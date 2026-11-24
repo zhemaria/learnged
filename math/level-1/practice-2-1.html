@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 1 · Lesson 2.1 · Multiplying — interactive (English)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 2.1 · Multiplying whole numbers · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 1 · Topic 2 · Multiplication and division</div>
+    <h1>Lesson 2.1 · Multiplying whole numbers</h1>
+    <div class="meta">Five practice activities and a review game on one page. The exercises change every time, so you can practice as many times as you want. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#meaning">What does multiplying mean?</a></li>
+      <li><a href="#tables-properties">Times tables and properties</a></li>
+      <li><a href="#one-digit">Multiplying by one digit</a></li>
+      <li><a href="#two-digit">Multiplying by two digits</a></li>
+      <li><a href="#estimate">Checking with an estimate</a></li>
+      <li><a href="#bingo">Multiplication bingo</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="meaning" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>What does multiplying mean?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p><strong>Multiplying is adding the same number several times</strong>, in a shorter way. Four packs of 6 bottles are
+      6 + 6 + 6 + 6 = 24, so 4 × 6 = 24. The numbers you multiply are the <strong>factors</strong>, and the answer is the <strong>product</strong>.</p>
+      <h3>Rows and columns (an array)</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="ar-f">Rows: <span id="ar-fv"></span></label><input type="range" id="ar-f" min="1" max="12" value="4"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="ar-c">In each row: <span id="ar-cv"></span></label><input type="range" id="ar-c" min="1" max="12" value="6"></div>
+        </div>
+        <div id="ar-vis" aria-hidden="true"></div>
+        <div class="salida" id="ar-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: which multiplication is it?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+  <details class="modulo" id="tables-properties">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Times tables and properties</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>It helps to know the tables up to 12 × 12, like a carpenter knows the measurements. Press a square: its row and its column
+      light up, and the "twin" square, with the factors switched, turns yellow. It has the same product.</p>
+      <div class="tabla-scroll" id="t12"></div>
+      <div class="salida" id="t12-salida" aria-live="polite"></div>
+      <table class="reglas">
+        <caption>Properties that make life easier</caption>
+        <thead><tr><th scope="col">Property</th><th scope="col">What it says</th><th scope="col">Example</th></tr></thead>
+        <tbody>
+          <tr><td>Commutative</td><td>the order of the factors does not change the product</td><td>7 × 8 = 8 × 7 = 56</td></tr>
+          <tr><td>Associative</td><td>with three factors, you can group them in any way</td><td>(2 × 5) × 3 = 2 × (5 × 3) = 30</td></tr>
+          <tr><td>Distributive</td><td>you can split a factor into easier parts</td><td>25 × 4 = (20 × 4) + (5 × 4) = 100</td></tr>
+          <tr><td>Zero and one</td><td>times 0 is 0; times 1 stays the same</td><td>8 × 0 = 0 · 8 × 1 = 8</td></tr>
+        </tbody>
+      </table>
+      <h3>Practice: use the distributive property</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Product</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type digits only. You can use commas to separate the groups.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+  <details class="modulo" id="one-digit">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Multiplying by one digit</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Multiply each digit, from right to left, and <strong>carry</strong> the same way you do when you add. Add the number you carried
+      <strong>after</strong> you multiply the next column.</p>
+      <h3>One column at a time</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="m1-a">Number</label><input type="text" inputmode="numeric" class="corto" id="m1-a" value="327"></div>
+          <div class="campo"><label for="m1-b">Times (one digit)</label><input type="text" inputmode="numeric" class="corto" id="m1-b" value="4"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m1-sig">Next step</button>
+          <button type="button" class="btn-sec" id="m1-todo">Show all</button>
+          <button type="button" class="btn-sec" id="m1-rei">Start over</button>
+        </div>
+        <div class="termo" id="m1-tabla"></div>
+        <div class="salida" id="m1-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: multiply by one digit</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Product</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type digits only. You can use commas to separate the groups.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+  <details class="modulo" id="two-digit">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Multiplying by two digits</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With two digits, find <strong>two partial products</strong> and add them. The second partial product, for the tens, moves
+      <strong>one place to the left</strong>. That is why many people write a 0 that "holds the place."</p>
+      <h3>The two partial products</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="m2-a">Number</label><input type="text" inputmode="numeric" class="corto" id="m2-a" value="246"></div>
+          <div class="campo"><label for="m2-b">Times (two digits)</label><input type="text" inputmode="numeric" class="corto" id="m2-b" value="35"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m2-sig">Next step</button>
+          <button type="button" class="btn-sec" id="m2-todo">Show all</button>
+          <button type="button" class="btn-sec" id="m2-rei">Start over</button>
+        </div>
+        <div class="termo" id="m2-tabla"></div>
+        <div class="salida" id="m2-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: multiply by two digits</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Product</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type digits only. You can use commas to separate the groups.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+  <details class="modulo" id="estimate">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Checking with an estimate</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To see if a product is reasonable, <strong>round the factors</strong> and multiply the round numbers, which is easy. An estimate
+      does not give the exact answer, but it is the alarm that catches a missing zero or a partial product in the wrong place.</p>
+      <h3>Estimate and compare</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="es-a">First factor</label><input type="text" inputmode="numeric" class="corto" id="es-a" value="246"></div>
+          <div class="campo"><label for="es-b">Second factor</label><input type="text" inputmode="numeric" class="corto" id="es-b" value="35"></div>
+        </div>
+        <div class="salida" id="es-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: is it reasonable?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+  <details class="modulo" id="bingo">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Multiplication bingo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Review the times tables with a game. It opens in a new tab.</p>
+      <div class="tarjetas">
+        <a class="tarjeta-ext" href="../games/multiplication-bingo.html" target="_blank" rel="noopener noreferrer"><strong>Multiplication bingo</strong>The tables from 1 to 12, as a game.<span class="ir">Open in a new tab ›</span></a>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 1 · Topic 2 · Multiplication and division · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script>
+function cap1(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+/* ============ MODULE 1 · meaning ============ */
+function arreglo(f, c){ return '<div class="arreglo" style="grid-template-columns:repeat(' + c + ',26px)">' + '<span></span>'.repeat(f*c) + '</div>'; }
+function pintaAR(){
+  var f = +$("ar-f").value, c = +$("ar-c").value;
+  $("ar-fv").textContent = f; $("ar-cv").textContent = c; $("ar-vis").innerHTML = arreglo(f, c);
+  $("ar-salida").innerHTML = '<div class="linea">Repeated addition: ' + (f <= 8 ? Array(f).fill(c).join(" + ") : c + " + " + c + " + … (" + f + " times)") + ' = ' + f*c + '</div><div class="linea veredicto">' + f + ' × ' + c + ' = ' + f*c + '</div><div class="linea">Factors: ' + f + ' and ' + c + '. Product: ' + f*c + '.</div>';
+}
+function genArreglo(){
+  var f = aleatorio(2, 7), c = aleatorio(2, 8); while (c === f) c = aleatorio(2, 8);
+  if (Math.random() < 0.5){
+    var o = [f + " × " + c + " = " + f*c, f + " + " + c + " = " + (f + c), f + " × " + (c + 1) + " = " + f*(c + 1)].map(function(x, i){ return { html: x, clave: "o" + i }; });
+    return { enun: "Which multiplication does this array show?" + '<div role="img" aria-label="An array of ' + f + ' rows with ' + c + ' dots in each row.">' + arreglo(f, c) + '</div>', opciones: o, correcta: "o0",
+      pistas: { o1: "Do not add the rows and the columns. There are " + f + " equal rows of " + c + ".", o2: "Count the dots in one row again." },
+      bien: f + " rows of " + c + ": " + f + " × " + c + " = " + f*c + ".", mal: "There are " + f + " rows with " + c + " in each row: " + f + " × " + c + " = " + f*c + "." };
+  }
+  var o2 = [f + " × " + c, c + " + " + f, f + " + " + f, c + " × " + c].map(function(x, i){ return { html: x, clave: "o" + i }; });
+  return { enun: "Which multiplication is the same as " + Array(f).fill(c).join(" + ") + "?", opciones: o2, correcta: "o0",
+    pistas: { o1: "Count how many times the " + c + " is added.", o2: "Which number is added again and again?", o3: "Count how many times the " + c + " is added." },
+    bien: "The " + c + " is added " + f + " times: " + f + " × " + c + " = " + f*c + ".", mal: "It is the " + c + " added " + f + " times: " + f + " × " + c + " = " + f*c + "." };
+}
+/* ============ MODULE 2 · 12 x 12 table ============ */
+var T12 = { f: 7, c: 8 };
+function pintaT12(){
+  var h = '<table class="tabla12"><caption class="cap-oculto">Times table from 1 to 12</caption><tr><th scope="col">×</th>';
+  for (var c = 1; c <= 12; c++) h += '<th scope="col">' + c + '</th>';
+  h += '</tr>';
+  for (var f = 1; f <= 12; f++){ h += '<tr><th scope="row">' + f + '</th>'; for (c = 1; c <= 12; c++){ var cl = (f === T12.f && c === T12.c) ? "sel" : ((f === T12.c && c === T12.f) ? "sim" : ((f === T12.f || c === T12.c) ? (f === T12.f ? "fila" : "col") : "")); h += '<td class="' + cl + '"><button type="button" data-f="' + f + '" data-c="' + c + '" aria-label="' + f + ' times ' + c + '">' + f*c + '</button></td>'; } h += '</tr>'; }
+  $("t12").innerHTML = h + '</table>';
+  $("t12").querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ T12.f = +b.getAttribute("data-f"); T12.c = +b.getAttribute("data-c"); pintaT12(); var nb = $("t12").querySelector('button[data-f="' + T12.f + '"][data-c="' + T12.c + '"]'); if (nb) nb.focus(); }); });
+  var a = T12.f, b2 = T12.c;
+  $("t12-salida").innerHTML = '<div class="linea veredicto">' + a + ' × ' + b2 + ' = ' + a*b2 + '</div><div class="linea">' + (a === b2 ? "This is a square number: the two factors are the same." : "Its twin, " + b2 + " × " + a + " = " + a*b2 + ", gives the same product: the commutative property.") + '</div>';
+}
+function genDistrib(){
+  var d = aleatorio(11, 49), m = aleatorio(3, 9), dec = Math.floor(d/10)*10, u = d % 10, r = d*m;
+  if (!u) return genDistrib();
+  return { enun: "Use the distributive property to find <strong>" + d + " × " + m + "</strong>. (Hint: " + d + " = " + dec + " + " + u + ")",
+    solucion: "(" + dec + " × " + m + ") + (" + u + " × " + m + ") = " + dec*m + " + " + u*m + " = " + r + ".",
+    evalua: numN(r, [{ v: dec*m + u, msg: "Multiply both parts by " + m + ": the " + u + " too." }, { v: d + m, msg: "This is a multiplication, not an addition." }], "Multiply each part by " + m + ", then add the two answers.") };
+}
+/* ============ MODULE 3 · one digit ============ */
+function pasosM1(a, m){
+  var L = String(a).length, W = Math.max(String(a*m).length, L) + 1, A = digitos(a, W), B = digitos(m, W), lleva = new Array(W).fill(null), res = new Array(W).fill(null), pasos = [], c = 0;
+  for (var i = W - 1; i >= W - L; i--){
+    var x = A[i], p = x*m + c, k = W - 1 - i, txt = cap1(PLACE[k]) + ": " + m + " × " + x + " = " + x*m + (c ? ", plus the " + c + " you carried = " + p : "") + ".";
+    if (i === W - L){ var s = String(p); for (var q = 0; q < s.length; q++) res[i - s.length + 1 + q] = +s[q]; txt += " This is the last column: write " + p + "."; }
+    else { res[i] = p % 10; c = Math.floor(p/10); txt += c ? " Write " + (p % 10) + " and carry " + c + "." : " Write " + p + "."; if (c) lleva[i - 1] = String(c); }
+    pasos.push({ txt: txt, tabla: tablaCol(W, [{ dig: A }, { signo: "×", dig: B }], lleva.slice(), res.slice(), i, "Multiplication in columns, " + PLACE[k]) });
+  }
+  return { pasos: pasos, W: W, A: A, B: B };
+}
+function sinLlevarM(a, m){ var s = String(a), r = ""; for (var i = 0; i < s.length; i++) r += (i === 0 ? String(+s[i]*m) : String((+s[i]*m) % 10)); return +r; }
+function stepper(pre, pinta){ var S = { i: 0, P: null }; $(pre + "-sig").addEventListener("click", function(){ if (S.P && S.i < S.P.pasos.length){ S.i++; pinta(S); } }); $(pre + "-todo").addEventListener("click", function(){ if (S.P){ S.i = S.P.pasos.length; pinta(S); } }); $(pre + "-rei").addEventListener("click", function(){ if (S.P){ S.i = 0; pinta(S); } }); return S; }
+var M1 = stepper("m1", pintaM1);
+function cargaM1(){ var a = leeNum($("m1-a").value), m = leeNum($("m1-b").value); if (a === null || m === null || m > 9 || a > 999999){ $("m1-salida").innerHTML = "Type a number with up to 6 digits and a one-digit factor (0 to 9)."; $("m1-tabla").innerHTML = ""; M1.P = null; $("m1-sig").disabled = true; return; } M1.P = pasosM1(a, m); M1.a = a; M1.m = m; M1.i = 0; pintaM1(M1); }
+function pintaM1(S){
+  var P = S.P, W = P.W;
+  $("m1-tabla").innerHTML = S.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "×", dig: P.B }], new Array(W).fill(null), new Array(W).fill(null), -1, "Multiplication: " + com(S.a) + " times " + S.m) : P.pasos[S.i - 1].tabla;
+  var h = P.pasos.slice(0, S.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (S.i === P.pasos.length) h += '<div class="linea veredicto">' + com(S.a) + ' × ' + S.m + ' = ' + com(S.a*S.m) + '</div>';
+  if (S.i === 0) h = '<div class="linea">Start with the ones. What you carry appears in red at the top.</div>';
+  $("m1-salida").innerHTML = h; $("m1-sig").disabled = S.i >= P.pasos.length;
+}
+function genM1(){
+  var a = aleatorio(100, 9999), m = aleatorio(3, 9), r = a*m, s = sinLlevarM(a, m);
+  return { enun: "Find <strong>" + com(a) + " × " + m + "</strong>.", solucion: pasosM1(a, m).pasos.map(function(p){ return p.txt; }).join(" ") + " The product is " + com(r) + ".",
+    evalua: numN(r, s !== r ? [{ v: s, msg: "It looks like the carried numbers were not added. After you multiply each column, add what you carried." }] : [], "Multiply one column at a time, from right to left, and add what you carry.") };
+}
+/* ============ MODULE 4 · two digits ============ */
+function pasosM2(a, b){
+  var u = b % 10, d = Math.floor(b/10), p1 = a*u, p2 = a*d, tot = a*b, W = String(tot).length + 1;
+  var A = digitos(a, W), B = digitos(b, W), P1 = digitos(p1, W), P2 = digitos(p2*10, W), pasos = [];
+  function tab(filas, res, voz){ return tablaCol(W, filas, null, res, -1, voz); }
+  var base = [{ dig: A }, { signo: "×", dig: B }];
+  pasos.push({ txt: "First partial product, by the ones (" + u + "): " + com(a) + " × " + u + " = " + com(p1) + ".", tabla: tab(base, P1, "First partial product: " + com(p1)) });
+  var P2v = P2.slice(); P2v[W - 1] = '<span style="color:#8a8a8a">0</span>';
+  pasos.push({ txt: "Second partial product, by the tens (" + d + "): " + com(a) + " × " + d + " = " + com(p2) + ". This " + d + " is worth " + d*10 + ", so move it one place to the left: " + com(p2*10) + " (the gray 0 holds the place).", tabla: tab(base.concat([{ dig: P1 }]), P2v, "Second partial product: " + com(p2*10)) });
+  pasos.push({ txt: "Add the partial products: " + com(p1) + " + " + com(p2*10) + " = " + com(tot) + ".", tabla: tab(base.concat([{ dig: P1 }, { signo: "+", dig: P2v }]), digitos(tot, W), "Sum of the partial products: " + com(tot)) });
+  return { pasos: pasos, W: W, A: A, B: B, sinCorrer: p1 + p2 };
+}
+var M2 = stepper("m2", pintaM2);
+function cargaM2(){ var a = leeNum($("m2-a").value), b = leeNum($("m2-b").value); if (a === null || b === null || b < 10 || b > 99 || a > 99999){ $("m2-salida").innerHTML = "Type a number with up to 5 digits and a two-digit factor (10 to 99)."; $("m2-tabla").innerHTML = ""; M2.P = null; $("m2-sig").disabled = true; return; } M2.P = pasosM2(a, b); M2.a = a; M2.b = b; M2.i = 0; pintaM2(M2); }
+function pintaM2(S){
+  var P = S.P, W = P.W;
+  $("m2-tabla").innerHTML = S.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "×", dig: P.B }], null, new Array(W).fill(null), -1, "Multiplication: " + com(S.a) + " times " + S.b) : P.pasos[S.i - 1].tabla;
+  var h = P.pasos.slice(0, S.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (S.i === P.pasos.length) h += '<div class="linea veredicto">' + com(S.a) + ' × ' + S.b + ' = ' + com(S.a*S.b) + '</div>';
+  if (S.i === 0) h = '<div class="linea">First multiply by the ones digit of the second factor, then by the tens digit.</div>';
+  $("m2-salida").innerHTML = h; $("m2-sig").disabled = S.i >= P.pasos.length;
+}
+function genM2(){
+  var a = aleatorio(100, 999), b = aleatorio(12, 98); if (b % 10 === 0) b++;
+  var P = pasosM2(a, b), r = a*b;
+  return { enun: "Find <strong>" + com(a) + " × " + b + "</strong>.", solucion: P.pasos.map(function(p){ return p.txt; }).join(" "),
+    evalua: numN(r, [{ v: P.sinCorrer, msg: "It looks like the second partial product was not moved one place to the left. Write a 0 to hold the place." }, { v: a*(b % 10), msg: "That is only the first partial product. Multiply by the tens too, then add." }], "Find the two partial products, move the second one place to the left, and add.") };
+}
+/* ============ MODULE 5 · estimate ============ */
+function redondeoEst(n){ if (n < 100) return Math.round(n/10)*10; var p = Math.pow(10, String(n).length - 2); return Math.round(n/p)*p; }
+function pintaES(){
+  var a = leeNum($("es-a").value), b = leeNum($("es-b").value), s = $("es-salida");
+  if (a === null || b === null || !a || !b){ s.innerHTML = "Type two whole numbers."; return; }
+  var ra = redondeoEst(a), rb = redondeoEst(b);
+  s.innerHTML = '<div class="linea">Round: ' + com(a) + ' is about ' + com(ra) + ', and ' + com(b) + ' is about ' + com(rb) + '.</div><div class="linea">Estimate: ' + com(ra) + ' × ' + com(rb) + ' = <strong>' + com(ra*rb) + '</strong> (about).</div><div class="linea veredicto">Exact: ' + com(a*b) + ', close to the estimate</div><div class="linea nota">If you got ' + com(Math.round(a*b/10)) + ' or ' + com(a*b*10) + ', the estimate would warn you about a mistake.</div>';
+}
+function genRazonable(){
+  var a = aleatorio(120, 980), b = aleatorio(12, 98), r = a*b, ok = Math.random() < 0.4, dado = ok ? r : elige([Math.round(r/10), r*10, r + 1000*aleatorio(3, 6)]);
+  var ra = redondeoEst(a), rb = redondeoEst(b), est = ra*rb;
+  var exp = "Estimate: " + com(ra) + " × " + com(rb) + " = " + com(est) + ". " + (ok ? com(dado) + " is close to it, so it is reasonable." : com(dado) + " is far from " + com(est) + ", so there is a mistake. The correct product is " + com(r) + ".");
+  return { enOrden: true, enun: "Someone found <strong>" + com(a) + " × " + b + " = " + com(dado) + "</strong>. Use an estimate: is it reasonable?", opciones: [ { html: "Yes, it is reasonable", clave: "s" }, { html: "No, it is too far off", clave: "n" } ], correcta: ok ? "s" : "n", bien: exp, mal: exp };
+}
+/* ---------- Start ---------- */
+["ar-f", "ar-c"].forEach(function(id){ $(id).addEventListener("input", pintaAR); }); pintaAR();
+creaPracticaOM("p1", genArreglo);
+pintaT12();
+creaPracticaLibre("p2", genDistrib);
+["m1-a", "m1-b"].forEach(function(id){ $(id).addEventListener("input", cargaM1); }); cargaM1();
+creaPracticaLibre("p3", genM1);
+["m2-a", "m2-b"].forEach(function(id){ $(id).addEventListener("input", cargaM2); }); cargaM2();
+creaPracticaLibre("p4", genM2);
+["es-a", "es-b"].forEach(function(id){ $(id).addEventListener("input", pintaES); }); pintaES();
+creaPracticaOM("p5", genRazonable);
+iniciaNavegacion();
+</script>
+</body>
+</html>
