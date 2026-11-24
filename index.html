@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LearnGED · Free GED prep in English and Spanish</title>
+<meta name="description" content="Free GED preparation in English and Spanish, at your own pace.">
+<script>
+(function(){
+  var saved=null; try{saved=localStorage.getItem('learnged-lang');}catch(e){}
+  if(!saved){var l=(navigator.languages&&navigator.languages[0])||navigator.language||'';
+    if(/^es\b/i.test(l)){location.replace('es/'+location.hash);}}
+})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1E3A5F">
+<link rel="alternate" hreflang="en" href="https://www.learnged.com/">
+<link rel="alternate" hreflang="es" href="https://www.learnged.com/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="learnged.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./"><img src="img/learnged-logo-horizontal.svg" alt="LearnGED home"></a>
+    <div class="tools">
+      <button type="button" id="b-big" aria-pressed="false">A+ Larger text</button>
+      <button type="button" id="b-hc" aria-pressed="false">High contrast</button>
+      <nav class="lang" aria-label="Language / Idioma">
+        <a href="./" lang="en" data-lang="en" aria-current="true">EN</a>
+        <a href="es/" lang="es" data-lang="es" >ES</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="badge">Coming soon</span>
+        <h1>Free GED<sup>®</sup> prep, in English and Spanish, at your own pace.</h1>
+        <p class="lead">Build your foundation, study the four GED subjects, and practice with explanations that help you move forward.</p>
+        <p>LearnGED offers free study materials. We do not give the official GED test or award the GED credential, and the official test has a fee.</p>
+      </div>
+      <img src="img/learnged-mascota.svg" alt="Leo, the LearnGED owl, wearing glasses and a graduation cap and holding a digital pen">
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="routes">
+      <article class="route"><h2>Build your foundation</h2><p>Reading, writing and math, step by step, starting from what you already know.</p><span class="soon">Coming soon</span></article>
+      <article class="route"><h2>Prepare for the GED</h2><p>The four subjects of the test: math, reasoning through language arts, science and social studies.</p><span class="soon">Coming soon</span></article>
+      <article class="route"><h2>Practice</h2><p>Exercises, games and practice tests with feedback that explains each answer.</p><span class="soon">Coming soon</span></article>
+    </div>
+    <aside class="note">
+      <h2>While we build LearnGED</h2>
+      <p>All our materials in Spanish are available right now, free, at GEDparaHispanos.</p>
+      <a class="btn" href="https://www.gedparahispanos.com/">Go to GEDparaHispanos</a>
+    </aside>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><img src="img/learnged-logo-invertido.svg" alt="LearnGED" style="height:48px;width:auto"></p>
+    <p>Free · No account needed · We do not collect personal data.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  function get(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  function set(k,v){try{localStorage.setItem(k,v);}catch(e){}}
+  var b=document.body;
+  [['b-big','big'],['b-hc','hc']].forEach(function(x){
+    var btn=document.getElementById(x[0]);
+    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}
+    btn.addEventListener('click',function(){
+      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+    });
+  });
+  document.querySelectorAll('.lang a').forEach(function(a){
+    a.addEventListener('click',function(){set('learnged-lang',a.getAttribute('data-lang'));});
+  });
+})();
+</script>
+</body>
+</html>
