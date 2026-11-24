@@ -102,7 +102,7 @@
       }
       var pct = Math.round(right / total * 100), msg, color;
       if (first === total) { msg = 'Excellent. You got every question on the first try. Careful, step-by-step work pays off.' + (L.next ? ' You are ready for ' + L.next + '.' : ''); color = '#e7f4ec'; }
-      else if (pct >= 75) { msg = 'Good work. You used the hints to fix your answers. That is how we learn. Look again at the solutions shown, then take the quiz once more.'; color = '#e7f4ec'; }
+      else if (pct >= 75) { msg = 'Good work. ' + (right > first ? 'You used the hints to fix your answers. That is how we learn. ' : '') + 'Look again at the solutions shown, then take the quiz once more.'; color = '#e7f4ec'; }
       else { msg = 'Let’s review together. Read ' + (L.review || 'the lesson') + ' again and use the practice activities. Then try the quiz again. Every try makes you stronger.'; color = '#fdecea'; }
       document.getElementById('puntaje').textContent = right + ' of ' + total + ' correct (' + first + ' on the first try, ' + (right - first) + ' after a hint)';
       document.getElementById('mensaje').textContent = msg;
