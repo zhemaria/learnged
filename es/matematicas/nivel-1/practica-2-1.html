@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 2.1 · Multiplicación de números enteros — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.1 · Multiplicación de números enteros · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 2 · Multiplicación y división</div>
+    <h1>Lección 2.1 · Multiplicación de números enteros</h1>
+    <div class="meta">Cinco actividades de práctica y un juego de repaso en una sola página. Los ejercicios cambian cada vez, así que puede practicar todas las veces que quiera. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#significado">¿Qué significa multiplicar?</a></li>
+      <li><a href="#tablas-propiedades">Tablas de multiplicar y propiedades</a></li>
+      <li><a href="#un-digito">Multiplicar por un dígito</a></li>
+      <li><a href="#dos-digitos">Multiplicar por dos dígitos</a></li>
+      <li><a href="#estimar">Comprobar con una estimación</a></li>
+      <li><a href="#bingo">Bingo de multiplicación</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="significado" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>¿Qué significa multiplicar?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p><strong>Multiplicar es sumar el mismo número varias veces</strong>, de forma más corta. Cuatro paquetes de 6 botellas son
+      6 + 6 + 6 + 6 = 24, así que 4 × 6 = 24. Los números que se multiplican son los <strong>factores</strong>, y el resultado es el <strong>producto</strong>.</p>
+      <h3>Filas y columnas (un arreglo)</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="ar-f">Filas: <span id="ar-fv"></span></label><input type="range" id="ar-f" min="1" max="12" value="4"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="ar-c">En cada fila: <span id="ar-cv"></span></label><input type="range" id="ar-c" min="1" max="12" value="6"></div>
+        </div>
+        <div id="ar-vis" aria-hidden="true"></div>
+        <div class="salida" id="ar-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿qué multiplicación es?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="tablas-propiedades">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Tablas de multiplicar y propiedades</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Ayuda saber las tablas hasta 12 × 12, como el carpintero conoce sus medidas. Pulse una casilla: se iluminan su fila y su columna,
+      y la casilla «gemela», con los factores cambiados de lugar, se pone amarilla. Tiene el mismo producto.</p>
+      <div class="tabla-scroll" id="t12"></div>
+      <div class="salida" id="t12-salida" aria-live="polite"></div>
+      <table class="reglas">
+        <caption>Propiedades que facilitan la vida</caption>
+        <thead><tr><th scope="col">Propiedad</th><th scope="col">Qué dice</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>Conmutativa</td><td>el orden de los factores no cambia el producto</td><td>7 × 8 = 8 × 7 = 56</td></tr>
+          <tr><td>Asociativa</td><td>con tres factores, se pueden agrupar de cualquier forma</td><td>(2 × 5) × 3 = 2 × (5 × 3) = 30</td></tr>
+          <tr><td>Distributiva</td><td>se puede separar un factor en partes más fáciles</td><td>25 × 4 = (20 × 4) + (5 × 4) = 100</td></tr>
+          <tr><td>El cero y el uno</td><td>por 0 da 0; por 1 se queda igual</td><td>8 × 0 = 0 · 8 × 1 = 8</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: use la propiedad distributiva</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Producto</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con una coma.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="un-digito">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Multiplicar por un dígito</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Multiplique cada dígito, de derecha a izquierda, y <strong>lleve</strong> igual que al sumar. Sume lo que llevaba
+      <strong>después</strong> de multiplicar la columna siguiente.</p>
+      <h3>Una columna a la vez</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="m1-a">Número</label><input type="text" inputmode="numeric" class="corto" id="m1-a" value="327"></div>
+          <div class="campo"><label for="m1-b">Por (un dígito)</label><input type="text" inputmode="numeric" class="corto" id="m1-b" value="4"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m1-sig">Paso siguiente</button>
+          <button type="button" class="btn-sec" id="m1-todo">Mostrar todo</button>
+          <button type="button" class="btn-sec" id="m1-rei">Empezar de nuevo</button>
+        </div>
+        <div class="termo" id="m1-tabla"></div>
+        <div class="salida" id="m1-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: multiplique por un dígito</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Producto</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con una coma.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="dos-digitos">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Multiplicar por dos dígitos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Con dos dígitos, halle <strong>dos productos parciales</strong> y súmelos. El segundo producto parcial, el de las decenas, se corre
+      <strong>un lugar a la izquierda</strong>. Por eso muchas personas escriben un 0 que «guarda el lugar».</p>
+      <h3>Los dos productos parciales</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="m2-a">Número</label><input type="text" inputmode="numeric" class="corto" id="m2-a" value="246"></div>
+          <div class="campo"><label for="m2-b">Por (dos dígitos)</label><input type="text" inputmode="numeric" class="corto" id="m2-b" value="35"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m2-sig">Paso siguiente</button>
+          <button type="button" class="btn-sec" id="m2-todo">Mostrar todo</button>
+          <button type="button" class="btn-sec" id="m2-rei">Empezar de nuevo</button>
+        </div>
+        <div class="termo" id="m2-tabla"></div>
+        <div class="salida" id="m2-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: multiplique por dos dígitos</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Producto</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con una coma.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="estimar">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Comprobar con una estimación</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para ver si un producto es razonable, <strong>redondee los factores</strong> y multiplique los números redondos, que es fácil. La estimación
+      no da el resultado exacto, pero es la alarma que atrapa un cero que falta o un producto parcial fuera de su lugar.</p>
+      <h3>Estime y compare</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="es-a">Primer factor</label><input type="text" inputmode="numeric" class="corto" id="es-a" value="246"></div>
+          <div class="campo"><label for="es-b">Segundo factor</label><input type="text" inputmode="numeric" class="corto" id="es-b" value="35"></div>
+        </div>
+        <div class="salida" id="es-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿es razonable?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="bingo">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Bingo de multiplicación</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Repase las tablas de multiplicar con un juego. Se abre en una pestaña nueva.</p>
+      <div class="tarjetas">
+        <a class="tarjeta-ext" href="../juegos/bingo-multiplicacion.html" target="_blank" rel="noopener noreferrer"><strong>Bingo de multiplicación</strong>Las tablas del 1 al 12, en forma de juego.<span class="ir">Abrir en una pestaña nueva ›</span></a>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 2 · Multiplicación y división · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+function cap1(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+/* ============ MÓDULO 1 · meaning ============ */
+function arreglo(f, c){ return '<div class="arreglo" style="grid-template-columns:repeat(' + c + ',26px)">' + '<span></span>'.repeat(f*c) + '</div>'; }
+function pintaAR(){
+  var f = +$("ar-f").value, c = +$("ar-c").value;
+  $("ar-fv").textContent = f; $("ar-cv").textContent = c; $("ar-vis").innerHTML = arreglo(f, c);
+  $("ar-salida").innerHTML = '<div class="linea">Suma repetida: ' + (f <= 8 ? Array(f).fill(c).join(" + ") : c + " + " + c + " + … (" + f + " veces)") + ' = ' + f*c + '</div><div class="linea veredicto">' + f + ' × ' + c + ' = ' + f*c + '</div><div class="linea">Factores: ' + f + ' y ' + c + '. Producto: ' + f*c + '.</div>';
+}
+function genArreglo(){
+  var f = aleatorio(2, 7), c = aleatorio(2, 8); while (c === f) c = aleatorio(2, 8);
+  if (Math.random() < 0.5){
+    var o = [f + " × " + c + " = " + f*c, f + " + " + c + " = " + (f + c), f + " × " + (c + 1) + " = " + f*(c + 1)].map(function(x, i){ return { html: x, clave: "o" + i }; });
+    return { enun: "¿Qué multiplicación muestra este arreglo?" + '<div role="img" aria-label="Un arreglo de ' + f + ' filas con ' + c + ' puntos en cada fila.">' + arreglo(f, c) + '</div>', opciones: o, correcta: "o0",
+      pistas: { o1: "No sume las filas y las columnas. Hay " + f + " filas iguales de " + c + ".", o2: "Cuente otra vez los puntos de una fila." },
+      bien: f + " filas de " + c + ": " + f + " × " + c + " = " + f*c + ".", mal: "Hay " + f + " filas con " + c + " en cada fila: " + f + " × " + c + " = " + f*c + "." };
+  }
+  var o2 = [f + " × " + c, c + " + " + f, f + " + " + f, c + " × " + c].map(function(x, i){ return { html: x, clave: "o" + i }; });
+  return { enun: "¿Qué multiplicación es lo mismo que " + Array(f).fill(c).join(" + ") + "?", opciones: o2, correcta: "o0",
+    pistas: { o1: "Cuente cuántas veces se suma el " + c + ".", o2: "¿Qué número se suma una y otra vez?", o3: "Cuente cuántas veces se suma el " + c + "." },
+    bien: "El " + c + " se suma " + f + " veces: " + f + " × " + c + " = " + f*c + ".", mal: "Es el " + c + " sumado " + f + " veces: " + f + " × " + c + " = " + f*c + "." };
+}
+/* ============ MÓDULO 2 · 12 x 12 table ============ */
+var T12 = { f: 7, c: 8 };
+function pintaT12(){
+  var h = '<table class="tabla12"><caption class="cap-oculto">Tabla de multiplicar del 1 al 12</caption><tr><th scope="col">×</th>';
+  for (var c = 1; c <= 12; c++) h += '<th scope="col">' + c + '</th>';
+  h += '</tr>';
+  for (var f = 1; f <= 12; f++){ h += '<tr><th scope="row">' + f + '</th>'; for (c = 1; c <= 12; c++){ var cl = (f === T12.f && c === T12.c) ? "sel" : ((f === T12.c && c === T12.f) ? "sim" : ((f === T12.f || c === T12.c) ? (f === T12.f ? "fila" : "col") : "")); h += '<td class="' + cl + '"><button type="button" data-f="' + f + '" data-c="' + c + '" aria-label="' + f + ' por ' + c + '">' + f*c + '</button></td>'; } h += '</tr>'; }
+  $("t12").innerHTML = h + '</table>';
+  $("t12").querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ T12.f = +b.getAttribute("data-f"); T12.c = +b.getAttribute("data-c"); pintaT12(); var nb = $("t12").querySelector('button[data-f="' + T12.f + '"][data-c="' + T12.c + '"]'); if (nb) nb.focus(); }); });
+  var a = T12.f, b2 = T12.c;
+  $("t12-salida").innerHTML = '<div class="linea veredicto">' + a + ' × ' + b2 + ' = ' + a*b2 + '</div><div class="linea">' + (a === b2 ? "Es un número cuadrado: los dos factores son iguales." : "Su gemela, " + b2 + " × " + a + " = " + a*b2 + ", da el mismo producto: la propiedad conmutativa.") + '</div>';
+}
+function genDistrib(){
+  var d = aleatorio(11, 49), m = aleatorio(3, 9), dec = Math.floor(d/10)*10, u = d % 10, r = d*m;
+  if (!u) return genDistrib();
+  return { enun: "Use la propiedad distributiva para hallar <strong>" + d + " × " + m + "</strong>. (Pista: " + d + " = " + dec + " + " + u + ")",
+    solucion: "(" + dec + " × " + m + ") + (" + u + " × " + m + ") = " + dec*m + " + " + u*m + " = " + r + ".",
+    evalua: numN(r, [{ v: dec*m + u, msg: "Multiplique las dos partes por " + m + ": el " + u + " también." }, { v: d + m, msg: "Esto es una multiplicación, no una suma." }], "Multiplique cada parte por " + m + " y después sume los dos resultados.") };
+}
+/* ============ MÓDULO 3 · one digit ============ */
+function pasosM1(a, m){
+  var L = String(a).length, W = Math.max(String(a*m).length, L) + 1, A = digitos(a, W), B = digitos(m, W), lleva = new Array(W).fill(null), res = new Array(W).fill(null), pasos = [], c = 0;
+  for (var i = W - 1; i >= W - L; i--){
+    var x = A[i], p = x*m + c, k = W - 1 - i, txt = cap1(LUGARES_PL[k]) + ": " + m + " × " + x + " = " + x*m + (c ? ", más el " + c + " que llevaba = " + p : "") + ".";
+    if (i === W - L){ var s = String(p); for (var q = 0; q < s.length; q++) res[i - s.length + 1 + q] = +s[q]; txt += " Es la última columna: escriba " + p + "."; }
+    else { res[i] = p % 10; c = Math.floor(p/10); txt += c ? " Escriba " + (p % 10) + " y lleve " + c + "." : " Escriba " + p + "."; if (c) lleva[i - 1] = String(c); }
+    pasos.push({ txt: txt, tabla: tablaCol(W, [{ dig: A }, { signo: "×", dig: B }], lleva.slice(), res.slice(), i, "Multiplicación en columnas, " + LUGARES_PL[k]) });
+  }
+  return { pasos: pasos, W: W, A: A, B: B };
+}
+function sinLlevarM(a, m){ var s = String(a), r = ""; for (var i = 0; i < s.length; i++) r += (i === 0 ? String(+s[i]*m) : String((+s[i]*m) % 10)); return +r; }
+function stepper(pre, pinta){ var S = { i: 0, P: null }; $(pre + "-sig").addEventListener("click", function(){ if (S.P && S.i < S.P.pasos.length){ S.i++; pinta(S); } }); $(pre + "-todo").addEventListener("click", function(){ if (S.P){ S.i = S.P.pasos.length; pinta(S); } }); $(pre + "-rei").addEventListener("click", function(){ if (S.P){ S.i = 0; pinta(S); } }); return S; }
+var M1 = stepper("m1", pintaM1);
+function cargaM1(){ var a = leeNum($("m1-a").value), m = leeNum($("m1-b").value); if (a === null || m === null || m > 9 || a > 999999){ $("m1-salida").innerHTML = "Escriba un número de hasta 6 dígitos y un factor de un dígito (del 0 al 9)."; $("m1-tabla").innerHTML = ""; M1.P = null; $("m1-sig").disabled = true; return; } M1.P = pasosM1(a, m); M1.a = a; M1.m = m; M1.i = 0; pintaM1(M1); }
+function pintaM1(S){
+  var P = S.P, W = P.W;
+  $("m1-tabla").innerHTML = S.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "×", dig: P.B }], new Array(W).fill(null), new Array(W).fill(null), -1, "Multiplicación: " + com(S.a) + " por " + S.m) : P.pasos[S.i - 1].tabla;
+  var h = P.pasos.slice(0, S.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (S.i === P.pasos.length) h += '<div class="linea veredicto">' + com(S.a) + ' × ' + S.m + ' = ' + com(S.a*S.m) + '</div>';
+  if (S.i === 0) h = '<div class="linea">Empiece por las unidades. Lo que se lleva aparece en rojo arriba.</div>';
+  $("m1-salida").innerHTML = h; $("m1-sig").disabled = S.i >= P.pasos.length;
+}
+function genM1(){
+  var a = aleatorio(100, 9999), m = aleatorio(3, 9), r = a*m, s = sinLlevarM(a, m);
+  return { enun: "Calcule <strong>" + com(a) + " × " + m + "</strong>.", solucion: pasosM1(a, m).pasos.map(function(p){ return p.txt; }).join(" ") + " El producto es " + com(r) + ".",
+    evalua: numN(r, s !== r ? [{ v: s, msg: "Parece que no se sumó lo que se llevaba. Después de multiplicar cada columna, sume lo que llevó." }] : [], "Multiplique una columna a la vez, de derecha a izquierda, y sume lo que lleva.") };
+}
+/* ============ MÓDULO 4 · two digits ============ */
+function pasosM2(a, b){
+  var u = b % 10, d = Math.floor(b/10), p1 = a*u, p2 = a*d, tot = a*b, W = String(tot).length + 1;
+  var A = digitos(a, W), B = digitos(b, W), P1 = digitos(p1, W), P2 = digitos(p2*10, W), pasos = [];
+  function tab(filas, res, voz){ return tablaCol(W, filas, null, res, -1, voz); }
+  var base = [{ dig: A }, { signo: "×", dig: B }];
+  pasos.push({ txt: "Primer producto parcial, por las unidades (" + u + "): " + com(a) + " × " + u + " = " + com(p1) + ".", tabla: tab(base, P1, "Primer producto parcial: " + com(p1)) });
+  var P2v = P2.slice(); P2v[W - 1] = '<span style="color:#8a8a8a">0</span>';
+  pasos.push({ txt: "Segundo producto parcial, por las decenas (" + d + "): " + com(a) + " × " + d + " = " + com(p2) + ". Este " + d + " vale " + d*10 + ", así que se corre un lugar a la izquierda: " + com(p2*10) + " (el 0 gris guarda el lugar).", tabla: tab(base.concat([{ dig: P1 }]), P2v, "Segundo producto parcial: " + com(p2*10)) });
+  pasos.push({ txt: "Sume los productos parciales: " + com(p1) + " + " + com(p2*10) + " = " + com(tot) + ".", tabla: tab(base.concat([{ dig: P1 }, { signo: "+", dig: P2v }]), digitos(tot, W), "Suma de los productos parciales: " + com(tot)) });
+  return { pasos: pasos, W: W, A: A, B: B, sinCorrer: p1 + p2 };
+}
+var M2 = stepper("m2", pintaM2);
+function cargaM2(){ var a = leeNum($("m2-a").value), b = leeNum($("m2-b").value); if (a === null || b === null || b < 10 || b > 99 || a > 99999){ $("m2-salida").innerHTML = "Escriba un número de hasta 5 dígitos y un factor de dos dígitos (del 10 al 99)."; $("m2-tabla").innerHTML = ""; M2.P = null; $("m2-sig").disabled = true; return; } M2.P = pasosM2(a, b); M2.a = a; M2.b = b; M2.i = 0; pintaM2(M2); }
+function pintaM2(S){
+  var P = S.P, W = P.W;
+  $("m2-tabla").innerHTML = S.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "×", dig: P.B }], null, new Array(W).fill(null), -1, "Multiplicación: " + com(S.a) + " por " + S.b) : P.pasos[S.i - 1].tabla;
+  var h = P.pasos.slice(0, S.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (S.i === P.pasos.length) h += '<div class="linea veredicto">' + com(S.a) + ' × ' + S.b + ' = ' + com(S.a*S.b) + '</div>';
+  if (S.i === 0) h = '<div class="linea">Primero multiplique por el dígito de las unidades del segundo factor y después por el de las decenas.</div>';
+  $("m2-salida").innerHTML = h; $("m2-sig").disabled = S.i >= P.pasos.length;
+}
+function genM2(){
+  var a = aleatorio(100, 999), b = aleatorio(12, 98); if (b % 10 === 0) b++;
+  var P = pasosM2(a, b), r = a*b;
+  return { enun: "Calcule <strong>" + com(a) + " × " + b + "</strong>.", solucion: P.pasos.map(function(p){ return p.txt; }).join(" "),
+    evalua: numN(r, [{ v: P.sinCorrer, msg: "Parece que el segundo producto parcial no se corrió un lugar a la izquierda. Escriba un 0 que guarde el lugar." }, { v: a*(b % 10), msg: "Ese es solo el primer producto parcial. Multiplique también por las decenas y después sume." }], "Halle los dos productos parciales, corra el segundo un lugar a la izquierda y sume.") };
+}
+/* ============ MÓDULO 5 · estimate ============ */
+function redondeoEst(n){ if (n < 100) return Math.round(n/10)*10; var p = Math.pow(10, String(n).length - 2); return Math.round(n/p)*p; }
+function pintaES(){
+  var a = leeNum($("es-a").value), b = leeNum($("es-b").value), s = $("es-salida");
+  if (a === null || b === null || !a || !b){ s.innerHTML = "Escriba dos números enteros."; return; }
+  var ra = redondeoEst(a), rb = redondeoEst(b);
+  s.innerHTML = '<div class="linea">Redondee: ' + com(a) + ' es unos ' + com(ra) + ', y ' + com(b) + ' es unos ' + com(rb) + '.</div><div class="linea">Estimación: ' + com(ra) + ' × ' + com(rb) + ' = <strong>' + com(ra*rb) + '</strong> (aproximadamente).</div><div class="linea veredicto">Exacto: ' + com(a*b) + ', cerca de la estimación</div><div class="linea nota">Si le hubiera dado ' + com(Math.round(a*b/10)) + ' o ' + com(a*b*10) + ', la estimación le avisaría del error.</div>';
+}
+function genRazonable(){
+  var a = aleatorio(120, 980), b = aleatorio(12, 98), r = a*b, ok = Math.random() < 0.4, dado = ok ? r : elige([Math.round(r/10), r*10, r + 1000*aleatorio(3, 6)]);
+  var ra = redondeoEst(a), rb = redondeoEst(b), est = ra*rb;
+  var exp = "Estimación: " + com(ra) + " × " + com(rb) + " = " + com(est) + ". " + (ok ? com(dado) + " está cerca, así que es razonable." : com(dado) + " está lejos de " + com(est) + ", así que hay un error. El producto correcto es " + com(r) + ".");
+  return { enOrden: true, enun: "Alguien calculó <strong>" + com(a) + " × " + b + " = " + com(dado) + "</strong>. Use una estimación: ¿es razonable?", opciones: [ { html: "Sí, es razonable", clave: "s" }, { html: "No, está demasiado lejos", clave: "n" } ], correcta: ok ? "s" : "n", bien: exp, mal: exp };
+}
+/* ---------- Arranque ---------- */
+["ar-f", "ar-c"].forEach(function(id){ $(id).addEventListener("input", pintaAR); }); pintaAR();
+creaPracticaOM("p1", genArreglo);
+pintaT12();
+creaPracticaLibre("p2", genDistrib);
+["m1-a", "m1-b"].forEach(function(id){ $(id).addEventListener("input", cargaM1); }); cargaM1();
+creaPracticaLibre("p3", genM1);
+["m2-a", "m2-b"].forEach(function(id){ $(id).addEventListener("input", cargaM2); }); cargaM2();
+creaPracticaLibre("p4", genM2);
+["es-a", "es-b"].forEach(function(id){ $(id).addEventListener("input", pintaES); }); pintaES();
+creaPracticaOM("p5", genRazonable);
+iniciaNavegacion();
+</script>
+</body>
+</html>

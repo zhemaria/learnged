@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 2.2 · División de números enteros — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.2 · División de números enteros · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-2-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 2 · Multiplicación y división</div>
+    <h1>Lección 2.2 · División de números enteros</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez, así que puede practicar todas las veces que quiera. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#significado">¿Qué significa dividir?</a></li>
+      <li><a href="#division-larga">La división larga, paso a paso</a></li>
+      <li><a href="#residuo">El residuo</a></li>
+      <li><a href="#que-hacer">¿Qué hago con el residuo?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="significado" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>¿Qué significa dividir?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La división es la contraria de la multiplicación: <strong>reparte un total en grupos iguales</strong>, o halla <strong>cuántos grupos caben</strong>.
+      En 24 ÷ 6 = 4, 24 es el <strong>dividendo</strong> (el total), 6 es el <strong>divisor</strong>, 4 es el <strong>cociente</strong> (el resultado),
+      y lo que sobra es el <strong>residuo</strong>.</p>
+      <h3>Forme grupos iguales</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rp-t">Total: <span id="rp-tv"></span></label><input type="range" id="rp-t" min="1" max="60" value="26"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rp-d">Tamaño de cada grupo: <span id="rp-dv"></span></label><input type="range" id="rp-d" min="1" max="12" value="4"></div>
+        </div>
+        <div class="grupos-div" id="rp-vis" aria-hidden="true"></div>
+        <div class="salida" id="rp-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: las palabras</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="division-larga">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La división larga, paso a paso</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>Repita el ciclo hasta que no queden dígitos por bajar</caption>
+        <thead><tr><th scope="col">Paso</th><th scope="col">Qué hace</th></tr></thead>
+        <tbody>
+          <tr><td>Dividir</td><td>¿Cuántas veces cabe el divisor? Escriba ese número en el cociente.</td></tr>
+          <tr><td>Multiplicar</td><td>Multiplique el divisor por ese número.</td></tr>
+          <tr><td>Restar</td><td>Reste para ver cuánto queda.</td></tr>
+          <tr><td>Bajar</td><td>Baje el dígito siguiente y empiece otra vez.</td></tr>
+        </tbody>
+      </table>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="dl-a">Dividendo</label><input type="text" inputmode="numeric" class="corto" id="dl-a" value="738"></div>
+          <div class="campo"><label for="dl-b">Divisor (un dígito)</label><input type="text" inputmode="numeric" class="corto" id="dl-b" value="6"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="dl-sig">Paso siguiente</button>
+          <button type="button" class="btn-sec" id="dl-todo">Mostrar todo</button>
+          <button type="button" class="btn-sec" id="dl-rei">Empezar de nuevo</button>
+        </div>
+        <div id="dl-tabla"></div>
+        <div class="salida" id="dl-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion">
+        <strong>El residuo siempre es menor que el divisor.</strong> Si al restar le da un número igual o mayor que el divisor,
+        el dígito del cociente es demasiado pequeño: auméntelo. Y si el divisor no cabe, escriba <strong>0</strong> en el cociente.
+      </div>
+      <h3>Practique: divida (sin residuo)</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Cociente</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con una coma.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="residuo">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El residuo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando una división no da exacto, lo que sobra es el <strong>residuo</strong>. Compruébelo así:</p>
+      <div class="formula">(cociente × divisor) + residuo = dividendo</div>
+      <div class="caja-tip"><strong>Ejemplo:</strong> 50 ÷ 7 = 7, residuo 1, porque (7 × 7) + 1 = 49 + 1 = 50 ✓.</div>
+      <h3>Practique: cociente y residuo</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+  <details class="modulo" id="que-hacer">
+    <summary><span class="num" aria-hidden="true">4</span><h2>¿Qué hago con el residuo?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Hallar el residuo es la mitad del trabajo. La otra mitad es decidir qué significa en la situación real. El mismo cálculo,
+      26 ÷ 4 = 6, residuo 2, tiene tres respuestas distintas:</p>
+      <table class="reglas">
+        <caption>Las tres posibilidades</caption>
+        <thead><tr><th scope="col">Lo que pide el problema</th><th scope="col">Qué hace</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>lo que sobra</td><td>dar el residuo</td><td>26 panes en 4 cajas iguales: sobran <strong>2</strong></td></tr>
+          <tr><td>que haya lugar para todos</td><td>redondear el cociente hacia arriba</td><td>26 personas en carros de 4: necesitan <strong>7</strong> carros</td></tr>
+          <tr><td>solo grupos completos</td><td>descartar el residuo</td><td>$26 y boletos de $4: puede comprar <strong>6</strong> boletos</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: ¿qué significa el residuo?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 2 · Multiplicación y división · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ MÓDULO 1 · meaning ============ */
+function pintaRP(){
+  var t = +$("rp-t").value, d = +$("rp-d").value, q = Math.floor(t/d), r = t % d, h = "";
+  $("rp-tv").textContent = t; $("rp-dv").textContent = d;
+  for (var i = 0; i < q; i++) h += '<div class="g">' + '<i></i>'.repeat(d) + '</div>';
+  if (r) h += '<div class="g resto">' + '<i></i>'.repeat(r) + '</div>';
+  $("rp-vis").innerHTML = h;
+  $("rp-salida").innerHTML = '<div class="linea">Con ' + t + ' objetos puede formar <strong>' + q + (q === 1 ? ' grupo' : ' grupos') + '</strong> de ' + d + (r ? ', y ' + (r === 1 ? 'sobra' : 'sobran') + ' <strong>' + r + '</strong> (en rojo).' : ', sin que sobre nada.') + '</div><div class="linea veredicto">' + t + ' ÷ ' + d + ' = ' + q + (r ? ', residuo ' + r : '') + '</div><div class="linea">Dividendo ' + t + ' · divisor ' + d + ' · cociente ' + q + ' · residuo ' + r + '</div>';
+}
+function genVocab(){
+  var d = aleatorio(3, 9), q = aleatorio(4, 12), r = aleatorio(1, d - 1), n = d*q + r;
+  var vals = [n, d, q, r]; if (new Set(vals).size < 4) return genVocab();
+  var nombres = ["el dividendo", "el divisor", "el cociente", "el residuo"], k = aleatorio(0, 3);
+  var o = vals.map(function(x, i){ return { html: String(x), clave: "v" + i }; });
+  var pistas = { v0: n + " es el total que se divide: el dividendo.", v1: d + " es el número entre el que se divide: el divisor.", v2: q + " es el resultado: el cociente.", v3: r + " es lo que sobra: el residuo." };
+  delete pistas["v" + k];
+  return { enOrden: true, enun: "En <strong>" + n + " ÷ " + d + " = " + q + ", residuo " + r + "</strong>, ¿qué número es " + nombres[k] + "?", opciones: o, correcta: "v" + k, pistas: pistas,
+    bien: "Dividendo " + n + ", divisor " + d + ", cociente " + q + ", residuo " + r + ".",
+    mal: "El dividendo es el total (" + n + "), el divisor es entre lo que se divide (" + d + "), el cociente es el resultado (" + q + ") y el residuo es lo que sobra (" + r + ")." };
+}
+/* ============ MÓDULO 2 · long division ============ */
+function pasosDL(n, d){
+  var s = String(n), L = s.length, pasos = [], coc = new Array(L).fill(null), filas = [], parcial = 0, i = 0, primera = true;
+  function tabla(act){
+    var h = '<table class="division" role="img" aria-label="División larga: ' + com(n) + ' entre ' + d + '"><tr><td></td><td></td>' + coc.map(function(c, j){ return '<td class="coc' + (j === act ? " act" : "") + '">' + (c === null ? "" : c) + '</td>'; }).join("") + '</tr>';
+    h += '<tr><td>' + d + '</td><td class="pared techo"></td>' + s.split("").map(function(c, j){ return '<td class="techo' + (j === act ? " act" : "") + '">' + c + '</td>'; }).join("") + '</tr>';
+    filas.forEach(function(f){ var t = String(f.txt), ini = f.fin - t.length + 1; h += '<tr><td></td><td>' + (f.menos && ini === 0 ? "−" : "") + '</td>'; for (var j = 0; j < L; j++){ var ch = j >= ini && j <= f.fin ? t[j - ini] : (f.menos && j === ini - 1 ? "−" : ""); h += '<td class="' + (f.sub && j >= ini && j <= f.fin ? "sub" : "") + '">' + ch + '</td>'; } h += '</tr>'; });
+    return h + '</table>';
+  }
+  var tabla0 = tabla(-1);
+  while (i < L){
+    parcial = parcial*10 + (+s[i]);
+    if (primera && parcial < d && i < L - 1){ i++; continue; }
+    var q = Math.floor(parcial / d), m = q*d, r = parcial - m;
+    coc[i] = q;
+    var txt = "<strong>Dividir:</strong> ¿cuántas veces cabe " + d + " en " + parcial + "? " + (q === 0 ? "No cabe: escriba 0 en el cociente." : q + (q === 1 ? " vez." : " veces.")) + " <strong>Multiplicar:</strong> " + q + " × " + d + " = " + m + ". <strong>Restar:</strong> " + parcial + " − " + m + " = " + r + ".";
+    filas.push({ txt: m, fin: i, sub: true, menos: true });
+    if (i < L - 1){ txt += " <strong>Bajar</strong> el " + s[i + 1] + ": ahora tiene " + (r*10 + (+s[i + 1])) + "."; filas.push({ txt: r*10 + (+s[i + 1]), fin: i + 1 }); }
+    else { txt += r ? " No quedan dígitos por bajar: el residuo es " + r + "." : " No quedan dígitos por bajar, y el residuo es 0."; filas.push({ txt: r, fin: i }); }
+    pasos.push({ txt: txt, tabla: tabla(i) });
+    parcial = r; primera = false; i++;
+  }
+  return { pasos: pasos, tabla0: tabla0 };
+}
+var DL = { i: 0, P: null };
+function cargaDL(){ var n = leeNum($("dl-a").value), d = leeNum($("dl-b").value); if (n === null || d === null || d < 1 || d > 9 || n > 9999999){ $("dl-salida").innerHTML = "Escriba un dividendo de hasta 7 dígitos y un divisor de un dígito (del 1 al 9)."; $("dl-tabla").innerHTML = ""; DL.P = null; $("dl-sig").disabled = true; return; } DL.P = pasosDL(n, d); DL.n = n; DL.d = d; DL.i = 0; pintaDL(); }
+function pintaDL(){
+  var P = DL.P; if (!P) return;
+  $("dl-tabla").innerHTML = DL.i === 0 ? P.tabla0 : P.pasos[DL.i - 1].tabla;
+  var h = P.pasos.slice(0, DL.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (DL.i === P.pasos.length) h += '<div class="linea veredicto">' + com(DL.n) + ' ÷ ' + DL.d + ' = ' + com(Math.floor(DL.n/DL.d)) + (DL.n % DL.d ? ', residuo ' + DL.n % DL.d : '') + '</div>';
+  if (DL.i === 0) h = '<div class="linea">Empiece por la izquierda. Si el divisor no cabe en el primer dígito, use los dos primeros dígitos.</div>';
+  $("dl-salida").innerHTML = h; $("dl-sig").disabled = DL.i >= P.pasos.length;
+}
+function sinCero(q){ return +String(q).replace(/0/g, ""); }
+function genDL(){
+  var d = aleatorio(2, 9), q = elige([aleatorio(12, 999), aleatorio(1, 9)*100 + aleatorio(1, 9), aleatorio(12, 999)]), n = d*q;
+  var ctx = elige(["", "", com(n) + " cajas se reparten en partes iguales entre " + d + " camiones. ¿Cuántas cajas lleva cada camión? "]);
+  var pist = [{ v: n*d, msg: "Esto es una división, no una multiplicación." }];
+  if (String(q).indexOf("0") > 0 && sinCero(q) !== q) pist.push({ v: sinCero(q), msg: "Falta un cero en el cociente. Cuando el divisor no cabe, escriba 0 antes de bajar el dígito siguiente." });
+  return { enun: ctx + "Calcule <strong>" + com(n) + " ÷ " + d + "</strong>.", solucion: pasosDL(n, d).pasos.map(function(p){ return p.txt.replace(/<[^>]+>/g, ""); }).join(" ") + " El cociente es " + com(q) + ". Comprobación: " + com(q) + " × " + d + " = " + com(n) + ".",
+    evalua: numN(q, pist, "Divida, multiplique, reste y baje. Compruebe su respuesta: cociente × " + d + " debe dar " + com(n) + ".") };
+}
+/* ============ MÓDULO 3 · remainder ============ */
+function genResiduo(){
+  var d = aleatorio(3, 9), q = aleatorio(5, 40), r = aleatorio(1, d - 1), n = d*q + r;
+  var cand = [[q, r], [q - 1, r + d], [q + 1, 0], [q, 0]];
+  var o = cand.map(function(x){ return { html: x[0] + ", residuo " + x[1], clave: x[0] + "-" + x[1] }; });
+  var pistas = {}; pistas[(q - 1) + "-" + (r + d)] = "Un residuo de " + (r + d) + " es mayor que el divisor, " + d + ". El cociente es demasiado pequeño.";
+  pistas[(q + 1) + "-0"] = (q + 1) + " × " + d + " = " + (q + 1)*d + ", que es más que " + n + ".";
+  pistas[q + "-0"] = q + " × " + d + " = " + q*d + ", no " + n + ". Sobra algo.";
+  return { enun: "¿Cuánto es <strong>" + n + " ÷ " + d + "</strong>?", opciones: o, correcta: q + "-" + r, pistas: pistas,
+    bien: "Comprobación: (" + q + " × " + d + ") + " + r + " = " + q*d + " + " + r + " = " + n + " ✓.",
+    mal: n + " ÷ " + d + " = " + q + ", residuo " + r + ". Comprobación: (" + q + " × " + d + ") + " + r + " = " + n + "." };
+}
+/* ============ MÓDULO 4 · what to do ============ */
+function genQueHago(){
+  var t = aleatorio(1, 3), d = aleatorio(4, 12), q = aleatorio(3, 12), r = aleatorio(1, d - 1), n = d*q + r, enun, cor, exp, ctx;
+  if (t === 1){ enun = "Una escuela lleva a " + n + " estudiantes de excursión en autobuses de " + d + " asientos. ¿Cuántos autobuses necesita?"; cor = q + 1; exp = "Tienen que ir todos: " + q + " autobuses no alcanzan (" + r + (r === 1 ? " estudiante se quedaría" : " estudiantes se quedarían") + " sin asiento). Se redondea hacia arriba: " + (q + 1) + " autobuses."; }
+  else if (t === 2){ enun = "Tiene $" + n + " para comprar camisetas de $" + d + " cada una. ¿Cuántas camisetas completas puede comprar?"; cor = q; exp = "Solo cuentan las camisetas completas: " + q + ". Los $" + r + " que sobran no alcanzan para otra, así que se descarta el residuo."; }
+  else { enun = n + " panes se empacan en " + d + " cajas, con la misma cantidad en cada caja. ¿Cuántos panes sobran?"; cor = r; exp = "La pregunta pide lo que sobra: el residuo, " + r + (r === 1 ? " pan" : " panes") + "."; }
+  enun += " <em>(" + n + " ÷ " + d + " = " + q + ", residuo " + r + ")</em>";
+  var vals = [q, q + 1, r]; if (new Set(vals).size < 3) return genQueHago();
+  var o = vals.map(function(x){ return { html: String(x), clave: "n" + x }; });
+  var pistas = {}; pistas["n" + q] = "¿El problema pide solo grupos completos? Lea otra vez la pregunta."; pistas["n" + (q + 1)] = "¿Tienen que caber todos, o todo? Lea otra vez la pregunta."; pistas["n" + r] = "¿El problema pide lo que sobra? Lea otra vez la pregunta.";
+  return { enOrden: true, enun: enun, opciones: o, correcta: "n" + cor, pistas: pistas, bien: exp, mal: exp };
+}
+/* ---------- Arranque ---------- */
+["rp-t", "rp-d"].forEach(function(id){ $(id).addEventListener("input", pintaRP); }); pintaRP();
+creaPracticaOM("p1", genVocab);
+["dl-a", "dl-b"].forEach(function(id){ $(id).addEventListener("input", cargaDL); });
+$("dl-sig").addEventListener("click", function(){ if (DL.P && DL.i < DL.P.pasos.length){ DL.i++; pintaDL(); } });
+$("dl-todo").addEventListener("click", function(){ if (DL.P){ DL.i = DL.P.pasos.length; pintaDL(); } });
+$("dl-rei").addEventListener("click", function(){ if (DL.P){ DL.i = 0; pintaDL(); } });
+cargaDL();
+creaPracticaLibre("p2", genDL);
+creaPracticaOM("p3", genResiduo);
+creaPracticaOM("p4", genQueHago);
+iniciaNavegacion();
+</script>
+</body>
+</html>
