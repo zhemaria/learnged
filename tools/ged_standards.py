@@ -118,27 +118,53 @@ TARGETS = {
  "MP.5.c": "Identify the information required to evaluate a line of reasoning.",
 }
 
+
+# ---------- College and Career Readiness (CCR) Standards for Adult Education (Pimentel, 2013) ----------
+# Level letter, then the standard (examples left out). The codes are the Common Core codes the CCR uses.
+CCR = {
+ "3.OA.3": ("B", "Use multiplication and division within 100 to solve word problems in situations involving equal groups, arrays, and measurement quantities."),
+ "3.OA.5": ("B", "Apply properties of operations as strategies to multiply and divide (commutative, associative, and distributive properties)."),
+ "3.OA.7": ("B", "Fluently multiply and divide within 100. Know from memory all products of two one-digit numbers."),
+ "3.OA.8": ("B", "Solve two-step word problems using the four operations. Assess the reasonableness of answers using mental computation and estimation strategies including rounding."),
+ "4.NBT.1": ("C", "Recognize that in a multi-digit whole number, a digit in one place represents ten times what it represents in the place to its right."),
+ "4.NBT.2": ("C", "Read and write multi-digit whole numbers using base-ten numerals, number names, and expanded form. Compare two multi-digit numbers using >, =, and < symbols."),
+ "4.NBT.3": ("C", "Use place value understanding to round multi-digit whole numbers to any place."),
+ "4.NBT.4": ("C", "Fluently add and subtract multi-digit whole numbers using the standard algorithm."),
+ "4.NBT.5": ("C", "Multiply a whole number of up to four digits by a one-digit whole number, and multiply two two-digit numbers, using strategies based on place value and the properties of operations."),
+ "4.NBT.6": ("C", "Find whole-number quotients and remainders with up to four-digit dividends and one-digit divisors."),
+ "4.OA.3": ("C", "Solve multistep word problems posed with whole numbers and having whole-number answers using the four operations, including problems in which remainders must be interpreted. Assess the reasonableness of answers using mental computation and estimation strategies including rounding."),
+ "5.NBT.1": ("C", "Recognize that in a multi-digit number, a digit in one place represents 10 times as much as it represents in the place to its right and 1/10 of what it represents in the place to its left."),
+ "5.NBT.3": ("C", "Read, write, and compare decimals to thousandths."),
+ "5.NBT.4": ("C", "Use place value understanding to round decimals to any place."),
+ "5.NBT.5": ("C", "Fluently multiply multi-digit whole numbers using the standard algorithm."),
+ "5.NBT.6": ("C", "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors."),
+ "5.NBT.7": ("C", "Add, subtract, multiply, and divide decimals to hundredths, using concrete models or drawings and strategies based on place value; relate the strategy to a written method and explain the reasoning used. (Applications involving financial literacy should be used.)"),
+ "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
+}
+CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
+CCR_ORDEN = list(CCR)
+
 # ---------- Lessons and the targets they work on ----------
 # "direct": the lesson works on the target as the GED test asks it.
 # "builds": the lesson builds a skill the target needs (Level 1 works with whole numbers first).
 # "mp":     Mathematical Practices the lesson practices.
 LESSONS = [
  ("level-1/lesson-1-1.html", "1.1", "Place value and whole numbers",
-  {"direct": [], "builds": ["Q.1.a"], "mp": ["MP.4.a"]}),
+  {"direct": [], "builds": ["Q.1.a"], "mp": ["MP.4.a"], "ccr": ["4.NBT.1", "4.NBT.2", "4.NBT.3"]}),
  ("level-1/lesson-1-2.html", "1.2", "Adding and subtracting whole numbers",
-  {"direct": [], "builds": ["Q.2.a"], "mp": ["MP.4.a", "MP.3.a"]}),
+  {"direct": [], "builds": ["Q.2.a"], "mp": ["MP.4.a", "MP.3.a"], "ccr": ["4.NBT.4"]}),
  ("level-1/lesson-1-3.html", "1.3", "Adding and subtracting in word problems",
-  {"direct": [], "builds": ["Q.2.e"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.4.a"]}),
+  {"direct": [], "builds": ["Q.2.e"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.4.a"], "ccr": ["3.OA.8", "4.OA.3"]}),
  ("level-1/lesson-2-1.html", "2.1", "Multiplying whole numbers",
-  {"direct": [], "builds": ["Q.2.a", "Q.1.b"], "mp": ["MP.4.a"]}),
+  {"direct": [], "builds": ["Q.2.a", "Q.1.b"], "mp": ["MP.4.a"], "ccr": ["3.OA.5", "3.OA.7", "4.NBT.5", "5.NBT.5"]}),
  ("level-1/lesson-2-2.html", "2.2", "Dividing whole numbers",
-  {"direct": [], "builds": ["Q.2.a", "Q.2.e"], "mp": ["MP.4.a", "MP.3.a"]}),
+  {"direct": [], "builds": ["Q.2.a", "Q.2.e"], "mp": ["MP.4.a", "MP.3.a"], "ccr": ["4.NBT.6", "5.NBT.6", "4.OA.3"]}),
  ("level-1/lesson-2-3.html", "2.3", "Multiplication and division in word problems",
-  {"direct": [], "builds": ["Q.2.e", "Q.1.b"], "mp": ["MP.1.a", "MP.1.e", "MP.2.c", "MP.4.a"]}),
+  {"direct": [], "builds": ["Q.2.e", "Q.1.b"], "mp": ["MP.1.a", "MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["3.OA.3", "3.OA.5", "4.OA.3"]}),
  ("level-1/lesson-3-1.html", "3.1", "Decimals: read, write, compare, and round",
-  {"direct": ["Q.1.a"], "builds": [], "mp": ["MP.4.a"]}),
+  {"direct": ["Q.1.a"], "builds": [], "mp": ["MP.4.a"], "ccr": ["5.NBT.1", "5.NBT.3", "5.NBT.4"]}),
  ("level-1/lesson-3-2.html", "3.2", "Operations with decimals",
-  {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.4.a", "MP.1.e", "MP.5.c"]}),
+  {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.4.a", "MP.1.e", "MP.5.c"], "ccr": ["5.NBT.7", "6.NS.3"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
@@ -149,14 +175,16 @@ def li(code, cls):
 
 def box(m):
     parts = ['<!-- GED-STANDARDS -->', '<details class="estandares" id="ged-standards">',
-             '<summary><span aria-hidden="true">🎓</span> GED® standards for this lesson</summary>', '<div class="std-cuerpo">']
+             '<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>', '<div class="std-cuerpo">']
     if m["direct"]:
         parts.append('<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul>' + "".join(li(c, "std-dir") for c in m["direct"]) + '</ul>')
     if m["builds"]:
         parts.append('<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul>' + "".join(li(c, "std-base") for c in m["builds"]) + '</ul>')
     if m["mp"]:
         parts.append('<p class="std-tit">Mathematical Practices you use:</p><ul>' + "".join(li(c, "std-mp") for c in m["mp"]) + '</ul>')
-    parts.append(f'<p class="std-fuente">Source: {SOURCE}. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>')
+    if m.get("ccr"):
+        parts.append('<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul>' + "".join(f'<li><span class="std-cod std-ccr">{c}</span> <span class="std-nivel">Level {CCR[c][0]}</span> {e(CCR[c][1])}</li>' for c in m["ccr"]) + '</ul>')
+    parts.append(f'<p class="std-fuente">Sources: {SOURCE}; {CCR_FUENTE}. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>')
     parts += ['</div>', '</details>', '<!-- /GED-STANDARDS -->']
     return "\n".join(parts)
 
@@ -192,6 +220,13 @@ def page():
                 cell = "<br>".join(links) if links else '<span class="std-pend">Coming in later lessons</span>'
                 rows.append(f'<tr><th scope="row">{c}</th><td>{e(TARGETS[c])}</td><td>{cell}</td></tr>')
             rows.append('</tbody></table></div>')
+    rows.append('<h2 id="ccr">College and Career Readiness (CCR) Standards for Adult Education</h2>')
+    rows.append('<p>The GED® targets describe what the test asks. The CCR Standards describe the steps before it, by level (A to E). Level 1 lessons work mostly on Levels B and C. The list shows only the CCR standards that LearnGED lessons teach so far.</p>')
+    rows.append('<div class="tabla-scroll" role="region" tabindex="0" aria-label="CCR Standards (table you can scroll sideways)"><table class="std-tabla"><caption class="cap-oculto">CCR Standards for Adult Education and the LearnGED lessons that teach them</caption><thead><tr><th scope="col">Code</th><th scope="col">Level</th><th scope="col">Standard</th><th scope="col">LearnGED lessons</th></tr></thead><tbody>')
+    for c in CCR_ORDEN:
+        links = [f'<a class="std-ccr" href="{p}">Lesson {n}</a>' for p, n, t, m in LESSONS if c in m.get("ccr", [])]
+        rows.append(f'<tr><th scope="row">{c}</th><td>{CCR[c][0]}</td><td>{e(CCR[c][1])}</td><td>{"<br>".join(links)}</td></tr>')
+    rows.append('</tbody></table></div>')
     lessons = "".join(f'<li><a href="{p}">Lesson {n} · {e(t)}</a>: ' + ", ".join(m["direct"] + m["builds"] + m["mp"]) + '</li>' for p, n, t, m in LESSONS)
     return f'''<!DOCTYPE html>
 <!-- LearnGED · GED® Mathematical Reasoning standards map (built by tools/ged_standards.py; do not edit by hand) -->
@@ -199,7 +234,7 @@ def page():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GED® Mathematical Reasoning standards map · LearnGED</title>
+<title>Math standards map (GED® and CCR) · LearnGED</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="lesson.css">
@@ -209,8 +244,8 @@ def page():
 <a class="saltar" href="#contenido">Skip to the standards</a>
 <header class="principal"><div class="envoltura-header">
 <p class="ruta">Math · For teachers</p>
-<h1>GED® Mathematical Reasoning: standards map</h1>
-<p class="lema">Which LearnGED lessons teach each GED® Assessment Target and Mathematical Practice.</p>
+<h1>Math standards map: GED® and CCR</h1>
+<p class="lema">Which LearnGED lessons teach each GED® Assessment Target, Mathematical Practice, and College and Career Readiness Standard.</p>
 </div></header>
 <div class="envoltura" id="contenido">
 <section>
@@ -220,8 +255,8 @@ def page():
 <li><span class="std-cod std-base">foundation</span> The lesson builds a skill the target needs. Level 1 starts with whole numbers; the test uses rational numbers (fractions, decimals, and negative numbers).</li>
 <li>The Mathematical Practices are habits of reasoning. Many lessons practice them; the map lists the ones each lesson works on most.</li>
 </ul>
-<p>Jump to: <a href="#q">Quantitative Problem Solving</a> · <a href="#a">Algebraic Problem Solving</a> · <a href="#mp">Mathematical Practices</a> · <a href="#by-lesson">By lesson</a></p>
-<p class="std-fuente">Indicator text: {SOURCE}, Chapter 1. GED® is a registered trademark of the American Council on Education (ACE), used under license by GED Testing Service LLC. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+<p>Jump to: <a href="#q">Quantitative Problem Solving</a> · <a href="#a">Algebraic Problem Solving</a> · <a href="#mp">Mathematical Practices</a> · <a href="#ccr">CCR Standards</a> · <a href="#by-lesson">By lesson</a></p>
+<p class="std-fuente">Indicator text: {SOURCE}, Chapter 1. CCR Standards: {CCR_FUENTE}. GED® is a registered trademark of the American Council on Education (ACE), used under license by GED Testing Service LLC. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
 </section>
 <section>
 {chr(10).join(rows)}
@@ -240,6 +275,8 @@ if __name__ == "__main__":
     for path, num, name, m in LESSONS:
         for c in m["direct"] + m["builds"] + m["mp"]:
             assert c in TARGETS, c
+        for c in m.get("ccr", []):
+            assert c in CCR, c
         insert(path, m)
     open(os.path.join(ROOT, "math", "ged-standards.html"), "w", encoding="utf-8").write(page())
     print("ok:", len(LESSONS), "lessons")
