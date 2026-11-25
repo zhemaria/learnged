@@ -156,6 +156,8 @@ CCR = {
  "4.NF.6": ("C", "Use decimal notation for fractions with denominators 10 or 100. For example, rewrite 0.62 as 62/100."),
  "5.NF.3": ("C", "Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b)."),
  "7.NS.2d": ("D", "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."),
+ "3.OA.9": ("B", "Identify arithmetic patterns (including patterns in the addition table or multiplication table), and explain them using properties of operations."),
+ "4.OA.5": ("C", "Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern that were not explicit in the rule itself."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -194,6 +196,8 @@ LESSONS = [
   {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.1.e", "MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["4.NF.4", "5.NF.4", "5.NF.6", "5.NF.7", "6.NS.1"]}),
  ("level-1/lesson-4-4.html", "4.4", "Operations with mixed numbers",
   {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.1.e", "MP.3.a", "MP.4.a"], "ccr": ["4.NF.3", "5.NF.1", "5.NF.6", "6.NS.1"]}),
+ ("level-1/lesson-5-1.html", "5.1", "Number and shape patterns",
+  {"direct": [], "builds": ["A.7.b", "A.7.c"], "mp": ["MP.1.a", "MP.2.c", "MP.3.a", "MP.4.a"], "ccr": ["3.OA.9", "4.OA.5"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

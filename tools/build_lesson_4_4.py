@@ -351,7 +351,7 @@ html = f'''<!DOCTYPE html>
 <p>With Topics 1 to 4 complete, you can do the four operations with whole numbers, decimals, fractions, and mixed numbers: all of basic arithmetic. That is the foundation for the rest of the course.</p>
 </div>
 <p>In <strong>Topic 5 · Patterns and algebraic thinking</strong> you will take a new and exciting step: from numbers to ideas. <strong>Lesson 5.1 · Number and shape patterns</strong> will teach you to discover the hidden rule behind a sequence: your first step toward algebra.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Topic 5 · Lesson 5.1 · Number and shape patterns</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Topic 5 · <a href="lesson-5-1.html">Lesson 5.1 · Number and shape patterns</a></p>
 </section>
 
 <section>
