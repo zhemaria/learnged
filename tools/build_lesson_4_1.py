@@ -194,6 +194,10 @@ html = f'''<!DOCTYPE html>
 <p>Simplify on paper first. If your answer and the screen do not match, check whether you can still divide.</p>""")}
 {practica("p2", "Practice 2 — Simplify", f"What is the simplest form of {F(6, 10)}?", [("a", F(3, 10)), ("b", F(3, 5)), ("c", F(6, 5)), ("d", F(2, 5))])}
 {enlace("simplify", "simplify a fraction", "Divide by the same number until you reach the simplest form, step by step or all at once.")}
+<a class="enlace-interactivo" href="lesson-4-1-gcf-lcm.html" aria-label="Open the complement: factors, multiples, GCF, and LCM">
+<span class="ei-icono" aria-hidden="true">📘</span>
+<span class="ei-cuerpo"><span class="ei-titulo">What is the greatest number that divides both?</span><span class="ei-sub">That number is the greatest common factor (GCF). This complement shows you how to find it, so you can simplify in one step. It also teaches the LCM, which you will need in Lesson 4.2.</span><span class="ei-cta">Open the complement <span aria-hidden="true">›</span></span></span>
+</a>
 </section>
 
 <section>
@@ -231,7 +235,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
 <p>This is independent practice. Plan for about one hour, with your notebook open.</p>
 <ul class="lista-tarea">
-<li><strong>ThatQuiz.</strong> Go to <a href="https://www.thatquiz.org/" rel="noopener noreferrer" target="_blank">ThatQuiz</a> and look for the <strong>fractions</strong> exercises: equivalent fractions, simplifying, and comparing. Start with small denominators, and move up when you get 8 out of 10 right.</li>
+<li><strong>The practice page.</strong> Open the <a href="practice-4-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
 <li><strong>Paper and pencil.</strong> Draw two bars of the same length. Divide one into 4 parts and the other into 8. Shade 3/4 of the first one, and find how many eighths you need to shade to reach the same length. Do it again with 1/2 and sixths, and with 2/3 and twelfths. Seeing the bars side by side is what convinces you that two different fractions can be worth the same.</li>
 <li><strong>In your kitchen.</strong> Look at your measuring cups and spoons. How many 1/4 cups fill a 1/2 cup? How many teaspoons make a tablespoon? Write each answer as an equation with fractions, for example 2 × 1/4 cup = 1/2 cup.</li>
 </ul>

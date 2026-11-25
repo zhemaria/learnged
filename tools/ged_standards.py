@@ -143,6 +143,8 @@ CCR = {
  "3.NF.3": ("B", "Explain equivalence of fractions in special cases, and compare fractions by reasoning about their size."),
  "4.NF.1": ("C", "Explain why a fraction a/b is equivalent to a fraction (n × a)/(n × b) by using visual fraction models. Use this principle to recognize and generate equivalent fractions."),
  "4.NF.2": ("C", "Compare two fractions with different numerators and different denominators, e.g., by creating common denominators or numerators, or by comparing to a benchmark fraction such as 1/2. Record the results of comparisons with symbols >, =, or <, and justify the conclusions."),
+ "4.OA.4": ("C", "Find all factor pairs for a whole number in the range 1–100. Recognize that a whole number is a multiple of each of its factors. Determine whether a given whole number in the range 1–100 is prime or composite."),
+ "6.NS.4": ("C", "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers with a common factor as a multiple of a sum of two whole numbers with no common factor."),
  "4.NF.6": ("C", "Use decimal notation for fractions with denominators 10 or 100. For example, rewrite 0.62 as 62/100."),
  "5.NF.3": ("C", "Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b)."),
  "7.NS.2d": ("D", "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."),
@@ -176,6 +178,8 @@ LESSONS = [
   {"direct": ["Q.2.e"], "builds": ["Q.1.a", "Q.2.a"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.4.a"], "ccr": ["5.NF.3", "4.NF.6", "7.NS.2d", "5.NBT.7"]}),
  ("level-1/lesson-4-1.html", "4.1", "Equivalent fractions: simplify and compare",
   {"direct": ["Q.1.a"], "builds": ["Q.1.b"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["3.NF.1", "3.NF.3", "4.NF.1", "4.NF.2"]}),
+ ("level-1/lesson-4-1-gcf-lcm.html", "4.1 (complement)", "Complement: factors, multiples, GCF, and LCM",
+  {"direct": ["Q.1.b"], "builds": [], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["4.OA.4", "6.NS.4"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

@@ -6,6 +6,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 s = open(sys.argv[1], encoding="utf-8").read()
 
 R = [
+('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">', '<link href="/fonts/fonts.css" rel="stylesheet">'),
 ('<html lang="es">', '<html lang="en">'),
 ('<title>La infinitud de los decimales</title>', '<title>Decimals never end · Lesson 3.1 · LearnGED</title>\n<meta name="robots" content="noindex">\n<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n<link rel="stylesheet" href="../lesson.css">'),
 ('<body>\n<div class="infd-app">', '<body>\n<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="lesson-3-1.html">← Back to Lesson 3.1</a></nav>\n<main class="infd-caja">\n<div class="infd-app">'),
