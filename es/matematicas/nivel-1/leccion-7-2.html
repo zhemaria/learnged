@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.2 · Matemáticas Nivel 1 (español) — construida con tools/build_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.2 · Perímetro de polígonos · LearnGED</title>
+<meta name="robots" content="noindex"/>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-1/lesson-7-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 1 · Tema 7 — Geometría</p>
+<h1>Lección 7.2 · Perímetro de polígonos</h1>
+<p class="lema">Cercas, marcos y bordes: halle la distancia alrededor de cualquier figura.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧱</span> Dele toda la vuelta</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Hallar</strong> el perímetro de un polígono sumando sus lados.</li>
+<li><strong>Usar</strong> los atajos para rectángulos, cuadrados y polígonos regulares.</li>
+<li><strong>Hallar</strong> un lado que falta cuando se conoce el perímetro.</li>
+<li><strong>Resolver</strong> problemas reales con cercas, puertas y precios.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.4.a</span> Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.</li><li><span class="std-cod std-dir">Q.4.c</span> Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">3.MD.8</span> <span class="std-nivel">Nivel B</span> Resolver problemas matemáticos y de la vida real sobre el perímetro de polígonos: hallar el perímetro dadas las medidas de los lados, hallar la medida de un lado desconocido, y mostrar rectángulos con el mismo perímetro y distinta área, o con la misma área y distinto perímetro.</li><li><span class="std-cod std-ccr">4.MD.3</span> <span class="std-nivel">Nivel C</span> Aplicar las fórmulas del área y del perímetro de rectángulos en problemas matemáticos y de la vida real.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-que-es">¿Qué es el perímetro?</a></li>
+<li><a href="#s-atajos">Atajos: rectángulos y cuadrados</a></li>
+<li><a href="#s-falta">Hallar un lado que falta</a></li>
+<li><a href="#s-vida-real">El perímetro en la vida real</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-que-es"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es el perímetro?</h2>
+<p>El <strong>perímetro</strong> es la distancia <strong>alrededor</strong> de una figura. Si usted le da toda la vuelta a un parque caminando, la distancia que camina es el perímetro del parque. Se necesita el perímetro para poner una cerca alrededor de un patio, un marco alrededor de un cuadro o un borde alrededor de un cuarto.</p>
+<svg viewBox="0 0 520 240" role="img" aria-label="Un parque de cinco lados de 4, 6, 9, 8 y 12 metros. Un camino punteado le da toda la vuelta." style="width:100%;max-width:480px;height:auto;display:block;margin:12px auto;"><polygon points="80,200 60,90 220,40 420,70 460,200" fill="#e8f5e9" stroke="#1565c0" stroke-width="5" stroke-dasharray="14 8"/><text x="44.3" y="154.6" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">4 m</text><text x="116.8" y="59.2" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">6 m</text><text x="339.3" y="43.6" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">9 m</text><text x="465.9" y="143.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">8 m</text><text x="276.9" y="231.1" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">12 m</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La idea clave de esta lección</span>
+<p>Para hallar el perímetro de cualquier polígono, <strong>sume las medidas de todos sus lados</strong>. El perímetro es una longitud, así que su unidad es de longitud: pulgadas, pies, metros…</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: el perímetro del parque</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Anote todos los lados.</strong> 4, 6, 9, 8, 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Súmelos.</strong> 4 + 6 + 9 + 8 + 12 = 39.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Responda con la unidad.</strong> El perímetro es <strong>39 metros</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¡Cuidado! Cuente todos los lados</span>
+<p>El error más común es olvidar un lado. Ponga el dedo en una esquina y dé la vuelta a la figura, sumando cada lado una vez, hasta volver a donde empezó.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#sumar-lados" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: sumar los lados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: sumar los lados</span><span class="ei-sub">Halle el perímetro de figuras de 3 a 6 lados.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-atajos"><span aria-hidden="true" class="num-seccion">2</span>Atajos: rectángulos y cuadrados</h2>
+<p>Algunas figuras tienen lados iguales, así que se puede multiplicar en vez de sumar uno por uno.</p>
+<svg viewBox="0 0 480 232" role="img" aria-label="Un rectángulo de 12 pies de largo y 8 pies de ancho." style="width:100%;max-width:420px;height:auto;display:block;margin:12px auto;"><rect x="120.0" y="30" width="240.0" height="160.0" fill="#e3f2fd" stroke="#37474f" stroke-width="3"/><text x="240.0" y="216.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">12 pies</text><text x="86.0" y="116.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">8 pies</text></svg>
+<div aria-label="Atajos para el perímetro (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Fórmulas del perímetro de rectángulos, cuadrados y polígonos regulares</caption>
+<thead><tr><th scope="col">Figura</th><th scope="col">Por qué</th><th scope="col">Fórmula</th></tr></thead>
+<tbody>
+<tr><td>rectángulo</td><td>2 largos y 2 anchos</td><td class="expr">P = 2l + 2w</td></tr>
+<tr><td>cuadrado</td><td>4 lados iguales</td><td class="expr">P = 4s</td></tr>
+<tr><td>polígono regular (todos los lados iguales)</td><td>n lados iguales</td><td class="expr">P = n × s</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>En las fórmulas, <strong>l</strong> es el largo (en inglés, <em>length</em>), <strong>w</strong> es el ancho (<em>width</em>) y <strong>s</strong> es el lado (<em>side</em>). Las letras vienen del inglés, como en la hoja de fórmulas del examen de GED®.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: el rectángulo de arriba, de 12 pies por 8 pies</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use la fórmula.</strong> P = 2 × 12 + 2 × 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Calcule.</strong> 24 + 16 = 40.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Compruebe sumando.</strong> 12 + 8 + 12 + 8 = 40 ✓. El perímetro es <strong>40 pies</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un rectángulo</h3></div>
+<p class="pregunta-int" id="t-p1">Un rectángulo mide <strong>15 m</strong> de largo y <strong>9 m</strong> de ancho. ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">24 m</button>
+<button class="opcion" data-k="b" type="button">48 m</button>
+<button class="opcion" data-k="c" type="button">135 m</button>
+<button class="opcion" data-k="d" type="button">33 m</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Un hexágono regular</h3></div>
+<p class="pregunta-int" id="t-p2">Un hexágono regular tiene lados de <strong>7 pulgadas</strong>. ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">42 pulgadas</button>
+<button class="opcion" data-k="b" type="button">13 pulgadas</button>
+<button class="opcion" data-k="c" type="button">49 pulgadas</button>
+<button class="opcion" data-k="d" type="button">35 pulgadas</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#rectangulos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: rectángulos, cuadrados y polígonos regulares (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: rectángulos, cuadrados y polígonos regulares</span><span class="ei-sub">Use los atajos para hallar el perímetro rápido.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-falta"><span aria-hidden="true" class="num-seccion">3</span>Hallar un lado que falta</h2>
+<p>A veces se conoce el perímetro y se necesita un lado. Trabaje al revés: <strong>reste</strong> los lados que conoce, o <strong>divida</strong> cuando los lados son iguales.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un rectángulo tiene un perímetro de 50 pies y un largo de 15 pies. ¿Cuánto mide de ancho?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La mitad del perímetro.</strong> Un largo y un ancho son la mitad de la vuelta: 50 ÷ 2 = 25.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Quite el largo.</strong> 25 − 15 = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Compruebe.</strong> 2 × 15 + 2 × 10 = 30 + 20 = 50 ✓. El ancho es <strong>10 pies</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un cuadrado tiene un perímetro de 36 cm. ¿Cuánto mide cada lado?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>4 lados iguales.</strong> 36 ÷ 4 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Compruebe.</strong> 4 × 9 = 36 ✓. Cada lado mide <strong>9 cm</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — El lado que falta</h3></div>
+<p class="pregunta-int" id="t-p3">Un rectángulo tiene un perímetro de <strong>40 pies</strong> y un largo de <strong>12 pies</strong>. ¿Cuánto mide de ancho?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">28 pies</button>
+<button class="opcion" data-k="b" type="button">16 pies</button>
+<button class="opcion" data-k="c" type="button">8 pies</button>
+<button class="opcion" data-k="d" type="button">4 pies</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#lado-que-falta" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: hallar el lado que falta (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: hallar el lado que falta</span><span class="ei-sub">Trabaje al revés a partir del perímetro.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-vida-real"><span aria-hidden="true" class="num-seccion">4</span>El perímetro en la vida real</h2>
+<p>Los problemas reales de perímetro casi siempre tienen un paso más: una puerta que no lleva cerca, un precio por cada pie, o vueltas alrededor de una cancha.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un patio mide 30 pies por 20 pies. Lo va a cercar, dejando una puerta de 4 pies. La cerca cuesta $12 el pie. ¿Cuánto costará la cerca?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Perímetro.</strong> 2 × 30 + 2 × 20 = 100 pies.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Quite la puerta.</strong> 100 − 4 = 96 pies de cerca.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Multiplique por el precio.</strong> 96 × $12 = $1,152.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La cerca costará <strong>$1,152</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¡Cuidado! El perímetro no es el área</span>
+<p>El perímetro mide el <strong>borde</strong> (cerca, marco, zócalo). El área mide la <strong>superficie de adentro</strong> (alfombra, pintura, césped). Aprenderá el área en la Lección 7.3. Si el problema habla de dar la vuelta, es perímetro.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Compruébelo en la calculadora</span>
+<p>La cerca: escriba <span class="tecla num">2</span> <span class="tecla">×</span> <span class="tecla num">3</span><span class="tecla num">0</span> <span class="tecla">+</span> <span class="tecla num">2</span> <span class="tecla">×</span> <span class="tecla num">2</span><span class="tecla num">0</span> <span class="tecla">−</span> <span class="tecla num">4</span> <span class="tecla">enter</span>. La pantalla muestra 96. Después escriba <span class="tecla">×</span> <span class="tecla num">1</span><span class="tecla num">2</span> <span class="tecla">enter</span>: 1152.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — El costo de una cerca</h3></div>
+<p class="pregunta-int" id="t-p4">Un jardín mide <strong>20 pies</strong> por <strong>15 pies</strong>. La cerca cuesta <strong>$9 el pie</strong>. ¿Cuánto cuesta cercar todo el jardín?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">$300</button>
+<button class="opcion" data-k="b" type="button">$2,700</button>
+<button class="opcion" data-k="c" type="button">$315</button>
+<button class="opcion" data-k="d" type="button">$630</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#vida-real" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el perímetro en la vida real (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el perímetro en la vida real</span><span class="ei-sub">Cercas, puertas, precios y vueltas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Dibuje un rectángulo, un cuadrado, un triángulo y un hexágono regular. Elija y escriba la medida de cada lado, y halle cada perímetro. Después dibuje un rectángulo con un perímetro de 30 unidades y halle su lado que falta.</li>
+<li><strong>En su vida diaria.</strong> Mida con una cinta métrica el perímetro de una mesa, una puerta y un cuarto de su casa. Después calcule cuántos pies de zócalo necesitaría el cuarto, sin contar la puerta.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿Cuál es el perímetro de un triángulo con lados de <strong>5, 7 y 9 pulgadas</strong>?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12 in</button><button class="opcion" data-k="b" type="button">315 in</button><button class="opcion" data-k="c" type="button">21 in</button><button class="opcion" data-k="d" type="button">16 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un rectángulo mide <strong>10 pies</strong> por <strong>4 pies</strong>. ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">14 pies</button><button class="opcion" data-k="b" type="button">40 pies</button><button class="opcion" data-k="c" type="button">24 pies</button><button class="opcion" data-k="d" type="button">28 pies</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Un cuadrado tiene lados de <strong>6 cm</strong>. ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">24 cm</button><button class="opcion" data-k="b" type="button">36 cm</button><button class="opcion" data-k="c" type="button">12 cm</button><button class="opcion" data-k="d" type="button">10 cm</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Un pentágono regular tiene lados de <strong>8 m</strong>. ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">13 m</button><button class="opcion" data-k="b" type="button">40 m</button><button class="opcion" data-k="c" type="button">32 m</button><button class="opcion" data-k="d" type="button">48 m</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Un rectángulo tiene un perímetro de <strong>30 pies</strong> y un largo de <strong>9 pies</strong>. ¿Cuánto mide de ancho?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">21 pies</button><button class="opcion" data-k="b" type="button">12 pies</button><button class="opcion" data-k="c" type="button">6 pies</button><button class="opcion" data-k="d" type="button">3 pies</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Un cuadrado tiene un perímetro de <strong>48 pulgadas</strong>. ¿Cuánto mide cada lado?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12 in</button><button class="opcion" data-k="b" type="button">24 in</button><button class="opcion" data-k="c" type="button">192 in</button><button class="opcion" data-k="d" type="button">44 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Un jardín mide <strong>12 pies</strong> por <strong>7 pies</strong>. Lo va a cercar, dejando una puerta de <strong>3 pies</strong>. ¿Cuántos pies de cerca necesita?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">38</button><button class="opcion" data-k="b" type="button">41</button><button class="opcion" data-k="c" type="button">84</button><button class="opcion" data-k="d" type="button">35</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Qué unidad puede medir un perímetro?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">pies cuadrados</button><button class="opcion" data-k="b" type="button">pies</button><button class="opcion" data-k="c" type="button">pies cúbicos</button><button class="opcion" data-k="d" type="button">grados</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación del perímetro (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas con el perímetro y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sumar los lados</th><td>Sumo cada lado una vez, con la unidad correcta.</td><td>Sumo los lados, pero a veces me falta uno.</td><td>Multiplico los lados en vez de sumarlos.</td></tr>
+<tr><th scope="row">Usar los atajos</th><td>Uso bien P = 2l + 2w, P = 4s y P = n × s.</td><td>Los uso con un poco de ayuda.</td><td>Confundo el perímetro con el área.</td></tr>
+<tr><th scope="row">Hallar un lado que falta</th><td>Trabajo al revés a partir del perímetro y compruebo mi respuesta.</td><td>Lo hallo en cuadrados, pero en rectángulos me cuesta.</td><td>No sé por dónde empezar.</td></tr>
+<tr><th scope="row">Problemas reales</th><td>Resuelvo problemas con puertas, precios y vueltas.</td><td>Hallo el perímetro, pero olvido el paso adicional.</td><td>No estoy seguro de cuándo un problema pide el perímetro.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Ya sabe hallar la distancia alrededor de cualquier polígono y resolver problemas reales de perímetro.</p>
+<p>En la <strong>Lección 7.3 · Área de rectángulos y triángulos</strong> medirá la superficie de adentro de una figura, que es lo que se necesita para una alfombra, la pintura o las losetas.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 7.3 · Área de rectángulos y triángulos</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>perímetro</dt><dd>La distancia alrededor de una figura. En un polígono, la suma de sus lados.</dd>
+<dt>largo y ancho</dt><dd>Los dos lados distintos de un rectángulo (l y w en las fórmulas).</dd>
+<dt>polígono regular</dt><dd>Un polígono con todos sus lados iguales (y todos sus ángulos iguales).</dd>
+<dt>fórmula</dt><dd>Una regla escrita con letras, como P = 4s.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 1 · Tema 7 · Lección 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.3",
+ "review": "las secciones 1, 2, 3 y 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "24 es 15 + 9: solo dos lados. Un rectángulo tiene 4 lados.",
+    "c": "135 es 15 × 9. Eso es el área, no el perímetro.",
+    "d": "33 es 15 + 9 + 9. Olvidó un largo."
+   },
+   "right": "2 × 15 + 2 × 9 = 30 + 18 = 48 m.",
+   "solution": "P = 2 × 15 + 2 × 9 = 48 m. Comprobación: 15 + 9 + 15 + 9 = 48."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "13 es 7 + 6. Un hexágono tiene 6 lados de 7: multiplique.",
+    "c": "49 es 7 × 7. Un hexágono tiene 6 lados, no 7.",
+    "d": "35 es 5 × 7, un pentágono. Un hexágono tiene 6 lados."
+   },
+   "right": "6 lados × 7 pulgadas = 42 pulgadas.",
+   "solution": "Un hexágono regular tiene 6 lados iguales: 6 × 7 = 42 pulgadas."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "28 es 40 − 12. Eso todavía incluye el otro largo y los dos anchos.",
+    "b": "16 es 40 − 2 × 12: son los dos anchos juntos. Divida entre 2.",
+    "d": "Compruebe: 2 × 12 + 2 × 4 = 32, no 40."
+   },
+   "right": "40 ÷ 2 = 20, y 20 − 12 = 8 pies.",
+   "solution": "La mitad del perímetro es 20 (un largo + un ancho). 20 − 12 = 8 pies. Comprobación: 24 + 16 = 40."
+  },
+  "p4": {
+   "ok": "d",
+   "hints": {
+    "a": "$300 es 20 × 15, el área. La cerca va alrededor: use el perímetro.",
+    "b": "$2,700 usa el área (300) por $9. Use el perímetro.",
+    "c": "$315 es (20 + 15) × 9, solo la mitad de la vuelta."
+   },
+   "right": "P = 70 pies, y 70 × $9 = $630.",
+   "solution": "Perímetro: 2 × 20 + 2 × 15 = 70 pies. Costo: 70 × $9 = $630."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "12 es 5 + 7. Sume los tres lados.",
+    "b": "315 multiplica. El perímetro suma los lados.",
+    "d": "16 es 7 + 9. Sume los tres lados."
+   },
+   "solution": "5 + 7 + 9 = 21 pulgadas."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "14 es 10 + 4: solo dos lados.",
+    "b": "40 es 10 × 4, el área.",
+    "c": "24 es 10 + 10 + 4: falta un lado."
+   },
+   "solution": "2 × 10 + 2 × 4 = 28 pies."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "36 es 6 × 6, el área.",
+    "c": "12 es 2 × 6: solo dos lados.",
+    "d": "10 es 6 + 4. Multiplique el lado por 4."
+   },
+   "solution": "4 × 6 = 24 cm."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "13 es 8 + 5. Multiplique: 5 lados de 8.",
+    "c": "32 es 4 × 8. Un pentágono tiene 5 lados.",
+    "d": "48 es 6 × 8. Un pentágono tiene 5 lados."
+   },
+   "solution": "5 × 8 = 40 m."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "21 es 30 − 9. Eso todavía incluye el otro largo y los dos anchos.",
+    "b": "12 es 30 − 2 × 9: los dos anchos juntos. Divida entre 2.",
+    "d": "Compruebe: 2 × 9 + 2 × 3 = 24, no 30."
+   },
+   "solution": "30 ÷ 2 = 15, y 15 − 9 = 6 pies."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "24 es 48 ÷ 2. Un cuadrado tiene 4 lados iguales.",
+    "c": "192 es 48 × 4. Divida para hallar un lado.",
+    "d": "44 es 48 − 4. Divida entre 4."
+   },
+   "solution": "48 ÷ 4 = 12 pulgadas."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "38 pies es todo el perímetro. La puerta no lleva cerca.",
+    "b": "Quite la puerta; no la sume.",
+    "c": "84 es 12 × 7, el área."
+   },
+   "solution": "P = 2 × 12 + 2 × 7 = 38 pies. Sin la puerta: 38 − 3 = 35 pies."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "Los pies cuadrados miden área, la superficie de adentro.",
+    "c": "Los pies cúbicos miden volumen, el espacio dentro de una caja.",
+    "d": "Los grados miden ángulos."
+   },
+   "solution": "El perímetro es una longitud, así que se mide en unidades de longitud, como pies."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

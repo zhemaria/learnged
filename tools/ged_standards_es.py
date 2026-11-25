@@ -43,6 +43,8 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "3.MD.8": "Resolver problemas matemáticos y de la vida real sobre el perímetro de polígonos: hallar el perímetro dadas las medidas de los lados, hallar la medida de un lado desconocido, y mostrar rectángulos con el mismo perímetro y distinta área, o con la misma área y distinto perímetro.",
+ "4.MD.3": "Aplicar las fórmulas del área y del perímetro de rectángulos en problemas matemáticos y de la vida real.",
  "3.G.1": "Entender que figuras de distintas categorías (por ejemplo, rombos, rectángulos y otras) pueden compartir atributos (por ejemplo, tener cuatro lados), y que los atributos compartidos pueden definir una categoría mayor (por ejemplo, los cuadriláteros). Reconocer los rombos, los rectángulos y los cuadrados como ejemplos de cuadriláteros, y dibujar ejemplos de cuadriláteros que no pertenecen a ninguna de estas subcategorías.",
  "4.G.1": "Dibujar puntos, rectas, segmentos, semirrectas, ángulos (rectos, agudos, obtusos) y rectas perpendiculares y paralelas. Identificarlos en figuras de dos dimensiones.",
  "4.G.2": "Clasificar figuras de dos dimensiones según tengan o no rectas paralelas o perpendiculares, o ángulos de una medida dada. Reconocer los triángulos rectángulos como una categoría e identificarlos.",
