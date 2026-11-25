@@ -173,6 +173,8 @@ CCR = {
  "5.G.4": ("C", "Classify two-dimensional figures in a hierarchy based on properties."),
  "3.MD.8": ("B", "Solve real world and mathematical problems involving perimeters of polygons, including finding the perimeter given the side lengths, finding an unknown side length, and exhibiting rectangles with the same perimeter and different areas or with the same area and different perimeters."),
  "4.MD.3": ("C", "Apply the area and perimeter formulas for rectangles in real world and mathematical problems."),
+ "3.MD.7": ("B", "Relate area to the operations of multiplication and addition."),
+ "6.G.1": ("D", "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -227,6 +229,8 @@ LESSONS = [
   {"direct": [], "builds": ["Q.4.a", "Q.4.c"], "mp": ["MP.2.c", "MP.3.a", "MP.5.c"], "ccr": ["3.G.1", "4.G.1", "4.G.2", "5.G.4"]}),
  ("level-1/lesson-7-2.html", "7.2", "Perimeter of polygons",
   {"direct": ["Q.4.a", "Q.4.c"], "builds": [], "mp": ["MP.1.b", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.8", "4.MD.3"]}),
+ ("level-1/lesson-7-3.html", "7.3", "Area of rectangles and triangles",
+  {"direct": ["Q.4.a"], "builds": ["Q.4.c", "Q.4.d"], "mp": ["MP.1.e", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.7", "4.MD.3", "6.G.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

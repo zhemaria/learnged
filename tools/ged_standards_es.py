@@ -23,6 +23,7 @@ TARGETS_ES = {
  "Q.3.c": "Resolver problemas aritméticos de la vida real, de varios pasos, con razones o proporciones, incluidos los que requieren convertir unidades de medida.",
  "Q.4.a": "Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.",
  "Q.4.c": "Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.",
+ "Q.4.d": "Calcular el perímetro y el área de figuras compuestas de dos dimensiones, que pueden incluir círculos, dadas las fórmulas geométricas necesarias.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
@@ -43,6 +44,8 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "3.MD.7": "Relacionar el área con las operaciones de multiplicación y suma.",
+ "6.G.1": "Hallar el área de triángulos rectángulos, de otros triángulos, de cuadriláteros especiales y de polígonos, componiéndolos en rectángulos o descomponiéndolos en triángulos y otras figuras; aplicar estas técnicas para resolver problemas matemáticos y de la vida real.",
  "3.MD.8": "Resolver problemas matemáticos y de la vida real sobre el perímetro de polígonos: hallar el perímetro dadas las medidas de los lados, hallar la medida de un lado desconocido, y mostrar rectángulos con el mismo perímetro y distinta área, o con la misma área y distinto perímetro.",
  "4.MD.3": "Aplicar las fórmulas del área y del perímetro de rectángulos en problemas matemáticos y de la vida real.",
  "3.G.1": "Entender que figuras de distintas categorías (por ejemplo, rombos, rectángulos y otras) pueden compartir atributos (por ejemplo, tener cuatro lados), y que los atributos compartidos pueden definir una categoría mayor (por ejemplo, los cuadriláteros). Reconocer los rombos, los rectángulos y los cuadrados como ejemplos de cuadriláteros, y dibujar ejemplos de cuadriláteros que no pertenecen a ninguna de estas subcategorías.",

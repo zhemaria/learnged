@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.3 · Matemáticas Nivel 1 (español) — construida con tools/build_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.3 · Área de rectángulos y triángulos · LearnGED</title>
+<meta name="robots" content="noindex"/>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-1/lesson-7-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 1 · Tema 7 — Geometría</p>
+<h1>Lección 7.3 · Área de rectángulos y triángulos</h1>
+<p class="lema">Alfombra, pintura y losetas: mida la superficie dentro de una figura en unidades cuadradas.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🟦</span> Cuente los cuadritos</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Explicar</strong> qué es el área y por qué usa unidades cuadradas.</li>
+<li><strong>Hallar</strong> el área de rectángulos y cuadrados.</li>
+<li><strong>Hallar</strong> el área de triángulos con ½ × base × altura.</li>
+<li><strong>Resolver</strong> problemas reales con cuartos en forma de L y precios, y decidir entre área y perímetro.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.4.a</span> Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.4.c</span> Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.</li><li><span class="std-cod std-base">Q.4.d</span> Calcular el perímetro y el área de figuras compuestas de dos dimensiones, que pueden incluir círculos, dadas las fórmulas geométricas necesarias.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">3.MD.7</span> <span class="std-nivel">Nivel B</span> Relacionar el área con las operaciones de multiplicación y suma.</li><li><span class="std-cod std-ccr">4.MD.3</span> <span class="std-nivel">Nivel C</span> Aplicar las fórmulas del área y del perímetro de rectángulos en problemas matemáticos y de la vida real.</li><li><span class="std-cod std-ccr">6.G.1</span> <span class="std-nivel">Nivel D</span> Hallar el área de triángulos rectángulos, de otros triángulos, de cuadriláteros especiales y de polígonos, componiéndolos en rectángulos o descomponiéndolos en triángulos y otras figuras; aplicar estas técnicas para resolver problemas matemáticos y de la vida real.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-que-es">¿Qué es el área?</a></li>
+<li><a href="#s-rectangulos">Área de rectángulos y cuadrados</a></li>
+<li><a href="#s-triangulos">Área de triángulos</a></li>
+<li><a href="#s-vida-real">El área en la vida real</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-que-es"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es el área?</h2>
+<p>El <strong>área</strong> es la cantidad de superficie <strong>dentro</strong> de una figura. Se necesita el área para comprar alfombra para un piso, pintura para una pared o césped para un patio. El perímetro va alrededor; el área cubre.</p>
+<p>El área se mide contando <strong>unidades cuadradas</strong>: cuadritos de 1 unidad por lado. Cuente los cuadritos de este rectángulo:</p>
+<svg viewBox="0 0 560 200" role="img" aria-label="Un rectángulo de 5 unidades de largo y 3 unidades de ancho, dividido en una cuadrícula de 15 cuadritos iguales: 3 filas de 5." style="width:100%;max-width:480px;height:auto;display:block;margin:12px auto;"><rect x="160" y="20" width="240" height="144" fill="#e3f2fd" stroke="#37474f" stroke-width="3"/><line x1="208" y1="20" x2="208" y2="164" stroke="#90a4ae" stroke-width="1.5"/><line x1="256" y1="20" x2="256" y2="164" stroke="#90a4ae" stroke-width="1.5"/><line x1="304" y1="20" x2="304" y2="164" stroke="#90a4ae" stroke-width="1.5"/><line x1="352" y1="20" x2="352" y2="164" stroke="#90a4ae" stroke-width="1.5"/><line x1="160" y1="68" x2="400" y2="68" stroke="#90a4ae" stroke-width="1.5"/><line x1="160" y1="116" x2="400" y2="116" stroke="#90a4ae" stroke-width="1.5"/><text x="280.0" y="192.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">5 unidades</text><text x="94.0" y="98.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">3 unidades</text></svg>
+<p>Hay 3 filas de 5 cuadritos: 3 × 5 = <strong>15 unidades cuadradas</strong>. Por eso el área de un rectángulo se halla <strong>multiplicando</strong>.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La idea clave de esta lección</span>
+<p>El área siempre va en <strong>unidades cuadradas</strong>: pulgadas cuadradas (in²), pies cuadrados (ft² o pies²), metros cuadrados (m²). El 2 pequeño quiere decir «cuadrado», porque multiplicamos dos longitudes.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-rectangulos"><span aria-hidden="true" class="num-seccion">2</span>Área de rectángulos y cuadrados</h2>
+<div aria-label="Fórmulas del área de rectángulos y cuadrados (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">El área de un rectángulo y de un cuadrado</caption>
+<thead><tr><th scope="col">Figura</th><th scope="col">Fórmula</th><th scope="col">En palabras</th></tr></thead>
+<tbody>
+<tr><td>rectángulo</td><td class="expr">A = l × w</td><td>largo por ancho</td></tr>
+<tr><td>cuadrado</td><td class="expr">A = s × s = s²</td><td>lado por lado</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un cuarto mide 12 pies de largo y 10 pies de ancho. ¿Cuál es su área?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use la fórmula.</strong> A = 12 × 10 = 120.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Responda con unidades cuadradas.</strong> El área es <strong>120 pies cuadrados</strong> (120 pies²).</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una loseta cuadrada mide 9 pulgadas por lado. ¿Cuál es su área?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Lado por lado.</strong> A = 9 × 9 = 81.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El área es <strong>81 pulgadas cuadradas</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¡Cuidado! No confunda el área con el perímetro</span>
+<p>En el cuarto, el <strong>perímetro</strong> es 12 + 10 + 12 + 10 = 44 pies (el zócalo). El <strong>área</strong> es 12 × 10 = 120 pies² (la alfombra). Para el perímetro se suma; para el área se multiplica.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — El área de un rectángulo</h3></div>
+<p class="pregunta-int" id="t-p1">Un rectángulo mide <strong>9 pies</strong> de largo y <strong>6 pies</strong> de ancho. ¿Cuál es su área?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">30 pies²</button>
+<button class="opcion" data-k="b" type="button">15 pies²</button>
+<button class="opcion" data-k="c" type="button">54 pies²</button>
+<button class="opcion" data-k="d" type="button">45 pies²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-3.html#contar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: contar los cuadritos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: contar los cuadritos</span><span class="ei-sub">Vea por qué el área de un rectángulo es largo por ancho.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-7-3.html#rectangulos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: área de rectángulos y cuadrados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: área de rectángulos y cuadrados</span><span class="ei-sub">Use A = l × w y A = s × s.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-triangulos"><span aria-hidden="true" class="num-seccion">3</span>Área de triángulos</h2>
+<p>Todo triángulo es exactamente la <strong>mitad</strong> de un rectángulo con la misma base y la misma altura:</p>
+<svg viewBox="0 0 580 215" role="img" aria-label="Un triángulo dibujado dentro de un rectángulo con la misma base y la misma altura. La altura punteada sube recta desde la base hasta la esquina de arriba, formando un ángulo recto. El triángulo ocupa exactamente la mitad del rectángulo." style="width:100%;max-width:480px;height:auto;display:block;margin:12px auto;"><rect x="140" y="20" width="300" height="160" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="8 6"/><polygon points="140,180 440,180 250,20" fill="#e3f2fd" stroke="#37474f" stroke-width="3"/><line x1="250" y1="20" x2="250" y2="180" stroke="#1565c0" stroke-width="3" stroke-dasharray="6 4"/><rect x="250" y="166" width="14" height="14" fill="none" stroke="#1565c0" stroke-width="2"/><text x="290.0" y="208.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">base (b)</text><text x="300.0" y="106.0" text-anchor="middle" font-size="16" font-weight="700" fill="#1565c0">altura (h)</text></svg>
+<p>Así que el área de un triángulo es la mitad de la base por la altura: <span class="ec">A = ½ × b × h</span></p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¡Cuidado! La altura sube recta</span>
+<p>La <strong>altura</strong> es la distancia de la base a la esquina opuesta, medida <strong>en línea recta hacia arriba</strong> (perpendicular a la base, con un ángulo recto). No es el lado inclinado.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un triángulo tiene una base de 10 pies y una altura de 6 pies. ¿Cuál es su área?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Base por altura.</strong> 10 × 6 = 60 (ese es el rectángulo entero).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Saque la mitad.</strong> 60 ÷ 2 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El área es <strong>30 pies cuadrados</strong>.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Compruébelo en la calculadora</span>
+<p>Escriba <span class="tecla num">1</span><span class="tecla num">0</span> <span class="tecla">×</span> <span class="tecla num">6</span> <span class="tecla">÷</span> <span class="tecla num">2</span> <span class="tecla">enter</span>. La pantalla muestra 30.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — El área de un triángulo</h3></div>
+<p class="pregunta-int" id="t-p2">Un triángulo tiene una base de <strong>8 cm</strong> y una altura de <strong>5 cm</strong>. ¿Cuál es su área?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">40 cm²</button>
+<button class="opcion" data-k="b" type="button">20 cm²</button>
+<button class="opcion" data-k="c" type="button">13 cm²</button>
+<button class="opcion" data-k="d" type="button">26 cm²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-3.html#triangulos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: área de triángulos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: área de triángulos</span><span class="ei-sub">Multiplique la base por la altura, y después saque la mitad.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-vida-real"><span aria-hidden="true" class="num-seccion">4</span>El área en la vida real</h2>
+<p>Muchos pisos y patios reales no son rectángulos simples. Divida la figura en rectángulos, halle cada área y <strong>sume</strong>.</p>
+<svg viewBox="0 0 480 260" role="img" aria-label="Un piso en forma de L. La parte de arriba, A, es un rectángulo de 8 pies por 5 pies. La parte de abajo, B, es un rectángulo de 4 pies de ancho y 3 pies de alto. Todo el lado izquierdo mide 8 pies." style="width:100%;max-width:420px;height:auto;display:block;margin:12px auto;"><polygon points="120,20 328,20 328,150 224,150 224,228 120,228" fill="#e3f2fd" stroke="#37474f" stroke-width="3"/><line x1="120" y1="150" x2="224" y2="150" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="7 5"/><text x="224.0" y="14.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">8 pies</text><text x="362.0" y="91.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">5 pies</text><text x="84.0" y="130.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">8 pies</text><text x="172.0" y="252.0" text-anchor="middle" font-size="17" font-weight="700" fill="#1a2330">4 pies</text><text x="224.0" y="91.0" text-anchor="middle" font-size="20" font-weight="700" fill="#1565c0">A</text><text x="172.0" y="195.0" text-anchor="middle" font-size="20" font-weight="700" fill="#1565c0">B</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: el área del piso en forma de L</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Parte A.</strong> 8 × 5 = 40 pies².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Parte B.</strong> Mide 4 pies de ancho, y su altura es 8 − 5 = 3 pies: 4 × 3 = 12 pies².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Sume las partes.</strong> 40 + 12 = <strong>52 pies cuadrados</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: la alfombra cuesta $3 el pie cuadrado. ¿Cuánto cuesta alfombrar un cuarto de 12 pies por 10 pies?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Área.</strong> 12 × 10 = 120 pies².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Multiplique por el precio.</strong> 120 × $3 = <strong>$360</strong>.</p>
+</div>
+<div aria-label="¿Área o perímetro? (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Qué trabajos de todos los días necesitan área y cuáles perímetro</caption>
+<thead><tr><th scope="col">Necesita perímetro (alrededor)</th><th scope="col">Necesita área (adentro)</th></tr></thead>
+<tbody>
+<tr><td>cerca, marco, zócalo, borde</td><td>alfombra, pintura, losetas, césped</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un cuarto en forma de L</h3></div>
+<p class="pregunta-int" id="t-p3">Un cuarto está formado por dos rectángulos: uno de <strong>8 m por 5 m</strong> y otro de <strong>4 m por 3 m</strong>. ¿Cuál es el área total?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">52 m²</button>
+<button class="opcion" data-k="b" type="button">20 m²</button>
+<button class="opcion" data-k="c" type="button">480 m²</button>
+<button class="opcion" data-k="d" type="button">64 m²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — ¿Área o perímetro?</h3></div>
+<p class="pregunta-int" id="t-p4">Usted quiere saber cuánta pintura comprar para una pared. ¿Qué necesita hallar?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">el perímetro</button>
+<button class="opcion" data-k="b" type="button">el volumen</button>
+<button class="opcion" data-k="c" type="button">un ángulo</button>
+<button class="opcion" data-k="d" type="button">el área</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-3.html#vida-real" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el área en la vida real (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el área en la vida real</span><span class="ei-sub">Cuartos en forma de L, alfombras y losetas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Dibuje un rectángulo en papel cuadriculado y cuente sus cuadritos. Después compruebe con largo × ancho. Dibuje un triángulo con la misma base y la misma altura y muestre que es la mitad del rectángulo.</li>
+<li><strong>En su vida diaria.</strong> Mida un cuarto de su casa. Halle su área y cuánto costaría cubrirlo con alfombra a $3 el pie cuadrado. Halle también su perímetro, para el zócalo.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">El área se mide en:</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">pies</button><button class="opcion" data-k="b" type="button">pies cuadrados</button><button class="opcion" data-k="c" type="button">grados</button><button class="opcion" data-k="d" type="button">pies cúbicos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un rectángulo mide <strong>8 m</strong> por <strong>5 m</strong>. ¿Cuál es su área?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">13 m²</button><button class="opcion" data-k="b" type="button">26 m²</button><button class="opcion" data-k="c" type="button">40 m²</button><button class="opcion" data-k="d" type="button">80 m²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Un cuadrado tiene lados de <strong>7 pulgadas</strong>. ¿Cuál es su área?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">49 in²</button><button class="opcion" data-k="b" type="button">28 in²</button><button class="opcion" data-k="c" type="button">14 in²</button><button class="opcion" data-k="d" type="button">21 in²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Un triángulo tiene una base de <strong>10 pies</strong> y una altura de <strong>6 pies</strong>. ¿Cuál es su área?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 pies²</button><button class="opcion" data-k="b" type="button">16 pies²</button><button class="opcion" data-k="c" type="button">30 pies²</button><button class="opcion" data-k="d" type="button">32 pies²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Qué trabajo necesita el <strong>área</strong>?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">una cerca alrededor de un patio</button><button class="opcion" data-k="b" type="button">un marco para un cuadro</button><button class="opcion" data-k="c" type="button">un zócalo para un cuarto</button><button class="opcion" data-k="d" type="button">alfombra para un piso</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">La alfombra cuesta <strong>$3 el pie cuadrado</strong>. ¿Cuánto cuesta alfombrar un cuarto de <strong>12 pies por 10 pies</strong>?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$132</button><button class="opcion" data-k="b" type="button">$360</button><button class="opcion" data-k="c" type="button">$66</button><button class="opcion" data-k="d" type="button">$44</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Un piso está formado por dos rectángulos: <strong>10 pies por 4 pies</strong> y <strong>6 pies por 3 pies</strong>. ¿Cuál es el área total?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">58 pies²</button><button class="opcion" data-k="b" type="button">23 pies²</button><button class="opcion" data-k="c" type="button">46 pies²</button><button class="opcion" data-k="d" type="button">240 pies²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Un triángulo tiene un área de <strong>24 pulgadas cuadradas</strong> y una base de <strong>8 pulgadas</strong>. ¿Cuál es su altura?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3 in</button><button class="opcion" data-k="b" type="button">16 in</button><button class="opcion" data-k="c" type="button">192 in</button><button class="opcion" data-k="d" type="button">6 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación del área (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas con el área y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Unidades cuadradas</th><td>Explico el área como cuadritos y siempre escribo unidades cuadradas.</td><td>Hallo el área, pero a veces olvido las unidades cuadradas.</td><td>Confundo el área con el perímetro.</td></tr>
+<tr><th scope="row">Rectángulos y cuadrados</th><td>Uso A = l × w y A = s × s sin errores.</td><td>Las uso con un poco de ayuda.</td><td>Sumo los lados en vez de multiplicar.</td></tr>
+<tr><th scope="row">Triángulos</th><td>Uso ½ × b × h y hallo la altura en línea recta.</td><td>A veces olvido el ½.</td><td>Uso el lado inclinado como altura.</td></tr>
+<tr><th scope="row">Problemas reales</th><td>Divido figuras en rectángulos y uso precios por pie cuadrado.</td><td>Resuelvo rectángulos simples, pero las formas de L me cuestan.</td><td>No sé cuándo usar área o perímetro.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Terminó el Tema 7. Ya sabe clasificar figuras y hallar su perímetro y su área, las destrezas de geometría que más aparecen en el examen de GED®.</p>
+<p>En el <strong>Tema 8 · Tablas, gráficas y proyecto final</strong> leerá y hará tablas y gráficas, y juntará todo el Nivel 1 en un proyecto final.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Tema 8 · Lección 8.1 · Leer e interpretar tablas de datos</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>área</dt><dd>La cantidad de superficie dentro de una figura, medida en unidades cuadradas.</dd>
+<dt>unidad cuadrada</dt><dd>Un cuadrito de 1 unidad por lado, como 1 pie² o 1 m².</dd>
+<dt>base</dt><dd>El lado de un triángulo (o rectángulo) que se mide abajo.</dd>
+<dt>altura</dt><dd>La distancia de la base a la esquina opuesta, medida en línea recta, con un ángulo recto.</dd>
+<dt>figura compuesta</dt><dd>Una figura formada por figuras más simples, como una L formada por dos rectángulos.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 1 · Tema 7 · Lección 7.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 8.1",
+ "review": "las secciones 2, 3 y 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "30 es 2 × 9 + 2 × 6, el perímetro. El área multiplica.",
+    "b": "15 es 9 + 6. Multiplique el largo por el ancho.",
+    "d": "Revise la multiplicación: 9 × 6."
+   },
+   "right": "9 × 6 = 54 pies cuadrados.",
+   "solution": "A = l × w = 9 × 6 = 54 pies cuadrados."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "40 es 8 × 5, el rectángulo entero. Un triángulo es la mitad.",
+    "c": "13 es 8 + 5. Multiplique, y después saque la mitad.",
+    "d": "26 es 2 × (8 + 5), una idea de perímetro. Use ½ × b × h."
+   },
+   "right": "8 × 5 = 40, y la mitad es 20 cm².",
+   "solution": "A = ½ × 8 × 5 = 40 ÷ 2 = 20 cm²."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "20 es 8 + 5 + 4 + 3. Halle cada área y sume las áreas.",
+    "c": "480 multiplica las dos áreas. Súmelas.",
+    "d": "Revise el segundo rectángulo: 4 × 3 = 12, no 24."
+   },
+   "right": "40 + 12 = 52 m².",
+   "solution": "8 × 5 = 40 m² y 4 × 3 = 12 m². Total: 40 + 12 = 52 m²."
+  },
+  "p4": {
+   "ok": "d",
+   "hints": {
+    "a": "El perímetro es el borde, como un marco. La pintura cubre la superficie.",
+    "b": "El volumen es el espacio dentro de una caja. Una pared es plana.",
+    "c": "Un ángulo no dice cuánta superficie hay que cubrir."
+   },
+   "right": "La pintura cubre una superficie: área.",
+   "solution": "La pintura cubre la superficie de la pared, así que necesita el área."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Los pies miden longitud, como un perímetro.",
+    "c": "Los grados miden ángulos.",
+    "d": "Los pies cúbicos miden volumen."
+   },
+   "solution": "El área se cuenta en cuadritos: pies cuadrados, pulgadas cuadradas, metros cuadrados."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "13 es 8 + 5. Multiplique.",
+    "b": "26 es el perímetro. El área multiplica.",
+    "d": "80 es el doble del área. A = l × w, nada más."
+   },
+   "solution": "8 × 5 = 40 m²."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "28 es 4 × 7, el perímetro.",
+    "c": "14 es 7 + 7. Multiplique lado por lado.",
+    "d": "21 es 3 × 7. El área de un cuadrado es lado por lado."
+   },
+   "solution": "7 × 7 = 49 pulgadas cuadradas."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "60 es 10 × 6, el rectángulo entero. Saque la mitad.",
+    "b": "16 es 10 + 6. Multiplique, y después saque la mitad.",
+    "d": "32 es 2 × (10 + 6). Use ½ × b × h."
+   },
+   "solution": "½ × 10 × 6 = 30 pies²."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "Una cerca va alrededor: perímetro.",
+    "b": "Un marco va alrededor: perímetro.",
+    "c": "Un zócalo va alrededor del cuarto: perímetro."
+   },
+   "solution": "La alfombra cubre el piso: se necesita el área."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "$132 es 44 × 3: usó el perímetro. La alfombra cubre el área.",
+    "c": "$66 es 22 × 3: sumó 12 + 10. Para el área, multiplique.",
+    "d": "$44 es el perímetro en pies, no un costo."
+   },
+   "solution": "Área: 12 × 10 = 120 pies². Costo: 120 × $3 = $360."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "23 suma los lados. Halle cada área y sume las áreas.",
+    "c": "Revise la parte B: 6 × 3 = 18.",
+    "d": "240 multiplica 40 × 6. Sume las dos áreas."
+   },
+   "solution": "10 × 4 = 40 y 6 × 3 = 18. Total: 58 pies²."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "3 es 24 ÷ 8. Recuerde el ½: ½ × 8 × h = 4 × h.",
+    "b": "16 es 24 − 8. Use la fórmula: ½ × 8 × h = 24.",
+    "c": "192 multiplica. Trabaje al revés: divida."
+   },
+   "solution": "½ × 8 × h = 24, así que 4 × h = 24 y h = 6 pulgadas. Comprobación: ½ × 8 × 6 = 24."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
