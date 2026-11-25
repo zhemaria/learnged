@@ -215,6 +215,8 @@ LESSONS = [
   {"direct": [], "builds": ["Q.3.c", "Q.2.e"], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["4.MD.1", "4.MD.2", "5.MD.1"]}),
  ("level-1/lesson-6-2.html", "6.2", "Metric system, time, and temperature",
   {"direct": [], "builds": ["Q.3.c", "Q.2.e"], "mp": ["MP.1.e", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.1", "3.MD.2", "4.MD.1", "4.MD.2", "5.MD.1"]}),
+ ("level-1/lesson-6-3.html", "6.3", "Applied measurement problems",
+  {"direct": ["Q.2.e"], "builds": ["Q.3.a", "Q.3.c"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.3.a"], "ccr": ["3.MD.1", "4.MD.2", "5.MD.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

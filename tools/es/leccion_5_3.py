@@ -164,7 +164,7 @@ R("<p>You can now solve one-step word problems with the four operations: picture
   "<p>Ya sabe resolver problemas verbales de un paso con las cuatro operaciones: imaginar la situación, escribir la ecuación, resolverla y comprobar que la respuesta tiene sentido. Con esta lección termina el Tema 5.</p>")
 R("<p>In <strong>Topic 6 · Measurement and time</strong> you will use these skills with real measures: inches and feet, pounds and ounces, cups and gallons, and also the metric system, time, and temperature.</p>",
   "<p>En el <strong>Tema 6 · Sistemas de medidas y el tiempo</strong> usará estas destrezas con medidas reales: pulgadas y pies, libras y onzas, tazas y galones, y también el sistema métrico, el tiempo y la temperatura.</p>")
-R("Next: Topic 6 · Lesson 6.1 · U.S. customary units: length, weight, and capacity</p>", "Siguiente: Tema 6 · Lección 6.1 · Sistema inglés: longitud, peso y capacidad</p>")
+R('Next: Topic 6 · <a href="lesson-6-1.html">Lesson 6.1 · U.S. customary units: length, weight, and capacity</a></p>', 'Siguiente: Tema 6 · <a href="leccion-6-1.html">Lección 6.1 · Sistema inglés: longitud, peso y capacidad</a></p>')
 R("""<dt>word problem</dt><dd>A math problem told as a story in words, with a question to answer.</dd>
 <dt>unknown</dt><dd>The number we do not know yet. In an equation we call it x.</dd>
 <dt>equation</dt><dd>A statement that two things are equal, like x + 85 = 310.</dd>

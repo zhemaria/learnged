@@ -330,7 +330,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>You can now solve one-step word problems with the four operations: picture the situation, write the equation, solve it, and check that the answer makes sense. With this lesson, you finish Topic 5.</p>
 <p>In <strong>Topic 6 · Measurement and time</strong> you will use these skills with real measures: inches and feet, pounds and ounces, cups and gallons, and also the metric system, time, and temperature.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Topic 6 · Lesson 6.1 · U.S. customary units: length, weight, and capacity</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Topic 6 · <a href="lesson-6-1.html">Lesson 6.1 · U.S. customary units: length, weight, and capacity</a></p>
 </section>
 
 <section>

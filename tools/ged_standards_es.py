@@ -19,6 +19,7 @@ TARGETS_ES = {
  "Q.1.b": "Aplicar propiedades de los números relacionadas con múltiplos y factores, como el mínimo común múltiplo, el máximo común divisor o la propiedad distributiva, para reescribir expresiones numéricas.",
  "Q.2.a": "Sumar, restar, multiplicar y dividir números racionales.",
  "Q.2.e": "Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.",
+ "Q.3.a": "Calcular tasas unitarias. Por ejemplo: precio por unidad, velocidad constante, personas por milla cuadrada, BTU por pie cúbico.",
  "Q.3.c": "Resolver problemas aritméticos de la vida real, de varios pasos, con razones o proporciones, incluidos los que requieren convertir unidades de medida.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
