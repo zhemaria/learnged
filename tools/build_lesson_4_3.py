@@ -322,7 +322,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>In this lesson you completed the four operations with fractions: add, subtract, multiply, and divide. You can now work with proper and improper fractions.</p>
 <p>One piece of Topic 4 is still missing. So far you have worked with fractions on their own. In <strong>Lesson 4.4 · Operations with mixed numbers</strong> you will see what happens when a whole number comes with a fraction, like 2&nbsp;{F(1, 2)} cups, and how to calculate with them using everything you already know.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 4.4 · Operations with mixed numbers</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-4.html">Lesson 4.4 · Operations with mixed numbers</a></p>
 </section>
 
 <section>

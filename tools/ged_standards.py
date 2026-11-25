@@ -192,6 +192,8 @@ LESSONS = [
   {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.1.b"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a", "MP.5.a"], "ccr": ["4.NF.3", "5.NF.1", "5.NF.2"]}),
  ("level-1/lesson-4-3.html", "4.3", "Multiplying and dividing fractions",
   {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.1.e", "MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["4.NF.4", "5.NF.4", "5.NF.6", "5.NF.7", "6.NS.1"]}),
+ ("level-1/lesson-4-4.html", "4.4", "Operations with mixed numbers",
+  {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.1.e", "MP.3.a", "MP.4.a"], "ccr": ["4.NF.3", "5.NF.1", "5.NF.6", "6.NS.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
