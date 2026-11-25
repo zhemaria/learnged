@@ -165,6 +165,8 @@ CCR = {
  "4.MD.1": ("C", "Know relative sizes of measurement units within one system of units including km, m, cm; kg, g; lb, oz.; l, ml; hr, min, sec. Within a single system of measurement, express measurements in a larger unit in terms of a smaller unit. Record measurement equivalents in a two-column table."),
  "4.MD.2": ("C", "Use the four operations to solve word problems involving distances, intervals of time, liquid volumes, masses of objects, and money, including problems involving simple fractions or decimals, and problems that require expressing measurements given in a larger unit in terms of a smaller unit. Represent measurement quantities using diagrams such as number line diagrams that feature a measurement scale."),
  "5.MD.1": ("C", "Convert among different-sized standard measurement units within a given measurement system (e.g., convert 5 cm to 0.05 m), and use these conversions in solving multi-step, real world problems."),
+ "3.MD.1": ("B", "Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram."),
+ "3.MD.2": ("B", "Measure and estimate liquid volumes and masses of objects using standard units of grams (g), kilograms (kg), and liters (l). Add, subtract, multiply, or divide to solve one-step word problems involving masses or volumes that are given in the same units."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -211,6 +213,8 @@ LESSONS = [
   {"direct": ["Q.2.e", "A.2.c"], "builds": ["A.2.b"], "mp": ["MP.1.a", "MP.1.b", "MP.2.a", "MP.2.c"], "ccr": ["3.OA.3", "3.OA.8", "4.OA.3", "6.EE.7"]}),
  ("level-1/lesson-6-1.html", "6.1", "U.S. customary units: length, weight, and capacity",
   {"direct": [], "builds": ["Q.3.c", "Q.2.e"], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["4.MD.1", "4.MD.2", "5.MD.1"]}),
+ ("level-1/lesson-6-2.html", "6.2", "Metric system, time, and temperature",
+  {"direct": [], "builds": ["Q.3.c", "Q.2.e"], "mp": ["MP.1.e", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.1", "3.MD.2", "4.MD.1", "4.MD.2", "5.MD.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

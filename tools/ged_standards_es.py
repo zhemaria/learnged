@@ -40,6 +40,8 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "3.MD.1": "Decir y escribir la hora al minuto más cercano y medir intervalos de tiempo en minutos. Resolver problemas verbales de suma y resta de intervalos de tiempo en minutos, por ejemplo, representándolos en una recta numérica.",
+ "3.MD.2": "Medir y estimar volúmenes de líquidos y masas de objetos con unidades estándar: gramos (g), kilogramos (kg) y litros (l). Sumar, restar, multiplicar o dividir para resolver problemas verbales de un paso con masas o volúmenes dados en las mismas unidades.",
  "4.MD.1": "Conocer el tamaño relativo de las unidades de medida de un mismo sistema, como km, m, cm; kg, g; lb, oz; l, ml; h, min, s. Dentro de un mismo sistema, expresar medidas de una unidad mayor en una unidad menor. Anotar las equivalencias en una tabla de dos columnas.",
  "4.MD.2": "Usar las cuatro operaciones para resolver problemas verbales de distancias, intervalos de tiempo, volúmenes de líquidos, masas de objetos y dinero, incluidos problemas con fracciones o decimales sencillos y problemas que requieren expresar una medida de una unidad mayor en una unidad menor. Representar cantidades medidas con diagramas, como rectas numéricas con una escala de medida.",
  "5.MD.1": "Convertir entre unidades de medida estándar de distinto tamaño dentro de un mismo sistema (por ejemplo, convertir 5 cm a 0.05 m), y usar estas conversiones para resolver problemas de la vida real de varios pasos.",
