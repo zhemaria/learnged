@@ -21,6 +21,8 @@ TARGETS_ES = {
  "Q.2.e": "Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.",
  "Q.3.a": "Calcular tasas unitarias. Por ejemplo: precio por unidad, velocidad constante, personas por milla cuadrada, BTU por pie cúbico.",
  "Q.3.c": "Resolver problemas aritméticos de la vida real, de varios pasos, con razones o proporciones, incluidos los que requieren convertir unidades de medida.",
+ "Q.4.a": "Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.",
+ "Q.4.c": "Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
@@ -41,6 +43,10 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "3.G.1": "Entender que figuras de distintas categorías (por ejemplo, rombos, rectángulos y otras) pueden compartir atributos (por ejemplo, tener cuatro lados), y que los atributos compartidos pueden definir una categoría mayor (por ejemplo, los cuadriláteros). Reconocer los rombos, los rectángulos y los cuadrados como ejemplos de cuadriláteros, y dibujar ejemplos de cuadriláteros que no pertenecen a ninguna de estas subcategorías.",
+ "4.G.1": "Dibujar puntos, rectas, segmentos, semirrectas, ángulos (rectos, agudos, obtusos) y rectas perpendiculares y paralelas. Identificarlos en figuras de dos dimensiones.",
+ "4.G.2": "Clasificar figuras de dos dimensiones según tengan o no rectas paralelas o perpendiculares, o ángulos de una medida dada. Reconocer los triángulos rectángulos como una categoría e identificarlos.",
+ "5.G.4": "Clasificar figuras de dos dimensiones en una jerarquía, según sus propiedades.",
  "3.MD.1": "Decir y escribir la hora al minuto más cercano y medir intervalos de tiempo en minutos. Resolver problemas verbales de suma y resta de intervalos de tiempo en minutos, por ejemplo, representándolos en una recta numérica.",
  "3.MD.2": "Medir y estimar volúmenes de líquidos y masas de objetos con unidades estándar: gramos (g), kilogramos (kg) y litros (l). Sumar, restar, multiplicar o dividir para resolver problemas verbales de un paso con masas o volúmenes dados en las mismas unidades.",
  "4.MD.1": "Conocer el tamaño relativo de las unidades de medida de un mismo sistema, como km, m, cm; kg, g; lb, oz; l, ml; h, min, s. Dentro de un mismo sistema, expresar medidas de una unidad mayor en una unidad menor. Anotar las equivalencias en una tabla de dos columnas.",

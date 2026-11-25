@@ -167,6 +167,10 @@ CCR = {
  "5.MD.1": ("C", "Convert among different-sized standard measurement units within a given measurement system (e.g., convert 5 cm to 0.05 m), and use these conversions in solving multi-step, real world problems."),
  "3.MD.1": ("B", "Tell and write time to the nearest minute and measure time intervals in minutes. Solve word problems involving addition and subtraction of time intervals in minutes, e.g., by representing the problem on a number line diagram."),
  "3.MD.2": ("B", "Measure and estimate liquid volumes and masses of objects using standard units of grams (g), kilograms (kg), and liters (l). Add, subtract, multiply, or divide to solve one-step word problems involving masses or volumes that are given in the same units."),
+ "3.G.1": ("B", "Understand that shapes in different categories (e.g., rhombuses, rectangles, and others) may share attributes (e.g., having four sides), and that the shared attributes can define a larger category (e.g., quadrilaterals). Recognize rhombuses, rectangles, and squares as examples of quadrilaterals, and draw examples of quadrilaterals that do not belong to any of these subcategories."),
+ "4.G.1": ("C", "Draw points, lines, line segments, rays, angles (right, acute, obtuse), and perpendicular and parallel lines. Identify these in two-dimensional figures."),
+ "4.G.2": ("C", "Classify two-dimensional figures based on the presence or absence of parallel or perpendicular lines, or the presence or absence of angles of a specified size. Recognize right triangles as a category, and identify right triangles."),
+ "5.G.4": ("C", "Classify two-dimensional figures in a hierarchy based on properties."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -217,6 +221,8 @@ LESSONS = [
   {"direct": [], "builds": ["Q.3.c", "Q.2.e"], "mp": ["MP.1.e", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.1", "3.MD.2", "4.MD.1", "4.MD.2", "5.MD.1"]}),
  ("level-1/lesson-6-3.html", "6.3", "Applied measurement problems",
   {"direct": ["Q.2.e"], "builds": ["Q.3.a", "Q.3.c"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.3.a"], "ccr": ["3.MD.1", "4.MD.2", "5.MD.1"]}),
+ ("level-1/lesson-7-1.html", "7.1", "Classifying 2D shapes: attributes and vocabulary",
+  {"direct": [], "builds": ["Q.4.a", "Q.4.c"], "mp": ["MP.2.c", "MP.3.a", "MP.5.c"], "ccr": ["3.G.1", "4.G.1", "4.G.2", "5.G.4"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
