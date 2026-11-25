@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 1 · Lesson 5.2 · Algebraic language and simple unknowns — interactive (English)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 5.2 · Algebraic language and simple unknowns · LearnGED</title>
+<meta name="robots" content="noindex">
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 1 · Topic 5 · Patterns and algebraic thinking</div>
+    <h1>Lesson 5.2 · Algebraic language and simple unknowns</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#translate">Translate words into symbols</a></li>
+      <li><a href="#balance">The equation as a scale</a></li>
+      <li><a href="#inverse-operation">Solve with the inverse operation</a></li>
+      <li><a href="#check">Check the solution</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="translate" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Translate words into symbols</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>An <strong>unknown</strong> is a number we do not know yet. We write it with a box □ or a letter like <strong>x</strong>.
+      Algebra writes ideas with symbols: "a number plus five" is <strong>x + 5</strong>.</p>
+      <table class="reglas">
+        <caption>Translation table</caption>
+        <thead><tr><th scope="col">In words</th><th scope="col">In algebra</th></tr></thead>
+        <tbody>
+          <tr><td>a number plus 7 · a number increased by 7 · 7 more than a number</td><td>x + 7</td></tr>
+          <tr><td>a number minus 5 · a number decreased by 5 · 5 less than a number</td><td>x − 5</td></tr>
+          <tr><td>twice a number</td><td>2x</td></tr>
+          <tr><td>three times a number</td><td>3x</td></tr>
+          <tr><td>a number divided by 4 · half of a number (divided by 2)</td><td>x ÷ 4 · x ÷ 2</td></tr>
+          <tr><td>a number is equal to 12</td><td>x = 12</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-atencion"><strong>Twice is written together:</strong> 2x, with no sign. A number written next to a letter means multiply.
+      And "5 less than a number" is x − 5, not 5 − x: the number comes first.</div>
+      <h3>Practice: translate</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="balance">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The equation as a scale</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>An <strong>equation</strong> says that what is on one side of the = sign has the same value as what is on the other side,
+      like a balanced scale. <strong>To solve it</strong> is to find the number in the box that keeps the scale level.</p>
+      <h3>Find the number in the box</h3>
+      <div class="panel">
+        <p class="grande" id="bz-ec" style="text-align:center"></p>
+        <div id="bz-svg"></div>
+        <div class="campo"><label for="bz-x">Try a number for the box: <span id="bz-xv"></span></label><input type="range" id="bz-x" min="0" max="20" value="0"></div>
+        <div class="salida" id="bz-salida" aria-live="polite"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="bz-nueva">New scale</button></div>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="inverse-operation">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Solve with the inverse operation</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The sure method: get the unknown alone with the <strong>inverse operation</strong> of what is with it. Subtraction undoes
+      addition, and division undoes multiplication (and the other way around). And the rule of the scale: <strong>whatever you do to one
+      side, do to the other side too</strong>.</p>
+      <table class="reglas">
+        <caption>The inverse operation for each case</caption>
+        <thead><tr><th scope="col">Equation</th><th scope="col">The x is…</th><th scope="col">Do this to both sides</th></tr></thead>
+        <tbody>
+          <tr><td>x + 3 = 8</td><td>added to 3</td><td>subtract 3: x = 5</td></tr>
+          <tr><td>x − 4 = 10</td><td>minus 4</td><td>add 4: x = 14</td></tr>
+          <tr><td>4x = 20</td><td>multiplied by 4</td><td>divide by 4: x = 5</td></tr>
+          <tr><td>x ÷ 3 = 6</td><td>divided by 3</td><td>multiply by 3: x = 18</td></tr>
+        </tbody>
+      </table>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <div class="estado"><span class="expr-grande" id="oi-ec"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="oi-sig">Show the first step</button><button type="button" class="btn-sec" id="oi-todo">Show all the steps</button><button type="button" class="btn-sec" id="oi-nueva">New equation</button></div>
+      </div>
+      <div class="pasos" id="oi-pasos" aria-live="polite"></div>
+      <h3>Practice: solve</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Value of x</label><input type="text" inputmode="numeric" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type only the number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="check">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Check the solution</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To know if an answer is right, <strong>substitute</strong>: put the number in place of x and calculate. If both sides are
+      equal, the solution is right. In x + 6 = 15 with x = 9: 9 + 6 = 15 ✓.</p>
+      <h3>Practice: is it the solution?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">New exercise</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 1 · Topic 5 · Patterns and algebraic thinking · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script>
+/* ============ MODULE 1 · translate ============ */
+var TR = [
+  ["a number increased by {a}", "x + {a}", "\"increased by\" means add"],
+  ["a number plus {a}", "x + {a}", "\"plus\" means add"],
+  ["{a} more than a number", "x + {a}", "\"more than\" means add"],
+  ["{a} less than a number", "x − {a}", "\"less than\" means subtract, and the number comes first"],
+  ["a number decreased by {a}", "x − {a}", "\"decreased by\" means subtract"],
+  ["a number minus {a}", "x − {a}", "\"minus\" means subtract"],
+  ["twice a number", "2x", "\"twice\" means two times"],
+  ["three times a number", "3x", "\"three times\" means multiply by 3"],
+  ["{a} times a number", "{a}x", "\"times\" means multiply"],
+  ["a number divided by {a}", "x ÷ {a}", "\"divided by\" means divide"],
+  ["half of a number", "x ÷ 2", "\"half of\" means divide by 2"],
+  ["a number is equal to {a}", "x = {a}", "\"is equal to\" is the equal sign"]
+];
+/* what an option says, in words */
+function enPalabras(e){
+  var m;
+  if ((m = e.match(/^x \+ (\d+)$/))) return "a number plus " + m[1];
+  if ((m = e.match(/^x − (\d+)$/))) return "a number minus " + m[1];
+  if ((m = e.match(/^(\d+) − x$/))) return m[1] + " minus a number";
+  if ((m = e.match(/^(\d+)x$/))) return m[1] + " times a number";
+  if ((m = e.match(/^x ÷ (\d+)$/))) return "a number divided by " + m[1];
+  if ((m = e.match(/^x = (\d+)$/))) return "a number is equal to " + m[1];
+  return e;
+}
+function genTr(){
+  var t = elige(TR), a = aleatorio(4, 12), f = t[0].replace("{a}", a), cor = t[1].replace("{a}", a);
+  var pool = ["x + " + a, a + " − x", "x − " + a, a + "x", "x ÷ " + a, "2x", "3x", "x + 2", "x + 3", "x ÷ 2", "x = " + a].filter(function(x){ return x !== cor; });
+  var o = [cor];
+  if (cor === "x − " + a) o.push(a + " − x");
+  baraja(pool).forEach(function(x){ if (o.length < 4 && o.indexOf(x) < 0) o.push(x); });
+  var pistas = {};
+  o.forEach(function(x){
+    if (x === cor) return;
+    pistas[x] = x === a + " − x" ? "Careful: \"" + a + " less than a number\" takes " + a + " away from the number, so the number comes first."
+      : x + " means \"" + enPalabras(x) + ".\" Look at the key words again: " + t[2] + ".";
+  });
+  return {
+    enun: "How do you write <strong>\"" + f + "\"</strong> in algebraic language?",
+    opciones: o.map(function(x){ return { html: x, clave: x }; }), correcta: cor, pistas: pistas,
+    pista: "Find the key words in the phrase and the operation they point to.",
+    bien: "\"" + f + "\" → " + cor + ". Remember: " + t[2] + ".",
+    mal: "\"" + f + "\" is written " + cor + ", because " + t[2] + "."
+  };
+}
+
+/* ============ MODULE 2 · the scale ============ */
+var BZ = {};
+function nuevaBZ(){ BZ = { a: aleatorio(1, 9), x: aleatorio(2, 12) }; BZ.b = BZ.a + BZ.x; $("bz-x").value = 0; pintaBZ(); }
+function pintaBZ(){
+  var g = +$("bz-x").value, izq = g + BZ.a, der = BZ.b, ang = Math.max(-12, Math.min(12, (der - izq) * 2.5));
+  $("bz-xv").textContent = g; $("bz-ec").textContent = "□ + " + BZ.a + " = " + BZ.b;
+  var cx = 320, cy = 70, L = 220;
+  var s = '<svg class="figura" viewBox="0 0 640 250" role="img" aria-label="Scale: on the left, the box with ' + g + ' and a weight of ' + BZ.a + '; on the right, ' + BZ.b + '. ' + (izq === der ? "It is level." : (izq > der ? "The left side is heavier." : "The right side is heavier.")) + '">';
+  s += '<polygon points="' + (cx - 30) + ',235 ' + (cx + 30) + ',235 ' + cx + ',' + cy + '" fill="#90a4ae"/>' + '<circle cx="' + cx + '" cy="' + cy + '" r="8" fill="#37474f"/>';
+  s += '<g transform="rotate(' + ang + ' ' + cx + ' ' + cy + ')">' + linea([cx - L, cy], [cx + L, cy], "#37474f", 6);
+  [[-1, izq], [1, der]].forEach(function(p){ var x = cx + p[0] * L; s += linea([x, cy], [x - 60, cy + 70], "#78909c", 2) + linea([x, cy], [x + 60, cy + 70], "#78909c", 2) + '<rect x="' + (x - 75) + '" y="' + (cy + 70) + '" width="150" height="10" rx="4" fill="#37474f"/>'; });
+  var xl = cx - L, xr = cx + L;
+  s += '<rect x="' + (xl - 68) + '" y="' + (cy + 24) + '" width="54" height="44" rx="6" fill="#1565c0"/>' + texto([xl - 41, cy + 46], g, 20, "#fff") + '<rect x="' + (xl + 6) + '" y="' + (cy + 24) + '" width="54" height="44" rx="6" fill="#cfd8dc"/>' + texto([xl + 33, cy + 46], BZ.a, 20, "#222");
+  s += '<rect x="' + (xr - 34) + '" y="' + (cy + 24) + '" width="68" height="44" rx="6" fill="#cfd8dc"/>' + texto([xr, cy + 46], BZ.b, 20, "#222") + '</g>';
+  $("bz-svg").innerHTML = s + '</svg>';
+  $("bz-salida").innerHTML = izq === der
+    ? '<div class="linea veredicto">Level! ' + g + ' + ' + BZ.a + ' = ' + BZ.b + '. The number in the box is ' + g + '.</div>'
+    : '<div class="linea">' + g + ' + ' + BZ.a + ' = ' + izq + (izq > der ? ', more than ' + der + ': the box is too heavy. Try a smaller number.' : ', less than ' + der + ': the box needs more. Try a bigger number.') + '</div>';
+}
+
+/* ============ MODULE 3 · inverse operation ============ */
+function ecAz(){
+  var t = aleatorio(0, 3), x = aleatorio(2, 15), a = aleatorio(2, 12), b;
+  if (t === 0) b = x + a; else if (t === 1) b = x - a; else if (t === 2) b = a * x; else { x = a * aleatorio(2, 9); b = x / a; }
+  if (t === 1 && b < 0){ x = a + aleatorio(1, 10); b = x - a; }
+  return { t: t, a: a, b: b, x: x };
+}
+function ecTxt(e){ return ["x + " + e.a + " = " + e.b, "x − " + e.a + " = " + e.b, e.a + "x = " + e.b, "x ÷ " + e.a + " = " + e.b][e.t]; }
+function izqTxt(e, v){ return [v + " + " + e.a, v + " − " + e.a, e.a + " × " + v, v + " ÷ " + e.a][e.t]; }
+function pasosEc(e){
+  var inv = ["subtract " + e.a, "add " + e.a, "divide by " + e.a, "multiply by " + e.a][e.t];
+  var con = ["added to " + e.a, "minus " + e.a, "multiplied by " + e.a, "divided by " + e.a][e.t];
+  var op = ["x + " + e.a + " − " + e.a + " = " + e.b + " − " + e.a, "x − " + e.a + " + " + e.a + " = " + e.b + " + " + e.a, e.a + "x ÷ " + e.a + " = " + e.b + " ÷ " + e.a, "x ÷ " + e.a + " × " + e.a + " = " + e.b + " × " + e.a][e.t];
+  return ["The x is " + con + ". The inverse operation is <strong>" + inv + "</strong>.",
+          "Do it to both sides, so the scale stays level: " + op + ".",
+          "On the left, the x is alone: x = " + e.x + ".",
+          '<span class="veredicto">Check: ' + izqTxt(e, e.x) + ' = ' + e.b + ' ✓</span>'];
+}
+/* step-by-step panel */
+function pasoAPaso(pre){
+  var S = { pasos: [], visto: 0 };
+  function pinta(){
+    var h = "";
+    for (var i = 0; i < S.visto; i++) h += '<div class="paso"><span class="n" aria-hidden="true">' + (i === S.pasos.length - 1 ? "✓" : i + 1) + '</span>' + S.pasos[i] + '</div>';
+    $(pre + "-pasos").innerHTML = h;
+    var b = $(pre + "-sig"), fin = S.visto >= S.pasos.length; b.disabled = fin; $(pre + "-todo").disabled = fin;
+    b.textContent = S.visto === 0 ? "Show the first step" : (fin ? "All the steps are showing" : "Show the next step");
+  }
+  S.carga = function(p){ S.pasos = p; S.visto = 0; pinta(); };
+  $(pre + "-sig").addEventListener("click", function(){ if (S.visto < S.pasos.length){ S.visto++; pinta(); } });
+  $(pre + "-todo").addEventListener("click", function(){ S.visto = S.pasos.length; pinta(); });
+  return S;
+}
+var OI_COLA = [{ t: 0, a: 3, b: 8, x: 5 }, { t: 2, a: 4, b: 20, x: 5 }];
+function nuevaOI(){ var e = OI_COLA.length ? OI_COLA.shift() : ecAz(); $("oi-ec").textContent = ecTxt(e); OIS.carga(pasosEc(e)); }
+function genEc(){
+  var e = ecAz(), p = [];
+  var mismo = [e.b + e.a, e.b - e.a, e.b * e.a, e.b / e.a][e.t];
+  if (mismo === Math.round(mismo) && mismo >= 0 && mismo !== e.x) p.push({ v: mismo, msg: "You used the same operation instead of the inverse one. To undo " + ["adding, subtract", "subtracting, add", "multiplying, divide", "dividing, multiply"][e.t] + "." });
+  if (e.t >= 2 && e.b + e.a !== e.x) p.push({ v: e.b + e.a, msg: "The x is " + (e.t === 2 ? "multiplied" : "divided") + ", not added. Undo it with " + (e.t === 2 ? "division" : "multiplication") + "." });
+  if (e.t >= 2 && e.b - e.a >= 0 && e.b - e.a !== e.x) p.push({ v: e.b - e.a, msg: "The x is " + (e.t === 2 ? "multiplied" : "divided") + ", not added. Undo it with " + (e.t === 2 ? "division" : "multiplication") + "." });
+  return {
+    enun: "Solve: <strong>" + ecTxt(e) + "</strong>",
+    solucion: pasosEc(e).map(function(x){ return x.replace(/<[^>]+>/g, ""); }).join(" "),
+    evalua: numN(e.x, p, "Find the operation that is with the x, and use its inverse on both sides.")
+  };
+}
+
+/* ============ MODULE 4 · check ============ */
+function genVer(){
+  var e = ecAz(), ok = Math.random() < 0.5;
+  var prop = ok ? e.x : elige([e.x + 1, e.x - 1, [e.b + e.a, e.b - e.a, e.b * e.a, e.b * e.a][e.t]].filter(function(v){ return v !== e.x && v >= 0; }));
+  var izq = [prop + e.a, prop - e.a, e.a * prop, prop / e.a][e.t], izqS = Math.round(izq * 100) / 100;
+  var exp = "Substitute: " + izqTxt(e, prop) + " = " + izqS + (izqS === e.b ? ", and the right side is " + e.b + " ✓. It is the solution." : ", but the right side is " + e.b + " ✗. It is not the solution; the solution is x = " + e.x + ".");
+  return { enOrden: true, enun: "Is <strong>x = " + prop + "</strong> the solution of <strong>" + ecTxt(e) + "</strong>?",
+    opciones: [{ html: "Yes", clave: "s" }, { html: "No", clave: "n" }], correcta: izqS === e.b ? "s" : "n", bien: exp, mal: exp };
+}
+
+/* ---------- Start ---------- */
+creaPracticaOM("p1", genTr);
+$("bz-x").addEventListener("input", pintaBZ); $("bz-nueva").addEventListener("click", nuevaBZ); BZ = { a: 3, x: 5, b: 8 }; pintaBZ();
+var OIS = pasoAPaso("oi"); $("oi-nueva").addEventListener("click", nuevaOI); nuevaOI();
+creaPracticaLibre("p2", genEc);
+creaPracticaOM("p3", genVer);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -158,6 +158,10 @@ CCR = {
  "7.NS.2d": ("D", "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."),
  "3.OA.9": ("B", "Identify arithmetic patterns (including patterns in the addition table or multiplication table), and explain them using properties of operations."),
  "4.OA.5": ("C", "Generate a number or shape pattern that follows a given rule. Identify apparent features of the pattern that were not explicit in the rule itself."),
+ "3.OA.4": ("B", "Determine the unknown whole number in a multiplication or division equation relating three whole numbers."),
+ "6.EE.2": ("D", "Write, read, and evaluate expressions in which letters stand for numbers."),
+ "6.EE.5": ("D", "Understand solving an equation or inequality as a process of answering a question: which values from a specified set, if any, make the equation or inequality true? Use substitution to determine whether a given number in a specified set makes an equation or inequality true."),
+ "6.EE.7": ("D", "Solve real-world and mathematical problems by writing and solving equations of the form x + p = q and px = q for cases in which p, q and x are all nonnegative rational numbers."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -198,6 +202,8 @@ LESSONS = [
   {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.1.e", "MP.3.a", "MP.4.a"], "ccr": ["4.NF.3", "5.NF.1", "5.NF.6", "6.NS.1"]}),
  ("level-1/lesson-5-1.html", "5.1", "Number and shape patterns",
   {"direct": [], "builds": ["A.7.b", "A.7.c"], "mp": ["MP.1.a", "MP.2.c", "MP.3.a", "MP.4.a"], "ccr": ["3.OA.9", "4.OA.5"]}),
+ ("level-1/lesson-5-2.html", "5.2", "Algebraic language and simple unknowns",
+  {"direct": ["A.1.c"], "builds": ["A.1.b", "A.2.a", "A.2.c"], "mp": ["MP.2.a", "MP.3.a", "MP.4.b"], "ccr": ["3.OA.4", "6.EE.2", "6.EE.5", "6.EE.7"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
