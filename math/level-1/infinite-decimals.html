@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decimals never end · Lesson 3.1 · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../lesson.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  .infd-app {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #213744;
+    max-width: 860px;
+    margin: 0 auto;
+    line-height: 1.55;
+  }
+  .infd-app h1 { font-size: 1.7rem; color: #05445e; font-weight: 700; margin: 0 0 0.4rem 0; }
+  .infd-app h2 { font-size: 1.2rem; color: #0089cd; font-weight: 600; margin: 1.9rem 0 0.5rem 0; }
+  .infd-app p { margin: 0.5rem 0; }
+  .infd-cita {
+    background: #e8f4fb; border-left: 5px solid #0089cd;
+    padding: 0.7rem 1rem; border-radius: 6px;
+    font-style: italic; color: #05445e; margin: 0.8rem 0 0.2rem 0;
+  }
+  .infd-recta-wrap {
+    background: #f4fafd; border: 1px solid #b8dcef; border-radius: 10px;
+    padding: 0.6rem 0.4rem 0.2rem 0.4rem; box-shadow: 0 1px 4px #c9dded; margin-top: 0.5rem;
+  }
+  .infd-recta-wrap canvas { display: block; width: 100%; height: 240px; touch-action: manipulation; }
+  .infd-recta-wrap.clic canvas { cursor: zoom-in; }
+  .infd-hint { text-align: center; font-size: 0.85rem; color: #4a6d82; margin: 0.1rem 0 0.4rem 0; }
+  .infd-controles { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin: 0.9rem 0; }
+  .infd-btn {
+    font-family: 'Poppins', Arial, sans-serif; font-size: 0.92rem; font-weight: 500;
+    border: none; border-radius: 8px; padding: 0.55rem 1rem; cursor: pointer;
+    background: #0089cd; color: #ffffff; transition: background 0.15s ease;
+  }
+  .infd-btn:hover { background: #006fa6; }
+  .infd-btn:disabled { background: #b8cdd9; cursor: default; }
+  .infd-btn.secundario { background: #e8f4fb; color: #05445e; }
+  .infd-btn.secundario:hover { background: #d2e9f7; }
+  .infd-btn.acento { background: #5C3900; color: #ffffff; }
+  .infd-btn.acento:hover { background: #3f2700; }
+  .infd-btn.activo { background: #05445e; color: #ffffff; }
+  .infd-panel { background: #ffffff; border: 1px solid #b8dcef; border-radius: 10px; padding: 0.9rem 1.1rem; margin-top: 0.4rem; }
+  .infd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.7rem 1.2rem; }
+  .infd-dato .et { font-size: 0.76rem; color: #4a6d82; text-transform: uppercase; letter-spacing: 0.04em; }
+  .infd-dato .val { font-size: 1.12rem; font-weight: 600; color: #05445e; word-break: break-all; }
+  .infd-dato .val.inf { color: #5C3900; }
+  .infd-mensaje { margin-top: 0.9rem; padding: 0.7rem 0.9rem; background: #e8f4fb; border-radius: 8px; color: #05445e; font-size: 0.95rem; }
+  .infd-app details { border: 1px solid #b8dcef; border-radius: 8px; margin-top: 0.6rem; background: #f4fafd; }
+  .infd-app summary { cursor: pointer; padding: 0.7rem 1rem; font-weight: 600; color: #0089cd; list-style: none; }
+  .infd-app summary::-webkit-details-marker { display: none; }
+  .infd-app summary::before { content: "\25B8  "; color: #0089cd; }
+  .infd-app details[open] summary::before { content: "\25BE  "; }
+  .infd-app details .cuerpo { padding: 0 1rem 0.9rem 1rem; }
+  .infd-caja { background:#fff; max-width: 920px; margin: 22px auto; padding: 22px 26px; border-radius: 14px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  .infd-ruta { font-size: .8rem; letter-spacing: .5px; text-transform: uppercase; color: #4a6d82; margin: 0 0 .3rem; }
+  .infd-btn:focus-visible { outline: 3px solid #f9a825; outline-offset: 2px; }
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="lesson-3-1.html">← Back to Lesson 3.1</a></nav>
+<main class="infd-caja">
+<div class="infd-app">
+
+  <p class="infd-ruta">Math · Level 1 · Lesson 3.1 · Explore more</p>
+  <h1>Decimals never end</h1>
+  <p>To order decimals, you place them on the number line. But the number line hides three ideas that often confuse people: between two decimals there are endless more decimals; adding zeros on the right does not change the value; and rounding means choosing where to stop. Explore each idea with your own hands.</p>
+  <p class="infd-cita">Between 0 and 1 there are endless decimals. And between any two of them, too. Zoom in and see for yourself: each step makes the piece of the line ten times smaller… and it never ends.</p>
+
+  <!-- ============ 1. INFINITUD ============ -->
+  <h2>1. Zoom in: the line never runs out</h2>
+  <div class="infd-recta-wrap clic">
+    <canvas id="cvInf" role="img" aria-label="Interactive number line. The panel below describes what it shows."></canvas>
+  </div>
+  <p class="infd-hint">Press any piece of the line to zoom in on it, or use the buttons.</p>
+  <div class="infd-controles">
+    <button class="infd-btn" id="infPaso" type="button">Zoom in one level</button>
+    <button class="infd-btn acento" id="infCaida" type="button">Fall into infinity</button>
+    <button class="infd-btn secundario" id="infAlejar" type="button">Zoom out</button>
+    <button class="infd-btn secundario" id="infReset" type="button">Start over</button>
+  </div>
+  <div class="infd-panel" aria-live="polite">
+    <div class="infd-grid">
+      <div class="infd-dato"><div class="et">Zoom level</div><div class="val" id="infNivel">0</div></div>
+      <div class="infd-dato"><div class="et">Piece of the line</div><div class="val" id="infIntervalo">[0, 1]</div></div>
+      <div class="infd-dato"><div class="et">Size of each step</div><div class="val" id="infAmplitud">0.1</div></div>
+      <div class="infd-dato"><div class="et">Decimal places so far</div><div class="val" id="infRecorridos">1</div></div>
+      <div class="infd-dato"><div class="et">Left to reach the bottom</div><div class="val inf" id="infFalta">&#8734;</div></div>
+    </div>
+    <div class="infd-mensaje" id="infMensaje">The number <strong>1/7 = 0.142857&#8230;</strong> lives inside the highlighted piece. Chase it: no matter how close you get, it always has neighbors.</div>
+  </div>
+
+  <!-- ============ 2. CEROS A LA DERECHA ============ -->
+  <h2>2. Is 0.1 the same as 0.10 and 0.100?</h2>
+  <p>Many people think 0.10 is &#8220;greater than&#8221; or &#8220;different from&#8221; 0.1 because it has more digits. Watch the orange point: when you add zeros, the ruler gets finer, but the point does not move at all.</p>
+  <div class="infd-recta-wrap">
+    <canvas id="cvCeros" role="img" aria-label="Number line that shows the point 0.1 while zeros are added on the right."></canvas>
+  </div>
+  <div class="infd-controles">
+    <button class="infd-btn" id="cerMas" type="button">Add a zero</button>
+    <button class="infd-btn secundario" id="cerMenos" type="button">Remove a zero</button>
+    <button class="infd-btn secundario" id="cerReset" type="button">Start over</button>
+  </div>
+  <div class="infd-panel" aria-live="polite">
+    <div class="infd-mensaje" id="cerMensaje">The orange point marks the value <strong>0.1</strong>. Press &#8220;Add a zero&#8221; and see that the label changes, but the position does not.</div>
+  </div>
+
+  <!-- ============ 3. REDONDEO ============ -->
+  <h2>3. So what does rounding mean?</h2>
+  <p>Going down forever is impossible, so at some point you have to <strong>stop</strong> at one level. That is exactly what rounding is: choosing how many decimal places to keep and taking the closest mark. Let&#8217;s see where 1/7 = 0.142857&#8230; lands.</p>
+  <div class="infd-recta-wrap">
+    <canvas id="cvRed" role="img" aria-label="Number line that shows 1/7 rounded to different numbers of decimal places."></canvas>
+  </div>
+  <div class="infd-controles">
+    <button class="infd-btn redbtn" data-n="1" type="button">To 1 decimal place</button>
+    <button class="infd-btn redbtn" data-n="2" type="button">To 2 decimal places</button>
+    <button class="infd-btn redbtn" data-n="3" type="button">To 3 decimal places</button>
+    <button class="infd-btn redbtn" data-n="4" type="button">To 4 decimal places</button>
+  </div>
+  <div class="infd-panel" aria-live="polite">
+    <div class="infd-mensaje" id="redMensaje">Choose how many decimal places to round to. The orange point is the real value of 1/7; the blue mark is the closest one, the one we round to.</div>
+  </div>
+
+  <!-- ============ EXPLICACIÓN ============ -->
+  <h2>Why do we never reach the end?</h2>
+  <details>
+    <summary>Show the math explanation</summary>
+    <div class="cuerpo">
+      <p>Take two different decimals, no matter how close; for example, 0.14 and 0.15. Their average, 0.145, sits exactly between them and is different from both. You can average that number again with either neighbor to get another number in between, and so on, forever.</p>
+      <p>This property is called the <strong>density</strong> of numbers: between any two numbers there is always a third one. So any piece of the number line, no matter how tiny, holds endless decimals.</p>
+      <p>Zeros on the right add no value because they do not change the position of the point: 0.1, 0.10, and 0.100 name the same place. And rounding does not go against the endless decimals; it accepts them: since going down never ends, we decide which level to stop at and choose the closest mark.</p>
+    </div>
+  </details>
+
+  <p style="margin-top:1.4rem"><a href="lesson-3-1.html#s-compare">← Back to Lesson 3.1 · Compare and order decimals</a></p>
+</div>
+</main>
+<footer><p>LearnGED · Math · Level 1 · Lesson 3.1 · Decimals never end</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p></footer>
+
+<script>
+(function () {
+  "use strict";
+
+  var INFD_GS = [];
+
+  // ===== Colores =====
+  var COL_EJE = "#9cc4dc", COL_MAYOR = "#0089cd", COL_MENOR = "#5bb4e0";
+  var COL_TEXTO = "#05445e", COL_TENUE = "#7896a8";
+  var COL_AMBAR = "#5C3900", COL_GUIA_FONDO = "#fdebd0";
+
+  // ===== Etiquetas exactas con BigInt =====
+  function limite(p, addOne) {
+    var len = p.length;
+    var base = BigInt(p === "" ? "0" : p);
+    var n = base + (addOne ? 1n : 0n);
+    var denom = 10n ** BigInt(len);
+    if (n === 0n) return "0";
+    if (n === denom) return "1";
+    return "0." + n.toString().padStart(len, "0");
+  }
+  function marcaVal(p, i) {
+    var len = p.length;
+    var base = BigInt(p === "" ? "0" : p);
+    var n = base * 10n + BigInt(i);
+    var denom = 10n ** BigInt(len + 1);
+    if (n === 0n) return "0";
+    if (n === denom) return "1";
+    return "0." + n.toString().padStart(len + 1, "0");
+  }
+  function amplitudTexto(len) {
+    if (len === 0) return "0.1";
+    var c = ""; for (var i = 0; i < len; i++) c += "0";
+    return "0." + c + "1";
+  }
+  // dígitos exactos de 1/7 = 0.142857142857...
+  function digito17(pos) {
+    var r = 1, d = 0;
+    for (var i = 0; i <= pos; i++) { r = r * 10; d = Math.floor(r / 7); r = r % 7; }
+    return d;
+  }
+  function prefijoSigue17(p) {
+    for (var i = 0; i < p.length; i++) if (Number(p.charAt(i)) !== digito17(i)) return false;
+    return true;
+  }
+
+  // ===== Geometría / dibujo compartido =====
+  function mkG(canvas, hfrac) {
+    return { canvas: canvas, ctx: canvas.getContext("2d"), mh: 46, W: 0, axisY: 0, cssH: 0, hfrac: hfrac || 0.46 };
+  }
+  function ajustar(g) {
+    var dpr = window.devicePixelRatio || 1;
+    var cssW = g.canvas.clientWidth || 700, cssH = g.canvas.clientHeight || 240;
+    g.canvas.width = Math.round(cssW * dpr);
+    g.canvas.height = Math.round(cssH * dpr);
+    g.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.W = cssW - 2 * g.mh; g.cssH = cssH; g.axisY = Math.round(cssH * g.hfrac);
+  }
+  function xp(g, local, A, B) { return g.mh + ((local - A) / (B - A)) * g.W; }
+  function clr(g) { g.ctx.clearRect(0, 0, g.canvas.width, g.canvas.height); }
+  function eje(g) {
+    var c = g.ctx; c.globalAlpha = 1; c.strokeStyle = COL_EJE; c.lineWidth = 2;
+    c.beginPath(); c.moveTo(g.mh, g.axisY); c.lineTo(g.mh + g.W, g.axisY); c.stroke();
+    c.beginPath();
+    c.moveTo(g.mh + g.W, g.axisY); c.lineTo(g.mh + g.W - 8, g.axisY - 5);
+    c.moveTo(g.mh + g.W, g.axisY); c.lineTo(g.mh + g.W - 8, g.axisY + 5);
+    c.moveTo(g.mh, g.axisY); c.lineTo(g.mh + 8, g.axisY - 5);
+    c.moveTo(g.mh, g.axisY); c.lineTo(g.mh + 8, g.axisY + 5);
+    c.stroke();
+  }
+  function tick(g, x, h, color, alpha) {
+    if (x < g.mh - 30 || x > g.mh + g.W + 30) return;
+    var c = g.ctx; c.globalAlpha = alpha; c.strokeStyle = color; c.lineWidth = 2;
+    c.beginPath(); c.moveTo(x, g.axisY - h); c.lineTo(x, g.axisY + h); c.stroke(); c.globalAlpha = 1;
+  }
+  function lbl(g, x, texto, alpha, tam, color, align, dy) {
+    if (x < g.mh - 70 || x > g.mh + g.W + 70) return;
+    var c = g.ctx, px = x;
+    if (align === "left") { c.textAlign = "left"; px = Math.max(x, 4); }
+    else if (align === "right") { c.textAlign = "right"; px = Math.min(x, g.mh + g.W + g.mh - 4); }
+    else c.textAlign = "center";
+    c.globalAlpha = alpha; c.fillStyle = color;
+    c.font = tam + "px 'Poppins', Arial, sans-serif";
+    c.fillText(texto, px, g.axisY + (dy === undefined ? 30 : dy));
+    c.globalAlpha = 1; c.textAlign = "start";
+  }
+  function gota(g, x, color, alpha) {
+    var c = g.ctx; c.globalAlpha = alpha; c.fillStyle = color;
+    var y = g.axisY;
+    c.beginPath();
+    c.moveTo(x, y - 4);
+    c.lineTo(x - 7, y - 18);
+    c.lineTo(x + 7, y - 18);
+    c.closePath(); c.fill();
+    c.beginPath(); c.arc(x, y, 4, 0, Math.PI * 2); c.fill();
+    c.globalAlpha = 1;
+  }
+  function easeInOut(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+  // =========================================================
+  // SECCIÓN 1 — INFINITUD (zoom telescópico)
+  // =========================================================
+  (function () {
+    var g = mkG(document.getElementById("cvInf"), 0.46);
+    var prefix = "", animando = false;
+
+    function resaltar(A, B) {
+      if (!prefijoSigue17(prefix)) return;
+      var k = digito17(prefix.length);
+      var x0 = xp(g, k / 10, A, B), x1 = xp(g, (k + 1) / 10, A, B);
+      var c = g.ctx; c.globalAlpha = 1; c.fillStyle = COL_GUIA_FONDO;
+      c.fillRect(x0, g.axisY - 38, x1 - x0, 76);
+      c.strokeStyle = COL_AMBAR; c.lineWidth = 1.5; c.strokeRect(x0, g.axisY - 38, x1 - x0, 76);
+      var cx = (x0 + x1) / 2;
+      if (cx > g.mh + 18 && cx < g.mh + g.W - 18) {
+        c.fillStyle = COL_AMBAR; c.font = "11px 'Poppins', Arial, sans-serif"; c.textAlign = "center";
+        c.fillText("1/7 is here", cx, g.axisY - 44); c.textAlign = "start";
+      }
+    }
+    function estable() {
+      clr(g); resaltar(0, 1); eje(g);
+      var hiTxt = limite(prefix, true), loTxt = limite(prefix, false);
+      g.ctx.font = "12px 'Poppins', Arial, sans-serif";
+      var anchoMax = Math.max(g.ctx.measureText(hiTxt).width, g.ctx.measureText(marcaVal(prefix, 5)).width);
+      var completas = (anchoMax + 8) < (g.W / 10);
+      for (var i = 0; i <= 10; i++) tick(g, xp(g, i / 10, 0, 1), 13, COL_MAYOR, 1);
+      lbl(g, xp(g, 0, 0, 1), loTxt, 1, 12, COL_TEXTO, "left");
+      lbl(g, xp(g, 1, 0, 1), hiTxt, 1, 12, COL_TEXTO, "right");
+      for (var j = 1; j <= 9; j++) {
+        var xj = xp(g, j / 10, 0, 1);
+        if (completas) lbl(g, xj, marcaVal(prefix, j), 1, 12, COL_TENUE, "center");
+        else lbl(g, xj, "\u2026" + j, 1, 11, COL_TENUE, "center");
+      }
+    }
+    function animar(k, dur, cb) {
+      if (animando) return;
+      if (prefix.length >= 18) { tope(); if (cb) cb(false); return; }
+      animando = true; bloquear(true);
+      var t0 = null, np = prefix + String(k);
+      var loN = limite(np, false), hiN = limite(np, true);
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var prog = Math.min(1, (ts - t0) / dur), e = easeInOut(prog);
+        var A = e * (k / 10), B = (1 - e) * 1 + e * ((k + 1) / 10);
+        clr(g); eje(g);
+        for (var i = 0; i <= 10; i++) tick(g, xp(g, i / 10, A, B), 13, COL_MAYOR, 1);
+        for (var j = 0; j <= 10; j++) tick(g, xp(g, k / 10 + j / 100, A, B), 10, COL_MENOR, e);
+        lbl(g, xp(g, k / 10, A, B), loN, e, 12, COL_TEXTO, "left");
+        lbl(g, xp(g, (k + 1) / 10, A, B), hiN, e, 12, COL_TEXTO, "right");
+        if (prog < 1) requestAnimationFrame(frame);
+        else { prefix = np; animando = false; bloquear(false); estable(); panel(); if (cb) cb(true); }
+      }
+      requestAnimationFrame(frame);
+    }
+    function siguienteK() { return prefijoSigue17(prefix) ? digito17(prefix.length) : 4; }
+    function panel(extra) {
+      var len = prefix.length;
+      document.getElementById("infNivel").textContent = String(len);
+      document.getElementById("infIntervalo").textContent = "[" + limite(prefix, false) + ", " + limite(prefix, true) + "]";
+      document.getElementById("infAmplitud").innerHTML = amplitudTexto(len) + " <span style='font-size:0.78rem;color:#4a6d82'>(10<sup>-" + (len + 1) + "</sup>)</span>";
+      document.getElementById("infRecorridos").textContent = String(len + 1);
+      var msg = document.getElementById("infMensaje");
+      if (extra) msg.innerHTML = extra;
+      else if (prefijoSigue17(prefix)) msg.innerHTML = "The number <strong>1/7 = 0.142857\u2026</strong> is still inside the highlighted piece. No matter how close you get, it never runs out of neighbors.";
+      else msg.innerHTML = "You are now in a piece of the line that is ten times smaller. Even so, it still holds endless decimals.";
+    }
+    function tope() { panel("You went down many, many levels\u2026 and the line is still full of numbers. The drawing stops here, but the math does not: you <strong>never</strong> reach the end. Press \u201CStart over\u201D to go back to the top."); }
+    function bloquear(b) {
+      ["infPaso", "infCaida", "infAlejar", "infReset"].forEach(function (id) { document.getElementById(id).disabled = b; });
+    }
+    document.getElementById("cvInf").addEventListener("click", function (ev) {
+      if (animando) return;
+      var r = g.canvas.getBoundingClientRect(), x = ev.clientX - r.left;
+      var local = (x - g.mh) / g.W;
+      if (local < 0 || local > 1) return;
+      var k = Math.floor(local * 10); if (k < 0) k = 0; if (k > 9) k = 9;
+      animar(k, 650, null);
+    });
+    document.getElementById("infPaso").addEventListener("click", function () { animar(siguienteK(), 650, null); });
+    document.getElementById("infCaida").addEventListener("click", function () {
+      if (animando) return;
+      var obj = Math.min(18, prefix.length + 8);
+      (function paso() {
+        if (prefix.length >= obj) { panel("We fell " + prefix.length + " levels, and the piece of the line is only " + amplitudTexto(prefix.length) + " long\u2026 and it still holds endless decimals. We never reach the bottom: that is infinity."); return; }
+        animar(siguienteK(), 430, function (ok) { if (ok) setTimeout(paso, 90); });
+      })();
+    });
+    document.getElementById("infAlejar").addEventListener("click", function () {
+      if (animando || prefix.length === 0) return;
+      prefix = prefix.slice(0, -1); estable(); panel();
+    });
+    document.getElementById("infReset").addEventListener("click", function () { if (animando) return; prefix = ""; estable(); panel(); });
+
+    g._redraw = function () { ajustar(g); estable(); };
+    g._panel = panel;
+    INFD_GS.push(g);
+  })();
+
+  // =========================================================
+  // SECCIÓN 2 — CEROS A LA DERECHA (zoom centrado en 0.1)
+  // =========================================================
+  (function () {
+    var g = mkG(document.getElementById("cvCeros"), 0.5);
+    var z = 0; // nº de ceros añadidos: etiqueta = 0.1 + z ceros
+    var animando = false, curA = 0, curB = 0.2;
+
+    function rango(zz) {
+      if (zz === 0) return [0, 0.2];
+      var div = Math.pow(10, -(zz + 1));
+      return [0.1 - 2 * div, 0.1 + 2 * div];
+    }
+    function etq(zz) { var s = "0.1"; for (var i = 0; i < zz; i++) s += "0"; return s; }
+
+    function dibujar(A, B) {
+      clr(g); eje(g);
+      var div = (B - A) / (B === 0.2 && A === 0 ? 2 : 4); // tamaño de paso visible
+      // determinar paso de marcas según nivel
+      var paso = (z === 0) ? 0.1 : Math.pow(10, -(z + 1));
+      var inicio = Math.round(A / paso) * paso;
+      for (var v = inicio; v <= B + paso * 0.5; v += paso) {
+        if (v < A - paso * 0.01) continue;
+        var x = xp(g, v, A, B);
+        var esCentro = Math.abs(v - 0.1) < paso * 0.01;
+        tick(g, x, esCentro ? 14 : 9, esCentro ? COL_MAYOR : COL_MENOR, 1);
+        var et = (Math.round(v / paso) === 0) ? "0" : ("0." + (Math.round(v / paso)).toString().padStart(z + 1, "0"));
+        if (Math.abs(v) < paso * 0.01) et = "0";
+        lbl(g, x, et, esCentro ? 0 : 1, 11, COL_TENUE, "center"); // centro lo etiqueta la gota
+      }
+      // punto invitado 0.1 (fijo en el centro)
+      var xc = xp(g, 0.1, A, B);
+      gota(g, xc, COL_AMBAR, 1);
+      g.ctx.fillStyle = COL_AMBAR; g.ctx.font = "600 14px 'Poppins', Arial, sans-serif"; g.ctx.textAlign = "center";
+      g.ctx.fillText(etq(z), xc, g.axisY - 26); g.ctx.textAlign = "start";
+    }
+    function anim(nz) {
+      if (animando) return;
+      animando = true; setBtns(true);
+      var r0 = [curA, curB], r1 = rango(nz), t0 = null, dur = 520;
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var prog = Math.min(1, (ts - t0) / dur), e = easeInOut(prog);
+        var A = r0[0] + (r1[0] - r0[0]) * e, B = r0[1] + (r1[1] - r0[1]) * e;
+        // durante la transición usamos el nivel destino para las marcas
+        z = nz;
+        dibujar(A, B);
+        if (prog < 1) requestAnimationFrame(frame);
+        else { curA = r1[0]; curB = r1[1]; animando = false; setBtns(false); msg(); }
+      }
+      requestAnimationFrame(frame);
+    }
+    function setBtns(b) { ["cerMas", "cerMenos", "cerReset"].forEach(function (id) { document.getElementById(id).disabled = b; }); }
+    function msg() {
+      var m = document.getElementById("cerMensaje");
+      if (z === 0) m.innerHTML = "The orange point marks the value <strong>0.1</strong>. Press \u201CAdd a zero\u201D and see that the label changes, but the position does not.";
+      else m.innerHTML = "<strong>" + etq(z) + " = 0.1</strong>. You added " + z + (z === 1 ? " zero" : " zeros") + ", and the point has not moved at all. Zeros on the right make the ruler finer, but they do not change the value.";
+    }
+    document.getElementById("cerMas").addEventListener("click", function () { if (z < 6) anim(z + 1); });
+    document.getElementById("cerMenos").addEventListener("click", function () { if (z > 0) anim(z - 1); });
+    document.getElementById("cerReset").addEventListener("click", function () { if (!animando) { z = 0; curA = 0; curB = 0.2; dibujar(0, 0.2); msg(); } });
+
+    g._redraw = function () { ajustar(g); dibujar(curA, curB); };
+    INFD_GS.push(g);
+  })();
+
+  // =========================================================
+  // SECCIÓN 3 — REDONDEO (1/7 a N decimales)
+  // =========================================================
+  (function () {
+    var g = mkG(document.getElementById("cvRed"), 0.5);
+    var N = 2;
+    var V17 = 1 / 7; // valor numérico de 1/7
+
+    function inferiorStr(n) { var s = ""; for (var i = 0; i < n; i++) s += String(digito17(i)); return s; } // dígitos
+    function marcaInf(n) { return "0." + inferiorStr(n); }
+    function marcaSup(n) {
+      var base = BigInt(inferiorStr(n)) + 1n;
+      var denom = 10n ** BigInt(n);
+      if (base === denom) return "1";
+      return "0." + base.toString().padStart(n, "0");
+    }
+    function redondeoStr(n) {
+      // dígito siguiente decide
+      var sig = digito17(n);
+      return (sig >= 5) ? marcaSup(n) : marcaInf(n);
+    }
+    function dibujar() {
+      clr(g);
+      var lo = parseFloat(marcaInf(N)), hi = parseFloat(marcaSup(N));
+      var div = hi - lo;
+      var A = lo - div, B = hi + div;
+      eje(g);
+      // marcas: lo-div, lo, hi, hi+div
+      var vals = [lo - div, lo, hi, hi + div];
+      var elegido = redondeoStr(N);
+      for (var i = 0; i < vals.length; i++) {
+        var v = vals[i], x = xp(g, v, A, B);
+        var txt;
+        if (i === 1) txt = marcaInf(N); else if (i === 2) txt = marcaSup(N);
+        else txt = (v).toFixed(N);
+        var esElegido = (txt === elegido);
+        tick(g, x, esElegido ? 15 : 10, esElegido ? COL_MAYOR : COL_MENOR, 1);
+        lbl(g, x, txt, 1, 12, esElegido ? COL_MAYOR : COL_TENUE, "center");
+        if (esElegido) {
+          g.ctx.strokeStyle = COL_MAYOR; g.ctx.lineWidth = 2;
+          g.ctx.beginPath(); g.ctx.arc(x, g.axisY, 9, 0, Math.PI * 2); g.ctx.stroke();
+        }
+      }
+      // punto real de 1/7
+      var xr = xp(g, V17, A, B);
+      gota(g, xr, COL_AMBAR, 1);
+      g.ctx.fillStyle = COL_AMBAR; g.ctx.font = "600 13px 'Poppins', Arial, sans-serif"; g.ctx.textAlign = "center";
+      g.ctx.fillText("0.142857\u2026", xr, g.axisY - 26); g.ctx.textAlign = "start";
+    }
+    function msg() {
+      var elegido = redondeoStr(N), sig = digito17(N);
+      var razon = (sig >= 5)
+        ? ("the next digit is " + sig + " (5 or more), so we go up to the higher mark")
+        : ("the next digit is " + sig + " (less than 5), so we keep the lower mark");
+      document.getElementById("redMensaje").innerHTML =
+        "To " + N + (N === 1 ? " decimal place" : " decimal places") + ": <strong>0.142857\u2026 \u2248 " + elegido + "</strong>, because " + razon + ". Rounding means stopping at this level and choosing the closest mark; all the endless decimals after it are summed up in that choice.";
+    }
+    function marcaActiva() {
+      var btns = document.querySelectorAll(".redbtn");
+      for (var i = 0; i < btns.length; i++) {
+        if (Number(btns[i].getAttribute("data-n")) === N) btns[i].classList.add("activo");
+        else btns[i].classList.remove("activo");
+      }
+    }
+    var btns = document.querySelectorAll(".redbtn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        N = Number(this.getAttribute("data-n")); dibujar(); msg(); marcaActiva();
+      });
+    }
+    g._redraw = function () { ajustar(g); dibujar(); };
+    g._initRed = function () { marcaActiva(); msg(); };
+    INFD_GS.push(g);
+    g._initRed();
+  })();
+
+  // ===== arranque y reescalado de todos los lienzos =====
+  function redibujarTodo() { for (var i = 0; i < INFD_GS.length; i++) INFD_GS[i]._redraw(); }
+  var t;
+  window.addEventListener("resize", function () { clearTimeout(t); t = setTimeout(redibujarTodo, 150); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(redibujarTodo);
+  redibujarTodo();
+  // panel inicial sección 1
+  for (var i = 0; i < INFD_GS.length; i++) if (INFD_GS[i]._panel) INFD_GS[i]._panel();
+})();
+</script>

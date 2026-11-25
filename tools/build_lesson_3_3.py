@@ -66,8 +66,8 @@ LESSON = {
       "a": "Line up the points: 1.80 + 2.35.",
       "c": "Check the tenths: 8 + 3 = 11, so you carry 1 to the ones.",
       "d": "That is close to a subtraction. The question asks for the total: add."},
-   "right": "1.80 + 2.35 = 4.15 km.",
-   "solution": "Total means add. Write 1.8 as 1.80 and line up the points: 1.80 + 2.35 = 4.15. The person walked 4.15 km."},
+   "right": "1.80 + 2.35 = 4.15 miles.",
+   "solution": "Total means add. Write 1.8 as 1.80 and line up the points: 1.80 + 2.35 = 4.15. The person walked 4.15 miles."},
   "p4": {"ok": "b", "hints": {
       "a": "6 gallons at $3.40 each are equal groups: multiply, do not add.",
       "c": "Check: 6 × 3 = 18 and 6 × 0.40 = 2.40.",
@@ -86,8 +86,8 @@ LESSON = {
         "solution": "0.7 is seven tenths. The last place is the tenths, so the denominator is 10: 7/10."},
   "E": {"ok": "c", "hints": {"a": "An exact (terminating) decimal ends. 0.333… never ends.", "b": "0.333… is not a whole number.", "d": "0.333… is more than 0, so it is not negative."},
         "solution": "The 3s repeat and never end, so 0.333… is a repeating decimal. In daily life we round it: 1/3 ≈ 0.33."},
-  "F": {"ok": "b", "hints": {"a": "Write 2.6 as 2.60 and subtract: 2.60 − 0.85.", "c": "A piece was cut off, so the board is shorter: subtract.", "d": "Check the borrowing: 2.60 − 0.85."},
-        "solution": "Cut off means subtract. 2.60 − 0.85 = 1.75. The board is now 1.75 m long."},
+  "F": {"ok": "b", "hints": {"a": "Write 2.6 as 2.60 and subtract: 2.60 − 0.85.", "c": "You used some of the flour, so there is less left: subtract.", "d": "Check the borrowing: 2.60 − 0.85."},
+        "solution": "Used means subtract. 2.60 − 0.85 = 1.75. There are 1.75 pounds of flour left."},
   "G": {"ok": "d", "hints": {"a": "4 kilos at $1.25 each are equal groups: multiply, do not add.", "b": "Check: 4 × 1 = 4 and 4 × 0.25 = 1.", "c": "Do not forget the 25 cents: 4 × 0.25 = 1."},
         "solution": "1.25 × 4 = 5.00. Shortcut: 4 × $1 = $4 and 4 × 25 cents = $1, so $5.00."},
   "H": {"ok": "a", "hints": {"b": "Check the total first: 6.80 + 5.45 = 12.25.", "c": "Check the hundredths: 15.00 − 12.25.", "d": "That is the total you spent. The question asks for the change."},
@@ -244,7 +244,7 @@ html = f'''<!DOCTYPE html>
 </div>
 {calc("Check it on the calculator", f"""<p>Check each step: {T("2", ".", "5", "+", "3", ".", "7", "5", "+", "4", ".", "2", "enter")} shows <strong>10.45</strong>. Then {T("2", "0", "−", "1", "0", ".", "4", "5", "enter")} shows <strong>9.55</strong>.</p>
 <p>Tip: right after the first answer, you can press {T("−")} and the calculator writes <strong>ans</strong> (the last answer). For the change, though, you need 20 − 10.45, so type the whole subtraction.</p>""")}
-{practica("p3", "Practice 3 — A problem in context", "A person walks <strong>1.8 km</strong> in the morning and <strong>2.35 km</strong> in the afternoon. How many kilometers did the person walk in all?", [("a", "3.53 km"), ("b", "4.15 km"), ("c", "4.05 km"), ("d", "2.53 km")])}
+{practica("p3", "Practice 3 — A problem in context", "A person walks <strong>1.8 miles</strong> in the morning and <strong>2.35 miles</strong> in the afternoon. How many miles did the person walk in all?", [("a", "3.53 miles"), ("b", "4.15 miles"), ("c", "4.05 miles"), ("d", "2.53 miles")])}
 {practica("p4", "Practice 4 — A problem in context", "A gallon of gas costs <strong>$3.40</strong>. How much do <strong>6 gallons</strong> cost?", [("a", "$9.40"), ("b", "$20.40"), ("c", "$18.40"), ("d", "$2.04")])}
 {enlace("real-life", "decimals in real life", "Solve shopping, change, and measurement problems with the 4 steps.")}
 </section>
@@ -269,7 +269,7 @@ html = f'''<!DOCTYPE html>
 {quiz("C", f"Which decimal is equal to {F(1, 2)}?", [("a", "0.12"), ("b", "0.5"), ("c", "0.25"), ("d", "1.2")])}
 {quiz("D", "The decimal <strong>0.7</strong> is equal to which fraction?", [("a", F(7, 100)), ("b", F(1, 7)), ("c", F(7, 1000)), ("d", F(7, 10))])}
 {quiz("E", "When you divide 1 ÷ 3, the answer 0.333… is called a ___ decimal.", [("a", "terminating (exact)"), ("b", "whole"), ("c", "repeating"), ("d", "negative")])}
-{quiz("F", "A board is 2.6 meters long. You cut off a piece that is 0.85 meters long. How long is the board now?", [("a", "1.85 m"), ("b", "1.75 m"), ("c", "3.45 m"), ("d", "2.25 m")])}
+{quiz("F", "A bag has 2.6 pounds of flour. You use 0.85 pounds for a recipe. How many pounds of flour are left?", [("a", "1.85 lb"), ("b", "1.75 lb"), ("c", "3.45 lb"), ("d", "2.25 lb")])}
 {quiz("G", "A pound of rice costs $1.25. How much do 4 pounds cost?", [("a", "$4.25"), ("b", "$5.25"), ("c", "$4.00"), ("d", "$5.00")])}
 {quiz("H", "You buy items for $6.80 and $5.45, and you pay with $15. How much change do you get?", [("a", "$2.75"), ("b", "$3.75"), ("c", "$2.65"), ("d", "$12.25")])}
 </div>

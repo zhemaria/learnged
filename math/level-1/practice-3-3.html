@@ -123,7 +123,7 @@
       <div class="practica" id="p4">
         <div class="enun" id="p4-enun"></div>
         <div class="campos"><div class="campo"><label for="p4-r">Answer</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
-        <p class="nota">Type the number only. You can type $ for money; do not type the unit (km, m).</p>
+        <p class="nota">Type the number only. You can type $ for money; do not type the unit (miles, pounds).</p>
         <div class="fila-btn">
           <button type="button" class="btn" id="p4-comprobar">Check</button>
           <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
@@ -253,8 +253,8 @@ function genCtx(){
   } else if (t === 2){
     var m = aleatorio(10, 30), n = aleatorio(100, 300);
     res = c2(m * 10 + n);
-    enun = "A person walks " + (m / 10) + " km in the morning and " + c2(n) + " km in the afternoon. <strong>How many kilometers did the person walk in all?</strong>";
-    sol = (m / 10).toFixed(2) + " + " + c2(n) + " = <strong>" + limpia(res) + " km</strong>.";
+    enun = "A person walks " + (m / 10) + " miles in the morning and " + c2(n) + " miles in the afternoon. <strong>How many miles did the person walk in all?</strong>";
+    sol = (m / 10).toFixed(2) + " + " + c2(n) + " = <strong>" + limpia(res) + " miles</strong>.";
     trampas.push({ v: c2(m + n), msg: "Line up the decimal points before you add: " + (m / 10).toFixed(2) + " + " + c2(n) + "." });
   } else if (t === 3){
     var g = aleatorio(8, 15), pg = aleatorio(275, 399);
@@ -271,9 +271,9 @@ function genCtx(){
   } else {
     var al = aleatorio(150, 190), al2 = aleatorio(100, 140);
     res = c2(al - al2);
-    enun = "A father is " + c2(al) + " m tall and his son is " + c2(al2) + " m tall. <strong>How many meters taller is the father?</strong>";
-    sol = c2(al) + " − " + c2(al2) + " = <strong>" + limpia(res) + " m</strong>.";
-    trampas.push({ v: c2(al + al2), msg: "\"How much taller\" compares two heights: subtract." });
+    enun = "A bag of apples weighs " + c2(al) + " pounds and a bag of oranges weighs " + c2(al2) + " pounds. <strong>How many pounds heavier is the bag of apples?</strong>";
+    sol = c2(al) + " − " + c2(al2) + " = <strong>" + limpia(res) + " pounds</strong>.";
+    trampas.push({ v: c2(al + al2), msg: "\"How many pounds heavier\" compares two weights: subtract." });
   }
   return { enun: enun, solucion: sol,
     evalua: function(txt){
