@@ -161,7 +161,7 @@ R('<span class="etiqueta et-verde">An important milestone</span>', '<span class=
 R("<p>With Topics 1 to 4 complete, you can do the four operations with whole numbers, decimals, fractions, and mixed numbers: all of basic arithmetic. That is the foundation for the rest of the course.</p>", "<p>Con los Temas 1 a 4 completos, ya sabe hacer las cuatro operaciones con números enteros, decimales, fracciones y números mixtos: toda la aritmética básica. Esa es la base del resto del curso.</p>")
 R("<p>In <strong>Topic 5 · Patterns and algebraic thinking</strong> you will take a new and exciting step: from numbers to ideas. <strong>Lesson 5.1 · Number and shape patterns</strong> will teach you to discover the hidden rule behind a sequence: your first step toward algebra.</p>",
   "<p>En el <strong>Tema 5 · Patrones y pensamiento algebraico</strong> dará un paso nuevo y emocionante: de los números a las ideas. La <strong>Lección 5.1 · Patrones numéricos y de figuras</strong> le enseñará a descubrir la regla escondida detrás de una sucesión: su primer paso hacia el álgebra.</p>")
-R('Next: Topic 5 · <a href="lesson-5-1.html">Lesson 5.1 · Number and shape patterns</a>', 'Siguiente: Tema 5 · Lección 5.1 · Patrones numéricos y de figuras')
+R('Next: Topic 5 · <a href="lesson-5-1.html">Lesson 5.1 · Number and shape patterns</a>', 'Siguiente: Tema 5 · <a href="leccion-5-1.html">Lección 5.1 · Patrones numéricos y de figuras</a>')
 R("""<dt>mixed number</dt><dd>A whole number together with a fraction, like 2 1/2 ("two and one half").</dd>
 <dt>improper fraction</dt><dd>A fraction whose numerator is greater than or equal to its denominator, like 5/2. It is 1 or more.</dd>
 <dt>quotient</dt><dd>The answer to a division. In 17 ÷ 5, the quotient is 3.</dd>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 5.2 · Lenguaje algebraico e incógnitas simples — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.2 · Lenguaje algebraico e incógnitas simples · LearnGED</title>
+<meta name="robots" content="noindex">
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-5-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 5 · Patrones y pensamiento algebraico</div>
+    <h1>Lección 5.2 · Lenguaje algebraico e incógnitas simples</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#traducir">Traducir palabras a símbolos</a></li>
+      <li><a href="#balanza">La ecuación como balanza</a></li>
+      <li><a href="#operacion-inversa">Resolver con la operación inversa</a></li>
+      <li><a href="#comprobar">Comprobar la solución</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="traducir" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Traducir palabras a símbolos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una <strong>incógnita</strong> es un número que todavía no conocemos. La escribimos con un cuadrito □ o una letra como <strong>x</strong>.
+      El álgebra escribe las ideas con símbolos: «un número más cinco» es <strong>x + 5</strong>.</p>
+      <table class="reglas">
+        <caption>Tabla de traducción</caption>
+        <thead><tr><th scope="col">En palabras</th><th scope="col">En álgebra</th></tr></thead>
+        <tbody>
+          <tr><td>un número más 7 · un número aumentado en 7 · 7 más que un número</td><td>x + 7</td></tr>
+          <tr><td>un número menos 5 · un número disminuido en 5 · 5 menos que un número</td><td>x − 5</td></tr>
+          <tr><td>el doble de un número</td><td>2x</td></tr>
+          <tr><td>el triple de un número</td><td>3x</td></tr>
+          <tr><td>un número dividido entre 4 · la mitad de un número (dividido entre 2)</td><td>x ÷ 4 · x ÷ 2</td></tr>
+          <tr><td>un número es igual a 12</td><td>x = 12</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-atencion"><strong>El doble se escribe junto:</strong> 2x, sin ningún signo. Un número escrito al lado de una letra quiere decir multiplicar.
+      Y «5 menos que un número» es x − 5, no 5 − x: el número va primero.</div>
+      <h3>Practique: traducir</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="balanza">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La ecuación como balanza</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una <strong>ecuación</strong> dice que lo que está a un lado del signo = vale lo mismo que lo que está al otro lado,
+      como una balanza en equilibrio. <strong>Resolverla</strong> es hallar el número del cuadrito que mantiene la balanza nivelada.</p>
+      <h3>Halle el número del cuadrito</h3>
+      <div class="panel">
+        <p class="grande" id="bz-ec" style="text-align:center"></p>
+        <div id="bz-svg"></div>
+        <div class="campo"><label for="bz-x">Pruebe un número para el cuadrito: <span id="bz-xv"></span></label><input type="range" id="bz-x" min="0" max="20" value="0"></div>
+        <div class="salida" id="bz-salida" aria-live="polite"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="bz-nueva">Otra balanza</button></div>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="operacion-inversa">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Resolver con la operación inversa</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El método seguro: deje sola la incógnita con la <strong>operación inversa</strong> de la que la acompaña. La resta deshace
+      la suma, y la división deshace la multiplicación (y al revés). Y la regla de la balanza: <strong>lo que haga en un
+      lado, hágalo también en el otro</strong>.</p>
+      <table class="reglas">
+        <caption>La operación inversa para cada caso</caption>
+        <thead><tr><th scope="col">Ecuación</th><th scope="col">La x está…</th><th scope="col">Haga esto en los dos lados</th></tr></thead>
+        <tbody>
+          <tr><td>x + 3 = 8</td><td>sumada con 3</td><td>restar 3: x = 5</td></tr>
+          <tr><td>x − 4 = 10</td><td>menos 4</td><td>sumar 4: x = 14</td></tr>
+          <tr><td>4x = 20</td><td>multiplicada por 4</td><td>dividir entre 4: x = 5</td></tr>
+          <tr><td>x ÷ 3 = 6</td><td>dividida entre 3</td><td>multiplicar por 3: x = 18</td></tr>
+        </tbody>
+      </table>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span class="expr-grande" id="oi-ec"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="oi-sig">Mostrar el primer paso</button><button type="button" class="btn-sec" id="oi-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="oi-nueva">Otra ecuación</button></div>
+      </div>
+      <div class="pasos" id="oi-pasos" aria-live="polite"></div>
+      <h3>Practique: resolver</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Valor de x</label><input type="text" inputmode="numeric" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comprobar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Comprobar la solución</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para saber si una respuesta está bien, <strong>sustituya</strong>: ponga el número en lugar de x y calcule. Si los dos lados son
+      iguales, la solución está bien. En x + 6 = 15 con x = 9: 9 + 6 = 15 ✓.</p>
+      <h3>Practique: ¿es la solución?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 5 · Patrones y pensamiento algebraico · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ MÓDULO 1 · traducir ============ */
+var TR = [
+  ["un número aumentado en {a}", "x + {a}", "«aumentado en» quiere decir sumar"],
+  ["un número más {a}", "x + {a}", "«más» quiere decir sumar"],
+  ["{a} más que un número", "x + {a}", "«más que» quiere decir sumar"],
+  ["{a} menos que un número", "x − {a}", "«menos que» quiere decir restar, y el número va primero"],
+  ["un número disminuido en {a}", "x − {a}", "«disminuido en» quiere decir restar"],
+  ["un número menos {a}", "x − {a}", "«menos» quiere decir restar"],
+  ["el doble de un número", "2x", "«el doble» quiere decir dos veces"],
+  ["el triple de un número", "3x", "«el triple» quiere decir multiplicar por 3"],
+  ["{a} veces un número", "{a}x", "«veces» quiere decir multiplicar"],
+  ["un número dividido entre {a}", "x ÷ {a}", "«dividido entre» quiere decir dividir"],
+  ["la mitad de un número", "x ÷ 2", "«la mitad de» quiere decir dividir entre 2"],
+  ["un número es igual a {a}", "x = {a}", "«es igual a» es el signo igual"]
+];
+/* lo que dice una opción, en palabras */
+function enPalabras(e){
+  var m;
+  if ((m = e.match(/^x \+ (\d+)$/))) return "un número más " + m[1];
+  if ((m = e.match(/^x − (\d+)$/))) return "un número menos " + m[1];
+  if ((m = e.match(/^(\d+) − x$/))) return m[1] + " menos un número";
+  if ((m = e.match(/^(\d+)x$/))) return m[1] + " veces un número";
+  if ((m = e.match(/^x ÷ (\d+)$/))) return "un número dividido entre " + m[1];
+  if ((m = e.match(/^x = (\d+)$/))) return "un número es igual a " + m[1];
+  return e;
+}
+function genTr(){
+  var t = elige(TR), a = aleatorio(4, 12), f = t[0].replace("{a}", a), cor = t[1].replace("{a}", a);
+  var pool = ["x + " + a, a + " − x", "x − " + a, a + "x", "x ÷ " + a, "2x", "3x", "x + 2", "x + 3", "x ÷ 2", "x = " + a].filter(function(x){ return x !== cor; });
+  var o = [cor];
+  if (cor === "x − " + a) o.push(a + " − x");
+  baraja(pool).forEach(function(x){ if (o.length < 4 && o.indexOf(x) < 0) o.push(x); });
+  var pistas = {};
+  o.forEach(function(x){
+    if (x === cor) return;
+    pistas[x] = x === a + " − x" ? "Cuidado: «" + a + " menos que un número» le quita " + a + " al número, así que el número va primero."
+      : x + " quiere decir «" + enPalabras(x) + "». Vuelva a mirar las palabras clave: " + t[2] + ".";
+  });
+  return {
+    enun: "¿Cómo se escribe <strong>«" + f + "»</strong> en lenguaje algebraico?",
+    opciones: o.map(function(x){ return { html: x, clave: x }; }), correcta: cor, pistas: pistas,
+    pista: "Busque las palabras clave de la frase y la operación que indican.",
+    bien: "«" + f + "» → " + cor + ". Recuerde: " + t[2] + ".",
+    mal: "«" + f + "» se escribe " + cor + ", porque " + t[2] + "."
+  };
+}
+
+/* ============ MÓDULO 2 · la balanza ============ */
+var BZ = {};
+function nuevaBZ(){ BZ = { a: aleatorio(1, 9), x: aleatorio(2, 12) }; BZ.b = BZ.a + BZ.x; $("bz-x").value = 0; pintaBZ(); }
+function pintaBZ(){
+  var g = +$("bz-x").value, izq = g + BZ.a, der = BZ.b, ang = Math.max(-12, Math.min(12, (der - izq) * 2.5));
+  $("bz-xv").textContent = g; $("bz-ec").textContent = "□ + " + BZ.a + " = " + BZ.b;
+  var cx = 320, cy = 70, L = 220;
+  var s = '<svg class="figura" viewBox="0 0 640 250" role="img" aria-label="Balanza: a la izquierda, el cuadrito con ' + g + ' y una pesa de ' + BZ.a + '; a la derecha, ' + BZ.b + '. ' + (izq === der ? "Está nivelada." : (izq > der ? "El lado izquierdo pesa más." : "El lado derecho pesa más.")) + '">';
+  s += '<polygon points="' + (cx - 30) + ',235 ' + (cx + 30) + ',235 ' + cx + ',' + cy + '" fill="#90a4ae"/>' + '<circle cx="' + cx + '" cy="' + cy + '" r="8" fill="#37474f"/>';
+  s += '<g transform="rotate(' + ang + ' ' + cx + ' ' + cy + ')">' + linea([cx - L, cy], [cx + L, cy], "#37474f", 6);
+  [[-1, izq], [1, der]].forEach(function(p){ var x = cx + p[0] * L; s += linea([x, cy], [x - 60, cy + 70], "#78909c", 2) + linea([x, cy], [x + 60, cy + 70], "#78909c", 2) + '<rect x="' + (x - 75) + '" y="' + (cy + 70) + '" width="150" height="10" rx="4" fill="#37474f"/>'; });
+  var xl = cx - L, xr = cx + L;
+  s += '<rect x="' + (xl - 68) + '" y="' + (cy + 24) + '" width="54" height="44" rx="6" fill="#1565c0"/>' + texto([xl - 41, cy + 46], g, 20, "#fff") + '<rect x="' + (xl + 6) + '" y="' + (cy + 24) + '" width="54" height="44" rx="6" fill="#cfd8dc"/>' + texto([xl + 33, cy + 46], BZ.a, 20, "#222");
+  s += '<rect x="' + (xr - 34) + '" y="' + (cy + 24) + '" width="68" height="44" rx="6" fill="#cfd8dc"/>' + texto([xr, cy + 46], BZ.b, 20, "#222") + '</g>';
+  $("bz-svg").innerHTML = s + '</svg>';
+  $("bz-salida").innerHTML = izq === der
+    ? '<div class="linea veredicto">¡Nivelada! ' + g + ' + ' + BZ.a + ' = ' + BZ.b + '. El número del cuadrito es ' + g + '.</div>'
+    : '<div class="linea">' + g + ' + ' + BZ.a + ' = ' + izq + (izq > der ? ', más que ' + der + ': el cuadrito pesa demasiado. Pruebe un número menor.' : ', menos que ' + der + ': al cuadrito le falta. Pruebe un número mayor.') + '</div>';
+}
+
+/* ============ MÓDULO 3 · operación inversa ============ */
+function ecAz(){
+  var t = aleatorio(0, 3), x = aleatorio(2, 15), a = aleatorio(2, 12), b;
+  if (t === 0) b = x + a; else if (t === 1) b = x - a; else if (t === 2) b = a * x; else { x = a * aleatorio(2, 9); b = x / a; }
+  if (t === 1 && b < 0){ x = a + aleatorio(1, 10); b = x - a; }
+  return { t: t, a: a, b: b, x: x };
+}
+function ecTxt(e){ return ["x + " + e.a + " = " + e.b, "x − " + e.a + " = " + e.b, e.a + "x = " + e.b, "x ÷ " + e.a + " = " + e.b][e.t]; }
+function izqTxt(e, v){ return [v + " + " + e.a, v + " − " + e.a, e.a + " × " + v, v + " ÷ " + e.a][e.t]; }
+function pasosEc(e){
+  var inv = ["restar " + e.a, "sumar " + e.a, "dividir entre " + e.a, "multiplicar por " + e.a][e.t];
+  var con = ["sumada con " + e.a, "menos " + e.a, "multiplicada por " + e.a, "dividida entre " + e.a][e.t];
+  var op = ["x + " + e.a + " − " + e.a + " = " + e.b + " − " + e.a, "x − " + e.a + " + " + e.a + " = " + e.b + " + " + e.a, e.a + "x ÷ " + e.a + " = " + e.b + " ÷ " + e.a, "x ÷ " + e.a + " × " + e.a + " = " + e.b + " × " + e.a][e.t];
+  return ["La x está " + con + ". La operación inversa es <strong>" + inv + "</strong>.",
+          "Hágalo en los dos lados, para que la balanza siga nivelada: " + op + ".",
+          "A la izquierda, la x queda sola: x = " + e.x + ".",
+          '<span class="veredicto">Comprobación: ' + izqTxt(e, e.x) + ' = ' + e.b + ' ✓</span>'];
+}
+/* panel paso a paso */
+function pasoAPaso(pre){
+  var S = { pasos: [], visto: 0 };
+  function pinta(){
+    var h = "";
+    for (var i = 0; i < S.visto; i++) h += '<div class="paso"><span class="n" aria-hidden="true">' + (i === S.pasos.length - 1 ? "✓" : i + 1) + '</span>' + S.pasos[i] + '</div>';
+    $(pre + "-pasos").innerHTML = h;
+    var b = $(pre + "-sig"), fin = S.visto >= S.pasos.length; b.disabled = fin; $(pre + "-todo").disabled = fin;
+    b.textContent = S.visto === 0 ? "Mostrar el primer paso" : (fin ? "Ya se ven todos los pasos" : "Mostrar el siguiente paso");
+  }
+  S.carga = function(p){ S.pasos = p; S.visto = 0; pinta(); };
+  $(pre + "-sig").addEventListener("click", function(){ if (S.visto < S.pasos.length){ S.visto++; pinta(); } });
+  $(pre + "-todo").addEventListener("click", function(){ S.visto = S.pasos.length; pinta(); });
+  return S;
+}
+var OI_COLA = [{ t: 0, a: 3, b: 8, x: 5 }, { t: 2, a: 4, b: 20, x: 5 }];
+function nuevaOI(){ var e = OI_COLA.length ? OI_COLA.shift() : ecAz(); $("oi-ec").textContent = ecTxt(e); OIS.carga(pasosEc(e)); }
+function genEc(){
+  var e = ecAz(), p = [];
+  var mismo = [e.b + e.a, e.b - e.a, e.b * e.a, e.b / e.a][e.t];
+  if (mismo === Math.round(mismo) && mismo >= 0 && mismo !== e.x) p.push({ v: mismo, msg: "Usó la misma operación en vez de la inversa. Para deshacer " + ["la suma, reste", "la resta, sume", "la multiplicación, divida", "la división, multiplique"][e.t] + "." });
+  if (e.t >= 2 && e.b + e.a !== e.x) p.push({ v: e.b + e.a, msg: "La x está " + (e.t === 2 ? "multiplicada" : "dividida") + ", no sumada. Deshágalo con " + (e.t === 2 ? "una división" : "una multiplicación") + "." });
+  if (e.t >= 2 && e.b - e.a >= 0 && e.b - e.a !== e.x) p.push({ v: e.b - e.a, msg: "La x está " + (e.t === 2 ? "multiplicada" : "dividida") + ", no sumada. Deshágalo con " + (e.t === 2 ? "una división" : "una multiplicación") + "." });
+  return {
+    enun: "Resuelva: <strong>" + ecTxt(e) + "</strong>",
+    solucion: pasosEc(e).map(function(x){ return x.replace(/<[^>]+>/g, ""); }).join(" "),
+    evalua: numN(e.x, p, "Busque la operación que acompaña a la x, y use su inversa en los dos lados.")
+  };
+}
+
+/* ============ MÓDULO 4 · comprobar ============ */
+function genVer(){
+  var e = ecAz(), ok = Math.random() < 0.5;
+  var prop = ok ? e.x : elige([e.x + 1, e.x - 1, [e.b + e.a, e.b - e.a, e.b * e.a, e.b * e.a][e.t]].filter(function(v){ return v !== e.x && v >= 0; }));
+  var izq = [prop + e.a, prop - e.a, e.a * prop, prop / e.a][e.t], izqS = Math.round(izq * 100) / 100;
+  var exp = "Sustituya: " + izqTxt(e, prop) + " = " + izqS + (izqS === e.b ? ", y el lado derecho es " + e.b + " ✓. Es la solución." : ", pero el lado derecho es " + e.b + " ✗. No es la solución; la solución es x = " + e.x + ".");
+  return { enOrden: true, enun: "¿<strong>x = " + prop + "</strong> es la solución de <strong>" + ecTxt(e) + "</strong>?",
+    opciones: [{ html: "Sí", clave: "s" }, { html: "No", clave: "n" }], correcta: izqS === e.b ? "s" : "n", bien: exp, mal: exp };
+}
+
+/* ---------- Inicio ---------- */
+creaPracticaOM("p1", genTr);
+$("bz-x").addEventListener("input", pintaBZ); $("bz-nueva").addEventListener("click", nuevaBZ); BZ = { a: 3, x: 5, b: 8 }; pintaBZ();
+var OIS = pasoAPaso("oi"); $("oi-nueva").addEventListener("click", nuevaOI); nuevaOI();
+creaPracticaLibre("p2", genEc);
+creaPracticaOM("p3", genVer);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

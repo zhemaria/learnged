@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 5.1 · Patrones numéricos y de figuras — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.1 · Patrones numéricos y de figuras · LearnGED</title>
+<meta name="robots" content="noindex">
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-5-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 5 · Patrones y pensamiento algebraico</div>
+    <h1>Lección 5.1 · Patrones numéricos y de figuras</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#patrones-numericos">Patrones numéricos</a></li>
+      <li><a href="#patrones-figuras">Patrones de figuras</a></li>
+      <li><a href="#entrada-salida">Tablas de entrada y salida</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="patrones-numericos" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Patrones numéricos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un <strong>patrón</strong> es una lista de números que sigue una <strong>regla</strong>. Cada número es un <strong>término</strong>.
+      Para descubrir la regla, fíjese en qué cambia de un término al siguiente. Si los números crecen despacio y parejo, la regla casi siempre
+      es sumar. Si crecen muy rápido (se duplican o se triplican), la regla casi siempre es multiplicar.</p>
+      <h3>Forme su propio patrón</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:150px;"><label for="pn-i">Primer término: <span id="pn-iv"></span></label><input type="range" id="pn-i" min="1" max="50" value="3"></div>
+          <div class="campo"><label for="pn-o">Regla</label><select id="pn-o"><option value="+">sumar</option><option value="-">restar</option><option value="x">multiplicar por</option></select></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="pn-k">Cantidad: <span id="pn-kv"></span></label><input type="range" id="pn-k" min="1" max="12" value="5"></div>
+        </div>
+        <div class="secuencia" id="pn-sec" aria-live="polite"></div>
+        <p class="nota">Mueva los deslizadores y cambie la regla. Fíjese en que al sumar los números crecen parejo, y al multiplicar crecen muy rápido.</p>
+      </div>
+      <h3>Practique: ¿qué sigue o qué falta?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="patrones-figuras">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Patrones de figuras</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Las figuras también pueden seguir reglas. El truco: <strong>cuente algo</strong> (cuadritos, puntos, palitos) y escriba los números.
+      El patrón de figuras se vuelve un patrón numérico, y usted ya sabe descubrir su regla.</p>
+      <h3>Figuras que crecen</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="pf-t">Patrón</label><select id="pf-t"><option value="0">Cuadrados que crecen</option><option value="1">Filas de 3 puntos</option><option value="2">Figuras en L</option><option value="3">Escaleras</option></select></div></div>
+        <div id="pf-svg"></div>
+        <div class="salida" id="pf-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿cuántos tendrá?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Cuántos</label><input type="text" inputmode="numeric" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="entrada-salida">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Tablas de entrada y salida</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La <strong>entrada</strong> es el número que se mete en la «máquina». La <strong>salida</strong> es el número que sale
+      después de que la máquina usa su regla. La regla une <strong>cada entrada con su propia salida</strong>: no compare una fila con
+      la siguiente.</p>
+      <h3>La máquina de reglas</h3>
+      <div class="panel">
+        <p>La máquina tiene una regla escondida. Escriba una entrada y vea qué sale. Pruebe varias entradas y después adivine la regla.</p>
+        <div class="maquina"><label for="mq-e" class="sr-only">Entrada</label><input type="text" inputmode="numeric" id="mq-e" value="1"> <span aria-hidden="true">→</span> <span class="caja" id="mq-caja">regla ?</span> <span aria-hidden="true">→</span> <span id="mq-s" aria-live="polite"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="mq-ok">Meter en la máquina</button><button type="button" class="btn-sec" id="mq-ver">Mostrar la regla</button><button type="button" class="btn-sec" id="mq-nueva">Otra máquina</button></div>
+        <div class="tabla-scroll" id="mq-tabla"></div>
+      </div>
+      <h3>Practique: ¿cuál es la regla?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <h3>Practique: halle la salida</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Salida</label><input type="text" inputmode="numeric" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 5 · Patrones y pensamiento algebraico · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ Utilidades ============ */
+function aplica(o, k, x){ return o === "+" ? x + k : (o === "-" ? x - k : x * k); }
+function sim(o){ return o === "+" ? "+" : (o === "-" ? "−" : "×"); }
+function reglaTxt(o, k){ return (o === "x" ? "multiplicar por " : (o === "+" ? "sumar " : "restar ")) + k; }
+/* cadena de la sucesión: términos t, etiqueta del salto s, posición del término que falta (o -1) */
+function secHTML(t, s, falta){
+  var h = "";
+  t.forEach(function(v, i){
+    if (i) h += '<span class="s" aria-hidden="true">' + s + '</span>';
+    h += '<span class="t' + (i === falta ? " falta" : "") + '">' + (i === falta ? "?" : com(v)) + '</span>';
+  });
+  return h;
+}
+
+/* ============ MÓDULO 1 · patrones numéricos ============ */
+function pintaPN(){
+  var i = +$("pn-i").value, o = $("pn-o").value, k = +$("pn-k").value, t = [i];
+  if (o === "x" && k > 5) k = 5;
+  if (o === "-" && i - 5 * k < 0){ i = Math.min(50, 5 * k); $("pn-i").value = i; if (i - 5 * k < 0){ k = Math.floor(i / 5); } }
+  $("pn-iv").textContent = i; $("pn-kv").textContent = k;
+  for (var n = 1; n < 6; n++) t.push(aplica(o, k, t[n - 1]));
+  $("pn-sec").innerHTML = '<span aria-hidden="true" style="display:contents">' + secHTML(t, sim(o) + k, -1) + '</span>' +
+    '<span class="sr-only">Patrón: ' + t.join(", ") + '. Regla: ' + reglaTxt(o, k) + ' cada vez.</span>';
+}
+function genPatron(){
+  var o = elige(["+", "+", "-", "x"]), k = o === "x" ? aleatorio(2, 3) : aleatorio(2, 12), t = [o === "x" ? aleatorio(1, 5) : aleatorio(1, 40)];
+  if (o === "-") t[0] = aleatorio(6 * k, 6 * k + 40);
+  for (var n = 1; n < 5; n++) t.push(aplica(o, k, t[n - 1]));
+  var enMedio = Math.random() < 0.4, pos = enMedio ? aleatorio(1, 3) : 4, cor = t[pos], base = t[pos - 1];
+  var regla = reglaTxt(o, k), todos = t.map(com).join(", ");
+  var op = [{ v: cor, clave: "n" + cor }], pistas = {};
+  function agrega(v, msg){ if (v > 0 && !op.some(function(x){ return x.v === v; })){ op.push({ v: v, clave: "n" + v }); pistas["n" + v] = msg; } }
+  if (o === "x"){
+    agrega(base + k, "Los números crecen muy rápido, así que la regla multiplica; no suma. Divida un término entre el anterior.");
+    agrega(aplica(o, k, cor), enMedio ? "Ese número está un salto más allá. El término que falta viene justo después de " + com(base) + "." : "Eso son dos saltos después de " + com(base) + ". Solo necesita uno.");
+    agrega(base * (k + 1), "Revise la regla: cada término es " + k + " veces el anterior.");
+  } else {
+    var dir = o === "+" ? 1 : -1;
+    agrega(cor + dir * k, enMedio ? "Ese número está un salto más allá. El término que falta viene justo después de " + com(base) + "." : "Eso son dos saltos después de " + com(base) + ". Solo necesita uno.");
+    agrega(cor + dir, "Revise el tamaño del salto: es " + k + " cada vez, no " + (k + 1) + " ni " + (k - 1) + ".");
+    agrega(base - dir * k, o === "+" ? "Los números suben, así que la regla suma. Usted restó." : "Los números bajan, así que la regla resta. Usted sumó.");
+  }
+  var extra = 2; while (op.length < 4 && extra < 40){ agrega(cor + extra * (o === "-" ? -1 : 1) + 1, "Busque primero el salto: compare dos términos que estén uno al lado del otro."); extra++; }
+  var txt = t.map(function(v, j){ return j === pos ? "___" : com(v); }).join(", ") + (pos === 4 ? "" : ", …");
+  return {
+    enun: (pos === 4 ? "¿Qué número sigue en el patrón " : "¿Qué número falta en el patrón ") + "<strong>" + txt + "</strong>?",
+    opciones: op.map(function(x){ return { html: com(x.v), clave: x.clave }; }), correcta: "n" + cor, pistas: pistas,
+    pista: "Busque el salto: compare dos términos que estén uno al lado del otro.",
+    bien: "La regla es " + regla + " cada vez: " + todos + ".",
+    mal: "De un término al siguiente, hay que " + regla + ": " + com(base) + " " + sim(o) + " " + k + " = " + com(cor) + ". El patrón completo es " + todos + "."
+  };
+}
+
+/* ============ MÓDULO 2 · patrones de figuras ============ */
+var PF = [
+  { nom: "cuadritos", f: function(n){ return n * n; }, regla: "la figura n es un cuadrado con n filas de n cuadritos (n × n)", dib: function(n){ var s = []; for (var i = 0; i < n; i++) for (var j = 0; j < n; j++) s.push([i, j]); return s; } },
+  { nom: "puntos", f: function(n){ return 3 * n; }, regla: "cada figura agrega 3 puntos (una fila más de 3)", dib: function(n){ var s = []; for (var i = 0; i < n; i++) for (var j = 0; j < 3; j++) s.push([j, i]); return s; } },
+  { nom: "cuadritos", f: function(n){ return 2 * n + 1; }, regla: "cada figura agrega 2 cuadritos (uno en cada brazo de la L)", dib: function(n){ var s = [[0, 0]]; for (var i = 1; i <= n; i++){ s.push([i, 0]); s.push([0, i]); } return s; } },
+  { nom: "cuadritos", f: function(n){ return n * (n + 1) / 2; }, regla: "cada escalón nuevo tiene un cuadrito más que el anterior (+2, +3, +4, …)", dib: function(n){ var s = []; for (var i = 0; i < n; i++) for (var j = 0; j <= i; j++) s.push([i, j]); return s; } }
+];
+function figSVG(P, n0, n1){
+  var u = 22, datos = [], alto = 0, punto = P.nom === "puntos";
+  for (var n = n0; n <= n1; n++){ var cel = P.dib(n), mx = 0, my = 0; cel.forEach(function(c){ mx = Math.max(mx, c[0]); my = Math.max(my, c[1]); }); datos.push({ n: n, cel: cel, w: (mx + 1) * u }); alto = Math.max(alto, (my + 1) * u); }
+  var slots = datos.map(function(d){ return Math.max(d.w, 96); }), tot = slots.reduce(function(a, b){ return a + b + 24; }, -24), W = Math.max(640, tot + 40), H = alto + 50, x = (W - tot) / 2;
+  var voz = "Figuras " + n0 + " a " + n1 + " del patrón, con " + datos.map(function(d){ return d.cel.length; }).join(", ") + " " + P.nom + ".";
+  var s = '<svg class="figura" viewBox="0 0 ' + W + ' ' + H + '" role="img" aria-label="' + voz + '">';
+  datos.forEach(function(d, k){
+    var x0 = x + (slots[k] - d.w) / 2;
+    d.cel.forEach(function(c){ var cx = x0 + c[0] * u, cy = alto + 6 - (c[1] + 1) * u; s += punto ? '<circle cx="' + (cx + u / 2) + '" cy="' + (cy + u / 2) + '" r="' + (u / 2 - 2) + '" fill="#0d47a1"/>' : '<rect x="' + cx + '" y="' + cy + '" width="' + (u - 2) + '" height="' + (u - 2) + '" fill="#1565c0"/>'; });
+    s += texto([x + slots[k] / 2, alto + 34], "Figura " + d.n, 17, "#222"); x += slots[k] + 24;
+  });
+  return s + '</svg>';
+}
+function pintaPF(){
+  var P = PF[+$("pf-t").value], vals = [1, 2, 3, 4].map(P.f);
+  $("pf-svg").innerHTML = figSVG(P, 1, 4);
+  $("pf-salida").innerHTML = '<div class="linea">Cuente los ' + P.nom + ': ' + vals.join(", ") + ', …</div><div class="linea">Regla: ' + P.regla + '.</div><div class="linea veredicto">Figura 5: ' + P.f(5) + ' · Figura 10: ' + P.f(10) + '</div>';
+}
+function genFig(){
+  var P = PF[aleatorio(0, 3)], n = Math.random() < 0.5 ? 5 : aleatorio(6, 10), vals = [1, 2, 3, 4].map(P.f), r = P.f(n), p = [];
+  var dif = vals[3] - vals[2];
+  if (vals[3] + dif * (n - 4) !== r) p.push({ v: vals[3] + dif * (n - 4), msg: "Revise si el salto de una figura a la siguiente es siempre el mismo. Escriba los números siguientes uno por uno." });
+  if (n > 5 && P.f(5) !== r) p.push({ v: P.f(5), msg: "Esa es la figura 5. Siga, figura por figura, hasta la figura " + n + "." });
+  if (n > 5 && 2 * P.f(n / 2) !== r && n % 2 === 0) p.push({ v: 2 * P.f(n / 2), msg: "Duplicar la figura " + (n / 2) + " no sirve aquí. Vaya figura por figura: descubra la regla y úsela." });
+  var serie = []; for (var i = 1; i <= n; i++) serie.push(P.f(i));
+  return {
+    enun: "Un patrón de figuras tiene " + vals.join(", ") + " " + P.nom + " en las figuras 1 a 4. ¿Cuántos " + P.nom + " tendrá la <strong>figura " + n + "</strong>?" + figSVG(P, 1, 3),
+    solucion: "Regla: " + P.regla + ". Figuras 1 a " + n + ": " + serie.join(", ") + ". Respuesta: <strong>" + r + "</strong>.",
+    evalua: numN(r, p, "Escriba los números figura por figura hasta llegar a la figura " + n + ".")
+  };
+}
+
+/* ============ MÓDULO 3 · tablas de entrada y salida ============ */
+var MQ = {};
+function nuevaMQ(){
+  MQ = { o: elige(["+", "x", "-", "+"]), k: aleatorio(2, 9), filas: [], vista: false };
+  if (MQ.o === "-") MQ.k = aleatorio(1, 5);
+  $("mq-caja").textContent = "regla ?"; $("mq-s").textContent = ""; pintaMQ();
+}
+function meteMQ(){
+  var e = leeNum($("mq-e").value);
+  if (e === null || e > 999){ $("mq-s").textContent = "Escriba un número entero del 0 al 999."; return; }
+  if (MQ.o === "-" && e < MQ.k){ $("mq-s").textContent = "Pruebe un número más grande."; return; }
+  var s = aplica(MQ.o, MQ.k, e);
+  $("mq-s").textContent = "salida: " + com(s);
+  if (!MQ.filas.some(function(f){ return f[0] === e; })) MQ.filas.push([e, s]);
+  pintaMQ();
+}
+function pintaMQ(){
+  var h = '<table class="comparar"><caption>Lo que salió de la máquina</caption><thead><tr><th scope="col">Entrada</th><th scope="col">Salida</th></tr></thead><tbody>' +
+    MQ.filas.map(function(f){ return '<tr><td>' + com(f[0]) + '</td><td>' + com(f[1]) + '</td></tr>'; }).join("") + '</tbody></table>';
+  $("mq-tabla").innerHTML = MQ.filas.length ? h : "";
+  if (MQ.vista) $("mq-caja").textContent = "entrada " + sim(MQ.o) + " " + MQ.k;
+}
+function tablaES(o, k, ent){
+  return '<table class="comparar"><caption>Tabla de entrada y salida</caption><thead><tr><th scope="col">Entrada</th><th scope="col">Salida</th></tr></thead><tbody>' +
+    ent.map(function(e){ return '<tr><td>' + e + '</td><td>' + aplica(o, k, e) + '</td></tr>'; }).join("") + '</tbody></table>';
+}
+function genRegla(){
+  var o = elige(["+", "x", "-"]), k = aleatorio(2, 6), ini = aleatorio(o === "-" ? k : 1, 6);
+  if (o === "x" && k === 2 && ini === 2) ini = 3;
+  var ent = [ini, ini + 1, ini + 2, ini + 3], s0 = aplica(o, k, ent[0]);
+  function etiqueta(oo, kk){ return "salida = entrada " + sim(oo) + " " + kk; }
+  var cands = [[o, k]], pistas = {};
+  function prueba(c, msg){
+    if (c[1] > 0 && !cands.some(function(x){ return x[0] === c[0] && x[1] === c[1]; }) && !ent.every(function(e){ return aplica(c[0], c[1], e) === aplica(o, k, e); })){ cands.push(c); pistas[c[0] + c[1]] = msg; }
+  }
+  var salto = aplica(o, k, ent[1]) - s0;
+  prueba(["+", salto], "Eso compara una fila con la siguiente. La regla une cada entrada con su propia salida: " + ent[0] + " → " + s0 + ".");
+  prueba(["+", s0 - ent[0]], "Eso sirve solo para la primera fila. Revíselo con la segunda: " + ent[1] + " → " + aplica(o, k, ent[1]) + ".");
+  prueba(["x", k], "Pruébelo en la primera fila: " + ent[0] + " × " + k + " = " + ent[0] * k + ", no " + s0 + ".");
+  prueba(["+", k], "Pruébelo en la primera fila: " + ent[0] + " + " + k + " = " + (ent[0] + k) + ", no " + s0 + ".");
+  prueba(["-", k], "Las salidas son " + (s0 > ent[0] ? "mayores" : "menores") + " que las entradas, así que revise la operación.");
+  cands = [cands[0]].concat(baraja(cands.slice(1)).slice(0, 3));
+  return {
+    enun: "¿Qué regla sigue esta tabla?" + tablaES(o, k, ent),
+    opciones: cands.map(function(c){ return { html: etiqueta(c[0], c[1]), clave: c[0] + c[1] }; }), correcta: o + k, pistas: pistas,
+    pista: "Mire cada fila de izquierda a derecha: ¿qué le pasa a la entrada para dar su salida? Compruebe su regla en todas las filas.",
+    bien: "Cada entrada " + sim(o) + " " + k + " da su salida: " + ent.map(function(e){ return e + " " + sim(o) + " " + k + " = " + aplica(o, k, e); }).join("; ") + ".",
+    mal: "Compare cada entrada con su propia salida: " + ent[0] + " → " + s0 + ", " + ent[1] + " → " + aplica(o, k, ent[1]) + ". La regla es salida = entrada " + sim(o) + " " + k + "."
+  };
+}
+function genSalida(){
+  var o = elige(["+", "x", "-"]), k = aleatorio(2, 8), ini = aleatorio(o === "-" ? k : 1, 5), ent = [ini, ini + 1, ini + 2], nueva = aleatorio(10, 25), r = aplica(o, k, nueva);
+  var sigFila = aplica(o, k, ent[2]) + (aplica(o, k, ent[2]) - aplica(o, k, ent[1])), p = [];
+  if (sigFila !== r) p.push({ v: sigFila, msg: "Esa es la salida de la fila siguiente de la tabla, no la salida para " + nueva + ". Use la regla con la entrada " + nueva + "." });
+  return {
+    enun: "Use la regla de esta tabla. ¿Cuál es la salida cuando la entrada es <strong>" + nueva + "</strong>?" + tablaES(o, k, ent),
+    solucion: "La regla es salida = entrada " + sim(o) + " " + k + ". Así que " + nueva + " " + sim(o) + " " + k + " = <strong>" + r + "</strong>.",
+    evalua: numN(r, p, "Primero descubra la regla en la tabla, y después úsela con " + nueva + ".")
+  };
+}
+
+/* ---------- Arranque ---------- */
+["pn-i", "pn-k"].forEach(function(id){ $(id).addEventListener("input", pintaPN); }); $("pn-o").addEventListener("change", pintaPN); pintaPN();
+creaPracticaOM("p1", genPatron);
+$("pf-t").addEventListener("change", pintaPF); pintaPF();
+creaPracticaLibre("p2", genFig);
+$("mq-ok").addEventListener("click", meteMQ); $("mq-e").addEventListener("keydown", function(e){ if (e.key === "Enter") meteMQ(); });
+$("mq-ver").addEventListener("click", function(){ MQ.vista = true; pintaMQ(); }); $("mq-nueva").addEventListener("click", nuevaMQ); nuevaMQ();
+creaPracticaOM("p3", genRegla);
+creaPracticaLibre("p4", genSalida);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
