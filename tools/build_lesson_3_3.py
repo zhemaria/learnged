@@ -88,7 +88,7 @@ LESSON = {
         "solution": "The 3s repeat and never end, so 0.333… is a repeating decimal. In daily life we round it: 1/3 ≈ 0.33."},
   "F": {"ok": "b", "hints": {"a": "Write 2.6 as 2.60 and subtract: 2.60 − 0.85.", "c": "You used some of the flour, so there is less left: subtract.", "d": "Check the borrowing: 2.60 − 0.85."},
         "solution": "Used means subtract. 2.60 − 0.85 = 1.75. There are 1.75 pounds of flour left."},
-  "G": {"ok": "d", "hints": {"a": "4 kilos at $1.25 each are equal groups: multiply, do not add.", "b": "Check: 4 × 1 = 4 and 4 × 0.25 = 1.", "c": "Do not forget the 25 cents: 4 × 0.25 = 1."},
+  "G": {"ok": "d", "hints": {"a": "4 pounds at $1.25 each are equal groups: multiply, do not add.", "b": "Check: 4 × 1 = 4 and 4 × 0.25 = 1.", "c": "Do not forget the 25 cents: 4 × 0.25 = 1."},
         "solution": "1.25 × 4 = 5.00. Shortcut: 4 × $1 = $4 and 4 × 25 cents = $1, so $5.00."},
   "H": {"ok": "a", "hints": {"b": "Check the total first: 6.80 + 5.45 = 12.25.", "c": "Check the hundredths: 15.00 − 12.25.", "d": "That is the total you spent. The question asks for the change."},
         "solution": "Two steps. First the total: 6.80 + 5.45 = 12.25. Then the change: 15.00 − 12.25 = 2.75. Your change is $2.75."},

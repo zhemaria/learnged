@@ -134,7 +134,7 @@ R("<p>With this lesson you finish <strong>Topic 2 · Multiplication and division
   "<p>Con esta lección termina el <strong>Tema 2 · Multiplicación y división</strong>. Ya sabe usar las cuatro operaciones con números enteros y resolver problemas verbales con cualquiera de ellas.</p>")
 R("<p>In <strong>Topic 3 · Decimals</strong> you will take a very useful step for daily life: working with the numbers you see in prices and money. <strong>Lesson 3.1</strong> teaches you to read, write, compare, and round decimals. From there, you will also start using the TI-30XS calculator to check your work.</p>",
   "<p>En el <strong>Tema 3 · Decimales</strong> dará un paso muy útil para la vida diaria: trabajar con los números que ve en los precios y el dinero. La <strong>Lección 3.1</strong> le enseña a leer, escribir, comparar y redondear decimales. A partir de ahí, también empezará a usar la calculadora TI-30XS para comprobar su trabajo.</p>")
-R('Next: <a href="lesson-3-1.html">Lesson 3.1 · Decimals: read, write, compare, and round</a>', 'Siguiente: Lección 3.1 · Decimales: leer, escribir, comparar y redondear')
+R('Next: <a href="lesson-3-1.html">Lesson 3.1 · Decimals: read, write, compare, and round</a>', 'Siguiente: <a href="leccion-3-1.html">Lección 3.1 · Decimales: leer, escribir, comparar y redondear</a>')
 R("""<dt>equal groups</dt><dd>Groups that all have the same number of things. 15 packs of 12 soaps are 15 equal groups.</dd>
 <dt>split equally (share equally)</dt><dd>To divide a total so that every group gets the same amount.</dd>
 <dt>per</dt><dd>For each. "$15 per hour" means $15 for each hour.</dd>

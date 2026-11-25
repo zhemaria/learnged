@@ -8,7 +8,7 @@ DIR = os.path.join(ROOT, "es", "matematicas", "nivel-1")
 TEMAS = [
  ("1", "Números enteros", [("1-1", "Valor posicional y números enteros"), ("1-2", "Suma y resta de números enteros"), ("1-3", "Suma y resta en problemas verbales")]),
  ("2", "Multiplicación y división", [("2-1", "Multiplicación de números enteros"), ("2-2", "División de números enteros"), ("2-3", "Multiplicación y división en problemas verbales")]),
- ("3", "Decimales", [("3-1", "Decimales: leer, escribir, comparar y redondear"), ("3-2", "Operaciones con decimales"), ("3-3", "Decimales en contexto y equivalencias fracción–decimal")]),
+ ("3", "Decimales", [("3-1", "Decimales: leer, escribir, comparar y redondear"), ("3-2", "Operaciones con decimales"), ("3-3", "Decimales en contexto y formas equivalentes")]),
  ("4", "Fracciones", [("4-1", "Fracciones equivalentes, simplificar y comparar"), ("4-2", "Suma y resta de fracciones"), ("4-3", "Multiplicación y división de fracciones"), ("4-4", "Operaciones con números mixtos")]),
  ("5", "Patrones y pensamiento algebraico", [("5-1", "Patrones numéricos y de figuras"), ("5-2", "Lenguaje algebraico e incógnitas simples"), ("5-3", "Problemas verbales de un paso con las cuatro operaciones")]),
  ("6", "Sistemas de medidas y el tiempo", [("6-1", "Sistema inglés: longitud, peso y capacidad"), ("6-2", "Sistema métrico, tiempo y temperatura"), ("6-3", "Problemas aplicados de medición en contexto real")]),
@@ -17,7 +17,7 @@ TEMAS = [
 ]
 # Complementos de algunas lecciones: (lección, archivo de la lección, archivo de práctica o None, texto)
 EXTRAS = {
- "3-1": ("explorar", "decimales-infinitos.html", None, "explorar: los decimales no terminan"),
+ "3-1": ("explorar", "decimales-infinitos.html", None, "explorar: los decimales no se acaban"),
  "4-1": ("complemento", "leccion-4-1-mcd-mcm.html", "practica-4-1-mcd-mcm.html", "Factores, múltiplos, MCD y MCM"),
 }
 
