@@ -28,9 +28,9 @@ TEMAS = {
 # Extras: (kind, lesson file, practice file or None, text)
 EXTRAS = {
  "en": {"3-1": ("explore", "infinite-decimals.html", None, "Explore: decimals never end"),
-        "4-1": ("complement", "lesson-4-1-gcf-lcm.html", "practice-4-1-gcf-lcm.html", "Complement: factors, multiples, GCF, and LCM")},
+        "4-1": ("complement", "lesson-4-1-gcf-lcm.html", "practice-4-1-gcf-lcm.html", "Complement: GCF and LCM")},
  "es": {"3-1": ("explore", "decimales-infinitos.html", None, "Explorar: los decimales no se acaban"),
-        "4-1": ("complement", "leccion-4-1-mcd-mcm.html", "practica-4-1-mcd-mcm.html", "Complemento: factores, múltiplos, MCD y MCM")}}
+        "4-1": ("complement", "leccion-4-1-mcd-mcm.html", "practica-4-1-mcd-mcm.html", "Complemento: MCD y MCM")}}
 
 TX = {
  "en": {"dir": "math/level-1", "lec": "lesson-{}.html", "prac": "practice-{}.html", "lang": "en", "title": "Math · Level 1 · LearnGED",
@@ -69,7 +69,8 @@ CSS = """  main.nivel{max-width:1320px}
   .tema .lec{flex:1}
   .tema .prac{flex:none;font-size:.82em;font-weight:700;border:1px solid var(--teal);border-radius:999px;padding:2px 10px;text-decoration:none;white-space:nowrap}
   .tema .prac:hover{background:#f1faf9}
-  .tema li.extra{display:block;font-size:.88em;padding-left:2.9em;border-top:0;padding-top:0}
+  .tema li.extra{font-size:.9em;border-top:0;padding-top:0}
+  .tema li.extra .num{min-width:2.34em}
   .tema li.soon{color:var(--muted)}
   body.hc .tema{border-color:#000}
   .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -92,8 +93,8 @@ def construye(L):
                 items.append(f'<li><span class="num" aria-hidden="true">{num}</span><a class="lec" href="{X["lec"].format(k)}"><span class="sr">{X["leccion"]} {num}: </span>{titulo}</a>{p}</li>')
                 x = EXTRAS[L].get(k)
                 if x and existe(x[1]):
-                    pe = f' · <a href="{x[2]}">{X["practica"]}</a>' if x[2] and existe(x[2]) else ""
-                    items.append(f'<li class="extra"><a href="{x[1]}">{x[3]}</a>{pe}</li>')
+                    pe = f' <a class="prac" href="{x[2]}" aria-label="{X["practica"]}: {x[3]}">{X["practica"]}</a>' if x[2] and existe(x[2]) else ""
+                    items.append(f'<li class="extra"><span class="num" aria-hidden="true"></span><a class="lec" href="{x[1]}">{x[3]}</a>{pe}</li>')
             else:
                 items.append(f'<li class="soon"><span class="num" aria-hidden="true">{num}</span><span class="lec"><span class="sr">{X["leccion"]} {num}: </span>{titulo} — {X["pronto"]}</span></li>')
         tarjetas.append(f'<section class="tema" id="{ancla}" aria-labelledby="h-{ancla}"><h2 id="h-{ancla}"><span class="tn" aria-hidden="true">{n}</span><span><span class="sr">{X["tema"]} {n}: </span>{nombre}</span></h2>\n<ul>\n' + "\n".join(items) + '\n</ul></section>')
