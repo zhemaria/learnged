@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 1 · Lesson 3.1 · Decimals — interactive (English)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 3.1 · Decimals: read, write, compare, and round · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 1 · Topic 3 · Decimals</div>
+    <h1>Lesson 3.1 · Decimals: read, write, compare, and round</h1>
+    <div class="meta">Three practice activities on one page. The exercises change every time, so you can practice as many times as you want. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#place-value">Place value after the decimal point</a></li>
+      <li><a href="#compare">Compare and order decimals</a></li>
+      <li><a href="#round">Round decimals</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="place-value" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Place value after the decimal point</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Decimals are the place value chart <strong>continued to the right</strong>. The point separates the whole part from the parts:
+      in $3.99 there are 3 whole dollars and 99 cents. To the right of the point are the <strong>tenths</strong>, the
+      <strong>hundredths</strong>, and the <strong>thousandths</strong>. Each place is worth 10 times less than the place before it.</p>
+
+      <h3>Put a decimal in the chart</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="vd-n">Type a decimal (up to 3 digits after the point)</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="vd-n" value="4.625"></div></div>
+        <div class="caja-aviso" id="vd-aviso" role="alert"></div>
+        <div class="tabla-scroll" id="vd-tabla"></div>
+        <p class="nota">Press a digit in the chart to see what it is worth.</p>
+        <div class="salida" id="vd-salida" aria-live="polite"></div>
+      </div>
+
+      <div class="caja-atencion">
+        <strong>The last place gives the name:</strong> 0.7 is seven <em>tenths</em>; 0.07 is seven <em>hundredths</em>; 0.007 is seven <em>thousandths</em>.
+      </div>
+
+      <h3>Practice: which place is it in?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+
+      <h3>Practice: how do you read it?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="compare">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Compare and order decimals</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Compare <strong>place by place, from left to right</strong>. If the numbers have a different number of digits, add
+      <strong>zeros on the right</strong>. They do not change the value: 0.6 = 0.60 = 0.600.</p>
+      <h3>Compare on the number line</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="cd-a">First decimal</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="cd-a" value="0.6"></div>
+          <div class="campo"><label for="cd-b">Second decimal</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="cd-b" value="0.58"></div>
+        </div>
+        <div id="cd-svg"></div>
+        <div class="salida" id="cd-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion">
+        <strong>The most common mistake:</strong> thinking that 0.58 is greater than 0.6 "because it has more digits." With decimals,
+        more digits do not mean more value.
+      </div>
+      <h3>Practice: which symbol goes there?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p3-nuevo">New exercise</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <h3>Practice: the cheapest or the most expensive?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="round">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Round decimals</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>It is the same neighbor-on-the-right rule from Lesson 1.1: if the neighbor is 0 to 4, the digit stays the same; if it is
+      5 to 9, the digit goes up by one. The difference: the digits on the right <strong>are dropped</strong>. They do not turn into zeros.</p>
+      <h3>Round on the number line</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="rd-n">Decimal</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="rd-n" value="5.348"></div>
+          <div class="campo"><label for="rd-l">Round to</label><select id="rd-l"><option value="0">the nearest whole number</option><option value="1" selected>the nearest tenth</option><option value="2">the nearest hundredth (the cent)</option></select></div>
+        </div>
+        <div id="rd-svg"></div>
+        <div class="salida" id="rd-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: round</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Rounded number</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Type the number with a decimal point, for example 5.3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 1 · Topic 3 · Decimals · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script>
+/* ============ Exact decimals (scaled whole numbers, no floating-point surprises) ============ */
+function nDec(s){ s = String(s); var p = s.indexOf("."); return p < 0 ? 0 : s.length - p - 1; }
+function aEsc(s, k){ s = String(s); var d = nDec(s); return parseInt(s.replace(".", ""), 10) * Math.pow(10, k - d); }
+function deEsc(v, k){ var s = String(Math.abs(v)); while (s.length <= k) s = "0" + s; return k ? s.slice(0, s.length - k) + "." + s.slice(s.length - k) : s; }
+function limpia(s){ s = String(s); if (s.indexOf(".") < 0) return s; return s.replace(/0+$/, "").replace(/\.$/, ""); }
+function valido(s){ return /^\d{1,6}(\.\d{1,3})?$/.test(String(s).trim()); }
+function azDec(ent, k){ var s = String(aleatorio(0, ent)) + "."; for (var i = 0; i < k; i++) s += aleatorio(i === k - 1 ? 1 : 0, 9); return s; }
+var LUG = ["", "tenths", "hundredths", "thousandths"], LUG1 = ["", "tenth", "hundredth", "thousandth"];
+/* Read a decimal in words, US style: the point is read "and" */
+function decWords(s){
+  s = String(s); var p = s.split("."), e = +p[0], d = p[1] || "";
+  if (!d) return words(e);
+  var n = +d, k = d.length, dec = (n === 0 ? "zero" : words(n)) + " " + (n === 1 ? LUG1[k] : LUG[k]);
+  return (e ? words(e) + " and " : "") + dec;
+}
+function gt(x){ return { ">": "&gt;", "<": "&lt;", "=": "=" }[x]; }
+
+/* ============ MODULE 1 · place value ============ */
+var COLS = [["Hundreds", 2], ["Tens", 1], ["Ones", 0], ["Point", null], ["Tenths", -1], ["Hundredths", -2], ["Thousandths", -3]];
+var VD = { sel: null, s: "" };
+function pintaVD(){
+  var s = $("vd-n").value.trim(), av = $("vd-aviso");
+  if (!valido(s) || s.split(".")[0].replace(/^0+(?=\d)/, "").length > 3){
+    av.className = "caja-aviso visible"; av.textContent = "Type a decimal with a point, for example 4.625 (up to 3 digits before and after the point)."; return;
+  }
+  av.className = "caja-aviso"; av.textContent = "";
+  if (s !== VD.s){ VD.s = s; VD.sel = null; }
+  var p = s.split("."), e = p[0].replace(/^0+(?=\d)/, ""), d = p[1] || "";
+  var cel = COLS.map(function(c){ if (c[1] === null) return "."; if (c[1] >= 0){ var k = e.length - 1 - c[1]; return k >= 0 ? e[k] : ""; } return d[-c[1] - 1] || ""; });
+  var h = '<table class="vp"><caption class="sr-only">Place value chart for ' + s + '</caption><tr class="fila-grupo"><td colspan="3">Whole part</td><td></td><td colspan="3">Decimal part</td></tr><tr>' +
+    COLS.map(function(c){ return '<th scope="col">' + c[0] + '</th>'; }).join("") + '</tr><tr>' +
+    cel.map(function(x, i){ return COLS[i][1] === null ? '<td>.</td>' : '<td class="' + (i === VD.sel ? "sel" : "") + '">' + (x ? '<button type="button" class="eleccion" style="font-size:24px;padding:2px 10px" data-i="' + i + '" aria-label="Digit ' + x + ', ' + COLS[i][0].toLowerCase() + ' place">' + x + '</button>' : "") + '</td>'; }).join("") + '</tr></table>';
+  $("vd-tabla").innerHTML = h;
+  $("vd-tabla").querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ VD.sel = +b.getAttribute("data-i"); pintaVD(); var nb = $("vd-tabla").querySelector('[data-i="' + VD.sel + '"]'); if (nb) nb.focus(); }); });
+  var out = '<div class="linea">Read it: <strong>' + decWords(s) + '</strong>.</div><div class="linea">Whole part: ' + (e || "0") + '. Decimal part: ' + (d ? d + " (" + LUG[d.length] + ")" : "none") + '.</div>';
+  if (VD.sel !== null){
+    var c = COLS[VD.sel], x = +cel[VD.sel];
+    out += '<div class="linea veredicto">The ' + x + ' is in the ' + c[0].toLowerCase() + ' place. It is worth ' +
+      (c[1] >= 0 ? com(x * Math.pow(10, c[1])) : limpia(deEsc(x, -c[1])) + " (" + words(x) + " " + (x === 1 ? LUG1[-c[1]] : LUG[-c[1]]) + ")") + '.</div>';
+  }
+  $("vd-salida").innerHTML = out;
+}
+function genLugar(){
+  var s = azDec(99, 3), p = s.split("."), k = aleatorio(0, 2), dig = p[1][k];
+  var marcado = p[0] + "." + p[1].split("").map(function(c, j){ return j === k ? '<u style="color:#b71c1c">' + c + '</u>' : c; }).join("");
+  var nom = ["The ones", "The tenths", "The hundredths", "The thousandths"];
+  var pistas = { l0: "The ones are to the left of the point. This digit is to the right." };
+  [1, 2, 3].forEach(function(j){ if (j !== k + 1) pistas["l" + j] = "Count the places after the point: tenths (1st), hundredths (2nd), thousandths (3rd)."; });
+  return { enOrden: true, enun: "In the number <strong>" + marcado + "</strong>, which place is the underlined digit <strong>" + dig + "</strong> in?",
+    opciones: nom.map(function(x, i){ return { html: x, clave: "l" + i }; }), correcta: "l" + (k + 1), pistas: pistas,
+    bien: "It is place number " + (k + 1) + " after the point: the " + LUG[k + 1] + ".",
+    mal: "After the point come the tenths, the hundredths, and the thousandths. The " + dig + " is in the " + LUG[k + 1] + "." };
+}
+function genLeer(){
+  var k = aleatorio(1, 3), s = azDec(20, k), p = s.split("."), otros = [];
+  otros.push(p[0] + ".0" + p[1]); otros.push(p[0] + ".00" + p[1]); if (+p[0] > 0 && p[1] !== p[0]) otros.push(+p[1] + "." + p[0]); if (k > 1) otros.push(p[0] + "." + p[1].slice(0, k - 1));
+  otros = otros.filter(function(x){ return nDec(x) <= 3 && decWords(x) !== decWords(s); });
+  var ops = [s].concat(baraja(otros).slice(0, 3));
+  return { enun: "How do you read <strong>" + s + "</strong>?",
+    opciones: ops.map(function(x){ return { html: cap(decWords(x)), clave: "d" + x }; }), correcta: "d" + s,
+    pista: "Count the digits after the point. The last digit's place gives the name.",
+    bien: "The last place, the " + LUG[k] + ", gives the name.",
+    mal: "You read it \"" + decWords(s) + ".\" The last digit is in the " + LUG[k] + "." };
+}
+
+/* ============ MODULE 2 · compare ============ */
+function rectaDec(vals, voz){
+  var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), span = mx - mn, menor, mayor;
+  if (span <= 0.25){ menor = 0.01; mayor = 0.1; } else if (span <= 2.5){ menor = 0.1; mayor = 1; } else if (span <= 25){ menor = 1; mayor = 5; } else return "";
+  var lo = Math.floor(mn / mayor) * mayor, hi = Math.ceil(mx / mayor) * mayor; if (hi - lo < mayor) hi = lo + mayor;
+  if (span <= 0.25 && hi - lo < 0.2){ lo = Math.max(0, lo - 0.1); hi = lo + 0.3; }
+  var x0 = 40, x1 = 600; function X(v){ return x0 + (v - lo) / (hi - lo) * (x1 - x0); }
+  var s = '<svg class="figura" viewBox="0 0 640 150" role="img" aria-label="' + voz + '">' + linea([x0 - 15, 80], [x1 + 15, 80], "#424242", 2);
+  var n = Math.round((hi - lo) / menor), cada = Math.round(mayor / menor);
+  for (var t = 0; t <= n; t++){
+    var v = lo + t * menor, big = t % cada === 0;
+    s += linea([X(v), 80 - (big ? 12 : 5)], [X(v), 80 + (big ? 12 : 5)], big ? "#424242" : "#9e9e9e", big ? 2 : 1);
+    if (big) s += texto([X(v), 110], limpia(v.toFixed(2)), 18, "#222", 700);
+  }
+  var cols = ["#b71c1c", "#0d47a1"];
+  vals.forEach(function(v, i){ s += '<circle cx="' + f1(X(v)) + '" cy="80" r="8" fill="' + cols[i % 2] + '"/>' + texto([X(v), i % 2 ? 136 : 44], String(v), 20, cols[i % 2]); });
+  return s + '</svg>';
+}
+function pintaCD(){
+  var a = $("cd-a").value.trim(), b = $("cd-b").value.trim(), out = $("cd-salida");
+  if (!valido(a) || !valido(b)){ out.innerHTML = "Type two decimals with a point, for example 0.6 and 0.58."; $("cd-svg").innerHTML = ""; return; }
+  var k = Math.max(nDec(a), nDec(b)), A = aEsc(a, k), B = aEsc(b, k), pa = deEsc(A, k), pb = deEsc(B, k), r = A > B ? ">" : (A < B ? "<" : "=");
+  var h = '<div class="linea">' + (nDec(a) !== nDec(b) ? 'Add zeros so they are the same length: ' : 'They are already the same length: ') + '<strong>' + pa + '</strong> and <strong>' + pb + '</strong>.</div>';
+  var i = 0; while (i < pa.length && pa[i] === pb[i]) i++;
+  if (pa.length !== pb.length) h += '<div class="linea">The whole parts are different: ' + pa.split(".")[0] + ' and ' + pb.split(".")[0] + '. That decides it.</div>';
+  else if (i < pa.length) h += '<div class="linea">Place by place, from left to right, the first different digits are ' + pa[i] + ' and ' + pb[i] + '. That decides it.</div>';
+  out.innerHTML = h + '<div class="linea veredicto">' + a + ' ' + gt(r) + ' ' + b + '</div>';
+  var fig = rectaDec([parseFloat(a), parseFloat(b)], "Number line with " + a + " and " + b + ". The one farther to the right is greater.");
+  $("cd-svg").innerHTML = fig || '<p class="nota">These numbers are too far apart to show on one number line.</p>';
+}
+function genComp(){
+  var t = aleatorio(1, 3), a, b;
+  if (t === 1){ var e = aleatorio(0, 5); a = e + "." + aleatorio(1, 9); b = e + "." + aleatorio(10, 99); }
+  else if (t === 2){ var e2 = aleatorio(1, 9), x = aleatorio(1, 9); a = e2 + ".0" + x; b = e2 + "." + x; }
+  else { a = azDec(9, 2); b = Math.random() < 0.25 ? a + "0" : azDec(9, aleatorio(1, 3)); }
+  if (Math.random() < 0.5){ var tt = a; a = b; b = tt; }
+  var k = Math.max(nDec(a), nDec(b)), A = aEsc(a, k), B = aEsc(b, k), r = A > B ? ">" : (A < B ? "<" : "=");
+  var igual = "Add zeros so they are the same length: " + deEsc(A, k) + " and " + deEsc(B, k) + ". Then compare place by place.";
+  return { enOrden: true, enun: "Which symbol goes between <strong>" + a + "</strong> and <strong>" + b + "</strong>?",
+    opciones: [">", "<", "="].map(function(x){ return { html: a + " " + gt(x) + " " + b, clave: x }; }), correcta: r, pista: igual,
+    bien: "With zeros: " + deEsc(A, k) + " and " + deEsc(B, k) + ".",
+    mal: "Make them the same length: " + deEsc(A, k) + " and " + deEsc(B, k) + ". Now you can see that " + a + " " + gt(r) + " " + b + "." };
+}
+function genPrecio(){
+  var e = aleatorio(1, 9), ps = [];
+  while (ps.length < 4){ var p = e + "." + elige(["05", "50", "15", "55", "10", "01", "51", "25"]); if (ps.indexOf(p) < 0) ps.push(p); }
+  var orden = ps.slice().sort(function(x, y){ return aEsc(x, 2) - aEsc(y, 2); }), caro = Math.random() < 0.35, obj = caro ? orden[3] : orden[0];
+  var lista = orden.map(function(x){ return "$" + x; }).join(" &lt; ");
+  return { enun: "Four products cost " + ps.map(function(x){ return "$" + x; }).join(", ") + ". Which one is the <strong>" + (caro ? "most expensive" : "cheapest") + "</strong>?",
+    opciones: ps.map(function(x){ return { html: "$" + x, clave: x }; }), correcta: obj,
+    pista: "All the prices have the same dollars ($" + e + "). Compare the tenths first, then the hundredths.",
+    bien: "In order: " + lista + ".", mal: "All the prices start with $" + e + ", so compare the tenths, then the hundredths. In order: " + lista + "." };
+}
+
+/* ============ MODULE 3 · round ============ */
+function redDec(s, k){ var d = nDec(s); if (d <= k) return s; var v = aEsc(s, d), f = Math.pow(10, d - k); return deEsc(Math.floor((v + f / 2) / f), k); }
+var LUGR = ["the nearest whole number", "the nearest tenth", "the nearest hundredth"];
+function vecino(s, k){ return String(s).split(".")[1][k]; }
+function pintaRD(){
+  var s = $("rd-n").value.trim(), k = +$("rd-l").value, out = $("rd-salida");
+  if (!valido(s)){ out.innerHTML = "Type a decimal with a point, for example 5.348."; $("rd-svg").innerHTML = ""; return; }
+  var d = nDec(s);
+  if (d <= k){ out.innerHTML = '<div class="linea">' + s + ' has no digits after that place, so there is nothing to round.</div>'; $("rd-svg").innerHTML = ""; return; }
+  var r = redDec(s, k), v = aEsc(s, d), f = Math.pow(10, d - k), lo = Math.floor(v / f), loS = deEsc(lo, k), hiS = deEsc(lo + 1, k), vec = vecino(s, k);
+  var x0 = 60, x1 = 580, X = function(t){ return x0 + (t - lo * f) / f * (x1 - x0); };
+  var svg = '<svg class="figura" viewBox="0 0 640 150" role="img" aria-label="' + s + ' is between ' + loS + ' and ' + hiS + '. It rounds to ' + r + '.">' + linea([x0 - 20, 75], [x1 + 20, 75], "#424242", 2);
+  for (var t = 0; t <= 10; t++) svg += linea([x0 + t * (x1 - x0) / 10, 75 - (t % 5 ? 6 : 12)], [x0 + t * (x1 - x0) / 10, 75 + (t % 5 ? 6 : 12)], "#424242", t % 5 ? 1 : 2);
+  svg += texto([x0, 108], loS, 22, r === loS ? "#1b5e20" : "#424242") + texto([x1, 108], hiS, 22, r === hiS ? "#1b5e20" : "#424242") +
+    texto([(x0 + x1) / 2, 108], "halfway", 15, "#757575", 400) + '<circle cx="' + f1(X(v)) + '" cy="75" r="8" fill="#b71c1c"/>' + texto([X(v), 40], s, 22, "#b71c1c");
+  $("rd-svg").innerHTML = svg + '</svg>';
+  out.innerHTML = '<div class="linea">The neighbor on the right is <strong>' + vec + '</strong>: ' + (+vec >= 5 ? "5 or more, so the digit goes up by one." : "4 or less, so the digit stays the same.") +
+    ' The digits on the right are dropped.</div><div class="linea veredicto">' + s + ' rounded to ' + LUGR[k] + ' ≈ ' + r + '</div>';
+}
+function leeDec(t){ var s = String(t).replace(/[\s$,]/g, ""); return /^\d*\.?\d+$|^\d+\.$/.test(s) ? s.replace(/\.$/, "") : null; }
+function genRed(){
+  var k = aleatorio(0, 2), s = azDec(50, k + aleatorio(1, 2)), r = redDec(s, k), d = nDec(s), vec = vecino(s, k);
+  var abajo = deEsc(Math.floor(aEsc(s, d) / Math.pow(10, d - k)), k), otro = abajo === r ? deEsc(aEsc(abajo, k) + 1, k) : abajo;
+  var dinero = k === 2 && Math.random() < 0.5;
+  var enun = (dinero ? "A calculator shows a price of <strong>$" + s + "</strong>. Round it to the cent (the nearest hundredth)." : "Round <strong>" + s + "</strong> to " + LUGR[k] + ".");
+  return { enun: enun,
+    solucion: "The neighbor on the right is " + vec + (+vec >= 5 ? " (5 or more), so the digit goes up" : " (4 or less), so the digit stays the same") + ", and the rest is dropped: <strong>" + (dinero ? "$" : "") + r + "</strong>.",
+    evalua: function(t){
+      var x = leeDec(t);
+      if (x === null) return { estado: "invalido", msg: "Type the number with digits and a decimal point, for example 5.3." };
+      if (x.indexOf(".") === 0) x = "0" + x;
+      var kk = Math.max(nDec(x), k, nDec(r));
+      if (aEsc(x, kk) === aEsc(r, kk)){
+        if (nDec(x) > k) return { estado: "mal", msg: "The value is right, but you kept too many digits. When you round to " + LUGR[k] + ", keep " + (k === 0 ? "no digits" : k === 1 ? "one digit" : "two digits") + " after the point." };
+        return { estado: "bien" };
+      }
+      if (aEsc(x, kk) === aEsc(otro, kk)) return { estado: "mal", msg: "Check the neighbor on the right: with 5 or more the digit goes up; with 4 or less it stays the same." };
+      if (nDec(x) !== k) return { estado: "mal", msg: "Round to " + LUGR[k] + ": keep " + (k === 0 ? "no digits" : k === 1 ? "one digit" : "two digits") + " after the point." };
+      return { estado: "mal", msg: "Find the place you are rounding to, then look only at its neighbor on the right." };
+    } };
+}
+
+/* ---------- Start ---------- */
+$("vd-n").addEventListener("input", pintaVD); pintaVD();
+creaPracticaOM("p1", genLugar);
+creaPracticaOM("p2", genLeer);
+["cd-a", "cd-b"].forEach(function(id){ $(id).addEventListener("input", pintaCD); }); pintaCD();
+creaPracticaOM("p3", genComp);
+creaPracticaOM("p4", genPrecio);
+$("rd-n").addEventListener("input", pintaRD); $("rd-l").addEventListener("change", pintaRD); pintaRD();
+creaPracticaLibre("p5", genRed);
+iniciaNavegacion();
+</script>
+</body>
+</html>

@@ -169,3 +169,28 @@ function tablaCol(W, filas, arriba, res, act, voz){
   return h + '</tbody></table>';
 }
 function digitos(n, W){ var s = String(n), d = []; for (var i = 0; i < W - s.length; i++) d.push(null); return d.concat(s.split("").map(Number)); }
+
+/* ---------- Leo, the LearnGED owl (decorative: the text already says everything) ----------
+   Right answer → leo-bien · first mistake (hint) → leo-piensa · solution shown → leo-pista
+   The lesson header gets Leo waving. Images use alt="" so screen readers skip them. */
+(function () {
+  var POSE = { bien: "bien", pista: "piensa", mal: "pista" };
+  function leoImg(pose, cls, size) { return '<img class="' + cls + '" src="/img/leo-' + pose + '.svg" alt="" aria-hidden="true" data-pose="' + pose + '" width="' + size + '" height="' + size + '">'; }
+  window.leoImg = leoImg;
+  function pon(el) {
+    var pose = null;
+    for (var k in POSE) if (el.classList.contains(k)) pose = POSE[k];
+    var img = null;
+    for (var i = 0; i < el.children.length; i++) if (el.children[i].classList.contains("leo-fb")) img = el.children[i];
+    if (!pose || !el.textContent.trim()) { if (img) img.remove(); return; }
+    if (img && img.getAttribute("data-pose") === pose) return;
+    if (img) img.remove();
+    el.insertAdjacentHTML("afterbegin", leoImg(pose, "leo-fb", 56));
+  }
+  document.querySelectorAll(".fb, .respuesta-int").forEach(function (el) {
+    pon(el);
+    new MutationObserver(function () { pon(el); }).observe(el, { childList: true, attributes: true, attributeFilter: ["class"] });
+  });
+  var head = document.querySelector("header.principal .envoltura-header") || document.querySelector("header.principal");
+  if (head && !head.querySelector(".leo-hola")) head.insertAdjacentHTML("afterbegin", leoImg("saludo", "leo-hola", 110));
+})();

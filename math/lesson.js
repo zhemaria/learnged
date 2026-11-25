@@ -106,6 +106,9 @@
       else { msg = 'Let’s review together. Read ' + (L.review || 'the lesson') + ' again and use the practice activities. Then try the quiz again. Every try makes you stronger.'; color = '#fdecea'; }
       document.getElementById('puntaje').textContent = right + ' of ' + total + ' correct (' + first + ' on the first try, ' + (right - first) + ' after a hint)';
       document.getElementById('mensaje').textContent = msg;
+      var pose = first === total ? 'felicidades' : (pct >= 75 ? 'bien' : 'piensa'), oldImg = box.querySelector('.leo-final');
+      if (oldImg) oldImg.remove();
+      if (window.leoImg) box.insertAdjacentHTML('afterbegin', window.leoImg(pose, 'leo-final', 120));
       box.style.background = color; box.classList.add('visible');
       document.getElementById('barra').style.width = pct + '%';
       btn.style.display = 'none';
@@ -118,6 +121,7 @@
         var r = bl.querySelector('.respuesta-int'); r.className = 'respuesta-int'; r.innerHTML = '';
         bl.querySelectorAll('.opcion').forEach(function (o) { o.disabled = false; o.classList.remove('correcta', 'incorrecta', 'elegida'); o.setAttribute('aria-pressed', 'false'); var m = o.querySelector('.marca'); if (m) m.remove(); });
       });
+      var lf = document.querySelector('#marcador .leo-final'); if (lf) lf.remove();
       document.getElementById('marcador').classList.remove('visible');
       document.getElementById('puntaje').textContent = ''; document.getElementById('mensaje').textContent = '';
       btn.textContent = 'Check my answers'; btn.style.display = 'inline-block';
@@ -148,4 +152,29 @@
   function update() { pairs.forEach(function (p) { p.hint.style.display = (p.box.scrollWidth > p.box.clientWidth + 2) ? 'block' : 'none'; }); }
   update();
   var tm; window.addEventListener('resize', function () { clearTimeout(tm); tm = setTimeout(update, 150); });
+})();
+
+/* ---------- Leo, the LearnGED owl (decorative: the text already says everything) ----------
+   Right answer → leo-bien · first mistake (hint) → leo-piensa · solution shown → leo-pista
+   The lesson header gets Leo waving. Images use alt="" so screen readers skip them. */
+(function () {
+  var POSE = { bien: "bien", pista: "piensa", mal: "pista" };
+  function leoImg(pose, cls, size) { return '<img class="' + cls + '" src="/img/leo-' + pose + '.svg" alt="" aria-hidden="true" data-pose="' + pose + '" width="' + size + '" height="' + size + '">'; }
+  window.leoImg = leoImg;
+  function pon(el) {
+    var pose = null;
+    for (var k in POSE) if (el.classList.contains(k)) pose = POSE[k];
+    var img = null;
+    for (var i = 0; i < el.children.length; i++) if (el.children[i].classList.contains("leo-fb")) img = el.children[i];
+    if (!pose || !el.textContent.trim()) { if (img) img.remove(); return; }
+    if (img && img.getAttribute("data-pose") === pose) return;
+    if (img) img.remove();
+    el.insertAdjacentHTML("afterbegin", leoImg(pose, "leo-fb", 56));
+  }
+  document.querySelectorAll(".fb, .respuesta-int").forEach(function (el) {
+    pon(el);
+    new MutationObserver(function () { pon(el); }).observe(el, { childList: true, attributes: true, attributeFilter: ["class"] });
+  });
+  var head = document.querySelector("header.principal .envoltura-header") || document.querySelector("header.principal");
+  if (head && !head.querySelector(".leo-hola")) head.insertAdjacentHTML("afterbegin", leoImg("saludo", "leo-hola", 110));
 })();
