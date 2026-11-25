@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 1.1 · Valor posicional — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.1 · Valor posicional y números enteros · LearnGED</title>
+<meta name="robots" content="noindex">
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-1-1.html">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 1 · Números enteros</div>
+    <h1>Lección 1.1 · Valor posicional y números enteros</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez, así que puede practicar todas las veces que quiera. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#valor-posicional">La tabla de valor posicional</a></li>
+      <li><a href="#leer-escribir">Leer y escribir números</a></li>
+      <li><a href="#comparar">Comparar y ordenar</a></li>
+      <li><a href="#redondear">Redondear</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <!-- ============ MÓDULO 1 · #valor-posicional ============ -->
+  <details class="modulo" id="valor-posicional" open>
+    <summary>
+      <span class="num" aria-hidden="true">1</span>
+      <h2>La tabla de valor posicional</h2>
+      <span class="chev" aria-hidden="true">›</span>
+    </summary>
+    <div class="cuerpo">
+      <p>El lugar donde está un dígito decide cuánto vale. El dígito 5 vale cinco en 5, cincuenta en 50 y quinientos en 500.
+      Cada vez que un dígito se mueve un lugar a la <strong>izquierda</strong>, vale <strong>10 veces más</strong>.
+      Separamos los números grandes en grupos de tres dígitos: unidades, miles y millones. Al escribir, dejamos un espacio entre los grupos: 3 482 651.</p>
+
+      <h3>Ponga un número en la tabla</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="vp-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="vp-n" value="3 482 651"></div></div>
+        <div class="caja-aviso" id="vp-aviso" role="alert"></div>
+        <div class="tabla-scroll" id="vp-tabla"></div>
+        <p>Toque un dígito para ver cuánto vale:</p>
+        <div class="lista-angulos" id="vp-dig" role="group" aria-label="Dígitos del número"></div>
+        <div class="salida" id="vp-salida" aria-live="polite"></div>
+      </div>
+
+      <h3>Practique: ¿cuánto vale el dígito?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <!-- ============ MÓDULO 2 · #leer-escribir ============ -->
+  <details class="modulo" id="leer-escribir">
+    <summary>
+      <span class="num" aria-hidden="true">2</span>
+      <h2>Leer y escribir números</h2>
+      <span class="chev" aria-hidden="true">›</span>
+    </summary>
+    <div class="cuerpo">
+      <p>Para leer un número, lea cada grupo de tres dígitos y después diga el nombre del grupo, de izquierda a derecha:
+      «tres <strong>millones</strong> cuatrocientos ochenta y dos <strong>mil</strong> seiscientos cincuenta y uno».
+      El último grupo (las unidades) no lleva nombre al final.</p>
+
+      <h3>De números a palabras</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="le-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="le-n" value="208 040"></div></div>
+        <div class="salida" id="le-salida" aria-live="polite"></div>
+      </div>
+
+      <div class="caja-tip">
+        <strong>El cero guarda el lugar:</strong> en 208 040 los ceros dicen que no hay decenas de millar, ni centenas, ni unidades.
+        Si los quitara, el número cambiaría por completo.
+      </div>
+
+      <h3>Practique: ¿cómo se lee?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+
+      <h3>Practique: de palabras a números</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Número</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con un espacio.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <!-- ============ MÓDULO 3 · #comparar ============ -->
+  <details class="modulo" id="comparar">
+    <summary>
+      <span class="num" aria-hidden="true">3</span>
+      <h2>Comparar y ordenar</h2>
+      <span class="chev" aria-hidden="true">›</span>
+    </summary>
+    <div class="cuerpo">
+      <p>Usamos tres símbolos: <strong>&gt;</strong> significa «es mayor que», <strong>&lt;</strong> significa «es menor que»
+      e <strong>=</strong> significa «es igual a». Piense en el símbolo como una boca abierta: siempre «se come» al número más grande.</p>
+      <table class="reglas">
+        <caption>Cómo comparar dos números</caption>
+        <thead><tr><th scope="col">Paso</th><th scope="col">Qué hacer</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Cuente los dígitos. El número con más dígitos es el mayor.</td></tr>
+          <tr><td>2</td><td>Si tienen la misma cantidad de dígitos, compare de izquierda a derecha.</td></tr>
+          <tr><td>3</td><td>El primer dígito distinto decide.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Compare paso a paso</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="cp-a">Primer número</label><input type="text" inputmode="numeric" class="corto" id="cp-a" value="4 729"></div>
+          <div class="campo"><label for="cp-b">Segundo número</label><input type="text" inputmode="numeric" class="corto" id="cp-b" value="4 813"></div>
+        </div>
+        <div class="salida" id="cp-salida" aria-live="polite"></div>
+      </div>
+
+      <h3>Practique: ¿qué símbolo va entre ellos?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+
+      <h3>Practique: ordene los números de menor a mayor</h3>
+      <div class="panel">
+        <p class="nota">Use las flechas para subir o bajar cada número. El número más pequeño va arriba.</p>
+        <ol class="lista-orden" id="or-lista"></ol>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="or-comprobar">Comprobar el orden</button>
+          <button type="button" class="btn-sec" id="or-nuevo">Otros números</button>
+        </div>
+        <div class="fb" id="or-fb" role="status"></div>
+        <p class="marcador" id="or-marcador"></p>
+      </div>
+
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <!-- ============ MÓDULO 4 · #redondear ============ -->
+  <details class="modulo" id="redondear">
+    <summary>
+      <span class="num" aria-hidden="true">4</span>
+      <h2>Redondear</h2>
+      <span class="chev" aria-hidden="true">›</span>
+    </summary>
+    <div class="cuerpo">
+      <p>Redondear es cambiar un número por otro cercano que sea más fácil de usar: $19 son «unos veinte dólares».
+      Use la regla del <strong>vecino de la derecha</strong>: mire el dígito que está justo a la derecha del lugar al que va a redondear.
+      Si es 0, 1, 2, 3 o 4, el lugar se queda igual. Si es 5, 6, 7, 8 o 9, el lugar sube uno.
+      Todos los dígitos de la derecha se vuelven cero.</p>
+
+      <h3>¿A cuál está más cerca?</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="rd-n">Número</label><input type="text" inputmode="numeric" class="corto" id="rd-n" value="48 213"></div>
+          <div class="campo"><label for="rd-l">Redondear a</label><select id="rd-l"><option value="1">la decena</option><option value="2">la centena</option><option value="3" selected>el millar</option><option value="4">la decena de millar</option></select></div>
+        </div>
+        <div id="rd-svg"></div>
+        <div class="salida" id="rd-salida" aria-live="polite"></div>
+      </div>
+
+      <h3>Practique: redondee el número</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Número redondeado</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escriba solo cifras.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 1 · Números enteros · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+
+<script src="/math/practice.js"></script>
+<script>
+var NBSP = " ";
+/* "en las centenas", "en las unidades de millar" … */
+function enLugar(k){ return "en las " + LUGARES_PL[k]; }
+/* Redondear «a la decena más cercana» … */
+var RED_A = ["", "a la decena más cercana", "a la centena más cercana", "al millar más cercano", "a la decena de millar más cercana"];
+
+/* ============ MÓDULO 1 · valor posicional ============ */
+var COL = ["Centenas de millón", "Decenas de millón", "Unidades de millón", "Centenas de millar", "Decenas de millar", "Unidades de millar", "Centenas", "Decenas", "Unidades"];
+var VP = { n: 3482651, sel: null };
+function pintaVP(){
+  var n = leeNum($("vp-n").value), av = $("vp-aviso");
+  if (n === null || n > 999999999){ av.className = "caja-aviso visible"; av.textContent = "Escriba un número entero de hasta 9 dígitos."; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  if (n !== VP.n){ VP.n = n; VP.sel = null; }
+  var s = String(n), d = []; for (var i = 0; i < 9 - s.length; i++) d.push(null); d = d.concat(s.split("").map(Number));
+  var h = '<table class="vp"><caption class="sr-only">Tabla de valor posicional de ' + com(n) + '</caption><tr class="fila-grupo"><td colspan="3">Millones</td><td colspan="3">Miles</td><td colspan="3">Unidades</td></tr><tr>' +
+    COL.map(function(c){ return '<th scope="col">' + c + '</th>'; }).join("") + '</tr><tr>' +
+    d.map(function(x, i){ return '<td class="' + (i === VP.sel ? "sel" : "") + '">' + (x === null ? "" : x) + '</td>'; }).join("") + '</tr></table>';
+  $("vp-tabla").innerHTML = h;
+  var bt = "";
+  d.forEach(function(x, i){ if (x !== null) bt += '<button type="button" class="eleccion" data-i="' + i + '" aria-pressed="' + (i === VP.sel) + '" aria-label="El ' + x + ' ' + enLugar(8 - i) + '">' + x + '</button>'; });
+  $("vp-dig").innerHTML = bt;
+  $("vp-dig").querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ VP.sel = +b.getAttribute("data-i"); pintaVP(); var nb = $("vp-dig").querySelector('[data-i="' + VP.sel + '"]'); if (nb) nb.focus(); }); });
+  var out = '<div class="linea">En palabras: <strong>' + enLetras(n) + '</strong></div>';
+  var partes = d.map(function(x, i){ return x ? com(x * p10(8 - i)) : null; }).filter(function(x){ return x; });
+  out += '<div class="linea">Forma desarrollada: ' + com(n) + ' = ' + (partes.length ? partes.join(" + ") : "0") + '</div>';
+  if (VP.sel !== null && d[VP.sel] !== null){ var k = 8 - VP.sel, x = d[VP.sel]; out += '<div class="linea veredicto">El ' + x + ' está ' + enLugar(k) + ': vale ' + x + ' × ' + com(p10(k)) + ' = ' + com(x * p10(k)) + '</div>'; }
+  $("vp-salida").innerHTML = out;
+}
+function numConDigito(){ var n; do { n = aleatorio(10000, 9999999); } while (new Set(String(n)).size < String(n).length - 1); return n; }
+function genValor(){
+  var n = numConDigito(), s = String(n), i;
+  do { i = aleatorio(0, s.length - 2); } while (s[i] === "0");
+  var x = +s[i], k = s.length - 1 - i, v = x * p10(k);
+  var cand = [v, x * p10(k - 1), x * p10(k + 1), x].filter(function(y, j, a){ return a.indexOf(y) === j; });
+  var cont = -1, marcado = com(n).split("").map(function(c){ if (/\d/.test(c)){ cont++; if (cont === i) return '<strong class="marcado">' + c + '</strong>'; } return c; }).join("");
+  var pistas = {};
+  pistas["v" + x] = "Ese es solo el dígito. Su lugar hace que valga más. ¿En qué columna está?";
+  pistas["v" + x * p10(k - 1)] = "Cuente otra vez los lugares. Empiece por las unidades, a la derecha, y avance hacia la izquierda un lugar a la vez.";
+  pistas["v" + x * p10(k + 1)] = "Cuente otra vez los lugares. Empiece por las unidades, a la derecha, y avance hacia la izquierda un lugar a la vez.";
+  return { enun: "En el número " + marcado + ", ¿cuánto vale el dígito subrayado " + x + "?",
+    opciones: cand.map(function(y){ return { html: com(y) + " (" + enLetras(y) + ")", clave: "v" + y }; }), correcta: "v" + v,
+    pistas: pistas, pista: "Busque la columna del dígito en la tabla de valor posicional.",
+    bien: "El " + x + " está " + enLugar(k) + ": " + x + " × " + com(p10(k)) + " = " + com(v) + ".",
+    mal: "El " + x + " está " + enLugar(k) + ", así que vale " + x + " × " + com(p10(k)) + " = " + com(v) + "." };
+}
+
+/* ============ MÓDULO 2 · leer y escribir ============ */
+function nombreGrupo(val, pos){ return pos === 2 ? (val === 1 ? "un millón" : apocope(menosDeMil(val)) + " millones") : pos === 1 ? (val === 1 ? "mil" : apocope(menosDeMil(val)) + " mil") : menosDeMil(val); }
+function pintaLE(){
+  var n = leeNum($("le-n").value);
+  if (n === null || n > 999999999){ $("le-salida").innerHTML = "Escriba un número entero de hasta 9 dígitos."; return; }
+  if (n === 0){ $("le-salida").innerHTML = '<div class="linea veredicto">«cero»</div>'; return; }
+  var partes = com(n).split(NBSP), nombres = ["de las unidades", "de los miles", "de los millones"], h = "";
+  partes.forEach(function(p, i){
+    var pos = partes.length - 1 - i, val = +p;
+    h += '<div class="linea">Paso ' + (i + 1) + '. El grupo ' + nombres[pos] + ': ' + p + ' → ' + (val ? "«" + nombreGrupo(val, pos) + "»" : "no se dice nada (todo son ceros)") + '</div>';
+  });
+  $("le-salida").innerHTML = '<div class="linea grande">' + com(n) + '</div>' + h + '<div class="linea veredicto">«' + cap(enLetras(n)) + '»</div>';
+}
+function numConCeros(){ var d = String(aleatorio(1, 9)), L = aleatorio(4, 7); for (var i = 1; i < L; i++) d += Math.random() < 0.4 ? "0" : String(aleatorio(1, 9)); return +d; }
+function variantes(n){
+  var s = String(n), v = [], i;
+  for (i = 1; i < s.length && v.length < 6; i++){ if (s[i] === "0"){ var t = s.slice(0, i) + s.slice(i + 1); if (t.length > 1) v.push(+t); } }
+  v.push(n * 10, Math.floor(n / 10));
+  for (i = 0; i < s.length - 1; i++){ if (s[i] !== s[i + 1]){ v.push(+(s.slice(0, i) + s[i + 1] + s[i] + s.slice(i + 2))); break; } }
+  return v.filter(function(x, j, a){ return x !== n && x > 0 && a.indexOf(x) === j; });
+}
+function pistaGrupos(n, x){
+  if (String(x).length !== String(n).length) return "Cuente los dígitos. Cada grupo de miles o de millones necesita sus tres dígitos, aunque algunos sean cero.";
+  return "Lea el número un grupo a la vez, de izquierda a derecha. Revise el orden de los dígitos en cada grupo.";
+}
+function genLeer(){
+  var n = numConCeros(), otros = baraja(variantes(n)).slice(0, 3), ops = [n].concat(otros), pistas = {};
+  otros.forEach(function(x){ pistas["n" + x] = pistaGrupos(n, x); });
+  return { enun: "¿Cómo se lee el número <strong>" + com(n) + "</strong>?",
+    opciones: ops.map(function(x){ return { html: cap(enLetras(x)), clave: "n" + x }; }), correcta: "n" + n, pistas: pistas,
+    pista: "Lea un grupo a la vez, de izquierda a derecha.",
+    bien: "Leído por grupos: " + grupoLetras(n).map(function(p){ return p[0] + " → «" + p[1] + "»"; }).join("; ") + ".",
+    mal: "Léalo por grupos: " + grupoLetras(n).map(function(p){ return p[0] + " → «" + p[1] + "»"; }).join("; ") + ". Todo junto: " + enLetras(n) + "." };
+}
+function todosGrupos(n){
+  var partes = com(n).split(NBSP), plural = ["unidades", "miles", "millones"];
+  return partes.map(function(p, i){
+    var pos = partes.length - 1 - i, val = +p;
+    return val ? "«" + nombreGrupo(val, pos) + "» → " + p : "sin " + plural[pos] + " → " + p;
+  });
+}
+function genEscribir(){
+  var n = numConCeros(), vs = variantes(n);
+  return { enun: "Escriba con cifras: «" + enLetras(n) + "»",
+    solucion: "Escriba un grupo a la vez: " + todosGrupos(n).join("; ") + ". El número es " + com(n) + ".",
+    evalua: numN(n, vs.map(function(v){ return { v: v, msg: String(v).length !== String(n).length ? "Revise los ceros. Cada grupo de miles o de millones necesita sus tres dígitos, aunque algunos sean cero." : "Revise el orden de los dígitos." }; }), "Escriba un grupo a la vez. Recuerde que cada grupo después del primero tiene tres dígitos.") };
+}
+
+/* ============ MÓDULO 3 · comparar y ordenar ============ */
+function pintaCP(){
+  var a = leeNum($("cp-a").value), b = leeNum($("cp-b").value), s = $("cp-salida");
+  if (a === null || b === null){ s.innerHTML = "Escriba dos números enteros."; return; }
+  var A = String(a), B = String(b), r, h = '<div class="linea">Paso 1. ' + com(a) + ' tiene ' + A.length + ' dígitos y ' + com(b) + ' tiene ' + B.length + '.';
+  if (A.length !== B.length){ h += ' El número con más dígitos es el mayor.</div>'; r = A.length > B.length ? ">" : "<"; }
+  else {
+    h += ' La misma cantidad de dígitos: hay que mirar adentro.</div>';
+    var i = 0; while (i < A.length && A[i] === B[i]) i++;
+    if (i === A.length){ h += '<div class="linea">Todos los dígitos son iguales.</div>'; r = "="; }
+    else {
+      if (i > 0) h += '<div class="linea">Paso 2. De izquierda a derecha, los dígitos son iguales hasta las ' + LUGARES_PL[A.length - i] + '.</div>';
+      h += '<div class="linea">Paso ' + (i > 0 ? 3 : 2) + '. En las ' + LUGARES_PL[A.length - 1 - i] + ': ' + A[i] + ' y ' + B[i] + '. ¡Este dígito decide!</div>';
+      r = A[i] > B[i] ? ">" : "<";
+    }
+  }
+  h += '<div class="linea veredicto">' + com(a) + ' ' + { ">": "&gt;", "<": "&lt;", "=": "=" }[r] + ' ' + com(b) + '</div>';
+  s.innerHTML = h;
+}
+function genCompara(){
+  var t = aleatorio(1, 3), a, b;
+  if (t === 1){ a = aleatorio(10000, 99999); var s = String(a).split(""), i = aleatorio(1, 3), tmp = s[i]; s[i] = s[i + 1]; s[i + 1] = tmp; b = +s.join(""); if (a === b) b = a + 100; }
+  else if (t === 2){ a = aleatorio(1000, 9999); b = aleatorio(100, 999); if (Math.random() < 0.5){ var c = a; a = b; b = c; } }
+  else { a = aleatorio(10000, 99999); b = Math.random() < 0.2 ? a : a + elige([-1, 1]) * elige([10, 100, 1000]); }
+  var r = a > b ? ">" : (a < b ? "<" : "=");
+  var o = [ { html: com(a) + " &gt; " + com(b) + " <span class='lee'>(es mayor que)</span>", clave: ">" }, { html: com(a) + " &lt; " + com(b) + " <span class='lee'>(es menor que)</span>", clave: "<" }, { html: com(a) + " = " + com(b) + " <span class='lee'>(es igual a)</span>", clave: "=" } ];
+  var difDig = String(a).length !== String(b).length;
+  return { enOrden: true, enun: "¿Qué símbolo va entre <strong>" + com(a) + "</strong> y <strong>" + com(b) + "</strong>?", opciones: o, correcta: r,
+    pista: difDig ? "Cuente primero los dígitos de cada número." : (r === "=" ? "Compare cada dígito, de izquierda a derecha. ¿Hay alguno distinto?" : "Los dos números tienen la misma cantidad de dígitos. Compare de izquierda a derecha y busque el primer dígito distinto."),
+    bien: r === "=" ? "Son el mismo número." : "El número mayor es " + com(Math.max(a, b)) + ".",
+    mal: r === "=" ? "Todos los dígitos son iguales, así que los números son iguales." : (difDig ? "El número con más dígitos es el mayor: " + com(Math.max(a, b)) + "." : "De izquierda a derecha, decide el primer dígito distinto: el número mayor es " + com(Math.max(a, b)) + ".") };
+}
+var OR = { lista: [], primero: 0, pista: 0, total: 0, resuelto: false, intentos: 0 };
+function marcadorOR(){ $("or-marcador").textContent = OR.total ? TX.resueltos(OR.primero + OR.pista, OR.primero, OR.total) : ""; }
+function nuevoOR(){
+  var base = aleatorio(10, 99) * 1000, s = [];
+  while (s.length < 5){ var n = Math.random() < 0.6 ? base + aleatorio(0, 999) : aleatorio(1000, 99999); if (s.indexOf(n) < 0) s.push(n); }
+  OR.lista = baraja(s); OR.resuelto = false; OR.intentos = 0; $("or-fb").className = "fb"; $("or-fb").innerHTML = ""; $("or-comprobar").disabled = false; pintaOR();
+}
+function pintaOR(foco, marcas){
+  var ol = $("or-lista"); ol.innerHTML = "";
+  OR.lista.forEach(function(v, i){
+    var li = document.createElement("li");
+    if (marcas) li.className = marcas[i] ? "bien" : "mal";
+    li.innerHTML = '<span class="nombre">' + com(v) + '</span><span class="flechas"><button type="button" data-i="' + i + '" data-d="-1" aria-label="Subir ' + com(v) + '">↑</button><button type="button" data-i="' + i + '" data-d="1" aria-label="Bajar ' + com(v) + '">↓</button></span>';
+    ol.appendChild(li);
+  });
+  ol.querySelectorAll("button").forEach(function(b){
+    var i = +b.getAttribute("data-i"), d = +b.getAttribute("data-d");
+    b.disabled = OR.resuelto || (d < 0 && i === 0) || (d > 0 && i === OR.lista.length - 1);
+    b.addEventListener("click", function(){ var j = i + d, t = OR.lista[i]; OR.lista[i] = OR.lista[j]; OR.lista[j] = t; pintaOR({ i: j, d: d }); });
+  });
+  if (foco){ var bb = ol.querySelector('button[data-i="' + foco.i + '"][data-d="' + foco.d + '"]'); if (!bb || bb.disabled) bb = ol.querySelector('button[data-i="' + foco.i + '"]:not([disabled])'); if (bb) bb.focus(); }
+}
+function compruebaOR(){
+  if (OR.resuelto) return;
+  var bien = OR.lista.slice().sort(function(a, b){ return a - b; }), marcas = OR.lista.map(function(v, i){ return v === bien[i]; }), ok = marcas.every(Boolean), fb = $("or-fb");
+  OR.intentos++;
+  if (ok){
+    OR.resuelto = true; OR.total++; if (OR.intentos === 1) OR.primero++; else OR.pista++;
+    fb.className = "fb bien"; fb.innerHTML = "✓ El orden es correcto: " + bien.map(com).join(" &lt; ") + ". <em>" + (OR.intentos === 1 ? elige(ELOGIO) : elige(ELOGIO2)) + "</em>";
+    $("or-comprobar").disabled = true; pintaOR(null, marcas);
+  } else if (OR.intentos === 1){
+    fb.className = "fb pista"; fb.innerHTML = "<strong>Todavía no.</strong> Los números marcados en rojo no están en su lugar. Cuente primero los dígitos y después compare de izquierda a derecha. <strong>Inténtelo de nuevo.</strong>";
+    pintaOR(null, marcas);
+  } else {
+    OR.resuelto = true; OR.total++;
+    fb.className = "fb mal"; fb.innerHTML = "<strong>Este es el orden correcto:</strong> " + bien.map(com).join(" &lt; ") + ". Pulse <em>Otros números</em> para intentarlo de nuevo.";
+    $("or-comprobar").disabled = true; pintaOR(null, marcas);
+  }
+  marcadorOR();
+}
+
+/* ============ MÓDULO 4 · redondear ============ */
+function redondea(n, k){ var p = p10(k); return Math.round(n / p) * p; }
+function pintaRD(){
+  var n = leeNum($("rd-n").value), k = +$("rd-l").value, s = $("rd-salida");
+  if (n === null || n > 99999999){ s.innerHTML = "Escriba un número entero."; $("rd-svg").innerHTML = ""; return; }
+  var p = p10(k), lo = Math.floor(n / p) * p, hi = lo + p, r = redondea(n, k), vec = Math.floor(n / p10(k - 1)) % 10;
+  var x0 = 60, x1 = 580; function X(v){ return x0 + (v - lo) / p * (x1 - x0); }
+  var svg = '<svg class="figura" viewBox="0 0 640 150" role="img" aria-label="' + com(n) + ' está entre ' + com(lo) + ' y ' + com(hi) + '. Está más cerca de ' + com(r) + '.">' + linea([x0 - 20, 70], [x1 + 20, 70], "#424242", 2);
+  for (var t = 0; t <= 10; t++) svg += linea([X(lo + p * t / 10), 70 - (t % 5 ? 6 : 12)], [X(lo + p * t / 10), 70 + (t % 5 ? 6 : 12)], "#424242", t % 5 ? 1 : 2);
+  svg += texto([X(lo), 108], com(lo), 22, r === lo ? "#1b5e20" : "#424242", 700) + texto([X(hi), 108], com(hi), 22, r === hi ? "#1b5e20" : "#424242", 700) + texto([X(lo + p / 2), 108], com(lo + p / 2), 17, "#757575", 400);
+  svg += '<circle cx="' + f1(X(n)) + '" cy="70" r="8" fill="#b71c1c"/>' + texto([X(n), 36], com(n), 22, "#b71c1c");
+  $("rd-svg").innerHTML = svg + '</svg>';
+  s.innerHTML = '<div class="linea">El vecino de la derecha (el dígito de las ' + LUGARES_PL[k - 1] + ') es <strong>' + vec + '</strong>: ' + (vec >= 5 ? "es 5 o más, así que el dígito de las " + LUGARES_PL[k] + " sube uno." : "es 4 o menos, así que el dígito de las " + LUGARES_PL[k] + " se queda igual.") + '</div><div class="linea veredicto">' + com(n) + ' redondeado ' + RED_A[k] + ' ≈ ' + com(r) + '</div>';
+}
+function genRedondeo(){
+  var k = aleatorio(1, 4), n = aleatorio(p10(k + 1), p10(k + 3) - 1), r = redondea(n, k), lo = Math.floor(n / p10(k)) * p10(k), otro = r === lo ? lo + p10(k) : lo, vec = Math.floor(n / p10(k - 1)) % 10;
+  var ctx = elige(["", "Una ciudad tiene " + com(n) + " habitantes. ", "Un carro tiene " + com(n) + " millas recorridas. ", "Una compra costó $" + com(n) + ". "]);
+  return { enun: ctx + "Redondee <strong>" + com(n) + "</strong> " + RED_A[k] + ".",
+    solucion: "El vecino de la derecha (el dígito de las " + LUGARES_PL[k - 1] + ") es " + vec + ": " + (vec >= 5 ? "es 5 o más, así que se redondea hacia arriba" : "es 4 o menos, así que el dígito de las " + LUGARES_PL[k] + " se queda igual") + ". La respuesta es " + com(r) + ".",
+    evalua: numN(r, [
+      { v: otro, msg: "Mire otra vez el vecino de la derecha: con 5 o más, se redondea hacia arriba; con 4 o menos, el dígito se queda igual." },
+      { v: +String(r).slice(0, String(r).length - k), msg: "Recuerde los ceros: todos los dígitos a la derecha del lugar redondeado se vuelven cero." }
+    ], "Busque primero el dígito de las " + LUGARES_PL[k] + ". Después mire el dígito de su derecha.") };
+}
+
+/* ---------- Arranque ---------- */
+$("vp-n").addEventListener("input", pintaVP); pintaVP();
+creaPracticaOM("p1", genValor);
+$("le-n").addEventListener("input", pintaLE); pintaLE();
+creaPracticaOM("p2", genLeer);
+creaPracticaLibre("p3", genEscribir);
+["cp-a", "cp-b"].forEach(function(id){ $(id).addEventListener("input", pintaCP); }); pintaCP();
+creaPracticaOM("p4", genCompara);
+$("or-comprobar").addEventListener("click", compruebaOR); $("or-nuevo").addEventListener("click", nuevoOR); nuevoOR(); marcadorOR();
+$("rd-l").addEventListener("change", pintaRD); $("rd-n").addEventListener("input", pintaRD); pintaRD();
+creaPracticaLibre("p5", genRedondeo);
+iniciaNavegacion();
+</script>
+</body>
+</html>

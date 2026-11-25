@@ -1,0 +1,129 @@
+"""Cuadro de estándares (GED® y CCR) para las lecciones de LearnGED en español.
+
+Usa la misma tabla de lecciones y estándares que tools/ged_standards.py, de modo que las dos
+versiones siempre muestran lo mismo. Los textos de los estándares son traducciones de LearnGED;
+los textos oficiales están en inglés (se enlaza el mapa de estándares en inglés).
+
+Uso: python3 tools/ged_standards_es.py   (desde la raíz del repositorio learnged)
+     Solo escribe el cuadro en las lecciones en español que ya existen.
+"""
+import html, os, re, importlib.util
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+spec = importlib.util.spec_from_file_location("g", os.path.join(ROOT, "tools", "ged_standards.py"))
+g = importlib.util.module_from_spec(spec); spec.loader.exec_module(g)
+
+# ---------- Traducciones (solo de los códigos que usan las lecciones) ----------
+TARGETS_ES = {
+ "Q.1.a": "Ordenar fracciones y decimales, también en la recta numérica.",
+ "Q.1.b": "Aplicar propiedades de los números relacionadas con múltiplos y factores, como el mínimo común múltiplo, el máximo común divisor o la propiedad distributiva, para reescribir expresiones numéricas.",
+ "Q.2.a": "Sumar, restar, multiplicar y dividir números racionales.",
+ "Q.2.e": "Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.",
+ "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
+ "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
+ "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
+ "A.2.c": "Escribir ecuaciones lineales de una o de varias variables para representar una situación.",
+ "A.7.b": "Representar o identificar una función en una tabla o una gráfica como una relación con exactamente una salida (un elemento del rango) para cada entrada (cada elemento del dominio).",
+ "A.7.c": "Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.",
+ "MP.1.a": "Buscar y reconocer por dónde empezar a resolver un problema.",
+ "MP.1.b": "Planear un camino de solución o esbozar una línea de razonamiento.",
+ "MP.1.e": "Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.",
+ "MP.2.a": "Representar algebraicamente problemas de la vida real.",
+ "MP.2.b": "Representar visualmente problemas de la vida real.",
+ "MP.2.c": "Reconocer los datos importantes y destacados de un problema.",
+ "MP.3.a": "Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.",
+ "MP.4.a": "Manejar y resolver expresiones aritméticas.",
+ "MP.4.b": "Transformar y resolver expresiones algebraicas.",
+ "MP.5.a": "Reconocer errores en el razonamiento de otras personas.",
+ "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
+}
+CCR_ES = {
+ "3.OA.3": "Usar la multiplicación y la división hasta 100 para resolver problemas verbales con grupos iguales, arreglos y medidas.",
+ "3.OA.4": "Hallar el número entero desconocido en una ecuación de multiplicación o de división que relaciona tres números enteros.",
+ "3.OA.5": "Aplicar las propiedades de las operaciones (conmutativa, asociativa y distributiva) como estrategias para multiplicar y dividir.",
+ "3.OA.7": "Multiplicar y dividir con fluidez hasta 100. Saber de memoria todos los productos de dos números de un dígito.",
+ "3.OA.8": "Resolver problemas verbales de dos pasos con las cuatro operaciones. Juzgar si la respuesta es razonable con cálculo mental y estimación, incluido el redondeo.",
+ "3.OA.9": "Identificar patrones aritméticos (también en las tablas de sumar y de multiplicar) y explicarlos con las propiedades de las operaciones.",
+ "3.NF.1": "Entender la fracción 1/b como una de las b partes iguales en que se divide un entero, y la fracción a/b como a partes de tamaño 1/b.",
+ "3.NF.3": "Explicar la equivalencia de fracciones en casos sencillos y comparar fracciones razonando sobre su tamaño.",
+ "4.NBT.1": "Reconocer que, en un número entero de varios dígitos, un dígito en un lugar vale diez veces lo que valdría en el lugar de su derecha.",
+ "4.NBT.2": "Leer y escribir números enteros de varios dígitos con cifras, con palabras y en forma desarrollada. Comparar dos números de varios dígitos con los símbolos >, = y <.",
+ "4.NBT.3": "Usar el valor posicional para redondear números enteros de varios dígitos a cualquier lugar.",
+ "4.NBT.4": "Sumar y restar con fluidez números enteros de varios dígitos con el algoritmo usual.",
+ "4.NBT.5": "Multiplicar un número entero de hasta cuatro dígitos por uno de un dígito, y dos números de dos dígitos, con estrategias basadas en el valor posicional y en las propiedades de las operaciones.",
+ "4.NBT.6": "Hallar cocientes y residuos enteros con dividendos de hasta cuatro dígitos y divisores de un dígito.",
+ "4.OA.3": "Resolver problemas verbales de varios pasos con números enteros y las cuatro operaciones, incluidos los que obligan a interpretar el residuo. Juzgar si la respuesta es razonable con cálculo mental y estimación, incluido el redondeo.",
+ "4.OA.4": "Hallar todos los pares de factores de un número entero del 1 al 100. Reconocer que un número es múltiplo de cada uno de sus factores. Determinar si un número del 1 al 100 es primo o compuesto.",
+ "4.OA.5": "Generar un patrón de números o de figuras que siga una regla dada. Identificar características del patrón que la regla no menciona.",
+ "4.NF.1": "Explicar con modelos visuales por qué a/b es equivalente a (n × a)/(n × b), y usar ese principio para reconocer y generar fracciones equivalentes.",
+ "4.NF.2": "Comparar dos fracciones con numeradores y denominadores distintos, por ejemplo, buscando un denominador o un numerador común o comparándolas con una fracción de referencia como 1/2. Anotar la comparación con >, = o < y justificarla.",
+ "4.NF.3": "Entender una fracción a/b con a > 1 como una suma de fracciones 1/b; entender la suma y la resta de fracciones como juntar y separar partes de un mismo entero, y resolver problemas con fracciones de igual denominador.",
+ "4.NF.4": "Ampliar lo que se sabe de la multiplicación para multiplicar una fracción por un número entero, y resolver problemas verbales de ese tipo.",
+ "4.NF.6": "Usar la notación decimal para fracciones con denominador 10 o 100. Por ejemplo, escribir 0.62 como 62/100.",
+ "5.NBT.1": "Reconocer que, en un número de varios dígitos, un dígito en un lugar vale 10 veces lo que valdría en el lugar de su derecha y 1/10 de lo que valdría en el de su izquierda.",
+ "5.NBT.3": "Leer, escribir y comparar decimales hasta las milésimas.",
+ "5.NBT.4": "Usar el valor posicional para redondear decimales a cualquier lugar.",
+ "5.NBT.5": "Multiplicar con fluidez números enteros de varios dígitos con el algoritmo usual.",
+ "5.NBT.6": "Hallar cocientes enteros con dividendos de hasta cuatro dígitos y divisores de dos dígitos.",
+ "5.NBT.7": "Sumar, restar, multiplicar y dividir decimales hasta las centésimas, con modelos o dibujos y estrategias basadas en el valor posicional; relacionar la estrategia con el método escrito y explicar el razonamiento (con aplicaciones de educación financiera).",
+ "5.NF.1": "Sumar y restar fracciones de distinto denominador (también números mixtos) sustituyéndolas por fracciones equivalentes con el mismo denominador.",
+ "5.NF.2": "Resolver problemas verbales de suma y resta de fracciones de un mismo entero, también con distinto denominador. Usar fracciones de referencia para estimar y juzgar si la respuesta es razonable.",
+ "5.NF.3": "Interpretar una fracción como la división del numerador entre el denominador (a/b = a ÷ b).",
+ "5.NF.4": "Ampliar lo que se sabe de la multiplicación para multiplicar una fracción o un número entero por una fracción.",
+ "5.NF.6": "Resolver problemas de la vida real con multiplicación de fracciones y números mixtos, por ejemplo, con modelos visuales o ecuaciones.",
+ "5.NF.7": "Ampliar lo que se sabe de la división para dividir fracciones unitarias entre números enteros y números enteros entre fracciones unitarias.",
+ "6.EE.2": "Escribir, leer y evaluar expresiones en las que las letras representan números.",
+ "6.EE.5": "Entender que resolver una ecuación o una desigualdad es responder la pregunta: ¿qué valores de un conjunto dado, si los hay, la hacen verdadera? Usar la sustitución para comprobar si un número dado la hace verdadera.",
+ "6.EE.7": "Resolver problemas de la vida real y de matemáticas escribiendo y resolviendo ecuaciones de la forma x + p = q y px = q, en las que p, q y x son números racionales no negativos.",
+ "6.NS.1": "Interpretar y calcular cocientes de fracciones, y resolver problemas verbales de división de fracciones entre fracciones, por ejemplo, con modelos visuales y ecuaciones.",
+ "6.NS.3": "Sumar, restar, multiplicar y dividir con fluidez decimales de varios dígitos con el algoritmo usual de cada operación.",
+ "6.NS.4": "Hallar el máximo común divisor de dos números enteros menores o iguales que 100 y el mínimo común múltiplo de dos números enteros menores o iguales que 12. Usar la propiedad distributiva para sacar un factor común de una suma.",
+ "7.NS.2d": "Convertir un número racional en decimal con la división larga; saber que la forma decimal de un número racional termina en ceros o termina por repetirse.",
+}
+
+# Lección en inglés → lección en español
+def ruta_es(path):
+    m = re.match(r"level-1/lesson-(.+)\.html$", path)
+    return os.path.join(ROOT, "es", "matematicas", "nivel-1", f"leccion-{m.group(1)}.html")
+
+e = html.escape
+def li(code, cls):
+    return f'<li><span class="std-cod {cls}">{code}</span> {e(TARGETS_ES[code])}</li>'
+
+def box(m):
+    p = ['<!-- GED-STANDARDS -->', '<details class="estandares" id="estandares-ged">',
+         '<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>', '<div class="std-cuerpo">']
+    if m["direct"]:
+        p.append('<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul>' + "".join(li(c, "std-dir") for c in m["direct"]) + '</ul>')
+    if m["builds"]:
+        p.append('<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul>' + "".join(li(c, "std-base") for c in m["builds"]) + '</ul>')
+    if m["mp"]:
+        p.append('<p class="std-tit">Prácticas matemáticas que usa:</p><ul>' + "".join(li(c, "std-mp") for c in m["mp"]) + '</ul>')
+    if m.get("ccr"):
+        p.append('<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul>' + "".join(f'<li><span class="std-cod std-ccr">{c}</span> <span class="std-nivel">Nivel {g.CCR[c][0]}</span> {e(CCR_ES[c])}</li>' for c in m["ccr"]) + '</ul>')
+    p.append(f'<p class="std-fuente">Fuentes: {g.SOURCE}; {g.CCR_FUENTE}. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>')
+    p += ['</div>', '</details>', '<!-- /GED-STANDARDS -->']
+    return "\n".join(p)
+
+def insert(full, m):
+    s = open(full, encoding="utf-8").read()
+    b = box(m)
+    if "<!-- GED-STANDARDS -->" in s:
+        s = re.sub(r"<!-- GED-STANDARDS -->.*?<!-- /GED-STANDARDS -->", lambda _: b, s, flags=re.S)
+    else:
+        i = s.index('<div class="caja caja-objetivo">')
+        j = s.index("</section>", i)
+        s = s[:j] + b + "\n" + s[j:]
+    open(full, "w", encoding="utf-8").write(s)
+
+if __name__ == "__main__":
+    n = 0
+    for path, num, name, m in g.LESSONS:
+        for c in m["direct"] + m["builds"] + m["mp"]:
+            assert c in TARGETS_ES, "Falta la traducción de " + c
+        for c in m.get("ccr", []):
+            assert c in CCR_ES, "Falta la traducción de " + c
+        full = ruta_es(path)
+        if os.path.exists(full):
+            insert(full, m); n += 1
+    print("ok:", n, "lecciones en español")

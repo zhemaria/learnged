@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 1.2 · Suma y resta — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.2 · Suma y resta de números enteros · LearnGED</title>
+<meta name="robots" content="noindex">
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-1-2.html">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 1 · Números enteros</div>
+    <h1>Lección 1.2 · Suma y resta de números enteros</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez, así que puede practicar todas las veces que quiera. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#sumar">Sumar reagrupando («llevar»)</a></li>
+      <li><a href="#restar">Restar reagrupando («pedir prestado»)</a></li>
+      <li><a href="#comprobar">Comprobar con la operación contraria</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="sumar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Sumar reagrupando («llevar»)</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Solo se suman dígitos del mismo lugar: unidades con unidades, decenas con decenas. Por eso <strong>alineamos los números por la derecha</strong>.
+      Si una columna suma 10 o más, escriba el dígito de las unidades y <strong>lleve</strong> 1 a la columna de la izquierda. Es como cambiar diez billetes de $1 por uno de $10.</p>
+      <h3>Una columna a la vez</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="su-a">Primer número</label><input type="text" inputmode="numeric" class="corto" id="su-a" value="367"></div>
+          <div class="campo"><label for="su-b">Segundo número</label><input type="text" inputmode="numeric" class="corto" id="su-b" value="158"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="su-sig">Columna siguiente</button>
+          <button type="button" class="btn-sec" id="su-todo">Mostrar todo</button>
+          <button type="button" class="btn-sec" id="su-rei">Empezar de nuevo</button>
+        </div>
+        <div class="termo" id="su-tabla"></div>
+        <div class="salida" id="su-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>El error más común:</strong> olvidar sumar en la columna siguiente el 1 que se llevó.</div>
+      <h3>Practique: sume</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Suma</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con un espacio.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="restar">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Restar reagrupando («pedir prestado»)</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si el dígito de arriba de una columna es menor que el de abajo, <strong>pida prestado</strong> 1 a la columna de la izquierda. Ese 1 vale 10 en su columna, como cambiar un billete de $10 por diez de $1.
+      Si la columna de la izquierda es un <strong>0</strong>, primero pide prestado ella, y ese 0 se vuelve 9.</p>
+      <h3>Una columna a la vez</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="re-a">Número de arriba</label><input type="text" inputmode="numeric" class="corto" id="re-a" value="4003"></div>
+          <div class="campo"><label for="re-b">Número que resta</label><input type="text" inputmode="numeric" class="corto" id="re-b" value="1547"></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="re-sig">Columna siguiente</button>
+          <button type="button" class="btn-sec" id="re-todo">Mostrar todo</button>
+          <button type="button" class="btn-sec" id="re-rei">Empezar de nuevo</button>
+        </div>
+        <div class="termo" id="re-tabla"></div>
+        <div class="salida" id="re-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>Un error común:</strong> restar en cada columna el dígito menor del mayor, sin importar cuál está arriba. En 624 − 158 eso da 534 en vez de 466.</div>
+      <h3>Practique: reste</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Diferencia</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con un espacio.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comprobar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Comprobar con la operación contraria</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La suma y la resta son <strong>operaciones contrarias</strong>: una deshace a la otra. Así se comprueba una respuesta sin calculadora.</p>
+      <table class="reglas">
+        <caption>Cómo comprobar</caption>
+        <thead><tr><th scope="col">Para comprobar…</th><th scope="col">haga esto</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>una suma</td><td>al resultado réstele uno de los números que sumó: debe obtener el otro</td><td>367 + 158 = 525 → 525 − 158 = 367 ✓</td></tr>
+          <tr><td>una resta</td><td>al resultado súmele el número que restó: debe obtener el número con el que empezó</td><td>624 − 158 = 466 → 466 + 158 = 624 ✓</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: ¿está bien?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <h3>Practique: ¿cómo se comprueba?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 1 · Números enteros · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ MÓDULO 1 · sumar ============ */
+function cap1(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function pasosSuma(a, b){
+  var W = Math.max(String(a).length, String(b).length) + 1, A = digitos(a, W), B = digitos(b, W), lleva = [], res = [], pasos = [], c = 0, i;
+  for (i = 0; i < W; i++){ lleva.push(null); res.push(null); }
+  for (i = W - 1; i >= 0; i--){
+    var x = A[i] || 0, y = B[i] || 0, s = x + y + c, k = W - 1 - i;
+    if (i === 0 && s === 0) break;
+    var txt = cap1(LUGARES_PL[k]) + ": " + (c ? "1 (que se llevó) + " : "") + x + " + " + y + " = " + s + ".";
+    res[i] = s % 10; var cNew = s >= 10 ? 1 : 0;
+    txt += s >= 10 ? " Escriba " + (s % 10) + " y lleve 1 a las " + LUGARES_PL[k + 1] + "." : " Escriba " + s + ".";
+    if (cNew && i > 0) lleva[i - 1] = "1";
+    c = cNew;
+    pasos.push({ txt: txt, tabla: tablaCol(W, [{ dig: A }, { signo: "+", dig: B }], lleva.slice(), res.slice(), i, "Suma en columnas, " + LUGARES_PL[k]) });
+    if (i === 0) break;
+  }
+  return { pasos: pasos, W: W, A: A, B: B };
+}
+function sinLlevar(a, b){ var W = Math.max(String(a).length, String(b).length), A = digitos(a, W), B = digitos(b, W), r = ""; for (var i = 0; i < W; i++) r += ((A[i] || 0) + (B[i] || 0)) % 10; return +r; }
+var SU = { i: 0, P: null };
+function cargaSU(){ var a = leeNum($("su-a").value), b = leeNum($("su-b").value); if (a === null || b === null || a > 9999999 || b > 9999999){ $("su-salida").innerHTML = "Escriba dos números enteros de hasta 7 dígitos."; $("su-tabla").innerHTML = ""; SU.P = null; return; } SU.P = pasosSuma(a, b); SU.a = a; SU.b = b; SU.i = 0; pintaSU(); }
+function pintaSU(){
+  if (!SU.P) return; var P = SU.P, W = P.W;
+  $("su-tabla").innerHTML = SU.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "+", dig: P.B }], new Array(W).fill(null), new Array(W).fill(null), -1, "Suma en columnas: " + com(SU.a) + " más " + com(SU.b)) : P.pasos[SU.i - 1].tabla;
+  var h = P.pasos.slice(0, SU.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (SU.i === P.pasos.length) h += '<div class="linea veredicto">Resultado: ' + com(SU.a) + ' + ' + com(SU.b) + ' = ' + com(SU.a + SU.b) + '</div>';
+  if (SU.i === 0) h = '<div class="linea">Los números están alineados por la derecha. Pulse «Columna siguiente» para empezar por las unidades.</div>';
+  $("su-salida").innerHTML = h; $("su-sig").disabled = SU.i >= P.pasos.length;
+}
+function genSuma(){
+  var t = aleatorio(1, 3), a, b;
+  if (t === 1){ a = aleatorio(100, 999); b = aleatorio(100, 999); } else if (t === 2){ a = aleatorio(1000, 9999); b = aleatorio(100, 999); } else { a = aleatorio(1000, 9999); b = aleatorio(1000, 9999); }
+  var r = a + b, s = sinLlevar(a, b);
+  var ctx = elige(["", "", "Una tienda vendió " + com(a) + " artículos en enero y " + com(b) + " en febrero. ¿Cuántos artículos vendió en total? "]);
+  return { enun: ctx + "Calcule <strong>" + com(a) + " + " + com(b) + "</strong>.", solucion: pasosSuma(a, b).pasos.map(function(p){ return p.txt; }).join(" ") + " La suma es " + com(r) + ".",
+    evalua: numN(r, s !== r ? [{ v: s, msg: "Parece que no se sumó algún 1 que se llevaba. Revise cada columna que suma 10 o más." }] : [], "Alinee los números por la derecha y sume una columna a la vez, de derecha a izquierda.") };
+}
+
+/* ============ MÓDULO 2 · restar ============ */
+function pasosResta(a, b){
+  var W = String(a).length, A = digitos(a, W), B = digitos(b, W), cur = A.slice(), marca = A.map(function(){ return null; }), res = new Array(W).fill(null), pasos = [];
+  function arriba(){ return cur.map(function(x, i){ return marca[i] !== null ? '<span class="tach">' + A[i] + '</span><span class="nuevo">' + x + '</span>' : x; }); }
+  for (var i = W - 1; i >= 0; i--){
+    var k = W - 1 - i, y = B[i] || 0, txt = cap1(LUGARES_PL[k]) + ": ";
+    if (cur[i] < y){
+      var j = i - 1; while (cur[j] === 0) j--;
+      var cad = [];
+      cur[j]--; marca[j] = 1; cad.push("el " + (cur[j] + 1) + " de las " + LUGARES_PL[W - 1 - j] + " se vuelve " + cur[j]);
+      for (var m = j + 1; m < i; m++){ cur[m] = 9; marca[m] = 1; cad.push("el 0 de las " + LUGARES_PL[W - 1 - m] + " se vuelve 9"); }
+      cur[i] += 10; marca[i] = 1;
+      txt += "¿" + (cur[i] - 10) + " − " + y + "? No se puede. Pida prestado: " + cad.join("; ") + "; y el " + (cur[i] - 10) + " se vuelve " + cur[i] + ". ";
+    }
+    res[i] = cur[i] - y;
+    if (i === 0 && res[i] === 0 && W > 1) res[i] = null;
+    txt += cur[i] + " − " + y + " = " + (cur[i] - y) + ".";
+    pasos.push({ txt: txt, tabla: tablaCol(W, [{ dig: arriba() }, { signo: "−", dig: B }], null, res.slice(), i, "Resta en columnas, " + LUGARES_PL[k]) });
+  }
+  return { pasos: pasos, W: W, A: A, B: B };
+}
+function restaAlReves(a, b){ var W = String(a).length, A = digitos(a, W), B = digitos(b, W), r = ""; for (var i = 0; i < W; i++) r += Math.abs((A[i] || 0) - (B[i] || 0)); return +r; }
+var RE = { i: 0, P: null };
+function cargaRE(){ var a = leeNum($("re-a").value), b = leeNum($("re-b").value); if (a === null || b === null || a > 9999999){ $("re-salida").innerHTML = "Escriba dos números enteros de hasta 7 dígitos."; $("re-tabla").innerHTML = ""; RE.P = null; return; } if (b > a){ $("re-salida").innerHTML = "En este nivel, el número de arriba tiene que ser el mayor."; $("re-tabla").innerHTML = ""; RE.P = null; return; } RE.P = pasosResta(a, b); RE.a = a; RE.b = b; RE.i = 0; pintaRE(); }
+function pintaRE(){
+  if (!RE.P) return; var P = RE.P, W = P.W;
+  $("re-tabla").innerHTML = RE.i === 0 ? tablaCol(W, [{ dig: P.A }, { signo: "−", dig: P.B }], null, new Array(W).fill(null), -1, "Resta en columnas: " + com(RE.a) + " menos " + com(RE.b)) : P.pasos[RE.i - 1].tabla;
+  var h = P.pasos.slice(0, RE.i).map(function(p, k){ return '<div class="linea">' + (k + 1) + '. ' + p.txt + '</div>'; }).join("");
+  if (RE.i === P.pasos.length) h += '<div class="linea veredicto">Resultado: ' + com(RE.a) + ' − ' + com(RE.b) + ' = ' + com(RE.a - RE.b) + '</div>';
+  if (RE.i === 0) h = '<div class="linea">Empiece por las unidades. Los dígitos que cambian al pedir prestado aparecen tachados, con el valor nuevo en rojo.</div>';
+  $("re-salida").innerHTML = h; $("re-sig").disabled = RE.i >= P.pasos.length;
+}
+function genResta(){
+  var t = aleatorio(1, 3), a, b;
+  if (t === 1){ a = aleatorio(300, 999); b = aleatorio(100, a - 50); }
+  else if (t === 2){ a = aleatorio(2, 9) * 1000 + elige([0, 0, aleatorio(1, 9), aleatorio(10, 99)]); b = aleatorio(100, a - 100); }
+  else { a = aleatorio(2000, 9999); b = aleatorio(1000, a - 100); }
+  var r = a - b, m = restaAlReves(a, b);
+  return { enun: "Calcule <strong>" + com(a) + " − " + com(b) + "</strong>.", solucion: pasosResta(a, b).pasos.map(function(p){ return p.txt; }).join(" ") + " La diferencia es " + com(r) + ".",
+    evalua: numN(r, m !== r ? [{ v: m, msg: "Parece que en alguna columna se restó el dígito menor del mayor. Cuando el dígito de arriba es menor, hay que pedir prestado." }] : [], "Empiece por las unidades. Cuando el dígito de arriba es menor, pida prestado a la izquierda; un 0 que presta se vuelve 9.") };
+}
+
+/* ============ MÓDULO 3 · comprobar ============ */
+function genBien(){
+  var suma = Math.random() < 0.5, a = aleatorio(200, 999), b = aleatorio(100, a - 1), r = suma ? a + b : a - b, ok = Math.random() < 0.5, dado = ok ? r : r + elige([10, -10, 100, 1, -1]);
+  var q = suma ? com(a) + " + " + com(b) + " = " + com(dado) : com(a) + " − " + com(b) + " = " + com(dado);
+  var ver = suma ? com(dado) + " − " + com(b) + " = " + com(dado - b) + (dado - b === a ? ", que es el otro número que se sumó ✓" : ", que no es " + com(a) + " ✗")
+                 : com(dado) + " + " + com(b) + " = " + com(dado + b) + (dado + b === a ? ", que es el número con el que se empezó ✓" : ", que no es " + com(a) + " ✗");
+  return { enun: "Un estudiante escribió <strong>" + q + "</strong>. ¿Está bien?", opciones: [ { html: "Sí, está bien", clave: "s" }, { html: "No, está mal", clave: "n" } ], correcta: ok ? "s" : "n", enOrden: true,
+    bien: "Comprobación: " + ver + ".", mal: "Comprobación: " + ver + "." + (ok ? "" : " La respuesta correcta es " + com(r) + "."), pista: "" };
+}
+function genComo(){
+  var suma = Math.random() < 0.5, a = aleatorio(300, 999), b = aleatorio(100, a - 1), r = suma ? a + b : a - b;
+  if (suma) return { enun: "¿Cómo se comprueba que <strong>" + com(a) + " + " + com(b) + " = " + com(r) + "</strong>?",
+    opciones: [ { html: "Restar " + com(r) + " − " + com(b) + " y ver si da " + com(a), clave: "a" }, { html: "Sumar " + com(r) + " + " + com(b), clave: "b" }, { html: "Restar " + com(a) + " − " + com(b), clave: "c" }, { html: "No se puede comprobar sin calculadora", clave: "d" } ], correcta: "a",
+    pistas: { b: "Para comprobar una suma, use la operación contraria: la resta.", c: "Empiece con el resultado, " + com(r) + ".", d: "La suma y la resta se deshacen entre sí. Puede comprobarlo sin calculadora." },
+    pista: "Use la operación contraria.", bien: "La resta deshace la suma.", mal: "Empiece con el resultado y réstele uno de los números que sumó. Debe obtener el otro." };
+  return { enun: "¿Cómo se comprueba que <strong>" + com(a) + " − " + com(b) + " = " + com(r) + "</strong>?",
+    opciones: [ { html: "Sumar " + com(r) + " + " + com(b) + " y ver si da " + com(a), clave: "a" }, { html: "Restar " + com(r) + " − " + com(b), clave: "b" }, { html: "Sumar " + com(a) + " + " + com(b), clave: "c" }, { html: "No se puede comprobar sin calculadora", clave: "d" } ], correcta: "a",
+    pistas: { b: "Para comprobar una resta, use la operación contraria: la suma.", c: "Empiece con el resultado, " + com(r) + ".", d: "La suma y la resta se deshacen entre sí. Puede comprobarlo sin calculadora." },
+    pista: "Use la operación contraria.", bien: "La suma deshace la resta.", mal: "Sume el resultado y el número que se restó. Debe obtener el número con el que se empezó." };
+}
+
+/* ---------- Arranque ---------- */
+["su-a", "su-b"].forEach(function(id){ $(id).addEventListener("input", cargaSU); });
+$("su-sig").addEventListener("click", function(){ if (SU.P && SU.i < SU.P.pasos.length){ SU.i++; pintaSU(); } });
+$("su-todo").addEventListener("click", function(){ if (SU.P){ SU.i = SU.P.pasos.length; pintaSU(); } });
+$("su-rei").addEventListener("click", function(){ if (SU.P){ SU.i = 0; pintaSU(); } });
+cargaSU();
+creaPracticaLibre("p1", genSuma);
+["re-a", "re-b"].forEach(function(id){ $(id).addEventListener("input", cargaRE); });
+$("re-sig").addEventListener("click", function(){ if (RE.P && RE.i < RE.P.pasos.length){ RE.i++; pintaRE(); } });
+$("re-todo").addEventListener("click", function(){ if (RE.P){ RE.i = RE.P.pasos.length; pintaRE(); } });
+$("re-rei").addEventListener("click", function(){ if (RE.P){ RE.i = 0; pintaRE(); } });
+cargaRE();
+creaPracticaLibre("p2", genResta);
+creaPracticaOM("p3", genBien);
+creaPracticaOM("p4", genComo);
+iniciaNavegacion();
+</script>
+</body>
+</html>
