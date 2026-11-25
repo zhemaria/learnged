@@ -47,11 +47,11 @@
     <div class="cuerpo">
       <p>El lugar donde está un dígito decide cuánto vale. El dígito 5 vale cinco en 5, cincuenta en 50 y quinientos en 500.
       Cada vez que un dígito se mueve un lugar a la <strong>izquierda</strong>, vale <strong>10 veces más</strong>.
-      Separamos los números grandes en grupos de tres dígitos: unidades, miles y millones. Al escribir, dejamos un espacio entre los grupos: 3 482 651.</p>
+      Separamos los números grandes en grupos de tres dígitos: unidades, miles y millones. Al escribir, separamos los grupos con una coma: 3,482,651.</p>
 
       <h3>Ponga un número en la tabla</h3>
       <div class="panel">
-        <div class="campos"><div class="campo"><label for="vp-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="vp-n" value="3 482 651"></div></div>
+        <div class="campos"><div class="campo"><label for="vp-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="vp-n" value="3,482,651"></div></div>
         <div class="caja-aviso" id="vp-aviso" role="alert"></div>
         <div class="tabla-scroll" id="vp-tabla"></div>
         <p>Toque un dígito para ver cuánto vale:</p>
@@ -86,12 +86,12 @@
 
       <h3>De números a palabras</h3>
       <div class="panel">
-        <div class="campos"><div class="campo"><label for="le-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="le-n" value="208 040"></div></div>
+        <div class="campos"><div class="campo"><label for="le-n">Escriba un número (hasta 9 dígitos)</label><input type="text" inputmode="numeric" class="ancho" id="le-n" value="208,040"></div></div>
         <div class="salida" id="le-salida" aria-live="polite"></div>
       </div>
 
       <div class="caja-tip">
-        <strong>El cero guarda el lugar:</strong> en 208 040 los ceros dicen que no hay decenas de millar, ni centenas, ni unidades.
+        <strong>El cero guarda el lugar:</strong> en 208,040 los ceros dicen que no hay decenas de millar, ni centenas, ni unidades.
         Si los quitara, el número cambiaría por completo.
       </div>
 
@@ -108,7 +108,7 @@
       <div class="practica" id="p3">
         <div class="enun" id="p3-enun"></div>
         <div class="campos"><div class="campo"><label for="p3-r">Número</label><input type="text" autocomplete="off" inputmode="numeric" class="ancho" id="p3-r"></div></div>
-        <p class="nota">Escriba solo cifras. Puede separar los grupos con un espacio.</p>
+        <p class="nota">Escriba solo cifras. Puede separar los grupos con una coma.</p>
         <div class="fila-btn">
           <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
           <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
@@ -144,8 +144,8 @@
       <h3>Compare paso a paso</h3>
       <div class="panel">
         <div class="campos">
-          <div class="campo"><label for="cp-a">Primer número</label><input type="text" inputmode="numeric" class="corto" id="cp-a" value="4 729"></div>
-          <div class="campo"><label for="cp-b">Segundo número</label><input type="text" inputmode="numeric" class="corto" id="cp-b" value="4 813"></div>
+          <div class="campo"><label for="cp-a">Primer número</label><input type="text" inputmode="numeric" class="corto" id="cp-a" value="4,729"></div>
+          <div class="campo"><label for="cp-b">Segundo número</label><input type="text" inputmode="numeric" class="corto" id="cp-b" value="4,813"></div>
         </div>
         <div class="salida" id="cp-salida" aria-live="polite"></div>
       </div>
@@ -191,7 +191,7 @@
       <h3>¿A cuál está más cerca?</h3>
       <div class="panel">
         <div class="campos">
-          <div class="campo"><label for="rd-n">Número</label><input type="text" inputmode="numeric" class="corto" id="rd-n" value="48 213"></div>
+          <div class="campo"><label for="rd-n">Número</label><input type="text" inputmode="numeric" class="corto" id="rd-n" value="48,213"></div>
           <div class="campo"><label for="rd-l">Redondear a</label><select id="rd-l"><option value="1">la decena</option><option value="2">la centena</option><option value="3" selected>el millar</option><option value="4">la decena de millar</option></select></div>
         </div>
         <div id="rd-svg"></div>
@@ -226,7 +226,7 @@
 
 <script src="/math/practice.js"></script>
 <script>
-var NBSP = " ";
+var SEP = ",";
 /* "en las centenas", "en las unidades de millar" … */
 function enLugar(k){ return "en las " + LUGARES_PL[k]; }
 /* Redondear «a la decena más cercana» … */
@@ -279,7 +279,7 @@ function pintaLE(){
   var n = leeNum($("le-n").value);
   if (n === null || n > 999999999){ $("le-salida").innerHTML = "Escriba un número entero de hasta 9 dígitos."; return; }
   if (n === 0){ $("le-salida").innerHTML = '<div class="linea veredicto">«cero»</div>'; return; }
-  var partes = com(n).split(NBSP), nombres = ["de las unidades", "de los miles", "de los millones"], h = "";
+  var partes = com(n).split(SEP), nombres = ["de las unidades", "de los miles", "de los millones"], h = "";
   partes.forEach(function(p, i){
     var pos = partes.length - 1 - i, val = +p;
     h += '<div class="linea">Paso ' + (i + 1) + '. El grupo ' + nombres[pos] + ': ' + p + ' → ' + (val ? "«" + nombreGrupo(val, pos) + "»" : "no se dice nada (todo son ceros)") + '</div>';
@@ -308,7 +308,7 @@ function genLeer(){
     mal: "Léalo por grupos: " + grupoLetras(n).map(function(p){ return p[0] + " → «" + p[1] + "»"; }).join("; ") + ". Todo junto: " + enLetras(n) + "." };
 }
 function todosGrupos(n){
-  var partes = com(n).split(NBSP), plural = ["unidades", "miles", "millones"];
+  var partes = com(n).split(SEP), plural = ["unidades", "miles", "millones"];
   return partes.map(function(p, i){
     var pos = partes.length - 1 - i, val = +p;
     return val ? "«" + nombreGrupo(val, pos) + "» → " + p : "sin " + plural[pos] + " → " + p;

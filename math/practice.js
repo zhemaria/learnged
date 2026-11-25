@@ -9,7 +9,7 @@ var TX = ES ? {
   resueltos: function(t, p, n){ return "Resueltos: " + t + " de " + n + " (" + p + " al primer intento)"; },
   bien: "✓ Correcto. ", todavia: "<strong>Todavía no.</strong> ", otraVez: " <strong>Inténtelo de nuevo.</strong>",
   asi: "<strong>Así se resuelve.</strong> ", noEsta: "<strong>Esta vez no.</strong> ", nuevo: " Pulse <em>Otro ejercicio</em> para intentar uno más.",
-  unoMas: " <strong>Tiene un intento más.</strong>", entero: "Escriba un número entero, solo con cifras (puede separar los miles con un espacio o una coma).",
+  unoMas: " <strong>Tiene un intento más.</strong>", entero: "Escriba un número entero, solo con cifras (puede separar los miles con una coma).",
   revise: "Revise su respuesta una vez más."
 } : {
   resueltos: function(t, p, n){ return "Solved: " + t + " of " + n + " (" + p + " on the first try)"; },
@@ -26,7 +26,7 @@ function linea(p, q, color, ancho){ return '<line x1="' + f1(p[0]) + '" y1="' + 
 function texto(p, t, tam, color, peso){ return '<text x="' + f1(p[0]) + '" y="' + f1(p[1]) + '" text-anchor="middle" dominant-baseline="middle" font-size="' + (tam || 18) + '" font-weight="' + (peso || 700) + '" fill="' + (color || "#222") + '">' + t + '</text>'; }
 
 /* ---------- Numbers in English ---------- */
-function com(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ES ? "\u00a0" : ","); }
+function com(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
 var ONES = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 var TENS = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 function under1000(n){

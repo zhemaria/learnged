@@ -195,7 +195,7 @@ function eligeOp(o){
 }
 function compruebaCP(){
   var q = CP.q, v = leeNum($("cp-r").value), fb = $("cp-fb");
-  if (v === null){ fb.className = "fb pista"; fb.innerHTML = "Escriba la respuesta solo con cifras (puede separar los miles con un espacio)."; return; }
+  if (v === null){ fb.className = "fb pista"; fb.innerHTML = "Escriba la respuesta solo con cifras (puede separar los miles con una coma)."; return; }
   CP.intentos++;
   if (v !== q.r && CP.intentos === 1){ fb.className = "fb pista"; fb.innerHTML = "<strong>Todavía no.</strong> Alinee los números por la derecha y resuelva una columna a la vez, empezando por las unidades. <strong>Tiene un intento más.</strong>"; $("cp-r").focus(); return; }
   $("cp-r").disabled = true; $("cp-ok").disabled = true; CP.total++;
