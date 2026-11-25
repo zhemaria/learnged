@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 1 · Lesson 4.1 · Equivalent fractions — interactive (English)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 4.1 · Equivalent fractions: simplify and compare · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 1 · Topic 4 · Fractions</div>
+    <h1>Lesson 4.1 · Equivalent fractions: simplify and compare</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#what">What is a fraction?</a></li>
+      <li><a href="#equivalent">Equivalent fractions</a></li>
+      <li><a href="#simplify">Simplify a fraction</a></li>
+      <li><a href="#compare">Compare fractions</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="what" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>What is a fraction?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The <strong>denominator</strong> (bottom) tells how many equal parts the whole is cut into. The <strong>numerator</strong> (top)
+      tells how many of those parts you take.</p>
+      <h3>Build a fraction</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="qe-n">Numerator (parts you take): <span id="qe-nv"></span></label><input type="range" id="qe-n" min="0" max="12" value="3"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="qe-d">Denominator (equal parts): <span id="qe-dv"></span></label><input type="range" id="qe-d" min="1" max="12" value="4"></div>
+        </div>
+        <div id="qe-svg"></div>
+        <div id="qe-recta"></div>
+        <div class="salida" id="qe-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: which fraction is it?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="equivalent">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Equivalent fractions</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Multiply the top and the bottom by the <strong>same number</strong>. Each piece is cut into smaller pieces: there are more pieces, but the
+      shaded amount stays the same.</p>
+      <h3>Cut every piece</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="eq-n">Numerator</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="eq-n" value="2"></div>
+          <div class="campo"><label for="eq-d">Denominator</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="eq-d" value="3"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="eq-k">Multiply the top and the bottom by: <span id="eq-kv"></span></label><input type="range" id="eq-k" min="1" max="6" value="2"></div>
+        </div>
+        <div id="eq-svg"></div>
+        <div class="salida" id="eq-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: which one is equivalent?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="simplify">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Simplify a fraction</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Divide the top and the bottom by the <strong>same number</strong> until no number greater than 1 divides both. You can go step
+      by step with small numbers, or all at once with the greatest number that divides both.</p>
+      <h3>Simplify step by step</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="si-n">Numerator</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="si-n" value="8"></div>
+          <div class="campo"><label for="si-d">Denominator</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="si-d" value="12"></div>
+        </div>
+        <div class="salida" id="si-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: simplify</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Simplest form</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type the fraction with a slash, for example 2/3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <div class="caja-calc">
+        <span class="et-calc"><span aria-hidden="true">🧮</span> Check it on the calculator</span>
+        <p>Write the fraction with the <span class="tecla">n/d</span> template (numerator, <span class="tecla">▼</span>, denominator, <span class="tecla">►</span>) and press <span class="tecla">enter</span>. The calculator shows it in simplest form.</p>
+        <button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="compare">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Compare fractions</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p><strong>Same denominator:</strong> compare the numerators. <strong>Same numerator:</strong> the smaller denominator has the bigger parts.
+      <strong>Different denominators:</strong> find a common denominator, or multiply across (cross-multiply) and compare.</p>
+      <h3>Compare with bars</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="co-a">First fraction</label><input type="text" autocomplete="off" class="corto" id="co-a" value="2/3"></div>
+          <div class="campo"><label for="co-b">Second fraction</label><input type="text" autocomplete="off" class="corto" id="co-b" value="3/4"></div>
+        </div>
+        <div id="co-svg"></div>
+        <div class="salida" id="co-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: which symbol goes there?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 1 · Topic 4 · Fractions · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script>
+/* ============ Helpers ============ */
+function mcd(a, b){ while (b){ var t = a % b; a = b; b = t; } return a; }
+function fr(n, d){ return '<span class="fracc" aria-hidden="true"><span class="fa">' + n + '</span><span class="fb2">' + d + '</span></span><span class="sr-only">' + n + '/' + d + '</span>'; }
+function frVoz(n, d){ return n + " over " + d; }
+function leeFr(t){ var m = String(t).replace(/\s+/g, "").match(/^(\d+)\/(\d+)$/); return m && +m[2] ? { p: +m[1], q: +m[2] } : null; }
+function nv(x){ return String(Math.round(x * 1000) / 1000); }
+/* Fraction bar: d equal parts, n of them filled (more than one bar if n > d) */
+function barraFr(n, d, col, voz, ancho){
+  var W = ancho || 520, h = 40, bars = Math.max(1, Math.ceil(n / d)), s = '<svg class="figura" style="max-width:' + (W + 40) + 'px" viewBox="0 0 ' + (W + 40) + ' ' + (bars * (h + 12) + 8) + '" role="img" aria-label="' + voz + '">';
+  for (var b = 0; b < bars; b++) for (var i = 0; i < d; i++){ var k = b * d + i, x = 20 + i * W / d, y = 6 + b * (h + 12); s += '<rect x="' + f1(x) + '" y="' + y + '" width="' + f1(W / d) + '" height="' + h + '" fill="' + (k < n ? (col || "#7b1fa2") : "#fff") + '" stroke="#424242" stroke-width="2"/>'; }
+  return s + '</svg>';
+}
+
+/* ============ MODULE 1 · what is a fraction ============ */
+function rectaFr(n, d){
+  var mx = Math.max(1, Math.ceil(n / d)), x0 = 40, x1 = 600, W = x1 - x0, s = '<svg class="figura" viewBox="0 0 640 110" role="img" aria-label="Number line from 0 to ' + mx + ' with ' + n + '/' + d + ' marked.">' + linea([x0, 55], [x1, 55], "#424242", 2);
+  for (var k = 0; k <= mx * d; k++){ var x = x0 + k * W / (mx * d), ent = k % d === 0; s += linea([x, 55 - (ent ? 14 : 7)], [x, 55 + (ent ? 14 : 7)], "#424242", ent ? 3 : 1.5); if (ent) s += texto([x, 95], k / d, 20, "#222"); }
+  var xp = x0 + n * W / (mx * d);
+  return s + '<circle cx="' + f1(xp) + '" cy="55" r="9" fill="#7b1fa2"/>' + texto([xp, 26], n + "/" + d, 20, "#7b1fa2") + '</svg>';
+}
+function pintaQE(){
+  var n = +$("qe-n").value, d = +$("qe-d").value;
+  $("qe-nv").textContent = n; $("qe-dv").textContent = d;
+  $("qe-svg").innerHTML = barraFr(n, d, "#7b1fa2", "Bar with " + n + " of " + d + " equal parts shaded.");
+  $("qe-recta").innerHTML = rectaFr(n, d);
+  var v = n / d;
+  $("qe-salida").innerHTML = '<div class="linea">' + fr(n, d) + '</div><div class="linea">The whole is cut into ' + d + (d === 1 ? ' part' : ' equal parts') + ', and you take ' + n + '. As a decimal: ' + n + ' ÷ ' + d + ' ' + (Math.abs(Math.round(v * 1000) / 1000 - v) > 1e-9 ? "≈" : "=") + ' ' + nv(v) + '.</div>' +
+    (n > d ? '<div class="linea">The numerator is greater than the denominator: the fraction is more than 1 whole (an improper fraction).</div>' : n === d ? '<div class="linea">The numerator equals the denominator: the fraction is exactly 1 whole.</div>' : n === 0 ? '<div class="linea">You take no parts: the fraction is 0.</div>' : '');
+}
+function genQueFr(){
+  var d = aleatorio(2, 10), n = aleatorio(1, d - 1);
+  var o = [[n, d], [d - n, d], [n, d - n > 0 && d - n !== d ? d - n : d + 1], [d, n]].filter(function(x, i, a){ return x[1] > 0 && a.findIndex(function(y){ return y[0] === x[0] && y[1] === x[1]; }) === i; });
+  var pistas = {}; pistas[(d - n) + "/" + d] = "That is the part that is not shaded.";
+  pistas[d + "/" + n] = "You switched the numbers. The bottom number is how many equal parts in all.";
+  return { enun: "What fraction of the bar is shaded?" + barraFr(n, d, "#7b1fa2", "Bar with " + n + " of " + d + " equal parts shaded.", 400),
+    opciones: o.map(function(x){ return { html: fr(x[0], x[1]), clave: x[0] + "/" + x[1] }; }), correcta: n + "/" + d, pistas: pistas,
+    pista: "Count all the equal parts (denominator), then the shaded parts (numerator).",
+    bien: d + " equal parts in all, and " + n + " shaded: " + n + "/" + d + ".", mal: "There are " + d + " equal parts (denominator) and " + n + " are shaded (numerator): " + n + "/" + d + "." };
+}
+
+/* ============ MODULE 2 · equivalent fractions ============ */
+function pintaEQ(){
+  var n = leeNum($("eq-n").value), d = leeNum($("eq-d").value), k = +$("eq-k").value, out = $("eq-salida");
+  $("eq-kv").textContent = k;
+  if (n === null || !d || n > d * 2 || d > 12){ out.innerHTML = "Type a fraction with a denominator from 1 to 12."; $("eq-svg").innerHTML = ""; return; }
+  $("eq-svg").innerHTML = barraFr(n, d, "#7b1fa2", n + " of " + d + " parts shaded.") + barraFr(n * k, d * k, "#ba68c8", (n * k) + " of " + (d * k) + " parts shaded, the same amount.");
+  out.innerHTML = '<div class="linea">' + fr(n, d) + ' = ' + fr(n + " × " + k, d + " × " + k) + ' = ' + fr(n * k, d * k) + '</div>' +
+    '<div class="linea">Each piece was cut into ' + k + (k === 1 ? ' piece (nothing changed)' : ' pieces') + ': now there are ' + (d * k) + ' pieces in all, and ' + (n * k) + ' are shaded. The shaded amount is the same.</div>';
+}
+function genEquiv(){
+  var d = aleatorio(2, 6), n = aleatorio(1, d - 1); while (mcd(n, d) > 1) n = aleatorio(1, d - 1);
+  var k = aleatorio(2, 4), cor = [n * k, d * k];
+  var o = [cor, [n * k, d], [n + k, d + k], [n, d * k]].filter(function(x, i, a){ return a.findIndex(function(y){ return y[0] === x[0] && y[1] === x[1]; }) === i && !(i > 0 && x[0] * d === x[1] * n); });
+  var pistas = {}; pistas[(n + k) + "/" + (d + k)] = "Adding the same number to the top and the bottom changes the value. Multiply instead.";
+  pistas[(n * k) + "/" + d] = "You multiplied only the top. Do the same to the bottom.";
+  pistas[n + "/" + (d * k)] = "You multiplied only the bottom. Do the same to the top.";
+  return { enun: "Which fraction is equivalent to " + fr(n, d) + "?", opciones: o.map(function(x){ return { html: fr(x[0], x[1]), clave: x[0] + "/" + x[1] }; }), correcta: cor[0] + "/" + cor[1], pistas: pistas,
+    bien: "Top and bottom multiplied by " + k + ": " + n + "/" + d + " = " + cor[0] + "/" + cor[1] + ".", mal: "Multiply the top and the bottom by " + k + ": " + n + " × " + k + " = " + cor[0] + " and " + d + " × " + k + " = " + cor[1] + "." };
+}
+
+/* ============ MODULE 3 · simplify ============ */
+function pintaSI(){
+  var n = leeNum($("si-n").value), d = leeNum($("si-d").value), out = $("si-salida");
+  if (n === null || !d || n > 999 || d > 999){ out.innerHTML = "Type a numerator and a denominator (the denominator cannot be 0)."; return; }
+  var g = mcd(n, d), h = '<div class="linea">' + fr(n, d) + '</div>';
+  if (g === 1){ out.innerHTML = h + '<div class="linea veredicto">' + n + ' and ' + d + ' share no factor greater than 1: the fraction is already in simplest form.</div>'; return; }
+  var a = n, b = d, pasos = [];
+  [2, 3, 5, 7, 11, 13].forEach(function(p){ while (a % p === 0 && b % p === 0){ pasos.push("Divide by " + p + ": " + a + " ÷ " + p + " = " + a / p + " and " + b + " ÷ " + p + " = " + b / p + " → " + a / p + "/" + b / p); a /= p; b /= p; } });
+  if (mcd(a, b) > 1){ var g2 = mcd(a, b); pasos.push("Divide by " + g2 + ": " + a / g2 + "/" + b / g2); a /= g2; b /= g2; }
+  h += '<div class="linea">Step by step, with small numbers:</div>' + pasos.map(function(p){ return '<div class="linea">· ' + p + '</div>'; }).join("");
+  h += '<div class="linea">All at once: the greatest number that divides both is ' + g + '. ' + n + ' ÷ ' + g + ' = ' + n / g + ', and ' + d + ' ÷ ' + g + ' = ' + d / g + '.</div><div class="linea veredicto">' + fr(n, d) + ' = ' + fr(n / g, d / g) + '</div>';
+  out.innerHTML = h;
+}
+function genSimp(){
+  var d = aleatorio(2, 9), n = aleatorio(1, d - 1); while (mcd(n, d) > 1) n = aleatorio(1, d - 1);
+  var k = aleatorio(2, 6), N = n * k, D = d * k;
+  return { enun: "Simplify " + fr(N, D) + " to its simplest form.",
+    solucion: "Divide the top and the bottom by " + k + ": " + N + " ÷ " + k + " = " + n + " and " + D + " ÷ " + k + " = " + d + ". Simplest form: <strong>" + n + "/" + d + "</strong>.",
+    evalua: function(t){
+      var q = leeFr(t);
+      if (!q) return { estado: "invalido", msg: "Type a fraction with a slash, for example 2/3." };
+      if (q.p * d !== q.q * n) return { estado: "mal", msg: "That fraction has a different value. Divide the top and the bottom by the same number." };
+      if (q.p !== n) return { estado: "mal", msg: "The value is right, but you can still simplify: " + q.p + " and " + q.q + " can both be divided by " + mcd(q.p, q.q) + "." };
+      return { estado: "bien" };
+    } };
+}
+
+/* ============ MODULE 4 · compare ============ */
+function pintaCO(){
+  var a = leeFr($("co-a").value), b = leeFr($("co-b").value), out = $("co-salida");
+  if (!a || !b || a.q > 20 || b.q > 20 || a.p > a.q * 2 || b.p > b.q * 2){ out.innerHTML = "Type two fractions with a slash, for example 2/3 and 3/5 (denominators up to 20)."; $("co-svg").innerHTML = ""; return; }
+  $("co-svg").innerHTML = barraFr(a.p, a.q, "#7b1fa2", a.p + "/" + a.q + " shaded.") + barraFr(b.p, b.q, "#1565c0", b.p + "/" + b.q + " shaded.");
+  var x = a.p * b.q, y = b.p * a.q, r = x > y ? "&gt;" : (x < y ? "&lt;" : "="), m = a.q * b.q / mcd(a.q, b.q), h = '';
+  if (a.q === b.q) h += '<div class="linea">Same denominator: compare the numerators, ' + a.p + ' and ' + b.p + '.</div>';
+  else if (a.p === b.p) h += '<div class="linea">Same numerator: the fraction with the smaller denominator has the bigger parts.</div>';
+  else h += '<div class="linea">Common denominator ' + m + ': ' + fr(a.p, a.q) + ' = ' + fr(a.p * m / a.q, m) + ' and ' + fr(b.p, b.q) + ' = ' + fr(b.p * m / b.q, m) + '.</div><div class="linea">Or cross-multiply: ' + a.p + ' × ' + b.q + ' = ' + x + ' and ' + b.p + ' × ' + a.q + ' = ' + y + '.</div>';
+  out.innerHTML = h + '<div class="linea veredicto">' + fr(a.p, a.q) + ' ' + r + ' ' + fr(b.p, b.q) + '</div>';
+}
+function genComp(){
+  var t = aleatorio(1, 3), a, b;
+  if (t === 1){ var d = aleatorio(4, 12); a = [aleatorio(1, d - 1), d]; b = [aleatorio(1, d - 1), d]; }
+  else if (t === 2){ var n = aleatorio(1, 3); a = [n, aleatorio(n + 1, 9)]; b = [n, aleatorio(n + 1, 9)]; }
+  else { a = [aleatorio(1, 5), aleatorio(2, 8)]; b = [aleatorio(1, 5), aleatorio(2, 8)]; if (a[0] >= a[1]) a[0] = a[1] - 1; if (b[0] >= b[1]) b[0] = b[1] - 1; }
+  var x = a[0] * b[1], y = b[0] * a[1], r = x > y ? ">" : (x < y ? "<" : "="), sim = { ">": "&gt;", "<": "&lt;", "=": "=" };
+  var pista = t === 1 ? "Same denominator: compare the numerators." : t === 2 ? "Same numerator: the smaller denominator has the bigger parts." : "Different denominators: cross-multiply, " + a[0] + " × " + b[1] + " and " + b[0] + " × " + a[1] + ".";
+  return { enOrden: true, enun: "Which symbol goes between " + fr(a[0], a[1]) + " and " + fr(b[0], b[1]) + "?",
+    opciones: [">", "<", "="].map(function(k){ return { html: fr(a[0], a[1]) + " " + sim[k] + " " + fr(b[0], b[1]), clave: k }; }), correcta: r, pista: pista,
+    bien: "Cross-multiply: " + a[0] + " × " + b[1] + " = " + x + " and " + b[0] + " × " + a[1] + " = " + y + ".",
+    mal: t === 2 ? "With the same numerator, the smaller denominator wins (bigger parts)." : "Cross-multiply: " + x + " and " + y + "." };
+}
+
+/* ---------- Start ---------- */
+["qe-n", "qe-d"].forEach(function(id){ $(id).addEventListener("input", pintaQE); }); pintaQE();
+creaPracticaOM("p1", genQueFr);
+["eq-n", "eq-d"].forEach(function(id){ $(id).addEventListener("input", pintaEQ); }); $("eq-k").addEventListener("input", pintaEQ); pintaEQ();
+creaPracticaOM("p2", genEquiv);
+["si-n", "si-d"].forEach(function(id){ $(id).addEventListener("input", pintaSI); }); pintaSI();
+creaPracticaLibre("p3", genSimp);
+["co-a", "co-b"].forEach(function(id){ $(id).addEventListener("input", pintaCO); }); pintaCO();
+creaPracticaOM("p4", genComp);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

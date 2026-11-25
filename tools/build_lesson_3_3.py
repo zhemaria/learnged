@@ -306,7 +306,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>With this lesson you finish <strong>Topic 3 · Decimals</strong>. You can now read, compare, round, and calculate with decimals, change them to fractions, and solve real problems with them.</p>
 <p>In <strong>Topic 4 · Fractions</strong> you will study the other way to write parts of a whole. <strong>Lesson 4.1 · Equivalent fractions: simplify and compare</strong> will show you how the same amount can be written with many different fractions, and how to find the simplest one. You already got a first look at that idea of "simplifying" in this lesson.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Topic 4 · Lesson 4.1 · Equivalent fractions: simplify and compare</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-1.html">Topic 4 · Lesson 4.1 · Equivalent fractions: simplify and compare</a></p>
 </section>
 
 <section>
