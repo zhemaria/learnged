@@ -177,6 +177,7 @@ CCR = {
  "6.G.1": ("D", "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems."),
  "3.MD.3": ("B", "Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step \"how many more\" and \"how many less\" problems using information presented in scaled bar graphs."),
  "6.SP.5": ("D", "Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability."),
+ "5.G.2": ("C", "Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -235,6 +236,8 @@ LESSONS = [
   {"direct": ["Q.4.a"], "builds": ["Q.4.c", "Q.4.d"], "mp": ["MP.1.e", "MP.2.b", "MP.4.a"], "ccr": ["3.MD.7", "4.MD.3", "6.G.1"]}),
  ("level-1/lesson-8-1.html", "8.1", "Reading and understanding data tables",
   {"direct": [], "builds": ["Q.6.a", "Q.6.c", "Q.7.a"], "mp": ["MP.1.a", "MP.2.c", "MP.4.a"], "ccr": ["3.MD.3", "6.SP.5"]}),
+ ("level-1/lesson-8-2.html", "8.2", "Bar graphs and line graphs",
+  {"direct": ["Q.6.a", "Q.6.c"], "builds": [], "mp": ["MP.2.b", "MP.4.c", "MP.5.c"], "ccr": ["3.MD.3", "5.G.2"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

@@ -43,10 +43,12 @@ TARGETS_ES = {
  "MP.3.a": "Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.",
  "MP.4.a": "Manejar y resolver expresiones aritméticas.",
  "MP.4.b": "Transformar y resolver expresiones algebraicas.",
+ "MP.4.c": "Mostrar datos o expresiones algebraicas en forma gráfica.",
  "MP.5.a": "Reconocer errores en el razonamiento de otras personas.",
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "5.G.2": "Representar problemas matemáticos y de la vida real ubicando puntos en el primer cuadrante del plano de coordenadas, e interpretar las coordenadas de los puntos según la situación.",
  "3.MD.3": "Hacer una pictografía y una gráfica de barras a escala para representar datos con varias categorías. Resolver problemas de uno y de dos pasos de «cuántos más» y «cuántos menos» con la información de gráficas de barras a escala.",
  "6.SP.5": "Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.",
  "3.MD.7": "Relacionar el área con las operaciones de multiplicación y suma.",
