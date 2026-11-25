@@ -38,7 +38,7 @@ TX = {
         "intro": "Eight topics, from whole numbers to tables and graphs. Each lesson has a practice page that makes new exercises every time.",
         "otro": '<span lang="es">Versión en español: <a href="/es/matematicas/nivel-1/" hreflang="es">Matemáticas · Nivel 1</a></span>',
         "maestros": 'For teachers: <a href="../ged-standards.html">standards map</a>',
-        "navlabel": "Topics", "tema": "Topic", "leccion": "Lesson", "practica": "practice", "ariaPrac": "Practice for lesson {}", "pronto": "coming soon",
+        "navlabel": "Topics", "big": "A+ Larger text", "hc": "High contrast", "tema": "Topic", "leccion": "Lesson", "practica": "practice", "ariaPrac": "Practice for lesson {}", "pronto": "coming soon",
         "alt": '<link rel="alternate" hreflang="es" href="/es/matematicas/nivel-1/">',
         "pie": '<p class="tm">© 2026. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a>. GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>'},
  "es": {"dir": "es/matematicas/nivel-1", "lec": "leccion-{}.html", "prac": "practica-{}.html", "lang": "es", "title": "Matemáticas · Nivel 1 · LearnGED",
@@ -46,34 +46,36 @@ TX = {
         "intro": "Ocho temas, de los números enteros a las tablas y gráficas. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez.",
         "otro": '<span lang="en">English version: <a href="/math/level-1/" hreflang="en">Math · Level 1</a></span>',
         "maestros": 'Para maestros: <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>',
-        "navlabel": "Temas", "tema": "Tema", "leccion": "Lección", "practica": "práctica", "ariaPrac": "Práctica de la lección {}", "pronto": "próximamente",
+        "navlabel": "Temas", "big": "A+ Texto más grande", "hc": "Alto contraste", "tema": "Tema", "leccion": "Lección", "practica": "práctica", "ariaPrac": "Práctica de la lección {}", "pronto": "próximamente",
         "alt": '<link rel="alternate" hreflang="en" href="/math/level-1/">',
         "pie": '<p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>\n<p class="tm">© 2026. Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>. GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>'}}
 
-CSS = """  main.nivel{max-width:1440px}
-  .top .wrap,footer .wrap{max-width:1440px}
-  .nivel h1{color:var(--navy);margin:16px 0 4px;font-size:1.6rem}
+CSS = """  main.nivel{max-width:1320px}
+  .top .wrap,footer .wrap{max-width:1320px}
+  .nivel h1{color:var(--navy);margin:16px 0 4px;font-size:1.75em}
   .nivel .intro{margin:0 0 4px}
-  .nivel .meta{margin:0 0 10px;font-size:.92rem;color:var(--muted)}
+  .nivel .meta{margin:0 0 12px;font-size:.92em;color:var(--muted)}
   .temas-nav{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px;padding:0;list-style:none}
-  .temas-nav a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:#fff;color:var(--navy);text-decoration:none;font-size:.88rem;font-weight:700}
+  .temas-nav a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:#fff;color:var(--navy);text-decoration:none;font-size:.88em;font-weight:700}
   .temas-nav a:hover{border-color:var(--teal);background:#f1faf9}
-  .grid-temas{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:14px;align-items:start;margin-bottom:24px}
-  .tema{background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:12px;padding:10px 14px 8px;scroll-margin-top:12px}
-  .tema h2{margin:0 0 4px;font-size:1.02rem;color:var(--navy);display:flex;gap:8px;align-items:center;line-height:1.25}
-  .tn{flex:none;background:var(--teal);color:#fff;border-radius:50%;width:26px;height:26px;display:inline-grid;place-items:center;font-size:.85rem}
+  .grid-temas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;margin-bottom:28px}
+  .tema{background:#fff;border:1px solid var(--line);border-top:5px solid var(--teal);border-radius:12px;padding:12px 16px 10px;scroll-margin-top:12px}
+  .tema h2{margin:0 0 6px;font-size:1.18em;color:var(--navy);display:flex;gap:9px;align-items:center;line-height:1.25}
+  .tn{flex:none;background:var(--teal);color:#fff;border-radius:50%;width:30px;height:30px;display:inline-grid;place-items:center;font-size:.85em}
   .tema ul{list-style:none;margin:0;padding:0}
-  .tema li{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid #eef0f2;font-size:.93rem;line-height:1.3}
+  .tema li{display:flex;gap:9px;align-items:baseline;padding:6px 0;border-top:1px solid #eef0f2;font-size:1.02em;line-height:1.35}
   .tema li:first-child{border-top:0}
-  .tema .num{flex:none;min-width:2.1em;font-weight:700;color:var(--muted);font-size:.85rem}
+  .tema .num{flex:none;min-width:2.1em;font-weight:700;color:var(--muted);font-size:.9em}
   .tema .lec{flex:1}
-  .tema .prac{flex:none;font-size:.78rem;font-weight:700;border:1px solid var(--teal);border-radius:999px;padding:1px 9px;text-decoration:none;white-space:nowrap}
+  .tema .prac{flex:none;font-size:.82em;font-weight:700;border:1px solid var(--teal);border-radius:999px;padding:2px 10px;text-decoration:none;white-space:nowrap}
   .tema .prac:hover{background:#f1faf9}
-  .tema li.extra{display:block;font-size:.84rem;padding-left:2.9em;border-top:0;padding-top:0}
+  .tema li.extra{display:block;font-size:.88em;padding-left:2.9em;border-top:0;padding-top:0}
   .tema li.soon{color:var(--muted)}
+  body.hc .tema{border-color:#000}
   .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   @media (min-width:1100px){ .temas-nav{display:none} }
-  @media (max-width:640px){ .nivel h1{font-size:1.4rem} .grid-temas{grid-template-columns:1fr} }"""
+  @media (max-width:1099px){ .grid-temas{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:700px){ .nivel h1{font-size:1.4em} .grid-temas{grid-template-columns:1fr} }"""
 
 def construye(L):
     X = TX[L]; d = os.path.join(ROOT, X["dir"])
@@ -113,9 +115,19 @@ def construye(L):
 </head>
 <body>
 <a class="skip" href="#main">{X["skip"]}</a>
-<header class="top"><div class="wrap">
-  <a class="logo" href="{X["home"]}"><img src="/img/learnged-logo-horizontal.svg" alt="{X["logoalt"]}"></a>
-</div></header>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="{X["home"]}"><img src="/img/learnged-logo-horizontal.svg" alt="{X["logoalt"]}"></a>
+    <div class="tools">
+      <button type="button" id="b-big" aria-pressed="false">{X["big"]}</button>
+      <button type="button" id="b-hc" aria-pressed="false">{X["hc"]}</button>
+      <nav class="lang" aria-label="Language / Idioma">
+        <a href="/math/level-1/" lang="en" hreflang="en" data-lang="en"{' aria-current="true"' if L == "en" else ""}>EN</a>
+        <a href="/es/matematicas/nivel-1/" lang="es" hreflang="es" data-lang="es"{' aria-current="true"' if L == "es" else ""}>ES</a>
+      </nav>
+    </div>
+  </div>
+</header>
 <main id="main" class="wrap nivel">
 <h1>{X["h1"]}</h1>
 <p class="intro">{X["intro"]}</p>
@@ -130,6 +142,23 @@ def construye(L):
 <footer><div class="wrap">
 {X["pie"]}
 </div></footer>
+<script>
+(function(){{
+  function get(k){{try{{return localStorage.getItem(k);}}catch(e){{return null;}}}}
+  function set(k,v){{try{{localStorage.setItem(k,v);}}catch(e){{}}}}
+  var b=document.body;
+  [['b-big','big'],['b-hc','hc']].forEach(function(x){{
+    var btn=document.getElementById(x[0]);
+    if(get('learnged-'+x[1])==='1'){{b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}}
+    btn.addEventListener('click',function(){{
+      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+    }});
+  }});
+  document.querySelectorAll('.lang a').forEach(function(a){{
+    a.addEventListener('click',function(){{set('learnged-lang',a.getAttribute('data-lang'));}});
+  }});
+}})();
+</script>
 </body>
 </html>
 '''
