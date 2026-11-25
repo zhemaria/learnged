@@ -36,6 +36,7 @@ TARGETS_ES = {
  "A.7.c": "Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.",
  "MP.1.a": "Buscar y reconocer por dónde empezar a resolver un problema.",
  "MP.1.b": "Planear un camino de solución o esbozar una línea de razonamiento.",
+ "MP.1.c": "Elegir el mejor camino de solución según ciertos criterios.",
  "MP.1.e": "Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.",
  "MP.2.a": "Representar algebraicamente problemas de la vida real.",
  "MP.2.b": "Representar visualmente problemas de la vida real.",

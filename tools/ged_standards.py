@@ -238,6 +238,8 @@ LESSONS = [
   {"direct": [], "builds": ["Q.6.a", "Q.6.c", "Q.7.a"], "mp": ["MP.1.a", "MP.2.c", "MP.4.a"], "ccr": ["3.MD.3", "6.SP.5"]}),
  ("level-1/lesson-8-2.html", "8.2", "Bar graphs and line graphs",
   {"direct": ["Q.6.a", "Q.6.c"], "builds": [], "mp": ["MP.2.b", "MP.4.c", "MP.5.c"], "ccr": ["3.MD.3", "5.G.2"]}),
+ ("level-1/lesson-8-3.html", "8.3", "Final project",
+  {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.4.a", "Q.6.a", "Q.7.a"], "mp": ["MP.1.b", "MP.1.c", "MP.3.a", "MP.5.c"], "ccr": ["4.OA.3", "4.MD.2", "4.MD.3", "5.NBT.7"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
