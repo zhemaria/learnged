@@ -287,7 +287,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>You now know what a fraction is, and you can make equivalent fractions, simplify, and compare. That is exactly the foundation you need to <strong>calculate</strong> with fractions.</p>
 <p>In <strong>Lesson 4.2 · Adding and subtracting fractions</strong> you will add and subtract fractions, and you will see why you first need <strong>the same denominator</strong>. The equivalent fractions you practiced today will be your main tool.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 4.2 · Adding and subtracting fractions</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-2.html">Lesson 4.2 · Adding and subtracting fractions</a></p>
 </section>
 
 <section>

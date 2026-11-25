@@ -300,7 +300,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>You can now find the factors and the multiples of a number, write its prime factorization, and find the <strong>GCF</strong> and the <strong>LCM</strong>. These are exactly the two tools fractions need.</p>
 <p>Go back to <a href="lesson-4-1.html#s-simplify">Lesson 4.1 · Simplify a fraction</a> and see that now you can simplify in one step. Then go on to <strong>Lesson 4.2 · Adding and subtracting fractions</strong>, where the LCM becomes the common denominator.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 4.2 · Adding and subtracting fractions</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-2.html">Lesson 4.2 · Adding and subtracting fractions</a></p>
 </section>
 
 <section>

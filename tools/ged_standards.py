@@ -145,6 +145,9 @@ CCR = {
  "4.NF.2": ("C", "Compare two fractions with different numerators and different denominators, e.g., by creating common denominators or numerators, or by comparing to a benchmark fraction such as 1/2. Record the results of comparisons with symbols >, =, or <, and justify the conclusions."),
  "4.OA.4": ("C", "Find all factor pairs for a whole number in the range 1–100. Recognize that a whole number is a multiple of each of its factors. Determine whether a given whole number in the range 1–100 is prime or composite."),
  "6.NS.4": ("C", "Find the greatest common factor of two whole numbers less than or equal to 100 and the least common multiple of two whole numbers less than or equal to 12. Use the distributive property to express a sum of two whole numbers with a common factor as a multiple of a sum of two whole numbers with no common factor."),
+ "4.NF.3": ("C", "Understand a fraction a/b with a > 1 as a sum of fractions 1/b: understand addition and subtraction of fractions as joining and separating parts referring to the same whole, and solve word problems involving addition and subtraction of fractions with like denominators."),
+ "5.NF.1": ("C", "Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions in such a way as to produce an equivalent sum or difference of fractions with like denominators. For example, 2/3 + 5/4 = 8/12 + 15/12 = 23/12."),
+ "5.NF.2": ("C", "Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators. Use benchmark fractions and number sense of fractions to estimate mentally and assess the reasonableness of answers. For example, recognize an incorrect result 2/5 + 1/2 = 3/7, by observing that 3/7 < 1/2."),
  "4.NF.6": ("C", "Use decimal notation for fractions with denominators 10 or 100. For example, rewrite 0.62 as 62/100."),
  "5.NF.3": ("C", "Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b)."),
  "7.NS.2d": ("D", "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."),
@@ -180,6 +183,8 @@ LESSONS = [
   {"direct": ["Q.1.a"], "builds": ["Q.1.b"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["3.NF.1", "3.NF.3", "4.NF.1", "4.NF.2"]}),
  ("level-1/lesson-4-1-gcf-lcm.html", "4.1 (complement)", "Complement: factors, multiples, GCF, and LCM",
   {"direct": ["Q.1.b"], "builds": [], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["4.OA.4", "6.NS.4"]}),
+ ("level-1/lesson-4-2.html", "4.2", "Adding and subtracting fractions",
+  {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.1.b"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a", "MP.5.a"], "ccr": ["4.NF.3", "5.NF.1", "5.NF.2"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
