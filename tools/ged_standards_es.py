@@ -19,6 +19,7 @@ TARGETS_ES = {
  "Q.1.b": "Aplicar propiedades de los números relacionadas con múltiplos y factores, como el mínimo común múltiplo, el máximo común divisor o la propiedad distributiva, para reescribir expresiones numéricas.",
  "Q.2.a": "Sumar, restar, multiplicar y dividir números racionales.",
  "Q.2.e": "Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.",
+ "Q.3.c": "Resolver problemas aritméticos de la vida real, de varios pasos, con razones o proporciones, incluidos los que requieren convertir unidades de medida.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
@@ -39,6 +40,9 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "4.MD.1": "Conocer el tamaño relativo de las unidades de medida de un mismo sistema, como km, m, cm; kg, g; lb, oz; l, ml; h, min, s. Dentro de un mismo sistema, expresar medidas de una unidad mayor en una unidad menor. Anotar las equivalencias en una tabla de dos columnas.",
+ "4.MD.2": "Usar las cuatro operaciones para resolver problemas verbales de distancias, intervalos de tiempo, volúmenes de líquidos, masas de objetos y dinero, incluidos problemas con fracciones o decimales sencillos y problemas que requieren expresar una medida de una unidad mayor en una unidad menor. Representar cantidades medidas con diagramas, como rectas numéricas con una escala de medida.",
+ "5.MD.1": "Convertir entre unidades de medida estándar de distinto tamaño dentro de un mismo sistema (por ejemplo, convertir 5 cm a 0.05 m), y usar estas conversiones para resolver problemas de la vida real de varios pasos.",
  "3.OA.3": "Usar la multiplicación y la división hasta 100 para resolver problemas verbales con grupos iguales, arreglos y medidas.",
  "3.OA.4": "Hallar el número entero desconocido en una ecuación de multiplicación o de división que relaciona tres números enteros.",
  "3.OA.5": "Aplicar las propiedades de las operaciones (conmutativa, asociativa y distributiva) como estrategias para multiplicar y dividir.",
