@@ -162,9 +162,9 @@ R('<tr><th scope="row">Check the solution</th><td>I substitute the value and che
 # Cierre
 R("<p>You can now translate phrases into algebraic language, write one-step equations, solve them with the inverse operation, and check the solution. You have taken your first steps in algebra.</p>",
   "<p>Ya sabe traducir frases al lenguaje algebraico, escribir ecuaciones de un paso, resolverlas con la operación inversa y comprobar la solución. Ha dado sus primeros pasos en el álgebra.</p>")
-R("<p>In <strong>Lesson 5.3 · One-step word problems</strong> you will put together everything you learned in Level 1: you will read a problem in words, decide which of the four operations to use, write it as an equation with an unknown, and solve it. That lesson closes Topic 5.</p>",
+R("<p>In <strong>Lesson 5.3 · One-step word problems with the four operations</strong> you will put together everything you learned in Level 1: you will read a problem in words, decide which of the four operations to use, write it as an equation with an unknown, and solve it. That lesson closes Topic 5.</p>",
   "<p>En la <strong>Lección 5.3 · Problemas verbales de un paso con las cuatro operaciones</strong> juntará todo lo que aprendió en el Nivel 1: leerá un problema en palabras, decidirá cuál de las cuatro operaciones usar, lo escribirá como una ecuación con una incógnita y lo resolverá. Esa lección cierra el Tema 5.</p>")
-R("Next: Lesson 5.3 · One-step word problems</p>", "Siguiente: Lección 5.3 · Problemas verbales de un paso con las cuatro operaciones</p>")
+R('Next: <a href="lesson-5-3.html">Lesson 5.3 · One-step word problems with the four operations</a></p>', 'Siguiente: <a href="leccion-5-3.html">Lección 5.3 · Problemas verbales de un paso con las cuatro operaciones</a></p>')
 R("""<dt>unknown (variable)</dt><dd>A number we do not know yet, shown with a box □ or a letter like x.</dd>
 <dt>expression</dt><dd>Numbers, letters, and operation signs with no equal sign, like x + 5 or 3x.</dd>
 <dt>equation</dt><dd>A statement that two things are equal, with an equal sign, like x + 3 = 8.</dd>

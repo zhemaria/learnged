@@ -204,6 +204,8 @@ LESSONS = [
   {"direct": [], "builds": ["A.7.b", "A.7.c"], "mp": ["MP.1.a", "MP.2.c", "MP.3.a", "MP.4.a"], "ccr": ["3.OA.9", "4.OA.5"]}),
  ("level-1/lesson-5-2.html", "5.2", "Algebraic language and simple unknowns",
   {"direct": ["A.1.c"], "builds": ["A.1.b", "A.2.a", "A.2.c"], "mp": ["MP.2.a", "MP.3.a", "MP.4.b"], "ccr": ["3.OA.4", "6.EE.2", "6.EE.5", "6.EE.7"]}),
+ ("level-1/lesson-5-3.html", "5.3", "One-step word problems with the four operations",
+  {"direct": ["Q.2.e", "A.2.c"], "builds": ["A.2.b"], "mp": ["MP.1.a", "MP.1.b", "MP.2.a", "MP.2.c"], "ccr": ["3.OA.3", "3.OA.8", "4.OA.3", "6.EE.7"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

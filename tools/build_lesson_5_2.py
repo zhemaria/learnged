@@ -311,8 +311,8 @@ html = f'''<!DOCTYPE html>
 <section class="cierre">
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>You can now translate phrases into algebraic language, write one-step equations, solve them with the inverse operation, and check the solution. You have taken your first steps in algebra.</p>
-<p>In <strong>Lesson 5.3 · One-step word problems</strong> you will put together everything you learned in Level 1: you will read a problem in words, decide which of the four operations to use, write it as an equation with an unknown, and solve it. That lesson closes Topic 5.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 5.3 · One-step word problems</p>
+<p>In <strong>Lesson 5.3 · One-step word problems with the four operations</strong> you will put together everything you learned in Level 1: you will read a problem in words, decide which of the four operations to use, write it as an equation with an unknown, and solve it. That lesson closes Topic 5.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-5-3.html">Lesson 5.3 · One-step word problems with the four operations</a></p>
 </section>
 
 <section>

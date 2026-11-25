@@ -22,6 +22,7 @@ TARGETS_ES = {
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
+ "A.2.b": "Resolver problemas de la vida real con ecuaciones lineales.",
  "A.2.c": "Escribir ecuaciones lineales de una o de varias variables para representar una situación.",
  "A.7.b": "Representar o identificar una función en una tabla o una gráfica como una relación con exactamente una salida (un elemento del rango) para cada entrada (cada elemento del dominio).",
  "A.7.c": "Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.",
