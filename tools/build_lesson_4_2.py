@@ -296,7 +296,7 @@ html = f'''<!DOCTYPE html>
 <h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
 <p>You can now add and subtract fractions, with the same or different denominators, and simplify the result. The hardest part of working with fractions is behind you.</p>
 <p>In <strong>Lesson 4.3 · Multiplying and dividing fractions</strong> you will see something that surprises many students: to multiply and divide fractions, you <strong>do not need</strong> a common denominator. Then, in Lesson 4.4, you will work with mixed numbers like the 1&nbsp;{F(1, 4)} you met today.</p>
-<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 4.3 · Multiplying and dividing fractions</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-3.html">Lesson 4.3 · Multiplying and dividing fractions</a></p>
 </section>
 
 <section>
