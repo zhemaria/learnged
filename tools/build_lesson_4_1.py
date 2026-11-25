@@ -87,7 +87,6 @@ html = f'''<!DOCTYPE html>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Lesson 4.1 · Equivalent fractions: simplify and compare · LearnGED</title>
-<meta name="robots" content="noindex"/>
 <meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="stylesheet" href="../lesson.css">

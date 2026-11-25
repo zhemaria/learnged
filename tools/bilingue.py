@@ -107,7 +107,6 @@ def pagina_leccion(n, tema_num, tema, titulo, lema, chip, objetivos, secciones, 
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>{t("Lesson", "Lección")} {num} · {titulo} · LearnGED</title>
-<meta name="robots" content="noindex"/>
 <meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="stylesheet" href="../lesson.css">
@@ -270,7 +269,6 @@ def pagina_practica(n, tema_num, tema, titulo, meta, modulos, js, estilo=""):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{t("Practice · Lesson", "Práctica · Lección")} {num} · {titulo} · LearnGED</title>
-<meta name="robots" content="noindex">
 <meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../practice.css">{est}
