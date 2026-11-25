@@ -199,7 +199,7 @@ function areaSVG(a, b, c, d){
   var W = 320, cw = W / b, rh = W / d, s = '<svg class="figura" style="max-width:360px" viewBox="0 0 340 340" role="img" aria-label="Area model: a square cut into ' + b + ' columns and ' + d + ' rows, ' + (b * d) + ' small parts in all. ' + a + ' columns are purple and ' + c + ' rows are blue. They overlap in ' + (a * c) + ' small parts, shown in dark purple.">';
   for (var i = 0; i < b; i++) for (var j = 0; j < d; j++){
     var ci = i < a, rj = j < c, f = ci && rj ? "#4a148c" : (ci ? "#ce93d8" : (rj ? "#90caf9" : "#fff"));
-    s += '<rect x="' + f1(10 + i * cw) + '" y="' + f1(10 + j * rh) + '" width="' + f1(cw) + '" height="' + f1(rh) + '" fill="' + f + '" stroke="#90a4ae" stroke-width="1"/>';
+    s += '<rect x="' + f1(10 + i * cw) + '" y="' + f1(10 + j * rh) + '" width="' + f1(cw) + '" height="' + f1(rh) + '" fill="' + f + '" stroke="#ffffff" stroke-width="1.5"/>';
   }
   return s + '<rect x="10" y="10" width="' + W + '" height="' + W + '" fill="none" stroke="#37474f" stroke-width="3"/></svg>';
 }

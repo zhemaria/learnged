@@ -51,7 +51,7 @@ def area(a, b, c, d, label, size=300):
         for j in range(d):
             col_in, row_in = i < a, j < c
             fill = "#4a148c" if col_in and row_in else ("#ce93d8" if col_in else ("#90caf9" if row_in else "#fff"))
-            out.append(f'<rect x="{10 + i * cw:.1f}" y="{10 + j * rh:.1f}" width="{cw:.1f}" height="{rh:.1f}" fill="{fill}" stroke="#90a4ae" stroke-width="1"/>')
+            out.append(f'<rect x="{10 + i * cw:.1f}" y="{10 + j * rh:.1f}" width="{cw:.1f}" height="{rh:.1f}" fill="{fill}" stroke="#ffffff" stroke-width="1.5"/>')
     out.append(f'<rect x="10" y="10" width="{W}" height="{H}" fill="none" stroke="#37474f" stroke-width="3"/>')
     return f'<svg viewBox="0 0 {W + 20} {H + 20}" role="img" aria-label="{label}" style="width:100%;max-width:{W + 20}px;height:auto;display:block;margin:6px auto;">{"".join(out)}</svg>'
 
