@@ -24,6 +24,9 @@ TARGETS_ES = {
  "Q.4.a": "Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.",
  "Q.4.c": "Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.",
  "Q.4.d": "Calcular el perímetro y el área de figuras compuestas de dos dimensiones, que pueden incluir círculos, dadas las fórmulas geométricas necesarias.",
+ "Q.6.a": "Representar, mostrar e interpretar datos por categorías en gráficas de barras o gráficas circulares.",
+ "Q.6.c": "Representar, mostrar e interpretar datos de dos variables en tablas y en el plano de coordenadas, incluidos los diagramas de dispersión y las gráficas.",
+ "Q.7.a": "Calcular la media, la mediana, la moda y el rango. Calcular un dato que falta, dada la media y todos los demás datos, y también la media ponderada.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
@@ -44,6 +47,8 @@ TARGETS_ES = {
  "MP.5.c": "Identificar la información necesaria para evaluar una línea de razonamiento.",
 }
 CCR_ES = {
+ "3.MD.3": "Hacer una pictografía y una gráfica de barras a escala para representar datos con varias categorías. Resolver problemas de uno y de dos pasos de «cuántos más» y «cuántos menos» con la información de gráficas de barras a escala.",
+ "6.SP.5": "Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.",
  "3.MD.7": "Relacionar el área con las operaciones de multiplicación y suma.",
  "6.G.1": "Hallar el área de triángulos rectángulos, de otros triángulos, de cuadriláteros especiales y de polígonos, componiéndolos en rectángulos o descomponiéndolos en triángulos y otras figuras; aplicar estas técnicas para resolver problemas matemáticos y de la vida real.",
  "3.MD.8": "Resolver problemas matemáticos y de la vida real sobre el perímetro de polígonos: hallar el perímetro dadas las medidas de los lados, hallar la medida de un lado desconocido, y mostrar rectángulos con el mismo perímetro y distinta área, o con la misma área y distinto perímetro.",
