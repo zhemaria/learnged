@@ -139,6 +139,9 @@ CCR = {
  "5.NBT.5": ("C", "Fluently multiply multi-digit whole numbers using the standard algorithm."),
  "5.NBT.6": ("C", "Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors."),
  "5.NBT.7": ("C", "Add, subtract, multiply, and divide decimals to hundredths, using concrete models or drawings and strategies based on place value; relate the strategy to a written method and explain the reasoning used. (Applications involving financial literacy should be used.)"),
+ "4.NF.6": ("C", "Use decimal notation for fractions with denominators 10 or 100. For example, rewrite 0.62 as 62/100."),
+ "5.NF.3": ("C", "Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b)."),
+ "7.NS.2d": ("D", "Convert a rational number to a decimal using long division; know that the decimal form of a rational number terminates in 0s or eventually repeats."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -165,6 +168,8 @@ LESSONS = [
   {"direct": ["Q.1.a"], "builds": [], "mp": ["MP.4.a"], "ccr": ["5.NBT.1", "5.NBT.3", "5.NBT.4"]}),
  ("level-1/lesson-3-2.html", "3.2", "Operations with decimals",
   {"direct": ["Q.2.a", "Q.2.e"], "builds": [], "mp": ["MP.4.a", "MP.1.e", "MP.5.c"], "ccr": ["5.NBT.7", "6.NS.3"]}),
+ ("level-1/lesson-3-3.html", "3.3", "Decimals in context and equivalent forms",
+  {"direct": ["Q.2.e"], "builds": ["Q.1.a", "Q.2.a"], "mp": ["MP.1.a", "MP.1.b", "MP.2.c", "MP.4.a"], "ccr": ["5.NF.3", "4.NF.6", "7.NS.2d", "5.NBT.7"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
