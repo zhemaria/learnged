@@ -85,6 +85,19 @@ LECCION = [
  ('<span class="etiqueta et-verde">Words to know</span>', '<span class="etiqueta et-verde">Palabras que debe conocer</span>'),
  ('<span class="etiqueta et-ambar">The most common mistake</span>', '<span class="etiqueta et-ambar">El error más común</span>'),
 ]
+def F(a, b):
+    """Fracción apilada como la escriben los constructores en inglés."""
+    return f'<span class="fracc" aria-hidden="true"><span class="fa">{a}</span><span class="fb2">{b}</span></span><span class="cap-oculto">{a}/{b}</span>'
+# Textos frecuentes que pueden aparecer o no en una página: se cambian todos los que haya.
+FRECUENTES = [
+ ('<span aria-hidden="true">🧮</span> Open the calculator</button>', '<span aria-hidden="true">🧮</span> Abrir la calculadora</button>'),
+ ('<span aria-hidden="true">🧮</span> Check it on the calculator</span>', '<span aria-hidden="true">🧮</span> Compruébelo en la calculadora</span>'),
+ ('<strong>Step 1.</strong>', '<strong>Paso 1.</strong>'), ('<strong>Step 2.</strong>', '<strong>Paso 2.</strong>'),
+ ('<strong>Step 3.</strong>', '<strong>Paso 3.</strong>'), ('<strong>Step 4.</strong>', '<strong>Paso 4.</strong>'),
+ ('<strong>Result.</strong>', '<strong>Resultado.</strong>'),
+ ('<span class="etiqueta et-verde">Tip</span>', '<span class="etiqueta et-verde">Consejo</span>'),
+ ('<h3>Step by step</h3>', '<h3>Paso a paso</h3>'),
+]
 class Traductor:
     def __init__(self, en, alterna=None):
         self.en = en
@@ -107,6 +120,8 @@ class Traductor:
     def cabecera(self, comentario):
         i = self.s.index("<!--"); j = self.s.index("-->", i) + 3
         self.s = self.s[:i] + comentario + self.s[j:]
+    def frecuentes(self):
+        for a, b in FRECUENTES: self.s = self.s.replace(a, b)
     def r(self, a, b, n=1):
         c = self.s.count(a)
         if c != n: sys.exit(f"[{self.en}] se esperaba {n}, hay {c}: {a[:90]!r}")

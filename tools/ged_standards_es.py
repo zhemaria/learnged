@@ -84,7 +84,8 @@ CCR_ES = {
 # Lección en inglés → lección en español
 def ruta_es(path):
     m = re.match(r"level-1/lesson-(.+)\.html$", path)
-    return os.path.join(ROOT, "es", "matematicas", "nivel-1", f"leccion-{m.group(1)}.html")
+    nombre = m.group(1).replace("-gcf-lcm", "-mcd-mcm")
+    return os.path.join(ROOT, "es", "matematicas", "nivel-1", f"leccion-{nombre}.html")
 
 e = html.escape
 def li(code, cls):

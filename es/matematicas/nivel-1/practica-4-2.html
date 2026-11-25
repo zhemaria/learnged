@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Lección 4.2 · Suma y resta de fracciones — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 4.2 · Suma y resta de fracciones · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-4-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 4 · Fracciones</div>
+    <h1>Lección 4.2 · Suma y resta de fracciones</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#mismo-denominador">El mismo denominador</a></li>
+      <li><a href="#denominadores-distintos">Denominadores distintos</a></li>
+      <li><a href="#simplificar-resultado">Simplificar el resultado</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="mismo-denominador" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>El mismo denominador</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El denominador dice el <strong>tamaño</strong> de las partes; el numerador dice <strong>cuántas</strong> hay. Si las partes son
+      del mismo tamaño, <strong>sume (o reste) los numeradores y deje el denominador</strong>: 2 cuartos de pizza más 1 cuarto son 3 cuartos.</p>
+      <h3>Junte los pedazos</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:150px;"><label for="md-d">Denominador: <span id="md-dv"></span></label><input type="range" id="md-d" min="2" max="12" value="5"></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="md-a">Primer numerador: <span id="md-av"></span></label><input type="range" id="md-a" min="0" max="12" value="2"></div>
+          <div class="campo"><label for="md-o">Operación</label><select id="md-o"><option value="+">+ sumar</option><option value="-">− restar</option></select></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="md-b">Segundo numerador: <span id="md-bv"></span></label><input type="range" id="md-b" min="0" max="12" value="1"></div>
+        </div>
+        <div id="md-svg"></div>
+        <div class="salida" id="md-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion">
+        <strong>El error más común:</strong> sumar también los denominadores. 2/5 + 1/5 no es 3/10: el tamaño de las partes no cambia al juntarlas.
+        Además, 3/10 es menos que 2/5, y al sumar debería obtener más.
+      </div>
+      <h3>Practique: el mismo denominador</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba la fracción con una raya inclinada, por ejemplo 3/5.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="denominadores-distintos">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Denominadores distintos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si las partes son de tamaños distintos, primero <strong>iguale los denominadores</strong>. Recorra los múltiplos del denominador
+      mayor hasta encontrar uno en el que también quepa el menor. Si no lo encuentra, multiplicar los dos denominadores siempre
+      sirve. Después convierta cada fracción en una equivalente, y sume o reste los numeradores.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="dd-a">Primera fracción</label><input type="text" autocomplete="off" class="corto" id="dd-a" value="1/2"></div>
+          <div class="campo"><label for="dd-o">Operación</label><select id="dd-o"><option value="+">+ sumar</option><option value="-">− restar</option></select></div>
+          <div class="campo"><label for="dd-b">Segunda fracción</label><input type="text" autocomplete="off" class="corto" id="dd-b" value="1/3"></div>
+        </div>
+        <div id="dd-svg"></div>
+        <div class="salida" id="dd-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿qué denominador común?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Practique: denominadores distintos</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba la fracción con una raya inclinada, en su forma más simple. Si es más que 1, puede escribir un número mixto con un espacio, como 1&nbsp;1/4.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <div class="caja-calc">
+        <span class="et-calc"><span aria-hidden="true">🧮</span> Compruébelo en la calculadora</span>
+        <p>Escriba la primera fracción con <span class="tecla">n/d</span> (numerador, <span class="tecla">▼</span>, denominador, <span class="tecla">►</span>),
+        pulse <span class="tecla">+</span> o <span class="tecla">−</span>, escriba la segunda fracción de la misma manera y pulse <span class="tecla">enter</span>.
+        La calculadora muestra el resultado en su forma más simple. Resuelva primero en papel y después compruebe.</p>
+        <button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="simplificar-resultado">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Simplificar el resultado</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Deje el resultado en su <strong>forma más simple</strong>: 3/6 se simplifica a 1/2. Y si el resultado es más que 1, como 7/4, también
+      puede escribirlo como <strong>número mixto</strong>: 7 ÷ 4 = 1, residuo 3, así que 7/4 = 1&nbsp;3/4.</p>
+      <h3>Practique: calcule y simplifique</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba una fracción en su forma más simple (3/4), un número mixto con un espacio (1&nbsp;3/4) o un número entero.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 4 · Fracciones · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ Utilidades ============ */
+function mcd(a, b){ a = Math.abs(a); b = Math.abs(b); while (b){ var t = a % b; a = b; b = t; } return a; }
+function mcm(a, b){ return a / mcd(a, b) * b; }
+function red(n, d){ var g = mcd(n, d) || 1; return { n: n / g, d: d / g }; }
+function igual(a, b){ return a.n * b.d === b.n * a.d; }
+function fr(n, d){ return '<span class="fracc" aria-hidden="true"><span class="fa">' + n + '</span><span class="fb2">' + d + '</span></span><span class="sr-only">' + n + '/' + d + '</span>'; }
+/* valor v = {n, d} en su forma más simple → HTML (entero, fracción o número mixto) */
+function frV(v){
+  if (v.d === 1) return String(v.n);
+  if (v.n < v.d) return fr(v.n, v.d);
+  var e = Math.floor(v.n / v.d), r = v.n - e * v.d;
+  return '<span aria-hidden="true">' + e + '&nbsp;</span>' + '<span class="fracc" aria-hidden="true"><span class="fa">' + r + '</span><span class="fb2">' + v.d + '</span></span><span class="sr-only">' + e + ' y ' + r + '/' + v.d + '</span>';
+}
+function txtV(v){ if (v.d === 1) return String(v.n); if (v.n < v.d) return v.n + "/" + v.d; var e = Math.floor(v.n / v.d); return e + " " + (v.n - e * v.d) + "/" + v.d; }
+function leeFr(t){ var m = String(t).replace(/\s+/g, "").match(/^(\d+)\/(\d+)$/); return m && +m[2] ? { p: +m[1], q: +m[2] } : null; }
+/* Lee "3/4", "7/4", "1 3/4" o "2". Devuelve { v: valor, f: la fracción tal como se escribió, mixta, w } o null. */
+function leeMixta(t){
+  var s = String(t).trim().replace(/\s+/g, " "), m;
+  if ((m = s.match(/^(\d+)$/))) return { v: { n: +m[1], d: 1 }, f: null };
+  if ((m = s.match(/^(\d+) ?\/ ?(\d+)$/))) return +m[2] ? { v: red(+m[1], +m[2]), f: { p: +m[1], q: +m[2] } } : { cero: true };
+  if ((m = s.match(/^(\d+) (\d+) ?\/ ?(\d+)$/))) return +m[3] ? { v: red(+m[1] * +m[3] + +m[2], +m[3]), f: { p: +m[2], q: +m[3] }, mixta: true } : { cero: true };
+  return null;
+}
+/* Evaluador. obj = valor correcto; pistas = [{v, msg}] para errores comunes; simple = la respuesta debe estar en su forma más simple */
+function evFr(obj, pistas, simple){
+  return function(t){
+    var r = leeMixta(t);
+    if (r && r.cero) return { estado: "invalido", msg: "Una fracción nunca puede tener 0 abajo. Las partes conservan su tamaño: deje el denominador." };
+    if (!r) return { estado: "invalido", msg: "Escriba una fracción con una raya inclinada (3/4), un número mixto con un espacio (1&nbsp;3/4) o un número entero." };
+    if (igual(r.v, obj)){
+      if (r.mixta && r.f.p >= r.f.q) return { estado: "mal", msg: "En un número mixto, la parte de fracción tiene que ser menor que 1." };
+      if (simple && r.f && mcd(r.f.p, r.f.q) > 1) return { estado: "mal", msg: "El valor está bien, pero todavía puede simplificar: " + r.f.p + " y " + r.f.q + " se pueden dividir los dos entre " + mcd(r.f.p, r.f.q) + "." };
+      return { estado: "bien" };
+    }
+    for (var i = 0; i < (pistas || []).length; i++) if (pistas[i].v && igual(r.v, pistas[i].v)) return { estado: "mal", msg: pistas[i].msg };
+    return { estado: "mal", msg: "Esa no es la cantidad correcta. Revise cada paso: primero el mismo denominador y después los numeradores." };
+  };
+}
+/* Barra de fracción: d partes iguales, n sombreadas (más de una barra si n > d) */
+function barraFr(n, d, col, voz, ancho){
+  var W = ancho || 520, h = 40, bars = Math.max(1, Math.ceil(n / d)), s = '<svg class="figura" style="max-width:' + (W + 40) + 'px" viewBox="0 0 ' + (W + 40) + ' ' + (bars * (h + 12) + 8) + '" role="img" aria-label="' + voz + '">';
+  for (var b = 0; b < bars; b++) for (var i = 0; i < d; i++){ var k = b * d + i, x = 20 + i * W / d, y = 6 + b * (h + 12); s += '<rect x="' + f1(x) + '" y="' + y + '" width="' + f1(W / d) + '" height="' + h + '" fill="' + (k < n ? (col || "#7b1fa2") : "#fff") + '" stroke="#424242" stroke-width="2"/>'; }
+  return s + '</svg>';
+}
+var SIGNO = { "+": "+", "-": "−" };
+
+/* ============ MÓDULO 1 · el mismo denominador ============ */
+function pintaMD(){
+  var d = +$("md-d").value; $("md-a").max = d; $("md-b").max = d;
+  var a = Math.min(+$("md-a").value, d), b = Math.min(+$("md-b").value, d), o = $("md-o").value;
+  $("md-dv").textContent = d; $("md-av").textContent = a; $("md-bv").textContent = b;
+  if (o === "-" && b > a){ $("md-salida").innerHTML = "Para restar, el primer numerador tiene que ser el mayor."; $("md-svg").innerHTML = ""; return; }
+  var r = o === "+" ? a + b : a - b, R = red(r, d);
+  $("md-svg").innerHTML = barraFr(a, d, "#7b1fa2", a + "/" + d + " sombreado.") + barraFr(b, d, "#ce93d8", b + "/" + d + " sombreado.") +
+    barraFr(r, d, "#4a148c", "Resultado: " + r + "/" + d + " sombreado.");
+  var h = '<div class="linea">Las partes son del mismo tamaño (' + d + ' partes iguales en cada entero). ' + (o === "+" ? "Sume" : "Reste") + ' solo los numeradores: ' + a + ' ' + SIGNO[o] + ' ' + b + ' = ' + r + '.</div>';
+  h += '<div class="linea veredicto">' + fr(a, d) + ' ' + SIGNO[o] + ' ' + fr(b, d) + ' = ' + fr(r, d) + (R.d !== d || R.n >= R.d ? ' = ' + frV(R) : '') + '</div>';
+  if (r > d) h += '<div class="linea">El resultado es más que 1 entero: ' + d + '/' + d + ' llenan una barra, y sobran ' + (r - d) + '/' + d + '.</div>';
+  $("md-salida").innerHTML = h;
+}
+function genMD(){
+  var d = aleatorio(3, 12), a = aleatorio(1, d - 1), b = aleatorio(1, d - 1), suma = Math.random() < 0.6 || a === b;
+  if (!suma && b > a){ var t = a; a = b; b = t; }
+  if (suma && a + b > d){ b = d - a; }
+  var r = suma ? a + b : a - b, R = red(r, d);
+  var pistas = [{ v: suma ? red(r, 2 * d) : null, msg: "No sume los denominadores. Las partes conservan su tamaño, así que el denominador sigue siendo " + d + "." }];
+  if (suma) pistas.push({ v: red(Math.abs(a - b), d), msg: "Eso es lo que da si resta. Este problema pide sumar." });
+  else pistas.push({ v: red(a + b, d), msg: "Eso es lo que da si suma. Este problema pide restar." });
+  return { enun: "Calcule " + fr(a, d) + " " + (suma ? "+" : "−") + " " + fr(b, d) + ".",
+    solucion: (suma ? a + " + " + b : a + " − " + b) + " = " + r + ", y el denominador sigue siendo " + d + ": <strong>" + r + "/" + d + "</strong>" + (R.d !== d ? ", que se simplifica a " + txtV(R) : "") + ".",
+    evalua: evFr(R, pistas, false) };
+}
+
+/* ============ MÓDULO 2 · denominadores distintos ============ */
+function pintaDD(){
+  var A = leeFr($("dd-a").value), B = leeFr($("dd-b").value), o = $("dd-o").value, s = $("dd-salida");
+  if (!A || !B || A.q > 20 || B.q > 20 || A.p > 40 || B.p > 40){ s.innerHTML = "Escriba dos fracciones con una raya inclinada, por ejemplo 1/2 y 1/3 (denominadores hasta 20)."; $("dd-svg").innerHTML = ""; return; }
+  var M = mcm(A.q, B.q), mayor = Math.max(A.q, B.q), menor = Math.min(A.q, B.q), mult = [];
+  for (var k = 1; k * mayor <= M; k++) mult.push(k * mayor);
+  var a2 = A.p * M / A.q, b2 = B.p * M / B.q;
+  if (o === "-" && b2 > a2){ s.innerHTML = "Para restar, la primera fracción tiene que ser la mayor."; $("dd-svg").innerHTML = ""; return; }
+  var r = o === "+" ? a2 + b2 : a2 - b2, R = red(r, M);
+  var h = A.q === B.q ? '<div class="linea">1. Los denominadores ya son iguales.</div>' :
+    '<div class="linea">1. Múltiplos de ' + mayor + ': ' + mult.join(", ") + '. ' + (mult.length === 1 ? 'El ' + menor + ' ya cabe exacto en ' + M + '.' : 'El primero en el que también cabe el ' + menor + ' es ' + M + '.') + '</div>';
+  h += '<div class="linea">2. Convierta cada fracción: ' + fr(A.p, A.q) + ' = ' + fr(a2, M) + ' (× ' + M / A.q + ') y ' + fr(B.p, B.q) + ' = ' + fr(b2, M) + ' (× ' + M / B.q + ').</div>';
+  h += '<div class="linea">3. Ahora con el mismo denominador: ' + a2 + ' ' + SIGNO[o] + ' ' + b2 + ' = ' + r + '.</div>';
+  h += '<div class="linea veredicto">' + fr(A.p, A.q) + ' ' + SIGNO[o] + ' ' + fr(B.p, B.q) + ' = ' + fr(r, M) + (R.d !== M || R.n >= R.d ? ' = ' + frV(R) : '') + '</div>';
+  s.innerHTML = h;
+  $("dd-svg").innerHTML = M <= 24 ? barraFr(a2, M, "#7b1fa2", A.p + "/" + A.q + " convertido en " + a2 + "/" + M + ".") + barraFr(b2, M, "#ce93d8", B.p + "/" + B.q + " convertido en " + b2 + "/" + M + ".") + barraFr(r, M, "#4a148c", "Resultado: " + r + "/" + M + ".") : "";
+}
+function genComun(){
+  var pares = [[4, 6], [2, 3], [3, 4], [6, 8], [4, 10], [3, 5], [2, 5], [6, 9], [8, 12], [5, 10], [2, 6], [4, 8], [3, 9]], p = baraja(elige(pares)), M = mcm(p[0], p[1]);
+  var cands = [M, p[0] + p[1], p[0] * p[1] === M ? M * 2 : p[0] * p[1], Math.max(p[0], p[1]) + 1], vistos = {}, opciones = [], pistas = {};
+  var vale = function(x){ return x % p[0] === 0 && x % p[1] === 0; };
+  cands.forEach(function(x){ if (!vistos[x]){ vistos[x] = 1; opciones.push({ html: String(x), clave: "c" + x }); } });
+  cands.slice(1).forEach(function(x){
+    if (x === M || pistas["c" + x]) return;
+    if (x === p[0] + p[1]) pistas["c" + x] = "Eso es " + p[0] + " + " + p[1] + ". Sumar los denominadores no sirve" + (vale(x) ? ": " + x + " es un denominador común, pero no el más pequeño." : ": " + x + " no es múltiplo de los dos.");
+    else if (vale(x)) pistas["c" + x] = x + " también sirve, pero no es el más pequeño. Busque un múltiplo más pequeño de " + Math.max(p[0], p[1]) + ".";
+    else pistas["c" + x] = x + " no es múltiplo de " + p[0] + " y de " + p[1] + " a la vez.";
+  });
+  var mayor = Math.max(p[0], p[1]), menor = Math.min(p[0], p[1]), mult = [];
+  for (var k = 1; k * mayor <= M; k++) mult.push(k * mayor);
+  return { enun: "Para calcular " + fr(1, p[0]) + " + " + fr(1, p[1]) + ", ¿cuál es el denominador común más pequeño?", opciones: opciones, correcta: "c" + M, pistas: pistas,
+    pista: "Recorra los múltiplos de " + mayor + " hasta encontrar uno en el que también quepa el " + menor + ".",
+    bien: "Múltiplos de " + mayor + ": " + mult.join(", ") + ". " + M + " es el primero en el que también cabe el " + menor + ".",
+    mal: "Múltiplos de " + mayor + ": " + mult.join(", ") + ". El primero en el que también cabe el " + menor + " es " + M + "." };
+}
+function parDistinto(){ var d1 = aleatorio(2, 8), d2 = aleatorio(2, 10); while (d2 === d1 || mcm(d1, d2) > 40) d2 = aleatorio(2, 10); return [aleatorio(1, d1 - 1), d1, aleatorio(1, d2 - 1), d2]; }
+function genDD(){
+  var p = parDistinto(), suma = Math.random() < 0.6;
+  if (!suma && p[0] * p[3] < p[2] * p[1]) p = [p[2], p[3], p[0], p[1]];
+  var M = mcm(p[1], p[3]), a2 = p[0] * M / p[1], b2 = p[2] * M / p[3], r = suma ? a2 + b2 : a2 - b2;
+  if (r === 0) return genDD();
+  var R = red(r, M);
+  var malo = suma ? red(p[0] + p[2], p[1] + p[3]) : (p[0] > p[2] && p[1] !== p[3] ? red(p[0] - p[2], Math.abs(p[1] - p[3])) : null);
+  return { enun: "Calcule " + fr(p[0], p[1]) + " " + (suma ? "+" : "−") + " " + fr(p[2], p[3]) + ".",
+    solucion: "Denominador común " + M + ": " + fr(p[0], p[1]) + " = " + fr(a2, M) + " y " + fr(p[2], p[3]) + " = " + fr(b2, M) + ". Después " + a2 + " " + (suma ? "+" : "−") + " " + b2 + " = " + r + ": " + r + "/" + M + (R.d !== M ? " = " + txtV(R) : (R.n > R.d ? " = " + txtV(R) : "")) + ". Respuesta: <strong>" + txtV(R) + "</strong>.",
+    evalua: evFr(R, [{ v: malo, msg: "No " + (suma ? "sume" : "reste") + " los de arriba y los de abajo. Primero iguale los denominadores." }], true) };
+}
+
+/* ============ MÓDULO 3 · simplificar el resultado ============ */
+function genSimpRes(){
+  var enun, sol, R, mismo = Math.random() < 0.5;
+  if (mismo){
+    var d = aleatorio(4, 12), a = aleatorio(1, d - 1), b = aleatorio(1, d - 1), r = a + b; R = red(r, d);
+    if (R.d === d && r <= d) return genSimpRes();
+    enun = "Calcule " + fr(a, d) + " + " + fr(b, d) + " y escriba el resultado en su forma más simple.";
+    sol = a + " + " + b + " = " + r + ", así que la suma es " + r + "/" + d + ". " + (r % d === 0 ? r + " ÷ " + d + " = " + (r / d) + "." : (R.d !== d ? "Divida el numerador y el denominador entre " + mcd(r, d) + ": " + R.n + "/" + R.d + ". " : "") + (R.n > R.d ? R.n + " ÷ " + R.d + " = " + Math.floor(R.n / R.d) + ", residuo " + (R.n % R.d) + "." : ""));
+  } else {
+    var p = parDistinto(), M = mcm(p[1], p[3]), num = p[0] * M / p[1] + p[2] * M / p[3]; R = red(num, M);
+    if (R.d === M && num <= M) return genSimpRes();
+    enun = "Calcule " + fr(p[0], p[1]) + " + " + fr(p[2], p[3]) + " y escriba el resultado en su forma más simple.";
+    sol = "Denominador común " + M + ": " + (p[0] * M / p[1]) + "/" + M + " + " + (p[2] * M / p[3]) + "/" + M + " = " + num + "/" + M + ". " + (R.d !== M ? "Divida el numerador y el denominador entre " + mcd(num, M) + ": " + R.n + "/" + R.d + ". " : "") + (R.n > R.d && R.d !== 1 ? R.n + " ÷ " + R.d + " = " + Math.floor(R.n / R.d) + ", residuo " + (R.n % R.d) + "." : "");
+  }
+  return { enun: enun, solucion: sol + " Respuesta: <strong>" + txtV(R) + "</strong>" + (R.n > R.d && R.d !== 1 ? " (o " + R.n + "/" + R.d + ")" : "") + ".", evalua: evFr(R, [], true) };
+}
+
+/* ---------- Arranque ---------- */
+["md-d", "md-a", "md-b"].forEach(function(id){ $(id).addEventListener("input", pintaMD); }); $("md-o").addEventListener("change", pintaMD); pintaMD();
+creaPracticaLibre("p1", genMD);
+["dd-a", "dd-b"].forEach(function(id){ $(id).addEventListener("input", pintaDD); }); $("dd-o").addEventListener("change", pintaDD); pintaDD();
+creaPracticaOM("p2", genComun);
+creaPracticaLibre("p3", genDD);
+creaPracticaLibre("p4", genSimpRes);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

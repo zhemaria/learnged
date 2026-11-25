@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 1 · Complemento de la Lección 4.1 · MCD y MCM — práctica (español)
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Complemento de la Lección 4.1 · Factores, múltiplos, MCD y MCM · LearnGED</title>
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="/math/level-1/practice-4-1-gcf-lcm.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 1 · Tema 4 · Fracciones · Complemento de la Lección 4.1</div>
+    <h1>Factores, múltiplos, MCD y MCM</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otro intento.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#factores">Factores y múltiplos</a></li>
+      <li><a href="#primos">Números primos y factorización prima</a></li>
+      <li><a href="#mcd">El máximo común divisor (MCD)</a></li>
+      <li><a href="#mcm">El mínimo común múltiplo (MCM)</a></li>
+      <li><a href="#cual">¿MCD o MCM?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="factores" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Factores y múltiplos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los factores <strong>dividen</strong> el número exactamente; hállelos <strong>en parejas</strong>. Los múltiplos salen de <strong>multiplicar</strong> el número por 1, 2, 3…</p>
+      <h3>Halle los factores y los múltiplos</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="fm-n">Número (del 2 al 200)</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="fm-n" value="12"></div></div>
+        <div class="salida" id="fm-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿cuál no es factor?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="primos">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Números primos y factorización prima</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un <strong>primo</strong> tiene exactamente dos factores: el 1 y él mismo. Para escribir la <strong>factorización prima</strong>, divida entre el primo más pequeño que
+      sirva, una y otra vez, hasta llegar a 1. Después compruebe multiplicando.</p>
+      <h3>Descomponga un número en primos</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="pf-n">Número (del 2 al 1,000)</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="pf-n" value="60"></div></div>
+        <div class="salida" id="pf-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿primo o compuesto?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Practique: ¿cuál es la factorización prima?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="mcd">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El máximo común divisor (MCD)</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Haga la lista de los factores de los dos números y tome el <strong>mayor que tienen en común</strong>. O use primos: tome los primos comunes, cada uno con su exponente menor.</p>
+      <h3>MCD y MCM, paso a paso</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="gl-a">Primer número</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="gl-a" value="24"></div>
+          <div class="campo"><label for="gl-b">Segundo número</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="gl-b" value="36"></div>
+        </div>
+        <div class="salida" id="gl-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: halle el MCD</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">MCD</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p4-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="mcm">
+    <summary><span class="num" aria-hidden="true">4</span><h2>El mínimo común múltiplo (MCM)</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Haga la lista de los múltiplos de los dos números y tome el <strong>primero que tienen en común</strong>. O use primos: tome todos los primos que aparecen, cada uno con su exponente mayor.
+      Atajo: MCM = (primero × segundo) ÷ MCD. La herramienta paso a paso está en la <a href="#mcd">sección 3</a>.</p>
+      <h3>Practique: halle el MCM</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">MCM</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p5-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <div class="caja-calc">
+        <span class="et-calc"><span aria-hidden="true">🧮</span> Compruébelo en la calculadora</span>
+        <p>Use el atajo: escriba <span class="tecla">(</span> primer número <span class="tecla">×</span> segundo número <span class="tecla">)</span> <span class="tecla">÷</span> MCD <span class="tecla">enter</span>.</p>
+        <button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cual">
+    <summary><span class="num" aria-hidden="true">5</span><h2>¿MCD o MCM?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p><strong>MCD:</strong> repartir o cortar en grupos iguales, lo más grandes posible, sin que sobre nada. <strong>MCM:</strong> cosas que se repiten, y cuándo vuelven a coincidir.</p>
+      <h3>Practique: resuelva el problema</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="opciones" id="p6-opciones"></div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="p6-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 1 · Tema 4 · Fracciones · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script>
+/* ============ Utilidades de números ============ */
+function mcd(a, b){ while (b){ var t = a % b; a = b; b = t; } return a; }
+function mcm(a, b){ return a / mcd(a, b) * b; }
+function factores(n){ var f = []; for (var i = 1; i * i <= n; i++) if (n % i === 0){ f.push(i); if (i * i !== n) f.push(n / i); } return f.sort(function(x, y){ return x - y; }); }
+function parejas(n){ var p = []; for (var i = 1; i * i <= n; i++) if (n % i === 0) p.push(i + " × " + (n / i)); return p; }
+function esPrimo(n){ if (n < 2) return false; for (var i = 2; i * i <= n; i++) if (n % i === 0) return false; return true; }
+function primos(n){ var p = [], d = 2; while (n > 1){ while (n % d === 0){ p.push(d); n /= d; } d++; } return p; }
+var SUP = { 1: "", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" };
+function conExp(p){ var c = {}; p.forEach(function(x){ c[x] = (c[x] || 0) + 1; }); return Object.keys(c).map(Number).sort(function(a, b){ return a - b; }).map(function(k){ return k + SUP[c[k]]; }).join(" × "); }
+function cuenta(p){ var c = {}; p.forEach(function(x){ c[x] = (c[x] || 0) + 1; }); return c; }
+
+/* ============ MÓDULO 1 · factores y múltiplos ============ */
+function pintaFM(){
+  var n = leeNum($("fm-n").value), out = $("fm-salida");
+  if (n === null || n < 2 || n > 200){ out.innerHTML = "Escriba un número entero del 2 al 200."; return; }
+  var mult = []; for (var k = 1; k <= 8; k++) mult.push(n * k);
+  out.innerHTML = '<div class="linea">Parejas de factores: ' + parejas(n).join(" · ") + '</div>' +
+    '<div class="linea veredicto">Factores de ' + n + ': ' + factores(n).join(", ") + '</div>' +
+    '<div class="linea">' + (esPrimo(n) ? n + ' tiene exactamente dos factores: es <strong>primo</strong>.' : n + ' tiene ' + factores(n).length + ' factores: es <strong>compuesto</strong>.') + '</div>' +
+    '<div class="linea">Múltiplos de ' + n + ': ' + mult.map(com).join(", ") + '… (no se acaban nunca)</div>';
+}
+function genNoFactor(){
+  var n = elige([12, 16, 18, 20, 24, 28, 30, 32, 36, 40, 42, 45, 48, 54, 56, 60, 63, 72, 84, 90]), fs = factores(n).filter(function(x){ return x > 1 && x < n; });
+  var no = [], c; for (c = 2; c < n && no.length < 6; c++) if (n % c !== 0) no.push(c);
+  var malo = elige(no), si = baraja(fs).slice(0, 3);
+  var pistas = {}; si.forEach(function(x){ pistas["k" + x] = n + " ÷ " + x + " = " + (n / x) + " sin residuo, así que " + x + " es factor."; });
+  return { enun: "¿Cuál de estos números <strong>no</strong> es factor de " + n + "?", opciones: si.concat([malo]).map(function(x){ return { html: String(x), clave: "k" + x }; }), correcta: "k" + malo, pistas: pistas,
+    bien: n + " ÷ " + malo + " deja un residuo de " + (n % malo) + ". Los factores de " + n + " son " + factores(n).join(", ") + ".",
+    mal: "Los factores de " + n + " son " + factores(n).join(", ") + ". " + malo + " no está en la lista: " + n + " ÷ " + malo + " deja un residuo de " + (n % malo) + "." };
+}
+
+/* ============ MÓDULO 2 · primos ============ */
+function pintaPF(){
+  var n = leeNum($("pf-n").value), out = $("pf-salida");
+  if (n === null || n < 2 || n > 1000){ out.innerHTML = "Escriba un número entero del 2 al 1,000."; return; }
+  if (esPrimo(n)){ out.innerHTML = '<div class="linea veredicto">' + n + ' es primo: sus únicos factores son 1 y ' + n + '.</div>'; return; }
+  var m = n, d = 2, pasos = [];
+  while (m > 1){ while (m % d === 0){ pasos.push(m + " ÷ " + d + " = " + (m / d)); m /= d; } d++; }
+  var p = primos(n);
+  out.innerHTML = '<div class="linea">Divida entre el primo más pequeño que sirva, una y otra vez:</div>' + pasos.map(function(x){ return '<div class="linea">· ' + x + '</div>'; }).join("") +
+    '<div class="linea veredicto">' + n + ' = ' + p.join(" × ") + (p.length > 2 ? ' = ' + conExp(p) : '') + '</div><div class="linea">Comprobación: ' + p.join(" × ") + ' = ' + n + ' ✓</div>';
+}
+function genPrimo(){
+  var n = Math.random() < 0.5 ? elige([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]) : elige([9, 15, 21, 25, 27, 33, 35, 39, 49, 51, 57, 63, 69, 77, 81, 87, 91, 93, 95]);
+  var p = esPrimo(n), f = factores(n);
+  var por = p ? n + " tiene exactamente dos factores, 1 y " + n + ": es primo." : n + " tiene más de dos factores (" + f.join(", ") + "): es compuesto.";
+  return { enOrden: true, enun: "¿<strong>" + n + "</strong> es primo o compuesto?", opciones: [{ html: "Primo", clave: "p" }, { html: "Compuesto", clave: "c" }],
+    correcta: p ? "p" : "c", bien: por, mal: por };
+}
+function genFact(){
+  var n = elige([12, 18, 20, 24, 28, 30, 36, 40, 42, 45, 48, 50, 54, 60, 72, 75, 84, 90, 100]), p = primos(n), c = cuenta(p);
+  var ok = p.join(" × "), opts = [ok];
+  var fs = factores(n).filter(function(x){ return x > 1 && x < n; });
+  var a = fs[Math.floor(fs.length / 2)], b = n / a; opts.push(a + " × " + b);
+  var q = p.slice(), x = q.shift(), y = q.shift(); if (y !== undefined) opts.push([x * y].concat(q).join(" × "));
+  var extra = p.slice(); extra.push(2); opts.push(extra.join(" × "));
+  opts = opts.filter(function(o, i, arr){ return arr.indexOf(o) === i; });
+  var pistas = {}; opts.forEach(function(o){ if (o !== ok){ var nums = o.split(" × ").map(Number), prod = nums.reduce(function(s, v){ return s * v; }, 1);
+    pistas[o] = prod !== n ? "Multiplique para comprobar: " + o + " = " + prod + ", no " + n + "." : "No todos los números son primos: " + nums.filter(function(v){ return !esPrimo(v); }).join(", ") + " todavía se puede descomponer."; } });
+  return { enun: "¿Cuál es la factorización prima de <strong>" + n + "</strong>?", opciones: opts.map(function(o){ return { html: o, clave: o }; }), correcta: ok, pistas: pistas,
+    bien: "Solo primos, y " + ok + " = " + n + ".", mal: n + " = " + ok + (p.length > 2 ? " = " + conExp(p) : "") + ". Todos sus números son primos." };
+}
+
+/* ============ MÓDULOS 3 y 4 · MCD y MCM ============ */
+function pintaGL(){
+  var a = leeNum($("gl-a").value), b = leeNum($("gl-b").value), out = $("gl-salida");
+  if (a === null || b === null || a < 2 || b < 2 || a > 500 || b > 500){ out.innerHTML = "Escriba dos números enteros del 2 al 500."; return; }
+  var fa = factores(a), fb = factores(b), com_ = fa.filter(function(x){ return fb.indexOf(x) >= 0; }), g = mcd(a, b), l = mcm(a, b);
+  var ca = cuenta(primos(a)), cb = cuenta(primos(b)), todos = Object.keys(ca).concat(Object.keys(cb)).map(Number).filter(function(v, i, s){ return s.indexOf(v) === i; }).sort(function(x, y){ return x - y; });
+  var gp = todos.filter(function(p){ return ca[p] && cb[p]; }).map(function(p){ return p + SUP[Math.min(ca[p], cb[p])]; }).join(" × ") || "1";
+  var lp = todos.map(function(p){ return p + SUP[Math.max(ca[p] || 0, cb[p] || 0)]; }).join(" × ");
+  var ma = [], mb = []; for (var k = 1; k <= 6; k++){ ma.push(a * k); mb.push(b * k); }
+  out.innerHTML = '<div class="linea"><strong>MCD · Método 1:</strong> factores de ' + a + ': ' + fa.join(", ") + '. Factores de ' + b + ': ' + fb.join(", ") + '. Comunes: ' + com_.join(", ") + '.</div>' +
+    '<div class="linea"><strong>MCD · Método 2:</strong> ' + a + ' = ' + (primos(a).length > 1 ? conExp(primos(a)) : a) + ' y ' + b + ' = ' + (primos(b).length > 1 ? conExp(primos(b)) : b) + '. Primos comunes, exponente menor: ' + gp + '.</div>' +
+    '<div class="linea veredicto">MCD(' + a + ', ' + b + ') = ' + g + '</div>' +
+    '<div class="linea"><strong>MCM · Método 1:</strong> múltiplos de ' + a + ': ' + ma.map(com).join(", ") + '… Múltiplos de ' + b + ': ' + mb.map(com).join(", ") + '…</div>' +
+    '<div class="linea"><strong>MCM · Método 2:</strong> todos los primos, exponente mayor: ' + lp + '. <strong>Atajo:</strong> (' + a + ' × ' + b + ') ÷ ' + g + ' = ' + com(l) + '.</div>' +
+    '<div class="linea veredicto">MCM(' + a + ', ' + b + ') = ' + com(l) + '</div>';
+}
+function par(){ var g = elige([2, 3, 4, 5, 6, 8, 10, 12]), x = aleatorio(1, 6), y = aleatorio(2, 7); while (x === y || mcd(x, y) !== 1) { x = aleatorio(1, 6); y = aleatorio(2, 7); } return [g * x, g * y]; }
+function genGCF(){
+  var p = par(), a = p[0], b = p[1], g = mcd(a, b), l = mcm(a, b);
+  var pistas = [{ v: l, msg: "Ese es un múltiplo común. El MCD es un factor común: no puede ser mayor que los números." }];
+  return { enun: "Halle el máximo común divisor de <strong>" + a + "</strong> y <strong>" + b + "</strong>.",
+    solucion: "Factores de " + a + ": " + factores(a).join(", ") + ". Factores de " + b + ": " + factores(b).join(", ") + ". El máximo común divisor es <strong>" + g + "</strong>.",
+    evalua: function(t){
+      var v = leeNum(t); if (v === null) return { estado: "invalido", msg: "Escriba un número entero." };
+      if (v === g) return { estado: "bien" };
+      if (v === l) return { estado: "mal", msg: pistas[0].msg };
+      if (a % v === 0 && b % v === 0) return { estado: "mal", msg: v + " es un factor común, pero hay uno mayor." };
+      return { estado: "mal", msg: v + " no divide a los dos números. Haga la lista de los factores de cada uno y busque el mayor que tienen en común." };
+    } };
+}
+function genLCM(){
+  var a = elige([3, 4, 5, 6, 8, 9, 10, 12, 15]), b = elige([4, 6, 8, 9, 10, 12, 14, 15, 16, 18, 20].filter(function(x){ return x !== a; }));
+  var g = mcd(a, b), l = mcm(a, b);
+  return { enun: "Halle el mínimo común múltiplo de <strong>" + a + "</strong> y <strong>" + b + "</strong>.",
+    solucion: "Múltiplos de " + Math.max(a, b) + ": " + [1, 2, 3, 4, 5, 6].map(function(k){ return Math.max(a, b) * k; }).join(", ") + "… El primero que también es múltiplo de " + Math.min(a, b) + " es <strong>" + l + "</strong>. Atajo: (" + a + " × " + b + ") ÷ " + g + " = " + l + ".",
+    evalua: function(t){
+      var v = leeNum(t); if (v === null) return { estado: "invalido", msg: "Escriba un número entero." };
+      if (v === l) return { estado: "bien" };
+      if (v === g) return { estado: "mal", msg: "Ese es el MCD, un factor común. El MCM es un múltiplo común: no puede ser menor que los números." };
+      if (v % a === 0 && v % b === 0) return { estado: "mal", msg: v + " es un múltiplo común, pero hay uno menor." };
+      return { estado: "mal", msg: v + " no es múltiplo de los dos números. Haga la lista de los múltiplos del número mayor hasta que uno sea también múltiplo del menor." };
+    } };
+}
+
+/* ============ MÓDULO 5 · ¿MCD o MCM? ============ */
+function genCual(){
+  var t = aleatorio(1, 4), a, b, enun, gcf;
+  if (t === 1){ var p = par(); a = p[0]; b = p[1]; enun = "Un banco de comida tiene " + a + " latas de frijoles y " + b + " latas de maíz. Quiere bolsas idénticas sin que sobre ninguna lata. <strong>¿Cuál es el mayor número de bolsas que puede hacer?</strong>"; gcf = true; }
+  else if (t === 2){ var q = par(); a = q[0]; b = q[1]; enun = "Tiene dos cintas, de " + a + " pulgadas y de " + b + " pulgadas. Las corta en pedazos iguales, lo más largos posible, sin que sobre nada. <strong>¿Cuántas pulgadas mide cada pedazo?</strong>"; gcf = true; }
+  else if (t === 3){ a = elige([10, 12, 15, 20]); b = elige([15, 18, 20, 25, 30].filter(function(x){ return x !== a; })); enun = "Un autobús para cada " + a + " minutos y otro cada " + b + " minutos. Paran juntos a las 8:00. <strong>¿En cuántos minutos volverán a parar juntos?</strong>"; gcf = false; }
+  else { a = elige([4, 6, 8]); b = elige([6, 9, 10, 12].filter(function(x){ return x !== a; })); enun = "Una luz parpadea cada " + a + " segundos y otra cada " + b + " segundos. Ahora parpadean juntas. <strong>¿En cuántos segundos volverán a parpadear juntas?</strong>"; gcf = false; }
+  var g = mcd(a, b), l = mcm(a, b), r = gcf ? g : l, otro = gcf ? l : g;
+  var ops = [r, otro, a * b, a + b].filter(function(v, i, s){ return s.indexOf(v) === i; });
+  var pistas = {}; pistas["k" + otro] = gcf ? "Este problema reparte en grupos iguales sin que sobre nada: pide el MCD, no el MCM." : "Las cosas se repiten y vuelven a coincidir: este problema pide el MCM, no el MCD.";
+  if (a * b !== r) pistas["k" + (a * b)] = gcf ? "Multiplicar los números da un múltiplo común. ¿Es un problema de repartir o de cosas que se repiten?" : "El producto es un múltiplo común, pero ¿es el menor?";
+  pistas["k" + (a + b)] = "Sumar los números no responde este tipo de problema. Decida primero: ¿MCD o MCM?";
+  return { enun: enun, opciones: ops.map(function(v){ return { html: String(v), clave: "k" + v }; }), correcta: "k" + r, pistas: pistas, pista: "Decida primero: ¿es repartir en grupos iguales (MCD) o cosas que se repiten (MCM)?",
+    bien: (gcf ? "Repartir en grupos iguales: MCD(" : "Repetirse y volver a coincidir: MCM(") + a + ", " + b + ") = " + r + ".",
+    mal: (gcf ? "Repartir en grupos iguales, lo más grandes posible, pide el MCD. MCD(" : "Las cosas que se repiten y vuelven a coincidir piden el MCM. MCM(") + a + ", " + b + ") = " + r + "." };
+}
+
+/* ---------- Arranque ---------- */
+$("fm-n").addEventListener("input", pintaFM); pintaFM();
+creaPracticaOM("p1", genNoFactor);
+$("pf-n").addEventListener("input", pintaPF); pintaPF();
+creaPracticaOM("p2", genPrimo);
+creaPracticaOM("p3", genFact);
+["gl-a", "gl-b"].forEach(function(id){ $(id).addEventListener("input", pintaGL); }); pintaGL();
+creaPracticaLibre("p4", genGCF);
+creaPracticaLibre("p5", genLCM);
+creaPracticaOM("p6", genCual);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
