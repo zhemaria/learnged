@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 3.1 · practice (English) — built by tools/build_n3_lesson_3_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 3.1 · Simplifying radicals with perfect-square factors · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 3 · Radicals and the real numbers</div>
+    <h1>Lesson 3.1 · Simplifying radicals with perfect-square factors</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#product">The product property of radicals</a></li>
+      <li><a href="#numbers">Simplifying number radicals</a></li>
+      <li><a href="#variables">Radicals with variables</a></li>
+      <li><a href="#check">Checking the answer</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="product" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The product property of radicals</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The root of a product can be split into the product of the roots. That lets you “take out” of the radical any factor that is a perfect square and leave inside only what is not.</p>
+      <div class="formula">√(a · b) = √a · √b</div>
+      <h3>Split the radical</h3>
+      <p>Type a number. The table marks the perfect squares that divide it, and the darkest one is the largest. Try splitting the radical with each one and compare what is left inside.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="pr-n">Number inside the radical (2 to 400)</label><input type="text" inputmode="numeric" class="corto" id="pr-n" value="72"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="pr-azar">Another number</button></div>
+        <div class="cuadros" id="pr-tabla" aria-hidden="true"></div>
+        <p class="sr-only" id="pr-tabla-voz" aria-live="polite"></p>
+        <p><strong>Split with the perfect square…</strong></p>
+        <div class="elecciones" id="pr-opciones"></div>
+      </div>
+      <div class="salida" aria-live="polite" id="pr-salida"></div>
+      <div class="caja-atencion"><strong>Look for the largest:</strong> if you use a small perfect square, something is still left to simplify. √72 = √(4 · 18) = 2√18, but √18 can still be reduced. With the largest, 36, you get there at once: √72 = 6√2.</div>
+      <h3>Practice: what is the largest perfect square that divides it?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="numbers">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Simplifying number radicals</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The procedure has three steps: find the largest perfect square that divides the radicand, split it off with the product property, and take its root.</p>
+      <h3>Step-by-step simplifier</h3>
+      <p>Choose a radical and reveal one step at a time. Try to predict each step before you show it.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="ns-sel">Radical to simplify</label><select id="ns-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="ns-sig"></button><button type="button" class="btn-sec" id="ns-todo">Show all the steps</button><button type="button" class="btn-sec" id="ns-azar">Another one at random</button></div>
+      </div>
+      <div class="fraccion-grande" id="ns-expr"></div>
+      <div class="pasos" id="ns-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>When is it simple?</strong> When the radicand has no factor, other than 1, that is a perfect square. √15 is already simple, because 15 = 3 · 5 and neither 3 nor 5 is a perfect square.</div>
+      <h3>Practice: choose the simplified form</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Write it yourself: simplify the radical</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p3-k">Coefficient</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p3-k"></div>
+          <div class="campo" aria-hidden="true" style="font-size:24px;font-weight:700;padding-bottom:6px;">√</div>
+          <div class="campo"><label for="p3-r">Radicand</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p3-r"></div>
+        </div>
+        <p class="nota">For example, for 6√2 type 6 and 2. If there is no coefficient left (as in √15), leave the first box blank. If no radical is left (as in √36 = 6), type 1 as the radicand.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="variables">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Radicals with variables</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A variable with an <strong>even</strong> exponent is a perfect square: its root is the same variable with half the exponent, because (x<sup>3</sup>)<sup>2</sup> = x<sup>6</sup>. If the exponent is <strong>odd</strong>, split off one x: the even part comes out and the extra x stays inside.</p>
+      <p class="nota">In this whole module, x is positive, as in the problems on the test.</p>
+      <h3>Exponent explorer</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="va-a">Number inside the radical</label><select id="va-a"><option value="1">1</option><option value="4">4</option><option value="9" selected>9</option><option value="16">16</option><option value="25">25</option><option value="2">2</option><option value="3">3</option><option value="12">12</option><option value="18">18</option><option value="50">50</option></select></div>
+        <div class="campo"><label for="va-n">Exponent of x (1 to 12)</label><input type="text" inputmode="numeric" class="corto" id="va-n" value="2"></div>
+      </div></div>
+      <div class="caja-aviso" id="va-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="va-salida"></div>
+      <h3>Practice: radicals with variables</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="check">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Checking the answer</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Simplifying does not change the value of the radical, only its form. So a reliable check is to work out both expressions on the calculator: they must give the same decimal. For example, √72 ≈ 8.485 and 6 × √2 ≈ 8.485.</p>
+      <p>But careful: matching decimals are not enough for the answer to be <strong>finished</strong>. 2√18 has the same value as √72, and it can still be simplified.</p>
+      <h3>Practice: is this simplification right?</h3>
+      <div class="fila-btn" style="margin:0 0 10px;"><button type="button" class="btn-sec" id="p5-calc">Work out both decimals</button></div>
+      <div class="salida" id="p5-dec" aria-live="polite" style="display:none;"></div>
+      
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <div class="caja-tip"><strong>Using the calculator:</strong> checking does not replace the procedure, but it confirms that the simplification keeps the value. It is a great tool for catching a factoring mistake.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 3 · Radicals and the real numbers · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+/* ============ MODULE 1 · splitting the radical ============ */
+var PR_COLA = [48, 200, 180, 50, 15];
+function pintaPR(){
+  var x = $("pr-n").value.trim(), n = /^\d+$/.test(x) ? parseInt(x, 10) : NaN, sal = $("pr-salida"), ops = $("pr-opciones");
+  ops.innerHTML = "";
+  if (!(n >= 2 && n <= 400)){ $("pr-tabla").innerHTML = ""; $("pr-tabla-voz").textContent = ""; sal.innerHTML = T("Type a whole number from 2 to 400.", "Escriba un número entero de 2 a 400."); return; }
+  var divs = cuadradosQueDividen(n), mayor = divs.length ? divs[divs.length - 1] : 0, h = "";
+  for (var s = 2; s * s <= 400; s++) h += '<div class="cuadro' + (n % (s * s) === 0 ? (s === mayor ? " mayor" : " divide") : "") + '">' + s + "²<strong>" + (s * s) + "</strong></div>";
+  $("pr-tabla").innerHTML = h;
+  $("pr-tabla-voz").textContent = divs.length ? T("Perfect squares that divide " + n + ": " + yLista(divs.map(function(s){ return s * s; })) + ". The largest is " + (mayor * mayor) + ".", "Cuadrados perfectos que dividen a " + n + ": " + yLista(divs.map(function(s){ return s * s; })) + ". El mayor es " + (mayor * mayor) + ".") : T("No perfect square greater than 1 divides " + n + ".", "Ningún cuadrado perfecto mayor que 1 divide a " + n + ".");
+  if (!divs.length){ sal.innerHTML = '<div class="linea veredicto">' + T(n + " has no perfect-square factors (other than 1), so " + radHTML(1, n) + " is already in simplest form.", n + " no tiene factores que sean cuadrados perfectos (salvo el 1), así que " + radHTML(1, n) + " ya está en su forma más simple.") + "</div>"; return; }
+  divs.forEach(function(s){
+    var b = document.createElement("button"); b.type = "button"; b.className = "eleccion"; b.textContent = T("With ", "Con ") + (s * s); b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function(){ Array.prototype.forEach.call(ops.children, function(z){ z.setAttribute("aria-pressed", z === b ? "true" : "false"); }); partePR(n, s, mayor); });
+    ops.appendChild(b);
+  });
+  sal.innerHTML = T("Choose one of the perfect squares above to split ", "Elija arriba uno de los cuadrados perfectos para partir ") + radHTML(1, n) + ".";
+}
+function partePR(n, s, mayor){
+  var b = n / (s * s), h = '<div class="linea grande">' + radHTML(1, n) + " = √(" + (s * s) + " · " + b + ") = " + radHTML(1, s * s) + " · " + radHTML(1, b) + " = " + radHTML(s, b) + "</div>";
+  if (b === 1) h += '<div class="linea veredicto">✓ ' + T(n + " is a perfect square: ", n + " es un cuadrado perfecto: ") + radHTML(1, n) + " = " + s + ".</div>";
+  else if (s === mayor) h += '<div class="linea veredicto">✓ ' + T("Simplest form: you used the largest perfect square, and " + b + " is left inside, which has no perfect squares.", "Forma más simple: usó el mayor cuadrado perfecto y dentro queda " + b + ", que ya no tiene cuadrados perfectos.") + "</div>";
+  else { var q = simplRad(b);
+    h += '<div class="linea veredicto">' + T("Not finished yet: ", "Todavía no está terminado: ") + radHTML(1, b) + T(" can be simplified, because " + b + " contains the square " + (q.k * q.k) + ".", " se puede simplificar, porque " + b + " contiene el cuadrado " + (q.k * q.k) + ".") + "</div>" +
+         '<div class="linea">' + T("If you keep going: ", "Si sigue: ") + radHTML(s, b) + " = " + s + " · " + radHTML(q.k, q.r) + " = " + radHTML(s * q.k, q.r) + T(". With " + (mayor * mayor) + " you would have gotten there in one step.", ". Con el " + (mayor * mayor) + " habría llegado en un solo paso.") + "</div>"; }
+  $("pr-salida").innerHTML = h;
+}
+function genMayor(){
+  var n, divs;
+  do { n = radicandoAzar(300); divs = cuadradosQueDividen(n); } while (!divs.length);
+  var mayor = divs[divs.length - 1], o = [{html: String(mayor * mayor), clave: "c" + mayor * mayor}], pc = {};
+  divs.slice(0, -1).forEach(function(s){ o.push({html: String(s * s), clave: "c" + s * s}); pc["c" + s * s] = T((s * s) + " does divide " + n + ", but it is not the largest: something would still be left to simplify.", (s * s) + " sí divide a " + n + ", pero no es el mayor: con él todavía quedaría algo por simplificar."); });
+  for (var s = 2; s <= 12 && o.length < 7; s++) if (n % (s * s) !== 0 && s * s < 2 * n){ o.push({html: String(s * s), clave: "c" + s * s}); pc["c" + s * s] = T((s * s) + " does not divide " + n + ": " + n + " ÷ " + (s * s) + " is not a whole number.", (s * s) + " no divide a " + n + ": " + n + " ÷ " + (s * s) + " no da un número entero."); }
+  return {enun: T("What is the largest perfect square that divides " + n + "?", "¿Cuál es el mayor cuadrado perfecto que divide a " + n + "?"), opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: n + " = " + (mayor * mayor) + " · " + (n / (mayor * mayor)) + T(", so ", ", así que ") + radHTML(1, n) + " = " + radHTML(mayor, n / (mayor * mayor)) + ".",
+    mal: T("The largest is ", "El mayor es ") + (mayor * mayor) + ": " + n + " = " + (mayor * mayor) + " · " + (n / (mayor * mayor)) + "."};
+}
+
+/* ============ MODULE 2 · step-by-step simplifier ============ */
+var NS = {lista: [50, 48, 72, 8, 75, 98, 200, 180, 36, 15], pasos: [], visto: 0};
+function llenaNS(){ var sel = $("ns-sel"); sel.innerHTML = ""; NS.lista.forEach(function(n){ var o = document.createElement("option"); o.value = n; o.textContent = "√" + n; sel.appendChild(o); }); }
+function preparaNS(){
+  var n = parseInt($("ns-sel").value, 10), q = simplRad(n); NS.pasos = []; NS.visto = 0;
+  $("ns-expr").innerHTML = '<span class="grande">' + radHTML(1, n) + "</span>";
+  if (q.k === 1){ NS.pasos.push(T("Look for perfect squares that divide " + n + " (4, 9, 16, 25, …). None does.", "Se buscan cuadrados perfectos que dividan a " + n + " (4, 9, 16, 25, …). Ninguno lo divide.")); NS.pasos.push('<span class="veredicto">' + radHTML(1, n) + T(" is already in simplest form.", " ya está en su forma más simple.") + "</span>"); }
+  else if (q.r === 1){ NS.pasos.push(T(n + " is a perfect square: ", n + " es un cuadrado perfecto: ") + q.k + " × " + q.k + " = " + n + "."); NS.pasos.push('<span class="veredicto">' + T("Answer: ", "Resultado: ") + radHTML(1, n) + " = " + q.k + ".</span>"); }
+  else {
+    NS.pasos.push(T("The largest perfect square that divides " + n + " is " + (q.k * q.k) + ": ", "El mayor cuadrado perfecto que divide a " + n + " es " + (q.k * q.k) + ": ") + n + " = " + (q.k * q.k) + " · " + q.r + ".");
+    NS.pasos.push(T("Split it with the product property: ", "Se separa con la propiedad del producto: ") + radHTML(1, n) + " = " + radHTML(1, q.k * q.k) + " · " + radHTML(1, q.r) + ".");
+    NS.pasos.push(T("Take the root of the perfect square: ", "Se extrae la raíz del cuadrado perfecto: ") + radHTML(1, q.k * q.k) + " = " + q.k + ".");
+    NS.pasos.push('<span class="veredicto">' + T("Answer: ", "Resultado: ") + radHTML(1, n) + " = " + radHTML(q.k, q.r) + ".</span>");
+  }
+  pintaNS();
+}
+function pintaNS(){
+  $("ns-pasos").innerHTML = NS.pasos.slice(0, NS.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === NS.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("ns-sig"); b.disabled = NS.visto >= NS.pasos.length; $("ns-todo").disabled = b.disabled;
+  b.textContent = NS.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function genSimpl(){
+  var n = radicandoAzar(300), q = simplRad(n), o = [opRad(q.k, q.r)], pc = {};
+  var a = opRad(q.k * q.k, q.r); o.push(a); pc[a.clave] = T("When you take out the perfect square, write its root (" + q.k + "), not the square (" + (q.k * q.k) + ").", "Al sacar el cuadrado perfecto se escribe su raíz (" + q.k + "), no el cuadrado (" + (q.k * q.k) + ").");
+  if (q.r !== q.k){ var b = opRad(q.r, q.k); o.push(b); pc[b.clave] = T("The number outside and the number inside were swapped.", "Se intercambiaron el número de fuera y el de dentro."); }
+  cuadradosQueDividen(n).slice(0, -1).forEach(function(s){ var c = opRad(s, n / (s * s)); o.push(c); pc[c.clave] = T("It has the same value, but it can still be simplified: " + (n / (s * s)) + " contains a perfect square.", "Tiene el mismo valor, pero todavía se puede simplificar: " + (n / (s * s)) + " contiene un cuadrado perfecto."); });
+  o.push({html: radHTML(1, n) + T(" is already in simplest form", " ya está en su forma más simple"), clave: "simple"}); pc.simple = T(n + " does have a perfect-square factor: " + (q.k * q.k) + ".", n + " sí tiene un factor que es cuadrado perfecto: " + (q.k * q.k) + ".");
+  o.push(opRad(q.k + 1, q.r));
+  return {enun: T("Simplify ", "Simplifique ") + radHTML(1, n) + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: n + " = " + (q.k * q.k) + " · " + q.r + T(", and ", ", y ") + radHTML(1, q.k * q.k) + " = " + q.k + ".",
+    mal: T("The answer is ", "La respuesta es ") + radHTML(q.k, q.r) + T(", because ", ", porque ") + n + " = " + (q.k * q.k) + " · " + q.r + "."};
+}
+function genEscribe(){
+  var u = Math.random(), n;
+  if (u < 0.1) n = elige(LIBRES.concat([17, 19, 21, 22, 23, 26, 30, 33, 35]));
+  else if (u < 0.2){ var s = aleatorio(4, 15); n = s * s; }
+  else n = radicandoAzar(300);
+  var q = simplRad(n);
+  return {enun: T("Simplify ", "Simplifique ") + radHTML(1, n) + ".", k: q.k, r: q.r,
+    explica: q.k === 1 ? T(n + " has no perfect-square factors, so it is already simple.", n + " no tiene factores que sean cuadrados perfectos, así que ya está simple.") : (q.r === 1 ? T(n + " is a perfect square.", n + " es un cuadrado perfecto.") : n + " = " + (q.k * q.k) + " · " + q.r + ".")};
+}
+
+/* ============ MODULE 3 · radicals with variables (x positive) ============ */
+function xVis(e){ return e === 0 ? "" : (e === 1 ? "x" : "x" + supH(e)); }
+function xVoz(e){ return e === 0 ? "" : (e === 1 ? "x" : T("x to the power of ", "x a la ") + e); }
+function varVis(k, e, r, xin){ var hay = r > 1 || xin, out = ""; if (k !== 1 || (e === 0 && !hay)) out += k; out += xVis(e); if (hay) out += '<span class="rad">√<span class="rc">' + (r > 1 ? r : "") + (xin ? "x" : "") + "</span></span>"; return out; }
+function varVoz(k, e, r, xin){ var hay = r > 1 || xin, p = []; if (k !== 1 || (e === 0 && !hay)) p.push(String(k)); if (e) p.push(xVoz(e)); if (hay) p.push(RAIZ + (r > 1 ? r + (xin ? " x" : "") : "x")); return p.join(T(" times ", " por ")); }
+function varHTML(k, e, r, xin){ return envuelve(varVis(k, e, r, xin), varVoz(k, e, r, xin)); }
+function opVar(k, e, r, xin){ return {html: varHTML(k, e, r, xin), clave: [k, e, r, xin ? 1 : 0].join("|")}; }
+function entradaHTML(a, n){ return envuelve('<span class="rad">√<span class="rc">' + (a > 1 ? a : "") + xVis(n) + "</span></span>", RAIZ + (a > 1 ? a + " " : "") + xVoz(n)); }
+function resuelveVar(a, n){ var s = simplRad(a); return {k: s.k, e: Math.floor(n / 2), r: s.r, xin: n % 2 === 1}; }
+function pintaVA(){
+  var a = parseInt($("va-a").value, 10), x = $("va-n").value.trim(), n = /^\d+$/.test(x) ? parseInt(x, 10) : NaN, av = $("va-aviso");
+  if (!(n >= 1 && n <= 12)){ av.className = "caja-aviso visible"; av.textContent = T("Type a whole-number exponent from 1 to 12.", "Escriba un exponente entero de 1 a 12."); $("va-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var R = resuelveVar(a, n), s = simplRad(a), h = '<div class="linea grande">' + entradaHTML(a, n) + " = " + varHTML(R.k, R.e, R.r, R.xin) + "</div>";
+  if (a > 1){
+    h += '<div class="linea">' + T("Split the product: ", "Se separa el producto: ") + entradaHTML(a, n) + " = " + radHTML(1, a) + " · " + entradaHTML(1, n) + ".</div>";
+    h += '<div class="linea">' + T("The number: ", "El número: ") + (s.r === 1 ? radHTML(1, a) + " = " + s.k + T(", because " + a + " is a perfect square.", ", porque " + a + " es un cuadrado perfecto.") : (s.k === 1 ? radHTML(1, a) + T(" does not simplify and stays inside.", " no se simplifica y se queda dentro.") : radHTML(1, a) + " = " + radHTML(s.k, s.r) + ".")) + "</div>";
+  }
+  if (n % 2 === 0) h += '<div class="linea">' + T("The variable: " + n + " is even, so x" + supH(n) + " is a perfect square and its root is x" + supH(n / 2) + " (half the exponent).", "La variable: " + n + " es par, así que x" + supH(n) + " es un cuadrado perfecto y su raíz es x" + supH(n / 2) + " (la mitad del exponente).") + "</div>";
+  else if (n === 1) h += '<div class="linea">' + T("The variable: the exponent 1 is odd and there is no even part to take out, so x stays inside the radical.", "La variable: el exponente 1 es impar y no hay parte par que sacar, así que x se queda dentro del radical.") + "</div>";
+  else h += '<div class="linea">' + T("The variable: " + n + " is odd. Split x" + supH(n) + " = x" + supH(n - 1) + " · x. The even part comes out as " + xVis((n - 1) / 2) + ", and the extra x stays inside.", "La variable: " + n + " es impar. Se separa x" + supH(n) + " = x" + supH(n - 1) + " · x. La parte par sale como " + xVis((n - 1) / 2) + " y la x sobrante se queda dentro.") + "</div>";
+  $("va-salida").innerHTML = h;
+}
+var COEF_VAR = [1, 4, 9, 16, 25, 36, 49, 2, 3, 5, 8, 12, 18, 20, 27, 50];
+function genVariables(){
+  if (Math.random() < 0.3){
+    var buenos = [[1, 0, 7, false], [1, 0, 1, true], [1, 0, 15, true], [2, 1, 5, false], [3, 2, 1, true], [1, 0, 6, false], [5, 3, 2, true]];
+    var malos = [["√18", RAIZ + "18"], ["√x" + supH(4), RAIZ + "x" + T(" to the power of 4", " a la 4")], ["√(12x)", RAIZ + "12 x"], ["√50", RAIZ + "50"], ["√(9x" + supH(3) + ")", RAIZ + "9 x" + T(" to the power of 3", " a la 3")], ["√(20x)", RAIZ + "20 x"], ["x√x" + supH(2), "x" + T(" times ", " por ") + RAIZ + "x" + T(" squared", " al cuadrado")]];
+    var b = elige(buenos), o = [{html: varHTML(b[0], b[1], b[2], b[3]), clave: "s"}], pc = {};
+    baraja(malos).slice(0, 3).forEach(function(m, i){ o.push({html: envuelve(m[0], m[1]), clave: "m" + i}); pc["m" + i] = T("Inside this one there is still a perfect square or an exponent of 2 or more.", "Dentro de esta todavía queda un cuadrado perfecto o un exponente de 2 o más."); });
+    return {enun: T("Which of these expressions is already in simplest form?", "¿Cuál de estas expresiones ya está en su forma más simple?"), opciones: o, correcta: "s", porClave: pc,
+      bien: T("No perfect square is left inside the radical: no numbers like 4 or 9, and no exponents of 2 or more.", "Dentro del radical no queda ningún cuadrado perfecto: ni números como 4 o 9, ni exponentes de 2 o más."),
+      mal: T("The only simple one is ", "La única simple es ") + varHTML(b[0], b[1], b[2], b[3]) + T(". In the others, a perfect square or an exponent of 2 or more is still inside.", ". En las demás queda dentro un cuadrado perfecto o un exponente de 2 o más.")};
+  }
+  var a = elige(COEF_VAR), n = aleatorio(2, 12), R = resuelveVar(a, n), o2 = [opVar(R.k, R.e, R.r, R.xin)], pc2 = {};
+  var c1 = opVar(R.k, n, R.r, false); o2.push(c1); pc2[c1.clave] = T("Taking the root halves the exponent of x.", "El exponente de x se divide entre 2 al sacar la raíz.");
+  if (n >= 5){ var c2 = opVar(R.k, n - 2, R.r, R.xin); o2.push(c2); pc2[c2.clave] = T("Taking the root halves the exponent; it does not subtract 2.", "Al sacar la raíz, el exponente se divide entre 2; no se le resta 2."); }
+  if (esCuadrado(a) && a > 1){ var c3 = opVar(a, R.e, 1, R.xin); o2.push(c3); pc2[c3.clave] = T("Take the root of the number too: ", "También hay que sacar la raíz del número: ") + radHTML(1, a) + " = " + R.k + "."; }
+  if (R.xin){ var c4 = opVar(R.k, R.e + 1, R.r, false); o2.push(c4); pc2[c4.clave] = T("With an odd exponent, one x stays inside the radical: it cannot all come out.", "Con exponente impar, una x se queda dentro del radical: no se puede sacar entera."); }
+  else if (R.r > 1){ var c5 = opVar(R.k, R.e, R.r, true); o2.push(c5); pc2[c5.clave] = T("The exponent is even: the x comes out whole and leaves nothing inside.", "El exponente es par: la x sale completa y no deja nada dentro."); }
+  o2.push(opVar(R.k, R.e + 1, R.r, R.xin));
+  var sa = simplRad(a);
+  return {enun: T("Simplify ", "Simplifique ") + entradaHTML(a, n) + ".", opciones: [o2[0]].concat(baraja(o2.slice(1)).slice(0, 3)), correcta: o2[0].clave, porClave: pc2,
+    bien: (n % 2 === 0 ? T("The exponent " + n + " is even: x" + supH(n) + " comes out as " + xVis(n / 2) + ".", "El exponente " + n + " es par: x" + supH(n) + " sale como " + xVis(n / 2) + ".") : T("The exponent " + n + " is odd: " + xVis((n - 1) / 2) + " comes out and one x stays inside.", "El exponente " + n + " es impar: sale " + xVis((n - 1) / 2) + " y una x se queda dentro.")) + (a > 1 ? T(" And ", " Y ") + radHTML(1, a) + " = " + radHTML(sa.k, sa.r) + "." : ""),
+    mal: T("The answer is ", "La respuesta es ") + varHTML(R.k, R.e, R.r, R.xin) + "."};
+}
+
+/* ============ MODULE 4 · checking ============ */
+var P5 = null;
+function genVerificar(){
+  var n = radicandoAzar(300), q = simplRad(n), u = Math.random(), k, rr, tipo, parc = cuadradosQueDividen(n).slice(0, -1);
+  if (u < 0.35){ k = q.k; rr = q.r; tipo = "s"; }
+  else if (u < 0.6 && parc.length){ var s = elige(parc); k = s; rr = n / (s * s); tipo = "t"; }
+  else { var f = [[q.k * q.k, q.r], [q.k + 1, q.r], [q.k, q.r + 1]]; if (q.r !== q.k) f.push([q.r, q.k]); var g = elige(f); k = g[0]; rr = g[1]; tipo = "m"; }
+  var expl = tipo === "s" ? T("The decimals match and no perfect square is left inside the radical.", "Los decimales coinciden y dentro del radical ya no queda ningún cuadrado perfecto.")
+           : (tipo === "t" ? T("The decimals match, but " + rr + " still contains a perfect square: the final form is ", "Los decimales coinciden, pero " + rr + " todavía contiene un cuadrado perfecto: la forma final es ") + radHTML(q.k, q.r) + "."
+                           : T("The decimals do not match. The right simplification is ", "Los decimales no coinciden. La simplificación correcta es ") + radHTML(q.k, q.r) + ".");
+  P5 = {n: n, k: k, rr: rr};
+  if ($("p5-dec")){ $("p5-dec").style.display = "none"; $("p5-dec").innerHTML = ""; }
+  return {enun: T("Someone wrote: ", "Alguien escribió: ") + radHTML(1, n) + " = " + radHTML(k, rr) + T(". What do you think?", ". ¿Qué opina?"), enOrden: true,
+    opciones: [{html: T("Right, and in simplest form", "Correcta y en su forma más simple"), clave: "s"}, {html: T("Same value, but it can still be simplified", "Tiene el mismo valor, pero todavía se puede simplificar"), clave: "t"}, {html: T("Wrong: the values do not match", "Incorrecta: los valores no coinciden"), clave: "m"}],
+    correcta: tipo, porClave: {}, pista: T("Work out the two decimals, then look inside the radical for a perfect square.", "Calcule los dos decimales y después busque un cuadrado perfecto dentro del radical."), bien: expl, mal: expl};
+}
+function muestraDecimales(){
+  if (!P5) return; var d = $("p5-dec"); d.style.display = "block";
+  d.innerHTML = '<div class="linea">' + radHTML(1, P5.n) + " ≈ " + aprox(Math.sqrt(P5.n), 3) + '</div><div class="linea">' + radHTML(P5.k, P5.rr) + " = " + P5.k + " × " + radHTML(1, P5.rr) + " ≈ " + aprox(P5.k * Math.sqrt(P5.rr), 3) + "</div>";
+}
+
+/* ============ Start ============ */
+$("pr-n").addEventListener("input", pintaPR);
+$("pr-azar").addEventListener("click", function(){ $("pr-n").value = PR_COLA.length ? PR_COLA.shift() : radicandoAzar(400); pintaPR(); });
+pintaPR();
+OMR("p1", genMayor);
+llenaNS();
+$("ns-sel").addEventListener("change", preparaNS);
+$("ns-sig").addEventListener("click", function(){ if (NS.visto < NS.pasos.length){ NS.visto++; pintaNS(); } });
+$("ns-todo").addEventListener("click", function(){ NS.visto = NS.pasos.length; pintaNS(); });
+$("ns-azar").addEventListener("click", function(){ var n = radicandoAzar(300); if (NS.lista.indexOf(n) < 0){ NS.lista.push(n); llenaNS(); } $("ns-sel").value = n; preparaNS(); });
+preparaNS();
+OMR("p2", genSimpl);
+creaPracticaRad("p3", genEscribe);
+$("va-a").addEventListener("change", pintaVA);
+$("va-n").addEventListener("input", pintaVA);
+pintaVA();
+OMR("p4", genVariables);
+OMR("p5", genVerificar);
+$("p5-calc").addEventListener("click", muestraDecimales);
+$("p5-opciones").addEventListener("click", function(ev){ if (ev.target.closest(".opcion")) muestraDecimales(); });
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

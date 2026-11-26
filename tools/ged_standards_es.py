@@ -139,6 +139,7 @@ CCR_ES = {
  "8.EE.3": "Usar números expresados como un solo dígito por una potencia entera de 10 para estimar cantidades muy grandes o muy pequeñas, y para expresar cuántas veces mayor es una que otra.",
  "8.EE.4": "Operar con números expresados en notación científica, incluidos problemas en los que se usan a la vez la notación decimal y la científica. Usar la notación científica y elegir unidades de tamaño adecuado para medir cantidades muy grandes o muy pequeñas. Interpretar la notación científica que genera la tecnología.",
  "8.EE.2": "Usar los símbolos de raíz cuadrada y raíz cúbica para representar las soluciones de ecuaciones de la forma x² = p y x³ = p, donde p es un número racional positivo. Evaluar las raíces cuadradas de cuadrados perfectos pequeños y las raíces cúbicas de cubos perfectos pequeños.",
+ "8.NS.1": "Saber que los números que no son racionales se llaman irracionales. Entender de manera informal que todo número tiene una expansión decimal; mostrar que la de los números racionales termina por repetirse y convertir en número racional una expansión decimal que se repite.",
  "8.NS.2": "Usar aproximaciones racionales de números irracionales para comparar su tamaño, ubicarlos aproximadamente en la recta numérica y estimar el valor de expresiones.",
  "6.RP.1": "Comprender el concepto de razón y usar el lenguaje de las razones para describir la relación entre dos cantidades.",
  "6.RP.2": "Comprender el concepto de tasa unitaria a/b asociada a una razón a:b con b ≠ 0, y usar el lenguaje de las tasas en el contexto de una razón.",

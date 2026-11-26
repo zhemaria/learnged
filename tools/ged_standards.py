@@ -200,6 +200,7 @@ CCR = {
  "8.EE.2": ("D", "Use square root and cube root symbols to represent solutions to equations of the form x² = p and x³ = p, where p is a positive rational number. Evaluate square roots of small perfect squares and cube roots of small perfect cubes."),
  "5.OA.1": ("C", "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols."),
  "6.EE.2c": ("D", "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations)."),
+ "8.NS.1": ("D", "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion; for rational numbers show that the decimal expansion repeats eventually, and convert a decimal expansion which repeats eventually into a rational number."),
  "8.NS.2": ("D", "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions."),
  "6.RP.1": ("D", "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities."),
  "6.RP.2": ("D", "Understand the concept of a unit rate a/b associated with a ratio a:b with b ≠ 0, and use rate language in the context of a ratio relationship."),
@@ -333,6 +334,12 @@ LESSONS = [
   {"direct": ["Q.2.e", "Q.1.c"], "builds": [], "mp": ["MP.1.e", "MP.4.a", "MP.5.c"], "ccr": ["8.EE.4"]}),
  ("level-3/lesson-2-3.html", "2.3", "Adding, subtracting, and using scientific notation",
   {"direct": ["Q.2.e"], "builds": [], "mp": ["MP.1.a", "MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["8.EE.4"]}),
+ ("level-3/lesson-3-1.html", "3.1", "Simplifying radicals with perfect-square factors",
+  {"direct": ["Q.2.b"], "builds": ["Q.1.b", "Q.4.e"], "mp": ["MP.2.c", "MP.3.a", "MP.5.c"], "ccr": ["8.EE.2"]}),
+ ("level-3/lesson-3-2.html", "3.2", "Adding, subtracting, and multiplying radicals",
+  {"direct": ["Q.2.b"], "builds": ["A.1.d"], "mp": ["MP.3.a", "MP.4.a", "MP.5.c"], "ccr": ["8.EE.2", "8.NS.2"]}),
+ ("level-3/lesson-3-3.html", "3.3", "The real number system: rational, irrational, and the number line",
+  {"direct": ["Q.1.a"], "builds": ["Q.2.b"], "mp": ["MP.3.a", "MP.3.c", "MP.4.a"], "ccr": ["8.NS.1", "8.NS.2"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

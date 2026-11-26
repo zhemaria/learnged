@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 3.3 · El sistema de números reales: racionales, irracionales y la recta numérica — práctica (español) — construida con tools/build_n3_lesson_3_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 3.3 · El sistema de números reales: racionales, irracionales y la recta numérica · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-3-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:2rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 3 · Radicales y números reales</div>
+    <h1>Lección 3.3 · El sistema de números reales: racionales, irracionales y la recta numérica</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#clasificar">El sistema de los números reales</a></li>
+      <li><a href="#racional-irracional">¿Racional o irracional?</a></li>
+      <li><a href="#recta">Ubicar irracionales en la recta numérica</a></li>
+      <li><a href="#periodicos">Decimales periódicos a fracciones</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="clasificar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>El sistema de los números reales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los números reales se organizan en conjuntos que se contienen unos a otros: los <strong>naturales</strong> (1, 2, 3, …) están dentro de los <strong>enteros</strong> (…, −2, −1, 0, 1, 2, …), y estos dentro de los <strong>racionales</strong> (los que se pueden escribir como fracción). Aparte están los <strong>irracionales</strong>. Juntos forman los <strong>reales</strong>.</p>
+      <h3>¿Dónde vive este número?</h3>
+      <p>Elija el conjunto más pequeño que contiene al número. Después el diagrama muestra todos los conjuntos a los que pertenece.</p>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="cl-num"></span></div>
+        <div class="elecciones" id="cl-opciones" style="justify-content:center;"></div>
+        <div class="fb" id="cl-fb" role="status"></div>
+        <div id="cl-diagrama"></div>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn-sec" id="cl-nuevo">Otro número</button></div>
+      </div>
+      <div class="caja-tip"><strong>Cómo leer el diagrama:</strong> cada número pertenece al conjunto más pequeño que lo contiene y a todos los que lo rodean. El 3 es natural, pero también entero, racional y real. En cambio, √2 es irracional y real, pero no es racional ni entero.</div>
+      <h3>Practique: marque todos los conjuntos a los que pertenece</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="casillas" id="p1-casillas"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro número</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="racional-irracional">
+    <summary><span class="num" aria-hidden="true">2</span><h2>¿Racional o irracional?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un número es <strong>racional</strong> si se puede escribir como fracción de dos enteros. Su decimal <strong>termina</strong> (como 0.75) o <strong>se repite</strong> en un patrón (como 0.333…). Un número es <strong>irracional</strong> si su decimal no termina y no se repite, como √2 o π.</p>
+      <h3>Explorador de fracciones</h3>
+      <p>Toda fracción da un decimal que termina o que se repite. Compruébelo con la división de siempre: el periodo aparece con una raya encima.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="fx-p">Numerador</label><input type="text" inputmode="numeric" class="corto" id="fx-p" value="1"></div>
+        <div class="campo"><label for="fx-q">Denominador (de 1 a 999)</label><input type="text" inputmode="numeric" class="corto" id="fx-q" value="6"></div>
+      </div></div>
+      <div class="salida" aria-live="polite" id="fx-salida"></div>
+      <h3>Explorador de raíces</h3>
+      <p>Una raíz es racional solo si el radicando es un cuadrado perfecto.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="rx-n">Radicando (de 0 a 10000)</label><input type="text" inputmode="numeric" class="corto" id="rx-n" value="9"></div></div></div>
+      <div class="salida" aria-live="polite" id="rx-salida"></div>
+      <div class="caja-atencion"><strong>Cuidado con las raíces:</strong> no toda raíz es irracional. √9 = 3 es racional, porque 9 es un cuadrado perfecto. Y cuidado también con 22/7: es una buena aproximación de π, pero es una fracción, así que es racional.</div>
+      <h3>Practique: ¿racional o irracional?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="recta">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Ubicar irracionales en la recta numérica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Aunque un irracional no tenga un decimal exacto, ocupa un lugar preciso en la recta numérica. Para ubicarlo se acorrala entre dos enteros con los cuadrados perfectos y se afina con la aproximación decimal.</p>
+      <h3>Coloque el número</h3>
+      <p>Mueva el deslizador hasta donde crea que está el número y pulse «Comprobar». También puede usar las flechas del teclado.</p>
+      <div class="panel">
+        <div class="estado">Ubique <span class="grande" id="re-num"></span></div>
+        <div id="re-recta"></div>
+        <div class="campo">
+          <label for="re-pos">Posición en la recta: <span id="re-val">0.00</span></label>
+          <input type="range" id="re-pos" min="0" max="7" step="0.05" value="0">
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="re-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="re-nuevo">Otro número</button>
+        </div>
+        <div class="fb" id="re-fb" role="status"></div>
+        <p class="marcador" id="re-marcador"></p>
+      </div>
+      <h3>Practique: ¿cuál es mayor?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="periodicos">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Decimales periódicos a fracciones</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un decimal periódico es racional porque siempre se puede escribir como fracción. El truco es multiplicar por una potencia de 10 que corra el periodo y restar, para que la parte que se repite desaparezca.</p>
+      <h3>El procedimiento, paso a paso</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="pe-sel">Decimal periódico</label><select id="pe-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="pe-sig"></button><button type="button" class="btn-sec" id="pe-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="pe-azar">Otro al azar</button></div>
+      </div>
+      <div class="fraccion-grande" id="pe-expr"></div>
+      <div class="pasos" id="pe-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>¿Por cuánto multiplicar?</strong> Por 10 si se repite una cifra, por 100 si se repiten dos. Si hay una cifra antes del periodo (como en 0.1666…), se usan dos multiplicaciones, por 10 y por 100, y se restan.</div>
+      <h3>Practique: elija la fracción</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <h3>Escríbalo usted: convierta a fracción</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Fracción equivalente</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escríbala con una barra, por ejemplo 2/3, y simplificada al máximo.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <div class="caja-tip"><strong>Contra reloj:</strong> cuando domine esta página, ponga a prueba su agilidad con <a href="rapidez-irracionales.html">Números irracionales contra reloj</a>.</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 3 · Radicales y números reales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+/* ============ MODULE 1 · classifying in the real number system ============ */
+var CONJ = {N: T("Natural", "Naturales"), Z: T("Integers", "Enteros"), Q: T("Rational", "Racionales"), I: T("Irrational", "Irracionales"), R: T("Real", "Reales")};
+var CONJ1 = {N: T("natural", "natural"), Z: T("an integer", "entero"), Q: T("rational", "racional"), I: T("irrational", "irracional"), R: T("real", "real")};
+var PERTENECE = {N: ["N", "Z", "Q", "R"], Z: ["Z", "Q", "R"], Q: ["Q", "R"], I: ["I", "R"]};
+function num(vis, voz, txt, tp, nota){ return {html: envuelve(vis, voz), txt: txt, t: tp, nota: nota || ""}; }
+var NUMEROS = [
+  num("3", "3", "3", "N"), num("12", "12", "12", "N"),
+  num(radVis(1, 9), radVoz(1, 9), "√9", "N", T("√9 = 3, which is natural.", "√9 = 3, que es natural.")),
+  num(radVis(1, 25), radVoz(1, 25), "√25", "N", T("√25 = 5, which is natural.", "√25 = 5, que es natural.")),
+  num(fracVis(6, 3), fracVoz(6, 3), "6/3", "N", T("6/3 = 2, which is natural.", "6/3 = 2, que es natural.")),
+  num("0", "0", "0", "Z", T("0 is an integer, but not natural: the natural numbers start at 1.", "El 0 es entero, pero no natural: los naturales empiezan en 1.")),
+  num("−4", T("negative 4", "menos 4"), "−4", "Z"), num("−15", T("negative 15", "menos 15"), "−15", "Z"),
+  num("−" + radVis(1, 16), T("negative square root of 16", "menos raíz cuadrada de 16"), "−√16", "Z", T("−√16 = −4, which is an integer.", "−√16 = −4, que es entero.")),
+  num(fracVis(1, 2), fracVoz(1, 2), "1/2", "Q"), num("0.75", "0.75", "0.75", "Q", "0.75 = 3/4."),
+  num(fracVis(-3, 4), fracVoz(-3, 4), "−3/4", "Q"), num("0.333…", T("0.3 repeating", "0.3 periódico"), "0.333…", "Q", T("0.333… = 1/3: its decimal repeats.", "0.333… = 1/3: su decimal se repite.")),
+  num("2.5", "2.5", "2.5", "Q", "2.5 = 5/2."), num("−1.2", T("negative 1.2", "menos 1.2"), "−1.2", "Q", "−1.2 = −6/5."),
+  num(fracVis(22, 7), fracVoz(22, 7), "22/7", "Q", T("22/7 is close to π, but it is a fraction of integers.", "22/7 se parece a π, pero es una fracción de enteros.")),
+  num(radVis(1, 2), radVoz(1, 2), "√2", "I", T("2 is not a perfect square.", "2 no es un cuadrado perfecto.")), num(radVis(1, 3), radVoz(1, 3), "√3", "I"),
+  num("π", "pi", "π", "I", T("The decimals of π do not end or repeat.", "Los decimales de π no terminan ni se repiten.")),
+  num("−" + radVis(1, 5), T("negative square root of 5", "menos raíz cuadrada de 5"), "−√5", "I"), num(radVis(1, 10), radVoz(1, 10), "√10", "I"),
+  num("0.1010010001…", T("0.1010010001, with more and more zeros", "0.1010010001, con cada vez más ceros"), "0.1010010001…", "I", T("It has an order, but no fixed group that repeats.", "Tiene un orden, pero ningún grupo fijo que se repita."))
+];
+function lista(cs, una){ return yLista(cs.map(function(c){ return una ? CONJ1[c] : CONJ[c].toLowerCase(); })); }
+function diagramaSVG(n){
+  var dentro = n ? PERTENECE[n.t] : [];
+  function caja(id, x, yy, w, h, ex, ey){
+    var on = dentro.indexOf(id) >= 0;
+    return '<rect x="' + x + '" y="' + yy + '" width="' + w + '" height="' + h + '" rx="14" fill="' + (on ? "#e0f2f1" : "#ffffff") + '" stroke="' + (on ? "#004d40" : "#9e9e9e") +
+           '" stroke-width="' + (on ? 4 : 2) + '"/><text x="' + ex + '" y="' + ey + '" font-size="16" font-weight="700" fill="' + (on ? "#00352c" : "#424242") + '">' + CONJ[id] + "</text>";
+  }
+  var s = '<svg class="diagrama" viewBox="0 0 560 330" role="img" aria-label="' +
+          (n ? T("Diagram of the sets: " + n.txt + " belongs to these sets: " + lista(dentro), "Diagrama de conjuntos: " + n.txt + " pertenece a estos conjuntos: " + lista(dentro)) : T("Diagram of the sets of the real numbers", "Diagrama de conjuntos de los números reales")) + '">';
+  s += caja("R", 5, 5, 550, 320, 20, 28) + caja("Q", 22, 42, 350, 270, 36, 64) + caja("Z", 40, 80, 314, 200, 54, 102) + caja("N", 58, 118, 278, 118, 72, 140) + caja("I", 388, 42, 150, 270, 400, 64);
+  if (n){
+    var pos = {N: [197, 195], Z: [197, 262], Q: [197, 300], I: [463, 185]}[n.t];
+    s += '<text x="' + pos[0] + '" y="' + pos[1] + '" text-anchor="middle" font-size="24" font-weight="700" fill="#0d47a1">' + n.txt + "</text>";
+  }
+  return s + "</svg>";
+}
+var CL = {n: null, resuelto: false, intentos: 0, cola: []};
+function nuevoCL(){
+  if (!CL.cola.length) CL.cola = baraja(NUMEROS);
+  CL.n = CL.cola.shift(); CL.resuelto = false; CL.intentos = 0;
+  $("cl-num").innerHTML = CL.n.html;
+  var ops = $("cl-opciones"); ops.innerHTML = "";
+  ["N", "Z", "Q", "I"].forEach(function(c){
+    var b = document.createElement("button"); b.type = "button"; b.className = "eleccion"; b.textContent = CONJ[c];
+    b.setAttribute("aria-pressed", "false");
+    b.addEventListener("click", function(){ respondeCL(c, b); });
+    ops.appendChild(b);
+  });
+  $("cl-fb").className = "fb"; $("cl-fb").innerHTML = "";
+  $("cl-diagrama").innerHTML = diagramaSVG(null);
+}
+function respondeCL(c, b){
+  if (CL.resuelto) return;
+  var n = CL.n, fb = $("cl-fb");
+  Array.prototype.forEach.call($("cl-opciones").children, function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+  var resumen = n.nota + " " + T("It belongs to these sets: " + lista(PERTENECE[n.t]) + ".", "Pertenece a: " + lista(PERTENECE[n.t]) + ".");
+  CL.intentos++;
+  if (c === n.t){
+    CL.resuelto = true; fb.className = "fb bien";
+    fb.innerHTML = TX.bien + T("The smallest set is the " + CONJ[c].toLowerCase() + " numbers. ", "El conjunto más pequeño es el de los " + CONJ[c].toLowerCase() + ". ") + resumen;
+    $("cl-diagrama").innerHTML = diagramaSVG(n);
+  } else if (CL.intentos >= 2){
+    CL.resuelto = true; fb.className = "fb mal";
+    fb.innerHTML = TX.asi + T("The smallest set is the " + CONJ[n.t].toLowerCase() + " numbers. ", "El conjunto más pequeño es el de los " + CONJ[n.t].toLowerCase() + ". ") + resumen;
+    $("cl-diagrama").innerHTML = diagramaSVG(n);
+  } else {
+    fb.className = "fb pista";
+    var pista = c === "I" ? T("This number can be written as a fraction.", "Este número sí se puede escribir como fracción.") :
+               (n.t === "I" ? T("This number cannot be written as a fraction of integers.", "Este número no se puede escribir como fracción de enteros.") :
+               (PERTENECE[n.t].indexOf(c) >= 0 ? T("It does belong to that set, but there is a smaller set that also contains it.", "Sí pertenece a ese conjunto, pero hay uno más pequeño que también lo contiene.") : T("It does not belong to that set.", "No pertenece a ese conjunto.")));
+    fb.innerHTML = TX.todavia + pista + TX.unoMas;
+  }
+}
+
+/* Practice 1 · check boxes, two tries */
+var P1 = {primero: 0, pista: 0, total: 0, n: null, resuelta: false, intentos: 0, cola: []};
+function pintaP1(){
+  if (!P1.cola.length) P1.cola = baraja(NUMEROS);
+  P1.n = P1.cola.shift(); P1.resuelta = false; P1.intentos = 0;
+  $("p1-enun").innerHTML = T("Which sets does ", "¿A qué conjuntos pertenece ") + P1.n.html + T(" belong to? Check all that apply.", "? Marque todos los que correspondan.");
+  var cont = $("p1-casillas"); cont.innerHTML = "";
+  ["N", "Z", "Q", "I", "R"].forEach(function(c){
+    var lab = document.createElement("label"); lab.className = "casilla";
+    lab.innerHTML = '<input type="checkbox" value="' + c + '"> ' + CONJ[c];
+    cont.appendChild(lab);
+  });
+  $("p1-comprobar").disabled = false;
+  $("p1-fb").className = "fb"; $("p1-fb").innerHTML = "";
+}
+function compruebaP1(){
+  if (P1.resuelta) return;
+  var cajas = $("p1-casillas").querySelectorAll("input"), marcadas = [], fb = $("p1-fb");
+  cajas.forEach(function(x){ if (x.checked) marcadas.push(x.value); });
+  if (!marcadas.length){ fb.className = "fb pista"; fb.innerHTML = T("Check at least one set.", "Marque al menos un conjunto."); return; }
+  P1.intentos++;
+  var bien = PERTENECE[P1.n.t], ok = marcadas.length === bien.length && bien.every(function(c){ return marcadas.indexOf(c) >= 0; });
+  var falta = bien.filter(function(c){ return marcadas.indexOf(c) < 0; }), sobra = marcadas.filter(function(c){ return bien.indexOf(c) < 0; });
+  if (!ok && P1.intentos < 2){
+    fb.className = "fb pista";
+    fb.innerHTML = TX.todavia + (falta.length ? T("It belongs to more sets than the ones you checked. ", "Pertenece a más conjuntos de los que marcó. ") : "") + (sobra.length ? T("You checked at least one set it does not belong to. ", "Marcó al menos un conjunto al que no pertenece. ") : "") +
+      (falta.indexOf("R") >= 0 ? T("Remember that all of these numbers are real.", "Recuerde que todos estos números son reales.") : T("Remember: a number in a set also belongs to every set around it.", "Recuerde: un número de un conjunto pertenece también a todos los que lo rodean.")) + TX.unoMas;
+    return;
+  }
+  P1.resuelta = true; P1.total++;
+  cajas.forEach(function(x){
+    var debe = bien.indexOf(x.value) >= 0;
+    x.disabled = true;
+    if (debe) x.parentNode.classList.add("correcta");
+    else if (x.checked) x.parentNode.classList.add("incorrecta");
+  });
+  var frase = T("It belongs to these sets: " + lista(bien) + ". ", "Pertenece a los " + lista(bien) + ". ") + P1.n.nota;
+  if (ok){ if (P1.intentos === 1) P1.primero++; else P1.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + frase + " <em>" + elige(P1.intentos === 1 ? ELOGIO : ELOGIO2) + "</em>"; }
+  else { fb.className = "fb mal"; fb.innerHTML = TX.asi + frase + TX.nuevo; }
+  $("p1-comprobar").disabled = true;
+  $("p1-marcador").textContent = TX.resueltos(P1.primero + P1.pista, P1.primero, P1.total);
+}
+
+/* ============ MODULE 2 · fractions and roots ============ */
+function divisionLarga(p, q){
+  var ent = Math.floor(p / q), rr = p % q, cifras = "", vistos = {}, i = 0;
+  while (rr !== 0 && !(rr in vistos) && i < 200){ vistos[rr] = i; rr *= 10; cifras += Math.floor(rr / q); rr = rr % q; i++; }
+  if (rr === 0) return {ent: ent, noRep: cifras, per: ""};
+  var k = vistos[rr]; return {ent: ent, noRep: cifras.slice(0, k), per: cifras.slice(k)};
+}
+function pintaFX(){
+  var pt = $("fx-p").value.trim(), qt = $("fx-q").value.trim(), sal = $("fx-salida");
+  if (!/^\d+$/.test(pt) || !/^\d+$/.test(qt) || +qt < 1 || +qt > 999 || +pt > 99999){ sal.innerHTML = T("Type a whole-number numerator from 0 to 99999 and a whole-number denominator from 1 to 999.", "Escriba un numerador entero de 0 a 99999 y un denominador entero de 1 a 999."); return; }
+  var p = +pt, q = +qt, d = divisionLarga(p, q), h;
+  if (!d.per){
+    var dec = d.ent + (d.noRep ? "." + d.noRep : "");
+    h = '<div class="linea grande">' + fracHTML(p, q) + " = " + dec + '</div><div class="linea veredicto">' + T("The decimal ends: it is a rational number.", "El decimal termina: es un número racional.") + "</div>";
+  } else {
+    var vis = d.ent + "." + d.noRep + '<span class="periodo">' + d.per + "</span>";
+    var largo = d.ent + "." + d.noRep + d.per + d.per + (d.per.length < 4 ? d.per : "") + "…";
+    h = '<div class="linea grande">' + fracHTML(p, q) + " = " + envuelve(vis, d.ent + T(" point ", " punto ") + (d.noRep ? d.noRep + T(", and then ", ", y luego ") : "") + T("the repeating group ", "el periodo ") + d.per.split("").join(" ")) + "</div>" +
+        '<div class="linea">' + T("That is, " + largo + " The group " + d.per + " repeats forever", "Es decir, " + largo + " El grupo " + d.per + " se repite sin fin") + (d.per.length > 6 ? T(" (its repeating group has " + d.per.length + " digits)", " (su periodo tiene " + d.per.length + " cifras)") : "") + ".</div>" +
+        '<div class="linea veredicto">' + T("The decimal repeats: it is a rational number.", "El decimal se repite: es un número racional.") + "</div>";
+  }
+  sal.innerHTML = h;
+}
+function pintaRX(){
+  var tx = $("rx-n").value.trim(), sal = $("rx-salida");
+  if (!/^\d+$/.test(tx) || +tx > 10000){ sal.innerHTML = T("Type a whole number from 0 to 10000.", "Escriba un número entero de 0 a 10000."); return; }
+  var n = +tx, s = Math.sqrt(n);
+  if (esCuadrado(n)) sal.innerHTML = '<div class="linea grande">' + radHTML(1, n) + " = " + Math.round(s) + '</div><div class="linea veredicto">' + T(n + " is a perfect square: the root is exact and the number is rational (" + Math.round(s) + " = " + Math.round(s) + "/1).", n + " es un cuadrado perfecto: la raíz es exacta y el número es racional (" + Math.round(s) + " = " + Math.round(s) + "/1).") + "</div>";
+  else sal.innerHTML = '<div class="linea grande">' + radHTML(1, n) + " ≈ " + s.toFixed(10) + '…</div><div class="linea veredicto">' + T(n + " is not a perfect square: the decimals do not end or repeat, so it is irrational.", n + " no es un cuadrado perfecto: los decimales no terminan ni se repiten, así que es irracional.") + "</div>";
+}
+function genRacional(){
+  var tp = aleatorio(1, 12), h, c, exp;
+  if (tp === 1){ var q = elige([3, 7, 9, 11, 12, 13]), p = aleatorio(1, q - 1); h = fracHTML(p, q); c = "R"; exp = T("It is a fraction of integers: its decimal repeats, but it is rational.", "Es una fracción de enteros: su decimal se repite, pero es racional."); }
+  else if (tp === 2){ var d = (aleatorio(1, 999) / 1000).toString(); h = d; c = "R"; exp = T(d + " is a decimal that ends: it can be written as a fraction.", d + " es un decimal que termina: se puede escribir como fracción."); }
+  else if (tp === 3){ var per = String(aleatorio(12, 98)); h = periodicoHTML("0", "", per); c = "R"; exp = T("The group " + per + " repeats: it is a repeating decimal, so it is rational.", "El grupo " + per + " se repite: es un decimal periódico, y por eso racional."); }
+  else if (tp === 4){ var s = aleatorio(2, 15); h = radHTML(1, s * s); c = "R"; exp = T((s * s) + " is a perfect square: the root is " + s + ", a rational number.", (s * s) + " es un cuadrado perfecto: la raíz es " + s + ", un número racional."); }
+  else if (tp === 5 || tp === 6){ var n; do { n = aleatorio(2, 99); } while (esCuadrado(n)); h = (tp === 6 ? envuelve("−" + radVis(1, n), T("negative ", "menos ") + radVoz(1, n)) : radHTML(1, n)); c = "I"; exp = T(n + " is not a perfect square: the root is irrational.", n + " no es un cuadrado perfecto: la raíz es irracional."); }
+  else if (tp === 7){ h = envuelve("π", "pi"); c = "I"; exp = T("The decimals of π do not end or repeat.", "Los decimales de π no terminan ni se repiten."); }
+  else if (tp === 8){ h = fracHTML(22, 7); c = "R"; exp = T("22/7 is an approximation of π, but it is a fraction of integers: it is rational.", "22/7 es una aproximación de π, pero es una fracción de enteros: es racional."); }
+  else if (tp === 9){ h = "3.14"; c = "R"; exp = T("3.14 is a decimal that ends (= 314/100). It looks like π, but it is rational.", "3.14 es un decimal que termina (= 314/100). Se parece a π, pero es racional."); }
+  else if (tp === 10){ h = envuelve("0.1010010001…", T("0.1010010001, with more and more zeros", "0.1010010001, con cada vez más ceros")); c = "I"; exp = T("It follows an order, but no fixed group repeats: it is not a repeating decimal, so it is irrational.", "Sigue un orden, pero ningún grupo fijo se repite: no es periódico, así que es irracional."); }
+  else if (tp === 11){ var m = elige([4, 9, 16, 25, 36]); h = envuelve('<span class="rad">√<span class="rc">−' + m + "</span></span>", T("square root of negative " + m, "raíz cuadrada de menos " + m)); c = "X"; exp = T("No real number squared gives a negative result: this root is not a real number.", "Ningún número real al cuadrado da un resultado negativo: esta raíz no es un número real."); }
+  else { h = envuelve('<span class="rad">√<span class="rc">' + fracVis(4, 9) + "</span></span>", T("square root of 4 ninths", "raíz cuadrada de 4 novenos")); c = "R"; exp = T("√(4/9) = 2/3, because (2/3)² = 4/9. It is rational.", "√(4/9) = 2/3, porque (2/3)² = 4/9. Es racional."); }
+  return {enun: T("How do you classify ", "¿Cómo se clasifica ") + h + "?", enOrden: true,
+    opciones: [{html: T("Rational", "Racional"), clave: "R"}, {html: T("Irrational", "Irracional"), clave: "I"}, {html: T("Not a real number", "No es un número real"), clave: "X"}],
+    correcta: c, porClave: {}, pista: T("Ask yourself: can it be written as a fraction of integers? Does its decimal end or repeat?", "Pregúntese: ¿se puede escribir como fracción de enteros? ¿Su decimal termina o se repite?"), bien: exp, mal: exp};
+}
+
+/* ============ MODULE 3 · the number line ============ */
+var RE = {v: 0, txt: "", html: "", n: 0, resuelto: false, intentos: 0, primero: 0, pista: 0, total: 0};
+function nuevoRE(){
+  if (Math.random() < 0.15){ RE.v = Math.PI; RE.txt = "π"; RE.html = envuelve("π", "pi"); RE.n = 0; }
+  else { var n; do { n = aleatorio(2, 48); } while (esCuadrado(n)); RE.v = Math.sqrt(n); RE.n = n; RE.txt = "√" + n; RE.html = radHTML(1, n); }
+  RE.resuelto = false; RE.intentos = 0;
+  $("re-num").innerHTML = RE.html;
+  $("re-pos").value = 0; $("re-pos").disabled = false; $("re-comprobar").disabled = false;
+  $("re-fb").className = "fb"; $("re-fb").innerHTML = "";
+  pintaRE();
+}
+function pintaRE(){
+  var x = parseFloat($("re-pos").value), marcas = [{v: x, txt: T("your mark", "su marca"), color: "#0d47a1"}];
+  if (RE.resuelto) marcas.push({v: RE.v, txt: RE.txt + " ≈ " + aprox(RE.v, 2), color: "#00352c", alto: true});
+  $("re-val").textContent = x.toFixed(2);
+  $("re-pos").setAttribute("aria-valuetext", x.toFixed(2));
+  $("re-recta").innerHTML = rectaSVG(0, 7, 0.5, marcas, T("Number line from 0 to 7. Your mark is at " + x.toFixed(2), "Recta numérica de 0 a 7. Su marca está en " + x.toFixed(2)) + (RE.resuelto ? T(". The real value is " + aprox(RE.v, 2), ". El valor real es " + aprox(RE.v, 2)) : ""));
+}
+function compruebaRE(){
+  if (RE.resuelto) return;
+  var x = parseFloat($("re-pos").value), err = Math.abs(x - RE.v), a = Math.floor(RE.v), fb = $("re-fb");
+  var razon = RE.n ? (a * a) + " &lt; " + RE.n + " &lt; " + ((a + 1) * (a + 1)) + T(", so ", ", así que ") + RE.html + T(" is between " + a + " and " + (a + 1) + ".", " está entre " + a + " y " + (a + 1) + ".") : T("π ≈ 3.14, a little more than 3.", "π ≈ 3.14, un poco más que 3.");
+  RE.intentos++;
+  if (err > 0.15 && RE.intentos < 2){
+    fb.className = "fb pista";
+    fb.innerHTML = TX.todavia + (Math.floor(x) !== a ? (RE.n ? T("Look for the perfect squares around " + RE.n + ": which whole numbers is the root between?", "Busque los cuadrados perfectos que rodean a " + RE.n + ": ¿entre qué enteros está la raíz?") : T("π is a little more than 3.", "π es un poco más que 3.")) : T("The whole numbers are right; now move closer: is it nearer " + a + " or " + (a + 1) + "?", "Los enteros están bien; ahora afine: ¿está más cerca del " + a + " o del " + (a + 1) + "?")) + TX.unoMas;
+    return;
+  }
+  RE.resuelto = true; RE.total++;
+  if (err <= 0.15){ if (RE.intentos === 1) RE.primero++; else RE.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + T("Well placed! ", "¡Bien ubicado! ") + RE.html + " ≈ " + aprox(RE.v, 2) + ". " + razon; }
+  else { fb.className = "fb mal"; fb.innerHTML = TX.asi + RE.html + " ≈ " + aprox(RE.v, 2) + T("; your mark was " + aprox(err, 2) + " away. ", "; su marca quedó a " + aprox(err, 2) + " de distancia. ") + razon; }
+  $("re-pos").disabled = true; $("re-comprobar").disabled = true;
+  $("re-marcador").textContent = TX.resueltos(RE.primero + RE.pista, RE.primero, RE.total);
+  pintaRE();
+}
+function genMayor(){
+  var tp = aleatorio(1, 4), A, B, vA, vB, exp;
+  if (tp === 1){ var n = aleatorio(2, 80), k = Math.round(Math.sqrt(n)) + elige([-1, 0, 0, 1]); if (k < 1) k = 1;
+    A = radHTML(1, n); B = String(k); vA = n; vB = k * k; exp = T("Compare the squares: (√" + n + ")² = " + n + " and " + k + "² = " + (k * k) + ".", "Compare los cuadrados: (√" + n + ")² = " + n + " y " + k + "² = " + (k * k) + "."); }
+  else if (tp === 2){ var m = elige([8, 9, 10, 11, 12]); A = radHTML(1, m); B = envuelve("π", "pi"); vA = Math.sqrt(m); vB = Math.PI;
+    exp = radHTML(1, m) + " ≈ " + aprox(Math.sqrt(m), 2) + T(" and π ≈ 3.14.", " y π ≈ 3.14."); }
+  else if (tp === 3){ var a1 = aleatorio(2, 60), a2 = aleatorio(2, 60); while (a2 === a1) a2 = aleatorio(2, 60);
+    A = radHTML(1, a1); B = radHTML(1, a2); vA = a1; vB = a2; exp = T("Of two square roots, the one with the greater radicand is greater.", "Entre dos raíces cuadradas, es mayor la del radicando mayor."); }
+  else { var nn; do { nn = aleatorio(2, 60); } while (esCuadrado(nn)); var d = (Math.round(Math.sqrt(nn) * 10) / 10 + elige([-0.1, 0.1])).toFixed(1);
+    A = radHTML(1, nn); B = d; vA = nn; vB = parseFloat(d) * parseFloat(d);
+    exp = T("Square the decimal: " + d + "² = " + (parseFloat(d) * parseFloat(d)).toFixed(2) + ", and compare it with " + nn + ".", "Eleve al cuadrado el decimal: " + d + "² = " + (parseFloat(d) * parseFloat(d)).toFixed(2) + ", y compárelo con " + nn + "."); }
+  if (Math.random() < 0.5){ var x = A; A = B; B = x; var y2 = vA; vA = vB; vB = y2; }
+  var clave = Math.abs(vA - vB) < 1e-9 ? "=" : (vA > vB ? "A" : "B");
+  return {enun: T("Which is greater: ", "¿Cuál es mayor: ") + A + T(" or ", " o ") + B + "?", enOrden: true,
+    opciones: [{html: A, clave: "A"}, {html: B, clave: "B"}, {html: T("They are equal", "Son iguales"), clave: "="}],
+    correcta: clave, porClave: {}, pista: T("Compare the squares of the two numbers, or approximate each one.", "Compare los cuadrados de los dos números o aproxime cada uno."), bien: exp, mal: exp};
+}
+
+/* ============ MODULE 4 · repeating decimals to fractions ============ */
+function p10(k){ return Math.pow(10, k); }
+function aFraccion(d){
+  var E = +d.ent, P = +d.per, L = d.per.length;
+  if (!d.noRep){ var den = p10(L) - 1; return {num: E * den + P, den: den}; }
+  var A = +d.noRep;
+  return {num: (E * p10(L + 1) + A * p10(L) + P) - (10 * E + A), den: p10(L + 1) - 10};
+}
+function perVis(ent, noRep, per){ return periodicoHTML(String(ent), noRep, per); }
+var PE = {lista: [{ent: "0", noRep: "", per: "6"}, {ent: "0", noRep: "", per: "2"}, {ent: "0", noRep: "", per: "27"}, {ent: "0", noRep: "1", per: "6"},
+                  {ent: "0", noRep: "8", per: "3"}, {ent: "0", noRep: "", per: "45"}, {ent: "1", noRep: "", per: "3"}], pasos: [], visto: 0};
+function etiquetaPE(d){ return d.ent + "." + d.noRep + d.per + d.per + d.per + "…"; }
+function llenaPE(){
+  var sel = $("pe-sel"); sel.innerHTML = "";
+  PE.lista.forEach(function(d, i){ var o = document.createElement("option"); o.value = i; o.textContent = etiquetaPE(d); sel.appendChild(o); });
+}
+function preparaPE(){
+  var d = PE.lista[+$("pe-sel").value], L = d.per.length, F = aFraccion(d), rr = reduce(F.num, F.den), E = +d.ent, P = +d.per;
+  var desp = T("Solve: x = ", "Se despeja: x = ") + fracHTML(F.num, F.den) + (rr.q !== F.den ? T(", which simplifies to ", ", que se simplifica a ") + fracHTML(rr.p, rr.q) : "") + ".";
+  PE.pasos = []; PE.visto = 0;
+  $("pe-expr").innerHTML = '<span class="grande">' + perVis(d.ent, d.noRep, d.per) + "</span>";
+  PE.pasos.push(T("Call the number x: x = ", "Se llama x al número: x = ") + perVis(d.ent, d.noRep, d.per));
+  if (!d.noRep){
+    var m = p10(L);
+    PE.pasos.push(T("The repeating group has " + L + (L === 1 ? " digit" : " digits") + ", so multiply by " + m + ": ", "El periodo tiene " + L + (L === 1 ? " cifra" : " cifras") + ", así que se multiplica por " + m + ": ") + m + "x = " + perVis(E * m + P, "", d.per));
+    PE.pasos.push(T("Subtract the first equation from the second. The repeating part disappears: ", "Se resta la primera igualdad de la segunda. La parte que se repite desaparece: ") + m + "x − x = " + (m - 1) + "x = " + F.num + ".");
+  } else {
+    var A = +d.noRep, m2 = p10(L + 1);
+    PE.pasos.push(T("There is one digit before the repeating group. Multiply by 10 to move it to the left of the point: ", "Hay una cifra antes del periodo. Se multiplica por 10 para dejarla a la izquierda del punto: ") + "10x = " + perVis(10 * E + A, "", d.per));
+    PE.pasos.push(T("Multiply by " + m2 + " to move a full repeating group too: ", "Se multiplica por " + m2 + " para correr también un periodo completo: ") + m2 + "x = " + perVis(E * m2 + A * p10(L) + P, "", d.per));
+    PE.pasos.push(T("Subtract the two equations, and the repeating part disappears: ", "Se restan las dos igualdades y la parte que se repite desaparece: ") + m2 + "x − 10x = " + (m2 - 10) + "x = " + F.num + ".");
+  }
+  PE.pasos.push(desp);
+  PE.pasos.push('<span class="veredicto">' + T("Answer: ", "Resultado: ") + perVis(d.ent, d.noRep, d.per) + " = " + fracHTML(rr.p, rr.q) + T(". It is a fraction, so the number is rational.", ". Es una fracción, así que el número es racional.") + "</span>");
+  pintaPE();
+}
+function pintaPE(){
+  $("pe-pasos").innerHTML = PE.pasos.slice(0, PE.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === PE.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("pe-sig"); b.disabled = PE.visto >= PE.pasos.length; $("pe-todo").disabled = b.disabled;
+  b.textContent = PE.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function periodicoAzar(){
+  var u = Math.random();
+  if (u < 0.4) return {ent: "0", noRep: "", per: String(aleatorio(1, 8))};
+  if (u < 0.75){ var a, b; do { a = aleatorio(0, 9); b = aleatorio(0, 9); } while (a === b || (a === 9 && b === 9)); return {ent: "0", noRep: "", per: "" + a + b}; }
+  var x, y; do { x = aleatorio(1, 9); y = aleatorio(1, 8); } while (x === y);
+  return {ent: "0", noRep: String(x), per: String(y)};
+}
+function azarPE(){ PE.lista.push(periodicoAzar()); llenaPE(); $("pe-sel").value = PE.lista.length - 1; preparaPE(); }
+function opFrac(p, q){ var rr = reduce(p, q); return {html: fracHTML(rr.p, rr.q), clave: "f" + rr.p + "/" + rr.q}; }
+function genElegirFrac(){
+  var d = periodicoAzar(), F = aFraccion(d), rr = reduce(F.num, F.den), L = d.per.length, o = [], pc = {}, usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opFrac(F.num, F.den));
+  if (!d.noRep){
+    mete(opFrac(+d.per, p10(L)), T("That fraction is the decimal 0." + d.per + " that ends, not the one that repeats.", "Esa fracción es el decimal que termina 0." + d.per + ", no el que se repite."));
+    mete(opFrac(+d.per + 1, p10(L) - 1), T("The numerator is the repeating group itself: " + d.per + ".", "El numerador es el mismo periodo: " + d.per + "."));
+    mete(opFrac(+d.per, p10(L + 1) - 1), T("The denominator depends on how many digits repeat: " + (p10(L) - 1) + ".", "El denominador depende de cuántas cifras tiene el periodo: " + (p10(L) - 1) + "."));
+  } else {
+    mete(opFrac(+(d.noRep + d.per), 99), T("Only the second digit repeats: it is not a two-digit repeating group.", "Solo se repite la segunda cifra: no es un periodo de dos cifras."));
+    mete(opFrac(+(d.noRep + d.per), 100), T("That fraction is the decimal 0." + d.noRep + d.per + " that ends.", "Esa fracción es el decimal que termina 0." + d.noRep + d.per + "."));
+    mete(opFrac(+d.per, 9), T("That fraction is 0." + d.per + d.per + "…: you still need the digit " + d.noRep + " before the repeating group.", "Esa fracción es 0." + d.per + d.per + "…: falta tener en cuenta la cifra " + d.noRep + " antes del periodo."));
+  }
+  return {enun: T("What fraction is equal to ", "¿Qué fracción equivale a ") + perVis(d.ent, d.noRep, d.per) + "?",
+    opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("With the procedure: x = ", "Con el procedimiento: x = ") + fracHTML(F.num, F.den) + (rr.q !== F.den ? " = " + fracHTML(rr.p, rr.q) : "") + ".",
+    mal: T("The fraction is ", "La fracción es ") + fracHTML(rr.p, rr.q) + T(". Review the procedure in the step-by-step panel above.", ". Revise el procedimiento en el paso a paso de arriba.")};
+}
+function genEscribeFrac(){
+  var d = periodicoAzar(), F = aFraccion(d), rr = reduce(F.num, F.den);
+  return {enun: T("Convert ", "Convierta ") + perVis(d.ent, d.noRep, d.per) + T(" to a fraction in simplest form.", " en una fracción simplificada."),
+    solucion: perVis(d.ent, d.noRep, d.per) + " = " + fracHTML(F.num, F.den) + (rr.q !== F.den ? " = " + fracHTML(rr.p, rr.q) : "") + ".",
+    evalua: function(txt){
+      var f = leeFraccion(txt);
+      if (!f) return {estado: "invalido", msg: T("Write the fraction with a slash, for example 2/3.", "Escriba la fracción con una barra, por ejemplo 2/3.")};
+      if (f.p * rr.q === rr.p * f.q){
+        if (mcd(f.p, f.q) === 1) return {estado: "bien", msg: ""};
+        return {estado: "mal", msg: T("It has the same value, but it can still be simplified.", "Tiene el mismo valor, pero todavía se puede simplificar.")};
+      }
+      return {estado: "mal", msg: d.noRep ? T("There is one digit before the repeating group: use 10x and " + p10(d.per.length + 1) + "x.", "Hay una cifra antes del periodo: use 10x y " + p10(d.per.length + 1) + "x.") : T("The repeating group has " + d.per.length + (d.per.length === 1 ? " digit: multiply by 10." : " digits: multiply by 100."), "El periodo tiene " + d.per.length + (d.per.length === 1 ? " cifra: multiplique por 10." : " cifras: multiplique por 100."))};
+    }};
+}
+
+/* ============ Start ============ */
+$("cl-nuevo").addEventListener("click", nuevoCL);
+CL.cola = [NUMEROS[0], NUMEROS[16]].concat(baraja(NUMEROS));
+nuevoCL();
+$("p1-comprobar").addEventListener("click", compruebaP1);
+$("p1-nuevo").addEventListener("click", pintaP1);
+pintaP1();
+["fx-p", "fx-q"].forEach(function(id){ $(id).addEventListener("input", pintaFX); });
+pintaFX();
+$("rx-n").addEventListener("input", pintaRX);
+pintaRX();
+OMR("p2", genRacional);
+$("re-pos").addEventListener("input", pintaRE);
+$("re-comprobar").addEventListener("click", compruebaRE);
+$("re-nuevo").addEventListener("click", nuevoRE);
+nuevoRE();
+OMR("p3", genMayor);
+llenaPE();
+$("pe-sel").addEventListener("change", preparaPE);
+$("pe-sig").addEventListener("click", function(){ if (PE.visto < PE.pasos.length){ PE.visto++; pintaPE(); } });
+$("pe-todo").addEventListener("click", function(){ PE.visto = PE.pasos.length; pintaPE(); });
+$("pe-azar").addEventListener("click", azarPE);
+preparaPE();
+OMR("p4", genElegirFrac);
+creaPracticaLibre("p5", genEscribeFrac);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

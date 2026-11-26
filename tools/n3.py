@@ -133,3 +133,9 @@ def sci_input(pid, titulo, intro="", ops=None):
         <p class="marcador" id="{pid}-marcador"></p>
       </div>'''
 
+
+ESTILO_RAD = """  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}"""

@@ -230,8 +230,10 @@ TEMAS3 = {
   ("8", "Combinatoria y probabilidad", [("8-1", "Principio fundamental del conteo, permutaciones y combinaciones"), ("8-2", "Probabilidad compuesta: con y sin reemplazo"), ("8-3", "Proyecto final integrador y estrategias para el GED Mathematical Reasoning")])]}
 
 EXTRAS3 = {
- "en": {"1-3": ("check", "topic-1-check.html", None, "Topic 1 check: the five rules of exponents")},
- "es": {"1-3": ("check", "comprobacion-tema-1.html", None, "Comprobación del Tema 1: las cinco reglas de los exponentes")}}
+ "en": {"1-3": ("check", "topic-1-check.html", None, "Topic 1 check: the five rules of exponents"),
+        "3-3": ("speed", "speed-irrationals.html", None, "Speed practice: irrational numbers against the clock")},
+ "es": {"1-3": ("check", "comprobacion-tema-1.html", None, "Comprobación del Tema 1: las cinco reglas de los exponentes"),
+        "3-3": ("speed", "rapidez-irracionales.html", None, "Ejercicios de rapidez: números irracionales contra reloj")}}
 
 def _tx3():
     import copy

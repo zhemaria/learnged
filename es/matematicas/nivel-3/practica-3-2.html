@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 3.2 · Operaciones con radicales: suma, resta y multiplicación — práctica (español) — construida con tools/build_n3_lesson_3_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 3.2 · Operaciones con radicales: suma, resta y multiplicación · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-3-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 3 · Radicales y números reales</div>
+    <h1>Lección 3.2 · Operaciones con radicales: suma, resta y multiplicación</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#semejantes">Sumar y restar radicales semejantes</a></li>
+      <li><a href="#simplificar-primero">¿Semejantes o no? Simplificar primero</a></li>
+      <li><a href="#multiplicar">Multiplicar radicales</a></li>
+      <li><a href="#aproximar">Aproximar radicales</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="semejantes" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Sumar y restar radicales semejantes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los radicales se combinan igual que los términos semejantes del álgebra. Así como 3x + 5x = 8x, también 3√2 + 5√2 = 8√2: se suman los coeficientes y la parte irracional <strong>se conserva</strong>.</p>
+      <div class="formula">3√2 + 5√2 = 8√2 &nbsp; (igual que 3x + 5x = 8x)</div>
+      <h3>¿Se pueden combinar?</h3>
+      <p>Arme dos términos y observe si se combinan. La línea de decimales comprueba el resultado.</p>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="sm-a">Primer coeficiente</label><input type="text" inputmode="numeric" class="corto" id="sm-a" value="3"></div>
+          <div class="campo"><label for="sm-r1">Primer radicando</label><input type="text" inputmode="numeric" class="corto" id="sm-r1" value="2"></div>
+          <div class="campo"><label for="sm-op">Operación</label><select id="sm-op"><option value="+">+ sumar</option><option value="−">− restar</option></select></div>
+          <div class="campo"><label for="sm-b">Segundo coeficiente</label><input type="text" inputmode="numeric" class="corto" id="sm-b" value="5"></div>
+          <div class="campo"><label for="sm-r2">Segundo radicando</label><input type="text" inputmode="numeric" class="corto" id="sm-r2" value="2"></div>
+        </div>
+        <p class="nota">Pruebe después con radicandos distintos, por ejemplo 2 y 3, o 8 y 2.</p>
+      </div>
+      <div class="caja-aviso" id="sm-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="sm-salida"></div>
+      <div class="caja-atencion"><strong>No se combinan partes distintas:</strong> √2 + √3 no es √5 ni 2√5. Como tienen distinta parte irracional, no son semejantes y la suma se deja indicada: √2 + √3.</div>
+      <h3>Practique: sumar y restar</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="simplificar-primero">
+    <summary><span class="num" aria-hidden="true">2</span><h2>¿Semejantes o no? Simplificar primero</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A veces dos radicales no parecen semejantes, pero al simplificarlos resulta que sí lo son. Por eso, antes de decidir, conviene simplificar cada radical. Recuerde que √2 es lo mismo que 1√2.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="sp-sel">Expresión</label><select id="sp-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="sp-sig"></button><button type="button" class="btn-sec" id="sp-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="sp-azar">Otra al azar</button></div>
+      </div>
+      <div class="fraccion-grande" id="sp-expr"></div>
+      <div class="pasos" id="sp-pasos" aria-live="polite"></div>
+      <h3>Practique: simplifique y combine</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Escríbalo usted: el resultado en un solo término</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p3-k">Coeficiente</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p3-k"></div>
+          <div class="campo" aria-hidden="true" style="font-size:24px;font-weight:700;padding-bottom:6px;">√</div>
+          <div class="campo"><label for="p3-r">Radicando</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p3-r"></div>
+        </div>
+        <p class="nota">Por ejemplo, para 6√2 escriba 6 y 2. Si no queda coeficiente (como en √15), deje vacío el primer campo. Si no queda radical (como en √36 = 6), escriba 1 como radicando.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="multiplicar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Multiplicar radicales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para multiplicar se usa la propiedad del producto en la otra dirección: el producto de las raíces es la raíz del producto. Los coeficientes de fuera se multiplican entre sí y al final se simplifica.</p>
+      <div class="formula">√a · √b = √(a · b)</div>
+      <h3>Unir y simplificar</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="mu-k1">Coeficiente del primero</label><input type="text" inputmode="numeric" class="corto" id="mu-k1" value="1"></div>
+          <div class="campo"><label for="mu-a">Radicando del primero</label><input type="text" inputmode="numeric" class="corto" id="mu-a" value="6"></div>
+          <div class="campo"><label for="mu-k2">Coeficiente del segundo</label><input type="text" inputmode="numeric" class="corto" id="mu-k2" value="1"></div>
+          <div class="campo"><label for="mu-b">Radicando del segundo</label><input type="text" inputmode="numeric" class="corto" id="mu-b" value="2"></div>
+        </div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="mu-azar">Otro ejemplo</button></div>
+      </div>
+      <div class="caja-aviso" id="mu-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="mu-salida"></div>
+      <div class="caja-tip"><strong>Una raíz por sí misma:</strong> √a · √a = √(a · a) = a. Por ejemplo, √7 · √7 = 7. Esta idea aparece a menudo al distribuir: √2 · (√2 + 5) = 2 + 5√2.</div>
+      <h3>Practique: multiplicar</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="aproximar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Aproximar radicales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un radical que no es exacto no tiene un decimal que termine, pero se puede <strong>acorralar</strong> entre dos números usando cuadrados perfectos: como 16 &lt; 20 &lt; 25, √20 está entre 4 y 5. Después se afina a la décima.</p>
+      <h3>Acorralar la raíz</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="ap-n">Radicando (de 2 a 200)</label><input type="text" inputmode="numeric" class="corto" id="ap-n" value="20"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="ap-azar">Otro número</button></div>
+      </div>
+      <div class="caja-aviso" id="ap-aviso" role="alert"></div>
+      <div id="ap-recta"></div>
+      <div class="salida" aria-live="polite" id="ap-salida"></div>
+      <h3>Practique: estimar</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <h3>Escríbalo usted: aproxime a la décima</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="campos"><div class="campo"><label for="p6-r">Aproximación a la décima</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p6-r"></div></div>
+        <p class="nota">Escriba un decimal con una cifra después del punto, por ejemplo 4.5. Puede usar la calculadora para comprobar.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p6-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <div class="caja-tip"><strong>Estimar para verificar:</strong> si una suma de radicales da 3√3, puede comprobar que 3√3 ≈ 5.20 y compararlo con el decimal de la expresión original. Si coinciden, la operación es correcta.</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 3 · Radicales y números reales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+function entero(id, min, max){ var s = $(id).value.trim(); if (!/^\d+$/.test(s)) return null; var n = parseInt(s, 10); return (n < min || n > max) ? null : n; }
+function libreCuadrados(n){ return simplRad(n).k === 1; }
+function signo(c){ return String(c).replace("-", "−"); }
+
+/* ============ MODULE 1 · can they be combined? ============ */
+function pintaSM(){
+  var a = entero("sm-a", 1, 20), r1 = entero("sm-r1", 2, 200), b = entero("sm-b", 1, 20), r2 = entero("sm-r2", 2, 200), op = $("sm-op").value, av = $("sm-aviso");
+  if (a === null || r1 === null || b === null || r2 === null){
+    av.className = "caja-aviso visible"; av.textContent = T("Use whole-number coefficients from 1 to 20 and whole-number radicands from 2 to 200.", "Use coeficientes enteros de 1 a 20 y radicandos enteros de 2 a 200.");
+    $("sm-salida").innerHTML = ""; return;
+  }
+  av.className = "caja-aviso"; av.textContent = "";
+  var sg = op === "+" ? 1 : -1, orig = [TM(a, r1), TM(sg * b, r2)], h = '<div class="linea grande">' + exprHTML(orig) + "</div>";
+  if (r1 === r2){
+    var c = a + sg * b, res = c === 0 ? [] : [TM(c, r1)];
+    h += '<div class="linea">' + T("They have the same irrational part, " + radHTML(1, r1) + ", so you " + (op === "+" ? "add" : "subtract") + " the coefficients: " + a + " " + op + " " + b + " = " + signo(c) + ".", "Tienen la misma parte irracional, " + radHTML(1, r1) + ": se " + (op === "+" ? "suman" : "restan") + " los coeficientes, " + a + " " + op + " " + b + " = " + signo(c) + ".") + "</div>";
+    h += '<div class="linea">' + T("It is like ", "Es como ") + a + "x " + op + " " + b + "x = " + (c === 0 ? "0" : signo(c) + "x") + ".</div>";
+    h += '<div class="linea veredicto">✓ ' + exprHTML(orig) + " = " + exprHTML(res) + "</div>";
+    h += '<div class="linea nota">' + T("Check: " + aprox(valor(orig), 3) + " and " + aprox(valor(res), 3) + " match.", "Comprobación: " + aprox(valor(orig), 3) + " y " + aprox(valor(res), 3) + " coinciden.") + "</div>";
+  } else {
+    var s1 = simplRad(r1), s2 = simplRad(r2);
+    h += '<div class="linea veredicto">' + T("The irrational parts are different (" + radHTML(1, r1) + " and " + radHTML(1, r2) + "): they are not like radicals, and the expression is left as it is.", "La parte irracional es distinta (" + radHTML(1, r1) + " y " + radHTML(1, r2) + "): no son semejantes y se deja indicado.") + "</div>";
+    if (op === "+"){
+      var trampa = [TM(a + b, r1 + r2)];
+      h += '<div class="linea">' + T("The “add everything” mistake would give ", "El error de «sumar todo» daría ") + exprHTML(trampa) + " ≈ " + aprox(valor(trampa), 3) + T(", but ", ", pero ") + exprHTML(orig) + " ≈ " + aprox(valor(orig), 3) + T(". They do not match.", ". No coinciden.") + "</div>";
+    } else h += '<div class="linea">' + T("Approximate value: ", "Valor aproximado: ") + exprHTML(orig) + " ≈ " + aprox(valor(orig), 3) + ".</div>";
+    if (s1.r === s2.r) h += '<div class="linea"><strong>' + T("But careful:", "Pero ojo:") + "</strong> " + T("if you simplify, ", "si se simplifica, ") + radHTML(1, r1) + " = " + radHTML(s1.k, s1.r) + T(" and ", " y ") + radHTML(1, r2) + " = " + radHTML(s2.k, s2.r) +
+      T(". They are like radicals after all! That is what module 2 is about: ", ". ¡Sí son semejantes! Eso es lo que se trabaja en el módulo 2: ") + '<a href="#' + T("simplify-first", "simplificar-primero") + '">' + T("simplify first", "simplificar primero") + "</a>.</div>";
+  }
+  $("sm-salida").innerHTML = h;
+}
+var BASES = [2, 3, 5, 6, 7, 10, 11];
+function genSemej(){
+  var tp = aleatorio(1, 4), r = elige(BASES), a = aleatorio(1, 9), b = aleatorio(1, 9), o, pc = {};
+  if (tp === 1 || tp === 4){
+    if (tp === 4) a = 1;
+    var res = [TM(a + b, r)]; o = [opExpr(res)];
+    var d1 = opExpr([TM(a + b, 2 * r)]); o.push(d1); pc[d1.clave] = T("The irrational part stays the same: radicands are not added.", "La parte irracional se conserva: no se suman los radicandos.");
+    var d2 = opExpr([TM(a * b, r)]); if (d2.clave !== o[0].clave){ o.push(d2); pc[d2.clave] = T("The coefficients are added, not multiplied.", "Los coeficientes se suman, no se multiplican."); }
+    var d3 = {html: String(a + b), clave: "n" + (a + b)}; o.push(d3); pc[d3.clave] = T("The radical does not disappear when you add: ", "El radical no desaparece al sumar: se conserva ") + radHTML(1, r) + T(" stays.", ".");
+    if (tp === 4){ var d4 = opExpr([TM(b, r)]); o.push(d4); pc[d4.clave] = radHTML(1, r) + T(" counts as 1", " vale como 1") + radHTML(1, r) + T(": its coefficient is 1, not 0.", ": su coeficiente es 1, no 0."); }
+    return {enun: T("Work out ", "Calcule ") + exprHTML([TM(a, r), TM(b, r)]) + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+      bien: T("Add the coefficients, " + a + " + " + b + " = " + (a + b) + ", and keep ", "Se suman los coeficientes, " + a + " + " + b + " = " + (a + b) + ", y se conserva ") + radHTML(1, r) + ".", mal: T("The answer is ", "La respuesta es ") + exprHTML(res) + "."};
+  }
+  if (tp === 2){
+    if (a === b) a = b + aleatorio(1, 4);
+    if (a < b){ var x = a; a = b; b = x; }
+    var res2 = [TM(a - b, r)]; o = [opExpr(res2)];
+    var e1 = {html: String(a - b), clave: "n" + (a - b)}; o.push(e1); pc[e1.clave] = T("The radical does not disappear when you subtract: ", "El radical no desaparece al restar: se conserva ") + radHTML(1, r) + T(" stays.", ".");
+    var e2 = opExpr([TM(a + b, r)]); o.push(e2); pc[e2.clave] = T("It is a subtraction: the coefficients are subtracted.", "Es una resta: los coeficientes se restan.");
+    o.push({html: T("They cannot be subtracted", "No se pueden restar"), clave: "ind"}); pc.ind = T("Yes, they can: they have the same irrational part.", "Sí se pueden: tienen la misma parte irracional.");
+    return {enun: T("Work out ", "Calcule ") + exprHTML([TM(a, r), TM(-b, r)]) + ".", opciones: o, correcta: o[0].clave, porClave: pc,
+      bien: T("Subtract the coefficients, " + a + " − " + b + " = " + (a - b) + ", and keep ", "Se restan los coeficientes, " + a + " − " + b + " = " + (a - b) + ", y se conserva ") + radHTML(1, r) + ".", mal: T("The answer is ", "La respuesta es ") + exprHTML(res2) + "."};
+  }
+  var r2 = elige(BASES.filter(function(z){ return z !== r; })); a = elige([1, 1, 2, 3]); b = elige([1, 1, 2, 4]);
+  var orig = [TM(a, r), TM(b, r2)];
+  o = [{html: T("Left as it is: ", "Se deja indicado: ") + exprHTML(orig), clave: "ind"}];
+  var f1 = opExpr([TM(a + b, r + r2)]); o.push(f1); pc[f1.clave] = T("Different radicands cannot be added.", "No se pueden sumar radicandos distintos.");
+  var f2 = opExpr([TM(a + b, r)]); o.push(f2); pc[f2.clave] = T("Only terms with the same irrational part combine.", "Solo se combinan términos con la misma parte irracional.");
+  var f3 = opExpr([TM(a * b, r * r2)]); o.push(f3); pc[f3.clave] = T("That would be a multiplication, not a sum.", "Eso sería una multiplicación, no una suma.");
+  return {enun: T("Work out ", "Calcule ") + exprHTML(orig) + ".", opciones: o, correcta: "ind", porClave: pc,
+    bien: T("The irrational parts are different, so they are not like radicals. Check: " + aprox(valor(orig), 3) + " is not equal to " + aprox(valor([TM(a + b, r + r2)]), 3) + ".", "La parte irracional es distinta, así que no son semejantes. Compruébelo: " + aprox(valor(orig), 3) + " no es igual a " + aprox(valor([TM(a + b, r + r2)]), 3) + "."),
+    mal: T("Since ", "Como ") + radHTML(1, r) + T(" and ", " y ") + radHTML(1, r2) + T(" are different, the sum is left as it is.", " son distintos, la suma se deja indicada.")};
+}
+
+/* ============ MODULE 2 · simplify first ============ */
+var SP = {lista: [[1, 8, 1, 1, 2], [1, 12, 1, 1, 27], [1, 50, -1, 1, 18], [1, 20, 1, 1, 45], [1, 8, 1, 1, 3], [1, 75, -1, 1, 12], [3, 8, 1, 1, 32], [1, 12, 1, 1, 3]], pasos: [], visto: 0};
+function exprOriginal(e){ return [TM(e[0], e[1]), TM(e[2] * e[3], e[4])]; }
+function llenaSP(){
+  var sel = $("sp-sel"); sel.innerHTML = "";
+  SP.lista.forEach(function(e, i){ var o = document.createElement("option"); o.value = i; o.textContent = exprVis(exprOriginal(e)).replace(/<[^>]+>/g, ""); sel.appendChild(o); });
+}
+function resuelveSP(e){ var orig = exprOriginal(e), simp = orig.map(simplTermino), res = combina(simp); return {orig: orig, simp: simp, res: res, semej: simp[0].r === simp[1].r}; }
+function preparaSP(){
+  var e = SP.lista[parseInt($("sp-sel").value, 10)], R = resuelveSP(e);
+  SP.pasos = []; SP.visto = 0;
+  $("sp-expr").innerHTML = '<span class="grande">' + exprHTML(R.orig) + "</span>";
+  R.orig.forEach(function(x, i){
+    var s = simplRad(x.r), k = Math.abs(x.k), txt = (i === 0 ? T("First term: ", "Primer término: ") : T("Second term: ", "Segundo término: "));
+    if (s.k === 1) txt += radHTML(k, x.r) + T(" is already simple.", " ya está simple.");
+    else if (k === 1) txt += radHTML(1, x.r) + " = √(" + (s.k * s.k) + " · " + s.r + ") = " + radHTML(s.k, s.r) + ".";
+    else txt += radHTML(k, x.r) + " = " + k + " · " + radHTML(s.k, s.r) + " = " + radHTML(k * s.k, s.r) + ".";
+    SP.pasos.push(txt);
+  });
+  if (R.semej) SP.pasos.push(T("Now both terms have ", "Ahora los dos términos tienen ") + radHTML(1, R.simp[0].r) + T(": they are like radicals. Combine the coefficients: ", ": son semejantes. Se combinan los coeficientes: ") + exprHTML(R.simp) + " = " + exprHTML(R.res) + ".");
+  else SP.pasos.push(T("After simplifying, the irrational parts are still different (", "Después de simplificar, la parte irracional sigue siendo distinta (") + radHTML(1, R.simp[0].r) + T(" and ", " y ") + radHTML(1, R.simp[1].r) + T("): they are not like radicals.", "): no son semejantes."));
+  SP.pasos.push('<span class="veredicto">' + T("Answer: ", "Resultado: ") + exprHTML(R.orig) + " = " + exprHTML(R.semej ? R.res : R.simp) + "</span>" + (R.semej ? "" : T(" (left as it is)", " (se deja indicado)")));
+  pintaSP();
+}
+function pintaSP(){
+  $("sp-pasos").innerHTML = SP.pasos.slice(0, SP.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === SP.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("sp-sig"); b.disabled = SP.visto >= SP.pasos.length; $("sp-todo").disabled = b.disabled;
+  b.textContent = SP.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function exprAzar(semejantes){
+  var b = elige([2, 3, 5, 6, 7]), s1 = aleatorio(1, 5), s2 = aleatorio(1, 5), k1 = elige([1, 1, 1, 2, 3]), k2 = elige([1, 1, 1, 2]);
+  if (s1 === 1 && s2 === 1) s1 = aleatorio(2, 5);
+  var b2 = semejantes ? b : elige([2, 3, 5, 6, 7].filter(function(z){ return z !== b; }));
+  var sg = Math.random() < 0.6 ? 1 : -1;
+  if (sg < 0 && k1 * s1 < k2 * s2){ var x = s1; s1 = s2; s2 = x; var u = k1; k1 = k2; k2 = u; }
+  return [k1, s1 * s1 * b, sg, k2, s2 * s2 * b2];
+}
+function azarSP(){ SP.lista.push(exprAzar(Math.random() < 0.8)); llenaSP(); $("sp-sel").value = SP.lista.length - 1; preparaSP(); }
+function genSimplCombina(){
+  var e, R, o, pc = {}, usadas = {};
+  do { e = exprAzar(Math.random() < 0.75); R = resuelveSP(e); } while (R.semej && (!R.res.length || e[0] + e[2] * e[3] === 0));
+  var enun = T("Work out ", "Calcule ") + exprHTML(R.orig) + T(". Simplify each radical first.", ". Simplifique primero cada radical.");
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  if (R.semej){
+    o = []; mete(opExpr(R.res));
+    if (e[2] > 0 && e[0] === 1 && e[3] === 1) mete(opRad(1, e[1] + e[4]), T("Radicands are not added: simplify each radical first.", "Los radicandos no se suman: primero se simplifica cada radical."));
+    mete({html: T("They cannot be combined", "No se pueden combinar"), clave: "ind"}, T("Yes, they can: after simplifying, both have ", "Sí se pueden: después de simplificar, los dos tienen ") + radHTML(1, R.simp[0].r) + ".");
+    if (R.res.length) mete(opExpr([TM(R.res[0].k + (R.res[0].k > 0 ? 1 : -1), R.res[0].r)]), T("Check the coefficients after simplifying.", "Revise los coeficientes después de simplificar."));
+    mete(opExpr([TM(e[0] + e[2] * e[3], R.simp[0].r)]), T("You forgot the coefficients that come out when you simplify.", "Faltó usar los coeficientes que salen al simplificar."));
+    return {enun: enun, opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+      bien: exprHTML(R.orig) + " = " + exprHTML(R.simp) + " = " + exprHTML(R.res) + ".", mal: T("Simplify: ", "Se simplifica: ") + exprHTML(R.simp) + " = " + exprHTML(R.res) + "."};
+  }
+  o = []; mete({html: T("Left as it is: ", "Se deja indicado: ") + exprHTML(R.simp), clave: "ind"});
+  mete(opExpr([TM(Math.abs(R.simp[0].k) + Math.abs(R.simp[1].k), R.simp[0].r)]), T("After simplifying, the irrational parts are still different: they do not combine.", "Después de simplificar, la parte irracional sigue siendo distinta: no se combinan."));
+  mete(opExpr([TM(Math.abs(R.simp[0].k) + Math.abs(R.simp[1].k), R.simp[0].r + R.simp[1].r)]), T("Different radicands are not added.", "No se suman radicandos distintos."));
+  mete({html: T("Left as it is: ", "Se deja indicado: ") + exprHTML(R.orig), clave: "orig"}, T("It is left as it is, yes, but first simplify each radical.", "Se deja indicado, sí, pero primero hay que simplificar cada radical."));
+  return {enun: enun, opciones: o, correcta: "ind", porClave: pc,
+    bien: T("Simplified, it is ", "Simplificado queda ") + exprHTML(R.simp) + T(", and since the irrational parts are different, it is left as it is.", ", y como la parte irracional es distinta, se deja indicado."),
+    mal: T("It simplifies to ", "Se simplifica a ") + exprHTML(R.simp) + T(", which cannot be combined.", ", que no se puede combinar.")};
+}
+function genEscribeSP(){
+  var e, R;
+  do { e = exprAzar(true); R = resuelveSP(e); } while (!R.res.length || R.res[0].k <= 0);
+  return {enun: T("Work out ", "Calcule ") + exprHTML(R.orig) + T(" and write the result as a single term.", " y escriba el resultado como un solo término."), k: R.res[0].k, r: R.res[0].r,
+    explica: exprHTML(R.orig) + " = " + exprHTML(R.simp) + " = " + exprHTML(R.res) + "."};
+}
+
+/* ============ MODULE 3 · multiplying ============ */
+var MU_COLA = [[1, 3, 1, 5], [1, 2, 1, 2], [2, 3, 4, 6], [1, 8, 1, 2]];
+function pintaMU(){
+  var k1 = entero("mu-k1", 1, 20), a = entero("mu-a", 1, 200), k2 = entero("mu-k2", 1, 20), b = entero("mu-b", 1, 200), av = $("mu-aviso");
+  if (k1 === null || a === null || k2 === null || b === null){
+    av.className = "caja-aviso visible"; av.textContent = T("Use whole-number coefficients from 1 to 20 and whole-number radicands from 1 to 200.", "Use coeficientes enteros de 1 a 20 y radicandos enteros de 1 a 200.");
+    $("mu-salida").innerHTML = ""; return;
+  }
+  av.className = "caja-aviso"; av.textContent = "";
+  var s = simplRad(a * b), kf = k1 * k2 * s.k, h = '<div class="linea grande">(' + radHTML(k1, a) + ")(" + radHTML(k2, b) + ") = " + radHTML(kf, s.r) + "</div>";
+  h += '<div class="linea">' + T("Coefficients: ", "Coeficientes: ") + k1 + " · " + k2 + " = " + (k1 * k2) + T(". Radicands: ", ". Radicandos: ") + radHTML(1, a) + " · " + radHTML(1, b) + " = " + radHTML(1, a * b) + ".</div>";
+  if (a === b) h += '<div class="linea">' + T("It is a root times itself: ", "Es una raíz por sí misma: ") + radHTML(1, a) + " · " + radHTML(1, a) + " = " + a + ".</div>";
+  else if (s.k > 1) h += '<div class="linea">' + T("Simplify: ", "Se simplifica: ") + radHTML(1, a * b) + " = " + radHTML(s.k, s.r) + T(", and ", ", y ") + (k1 * k2) + " · " + radHTML(s.k, s.r) + " = " + radHTML(kf, s.r) + ".</div>";
+  else h += '<div class="linea">' + T((a * b) + " has no perfect squares: ", (a * b) + " no tiene cuadrados perfectos: ") + radHTML(1, a * b) + T(" is already simple.", " ya está simple.") + "</div>";
+  h += '<div class="linea nota">' + T("Check: ", "Comprobación: ") + aprox(k1 * Math.sqrt(a) * k2 * Math.sqrt(b), 3) + T(" and ", " y ") + aprox(kf * Math.sqrt(s.r), 3) + ".</div>";
+  $("mu-salida").innerHTML = h;
+}
+function azarMU(){
+  var e = MU_COLA.length ? MU_COLA.shift() : [elige([1, 1, 2, 3]), aleatorio(2, 15), elige([1, 1, 2, 5]), aleatorio(2, 15)];
+  $("mu-k1").value = e[0]; $("mu-a").value = e[1]; $("mu-k2").value = e[2]; $("mu-b").value = e[3]; pintaMU();
+}
+function genMultiplicar(){
+  var tp = aleatorio(1, 5), o, pc = {}, a, b, res;
+  if (tp === 1){
+    a = aleatorio(2, 15); while (esCuadrado(a)) a++;
+    o = [{html: String(a), clave: "n" + a}];
+    var d1 = opRad(1, a); o.push(d1); pc[d1.clave] = T("√a · √a is not √a: the radical disappears.", "√a · √a no es √a: el radical desaparece.");
+    var d2 = {html: String(a * a), clave: "n" + a * a}; o.push(d2); pc[d2.clave] = T("√a · √a = √(a²) = a, not a².", "√a · √a = √(a²) = a, no a².");
+    var d3 = opRad(2, a); o.push(d3); pc[d3.clave] = T("That would be √a + √a. Here you multiply.", "Eso sería √a + √a. Aquí se multiplica.");
+    return {enun: T("Work out ", "Calcule ") + radHTML(1, a) + " · " + radHTML(1, a) + ".", opciones: o, correcta: o[0].clave, porClave: pc,
+      bien: radHTML(1, a) + " · " + radHTML(1, a) + " = " + radHTML(1, a * a) + " = " + a + ".", mal: T("The answer is " + a + ": a root times itself gives the radicand.", "La respuesta es " + a + ": una raíz por sí misma da el radicando.")};
+  }
+  if (tp === 5){
+    a = elige([2, 3, 5, 6, 7]); var c = aleatorio(2, 9);
+    res = [TM(a, 1), TM(c, a)]; o = [opExpr(res)];
+    var f1 = opExpr([TM(a, 1), TM(c, 1)]); o.push(f1); pc[f1.clave] = radHTML(1, a) + " · " + c + T(" is ", " es ") + radHTML(c, a) + T(": the radical stays.", ": el radical se conserva.");
+    var f2 = opExpr([TM(a + c, a)]); o.push(f2); pc[f2.clave] = a + T(" and ", " y ") + radHTML(c, a) + T(" are not like terms: they do not combine.", " no son semejantes: no se combinan.");
+    var f3 = opExpr([TM(2 * a, 1), TM(c, a)]); o.push(f3); pc[f3.clave] = radHTML(1, a) + " · " + radHTML(1, a) + " = " + a + T(", not ", ", no ") + (2 * a) + ".";
+    return {enun: T("Work out ", "Calcule ") + radHTML(1, a) + " · (" + radHTML(1, a) + " + " + c + ").", opciones: o, correcta: o[0].clave, porClave: pc,
+      bien: T("Distribute: ", "Se distribuye: ") + radHTML(1, a) + " · " + radHTML(1, a) + " = " + a + T(" and ", " y ") + radHTML(1, a) + " · " + c + " = " + radHTML(c, a) + ".",
+      mal: T("The answer is ", "La respuesta es ") + exprHTML(res) + "."};
+  }
+  var k1 = tp === 4 ? aleatorio(2, 5) : 1, k2 = tp === 4 ? aleatorio(2, 5) : 1;
+  do { a = aleatorio(2, 12); b = aleatorio(2, 12); } while (a === b || esCuadrado(a) || esCuadrado(b) || (tp === 2 && !libreCuadrados(a * b)) || (tp === 3 && libreCuadrados(a * b)));
+  var s = simplRad(a * b), kf = k1 * k2 * s.k, usadas = {};
+  o = [];
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opRad(kf, s.r));
+  mete(opRad(k1 * k2, a + b), T("The radicands are multiplied, not added.", "Los radicandos se multiplican, no se suman."));
+  mete({html: String(k1 * k2 * a * b), clave: "n" + k1 * k2 * a * b}, T("The product stays inside the radical: ", "El producto sigue dentro del radical: ") + radHTML(1, a * b) + ".");
+  if (s.k > 1) mete(opRad(k1 * k2, a * b), T("The value is right, but ", "El valor es correcto, pero ") + radHTML(1, a * b) + T(" can still be simplified.", " todavía se puede simplificar."));
+  if (tp === 4) mete(opRad((k1 + k2) * s.k, s.r), T("The coefficients outside are multiplied, not added.", "Los coeficientes de fuera se multiplican, no se suman."));
+  mete(opRad(kf + 1, s.r));
+  return {enun: T("Work out ", "Calcule ") + (tp === 4 ? "(" + radHTML(k1, a) + ")(" + radHTML(k2, b) + ")" : radHTML(1, a) + " · " + radHTML(1, b)) + T(". Simplify the result.", ". Simplifique el resultado."),
+    opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("Join them under one radical: ", "Se unen bajo un radical: ") + radHTML(k1 * k2, a * b) + (s.k > 1 ? T(", which simplifies to ", ", y se simplifica a ") + radHTML(kf, s.r) : "") + ".",
+    mal: T("The answer is ", "La respuesta es ") + radHTML(kf, s.r) + "."};
+}
+
+/* ============ MODULE 4 · approximating ============ */
+function pintaAP(){
+  var n = entero("ap-n", 2, 200), av = $("ap-aviso");
+  if (n === null){ av.className = "caja-aviso visible"; av.textContent = T("Type a whole number from 2 to 200.", "Escriba un número entero de 2 a 200."); $("ap-salida").innerHTML = ""; $("ap-recta").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var raiz = Math.sqrt(n), a = Math.floor(raiz + 1e-12), h;
+  if (esCuadrado(n)){
+    $("ap-recta").innerHTML = rectaSVG(Math.max(0, a - 1), a + 1, 0.1, [{v: a, txt: "√" + n}], T("Number line: the square root of " + n + " lands exactly on " + a, "Recta numérica: la raíz de " + n + " cae exactamente en " + a));
+    $("ap-salida").innerHTML = '<div class="linea veredicto">' + T(n + " is a perfect square: ", n + " es un cuadrado perfecto: ") + radHTML(1, n) + " = " + a + T(" exactly. Try a number that is not.", " exactamente. Pruebe con un número que no lo sea.") + "</div>";
+    return;
+  }
+  var d = Math.floor(raiz * 10 + 1e-9), t0 = d / 10, t1 = (d + 1) / 10;
+  h = '<div class="linea"><strong>' + T("Between which whole numbers:", "Entre qué enteros:") + "</strong> " + (a * a) + " &lt; " + n + " &lt; " + ((a + 1) * (a + 1)) + T(", so ", ", así que ") + radHTML(1, n) + T(" is between " + a + " and " + (a + 1) + ".", " está entre " + a + " y " + (a + 1) + ".") + "</div>";
+  h += '<div class="linea"><strong>' + T("Between which tenths:", "Entre qué décimas:") + "</strong> " + t0.toFixed(1) + "² = " + (d * d / 100).toFixed(2) + T(" and ", " y ") + t1.toFixed(1) + "² = " + ((d + 1) * (d + 1) / 100).toFixed(2) +
+       T(". Since " + n + " is in between, ", ". Como " + n + " queda en medio, ") + radHTML(1, n) + T(" is between " + t0.toFixed(1) + " and " + t1.toFixed(1) + ".", " está entre " + t0.toFixed(1) + " y " + t1.toFixed(1) + ".") + "</div>";
+  h += '<div class="linea veredicto">' + T("With the calculator: ", "Con la calculadora: ") + radHTML(1, n) + " ≈ " + aprox(raiz, 3) + T(", which rounds to " + aprox(raiz, 1) + " to the nearest tenth.", ", que redondeado a la décima es " + aprox(raiz, 1) + ".") + "</div>";
+  $("ap-recta").innerHTML = rectaSVG(a, a + 1, 0.1, [{v: raiz, txt: "√" + n}], T("Number line from " + a + " to " + (a + 1) + " with the square root of " + n + " near " + aprox(raiz, 1), "Recta numérica de " + a + " a " + (a + 1) + " con la raíz de " + n + " cerca de " + aprox(raiz, 1)));
+  $("ap-salida").innerHTML = h;
+}
+function azarAP(){ var n; do { n = aleatorio(2, 200); } while (esCuadrado(n)); $("ap-n").value = n; pintaAP(); }
+function genEstimar(){
+  if (Math.random() < 0.55){
+    var n; do { n = aleatorio(2, 150); } while (esCuadrado(n));
+    var a = Math.floor(Math.sqrt(n)), o = [], pc = {};
+    [a - 1, a, a + 1, a + 2].forEach(function(i){ if (i >= 0){ o.push({html: T("Between " + i + " and " + (i + 1), "Entre " + i + " y " + (i + 1)), clave: "e" + i}); pc["e" + i] = T((i * i) + " and " + ((i + 1) * (i + 1)) + " do not surround " + n + ".", (i * i) + " y " + ((i + 1) * (i + 1)) + " no rodean a " + n + "."); } });
+    var ok = "e" + a;
+    return {enun: T("Between which two consecutive whole numbers is ", "¿Entre qué dos enteros consecutivos está ") + radHTML(1, n) + "?", opciones: o, correcta: ok, porClave: pc, enOrden: true,
+      pista: T("Look for the perfect squares just below and just above " + n + ".", "Busque los cuadrados perfectos justo por debajo y justo por encima de " + n + "."),
+      bien: (a * a) + " &lt; " + n + " &lt; " + ((a + 1) * (a + 1)) + T(", so ", ", así que ") + radHTML(1, n) + T(" is between " + a + " and " + (a + 1) + ".", " está entre " + a + " y " + (a + 1) + "."),
+      mal: T("The perfect squares around " + n + " are " + (a * a) + " and " + ((a + 1) * (a + 1)) + ", so it is between " + a + " and " + (a + 1) + ".", "Los cuadrados perfectos que rodean a " + n + " son " + (a * a) + " y " + ((a + 1) * (a + 1)) + ", así que está entre " + a + " y " + (a + 1) + ".")};
+  }
+  var k = aleatorio(2, 6), r = elige([2, 3, 5, 6, 7]), v = k * Math.sqrt(r), op2 = [], pc2 = {}, usadas = {};
+  function mete(x, msg){ var c = "a" + x; if (usadas[c]) return; usadas[c] = 1; op2.push({html: "≈ " + x, clave: c}); if (msg) pc2[c] = msg; }
+  mete(aprox(v, 2));
+  mete(aprox(Math.sqrt(k * r), 2), T("That is ", "Eso es ") + radHTML(1, k * r) + T(": the coefficient stays outside and multiplies the root.", ": el coeficiente queda fuera y multiplica a la raíz."));
+  mete(aprox(k + Math.sqrt(r), 2), T("The coefficient multiplies the root; it is not added to it.", "El coeficiente multiplica a la raíz, no se le suma."));
+  mete(aprox(k * r, 2), T("You still need the root: ", "Falta sacar la raíz: ") + radHTML(1, r) + T(" is not ", " no es ") + r + ".");
+  return {enun: T("What is the approximate value of ", "¿Cuál es el valor aproximado de ") + radHTML(k, r) + "?", opciones: [op2[0]].concat(baraja(op2.slice(1))), correcta: op2[0].clave, porClave: pc2,
+    bien: radHTML(1, r) + " ≈ " + aprox(Math.sqrt(r), 3) + T(", and ", ", y ") + k + " × " + aprox(Math.sqrt(r), 3) + " ≈ " + aprox(v, 2) + ".",
+    mal: T("Multiply the coefficient by the root: ", "Se multiplica el coeficiente por la raíz: ") + k + " × " + aprox(Math.sqrt(r), 3) + " ≈ " + aprox(v, 2) + "."};
+}
+function genDecima(){
+  var n; do { n = aleatorio(2, 150); } while (esCuadrado(n));
+  var raiz = Math.sqrt(n), bueno = aprox(raiz, 1), a = Math.floor(raiz);
+  return {enun: T("Approximate ", "Aproxime ") + radHTML(1, n) + T(" to the nearest tenth.", " a la décima."),
+    solucion: radHTML(1, n) + " ≈ " + aprox(raiz, 3) + T(", which rounds to " + bueno + ".", ", que redondeado a la décima es " + bueno + "."),
+    evalua: function(txt){
+      var v = leeDecimal(txt);
+      if (v === null) return {estado: "invalido", msg: T("Type a decimal number, for example " + (a + 0.5).toFixed(1) + ".", "Escriba un número decimal, por ejemplo " + (a + 0.5).toFixed(1) + ".")};
+      if (Math.abs(v - parseFloat(bueno)) < 1e-9) return {estado: "bien", msg: ""};
+      if (Math.abs(v - raiz) <= 0.1) return {estado: "mal", msg: T("Close: you are within a tenth, but that is not the correct rounding.", "Casi: está a menos de una décima, pero no es el redondeo correcto.")};
+      if (v >= a && v <= a + 1) return {estado: "mal", msg: T("The whole number (" + a + ") is right; fine-tune the tenth by squaring your estimate.", "El entero (" + a + ") está bien; afine la décima elevando al cuadrado su estimación.")};
+      return {estado: "mal", msg: T("Trap it first: " + (a * a) + " < " + n + " < " + ((a + 1) * (a + 1)) + ", so the root is between " + a + " and " + (a + 1) + ".", "Primero acorrale: " + (a * a) + " < " + n + " < " + ((a + 1) * (a + 1)) + ", así que la raíz está entre " + a + " y " + (a + 1) + ".")};
+    }};
+}
+
+/* ============ Start ============ */
+["sm-a", "sm-r1", "sm-b", "sm-r2"].forEach(function(id){ $(id).addEventListener("input", pintaSM); });
+$("sm-op").addEventListener("change", pintaSM);
+pintaSM();
+OMR("p1", genSemej);
+llenaSP();
+$("sp-sel").addEventListener("change", preparaSP);
+$("sp-sig").addEventListener("click", function(){ if (SP.visto < SP.pasos.length){ SP.visto++; pintaSP(); } });
+$("sp-todo").addEventListener("click", function(){ SP.visto = SP.pasos.length; pintaSP(); });
+$("sp-azar").addEventListener("click", azarSP);
+preparaSP();
+OMR("p2", genSimplCombina);
+creaPracticaRad("p3", genEscribeSP);
+["mu-k1", "mu-a", "mu-k2", "mu-b"].forEach(function(id){ $(id).addEventListener("input", pintaMU); });
+$("mu-azar").addEventListener("click", azarMU);
+pintaMU();
+OMR("p4", genMultiplicar);
+$("ap-n").addEventListener("input", pintaAP);
+$("ap-azar").addEventListener("click", azarAP);
+pintaAP();
+OMR("p5", genEstimar);
+creaPracticaLibre("p6", genDecima);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
