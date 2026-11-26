@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 1.2 · Regla del cociente, exponente cero y exponentes negativos — práctica (español) — construida con tools/build_n3_lesson_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.2 · Regla del cociente, exponente cero y exponentes negativos · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-1-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .fichas{display:flex;flex-wrap:wrap;align-items:center;gap:6px;justify-content:center;margin:14px 0;font-size:18px;}
+  .fichas .grupo{display:inline-flex;flex-wrap:nowrap;max-width:none;gap:4px;padding:4px;border:1px dashed #90a4ae;border-radius:10px;}
+  .ficha{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 6px;border-radius:8px;font-weight:700;border:2px solid var(--tema);background:var(--tema-bg);color:var(--tema-d);}
+  .ficha.b{border-color:#00695c;background:#e0f2f1;color:#004d40;}
+  .ficha.tachada{border-color:#b71c1c;background:#ffebee;color:#b71c1c;text-decoration:line-through;text-decoration-thickness:3px;}
+  .signo{font-weight:700;font-size:20px;color:var(--tema-d);padding:0 2px;}
+  .linea-frac{display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0;}
+  .linea-frac .barra{width:100%;max-width:520px;border-top:3px solid var(--tema-d);}
+  .tabla-patron{border-collapse:collapse;margin:12px auto;font-size:17px;}
+  .tabla-patron caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-patron th,.tabla-patron td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;min-width:64px;}
+  .tabla-patron th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-patron td.cero{background:#e8f5e9;font-weight:700;}
+  .tabla-patron td.neg{background:#fff8e1;}
+  .dividir{font-size:13px;color:var(--gris);}
+  .marcador-regla{margin-top:12px;}
+  .marcador-regla table{border-collapse:collapse;font-size:14px;}
+  .marcador-regla caption{text-align:left;font-size:14px;color:var(--gris);padding-bottom:4px;}
+  .marcador-regla th,.marcador-regla td{border:1px solid #c8c8c8;padding:5px 10px;text-align:left;}
+  .marcador-regla th{background:var(--tema-bg);color:var(--tema-d);}
+  .paso .regla{display:inline-block;font-size:13px;font-weight:700;color:var(--tema-d);background:var(--tema-bg);border-radius:6px;padding:1px 8px;margin-left:6px;}
+  .fila-resp{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  .salida .ex,.enun .ex,.opcion .ex{font-size:18px;}
+  .campo input.bien,.campo select.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .salida:empty{display:none;}
+  .campo select.error{border-color:#b71c1c;background:#ffebee;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 1 · Reglas de los exponentes</div>
+    <h1>Lección 1.2 · Regla del cociente, exponente cero y exponentes negativos</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#cociente">La regla del cociente</a></li>
+      <li><a href="#cero">El exponente cero</a></li>
+      <li><a href="#negativos">Los exponentes negativos</a></li>
+      <li><a href="#cinco-reglas">Las cinco reglas de los exponentes</a></li>
+      <li><a href="#verificar">Verificar con valores numéricos</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="cociente" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La regla del cociente</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Al dividir dos potencias de la <strong>misma base</strong>, cada factor de abajo cancela un factor de arriba. Por eso los exponentes <strong>se restan</strong>, siempre el de arriba menos el de abajo:</p>
+      <div class="formula">a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m − n</sup></div>
+      <h3>Cancelador de factores</h3>
+      <p>Cambie los exponentes de arriba y de abajo. Pruebe también el mismo número en los dos, o uno mayor abajo: así se descubren las ideas de los dos módulos siguientes.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="co-m">Exponente de arriba</label><input type="number" id="co-m" value="5" min="1" max="7" step="1"></div>
+        <div class="campo"><label for="co-n">Exponente de abajo</label><input type="number" id="co-n" value="2" min="1" max="7" step="1"></div>
+      </div></div>
+      <div class="caja-aviso" id="co-aviso" role="alert"></div>
+      <div class="linea-frac" id="co-fichas" aria-hidden="true"></div>
+      <div class="salida" aria-live="polite" id="co-salida"></div>
+      <div class="caja-atencion"><strong>Cuidado con el orden:</strong> se resta el exponente de arriba menos el de abajo, nunca al revés. Y la base no puede ser cero, porque dividir entre cero no está definido.</div>
+      <h3>Practique: escriba el exponente del resultado</h3>
+      <div class="practica" id="p-cociente1">
+        <div class="enun" id="p-cociente1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p-cociente1-r">Exponente del resultado</label><input type="text" autocomplete="off" class="corto" id="p-cociente1-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −2 o -2.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p-cociente1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p-cociente1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p-cociente1-fb" role="status"></div>
+        <p class="marcador" id="p-cociente1-marcador"></p>
+      </div>
+      <h3>Practique: con coeficientes</h3>
+      <p>Los coeficientes se <strong>dividen</strong>; los exponentes se <strong>restan</strong>.</p>
+      
+      <div class="practica" id="p-cociente2">
+        <div class="enun" id="p-cociente2-enun"></div>
+        <div class="opciones" id="p-cociente2-opciones"></div>
+        <div class="fb" id="p-cociente2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-cociente2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-cociente2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cero">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El exponente cero</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si divide una potencia entre sí misma, el resultado es 1, porque todo número distinto de cero dividido entre sí mismo da 1. Pero la regla del cociente da a<sup>3</sup> ÷ a<sup>3</sup> = a<sup>0</sup>. Las dos cosas describen la misma división, así que tienen que ser iguales:</p>
+      <div class="formula">a<sup>0</sup> = 1  (a ≠ 0)</div>
+      <h3>El patrón de potencias decrecientes</h3>
+      <p>Cada vez que el exponente baja una unidad, el valor se divide entre la base. Elija una base y siga el patrón hasta el cero.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="ce-base">Base</label><select id="ce-base"><option value="2">2</option><option value="3">3</option><option value="5">5</option><option value="10">10</option></select></div>
+      </div></div>
+      <div id="ce-tabla" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>El exponente cero solo afecta a su base:</strong> (3x)<sup>0</sup> = 1, porque el cero afecta a todo el paréntesis; pero 3x<sup>0</sup> = 3 · 1 = 3, porque el cero solo afecta a la x. Del mismo modo, −5<sup>0</sup> = −1, mientras que (−5)<sup>0</sup> = 1.</div>
+      <h3>Practique: ¿cuánto vale?</h3>
+      <div class="practica" id="p-cero">
+        <div class="enun" id="p-cero-enun"></div>
+        <div class="opciones" id="p-cero-opciones"></div>
+        <div class="fb" id="p-cero-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-cero-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-cero-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="negativos">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Los exponentes negativos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si el patrón sigue más allá del cero, cada paso sigue dividiendo entre la base y aparecen las fracciones. Un exponente negativo indica el <strong>recíproco</strong> de la potencia con exponente positivo:</p>
+      <div class="formula">a<sup>−n</sup> = 1/a<sup>n</sup>  (a ≠ 0)</div>
+      <h3>El patrón continúa</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="ne-base">Base</label><select id="ne-base"><option value="2">2</option><option value="3">3</option><option value="5">5</option><option value="10">10</option></select></div>
+        <div class="campo"><label for="ne-n">Exponente negativo que quiere estudiar</label><select id="ne-n"><option value="1">−1</option><option value="2" selected>−2</option><option value="3">−3</option><option value="4">−4</option></select></div>
+      </div></div>
+      <div id="ne-tabla"></div>
+      <div class="salida" aria-live="polite" id="ne-salida"></div>
+      <div class="caja-tip"><strong>Cruzar la barra de fracción:</strong> mover un factor de arriba abajo, o de abajo arriba, cambia el signo de su exponente. Así, x<sup>−4</sup> = 1/x<sup>4</sup> y también 1/a<sup>−2</sup> = a<sup>2</sup>.</div>
+      <div class="caja-atencion"><strong>Un exponente negativo no hace negativo al número.</strong> 2<sup>−3</sup> no es −8 ni −6: es la fracción positiva 1/8. El signo del exponente solo dice «recíproco».</div>
+      <h3>Practique: exponentes negativos</h3>
+      <div class="practica" id="p-negativos">
+        <div class="enun" id="p-negativos-enun"></div>
+        <div class="opciones" id="p-negativos-opciones"></div>
+        <div class="fb" id="p-negativos-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-negativos-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-negativos-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cinco-reglas">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Las cinco reglas de los exponentes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="tabla-scroll" role="region" tabindex="0" aria-label="Las cinco reglas (tabla desplazable horizontalmente)"><table class="reglas"><caption>Las cinco reglas de los exponentes: nombre, patrón y ejemplo.</caption>
+      <thead><tr><th scope="col">Regla</th><th scope="col">Patrón</th><th scope="col">Ejemplo</th></tr></thead><tbody><tr><td>Producto de potencias</td><td>a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup></td><td>x<sup>4</sup> · x<sup>3</sup> = x<sup>7</sup></td></tr><tr><td>Potencia de una potencia</td><td>(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup></td><td>(x<sup>4</sup>)<sup>3</sup> = x<sup>12</sup></td></tr><tr><td>Potencia de un producto</td><td>(a · b)<sup>n</sup> = a<sup>n</sup> · b<sup>n</sup></td><td>(2x)<sup>3</sup> = 8x<sup>3</sup></td></tr><tr><td>Cociente de potencias</td><td>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup></td><td>x<sup>7</sup> ÷ x<sup>2</sup> = x<sup>5</sup></td></tr><tr><td>Exponente cero y negativo</td><td>a<sup>0</sup> = 1 · a<sup>−n</sup> = 1/a<sup>n</sup></td><td>5<sup>0</sup> = 1 · 3<sup>−2</sup> = 1/9</td></tr></tbody></table></div>
+      <h3>Practique: ¿qué regla se aplicó?</h3>
+      <p>Cada ejercicio muestra un paso ya hecho, y bien hecho. Su tarea es reconocer qué regla lo justifica. La tabla de debajo del ejercicio le dice qué regla necesita repasar.</p>
+      
+      <div class="practica" id="p-cinco">
+        <div class="enun" id="p-cinco-enun"></div>
+        <div class="opciones" id="p-cinco-opciones"></div>
+        <div class="fb" id="p-cinco-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-cinco-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-cinco-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="verificar">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Verificar con valores numéricos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una simplificación correcta da el <strong>mismo número</strong> que la expresión original para cualquier valor de la variable. Si al sustituir un número salen valores distintos, hay un error seguro. Es la misma comprobación que haría con la calculadora.</p>
+      <div class="caja-atencion"><strong>Elija bien el número de prueba:</strong> el 0 no sirve cuando hay divisiones o exponentes negativos, y con el 1 cualquier potencia vale 1, así que la prueba no distingue nada. Use 2 o 3.</div>
+      <h3>Practique: ¿la simplificación es correcta?</h3>
+      <p>Primero pruebe con uno o dos valores de x. Después decida.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="v-x">Valor de x para la prueba</label><input type="number" id="v-x" value="2" min="-5" max="5" step="1"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="v-probar">Probar este valor</button></div></div>
+      <div class="caja-aviso" id="v-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="v-salida"></div>
+      
+      <div class="practica" id="p-verifica">
+        <div class="enun" id="p-verifica-enun"></div>
+        <div class="opciones" id="p-verifica-opciones"></div>
+        <div class="fb" id="p-verifica-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-verifica-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-verifica-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 1 · Reglas de los exponentes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/exponents.js"></script>
+<script>
+var VARS = ["x", "y", "a", "m", "n", "b"];
+function fac(n){ return n === 1 ? T(" factor", " factor") : T(" factors", " factores"); }
+function sim(){ return T("Simplify ", "Simplifique "); }
+
+/* ============ MODULE 1 · factor canceller ============ */
+function actualizaCociente(){
+  var m = leeEntero("co-m", 1, 7, "co-aviso", T("top exponent", "exponente de arriba"));
+  var n = m === null ? null : leeEntero("co-n", 1, 7, "co-aviso", T("bottom exponent", "exponente de abajo"));
+  if (m === null || n === null){ $("co-fichas").innerHTML = ""; $("co-salida").innerHTML = ""; return; }
+  limpiaAviso("co-aviso");
+  var k = Math.min(m, n);
+  $("co-fichas").innerHTML = '<div class="fichas">' + fichas("a", m, "", k) + '</div><div class="barra"></div><div class="fichas">' + fichas("a", n, "b", k) + "</div>";
+  var cu = ver(fracX(xp("a", m), xp("a", n)));
+  var h = '<div class="linea">' + T(k + (k === 1 ? " pair" : " pairs") + " of factors cancel (the crossed-out chips).", "Se cancelan " + k + (k === 1 ? " pareja" : " parejas") + " de factores (las fichas tachadas).") + "</div>";
+  if (m > n){
+    h += '<div class="linea">' + cu + " = " + ver(xp("a", m - n)) + "</div>";
+    h += '<div class="linea veredicto">' + T((m - n) + fac(m - n) + " left on top: ", "Quedan " + (m - n) + fac(m - n) + " arriba: ") + m + " − " + n + " = " + (m - n) + ".</div>";
+  } else if (m === n){
+    h += '<div class="linea">' + cu + T(" = 1, because no factor is left.", " = 1, porque no queda ningún factor.") + "</div>";
+    h += '<div class="linea veredicto">' + T("The rule gives ", "La regla da ") + m + " − " + n + T(" = 0, that is, a<sup>0</sup>. Both answers must agree: a<sup>0</sup> = 1. You will see it in module 2.", " = 0, es decir, a<sup>0</sup>. Las dos respuestas tienen que coincidir: a<sup>0</sup> = 1. Lo verá en el módulo 2.") + "</div>";
+  } else {
+    h += '<div class="linea">' + cu + " = " + ver(fracX(X("1", "1"), xp("a", n - m))) + "</div>";
+    h += '<div class="linea veredicto">' + T((n - m) + fac(n - m) + " left on the bottom. The rule gives ", "Quedan " + (n - m) + fac(n - m) + " abajo. La regla da ") + m + " − " + n + " = " + numTxt(m - n) +
+         T(": a<sup>" + numTxt(m - n) + "</sup> means the same as 1/" + xp("a", n - m).h + ". You will see it in module 3.", ": a<sup>" + numTxt(m - n) + "</sup> significa lo mismo que 1/" + xp("a", n - m).h + ". Lo verá en el módulo 3.") + "</div>";
+  }
+  $("co-salida").innerHTML = h;
+}
+function genCociente1(){
+  var numerica = Math.random() < 0.35, v = elige(VARS), n = ale(2, 6), m = n + ale(1, 7), base = numerica ? String(elige([2, 3, 5, 10])) : v;
+  return { enun: ver(igualX(entreX(xp(base, m), xp(base, n)), preg(base))), etiqueta: T("Exponent of the answer", "Exponente del resultado"), resp: m - n,
+    pista: function(x){
+      if (x === n - m) return T("You subtracted backward: it is always the top exponent minus the bottom one.", "Restó al revés: siempre es el exponente de arriba menos el de abajo.");
+      if (x === m + n) return T("You added the exponents; when you divide, subtract them.", "Sumó los exponentes; al dividir se restan.");
+      if (n !== 0 && x === m / n) return T("You divided the exponents; subtract them.", "Dividió los exponentes; se restan.");
+      return null; },
+    sol: T("Same base: ", "Misma base: ") + m + " − " + n + " = " + (m - n) + "." + (numerica ? T(" The base " + base + " does not change.", " La base " + base + " no cambia.") : "") };
+}
+function genCociente2(){
+  var v = elige(["x", "a", "m"]), c2 = ale(2, 6), q = ale(2, 6), c1 = c2 * q, b = ale(1, 5), a = b + ale(1, 6);
+  var A = mono(c1, e1(v, a)), B = mono(c2, e1(v, b)), R = mDiv(A, B);
+  var dis = [[mono(c1 - c2, R.e), T("You subtracted the numbers; they are divided: ", "Restó los coeficientes; los números se dividen: ") + c1 + " ÷ " + c2 + " = " + q + "."],
+             [mono(c1, R.e), T("The numbers still have to be divided.", "Falta dividir los coeficientes.")],
+             [mono(q, e1(v, a + b)), T("You added the exponents; when you divide, subtract them.", "Sumó los exponentes; al dividir se restan.")]];
+  if (a % b === 0 && a / b !== a - b) dis.push([mono(q, e1(v, a / b)), T("You divided the exponents; subtract them.", "Dividió los exponentes; se restan.")]);
+  return { enun: sim() + ver(fracX(mLinea(A), mLinea(B))) + ".", opciones: opcionesMono(R, dis),
+    sol: T("Numbers: ", "Coeficientes: ") + c1 + " ÷ " + c2 + " = " + q + T(". Exponents of ", ". Exponentes de ") + v + ": " + a + " − " + b + " = " + (a - b) + "." };
+}
+
+/* ============ MODULE 2 · the pattern down to zero ============ */
+function actualizaCero(){
+  var b = parseInt($("ce-base").value, 10), cab = "", val = "", div = "";
+  for (var e = 4; e >= 0; e--){
+    cab += "<th scope=\"col\">" + b + "<sup>" + e + "</sup></th>";
+    val += "<td" + (e === 0 ? ' class="cero"' : "") + ">" + fmt(Math.pow(b, e)) + "</td>";
+    div += '<td class="dividir">' + (e > 0 ? "÷ " + b + " →" : "") + "</td>";
+  }
+  $("ce-tabla").innerHTML = '<div style="overflow-x:auto"><table class="tabla-patron"><caption>' + T("Powers of " + b + " going down: each step to the right divides by " + b + ".", "Potencias decrecientes de " + b + ": cada paso a la derecha divide entre " + b + ".") +
+    "</caption><thead><tr>" + cab + "</tr></thead><tbody><tr>" + val + "</tr><tr>" + div + '</tr></tbody></table></div><p class="nota" style="text-align:center">' + b + " ÷ " + b + T(" = 1: the pattern leads naturally to ", " = 1: el patrón llega de forma natural a ") + b + "<sup>0</sup> = 1.</p>";
+}
+function genCero(){
+  var t = ale(1, 7), k = ale(2, 99), c = ale(2, 9), v = elige(["x", "y", "a"]), a = ale(2, 8);
+  function op(x, ok, fb){ return {x: X(fmt(x), numVoz(x)), ok: ok, fb: fb || ""}; }
+  var cuanto = T("What is ", "¿Cuánto vale ");
+  if (t === 1) return {enun: cuanto + ver(xp(String(k), 0)) + "?",
+    opciones: unicas([op(1, true), op(0, false, T("The zero exponent does not wipe out the number: it means the power was divided by itself.", "El exponente cero no anula el número: indica que se ha dividido la potencia entre sí misma.")), op(k, false, T("With exponent zero the value is always 1, whatever the base (other than zero).", "Con exponente cero el valor siempre es 1, sea cual sea la base (distinta de cero)."))]),
+    sol: T("Any base other than zero to the power 0 is 1.", "Cualquier base distinta de cero con exponente 0 vale 1.")};
+  if (t === 2) return {enun: cuanto + ver(parX(X(c + v, c + " " + v), 0)) + "?",
+    opciones: [op(1, true), op(0, false, T("The zero exponent gives 1, not 0.", "El exponente cero da 1, no 0.")), op(c, false, T("The zero affects the whole parentheses, the number too.", "El cero afecta a todo el paréntesis, coeficiente incluido.")), htmlOp(ver(X(c + v, c + " " + v)), false, T("The zero exponent does not just disappear: it turns the whole parentheses into 1.", "El exponente cero no desaparece sin más: convierte todo el paréntesis en 1."))],
+    sol: T("The exponent 0 affects everything in the parentheses: (", "El exponente 0 afecta a todo lo que está dentro del paréntesis: (") + c + v + ")<sup>0</sup> = 1."};
+  if (t === 3) return {enun: cuanto + ver(X(c + v + "<sup>0</sup>", c + " " + v + VZ.pot + "0")) + "?",
+    opciones: [op(c, true), op(1, false, T("The zero affects only the " + v + ", not the " + c + ": with no parentheses, the number stays outside.", "El cero solo afecta a la " + v + ", no al " + c + ": sin paréntesis, el coeficiente queda fuera.")), op(0, false, v + "<sup>0</sup>" + T(" is 1, not 0.", " vale 1, no 0.")), htmlOp(ver(X(c + v, c + " " + v)), false, v + "<sup>0</sup>" + T(" is not " + v + ": it is 1.", " no es " + v + ": es 1."))],
+    sol: c + v + "<sup>0</sup> = " + c + " · " + v + "<sup>0</sup> = " + c + " · 1 = " + c + "."};
+  if (t === 4) return {enun: cuanto + ver(potX(MENOS + k, numVoz(-k), 0)) + "?",
+    opciones: unicas([op(-1, true), op(1, false, T("With no parentheses, the base is only the " + k + ": the minus sign stays outside.", "Sin paréntesis, la base es solo el " + k + ": el signo menos queda fuera y se conserva.")), op(0, false, T("The zero exponent gives 1, not 0.", "El exponente cero da 1, no 0.")), op(-k, false, "")]),
+    sol: T("The base is ", "La base es ") + k + ": " + MENOS + k + "<sup>0</sup> = " + MENOS + "(" + k + "<sup>0</sup>) = " + MENOS + "1."};
+  if (t === 5) return {enun: cuanto + ver(potX("(" + MENOS + k + ")", VZ.abre + numVoz(-k) + VZ.cierra, 0)) + "?",
+    opciones: unicas([op(1, true), op(-1, false, T("With parentheses, the base is the whole " + MENOS + k + ", and any base other than zero to the power 0 is 1.", "Con paréntesis, la base es " + MENOS + k + " completa, y cualquier base distinta de cero con exponente 0 vale 1.")), op(0, false, T("The zero exponent gives 1, not 0.", "El exponente cero da 1, no 0.")), op(-k, false, "")]),
+    sol: T("The base is " + MENOS + k + ", not zero: (", "La base es " + MENOS + k + ", distinta de cero: (") + MENOS + k + ")<sup>0</sup> = 1."};
+  if (t === 6) return {enun: sim() + ver(entreX(xp(v, a), xp(v, a))) + ".",
+    opciones: [op(1, true), op(0, false, T("A number other than zero divided by itself is 1, not 0.", "Un número distinto de cero dividido entre sí mismo da 1, no 0.")), htmlOp(ver(X(v, v)), false, T("No factor of " + v + " is left: they all cancel.", "No queda ningún factor de " + v + ": se cancelan todos.")), htmlOp(ver(xp(v, a)), false, T("The exponents are subtracted: ", "Los exponentes se restan: ") + a + " − " + a + " = 0.")],
+    sol: T("By the quotient rule, ", "Por la regla del cociente, ") + v + "<sup>" + a + "−" + a + "</sup> = " + v + "<sup>0</sup> = 1."};
+  return {enun: sim() + ver(porX(xp(v, 0), xp(v, a))) + ".",
+    opciones: [{x: xp(v, a), ok: true, fb: ""}, op(0, false, v + "<sup>0</sup>" + T(" is 1, not 0: it does not wipe out the product.", " vale 1, no 0: no anula el producto.")), op(1, false, T("Only " + v + "<sup>0</sup> is 1; the other power stays.", "Solo " + v + "<sup>0</sup> vale 1; la otra potencia se conserva.")), {x: xp(v, a + 1), ok: false, fb: T("The zero exponent adds 0, not 1.", "El exponente cero suma 0, no 1.")}],
+    sol: v + "<sup>0</sup> · " + v + "<sup>" + a + "</sup> = 1 · " + v + "<sup>" + a + "</sup> = " + v + "<sup>" + a + "</sup>. " + T("With the product rule: 0 + ", "Con la regla del producto: 0 + ") + a + " = " + a + "."};
+}
+
+/* ============ MODULE 3 · negative exponents ============ */
+function actualizaNegativos(){
+  var b = parseInt($("ne-base").value, 10), n = parseInt($("ne-n").value, 10), cab = "", val = "";
+  for (var e = 3; e >= -4; e--){
+    cab += "<th scope=\"col\">" + b + "<sup>" + numTxt(e) + "</sup></th>";
+    val += "<td" + (e === 0 ? ' class="cero"' : (e < 0 ? ' class="neg"' : "")) + ">" + (e >= 0 ? fmt(Math.pow(b, e)) : "1/" + fmt(Math.pow(b, -e))) + "</td>";
+  }
+  $("ne-tabla").innerHTML = '<div style="overflow-x:auto"><table class="tabla-patron"><caption>' + T("Powers of " + b + " from exponent 3 down to −4: each step to the right divides by " + b + ".", "Potencias de " + b + " desde el exponente 3 hasta el −4: cada paso a la derecha divide entre " + b + ".") + "</caption><thead><tr>" + cab + "</tr></thead><tbody><tr>" + val + "</tr></tbody></table></div>";
+  var p = Math.pow(b, n), dec = b === 3 ? "≈ " + (1 / p).toFixed(4) + T(" (a repeating decimal)", " (decimal periódico)") : "= " + String(1 / p);
+  $("ne-salida").innerHTML = '<div class="linea">' + ver(igualX(xp(String(b), -n), fracX(X("1", "1"), xp(String(b), n)))) + " = " + ver(fracX(X("1", "1"), X(fmt(p), String(p)))) + " " + dec + "</div>" +
+    '<div class="linea veredicto">' + T("The answer is a small positive number: the exponent −" + n + " says “reciprocal of " + b + "<sup>" + n + "</sup>,” not “negative.”", "El resultado es un número positivo y pequeño: el exponente −" + n + " dice «recíproco de " + b + "<sup>" + n + "</sup>», no «negativo».") + "</div>";
+}
+function genNegativos(){
+  var t = ale(1, 5), v = elige(["x", "y", "a", "m"]), n = ale(2, 5), eq = T("What is ", "¿A qué equivale "), eq2 = T(" equal to?", "?");
+  if (t === 1){
+    var b = ale(2, 5), k = ale(1, 3); if (b === 2 && k === 1) k = 2;
+    var p = Math.pow(b, k), f = function(a, d){ return X(a + "/" + d, a + VZ.sobre + d); };
+    return {enun: T("What is ", "¿Cuánto vale ") + ver(xp(String(b), -k)) + "?",
+      opciones: unicas([{x: f(1, p), ok: true},
+        {x: X(MENOS + p, numVoz(-p)), ok: false, fb: T("A negative exponent does not make the number negative: it means the reciprocal.", "El exponente negativo no hace negativo al número: indica el recíproco.")},
+        {x: X(MENOS + (b * k), numVoz(-b * k)), ok: false, fb: T("Do not multiply the base by the exponent, and the answer is not negative.", "No se multiplica la base por el exponente, y el resultado no es negativo.")},
+        {x: f(1, b * k), ok: false, fb: T("Take the reciprocal of the power " + b + "<sup>" + k + "</sup> = " + p + ", not of the product " + b + " · " + k + ".", "El recíproco es de la potencia " + b + "<sup>" + k + "</sup> = " + p + ", no del producto " + b + " · " + k + ".")},
+        {x: X(String(p), String(p)), ok: false, fb: T("You still need to take the reciprocal.", "Falta tomar el recíproco.")}]),
+      sol: b + "<sup>" + MENOS + k + "</sup> = 1/" + b + "<sup>" + k + "</sup> = 1/" + p + "."};
+  }
+  if (t === 2) return {enun: eq + ver(xp(v, -n)) + eq2,
+    opciones: [{x: fracX(X("1", "1"), xp(v, n)), ok: true},
+      {x: X(MENOS + v + "<sup>" + n + "</sup>", T("minus ", "menos ") + v + VZ.pot + n), ok: false, fb: T("The sign of the exponent does not go to the number.", "El signo del exponente no pasa al número.")},
+      {x: fracX(X(String(n), String(n)), X(v, v)), ok: false, fb: T("The exponent does not come down as a number: " + v + " keeps its exponent " + n + " on the bottom.", "El exponente no baja como coeficiente: " + v + " se queda con su exponente " + n + " en el denominador.")},
+      {x: fracX(X("1", "1"), xp(v, -n)), ok: false, fb: T("When it crosses the fraction bar, the sign of the exponent changes.", "Al cruzar la barra de fracción, el signo del exponente cambia.")}],
+    sol: v + "<sup>" + MENOS + n + "</sup> = 1/" + v + "<sup>" + n + "</sup>."};
+  if (t === 3) return {enun: eq + ver(fracX(X("1", "1"), xp(v, -n))) + eq2,
+    opciones: [{x: xp(v, n), ok: true},
+      {x: fracX(X("1", "1"), xp(v, n)), ok: false, fb: T("When the factor moves up, its exponent changes sign and the 1 on top is no longer needed.", "Si el factor sube, su exponente cambia de signo y el 1 de arriba ya no hace falta.")},
+      {x: X(MENOS + v + "<sup>" + n + "</sup>", T("minus ", "menos ") + v + VZ.pot + n), ok: false, fb: T("The answer is not negative.", "El resultado no es negativo.")},
+      {x: xp(v, -n), ok: false, fb: T("When it crosses the bar, the negative exponent becomes positive.", "Al cruzar la barra, el exponente negativo pasa a positivo.")}],
+    sol: T("Moving " + v + "<sup>" + MENOS + n + "</sup> to the top changes the sign of its exponent: ", "Al subir " + v + "<sup>" + MENOS + n + "</sup> al numerador, el exponente cambia de signo: ") + v + "<sup>" + n + "</sup>."};
+  if (t === 4){
+    var c = ale(2, 9);
+    return {enun: eq + ver(X(c + v + "<sup>" + MENOS + n + "</sup>", c + " " + v + VZ.pot + numVoz(-n))) + eq2,
+      opciones: [{x: fracX(X(String(c), String(c)), xp(v, n)), ok: true},
+        {x: fracX(X("1", "1"), X(c + v + "<sup>" + n + "</sup>", c + " " + v + VZ.pot + n)), ok: false, fb: T("The negative exponent affects only the " + v + ": the " + c + " stays on top.", "El exponente negativo solo afecta a la " + v + ": el " + c + " se queda arriba.")},
+        {x: X(MENOS + c + v + "<sup>" + n + "</sup>", T("minus ", "menos ") + c + " " + v + VZ.pot + n), ok: false, fb: T("The sign of the exponent does not make the term negative.", "El signo del exponente no hace negativo al término.")},
+        {x: X(c + v + "<sup>" + n + "</sup>", c + " " + v + VZ.pot + n), ok: false, fb: T("The " + v + " still has to move to the bottom.", "Falta llevar la " + v + " al denominador.")}],
+      sol: c + v + "<sup>" + MENOS + n + "</sup> = " + c + " · 1/" + v + "<sup>" + n + "</sup> = " + c + "/" + v + "<sup>" + n + "</sup>."};
+  }
+  var a = ale(1, 6), bb = ale(2, 8), R = mMul(xv(v, a), xv(v, -bb));
+  return {enun: sim() + ver(porX(xp(v, a), xp(v, -bb))) + T(" and leave no negative exponents.", " y deje el resultado sin exponentes negativos."),
+    opciones: opcionesMono(R, [[xv(v, a + bb), T("The exponent " + MENOS + bb + " is negative: adding it means subtracting " + bb + ".", "El exponente " + MENOS + bb + " es negativo: sumarlo es restar " + bb + ".")],
+      [xv(v, -(a + bb)), ""], [xv(v, bb - a), T("Check the sign: ", "Revise el signo: ") + a + " + (" + MENOS + bb + ") = " + numTxt(a - bb) + "."]]),
+    sol: T("Product rule: ", "Regla del producto: ") + a + " + (" + MENOS + bb + ") = " + numTxt(a - bb) + (a - bb < 0 ? T(", and the negative exponent moves to the bottom.", ", y el exponente negativo se pasa al denominador.") : a - bb === 0 ? T(", and ", ", y ") + v + "<sup>0</sup> = 1." : ".")};
+}
+
+/* ============ MODULE 4 · which rule was used? ============ */
+var REGLAS5 = [["producto", T("Product of powers", "Producto de potencias")], ["potpot", T("Power of a power", "Potencia de una potencia")], ["potprod", T("Power of a product", "Potencia de un producto")],
+               ["cociente", T("Quotient of powers", "Cociente de potencias")], ["cero", T("Zero exponent", "Exponente cero")], ["negativo", T("Negative exponent", "Exponente negativo")]];
+function genCinco(){
+  var r = elige(REGLAS5), v = elige(["x", "y", "a"]), paso, a = ale(2, 7), b = ale(2, 6), c = ale(2, 5), bb = b > 4 ? 3 : b;
+  if (r[0] === "producto") paso = igualX(porX(xp(v, a), xp(v, b)), xp(v, a + b));
+  else if (r[0] === "potpot") paso = igualX(parX(xp(v, a), b), xp(v, a * b));
+  else if (r[0] === "potprod") paso = igualX(parX(X(c + v, c + " " + v), bb), X(Math.pow(c, bb) + v + "<sup>" + bb + "</sup>", Math.pow(c, bb) + " " + v + VZ.pot + bb));
+  else if (r[0] === "cociente") paso = igualX(entreX(xp(v, a + b), xp(v, b)), xp(v, a));
+  else if (r[0] === "cero") paso = igualX(parX(X(c + v, c + " " + v), 0), X("1", "1"));
+  else paso = igualX(xp(v, -a), fracX(X("1", "1"), xp(v, a)));
+  var otras = mezcla(REGLAS5.filter(function(x){ return x[0] !== r[0]; })).slice(0, 3);
+  var porque = {producto: T("Two powers with the same base are multiplied: the exponents are added.", "Dos potencias de la misma base multiplicadas: los exponentes se suman."),
+    potpot: T("A power raised to a power: the exponents are multiplied.", "Una potencia elevada a otra: los exponentes se multiplican."),
+    potprod: T("A product raised to an exponent: the exponent goes to each factor, the number too.", "Un producto elevado a un exponente: el exponente se reparte a cada factor, coeficiente incluido."),
+    cociente: T("Two powers with the same base are divided: the exponents are subtracted.", "Dos potencias de la misma base divididas: los exponentes se restan."),
+    cero: T("Any base other than zero to the power 0 is 1.", "Cualquier base distinta de cero con exponente 0 vale 1."),
+    negativo: T("A negative exponent means the reciprocal of the positive power.", "El exponente negativo indica el recíproco de la potencia positiva.")};
+  var ops = [htmlOp(r[1], true)].concat(otras.map(function(o){ return htmlOp(o[1], false, T("That rule does not fit this step. Look at the operation on the left of the equal sign.", "Esa regla no corresponde a este paso. Fíjese en la operación a la izquierda del signo igual.")); }));
+  return {enun: T("Which rule explains this step? ", "¿Qué regla justifica este paso? ") + ver(paso), opciones: ops, sol: porque[r[0]], regla: r[0]};
+}
+
+/* ============ MODULE 5 · checking with numbers ============ */
+var V = {caso: null};
+function genCaso(){
+  var t = ale(1, 5), bien = Math.random() < 0.5, orig, R, P, error;
+  if (t === 1){
+    var c1 = ale(2, 5), c2 = ale(2, 5), a = ale(2, 4), b = ale(2, 4), A = mono(c1, {x: a}), B = mono(c2, {x: b});
+    orig = porX(parX(mLinea(A)), parX(mLinea(B))); R = mMul(A, B);
+    if (Math.random() < 0.5 && !(a === 2 && b === 2)){ P = mono(c1 * c2, {x: a * b}); error = T("The exponents were multiplied; in a product they are added.", "Se multiplicaron los exponentes; en un producto se suman."); }
+    else { P = mono(c1 + c2, {x: a + b}); error = T("The numbers were added; they are multiplied.", "Se sumaron los coeficientes; se multiplican."); }
+  } else if (t === 2){
+    var c = ale(2, 4), a2 = ale(1, 3), n = ale(2, 3), A2 = mono(c, {x: a2});
+    orig = parX(mLinea(A2), n); R = mPow(A2, n); P = mono(c, R.e); error = T("The number was not raised: ", "Faltó elevar el coeficiente: ") + c + "<sup>" + n + "</sup> = " + Math.pow(c, n) + ".";
+  } else if (t === 3){
+    var b3 = ale(2, 4), a3 = b3 + ale(1, 4);
+    orig = entreX(xp("x", a3), xp("x", b3)); R = xv("x", a3 - b3); P = xv("x", b3 - a3); error = T("The subtraction was done backward: it is the top exponent minus the bottom one.", "Se restó al revés: es el exponente de arriba menos el de abajo.");
+  } else if (t === 4){
+    var a4 = ale(2, 5), b4 = ale(1, 4); if (b4 === a4) b4 = a4 + 1;
+    orig = porX(xp("x", a4), xp("x", -b4)); R = xv("x", a4 - b4); P = xv("x", a4 + b4); error = T("The sign of the negative exponent was ignored: ", "Se ignoró el signo del exponente negativo: ") + a4 + " + (" + MENOS + b4 + ") = " + numTxt(a4 - b4) + ".";
+  } else {
+    var k = ale(2, 7), a5 = ale(2, 5);
+    orig = porX(X(k + "x<sup>0</sup>", k + " x" + VZ.pot + "0"), xp("x", a5)); R = mono(k, {x: a5}); P = xv("x", a5); error = T("The zero exponent affects only the x: " + k + "x<sup>0</sup> is " + k + ", not 1.", "El exponente cero solo afecta a la x: " + k + "x<sup>0</sup> vale " + k + ", no 1.");
+  }
+  if (bien) P = R;
+  return {orig: orig, R: R, P: P, bien: mIgual(P, R), error: error};
+}
+function pruebaValor(x){
+  var o = mValor(V.caso.R, {x: x}), p = mValor(V.caso.P, {x: x});
+  var h = '<div class="linea">' + T("With x = " + numTxt(x) + ", the original expression is ", "Con x = " + numTxt(x) + ", la expresión original vale ") + "<strong>" + ver(valX(o)) + "</strong>.</div>" +
+          '<div class="linea">' + T("With x = " + numTxt(x) + ", the proposed answer is ", "Con x = " + numTxt(x) + ", la simplificación propuesta vale ") + "<strong>" + ver(valX(p)) + "</strong>.</div>";
+  h += '<div class="linea veredicto">' + (ratIgual(o, p)
+        ? T("The two values match.", "Los dos valores coinciden.") + (Math.abs(x) === 1 ? T(" But with x = " + numTxt(x) + " almost every power gives the same: try 2 or 3 before you trust it.", " Pero con x = " + numTxt(x) + " casi todas las potencias dan lo mismo: pruebe con 2 o con 3 antes de fiarse.") : T(" That is a good sign; if they also match with another value, the answer is almost surely right.", " Es buena señal; si coinciden también con otro valor, la simplificación es casi con seguridad correcta."))
+        : T("The values do not match: the work has a mistake.", "Los valores no coinciden: la simplificación tiene un error.")) + "</div>";
+  return h;
+}
+function probar(){
+  if (!V.caso) return;
+  var x = leeEntero("v-x", -5, 5, "v-aviso", T("test value", "valor de prueba"));
+  if (x === null) return;
+  if (x === 0){ $("v-x").classList.add("error"); $("v-aviso").className = "caja-aviso visible"; $("v-aviso").textContent = T("With x = 0 there are divisions by zero or powers that are not defined. Choose another value, like 2 or 3.", "Con x = 0 hay divisiones entre cero o potencias sin definir. Elija otro valor, como 2 o 3."); return; }
+  limpiaAviso("v-aviso");
+  $("v-salida").innerHTML = pruebaValor(x);
+}
+function genVerifica(){
+  var c = genCaso(); V.caso = c;
+  if ($("v-salida")){ $("v-salida").innerHTML = ""; limpiaAviso("v-aviso"); }
+  var expl = c.bien ? T("The work is correct: ", "La simplificación es correcta: ") + ver(igualX(c.orig, mFinal(c.R))) + "."
+                    : T("The work has a mistake. ", "La simplificación tiene un error. ") + c.error + T(" The right answer is ", " Lo correcto es ") + ver(mFinal(c.R)) + ".";
+  return {enun: T("Someone simplified it like this: ", "Alguien simplificó así: ") + ver(igualX(c.orig, mFinal(c.P))), enOrden: true,
+    opciones: [htmlOp(T("The work is correct", "La simplificación es correcta"), c.bien), htmlOp(T("The work has a mistake", "La simplificación tiene un error"), !c.bien)],
+    sol: expl + " " + T("Test with x = 2: ", "Prueba con x = 2: ") + (function(){ var o = mValor(c.R, {x: 2}), p = mValor(c.P, {x: 2}); return T("the original gives ", "la original da ") + ver(valX(o)) + T(" and the proposed answer gives ", " y la propuesta da ") + ver(valX(p)) + "."; })()};
+}
+
+/* ============ Start ============ */
+["co-m", "co-n"].forEach(function(id){ $(id).addEventListener("input", actualizaCociente); });
+actualizaCociente();
+ESCRITA("p-cociente1", genCociente1);
+OM("p-cociente2", genCociente2);
+$("ce-base").addEventListener("change", actualizaCero);
+actualizaCero();
+OM("p-cero", genCero);
+$("ne-base").addEventListener("change", actualizaNegativos);
+$("ne-n").addEventListener("change", actualizaNegativos);
+actualizaNegativos();
+OM("p-negativos", genNegativos);
+OM("p-cinco", genCinco, REGLAS5);
+OM("p-verifica", genVerifica);
+$("v-probar").addEventListener("click", probar);
+$("v-x").addEventListener("keydown", function(e){ if (e.key === "Enter") probar(); });
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

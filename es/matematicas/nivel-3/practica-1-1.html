@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 1.1 · Regla del producto, potencia de potencia y potencia de un producto — práctica (español) — construida con tools/build_n3_lesson_1_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.1 · Regla del producto, potencia de potencia y potencia de un producto · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-1-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .fichas{display:flex;flex-wrap:wrap;align-items:center;gap:6px;justify-content:center;margin:14px 0;font-size:18px;}
+  .fichas .grupo{display:inline-flex;flex-wrap:nowrap;max-width:none;gap:4px;padding:4px;border:1px dashed #90a4ae;border-radius:10px;}
+  .ficha{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 6px;border-radius:8px;font-weight:700;border:2px solid var(--tema);background:var(--tema-bg);color:var(--tema-d);}
+  .ficha.b{border-color:#00695c;background:#e0f2f1;color:#004d40;}
+  .ficha.tachada{border-color:#b71c1c;background:#ffebee;color:#b71c1c;text-decoration:line-through;text-decoration-thickness:3px;}
+  .signo{font-weight:700;font-size:20px;color:var(--tema-d);padding:0 2px;}
+  .linea-frac{display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0;}
+  .linea-frac .barra{width:100%;max-width:520px;border-top:3px solid var(--tema-d);}
+  .tabla-patron{border-collapse:collapse;margin:12px auto;font-size:17px;}
+  .tabla-patron caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-patron th,.tabla-patron td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;min-width:64px;}
+  .tabla-patron th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-patron td.cero{background:#e8f5e9;font-weight:700;}
+  .tabla-patron td.neg{background:#fff8e1;}
+  .dividir{font-size:13px;color:var(--gris);}
+  .marcador-regla{margin-top:12px;}
+  .marcador-regla table{border-collapse:collapse;font-size:14px;}
+  .marcador-regla caption{text-align:left;font-size:14px;color:var(--gris);padding-bottom:4px;}
+  .marcador-regla th,.marcador-regla td{border:1px solid #c8c8c8;padding:5px 10px;text-align:left;}
+  .marcador-regla th{background:var(--tema-bg);color:var(--tema-d);}
+  .paso .regla{display:inline-block;font-size:13px;font-weight:700;color:var(--tema-d);background:var(--tema-bg);border-radius:6px;padding:1px 8px;margin-left:6px;}
+  .fila-resp{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  .salida .ex,.enun .ex,.opcion .ex{font-size:18px;}
+  .campo input.bien,.campo select.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .salida:empty{display:none;}
+  .campo select.error{border-color:#b71c1c;background:#ffebee;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 1 · Reglas de los exponentes</div>
+    <h1>Lección 1.1 · Regla del producto, potencia de potencia y potencia de un producto</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#notacion">La notación exponencial</a></li>
+      <li><a href="#producto">La regla del producto</a></li>
+      <li><a href="#potencia-potencia">La potencia de una potencia</a></li>
+      <li><a href="#potencia-producto">La potencia de un producto</a></li>
+      <li><a href="#tres-reglas">Las tres reglas juntas</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="notacion" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La notación exponencial</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En una potencia a<sup>n</sup>, la <strong>base</strong> a es el factor que se repite y el <strong>exponente</strong> n dice cuántas veces se repite. <strong>El exponente cuenta factores</strong>: si sabe contar los factores, siempre llega al exponente correcto, aunque no recuerde la regla.</p>
+      <h3>Explorador de potencias</h3>
+      <p>Elija una base y un exponente, y observe la forma desarrollada y el valor.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="n-base">Base</label><select id="n-base"><option value="2">2</option><option value="3" selected>3</option><option value="5">5</option><option value="10">10</option><option value="-2">−2</option><option value="-3">−3</option><option value="x">x</option><option value="a">a</option></select></div>
+        <div class="campo"><label for="n-exp">Exponente (de 1 a 8)</label><input type="number" id="n-exp" value="4" min="1" max="8" step="1"></div>
+      </div></div>
+      <div class="caja-aviso" id="n-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="n-salida"></div>
+      <div class="caja-atencion"><strong>El paréntesis manda:</strong> en (−3)<sup>4</sup> la base es −3 y el signo se multiplica cuatro veces, así que el resultado es positivo. En −3<sup>4</sup> la base es solo el 3; el signo menos queda fuera y el resultado es −81. Elija una base negativa en el explorador para verlo.</div>
+      <h3>Practique: potencias y forma desarrollada</h3>
+      <div class="practica" id="p-notacion">
+        <div class="enun" id="p-notacion-enun"></div>
+        <div class="opciones" id="p-notacion-opciones"></div>
+        <div class="fb" id="p-notacion-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-notacion-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-notacion-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="producto">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La regla del producto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Al multiplicar dos potencias de la <strong>misma base</strong>, los factores se acumulan. Por eso los exponentes <strong>se suman</strong>:</p>
+      <div class="formula">a<sup>m</sup> · a<sup>n</sup> = a<sup>m + n</sup></div>
+      <h3>Contador de factores</h3>
+      <p>Cambie los dos exponentes y cuente las fichas: cada ficha es un factor de la base.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="pr-m">Primer exponente</label><input type="number" id="pr-m" value="3" min="1" max="7" step="1"></div>
+        <div class="campo"><label for="pr-n">Segundo exponente</label><input type="number" id="pr-n" value="2" min="1" max="7" step="1"></div>
+      </div></div>
+      <div class="caja-aviso" id="pr-aviso" role="alert"></div>
+      <div class="fichas" id="pr-fichas" aria-hidden="true"></div>
+      <div class="salida" aria-live="polite" id="pr-salida"></div>
+      <div class="caja-atencion"><strong>Dos errores frecuentes:</strong> los exponentes se suman, no se multiplican (a<sup>3</sup> · a<sup>2</sup> = a<sup>5</sup>, no a<sup>6</sup>). Y la regla solo vale para bases iguales: x<sup>2</sup> · y<sup>3</sup> se queda como está.</div>
+      <h3>Practique: escriba el exponente del resultado</h3>
+      <div class="practica" id="p-producto1">
+        <div class="enun" id="p-producto1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p-producto1-r">Exponente del resultado</label><input type="text" autocomplete="off" class="corto" id="p-producto1-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −2 o -2.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p-producto1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p-producto1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p-producto1-fb" role="status"></div>
+        <p class="marcador" id="p-producto1-marcador"></p>
+      </div>
+      <h3>Practique: con coeficientes y con varias bases</h3>
+      <p>Los coeficientes numéricos se <strong>multiplican</strong>; los exponentes de cada base se <strong>suman</strong> por separado.</p>
+      
+      <div class="practica" id="p-producto2">
+        <div class="enun" id="p-producto2-enun"></div>
+        <div class="opciones" id="p-producto2-opciones"></div>
+        <div class="fb" id="p-producto2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-producto2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-producto2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="potencia-potencia">
+    <summary><span class="num" aria-hidden="true">3</span><h2>La potencia de una potencia</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando una potencia se eleva a otro exponente, la potencia entera se repite como factor. Al contar las fichas se ve que los exponentes <strong>se multiplican</strong>:</p>
+      <div class="formula">(a<sup>m</sup>)<sup>n</sup> = a<sup>m · n</sup></div>
+      <h3>Grupos de factores</h3>
+      <p>El exponente de dentro dice cuántas fichas tiene cada grupo; el de fuera, cuántos grupos hay.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="pp-m">Exponente de dentro</label><input type="number" id="pp-m" value="2" min="1" max="5" step="1"></div>
+        <div class="campo"><label for="pp-n">Exponente de fuera</label><input type="number" id="pp-n" value="3" min="1" max="4" step="1"></div>
+      </div></div>
+      <div class="caja-aviso" id="pp-aviso" role="alert"></div>
+      <div class="fichas" id="pp-fichas" aria-hidden="true"></div>
+      <div class="salida" aria-live="polite" id="pp-salida"></div>
+      <div class="caja-atencion"><strong>No confunda las dos reglas:</strong> en a<sup>5</sup> · a<sup>4</sup> las potencias están <em>multiplicadas</em> y los exponentes se suman (a<sup>9</sup>); en (a<sup>5</sup>)<sup>4</sup> una potencia está <em>elevada</em> a la otra y los exponentes se multiplican (a<sup>20</sup>).</div>
+      <h3>Practique: ¿sumar o multiplicar?</h3>
+      <p>Aquí se mezclan las dos formas. Antes de elegir, fíjese si hay paréntesis con exponente.</p>
+      
+      <div class="practica" id="p-potpot">
+        <div class="enun" id="p-potpot-enun"></div>
+        <div class="opciones" id="p-potpot-opciones"></div>
+        <div class="fb" id="p-potpot-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-potpot-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-potpot-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="potencia-producto">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La potencia de un producto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando lo que se eleva es un producto, el exponente <strong>se reparte a cada factor</strong>, incluido el coeficiente numérico:</p>
+      <div class="formula">(a · b)<sup>n</sup> = a<sup>n</sup> · b<sup>n</sup></div>
+      <h3>Repartidor del exponente</h3>
+      <p>Arme un producto dentro del paréntesis y observe cómo el exponente de fuera llega a cada factor.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="px-c">Coeficiente</label><input type="number" id="px-c" value="2" min="1" max="5" step="1"></div>
+        <div class="campo"><label for="px-a">Exponente de x</label><input type="number" id="px-a" value="1" min="1" max="4" step="1"></div>
+        <div class="campo"><label for="px-b">Exponente de y (0 = sin y)</label><input type="number" id="px-b" value="0" min="0" max="3" step="1"></div>
+        <div class="campo"><label for="px-n">Exponente de fuera</label><input type="number" id="px-n" value="3" min="2" max="4" step="1"></div>
+      </div></div>
+      <div class="caja-aviso" id="px-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="px-salida"></div>
+      <div class="caja-atencion"><strong>El error más frecuente:</strong> olvidar elevar el coeficiente. (2x)<sup>3</sup> no es 2x<sup>3</sup>: el 2 también se eleva al cubo y el resultado es 8x<sup>3</sup>. Y tampoco es 6x<sup>3</sup>: elevar al cubo no es multiplicar por 3.</div>
+      <h3>Practique: reparta el exponente</h3>
+      <div class="practica" id="p-potprod">
+        <div class="enun" id="p-potprod-enun"></div>
+        <div class="opciones" id="p-potprod-opciones"></div>
+        <div class="fb" id="p-potprod-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-potprod-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-potprod-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="tres-reglas">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Las tres reglas juntas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="tabla-scroll" role="region" tabindex="0" aria-label="Las tres reglas (tabla desplazable horizontalmente)"><table class="reglas"><caption>Las tres reglas de la multiplicación con exponentes: nombre, patrón y ejemplo.</caption><thead><tr><th scope="col">Regla</th><th scope="col">Patrón</th><th scope="col">Ejemplo</th></tr></thead><tbody><tr><td>Producto de potencias</td><td>a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup> (se suman)</td><td>x<sup>4</sup> · x<sup>3</sup> = x<sup>7</sup></td></tr><tr><td>Potencia de una potencia</td><td>(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup> (se multiplican)</td><td>(x<sup>4</sup>)<sup>3</sup> = x<sup>12</sup></td></tr><tr><td>Potencia de un producto</td><td>(a · b)<sup>n</sup> = a<sup>n</sup> · b<sup>n</sup> (se reparte)</td><td>(2x)<sup>3</sup> = 8x<sup>3</sup></td></tr></tbody></table></div>
+      <div class="caja-tip"><strong>Estrategia:</strong> resuelva primero los paréntesis con exponente (potencia de una potencia o de un producto) y después combine con la regla del producto. Trabajar de adentro hacia afuera evita la mayoría de los errores.</div>
+      <h3>Practique: expresiones mixtas</h3>
+      <p>Cada ejercicio se centra en una regla o las combina. La tabla de debajo del ejercicio le dice qué regla necesita repasar.</p>
+      
+      <div class="practica" id="p-tres">
+        <div class="enun" id="p-tres-enun"></div>
+        <div class="opciones" id="p-tres-opciones"></div>
+        <div class="fb" id="p-tres-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-tres-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-tres-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 1 · Reglas de los exponentes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/exponents.js"></script>
+<script>
+var VARS = ["x", "y", "a", "m", "n", "b"];
+function fac(n){ return n === 1 ? T(" factor", " factor") : T(" factors", " factores"); }
+
+/* ============ MODULE 1 · exponential notation ============ */
+function actualizaNotacion(){
+  var n = leeEntero("n-exp", 1, 8, "n-aviso", T("exponent", "exponente"));
+  if (n === null){ $("n-salida").innerHTML = ""; return; }
+  limpiaAviso("n-aviso");
+  var bv = $("n-base").value, h = "", f = [], esVar = isNaN(parseInt(bv, 10));
+  if (esVar){
+    for (var i = 0; i < n; i++) f.push(bv);
+    h += '<div class="linea">' + T("Base", "Base") + ': <strong>' + bv + "</strong> · " + T("exponent", "exponente") + ": <strong>" + n + "</strong></div>";
+    h += '<div class="linea">' + T("Written out", "Forma desarrollada") + ": " + ver(igualX(xp(bv, n), X(f.join(" · "), f.join(VZ.por)))) + "</div>";
+    h += '<div class="linea veredicto">' + n + fac(n) + T(" of ", " de ") + bv + (n === 1 ? T(". A letter on its own already has exponent 1, even if you do not write it.", ". Una letra sola ya tiene exponente 1, aunque no se escriba.") : ".") + "</div>";
+  } else {
+    var b = parseInt(bv, 10), bH = b < 0 ? "(" + numTxt(b) + ")" : String(b), bS = b < 0 ? VZ.abre + numVoz(b) + VZ.cierra : String(b);
+    for (var j = 0; j < n; j++) f.push(bH);
+    var valor = Math.pow(b, n);
+    h += '<div class="linea">' + T("Base", "Base") + ": <strong>" + numTxt(b) + "</strong> · " + T("exponent", "exponente") + ": <strong>" + n + "</strong></div>";
+    h += '<div class="linea">' + ver(igualX(potX(bH, bS, n), X(f.join(" · "), f.join(VZ.por)))) + " = <strong>" + fmt(valor) + "</strong></div>";
+    if (b < 0){
+      var sinPar = -Math.pow(-b, n);
+      h += '<div class="linea">' + T("Without parentheses", "Sin paréntesis") + ": " + ver(potX(MENOS + Math.abs(b), numVoz(b), n)) + " = " + MENOS + "(" + Array(n + 1).join(String(-b) + " · ").slice(0, -3) + ") = <strong>" + fmt(sinPar) + "</strong></div>";
+      h += '<div class="linea veredicto">' + (n % 2 === 0
+        ? T("With an even exponent, (" + numTxt(b) + ")<sup>" + n + "</sup> is positive; without parentheses the answer is negative. They are not the same.", "Con exponente par, (" + numTxt(b) + ")<sup>" + n + "</sup> es positivo; sin paréntesis el resultado es negativo. No son lo mismo.")
+        : T("With an odd exponent the two answers are equal, but for different reasons: look at where the sign is.", "Con exponente impar los dos resultados coinciden, pero por razones distintas: fíjese en dónde está el signo.")) + "</div>";
+    } else h += '<div class="linea veredicto">' + n + fac(n) + T(" of ", " de ") + b + T(": the value is ", ": el valor es ") + fmt(valor) + ".</div>";
+  }
+  $("n-salida").innerHTML = h;
+}
+function genNotacion(){
+  var t = ale(1, 3);
+  if (t === 1){
+    var b, n;
+    do { b = ale(2, 5); n = ale(2, 4); } while ((b === 2 && n === 2) || Math.pow(b, n) > 625);
+    var v = Math.pow(b, n);
+    return { enun: T("What is ", "¿Cuánto vale ") + ver(xp(String(b), n)) + "?",
+      opciones: unicas([numOp(v, true),
+        numOp(b * n, false, T("You multiplied the base by the exponent. The exponent says how many times the base repeats as a factor.", "Multiplicó la base por el exponente. El exponente dice cuántas veces se repite la base como factor.")),
+        numOp(Math.pow(n, b), false, T("You swapped the base and the exponent.", "Intercambió la base y el exponente.")),
+        numOp(Math.pow(b, n - 1), false, T("One factor is missing: count again how many times the base appears.", "Le falta un factor: cuente otra vez cuántas veces aparece la base.")),
+        numOp(v + b, false, "")]),
+      sol: ver(xp(String(b), n)) + " = " + Array(n + 1).join(b + " · ").slice(0, -3) + " = " + v + "." };
+  }
+  if (t === 2){
+    var b2 = ale(2, 4), n2 = ale(2, 4), con = Math.random() < 0.5;
+    if (b2 === 2 && n2 === 2) n2 = 3;
+    var val = con ? Math.pow(-b2, n2) : -Math.pow(b2, n2);
+    var ex = con ? potX("(" + MENOS + b2 + ")", VZ.abre + numVoz(-b2) + VZ.cierra, n2) : potX(MENOS + b2, numVoz(-b2), n2);
+    var expl = con
+      ? T("The base is " + MENOS + b2 + ": the sign is multiplied " + n2 + " times, and with an " + (n2 % 2 === 0 ? "even exponent the answer is positive." : "odd exponent the answer is negative."),
+          "La base es " + MENOS + b2 + ": el signo se multiplica " + n2 + " veces, y con exponente " + (n2 % 2 === 0 ? "par el resultado es positivo." : "impar el resultado es negativo."))
+      : T("With no parentheses, the base is only the " + b2 + ": first " + b2 + "<sup>" + n2 + "</sup> = " + Math.pow(b2, n2) + ", then the minus sign goes in front.",
+          "Sin paréntesis, la base es solo el " + b2 + ": primero " + b2 + "<sup>" + n2 + "</sup> = " + Math.pow(b2, n2) + ", y después el signo menos se pone delante.");
+    return { enun: T("What is ", "¿Cuánto vale ") + ver(ex) + "?",
+      opciones: unicas([numOp(val, true),
+        numOp(-val, false, T("The sign is wrong: check whether the minus sign is inside the parentheses or outside.", "El signo no es el correcto: fíjese si el signo menos está dentro del paréntesis o fuera.")),
+        numOp(-b2 * n2, false, T("You multiplied the base by the exponent.", "Multiplicó la base por el exponente.")),
+        numOp(b2 * n2, false, T("You multiplied the base by the exponent and lost the sign.", "Multiplicó la base por el exponente y además perdió el signo."))]),
+      sol: expl };
+  }
+  var v3 = elige(VARS), k = ale(3, 7), f = [];
+  for (var i = 0; i < k; i++) f.push(v3);
+  return { enun: T("How do you write ", "¿Cómo se escribe ") + ver(X(f.join(" · "), f.join(VZ.por))) + T(" with an exponent?", " con un exponente?"),
+    opciones: [{x: xp(v3, k), ok: true},
+      {x: X(k + v3, k + " " + v3), ok: false, fb: T(k + v3 + " means " + v3 + " + " + v3 + " + …, a repeated addition, not a repeated multiplication.", k + v3 + " significa " + v3 + " + " + v3 + " + …, una suma repetida, no una multiplicación repetida.")},
+      {x: X(k + "<sup>" + v3 + "</sup>", k + VZ.pot + v3), ok: false, fb: T("The base is " + v3 + " and the exponent is " + k + ": you swapped them.", "La base es " + v3 + " y el exponente es " + k + ": los puso al revés.")},
+      {x: xp(v3, k - 1), ok: false, fb: T("Count the factors again: there are " + k + ".", "Cuente otra vez los factores: son " + k + ".")}],
+    sol: T("There are " + k + " factors of " + v3 + ", so the exponent is " + k + ".", "Hay " + k + " factores de " + v3 + ", así que el exponente es " + k + ".") };
+}
+
+/* ============ MODULE 2 · the product rule ============ */
+function actualizaProducto(){
+  var m = leeEntero("pr-m", 1, 7, "pr-aviso", T("first exponent", "primer exponente"));
+  var n = m === null ? null : leeEntero("pr-n", 1, 7, "pr-aviso", T("second exponent", "segundo exponente"));
+  if (m === null || n === null){ $("pr-fichas").innerHTML = ""; $("pr-salida").innerHTML = ""; return; }
+  limpiaAviso("pr-aviso");
+  $("pr-fichas").innerHTML = '<span class="grupo">' + fichas("a", m) + '</span><span class="signo">·</span><span class="grupo">' + fichas("a", n, "b") + '</span><span class="signo">=</span><span class="grupo">' + fichas("a", m) + fichas("a", n, "b") + "</span>";
+  var h = '<div class="linea">' + ver(igualX(porX(xp("a", m), xp("a", n)), xp("a", m + n))) + "</div>";
+  h += '<div class="linea veredicto">' + m + fac(m) + T(" plus ", " más ") + n + fac(n) + T(" make ", " son ") + (m + n) + T(" factors: ", " factores: ") + m + " + " + n + " = " + (m + n) + ".</div>";
+  if (m === 1 || n === 1) h += '<div class="linea">' + T("An a on its own counts as a<sup>1</sup>: it adds one factor.", "Una a sola cuenta como a<sup>1</sup>: aporta un factor.") + "</div>";
+  $("pr-salida").innerHTML = h;
+}
+function genProducto1(){
+  var t = ale(1, 4), v = elige(VARS), a, b, c, et = T("Exponent of the answer", "Exponente del resultado");
+  if (t === 1){
+    a = ale(2, 9); b = ale(2, 9);
+    return { enun: ver(igualX(porX(xp(v, a), xp(v, b)), preg(v))), etiqueta: et, resp: a + b,
+      pista: function(x){ return x === a * b ? T("You multiplied the exponents. When powers are multiplied, the exponents are added.", "Multiplicó los exponentes. Cuando las potencias están multiplicadas, los exponentes se suman.") : null; },
+      sol: T("Same base: add the exponents, " + a + " + " + b + " = " + (a + b) + ".", "Misma base: se suman los exponentes, " + a + " + " + b + " = " + (a + b) + ".") };
+  }
+  if (t === 2){
+    a = ale(2, 6); b = ale(2, 6); c = ale(2, 6);
+    return { enun: ver(igualX(porX(porX(xp(v, a), xp(v, b)), xp(v, c)), preg(v))), etiqueta: et, resp: a + b + c,
+      pista: function(x){ return x === a * b * c ? T("You multiplied the exponents; with powers that are multiplied, add them.", "Multiplicó los exponentes; con potencias multiplicadas se suman.") : (x === a + b || x === b + c || x === a + c ? T("You left out one of the three exponents.", "Le faltó uno de los tres exponentes.") : null); },
+      sol: T("Add the three exponents: ", "Se suman los tres exponentes: ") + a + " + " + b + " + " + c + " = " + (a + b + c) + "." };
+  }
+  if (t === 3){
+    a = ale(2, 9);
+    var ex = Math.random() < 0.5 ? porX(X(v, v), xp(v, a)) : porX(xp(v, a), X(v, v));
+    return { enun: ver(igualX(ex, preg(v))), etiqueta: et, resp: a + 1,
+      pista: function(x){ return x === a ? T("The " + v + " on its own is not zero factors: it is " + v + "<sup>1</sup>, one factor.", "La " + v + " sola no vale cero factores: vale " + v + "<sup>1</sup>, un factor.") : null; },
+      sol: T("Remember that ", "Recuerde que ") + v + " = " + v + "<sup>1</sup>: " + a + " + 1 = " + (a + 1) + "." };
+  }
+  var base = ale(2, 5), bs = String(base); a = ale(2, 6); b = ale(2, 6);
+  return { enun: ver(igualX(porX(xp(bs, a), xp(bs, b)), preg(bs))), etiqueta: et, resp: a + b,
+    pista: function(x){ return x === a * b ? T("You multiplied the exponents; add them.", "Multiplicó los exponentes; se suman.") : null; },
+    sol: T("The base " + base + " stays the same and the exponents are added: " + a + " + " + b + " = " + (a + b) + ". The base is not multiplied: it is not " + (base * base) + "<sup>" + (a + b) + "</sup>.",
+           "La base " + base + " se mantiene y se suman los exponentes: " + a + " + " + b + " = " + (a + b) + ". La base no se multiplica: no es " + (base * base) + "<sup>" + (a + b) + "</sup>.") };
+}
+function genProducto2(){
+  var t = ale(1, 3), v = elige(["x", "a", "m"]), sim = T("Simplify ", "Simplifique ");
+  if (t === 1){
+    var c1 = ale(2, 7), c2 = ale(2, 7), a = ale(2, 6), b = ale(2, 6);
+    if (a === 2 && b === 2) b = 3;
+    var A = mono(c1, e1(v, a)), B = mono(c2, e1(v, b)), R = mMul(A, B);
+    return { enun: sim + ver(porX(parX(mLinea(A)), parX(mLinea(B)))) + ".",
+      opciones: opcionesMono(R, [
+        [mono(c1 + c2, R.e), T("You added the numbers. They are multiplied: ", "Sumó los coeficientes. Se multiplican: ") + c1 + " · " + c2 + " = " + (c1 * c2) + "."],
+        [mono(c1 * c2, e1(v, a * b)), T("You multiplied the exponents. They are added.", "Multiplicó los exponentes. Se suman.")],
+        [mono(c1 + c2, e1(v, a * b)), T("You swapped the two operations: the numbers are multiplied and the exponents are added.", "Cambió las dos operaciones: los coeficientes se multiplican y los exponentes se suman.")]]),
+      sol: T("Numbers: ", "Coeficientes: ") + c1 + " · " + c2 + " = " + (c1 * c2) + T(". Exponents of ", ". Exponentes de ") + v + ": " + a + " + " + b + " = " + (a + b) + "." };
+  }
+  if (t === 2){
+    var p = ale(1, 5), q = ale(1, 4), r = ale(1, 5), s = ale(1, 4), k1 = ale(1, 5), k2 = ale(2, 5);
+    var A2 = mono(k1, {x: p, y: q}), B2 = mono(k2, {x: r, y: s}), R2 = mMul(A2, B2);
+    return { enun: sim + ver(porX(parX(mLinea(A2)), parX(mLinea(B2)))) + ".",
+      opciones: opcionesMono(R2, [
+        [mono(k1 * k2, {x: p + s, y: q + r}), T("You crossed the exponents: each base adds only its own exponents.", "Cruzó los exponentes: cada base suma solo sus propios exponentes.")],
+        [mono(k1 + k2, R2.e), T("You added the numbers; they are multiplied.", "Sumó los coeficientes; se multiplican.")],
+        [mono(k1 * k2, {x: p * r, y: q * s}), T("You multiplied the exponents; they are added.", "Multiplicó los exponentes; se suman.")],
+        [mono(k1 * k2, {x: p + q + r + s}), T("You put different bases together: x and y do not combine.", "Juntó bases distintas: la x y la y no se combinan entre sí.")]]),
+      sol: T("Numbers: ", "Coeficientes: ") + k1 + " · " + k2 + " = " + (k1 * k2) + T(". Exponents of x: ", ". Exponentes de x: ") + p + " + " + r + " = " + (p + r) + T(". Exponents of y: ", ". Exponentes de y: ") + q + " + " + s + " = " + (q + s) + "." };
+  }
+  var ea = ale(2, 6), eb = ale(2, 6);
+  if (ea + eb === ea * eb) eb = 3;
+  return { enun: sim + ver(porX(xp("x", ea), xp("y", eb))) + ".",
+    opciones: [
+      {html: ver(mLinea(mono(1, {x: ea, y: eb}))) + T(" (it is already simplified)", " (ya está simplificada)"), ok: true, fb: T("The bases are different: there is nothing to combine.", "Las bases son distintas: no hay nada que combinar.")},
+      {x: parX(X("xy", "x y"), ea + eb), ok: false, fb: T("Adding exponents works only with the same base; x and y are different bases.", "Sumar los exponentes solo vale con la misma base; x e y son bases distintas.")},
+      {x: xp("x", ea + eb), ok: false, fb: T("The y cannot disappear or turn into an x.", "La y no puede desaparecer ni convertirse en x.")},
+      {x: parX(X("xy", "x y"), ea * eb), ok: false, fb: T("With different bases no rule applies: the expression stays as it is.", "Con bases distintas no se aplica ninguna regla: la expresión se queda como está.")}],
+    sol: T("The product rule needs the same base. x<sup>" + ea + "</sup>y<sup>" + eb + "</sup> is already as simple as it gets.", "La regla del producto exige la misma base. x<sup>" + ea + "</sup>y<sup>" + eb + "</sup> es la forma más simple.") };
+}
+
+/* ============ MODULE 3 · power of a power ============ */
+function actualizaPotPot(){
+  var m = leeEntero("pp-m", 1, 5, "pp-aviso", T("inside exponent", "exponente de dentro"));
+  var n = m === null ? null : leeEntero("pp-n", 1, 4, "pp-aviso", T("outside exponent", "exponente de fuera"));
+  if (m === null || n === null){ $("pp-fichas").innerHTML = ""; $("pp-salida").innerHTML = ""; return; }
+  limpiaAviso("pp-aviso");
+  var g = [];
+  for (var i = 0; i < n; i++) g.push('<span class="grupo">' + fichas("a", m, i % 2 ? "b" : "") + "</span>");
+  $("pp-fichas").innerHTML = g.join('<span class="signo">·</span>');
+  var rep = [];
+  for (var j = 0; j < n; j++) rep.push(xp("a", m));
+  var des = rep.reduce(function(acc, x){ return acc ? porX(acc, x) : x; }, null);
+  var h = '<div class="linea">' + ver(igualX(igualX(parX(xp("a", m), n), des), xp("a", m * n))) + "</div>";
+  h += '<div class="linea veredicto">' + n + (n === 1 ? T(" group", " grupo") : T(" groups", " grupos")) + T(" of ", " de ") + m + fac(m) + T(" make ", " son ") + (m * n) + T(" factors: ", " factores: ") + m + " × " + n + " = " + (m * n) + ".</div>";
+  if (n > 1) h += '<div class="linea">' + T("It is the same as adding ", "Es lo mismo que sumar ") + Array(n + 1).join(m + " + ").slice(0, -3) + " = " + (m * n) + T(": multiplying is adding the same number several times.", ": multiplicar es sumar el mismo número varias veces.") + "</div>";
+  $("pp-salida").innerHTML = h;
+}
+function genPotPot(){
+  var v = elige(VARS), a, n, sim = T("Simplify ", "Simplifique ");
+  do { a = ale(2, 6); n = ale(2, 5); } while (a + n === a * n);
+  if (Math.random() < 0.6){
+    var dis = [[xv(v, a + n), T("You added the exponents. Here one power is raised to another: multiply them.", "Sumó los exponentes. Aquí una potencia está elevada a otra: se multiplican.")]];
+    if (Math.pow(a, n) <= 81) dis.push([xv(v, Math.pow(a, n)), T("You raised one exponent to the other; just multiply them.", "Elevó un exponente al otro; basta con multiplicarlos.")]);
+    dis.push([xv(v, a * n + 1), T("Check the multiplication of the exponents.", "Revise la multiplicación de los exponentes.")]);
+    dis.push([xv(v, Math.abs(a - n) || a + 1), ""]);
+    return { enun: sim + ver(parX(xp(v, a), n)) + ".", opciones: opcionesMono(xv(v, a * n), dis),
+      sol: T("Power of a power: ", "Potencia de una potencia: ") + a + " × " + n + " = " + (a * n) + "." };
+  }
+  var b = n;
+  return { enun: sim + ver(porX(xp(v, a), xp(v, b))) + ".",
+    opciones: opcionesMono(xv(v, a + b), [
+      [xv(v, a * b), T("You multiplied the exponents. There are no parentheses here: the powers are multiplied, so the exponents are added.", "Multiplicó los exponentes. Aquí no hay paréntesis: las potencias están multiplicadas y los exponentes se suman.")],
+      [xv(v, a + b + 1), T("Check the sum of the exponents.", "Revise la suma de los exponentes.")],
+      [xv(v, Math.abs(a - b) || a * b + 1), ""]]),
+    sol: T("Product rule: ", "Regla del producto: ") + a + " + " + b + " = " + (a + b) + "." };
+}
+
+/* ============ MODULE 4 · power of a product ============ */
+function actualizaPotProd(){
+  var c = leeEntero("px-c", 1, 5, "px-aviso", T("coefficient", "coeficiente"));
+  var a = c === null ? null : leeEntero("px-a", 1, 4, "px-aviso", T("exponent of x", "exponente de x"));
+  var b = a === null ? null : leeEntero("px-b", 0, 3, "px-aviso", T("exponent of y", "exponente de y"));
+  var n = b === null ? null : leeEntero("px-n", 2, 4, "px-aviso", T("outside exponent", "exponente de fuera"));
+  if (n === null){ $("px-salida").innerHTML = ""; return; }
+  limpiaAviso("px-aviso");
+  var e = {x: a}; if (b > 0) e.y = b;
+  var A = mono(c, e), R = mPow(A, n), piezas = [];
+  if (c !== 1) piezas.push(xp(String(c), n));
+  piezas.push(a === 1 ? xp("x", n) : parX(xp("x", a), n));
+  if (b > 0) piezas.push(b === 1 ? xp("y", n) : parX(xp("y", b), n));
+  var rep = piezas.reduce(function(acc, x){ return acc ? porX(acc, x) : x; }, null);
+  var h = '<div class="linea">' + ver(igualX(igualX(parX(mLinea(A), n), rep), mFinal(R))) + "</div>", det = [];
+  if (c !== 1) det.push(T("the number: ", "el coeficiente: ") + c + "<sup>" + n + "</sup> = " + Math.pow(c, n));
+  det.push(T("the x: ", "la x: ") + a + " × " + n + " = " + (a * n));
+  if (b > 0) det.push(T("the y: ", "la y: ") + b + " × " + n + " = " + (b * n));
+  h += '<div class="linea veredicto">' + T("The exponent " + n + " reaches each factor — ", "El exponente " + n + " llega a cada factor — ") + det.join("; ") + ".</div>";
+  if (c === 1) h += '<div class="linea">' + T("A coefficient of 1 is not written: 1 raised to any exponent is still 1.", "Con coeficiente 1 no se escribe: 1 elevado a cualquier exponente sigue siendo 1.") + "</div>";
+  $("px-salida").innerHTML = h;
+}
+function genPotProd(){
+  var c, a = ale(1, 4), n = ale(2, 4), conY = Math.random() < 0.45, b = ale(1, 3), neg = Math.random() < 0.25;
+  do { c = neg ? -ale(2, 3) : ale(2, 5); } while (Math.pow(Math.abs(c), n) > 625 || Math.abs(c) === n);
+  var e = {x: a}; if (conY) e.y = b;
+  var A = mono(c, e), R = mPow(A, n);
+  var dis = [[mono(c, R.e), T("You forgot to raise the number: the " + numTxt(c) + " is inside the parentheses too.", "Olvidó elevar el coeficiente: el " + numTxt(c) + " también está dentro del paréntesis.")],
+             [mono(c * n, R.e), T("You multiplied the number by " + n + "; raise it instead: " + numTxt(c) + "<sup>" + n + "</sup>.", "Multiplicó el coeficiente por " + n + "; hay que elevarlo: " + numTxt(c) + "<sup>" + n + "</sup>.")]];
+  if (neg) dis.unshift([mono(-R.n, R.e), T("The sign is raised too: with an " + (n % 2 === 0 ? "even exponent the answer is positive." : "odd exponent the answer is negative."), "El signo también se eleva: con exponente " + (n % 2 === 0 ? "par el resultado es positivo." : "impar el resultado es negativo."))]);
+  var eS = {x: a + n}; if (conY) eS.y = b + n;
+  dis.push([mono(R.n, eS), T("You added the exponents of the letters; in a power of a product they are multiplied.", "Sumó los exponentes de las variables; en la potencia de un producto se multiplican.")]);
+  return { enun: T("Simplify ", "Simplifique ") + ver(parX(mLinea(A), n)) + ".", opciones: opcionesMono(R, dis),
+    sol: T("Share out the exponent: ", "Se reparte el exponente: ") + numTxt(c) + "<sup>" + n + "</sup> = " + numTxt(Math.pow(c, n)) + "; x: " + a + " × " + n + " = " + (a * n) + (conY ? "; y: " + b + " × " + n + " = " + (b * n) : "") + "." };
+}
+
+/* ============ MODULE 5 · the three rules together ============ */
+function genTres(){
+  var tipo = elige(["producto", "potpot", "potprod", "combinada", "combinada"]), v = elige(["x", "a", "y"]), R, ex, pasos, dis;
+  function ee(k){ return e1(v, k); }
+  var rP = T("product", "producto"), rPP = T("power of a power", "potencia de una potencia"), rPX = T("power of a product", "potencia de un producto");
+  if (tipo === "producto"){
+    var a = ale(2, 6), b = ale(1, 5), c = ale(2, 6);
+    R = xv(v, a + b + c); ex = porX(porX(xp(v, a), xp(v, b)), xp(v, c));
+    dis = [[xv(v, a * b * c), T("You multiplied the exponents; they are added.", "Multiplicó los exponentes; se suman.")],
+           [xv(v, a + c), T("You skipped a factor: ", "Se saltó un factor: ") + v + (b === 1 ? T(" on its own is ", " sola vale ") + v + "<sup>1</sup>." : "<sup>" + b + "</sup>" + T(" counts too.", " también cuenta."))], [xv(v, a + b + c + 1), ""]];
+    pasos = [T("Product rule: ", "Regla del producto: ") + a + " + " + b + " + " + c + " = " + (a + b + c) + "."];
+  } else if (tipo === "potpot"){
+    var p, q; do { p = ale(2, 6); q = ale(2, 5); } while (p + q === p * q);
+    R = xv(v, p * q); ex = parX(xp(v, p), q);
+    dis = [[xv(v, p + q), T("You added; with a power raised to a power, the exponents are multiplied.", "Sumó; con una potencia elevada a otra, los exponentes se multiplican.")], [xv(v, p * q + q), ""], [xv(v, p * q - 1), ""]];
+    pasos = [T("Power of a power: ", "Potencia de una potencia: ") + p + " × " + q + " = " + (p * q) + "."];
+  } else if (tipo === "potprod"){
+    var k = ale(2, 4), r = ale(1, 4), s; do { s = ale(2, 3); } while (s === k);
+    R = mPow(mono(k, ee(r)), s); ex = parX(mLinea(mono(k, ee(r))), s);
+    dis = [[mono(k, R.e), T("The number still has to be raised.", "Falta elevar el coeficiente.")], [mono(k * s, R.e), T("The number is raised, not multiplied by the exponent.", "El coeficiente se eleva, no se multiplica por el exponente.")], [mono(R.n, ee(r + s)), T("The exponents are multiplied, not added.", "Los exponentes se multiplican, no se suman.")]];
+    pasos = [T("Power of a product: ", "Potencia de un producto: ") + k + "<sup>" + s + "</sup> = " + Math.pow(k, s) + T(" and ", " y ") + r + " × " + s + " = " + (r * s) + "."];
+  } else {
+    var sub = ale(1, 3);
+    if (sub === 1){
+      var a1 = ale(2, 5), n1 = ale(2, 4), b1 = ale(1, 6);
+      if (a1 + n1 === a1 * n1) n1 = 3;
+      R = mMul(xv(v, a1 * n1), xv(v, b1)); ex = porX(parX(xp(v, a1), n1), xp(v, b1));
+      dis = [[xv(v, a1 + n1 + b1), T("You added everything. The parentheses go first, and there the exponents are multiplied.", "Sumó todo. El paréntesis va primero y allí los exponentes se multiplican.")],
+             [xv(v, a1 * n1 * b1), T("You multiplied everything. After the parentheses, the product adds exponents.", "Multiplicó todo. Después del paréntesis, el producto suma exponentes.")],
+             [xv(v, a1 * (n1 + b1)), T("The outside exponent affects only what is inside the parentheses.", "El exponente de fuera solo afecta a lo que está dentro del paréntesis.")]];
+      pasos = [T("Parentheses first: ", "Paréntesis primero: ") + "(" + v + "<sup>" + a1 + "</sup>)<sup>" + n1 + "</sup> = " + v + "<sup>" + (a1 * n1) + "</sup>." + R_(rPP),
+               T("Product: ", "Producto: ") + (a1 * n1) + " + " + b1 + " = " + (a1 * n1 + b1) + "." + R_(rP)];
+    } else if (sub === 2){
+      var k2 = ale(2, 3), a2 = ale(1, 4), n2 = ale(2, 3), b2 = ale(1, 5);
+      R = mMul(mPow(mono(k2, ee(a2)), n2), xv(v, b2)); ex = porX(parX(mLinea(mono(k2, ee(a2))), n2), xp(v, b2));
+      dis = [[mono(k2, R.e), T("The number inside the parentheses still has to be raised.", "Falta elevar el coeficiente dentro del paréntesis.")],
+             [mono(R.n, ee(a2 + n2 + b2)), T("Inside the parentheses the exponents are multiplied.", "En el paréntesis los exponentes se multiplican.")],
+             [mono(k2 * n2, R.e), T("The number is raised: ", "El coeficiente se eleva: ") + k2 + "<sup>" + n2 + "</sup>."]];
+      pasos = [T("Parentheses: ", "Paréntesis: ") + k2 + "<sup>" + n2 + "</sup> = " + Math.pow(k2, n2) + T(" and ", " y ") + a2 + " × " + n2 + " = " + (a2 * n2) + "." + R_(rPX),
+               T("Product: ", "Producto: ") + (a2 * n2) + " + " + b2 + " = " + (a2 * n2 + b2) + "." + R_(rP)];
+    } else {
+      var a3 = ale(2, 4), n3 = ale(2, 3), b3 = ale(1, 3), m3 = ale(2, 4);
+      R = mMul(xv(v, a3 * n3), xv(v, b3 * m3)); ex = porX(parX(xp(v, a3), n3), parX(xp(v, b3), m3));
+      dis = [[xv(v, a3 + n3 + b3 + m3), T("You added all the exponents; parentheses multiply.", "Sumó todos los exponentes; los paréntesis multiplican.")],
+             [xv(v, a3 * n3 * b3 * m3), T("After the parentheses, the two powers are multiplied: add the exponents.", "Tras resolver los paréntesis, las dos potencias están multiplicadas: se suman.")],
+             [xv(v, a3 * n3 + b3), T("The second parentheses have to be worked out too.", "El segundo paréntesis también hay que resolverlo.")]];
+      pasos = [T("First parentheses: ", "Primer paréntesis: ") + a3 + " × " + n3 + " = " + (a3 * n3) + T("; second: ", "; segundo: ") + b3 + " × " + m3 + " = " + (b3 * m3) + "." + R_(rPP),
+               T("Product: ", "Producto: ") + (a3 * n3) + " + " + (b3 * m3) + " = " + (a3 * n3 + b3 * m3) + "." + R_(rP)];
+    }
+  }
+  return {enun: T("Simplify ", "Simplifique ") + ver(ex) + ".", opciones: opcionesMono(R, dis), sol: pasosHTML(pasos), regla: tipo};
+}
+
+/* ============ Start ============ */
+$("n-base").addEventListener("change", actualizaNotacion);
+$("n-exp").addEventListener("input", actualizaNotacion);
+actualizaNotacion();
+OM("p-notacion", genNotacion);
+["pr-m", "pr-n"].forEach(function(id){ $(id).addEventListener("input", actualizaProducto); });
+actualizaProducto();
+ESCRITA("p-producto1", genProducto1);
+OM("p-producto2", genProducto2);
+["pp-m", "pp-n"].forEach(function(id){ $(id).addEventListener("input", actualizaPotPot); });
+actualizaPotPot();
+OM("p-potpot", genPotPot);
+["px-c", "px-a", "px-b", "px-n"].forEach(function(id){ $(id).addEventListener("input", actualizaPotProd); });
+actualizaPotProd();
+OM("p-potprod", genPotProd);
+OM("p-tres", genTres, [["producto", T("Product of powers", "Producto de potencias")], ["potpot", T("Power of a power", "Potencia de una potencia")], ["potprod", T("Power of a product", "Potencia de un producto")], ["combinada", T("Rules combined", "Reglas combinadas")]]);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

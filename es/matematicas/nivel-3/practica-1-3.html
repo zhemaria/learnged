@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 1.3 · Simplificar expresiones exponenciales con múltiples reglas — práctica (español) — construida con tools/build_n3_lesson_1_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.3 · Simplificar expresiones exponenciales con múltiples reglas · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-1-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .fichas{display:flex;flex-wrap:wrap;align-items:center;gap:6px;justify-content:center;margin:14px 0;font-size:18px;}
+  .fichas .grupo{display:inline-flex;flex-wrap:nowrap;max-width:none;gap:4px;padding:4px;border:1px dashed #90a4ae;border-radius:10px;}
+  .ficha{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 6px;border-radius:8px;font-weight:700;border:2px solid var(--tema);background:var(--tema-bg);color:var(--tema-d);}
+  .ficha.b{border-color:#00695c;background:#e0f2f1;color:#004d40;}
+  .ficha.tachada{border-color:#b71c1c;background:#ffebee;color:#b71c1c;text-decoration:line-through;text-decoration-thickness:3px;}
+  .signo{font-weight:700;font-size:20px;color:var(--tema-d);padding:0 2px;}
+  .linea-frac{display:flex;flex-direction:column;align-items:center;gap:8px;margin:14px 0;}
+  .linea-frac .barra{width:100%;max-width:520px;border-top:3px solid var(--tema-d);}
+  .tabla-patron{border-collapse:collapse;margin:12px auto;font-size:17px;}
+  .tabla-patron caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-patron th,.tabla-patron td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;min-width:64px;}
+  .tabla-patron th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-patron td.cero{background:#e8f5e9;font-weight:700;}
+  .tabla-patron td.neg{background:#fff8e1;}
+  .dividir{font-size:13px;color:var(--gris);}
+  .marcador-regla{margin-top:12px;}
+  .marcador-regla table{border-collapse:collapse;font-size:14px;}
+  .marcador-regla caption{text-align:left;font-size:14px;color:var(--gris);padding-bottom:4px;}
+  .marcador-regla th,.marcador-regla td{border:1px solid #c8c8c8;padding:5px 10px;text-align:left;}
+  .marcador-regla th{background:var(--tema-bg);color:var(--tema-d);}
+  .paso .regla{display:inline-block;font-size:13px;font-weight:700;color:var(--tema-d);background:var(--tema-bg);border-radius:6px;padding:1px 8px;margin-left:6px;}
+  .fila-resp{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;}
+  .salida .ex,.enun .ex,.opcion .ex{font-size:18px;}
+  .campo input.bien,.campo select.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .salida:empty{display:none;}
+  .campo select.error{border-color:#b71c1c;background:#ffebee;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 1 · Reglas de los exponentes</div>
+    <h1>Lección 1.3 · Simplificar expresiones exponenciales con múltiples reglas</h1>
+    <div class="meta">Cuatro actividades de práctica y la comprobación del tema en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#orden">Un orden para simplificar</a></li>
+      <li><a href="#fracciones">Fracciones con exponentes negativos</a></li>
+      <li><a href="#arbitro">El árbitro de exponentes</a></li>
+      <li><a href="#completa">Una expresión completa, paso a paso</a></li>
+      <li><a href="#comprobacion">Comprobación del Tema 1</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="orden" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Un orden para simplificar</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando una expresión combina varias reglas, conviene seguir siempre la misma ruta:</p>
+      <ol>
+        <li><strong>Paréntesis con exponente:</strong> potencia de una potencia y potencia de un producto, sin olvidar elevar los coeficientes.</li>
+        <li><strong>Producto y cociente</strong> de las bases iguales: sumar o restar exponentes.</li>
+        <li><strong>Exponentes negativos:</strong> reescribirlos como fracción con exponente positivo.</li>
+        <li><strong>Revisar</strong> que el resultado quede en su forma más simple.</li>
+      </ol>
+      <div class="tabla-scroll" role="region" tabindex="0" aria-label="Las cinco reglas (tabla desplazable horizontalmente)"><table class="reglas"><caption>Las cinco reglas de los exponentes, para tenerlas a la vista.</caption>
+      <thead><tr><th scope="col">Regla</th><th scope="col">Patrón</th><th scope="col">Ejemplo</th></tr></thead><tbody><tr><td>Producto de potencias</td><td>a<sup>m</sup> · a<sup>n</sup> = a<sup>m+n</sup></td><td>x<sup>4</sup> · x<sup>3</sup> = x<sup>7</sup></td></tr><tr><td>Potencia de una potencia</td><td>(a<sup>m</sup>)<sup>n</sup> = a<sup>m·n</sup></td><td>(x<sup>4</sup>)<sup>3</sup> = x<sup>12</sup></td></tr><tr><td>Potencia de un producto</td><td>(a · b)<sup>n</sup> = a<sup>n</sup> · b<sup>n</sup></td><td>(2x)<sup>3</sup> = 8x<sup>3</sup></td></tr><tr><td>Cociente de potencias</td><td>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup></td><td>x<sup>7</sup> ÷ x<sup>2</sup> = x<sup>5</sup></td></tr><tr><td>Exponente cero y negativo</td><td>a<sup>0</sup> = 1 · a<sup>−n</sup> = 1/a<sup>n</sup></td><td>5<sup>0</sup> = 1 · 3<sup>−2</sup> = 1/9</td></tr></tbody></table></div>
+      <h3>La ruta, paso a paso</h3>
+      <p>Elija una expresión y vaya revelando un paso a la vez. Intente anticipar cada paso antes de mostrarlo.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:260px;"><label for="o-expr">Expresión que se va a simplificar</label><select id="o-expr"></select></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="o-siguiente"></button>
+          <button type="button" class="btn-sec" id="o-todo">Mostrar todos los pasos</button>
+          <button type="button" class="btn-sec" id="o-reiniciar">Reiniciar</button>
+        </div>
+      </div>
+      <div class="expr-grande" id="o-visual"></div>
+      <div class="pasos" id="o-pasos" aria-live="polite"></div>
+      <h3>Practique: combinar reglas</h3>
+      <div class="practica" id="p-orden">
+        <div class="enun" id="p-orden-enun"></div>
+        <div class="opciones" id="p-orden-opciones"></div>
+        <div class="fb" id="p-orden-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-orden-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-orden-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="fracciones">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Fracciones con exponentes negativos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando la expresión es una fracción, el cociente se aplica <strong>a cada base por separado</strong>, y los coeficientes se simplifican como una fracción numérica. Si algún exponente queda negativo, ese factor pasa al denominador con exponente positivo en el último paso.</p>
+      <div class="caja-atencion"><strong>Forma final exigida:</strong> un resultado no está simplificado mientras tenga exponentes negativos. x<sup>3</sup>y<sup>−2</sup> vale lo mismo que x<sup>3</sup>/y<sup>2</sup>, pero solo la segunda es la respuesta que espera el examen.</div>
+      <h3>Practique: simplifique la fracción</h3>
+      <div class="practica" id="p-fracciones">
+        <div class="enun" id="p-fracciones-enun"></div>
+        <div class="opciones" id="p-fracciones-opciones"></div>
+        <div class="fb" id="p-fracciones-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-fracciones-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-fracciones-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="arbitro">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El árbitro de exponentes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Lea el trabajo de cada estudiante como un árbitro. Si está correcto, dígalo. Si tiene un error, elija la corrección adecuada. La mayoría de los errores repiten los mismos patrones: sumar en vez de multiplicar, olvidar elevar el coeficiente o creer que un exponente negativo hace negativo al número.</p>
+      <h3>Practique: ¿qué corresponde?</h3>
+      <div class="practica" id="p-arbitro">
+        <div class="enun" id="p-arbitro-enun"></div>
+        <div class="opciones" id="p-arbitro-opciones"></div>
+        <div class="fb" id="p-arbitro-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p-arbitro-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p-arbitro-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="completa">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Una expresión completa, paso a paso</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Aquí resuelve usted cada paso de la ruta. Cada casilla se comprueba por separado: tiene dos intentos por paso y, si no sale, se muestra la respuesta para que pueda seguir.</p>
+      <div class="practica">
+        <div class="enun">Simplifique <span id="c-expr"></span></div>
+        <div class="panel" id="c-paso1">
+          <p><strong>Paso 1 · Paréntesis.</strong> Resuelva <span id="c-par"></span>.</p>
+          <div class="campos"><div class="campo"><label for="c-coef">Coeficiente</label><input type="text" autocomplete="off" class="corto" id="c-coef"></div><div class="campo"><label for="c-e1">Exponente de x</label><input type="text" autocomplete="off" class="corto" id="c-e1"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="c-v1">Comprobar el paso 1</button></div>
+          <div class="fb" id="c-fb1" role="status"></div>
+        </div>
+        <div class="panel" id="c-paso2">
+          <p><strong>Paso 2 · Producto.</strong> <span id="c-t2"></span></p>
+          <div class="campos"><div class="campo"><label for="c-e2">Exponente de x</label><input type="text" autocomplete="off" class="corto" id="c-e2"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="c-v2">Comprobar el paso 2</button></div>
+          <div class="fb" id="c-fb2" role="status"></div>
+        </div>
+        <div class="panel" id="c-paso3">
+          <p><strong>Paso 3 · Cociente.</strong> <span id="c-t3"></span></p>
+          <div class="campos"><div class="campo"><label for="c-e3">Exponente de x (puede ser negativo)</label><input type="text" autocomplete="off" class="corto" id="c-e3"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="c-v3">Comprobar el paso 3</button></div>
+          <div class="fb" id="c-fb3" role="status"></div>
+        </div>
+        <div class="panel" id="c-paso4">
+          <p><strong>Paso 4 · Forma final.</strong> <span id="c-t4"></span></p>
+          <div class="campos"><div class="campo"><label for="c-donde">¿Dónde queda la x?</label><select id="c-donde"><option value="">Elija una opción</option><option value="arriba">En el numerador</option><option value="abajo">En el denominador</option></select></div><div class="campo"><label for="c-e4">Exponente positivo de x</label><input type="text" autocomplete="off" class="corto" id="c-e4"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="c-v4">Comprobar el paso 4</button></div>
+          <div class="fb" id="c-fb4" role="status"></div>
+        </div>
+        <div class="salida" id="c-final" aria-live="polite"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="c-nuevo">Otra expresión</button>
+          <button type="button" class="btn-sec" id="c-solucion">Ver la solución completa</button>
+        </div>
+        <p class="marcador" id="c-marc"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comprobacion">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Comprobación del Tema 1</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando se sienta seguro con las tres lecciones, haga la comprobación del tema: doce preguntas de las cinco reglas, con un informe por lección que puede imprimir. Si una lección sale floja, vuelva a su práctica.</p>
+      <p><a class="btn" href="comprobacion-tema-1.html">Abrir la comprobación del Tema 1 <span aria-hidden="true">›</span></a></p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 1 · Reglas de los exponentes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/exponents.js"></script>
+<script>
+function sim(){ return T("Simplify ", "Simplifique "); }
+function mx(c, v, e){ return mLinea(mono(c, e1(v, e))); }
+var RP = T("product", "producto"), RPP = T("power of a power", "potencia de una potencia"), RPX = T("power of a product", "potencia de un producto"),
+    RC = T("quotient", "cociente"), RN = T("negative exponent", "exponente negativo"), RF = T("final form", "forma final");
+
+/* ============ MODULE 1 · the route, step by step (fixed examples) ============ */
+var RUTAS = [
+  { expr: porX(parX(xp("x", 2), 3), xp("x", 4)),
+    pasos: [ver(igualX(parX(xp("x", 2), 3), xp("x", 6))) + T(": the exponents are multiplied, 2 × 3 = 6.", ": los exponentes se multiplican, 2 × 3 = 6.") + R_(RPP),
+            ver(igualX(porX(xp("x", 6), xp("x", 4)), xp("x", 10))) + T(": they are added, 6 + 4 = 10.", ": se suman, 6 + 4 = 10.") + R_(RP),
+            T("No negative exponents are left. Answer: ", "No quedan exponentes negativos. Resultado: ") + ver(xp("x", 10)) + "."] },
+  { expr: porX(parX(mx(2, "a", 3), 2), X("a", "a")),
+    pasos: [ver(igualX(parX(mx(2, "a", 3), 2), mx(4, "a", 6))) + T(": the 2 is raised too, 2<sup>2</sup> = 4; and 3 × 2 = 6.", ": el 2 también se eleva, 2<sup>2</sup> = 4; y 3 × 2 = 6.") + R_(RPX),
+            ver(igualX(porX(mx(4, "a", 6), X("a", "a")), mx(4, "a", 7))) + T(": the a on its own is a<sup>1</sup>, 6 + 1 = 7.", ": la a sola vale a<sup>1</sup>, 6 + 1 = 7.") + R_(RP),
+            T("Answer: ", "Resultado: ") + ver(mx(4, "a", 7)) + "."] },
+  { expr: entreX(parX(porX(xp("a", 8), xp("a", 2))), xp("a", 3)),
+    pasos: [T("Inside the parentheses: ", "Dentro del paréntesis: ") + ver(igualX(porX(xp("a", 8), xp("a", 2)), xp("a", 10))) + ", 8 + 2 = 10." + R_(RP),
+            ver(igualX(entreX(xp("a", 10), xp("a", 3)), xp("a", 7))) + T(": they are subtracted, 10 − 3 = 7.", ": se restan, 10 − 3 = 7.") + R_(RC),
+            T("Answer: ", "Resultado: ") + ver(xp("a", 7)) + "."] },
+  { expr: entreX(parX(mx(3, "x", 2), 3), xp("x", 8)),
+    pasos: [ver(igualX(parX(mx(3, "x", 2), 3), mx(27, "x", 6))) + T(": 3<sup>3</sup> = 27 and 2 × 3 = 6.", ": 3<sup>3</sup> = 27 y 2 × 3 = 6.") + R_(RPX),
+            ver(igualX(entreX(mx(27, "x", 6), xp("x", 8)), mx(27, "x", -2))) + ": 6 − 8 = " + MENOS + "2." + R_(RC),
+            ver(igualX(mx(27, "x", -2), fracX(X("27", "27"), xp("x", 2)))) + T(": the x moves to the bottom with a positive exponent; the 27 stays on top.", ": la x pasa abajo con exponente positivo; el 27 se queda arriba.") + R_(RN),
+            T("Answer: ", "Resultado: ") + ver(fracX(X("27", "27"), xp("x", 2))) + "."] },
+  { expr: entreX(porX(parX(mLinea(mono(1, {x: 4, y: 1})), 2), xp("y", 3)), xp("x", 5)),
+    pasos: [ver(igualX(parX(mLinea(mono(1, {x: 4, y: 1})), 2), mLinea(mono(1, {x: 8, y: 2})))) + T(": the 2 goes to both the x and the y.", ": el 2 se reparte a la x y a la y.") + R_(RPX),
+            T("Multiply by ", "Se multiplica por ") + ver(xp("y", 3)) + T(": the y becomes y<sup>2+3</sup> = y<sup>5</sup>; the x does not change.", ": la y pasa a y<sup>2+3</sup> = y<sup>5</sup>; la x no cambia.") + R_(RP),
+            T("Divide by ", "Se divide entre ") + ver(xp("x", 5)) + T(": the x becomes x<sup>8−5</sup> = x<sup>3</sup>; the y does not change.", ": la x pasa a x<sup>8−5</sup> = x<sup>3</sup>; la y no cambia.") + R_(RC),
+            T("Answer: ", "Resultado: ") + ver(mLinea(mono(1, {x: 3, y: 5}))) + T(". Each base is worked separately.", ". Cada base se trabaja por separado.")] },
+  { expr: entreX(porX(parX(mx(2, "x", 3), 2), X("x", "x")), xp("x", 9)),
+    pasos: [ver(igualX(parX(mx(2, "x", 3), 2), mx(4, "x", 6))) + T(": 2<sup>2</sup> = 4 and 3 × 2 = 6.", ": 2<sup>2</sup> = 4 y 3 × 2 = 6.") + R_(RPX),
+            ver(igualX(porX(mx(4, "x", 6), X("x", "x")), mx(4, "x", 7))) + ": 6 + 1 = 7." + R_(RP),
+            ver(igualX(entreX(mx(4, "x", 7), xp("x", 9)), mx(4, "x", -2))) + ": 7 − 9 = " + MENOS + "2." + R_(RC),
+            ver(igualX(mx(4, "x", -2), fracX(X("4", "4"), xp("x", 2)))) + "." + R_(RN),
+            T("Answer: ", "Resultado: ") + ver(fracX(X("4", "4"), xp("x", 2))) + T(". Check with x = 2: the original gives (2 · 8)<sup>2</sup> · 2 ÷ 512 = 1, and 4/2<sup>2</sup> = 1. They match.", ". Comprobación con x = 2: la original da (2 · 8)<sup>2</sup> · 2 ÷ 512 = 1, y 4/2<sup>2</sup> = 1. Coinciden.")] }
+];
+var O = {i: 0, paso: 0};
+function llenaRutas(){
+  RUTAS.forEach(function(r, i){
+    var op = document.createElement("option");
+    op.value = i; op.textContent = r.expr.h.replace(/<sup>/g, "^").replace(/<\/sup>/g, "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ");
+    $("o-expr").appendChild(op);
+  });
+}
+function reiniciaRuta(){
+  O.i = parseInt($("o-expr").value, 10) || 0; O.paso = 0;
+  $("o-visual").innerHTML = ver(RUTAS[O.i].expr); $("o-pasos").innerHTML = "";
+  $("o-siguiente").textContent = T("Show the first step", "Mostrar el primer paso"); $("o-siguiente").disabled = false;
+}
+function pintaPasosRuta(){
+  var r = RUTAS[O.i];
+  $("o-pasos").innerHTML = r.pasos.slice(0, O.paso).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i + 1) + "</span>" + p + "</div>"; }).join("");
+  if (O.paso >= r.pasos.length){ $("o-siguiente").textContent = T("No more steps", "No hay más pasos"); $("o-siguiente").disabled = true; }
+  else $("o-siguiente").textContent = T("Show step ", "Mostrar el paso ") + (O.paso + 1);
+}
+function opcionesConLinea(R, dis){
+  var ops = opcionesMono(R, dis);
+  if (R.o.some(function(v){ return (R.e[v] || 0) < 0; })){
+    ops = ops.slice(0, 3);
+    ops.push({x: mLinea(R), ok: false, fb: T("That has the same value, but it still has a negative exponent: it is not in final form.", "Esa expresión vale lo mismo, pero todavía tiene un exponente negativo: no está en forma final.")});
+  }
+  return ops;
+}
+function genOrden(){
+  var t = ale(1, 3), v = elige(["x", "a", "m"]), R, ex, dis, sol;
+  if (t === 1){
+    var a = ale(2, 4), n = ale(2, 3), b = ale(1, 5), d = ale(2, 12), r = a * n + b - d;
+    R = mDiv(mMul(xv(v, a * n), xv(v, b)), xv(v, d)); ex = entreX(porX(parX(xp(v, a), n), xp(v, b)), xp(v, d));
+    dis = [[xv(v, a + n + b - d), T("In the parentheses the exponents are multiplied, not added.", "En el paréntesis los exponentes se multiplican, no se suman.")],
+           [xv(v, -r), T("Check the subtraction of the quotient: top minus bottom.", "Revise la resta del cociente: arriba menos abajo.")],
+           [xv(v, a * n * b - d), T("After the parentheses, the product adds exponents.", "Tras el paréntesis, el producto suma exponentes.")]];
+    sol = pasosHTML([T("Parentheses: ", "Paréntesis: ") + a + " × " + n + " = " + (a * n) + "." + R_(RPP), T("Product: ", "Producto: ") + (a * n) + " + " + b + " = " + (a * n + b) + "." + R_(RP),
+                     T("Quotient: ", "Cociente: ") + (a * n + b) + " − " + d + " = " + numTxt(r) + "." + R_(RC) + (r < 0 ? T(" The negative exponent moves to the bottom.", " El exponente negativo pasa abajo.") + R_(RN) : (r === 0 ? T(" And ", " Y ") + v + "<sup>0</sup> = 1." : ""))]);
+  } else if (t === 2){
+    var c = ale(2, 3), a2 = ale(1, 4), n2 = ale(2, 3), d2 = ale(2, 10), cn = Math.pow(c, n2);
+    R = mDiv(mPow(mono(c, e1(v, a2)), n2), xv(v, d2)); ex = entreX(parX(mx(c, v, a2), n2), xp(v, d2));
+    dis = [[mDiv(mono(c, e1(v, a2 * n2)), xv(v, d2)), T("The number still has to be raised: ", "Falta elevar el coeficiente: ") + c + "<sup>" + n2 + "</sup> = " + cn + "."],
+           [mDiv(mono(c * n2, e1(v, a2 * n2)), xv(v, d2)), T("The number is raised, not multiplied by the exponent.", "El coeficiente se eleva, no se multiplica por el exponente.")],
+           [mDiv(mono(cn, e1(v, a2 + n2)), xv(v, d2)), T("Inside the parentheses the exponents are multiplied.", "Dentro del paréntesis los exponentes se multiplican.")]];
+    sol = pasosHTML([T("Parentheses: ", "Paréntesis: ") + c + "<sup>" + n2 + "</sup> = " + cn + T(" and ", " y ") + a2 + " × " + n2 + " = " + (a2 * n2) + "." + R_(RPX),
+                     T("Quotient: ", "Cociente: ") + (a2 * n2) + " − " + d2 + " = " + numTxt(a2 * n2 - d2) + "." + R_(RC) + (a2 * n2 - d2 < 0 ? T(" The " + v + " moves to the bottom; the number stays on top.", " La " + v + " pasa abajo; el coeficiente se queda arriba.") + R_(RN) : "")]);
+  } else {
+    var p = ale(2, 7), q = ale(1, 5), d3 = ale(2, 9);
+    R = mDiv(xv(v, p + q), xv(v, d3)); ex = entreX(parX(porX(xp(v, p), xp(v, q))), xp(v, d3));
+    dis = [[xv(v, p * q - d3), T("There is a product inside the parentheses: the exponents are added.", "Dentro del paréntesis hay un producto: los exponentes se suman.")],
+           [xv(v, d3 - p - q), T("Top minus bottom, not the other way around.", "Arriba menos abajo, no al revés.")],
+           [xv(v, p + q + d3), T("When you divide, the exponents are subtracted.", "Al dividir, los exponentes se restan.")]];
+    sol = pasosHTML([T("Product inside the parentheses: ", "Producto dentro del paréntesis: ") + p + " + " + q + " = " + (p + q) + "." + R_(RP), T("Quotient: ", "Cociente: ") + (p + q) + " − " + d3 + " = " + numTxt(p + q - d3) + "." + R_(RC)]);
+  }
+  return {enun: sim() + ver(ex) + T(" and leave no negative exponents.", " y deje el resultado sin exponentes negativos."), opciones: opcionesConLinea(R, dis), sol: sol};
+}
+
+/* ============ MODULE 2 · fractions with two bases ============ */
+function genFracciones(){
+  var pares = [[12, 4], [10, 2], [18, 6], [15, 5], [8, 12], [6, 9], [20, 8], [14, 21], [9, 3], [16, 4], [4, 10], [6, 4]];
+  var cc = elige(pares), c1 = cc[0], c2 = cc[1], a = ale(1, 7), b = ale(1, 6), c = ale(1, 7), d = ale(1, 6);
+  if (a === c) c = a + 2;
+  var A = mono(c1, {x: a, y: b}), B = mono(c2, {x: c, y: d}), R = mDiv(A, B), g = mcd(c1, c2);
+  var dis = [[M(c1, c2, {x: c - a, y: b - d}), T("For x you subtracted backward: it is always the top exponent minus the bottom one.", "Para la x restó al revés: siempre es el exponente de arriba menos el de abajo.")],
+             [M(c1, c2, {x: a + c, y: b + d}), T("When you divide, the exponents are subtracted.", "Al dividir, los exponentes se restan.")],
+             [M(c1 - c2 === 0 ? 1 : c1 - c2, 1, {x: a - c, y: b - d}), T("You subtracted the numbers; divide them like a fraction: ", "Restó los coeficientes; se dividen como una fracción: ") + c1 + "/" + c2 + "."]];
+  var pasos = [T("Numbers: ", "Coeficientes: ") + c1 + "/" + c2 + (g > 1 ? " = " + (c1 / g) + (c2 / g === 1 ? "" : "/" + (c2 / g)) + T(" (divide top and bottom by ", " (se divide arriba y abajo entre ") + g + ")" : "") + ".",
+               T("The x: ", "La x: ") + a + " − " + c + " = " + numTxt(a - c) + T(". The y: ", ". La y: ") + b + " − " + d + " = " + numTxt(b - d) + "." + R_(RC),
+               T("Factors with a negative exponent move to the bottom with a positive exponent; factors with exponent 0 disappear.", "Los factores con exponente negativo pasan al denominador con exponente positivo; los de exponente 0 desaparecen.") + R_(RF)];
+  return {enun: sim() + ver(fracX(mLinea(A), mLinea(B))) + ".", opciones: opcionesConLinea(R, dis), sol: pasosHTML(pasos)};
+}
+
+/* ============ MODULE 3 · the referee ============ */
+function genArbitro(){
+  var v = elige(["x", "a", "y"]), t = ale(1, 8), bien = Math.random() < 0.3, ex, cor, err, porque, falsa;
+  var a = ale(2, 6), b = ale(2, 5), c = ale(2, 4);
+  if (a === b) b = a + 1;
+  function cv(k, e){ return X(k + v + "<sup>" + numTxt(e) + "</sup>", k + " " + v + VZ.pot + numVoz(e)); }
+  if (t === 1){ ex = porX(xp(v, a), xp(v, b)); cor = xp(v, a + b); err = xp(v, a * b);
+    porque = T("The exponents are added: ", "Los exponentes se suman: ") + a + " + " + b + " = " + (a + b) + "."; falsa = [xp(v, a - b > 0 ? a - b : a + b + 1), T("The exponents are subtracted", "Los exponentes se restan")]; }
+  else if (t === 2){ ex = parX(xp(v, a), b); cor = xp(v, a * b); err = xp(v, a + b);
+    porque = T("The exponents are multiplied: ", "Los exponentes se multiplican: ") + a + " × " + b + " = " + (a * b) + "."; falsa = [xp(v, a * b + 1), T("Add 1 to the product", "Hay que sumar 1 al producto")]; }
+  else if (t === 3){ var n = ale(2, 3); if (c === 2 && n === 2) n = 3; ex = parX(X(c + v, c + " " + v), n); cor = cv(Math.pow(c, n), n); err = cv(c, n);
+    porque = T("The " + c + " is raised too: ", "El " + c + " también se eleva: ") + c + "<sup>" + n + "</sup> = " + Math.pow(c, n) + "."; falsa = [cv(c * n, n), T("Multiply the number by the exponent", "Se multiplica el coeficiente por el exponente")]; }
+  else if (t === 4){ var n4 = ale(2, 3); if (c === 2 && n4 === 2) n4 = 3; ex = parX(X(c + v, c + " " + v), n4); cor = cv(Math.pow(c, n4), n4); err = cv(c * n4, n4);
+    porque = T("Raising is not multiplying: ", "Elevar no es multiplicar: ") + c + "<sup>" + n4 + "</sup> = " + Math.pow(c, n4) + T(", not ", ", no ") + c + " × " + n4 + "."; falsa = [cv(c, n4), T("The number is not touched", "El coeficiente no se toca")]; }
+  else if (t === 5){ var m = b + ale(1, 5); ex = entreX(xp(v, m), xp(v, b)); cor = xp(v, m - b); err = fracX(X("1", "1"), xp(v, m - b));
+    porque = T("It is the top exponent minus the bottom one: ", "Es el exponente de arriba menos el de abajo: ") + m + " − " + b + " = " + (m - b) + T("; the answer stays on top.", "; el resultado queda en el numerador."); falsa = [xp(v, m + b), T("When you divide, add the exponents", "Al dividir se suman los exponentes")]; }
+  else if (t === 6){ ex = parX(X(c + v, c + " " + v), 0); cor = X("1", "1"); err = X("0", "0");
+    porque = T("Any base other than zero to the power 0 is 1, not 0.", "Cualquier base distinta de cero con exponente 0 vale 1, no 0."); falsa = [X(String(c), String(c)), T("Only the " + v + " turns into 1", "Solo la " + v + " se convierte en 1")]; }
+  else if (t === 7){ var k = ale(2, 4); ex = xp(String(c), -k); cor = X("1/" + Math.pow(c, k), "1" + VZ.sobre + Math.pow(c, k)); err = X(MENOS + Math.pow(c, k), numVoz(-Math.pow(c, k)));
+    porque = T("A negative exponent means the reciprocal: ", "El exponente negativo indica el recíproco: ") + c + "<sup>" + MENOS + k + "</sup> = 1/" + Math.pow(c, k) + T(", a positive number.", ", un número positivo."); falsa = [X(MENOS + (c * k), numVoz(-c * k)), T("Multiply the base by the exponent", "Se multiplica la base por el exponente")]; }
+  else { var k8 = ale(2, 5), c8 = ale(2, 7); ex = cv(c8, -k8); cor = fracX(X(String(c8), String(c8)), xp(v, k8)); err = fracX(X("1", "1"), cv(c8, k8));
+    porque = T("The negative exponent belongs only to the " + v + ": the " + c8 + " stays on top.", "El exponente negativo solo afecta a la " + v + ": el " + c8 + " se queda arriba."); falsa = [X(MENOS + c8 + v + "<sup>" + k8 + "</sup>", T("minus ", "menos ") + c8 + " " + v + VZ.pot + k8), T("The sign of the exponent goes to the term", "El signo del exponente pasa al término")]; }
+  var ops = bien
+    ? [htmlOp(T("It is correct.", "Está correcto."), true, porque), htmlOp(T("Correction: ", "Corrección: ") + ver(err) + ".", false, T("That “correction” brings in the typical mistake. Look again at the rule.", "Esa «corrección» introduce el error típico. Revise otra vez la regla.")), htmlOp(falsa[1] + ": " + ver(falsa[0]) + ".", false, T("That is not how the rule works. Look again at the shape of the expression.", "La regla no funciona así. Revise otra vez la forma de la expresión."))]
+    : [htmlOp(T("Correction: ", "Corrección: ") + ver(cor) + ".", true, porque), htmlOp(T("It is correct.", "Está correcto."), false, T("It has a mistake. Look again at which rule fits.", "Tiene un error. Revise otra vez qué regla corresponde.")), htmlOp(falsa[1] + ": " + ver(falsa[0]) + ".", false, T("That is not how the rule works. Look again at the shape of the expression.", "La regla no funciona así. Revise otra vez la forma de la expresión."))];
+  return {enun: T("A student wrote ", "Un estudiante escribió ") + ver(igualX(ex, bien ? cor : err)) + T(". What is the right call?", ". ¿Qué corresponde?"), opciones: ops, sol: ""};
+}
+
+/* ============ MODULE 4 · a complete expression, box by box ============ */
+var C = {q: null, intentos: [0, 0, 0, 0, 0], hechos: [false, false, false, false, false], ayuda: false, resueltas: 0, total: 0, cerrada: false};
+function nuevaCompleta(){
+  var c, a, n, b, d, e3;
+  do { c = ale(2, 3); a = ale(1, 4); n = ale(2, 3); b = ale(1, 4); d = ale(2, 14); e3 = a * n + b - d; } while (e3 === 0 || Math.abs(e3) > 5 || Math.pow(c, n) > 27);
+  C.q = {c: c, a: a, n: n, b: b, d: d, coef: Math.pow(c, n), e1: a * n, e2: a * n + b, e3: e3};
+  C.intentos = [0, 0, 0, 0, 0]; C.hechos = [false, false, false, false, false]; C.ayuda = false; C.cerrada = false;
+  var dentro = mx(c, "x", a);
+  $("c-expr").innerHTML = ver(entreX(porX(parX(dentro, n), xp("x", b)), xp("x", d))) + ".";
+  $("c-par").innerHTML = ver(parX(dentro, n));
+  $("c-t2").innerHTML = T("Multiply the answer of step 1 by ", "Multiplique el resultado del paso 1 por ") + ver(xp("x", b)) + T(". The number does not change.", ". El coeficiente no cambia.");
+  $("c-t3").innerHTML = T("Divide by ", "Divida entre ") + ver(xp("x", d)) + ".";
+  $("c-t4").innerHTML = T("Leave no negative exponents. The number stays on top.", "Deje el resultado sin exponentes negativos. El coeficiente se queda en el numerador.");
+  ["c-coef", "c-e1", "c-e2", "c-e3", "c-e4"].forEach(function(id){ $(id).value = ""; $(id).className = "corto"; });
+  $("c-donde").value = ""; $("c-donde").className = "";
+  for (var i = 1; i <= 4; i++){ $("c-fb" + i).className = "fb"; $("c-fb" + i).innerHTML = ""; }
+  $("c-final").innerHTML = "";
+  habilita();
+}
+function habilita(){
+  [["c-coef", "c-e1", "c-v1"], ["c-e2", "c-v2"], ["c-e3", "c-v3"], ["c-donde", "c-e4", "c-v4"]].forEach(function(ids, i){
+    var activo = !C.hechos[i + 1] && (i === 0 || C.hechos[i]);
+    ids.forEach(function(id){ $(id).disabled = !activo; });
+  });
+}
+function cierraPaso(k, bien, texto){
+  var fb = $("c-fb" + k);
+  if (bien){ C.hechos[k] = true; fb.className = "fb bien"; fb.innerHTML = "✓ " + texto; }
+  else if (C.intentos[k] < 2){ fb.className = "fb pista"; fb.innerHTML = "<strong>" + T("Not yet.", "Todavía no.") + "</strong> " + texto + " <strong>" + T("You have one more try.", "Tiene un intento más.") + "</strong>"; return; }
+  else { C.hechos[k] = true; C.ayuda = true; fb.className = "fb mal"; fb.innerHTML = texto; }
+  habilita();
+  if (k < 4) $(["c-e2", "c-e3", "c-donde"][k - 1]).focus(); else termina();
+}
+function marca(id, ok){ $(id).className = (id === "c-donde" ? "" : "corto ") + (ok ? "bien" : "error"); }
+function verifica(k){
+  var q = C.q;
+  if (k === 1){
+    var co = leeEnt($("c-coef").value), e = leeEnt($("c-e1").value);
+    if (isNaN(co) || isNaN(e)){ $("c-fb1").className = "fb pista"; $("c-fb1").innerHTML = T("Type a whole number in each box.", "Escriba un número entero en cada casilla."); return; }
+    C.intentos[1]++;
+    var okC = co === q.coef, okE = e === q.e1; marca("c-coef", okC); marca("c-e1", okE);
+    if (okC && okE) return cierraPaso(1, true, T("The number is ", "El coeficiente es ") + q.c + "<sup>" + q.n + "</sup> = " + q.coef + T(" and the exponent is ", " y el exponente ") + q.a + " × " + q.n + " = " + q.e1 + ".");
+    var msg = [];
+    if (!okC) msg.push(co === q.c ? T("the number is raised too", "el coeficiente también se eleva") : (co === q.c * q.n ? T("the number is raised, not multiplied by ", "el coeficiente se eleva, no se multiplica por ") + q.n : T("check ", "revise ") + q.c + "<sup>" + q.n + "</sup>"));
+    if (!okE) msg.push(e === q.a + q.n ? T("inside the parentheses the exponents are multiplied", "dentro del paréntesis los exponentes se multiplican") : T("check ", "revise ") + q.a + " × " + q.n);
+    if (C.intentos[1] >= 2){ $("c-coef").value = q.coef; $("c-e1").value = q.e1; marca("c-coef", true); marca("c-e1", true); }
+    return cierraPaso(1, false, (C.intentos[1] >= 2 ? T("The answer was ", "La respuesta era ") + q.coef + "x<sup>" + q.e1 + "</sup>: " + msg.join("; ") : (function(s){ return s.charAt(0).toUpperCase() + s.slice(1); })(msg.join("; "))) + ".");
+  }
+  if (k === 2 || k === 3){
+    var campo = k === 2 ? "c-e2" : "c-e3", v = leeEnt($(campo).value), esp = k === 2 ? q.e2 : q.e3;
+    if (isNaN(v)){ $("c-fb" + k).className = "fb pista"; $("c-fb" + k).innerHTML = T("Type a whole number (it can start with a minus sign).", "Escriba un número entero (puede empezar con el signo menos)."); return; }
+    C.intentos[k]++;
+    if (v === esp){ marca(campo, true); return cierraPaso(k, true, k === 2 ? q.e1 + " + " + q.b + " = " + q.e2 + "." : q.e2 + " − " + q.d + " = " + numTxt(q.e3) + "."); }
+    marca(campo, false);
+    var pista = k === 2 ? (v === q.e1 * q.b ? T("In a product the exponents are added.", "En el producto los exponentes se suman.") : T("Add ", "Sume ") + q.e1 + " + " + q.b + ".")
+                        : (v === q.d - q.e2 ? T("It is top minus bottom: ", "Es arriba menos abajo: ") + q.e2 + " − " + q.d + "." : T("Subtract ", "Reste ") + q.e2 + " − " + q.d + T("; the answer can be negative.", "; el resultado puede ser negativo."));
+    if (C.intentos[k] >= 2){ $(campo).value = esp; marca(campo, true); }
+    return cierraPaso(k, false, (C.intentos[k] >= 2 ? T("The answer was ", "La respuesta era ") + numTxt(esp) + ". " : "") + pista);
+  }
+  var donde = $("c-donde").value, e4 = leeEnt($("c-e4").value);
+  if (!donde || isNaN(e4)){ $("c-fb4").className = "fb pista"; $("c-fb4").innerHTML = T("Choose where the x goes and type its exponent.", "Elija dónde queda la x y escriba su exponente."); return; }
+  C.intentos[4]++;
+  var dOk = q.e3 > 0 ? "arriba" : "abajo", eOk = Math.abs(q.e3);
+  marca("c-donde", donde === dOk); marca("c-e4", e4 === eOk);
+  if (donde === dOk && e4 === eOk) return cierraPaso(4, true, q.e3 < 0 ? T("The exponent " + numTxt(q.e3) + " becomes positive when the x moves to the bottom.", "El exponente " + numTxt(q.e3) + " se vuelve positivo al bajar la x al denominador.") : T("The exponent is already positive: the x stays on top.", "El exponente ya es positivo: la x se queda arriba."));
+  var p4 = donde !== dOk ? (q.e3 < 0 ? T("With a negative exponent, the x moves to the bottom.", "Con exponente negativo, la x baja al denominador.") : T("With a positive exponent, the x stays on top.", "Con exponente positivo, la x se queda en el numerador.")) : T("When it crosses the bar, the exponent changes sign: it becomes ", "Al cruzar la barra, el exponente cambia de signo: queda ") + eOk + ".";
+  if (C.intentos[4] >= 2){ $("c-donde").value = dOk; $("c-e4").value = eOk; marca("c-donde", true); marca("c-e4", true); }
+  return cierraPaso(4, false, (C.intentos[4] >= 2 ? T("The right answer is now in the boxes. ", "La respuesta correcta ya está en las casillas. ") : "") + p4);
+}
+function termina(){
+  if (C.cerrada) return;
+  C.cerrada = true; C.total++; if (!C.ayuda) C.resueltas++;
+  var q = C.q, R = M(q.coef, 1, {x: q.e3}), orig = mDiv(mMul(mPow(mono(q.c, {x: q.a}), q.n), xv("x", q.b)), xv("x", q.d));
+  var vo = mValor(orig, {x: 2}), vr = mValor(R, {x: 2});
+  $("c-final").innerHTML = '<div class="linea veredicto">' + T("Answer: ", "Resultado: ") + ver(mFinal(R)) + "</div>" +
+    '<div class="linea">' + T("Check with x = 2: the original expression is ", "Comprobación con x = 2: la expresión original vale ") + ver(ratX(vo)) + T(" and the answer is ", " y el resultado vale ") + ver(ratX(vr)) + (ratIgual(vo, vr) ? T(". They match.", ". Coinciden.") : ".") + "</div>" +
+    '<div class="linea">' + (C.ayuda ? T("You needed help on a step: try another expression to make it stick.", "Necesitó ayuda en algún paso: pruebe otra expresión para afianzarlo.") : T("Solved with no help. Well done!", "Resuelta sin ayuda. ¡Bien hecho!")) + "</div>";
+  $("c-marc").textContent = T("Expressions solved with no help: ", "Expresiones resueltas sin ayuda: ") + C.resueltas + T(" of ", " de ") + C.total;
+}
+function solucionCompleta(){
+  var q = C.q;
+  $("c-coef").value = q.coef; $("c-e1").value = q.e1; $("c-e2").value = q.e2; $("c-e3").value = q.e3; $("c-donde").value = q.e3 > 0 ? "arriba" : "abajo"; $("c-e4").value = Math.abs(q.e3);
+  ["c-coef", "c-e1", "c-e2", "c-e3", "c-donde", "c-e4"].forEach(function(id){ marca(id, true); });
+  for (var k = 1; k <= 4; k++) if (!C.hechos[k]){ C.hechos[k] = true; C.ayuda = true; $("c-fb" + k).className = "fb"; $("c-fb" + k).innerHTML = T("Step shown by the solution.", "Paso mostrado por la solución."); }
+  habilita(); termina();
+}
+
+/* ============ Start ============ */
+llenaRutas();
+$("o-expr").addEventListener("change", reiniciaRuta);
+$("o-siguiente").addEventListener("click", function(){ if (O.paso < RUTAS[O.i].pasos.length){ O.paso++; pintaPasosRuta(); } });
+$("o-todo").addEventListener("click", function(){ O.paso = RUTAS[O.i].pasos.length; pintaPasosRuta(); });
+$("o-reiniciar").addEventListener("click", reiniciaRuta);
+reiniciaRuta();
+OM("p-orden", genOrden);
+OM("p-fracciones", genFracciones);
+OM("p-arbitro", genArbitro);
+[1, 2, 3, 4].forEach(function(k){ $("c-v" + k).addEventListener("click", function(){ verifica(k); }); });
+[["c-coef", 1], ["c-e1", 1], ["c-e2", 2], ["c-e3", 3], ["c-e4", 4]].forEach(function(p){ $(p[0]).addEventListener("keydown", function(e){ if (e.key === "Enter") verifica(p[1]); }); });
+$("c-nuevo").addEventListener("click", function(){ nuevaCompleta(); $("c-coef").focus(); });
+$("c-solucion").addEventListener("click", solucionCompleta);
+nuevaCompleta();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

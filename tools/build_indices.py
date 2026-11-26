@@ -207,6 +207,45 @@ def _tx2():
     return X
 TX2 = _tx2()
 
+# ---------------- Level 3 · Exploring geometry and statistics ----------------
+TEMAS3 = {
+ "en": [
+  ("1", "Rules of exponents", [("1-1", "The product rule, power of a power, and power of a product"), ("1-2", "The quotient rule, zero exponents, and negative exponents"), ("1-3", "Simplifying with several rules")]),
+  ("2", "Scientific notation", [("2-1", "Scientific notation and orders of magnitude"), ("2-2", "Multiplying and dividing in scientific notation"), ("2-3", "Adding, subtracting, and using scientific notation")]),
+  ("3", "Radicals and the real numbers", [("3-1", "Simplifying radicals with perfect-square factors"), ("3-2", "Adding, subtracting, and multiplying radicals"), ("3-3", "The real number system: rational and irrational numbers")]),
+  ("4", "Linear algebra", [("4-1", "Variables, algebraic expressions, and translating words"), ("4-2", "Solving linear equations with variables on both sides"), ("4-3", "Equations with fractions, decimals, and special cases")]),
+  ("5", "Inequalities and formulas", [("5-1", "Solving and graphing linear inequalities"), ("5-2", "Inequalities that need simplifying, and word problems"), ("5-3", "Solving formulas for a variable, and a general strategy")]),
+  ("6", "Advanced geometry", [("6-1", "Angles and parallel lines cut by a transversal"), ("6-2", "The Pythagorean theorem: proof, uses, and converse"), ("6-3", "Similar figures and scale drawings")]),
+  ("7", "Volume and data analysis", [("7-1", "Volume of prisms and cylinders"), ("7-2", "Box plots"), ("7-3", "Histograms: make, read, and compare")]),
+  ("8", "Counting and probability", [("8-1", "The counting principle, permutations, and combinations"), ("8-2", "Compound probability: with and without replacement"), ("8-3", "Final project and strategies for the GED math test")])],
+ "es": [
+  ("1", "Reglas de los exponentes", [("1-1", "Regla del producto, potencia de potencia y potencia de un producto"), ("1-2", "Regla del cociente, exponente cero y exponentes negativos"), ("1-3", "Simplificar expresiones exponenciales con múltiples reglas")]),
+  ("2", "Notación científica", [("2-1", "Conversión decimal ↔ científica y órdenes de magnitud"), ("2-2", "Multiplicación y división en notación científica"), ("2-3", "Suma, resta y aplicaciones en ciencia y tecnología")]),
+  ("3", "Radicales y números reales", [("3-1", "Simplificar radicales: factorización en cuadrados perfectos"), ("3-2", "Operaciones con radicales: suma, resta y multiplicación"), ("3-3", "El sistema de números reales: racionales, irracionales y la recta numérica completa")]),
+  ("4", "Álgebra lineal", [("4-1", "Variables, expresiones algebraicas y traducción"), ("4-2", "Resolver ecuaciones lineales: propiedades de igualdad y variables en ambos lados"), ("4-3", "Ecuaciones con coeficientes fraccionarios, decimales y casos especiales")]),
+  ("5", "Inecuaciones y fórmulas", [("5-1", "Resolver inecuaciones lineales y graficar en la recta numérica"), ("5-2", "Inecuaciones que requieren simplificación y problemas verbales"), ("5-3", "Despeje de fórmulas literales y estrategia general de resolución")]),
+  ("6", "Geometría avanzada", [("6-1", "Ángulos: relaciones y líneas paralelas cortadas por una transversal"), ("6-2", "Teorema de Pitágoras: demostración, aplicaciones y converso"), ("6-3", "Semejanza de figuras y dibujos a escala (Teorema de Thales)")]),
+  ("7", "Volumen y análisis de datos", [("7-1", "Volumen de prismas y cilindros"), ("7-2", "Diagramas de caja y bigotes"), ("7-3", "Histogramas: construir, interpretar y comparar distribuciones")]),
+  ("8", "Combinatoria y probabilidad", [("8-1", "Principio fundamental del conteo, permutaciones y combinaciones"), ("8-2", "Probabilidad compuesta: con y sin reemplazo"), ("8-3", "Proyecto final integrador y estrategias para el GED Mathematical Reasoning")])]}
+
+EXTRAS3 = {
+ "en": {"1-3": ("check", "topic-1-check.html", None, "Topic 1 check: the five rules of exponents")},
+ "es": {"1-3": ("check", "comprobacion-tema-1.html", None, "Comprobación del Tema 1: las cinco reglas de los exponentes")}}
+
+def _tx3():
+    import copy
+    X = copy.deepcopy(TX)
+    for L in X:
+        for k, v in X[L].items():
+            X[L][k] = v.replace("level-1", "level-3").replace("nivel-1", "nivel-3").replace("Level 1", "Level 3").replace("Nivel 1", "Nivel 3")
+    X["en"]["h1"] = "Math · Level 3 · Exploring geometry and statistics"
+    X["es"]["h1"] = "Matemáticas · Nivel 3 · Exploración geométrica y estadística"
+    X["en"]["intro"] = "Eight topics, from the rules of exponents to probability: the algebra, geometry, and data of the GED test. Each lesson has a practice page that makes new exercises every time."
+    X["es"]["intro"] = "Ocho temas, de las reglas de los exponentes a la probabilidad: el álgebra, la geometría y los datos del examen GED. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez."
+    return X
+TX3 = _tx3()
+
 if __name__ == "__main__":
     print("Level 1 ok:", construye("en"), "English lessons ·", construye("es"), "lecciones en español")
     print("Level 2 ok:", construye("en", TEMAS2, EXTRAS2, TX2), "English lessons ·", construye("es", TEMAS2, EXTRAS2, TX2), "lecciones en español")
+    print("Level 3 ok:", construye("en", TEMAS3, EXTRAS3, TX3), "English lessons ·", construye("es", TEMAS3, EXTRAS3, TX3), "lecciones en español")

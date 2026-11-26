@@ -194,6 +194,7 @@ CCR = {
  "7.NS.2b": ("D", "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If p and q are integers, then –(p/q) = (–p)/q = p/(–q)."),
  "5.NBT.2": ("C", "Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point when a decimal is multiplied or divided by a power of 10. Use whole-number exponents to denote powers of 10."),
  "6.EE.1": ("D", "Write and evaluate numerical expressions involving whole-number exponents."),
+ "8.EE.1": ("D", "Know and apply the properties of integer exponents to generate equivalent numerical expressions."),
  "8.EE.2": ("D", "Use square root and cube root symbols to represent solutions to equations of the form x² = p and x³ = p, where p is a positive rational number. Evaluate square roots of small perfect squares and cube roots of small perfect cubes."),
  "5.OA.1": ("C", "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols."),
  "6.EE.2c": ("D", "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations)."),
@@ -317,6 +318,13 @@ LESSONS = [
   {"direct": ["Q.6.a"], "builds": ["Q.3.d"], "mp": ["MP.2.b", "MP.4.c", "MP.1.e"], "ccr": ["7.RP.3"]}),
  ("level-2/lesson-8-3.html", "8.3", "Simple probability",
   {"direct": ["Q.8.b"], "builds": ["Q.1.a"], "mp": ["MP.1.a", "MP.2.c", "MP.5.c"], "ccr": ["7.SP.5", "7.SP.6", "7.SP.7"]}),
+ # ---------- Level 3 ----------
+ ("level-3/lesson-1-1.html", "1.1", "The product rule, power of a power, and power of a product",
+  {"direct": ["Q.1.c"], "builds": ["A.1.d"], "mp": ["MP.3.a", "MP.4.a", "MP.4.b"], "ccr": ["6.EE.1", "8.EE.1"]}),
+ ("level-3/lesson-1-2.html", "1.2", "The quotient rule, zero exponents, and negative exponents",
+  {"direct": ["Q.1.c"], "builds": ["A.1.d", "Q.2.e"], "mp": ["MP.3.a", "MP.4.a", "MP.5.c"], "ccr": ["8.EE.1"]}),
+ ("level-3/lesson-1-3.html", "1.3", "Simplifying with several rules",
+  {"direct": ["Q.1.c"], "builds": ["A.1.d", "A.1.h"], "mp": ["MP.1.b", "MP.3.c", "MP.4.b", "MP.5.a"], "ccr": ["8.EE.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
