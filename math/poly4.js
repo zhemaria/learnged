@@ -63,3 +63,58 @@ function azarP(grado, nterm, max){
   elegidos.forEach(function(g){ var c; do { c = aleatorio(-(max || 9), max || 9); } while (!c); o[g] = c; });
   return pDe(o);
 }
+
+/* ---------- Factored forms ----------
+   A factored form is {k: whole number, m: power of x outside, f: [polynomials]} meaning k · x^m · f1 · f2 … */
+function mcdLista(l){ return l.reduce(function(a, b){ return mcd(a, Math.abs(b)); }, 0); }
+function contenido(p){ return mcdLista(p) || 1; }
+function fProducto(F){ var r = pMono(F.k, F.m || 0); F.f.forEach(function(q){ r = pMul(r, q); }); return r; }
+/* (x + 3), (2x − 5), (x + 3)² written with plain text */
+function factorVis(q){ return "(" + pVis(q) + ")"; }
+function fVis(F){
+  var pre = "", k = F.k, m = F.m || 0;
+  if (m) pre = (k === 1 ? "" : k === -1 ? "−" : sg(k)) + "x" + (m > 1 ? "<sup>" + m + "</sup>" : "");
+  else if (k !== 1 || !F.f.length) pre = k === -1 && F.f.length ? "−" : sg(k);
+  var partes = [], i = 0;
+  while (i < F.f.length){ var j = i; while (j + 1 < F.f.length && pIgual(F.f[j + 1], F.f[i])) j++; partes.push(factorVis(F.f[i]) + (j > i ? "<sup>" + (j - i + 1) + "</sup>" : "")); i = j + 1; }
+  return pre + partes.join("");
+}
+function fVoz(F){
+  var k = F.k, m = F.m || 0, s = [];
+  if (k !== 1 || m) s.push((k === -1 ? T("negative ", "menos ") : (k !== 1 ? sg(k).replace("−", T("negative ", "menos ")) + " " : "")) + (m ? (m === 1 ? "x" : "x " + T("to the ", "a la ") + m) : ""));
+  F.f.forEach(function(q){ s.push(T("the quantity ", "la cantidad ") + pVoz(q)); });
+  return s.join(T(" times ", " por "));
+}
+function fHTML(F){ return envuelve(fVis(F), fVoz(F)); }
+function opF(F){ return {clave: fClave(F), html: fHTML(F)}; }
+function fClave(F){ return F.k + "|" + (F.m || 0) + "|" + F.f.map(pClave).sort().join(";"); }
+/* Reads a typed factored form: 2(x+5)(x-5), 4x(2x+3), (x+3)^2, -3(x-1)(x+2), x^2(x+4). Returns {F, prod} or null. */
+function fLee(txt){
+  var s = String(txt).replace(/\s+/g, "").replace(/[−–]/g, "-").replace(/[·*×]/g, "").replace(/[⁰¹²³⁴⁵⁶⁷⁸⁹]+/g, function(m){ return "^" + m.split("").map(function(ch){ for (var k in SUPS) if (SUPS[k] === ch) return k; return ""; }).join(""); });
+  if (!s) return null;
+  var letras = s.match(/[a-z]/gi); if (letras && letras.some(function(l){ return l.toLowerCase() !== letras[0].toLowerCase(); })) return null;
+  if (letras) s = s.replace(new RegExp(letras[0], "gi"), "x");
+  var m0 = s.match(/^([-+]?\d*)(x(?:\^(\d+))?)?(?=\(|$)/);
+  if (!m0) return null;
+  var resto = s.slice(m0[0].length), k = m0[1] === "" || m0[1] === "+" ? 1 : (m0[1] === "-" ? -1 : parseInt(m0[1], 10)), m = m0[2] ? (m0[3] ? +m0[3] : 1) : 0, f = [];
+  if (!resto && !m0[0]) return null;
+  var re = /^\(([^()]+)\)(?:\^(\d+))?/;
+  while (resto){ var mm = resto.match(re); if (!mm) return null; var q = pLee(mm[1]); if (!q) return null; var e = mm[2] ? +mm[2] : 1; for (var i = 0; i < e; i++) f.push(q); resto = resto.slice(mm[0].length); }
+  var F = {k: k, m: m, f: f};
+  return {F: F, prod: fProducto(F)};
+}
+/* Is a polynomial factor "finished"? (degree 1 with no common number, or a quadratic with no whole-number roots and no common number) */
+function primo(q){ var g = pGrado(q); if (g === 0) return true; if (contenido(q) !== 1) return false; if (g === 1) return true; if (g === 2){ var a = q[2], b = q[1], c = q[0], d = b * b - 4 * a * c; return !(d >= 0 && esCuadrado(d)) || false; } return false; }
+/* Checks a typed factored answer against the polynomial ok. trampas: [{p (product) or F, msg}] */
+function evaluaF(txt, ok, trampas){
+  var r = fLee(txt);
+  if (!r) return {estado: "invalido", msg: T("Type the factors with parentheses, like 3(x + 2) or (x − 4)(x + 4). Use ^ for exponents.", "Escriba los factores con paréntesis, como 3(x + 2) o (x − 4)(x + 4). Use ^ para los exponentes.")};
+  var F = r.F;
+  for (var i = 0; i < (trampas || []).length; i++){ var tp = trampas[i]; if (tp.F ? fClave(tp.F) === fClave(F) : pIgual(r.prod, tp.p) && !pIgual(r.prod, ok)) return {estado: "mal", msg: tp.msg}; }
+  if (!pIgual(r.prod, ok)) return {estado: "mal", msg: T("Multiply your factors to check: they do not give back the polynomial. Look at the signs and the numbers.", "Multiplique sus factores para comprobar: no devuelven el polinomio. Revise los signos y los números.")};
+  if (!F.f.length || (F.f.length === 1 && pGrado(F.f[0]) === pGrado(ok) && F.k === 1 && !F.m)) return {estado: "mal", msg: T("That is the same polynomial. Write it as a product of factors.", "Ese es el mismo polinomio. Escríbalo como un producto de factores.")};
+  var gx = 0; F.f.forEach(function(q){ if (!q[0]) gx++; });
+  var fin = F.f.every(primo) && !gx;
+  if (!fin) return {estado: "mal", msg: F.f.some(function(q){ return contenido(q) !== 1 || !q[0]; }) ? T("The product is right, but a factor still has a common factor inside. Take it out.", "El producto está bien, pero dentro de un factor todavía queda un factor común. Sáquelo.") : T("The product is right, but it can be factored further: look at what is left inside the parentheses.", "El producto está bien, pero todavía se puede factorizar más: mire lo que queda dentro del paréntesis.")};
+  return {estado: "bien"};
+}

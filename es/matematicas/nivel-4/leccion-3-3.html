@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 3.3 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_3_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 3.3 · Factorización de trinomios (a = 1 y a ≠ 1) · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-3-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 3 — Multiplicación y factorización</p>
+<h1>Lección 3.3 · Factorización de trinomios (a = 1 y a ≠ 1)</h1>
+<p class="lema">Factorice trinomios hallando dos números cuyo producto y suma encajen, use el método ac cuando a ≠ 1 y factorice siempre por completo.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">✏️</span> Sin calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Factorizar</strong> trinomios x² + bx + c hallando dos números cuyo producto sea c y cuya suma sea b.</li>
+<li><strong>Factorizar</strong> trinomios ax² + bx + c (a ≠ 1) con el método ac (producto y suma).</li>
+<li><strong>Combinar</strong> el factor común con la factorización de trinomios cuando sea necesario.</li>
+<li><strong>Verificar</strong> cada factorización expandiendo.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.1.f</span> Factorizar expresiones polinómicas.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.1.d</span> Sumar, restar y multiplicar polinomios, incluida la multiplicación de dos binomios, o dividir polinomios factorizables.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-SSE.2</span> <span class="std-nivel">Nivel E</span> Usar la estructura de una expresión para identificar maneras de reescribirla. Por ejemplo, ver x⁴ − y⁴ como (x²)² − (y²)², y reconocerla así como una diferencia de cuadrados que se factoriza como (x² − y²)(x² + y²).</li><li><span class="std-cod std-ccr">A-APR.1</span> <span class="std-nivel">Nivel E</span> Entender que los polinomios forman un sistema análogo al de los números enteros, es decir, cerrado bajo la suma, la resta y la multiplicación; sumar, restar y multiplicar polinomios.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-a-uno">Trinomios con a = 1: dos números</a></li>
+<li><a href="#s-ac">Trinomios con a ≠ 1: el método ac</a></li>
+<li><a href="#s-completa">Casos especiales y factorización completa</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-a-uno"><span aria-hidden="true" class="num-seccion">1</span>Trinomios con a = 1: dos números</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 3.2 se factorizó extrayendo el factor común y reconociendo diferencias de cuadrados. Ahora se factorizan <strong>trinomios</strong> (tres términos), que son justamente el resultado de multiplicar dos binomios con FOIL. Factorizar un trinomio es preguntarse: ¿qué dos binomios, multiplicados, dan este trinomio?</p>
+<p>Para factorizar x² + bx + c se buscan dos números que cumplan dos condiciones a la vez:</p>
+<ul><li>que multiplicados den <strong>c</strong> (el término independiente);</li>
+<li>que sumados den <strong>b</strong> (el coeficiente de x).</li></ul>
+<p>Esos dos números son los que van en los binomios: x² + bx + c = (x + número₁)(x + número₂). Los signos de c y b orientan la búsqueda:</p>
+<div aria-label="Signos del trinomio y de los dos números (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Relación entre los signos del trinomio y los signos de los dos números buscados</caption>
+<thead><tr><th scope="col">Signo de c</th><th scope="col">Signo de b</th><th scope="col">Los dos números son…</th></tr></thead>
+<tbody>
+<tr><td>positivo (+)</td><td>positivo (+)</td><td>ambos positivos</td></tr>
+<tr><td>positivo (+)</td><td>negativo (−)</td><td>ambos negativos</td></tr>
+<tr><td>negativo (−)</td><td>cualquiera</td><td>uno positivo y uno negativo</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Factorizar x² + 7x + 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Dos números que multiplicados den 12 y sumados den 7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Son 3 y 4.</strong> 3 · 4 = 12 y 3 + 4 = 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se escriben los binomios.</strong> (x + 3)(x + 4).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(x + 3)(x + 4)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Con un término independiente negativo. Factorizar x² − x − 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Dos números que multiplicados den −12 y sumados den −1.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Son −4 y 3.</strong> (−4) · 3 = −12 y −4 + 3 = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(x − 4)(x + 3)</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — x² + 5x + 6</h3></div>
+<p class="pregunta-int" id="t-p1">Seleccione la factorización correcta de x² + 5x + 6.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">(x + 1)(x + 6)</button>
+<button class="opcion" data-k="b" type="button">(x + 2)(x + 3)</button>
+<button class="opcion" data-k="c" type="button">(x − 2)(x − 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — x² − x − 6</h3></div>
+<p class="pregunta-int" id="t-p2">Seleccione la factorización correcta de x² − x − 6.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">(x + 3)(x − 2)</button>
+<button class="opcion" data-k="b" type="button">(x − 2)(x − 3)</button>
+<button class="opcion" data-k="c" type="button">(x − 3)(x + 2)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — x² − 9x + 20</h3></div>
+<p class="pregunta-int" id="t-p3">Seleccione la factorización correcta de x² − 9x + 20.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">(x − 4)(x − 5)</button>
+<button class="opcion" data-k="b" type="button">(x + 4)(x + 5)</button>
+<button class="opcion" data-k="c" type="button">(x − 2)(x − 10)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#a-uno" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: trinomios con a = 1 (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: trinomios con a = 1</span><span class="ei-sub">Mire los pares de factores, halle los dos números que multiplican y suman, y escriba los binomios.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-ac"><span aria-hidden="true" class="num-seccion">2</span>Trinomios con a ≠ 1: el método ac</h2>
+<p>Cuando el coeficiente de x² no es 1, se usa el <strong>método ac</strong>:</p>
+<ol><li>Multiplicar a · c.</li>
+<li>Buscar dos números que multiplicados den ac y sumados den b.</li>
+<li>Reescribir el término del medio (bx) usando esos dos números.</li>
+<li>Agrupar de dos en dos y extraer el factor común de cada grupo.</li></ol>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Factorizar 2x² + 7x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a · c = 2 · 3 = 6.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Dos números que multipliquen 6 y sumen 7:</strong> 6 y 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se reescribe.</strong> 2x² + 6x + x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Se agrupa.</strong> 2x(x + 3) + 1(x + 3) = (2x + 1)(x + 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(2x + 1)(x + 3)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Con signos. Factorizar 3x² − 10x + 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a · c = 3 · 8 = 24.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Dos números que multipliquen 24 y sumen −10:</strong> −6 y −4.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se reescribe.</strong> 3x² − 6x − 4x + 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Se agrupa.</strong> 3x(x − 2) − 4(x − 2) = (3x − 4)(x − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(3x − 4)(x − 2)</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El truco está en el término del medio</span>
+<p>Los dos números del método ac sirven para «partir» el término bx en dos. Al agrupar, debe aparecer el <strong>mismo binomio</strong> en ambos grupos; si no aparece, conviene revisar los signos.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Otro camino: el aspa simple</span>
+<p>También se puede multiplicar y dividir por a, factorizar como si a fuera 1 y simplificar. Para 2x² + 7x + 3: [(2x)² + 7(2x) + 6] ÷ 2 = (2x + 6)(2x + 1) ÷ 2 = (x + 3)(2x + 1). Los dos números son los mismos (6 y 1), y el divisor siempre desaparece al simplificar. Si no desaparece, uno de los números está mal.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — 2x² + 5x + 2</h3></div>
+<p class="pregunta-int" id="t-p4">Seleccione la factorización correcta de 2x² + 5x + 2.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">(2x + 2)(x + 1)</button>
+<button class="opcion" data-k="b" type="button">(2x + 1)(x + 2)</button>
+<button class="opcion" data-k="c" type="button">(x + 1)(x + 2)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — 3x² + 7x + 2</h3></div>
+<p class="pregunta-int" id="t-p5">Seleccione la factorización correcta de 3x² + 7x + 2.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">(3x + 1)(x + 2)</button>
+<button class="opcion" data-k="b" type="button">(3x + 2)(x + 1)</button>
+<button class="opcion" data-k="c" type="button">(x + 1)(x + 2)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — 2x² − 7x + 3</h3></div>
+<p class="pregunta-int" id="t-p6">Seleccione la factorización correcta de 2x² − 7x + 3.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">(2x − 3)(x − 1)</button>
+<button class="opcion" data-k="b" type="button">(2x + 1)(x − 3)</button>
+<button class="opcion" data-k="c" type="button">(2x − 1)(x − 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#ac" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el método ac y el aspa simple (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el método ac y el aspa simple</span><span class="ei-sub">Elija un camino, vea los pasos y escriba los dos binomios.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-completa"><span aria-hidden="true" class="num-seccion">3</span>Casos especiales y factorización completa</h2>
+<p>Algunos trinomios son <strong>cuadrados perfectos</strong>: provienen de elevar un binomio al cuadrado. Por ejemplo, 4x² − 12x + 9 = (2x − 3)², porque (2x)² = 4x², 3² = 9 y 2 · 2x · 3 = 12x.</p>
+<p>Y, como siempre, antes de factorizar un trinomio conviene sacar primero el factor común si lo hay. Algunos trinomios, como x² + x + 1, no se pueden factorizar con números enteros: no hay dos enteros que multiplicados den 1 y sumados den 1.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Factor común primero. Factorizar 2x² + 10x + 12 completamente.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Factor común 2.</strong> 2(x² + 5x + 6).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se factoriza el trinomio.</strong> x² + 5x + 6 = (x + 2)(x + 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Resultado completo.</strong> 2(x + 2)(x + 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>2(x + 2)(x + 3)</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Verifique siempre por expansión</span>
+<p>Al multiplicar los factores, incluido el factor común, debe recuperarse el trinomio original. Si algo no cuadra, revise los dos números y los signos.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — Hasta el final</h3></div>
+<p class="pregunta-int" id="t-p7">Factorice completamente 3x² − 12x + 12.</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">3(x² − 4x + 4)</button>
+<button class="opcion" data-k="b" type="button">3(x − 2)²</button>
+<button class="opcion" data-k="c" type="button">(3x − 6)(x − 2)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#completa" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: casos especiales y factorización completa (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: casos especiales y factorización completa</span><span class="ei-sub">Extraiga el factor común, decida qué clase de trinomio queda y termine la factorización.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">4</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-3-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno abierto y sin calculadora: (1) La escalera de factorización, a su ritmo. Nivel 1: x² + 7x + 12 y x² − 5x + 6. Nivel 2: x² − x − 12 y x² + 3x − 10. Nivel 3: 2x² + 7x + 3 y 3x² − 10x + 8. Nivel 4: 4x² − 12x + 9 (cuadrado perfecto). (2) Producto y suma: para x² + 9x + 20, x² − 2x − 15, 2x² + 11x + 5 y 6x² + x − 2, complete primero la frase «dos números que multiplican a ___ y suman ___» y solo después escriba los binomios. (3) Hasta el final: factorice por completo 2x² + 10x + 12, 3x² − 12x + 12 y 5x² − 5, sacando primero el factor común. Verifique cada una expandiendo y explique por qué la factorización está completa. Después haga una ronda de cada actividad de la página de práctica, resolviendo cada ejercicio en papel antes de escribir la respuesta. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Haga unas tarjetas: por un lado un trinomio (x² + 7x + 12, x² − x − 6, 2x² + 7x + 3, …) y por el otro sus factores. Barájelas y juegue con alguien en casa: uno lee los factores y el otro multiplica para hallar el trinomio.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">5</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Factorice x² + 8x + 15.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(x + 1)(x + 15)</button><button class="opcion" data-k="b" type="button">(x + 3)(x + 5)</button><button class="opcion" data-k="c" type="button">(x − 3)(x − 5)</button><button class="opcion" data-k="d" type="button">(x + 4)(x + 4)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Factorice x² − 7x + 12.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(x + 3)(x + 4)</button><button class="opcion" data-k="b" type="button">(x − 2)(x − 6)</button><button class="opcion" data-k="c" type="button">(x − 3)(x − 4)</button><button class="opcion" data-k="d" type="button">(x − 1)(x − 12)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Factorice x² + 2x − 15.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(x − 5)(x + 3)</button><button class="opcion" data-k="b" type="button">(x + 15)(x − 1)</button><button class="opcion" data-k="c" type="button">(x + 5)(x + 3)</button><button class="opcion" data-k="d" type="button">(x + 5)(x − 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Factorice x² − 2x − 8.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(x − 4)(x + 2)</button><button class="opcion" data-k="b" type="button">(x + 4)(x − 2)</button><button class="opcion" data-k="c" type="button">(x − 8)(x + 1)</button><button class="opcion" data-k="d" type="button">(x − 4)(x − 2)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Factorice 2x² + 7x + 3.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2x + 3)(x + 1)</button><button class="opcion" data-k="b" type="button">(x + 1)(x + 3)</button><button class="opcion" data-k="c" type="button">(2x + 1)(x + 1)</button><button class="opcion" data-k="d" type="button">(2x + 1)(x + 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Factorice 3x² − 10x + 8.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(3x − 2)(x − 4)</button><button class="opcion" data-k="b" type="button">(3x + 4)(x + 2)</button><button class="opcion" data-k="c" type="button">(3x − 4)(x − 2)</button><button class="opcion" data-k="d" type="button">(x − 4)(x − 2)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Factorice 2x² − 5x − 3.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2x + 1)(x − 3)</button><button class="opcion" data-k="b" type="button">(2x − 1)(x + 3)</button><button class="opcion" data-k="c" type="button">(2x − 3)(x + 1)</button><button class="opcion" data-k="d" type="button">(2x + 3)(x − 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Factorice completamente 3x² − 3x − 6.</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3(x² − x − 2)</button><button class="opcion" data-k="b" type="button">3(x − 2)(x + 1)</button><button class="opcion" data-k="c" type="button">(3x − 6)(x + 1)</button><button class="opcion" data-k="d" type="button">3(x + 2)(x − 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">6</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la factorización de trinomios (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de la factorización de trinomios y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Trinomios con a = 1</th><td>Hallo los dos números (producto y suma) y reconozco el patrón de signos al instante.</td><td>Hallo los números, pero me equivoco en el signo.</td><td>No hallo los dos números o ignoro los signos.</td></tr>
+<tr><th scope="row">Trinomios con a ≠ 1</th><td>Aplico el método ac con seguridad y verifico el binomio común.</td><td>Aplico el método ac, pero fallo al agrupar.</td><td>No aplico el método ac.</td></tr>
+<tr><th scope="row">Combinar con factor común</th><td>Factorizo por completo y verifico expandiendo.</td><td>Saco el factor común, pero no factorizo el trinomio que queda.</td><td>Olvido sacar el factor común.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Tema 3. Se aprendió a factorizar trinomios con a = 1 (buscando dos números cuyo producto es c y cuya suma es b) y con a ≠ 1 (método ac y agrupación), combinando siempre con el factor común y verificando por expansión.</p>
+<p>El Tema 4 · Ecuaciones cuadráticas comienza con la <strong>Lección 4.1 · Resolver ecuaciones cuadráticas por factorización</strong>. Toda esta destreza de factorizar tendrá ahora un propósito potente: hallar las soluciones de una ecuación. Usando la propiedad del producto cero (si A · B = 0, entonces A = 0 o B = 0), cada factor revelará una solución.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 4.1 · Resolver ecuaciones cuadráticas por factorización</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>trinomio</dt><dd>Un polinomio de tres términos, como x² + 7x + 12.</dd>
+<dt>método ac</dt><dd>Buscar dos números de producto a · c y suma b, partir con ellos el término del medio y agrupar.</dd>
+<dt>agrupación</dt><dd>Extraer el factor común de cada par de términos para que aparezca el mismo binomio.</dd>
+<dt>trinomio cuadrado perfecto</dt><dd>a² ± 2ab + b² = (a ± b)²</dd>
+<dt>factorizado completamente</dt><dd>Cuando ningún factor se puede seguir factorizando.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 3 · Lección 3.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 4.1",
+ "review": "las secciones 1 y 2",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "1 · 6 = 6, pero 1 + 6 = 7, no 5.",
+    "c": "−2 + (−3) = −5, no +5."
+   },
+   "right": "2 · 3 = 6 y 2 + 3 = 5.",
+   "solution": "(x + 2)(x + 3)."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "3 + (−2) = 1, no −1.",
+    "b": "(−2)(−3) = +6, no −6."
+   },
+   "right": "(−3) · 2 = −6 y −3 + 2 = −1.",
+   "solution": "(x − 3)(x + 2)."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "4 + 5 = 9, pero el término del medio es −9x.",
+    "c": "−2 + (−10) = −12, no −9."
+   },
+   "right": "(−4)(−5) = 20 y −4 + (−5) = −9.",
+   "solution": "(x − 4)(x − 5)."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "2x + 2 tiene factor común 2, pero 2x² + 5x + 2 no.",
+    "c": "(x + 1)(x + 2) empieza con x², no con 2x²."
+   },
+   "right": "(2x + 1)(x + 2) = 2x² + 5x + 2.",
+   "solution": "(2x + 1)(x + 2)."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Multiplique: el término del medio es 3x + 2x = 5x, no 7x.",
+    "c": "(x + 1)(x + 2) empieza con x², no con 3x²."
+   },
+   "right": "(3x + 1)(x + 2) = 3x² + 7x + 2.",
+   "solution": "(3x + 1)(x + 2)."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiplique: el término del medio es −2x − 3x = −5x.",
+    "b": "1 · (−3) = −3, pero el término independiente es +3."
+   },
+   "right": "(2x − 1)(x − 3) = 2x² − 7x + 3.",
+   "solution": "(2x − 1)(x − 3)."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "x² − 4x + 4 todavía se puede factorizar: es un cuadrado perfecto.",
+    "c": "3x − 6 todavía tiene factor común 3."
+   },
+   "right": "3(x − 2)² = 3(x² − 4x + 4) = 3x² − 12x + 12.",
+   "solution": "3(x − 2)²."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "1 + 15 = 16, no 8.",
+    "c": "−3 + (−5) = −8, no +8.",
+    "d": "4 · 4 = 16, no 15."
+   },
+   "solution": "(x + 3)(x + 5)."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "3 + 4 = 7, pero el término del medio es −7x.",
+    "b": "−2 + (−6) = −8.",
+    "d": "−1 + (−12) = −13."
+   },
+   "solution": "(x − 3)(x − 4)."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "−5 + 3 = −2, no +2.",
+    "b": "15 + (−1) = 14.",
+    "c": "5 · 3 = +15, no −15."
+   },
+   "solution": "(x + 5)(x − 3)."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "4 + (−2) = 2, no −2.",
+    "c": "−8 + 1 = −7.",
+    "d": "(−4)(−2) = +8, no −8."
+   },
+   "solution": "(x − 4)(x + 2)."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "Multiplique: el término del medio es 2x + 3x = 5x.",
+    "b": "Debe empezar con 2x².",
+    "c": "1 · 1 = 1, no 3."
+   },
+   "solution": "(2x + 1)(x + 3)."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiplique: el término del medio es −12x − 2x = −14x.",
+    "b": "El término del medio es negativo: los dos números son negativos.",
+    "d": "Debe empezar con 3x²."
+   },
+   "solution": "(3x − 4)(x − 2)."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "Multiplique: el término del medio es 6x − x = 5x, no −5x.",
+    "c": "Multiplique: el término del medio es 2x − 3x = −x.",
+    "d": "Multiplique: el término del medio es −2x + 3x = x."
+   },
+   "solution": "(2x + 1)(x − 3)."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "x² − x − 2 todavía se puede factorizar.",
+    "c": "3x − 6 todavía tiene factor común 3.",
+    "d": "3(x + 2)(x − 1) = 3x² + 3x − 6: el signo del medio no coincide."
+   },
+   "solution": "3(x − 2)(x + 1)."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

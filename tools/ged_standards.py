@@ -190,6 +190,7 @@ CCR = {
  "G-GPE.5": ("E", "Prove the slope criteria for parallel and perpendicular lines and use them to solve geometric problems (e.g., find the equation of a line parallel or perpendicular to a given line that passes through a given point)."),
  "G-GPE.7": ("E", "Use coordinates to compute perimeters of polygons and areas of triangles and rectangles, e.g., using the distance formula."),
  "G-GMD.3": ("E", "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems."),
+ "A-SSE.2": ("E", "Use the structure of an expression to identify ways to rewrite it. For example, see x⁴ − y⁴ as (x²)² − (y²)², thus recognizing it as a difference of squares that can be factored as (x² − y²)(x² + y²)."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -407,6 +408,12 @@ LESSONS = [
   {"direct": ["Q.5.f", "Q.5.b", "Q.5.d"], "builds": [], "mp": ["MP.1.b", "MP.2.b", "MP.4.a"], "ccr": ["7.G.6", "G-GMD.3"]}),
  ("level-4/lesson-2-3.html", "2.3", "Polynomials: types, adding, subtracting, and multiplying",
   {"direct": ["A.1.d", "A.1.e"], "builds": ["A.1.g"], "mp": ["MP.3.a", "MP.4.b", "MP.5.a"], "ccr": ["A-APR.1", "6.EE.2c"]}),
+ ("level-4/lesson-3-1.html", "3.1", "Multiplying binomials: FOIL and special products",
+  {"direct": ["A.1.d"], "builds": ["A.1.f"], "mp": ["MP.2.c", "MP.3.a", "MP.4.b"], "ccr": ["A-APR.1", "A-SSE.2"]}),
+ ("level-4/lesson-3-2.html", "3.2", "Factoring: common factor and difference of squares",
+  {"direct": ["A.1.f"], "builds": ["A.1.d"], "mp": ["MP.3.a", "MP.3.c", "MP.4.b"], "ccr": ["A-SSE.2", "A-APR.1"]}),
+ ("level-4/lesson-3-3.html", "3.3", "Factoring trinomials (a = 1 and a ≠ 1)",
+  {"direct": ["A.1.f"], "builds": ["A.1.d"], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["A-SSE.2", "A-APR.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 3.2 · practice (English) — built by tools/build_n4_lesson_3_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 3.2 · Factoring: common factor and difference of squares · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 3 · Multiplying and factoring</div>
+    <h1>Lesson 3.2 · Factoring: common factor and difference of squares</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#undo">Factoring undoes multiplying</a></li>
+      <li><a href="#common">The common factor</a></li>
+      <li><a href="#squares">Difference of squares</a></li>
+      <li><a href="#combine">Both together: common factor, then difference of squares</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="undo" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Factoring undoes multiplying</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Factoring a polynomial means writing it as a product. When you multiply you start from the factors and reach the polynomial; when you factor you start from the polynomial and find which factors produced it. That is why the best check of a factorization is to multiply again. Choose an expression and change the direction.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="de-ex">Expression</label><select id="de-ex"><option value="0">3(x + 2) ⇄ 3x + 6</option><option value="1">5(x − 4) ⇄ 5x − 20</option><option value="2">4x(x + 3) ⇄ 4x² + 12x</option><option value="3">(x + 3)(x − 3) ⇄ x² − 9</option><option value="4">2(x + 5)(x − 5) ⇄ 2x² − 50</option><option value="5">(x + 2)(x + 5) ⇄ x² + 7x + 10</option></select></div></div>
+        <div class="modos" id="de-dir" data-d="m" role="group" aria-label="Direction"><button type="button" class="btn-sec" id="de-m" aria-pressed="true">Multiply →</button><button type="button" class="btn-sec" id="de-f" aria-pressed="false">← Factor</button></div></div>
+      <div class="tarjetas" style="align-items:center;text-align:center;font-size:24px;font-weight:700;"><div class="tarjeta" id="de-izq"></div><div style="flex:0 0 120px;font-size:15px;"><div id="de-fm" style="color:#0d47a1">multiply ⟶</div><div id="de-ff" style="color:#1b5e20">⟵ factor</div></div><div class="tarjeta" id="de-der"></div></div>
+      <div class="salida" aria-live="polite" id="de-txt"></div>
+      <div class="caja-tip">Two mistakes the check catches. The sign: 3(x − 2) gives 3x − 6, not 3x + 6. And the incomplete factor, when the number outside does not multiply every term: 3(x + 6) gives 3x + 18, not 3x + 6.</div>
+      <h3>Practice: factored form, expanded form, and the check</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">New exercise</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="common">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The common factor</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The common factor is made of the greatest common factor (GCF) of the numbers and the smallest power of x that appears in every term. If a term has no x, no x comes out. Check by multiplying: if you do not get the original polynomial back, the factor was wrong or a sign failed.</p>
+      <div class="panel"><p class="enun" id="cm-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cm-sig">Show the next step</button><button type="button" class="btn-sec" id="cm-todo">Show all the steps</button><button type="button" class="btn-sec" id="cm-nuevo">Another polynomial</button></div></div>
+      <div class="pasos" id="cm-pasos" aria-live="polite"></div>
+      <h3>Practice: take out the common factor</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="campos"><div class="campo"><label for="cq-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="cq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="cq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="cq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="squares">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Difference of squares</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">a² − b² = (a + b)(a − b)</div>
+      <p>A binomial is a difference of squares when both terms are perfect squares and they are subtracted. First decide; then write the two factors.</p>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Perfect squares for reference</caption><tbody><tr><th scope="row">n</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr><tr><th scope="row">n²</th><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td><td>36</td><td>49</td><td>64</td><td>81</td><td>100</td><td>121</td><td>144</td></tr></tbody></table></div>
+      <div class="practica"><p class="enun" id="dc-enun"></p>
+        <p><strong>Step 1. Is it a difference of squares?</strong></p>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dc-si">Yes, it can be factored</button><button type="button" class="btn-sec" id="dc-no">No, it cannot be factored this way</button></div>
+        <div id="dc-paso2" hidden><p><strong>Step 2. Write the two factors.</strong></p>
+          <div class="campos"><div class="campo"><label for="dc-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="dc-r"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="dc-comprobar">Check the factors</button></div></div>
+        <div class="fb" id="dc-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dc-otro">New exercise</button></div></div>
+      <div class="caja-atencion"><strong>A sum of squares does not factor.</strong> x² + 25 has no factorization with real numbers. Only the subtraction gives two binomials.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="combine">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Both together: common factor, then difference of squares</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The order never changes: first take out the common factor, then look at what is left inside the parentheses. Sometimes you can keep factoring, and sometimes you cannot. An expression is factored completely when no factor can be broken down any further.</p>
+      <div class="panel"><p class="enun" id="cb-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cb-sig">Show the next step</button><button type="button" class="btn-sec" id="cb-todo">Show all the steps</button><button type="button" class="btn-sec" id="cb-nuevo">Another polynomial</button></div></div>
+      <div class="pasos" id="cb-pasos" aria-live="polite"></div>
+      <h3>Practice: factor completely</h3>
+      <div class="practica" id="bq">
+        <div class="enun" id="bq-enun"></div>
+        <div class="campos"><div class="campo"><label for="bq-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="bq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="bq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="bq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="bq-fb" role="status"></div>
+        <p class="marcador" id="bq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 3 · Multiplying and factoring · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function F(k, m, f){ return {k: k, m: m || 0, f: f || []}; }
+function bin(a, b){ return [b, a]; }
+function monoV(c, g){ return tVis(c, g, true); }
+var FAC_AYUDA = T("Type the factors with parentheses, like 3(x\u00a0+\u00a02) or (x\u00a0−\u00a04)(x\u00a0+\u00a04).", "Escriba los factores con paréntesis, como 3(x\u00a0+\u00a02) o (x\u00a0−\u00a04)(x\u00a0+\u00a04).");
+
+/* ===== MODULE 1 · Undoing the multiplication ===== */
+var DES = [F(3, 0, [bin(1, 2)]), F(5, 0, [bin(1, -4)]), F(4, 1, [bin(1, 3)]), F(1, 0, [bin(1, 3), bin(1, -3)]), F(2, 0, [bin(1, 5), bin(1, -5)]), F(1, 0, [bin(1, 2), bin(1, 5)])];
+function deDibuja(){
+  var F0 = DES[+$("de-ex").value], dir = $("de-dir").getAttribute("data-d"), prod = fProducto(F0);
+  $("de-izq").innerHTML = fHTML(F0); $("de-der").innerHTML = pHTML(prod);
+  $("de-fm").style.opacity = dir === "m" ? 1 : .25; $("de-ff").style.opacity = dir === "f" ? 1 : .25;
+  $("de-txt").innerHTML = '<div class="linea">' + (dir === "m" ? T("Multiplying: start from the factors and distribute. ", "Multiplicar: se parte de los factores y se distribuye. ") + fVis(F0) + " = " + pVis(prod) : T("Factoring: start from the polynomial and find the factors that produce it. ", "Factorizar: se parte del polinomio y se buscan los factores que lo producen. ") + pVis(prod) + " = " + fVis(F0)) + "</div>";
+}
+$("de-ex").addEventListener("change", deDibuja);
+$("de-m").addEventListener("click", function(){ $("de-dir").setAttribute("data-d", "m"); $("de-m").setAttribute("aria-pressed", "true"); $("de-f").setAttribute("aria-pressed", "false"); deDibuja(); });
+$("de-f").addEventListener("click", function(){ $("de-dir").setAttribute("data-d", "f"); $("de-f").setAttribute("aria-pressed", "true"); $("de-m").setAttribute("aria-pressed", "false"); deDibuja(); });
+deDibuja();
+OMR("dq", function(){
+  var k = aleatorio(2, 7), b; do { b = aleatorio(-9, 9); } while (!b); var a = aleatorio(1, 4), F0 = F(k, 0, [bin(a, b)]), prod = fProducto(F0);
+  if (Math.random() < .5){
+    var ops = [opP(prod), opP(pDe({1: k * a, 0: -k * b})), opP(pDe({1: k * a, 0: b})), opP(pDe({1: a, 0: k * b}))];
+    return {enun: T("Multiply to get the expanded form of ", "Multiplique para obtener la forma desarrollada de ") + fHTML(F0) + ".", correcta: pClave(prod), opciones: ops,
+      porClave: (function(){ var o = {}; o[pClave(pDe({1: k * a, 0: b}))] = T("The number outside must multiply every term.", "El número de fuera debe multiplicar a todos los términos."); o[pClave(pDe({1: k * a, 0: -k * b}))] = T("Check the sign of the last term.", "Revise el signo del último término."); return o; })(),
+      pista: T("Distribute: the number outside multiplies each term inside.", "Distribuya: el número de fuera multiplica a cada término de dentro."), bien: fVis(F0) + " = " + pVis(prod) + "."};
+  }
+  var malos = [F(k, 0, [bin(a, -b)]), F(k, 0, [bin(a, k * b)]), F(1, 0, [bin(k * a, b)])];
+  return {enun: T("Which is the factored form of ", "¿Cuál es la forma factorizada de ") + pHTML(prod) + T("? Check by multiplying.", "? Compruebe multiplicando."), correcta: fClave(F0), opciones: [opF(F0)].concat(malos.map(opF)),
+    pista: T("Multiply each option: only one gives back the polynomial exactly.", "Multiplique cada opción: solo una devuelve exactamente el polinomio."), bien: fVis(F0) + " → " + pVis(prod) + "."};
+});
+
+/* ===== MODULE 2 · Common factor ===== */
+/* Only the common factor is asked here: what is left inside may be any polynomial with no common factor and a constant term. */
+function evaluaComun(txt, ok){
+  var r = fLee(txt);
+  if (!r) return {estado: "invalido", msg: FAC_AYUDA};
+  if (!pIgual(r.prod, ok)) return {estado: "mal", msg: T("Multiply to check: your answer does not give back the polynomial. Look at the signs and at what is left inside.", "Multiplique para comprobar: su respuesta no devuelve el polinomio. Revise los signos y lo que queda dentro.")};
+  var F0 = r.F;
+  if (F0.f.length !== 1) return evaluaF(txt, ok, []);
+  if (pGrado(F0.f[0]) === pGrado(ok) && Math.abs(F0.k) === 1 && !F0.m) return {estado: "mal", msg: T("That is the same polynomial. Take out the common factor.", "Ese es el mismo polinomio. Saque el factor común.")};
+  if (contenido(F0.f[0]) !== 1) return {estado: "mal", msg: T("The product is right, but inside the parentheses there is still a common number. Take out the greatest one.", "El producto está bien, pero dentro del paréntesis todavía queda un número común. Saque el mayor.")};
+  if (!F0.f[0][0]) return {estado: "mal", msg: T("The product is right, but every term inside still has x. Take out x too.", "El producto está bien, pero todos los términos de dentro todavía tienen x. Saque también la x.")};
+  return {estado: "bien"};
+}
+function casoComun(){
+  var g = elige([2, 3, 4, 5, 6]), m = aleatorio(0, 2), n = elige([2, 2, 3]), dentro, ok;
+  do { var o = {}; var grs = baraja([0, 1, 2, 3]).slice(0, n); if (grs.indexOf(0) < 0) grs[0] = 0; grs.forEach(function(e){ var c; do { c = aleatorio(-6, 6); } while (!c); o[e] = c; }); dentro = pDe(o); } while (contenido(dentro) !== 1 || pGrado(dentro) === 0);
+  if (dentro[pGrado(dentro)] < 0 && Math.random() < .5) dentro = pEsc(dentro, -1);
+  var FF = F(g, m, [dentro]), poly = fProducto(FF);
+  var lista = listaTerm(poly), coefs = lista.map(function(t){ return Math.abs(t[0]); }), menor = Math.min.apply(null, lista.map(function(t){ return t[1]; }));
+  var pasos = [T("GCF of the numbers ", "MCD de los coeficientes ") + coefs.join(", ") + ": <strong>" + g + "</strong>.",
+    T("Smallest power of x in every term: ", "Menor potencia de x presente en todos los términos: ") + (menor ? "<strong>" + monoV(1, menor) + "</strong>" : T("none (one term has no x)", "ninguna (un término no tiene x)")) + ".",
+    T("Divide each term by ", "Se divide cada término entre ") + monoV(g, m) + ": " + lista.map(function(t){ return tVis(t[0], t[1], true) + " ÷ " + monoV(g, m) + " = " + tVis(t[0] / g, t[1] - m, true); }).join("; ") + ".",
+    T("Result: ", "Resultado: ") + "<strong>" + fVis(FF) + "</strong>. " + T("Check: multiplying gives ", "Comprobación: al multiplicar se obtiene ") + pVis(poly) + "."];
+  return {FF: FF, poly: poly, g: g, m: m, pasos: pasos};
+}
+pasoAPaso4("cm", function(){ var c = casoComun(); return {enun: T("Factor ", "Factorice ") + pHTML(c.poly) + ".", pasos: c.pasos}; });
+creaPracticaLibre("cq", function(){ var c = casoComun();
+  return {enun: T("Take out the greatest common factor: ", "Extraiga el máximo factor común: ") + pHTML(c.poly) + ". " + FAC_AYUDA, evalua: function(txt){ return evaluaComun(txt, c.poly); }, solucion: c.pasos.join(" ").replace(/<\/?strong>/g, "")}; });
+
+/* ===== MODULE 3 · Difference of squares ===== */
+var DC = {};
+function dcNuevo(){
+  var a = elige([1, 1, 1, 2, 3, 4, 5]), b; do { b = aleatorio(1, 11); } while (mcd(a, b) !== 1); var tipo = elige(["dif", "dif", "dif", "suma", "noCuad"]), p;
+  if (tipo === "dif") p = pDe({2: a * a, 0: -b * b}); else if (tipo === "suma") p = pDe({2: a * a, 0: b * b}); else { var n; do { n = aleatorio(2, 50); } while (esCuadrado(n)); p = pDe({2: a * a, 0: -n}); }
+  DC = {p: p, es: tipo === "dif", a: a, b: b, tipo: tipo};
+  $("dc-enun").innerHTML = T("Factor, if possible: ", "Factorice, si se puede: ") + pHTML(p) + ".";
+  $("dc-fb").className = "fb"; $("dc-fb").innerHTML = ""; $("dc-paso2").hidden = true; $("dc-r").value = ""; $("dc-si").disabled = $("dc-no").disabled = false;
+}
+$("dc-si").addEventListener("click", function(){ var fb = $("dc-fb");
+  if (DC.es){ fb.className = "fb bien"; fb.innerHTML = TX.bien + T("Both terms are perfect squares and they are subtracted.", "Los dos términos son cuadrados perfectos y están restados."); $("dc-paso2").hidden = false; $("dc-si").disabled = $("dc-no").disabled = true; $("dc-r").focus(); }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + (DC.tipo === "suma" ? T("It is a <strong>sum</strong> of squares: it cannot be factored with real numbers.", "Es una <strong>suma</strong> de cuadrados: no se factoriza con números reales.") : T(String(-DC.p[0]) + " is not a perfect square.", String(-DC.p[0]) + " no es un cuadrado perfecto.")); } });
+$("dc-no").addEventListener("click", function(){ var fb = $("dc-fb");
+  if (!DC.es){ fb.className = "fb bien"; fb.innerHTML = TX.bien + (DC.tipo === "suma" ? T("A sum of squares cannot be factored this way.", "Una suma de cuadrados no se factoriza así.") : T(String(-DC.p[0]) + " is not a perfect square, so this method does not work.", String(-DC.p[0]) + " no es un cuadrado perfecto, así que este método no sirve.")); $("dc-si").disabled = $("dc-no").disabled = true; }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + T("Look again: " + (DC.a > 1 ? DC.a * DC.a + "x² = (" + DC.a + "x)²" : "x² = (x)²") + " and " + DC.b * DC.b + " = " + DC.b + "², and they are subtracted.", "Mire otra vez: " + (DC.a > 1 ? DC.a * DC.a + "x² = (" + DC.a + "x)²" : "x² = (x)²") + " y " + DC.b * DC.b + " = " + DC.b + "², y están restados."); } });
+$("dc-comprobar").addEventListener("click", function(){
+  var a = DC.a, b = DC.b, r = evaluaF($("dc-r").value, DC.p, [{F: F(1, 0, [bin(a, -b), bin(a, -b)]), msg: T("One factor has +, the other −: (a + b)(a − b).", "Un factor lleva +, el otro −: (a + b)(a − b).")}, {F: F(1, 0, [bin(a, b), bin(a, b)]), msg: T("One factor has +, the other −: (a + b)(a − b).", "Un factor lleva +, el otro −: (a + b)(a − b).")}, {F: F(1, 0, [bin(a * a, b), bin(1, -b)]), msg: T("Use the square root of the first term: " + tVis(a, 1, true) + ".", "Use la raíz cuadrada del primer término: " + tVis(a, 1, true) + ".")}].slice(0, a > 1 ? 3 : 2)), fb = $("dc-fb");
+  if (r.estado === "bien"){ fb.className = "fb bien"; fb.innerHTML = TX.bien + pVis(DC.p) + " = (" + tVis(a, 1, true) + " + " + b + ")(" + tVis(a, 1, true) + " − " + b + ")."; }
+  else { fb.className = "fb pista"; fb.innerHTML = (r.estado === "mal" ? TX.todavia : "") + r.msg; }
+});
+$("dc-otro").addEventListener("click", dcNuevo); dcNuevo();
+
+/* ===== MODULE 4 · Both together ===== */
+function casoComb(){
+  var g = elige([2, 3, 4, 5]), m = elige([0, 0, 1]), a = elige([1, 1, 2, 3]), b; do { b = aleatorio(1, a > 1 ? 5 : 9); } while (mcd(a, b) !== 1); var sigue = Math.random() < .75, dentro = sigue ? pDe({2: a * a, 0: -b * b}) : pDe({2: a * a, 0: b * b});
+  var FF = sigue ? F(g, m, [bin(a, b), bin(a, -b)]) : F(g, m, [dentro]), poly = pMul(pMono(g, m), dentro);
+  var pasos = [T("Common factor first: ", "Primero el factor común: ") + pVis(poly) + " = " + monoV(g, m) + "(" + pVis(dentro) + ").",
+    sigue ? T("Inside there is a difference of squares: ", "Dentro hay una diferencia de cuadrados: ") + pVis(dentro) + " = (" + tVis(a, 1, true) + " + " + b + ")(" + tVis(a, 1, true) + " − " + b + ")." : T("Inside there is a <strong>sum</strong> of squares: it cannot be factored further.", "Dentro hay una <strong>suma</strong> de cuadrados: no se puede seguir factorizando."),
+    T("Complete factorization: ", "Factorización completa: ") + "<strong>" + fVis(FF) + "</strong>."];
+  return {FF: FF, poly: poly, pasos: pasos, g: g, m: m, dentro: dentro};
+}
+pasoAPaso4("cb", function(){ var c = casoComb(); return {enun: T("Factor completely: ", "Factorice completamente: ") + pHTML(c.poly) + ".", pasos: c.pasos}; });
+creaPracticaLibre("bq", function(){ var c = casoComb();
+  return {enun: T("Factor completely: ", "Factorice completamente: ") + pHTML(c.poly) + ". " + FAC_AYUDA, evalua: function(txt){ return evaluaF(txt, c.poly, [{F: F(c.g, c.m, [c.dentro]), msg: c.FF.f.length > 1 ? T("Good start, but the factor inside is a difference of squares: keep going.", "Buen comienzo, pero el factor de dentro es una diferencia de cuadrados: siga factorizando.") : ""}].filter(function(x){ return x.msg; })); }, solucion: c.pasos.join(" ").replace(/<\/?strong>/g, "")}; });
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 3.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_3_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 3.2 · Factorización: factor común y diferencia de cuadrados · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-3-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 3 — Multiplicación y factorización</p>
+<h1>Lección 3.2 · Factorización: factor común y diferencia de cuadrados</h1>
+<p class="lema">Factorice un polinomio sacando el factor común y reconociendo la diferencia de cuadrados, y compruebe siempre multiplicando.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">✏️</span> Sin calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Explicar</strong> que factorizar deshace la multiplicación, y comprobar expandiendo.</li>
+<li><strong>Extraer</strong> el máximo factor común (número y variable).</li>
+<li><strong>Factorizar</strong> una diferencia de cuadrados, a² − b² = (a + b)(a − b).</li>
+<li><strong>Combinar</strong> las dos técnicas para factorizar completamente.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.1.f</span> Factorizar expresiones polinómicas.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.1.d</span> Sumar, restar y multiplicar polinomios, incluida la multiplicación de dos binomios, o dividir polinomios factorizables.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.3.c</span> Mejorar o corregir una línea de razonamiento que tiene errores.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-SSE.2</span> <span class="std-nivel">Nivel E</span> Usar la estructura de una expresión para identificar maneras de reescribirla. Por ejemplo, ver x⁴ − y⁴ como (x²)² − (y²)², y reconocerla así como una diferencia de cuadrados que se factoriza como (x² − y²)(x² + y²).</li><li><span class="std-cod std-ccr">A-APR.1</span> <span class="std-nivel">Nivel E</span> Entender que los polinomios forman un sistema análogo al de los números enteros, es decir, cerrado bajo la suma, la resta y la multiplicación; sumar, restar y multiplicar polinomios.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-deshacer">Factorizar es deshacer la multiplicación</a></li>
+<li><a href="#s-comun">Factor común</a></li>
+<li><a href="#s-cuadrados">Diferencia de cuadrados</a></li>
+<li><a href="#s-combinar">Combinar: factor común y luego diferencia de cuadrados</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-deshacer"><span aria-hidden="true" class="num-seccion">1</span>Factorizar es deshacer la multiplicación</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 3.1 se multiplicaron binomios para obtener un polinomio. <strong>Factorizar es el camino inverso</strong>: se parte del polinomio y se descubren los factores que lo produjeron. Por eso la mejor manera de comprobar una factorización es <strong>volver a multiplicar</strong>: si se obtiene el polinomio original, la factorización es correcta.</p>
+<p><strong>Factorizar</strong> un polinomio significa escribirlo como un producto. Es lo contrario de multiplicar. Con números pasa lo mismo: 3 · 4 = 12 es una multiplicación, y escribir 12 como 3 · 4 es factorizarlo.</p>
+<svg viewBox="0 0 520 120" role="img" aria-label="3(x + 2) y 3x + 6. Multiplicar va de 3(x + 2) a 3x + 6; factorizar vuelve de 3x + 6 a 3(x + 2)." style="width:100%;max-width:460px;height:auto;display:block;margin:12px auto;"><text x="90" y="68" font-size="26" font-weight="700" text-anchor="middle" fill="#0d47a1">3(x + 2)</text><text x="430" y="68" font-size="26" font-weight="700" text-anchor="middle" fill="#1b5e20">3x + 6</text><path d="M170 45 H350" stroke="#0d47a1" stroke-width="3" marker-end="url(#fl1)"/><path d="M350 85 H170" stroke="#1b5e20" stroke-width="3" marker-end="url(#fl2)"/><defs><marker id="fl1" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0d47a1"/></marker><marker id="fl2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#1b5e20"/></marker></defs><text x="260" y="35" font-size="16" font-weight="700" text-anchor="middle" fill="#0d47a1">multiplicar</text><text x="260" y="108" font-size="16" font-weight="700" text-anchor="middle" fill="#1b5e20">factorizar</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Verificar siempre</span>
+<p>Después de factorizar, multiplique los factores. Si obtiene el polinomio original, la respuesta es correcta. Esta comprobación descubre casi todos los errores: el de signo (3(x − 2) da 3x − 6, no 3x + 6) y el de factor incompleto (3(x + 6) da 3x + 18, no 3x + 6).</p>
+</div>
+<a class="enlace-interactivo" href="practica-3-2.html#deshacer" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: factorizar deshace la multiplicación (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: factorizar deshace la multiplicación</span><span class="ei-sub">Pase de la forma factorizada al producto y vuelva, comprobando al multiplicar.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-comun"><span aria-hidden="true" class="num-seccion">2</span>Factor común</h2>
+<p>El primer paso de cualquier factorización es buscar un <strong>factor común</strong> a todos los términos. Se extrae:</p>
+<ul><li>el <strong>máximo común divisor (MCD)</strong> de los coeficientes;</li>
+<li>la variable con el <strong>menor exponente</strong> que aparezca en todos los términos.</li></ul>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Factorizar 6x + 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>MCD de 6 y 9.</strong> 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se saca el 3.</strong> 6x + 9 = 3(2x + 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Verificación.</strong> 3(2x + 3) = 6x + 9. ✓</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>3(2x + 3)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Con variable. Factorizar 4x² + 8x.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El MCD de 4 y 8 es 4; la variable común con menor exponente es x.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se saca 4x.</strong> 4x² + 8x = 4x(x + 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Verificación.</strong> 4x(x + 2) = 4x² + 8x. ✓</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>4x(x + 2)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Factorizar 10x³ − 15x².</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El MCD de 10 y 15 es 5; la menor potencia de x es x².</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se saca 5x².</strong> 10x³ − 15x² = 5x²(2x − 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>5x²(2x − 3)</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cuando un término deja un 1</span>
+<p>Si el término entero es el factor común, en su lugar queda un 1: 3x + 3 = 3(x + 1), no 3(x). Y el factor debe ser el mayor: 2(4x + 6) no está terminado, porque 4x + 6 todavía tiene un factor común 2.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un número en común</h3></div>
+<p class="pregunta-int" id="t-p1">Factorice 6x + 9.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">2(3x + 4)</button>
+<button class="opcion" data-k="b" type="button">3(2x + 3)</button>
+<button class="opcion" data-k="c" type="button">3(2x + 9)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Con x en común</h3></div>
+<p class="pregunta-int" id="t-p2">Factorice 4x² + 8x.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">4x(x + 2)</button>
+<button class="opcion" data-k="b" type="button">2x(2x + 4)</button>
+<button class="opcion" data-k="c" type="button">4(x² + 2x)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Con x²</h3></div>
+<p class="pregunta-int" id="t-p3">Factorice 10x³ − 15x².</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">5x(2x² − 3x)</button>
+<button class="opcion" data-k="b" type="button">5x²(2x − 15)</button>
+<button class="opcion" data-k="c" type="button">5x²(2x − 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-2.html#comun" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el factor común (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el factor común</span><span class="ei-sub">Halle el MCD de los coeficientes y la menor potencia de x, extráigalos y compruebe lo que queda dentro.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-cuadrados"><span aria-hidden="true" class="num-seccion">3</span>Diferencia de cuadrados</h2>
+<p>Un binomio de la forma a² − b² (un cuadrado menos otro cuadrado) se factoriza con la identidad de la Lección 3.1, ahora al revés:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">a² − b² = (a + b)(a − b)</p>
+<div aria-label="Cuadrados perfectos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Los cuadrados perfectos del 1 al 12</caption>
+<thead><tr><th scope="col">Número</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th><th scope="col">10</th><th scope="col">11</th><th scope="col">12</th></tr></thead>
+<tbody>
+<tr><td>Cuadrado</td><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td><td>36</td><td>49</td><td>64</td><td>81</td><td>100</td><td>121</td><td>144</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Factorizar x² − 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se reconoce.</strong> x² es el cuadrado de x; 9 es el cuadrado de 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se aplica la identidad.</strong> x² − 9 = (x + 3)(x − 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Verificación.</strong> (x + 3)(x − 3) = x² − 9. ✓</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(x + 3)(x − 3)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Con coeficiente. Factorizar 4x² − 25.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se reconoce.</strong> 4x² es el cuadrado de 2x; 25 es el cuadrado de 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se aplica la identidad.</strong> 4x² − 25 = (2x + 5)(2x − 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>(2x + 5)(2x − 5)</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Solo restas, no sumas</span>
+<p>La diferencia de cuadrados requiere un signo menos. Una <strong>suma</strong> de cuadrados como x² + 9 no se factoriza con números reales. Además, los dos términos deben ser cuadrados perfectos: x² − 10 no es una diferencia de cuadrados con números enteros.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — x² − 9</h3></div>
+<p class="pregunta-int" id="t-p4">Factorice x² − 9.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">(x − 3)(x − 3)</button>
+<button class="opcion" data-k="b" type="button">(x + 9)(x − 1)</button>
+<button class="opcion" data-k="c" type="button">(x + 3)(x − 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — x² − 49</h3></div>
+<p class="pregunta-int" id="t-p5">Factorice x² − 49.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">(x + 7)(x + 7)</button>
+<button class="opcion" data-k="b" type="button">(x + 7)(x − 7)</button>
+<button class="opcion" data-k="c" type="button">(x − 7)(x − 7)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — 9x² − 1</h3></div>
+<p class="pregunta-int" id="t-p6">Factorice 9x² − 1.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">(3x + 1)(3x − 1)</button>
+<button class="opcion" data-k="b" type="button">(3x − 1)(3x − 1)</button>
+<button class="opcion" data-k="c" type="button">(9x + 1)(x − 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-2.html#cuadrados" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la diferencia de cuadrados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la diferencia de cuadrados</span><span class="ei-sub">Decida primero si es una diferencia de cuadrados y después escriba los dos factores. Incluye sumas de cuadrados y números que no son cuadrados perfectos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-combinar"><span aria-hidden="true" class="num-seccion">4</span>Combinar: factor común y luego diferencia de cuadrados</h2>
+<p>La regla de oro es <strong>sacar siempre primero el factor común</strong>. Después se revisa si lo que queda dentro del paréntesis es una diferencia de cuadrados.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 6 · Factorizar 2x² − 50 completamente.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Factor común 2.</strong> 2x² − 50 = 2(x² − 25).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Dentro hay una diferencia de cuadrados.</strong> x² − 25 = (x + 5)(x − 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Resultado completo.</strong> 2(x + 5)(x − 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>2(x + 5)(x − 5)</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">«Completamente» significa hasta el final</span>
+<p>Una factorización está completa cuando ningún factor se puede seguir factorizando. Por eso, tras sacar el factor común, siempre se revisa si el binomio que queda es una diferencia de cuadrados.</p>
+</div>
+<a class="enlace-interactivo" href="practica-3-2.html#combinar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: factor común y luego diferencia de cuadrados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: factor común y luego diferencia de cuadrados</span><span class="ei-sub">Extraiga el factor común, decida si lo que queda se puede seguir factorizando y llegue a la factorización completa.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-3-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno abierto y sin calculadora: (1) El detective de factores: antes de factorizar cada polinomio, decida si necesita solo factor común, solo diferencia de cuadrados o ambas técnicas: 6x + 18, 4x² − 12x, 12x³ + 8x², x² − 49, 9x² − 16, 3x² − 27, 5x³ − 20x y 2x² − 50. (2) Siempre verifico: expanda cada una de las ocho factorizaciones y compruebe que recupera el polinomio original. Si no coincide, localice el paso en que se equivocó. (3) Cuando vale cero: factorice x² − 25, x² − 81 y 4x² − 9, y halle qué valores de x hacen cero cada factor. Esta idea se usará en el Tema 4 para resolver ecuaciones. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Cálculo mental con la diferencia de cuadrados: 21 × 19 = (20 + 1)(20 − 1) = 400 − 1 = 399. Pruebe de cabeza 31 × 29, 52 × 48 y 99 × 101, y compruébelos con la calculadora. Enséñele el truco a alguien en casa.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Factorice 6x + 15.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2(3x + 5)</button><button class="opcion" data-k="b" type="button">6(x + 15)</button><button class="opcion" data-k="c" type="button">3(2x + 5)</button><button class="opcion" data-k="d" type="button">3(2x + 15)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Factorice 8x² + 12x.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2x(4x + 6)</button><button class="opcion" data-k="b" type="button">4x(2x + 3)</button><button class="opcion" data-k="c" type="button">4(2x² + 3x)</button><button class="opcion" data-k="d" type="button">4x(2x + 12)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Factorice 10x³ − 15x².</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5x(2x² − 3x)</button><button class="opcion" data-k="b" type="button">5x²(2x − 15)</button><button class="opcion" data-k="c" type="button">10x²(x − 15)</button><button class="opcion" data-k="d" type="button">5x²(2x − 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Factorice x² − 16.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(x − 4)(x − 4)</button><button class="opcion" data-k="b" type="button">(x + 8)(x − 2)</button><button class="opcion" data-k="c" type="button">(x + 4)(x − 4)</button><button class="opcion" data-k="d" type="button">(x + 4)(x + 4)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Factorice 4x² − 9.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(4x + 3)(x − 3)</button><button class="opcion" data-k="b" type="button">(2x − 3)(2x − 3)</button><button class="opcion" data-k="c" type="button">(2x + 9)(2x − 1)</button><button class="opcion" data-k="d" type="button">(2x + 3)(2x − 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Factorice 25x² − 1.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(5x + 1)(5x − 1)</button><button class="opcion" data-k="b" type="button">(5x − 1)(5x − 1)</button><button class="opcion" data-k="c" type="button">(25x + 1)(x − 1)</button><button class="opcion" data-k="d" type="button">(5x + 1)(5x + 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Factorice completamente 2x² − 50.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2(x² − 25)</button><button class="opcion" data-k="b" type="button">2(x + 5)(x − 5)</button><button class="opcion" data-k="c" type="button">(2x + 10)(x − 5)</button><button class="opcion" data-k="d" type="button">2(x − 5)(x − 5)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Factorice completamente 3x² − 12.</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3(x² − 4)</button><button class="opcion" data-k="b" type="button">(3x + 6)(x − 2)</button><button class="opcion" data-k="c" type="button">3(x − 2)(x − 2)</button><button class="opcion" data-k="d" type="button">3(x + 2)(x − 2)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la factorización (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas del factor común y la diferencia de cuadrados y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Extraer el factor común</th><td>Extraigo el MCD de los coeficientes y la variable, y reviso lo que queda dentro.</td><td>Saco el MCD numérico, pero olvido la variable.</td><td>No identifico el factor común o lo saco incompleto.</td></tr>
+<tr><th scope="row">Diferencia de cuadrados</th><td>La factorizo con seguridad y sé cuándo no aplica (suma de cuadrados).</td><td>La reconozco, pero escribo mal los signos.</td><td>No reconozco la diferencia de cuadrados.</td></tr>
+<tr><th scope="row">Verificar expandiendo</th><td>Verifico siempre y factorizo por completo, combinando técnicas.</td><td>Verifico, pero me equivoco al expandir.</td><td>No verifico el resultado.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió a <strong>factorizar</strong> extrayendo el <strong>factor común</strong> y reconociendo la <strong>diferencia de cuadrados</strong>, a² − b² = (a + b)(a − b), verificando siempre por expansión.</p>
+<p>En la <strong>Lección 3.3 · Factorización de trinomios (a = 1 y a ≠ 1)</strong> se factorizarán expresiones de tres términos como x² + 7x + 12, buscando dos números cuyo producto y suma cumplan las condiciones, y se extenderá la técnica a trinomios con coeficiente principal distinto de 1. Recuerde: el primer paso siempre será buscar el factor común.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-3-3.html">Lección 3.3 · Factorización de trinomios (a = 1 y a ≠ 1)</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>factorizar</dt><dd>Escribir un polinomio como un producto.</dd>
+<dt>máximo común divisor (MCD)</dt><dd>El mayor número (y potencia de x) que divide a todos los términos.</dd>
+<dt>cuadrado perfecto</dt><dd>Un número o término que es el cuadrado de otro: 49 = 7², 4x² = (2x)².</dd>
+<dt>diferencia de cuadrados</dt><dd>a² − b² = (a + b)(a − b)</dd>
+<dt>factorizado completamente</dt><dd>Cuando ningún factor se puede seguir factorizando.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 3 · Lección 3.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 3.3",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Multiplique para comprobar: 2(3x + 4) = 6x + 8.",
+    "c": "Multiplique para comprobar: 3 · 9 = 27, no 9."
+   },
+   "right": "3(2x + 3) = 6x + 9.",
+   "solution": "3(2x + 3)."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "2x + 4 todavía tiene factor común 2.",
+    "c": "La x también está en los dos términos: sáquela."
+   },
+   "right": "4x(x + 2) = 4x² + 8x.",
+   "solution": "4x(x + 2)."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "x² está en los dos términos: saque 5x².",
+    "b": "Divida −15x² entre 5x²: −3."
+   },
+   "right": "5x²(2x − 3) = 10x³ − 15x².",
+   "solution": "5x²(2x − 3)."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "(x − 3)(x − 3) = x² − 6x + 9. Un signo es +, el otro −.",
+    "b": "Use las raíces cuadradas: x y 3."
+   },
+   "right": "(x + 3)(x − 3) = x² − 9.",
+   "solution": "(x + 3)(x − 3)."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "(x + 7)(x + 7) = x² + 14x + 49.",
+    "c": "(x − 7)(x − 7) = x² − 14x + 49."
+   },
+   "right": "(x + 7)(x − 7) = x² − 49.",
+   "solution": "(x + 7)(x − 7)."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "Un signo es +, el otro −.",
+    "c": "9x² es el cuadrado de 3x."
+   },
+   "right": "(3x + 1)(3x − 1) = 9x² − 1.",
+   "solution": "(3x + 1)(3x − 1)."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "2 no es el mayor: 15 es impar.",
+    "b": "6(x + 15) = 6x + 90.",
+    "d": "3 · 15 = 45, no 15."
+   },
+   "solution": "3(2x + 5)."
+  },
+  "B": {
+   "ok": "b",
+   "hints": {
+    "a": "4x + 6 todavía tiene factor 2.",
+    "c": "La x también es común.",
+    "d": "4x · 12 = 48x."
+   },
+   "solution": "4x(2x + 3)."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "x² está en los dos términos.",
+    "b": "−15x² ÷ 5x² = −3.",
+    "c": "El MCD de 10 y 15 es 5."
+   },
+   "solution": "5x²(2x − 3)."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "(x − 4)(x − 4) = x² − 8x + 16.",
+    "b": "Use las raíces cuadradas: x y 4.",
+    "d": "(x + 4)(x + 4) = x² + 8x + 16."
+   },
+   "solution": "(x + 4)(x − 4)."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "4x² es el cuadrado de 2x.",
+    "b": "Un signo es +, el otro −.",
+    "c": "9 es el cuadrado de 3."
+   },
+   "solution": "(2x + 3)(2x − 3)."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Un signo es +, el otro −.",
+    "c": "25x² es el cuadrado de 5x.",
+    "d": "Un signo es +, el otro −."
+   },
+   "solution": "(5x + 1)(5x − 1)."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "x² − 25 todavía se puede factorizar.",
+    "c": "2x + 10 todavía tiene factor 2.",
+    "d": "Un signo es +, el otro −."
+   },
+   "solution": "2(x + 5)(x − 5)."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "x² − 4 todavía se puede factorizar.",
+    "b": "3x + 6 todavía tiene factor 3.",
+    "c": "Un signo es +, el otro −."
+   },
+   "solution": "3(x + 2)(x − 2)."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 3.3 · practice (English) — built by tools/build_n4_lesson_3_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 3.3 · Factoring trinomials (a = 1 and a ≠ 1) · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}.fila-ok td{background:#e8f5e9;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 3 · Multiplying and factoring</div>
+    <h1>Lesson 3.3 · Factoring trinomials (a = 1 and a ≠ 1)</h1>
+    <div class="meta">Three practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#a-one">Trinomials with a = 1: two numbers</a></li>
+      <li><a href="#ac">Trinomials with a ≠ 1: the ac method</a></li>
+      <li><a href="#complete">Special cases and complete factoring</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="a-one" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Trinomials with a = 1: two numbers</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To factor x² + bx + c, look for two numbers whose product is c and whose sum is b. The table lists every pair of whole numbers with product c; look at the sum column and find b.</p>
+      <div class="panel"><p class="enun" id="pu-enun"></p>
+        <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Pairs of whole numbers with product c and their sums</caption><thead><tr><th scope="col">number 1</th><th scope="col">number 2</th><th scope="col">product</th><th scope="col">sum</th></tr></thead><tbody id="pu-tabla"></tbody></table></div>
+        <div class="fila-btn"><button type="button" class="btn" id="pu-marca">Show the pair that works</button><button type="button" class="btn-sec" id="pu-otro">Another trinomial</button></div></div>
+      <div class="salida" aria-live="polite" id="pu-txt"></div>
+      <div class="caja-tip">The signs give you a head start. If c is positive, both numbers have the same sign, the sign of b. If c is negative, one is positive and the other negative.</div>
+      <h3>Practice: choose the two numbers</h3>
+      <div class="practica" id="un">
+        <div class="enun" id="un-enun"></div>
+        <div class="opciones" id="un-opciones"></div>
+        <div class="fb" id="un-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="un-nuevo">New exercise</button></div>
+        <p class="marcador" id="un-marcador"></p>
+      </div>
+      <h3>Practice: type the two binomials</h3>
+      <div class="practica" id="uq">
+        <div class="enun" id="uq-enun"></div>
+        <div class="campos"><div class="campo"><label for="uq-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="uq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="uq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="uq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="uq-fb" role="status"></div>
+        <p class="marcador" id="uq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="ac">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Trinomials with a ≠ 1: the ac method</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Both roads start the same way: find two numbers whose product is a · c and whose sum is b. They also end the same way. Choose a road and compare.</p>
+      <div class="modos" role="group" aria-label="Road"><button type="button" class="btn-sec" id="ru-ac" aria-pressed="true">ac method (grouping)</button><button type="button" class="btn-sec" id="ru-aspa" aria-pressed="false">Multiply and divide by a</button></div>
+      <div class="panel"><p class="enun" id="ac-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ac-sig">Show the next step</button><button type="button" class="btn-sec" id="ac-todo">Show all the steps</button><button type="button" class="btn-sec" id="ac-nuevo">Another trinomial</button></div></div>
+      <div class="pasos" id="ac-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Multiplying and dividing by the same number does not change the trinomial. That is why the divisor must disappear when you simplify: if it does not, one of the two numbers is wrong.</div>
+      <h3>Practice: factor the trinomial</h3>
+      <div class="practica" id="aq">
+        <div class="enun" id="aq-enun"></div>
+        <div class="campos"><div class="campo"><label for="aq-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="aq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="aq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="aq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="aq-fb" role="status"></div>
+        <p class="marcador" id="aq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="complete">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Special cases and complete factoring</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The order of work never changes: first the common factor, then the trinomial. Some trinomials are perfect squares, and some cannot be factored with whole numbers.</p>
+      <div class="panel"><p class="enun" id="cp-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cp-sig">Show the next step</button><button type="button" class="btn-sec" id="cp-todo">Show all the steps</button><button type="button" class="btn-sec" id="cp-nuevo">Another polynomial</button></div></div>
+      <div class="pasos" id="cp-pasos" aria-live="polite"></div>
+      <h3>Practice: what is left inside?</h3>
+      <div class="practica" id="ct">
+        <div class="enun" id="ct-enun"></div>
+        <div class="opciones" id="ct-opciones"></div>
+        <div class="fb" id="ct-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="ct-nuevo">New exercise</button></div>
+        <p class="marcador" id="ct-marcador"></p>
+      </div>
+      <h3>Practice: factor completely</h3>
+      <div class="practica" id="pq">
+        <div class="enun" id="pq-enun"></div>
+        <div class="campos"><div class="campo"><label for="pq-r">Factored form</label><input type="text" autocomplete="off" class="ancho" id="pq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="pq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="pq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="pq-fb" role="status"></div>
+        <p class="marcador" id="pq-marcador"></p>
+      </div>
+      <div class="caja-atencion"><strong>Check by multiplying.</strong> When you expand the factors, including the common factor, the original trinomial must come back. That check catches almost every mistake.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 3 · Multiplying and factoring · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function F(k, m, f){ return {k: k, m: m || 0, f: f || []}; }
+function bin(a, b){ return [b, a]; }
+function tri(a, b, c){ return pDe({2: a, 1: b, 0: c}); }
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function mas(v){ return (v < 0 ? " − " : " + ") + Math.abs(v); }
+function binV(a, b){ return "(" + tVis(a, 1, true) + mas(b) + ")"; }
+var FAC_AYUDA = T("Type the factors with parentheses, like (x\u00a0+\u00a03)(x\u00a0−\u00a04) or 2(x\u00a0+\u00a01)(x\u00a0+\u00a05).", "Escriba los factores con paréntesis, como (x\u00a0+\u00a03)(x\u00a0−\u00a04) o 2(x\u00a0+\u00a01)(x\u00a0+\u00a05).");
+var Y = T(" and ", " y ");
+
+/* ===== MODULE 1 · a = 1: two numbers ===== */
+function casoUno(){ var p, q; do { p = nz(-9, 9); q = nz(-9, 9); } while (p + q === 0 || Math.abs(p * q) > 60); return {p: p, q: q, b: p + q, c: p * q, poly: tri(1, p + q, p * q), FF: F(1, 0, [bin(1, p), bin(1, q)])}; }
+function signosUno(b, c){ return c > 0 ? (b > 0 ? T("c is positive and b is positive: both numbers are positive.", "c es positivo y b es positivo: los dos números son positivos.") : T("c is positive and b is negative: both numbers are negative.", "c es positivo y b es negativo: los dos números son negativos.")) : T("c is negative: one number is positive and the other negative.", "c es negativo: un número es positivo y el otro negativo."); }
+function paresDe(c){ var l = [], a = Math.abs(c); for (var d = 1; d * d <= a; d++) if (a % d === 0){ var e = a / d; if (c > 0){ l.push([d, e]); l.push([-d, -e]); } else { l.push([d, -e]); l.push([-d, e]); } } return l; }
+var PU = casoUno();
+function puDibuja(marca){
+  $("pu-enun").innerHTML = T("Trinomial: ", "Trinomio: ") + pHTML(PU.poly) + ". " + T("Look for two numbers with product ", "Se buscan dos números de producto ") + sg(PU.c) + T(" and sum ", " y suma ") + sg(PU.b) + ".";
+  var filas = paresDe(PU.c).map(function(pq){ var ok = pq[0] + pq[1] === PU.b; if (ok) PU.par = sg(pq[0]) + Y + sg(pq[1]); return '<tr' + (marca && ok ? ' class="fila-ok"' : "") + '><td>' + sg(pq[0]) + "</td><td>" + sg(pq[1]) + "</td><td>" + sg(pq[0] * pq[1]) + "</td><td>" + sg(pq[0] + pq[1]) + (marca && ok ? " ✓" : "") + "</td></tr>"; }).join("");
+  $("pu-tabla").innerHTML = filas;
+  $("pu-txt").innerHTML = '<div class="linea">' + signosUno(PU.b, PU.c) + "</div>" + (marca ? '<div class="linea">' + T("The pair is ", "El par es ") + PU.par + ": " + pVis(PU.poly) + " = " + fVis(PU.FF) + ".</div>" : "");
+}
+$("pu-marca").addEventListener("click", function(){ puDibuja(true); });
+$("pu-otro").addEventListener("click", function(){ PU = casoUno(); puDibuja(false); });
+puDibuja(false);
+function parClave(a, b){ return [a, b].sort(function(x, y){ return x - y; }).join(","); }
+OMR("un", function(){
+  var c = casoUno(), ok = parClave(c.p, c.q), vistos = {}, ops = [{clave: ok, html: sg(c.p) + Y + sg(c.q)}]; vistos[ok] = 1;
+  var cand = [[-c.p, -c.q], [c.p, -c.q], [-c.p, c.q]].concat(paresDe(c.c)).concat([[c.p + 1, c.q - 1], [c.p - 1, c.q + 1]]);
+  cand.forEach(function(pq){ var k = parClave(pq[0], pq[1]); if (ops.length < 4 && !vistos[k] && pq[0] && pq[1]){ vistos[k] = 1; ops.push({clave: k, html: sg(pq[0]) + Y + sg(pq[1])}); } });
+  var pistas = {}; ops.forEach(function(o){ if (o.clave === ok) return; var v = o.clave.split(",").map(Number); pistas[o.clave] = v[0] * v[1] !== c.c ? T("Their product is ", "Su producto es ") + sg(v[0] * v[1]) + T(", not ", ", no ") + sg(c.c) + "." : T("Their sum is ", "Su suma es ") + sg(v[0] + v[1]) + T(", not ", ", no ") + sg(c.b) + "."; });
+  return {enun: T("Which two numbers factor ", "¿Qué dos números factorizan ") + pHTML(c.poly) + "?", correcta: ok, opciones: ops, porClave: pistas,
+    pista: T("Multiply them and add them.", "Multiplíquelos y súmelos."), bien: sg(c.p) + " · " + pn(c.q) + " = " + sg(c.c) + Y + sg(c.p) + " + " + pn(c.q) + " = " + sg(c.b) + ". " + pVis(c.poly) + " = " + fVis(c.FF) + "."};
+});
+creaPracticaLibre("uq", function(){ var c = casoUno();
+  return {enun: T("Factor ", "Factorice ") + pHTML(c.poly) + ". " + FAC_AYUDA,
+    evalua: function(txt){ return evaluaF(txt, c.poly, [{F: F(1, 0, [bin(1, -c.p), bin(1, -c.q)]), msg: T("The numbers are right but the signs are not. Check the sign rule.", "Los números están bien, pero los signos no. Revise la regla de los signos.")}]); },
+    solucion: T("Two numbers with product ", "Dos números de producto ") + sg(c.c) + T(" and sum ", " y suma ") + sg(c.b) + ": " + sg(c.p) + Y + sg(c.q) + ". " + pVis(c.poly) + " = " + fVis(c.FF) + "."};
+});
+
+/* ===== MODULE 2 · a ≠ 1: the ac method and multiplying and dividing by a ===== */
+var RUTA = "ac";
+function casoAC(){
+  var a1, a2, b1, b2, a, b, c, n = 0;
+  do { a1 = elige([2, 2, 3, 3, 4, 5]); a2 = elige([1, 1, 1, 2, 3]); b1 = nz(-7, 7); b2 = nz(-7, 7); a = a1 * a2; b = a1 * b2 + a2 * b1; c = b1 * b2; n++; }
+  while ((mcd(a1, b1) !== 1 || mcd(a2, b2) !== 1 || a < 2 || !b || Math.abs(b) > 40 || Math.abs(c) > 49 || mcd(mcd(a, Math.abs(b)), Math.abs(c)) !== 1) && n < 300);
+  return {a1: a1, b1: b1, a2: a2, b2: b2, a: a, b: b, c: c, m: a1 * b2, nn: a2 * b1, poly: tri(a, b, c), FF: F(1, 0, [bin(a1, b1), bin(a2, b2)])};
+}
+function pasosAC(k, ruta){
+  var a = k.a, b = k.b, c = k.c, m = k.m, n = k.nn, P = [];
+  P.push("a · c = " + a + " · " + pn(c) + " = <strong>" + sg(a * c) + "</strong>.");
+  P.push(T("Two numbers with product ", "Dos números de producto ") + sg(a * c) + T(" and sum ", " y suma ") + sg(b) + ": <strong>" + sg(m) + Y + sg(n) + "</strong>.");
+  if (ruta === "ac"){
+    P.push(T("Split the middle term: ", "Se parte el término del medio: ") + tVis(a, 2, true) + (m < 0 ? " − " : " + ") + tVis(Math.abs(m), 1, true) + (n < 0 ? " − " : " + ") + tVis(Math.abs(n), 1, true) + mas(c) + ".");
+    P.push(T("Group two and two: ", "Se agrupa de dos en dos: ") + tVis(k.a1, 1, true) + binV(k.a2, k.b2) + (k.b1 < 0 ? " − " : " + ") + Math.abs(k.b1) + binV(k.a2, k.b2) + ". " + T("The same binomial appears twice.", "El mismo binomio aparece dos veces."));
+  } else {
+    P.push(T("Multiply and divide by ", "Se multiplica y se divide por ") + a + ": [(" + a + "x)<sup>2</sup>" + (b < 0 ? " − " : " + ") + Math.abs(b) + "(" + a + "x)" + mas(a * c) + "] ÷ " + a + ".");
+    P.push(T("Factor as if the coefficient were 1, with the two numbers: ", "Se factoriza como si el coeficiente fuera 1, con los dos números: ") + "[" + binV(a, m) + binV(a, n) + "] ÷ " + a + ".");
+    var s1 = binV(a, m) + " = " + k.a1 + binV(k.a2, k.b2), s2 = k.a2 > 1 ? binV(a, n) + " = " + k.a2 + binV(k.a1, k.b1) : binV(a, n) + T(" stays the same", " queda igual");
+    P.push(T("Simplify: ", "Se simplifica: ") + s1 + Y + s2 + ". " + (k.a2 > 1 ? k.a1 + " · " + k.a2 + " = " + a + T(", which cancels the divisor.", ", que cancela el divisor.") : T("The factor ", "El factor ") + k.a1 + T(" cancels the divisor.", " cancela el divisor.")));
+  }
+  P.push(T("Result: ", "Resultado: ") + "<strong>" + binV(k.a1, k.b1) + binV(k.a2, k.b2) + "</strong>. " + T("Multiplying gives back ", "Al multiplicar se recupera ") + pVis(k.poly) + ".");
+  return P;
+}
+pasoAPaso4("ac", function(){ var k = casoAC(); return {enun: T("Factor ", "Factorice ") + pHTML(k.poly) + (RUTA === "ac" ? T(" with the ac method.", " con el método ac.") : T(" by multiplying and dividing by a.", " con el aspa simple (multiplicar y dividir por a).")), pasos: pasosAC(k, RUTA)}; });
+function ruta(r){ RUTA = r; $("ru-ac").setAttribute("aria-pressed", r === "ac" ? "true" : "false"); $("ru-aspa").setAttribute("aria-pressed", r === "aspa" ? "true" : "false"); $("ac-nuevo").click(); }
+$("ru-ac").addEventListener("click", function(){ ruta("ac"); });
+$("ru-aspa").addEventListener("click", function(){ ruta("aspa"); });
+creaPracticaLibre("aq", function(){ var k = casoAC();
+  return {enun: T("Factor ", "Factorice ") + pHTML(k.poly) + ". " + FAC_AYUDA,
+    evalua: function(txt){ return evaluaF(txt, k.poly, [{F: F(1, 0, [bin(k.a1, k.b2), bin(k.a2, k.b1)]), msg: T("The numbers are in the wrong binomials. Multiply to check the middle term.", "Los números están en el binomio equivocado. Multiplique para comprobar el término del medio.")},
+      {F: F(1, 0, [bin(k.a1, -k.b1), bin(k.a2, -k.b2)]), msg: T("The numbers are right but the signs are not.", "Los números están bien, pero los signos no.")}].filter(function(tp){ return !pIgual(fProducto(tp.F), k.poly); })); },
+    solucion: pasosAC(k, "ac").join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 3 · Special cases and complete factoring ===== */
+var TIPOS = {cuad: T("A perfect square trinomial", "Un trinomio cuadrado perfecto"), dos: T("A trinomial that factors into two different binomials", "Un trinomio que se factoriza en dos binomios distintos"), no: T("A trinomial that cannot be factored with whole numbers", "Un trinomio que no se puede factorizar con números enteros")};
+function casoComp(tipo){
+  tipo = tipo || elige(["cuad", "dos", "dos", "no"]);
+  var g = elige([1, 2, 2, 3, 3, 4, 5]), dentro, FF, a, b, p, q;
+  if (tipo === "cuad"){ do { p = elige([1, 1, 2, 3]); q = nz(-6, 6); } while (mcd(p, Math.abs(q)) !== 1); dentro = pMul(bin(p, q), bin(p, q)); FF = F(g, 0, [bin(p, q), bin(p, q)]); }
+  else if (tipo === "dos"){ if (Math.random() < .6){ do { p = nz(-7, 7); q = nz(-7, 7); } while (p === q || p + q === 0); dentro = tri(1, p + q, p * q); FF = F(g, 0, [bin(1, p), bin(1, q)]); } else { var k = casoAC(); while (k.a1 === k.a2 && k.b1 === k.b2) k = casoAC(); while (k.a > 6 || (k.a1 === k.a2 && k.b1 === k.b2)) k = casoAC(); dentro = k.poly; FF = k.FF; FF.k = g; } }
+  else { do { b = nz(-7, 7); a = nz(-9, 12); } while (b * b - 4 * a >= 0 && esCuadrado(b * b - 4 * a)); dentro = tri(1, b, a); FF = F(g, 0, [dentro]); }
+  if (g === 1 && tipo === "no") g = elige([2, 3]), FF.k = g;
+  return {tipo: tipo, g: g, dentro: dentro, FF: FF, poly: pEsc(dentro, g)};
+}
+function pasosComp(k){
+  var P = [k.g > 1 ? T("Common factor first: ", "Primero el factor común: ") + pVis(k.poly) + " = " + k.g + "(" + pVis(k.dentro) + ")." : T("There is no common factor (only 1).", "No hay factor común (solo 1).")];
+  if (k.tipo === "cuad"){ var r = k.FF.f[0]; P.push(T("The trinomial inside is a perfect square: ", "El trinomio de dentro es un cuadrado perfecto: ") + pVis(k.dentro) + " = " + binV(r[1], r[0]) + "<sup>2</sup>."); }
+  else if (k.tipo === "dos") P.push(T("The trinomial inside factors: ", "El trinomio de dentro se factoriza: ") + pVis(k.dentro) + " = " + fVis(F(1, 0, k.FF.f)) + ".");
+  else P.push(T("The trinomial inside cannot be factored with whole numbers: no two whole numbers multiply to ", "El trinomio de dentro no se puede factorizar con enteros: no hay dos enteros que multiplicados den ") + sg(k.dentro[0]) + T(" and add to ", " y sumados den ") + sg(k.dentro[1]) + ".");
+  P.push(T("Complete factorization: ", "Factorización completa: ") + "<strong>" + fVis(k.FF) + "</strong>.");
+  return P;
+}
+pasoAPaso4("cp", function(){ var k = casoComp(); return {enun: T("Factor completely: ", "Factorice completamente: ") + pHTML(k.poly) + ".", pasos: pasosComp(k)}; });
+OMR("ct", function(){ var k = casoComp(); while (k.g === 1) k = casoComp(k.tipo);
+  var ops = ["cuad", "dos", "no"].map(function(x){ return {clave: x, html: TIPOS[x]}; });
+  return {enun: T("Take out the common factor of ", "Extraiga el factor común de ") + pHTML(k.poly) + ": " + k.g + "(" + pHTML(k.dentro) + "). " + T("What is left inside the parentheses?", "¿Qué queda dentro del paréntesis?"), correcta: k.tipo, opciones: ops,
+    porClave: {cuad: T("Is the first term a square, the last a square, and the middle twice their product?", "¿Es el primer término un cuadrado, el último un cuadrado y el del medio el doble de su producto?"), dos: T("Look for two whole numbers with the right product and sum. Do they exist? Are they different?", "Busque dos enteros con el producto y la suma correctos. ¿Existen? ¿Son distintos?"), no: T("Look again: there are two whole numbers with that product and that sum.", "Mire otra vez: sí hay dos enteros con ese producto y esa suma.")},
+    pista: T("Try to find the two numbers.", "Intente hallar los dos números."), bien: pasosComp(k).slice(1).join(" ").replace(/<\/?strong>/g, "")};
+});
+creaPracticaLibre("pq", function(){ var k = casoComp(elige(["cuad", "dos", "dos"]));
+  return {enun: T("Factor completely: ", "Factorice completamente: ") + pHTML(k.poly) + ". " + FAC_AYUDA + T(" For a square you can write (x + 3)^2.", " Para un cuadrado puede escribir (x + 3)^2."),
+    evalua: function(txt){ return evaluaF(txt, k.poly, k.g > 1 ? [{p: k.dentro, msg: T("You lost the common factor " + k.g + ": multiply and you will see that you do not get the trinomial back.", "Se perdió el factor común " + k.g + ": multiplique y verá que no recupera el trinomio.")}] : []); },
+    solucion: pasosComp(k).join(" ").replace(/<\/?strong>/g, "")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 3.1 · Multiplicación de binomios: FOIL e identidades notables — práctica (español) — construida con tools/build_n4_lesson_3_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 3.1 · Multiplicación de binomios: FOIL e identidades notables · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-3-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 3 · Multiplicación y factorización</div>
+    <h1>Lección 3.1 · Multiplicación de binomios: FOIL e identidades notables</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#area">Producto de binomios: modelo del área</a></li>
+      <li><a href="#foil">Producto de binomios usando FOIL</a></li>
+      <li><a href="#cuadrado">Identidad: el cuadrado de un binomio</a></li>
+      <li><a href="#suma-diferencia">Identidad: suma por diferencia</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="area" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Producto de binomios: modelo del área</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El producto de dos binomios es el área de un rectángulo. Calcule el área de cada una de las cuatro partes, súmelas y combine los términos semejantes. Las dos partes del centro siempre llevan términos semejantes (las dos tienen x), por eso el área total tiene solo tres términos.</p>
+      <div id="ar-svg"></div>
+      <div class="fila-btn"><button type="button" class="btn-sec" id="ar-ver">Mostrar las cuatro partes</button></div>
+      <h3>Practique: el área total</h3>
+      <div class="practica" id="ar">
+        <div class="enun" id="ar-enun"></div>
+        <div class="campos"><div class="campo"><label for="ar-r">Área</label><input type="text" autocomplete="off" class="ancho" id="ar-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="ar-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="ar-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="ar-fb" role="status"></div>
+        <p class="marcador" id="ar-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="foil">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Producto de binomios usando FOIL</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>F, O, I, L: primeros, externos, internos y últimos. Cada término lleva su signo: si el binomio es (x − 4), el último término es −4, no 4, y ese signo viaja con el número en los productos O, I y L.</p>
+      <div class="panel"><p class="enun" id="fo-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="fo-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="fo-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="fo-nuevo">Otro producto</button></div></div>
+      <div class="pasos" id="fo-pasos" aria-live="polite"></div>
+      <h3>Practique: multiplique con FOIL</h3>
+      <div class="practica" id="fq">
+        <div class="enun" id="fq-enun"></div>
+        <div class="campos"><div class="campo"><label for="fq-r">Producto</label><input type="text" autocomplete="off" class="ancho" id="fq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="fq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="fq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="fq-fb" role="status"></div>
+        <p class="marcador" id="fq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cuadrado">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Identidad: el cuadrado de un binomio</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">(a + b)² = a² + 2ab + b² · (a − b)² = a² − 2ab + b²</div>
+      <p>Construya las tres piezas: el cuadrado del primero, el doble del producto (con su signo) y el cuadrado del segundo.</p>
+      <div class="panel"><p class="enun" id="cu-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cu-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="cu-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="cu-nuevo">Otro cuadrado</button></div></div>
+      <div class="pasos" id="cu-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>El error más frecuente:</strong> escribir (x + 5)² como x² + 25. Falta el término del medio, 2ab. Elevar al cuadrado un binomio nunca es elevar al cuadrado cada término por separado.</div>
+      <h3>Practique: desarrolle el cuadrado</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="campos"><div class="campo"><label for="cq-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="cq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="cq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="cq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="suma-diferencia">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Identidad: suma por diferencia</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">(a + b)(a − b) = a² − b²</div>
+      <p>Primero decida si el producto es una suma por diferencia. Solo lo es cuando los dos binomios tienen los mismos términos y difieren únicamente en el signo del medio. Si no, hay que usar FOIL.</p>
+      <div class="practica"><p class="enun" id="sd-enun"></p>
+        <p><strong>Paso 1. ¿Se puede aplicar el atajo (a + b)(a − b) = a² − b²?</strong></p>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="sd-si">Sí, es suma por diferencia</button><button type="button" class="btn-sec" id="sd-no">No, hay que usar FOIL</button></div>
+        <div id="sd-paso2" hidden><p><strong id="sd-paso2t"></strong></p>
+          <div class="campos"><div class="campo"><label for="sd-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="sd-r"></div></div>
+          <div class="fila-btn"><button type="button" class="btn" id="sd-comprobar">Comprobar el resultado</button></div></div>
+        <div class="fb" id="sd-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="sd-otro">Otro ejercicio</button></div></div>
+      <div class="caja-tip">Por qué funciona: con FOIL, los productos externo e interno son opuestos y se cancelan. Queda solo el cuadrado del primero menos el cuadrado del segundo.</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 3 · Multiplicación y factorización · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function bin(a, b){ return [b, a]; }                       /* ax + b */
+function binVis(q){ return "(" + pVis(q) + ")"; }
+function prodHTML(p1, p2, cuadrado){ return envuelve(cuadrado ? binVis(p1) + "<sup>2</sup>" : binVis(p1) + binVis(p2), cuadrado ? T("the quantity ", "la cantidad ") + pVoz(p1) + T(", squared", ", al cuadrado") : T("the quantity ", "la cantidad ") + pVoz(p1) + T(", times the quantity ", ", por la cantidad ") + pVoz(p2)); }
+function tmv(c, g){ return tVis(c, g, true); }
+function azarBin(conA){ var a = conA ? elige([1, 1, 2, 3]) : 1, b; do { b = aleatorio(-9, 9); } while (!b); return bin(a, b); }
+function trampasProd(p1, p2){
+  var a = p1[1], b = p1[0], c = p2[1], d = p2[0], ok = pMul(p1, p2), l = [];
+  l.push({p: pDe({2: a * c, 0: b * d}), msg: T("The middle terms are missing: add the Outer and Inner products.", "Faltan los términos del centro: sume los productos externos (O) e internos (I).")});
+  l.push({p: pDe({2: a * c, 1: a * d - b * c, 0: b * d}), msg: T("Check the sign of the Inner product (I): each term keeps its sign.", "Revise el signo del producto interno (I): cada término lleva su signo.")});
+  l.push({p: pDe({2: a * c, 1: b * c - a * d, 0: b * d}), msg: T("Check the sign of the Outer product (O): each term keeps its sign.", "Revise el signo del producto externo (O): cada término lleva su signo.")});
+  l.push({p: pDe({2: a * c, 1: a * d + b * c, 0: -b * d}), msg: T("Check the Last product (L): " + pn(b) + " · " + pn(d) + " = " + sg(b * d) + ".", "Revise el producto de los últimos (L): " + pn(b) + " · " + pn(d) + " = " + sg(b * d) + ".")});
+  l.push({p: pDe({2: a + c, 1: a * d + b * c, 0: b * d}), msg: T("First (F): multiply the x terms, " + a + "x · " + c + "x = " + a * c + "x².", "Primeros (F): se multiplican los términos con x, " + a + "x · " + c + "x = " + a * c + "x².")});
+  return l.filter(function(x){ return !pIgual(x.p, ok); });
+}
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+
+/* ===== MODULE 1 · The area model ===== */
+var AR = {p1: null, p2: null, ver: false};
+function areaSVG(p1, p2, ver){
+  var a = p1[1], b = p1[0], c = p2[1], d = p2[0], W = 460, H = 340, x0 = 90, y0 = 50, wx = 190, wb = 90, hx = 170, hb = 70, s = "";
+  var celdas = [[x0, y0, wx, hx, tmv(a * c, 2), "#e3f2fd"], [x0 + wx, y0, wb, hx, tmv(a * d, 1), "#fff8e1"], [x0, y0 + hx, wx, hb, tmv(b * c, 1), "#e8f5e9"], [x0 + wx, y0 + hx, wb, hb, sg(b * d), "#f3e5f5"]];
+  celdas.forEach(function(q){ s += '<rect x="' + q[0] + '" y="' + q[1] + '" width="' + q[2] + '" height="' + q[3] + '" fill="' + q[5] + '" stroke="#37474f" stroke-width="2.5"/><text x="' + (q[0] + q[2] / 2) + '" y="' + (q[1] + q[3] / 2 + 8) + '" font-size="22" font-weight="700" text-anchor="middle">' + (ver ? q[4] : "?") + "</text>"; });
+  s += '<text x="' + (x0 + wx / 2) + '" y="' + (y0 - 14) + '" font-size="19" font-weight="700" text-anchor="middle" fill="#0d47a1">' + tmv(c, 1) + '</text><text x="' + (x0 + wx + wb / 2) + '" y="' + (y0 - 14) + '" font-size="19" font-weight="700" text-anchor="middle" fill="#0d47a1">' + sg(d) + "</text>";
+  s += '<text x="' + (x0 - 12) + '" y="' + (y0 + hx / 2 + 6) + '" font-size="19" font-weight="700" text-anchor="end" fill="#b71c1c">' + tmv(a, 1) + '</text><text x="' + (x0 - 12) + '" y="' + (y0 + hx + hb / 2 + 6) + '" font-size="19" font-weight="700" text-anchor="end" fill="#b71c1c">' + sg(b) + "</text>";
+  return '<svg class="geo-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + T("Area model: a rectangle with sides ", "Modelo del área: un rectángulo de lados ") + pVoz(p2) + T(" across and ", " a lo ancho y ") + pVoz(p1) + T(" down, split into four parts", " a lo alto, dividido en cuatro partes") + (ver ? ": " + [tmv(a * c, 2), tmv(a * d, 1), tmv(b * c, 1), sg(b * d)].join(", ").replace(/<[^>]+>/g, "") : "") + '." style="max-width:440px">' + s.replace(/<sup>/g, '<tspan baseline-shift="super" font-size="14">').replace(/<\/sup>/g, "</tspan>") + "</svg>";
+}
+function arPinta(){ $("ar-svg").innerHTML = areaSVG(AR.p1, AR.p2, AR.ver); }
+creaPracticaLibre("ar", function(){
+  AR.p1 = azarBin(Math.random() < .4); AR.p2 = azarBin(false); AR.ver = false; arPinta();
+  var ok = pMul(AR.p1, AR.p2), a = AR.p1[1], b = AR.p1[0], c = AR.p2[1], d = AR.p2[0];
+  return {enun: T("Find the area of the rectangle: ", "Halle el área del rectángulo: ") + prodHTML(AR.p1, AR.p2) + T(". Find the four parts, add them, and combine the like terms. Use ^ for exponents: x^2.", ". Calcule las cuatro partes, súmelas y combine los términos semejantes. Use ^ para los exponentes: x^2."),
+    evalua: function(txt){ var r = evaluaP(txt, ok, trampasProd(AR.p1, AR.p2)); if (r.estado !== "invalido"){ AR.ver = r.estado === "bien"; arPinta(); } return r; },
+    solucion: T("The four parts: ", "Las cuatro partes: ") + [tmv(a * c, 2), tmv(a * d, 1), tmv(b * c, 1), sg(b * d)].join(", ") + T(". The two middle ones are like terms: ", ". Las dos del centro son semejantes: ") + tmv(a * d, 1) + " + " + pn(b * c) + "x = " + tmv(a * d + b * c, 1) + ". " + T("Total: ", "Total: ") + pVis(ok) + "."};
+});
+$("ar-ver").addEventListener("click", function(){ AR.ver = true; arPinta(); });
+
+/* ===== MODULE 2 · FOIL ===== */
+function casoFOIL(){ var p1 = azarBin(true), p2 = azarBin(Math.random() < .3), a = p1[1], b = p1[0], c = p2[1], d = p2[0], ok = pMul(p1, p2);
+  var C = function(l, col){ return '<strong style="color:' + col + '">' + l + "</strong> "; };
+  return {p1: p1, p2: p2, ok: ok, pasos: [C("F", "#0d47a1") + T("First: ", "Primeros: ") + tmv(a, 1) + " · " + tmv(c, 1) + " = " + tmv(a * c, 2) + ".", C("O", "#e65100") + T("Outer: ", "Externos: ") + tmv(a, 1) + " · " + pn(d) + " = " + tmv(a * d, 1) + ".", C("I", "#2e7d32") + T("Inner: ", "Internos: ") + pn(b) + " · " + tmv(c, 1) + " = " + tmv(b * c, 1) + ".", C("L", "#6a1b9a") + T("Last: ", "Últimos: ") + pn(b) + " · " + pn(d) + " = " + sg(b * d) + ".", T("Combine O + I: ", "Se combinan O + I: ") + tmv(a * d, 1) + (b * c < 0 ? " − " + tmv(-b * c, 1) : " + " + tmv(b * c, 1)) + " = " + (a * d + b * c ? tmv(a * d + b * c, 1) : "0") + ". " + T("Result: ", "Resultado: ") + "<strong>" + pVis(ok) + "</strong>."]};
+}
+pasoAPaso4("fo", function(){ var c = casoFOIL(); return {enun: T("Multiply ", "Multiplique ") + prodHTML(c.p1, c.p2) + T(" with FOIL.", " con FOIL."), pasos: c.pasos}; });
+creaPracticaLibre("fq", function(){ var c = casoFOIL();
+  return {enun: T("Multiply ", "Multiplique ") + prodHTML(c.p1, c.p2) + T(". Use ^ for exponents: x^2.", ". Use ^ para los exponentes: x^2."), evalua: function(txt){ return evaluaP(txt, c.ok, trampasProd(c.p1, c.p2)); }, solucion: c.pasos.join(" ").replace(/<\/?strong[^>]*>/g, "")}; });
+
+/* ===== MODULE 3 · The square of a binomial ===== */
+function casoCuad(){ var a = elige([1, 1, 1, 2, 3]), b; do { b = aleatorio(-9, 9); } while (!b); var p1 = bin(a, b), ok = pMul(p1, p1);
+  return {p1: p1, ok: ok, a: a, b: b, pasos: [T("Square of the first: ", "Cuadrado del primero: ") + (a === 1 ? "x²" : "(" + tmv(a, 1) + ")² = " + tmv(a * a, 2)) + ".", T("Twice the product, with its sign: ", "Doble del producto, con su signo: ") + "2 · " + tmv(a, 1) + " · " + pn(b) + " = " + tmv(2 * a * b, 1) + ".", T("Square of the second (always positive): ", "Cuadrado del segundo (siempre positivo): ") + pn(b) + "² = " + b * b + ".", T("Result: ", "Resultado: ") + "<strong>" + pVis(ok) + "</strong>."]};
+}
+pasoAPaso4("cu", function(){ var c = casoCuad(); return {enun: T("Expand ", "Desarrolle ") + prodHTML(c.p1, null, true) + ".", pasos: c.pasos}; });
+creaPracticaLibre("cq", function(){ var c = casoCuad(), a = c.a, b = c.b;
+  var tr = [{p: pDe({2: a * a, 0: b * b}), msg: T("The middle term 2ab is missing: squaring a binomial is not squaring each term.", "Falta el término del medio, 2ab: elevar un binomio al cuadrado no es elevar cada término.")},
+    {p: pDe({2: a * a, 1: a * b, 0: b * b}), msg: T("The middle term is twice the product: 2ab.", "El término del medio es el doble del producto: 2ab.")},
+    {p: pDe({2: a * a, 1: 2 * a * b, 0: -b * b}), msg: T("The square of the second is always positive.", "El cuadrado del segundo siempre es positivo.")},
+    {p: pDe({2: a, 1: 2 * a * b, 0: b * b}), msg: T("Square the whole first term: (" + a + "x)² = " + a * a + "x².", "Eleve al cuadrado todo el primer término: (" + a + "x)² = " + a * a + "x².")}];
+  return {enun: T("Expand ", "Desarrolle ") + prodHTML(c.p1, null, true) + T(". Use ^ for exponents: x^2.", ". Use ^ para los exponentes: x^2."), evalua: function(txt){ return evaluaP(txt, c.ok, tr.filter(function(x){ return !pIgual(x.p, c.ok); })); }, solucion: c.pasos.join(" ").replace(/<\/?strong>/g, "")}; });
+
+/* ===== MODULE 4 · Sum times difference ===== */
+var SD = {};
+function sdNuevo(){
+  var a = elige([1, 1, 2, 3, 4]), b = aleatorio(1, 9), es = Math.random() < .65, p1 = bin(a, b), p2 = es ? bin(a, -b) : (Math.random() < .5 ? bin(a, -b + elige([-1, 1, 2])) : bin(a + 1, -b));
+  if (!es && p2[0] === 0) p2 = bin(a, -b - 1);
+  if (Math.random() < .5){ var t1 = p1; p1 = p2; p2 = t1; }
+  SD = {p1: p1, p2: p2, es: es && true, ok: pMul(p1, p2), paso: 1};
+  $("sd-enun").innerHTML = T("The product is ", "El producto es ") + prodHTML(p1, p2) + ".";
+  $("sd-fb").className = "fb"; $("sd-fb").innerHTML = ""; $("sd-paso2").hidden = true; $("sd-r").value = ""; $("sd-si").disabled = $("sd-no").disabled = false;
+}
+function sdDecide(si){
+  var fb = $("sd-fb");
+  if (si === SD.es){ fb.className = "fb bien"; fb.innerHTML = TX.bien + (SD.es ? T("Same terms, opposite signs: the shortcut works.", "Mismos términos y signos opuestos: el atajo funciona.") : T("The terms are not the same, so use FOIL.", "Los términos no son los mismos, así que hay que usar FOIL.")); $("sd-paso2").hidden = false; $("sd-paso2t").innerHTML = SD.es ? T("Step 2. Write the result with the identity: the square of the first minus the square of the second.", "Paso 2. Escriba el resultado con la identidad: el cuadrado del primero menos el cuadrado del segundo.") : T("Step 2. Multiply with FOIL and write the result.", "Paso 2. Multiplique con FOIL y escriba el resultado."); $("sd-si").disabled = $("sd-no").disabled = true; $("sd-r").focus(); }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + T("Look again: for a sum times a difference, the two binomials have exactly the same terms and differ only in the sign in the middle.", "Mire otra vez: en una suma por diferencia, los dos binomios tienen exactamente los mismos términos y solo cambia el signo del medio."); }
+}
+$("sd-si").addEventListener("click", function(){ sdDecide(true); }); $("sd-no").addEventListener("click", function(){ sdDecide(false); });
+$("sd-comprobar").addEventListener("click", function(){
+  var a = SD.p1[1], b = SD.p1[0], r = evaluaP($("sd-r").value, SD.ok, SD.es ? [{p: pDe({2: a * a, 0: b * b}), msg: T("The second square is subtracted: a² − b².", "El segundo cuadrado se resta: a² − b².")}, {p: pDe({2: a * a, 1: -2 * Math.abs(a * b), 0: -b * b}), msg: T("The middle terms cancel: there is no x term.", "Los términos del centro se cancelan: no queda término con x.")}] : trampasProd(SD.p1, SD.p2)), fb = $("sd-fb");
+  if (r.estado === "bien"){ fb.className = "fb bien"; fb.innerHTML = TX.bien + pVis(SD.ok) + "."; SD.bien = (SD.bien || 0) + 1; }
+  else { fb.className = "fb pista"; fb.innerHTML = (r.estado === "invalido" ? "" : TX.todavia) + r.msg + (r.estado === "mal" ? " " + T("Answer: ", "Respuesta: ") + pVis(SD.ok) + "." : ""); }
+});
+$("sd-otro").addEventListener("click", sdNuevo); sdNuevo();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
