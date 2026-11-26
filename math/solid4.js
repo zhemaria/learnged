@@ -59,7 +59,14 @@ function esferaSVG(o){
   s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + R + '" fill="' + S4.rell + '" stroke="' + S4.linea + '" stroke-width="2.5"/>';
   s += elip(cx, cy, R, R * .25, "none", S4.oculto, "atras") + elip(cx, cy, R, R * .25, "none", S4.linea, "frente");
   s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="' + S4.linea + '"/>' + lin(cx, cy, cx + R, cy, S4.radio, 3.5) + etq(cx + R + 8, cy + 6, isNaN(+o.r) ? "r" : "r = " + o.r, S4.radio, "start");
-  if (o.diam) s += lin(cx - R, cy + 36, cx + R, cy + 36, "#6a1b9a", 2.5, "6 4") + etq(cx, cy + 58, isNaN(+o.r) ? "d" : "d = " + nd(2 * o.r), "#6a1b9a");
+  /* The diameter goes across through the center: the red radius plus another radius on the left, d = 2r.
+     A measuring line under the sphere shows its whole length. */
+  if (o.diam){ var yd = cy + R + 10, mor = "#6a1b9a";
+    s = s.replace(/(<circle cx="[^"]+" cy="[^"]+" r="4")/, lin(cx - R, cy, cx, cy, mor, 3.5, "10 4 2 4") + "$1");
+    s += etq(cx - R / 2, cy - 9, "r", mor) + lin(cx - R, cy + 4, cx - R, yd + 6, "#90a4ae", 1.5, "3 4") + lin(cx + R, cy + 4, cx + R, yd + 6, "#90a4ae", 1.5, "3 4");
+    if (o.cil){ s += etq(cx, cy + 50, isNaN(+o.r) ? "d = 2r" : "d = " + nd(2 * o.r), mor); return marco(W, H, o.voz, s.replace(lin(cx - R, cy + 4, cx - R, yd + 6, "#90a4ae", 1.5, "3 4") + lin(cx + R, cy + 4, cx + R, yd + 6, "#90a4ae", 1.5, "3 4"), ""), o.ancho || 340); }
+    s += lin(cx - R, yd, cx + R, yd, mor, 2.5) + lin(cx - R, yd - 7, cx - R, yd + 7, mor, 2.5) + lin(cx + R, yd - 7, cx + R, yd + 7, mor, 2.5);
+    s += etq(cx, yd + 21, isNaN(+o.r) ? "d = 2r" : "d = " + nd(2 * o.r), mor); }
   return marco(W, H, o.voz, s, o.ancho || 340);
 }
 function conoSVG(o){
