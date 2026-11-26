@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.2 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.2 · Diagramas de caja y bigotes · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-7-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 7 — Volumen y análisis de datos</p>
+<h1>Lección 7.2 · Diagramas de caja y bigotes</h1>
+<p class="lema">Resuma un conjunto de datos con cinco valores clave, construya un diagrama de caja, halle el IQR y los valores atípicos, y compare dos grupos.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📊</span> Datos de un vistazo</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> los cinco valores clave: mínimo, Q1, mediana (Q2), Q3 y máximo.</li>
+<li><strong>Construir</strong> un diagrama de caja y bigotes a partir de datos ordenados.</li>
+<li><strong>Calcular</strong> el rango intercuartílico (IQR = Q3 − Q1).</li>
+<li><strong>Identificar</strong> valores atípicos usando la regla 1.5 × IQR.</li>
+<li><strong>Interpretar</strong> la dispersión y comparar dos distribuciones.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.6.b</span> Representar, mostrar e interpretar datos de una variable en gráficas sobre la recta numérica, incluidos los diagramas de puntos, los histogramas y los diagramas de caja.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.7.a</span> Calcular la media, la mediana, la moda y el rango. Calcular un dato que falta, dada la media y todos los demás datos, y también la media ponderada.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.SP.4</span> <span class="std-nivel">Nivel D</span> Representar datos numéricos en gráficas sobre la recta numérica, como diagramas de puntos, histogramas y diagramas de caja.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Nivel D</span> Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.</li><li><span class="std-cod std-ccr">7.SP.4</span> <span class="std-nivel">Nivel D</span> Usar medidas de tendencia central y de variación de datos numéricos de muestras aleatorias para hacer comparaciones informales entre dos poblaciones.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-cinco-valores">Los cinco valores clave</a></li>
+<li><a href="#s-construir">Construir el diagrama</a></li>
+<li><a href="#s-iqr">El rango intercuartílico (IQR)</a></li>
+<li><a href="#s-atipicos">Valores atípicos</a></li>
+<li><a href="#s-comparar">Interpretar y comparar</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-cinco-valores"><span aria-hidden="true" class="num-seccion">1</span>Los cinco valores clave</h2>
+<p>La Lección 7.1 midió cuánto cabe en un cuerpo sólido. Esta lección cambia el foco hacia los datos: cómo resumir un conjunto de números para verlo de un vistazo. El diagrama de caja y bigotes muestra, en una sola imagen, dónde se concentran los datos, qué tan dispersos están y si hay valores fuera de lo común.</p>
+<p>Un diagrama de caja se construye con cinco números que resumen el conjunto: el <strong>mínimo</strong>, el <strong>primer cuartil Q1</strong>, la <strong>mediana</strong> (Q2), el <strong>tercer cuartil Q3</strong> y el <strong>máximo</strong>. La caja va de Q1 a Q3, con una línea en la mediana, y los bigotes llegan al mínimo y al máximo.</p>
+<svg viewBox="0 0 560 186" role="img" aria-label="Un diagrama de caja sobre una recta numérica de 0 a 90. El bigote izquierdo empieza en el mínimo, 10. La caja va de Q1 = 25 a Q3 = 55, con una línea en la mediana, 40. El bigote derecho termina en el máximo, 80." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><line x1="40.0" y1="150" x2="535.0" y2="150" stroke="#424242" stroke-width="2"/><line x1="40.0" y1="144" x2="40.0" y2="156" stroke="#424242" stroke-width="2"/><text x="40.0" y="174" font-size="15" text-anchor="middle" fill="#222">0</text><line x1="95.0" y1="144" x2="95.0" y2="156" stroke="#424242" stroke-width="2"/><text x="95.0" y="174" font-size="15" text-anchor="middle" fill="#222">10</text><line x1="150.0" y1="144" x2="150.0" y2="156" stroke="#424242" stroke-width="2"/><text x="150.0" y="174" font-size="15" text-anchor="middle" fill="#222">20</text><line x1="205.0" y1="144" x2="205.0" y2="156" stroke="#424242" stroke-width="2"/><text x="205.0" y="174" font-size="15" text-anchor="middle" fill="#222">30</text><line x1="260.0" y1="144" x2="260.0" y2="156" stroke="#424242" stroke-width="2"/><text x="260.0" y="174" font-size="15" text-anchor="middle" fill="#222">40</text><line x1="315.0" y1="144" x2="315.0" y2="156" stroke="#424242" stroke-width="2"/><text x="315.0" y="174" font-size="15" text-anchor="middle" fill="#222">50</text><line x1="370.0" y1="144" x2="370.0" y2="156" stroke="#424242" stroke-width="2"/><text x="370.0" y="174" font-size="15" text-anchor="middle" fill="#222">60</text><line x1="425.0" y1="144" x2="425.0" y2="156" stroke="#424242" stroke-width="2"/><text x="425.0" y="174" font-size="15" text-anchor="middle" fill="#222">70</text><line x1="480.0" y1="144" x2="480.0" y2="156" stroke="#424242" stroke-width="2"/><text x="480.0" y="174" font-size="15" text-anchor="middle" fill="#222">80</text><line x1="535.0" y1="144" x2="535.0" y2="156" stroke="#424242" stroke-width="2"/><text x="535.0" y="174" font-size="15" text-anchor="middle" fill="#222">90</text><line x1="95.0" y1="90" x2="177.5" y2="90" stroke="#37474f" stroke-width="3"/><line x1="342.5" y1="90" x2="480.0" y2="90" stroke="#37474f" stroke-width="3"/><line x1="95.0" y1="78" x2="95.0" y2="102" stroke="#37474f" stroke-width="3"/><line x1="480.0" y1="78" x2="480.0" y2="102" stroke="#37474f" stroke-width="3"/><rect x="177.5" y="68" width="165.0" height="44" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><line x1="260.0" y1="68" x2="260.0" y2="112" stroke="#b71c1c" stroke-width="4"/><text x="95.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Mín</text><text x="95.0" y="56" font-size="15" text-anchor="middle" fill="#424242">10</text><text x="177.5" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Q1</text><text x="177.5" y="56" font-size="15" text-anchor="middle" fill="#424242">25</text><text x="260.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#b71c1c">Mediana</text><text x="260.0" y="56" font-size="15" text-anchor="middle" fill="#b71c1c">40</text><text x="342.5" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Q3</text><text x="342.5" y="56" font-size="15" text-anchor="middle" fill="#424242">55</text><text x="480.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Máx</text><text x="480.0" y="56" font-size="15" text-anchor="middle" fill="#424242">80</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Cada zona, una cuarta parte</span>
+<p>Los cuartiles dividen los datos en cuatro grupos del 25% cada uno. Entre el mínimo y Q1 está el 25% más bajo; la caja (de Q1 a Q3) contiene el 50% central de los datos.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#cinco-valores" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los cinco valores clave (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los cinco valores clave</span><span class="ei-sub">Halle el mínimo, Q1, la mediana, Q3 y el máximo de un conjunto de datos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-construir"><span aria-hidden="true" class="num-seccion">2</span>Construir el diagrama</h2>
+<p>El procedimiento sigue cinco pasos ordenados.</p>
+<div aria-label="Cinco pasos para construir un diagrama de caja (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Cinco pasos para construir un diagrama de caja y bigotes</caption>
+<thead><tr><th scope="col">Paso</th><th scope="col">Acción</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Ordenar los datos de menor a mayor.</td></tr>
+<tr><td>2</td><td>Encontrar la mediana (el valor central).</td></tr>
+<tr><td>3</td><td>Encontrar Q1 (mediana de la mitad inferior) y Q3 (mediana de la superior).</td></tr>
+<tr><td>4</td><td>Trazar la caja de Q1 a Q3 con la línea de la mediana.</td></tr>
+<tr><td>5</td><td>Trazar los bigotes hasta el mínimo y el máximo.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Para los datos 2, 4, 6, 8, 10, ¿cuál es la mediana?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Ya están ordenados.</strong> Hay cinco valores, así que el central es el tercero.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La mediana es <strong>6</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Cantidad impar o par de datos</span>
+<p>Con una cantidad impar de datos, la mediana es el dato central y no entra en ninguna de las dos mitades. Con una cantidad par, la mediana es el promedio de los dos centrales, y cada mitad se queda con la mitad de los datos.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — La mediana</h3></div>
+<p class="pregunta-int" id="t-p1">Para los datos 1, 3, 5, 7, 9, la mediana es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">4</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — El IQR</h3></div>
+<p class="pregunta-int" id="t-p2">Si Q1 = 10 y Q3 = 30, el IQR es…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">20</button>
+<button class="opcion" data-k="b" type="button">40</button>
+<button class="opcion" data-k="c" type="button">10</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Valores clave</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cuántos valores clave tiene el diagrama de caja?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#construir" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: construir el diagrama (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: construir el diagrama</span><span class="ei-sub">Trace la caja y los bigotes a partir de los cinco valores, y lea un diagrama.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-iqr"><span aria-hidden="true" class="num-seccion">3</span>El rango intercuartílico (IQR)</h2>
+<p>El <strong>rango intercuartílico</strong> (IQR, por sus siglas en inglés) mide qué tan dispersa está la mitad central de los datos. Se calcula restando:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">IQR = Q3 − Q1</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: en el diagrama de arriba, Q1 = 25 y Q3 = 55. ¿Cuál es el IQR?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se resta.</strong> 55 − 25 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El IQR es <strong>30</strong>. Es el ancho de la caja.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El IQR resiste a los extremos</span>
+<p>A diferencia del rango total (máx − mín), el IQR no se ve afectado por uno o dos valores muy grandes o muy pequeños, porque solo mira el 50% central. Por eso es una medida de dispersión confiable.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#iqr" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el rango intercuartílico (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el rango intercuartílico</span><span class="ei-sub">Calcule el IQR y relaciónelo con los porcentajes de datos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-atipicos"><span aria-hidden="true" class="num-seccion">4</span>Valores atípicos</h2>
+<p>Un <strong>valor atípico</strong> es un dato que queda muy lejos del resto. La regla más usada para detectarlos emplea el IQR: un valor es atípico si está más allá de 1.5 × IQR por encima de Q3 o por debajo de Q1.</p>
+<p class="formula" style="text-align:center;font-weight:700;">límite inferior = Q1 − 1.5 × IQR &nbsp;&nbsp;&nbsp; límite superior = Q3 + 1.5 × IQR</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Límite superior. Con Q3 = 55 e IQR = 30, ¿cuál es el límite superior para valores atípicos?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se calcula 1.5 × IQR.</strong> 1.5 × 30 = 45.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se suma a Q3.</strong> 55 + 45 = 100.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Cualquier dato mayor que <strong>100</strong> sería un valor atípico por arriba.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — La regla</h3></div>
+<p class="pregunta-int" id="t-p4">La regla para detectar valores atípicos usa el factor…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">2 × la media</button>
+<button class="opcion" data-k="b" type="button">Q2</button>
+<button class="opcion" data-k="c" type="button">1.5 × IQR</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#atipicos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: valores atípicos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: valores atípicos</span><span class="ei-sub">Aplique la regla de 1.5 × IQR para detectar datos atípicos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-comparar"><span aria-hidden="true" class="num-seccion">5</span>Interpretar y comparar</h2>
+<p>El verdadero valor del diagrama está en interpretarlo. Una caja ancha indica datos muy dispersos; una caja angosta, datos concentrados. Comparando dos diagramas sobre la misma escala se ve cuál grupo tiene la mediana más alta o más variabilidad.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Comparar dos grupos. El grupo A tiene mediana 70 y una caja angosta; el grupo B tiene mediana 60 y una caja ancha. ¿Qué se concluye?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se comparan las medianas.</strong> La mediana de A (70) es mayor que la de B (60): A tiende a valores más altos.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se comparan las cajas.</strong> La caja de B es más ancha: B tiene mayor variabilidad (mayor IQR).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> A tiene valores más altos y más consistentes; B está más disperso.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Mediana no es media</span>
+<p>La raya de la caja es la mediana. El diagrama de caja no muestra la media (el promedio).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — La raya de la caja</h3></div>
+<p class="pregunta-int" id="t-p5">La línea dentro de la caja representa…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">la mediana</button>
+<button class="opcion" data-k="b" type="button">la media</button>
+<button class="opcion" data-k="c" type="button">el mínimo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Una caja más ancha</h3></div>
+<p class="pregunta-int" id="t-p6">Una caja más ancha indica…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">menos variabilidad</button>
+<button class="opcion" data-k="b" type="button">más variabilidad</button>
+<button class="opcion" data-k="c" type="button">mayor mediana</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#comparar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: interpretar y comparar (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: interpretar y comparar</span><span class="ei-sub">Compare dos diagramas de caja: centro, dispersión y forma.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Tome dos conjuntos de 9 a 12 datos cada uno (por ejemplo, las calificaciones de dos grupos). En cada uno, halle los cinco valores clave, el IQR y los límites para valores atípicos, y dibuje los dos diagramas de caja sobre la misma escala. Después escriba dos oraciones que comparen los grupos: una sobre el centro y otra sobre la dispersión.</li>
+<li><strong>En su vida diaria.</strong> Anote durante dos semanas cuántos minutos tarda en llegar a algún lugar cada día (el trabajo, la escuela, la tienda). Haga un diagrama de caja con sus tiempos. ¿Qué días, si los hay, son atípicos? ¿Qué pasó esos días?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Datos ordenados 2, 4, 6, 8, 10. La mediana (Q2) es…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5</button><button class="opcion" data-k="b" type="button">6</button><button class="opcion" data-k="c" type="button">8</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Si Q1 = 20 y Q3 = 50, el IQR es…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">70</button><button class="opcion" data-k="b" type="button">50</button><button class="opcion" data-k="c" type="button">20</button><button class="opcion" data-k="d" type="button">30</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">El IQR se calcula como…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Q3 − Q1</button><button class="opcion" data-k="b" type="button">Q3 + Q1</button><button class="opcion" data-k="c" type="button">máx − mín</button><button class="opcion" data-k="d" type="button">la mediana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">La regla para detectar valores atípicos usa el factor…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2 × IQR</button><button class="opcion" data-k="b" type="button">la mediana</button><button class="opcion" data-k="c" type="button">1.5 × IQR</button><button class="opcion" data-k="d" type="button">el rango</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Si IQR = 30 y Q3 = 55, el límite superior (Q3 + 1.5 × IQR) es…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100</button><button class="opcion" data-k="b" type="button">85</button><button class="opcion" data-k="c" type="button">45</button><button class="opcion" data-k="d" type="button">75</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">En un diagrama de caja sin valores atípicos, los bigotes llegan hasta…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Q1 y Q3</button><button class="opcion" data-k="b" type="button">la media</button><button class="opcion" data-k="c" type="button">el mínimo y el máximo</button><button class="opcion" data-k="d" type="button">los valores atípicos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">La línea dentro de la caja representa…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la media</button><button class="opcion" data-k="b" type="button">la mediana</button><button class="opcion" data-k="c" type="button">el máximo</button><button class="opcion" data-k="d" type="button">el IQR</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Un grupo con una caja más ancha tiene…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">menor variabilidad</button><button class="opcion" data-k="b" type="button">siempre más valores atípicos</button><button class="opcion" data-k="c" type="button">mayor mediana</button><button class="opcion" data-k="d" type="button">mayor variabilidad</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de diagramas de caja (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de diagramas de caja, IQR y valores atípicos y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Los cinco valores clave</th><td>Ordeno los datos e identifico los cinco valores clave, incluso con datos repetidos.</td><td>Identifico algunos valores con errores.</td><td>No identifico los cinco valores.</td></tr>
+<tr><th scope="row">IQR y valores atípicos</th><td>Calculo el IQR y aplico la regla 1.5 × IQR por arriba y por abajo.</td><td>Calculo el IQR, pero no aplico la regla de atípicos.</td><td>No calculo el IQR.</td></tr>
+<tr><th scope="row">Construir el diagrama</th><td>Construyo el diagrama a escala y rotulo todos los valores.</td><td>Construyo la caja con errores de escala.</td><td>No construyo el diagrama.</td></tr>
+<tr><th scope="row">Interpretar la dispersión</th><td>Interpreto la dispersión, comparo dos distribuciones y distingo lo que el diagrama no puede mostrar.</td><td>Interpreto de forma parcial o imprecisa.</td><td>No interpreto la dispersión.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió a resumir un conjunto de datos con los cinco valores clave, a construir un diagrama de caja y bigotes, a calcular el IQR (Q3 − Q1), a detectar valores atípicos con la regla 1.5 × IQR y a comparar distribuciones por su mediana y dispersión.</p>
+<p>En la <strong>Lección 7.3 · Histogramas: construir, interpretar y comparar distribuciones</strong> se estudiará otra forma de ver los datos: el histograma, con sus barras contiguas. Se describirá la forma de la distribución (simétrica, sesgada, unimodal o bimodal) y se comparará con el diagrama de caja para elegir la mejor representación.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-7-3.html">Lección 7.3 · Histogramas: construir, interpretar y comparar distribuciones</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>cuartiles</dt><dd>Los valores que dividen los datos ordenados en cuatro partes del 25%: Q1, la mediana (Q2) y Q3.</dd>
+<dt>mediana</dt><dd>El valor central de los datos ordenados, o el promedio de los dos centrales.</dd>
+<dt>rango intercuartílico (IQR)</dt><dd>Q3 − Q1: la dispersión del 50% central de los datos.</dd>
+<dt>rango</dt><dd>Máximo − mínimo.</dd>
+<dt>valor atípico</dt><dd>Un dato a más de 1.5 × IQR por debajo de Q1 o por encima de Q3.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 7 · Lección 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.3",
+ "review": "las secciones 2 a 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Aquí la mediana es uno de los datos: el del centro.",
+    "c": "7 es el cuarto dato. Con cinco datos, el central es el tercero."
+   },
+   "right": "El central de cinco datos es el tercero: 5.",
+   "solution": "La mediana es 5."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "Sumó. El IQR es Q3 − Q1.",
+    "c": "10 es Q1. Reste: 30 − 10."
+   },
+   "right": "30 − 10 = 20.",
+   "solution": "IQR = 30 − 10 = 20."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Cuéntelos: mínimo, Q1, mediana, Q3, máximo.",
+    "b": "Cuatro es el número de zonas. Cuente los valores que las separan, más los extremos."
+   },
+   "right": "Mínimo, Q1, mediana, Q3 y máximo: cinco.",
+   "solution": "Cinco."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "La regla usa el IQR, no la media.",
+    "b": "La regla mide la distancia a Q1 y Q3 con el IQR."
+   },
+   "right": "Son atípicos los datos a más de 1.5 × IQR de Q1 o de Q3.",
+   "solution": "1.5 × IQR."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "El diagrama de caja no muestra la media.",
+    "c": "El mínimo está al final del bigote izquierdo."
+   },
+   "right": "La raya de la caja es la mediana.",
+   "solution": "La mediana."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Una caja más ancha significa datos centrales más separados.",
+    "c": "El ancho muestra la dispersión, no el centro."
+   },
+   "right": "El ancho de la caja es el IQR: más ancha, más dispersión.",
+   "solution": "Más variabilidad."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "5 no está en los datos. Con cinco datos, la mediana es el tercero.",
+    "c": "8 es el cuarto dato.",
+    "d": "4 es el segundo dato."
+   },
+   "solution": "La mediana es 6."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó. Reste: Q3 − Q1.",
+    "b": "50 es Q3. Falta restar Q1.",
+    "c": "20 es Q1. Réstelo de Q3."
+   },
+   "solution": "50 − 20 = 30."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "El IQR es una resta, no una suma.",
+    "c": "Máx − mín es el rango, no el IQR.",
+    "d": "La mediana es el centro, no una dispersión."
+   },
+   "solution": "IQR = Q3 − Q1."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "El factor es 1.5, no 2.",
+    "b": "La regla usa el IQR.",
+    "d": "La regla usa el IQR, no el rango."
+   },
+   "solution": "1.5 × IQR."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Multiplique el IQR por 1.5 antes de sumar.",
+    "c": "45 es 1.5 × IQR. Súmelo a Q3.",
+    "d": "Calcule 1.5 × 30 = 45 y súmele 55."
+   },
+   "solution": "55 + 1.5 × 30 = 100."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Q1 y Q3 son los extremos de la caja.",
+    "b": "El diagrama de caja no muestra la media.",
+    "d": "Si hay atípicos, los bigotes llegan solo hasta el último dato que no es atípico."
+   },
+   "solution": "Hasta el mínimo y el máximo."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "El diagrama de caja no muestra la media.",
+    "c": "El máximo está al final del bigote derecho.",
+    "d": "El IQR es el ancho de la caja, no una línea."
+   },
+   "solution": "La mediana."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Una caja más ancha significa datos centrales más separados.",
+    "b": "Los atípicos se marcan como puntos aparte, no con el ancho de la caja.",
+    "c": "El ancho muestra la dispersión, no el centro."
+   },
+   "solution": "Mayor variabilidad."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

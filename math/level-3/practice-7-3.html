@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 7.3 · practice (English) — built by tools/build_n3_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.3 · Histograms: make, read, and compare · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+  #hc-tabla{border-collapse:collapse;margin:10px 0;font-size:17px;}
+  #hc-tabla caption{text-align:left;font-size:14px;color:var(--gris);padding-bottom:6px;}
+  #hc-tabla th,#hc-tabla td{border:1px solid #c8c8c8;padding:6px 12px;text-align:center;}
+  #hc-tabla th{background:var(--tema-bg);color:var(--tema-d);}
+  #hc-tabla input{width:64px;font-size:17px;padding:4px 6px;text-align:center;}
+  #hc-tabla td.bien{background:#e8f5e9;} #hc-tabla td.mal{background:#ffebee;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 7 · Volume and data analysis</div>
+    <h1>Lesson 7.3 · Histograms: make, read, and compare</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#build">Making a histogram</a></li>
+      <li><a href="#shape">The shape of a distribution</a></li>
+      <li><a href="#compare">Histogram versus box plot</a></li>
+      <li><a href="#choose">Choosing the most useful display</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="build" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Making a histogram</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A histogram groups the data in intervals of the same width and draws one bar per interval, whose height is the <strong>frequency</strong>: how many values fall in it. The bars touch, because the intervals are continuous. In a bar graph, on the other hand, each bar is a category and they are separated.</p>
+      <h3>Count and draw</h3>
+      <p>Count how many values fall in each interval and type the frequency. The histogram is drawn with your numbers. Each interval includes its left end but not its right end: 20–30 includes 20 but not 30.</p>
+      <div class="panel">
+        <p><strong id="hc-titulo"></strong></p>
+        <div class="datos" id="hc-datos" aria-hidden="true"></div>
+        <p class="sr-only" id="hc-voz"></p>
+        <div class="campo"><label for="hc-ancho">Width of the intervals</label><select id="hc-ancho"><option value="10">10</option><option value="5">5</option></select></div>
+      </div>
+      <table id="hc-tabla"></table>
+      <div id="hc-svg"></div>
+      <div class="fila-btn"><button type="button" class="btn" id="hc-comprobar">Check the frequencies</button><button type="button" class="btn-sec" id="hc-contar">Count for me</button><button type="button" class="btn-sec" id="hc-nuevo">Other data</button></div>
+      <div class="fb" id="hc-fb" role="status"></div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="shape">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The shape of a distribution</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The great advantage of a histogram is that it shows the shape of the data at a glance.</p>
+      <h3>Gallery of shapes</h3>
+      <div class="panel"><div class="campo"><label for="fo-sel">Shape</label><select id="fo-sel"><option value="sim">Symmetric</option><option value="der">Skewed right</option><option value="izq">Skewed left</option><option value="uni">Uniform</option><option value="bim">Bimodal</option></select></div></div>
+      <div id="fo-svg"></div>
+      <div class="salida" aria-live="polite" id="fo-salida"></div>
+      <div class="caja-tip"><strong>Skew is named by the tail, not by the peak:</strong> “skewed right” has its peak on the left and a long tail toward the high values.</div>
+      <h3>Practice: what shape does it have?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="compare">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Histogram versus box plot</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The two graphs describe the same data from different angles. The histogram shows the shape and the peaks; the box plot shows the quartiles, the middle spread, and the outliers.</p>
+      <h3>The same data, two graphs</h3>
+      <div class="panel"><div class="campo"><label for="cm-sel">Data set</label><select id="cm-sel"><option value="sim">Symmetric</option><option value="der">Skewed right</option><option value="bim">Bimodal</option><option value="izq">Skewed left</option></select></div></div>
+      <div id="cm-hist"></div>
+      <div id="cm-caja"></div>
+      <div class="salida" aria-live="polite" id="cm-salida"></div>
+      <h3>Practice: which interval has the median?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="choose">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Choosing the most useful display</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>There is no “best” graph in general: it depends on the question.</p>
+      <table class="reglas"><caption>Which graph answers each kind of question better</caption>
+        <thead><tr><th scope="col">If the question is about…</th><th scope="col">Use</th></tr></thead>
+        <tbody><tr><td>the shape, the peaks, or the most frequent interval</td><td>the histogram</td></tr>
+        <tr><td>the quartiles, the middle spread, or the outliers, or comparing groups</td><td>the box plot</td></tr>
+        <tr><td>separate categories (countries, colors, days of the week)</td><td>the bar graph</td></tr></tbody></table>
+      <h3>Practice: which graph should you use?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">New exercise</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 7 · Volume and data analysis · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script>
+/* MODULE 1 · Make a histogram by counting */
+var CONTEXTOS = [
+  {t: T("Ages of 20 students in an evening class (years)", "Edades de 20 estudiantes de una clase nocturna (años)"), lo: 18, hi: 59, eje: T("Age (years)", "Edad (años)")},
+  {t: T("Minutes it takes 20 people to get to work", "Minutos que tardan 20 personas en llegar al trabajo"), lo: 5, hi: 54, eje: T("Minutes", "Minutos")},
+  {t: T("Scores on 20 tests (out of 100)", "Calificaciones de 20 exámenes (sobre 100)"), lo: 40, hi: 99, eje: T("Score", "Calificación")}];
+var HC = {d: [], ctx: null, clases: []};
+function nuevoHC(){
+  HC.ctx = elige(CONTEXTOS); HC.d = datosAzar(20, HC.ctx.lo, HC.ctx.hi);
+  $("hc-titulo").textContent = HC.ctx.t + ":";
+  $("hc-datos").innerHTML = HC.d.map(function(v){ return '<span class="dato">' + v + "</span>"; }).join("");
+  $("hc-voz").textContent = T("Data: ", "Datos: ") + HC.d.join(", ") + ".";
+  armaTabla();
+}
+function armaTabla(){
+  var w = +$("hc-ancho").value, a0 = Math.floor(Math.min.apply(null, HC.d) / w) * w, b1 = Math.max.apply(null, HC.d), clases = [];
+  for (var a = a0; a <= b1; a += w) clases.push({a: a, b: a + w, f: HC.d.filter(function(v){ return v >= a && v < a + w; }).length});
+  HC.clases = clases;
+  var h = "<caption>" + T("Frequency table: type how many values are in each interval", "Tabla de frecuencias: escriba cuántos datos hay en cada intervalo") + '</caption><thead><tr><th scope="col">' + T("Interval", "Intervalo") + '</th><th scope="col">' + T("Frequency", "Frecuencia") + "</th></tr></thead><tbody>";
+  clases.forEach(function(c, i){ h += "<tr><td>" + c.a + "–" + c.b + '</td><td id="hc-c' + i + '"><label class="sr-only" for="hc-f' + i + '">' + T("Frequency of the interval from " + c.a + " to " + c.b, "Frecuencia del intervalo de " + c.a + " a " + c.b) + '</label><input type="text" inputmode="numeric" autocomplete="off" id="hc-f' + i + '"></td></tr>'; });
+  $("hc-tabla").innerHTML = h + "</tbody>";
+  clases.forEach(function(c, i){ $("hc-f" + i).addEventListener("input", dibujaHC); });
+  $("hc-fb").className = "fb"; $("hc-fb").innerHTML = ""; HC.intentos = 0;
+  dibujaHC();
+}
+function dibujaHC(){
+  var cl = HC.clases.map(function(c, i){ var v = leeEntero($("hc-f" + i).value); return {a: c.a, b: c.b, f: v === null ? 0 : Math.max(0, v)}; });
+  $("hc-svg").innerHTML = histSVG(cl, T("Histogram with your frequencies: ", "Histograma con sus frecuencias: ") + cl.map(function(c){ return c.a + T(" to ", " a ") + c.b + ": " + c.f; }).join("; "), {eje: HC.ctx.eje});
+}
+function compruebaHC(){
+  var bien = 0, fb = $("hc-fb");
+  HC.clases.forEach(function(c, i){ var v = leeEntero($("hc-f" + i).value), ok = v === c.f; $("hc-c" + i).className = ok ? "bien" : "mal"; if (ok) bien++; });
+  var total = HC.clases.reduce(function(s, c, i){ var v = leeEntero($("hc-f" + i).value); return s + (v || 0); }, 0), faltan = HC.clases.length - bien;
+  if (!faltan){ fb.className = "fb bien"; fb.innerHTML = TX.bien + T("All the frequencies are right. They add up to " + total + ", the number of data values.", "Todas las frecuencias están bien. Suman " + total + ", el total de datos."); return; }
+  HC.intentos = (HC.intentos || 0) + 1;
+  var msg = T(faltan + (faltan === 1 ? " interval needs" : " intervals need") + " checking (in red). Your frequencies add up to " + total + " and should add up to 20. Remember that the right end is not included.", "Hay " + faltan + (faltan === 1 ? " intervalo" : " intervalos") + " por revisar (en rojo). Sus frecuencias suman " + total + " y deben sumar 20. Recuerde que el extremo derecho no se incluye.");
+  if (HC.intentos >= 2){ fb.className = "fb mal"; fb.innerHTML = msg + " " + T("Press <strong>Count for me</strong> to see the right frequencies.", "Pulse <strong>Contar por mí</strong> para ver las frecuencias correctas."); }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + msg + TX.unoMas; }
+}
+function contarHC(){ HC.clases.forEach(function(c, i){ $("hc-f" + i).value = c.f; $("hc-c" + i).className = ""; }); dibujaHC(); $("hc-fb").className = "fb bien"; $("hc-fb").innerHTML = T("Frequencies counted. Change the width of the intervals to see how the histogram changes.", "Frecuencias contadas. Cambie el ancho de los intervalos para ver cómo cambia el histograma."); }
+
+/* MODULE 2 · Shapes */
+var FORMAS = {
+  sim: {f: [1, 3, 6, 9, 9, 6, 3, 1], nombre: T("Symmetric", "Simétrica"), d: T("The same shape on both sides of the center, with one peak. The mean and the median are in almost the same place.", "La misma forma a ambos lados del centro, con un solo pico. La media y la mediana quedan casi en el mismo lugar.")},
+  der: {f: [3, 9, 10, 7, 4, 2, 1, 1], nombre: T("Skewed right", "Sesgada a la derecha"), d: T("The peak is on the left and the long tail goes toward the high values. The few large values pull the mean to the right: the mean is greater than the median.", "El pico está a la izquierda y la cola larga va hacia los valores altos. Los pocos valores grandes arrastran la media hacia la derecha: media mayor que mediana.")},
+  izq: {f: [1, 1, 2, 4, 7, 10, 9, 3], nombre: T("Skewed left", "Sesgada a la izquierda"), d: T("The peak is on the right and the long tail goes toward the low values. The mean is below the median.", "El pico está a la derecha y la cola larga va hacia los valores bajos. La media queda por debajo de la mediana.")},
+  uni: {f: [5, 6, 5, 5, 6, 5, 5, 6], nombre: T("Uniform", "Uniforme"), d: T("All the bars are about the same height: there is no clear peak.", "Todas las barras tienen más o menos la misma altura: no hay un pico claro.")},
+  bim: {f: [2, 7, 9, 4, 3, 8, 9, 3], nombre: T("Bimodal", "Bimodal"), d: T("It has two separate peaks: this often means there are two different groups in the data.", "Tiene dos picos separados: suele indicar que en los datos hay dos grupos distintos.")}};
+function clasesDe(f, a0, w){ return f.map(function(x, i){ return {a: a0 + i * w, b: a0 + (i + 1) * w, f: x}; }); }
+function mediaMediana(cl){
+  var n = cl.reduce(function(s, c){ return s + c.f; }, 0), suma = cl.reduce(function(s, c){ return s + c.f * (c.a + c.b) / 2; }, 0), acum = 0, med = null;
+  for (var i = 0; i < cl.length; i++){ if (acum + cl[i].f >= n / 2){ med = cl[i].a + (n / 2 - acum) / cl[i].f * (cl[i].b - cl[i].a); break; } acum += cl[i].f; }
+  return {media: suma / n, med: med};
+}
+function pintaFO(){
+  var k = $("fo-sel").value, F = FORMAS[k], cl = clasesDe(F.f, 0, 10), mm = mediaMediana(cl);
+  $("fo-svg").innerHTML = histSVG(cl, T("Histogram with a " + F.nombre.toLowerCase() + " shape. Frequencies: ", "Histograma de forma " + F.nombre.toLowerCase() + ". Frecuencias: ") + F.f.join(", "));
+  $("fo-salida").innerHTML = '<div class="linea"><strong>' + F.nombre + ".</strong> " + F.d + "</div>" +
+    '<div class="linea">' + T("With these data, the mean is about " + aprox(mm.media, 1) + " and the median about " + aprox(mm.med, 1) + ".", "Con estos datos, la media es aproximadamente " + aprox(mm.media, 1) + " y la mediana " + aprox(mm.med, 1) + ".") + "</div>";
+}
+function ruido(f){ return f.map(function(x){ return Math.max(0, x + elige([-1, 0, 0, 1])); }); }
+function genForma(){
+  var k = elige(["sim", "der", "izq", "uni", "bim"]), f = ruido(FORMAS[k].f);
+  if (k === "sim"){ f = f.slice(0, 4); f = f.concat(f.slice().reverse()); }
+  var o = ["sim", "der", "izq", "uni", "bim"].map(function(x){ return {html: FORMAS[x].nombre, clave: x}; }), pc = {};
+  if (k === "izq") pc.der = T("Look at where the long tail goes: here it goes toward the low values (left).", "Fíjese hacia dónde va la cola larga: aquí va hacia los valores bajos (izquierda).");
+  if (k === "der") pc.izq = T("Look at where the long tail goes: here it goes toward the high values (right).", "Fíjese hacia dónde va la cola larga: aquí va hacia los valores altos (derecha).");
+  return {enun: T("What shape does this distribution have?", "¿Qué forma tiene esta distribución?") + histSVG(clasesDe(f, 0, 10), T("Histogram to classify. Frequencies: ", "Histograma para clasificar. Frecuencias: ") + f.join(", ")), opciones: o, correcta: k, porClave: pc,
+    pista: T("Count the peaks, and look at whether one side has a long tail.", "Cuente los picos y fíjese si un lado tiene una cola larga."), bien: FORMAS[k].d, mal: T("It is ", "Es ") + FORMAS[k].nombre.toLowerCase() + ". " + FORMAS[k].d};
+}
+
+/* MODULE 3 · Histogram and box plot of the same data */
+function datosDeForma(f, a0, w){ var d = []; f.forEach(function(x, i){ for (var j = 0; j < x; j++) d.push(a0 + i * w + aleatorio(0, w - 1)); }); return d; }
+var CM_DATOS = {};
+function pintaCM(){
+  var k = $("cm-sel").value;
+  if (!CM_DATOS[k]) CM_DATOS[k] = datosDeForma(FORMAS[k].f, 0, 10);
+  var d = CM_DATOS[k], c = cinco(d), cl = clasesDe(FORMAS[k].f, 0, 10);
+  $("cm-hist").innerHTML = histSVG(cl, T("Histogram of the data. Frequencies: ", "Histograma de los datos. Frecuencias: ") + FORMAS[k].f.join(", "));
+  $("cm-caja").innerHTML = cajaSVG([{c: c}], T("Box plot of the same data: minimum ", "Diagrama de caja de los mismos datos: mínimo ") + c.min + ", Q1 " + nm(c.q1) + T(", median ", ", mediana ") + nm(c.med) + ", Q3 " + nm(c.q3) + T(", maximum ", ", máximo ") + c.max, {lo: 0, hi: 80, x0: 64, x1: 620});
+  var nota = {sim: T("Both show a balanced set: the median is in the middle of the box and the whiskers are alike.", "Los dos muestran un conjunto equilibrado: la mediana queda en el centro de la caja y los bigotes son parecidos."),
+    der: T("In the box plot, the skew shows as a long right whisker and the median closer to the left of the box. The histogram also shows where the peak is.", "En la caja, el sesgo se ve como un bigote derecho largo y la mediana corrida a la izquierda de la caja. El histograma muestra además dónde está el pico."),
+    izq: T("In the box plot, the skew shows as a long left whisker. The histogram shows the tail toward the low values.", "En la caja, el sesgo se ve como un bigote izquierdo largo. El histograma muestra la cola hacia los valores bajos."),
+    bim: T("The histogram clearly shows two peaks. The box plot cannot show them: it looks like a set with a wide box and nothing more. So for questions about peaks, use the histogram.", "El histograma muestra claramente dos picos. El diagrama de caja no puede mostrarlos: se ve como un conjunto con una caja ancha y nada más. Por eso, para preguntas sobre picos, conviene el histograma.")}[k];
+  $("cm-salida").innerHTML = '<div class="linea">' + nota + "</div>";
+}
+function genMediana(){
+  var f; do { f = datosAzar(6, 1, 9); } while (f.reduce(function(a, b){ return a + b; }, 0) % 2 === 0);
+  var w = elige([5, 10]), a0 = elige([0, 10, 20]), cl = clasesDe(f, a0, w), n = f.reduce(function(a, b){ return a + b; }, 0), pos = (n + 1) / 2, acum = 0, idx = 0;
+  for (var i = 0; i < f.length; i++){ if (acum + f[i] >= pos){ idx = i; break; } acum += f[i]; }
+  var o = cl.map(function(c, i){ return {html: c.a + "–" + c.b, clave: "i" + i}; }), masAlta = f.indexOf(Math.max.apply(null, f)), pc = {};
+  if (masAlta !== idx) pc["i" + masAlta] = T("That is the most frequent interval (the tallest bar), not necessarily the one with the median.", "Ese es el intervalo más frecuente (la barra más alta), no necesariamente el de la mediana.");
+  var sel = [o[idx]].concat(baraja(o.filter(function(x, i){ return i !== idx; })).slice(0, 3)), suma = f.slice(0, idx + 1).join(" + ") + " = " + (acum + f[idx]);
+  return {enun: T("This histogram has " + n + " data values. Which interval has the median?", "Este histograma tiene " + n + " datos. ¿En qué intervalo está la mediana?") + histSVG(cl, T("Histogram with intervals ", "Histograma con intervalos ") + cl.map(function(c){ return c.a + "–" + c.b; }).join(", ") + T(" and frequencies ", " y frecuencias ") + f.join(", ")), opciones: sel, correcta: "i" + idx, porClave: pc,
+    pista: T("With " + n + " values, the median is value number " + pos + ". Add the frequencies from the left until you reach it.", "Con " + n + " datos, la mediana es el dato número " + pos + ". Sume las frecuencias desde la izquierda hasta llegar a él."),
+    bien: T("The median is value number " + pos + ". Adding frequencies from the left (" + suma + "), you reach it in the interval " + cl[idx].a + "–" + cl[idx].b + ".", "La mediana es el dato número " + pos + ". Sumando frecuencias desde la izquierda (" + suma + "), se llega a él en el intervalo " + cl[idx].a + "–" + cl[idx].b + "."),
+    mal: T("With " + n + " values, the median is value number " + pos + ". Add the frequencies from the left until you reach it: " + suma + ", in the interval " + cl[idx].a + "–" + cl[idx].b + ".", "Con " + n + " datos, la mediana es el dato número " + pos + ". Se suman las frecuencias desde la izquierda hasta llegar a él: " + suma + ", en el intervalo " + cl[idx].a + "–" + cl[idx].b + ".")};
+}
+
+/* MODULE 4 · Choosing the graph */
+var ESCENARIOS = [
+  [T("You want to know whether the ages in a group form one group or two very different groups.", "Se quiere saber si las edades de un grupo forman uno o dos grupos bien distintos."), "h", T("The question is about shape (one or two peaks?): the histogram shows it.", "La pregunta es sobre la forma (¿uno o dos picos?): lo muestra el histograma.")],
+  [T("You want to compare the spread of the salaries at two companies.", "Se quiere comparar la dispersión de los salarios de dos empresas."), "c", T("To compare spread between groups, two box plots on the same scale are the clearest.", "Para comparar dispersión entre grupos, dos diagramas de caja sobre la misma escala son lo más claro.")],
+  [T("You want to find out whether there are any unusual waiting times.", "Se quiere detectar si hay tiempos de espera atípicos."), "c", T("The box plot marks the outliers with the 1.5 × IQR rule.", "El diagrama de caja marca los valores atípicos con la regla de 1.5 × IQR.")],
+  [T("You want to show how many students come from each country.", "Se quiere mostrar cuántos estudiantes vienen de cada país."), "b", T("Countries are separate categories: bar graph.", "Los países son categorías separadas: gráfica de barras.")],
+  [T("You want to see whether the waiting times are skewed and where they are concentrated.", "Se quiere ver si los tiempos de espera están sesgados y dónde se concentran."), "h", T("The detailed shape and where the data are concentrated are seen best in the histogram.", "La forma detallada y la concentración se ven mejor en el histograma.")],
+  [T("You want to know the quartiles of the scores on a test.", "Se quieren conocer los cuartiles de las calificaciones de un examen."), "c", T("The quartiles are exactly the values a box plot draws.", "Los cuartiles son justo los valores que dibuja el diagrama de caja.")],
+  [T("You want to know which interval of heights is the most common.", "Se quiere saber qué intervalo de estaturas es el más frecuente."), "h", T("The most frequent interval is the tallest bar of the histogram.", "El intervalo más frecuente es la barra más alta del histograma.")],
+  [T("You want to show the number of sales on each day of the week.", "Se quiere mostrar el número de ventas de cada día de la semana."), "b", T("The days are categories: bar graph.", "Los días son categorías: gráfica de barras.")],
+  [T("You want to compare the medians of three groups of workers.", "Se quiere comparar la mediana de tres grupos de trabajadores."), "c", T("Three box plots on the same scale show the three medians at a glance.", "Tres diagramas de caja en la misma escala muestran las tres medianas de un vistazo.")],
+  [T("You want to show the car color that customers like best.", "Se quiere mostrar el color de auto preferido por los clientes."), "b", T("Colors are categories: bar graph.", "Los colores son categorías: gráfica de barras.")]];
+function genElegir(){
+  var e = elige(ESCENARIOS);
+  return {enun: e[0] + T(" Which graph should you use?", " ¿Qué gráfica conviene?"), opciones: [{html: T("Histogram", "Histograma"), clave: "h"}, {html: T("Box plot", "Diagrama de caja"), clave: "c"}, {html: T("Bar graph", "Gráfica de barras"), clave: "b"}], correcta: e[1], porClave: {},
+    pista: T("Is the question about shape, about quartiles and spread, or about separate categories?", "¿La pregunta es sobre la forma, sobre los cuartiles y la dispersión, o sobre categorías separadas?"), bien: e[2], mal: e[2]};
+}
+
+/* Start */
+$("hc-ancho").addEventListener("change", armaTabla);
+$("hc-comprobar").addEventListener("click", compruebaHC);
+$("hc-contar").addEventListener("click", contarHC);
+$("hc-nuevo").addEventListener("click", nuevoHC);
+nuevoHC();
+$("fo-sel").addEventListener("change", pintaFO); pintaFO();
+OMR("p1", genForma);
+$("cm-sel").addEventListener("change", pintaCM); pintaCM();
+OMR("p2", genMediana);
+OMR("p3", genElegir);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

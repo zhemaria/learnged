@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.2 · Math Level 3 (English) — built by tools/build_n3_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.2 · Box plots · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 7 — Volume and data analysis</p>
+<h1>Lesson 7.2 · Box plots</h1>
+<p class="lema">Summarize a data set with five key values, draw a box plot, find the IQR and the outliers, and compare two groups.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📊</span> Data at a glance</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Identify</strong> the five key values: minimum, Q1, median (Q2), Q3, and maximum.</li>
+<li><strong>Build</strong> a box plot from ordered data.</li>
+<li><strong>Find</strong> the interquartile range (IQR = Q3 − Q1).</li>
+<li><strong>Identify</strong> outliers with the 1.5 × IQR rule.</li>
+<li><strong>Interpret</strong> spread and compare two distributions.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.6.b</span> Represent, display, and interpret data involving one variable plots on the real number line including dot plots, histograms, and box plots.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.7.a</span> Calculate the mean, median, mode and range. Calculate a missing data value, given the average and all the missing data values but one, as well as calculating the average, given the frequency counts of all the data values, and calculating a weighted average.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.2.b</span> Represent real world problems visually.</li><li><span class="std-cod std-mp">MP.4.c</span> Display data or algebraic expressions graphically.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">6.SP.4</span> <span class="std-nivel">Level D</span> Display numerical data in plots on a number line, including dot plots, histograms, and box plots.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Level D</span> Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability.</li><li><span class="std-cod std-ccr">7.SP.4</span> <span class="std-nivel">Level D</span> Use measures of center and measures of variability for numerical data from random samples to draw informal comparative inferences about two populations.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-five-values">The five key values</a></li>
+<li><a href="#s-build">Building the plot</a></li>
+<li><a href="#s-iqr">The interquartile range (IQR)</a></li>
+<li><a href="#s-outliers">Outliers</a></li>
+<li><a href="#s-compare">Reading and comparing</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-five-values"><span aria-hidden="true" class="num-seccion">1</span>The five key values</h2>
+<p>Lesson 7.1 measured how much fits inside a solid. This lesson turns to data: how to summarize a set of numbers so you can see it at a glance. A box plot shows, in a single picture, where the data are concentrated, how spread out they are, and whether there are unusual values.</p>
+<p>A box plot is built from five numbers that summarize the set: the <strong>minimum</strong>, the <strong>first quartile Q1</strong>, the <strong>median</strong> (Q2), the <strong>third quartile Q3</strong>, and the <strong>maximum</strong>. The box goes from Q1 to Q3, with a line at the median, and the whiskers reach the minimum and the maximum.</p>
+<svg viewBox="0 0 560 186" role="img" aria-label="A box plot on a number line from 0 to 90. The left whisker starts at the minimum, 10. The box goes from Q1 = 25 to Q3 = 55, with a line at the median, 40. The right whisker ends at the maximum, 80." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><line x1="40.0" y1="150" x2="535.0" y2="150" stroke="#424242" stroke-width="2"/><line x1="40.0" y1="144" x2="40.0" y2="156" stroke="#424242" stroke-width="2"/><text x="40.0" y="174" font-size="15" text-anchor="middle" fill="#222">0</text><line x1="95.0" y1="144" x2="95.0" y2="156" stroke="#424242" stroke-width="2"/><text x="95.0" y="174" font-size="15" text-anchor="middle" fill="#222">10</text><line x1="150.0" y1="144" x2="150.0" y2="156" stroke="#424242" stroke-width="2"/><text x="150.0" y="174" font-size="15" text-anchor="middle" fill="#222">20</text><line x1="205.0" y1="144" x2="205.0" y2="156" stroke="#424242" stroke-width="2"/><text x="205.0" y="174" font-size="15" text-anchor="middle" fill="#222">30</text><line x1="260.0" y1="144" x2="260.0" y2="156" stroke="#424242" stroke-width="2"/><text x="260.0" y="174" font-size="15" text-anchor="middle" fill="#222">40</text><line x1="315.0" y1="144" x2="315.0" y2="156" stroke="#424242" stroke-width="2"/><text x="315.0" y="174" font-size="15" text-anchor="middle" fill="#222">50</text><line x1="370.0" y1="144" x2="370.0" y2="156" stroke="#424242" stroke-width="2"/><text x="370.0" y="174" font-size="15" text-anchor="middle" fill="#222">60</text><line x1="425.0" y1="144" x2="425.0" y2="156" stroke="#424242" stroke-width="2"/><text x="425.0" y="174" font-size="15" text-anchor="middle" fill="#222">70</text><line x1="480.0" y1="144" x2="480.0" y2="156" stroke="#424242" stroke-width="2"/><text x="480.0" y="174" font-size="15" text-anchor="middle" fill="#222">80</text><line x1="535.0" y1="144" x2="535.0" y2="156" stroke="#424242" stroke-width="2"/><text x="535.0" y="174" font-size="15" text-anchor="middle" fill="#222">90</text><line x1="95.0" y1="90" x2="177.5" y2="90" stroke="#37474f" stroke-width="3"/><line x1="342.5" y1="90" x2="480.0" y2="90" stroke="#37474f" stroke-width="3"/><line x1="95.0" y1="78" x2="95.0" y2="102" stroke="#37474f" stroke-width="3"/><line x1="480.0" y1="78" x2="480.0" y2="102" stroke="#37474f" stroke-width="3"/><rect x="177.5" y="68" width="165.0" height="44" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><line x1="260.0" y1="68" x2="260.0" y2="112" stroke="#b71c1c" stroke-width="4"/><text x="95.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Min</text><text x="95.0" y="56" font-size="15" text-anchor="middle" fill="#424242">10</text><text x="177.5" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Q1</text><text x="177.5" y="56" font-size="15" text-anchor="middle" fill="#424242">25</text><text x="260.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#b71c1c">Median</text><text x="260.0" y="56" font-size="15" text-anchor="middle" fill="#b71c1c">40</text><text x="342.5" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Q3</text><text x="342.5" y="56" font-size="15" text-anchor="middle" fill="#424242">55</text><text x="480.0" y="38" font-size="15" font-weight="700" text-anchor="middle" fill="#424242">Max</text><text x="480.0" y="56" font-size="15" text-anchor="middle" fill="#424242">80</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Each part holds one quarter</span>
+<p>The quartiles split the data into four groups with 25% of the data each. The lowest 25% is between the minimum and Q1; the box (from Q1 to Q3) holds the middle 50% of the data.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#five-values" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the five key values (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the five key values</span><span class="ei-sub">Find the minimum, Q1, the median, Q3, and the maximum of a data set.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-build"><span aria-hidden="true" class="num-seccion">2</span>Building the plot</h2>
+<p>The procedure has five steps in order.</p>
+<div aria-label="Five steps to build a box plot (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Five steps to build a box plot</caption>
+<thead><tr><th scope="col">Step</th><th scope="col">What to do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Put the data in order from least to greatest.</td></tr>
+<tr><td>2</td><td>Find the median (the middle value).</td></tr>
+<tr><td>3</td><td>Find Q1 (the median of the lower half) and Q3 (the median of the upper half).</td></tr>
+<tr><td>4</td><td>Draw the box from Q1 to Q3, with a line at the median.</td></tr>
+<tr><td>5</td><td>Draw the whiskers out to the minimum and the maximum.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: for the data 2, 4, 6, 8, 10, what is the median?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>They are already in order.</strong> There are five values, so the middle one is the third.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The median is <strong>6</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Odd or even number of data</span>
+<p>With an odd number of data, the median is the middle value, and it does not go into either half. With an even number, the median is the average of the two middle values, and each half keeps half of the data.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — The median</h3></div>
+<p class="pregunta-int" id="t-p1">For the data 1, 3, 5, 7, 9, the median is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">4</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — The IQR</h3></div>
+<p class="pregunta-int" id="t-p2">If Q1 = 10 and Q3 = 30, the IQR is…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">20</button>
+<button class="opcion" data-k="b" type="button">40</button>
+<button class="opcion" data-k="c" type="button">10</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — Key values</h3></div>
+<p class="pregunta-int" id="t-p3">How many key values does a box plot have?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#build" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: building the plot (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: building the plot</span><span class="ei-sub">Draw the box and the whiskers from the five values, and read a plot.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-iqr"><span aria-hidden="true" class="num-seccion">3</span>The interquartile range (IQR)</h2>
+<p>The <strong>interquartile range</strong> (IQR) measures how spread out the middle half of the data is. Find it by subtracting:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">IQR = Q3 − Q1</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: in the plot above, Q1 = 25 and Q3 = 55. What is the IQR?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Subtract.</strong> 55 − 25 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The IQR is <strong>30</strong>. It is the width of the box.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The IQR resists extreme values</span>
+<p>Unlike the range (max − min), the IQR is not affected by one or two very large or very small values, because it only looks at the middle 50%. That is why it is a reliable measure of spread.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#iqr" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the interquartile range (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the interquartile range</span><span class="ei-sub">Find the IQR and connect it with the percents of the data.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-outliers"><span aria-hidden="true" class="num-seccion">4</span>Outliers</h2>
+<p>An <strong>outlier</strong> is a data value that is far away from the rest. The most common rule to find outliers uses the IQR: a value is an outlier if it is more than 1.5 × IQR above Q3 or below Q1.</p>
+<p class="formula" style="text-align:center;font-weight:700;">lower limit = Q1 − 1.5 × IQR &nbsp;&nbsp;&nbsp; upper limit = Q3 + 1.5 × IQR</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: the upper limit. With Q3 = 55 and IQR = 30, what is the upper limit for outliers?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Find 1.5 × IQR.</strong> 1.5 × 30 = 45.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Add it to Q3.</strong> 55 + 45 = 100.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> Any value greater than <strong>100</strong> would be an outlier on the high side.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — The rule</h3></div>
+<p class="pregunta-int" id="t-p4">The rule for finding outliers uses…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">2 × the mean</button>
+<button class="opcion" data-k="b" type="button">Q2</button>
+<button class="opcion" data-k="c" type="button">1.5 × IQR</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#outliers" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: outliers (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: outliers</span><span class="ei-sub">Use the 1.5 × IQR rule to find outliers.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-compare"><span aria-hidden="true" class="num-seccion">5</span>Reading and comparing</h2>
+<p>The real value of a box plot is in reading it. A wide box means the data are spread out; a narrow box means the data are close together. Comparing two plots on the same scale shows which group has the higher median or more variability.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: comparing two groups. Group A has a median of 70 and a narrow box; group B has a median of 60 and a wide box. What can you conclude?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Compare the medians.</strong> A's median (70) is higher than B's (60): A tends to have higher values.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Compare the boxes.</strong> B's box is wider: B has more variability (a larger IQR).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> A has higher, more consistent values; B is more spread out.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Median is not mean</span>
+<p>The line in the box is the median. A box plot does not show the mean (the average).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — The line in the box</h3></div>
+<p class="pregunta-int" id="t-p5">The line inside the box shows…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">the median</button>
+<button class="opcion" data-k="b" type="button">the mean</button>
+<button class="opcion" data-k="c" type="button">the minimum</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — A wider box</h3></div>
+<p class="pregunta-int" id="t-p6">A wider box shows…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">less variability</button>
+<button class="opcion" data-k="b" type="button">more variability</button>
+<button class="opcion" data-k="c" type="button">a higher median</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#compare" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: reading and comparing (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: reading and comparing</span><span class="ei-sub">Compare two box plots: center, spread, and shape.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Take two data sets of 9 to 12 numbers each (for example, the scores of two classes). For each one, find the five key values, the IQR, and the limits for outliers, and draw both box plots on the same scale. Then write two sentences comparing the groups: one about the center and one about the spread.</li>
+<li><strong>In your daily life.</strong> Write down how many minutes it takes you to get somewhere every day for two weeks (work, school, the store). Make a box plot of your times. Which days, if any, are outliers? What was going on those days?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">For the ordered data 2, 4, 6, 8, 10, the median (Q2) is…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5</button><button class="opcion" data-k="b" type="button">6</button><button class="opcion" data-k="c" type="button">8</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">If Q1 = 20 and Q3 = 50, the IQR is…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">70</button><button class="opcion" data-k="b" type="button">50</button><button class="opcion" data-k="c" type="button">20</button><button class="opcion" data-k="d" type="button">30</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">The IQR is found with…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Q3 − Q1</button><button class="opcion" data-k="b" type="button">Q3 + Q1</button><button class="opcion" data-k="c" type="button">max − min</button><button class="opcion" data-k="d" type="button">the median</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">The rule for finding outliers uses…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2 × IQR</button><button class="opcion" data-k="b" type="button">the median</button><button class="opcion" data-k="c" type="button">1.5 × IQR</button><button class="opcion" data-k="d" type="button">the range</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">If IQR = 30 and Q3 = 55, the upper limit (Q3 + 1.5 × IQR) is…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100</button><button class="opcion" data-k="b" type="button">85</button><button class="opcion" data-k="c" type="button">45</button><button class="opcion" data-k="d" type="button">75</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">In a box plot with no outliers, the whiskers reach…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Q1 and Q3</button><button class="opcion" data-k="b" type="button">the mean</button><button class="opcion" data-k="c" type="button">the minimum and the maximum</button><button class="opcion" data-k="d" type="button">the outliers</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">The line inside the box shows…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">the mean</button><button class="opcion" data-k="b" type="button">the median</button><button class="opcion" data-k="c" type="button">the maximum</button><button class="opcion" data-k="d" type="button">the IQR</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A group with a wider box has…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">less variability</button><button class="opcion" data-k="b" type="button">always more outliers</button><button class="opcion" data-k="c" type="button">a higher median</button><button class="opcion" data-k="d" type="button">more variability</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for box plots (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for box plots, the IQR, and outliers and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">The five key values</th><td>I put the data in order and find the five key values, even with repeated values.</td><td>I find some values with mistakes.</td><td>I do not find the five values.</td></tr>
+<tr><th scope="row">IQR and outliers</th><td>I find the IQR and use the 1.5 × IQR rule on both sides.</td><td>I find the IQR but do not use the outlier rule.</td><td>I do not find the IQR.</td></tr>
+<tr><th scope="row">Building the plot</th><td>I draw the plot to scale and label all the values.</td><td>I draw the box with scale mistakes.</td><td>I do not draw the plot.</td></tr>
+<tr><th scope="row">Reading the spread</th><td>I read the spread and compare two distributions, and I know what a box plot cannot show.</td><td>I read it partly or loosely.</td><td>I do not read the spread.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned to summarize a data set with the five key values, draw a box plot, find the IQR (Q3 − Q1), find outliers with the 1.5 × IQR rule, and compare distributions by their median and spread.</p>
+<p>In <strong>Lesson 7.3 · Histograms: make, read, and compare</strong> you will study another way to see data: the histogram, with bars that touch. You will describe the shape of a distribution (symmetric, skewed, one peak or two) and compare it with a box plot to choose the best display.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-7-3.html">Lesson 7.3 · Histograms: make, read, and compare</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>quartiles</dt><dd>The values that split ordered data into four parts with 25% each: Q1, the median (Q2), and Q3.</dd>
+<dt>median</dt><dd>The middle value of ordered data, or the average of the two middle values.</dd>
+<dt>interquartile range (IQR)</dt><dd>Q3 − Q1: the spread of the middle 50% of the data.</dd>
+<dt>range</dt><dd>Maximum − minimum.</dd>
+<dt>outlier</dt><dd>A value more than 1.5 × IQR below Q1 or above Q3.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 7 · Lesson 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 7.3",
+ "review": "sections 2 to 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "The median is one of the data values here: the one in the middle.",
+    "c": "7 is the fourth value. With five values, the middle one is the third."
+   },
+   "right": "The middle value of five is the third: 5.",
+   "solution": "The median is 5."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "You added. The IQR is Q3 − Q1.",
+    "c": "10 is Q1. Subtract: 30 − 10."
+   },
+   "right": "30 − 10 = 20.",
+   "solution": "IQR = 30 − 10 = 20."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Count them: minimum, Q1, median, Q3, maximum.",
+    "b": "Four is the number of parts. Count the values that separate them, plus the ends."
+   },
+   "right": "Minimum, Q1, median, Q3, and maximum: five.",
+   "solution": "Five."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "The rule uses the IQR, not the mean.",
+    "b": "The rule measures distance from Q1 and Q3 with the IQR."
+   },
+   "right": "Outliers are more than 1.5 × IQR beyond Q1 or Q3.",
+   "solution": "1.5 × IQR."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "A box plot does not show the mean.",
+    "c": "The minimum is at the end of the left whisker."
+   },
+   "right": "The line in the box is the median.",
+   "solution": "The median."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "A wider box means the middle data are farther apart.",
+    "c": "The width shows spread, not the center."
+   },
+   "right": "The width of the box is the IQR: wider means more spread out.",
+   "solution": "More variability."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "5 is not in the data. With five values, the median is the third.",
+    "c": "8 is the fourth value.",
+    "d": "4 is the second value."
+   },
+   "solution": "The median is 6."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "You added. Subtract: Q3 − Q1.",
+    "b": "50 is Q3. Subtract Q1.",
+    "c": "20 is Q1. Subtract it from Q3."
+   },
+   "solution": "50 − 20 = 30."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "The IQR is a difference, not a sum.",
+    "c": "Max − min is the range, not the IQR.",
+    "d": "The median is the center, not a spread."
+   },
+   "solution": "IQR = Q3 − Q1."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "The factor is 1.5, not 2.",
+    "b": "The rule uses the IQR.",
+    "d": "The rule uses the IQR, not the range."
+   },
+   "solution": "1.5 × IQR."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Multiply the IQR by 1.5 before adding.",
+    "c": "45 is 1.5 × IQR. Add it to Q3.",
+    "d": "Find 1.5 × 30 = 45, then add 55."
+   },
+   "solution": "55 + 1.5 × 30 = 100."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Q1 and Q3 are the ends of the box.",
+    "b": "A box plot does not show the mean.",
+    "d": "When there are outliers, the whiskers stop at the last value that is not an outlier."
+   },
+   "solution": "To the minimum and the maximum."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "A box plot does not show the mean.",
+    "c": "The maximum is at the end of the right whisker.",
+    "d": "The IQR is the width of the box, not a line."
+   },
+   "solution": "The median."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "A wider box means the middle data are farther apart.",
+    "b": "Outliers are shown as separate points, not by the width of the box.",
+    "c": "The width shows spread, not the center."
+   },
+   "solution": "More variability."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

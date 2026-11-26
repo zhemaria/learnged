@@ -99,12 +99,12 @@ function evaluaRaiz(txt, n, pistas){
 /* A number for display: up to 4 decimals, no trailing zeros, visual minus sign */
 function nm(x){ return String(parseFloat(x.toFixed(4))).replace("-", "−"); }
 function Qf(a, b){ return '<span class="fracc"><span class="fa">' + a + '</span><span class="fb2">' + b + "</span></span>"; }
-/* Typed decimal answer with optional hints for known mistakes */
-function evaluaDec(txt, esperado, pistas){
+/* Typed decimal answer with optional hints for known mistakes; tol is the accepted difference (default: exact) */
+function evaluaDec(txt, esperado, pistas, tol){
   var v = leeDecimal(txt); if (v === null){ var f = leeFraccion(txt); if (f) v = f.p / f.q; }
   if (v === null) return {estado: "invalido", msg: T("Type a number, for example 8 or 7.5.", "Escriba un número, por ejemplo 8 o 7.5.")};
-  if (Math.abs(v - esperado) < 1e-6) return {estado: "bien", msg: ""};
-  for (var i = 0; i < (pistas || []).length; i++) if (Math.abs(v - pistas[i].v) < 1e-6) return {estado: "mal", msg: pistas[i].msg};
+  if (Math.abs(v - esperado) <= (tol || 1e-6)) return {estado: "bien", msg: ""};
+  for (var i = 0; i < (pistas || []).length; i++) if (Math.abs(v - pistas[i].v) <= (pistas[i].tol || tol || 1e-6)) return {estado: "mal", msg: pistas[i].msg};
   return {estado: "mal", msg: T("Check the proportion and the cross multiplication.", "Revise la proporción y la multiplicación cruzada.")};
 }
 /* Triangle with sides a = BC, b = CA, c = AB: vertices A, B, C */

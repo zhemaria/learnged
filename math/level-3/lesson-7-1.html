@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.1 · Math Level 3 (English) — built by tools/build_n3_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.1 · Volume of prisms and cylinders · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 7 — Volume and data analysis</p>
+<h1>Lesson 7.1 · Volume of prisms and cylinders</h1>
+<p class="lema">Find the volume of boxes, prisms, and cylinders with V = area of the base × height, solve for a missing measure, and solve real problems about capacity.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator and reference sheet</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Find</strong> the volume of rectangular and triangular prisms with V = area of the base × height.</li>
+<li><strong>Find</strong> the volume of cylinders with V = πr²h.</li>
+<li><strong>Identify</strong> the base and the height of each solid.</li>
+<li><strong>Solve</strong> for the height or the radius when the volume is known.</li>
+<li><strong>Give</strong> the answer in the right cubic units (in³, ft³) or in gallons.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.5.a</span> When given geometric formulas, compute volume and surface area of rectangular prisms. Solve for side lengths or height, when given volume or surface area.</li><li><span class="std-cod std-dir">Q.5.b</span> When given geometric formulas, compute volume and surface area of cylinders. Solve for height, radius, or diameter when given volume or surface area.</li><li><span class="std-cod std-dir">Q.5.c</span> When given geometric formulas, compute volume and surface area of right prisms. Solve for side lengths or height, when given volume or surface area.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.2.a</span> Solve one-variable linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms or equations with coefficients represented by letters.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li><li><span class="std-cod std-mp">MP.5.c</span> Identify the information required to evaluate a line of reasoning.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Level D</span> Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.</li><li><span class="std-cod std-ccr">8.G.9</span> <span class="std-nivel">Level D</span> Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-volume">What is volume?</a></li>
+<li><a href="#s-prisms">Volume of prisms</a></li>
+<li><a href="#s-cylinders">Volume of cylinders</a></li>
+<li><a href="#s-solve">Solving for the height or the radius</a></li>
+<li><a href="#s-capacity">Uses: capacity and storage</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-volume"><span aria-hidden="true" class="num-seccion">1</span>What is volume?</h2>
+<p>Topic 6 closed the geometry of flat figures (two dimensions). Topic 7 takes the step to three dimensions: volume measures how much space a solid takes up, or how much fits inside it. To find it, you use again the formulas and the solving of Topic 5, and the area of the base that you already worked with in earlier levels.</p>
+<p><strong>Volume</strong> is the amount of space that a three-dimensional object takes up. For a prism or a cylinder, it is found with one powerful idea: the area of the base times the height.</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = area of the base × height</p>
+<svg viewBox="0 0 520 230" role="img" aria-label="A rectangular box with its length, width, and height labeled, and a cylinder with its radius r and height h labeled." style="width:100%;max-width:500px;height:auto;display:block;margin:12px auto;"><polygon points="40,90 190,90 230,60 80,60" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/><polygon points="40,90 190,90 190,190 40,190" fill="#b0bec5" stroke="#37474f" stroke-width="2"/><polygon points="190,90 230,60 230,160 190,190" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="115" y="212" font-size="16" font-weight="700" text-anchor="middle" fill="#0d47a1">length</text><text x="24" y="145" font-size="16" font-weight="700" text-anchor="end" fill="#0d47a1">height</text><text x="222" y="190" font-size="16" font-weight="700" text-anchor="start" fill="#0d47a1">width</text><path d="M330 70 V180 A60 18 0 0 0 450 180 V70" fill="#b0bec5" stroke="#37474f" stroke-width="2"/><ellipse cx="390" cy="70" rx="60" ry="18" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/><line x1="390" y1="70" x2="450" y2="70" stroke="#b71c1c" stroke-width="3"/><text x="420" y="60" font-size="18" font-weight="700" text-anchor="middle" fill="#b71c1c">r</text><line x1="470" y1="70" x2="470" y2="180" stroke="#0d47a1" stroke-width="2"/><text x="480" y="130" font-size="18" font-weight="700" fill="#0d47a1">h</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Cubic units</span>
+<p>Volume multiplies three lengths, so the answer is in <strong>cubic units</strong>: cubic inches (in³), cubic feet (ft³), and so on. Two useful facts: 1 cubic foot = 1,728 cubic inches (12 × 12 × 12), and 1 cubic foot holds about 7.48 gallons.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-prisms"><span aria-hidden="true" class="num-seccion">2</span>Volume of prisms</h2>
+<p>In a rectangular prism (a box), the base is a rectangle, so V = length × width × height. In a triangular prism, the base is a triangle: first find the area of the triangle, then multiply it by the height (length) of the prism.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: rectangular prism. A box is 5 inches long, 3 inches wide, and 4 inches high. What is its volume?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Multiply the three dimensions.</strong> 5 × 3 × 4 = 60.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> V = <strong>60 in³</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: triangular prism. A prism has a triangular base with an area of 6 square inches and a height of 10 inches. What is its volume?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use V = area of the base × height.</strong> 6 × 10 = 60.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> V = <strong>60 in³</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — A box</h3></div>
+<p class="pregunta-int" id="t-p1">A box measures 3 × 4 × 5. Its volume is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">60</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">20</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Base and height</h3></div>
+<p class="pregunta-int" id="t-p2">A prism has a base with an area of 8 and a height of 6. Its volume is…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">14</button>
+<button class="opcion" data-k="b" type="button">48</button>
+<button class="opcion" data-k="c" type="button">8</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A cube</h3></div>
+<p class="pregunta-int" id="t-p3">A cube has sides of 3. Its volume is…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">18</button>
+<button class="opcion" data-k="c" type="button">27</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#prisms" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: volume of prisms (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: volume of prisms</span><span class="ei-sub">See the box layer by layer, find the area of the base, and multiply by the height.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-cylinders"><span aria-hidden="true" class="num-seccion">3</span>Volume of cylinders</h2>
+<p>In a cylinder, the base is a circle with radius r, and its area is πr². So the volume is that area times the height:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = πr²h</p>
+<p>In the calculations, use π ≈ 3.14 (or the π key on the calculator). The formula is on the GED reference sheet; open it with the Reference sheet button.</p>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> About the calculator</span>
+<p>The GED test uses the TI-30XS MultiView calculator. The calculator on this page does the same operations, although some keys have other names or are in other places. If you have a TI-30XS, practice with it too so you learn where its keys are.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: a cylinder has a radius of 2 inches and a height of 5 inches. What is its volume? (π ≈ 3.14)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Find the area of the base.</strong> πr² = 3.14 × 2² = 3.14 × 4 = 12.56.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Multiply by the height.</strong> 12.56 × 5 = 62.8.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> V ≈ <strong>62.8 in³</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Square only the radius</span>
+<p>In πr²h, the exponent applies only to the radius (r²), not to π or the height. A common mistake is to square the whole product. First r², then multiply by π and by h. And if the problem gives the <strong>diameter</strong>, divide it by 2 first to get the radius.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — Radius 2, height 10</h3></div>
+<p class="pregunta-int" id="t-p4">A cylinder has a radius of 2 and a height of 10 (π ≈ 3.14). Its volume is…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">40</button>
+<button class="opcion" data-k="b" type="button">62.8</button>
+<button class="opcion" data-k="c" type="button">125.6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Radius 5, height 2</h3></div>
+<p class="pregunta-int" id="t-p5">A cylinder has a radius of 5 and a height of 2 (π ≈ 3.14). Its volume is…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">157</button>
+<button class="opcion" data-k="b" type="button">50</button>
+<button class="opcion" data-k="c" type="button">78.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#cylinders" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: volume of cylinders (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: volume of cylinders</span><span class="ei-sub">Use V = πr²h with cylinders of different sizes.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-solve"><span aria-hidden="true" class="num-seccion">4</span>Solving for the height or the radius</h2>
+<p>When you know the volume and one measure is missing, solve for it as in Topic 5. For the height of a prism, divide the volume by the area of the base.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: solving for the height. A prism has a volume of 60 cubic inches and a base with an area of 12 square inches. What is its height?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Start from V = area of the base × height.</strong> 60 = 12 × h.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Divide by 12.</strong> h = 60 ÷ 12 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The height is <strong>5 inches</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The radius of a cylinder</span>
+<p>To find the radius when you know the volume and the height, divide the volume by πh to get r², then take the square root: the same steps as the Pythagorean theorem in Lesson 6.2.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The height</h3></div>
+<p class="pregunta-int" id="t-p6">A prism has V = 100 and a base with an area of 20. The height is…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">80</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">2000</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#solve" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: solving for the height or the radius (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: solving for the height or the radius</span><span class="ei-sub">Find the missing measure when you know the volume.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-capacity"><span aria-hidden="true" class="num-seccion">5</span>Uses: capacity and storage</h2>
+<p>Volume answers real questions about building and storage: how many gallons fit in a tank, how much concrete a column needs, how much fits in a box.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: a cylindrical tank has a radius of 2 feet and a height of 5 feet. How many cubic feet of water fit? About how many gallons is that? (π ≈ 3.14)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Area of the base.</strong> 3.14 × 2² = 3.14 × 4 = 12.56.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Times the height.</strong> 12.56 × 5 = 62.8 ft³.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Convert to gallons.</strong> 62.8 × 7.48 ≈ 470 gallons.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> About <strong>62.8 ft³</strong>, or about <strong>470 gallons</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Use the same unit for every measure</span>
+<p>Before you calculate, make sure every measure is in the same unit (all in feet, or all in inches). If the radius is in inches and the height is in feet, convert first to a single unit.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#capacity" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: capacity and storage (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: capacity and storage</span><span class="ei-sub">Solve problems about tanks, containers, and converting to gallons.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve four exercises on the volume of prisms (rectangular and triangular), four on the volume of cylinders (with π ≈ 3.14), and two that solve for the height or the radius. Then check your answers with the calculator's π key: the difference shows how much you rounded.</li>
+<li><strong>In your daily life.</strong> Find a box and a can at home. Measure the box in inches and find its volume. Measure the diameter and the height of the can, find its volume with V = πr²h, and divide by 231 to get gallons (1 gallon = 231 cubic inches). Compare it with the amount printed on the label.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A rectangular prism measures 2 × 3 × 4. Its volume is…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">48</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">A prism has a base with an area of 12 and a height of 5. Its volume is…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17</button><button class="opcion" data-k="b" type="button">12</button><button class="opcion" data-k="c" type="button">5</button><button class="opcion" data-k="d" type="button">60</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">A triangular prism has a base with an area of 6 and a height of 10. Its volume is…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60</button><button class="opcion" data-k="b" type="button">16</button><button class="opcion" data-k="c" type="button">6</button><button class="opcion" data-k="d" type="button">600</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">A cylinder has a radius of 2 and a height of 5 (π ≈ 3.14). Its volume is…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">31.4</button><button class="opcion" data-k="b" type="button">20</button><button class="opcion" data-k="c" type="button">125.6</button><button class="opcion" data-k="d" type="button">62.8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A cylinder has a radius of 3 and a height of 10 (π ≈ 3.14). Its volume is…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">94.2</button><button class="opcion" data-k="b" type="button">282.6</button><button class="opcion" data-k="c" type="button">90</button><button class="opcion" data-k="d" type="button">1,130.4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">What is the formula for the volume of a cylinder?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">V = 2πr</button><button class="opcion" data-k="b" type="button">V = πr²</button><button class="opcion" data-k="c" type="button">V = πr²h</button><button class="opcion" data-k="d" type="button">V = lwh</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A prism has V = 60 and a base with an area of 12. The height is…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">48</button><button class="opcion" data-k="b" type="button">72</button><button class="opcion" data-k="c" type="button">720</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A box has V = 24, a length of 2, and a width of 3. The height is…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">19</button><button class="opcion" data-k="b" type="button">4</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for volume (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the volume of prisms and cylinders and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identifying the base and height</th><td>I identify the base and the height of the solid, in prisms and cylinders in any position.</td><td>I identify the base or the height with mistakes.</td><td>I confuse the base with the height of the solid.</td></tr>
+<tr><th scope="row">Finding the area of the base</th><td>I find the area of the base without mistakes, even with πr².</td><td>I find the area with occasional mistakes.</td><td>I do not find the area of the base.</td></tr>
+<tr><th scope="row">Using V = area × height</th><td>I use the formula correctly and solve it for a missing measure when needed.</td><td>I use the formula with calculation mistakes.</td><td>I do not use the formula correctly.</td></tr>
+<tr><th scope="row">Cubic units</th><td>I give the answer in cubic units and convert to gallons when the problem asks.</td><td>I use wrong or mixed units.</td><td>I do not give the answer in cubic units.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you found the volume of prisms and cylinders with the central idea V = area of the base × height (and V = πr²h for the cylinder), solved for the height or the radius when they were missing, and used volume in real capacity problems, giving the answer in cubic units.</p>
+<p>In <strong>Lesson 7.2 · Box plots</strong> the topic changes from space to data. You will learn to summarize a data set with five key values (minimum, Q1, median, Q3, and maximum) and to show them in a plot that shows spread and outliers at a glance.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-7-2.html">Lesson 7.2 · Box plots</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>volume</dt><dd>The amount of space a solid takes up. It is measured in cubic units.</dd>
+<dt>prism</dt><dd>A solid with two equal, parallel bases joined by flat faces, like a box.</dd>
+<dt>cylinder</dt><dd>A solid with two equal, parallel circular bases, like a can.</dd>
+<dt>radius</dt><dd>The distance from the center of a circle to its edge: half the diameter.</dd>
+<dt>cubic unit</dt><dd>A cube that measures 1 unit on each side, like 1 in³ or 1 ft³.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 7 · Lesson 7.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 7.2",
+ "review": "sections 2 to 4",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "12 is 3 × 4, the area of the base. Multiply by 5 too.",
+    "c": "20 is 4 × 5. Multiply the three measures."
+   },
+   "right": "3 × 4 × 5 = 60.",
+   "solution": "V = 3 × 4 × 5 = 60."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "You added. Multiply the area of the base by the height.",
+    "c": "8 is only the area of the base. Multiply by the height."
+   },
+   "right": "8 × 6 = 48.",
+   "solution": "V = 8 × 6 = 48."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "9 is 3 × 3, the area of one face. Multiply by 3 once more.",
+    "b": "The side is multiplied three times by itself, not by 6."
+   },
+   "right": "3 × 3 × 3 = 27.",
+   "solution": "V = 3³ = 27."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "40 is 2² × 10. Multiply by 3.14 too.",
+    "b": "62.8 is 3.14 × 2 × 10: the radius was not squared."
+   },
+   "right": "3.14 × 4 × 10 = 125.6.",
+   "solution": "V = 3.14 × 2² × 10 = 125.6."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "50 is 5² × 2. Multiply by 3.14 too.",
+    "c": "78.5 is the area of the base. Multiply by the height, 2."
+   },
+   "right": "3.14 × 25 × 2 = 157.",
+   "solution": "V = 3.14 × 5² × 2 = 157."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "You subtracted. Divide the volume by the area of the base.",
+    "c": "You multiplied. To solve for the height, divide."
+   },
+   "right": "100 ÷ 20 = 5.",
+   "solution": "h = 100 ÷ 20 = 5."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "You added the measures. Multiply them.",
+    "c": "12 is 3 × 4. Multiply by 2 too.",
+    "d": "Check the multiplication: 2 × 3 × 4."
+   },
+   "solution": "2 × 3 × 4 = 24."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "You added. Multiply the area of the base by the height.",
+    "b": "12 is only the area of the base.",
+    "c": "5 is only the height."
+   },
+   "solution": "12 × 5 = 60."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "You added. Multiply the area of the base by the height.",
+    "c": "6 is only the area of the base.",
+    "d": "Check the multiplication: 6 × 10."
+   },
+   "solution": "6 × 10 = 60."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "31.4 is 3.14 × 2 × 5: the radius was not squared.",
+    "b": "20 is 2² × 5. Multiply by 3.14 too.",
+    "c": "Square only the radius, not the height."
+   },
+   "solution": "3.14 × 4 × 5 = 62.8."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "94.2 is 3.14 × 3 × 10: the radius was not squared.",
+    "c": "90 is 3² × 10. Multiply by 3.14 too.",
+    "d": "Use the radius, 3, not the diameter, 6."
+   },
+   "solution": "3.14 × 9 × 10 = 282.6."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "2πr is the circumference of the base.",
+    "b": "πr² is only the area of the base.",
+    "d": "lwh is the volume of a box."
+   },
+   "solution": "V = πr²h."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "You subtracted. Divide the volume by the area of the base.",
+    "b": "You added. Divide.",
+    "c": "You multiplied. To solve for the height, divide."
+   },
+   "solution": "60 ÷ 12 = 5."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "The area of the base is 2 × 3 = 6. Divide 24 by 6.",
+    "c": "Divide by the whole base, 2 × 3 = 6, not only by 2.",
+    "d": "6 is the area of the base. Divide 24 by it."
+   },
+   "solution": "24 ÷ (2 × 3) = 4."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

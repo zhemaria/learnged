@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.1 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.1 · Volumen de prismas y cilindros · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-7-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 7 — Volumen y análisis de datos</p>
+<h1>Lección 7.1 · Volumen de prismas y cilindros</h1>
+<p class="lema">Calcule el volumen de cajas, prismas y cilindros con V = área de la base × altura, despeje la medida que falta y resuelva problemas reales de capacidad.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora y hoja de referencia</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Calcular</strong> el volumen de prismas rectangulares y triangulares con V = área de la base × altura.</li>
+<li><strong>Calcular</strong> el volumen de cilindros con V = πr²h.</li>
+<li><strong>Identificar</strong> correctamente la base y la altura de cada sólido.</li>
+<li><strong>Despejar</strong> la altura o el radio cuando el volumen es conocido.</li>
+<li><strong>Expresar</strong> el resultado en las unidades cúbicas correctas (pulg³, pies³) o en galones.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.5.a</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de prismas rectangulares. Hallar la medida de los lados o la altura dado el volumen o el área de superficie.</li><li><span class="std-cod std-dir">Q.5.b</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de cilindros. Hallar la altura, el radio o el diámetro dado el volumen o el área de superficie.</li><li><span class="std-cod std-dir">Q.5.c</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de prismas rectos. Hallar la medida de los lados o la altura dado el volumen o el área de superficie.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.2.a</span> Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li><li><span class="std-cod std-mp">MP.5.c</span> Identificar la información necesaria para evaluar una línea de razonamiento.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Nivel D</span> Resolver problemas de la vida real y de matemáticas sobre el área, el volumen y el área de la superficie de objetos de dos y tres dimensiones formados por triángulos, cuadriláteros, polígonos, cubos y prismas rectos.</li><li><span class="std-cod std-ccr">8.G.9</span> <span class="std-nivel">Nivel D</span> Conocer las fórmulas del volumen de conos, cilindros y esferas, y usarlas para resolver problemas de la vida real y de matemáticas.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-volumen">¿Qué es el volumen?</a></li>
+<li><a href="#s-prismas">Volumen de prismas</a></li>
+<li><a href="#s-cilindros">Volumen de cilindros</a></li>
+<li><a href="#s-despejar">Despejar la altura o el radio</a></li>
+<li><a href="#s-capacidad">Aplicaciones: capacidad y almacenamiento</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-volumen"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es el volumen?</h2>
+<p>El Tema 6 cerró la geometría de figuras planas (dos dimensiones). El Tema 7 da el salto a las tres dimensiones: el volumen mide cuánto espacio ocupa un cuerpo sólido o cuánto cabe dentro de él. Para calcularlo se usan de nuevo las fórmulas y el despeje aprendidos en el Tema 5, y el área de la base que ya se trabajó en niveles anteriores.</p>
+<p>El <strong>volumen</strong> es la cantidad de espacio que ocupa un cuerpo de tres dimensiones. Para un prisma o un cilindro, se calcula con una idea única y poderosa: el área de la base multiplicada por la altura.</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = área de la base × altura</p>
+<svg viewBox="0 0 520 230" role="img" aria-label="Una caja rectangular con su largo, ancho y alto rotulados, y un cilindro con su radio r y su altura h rotulados." style="width:100%;max-width:500px;height:auto;display:block;margin:12px auto;"><polygon points="40,90 190,90 230,60 80,60" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/><polygon points="40,90 190,90 190,190 40,190" fill="#b0bec5" stroke="#37474f" stroke-width="2"/><polygon points="190,90 230,60 230,160 190,190" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="115" y="212" font-size="16" font-weight="700" text-anchor="middle" fill="#0d47a1">largo</text><text x="24" y="145" font-size="16" font-weight="700" text-anchor="end" fill="#0d47a1">alto</text><text x="222" y="190" font-size="16" font-weight="700" text-anchor="start" fill="#0d47a1">ancho</text><path d="M330 70 V180 A60 18 0 0 0 450 180 V70" fill="#b0bec5" stroke="#37474f" stroke-width="2"/><ellipse cx="390" cy="70" rx="60" ry="18" fill="#cfd8dc" stroke="#37474f" stroke-width="2"/><line x1="390" y1="70" x2="450" y2="70" stroke="#b71c1c" stroke-width="3"/><text x="420" y="60" font-size="18" font-weight="700" text-anchor="middle" fill="#b71c1c">r</text><line x1="470" y1="70" x2="470" y2="180" stroke="#0d47a1" stroke-width="2"/><text x="480" y="130" font-size="18" font-weight="700" fill="#0d47a1">h</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Unidades cúbicas</span>
+<p>Como el volumen multiplica tres medidas de longitud, el resultado se expresa en <strong>unidades cúbicas</strong>: pulgadas cúbicas (pulg³), pies cúbicos (pies³), etc. Dos datos útiles: 1 pie cúbico = 1,728 pulgadas cúbicas (12 × 12 × 12), y en 1 pie cúbico caben unos 7.48 galones.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-prismas"><span aria-hidden="true" class="num-seccion">2</span>Volumen de prismas</h2>
+<p>En un prisma rectangular (una caja), la base es un rectángulo, así que V = largo × ancho × alto. En un prisma triangular, la base es un triángulo, así que primero se calcula el área del triángulo y luego se multiplica por la altura (el largo) del prisma.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Prisma rectangular. Una caja mide 5 pulgadas de largo, 3 de ancho y 4 de alto. ¿Cuál es su volumen?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se multiplican las tres dimensiones.</strong> 5 × 3 × 4 = 60.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> V = <strong>60 pulg³</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Prisma triangular. Un prisma tiene una base triangular de área 6 pulgadas cuadradas y una altura de 10 pulgadas. ¿Cuál es su volumen?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se usa V = área de la base × altura.</strong> 6 × 10 = 60.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> V = <strong>60 pulg³</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Una caja</h3></div>
+<p class="pregunta-int" id="t-p1">Una caja mide 3 × 4 × 5. Su volumen es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">60</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">20</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Base y altura</h3></div>
+<p class="pregunta-int" id="t-p2">Un prisma tiene una base de área 8 y una altura de 6. Su volumen es…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">14</button>
+<button class="opcion" data-k="b" type="button">48</button>
+<button class="opcion" data-k="c" type="button">8</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un cubo</h3></div>
+<p class="pregunta-int" id="t-p3">Un cubo tiene lados de 3. Su volumen es…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">18</button>
+<button class="opcion" data-k="c" type="button">27</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#prismas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: volumen de prismas (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: volumen de prismas</span><span class="ei-sub">Vea la caja capa por capa, calcule el área de la base y multiplíquela por la altura.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-cilindros"><span aria-hidden="true" class="num-seccion">3</span>Volumen de cilindros</h2>
+<p>En un cilindro, la base es un círculo de radio r, cuya área es πr². Por eso el volumen es esa área multiplicada por la altura:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = πr²h</p>
+<p>En los cálculos se usa π ≈ 3.14 (o la tecla π de la calculadora). La fórmula está en la hoja de referencia del GED; ábrala con el botón Hoja de referencia.</p>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Sobre la calculadora</span>
+<p>En el examen GED se usa la calculadora TI-30XS MultiView. La calculadora de esta página hace las mismas operaciones, aunque algunas teclas tienen otro nombre o están en otro lugar. Si tiene una TI-30XS, practique también con ella para conocer la ubicación de sus teclas.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: un cilindro tiene un radio de 2 pulgadas y una altura de 5 pulgadas. ¿Cuál es su volumen? (π ≈ 3.14)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se calcula el área de la base.</strong> πr² = 3.14 × 2² = 3.14 × 4 = 12.56.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se multiplica por la altura.</strong> 12.56 × 5 = 62.8.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> V ≈ <strong>62.8 pulg³</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Elevar al cuadrado solo el radio</span>
+<p>En πr²h, el exponente afecta únicamente al radio (r²), no a π ni a la altura. Un error común es elevar al cuadrado todo el producto. Primero r², luego se multiplica por π y por h. Y si el problema da el <strong>diámetro</strong>, primero se divide entre 2 para obtener el radio.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Radio 2, altura 10</h3></div>
+<p class="pregunta-int" id="t-p4">Un cilindro tiene radio 2 y altura 10 (π ≈ 3.14). Su volumen es…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">40</button>
+<button class="opcion" data-k="b" type="button">62.8</button>
+<button class="opcion" data-k="c" type="button">125.6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Radio 5, altura 2</h3></div>
+<p class="pregunta-int" id="t-p5">Un cilindro tiene radio 5 y altura 2 (π ≈ 3.14). Su volumen es…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">157</button>
+<button class="opcion" data-k="b" type="button">50</button>
+<button class="opcion" data-k="c" type="button">78.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#cilindros" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: volumen de cilindros (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: volumen de cilindros</span><span class="ei-sub">Aplique V = πr²h a cilindros de distintas medidas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-despejar"><span aria-hidden="true" class="num-seccion">4</span>Despejar la altura o el radio</h2>
+<p>Cuando se conoce el volumen y falta una dimensión, se despeja como en el Tema 5. Para la altura de un prisma, se divide el volumen entre el área de la base.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Despejar la altura. Un prisma tiene un volumen de 60 pulgadas cúbicas y una base de área 12 pulgadas cuadradas. ¿Cuál es su altura?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se parte de V = área de la base × altura.</strong> 60 = 12 × h.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se divide entre 12.</strong> h = 60 ÷ 12 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La altura es de <strong>5 pulgadas</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El radio de un cilindro</span>
+<p>Para hallar el radio conociendo el volumen y la altura, se divide el volumen entre πh para obtener r², y después se saca la raíz cuadrada: los mismos pasos del teorema de Pitágoras de la Lección 6.2.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — La altura</h3></div>
+<p class="pregunta-int" id="t-p6">Un prisma tiene V = 100 y una base de área 20. La altura es…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">80</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">2000</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#despejar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: despejar la altura o el radio (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: despejar la altura o el radio</span><span class="ei-sub">Halle la medida que falta cuando se conoce el volumen.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-capacidad"><span aria-hidden="true" class="num-seccion">5</span>Aplicaciones: capacidad y almacenamiento</h2>
+<p>El volumen responde preguntas reales de construcción y almacenamiento: cuántos galones caben en un tanque, cuánto concreto se necesita para una columna, cuánto material entra en una caja.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Un tanque cilíndrico tiene un radio de 2 pies y una altura de 5 pies. ¿Cuántos pies cúbicos de agua caben? ¿Cuántos galones son, aproximadamente? (π ≈ 3.14)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Área de la base.</strong> 3.14 × 2² = 3.14 × 4 = 12.56.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Por la altura.</strong> 12.56 × 5 = 62.8 pies³.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se pasa a galones.</strong> 62.8 × 7.48 ≈ 470 galones.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Caben unos <strong>62.8 pies³</strong>, es decir, unos <strong>470 galones</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Todas las medidas en la misma unidad</span>
+<p>Antes de calcular, conviene que todas las medidas estén en la misma unidad (todo en pies, o todo en pulgadas). Si el radio está en pulgadas y la altura en pies, primero se convierten a una sola unidad.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#capacidad" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: capacidad y almacenamiento (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: capacidad y almacenamiento</span><span class="ei-sub">Resuelva problemas de tanques, envases y conversión a galones.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva cuatro ejercicios de volumen de prismas (rectangulares y triangulares), cuatro de volumen de cilindros (con π ≈ 3.14) y dos problemas inversos para despejar la altura o el radio. Después compare sus respuestas con la tecla π de la calculadora: la diferencia le dirá cuánto redondeó.</li>
+<li><strong>En su vida diaria.</strong> Busque en su casa una caja y una lata. Mida la caja en pulgadas y calcule su volumen. Mida el diámetro y la altura de la lata, calcule su volumen con V = πr²h y divídalo entre 231 para pasarlo a galones (1 galón = 231 pulgadas cúbicas). Compárelo con la cantidad impresa en la etiqueta.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Un prisma rectangular mide 2 × 3 × 4. Su volumen es…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">48</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un prisma tiene una base de área 12 y una altura de 5. Su volumen es…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17</button><button class="opcion" data-k="b" type="button">12</button><button class="opcion" data-k="c" type="button">5</button><button class="opcion" data-k="d" type="button">60</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Un prisma triangular tiene una base de área 6 y una altura de 10. Su volumen es…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60</button><button class="opcion" data-k="b" type="button">16</button><button class="opcion" data-k="c" type="button">6</button><button class="opcion" data-k="d" type="button">600</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Un cilindro tiene radio 2 y altura 5 (π ≈ 3.14). Su volumen es…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">31.4</button><button class="opcion" data-k="b" type="button">20</button><button class="opcion" data-k="c" type="button">125.6</button><button class="opcion" data-k="d" type="button">62.8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Un cilindro tiene radio 3 y altura 10 (π ≈ 3.14). Su volumen es…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">94.2</button><button class="opcion" data-k="b" type="button">282.6</button><button class="opcion" data-k="c" type="button">90</button><button class="opcion" data-k="d" type="button">1,130.4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Cuál es la fórmula del volumen de un cilindro?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">V = 2πr</button><button class="opcion" data-k="b" type="button">V = πr²</button><button class="opcion" data-k="c" type="button">V = πr²h</button><button class="opcion" data-k="d" type="button">V = lwh</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Un prisma tiene V = 60 y una base de área 12. La altura es…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">48</button><button class="opcion" data-k="b" type="button">72</button><button class="opcion" data-k="c" type="button">720</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Una caja tiene V = 24, largo 2 y ancho 3. La altura es…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">19</button><button class="opcion" data-k="b" type="button">4</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de volumen (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas del volumen de prismas y cilindros y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identificar base y altura</th><td>Identifico la base y la altura del sólido, en prismas y cilindros en cualquier posición.</td><td>Identifico la base o la altura con errores.</td><td>Confundo la base con la altura del sólido.</td></tr>
+<tr><th scope="row">Calcular el área de la base</th><td>Calculo el área de la base sin errores, incluso con πr².</td><td>Calculo el área con errores ocasionales.</td><td>No calculo el área de la base.</td></tr>
+<tr><th scope="row">Aplicar V = área × altura</th><td>Aplico la fórmula correctamente y la despejo cuando hace falta.</td><td>Aplico la fórmula con errores de cálculo.</td><td>No aplico la fórmula correctamente.</td></tr>
+<tr><th scope="row">Unidades cúbicas</th><td>Expreso el resultado en unidades cúbicas y lo paso a galones cuando el problema lo pide.</td><td>Uso unidades incorrectas o inconsistentes.</td><td>No expreso el resultado en unidades cúbicas.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se calculó el volumen de prismas y cilindros con la idea central V = área de la base × altura (y V = πr²h para el cilindro), se despejó la altura o el radio cuando faltaban, y se aplicó a problemas reales de capacidad, expresando el resultado en unidades cúbicas.</p>
+<p>En la <strong>Lección 7.2 · Diagramas de caja y bigotes</strong> el tema cambia del espacio a los datos. Se aprenderá a resumir un conjunto de datos con cinco valores clave (mínimo, Q1, mediana, Q3 y máximo) y a representarlos en un diagrama que muestra de un vistazo la dispersión y los valores atípicos.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-7-2.html">Lección 7.2 · Diagramas de caja y bigotes</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>volumen</dt><dd>La cantidad de espacio que ocupa un cuerpo. Se mide en unidades cúbicas.</dd>
+<dt>prisma</dt><dd>Un cuerpo con dos bases iguales y paralelas unidas por caras planas, como una caja.</dd>
+<dt>cilindro</dt><dd>Un cuerpo con dos bases circulares iguales y paralelas, como una lata.</dd>
+<dt>radio</dt><dd>La distancia del centro de un círculo a su borde: la mitad del diámetro.</dd>
+<dt>unidad cúbica</dt><dd>Un cubo que mide 1 unidad por lado, como 1 pulg³ o 1 pie³.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 7 · Lección 7.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.2",
+ "review": "las secciones 2 a 4",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "12 es 3 × 4, el área de la base. Falta multiplicar por 5.",
+    "c": "20 es 4 × 5. Hay que multiplicar las tres medidas."
+   },
+   "right": "3 × 4 × 5 = 60.",
+   "solution": "V = 3 × 4 × 5 = 60."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó. Hay que multiplicar el área de la base por la altura.",
+    "c": "8 es solo el área de la base. Falta multiplicar por la altura."
+   },
+   "right": "8 × 6 = 48.",
+   "solution": "V = 8 × 6 = 48."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "9 es 3 × 3, el área de una cara. Falta multiplicar otra vez por 3.",
+    "b": "El lado se multiplica tres veces por sí mismo, no por 6."
+   },
+   "right": "3 × 3 × 3 = 27.",
+   "solution": "V = 3³ = 27."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "40 es 2² × 10. Falta multiplicar por 3.14.",
+    "b": "62.8 es 3.14 × 2 × 10: no se elevó el radio al cuadrado."
+   },
+   "right": "3.14 × 4 × 10 = 125.6.",
+   "solution": "V = 3.14 × 2² × 10 = 125.6."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "50 es 5² × 2. Falta multiplicar por 3.14.",
+    "c": "78.5 es el área de la base. Falta multiplicar por la altura, 2."
+   },
+   "right": "3.14 × 25 × 2 = 157.",
+   "solution": "V = 3.14 × 5² × 2 = 157."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Restó. Hay que dividir el volumen entre el área de la base.",
+    "c": "Multiplicó. Para despejar la altura se divide."
+   },
+   "right": "100 ÷ 20 = 5.",
+   "solution": "h = 100 ÷ 20 = 5."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó las medidas. Hay que multiplicarlas.",
+    "c": "12 es 3 × 4. Falta multiplicar por 2.",
+    "d": "Revise la multiplicación: 2 × 3 × 4."
+   },
+   "solution": "2 × 3 × 4 = 24."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó. Hay que multiplicar el área de la base por la altura.",
+    "b": "12 es solo el área de la base.",
+    "c": "5 es solo la altura."
+   },
+   "solution": "12 × 5 = 60."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "Sumó. Hay que multiplicar el área de la base por la altura.",
+    "c": "6 es solo el área de la base.",
+    "d": "Revise la multiplicación: 6 × 10."
+   },
+   "solution": "6 × 10 = 60."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "31.4 es 3.14 × 2 × 5: no se elevó el radio al cuadrado.",
+    "b": "20 es 2² × 5. Falta multiplicar por 3.14.",
+    "c": "Solo el radio va al cuadrado, no la altura."
+   },
+   "solution": "3.14 × 4 × 5 = 62.8."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "94.2 es 3.14 × 3 × 10: no se elevó el radio al cuadrado.",
+    "c": "90 es 3² × 10. Falta multiplicar por 3.14.",
+    "d": "Use el radio, 3, no el diámetro, 6."
+   },
+   "solution": "3.14 × 9 × 10 = 282.6."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "2πr es la circunferencia de la base.",
+    "b": "πr² es solo el área de la base.",
+    "d": "lwh es el volumen de una caja."
+   },
+   "solution": "V = πr²h."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Restó. Hay que dividir el volumen entre el área de la base.",
+    "b": "Sumó. Hay que dividir.",
+    "c": "Multiplicó. Para despejar la altura se divide."
+   },
+   "solution": "60 ÷ 12 = 5."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "El área de la base es 2 × 3 = 6. Divida 24 entre 6.",
+    "c": "Se divide entre toda la base, 2 × 3 = 6, no solo entre 2.",
+    "d": "6 es el área de la base. Divida 24 entre ella."
+   },
+   "solution": "24 ÷ (2 × 3) = 4."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

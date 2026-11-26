@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 7.2 · practice (English) — built by tools/build_n3_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.2 · Box plots · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 7 · Volume and data analysis</div>
+    <h1>Lesson 7.2 · Box plots</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#five-values">The five key values</a></li>
+      <li><a href="#build">Building the plot</a></li>
+      <li><a href="#iqr">The interquartile range</a></li>
+      <li><a href="#outliers">Outliers</a></li>
+      <li><a href="#compare">Reading and comparing</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="five-values" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The five key values</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A box plot summarizes a data set with five numbers: the <strong>minimum</strong>, the <strong>first quartile</strong> (Q1), the <strong>median</strong> (Q2), the <strong>third quartile</strong> (Q3), and the <strong>maximum</strong>. The quartiles split the ordered data into four parts with 25% of the data each.</p>
+      <h3>Find the five values step by step</h3>
+      <div class="panel">
+        <p class="enun"><strong>Data:</strong> <span id="cv-datos"></span></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cv-sig"></button><button type="button" class="btn-sec" id="cv-todo">Show all the steps</button><button type="button" class="btn-sec" id="cv-nuevo">Other data</button></div>
+      </div>
+      <div class="pasos" id="cv-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>Odd number of data:</strong> the median is the middle value and does not go into either half. <strong>Even number:</strong> the median is the average of the two middle values, and each half keeps half of the data.</div>
+      <h3>Practice: find the value asked for</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Value</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Type the number; it can be a decimal, like 12.5.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="build">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Building the plot</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With the five values you draw the box: it goes from Q1 to Q3, with a line at the median, and the whiskers reach the minimum and the maximum. Type or change the five values and watch the plot take shape.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="cd-0">Minimum</label><input type="text" inputmode="decimal" class="corto" id="cd-0" value="5"></div><div class="campo"><label for="cd-1">Q1</label><input type="text" inputmode="decimal" class="corto" id="cd-1" value="25"></div><div class="campo"><label for="cd-2">Median</label><input type="text" inputmode="decimal" class="corto" id="cd-2" value="40"></div><div class="campo"><label for="cd-3">Q3</label><input type="text" inputmode="decimal" class="corto" id="cd-3" value="55"></div><div class="campo"><label for="cd-4">Maximum</label><input type="text" inputmode="decimal" class="corto" id="cd-4" value="80"></div></div></div>
+      <p class="caja-aviso" id="cd-aviso" role="alert"></p>
+      <div id="cd-svg"></div>
+      <div class="salida" aria-live="polite" id="cd-salida"></div>
+      <h3>Practice: read the plot</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="iqr">
+    <summary><span class="num" aria-hidden="true">3</span><h2>The interquartile range</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The interquartile range measures how spread out the middle half of the data is. It is the width of the box:</p>
+      <div class="formula">IQR = Q3 − Q1</div>
+      <h3>What changes it and what does not?</h3>
+      <p>Move the largest value in the set. Watch what happens to the range (max − min) and to the IQR.</p>
+      <div class="panel">
+        <p><strong>Data:</strong> <span id="iq-datos"></span></p>
+        <div class="campo"><label for="iq-max">Largest value: <span id="iq-val"></span></label><input type="range" id="iq-max" min="30" max="120" value="40"></div>
+      </div>
+      <div id="iq-svg"></div>
+      <div class="salida" aria-live="polite" id="iq-salida"></div>
+      <h3>Practice: IQR and percents</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">New exercise</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="outliers">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Outliers</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>An <strong>outlier</strong> is a value far away from the rest. The most common rule: it is an outlier if it is more than 1.5 × IQR above Q3 or below Q1.</p>
+      <div class="formula">lower limit = Q1 − 1.5 × IQR &nbsp;&nbsp;&nbsp; upper limit = Q3 + 1.5 × IQR</div>
+      <h3>Outlier detector</h3>
+      <div class="panel">
+        <p><strong>Ordered data:</strong></p>
+        <div class="datos" id="at-datos" aria-hidden="true"></div>
+        <p class="sr-only" id="at-voz"></p>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="at-nuevo">Other data</button></div>
+      </div>
+      <div id="at-svg"></div>
+      <div class="salida" aria-live="polite" id="at-salida"></div>
+      <div class="caja-tip">In the plot, an outlier is marked with a separate point, and the whisker only reaches the last value that is not an outlier.</div>
+      <h3>Practice: find the limit</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Limit</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type the number; it can be a decimal or negative.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="compare">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Reading and comparing</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Two plots on the same scale let you compare groups at a glance: the center (the median), the spread (the width of the box and the range), and the shape (whether the box or a whisker is stretched to one side).</p>
+      <h3>Practice: compare the two groups</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <div class="caja-tip"><strong>Median is not mean:</strong> the line in the box is the median. A box plot does not show the mean.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 7 · Volume and data analysis · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script>
+/* MODULE 1 · The five values, step by step */
+function pasosCinco(d){
+  var c = cinco(d), o = c.o, n = o.length, m = Math.floor(n / 2), h = mitades(o), pasos = [];
+  pasos.push(T("Put the data in order from least to greatest:", "Se ordenan los datos de menor a mayor:") + chips(o));
+  pasos.push(T("The minimum is " + nm(c.min) + " and the maximum is " + nm(c.max) + ".", "El mínimo es " + nm(c.min) + " y el máximo es " + nm(c.max) + "."));
+  var cm = o.map(function(v, i){ return (n % 2 ? i === m : (i === m - 1 || i === m)) ? "med" : ""; });
+  pasos.push((n % 2 ? T("There are " + n + " values (odd): the median is the middle value, in place " + (m + 1) + ". Median = " + nm(c.med) + ".", "Hay " + n + " datos (impar): la mediana es el dato central, el que ocupa el lugar " + (m + 1) + ". Mediana = " + nm(c.med) + ".")
+                    : T("There are " + n + " values (even): the median is the average of the two middle values, (" + nm(o[m - 1]) + " + " + nm(o[m]) + ") ÷ 2 = " + nm(c.med) + ".", "Hay " + n + " datos (par): la mediana es el promedio de los dos centrales, (" + nm(o[m - 1]) + " + " + nm(o[m]) + ") ÷ 2 = " + nm(c.med) + ".")) + chips(o, cm));
+  var cq = o.map(function(v, i){ return i < h[0].length ? "baja" : (i >= n - h[1].length ? "alta" : "med"); });
+  pasos.push(T("Q1 is the median of the lower half (" + listaN(h[0]) + "): Q1 = " + nm(c.q1) + ". Q3 is the median of the upper half (" + listaN(h[1]) + "): Q3 = " + nm(c.q3) + ".", "Q1 es la mediana de la mitad de abajo (" + listaN(h[0]) + "): Q1 = " + nm(c.q1) + ". Q3 es la mediana de la mitad de arriba (" + listaN(h[1]) + "): Q3 = " + nm(c.q3) + ".") + chips(o, cq));
+  pasos.push('<span class="veredicto">' + T("The five values: minimum " + nm(c.min) + ", Q1 = " + nm(c.q1) + ", median = " + nm(c.med) + ", Q3 = " + nm(c.q3) + ", maximum " + nm(c.max) + ".", "Los cinco valores: mínimo " + nm(c.min) + ", Q1 = " + nm(c.q1) + ", mediana = " + nm(c.med) + ", Q3 = " + nm(c.q3) + ", máximo " + nm(c.max) + ".") + "</span>" +
+             cajaSVG([{c: c}], T("Box plot: minimum ", "Diagrama de caja: mínimo ") + nm(c.min) + ", Q1 " + nm(c.q1) + T(", median ", ", mediana ") + nm(c.med) + ", Q3 " + nm(c.q3) + T(", maximum ", ", máximo ") + nm(c.max), {rotulos: true}));
+  return pasos;
+}
+var CV_COLA = [[12, 7, 3, 15, 9, 20, 11], [25, 40, 10, 55, 30, 45, 20, 35]];
+function nuevoCV(){ var d = CV_COLA.length ? CV_COLA.shift() : datosAzar(aleatorio(7, 12), 5, 60); $("cv-datos").textContent = listaN(d); CVS.carga(pasosCinco(d)); }
+var NOMBRE5 = {med: T("the median", "la mediana"), q1: "Q1", q3: "Q3", rango: T("the range", "el rango"), iqr: T("the IQR", "el IQR"), min: T("the minimum", "el mínimo"), max: T("the maximum", "el máximo")};
+function genCinco(){
+  var d = datosAzar(aleatorio(7, 12), 1, 50), c = cinco(d), cual = elige(["med", "q1", "q3", "rango", "iqr", "min", "max"]);
+  var res = {med: c.med, q1: c.q1, q3: c.q3, rango: c.max - c.min, iqr: c.q3 - c.q1, min: c.min, max: c.max}[cual];
+  var pistas = [];
+  if (cual === "med") pistas.push({v: mediana(d), msg: T("Put the data in order from least to greatest first.", "Primero hay que ordenar los datos de menor a mayor.")});
+  if (cual === "iqr") pistas.push({v: c.max - c.min, msg: T("That is the range (max − min). The IQR is Q3 − Q1.", "Ese es el rango (máx − mín). El IQR es Q3 − Q1.")});
+  if (cual === "rango") pistas.push({v: c.q3 - c.q1, msg: T("That is the IQR. The range is max − min.", "Ese es el IQR. El rango es máx − mín.")});
+  if (cual === "q1") pistas.push({v: c.q3, msg: T("That is Q3. Q1 is the median of the lower half.", "Ese es Q3. Q1 es la mediana de la mitad de abajo.")});
+  if (cual === "q3") pistas.push({v: c.q1, msg: T("That is Q1. Q3 is the median of the upper half.", "Ese es Q1. Q3 es la mediana de la mitad de arriba.")});
+  return {enun: T("Data: ", "Datos: ") + listaN(d) + T(". What is " + NOMBRE5[cual] + "?", ". ¿Cuánto vale " + NOMBRE5[cual] + "?"),
+    solucion: T("In order: ", "Ordenados: ") + listaN(c.o) + T(". Minimum ", ". Mínimo ") + nm(c.min) + ", Q1 = " + nm(c.q1) + T(", median = ", ", mediana = ") + nm(c.med) + ", Q3 = " + nm(c.q3) + T(", maximum ", ", máximo ") + nm(c.max) + "." +
+              (cual === "rango" ? T(" Range = ", " Rango = ") + nm(c.max) + " − " + nm(c.min) + " = " + nm(res) + "." : "") + (cual === "iqr" ? " IQR = " + nm(c.q3) + " − " + nm(c.q1) + " = " + nm(res) + "." : ""),
+    evalua: function(v){ var r = evaluaDec(v, res, pistas); if (r.estado === "mal" && !pistas.some(function(p){ return p.msg === r.msg; })) r.msg = T("Put the data in order and find the halves carefully.", "Ordene los datos y busque las mitades con cuidado."); return r; }};
+}
+
+/* MODULE 2 · Build and read */
+function pintaCD(){
+  var v = [0, 1, 2, 3, 4].map(function(i){ return leeDecimal($("cd-" + i).value); }), av = $("cd-aviso");
+  if (v.some(function(x){ return x === null; }) || v.some(function(x, i){ return i > 0 && x < v[i - 1]; })){
+    av.className = "caja-aviso visible"; av.textContent = T("Type five numbers in order: minimum ≤ Q1 ≤ median ≤ Q3 ≤ maximum.", "Escriba cinco números en orden: mínimo ≤ Q1 ≤ mediana ≤ Q3 ≤ máximo.");
+    $("cd-svg").innerHTML = ""; $("cd-salida").innerHTML = ""; return;
+  }
+  av.className = "caja-aviso"; av.textContent = "";
+  var c = {min: v[0], q1: v[1], med: v[2], q3: v[3], max: v[4]};
+  $("cd-svg").innerHTML = cajaSVG([{c: c}], T("Box plot with minimum ", "Diagrama de caja con mínimo ") + nm(v[0]) + ", Q1 " + nm(v[1]) + T(", median ", ", mediana ") + nm(v[2]) + ", Q3 " + nm(v[3]) + T(", and maximum ", " y máximo ") + nm(v[4]), {rotulos: true});
+  $("cd-salida").innerHTML = '<div class="linea">' + T("Each of the four parts (left whisker, the two parts of the box, and right whisker) holds <strong>25%</strong> of the data, even if some look longer than others.", "Cada una de las cuatro zonas (bigote izquierdo, las dos partes de la caja y bigote derecho) contiene el <strong>25%</strong> de los datos, aunque unas se vean más largas que otras.") + "</div>" +
+    '<div class="linea">' + T("The box, from " + nm(v[1]) + " to " + nm(v[3]) + ", holds the middle 50%. A long part means those data are farther apart, not that there are more of them.", "La caja, de " + nm(v[1]) + " a " + nm(v[3]) + ", contiene el 50% central. Una zona larga significa que esos datos están más separados, no que haya más.") + "</div>";
+}
+function cincoMultiplos(){
+  var base = 5 * aleatorio(0, 10), p = [0].concat(baraja([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]).slice(0, 4)).sort(function(a, b){ return a - b; });
+  var v = p.map(function(k){ return base + 5 * k; });
+  return {min: v[0], q1: v[1], med: v[2], q3: v[3], max: v[4]};
+}
+function genLeer(){
+  var c = cincoMultiplos(), cual = elige(["med", "q1", "q3", "max", "min", "rango", "iqr"]);
+  var res = {med: c.med, q1: c.q1, q3: c.q3, max: c.max, min: c.min, rango: c.max - c.min, iqr: c.q3 - c.q1}[cual];
+  var cand = [c.min, c.q1, c.med, c.q3, c.max, c.max - c.min, c.q3 - c.q1].filter(function(x, i, a){ return x !== res && a.indexOf(x) === i; });
+  var o = [{html: String(res), clave: "n" + res}].concat(baraja(cand).slice(0, 3).map(function(x){ return {html: String(x), clave: "n" + x}; }));
+  while (o.length < 4){ var extra = res + 5 * o.length; if (!o.some(function(z){ return z.clave === "n" + extra; })) o.push({html: String(extra), clave: "n" + extra}); }
+  var exp = T("Minimum " + c.min + ", Q1 " + c.q1 + ", median " + c.med + " (the red line), Q3 " + c.q3 + ", maximum " + c.max + ".", "Mínimo " + c.min + ", Q1 " + c.q1 + ", mediana " + c.med + " (la raya roja), Q3 " + c.q3 + ", máximo " + c.max + ".") + (cual === "rango" ? T(" Range = maximum − minimum = ", " Rango = máximo − mínimo = ") + res + "." : "") + (cual === "iqr" ? " IQR = Q3 − Q1 = " + res + "." : "");
+  return {enun: T("According to the plot, what is " + NOMBRE5[cual] + "?", "Según el diagrama, ¿cuánto vale " + NOMBRE5[cual] + "?") + cajaSVG([{c: c}], T("Box plot to read: minimum ", "Diagrama de caja para leer: mínimo ") + c.min + ", Q1 " + c.q1 + T(", median ", ", mediana ") + c.med + ", Q3 " + c.q3 + T(", maximum ", ", máximo ") + c.max + "."),
+    opciones: o, correcta: "n" + res, porClave: {}, pista: T("Left to right: minimum, Q1 (left edge of the box), median (red line), Q3 (right edge), maximum.", "De izquierda a derecha: mínimo, Q1 (borde izquierdo de la caja), mediana (raya roja), Q3 (borde derecho), máximo.") + (cual === "rango" ? T(" The range is max − min.", " El rango es máx − mín.") : "") + (cual === "iqr" ? T(" The IQR is Q3 − Q1.", " El IQR es Q3 − Q1.") : ""), bien: exp, mal: exp};
+}
+
+/* MODULE 3 · IQR versus range */
+var IQ_BASE = [12, 15, 18, 20, 22, 25, 27, 30];
+function pintaIQ(){
+  var X = +$("iq-max").value, d = IQ_BASE.concat([X]), c = cinco(d);
+  $("iq-val").textContent = X; $("iq-datos").textContent = listaN(d);
+  $("iq-svg").innerHTML = cajaSVG([{c: c}], T("Box plot with maximum ", "Diagrama de caja con máximo ") + X, {lo: 10, hi: 120, rotulos: true});
+  $("iq-salida").innerHTML = '<div class="linea">' + T("Range = ", "Rango = ") + X + " − " + c.min + " = <strong>" + (X - c.min) + "</strong>" + (X > 40 ? T(": it changes with the extreme value.", ": cambia con el dato extremo.") : ".") + "</div>" +
+    '<div class="linea">IQR = ' + nm(c.q3) + " − " + nm(c.q1) + " = <strong>" + nm(c.q3 - c.q1) + "</strong>" + T(": it does not change, because it only looks at the middle 50%.", ": no cambia, porque solo mira el 50% central.") + "</div>";
+}
+function genIQR(){
+  var tp = aleatorio(1, 3);
+  if (tp === 1){ var a = 5 * aleatorio(1, 10), b = a + 5 * aleatorio(2, 10), o = [{html: String(b - a), clave: "n" + (b - a)}, {html: String(a + b), clave: "n" + (a + b)}, {html: String(b), clave: "n" + b}, {html: String((a + b) / 2), clave: "n" + (a + b) / 2}], pc = {};
+    pc["n" + (a + b)] = T("You added. The IQR is a difference.", "Sumó. El IQR es una resta."); pc["n" + b] = T("That is Q3. Subtract Q1 from it.", "Ese es Q3. Réstele Q1."); pc["n" + (a + b) / 2] = T("That is the number halfway between them, not the IQR.", "Ese es el número que está a la mitad, no el IQR.");
+    return {enun: T("If Q1 = " + a + " and Q3 = " + b + ", what is the IQR?", "Si Q1 = " + a + " y Q3 = " + b + ", ¿cuánto vale el IQR?"), opciones: o, correcta: "n" + (b - a), porClave: pc, pista: "IQR = Q3 − Q1.", bien: "IQR = " + b + " − " + a + " = " + (b - a) + ".", mal: "IQR = Q3 − Q1 = " + b + " − " + a + " = " + (b - a) + "."}; }
+  if (tp === 2){
+    var pr = elige([[T("between Q1 and Q3", "entre Q1 y Q3"), 50], [T("above the median", "por encima de la mediana"), 50], [T("below Q1", "por debajo de Q1"), 25], [T("above Q3", "por encima de Q3"), 25], [T("between the minimum and Q3", "entre el mínimo y Q3"), 75], [T("between the median and Q3", "entre la mediana y Q3"), 25], [T("between Q1 and the maximum", "entre Q1 y el máximo"), 75]]);
+    var o2 = [25, 50, 75, 100].map(function(p){ return {html: p + "%", clave: "p" + p}; });
+    return {enun: T("What percent of the data is " + pr[0] + "?", "¿Qué porcentaje de los datos queda " + pr[0] + "?"), opciones: o2, correcta: "p" + pr[1], porClave: {}, pista: T("Count the parts: each one holds 25%.", "Cuente las zonas: cada una tiene el 25%."),
+      bien: T("Each part of the plot holds 25%: " + pr[0] + " there " + (pr[1] === 25 ? "is 1 part" : "are " + (pr[1] / 25) + " parts") + ". Total: " + pr[1] + "%.", "Cada zona del diagrama tiene el 25%: " + pr[0] + " hay " + (pr[1] / 25) + (pr[1] === 25 ? " zona." : " zonas.") + " Total: " + pr[1] + "%."), mal: T("Each of the four parts holds 25% of the data; " + pr[0] + " is " + pr[1] + "%.", "Cada una de las cuatro zonas contiene el 25% de los datos; " + pr[0] + " queda el " + pr[1] + "%.")}; }
+  return {enun: T("One box is wider than another. That shows…", "Una caja más ancha que otra indica…"), opciones: [{html: T("More variability in the middle 50%", "Más variabilidad en el 50% central"), clave: "v"}, {html: T("Less variability", "Menos variabilidad"), clave: "m"}, {html: T("A higher median", "Una mediana mayor"), clave: "med"}, {html: T("More data", "Más datos"), clave: "d"}], correcta: "v",
+    porClave: {d: T("The width does not depend on how many data there are: each part always holds 25%.", "El ancho no depende de cuántos datos hay: cada zona tiene siempre el 25%."), med: T("The width shows spread, not the center.", "El ancho muestra la dispersión, no el centro.")}, pista: T("The width of the box is the IQR.", "El ancho de la caja es el IQR."),
+    bien: T("The width of the box is the IQR: it measures the spread of the middle 50%.", "El ancho de la caja es el IQR: mide la dispersión del 50% central."), mal: T("The width of the box is the IQR: a wider box means more spread-out data.", "El ancho de la caja es el IQR: una caja más ancha significa datos más dispersos.")};
+}
+
+/* MODULE 4 · Outliers */
+function datosConAtipico(){
+  var d = datosAzar(aleatorio(9, 12), 20, 45), c = cinco(d), L = limites(c);
+  if (Math.random() < 0.8) d.push(Math.ceil(L.sup) + aleatorio(3, 20));
+  if (Math.random() < 0.3) d.push(Math.max(0, Math.floor(L.inf) - aleatorio(3, 10)));
+  return d;
+}
+var AT_COLA = [[10, 25, 30, 35, 40, 45, 50, 55, 60, 120]];
+function pintaAT(d){
+  var c = cinco(d), L = limites(c), o = c.o, at = o.filter(function(v){ return v < L.inf || v > L.sup; }), ok = o.filter(function(v){ return v >= L.inf && v <= L.sup; });
+  $("at-datos").innerHTML = o.map(function(v){ return '<span class="dato' + ((v < L.inf || v > L.sup) ? " atip" : "") + '">' + nm(v) + "</span>"; }).join("");
+  $("at-voz").textContent = T("Data: ", "Datos: ") + listaN(o) + ".";
+  $("at-svg").innerHTML = cajaSVG([{c: c, atip: at, bigMin: ok[0], bigMax: ok[ok.length - 1]}], T("Box plot with ", "Diagrama de caja con ") + (at.length ? T("outliers ", "valores atípicos ") + listaN(at) : T("no outliers", "ningún valor atípico")));
+  $("at-salida").innerHTML = '<div class="linea">Q1 = ' + nm(c.q1) + ", Q3 = " + nm(c.q3) + ", IQR = " + nm(L.iqr) + T(", and 1.5 × IQR = ", ", y 1.5 × IQR = ") + nm(1.5 * L.iqr) + ".</div>" +
+    '<div class="linea">' + T("Lower limit: ", "Límite inferior: ") + nm(c.q1) + " − " + nm(1.5 * L.iqr) + " = <strong>" + nm(L.inf) + "</strong>. " + T("Upper limit: ", "Límite superior: ") + nm(c.q3) + " + " + nm(1.5 * L.iqr) + " = <strong>" + nm(L.sup) + "</strong>.</div>" +
+    '<div class="linea veredicto">' + (at.length ? T("Outliers: " + listaN(at) + ", outside the limits.", "Valores atípicos: " + listaN(at) + ", fuera de los límites.") : T("No value is outside the limits: there are no outliers.", "Ningún dato queda fuera de los límites: no hay valores atípicos.")) + "</div>";
+}
+function nuevoAT(){ pintaAT(AT_COLA.length ? AT_COLA.shift() : datosConAtipico()); }
+function genLimite(){
+  var q1 = 2 * aleatorio(5, 30), q3 = q1 + 2 * aleatorio(3, 20), iqr = q3 - q1, sup = Math.random() < 0.6, res = sup ? q3 + 1.5 * iqr : q1 - 1.5 * iqr;
+  var pistas = [{v: sup ? q3 + iqr : q1 - iqr, msg: T("You forgot to multiply the IQR by 1.5.", "Faltó multiplicar el IQR por 1.5.")}, {v: sup ? q1 + 1.5 * iqr : q3 - 1.5 * iqr, msg: sup ? T("The upper limit starts from Q3.", "El límite superior se calcula desde Q3.") : T("The lower limit starts from Q1.", "El límite inferior se calcula desde Q1.")}, {v: 1.5 * iqr, msg: sup ? T("That is 1.5 × IQR: add it to Q3.", "Ese es 1.5 × IQR: falta sumárselo a Q3.") : T("That is 1.5 × IQR: subtract it from Q1.", "Ese es 1.5 × IQR: falta restárselo a Q1.")}];
+  return {enun: T("With Q1 = " + q1 + " and Q3 = " + q3 + ", what is the " + (sup ? "upper" : "lower") + " limit for outliers?", "Con Q1 = " + q1 + " y Q3 = " + q3 + ", ¿cuál es el límite " + (sup ? "superior" : "inferior") + " para los valores atípicos?"),
+    solucion: "IQR = " + q3 + " − " + q1 + " = " + iqr + "; 1.5 × " + iqr + " = " + nm(1.5 * iqr) + "; " + (sup ? q3 + " + " + nm(1.5 * iqr) : q1 + " − " + nm(1.5 * iqr)) + " = " + nm(res) + ".",
+    evalua: function(v){ var r = evaluaDec(v, res, pistas); if (r.estado === "mal" && !pistas.some(function(p){ return p.msg === r.msg; })) r.msg = sup ? T("Upper limit = Q3 + 1.5 × IQR.", "Límite superior = Q3 + 1.5 × IQR.") : T("Lower limit = Q1 − 1.5 × IQR.", "Límite inferior = Q1 − 1.5 × IQR."); return r; }};
+}
+
+/* MODULE 5 · Comparing two groups */
+function genComparar(){
+  var A = cincoMultiplos(), B2 = cincoMultiplos(), tp = aleatorio(1, 4), pregunta, va, vb, bien, pista;
+  if (tp === 1){ pregunta = T("Which group has the higher median?", "¿Qué grupo tiene la mediana más alta?"); va = A.med; vb = B2.med; bien = T("Median of A: " + A.med + "; of B: " + B2.med + ".", "Mediana de A: " + A.med + "; de B: " + B2.med + "."); pista = T("Compare the red lines.", "Compare las rayas rojas."); }
+  else if (tp === 2){ pregunta = T("Which group has more variability in the middle 50% (a larger IQR)?", "¿Qué grupo tiene mayor variabilidad en el 50% central (mayor IQR)?"); va = A.q3 - A.q1; vb = B2.q3 - B2.q1; bien = T("IQR of A: ", "IQR de A: ") + A.q3 + " − " + A.q1 + " = " + va + T("; of B: ", "; de B: ") + B2.q3 + " − " + B2.q1 + " = " + vb + "."; pista = T("Compare the widths of the boxes.", "Compare el ancho de las cajas."); }
+  else if (tp === 3){ pregunta = T("Which group has the greater range?", "¿Qué grupo tiene el mayor rango?"); va = A.max - A.min; vb = B2.max - B2.min; bien = T("Range of A: " + va + "; of B: " + vb + ".", "Rango de A: " + va + "; de B: " + vb + "."); pista = T("The range goes from the end of one whisker to the end of the other.", "El rango va del extremo de un bigote al extremo del otro."); }
+  else { pregunta = T("Which group is more consistent (its middle data are closer together)?", "¿Qué grupo es más consistente (sus datos centrales están más juntos)?"); va = -(A.q3 - A.q1); vb = -(B2.q3 - B2.q1); bien = T("The more consistent group has the narrower box. IQR of A: " + (-va) + "; of B: " + (-vb) + ".", "El más consistente tiene la caja más angosta. IQR de A: " + (-va) + "; de B: " + (-vb) + "."); pista = T("Look for the narrower box.", "Busque la caja más angosta."); }
+  var cl = va > vb ? "A" : (vb > va ? "B" : "=");
+  return {enun: pregunta + cajaSVG([{nombre: "A", c: A, color: "#37474f"}, {nombre: "B", c: B2, color: "#6a1b9a", relleno: "#f3e5f5"}], T("Two box plots on the same scale. Group A: minimum ", "Dos diagramas de caja sobre la misma escala. Grupo A: mínimo ") + A.min + ", Q1 " + A.q1 + T(", median ", ", mediana ") + A.med + ", Q3 " + A.q3 + T(", maximum ", ", máximo ") + A.max + T(". Group B: minimum ", ". Grupo B: mínimo ") + B2.min + ", Q1 " + B2.q1 + T(", median ", ", mediana ") + B2.med + ", Q3 " + B2.q3 + T(", maximum ", ", máximo ") + B2.max + "."),
+    opciones: [{html: T("Group A", "El grupo A"), clave: "A"}, {html: T("Group B", "El grupo B"), clave: "B"}, {html: T("Both are the same", "Los dos por igual"), clave: "="}], correcta: cl, porClave: {}, pista: pista, bien: bien, mal: bien};
+}
+
+/* Start */
+var CVS = pasoAPaso("cv", []);
+$("cv-nuevo").addEventListener("click", nuevoCV); nuevoCV();
+creaPracticaLibre("p1", genCinco);
+[0, 1, 2, 3, 4].forEach(function(i){ $("cd-" + i).addEventListener("input", pintaCD); }); pintaCD();
+OMR("p2", genLeer);
+$("iq-max").addEventListener("input", pintaIQ); pintaIQ();
+OMR("p3", genIQR);
+$("at-nuevo").addEventListener("click", nuevoAT); nuevoAT();
+creaPracticaLibre("p4", genLimite);
+OMR("p5", genComparar);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

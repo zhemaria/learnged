@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 7.1 · practice (English) — built by tools/build_n3_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.1 · Volume of prisms and cylinders · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 7 · Volume and data analysis</div>
+    <h1>Lesson 7.1 · Volume of prisms and cylinders</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#prisms">Volume of prisms</a></li>
+      <li><a href="#cylinders">Volume of cylinders</a></li>
+      <li><a href="#solve">Solving for the height or the radius</a></li>
+      <li><a href="#capacity">Capacity and storage</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="prisms" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Volume of prisms</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Volume is the space an object takes up. For prisms and cylinders it is always found with the same idea: the area of the base times the height. The answer is in cubic units (in³, ft³).</p>
+      <div class="formula">V = area of the base × height</div>
+      <h3>The box in layers</h3>
+      <p>Each small cube measures 1 unit on each side. The base has length × width small cubes, and you stack as many layers as the height says. Turn the box to see it from another side.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:150px;"><label for="cj-l">Length: <span id="cj-lv"></span></label><input type="range" id="cj-l" min="1" max="7" step="1" value="5"></div>
+        <div class="campo" style="flex:1;min-width:150px;"><label for="cj-w">Width: <span id="cj-wv"></span></label><input type="range" id="cj-w" min="1" max="6" step="1" value="3"></div>
+        <div class="campo" style="flex:1;min-width:150px;"><label for="cj-h">Height: <span id="cj-hv"></span></label><input type="range" id="cj-h" min="1" max="6" step="1" value="4"></div>
+        <div class="campo" style="flex:1;min-width:150px;"><label for="cj-g">Turn: <span id="cj-gv"></span></label><input type="range" id="cj-g" min="10" max="80" step="1" value="30"></div></div></div>
+      <div id="cj-svg"></div>
+      <div class="salida" aria-live="polite" id="cj-salida"></div>
+      <div class="caja-tip"><strong>Triangular prism:</strong> the base is a triangle. First find its area (base × height ÷ 2), then multiply by the length of the prism.</div>
+      <h3>Practice: volume of prisms</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cylinders">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Volume of cylinders</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>In a cylinder, the base is a circle with radius r, and its area is πr². So:</p>
+      <div class="formula">V = πr²h</div>
+      <p>Use π ≈ 3.14 or the π key on the calculator. You can also leave the answer <strong>exact</strong>, with π: for example, 20π.</p>
+      <h3>Cylinder calculator</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:180px;"><label for="ci-r">Radius: <span id="ci-rv"></span></label><input type="range" id="ci-r" min="0.5" max="6" step="0.5" value="2"></div>
+        <div class="campo" style="flex:1;min-width:180px;"><label for="ci-h">Height: <span id="ci-hv"></span></label><input type="range" id="ci-h" min="1" max="12" step="0.5" value="5"></div></div></div>
+      <div id="ci-svg"></div>
+      <div class="salida" aria-live="polite" id="ci-salida"></div>
+      <div class="caja-atencion"><strong>Square only the radius:</strong> in πr²h the exponent applies only to r. And if the problem gives the <strong>diameter</strong>, divide it by 2 first to get the radius.</div>
+      <h3>Practice: volume of a cylinder</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Volume</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 and round to the nearest tenth, or type the exact answer with π, like 20π.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="solve">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Solving for the height or the radius</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>If you know the volume and one measure is missing, solve for it as in Topic 5: the height is the volume divided by the area of the base. For the radius of a cylinder, divide by πh and then take the square root.</p>
+      <div class="formula">h = <span class="fracc"><span class="fa">V</span><span class="fb2">area of the base</span></span>&nbsp;&nbsp;&nbsp;&nbsp; r = √<span class="fracc"><span class="fa">V</span><span class="fb2">πh</span></span></div>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <p class="enun" id="dj-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="dj-sig"></button><button type="button" class="btn-sec" id="dj-todo">Show all the steps</button><button type="button" class="btn-sec" id="dj-nuevo">Another example</button></div>
+      </div>
+      <div class="pasos" id="dj-pasos" aria-live="polite"></div>
+      <h3>Practice: find the missing measure</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Measure</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type the number; if it is not exact, round to the nearest tenth.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="capacity">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Capacity and storage</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Volume answers real questions: how much water fits in a tank, or how much concrete a column takes. To go from volume to capacity, use these facts:</p>
+      <table class="reglas"><caption>Volume and capacity facts</caption>
+        <thead><tr><th scope="col">Volume</th><th scope="col">Equals</th></tr></thead>
+        <tbody><tr><td>1 cubic foot</td><td>1,728 cubic inches (12 × 12 × 12)</td></tr>
+        <tr><td>1 cubic foot</td><td>about 7.48 gallons</td></tr>
+        <tr><td>231 cubic inches</td><td>1 gallon</td></tr>
+        <tr><td>1 cubic yard</td><td>27 cubic feet (3 × 3 × 3)</td></tr></tbody></table>
+      <div class="caja-tip"><strong>Every measure in the same unit:</strong> if the radius is in inches and the height is in feet, convert everything to one unit first.</div>
+      <h3>Practice: capacity problems</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Result</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Round to the nearest whole number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 7 · Volume and data analysis · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script>
+var UN = {in: T("inches", "pulgadas"), ft: T("feet", "pies"), in3: T("cubic inches", "pulgadas cúbicas"), ft3: T("cubic feet", "pies cúbicos"), gal: T("gallons", "galones")};
+/* MODULE 1 · A box in layers, in perspective */
+function pintaCaja(){
+  var l = +$("cj-l").value, w = +$("cj-w").value, h = +$("cj-h").value, g = rad(+$("cj-g").value), phi = rad(28);
+  ["l", "w", "h"].forEach(function(k){ $("cj-" + k + "v").textContent = $("cj-" + k).value; }); $("cj-gv").textContent = $("cj-g").value + "°";
+  var cg = Math.cos(g), sg = Math.sin(g), cp = Math.cos(phi), sp = Math.sin(phi);
+  function prj(p){ var x = p[0] - l / 2, y = p[1] - w / 2, z = p[2]; var xr = x * cg - y * sg, yr = x * sg + y * cg; return [xr, z * cp + yr * sp]; }
+  var caras = [
+    {n: [0, -1, 0], p: function(u, v){ return [u, 0, v]; }, U: l, V: h, col: "#b8c4ca"},
+    {n: [0, 1, 0], p: function(u, v){ return [u, w, v]; }, U: l, V: h, col: "#b8c4ca"},
+    {n: [-1, 0, 0], p: function(u, v){ return [0, u, v]; }, U: w, V: h, col: "#80deea"},
+    {n: [1, 0, 0], p: function(u, v){ return [l, u, v]; }, U: w, V: h, col: "#80deea"},
+    {n: [0, 0, 1], p: function(u, v){ return [u, v, h]; }, U: l, V: w, col: "#cfd8dc"},
+    {n: [0, 0, -1], p: function(u, v){ return [u, v, 0]; }, U: l, V: w, col: "#cfd8dc"}];
+  var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  caras.forEach(function(c){ [[0, 0], [c.U, 0], [c.U, c.V], [0, c.V]].forEach(function(q){ var p = prj(c.p(q[0], q[1])); minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]); minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]); }); });
+  var esc = Math.min(420 / (maxX - minX), 260 / (maxY - minY)), ox = 320 - (minX + maxX) / 2 * esc, oy = 150 + (minY + maxY) / 2 * esc;
+  function V(p){ var q = prj(p); return [ox + q[0] * esc, oy - q[1] * esc]; }
+  var s = '<svg class="geo-svg" viewBox="0 0 640 300" role="img" aria-label="' + T("A box " + l + " by " + w + " by " + h + " small cubes: " + (l * w * h) + " in all.", "Caja de " + l + " por " + w + " por " + h + " cubitos: " + (l * w * h) + " en total.") + '">';
+  caras.forEach(function(c){
+    var yr = c.n[0] * sg + c.n[1] * cg, d = yr * cp - c.n[2] * sp;
+    if (!(d < 0)) return;
+    var pts = [[0, 0], [c.U, 0], [c.U, c.V], [0, c.V]].map(function(q){ return V(c.p(q[0], q[1])); });
+    s += '<polygon points="' + pts.map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c.col + '" stroke="#37474f" stroke-width="2.5"/>';
+    for (var u = 1; u < c.U; u++) s += lineaG(V(c.p(u, 0)), V(c.p(u, c.V)), "#00838f", 1);
+    for (var v = 1; v < c.V; v++) s += lineaG(V(c.p(0, v)), V(c.p(c.U, v)), "#00838f", 1);
+  });
+  $("cj-svg").innerHTML = s + "</svg>";
+  $("cj-salida").innerHTML = '<div class="linea">' + T("One layer (the base) has " + l + " × " + w + " = " + (l * w) + " small cubes: that is the area of the base.", "Una capa (la base) tiene " + l + " × " + w + " = " + (l * w) + " cubitos: es el área de la base.") + "</div>" +
+    '<div class="linea">' + T("There " + (h === 1 ? "is 1 layer" : "are " + h + " layers") + ": ", "Hay " + h + (h === 1 ? " capa" : " capas") + ": ") + (l * w) + " × " + h + " = <strong>" + (l * w * h) + "</strong>" + T(" small cubes.", " cubitos.") + "</div>" +
+    '<div class="linea veredicto">V = ' + l + " × " + w + " × " + h + " = " + (l * w * h) + T(" cubic units", " unidades cúbicas") + "</div>";
+}
+function genPrisma(){
+  var tp = aleatorio(1, 3), o, pc = {};
+  if (tp === 1){ var l = aleatorio(2, 9), w = aleatorio(2, 8), h = aleatorio(2, 9), V = l * w * h;
+    o = [opN(V), opN(l + w + h), opN(l * w), opN(2 * (l * w + l * h + w * h))]; pc["n" + (l + w + h)] = T("Multiply the measures; do not add them.", "Las medidas se multiplican, no se suman."); pc["n" + (l * w)] = T("That is the area of the base: multiply by the height too.", "Ese es el área de la base: falta multiplicar por la altura."); pc["n" + 2 * (l * w + l * h + w * h)] = T("That is the surface area, not the volume.", "Esa es el área de la superficie, no el volumen.");
+    return {enun: T("A box is " + l + " inches long, " + w + " inches wide, and " + h + " inches high. What is its volume in cubic inches?", "Una caja mide " + l + " pulgadas de largo, " + w + " de ancho y " + h + " de alto. ¿Cuál es su volumen en pulgadas cúbicas?"), opciones: o, correcta: "n" + V, porClave: pc,
+      pista: T("Volume of a box: length × width × height.", "Volumen de una caja: largo × ancho × alto."), bien: l + " × " + w + " × " + h + " = " + V + T(" in³.", " pulg³."), mal: "V = " + l + " × " + w + " × " + h + " = " + V + T(" in³.", " pulg³.")}; }
+  if (tp === 2){ var a = aleatorio(2, 9), V2 = a * a * a;
+    o = [opN(V2), opN(a * a), opN(3 * a), opN(6 * a * a)]; pc["n" + a * a] = T("That is the area of one face.", "Eso es el área de una cara."); pc["n" + 3 * a] = T("Multiply the side by itself three times; do not multiply by 3.", "Se multiplica el lado tres veces por sí mismo, no por 3."); pc["n" + 6 * a * a] = T("That is the surface area of the cube.", "Esa es el área de la superficie del cubo.");
+    return {enun: T("What is the volume of a cube with sides of " + a + " inches?", "¿Cuál es el volumen de un cubo de " + a + " pulgadas de lado?"), opciones: o, correcta: "n" + V2, porClave: pc,
+      pista: T("A cube is a box whose length, width, and height are equal.", "Un cubo es una caja con el largo, el ancho y el alto iguales."), bien: a + " × " + a + " × " + a + " = " + V2 + T(" in³.", " pulg³."), mal: "V = " + a + "³ = " + V2 + T(" in³.", " pulg³.")}; }
+  var b = aleatorio(2, 8) * 2, ht = aleatorio(2, 7), L = aleatorio(3, 12), A = b * ht / 2, V3 = A * L;
+  o = [opN(V3), opN(b * ht * L), opN(A), opN(b + ht + L)]; pc["n" + b * ht * L] = T("The area of the triangle is base × height ÷ 2: you forgot to divide by 2.", "El área del triángulo es base × altura ÷ 2: faltó dividir entre 2."); pc["n" + A] = T("That is the area of the base. Multiply by the length of the prism.", "Ese es el área de la base. Falta multiplicar por el largo del prisma.");
+  return {enun: T("A prism has a triangular base with a base of " + b + " inches and a height of " + ht + " inches, and the prism is " + L + " inches long. What is its volume in cubic inches?", "Un prisma tiene como base un triángulo de base " + b + " pulgadas y altura " + ht + " pulgadas, y mide " + L + " pulgadas de largo. ¿Cuál es su volumen en pulgadas cúbicas?"), opciones: o, correcta: "n" + V3, porClave: pc,
+    pista: T("First the area of the triangle (base × height ÷ 2), then times the length.", "Primero el área del triángulo (base × altura ÷ 2) y después por el largo."),
+    bien: T("Area of the base: ", "Área de la base: ") + b + " × " + ht + " ÷ 2 = " + A + T(". Volume: ", ". Volumen: ") + A + " × " + L + " = " + V3 + T(" in³.", " pulg³."), mal: T("Area of the base: ", "Área de la base: ") + b + " × " + ht + " ÷ 2 = " + A + "; V = " + A + " × " + L + " = " + V3 + T(" in³.", " pulg³.")};
+}
+
+/* MODULE 2 · Cylinder */
+function pintaCil(){
+  var r = +$("ci-r").value, h = +$("ci-h").value;
+  $("ci-rv").textContent = nm(r); $("ci-hv").textContent = nm(h);
+  var esc = Math.min(160 / r, 220 / h, 40), R = r * esc, Hh = h * esc, cx = 300, yt = 150 - Hh / 2, yb = 150 + Hh / 2, ry = Math.max(R * 0.3, 6);
+  var s = '<svg class="geo-svg" viewBox="0 0 640 310" role="img" aria-label="' + T("Cylinder with radius " + nm(r) + " and height " + nm(h) + ".", "Cilindro de radio " + nm(r) + " y altura " + nm(h) + ".") + '">';
+  s += '<path d="M' + f1(cx - R) + " " + f1(yt) + " L" + f1(cx - R) + " " + f1(yb) + " A" + f1(R) + " " + f1(ry) + " 0 0 0 " + f1(cx + R) + " " + f1(yb) + " L" + f1(cx + R) + " " + f1(yt) + '" fill="#b8c4ca" stroke="#37474f" stroke-width="2.5"/>';
+  s += '<path d="M' + f1(cx - R) + " " + f1(yb) + " A" + f1(R) + " " + f1(ry) + " 0 0 1 " + f1(cx + R) + " " + f1(yb) + '" fill="none" stroke="#37474f" stroke-width="1.5" stroke-dasharray="5 4"/>';
+  s += '<ellipse cx="' + cx + '" cy="' + f1(yt) + '" rx="' + f1(R) + '" ry="' + f1(ry) + '" fill="#cfd8dc" stroke="#37474f" stroke-width="2.5"/>';
+  s += lineaG([cx, yt], [cx + R, yt], "#b71c1c", 3) + textoA([cx + R / 2, yt - ry - 10], "r = " + nm(r), 18, "#b71c1c");
+  s += lineaG([cx + R + 22, yt], [cx + R + 22, yb], "#0d47a1", 2) + textoA([cx + R + 30, (yt + yb) / 2], "h = " + nm(h), 18, "#0d47a1", 700, "start");
+  $("ci-svg").innerHTML = s + "</svg>";
+  var rr = r * r, base = PI * rr, V = base * h;
+  $("ci-salida").innerHTML = '<div class="linea">' + T("First the radius squared: r² = ", "Primero el radio al cuadrado: r² = ") + nm(r) + "² = " + nm(rr) + ".</div>" +
+    '<div class="linea">' + T("Area of the base: ", "Área de la base: ") + "π × " + nm(rr) + " ≈ 3.14 × " + nm(rr) + " = " + nm(r2(base)) + ".</div>" +
+    '<div class="linea">' + T("Times the height: ", "Por la altura: ") + nm(r2(base)) + " × " + nm(h) + " ≈ <strong>" + nm(r2(V)) + "</strong>.</div>" +
+    '<div class="linea veredicto">V = ' + nm(rr * h) + "π " + T("(exact)", "(exacto)") + " ≈ " + nm(r1(V)) + T(" cubic units", " unidades cúbicas") + "</div>";
+}
+function genCilindro(){
+  var r = aleatorio(1, 9), h = aleatorio(2, 12), diam = Math.random() < 0.3, k = r * r * h;
+  var enun = T("A cylinder has " + (diam ? "a diameter of " + (2 * r) : "a radius of " + r) + " inches and a height of " + h + " inches. What is its volume in cubic inches?", "Un cilindro tiene " + (diam ? "un diámetro de " + (2 * r) : "un radio de " + r) + " pulgadas y una altura de " + h + " pulgadas. ¿Cuál es su volumen en pulgadas cúbicas?");
+  var pistas = [{v: 3.14 * r * h, msg: T("You forgot to square the radius.", "Faltó elevar el radio al cuadrado.")}, {v: 3.14 * 2 * r * h, msg: T("That looks like the lateral area (2πrh), not the volume.", "Eso se parece al área lateral (2πrh), no al volumen.")}, {v: r1(3.14 * r * r), msg: T("That is the area of the base: multiply by the height too.", "Ese es el área de la base: falta multiplicar por la altura.")}];
+  if (diam) pistas.unshift({v: 3.14 * 4 * r * r * h, msg: T("You used the diameter as the radius: divide it by 2 first.", "Se usó el diámetro como radio: primero hay que dividirlo entre 2.")}, {v: 4 * r * r * h * Math.PI, msg: T("You used the diameter as the radius: divide it by 2 first.", "Se usó el diámetro como radio: primero hay que dividirlo entre 2.")});
+  return {enun: enun, solucion: (diam ? T("The radius is ", "El radio es ") + (2 * r) + " ÷ 2 = " + r + ". " : "") + "V = π × " + r + "² × " + h + " = " + k + "π ≈ " + nm(r1(3.14 * k)) + T(" in³.", " pulg³."),
+    evalua: function(v){ return evaluaPi(v, k, pistas); }};
+}
+
+/* MODULE 3 · Solving */
+function problemaDespeje(tp){
+  if (tp === undefined) tp = aleatorio(1, 4);
+  if (tp === 1){ var A = aleatorio(4, 30), h = aleatorio(2, 12), V = A * h;
+    return {txt: T("A prism has a volume of " + V + " cubic inches and a base with an area of " + A + " square inches. What is its height, in inches?", "Un prisma tiene un volumen de " + V + " pulgadas cúbicas y una base de área " + A + " pulgadas cuadradas. ¿Cuál es su altura, en pulgadas?"), res: h, mal: [{v: V * A, msg: T("You multiplied. To solve for the height, divide.", "Multiplicó. Para despejar la altura se divide.")}, {v: V - A, msg: T("You subtracted. Divide the volume by the area of the base.", "Restó. Hay que dividir el volumen entre el área de la base.")}],
+      pasos: [T("Start from V = area of the base × height: ", "Se parte de V = área de la base × altura: ") + V + " = " + A + " × h.", T("Divide both sides by " + A + ": h = ", "Se divide entre " + A + " en ambos lados: h = ") + V + " ÷ " + A + ".", '<span class="veredicto">h = ' + h + " " + UN.in + "</span>"]}; }
+  if (tp === 2){ var l = aleatorio(2, 10), w = aleatorio(2, 8), hh = aleatorio(2, 9), V2 = l * w * hh;
+    return {txt: T("A box has a volume of " + V2 + " cubic inches, a length of " + l + " inches, and a width of " + w + " inches. What is its height, in inches?", "Una caja tiene un volumen de " + V2 + " pulgadas cúbicas, un largo de " + l + " pulgadas y un ancho de " + w + " pulgadas. ¿Cuál es su altura, en pulgadas?"), res: hh, mal: [{v: V2 / l, msg: T("Divide by the whole base, " + l + " × " + w + ", not only by the length.", "Se divide entre toda la base, " + l + " × " + w + ", no solo entre el largo.")}, {v: V2 / w, msg: T("Divide by the whole base, " + l + " × " + w + ", not only by the width.", "Se divide entre toda la base, " + l + " × " + w + ", no solo entre el ancho.")}],
+      pasos: [T("The area of the base is ", "El área de la base es ") + l + " × " + w + " = " + (l * w) + T(" square inches.", " pulgadas cuadradas."), T("Divide the volume by the area of the base: h = ", "Se divide el volumen entre el área de la base: h = ") + V2 + " ÷ " + (l * w) + ".", '<span class="veredicto">h = ' + hh + " " + UN.in + "</span>"]}; }
+  if (tp === 3){ var r = aleatorio(1, 6), hc = aleatorio(2, 10), V3 = r2(3.14 * r * r * hc);
+    return {txt: T("A cylinder has a volume of " + nm(V3) + " cubic inches and a radius of " + r + " inches. What is its height, in inches? (π ≈ 3.14)", "Un cilindro tiene un volumen de " + nm(V3) + " pulgadas cúbicas y un radio de " + r + " pulgadas. ¿Cuál es su altura, en pulgadas? (π ≈ 3.14)"), res: hc, mal: [{v: V3 / (3.14 * r), msg: T("Square the radius before you divide: the base is π × r².", "Eleve el radio al cuadrado antes de dividir: la base es π × r².")}],
+      pasos: [T("The area of the base is ", "El área de la base es ") + "3.14 × " + r + "² = 3.14 × " + (r * r) + " = " + nm(r2(3.14 * r * r)) + T(" square inches.", " pulgadas cuadradas."), T("Divide the volume by the area of the base: h = ", "Se divide el volumen entre el área de la base: h = ") + nm(V3) + " ÷ " + nm(r2(3.14 * r * r)) + ".", '<span class="veredicto">h = ' + hc + " " + UN.in + "</span>"]}; }
+  var rr = aleatorio(2, 7), h4 = aleatorio(2, 10), V4 = r2(3.14 * rr * rr * h4);
+  return {txt: T("A cylinder has a volume of " + nm(V4) + " cubic inches and a height of " + h4 + " inches. What is its radius, in inches? (π ≈ 3.14)", "Un cilindro tiene un volumen de " + nm(V4) + " pulgadas cúbicas y una altura de " + h4 + " pulgadas. ¿Cuál es su radio, en pulgadas? (π ≈ 3.14)"), res: rr, mal: [{v: rr * rr, msg: T("That is r². Take the square root.", "Ese es r². Falta sacar la raíz cuadrada.")}],
+    pasos: [T("Divide the volume by πh: r² = ", "Se divide el volumen entre πh: r² = ") + nm(V4) + " ÷ (3.14 × " + h4 + ") = " + nm(V4) + " ÷ " + nm(r2(3.14 * h4)) + " = " + (rr * rr) + ".", T("Take the square root: r = ", "Se saca la raíz cuadrada: r = ") + "√" + (rr * rr) + ".", '<span class="veredicto">r = ' + rr + " " + UN.in + "</span>"]};
+}
+var DJ_COLA = [1, 3, 4];
+function nuevoDJ(){ var q = problemaDespeje(DJ_COLA.length ? DJ_COLA.shift() : undefined); $("dj-enun").textContent = q.txt; DJS.carga(q.pasos); }
+function genDespeje(){
+  var q = problemaDespeje();
+  return {enun: q.txt, solucion: q.pasos.map(function(p){ return p.replace(/<[^>]+>/g, ""); }).join(" "),
+    evalua: function(v){ var r = evaluaDec(v, q.res, q.mal, 0.051); if (r.estado === "mal" && !q.mal.some(function(p){ return p.msg === r.msg; })) r.msg = T("Divide the volume by the area of the base.", "Divida el volumen entre el área de la base."); return r; }};
+}
+
+/* MODULE 4 · Capacity */
+function genCapacidad(){
+  var tp = aleatorio(1, 5), enun, res, sol, pistas = [];
+  if (tp === 1){ var r = elige([1, 1.5, 2, 2.5, 3]), h = elige([2, 3, 4, 5, 6]), V = 3.14 * r * r * h; res = Math.round(V * 7.48);
+    enun = T("A cylindrical tank has a radius of " + nm(r) + " feet and a height of " + h + " feet. About how many gallons of water fit? (π ≈ 3.14; 1 cubic foot ≈ 7.48 gallons)", "Un tanque cilíndrico tiene un radio de " + nm(r) + " pies y una altura de " + h + " pies. ¿Cuántos galones de agua caben, aproximadamente? (π ≈ 3.14; 1 pie cúbico ≈ 7.48 galones)");
+    sol = "V = 3.14 × " + nm(r) + "² × " + h + " ≈ " + nm(r2(V)) + T(" cubic feet; × 7.48 ≈ " + res + " gallons.", " pies cúbicos; × 7.48 ≈ " + res + " galones."); pistas.push({v: V, tol: 0.6, msg: T("That is the volume in cubic feet. Now convert it to gallons.", "Ese es el volumen en pies cúbicos. Falta pasarlo a galones.")}); }
+  else if (tp === 2){ var l = elige([20, 24, 30, 36]), w = elige([10, 12, 15]), hh = elige([12, 16, 18, 20]), Vi = l * w * hh; res = Math.round(Vi / 231);
+    enun = T("A fish tank is " + l + " inches long, " + w + " inches wide, and " + hh + " inches high. About how many gallons fit? (1 gallon = 231 cubic inches)", "Una pecera mide " + l + " pulgadas de largo, " + w + " de ancho y " + hh + " de alto. ¿Cuántos galones caben, aproximadamente? (1 galón = 231 pulgadas cúbicas)");
+    sol = "V = " + l + " × " + w + " × " + hh + " = " + com(Vi) + T(" cubic inches; ", " pulgadas cúbicas; ") + com(Vi) + " ÷ 231 ≈ " + res + T(" gallons.", " galones."); pistas.push({v: Vi, msg: T("That is the volume in cubic inches. Divide by 231 to get gallons.", "Ese es el volumen en pulgadas cúbicas. Divida entre 231 para pasarlo a galones.")}); }
+  else if (tp === 3){ var L = elige([10, 12, 15, 20]), A = elige([5, 6, 8]), P = elige([1, 1.5, 2]), Vp = L * A * P; res = Math.round(Vp * 7.48);
+    enun = T("A rectangular wading pool is " + L + " feet long, " + A + " feet wide, and " + nm(P) + " feet deep. About how many gallons fit? (1 cubic foot ≈ 7.48 gallons)", "Una piscina rectangular para niños mide " + L + " pies de largo, " + A + " de ancho y " + nm(P) + " de profundidad. ¿Cuántos galones caben, aproximadamente? (1 pie cúbico ≈ 7.48 galones)");
+    sol = "V = " + L + " × " + A + " × " + nm(P) + " = " + nm(Vp) + T(" cubic feet; × 7.48 ≈ " + res + " gallons.", " pies cúbicos; × 7.48 ≈ " + res + " galones."); pistas.push({v: Vp, msg: T("That is the volume in cubic feet. Multiply by 7.48 to get gallons.", "Ese es el volumen en pies cúbicos. Multiplique por 7.48 para pasarlo a galones.")}); }
+  else if (tp === 4){ var rc = elige([6, 9, 12]), hm = elige([8, 9, 10, 12]), Vc = 3.14 * (rc / 12) * (rc / 12) * hm; res = Math.round(Vc);
+    enun = T("A cylindrical concrete column has a radius of " + rc + " inches and a height of " + hm + " feet. About how many cubic feet of concrete does it take? (π ≈ 3.14; change the radius to feet first)", "Una columna cilíndrica de concreto tiene un radio de " + rc + " pulgadas y una altura de " + hm + " pies. ¿Cuántos pies cúbicos de concreto lleva, aproximadamente? (π ≈ 3.14; primero pase el radio a pies)");
+    sol = T("The radius is " + rc + " inches = " + nm(rc / 12) + " feet. ", "El radio es " + rc + " pulgadas = " + nm(rc / 12) + " pies. ") + "V = 3.14 × " + nm(rc / 12) + "² × " + hm + " ≈ " + nm(r2(Vc)) + T(" cubic feet, about " + res + ".", " pies cúbicos, unos " + res + "."); pistas.push({v: 3.14 * rc * rc * hm, tol: 1, msg: T("The radius is in inches and the height in feet. Change the radius to feet first: divide by 12.", "El radio está en pulgadas y la altura en pies. Primero pase el radio a pies: divida entre 12.")}); }
+  else { var lc = elige([24, 36, 48]), wc = elige([12, 18, 24]), hc = elige([12, 18, 24]), Vl = lc * wc * hc; res = Math.round(Vl / 1728);
+    enun = T("A storage box is " + lc + " inches long, " + wc + " inches wide, and " + hc + " inches high. About how many cubic feet does it hold? (1 cubic foot = 1,728 cubic inches)", "Una caja para guardar cosas mide " + lc + " pulgadas de largo, " + wc + " de ancho y " + hc + " de alto. ¿Cuántos pies cúbicos le caben, aproximadamente? (1 pie cúbico = 1,728 pulgadas cúbicas)");
+    sol = "V = " + lc + " × " + wc + " × " + hc + " = " + com(Vl) + T(" cubic inches; ÷ 1,728 = ", " pulgadas cúbicas; ÷ 1,728 = ") + nm(r2(Vl / 1728)) + T(" cubic feet, about " + res + ".", " pies cúbicos, unos " + res + "."); pistas.push({v: Vl, msg: T("That is the volume in cubic inches. Divide by 1,728 to get cubic feet.", "Ese es el volumen en pulgadas cúbicas. Divida entre 1,728 para pasarlo a pies cúbicos.")}, {v: Vl / 12, tol: 1, msg: T("A cubic foot is 12 × 12 × 12 = 1,728 cubic inches, not 12.", "Un pie cúbico son 12 × 12 × 12 = 1,728 pulgadas cúbicas, no 12.")}); }
+  var tol = Math.max(0.6, res * 0.01);
+  return {enun: enun, solucion: sol, evalua: function(v){ var r = evaluaDec(v, res, pistas, tol); if (r.estado === "mal" && !pistas.some(function(p){ return p.msg === r.msg; })) r.msg = T("Find the volume first, then use the conversion in the problem.", "Calcule primero el volumen y después use la equivalencia del problema."); return r; }};
+}
+
+/* Start */
+["cj-l", "cj-w", "cj-h", "cj-g"].forEach(function(id){ $(id).addEventListener("input", pintaCaja); }); pintaCaja();
+OMR("p1", genPrisma);
+["ci-r", "ci-h"].forEach(function(id){ $(id).addEventListener("input", pintaCil); }); pintaCil();
+creaPracticaLibre("p2", genCilindro);
+var DJS = pasoAPaso("dj", []);
+$("dj-nuevo").addEventListener("click", nuevoDJ); nuevoDJ();
+creaPracticaLibre("p3", genDespeje);
+creaPracticaLibre("p4", genCapacidad);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

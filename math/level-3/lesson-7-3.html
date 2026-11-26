@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.3 · Math Level 3 (English) — built by tools/build_n3_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.3 · Histograms: make, read, and compare · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 7 — Volume and data analysis</p>
+<h1>Lesson 7.3 · Histograms: make, read, and compare</h1>
+<p class="lema">Make a histogram from a frequency table, describe the shape of a distribution, and choose between a histogram and a box plot.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📊</span> The shape of the data</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Tell</strong> a histogram from a bar graph (bars that touch = continuous data).</li>
+<li><strong>Make</strong> a histogram from a frequency table.</li>
+<li><strong>Describe</strong> the shape of a distribution (symmetric, skewed, unimodal, bimodal).</li>
+<li><strong>Compare</strong> a histogram with a box plot of the same data.</li>
+<li><strong>Choose</strong> the most useful graph for each situation.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.6.b</span> Represent, display, and interpret data involving one variable plots on the real number line including dot plots, histograms, and box plots.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.6.a</span> Represent, display, and interpret categorical data in bar graphs or circle graphs.</li><li><span class="std-cod std-base">Q.7.a</span> Calculate the mean, median, mode and range. Calculate a missing data value, given the average and all the missing data values but one, as well as calculating the average, given the frequency counts of all the data values, and calculating a weighted average.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.2.b</span> Represent real world problems visually.</li><li><span class="std-cod std-mp">MP.4.c</span> Display data or algebraic expressions graphically.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">6.SP.2</span> <span class="std-nivel">Level D</span> Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape.</li><li><span class="std-cod std-ccr">6.SP.4</span> <span class="std-nivel">Level D</span> Display numerical data in plots on a number line, including dot plots, histograms, and box plots.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Level D</span> Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-what-is">What is a histogram?</a></li>
+<li><a href="#s-build">Making a histogram</a></li>
+<li><a href="#s-shape">The shape of a distribution</a></li>
+<li><a href="#s-compare">Histogram versus box plot</a></li>
+<li><a href="#s-choose">Choosing the most useful display</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-what-is"><span aria-hidden="true" class="num-seccion">1</span>What is a histogram?</h2>
+<p>The box plot in Lesson 7.2 summarizes data with five numbers. The histogram gives another view: it shows how many data values fall in each interval, which reveals the whole shape of the distribution. Together, the two graphs give a richer picture of the same data set.</p>
+<p>A <strong>histogram</strong> groups the data into intervals and draws one bar for each, whose height is the <strong>frequency</strong> (how many data values fall in that interval). Unlike a bar graph, its bars touch, because they show continuous data.</p>
+<svg viewBox="0 0 490 250" role="img" aria-label="A histogram with five bars that touch, for the intervals 0–5, 5–10, 10–15, 15–20, and 20–25. Their frequencies are 2, 5, 8, 4, and 1." style="width:100%;max-width:490px;height:auto;display:block;margin:12px auto;"><line x1="70" y1="200" x2="470" y2="200" stroke="#e0e0e0"/><text x="62" y="205" font-size="14" text-anchor="end" fill="#424242">0</text><line x1="70" y1="160" x2="470" y2="160" stroke="#e0e0e0"/><text x="62" y="165" font-size="14" text-anchor="end" fill="#424242">2</text><line x1="70" y1="120" x2="470" y2="120" stroke="#e0e0e0"/><text x="62" y="125" font-size="14" text-anchor="end" fill="#424242">4</text><line x1="70" y1="80" x2="470" y2="80" stroke="#e0e0e0"/><text x="62" y="85" font-size="14" text-anchor="end" fill="#424242">6</text><line x1="70" y1="40" x2="470" y2="40" stroke="#e0e0e0"/><text x="62" y="45" font-size="14" text-anchor="end" fill="#424242">8</text><rect x="70" y="160" width="80" height="40" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="110.0" y="154" font-size="14" font-weight="700" text-anchor="middle" fill="#222">2</text><rect x="150" y="100" width="80" height="100" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="190.0" y="94" font-size="14" font-weight="700" text-anchor="middle" fill="#222">5</text><rect x="230" y="40" width="80" height="160" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="270.0" y="34" font-size="14" font-weight="700" text-anchor="middle" fill="#222">8</text><rect x="310" y="120" width="80" height="80" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="350.0" y="114" font-size="14" font-weight="700" text-anchor="middle" fill="#222">4</text><rect x="390" y="180" width="80" height="20" fill="#90a4ae" stroke="#37474f" stroke-width="2"/><text x="430.0" y="174" font-size="14" font-weight="700" text-anchor="middle" fill="#222">1</text><text x="70" y="218" font-size="14" text-anchor="middle" fill="#222">0</text><text x="150" y="218" font-size="14" text-anchor="middle" fill="#222">5</text><text x="230" y="218" font-size="14" text-anchor="middle" fill="#222">10</text><text x="310" y="218" font-size="14" text-anchor="middle" fill="#222">15</text><text x="390" y="218" font-size="14" text-anchor="middle" fill="#222">20</text><text x="470" y="218" font-size="14" text-anchor="middle" fill="#222">25</text><line x1="70" y1="200" x2="470" y2="200" stroke="#424242" stroke-width="2"/><line x1="70" y1="200" x2="70" y2="20" stroke="#424242" stroke-width="2"/><text x="22" y="110" font-size="14" font-weight="700" fill="#424242" text-anchor="middle" transform="rotate(-90 22 110)">Frequency</text><text x="270.0" y="240" font-size="14" font-weight="700" fill="#424242" text-anchor="middle">Intervals of the data</text></svg>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">A histogram is not a bar graph</span>
+<p>In a bar graph, the columns stand for separate categories and have spaces between them. In a histogram, the bars stand for intervals of continuous data and touch each other. That is the key difference when you need to tell them apart.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-build"><span aria-hidden="true" class="num-seccion">2</span>Making a histogram</h2>
+<p>Start from a frequency table: each row gives an interval and how many data values fall in it. The height of each bar is that frequency.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: a table shows that the interval 10–15 has a frequency of 8. How tall is its bar?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The height of the bar equals the frequency of the interval.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The bar for 10–15 reaches a height of <strong>8</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Intervals of the same width</span>
+<p>So that the histogram is easy to read, all the intervals should have the same width (for example, every 5 years). Then comparing the heights is the same as comparing the frequencies. Each interval includes its left end but not its right end: 10–15 includes 10 but not 15.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — The bars</h3></div>
+<p class="pregunta-int" id="t-p1">In a histogram, the bars are…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">separated</button>
+<button class="opcion" data-k="b" type="button">in a circle</button>
+<button class="opcion" data-k="c" type="button">touching each other</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — The vertical axis</h3></div>
+<p class="pregunta-int" id="t-p2">The vertical axis of a histogram shows…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">the name of each category</button>
+<button class="opcion" data-k="b" type="button">the frequency</button>
+<button class="opcion" data-k="c" type="button">the total</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — The height of a bar</h3></div>
+<p class="pregunta-int" id="t-p3">An interval with a frequency of 6 has a bar with a height of…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">6</button>
+<button class="opcion" data-k="b" type="button">3</button>
+<button class="opcion" data-k="c" type="button">12</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#build" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: making a histogram (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: making a histogram</span><span class="ei-sub">Count the data in each interval and draw the bars.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-shape"><span aria-hidden="true" class="num-seccion">3</span>The shape of a distribution</h2>
+<p>The great advantage of a histogram is that it shows the shape of the data at a glance. The shape is described with precise words:</p>
+<div aria-label="Shapes of a distribution (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Shapes of a distribution and what they look like</caption>
+<thead><tr><th scope="col">Shape</th><th scope="col">What it looks like</th></tr></thead>
+<tbody>
+<tr><td>Symmetric</td><td>The same shape on both sides of the center.</td></tr>
+<tr><td>Skewed right</td><td>A long tail toward the high values.</td></tr>
+<tr><td>Skewed left</td><td>A long tail toward the low values.</td></tr>
+<tr><td>Unimodal</td><td>One peak (one bar that is highest).</td></tr>
+<tr><td>Bimodal</td><td>Two separate peaks.</td></tr>
+<tr><td>Uniform</td><td>All the bars are about the same height; there is no clear peak.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: a histogram rises to a peak in the center and falls about the same way on both sides. What shape does it have?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>It has one peak.</strong> So it is unimodal.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The two sides are alike.</strong> So it is about symmetric.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> It is a <strong>unimodal</strong>, about <strong>symmetric</strong> distribution.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Skew is named by the tail</span>
+<p>Skew is named by the tail, not by the peak: “skewed right” has its peak on the left and a long tail toward the high values.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#shape" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the shape of a distribution (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the shape of a distribution</span><span class="ei-sub">Recognize symmetric, skewed, and bimodal distributions.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-compare"><span aria-hidden="true" class="num-seccion">4</span>Histogram versus box plot</h2>
+<p>The two graphs describe the same data from different angles. It helps to know when to use each one.</p>
+<div aria-label="Which graph shows it better (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">What each graph shows better</caption>
+<thead><tr><th scope="col">Question</th><th scope="col">Better display</th></tr></thead>
+<tbody>
+<tr><td>What is the detailed shape of the data?</td><td>Histogram</td></tr>
+<tr><td>What are the quartiles and the outliers?</td><td>Box plot</td></tr>
+<tr><td>Are there one or two peaks?</td><td>Histogram</td></tr>
+<tr><td>How spread out is the middle half?</td><td>Box plot</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A long tail</h3></div>
+<p class="pregunta-int" id="t-p4">A histogram with a long tail toward the high values is…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">skewed left</button>
+<button class="opcion" data-k="b" type="button">symmetric</button>
+<button class="opcion" data-k="c" type="button">skewed right</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Two peaks</h3></div>
+<p class="pregunta-int" id="t-p5">A distribution with two peaks is…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">bimodal</button>
+<button class="opcion" data-k="b" type="button">unimodal</button>
+<button class="opcion" data-k="c" type="button">uniform</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The quartiles</h3></div>
+<p class="pregunta-int" id="t-p6">Which graph shows the quartiles better?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">The histogram</button>
+<button class="opcion" data-k="b" type="button">The box plot</button>
+<button class="opcion" data-k="c" type="button">The bar graph</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#compare" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: histogram versus box plot (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: histogram versus box plot</span><span class="ei-sub">See what each graph of the same data set tells you.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-choose"><span aria-hidden="true" class="num-seccion">5</span>Choosing the most useful display</h2>
+<p>There is no “best” graph in general: it depends on the question. To see the shape and the peaks, use a histogram; to compare spread and find outliers between groups, use box plots.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: choosing by the question. You want to know whether the ages in a class split into two very different age groups. Which graph should you use?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The question is about shape.</strong> Are there one or two peaks?</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Compare the graphs.</strong> The histogram shows the peaks directly; the box plot does not.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> Use the <strong>histogram</strong>, because it shows whether the distribution is bimodal.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">And for categories?</span>
+<p>When the data are separate categories (countries, colors, days of the week), neither one fits: use a bar graph.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#choose" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: choosing the most useful display (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: choosing the most useful display</span><span class="ei-sub">Decide which graph fits the question.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-3.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Take a set of 20 data values (for example, the ages of 20 people). Make a frequency table with intervals of the same width, draw the histogram, and describe its shape in one sentence. Then find the five key values, draw the box plot of the same data, and write what each graph shows that the other does not.</li>
+<li><strong>In your daily life.</strong> Look for a histogram in a newspaper, a website, or a report from your job (for example, ages of customers or waiting times). What shape does it have? What question does it answer well? Would a box plot answer it better or worse?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">In a histogram, the bars are…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">separated</button><button class="opcion" data-k="b" type="button">touching (next to each other)</button><button class="opcion" data-k="c" type="button">circular</button><button class="opcion" data-k="d" type="button">always the same</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">The vertical axis of a histogram shows…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">the frequency</button><button class="opcion" data-k="b" type="button">the name of each category</button><button class="opcion" data-k="c" type="button">the average</button><button class="opcion" data-k="d" type="button">the IQR</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">If the interval 10–15 has a frequency of 8, its bar has a height of…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">8</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">A distribution with the same shape on both sides of the center is…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">skewed right</button><button class="opcion" data-k="b" type="button">bimodal</button><button class="opcion" data-k="c" type="button">uniform</button><button class="opcion" data-k="d" type="button">symmetric</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A distribution with a long tail toward the high values is…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">skewed left</button><button class="opcion" data-k="b" type="button">skewed right</button><button class="opcion" data-k="c" type="button">symmetric</button><button class="opcion" data-k="d" type="button">without a peak</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">A distribution with two peaks is…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">unimodal</button><button class="opcion" data-k="b" type="button">symmetric</button><button class="opcion" data-k="c" type="button">bimodal</button><button class="opcion" data-k="d" type="button">uniform</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Which graph best shows the detailed shape of a distribution?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The histogram</button><button class="opcion" data-k="b" type="button">The box plot</button><button class="opcion" data-k="c" type="button">Neither</button><button class="opcion" data-k="d" type="button">Both equally</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">Which graph best shows the quartiles and the outliers?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The histogram</button><button class="opcion" data-k="b" type="button">The circle graph</button><button class="opcion" data-k="c" type="button">The box plot</button><button class="opcion" data-k="d" type="button">Neither</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for histograms (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for making, reading, and comparing histograms and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Making the histogram</th><td>I make the histogram with the right intervals and frequencies, with equal widths and bars that touch.</td><td>I make it with mistakes in the intervals or frequencies.</td><td>I do not connect the frequency with the height of the bar.</td></tr>
+<tr><th scope="row">Describing the shape</th><td>I describe the shape with the right words (symmetry, skew, number of peaks).</td><td>I describe the shape with loose words.</td><td>I do not describe the shape.</td></tr>
+<tr><th scope="row">Comparing distributions</th><td>I compare two distributions with at least two features, using the histogram and the box plot.</td><td>I compare with only one feature.</td><td>I do not compare the two displays.</td></tr>
+<tr><th scope="row">Choosing the display</th><td>I choose the most useful graph and explain why.</td><td>I choose without explaining.</td><td>I do not choose by the situation.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson closes Topic 7. You can now find the volume of solids and analyze data with two tools that complete each other: the box plot (five values, IQR, outliers) and the histogram (the shape of the distribution). You also know how to choose the most useful graph for each question.</p>
+<p>Topic 8 closes Level 3. It opens with <strong>Lesson 8.1 · The counting principle, permutations, and combinations</strong>, where you will learn to count the ways events can happen, the basis of probability. The topic ends with a final project and preparation for the GED Mathematical Reasoning test.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 8.1 · The counting principle, permutations, and combinations</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>histogram</dt><dd>A graph of intervals of continuous data, with bars that touch; each height is a frequency.</dd>
+<dt>frequency</dt><dd>How many data values fall in an interval.</dd>
+<dt>symmetric</dt><dd>A distribution with the same shape on both sides of its center.</dd>
+<dt>skewed</dt><dd>A distribution with a long tail on one side; it is named by the side of the tail.</dd>
+<dt>bimodal</dt><dd>A distribution with two peaks.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 7 · Lesson 7.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.1",
+ "review": "sections 3 and 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Separate bars belong to a bar graph of categories.",
+    "b": "Pieces in a circle belong to a circle graph."
+   },
+   "right": "The intervals are continuous, so the bars touch.",
+   "solution": "They touch."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "A histogram has intervals, not categories, and they go on the horizontal axis.",
+    "c": "The vertical axis shows how many values fall in each interval."
+   },
+   "right": "The height of each bar is its frequency.",
+   "solution": "The frequency."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Do not divide: the height is the frequency itself.",
+    "c": "Do not double it: the height is the frequency itself."
+   },
+   "right": "The height equals the frequency: 6.",
+   "solution": "6."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Skew is named by the tail. Where does the tail go?",
+    "b": "A long tail on one side means it is not symmetric."
+   },
+   "right": "The tail goes toward the high values (to the right).",
+   "solution": "Skewed right."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Uni- means one. Two peaks is bi-.",
+    "c": "Uniform means there is no clear peak."
+   },
+   "right": "Bi- means two: two peaks.",
+   "solution": "Bimodal."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "The histogram shows the shape, not the quartiles.",
+    "c": "A bar graph is for categories."
+   },
+   "right": "The box plot draws Q1, the median, and Q3.",
+   "solution": "The box plot."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Separate bars belong to a bar graph.",
+    "c": "Circles belong to a circle graph.",
+    "d": "The heights change with the frequencies."
+   },
+   "solution": "They touch."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "A histogram has intervals, not categories.",
+    "c": "A histogram does not show the average.",
+    "d": "The IQR belongs to the box plot."
+   },
+   "solution": "The frequency."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "15 is the right end of the interval, not its frequency.",
+    "b": "10 is the left end of the interval.",
+    "d": "5 is the width of the interval."
+   },
+   "solution": "8."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "A skewed distribution has a long tail on one side.",
+    "b": "Bimodal means two peaks.",
+    "c": "Uniform means no clear peak."
+   },
+   "solution": "Symmetric."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Skew is named by the tail, and here the tail goes to the high values.",
+    "c": "A long tail on one side means it is not symmetric.",
+    "d": "It does have a peak, on the left."
+   },
+   "solution": "Skewed right."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Uni- means one peak.",
+    "b": "Symmetric is about the two sides, not the number of peaks.",
+    "d": "Uniform means no clear peak."
+   },
+   "solution": "Bimodal."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "The box plot shows the quartiles, not the detailed shape.",
+    "c": "One of them does show the shape.",
+    "d": "A box plot cannot show peaks."
+   },
+   "solution": "The histogram."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "The histogram shows the shape.",
+    "b": "A circle graph shows parts of a whole.",
+    "d": "One of them does show them."
+   },
+   "solution": "The box plot."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
