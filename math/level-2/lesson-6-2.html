@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 6.2 · Math Level 2 (English) — built by tools/build_n2_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 6.2 · Depreciation and other money applications · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 6 — Money math and unit conversions</p>
+<h1>Lesson 6.2 · Depreciation and other money applications</h1>
+<p class="lema">The mirror image of simple interest: things that lose the same amount of value every year. The book-value table, the formula D = (V₀ − Vr) ÷ n, and problems that mix interest, tax, and depreciation.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Explain</strong> starting value, salvage value, useful life, and book value.</li>
+<li><strong>Build</strong> the book-value table year by year before using the formula.</li>
+<li><strong>Find</strong> the yearly straight-line depreciation, (V₀ − Vr) ÷ n, and its yearly rate.</li>
+<li><strong>Find</strong> the book value of an item in a given year.</li>
+<li><strong>Solve</strong> money problems that combine percent, simple interest, and depreciation.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.2.e</span> Solve one-step or multi-step arithmetic, real world problems involving the four operations with rational numbers, including those involving scientific notation.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.3.d</span> Solve two-step, arithmetic, real world problems involving percents. Examples include but are not limited to: simple interest, tax, markups and markdowns, gratuities and commissions, percent increase and decrease.</li><li><span class="std-cod std-base">Q.6.c</span> Represent, display, and interpret data involving two variables in tables and the coordinate plane including scatter plots and graphs.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.1.e</span> Select the appropriate mathematical technique(s) to use in solving a problem or a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.RP.3</span> <span class="std-nivel">Level D</span> Use proportional relationships to solve multistep ratio and percent problems. Examples: simple interest, tax, markups and markdowns, gratuities and commissions, fees, percent increase and decrease, percent error.</li><li><span class="std-cod std-ccr">6.EE.7</span> <span class="std-nivel">Level D</span> Solve real-world and mathematical problems by writing and solving equations of the form x + p = q and px = q for cases in which p, q and x are all nonnegative rational numbers.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-vocabulary">Depreciation vocabulary</a></li>
+<li><a href="#s-table">First the table, then the formula</a></li>
+<li><a href="#s-formulas">The straight-line depreciation formulas</a></li>
+<li><a href="#s-combined">Combined money problems</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-vocabulary"><span aria-hidden="true" class="num-seccion">1</span>Depreciation vocabulary</h2>
+<p>In Lesson 6.1 money in savings grew by the same amount every year because of simple interest. Many things you buy go the opposite way: a car, a computer, or a work tool lose value with use and with time. When that loss is the same every year, it is called <strong>straight-line depreciation</strong>.</p>
+<div aria-label="Two mirror images (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Simple interest and straight-line depreciation</caption>
+<thead><tr><th scope="col"></th><th scope="col">Simple interest ↑</th><th scope="col">Straight-line depreciation ↓</th></tr></thead>
+<tbody>
+<tr><td>Every year</td><td>the money <strong>gains</strong> the same amount</td><td>the item <strong>loses</strong> the same amount</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div aria-label="Depreciation words (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The vocabulary of depreciation</caption>
+<thead><tr><th scope="col">Term</th><th scope="col">What it is</th></tr></thead>
+<tbody>
+<tr><td>asset</td><td>something of value you buy to use for several years (a car, a machine, a computer)</td></tr>
+<tr><td>starting value (V₀)</td><td>what the item cost when it was bought</td></tr>
+<tr><td>useful life (n)</td><td>the number of years you expect to use it</td></tr>
+<tr><td>salvage value (Vr)</td><td>what it will still be worth at the end of its useful life, for example, what someone would pay for it used or for its parts</td></tr>
+<tr><td>yearly depreciation (D)</td><td>the value it loses each year</td></tr>
+<tr><td>book value</td><td>what the item is worth, according to the calculations, at the end of a given year</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div aria-label="The same words in both languages (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Depreciation words in English and in Spanish</caption>
+<thead><tr><th scope="col">English</th><th scope="col">Spanish</th></tr></thead>
+<tbody>
+<tr><td>straight-line depreciation</td><td>depreciación lineal</td></tr>
+<tr><td>asset</td><td>activo o bien</td></tr>
+<tr><td>salvage value (residual value)</td><td>valor residual</td></tr>
+<tr><td>useful life</td><td>vida útil</td></tr>
+<tr><td>book value</td><td>valor contable</td></tr>
+<tr><td>accumulated depreciation</td><td>depreciación acumulada</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<a class="enlace-interactivo" href="practice-6-2.html#vocabulary" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: depreciation vocabulary (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: depreciation vocabulary</span><span class="ei-sub">Review starting value, salvage value, useful life, and book value.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-table"><span aria-hidden="true" class="num-seccion">2</span>First the table, then the formula</h2>
+<p>Before you use a formula, it helps to see the pattern in a table.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: the office computer<span style="display:block;font-weight:400;margin-top:6px">An office buys a computer for <strong>$1,800</strong>. It will be used for <strong>4 years</strong>, and at the end it can be sold for <strong>$200</strong>. What is it worth at the end of each year?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Total loss.</strong> 1,800 − 200 = 1,600.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Split it into equal parts.</strong> 1,600 ÷ 4 = 400 per year.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Subtract year by year.</strong> Each year, take $400 away from the year before.</p>
+</div>
+<div aria-label="The computer, year by year (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Book value of the computer year by year</caption>
+<thead><tr><th scope="col">Year</th><th scope="col">Depreciation that year ($)</th><th scope="col">Accumulated depreciation ($)</th><th scope="col">Book value ($)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>—</td><td>0</td><td>1,800</td></tr>
+<tr><td>1</td><td>400</td><td>400</td><td>1,400</td></tr>
+<tr><td>2</td><td>400</td><td>800</td><td>1,000</td></tr>
+<tr><td>3</td><td>400</td><td>1,200</td><td>600</td></tr>
+<tr><td>4</td><td>400</td><td>1,600</td><td>200</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 240" role="img" aria-label="Bars for the book value of the computer: $1,800 in year 0, $1,400, $1,000, $600, and $200 in year 4. Each bar is $400 lower than the one before, and the last one reaches the dashed line of the $200 salvage value." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><rect x="177.5" y="30.0" width="57.0" height="170.0" fill="#00897b"/><text x="206.0" y="24.0" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,800</text><text x="206.0" y="216" text-anchor="middle" font-size="13" fill="#424242">0</text><rect x="269.5" y="67.8" width="57.0" height="132.2" fill="#00897b"/><text x="298.0" y="61.8" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,400</text><text x="298.0" y="216" text-anchor="middle" font-size="13" fill="#424242">1</text><rect x="361.5" y="105.6" width="57.0" height="94.4" fill="#00897b"/><text x="390.0" y="99.6" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,000</text><text x="390.0" y="216" text-anchor="middle" font-size="13" fill="#424242">2</text><rect x="453.5" y="143.3" width="57.0" height="56.7" fill="#00897b"/><text x="482.0" y="137.3" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$600</text><text x="482.0" y="216" text-anchor="middle" font-size="13" fill="#424242">3</text><rect x="545.5" y="181.1" width="57.0" height="18.9" fill="#00897b"/><text x="574.0" y="175.1" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$200</text><text x="574.0" y="216" text-anchor="middle" font-size="13" fill="#424242">4</text><line x1="158" y1="181.1" x2="620" y2="181.1" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4"/><text x="154" y="185.1" text-anchor="end" font-size="12" fill="#c62828">salvage value $200</text><line x1="160" y1="200" x2="620" y2="200" stroke="#424242" stroke-width="2"/><text x="390" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">Year</text></svg></div>
+<p>Each bar is $400 lower than the one before. The value never drops below the salvage value.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Yearly depreciation</h3></div>
+<p class="pregunta-int" id="t-p1">A store buys a commercial refrigerator for $2,600. Its useful life is 5 years and its salvage value is $600. How much does it lose each year?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">$520</button>
+<button class="opcion" data-k="b" type="button">$400</button>
+<button class="opcion" data-k="c" type="button">$2,000</button>
+<button class="opcion" data-k="d" type="button">$600</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Book value</h3></div>
+<p class="pregunta-int" id="t-p2">With the same refrigerator, what is its book value at the end of year 3?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">$1,200</button>
+<button class="opcion" data-k="b" type="button">$1,040</button>
+<button class="opcion" data-k="c" type="button">$1,000</button>
+<button class="opcion" data-k="d" type="button">$1,400</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#table" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: first the table, then the formula (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: first the table, then the formula</span><span class="ei-sub">Fill in the book-value table year by year.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">3</span>The straight-line depreciation formulas</h2>
+<p>The steps of the computer example add up to two formulas.</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">D = (V₀ − Vr) ÷ n</p>
+<p style="text-align:center">D = yearly depreciation · V₀ = starting value · Vr = salvage value · n = useful life in years</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">Book value in year t = V₀ − D × t</p>
+<p style="text-align:center">D × t is the accumulated depreciation up to that year.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The yearly rate</span>
+<p>If an item lasts 4 years, each year it loses 1 of 4 equal parts of the value being depreciated: 1 ÷ 4 = 0.25 = 25% a year. In general, the yearly rate of straight-line depreciation is <strong>1 ÷ n</strong>. For the computer: 25% of $1,600 = $400, the same result.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: work equipment<span style="display:block;font-weight:400;margin-top:6px">A sewing shop buys an industrial machine for $3,000. Its useful life is 5 years and its salvage value is $500. Find the yearly depreciation, the yearly rate, and the book value at the end of year 3.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Yearly depreciation.</strong> D = (3,000 − 500) ÷ 5 = 2,500 ÷ 5 = 500 per year.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Yearly rate.</strong> 1 ÷ 5 = 0.20 = 20% a year.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Book value in year 3.</strong> 3,000 − 500 × 3 = 3,000 − 1,500 = 1,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> It loses <strong>$500 a year</strong> (20%), and at the end of year 3 it is worth <strong>$1,500</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: in what year does it reach a value?<span style="display:block;font-weight:400;margin-top:6px">With the same machine: at the end of what year will its book value be $1,000?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Value it must lose.</strong> 3,000 − 1,000 = 2,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Years needed.</strong> 2,000 ÷ 500 = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> At the end of <strong>year 4</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: when the problem gives a percent of the cost<span style="display:block;font-weight:400;margin-top:6px">“A $30,000 delivery van depreciates 10% of its original cost each year.” What is it worth after 4 years?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Yearly depreciation.</strong> 30,000 × 0.10 = 3,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Book value in year 4.</strong> 30,000 − 3,000 × 4 = 30,000 − 12,000 = 18,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>$18,000</strong>. It is still straight-line depreciation: the loss is the same every year; only the way the data is given changes.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Common mistake</span>
+<p>Dividing the starting value by the useful life without first subtracting the salvage value. For the machine, 3,000 ÷ 5 = 600 is wrong: with that number the machine would end up worth $0, not the $500 the problem says.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Book value on the calculator</span>
+<p>For the machine in year 3: <span class="tecla">(</span> <span class="tecla num">3000</span> <span class="tecla">−</span> <span class="tecla num">500</span> <span class="tecla">)</span> <span class="tecla">÷</span> <span class="tecla num">5</span> <span class="tecla">enter</span> gives 500. Then <span class="tecla num">3000</span> <span class="tecla">−</span> <span class="tecla num">500</span> <span class="tecla">×</span> <span class="tecla num">3</span> <span class="tecla">enter</span> gives 1,500. The calculator multiplies before it subtracts.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A printer</h3></div>
+<p class="pregunta-int" id="t-p3">A $900 printer has a salvage value of $100 and a useful life of 4 years. What is its yearly depreciation?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">$200</button>
+<button class="opcion" data-k="b" type="button">$225</button>
+<button class="opcion" data-k="c" type="button">$250</button>
+<button class="opcion" data-k="d" type="button">$800</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A drill</h3></div>
+<p class="pregunta-int" id="t-p4">A $450 professional drill has a salvage value of $50 and a useful life of 5 years. What is its book value at the end of year 3?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">$290</button>
+<button class="opcion" data-k="b" type="button">$240</button>
+<button class="opcion" data-k="c" type="button">$210</button>
+<button class="opcion" data-k="d" type="button">$80</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — The yearly rate</h3></div>
+<p class="pregunta-int" id="t-p5">An item has a useful life of 8 years. What is its yearly rate of straight-line depreciation?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">12.5%</button>
+<button class="opcion" data-k="b" type="button">8%</button>
+<button class="opcion" data-k="c" type="button">80%</button>
+<button class="opcion" data-k="d" type="button">0.125%</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the straight-line depreciation formulas (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the straight-line depreciation formulas</span><span class="ei-sub">Find D = (V₀ − Vr) ÷ n, the yearly rate, and the value in any year.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-combined"><span aria-hidden="true" class="num-seccion">4</span>Combined money problems</h2>
+<p>In real life, money decisions mix several ideas: the percent of a tax, the interest on a loan, and the loss of value of what you buy. The strategy: solve each part on its own, then put the results together.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: the business van<span style="display:block;font-weight:400;margin-top:6px">Rosa borrows $18,000 at 6% simple interest a year for 3 years to buy a van for her business. The van has a useful life of 6 years and a salvage value of $3,000. When she finishes paying the loan, how much has she paid in all, and what is the van worth?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The loan.</strong> I = 18,000 × 0.06 × 3 = 3,240; total paid A = 18,000 + 3,240 = 21,240.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The depreciation.</strong> D = (18,000 − 3,000) ÷ 6 = 2,500 per year.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Book value in year 3.</strong> 18,000 − 2,500 × 3 = 10,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>What it means.</strong> 21,240 − 10,500 = 10,740.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> Rosa paid <strong>$21,240</strong> and the van is worth <strong>$10,500</strong>. Using it for three years really cost her $10,740.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: tax and depreciation<span style="display:block;font-weight:400;margin-top:6px">A laptop costs $1,200 plus a 10% sales tax. It will be used for 3 years and at the end will be worth $120. What is it worth after 2 years?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Starting value with tax (Lesson 5.3).</strong> 1,200 × 1.10 = 1,320.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Yearly depreciation.</strong> D = (1,320 − 120) ÷ 3 = 1,200 ÷ 3 = 400.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Book value in year 2.</strong> 1,320 − 400 × 2 = 520.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> After 2 years it is worth <strong>$520</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The real cost</h3></div>
+<p class="pregunta-int" id="t-p6">Ana borrows $10,000 at 5% simple interest a year for 2 years to buy a truck. The truck has a useful life of 5 years and a salvage value of $2,000. When she finishes paying, how much did using the truck really cost her (total paid − book value)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">$1,000</button>
+<button class="opcion" data-k="b" type="button">$3,200</button>
+<button class="opcion" data-k="c" type="button">$6,800</button>
+<button class="opcion" data-k="d" type="button">$4,200</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#combined" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: combined money problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: combined money problems</span><span class="ei-sub">Combine interest, tax, and depreciation in the same problem.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-6-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve six straight-line depreciation problems: yearly depreciation, yearly rate, the table, and the book value in a given year. Then solve four review problems on simple interest (Lesson 6.1).</li>
+<li><strong>In your daily life.</strong> Think of something you or your family use for work or at home: a car, a phone, a tool. Estimate what it cost, how many years it will last, and what it will be worth at the end. Build its book-value table.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A $1,800 computer has a salvage value of $200 and a useful life of 4 years. What is its yearly depreciation?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$450</button><button class="opcion" data-k="b" type="button">$400</button><button class="opcion" data-k="c" type="button">$1,600</button><button class="opcion" data-k="d" type="button">$500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">An item has a useful life of 5 years. What is its yearly rate of straight-line depreciation?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5%</button><button class="opcion" data-k="b" type="button">0.2%</button><button class="opcion" data-k="c" type="button">50%</button><button class="opcion" data-k="d" type="button">20%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">A $3,000 machine has a salvage value of $500 and a useful life of 5 years. What is its book value at the end of year 3?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$1,500</button><button class="opcion" data-k="b" type="button">$1,200</button><button class="opcion" data-k="c" type="button">$1,000</button><button class="opcion" data-k="d" type="button">$500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">With the same machine, at the end of what year will its book value be $1,000?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Year 2</button><button class="opcion" data-k="b" type="button">Year 5</button><button class="opcion" data-k="c" type="button">Year 4</button><button class="opcion" data-k="d" type="button">Year 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A $30,000 van depreciates 10% of its original cost each year. What is it worth after 4 years?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$12,000</button><button class="opcion" data-k="b" type="button">$18,000</button><button class="opcion" data-k="c" type="button">$19,683</button><button class="opcion" data-k="d" type="button">$27,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">An item has a useful life of 8 years. What is its yearly rate of straight-line depreciation?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8%</button><button class="opcion" data-k="b" type="button">80%</button><button class="opcion" data-k="c" type="button">0.125%</button><button class="opcion" data-k="d" type="button">12.5%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Rosa borrows $18,000 at 6% simple interest a year for 3 years. How much does she pay back in all?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$21,240</button><button class="opcion" data-k="b" type="button">$3,240</button><button class="opcion" data-k="c" type="button">$19,080</button><button class="opcion" data-k="d" type="button">$10,500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A laptop costs $1,200 plus a 10% tax. It will be used for 3 years and at the end will be worth $120. What is it worth after 2 years?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$480</button><button class="opcion" data-k="b" type="button">$800</button><button class="opcion" data-k="c" type="button">$520</button><button class="opcion" data-k="d" type="button">$920</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for depreciation (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for money math and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Find the yearly depreciation and its rate</th><td>I find D = (V₀ − Vr) ÷ n and the rate 1 ÷ n, and I also solve problems that give a percent of the original cost.</td><td>I find D with help or with mistakes in the operations.</td><td>I divide the starting value by the useful life without subtracting the salvage value.</td></tr>
+<tr><th scope="row">Build or read the book-value table</th><td>I build the full table, check it with V₀ − D × t, and find in what year a value is reached.</td><td>I build the table, with some subtraction mistakes.</td><td>The table is incomplete or does not show the pattern.</td></tr>
+<tr><th scope="row">Solve a combined money problem</th><td>I solve the interest part and the depreciation part and explain what the result means, for example, the real cost of using an item.</td><td>I solve only one of the two parts correctly.</td><td>I do not separate the interest part from the depreciation part.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>Straight-line depreciation is the mirror image of simple interest: instead of adding a fixed amount every year, you <strong>subtract</strong> it. With the year-by-year table and the formula D = (V₀ − Vr) ÷ n you can tell what an item is worth at any time and what it really costs to use it.</p>
+<p>That completes the money part of Topic 6. <strong>Lesson 6.3 · Converting between U.S. customary and metric units</strong> changes the setting but not the tool: to convert between the two systems you also multiply by a fixed number, the conversion factor, with the same proportional reasoning as in Topic 4.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 6.3 · Converting between U.S. customary and metric units</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>straight-line depreciation</dt><dd>A loss of value that is the same every year.</dd>
+<dt>salvage value (Vr)</dt><dd>What an item is still worth at the end of its useful life.</dd>
+<dt>useful life (n)</dt><dd>The number of years an item is expected to be used.</dd>
+<dt>book value</dt><dd>What an item is worth, by the calculations, in a given year: V₀ − D × t.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 6 · Lesson 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 6.3",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "You divided $2,600 without first subtracting the salvage value.",
+    "c": "$2,000 is the total loss. Split it among the 5 years.",
+    "d": "$600 is the salvage value."
+   },
+   "right": "(2,600 − 600) ÷ 5 = $400 a year.",
+   "solution": "D = (2,600 − 600) ÷ 5 = 2,000 ÷ 5 = 400."
+  },
+  "p2": {
+   "ok": "d",
+   "hints": {
+    "a": "$1,200 is the depreciation built up in 3 years. Subtract it from $2,600.",
+    "b": "You used $520 a year. First subtract the salvage value.",
+    "c": "$1,000 is the value at the end of year 4."
+   },
+   "right": "2,600 − 400 × 3 = $1,400.",
+   "solution": "Book value = 2,600 − 400 × 3 = 2,600 − 1,200 = 1,400."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "You divided $900 without subtracting the salvage value.",
+    "c": "Check: 900 − 100 = 800, and 800 ÷ 4.",
+    "d": "$800 is the total loss. Divide by 4."
+   },
+   "right": "(900 − 100) ÷ 4 = $200.",
+   "solution": "D = (900 − 100) ÷ 4 = 800 ÷ 4 = 200."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the value at the end of year 2.",
+    "b": "$240 is the depreciation for 3 years. Subtract it from $450.",
+    "d": "$80 is the yearly depreciation."
+   },
+   "right": "D = 80; 450 − 80 × 3 = $210.",
+   "solution": "D = (450 − 50) ÷ 5 = 80. Book value = 450 − 80 × 3 = 210."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "The rate is 1 ÷ n, not n.",
+    "c": "Check: 1 ÷ 8 = 0.125.",
+    "d": "0.125 is the decimal. Multiply by 100."
+   },
+   "right": "1 ÷ 8 = 0.125 = 12.5% a year.",
+   "solution": "Rate = 1 ÷ 8 = 0.125 = 12.5% a year."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "$1,000 is only the interest. Find the total paid and the book value.",
+    "b": "$3,200 is the depreciation for 2 years; the interest is missing.",
+    "c": "$6,800 is the book value. Subtract it from the total paid."
+   },
+   "right": "Paid 11,000; worth 6,800; real cost $4,200.",
+   "solution": "I = 10,000 × 0.05 × 2 = 1,000, total 11,000. D = (10,000 − 2,000) ÷ 5 = 1,600; value = 10,000 − 3,200 = 6,800. Real cost = 11,000 − 6,800 = 4,200."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "First subtract the salvage value.",
+    "c": "That is the total loss.",
+    "d": "You added the salvage value instead of subtracting it."
+   },
+   "solution": "(1,800 − 200) ÷ 4 = $400."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "The rate is 1 ÷ n.",
+    "b": "0.2 is the decimal; write it as a percent.",
+    "c": "Check: 1 ÷ 5 = 0.2."
+   },
+   "solution": "1 ÷ 5 = 0.20 = 20%."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "You used 3,000 ÷ 5 = 600. Subtract the salvage value first.",
+    "c": "$1,000 is the value in year 4.",
+    "d": "$500 is the salvage value, at the end of year 5."
+   },
+   "solution": "D = 500; 3,000 − 500 × 3 = $1,500."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "In 2 years it loses only $1,000.",
+    "b": "In year 5 it is worth the salvage value, $500.",
+    "d": "In year 3 it is worth $1,500."
+   },
+   "solution": "It must lose 2,000; 2,000 ÷ 500 = 4."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "$12,000 is the loss in 4 years.",
+    "c": "You took 10% of each new value. Here it is 10% of the original cost.",
+    "d": "$27,000 is the value after only 1 year."
+   },
+   "solution": "D = 3,000; 30,000 − 3,000 × 4 = $18,000."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "The rate is 1 ÷ n, not n.",
+    "b": "Check: 1 ÷ 8.",
+    "c": "0.125 is the decimal; multiply by 100."
+   },
+   "solution": "1 ÷ 8 = 0.125 = 12.5%."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "$3,240 is the interest. Add the loan.",
+    "c": "That has only one year of interest.",
+    "d": "$10,500 is the van's book value."
+   },
+   "solution": "I = 18,000 × 0.06 × 3 = 3,240; A = $21,240."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "You left out the tax. The starting value is $1,320.",
+    "b": "$800 is the depreciation in 2 years.",
+    "d": "$920 is the value after only 1 year."
+   },
+   "solution": "V₀ = 1,320; D = 400; 1,320 − 800 = $520."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

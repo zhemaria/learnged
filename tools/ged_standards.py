@@ -198,6 +198,7 @@ CCR = {
  "6.RP.3b": ("D", "Solve unit rate problems including those involving unit pricing and constant speed."),
  "7.RP.2a": ("D", "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin."),
  "7.RP.2c": ("D", "Represent proportional relationships by equations."),
+ "6.RP.3d": ("D", "Use ratio reasoning to convert measurement units; manipulate and transform units appropriately when multiplying or dividing quantities."),
  "6.RP.3c": ("D", "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity); solve problems involving finding the whole, given a part and the percent."),
  "7.RP.3": ("D", "Use proportional relationships to solve multistep ratio and percent problems. Examples: simple interest, tax, markups and markdowns, gratuities and commissions, fees, percent increase and decrease, percent error."),
 }
@@ -292,6 +293,12 @@ LESSONS = [
   {"direct": ["Q.3.d"], "builds": [], "mp": ["MP.1.e", "MP.3.a", "MP.5.a"], "ccr": ["7.RP.3"]}),
  ("level-2/lesson-5-3.html", "5.3", "Discount, tax, tip, and mixed applications",
   {"direct": ["Q.3.d"], "builds": ["Q.3.c"], "mp": ["MP.1.b", "MP.1.e", "MP.2.c"], "ccr": ["7.RP.3"]}),
+ ("level-2/lesson-6-1.html", "6.1", "Simple interest: I = P × r × t",
+  {"direct": ["Q.3.d"], "builds": ["A.1.b", "Q.2.e"], "mp": ["MP.1.e", "MP.4.a", "MP.5.a"], "ccr": ["7.RP.3"]}),
+ ("level-2/lesson-6-2.html", "6.2", "Depreciation and other money applications",
+  {"direct": ["Q.2.e"], "builds": ["Q.3.d", "Q.6.c"], "mp": ["MP.1.b", "MP.1.e", "MP.2.c"], "ccr": ["7.RP.3", "6.EE.7"]}),
+ ("level-2/lesson-6-3.html", "6.3", "Converting between U.S. customary and metric units",
+  {"direct": ["Q.3.c"], "builds": ["A.1.b"], "mp": ["MP.1.e", "MP.4.a", "MP.5.a"], "ccr": ["6.RP.3d", "5.MD.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

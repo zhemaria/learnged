@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 6.2 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 6.2 · Depreciación y otras aplicaciones financieras · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-6-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 6 — Matemáticas financieras y conversiones de medidas</p>
+<h1>Lección 6.2 · Depreciación y otras aplicaciones financieras</h1>
+<p class="lema">El espejo del interés simple: bienes que pierden la misma cantidad de valor cada año. La tabla del valor contable, la fórmula D = (V₀ − Vr) ÷ n y problemas que combinan interés, impuesto y depreciación.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Explicar</strong> qué significan el valor inicial, el valor residual, la vida útil y el valor contable.</li>
+<li><strong>Construir</strong> la tabla del valor contable año por año antes de usar la fórmula.</li>
+<li><strong>Calcular</strong> la depreciación lineal anual, (V₀ − Vr) ÷ n, y su tasa anual.</li>
+<li><strong>Determinar</strong> el valor contable de un bien en un año específico.</li>
+<li><strong>Resolver</strong> problemas financieros que combinan porcentaje, interés simple y depreciación.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.2.e</span> Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.3.d</span> Resolver problemas de la vida real, de dos pasos, con porcentajes. Por ejemplo: interés simple, impuestos, aumentos y rebajas de precio, propinas y comisiones, aumento y disminución porcentual.</li><li><span class="std-cod std-base">Q.6.c</span> Representar, mostrar e interpretar datos de dos variables en tablas y en el plano de coordenadas, incluidos los diagramas de dispersión y las gráficas.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.RP.3</span> <span class="std-nivel">Nivel D</span> Usar relaciones proporcionales para resolver problemas de varios pasos con razones y porcentajes. Por ejemplo: interés simple, impuestos, aumentos y rebajas de precio, propinas y comisiones, cargos, aumento y disminución porcentual, error porcentual.</li><li><span class="std-cod std-ccr">6.EE.7</span> <span class="std-nivel">Nivel D</span> Resolver problemas de la vida real y de matemáticas escribiendo y resolviendo ecuaciones de la forma x + p = q y px = q, en las que p, q y x son números racionales no negativos.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-vocabulario">Vocabulario de la depreciación</a></li>
+<li><a href="#s-tabla">Primero la tabla, después la fórmula</a></li>
+<li><a href="#s-formulas">Las fórmulas de la depreciación lineal</a></li>
+<li><a href="#s-integrados">Problemas financieros integrados</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-vocabulario"><span aria-hidden="true" class="num-seccion">1</span>Vocabulario de la depreciación</h2>
+<p>En la Lección 6.1, el dinero ahorrado crecía en una cantidad fija cada año gracias al interés simple. Muchas cosas que se compran siguen el camino contrario: un carro, una computadora o una herramienta de trabajo pierden valor con el uso y el paso del tiempo. Cuando esa pérdida es la misma cada año, se llama <strong>depreciación lineal</strong>.</p>
+<div aria-label="Dos imágenes en espejo (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Interés simple y depreciación lineal</caption>
+<thead><tr><th scope="col"></th><th scope="col">Interés simple ↑</th><th scope="col">Depreciación lineal ↓</th></tr></thead>
+<tbody>
+<tr><td>Cada año</td><td>el dinero <strong>gana</strong> la misma cantidad</td><td>el bien <strong>pierde</strong> la misma cantidad</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div aria-label="Términos de la depreciación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">El vocabulario de la depreciación</caption>
+<thead><tr><th scope="col">Término</th><th scope="col">Qué es</th></tr></thead>
+<tbody>
+<tr><td>activo o bien</td><td>algo de valor que se compra para usarlo varios años (un carro, una máquina, una computadora)</td></tr>
+<tr><td>valor inicial (V₀)</td><td>lo que costó el bien al comprarlo</td></tr>
+<tr><td>vida útil (n)</td><td>los años que se espera usar el bien</td></tr>
+<tr><td>valor residual (Vr)</td><td>lo que todavía valdrá al final de su vida útil; por ejemplo, lo que pagaría alguien por él como usado o por sus piezas</td></tr>
+<tr><td>depreciación anual (D)</td><td>el valor que pierde cada año</td></tr>
+<tr><td>valor contable</td><td>lo que vale el bien, según los cálculos, al final de un año determinado</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div aria-label="Las mismas palabras en los dos idiomas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Términos de la depreciación en inglés y en español</caption>
+<thead><tr><th scope="col">Inglés</th><th scope="col">Español</th></tr></thead>
+<tbody>
+<tr><td>straight-line depreciation</td><td>depreciación lineal</td></tr>
+<tr><td>asset</td><td>activo o bien</td></tr>
+<tr><td>salvage value (residual value)</td><td>valor residual</td></tr>
+<tr><td>useful life</td><td>vida útil</td></tr>
+<tr><td>book value</td><td>valor contable</td></tr>
+<tr><td>accumulated depreciation</td><td>depreciación acumulada</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<a class="enlace-interactivo" href="practica-6-2.html#vocabulario" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: vocabulario de la depreciación (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: vocabulario de la depreciación</span><span class="ei-sub">Repase el valor inicial, el valor residual, la vida útil y el valor contable.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tabla"><span aria-hidden="true" class="num-seccion">2</span>Primero la tabla, después la fórmula</h2>
+<p>Antes de usar una fórmula, conviene ver el patrón con una tabla.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: la computadora de la oficina<span style="display:block;font-weight:400;margin-top:6px">Una oficina compra una computadora por <strong>$1,800</strong>. Se espera usarla <strong>4 años</strong>, y al final se podrá vender en <strong>$200</strong>. ¿Cuánto vale al final de cada año?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Pérdida total.</strong> 1,800 − 200 = 1,600.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Repártala en partes iguales.</strong> 1,600 ÷ 4 = 400 por año.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Reste año tras año.</strong> Cada año se restan $400 al valor del año anterior.</p>
+</div>
+<div aria-label="La computadora, año por año (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Valor contable de la computadora año por año</caption>
+<thead><tr><th scope="col">Año</th><th scope="col">Depreciación del año ($)</th><th scope="col">Depreciación acumulada ($)</th><th scope="col">Valor contable ($)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>—</td><td>0</td><td>1,800</td></tr>
+<tr><td>1</td><td>400</td><td>400</td><td>1,400</td></tr>
+<tr><td>2</td><td>400</td><td>800</td><td>1,000</td></tr>
+<tr><td>3</td><td>400</td><td>1,200</td><td>600</td></tr>
+<tr><td>4</td><td>400</td><td>1,600</td><td>200</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 240" role="img" aria-label="Barras del valor contable de la computadora: $1,800 en el año 0, $1,400, $1,000, $600 y $200 en el año 4. Cada barra es $400 más baja que la anterior, y la última llega a la línea punteada del valor residual de $200." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><rect x="177.5" y="30.0" width="57.0" height="170.0" fill="#00897b"/><text x="206.0" y="24.0" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,800</text><text x="206.0" y="216" text-anchor="middle" font-size="13" fill="#424242">0</text><rect x="269.5" y="67.8" width="57.0" height="132.2" fill="#00897b"/><text x="298.0" y="61.8" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,400</text><text x="298.0" y="216" text-anchor="middle" font-size="13" fill="#424242">1</text><rect x="361.5" y="105.6" width="57.0" height="94.4" fill="#00897b"/><text x="390.0" y="99.6" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$1,000</text><text x="390.0" y="216" text-anchor="middle" font-size="13" fill="#424242">2</text><rect x="453.5" y="143.3" width="57.0" height="56.7" fill="#00897b"/><text x="482.0" y="137.3" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$600</text><text x="482.0" y="216" text-anchor="middle" font-size="13" fill="#424242">3</text><rect x="545.5" y="181.1" width="57.0" height="18.9" fill="#00897b"/><text x="574.0" y="175.1" text-anchor="middle" font-size="13" font-weight="700" fill="#004d40">$200</text><text x="574.0" y="216" text-anchor="middle" font-size="13" fill="#424242">4</text><line x1="158" y1="181.1" x2="620" y2="181.1" stroke="#c62828" stroke-width="2" stroke-dasharray="6 4"/><text x="154" y="185.1" text-anchor="end" font-size="12" fill="#c62828">valor residual $200</text><line x1="160" y1="200" x2="620" y2="200" stroke="#424242" stroke-width="2"/><text x="390" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">Año</text></svg></div>
+<p>Cada barra es $400 más baja que la anterior. El valor nunca baja del valor residual.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Depreciación anual</h3></div>
+<p class="pregunta-int" id="t-p1">Una tienda compra un refrigerador comercial por $2,600. Su vida útil es de 5 años y su valor residual, $600. ¿Cuánto pierde cada año?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">$520</button>
+<button class="opcion" data-k="b" type="button">$400</button>
+<button class="opcion" data-k="c" type="button">$2,000</button>
+<button class="opcion" data-k="d" type="button">$600</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Valor contable</h3></div>
+<p class="pregunta-int" id="t-p2">Con el mismo refrigerador, ¿cuál es su valor contable al final del año 3?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">$1,200</button>
+<button class="opcion" data-k="b" type="button">$1,040</button>
+<button class="opcion" data-k="c" type="button">$1,000</button>
+<button class="opcion" data-k="d" type="button">$1,400</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#tabla" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: primero la tabla, después la fórmula (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: primero la tabla, después la fórmula</span><span class="ei-sub">Complete la tabla del valor contable año por año.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">3</span>Las fórmulas de la depreciación lineal</h2>
+<p>Los pasos del ejemplo de la computadora se resumen en dos fórmulas.</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">D = (V₀ − Vr) ÷ n</p>
+<p style="text-align:center">D = depreciación anual · V₀ = valor inicial · Vr = valor residual · n = vida útil en años</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">Valor contable en el año t = V₀ − D × t</p>
+<p style="text-align:center">D × t es la depreciación acumulada hasta ese año.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La tasa anual</span>
+<p>Si un bien dura 4 años, cada año pierde 1 de 4 partes iguales del valor que se va a depreciar: 1 ÷ 4 = 0.25 = 25% por año. En general, la tasa anual de depreciación lineal es <strong>1 ÷ n</strong>. En la computadora: 25% de $1,600 = $400, el mismo resultado.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: equipo de trabajo<span style="display:block;font-weight:400;margin-top:6px">Un taller de costura compra una máquina industrial por $3,000. Su vida útil es de 5 años y su valor residual, $500. Calcule la depreciación anual, la tasa anual y el valor contable al final del año 3.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Depreciación anual.</strong> D = (3,000 − 500) ÷ 5 = 2,500 ÷ 5 = 500 por año.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Tasa anual.</strong> 1 ÷ 5 = 0.20 = 20% por año.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Valor contable en el año 3.</strong> 3,000 − 500 × 3 = 3,000 − 1,500 = 1,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Pierde <strong>$500 por año</strong> (20%), y al final del año 3 vale <strong>$1,500</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: ¿en qué año llega a cierto valor?<span style="display:block;font-weight:400;margin-top:6px">Con la misma máquina: ¿al final de qué año su valor contable será de $1,000?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Valor que tiene que perder.</strong> 3,000 − 1,000 = 2,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Años necesarios.</strong> 2,000 ÷ 500 = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Al final del <strong>año 4</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: cuando el problema da un porcentaje del costo<span style="display:block;font-weight:400;margin-top:6px">«Una camioneta de reparto de $30,000 se deprecia un 10% anual de su costo original». ¿Cuánto vale después de 4 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Depreciación anual.</strong> 30,000 × 0.10 = 3,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Valor contable en el año 4.</strong> 30,000 − 3,000 × 4 = 30,000 − 12,000 = 18,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$18,000</strong>. Sigue siendo depreciación lineal: la pérdida es la misma cada año; solo cambia la forma de dar el dato.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Error frecuente</span>
+<p>Dividir el valor inicial entre la vida útil sin restar antes el valor residual. En la máquina, 3,000 ÷ 5 = 600 es incorrecto: con esa cifra, la máquina terminaría valiendo $0 y no los $500 del enunciado.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> El valor contable en la calculadora</span>
+<p>Para la máquina en el año 3: <span class="tecla">(</span> <span class="tecla num">3000</span> <span class="tecla">−</span> <span class="tecla num">500</span> <span class="tecla">)</span> <span class="tecla">÷</span> <span class="tecla num">5</span> <span class="tecla">enter</span> da 500. Después, <span class="tecla num">3000</span> <span class="tecla">−</span> <span class="tecla num">500</span> <span class="tecla">×</span> <span class="tecla num">3</span> <span class="tecla">enter</span> da 1,500. La calculadora multiplica antes de restar.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Una impresora</h3></div>
+<p class="pregunta-int" id="t-p3">Una impresora de $900 tiene un valor residual de $100 y una vida útil de 4 años. ¿Cuál es la depreciación anual?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">$200</button>
+<button class="opcion" data-k="b" type="button">$225</button>
+<button class="opcion" data-k="c" type="button">$250</button>
+<button class="opcion" data-k="d" type="button">$800</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Un taladro</h3></div>
+<p class="pregunta-int" id="t-p4">Un taladro profesional de $450 tiene un valor residual de $50 y una vida útil de 5 años. ¿Cuál es su valor contable al final del año 3?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">$290</button>
+<button class="opcion" data-k="b" type="button">$240</button>
+<button class="opcion" data-k="c" type="button">$210</button>
+<button class="opcion" data-k="d" type="button">$80</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — La tasa anual</h3></div>
+<p class="pregunta-int" id="t-p5">Un bien tiene una vida útil de 8 años. ¿Cuál es su tasa anual de depreciación lineal?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">12.5%</button>
+<button class="opcion" data-k="b" type="button">8%</button>
+<button class="opcion" data-k="c" type="button">80%</button>
+<button class="opcion" data-k="d" type="button">0.125%</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las fórmulas de la depreciación lineal (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las fórmulas de la depreciación lineal</span><span class="ei-sub">Calcule D = (V₀ − Vr) ÷ n, la tasa anual y el valor en cualquier año.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-integrados"><span aria-hidden="true" class="num-seccion">4</span>Problemas financieros integrados</h2>
+<p>En la vida real, las decisiones de dinero mezclan varias ideas: el porcentaje de un impuesto, el interés de un préstamo y la pérdida de valor de lo que se compra. La estrategia es resolver cada parte por separado y después juntar los resultados.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: la camioneta del negocio<span style="display:block;font-weight:400;margin-top:6px">Rosa pide un préstamo de $18,000 al 6% de interés simple anual, a 3 años, para comprar una camioneta para su negocio. La camioneta tiene una vida útil de 6 años y un valor residual de $3,000. Al terminar de pagar el préstamo, ¿cuánto pagó en total y cuánto vale la camioneta?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El préstamo.</strong> I = 18,000 × 0.06 × 3 = 3,240; total pagado A = 18,000 + 3,240 = 21,240.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>La depreciación.</strong> D = (18,000 − 3,000) ÷ 6 = 2,500 por año.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Valor contable en el año 3.</strong> 18,000 − 2,500 × 3 = 10,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Interpretación.</strong> 21,240 − 10,500 = 10,740.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Rosa pagó <strong>$21,240</strong> y la camioneta vale <strong>$10,500</strong>. Usarla durante tres años le costó, en realidad, $10,740.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: impuesto y depreciación<span style="display:block;font-weight:400;margin-top:6px">Una laptop cuesta $1,200 más un impuesto sobre ventas del 10%. Se usará 3 años y al final valdrá $120. ¿Cuánto vale después de 2 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Valor inicial con impuesto (Lección 5.3).</strong> 1,200 × 1.10 = 1,320.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Depreciación anual.</strong> D = (1,320 − 120) ÷ 3 = 1,200 ÷ 3 = 400.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Valor contable en el año 2.</strong> 1,320 − 400 × 2 = 520.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Después de 2 años vale <strong>$520</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — El costo real</h3></div>
+<p class="pregunta-int" id="t-p6">Ana pide un préstamo de $10,000 al 5% de interés simple anual, a 2 años, para comprar una camioneta. La camioneta tiene una vida útil de 5 años y un valor residual de $2,000. Al terminar de pagar, ¿cuánto le costó en realidad usar la camioneta (total pagado − valor contable)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">$1,000</button>
+<button class="opcion" data-k="b" type="button">$3,200</button>
+<button class="opcion" data-k="c" type="button">$6,800</button>
+<button class="opcion" data-k="d" type="button">$4,200</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#integrados" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: problemas financieros integrados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: problemas financieros integrados</span><span class="ei-sub">Combine interés, impuesto y depreciación en un mismo problema.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-6-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva seis problemas de depreciación lineal: depreciación anual, tasa anual, tabla y valor contable en un año específico. Después, resuelva cuatro problemas de repaso de interés simple (Lección 6.1).</li>
+<li><strong>En su vida diaria.</strong> Piense en algo que usted o su familia usan para trabajar o en casa: un carro, un teléfono, una herramienta. Estime cuánto costó, cuántos años durará y cuánto valdrá al final. Construya su tabla de valor contable.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Una computadora de $1,800 tiene un valor residual de $200 y una vida útil de 4 años. ¿Cuál es su depreciación anual?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$450</button><button class="opcion" data-k="b" type="button">$400</button><button class="opcion" data-k="c" type="button">$1,600</button><button class="opcion" data-k="d" type="button">$500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un bien tiene una vida útil de 5 años. ¿Cuál es su tasa anual de depreciación lineal?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5%</button><button class="opcion" data-k="b" type="button">0.2%</button><button class="opcion" data-k="c" type="button">50%</button><button class="opcion" data-k="d" type="button">20%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Una máquina de $3,000 tiene un valor residual de $500 y una vida útil de 5 años. ¿Cuál es su valor contable al final del año 3?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$1,500</button><button class="opcion" data-k="b" type="button">$1,200</button><button class="opcion" data-k="c" type="button">$1,000</button><button class="opcion" data-k="d" type="button">$500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Con la misma máquina, ¿al final de qué año su valor contable será de $1,000?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Año 2</button><button class="opcion" data-k="b" type="button">Año 5</button><button class="opcion" data-k="c" type="button">Año 4</button><button class="opcion" data-k="d" type="button">Año 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Una camioneta de $30,000 se deprecia un 10% anual de su costo original. ¿Cuánto vale después de 4 años?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$12,000</button><button class="opcion" data-k="b" type="button">$18,000</button><button class="opcion" data-k="c" type="button">$19,683</button><button class="opcion" data-k="d" type="button">$27,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Un bien tiene una vida útil de 8 años. ¿Cuál es su tasa anual de depreciación lineal?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8%</button><button class="opcion" data-k="b" type="button">80%</button><button class="opcion" data-k="c" type="button">0.125%</button><button class="opcion" data-k="d" type="button">12.5%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Rosa pide un préstamo de $18,000 al 6% de interés simple anual, a 3 años. ¿Cuánto devuelve en total?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$21,240</button><button class="opcion" data-k="b" type="button">$3,240</button><button class="opcion" data-k="c" type="button">$19,080</button><button class="opcion" data-k="d" type="button">$10,500</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Una laptop cuesta $1,200 más un 10% de impuesto. Se usará 3 años y al final valdrá $120. ¿Cuánto vale después de 2 años?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$480</button><button class="opcion" data-k="b" type="button">$800</button><button class="opcion" data-k="c" type="button">$520</button><button class="opcion" data-k="d" type="button">$920</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de depreciación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de matemáticas financieras y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcular la depreciación anual y su tasa</th><td>Calculo D = (V₀ − Vr) ÷ n y la tasa 1 ÷ n, y también resuelvo problemas que dan un porcentaje del costo original.</td><td>Calculo D con apoyo o con errores de operación.</td><td>Divido el valor inicial entre la vida útil sin restar el valor residual.</td></tr>
+<tr><th scope="row">Construir o interpretar la tabla de valor contable</th><td>Construyo la tabla completa, la compruebo con V₀ − D × t y hallo en qué año se alcanza un valor.</td><td>Construyo la tabla, con algunos errores de resta.</td><td>La tabla está incompleta o no muestra el patrón.</td></tr>
+<tr><th scope="row">Resolver un problema financiero integrado</th><td>Resuelvo la parte del interés y la de la depreciación, y explico qué significa el resultado; por ejemplo, el costo real de usar un bien.</td><td>Resuelvo bien solo una de las dos partes.</td><td>No separo la parte del interés de la parte de la depreciación.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>La depreciación lineal es el espejo del interés simple: en lugar de sumar una cantidad fija cada año, se <strong>resta</strong>. Con la tabla año por año y la fórmula D = (V₀ − Vr) ÷ n se puede saber cuánto vale un bien en cualquier momento y cuánto cuesta en realidad usarlo.</p>
+<p>Con esto se completa la parte financiera del Tema 6. La <strong>Lección 6.3 · Conversiones entre el sistema inglés y el métrico</strong> cambia de terreno, pero no de herramienta: para convertir entre los dos sistemas también se multiplica por una cantidad fija, el factor de conversión, con el mismo razonamiento proporcional del Tema 4.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 6.3 · Conversiones entre el sistema inglés y el métrico</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>depreciación lineal</dt><dd>Pérdida de valor que es la misma cada año.</dd>
+<dt>valor residual (Vr)</dt><dd>Lo que todavía vale un bien al final de su vida útil.</dd>
+<dt>vida útil (n)</dt><dd>Los años que se espera usar un bien.</dd>
+<dt>valor contable</dt><dd>Lo que vale un bien, según los cálculos, en un año dado: V₀ − D × t.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 6 · Lección 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 6.3",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Dividió $2,600 sin restar antes el valor residual.",
+    "c": "$2,000 es la pérdida total. Repártala entre los 5 años.",
+    "d": "$600 es el valor residual."
+   },
+   "right": "(2,600 − 600) ÷ 5 = $400 por año.",
+   "solution": "D = (2,600 − 600) ÷ 5 = 2,000 ÷ 5 = 400."
+  },
+  "p2": {
+   "ok": "d",
+   "hints": {
+    "a": "$1,200 es la depreciación acumulada en 3 años. Réstela de $2,600.",
+    "b": "Usó $520 por año. Primero reste el valor residual.",
+    "c": "$1,000 es el valor al final del año 4."
+   },
+   "right": "2,600 − 400 × 3 = $1,400.",
+   "solution": "Valor contable = 2,600 − 400 × 3 = 2,600 − 1,200 = 1,400."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Dividió $900 sin restar el valor residual.",
+    "c": "Revise: 900 − 100 = 800, y 800 ÷ 4.",
+    "d": "$800 es la pérdida total. Divida entre 4."
+   },
+   "right": "(900 − 100) ÷ 4 = $200.",
+   "solution": "D = (900 − 100) ÷ 4 = 800 ÷ 4 = 200."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es el valor al final del año 2.",
+    "b": "$240 es la depreciación de 3 años. Réstela de $450.",
+    "d": "$80 es la depreciación anual."
+   },
+   "right": "D = 80; 450 − 80 × 3 = $210.",
+   "solution": "D = (450 − 50) ÷ 5 = 80. Valor contable = 450 − 80 × 3 = 210."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "La tasa es 1 ÷ n, no n.",
+    "c": "Revise: 1 ÷ 8 = 0.125.",
+    "d": "0.125 es el decimal. Multiplique por 100."
+   },
+   "right": "1 ÷ 8 = 0.125 = 12.5% por año.",
+   "solution": "Tasa = 1 ÷ 8 = 0.125 = 12.5% por año."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "$1,000 es solo el interés. Halle el total pagado y el valor contable.",
+    "b": "$3,200 es la depreciación de 2 años; falta el interés.",
+    "c": "$6,800 es el valor contable. Réstelo del total pagado."
+   },
+   "right": "Pagó 11,000; vale 6,800; costo real $4,200.",
+   "solution": "I = 10,000 × 0.05 × 2 = 1,000, total 11,000. D = (10,000 − 2,000) ÷ 5 = 1,600; valor = 10,000 − 3,200 = 6,800. Costo real = 11,000 − 6,800 = 4,200."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Primero reste el valor residual.",
+    "c": "Esa es la pérdida total.",
+    "d": "Sumó el valor residual en lugar de restarlo."
+   },
+   "solution": "(1,800 − 200) ÷ 4 = $400."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "La tasa es 1 ÷ n.",
+    "b": "0.2 es el decimal; páselo a porcentaje.",
+    "c": "Revise: 1 ÷ 5 = 0.2."
+   },
+   "solution": "1 ÷ 5 = 0.20 = 20%."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "Usó 3,000 ÷ 5 = 600. Reste antes el valor residual.",
+    "c": "$1,000 es el valor en el año 4.",
+    "d": "$500 es el valor residual, al final del año 5."
+   },
+   "solution": "D = 500; 3,000 − 500 × 3 = $1,500."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "En 2 años pierde solo $1,000.",
+    "b": "En el año 5 vale el valor residual, $500.",
+    "d": "En el año 3 vale $1,500."
+   },
+   "solution": "Tiene que perder 2,000; 2,000 ÷ 500 = 4."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "$12,000 es la pérdida en 4 años.",
+    "c": "Tomó el 10% de cada valor nuevo. Aquí es el 10% del costo original.",
+    "d": "$27,000 es el valor después de solo 1 año."
+   },
+   "solution": "D = 3,000; 30,000 − 3,000 × 4 = $18,000."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "La tasa es 1 ÷ n, no n.",
+    "b": "Revise: 1 ÷ 8.",
+    "c": "0.125 es el decimal; multiplique por 100."
+   },
+   "solution": "1 ÷ 8 = 0.125 = 12.5%."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "$3,240 es el interés. Sume el préstamo.",
+    "c": "Eso tiene solo un año de interés.",
+    "d": "$10,500 es el valor contable de la camioneta."
+   },
+   "solution": "I = 18,000 × 0.06 × 3 = 3,240; A = $21,240."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "Dejó fuera el impuesto. El valor inicial es $1,320.",
+    "b": "$800 es la depreciación de 2 años.",
+    "d": "$920 es el valor después de solo 1 año."
+   },
+   "solution": "V₀ = 1,320; D = 400; 1,320 − 800 = $520."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

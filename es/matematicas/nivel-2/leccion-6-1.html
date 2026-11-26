@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 6.1 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_6_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 6.1 · Interés simple: la fórmula I = P × r × t · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-6-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 6 — Matemáticas financieras y conversiones de medidas</p>
+<h1>Lección 6.1 · Interés simple: la fórmula I = P × r × t</h1>
+<p class="lema">El porcentaje a lo largo del tiempo: el interés de ahorros y préstamos con I = P × r × t, el monto total, la tasa y el tiempo en la misma unidad, y cómo despejar cualquier dato.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> las cinco cantidades: P, r, t, I y A.</li>
+<li><strong>Calcular</strong> el interés con I = P × r × t y el monto total con A = P + I.</li>
+<li><strong>Convertir</strong> la tasa a decimal y el tiempo a la misma unidad que la tasa.</li>
+<li><strong>Describir</strong> el interés simple como un crecimiento en escalones iguales.</li>
+<li><strong>Despejar</strong> el principal, la tasa o el tiempo.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.3.d</span> Resolver problemas de la vida real, de dos pasos, con porcentajes. Por ejemplo: interés simple, impuestos, aumentos y rebajas de precio, propinas y comisiones, aumento y disminución porcentual.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.1.b</span> Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.</li><li><span class="std-cod std-base">Q.2.e</span> Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li><li><span class="std-cod std-mp">MP.5.a</span> Reconocer errores en el razonamiento de otras personas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.RP.3</span> <span class="std-nivel">Nivel D</span> Usar relaciones proporcionales para resolver problemas de varios pasos con razones y porcentajes. Por ejemplo: interés simple, impuestos, aumentos y rebajas de precio, propinas y comisiones, cargos, aumento y disminución porcentual, error porcentual.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-dos-caras">El banco y yo: dos caras del interés</a></li>
+<li><a href="#s-vocabulario">Vocabulario financiero</a></li>
+<li><a href="#s-formula">La fórmula del interés simple</a></li>
+<li><a href="#s-misma-unidad">La tasa y el tiempo, en la misma unidad</a></li>
+<li><a href="#s-ano-a-ano">Crecimiento año tras año</a></li>
+<li><a href="#s-despejar">Despejar P, r o t</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-dos-caras"><span aria-hidden="true" class="num-seccion">1</span>El banco y yo: dos caras del interés</h2>
+<p>En la Lección 5.3 se aplicaron los porcentajes a situaciones de un solo momento: un descuento, un impuesto, una propina. Esta lección, primera del Tema 6, da el paso siguiente: aplicar un porcentaje <strong>a lo largo del tiempo</strong>. Cada año que el dinero pasa en una cuenta o en un préstamo, se aplica otra vez el mismo porcentaje.</p>
+<p>Antes de ver ninguna fórmula, conviene mirar dos situaciones conocidas. En las dos aparece el interés, pero desde lados opuestos.</p>
+<div aria-label="Ahorrar y pedir prestado (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Dos caras del interés: cuando se ahorra y cuando se pide prestado</caption>
+<thead><tr><th scope="col"></th><th scope="col">Cuando yo ahorro</th><th scope="col">Cuando yo pido prestado</th></tr></thead>
+<tbody>
+<tr><td>Situación</td><td>Guadalupe deposita $1,500 en una cuenta de ahorro que paga el 4% anual.</td><td>Ernesto pide un préstamo de $3,000 al 10% anual por 6 meses.</td></tr>
+<tr><td>Un año</td><td>El 4% de $1,500 = $60</td><td>El 10% de $3,000 = $300</td></tr>
+<tr><td>Todo el plazo</td><td>3 años: 60 + 60 + 60 = <strong>$180</strong></td><td>Medio año: la mitad de $300 = <strong>$150</strong></td></tr>
+<tr><td>¿Quién paga?</td><td>El banco me paga por usar mi dinero.</td><td>Yo le pago al banco por usar su dinero.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Idea esencial</span>
+<p>Sin fórmula, ya se calculó interés simple. Primero se halló el porcentaje del dinero inicial para <strong>un año</strong>; después se multiplicó por el <strong>número de años</strong>. La fórmula de la sección 3 solo escribe esta idea con letras.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-vocabulario"><span aria-hidden="true" class="num-seccion">2</span>Vocabulario financiero</h2>
+<p>Toda situación de interés simple gira en torno a cinco cantidades. Las letras son las mismas que aparecen en la hoja de fórmulas del examen GED.</p>
+<div aria-label="Las cinco cantidades (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las cinco cantidades del interés simple</caption>
+<thead><tr><th scope="col">Letra</th><th scope="col">Nombre</th><th scope="col">Qué es</th></tr></thead>
+<tbody>
+<tr><td>P</td><td>principal o capital</td><td>el dinero inicial que se deposita o se presta</td></tr>
+<tr><td>r</td><td>tasa de interés</td><td>el porcentaje que se cobra o se paga por cada período, casi siempre por año; en la fórmula va en decimal</td></tr>
+<tr><td>t</td><td>tiempo o plazo</td><td>cuánto dura el ahorro o el préstamo, en la misma unidad que la tasa (normalmente, años)</td></tr>
+<tr><td>I</td><td>interés</td><td>el dinero adicional: una ganancia en un ahorro, un costo en un préstamo</td></tr>
+<tr><td>A</td><td>monto total</td><td>el principal más el interés: lo que se retira al final, o lo que se devuelve en total</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div aria-label="Las mismas palabras en los dos idiomas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Términos financieros en inglés y en español</caption>
+<thead><tr><th scope="col">Inglés</th><th scope="col">Español</th></tr></thead>
+<tbody>
+<tr><td>principal</td><td>principal o capital</td></tr>
+<tr><td>simple interest</td><td>interés simple</td></tr>
+<tr><td>annual interest rate</td><td>tasa de interés anual</td></tr>
+<tr><td>term</td><td>plazo</td></tr>
+<tr><td>total amount</td><td>monto total</td></tr>
+<tr><td>loan / savings account</td><td>préstamo / cuenta de ahorro</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<a class="enlace-interactivo" href="practica-6-1.html#vocabulario" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: vocabulario financiero (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: vocabulario financiero</span><span class="ei-sub">Repase qué son el capital, la tasa, el tiempo, el interés y el monto.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formula"><span aria-hidden="true" class="num-seccion">3</span>La fórmula del interés simple</h2>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">I = P × r × t</p>
+<p style="text-align:center">I = interés · P = principal · r = tasa anual en decimal · t = tiempo en años</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">A = P + I</p>
+<p style="text-align:center">El monto total es el principal más el interés.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: calcular el interés<span style="display:block;font-weight:400;margin-top:6px">¿Cuánto interés genera un ahorro de $3,500 al 4% de interés simple anual durante 6 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Datos.</strong> P = 3,500; r = 4% = 0.04; t = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Fórmula.</strong> I = 3,500 × 0.04 × 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Por partes.</strong> 3,500 × 0.04 = 140 (interés de un año); 140 × 6 = 840.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El interés es de <strong>$840</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: monto total de un ahorro<span style="display:block;font-weight:400;margin-top:6px">Con los mismos datos, ¿cuánto dinero hay en la cuenta al final de los 6 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>A = P + I.</strong> A = 3,500 + 840 = 4,340.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$4,340</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: monto total de un préstamo<span style="display:block;font-weight:400;margin-top:6px">Un préstamo de $1,800 tiene un interés simple del 12% anual y se paga en 2 años. ¿Cuánto se devuelve en total?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Interés.</strong> I = 1,800 × 0.12 × 2 = 432.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Total.</strong> A = 1,800 + 432 = 2,232.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$2,232</strong>. El préstamo cuesta $432.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> El interés simple en la calculadora</span>
+<p>Escriba <span class="tecla num">3500</span> <span class="tecla">×</span> <span class="tecla">0.04</span> <span class="tecla">×</span> <span class="tecla num">6</span> <span class="tecla">enter</span>. La pantalla muestra 840. Después, <span class="tecla">+</span> <span class="tecla num">3500</span> <span class="tecla">enter</span> da el monto total, 4,340.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — El interés</h3></div>
+<p class="pregunta-int" id="t-p1">P = $500, r = 6% anual, t = 2 años. ¿Cuánto es el interés?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">$60</button>
+<button class="opcion" data-k="b" type="button">$6,000</button>
+<button class="opcion" data-k="c" type="button">$30</button>
+<button class="opcion" data-k="d" type="button">$560</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — El monto total</h3></div>
+<p class="pregunta-int" id="t-p2">P = $800, r = 3% anual, t = 4 años. ¿Cuál es el monto total A?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">$96</button>
+<button class="opcion" data-k="b" type="button">$896</button>
+<button class="opcion" data-k="c" type="button">$824</button>
+<button class="opcion" data-k="d" type="button">$10,400</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-1.html#interes-simple" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la fórmula del interés simple (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la fórmula del interés simple</span><span class="ei-sub">Use la calculadora de interés y practique con la tasa en decimal.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-misma-unidad"><span aria-hidden="true" class="num-seccion">4</span>La tasa y el tiempo, en la misma unidad</h2>
+<p>La fórmula solo funciona si la tasa está en <strong>decimal</strong> y si la tasa y el tiempo usan <strong>la misma unidad</strong>. Si la tasa es anual, el tiempo debe estar en años. Esta es la parte donde ocurren más errores.</p>
+<p><strong>De porcentaje a decimal:</strong> se divide entre 100 (el punto se corre dos lugares a la izquierda): 3% = 0.03 · 4.5% = 0.045 · 12% = 0.12 · 0.5% = 0.005.</p>
+<div aria-label="De meses a años (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">El tiempo en meses pasado a años (se divide entre 12)</caption>
+<thead><tr><th scope="col">Meses</th><th scope="col">3</th><th scope="col">6</th><th scope="col">9</th><th scope="col">18</th><th scope="col">30</th></tr></thead>
+<tbody>
+<tr><td>Años</td><td>0.25</td><td>0.5</td><td>0.75</td><td>1.5</td><td>2.5</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div aria-label="De tasa mensual a tasa anual (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">La tasa mensual pasada a tasa anual (se multiplica por 12)</caption>
+<thead><tr><th scope="col">Tasa mensual</th><th scope="col">0.5%</th><th scope="col">1%</th><th scope="col">1.5%</th><th scope="col">2%</th><th scope="col">2.5%</th></tr></thead>
+<tbody>
+<tr><td>Tasa anual</td><td>6%</td><td>12%</td><td>18%</td><td>24%</td><td>30%</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>Cuando el tiempo viene en <strong>días</strong>, se divide entre 365. Algunos bancos usan el año comercial de 360 días; el problema debe indicar cuál se usa.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: tiempo en meses<span style="display:block;font-weight:400;margin-top:6px">Un préstamo de $4,000 al 6% anual se paga en 9 meses. ¿Cuánto interés se paga?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Convierta el tiempo.</strong> 9 ÷ 12 = 0.75 años.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Fórmula.</strong> I = 4,000 × 0.06 × 0.75 = 180.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$180</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Error frecuente</span>
+<p>Usar t = 9 sin convertir da I = 4,000 × 0.06 × 9 = $2,160: más de la mitad del préstamo en solo 9 meses. Antes de dar una respuesta, pregúntese si el resultado tiene sentido.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: tasa mensual<span style="display:block;font-weight:400;margin-top:6px">Una tienda financia una compra de $1,200 al 2% mensual durante 6 meses. ¿Cuánto interés se paga?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">A</span><strong>Camino A.</strong> La tasa es mensual y el tiempo está en meses: ya coinciden. I = 1,200 × 0.02 × 6 = 144.</p>
+<p class="paso"><span aria-hidden="true" class="n">B</span><strong>Camino B.</strong> Tasa anual = 2% × 12 = 24%; tiempo = 6 ÷ 12 = 0.5 años. I = 1,200 × 0.24 × 0.5 = 144.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$144</strong> por cualquiera de los dos caminos. Lo importante es que la tasa y el tiempo coincidan.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Tiempo en meses</h3></div>
+<p class="pregunta-int" id="t-p3">P = $3,000, r = 5% anual, t = 8 meses. ¿Cuánto es el interés?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">$1,200</button>
+<button class="opcion" data-k="b" type="button">$150</button>
+<button class="opcion" data-k="c" type="button">$100</button>
+<button class="opcion" data-k="d" type="button">$120</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-1.html#misma-unidad" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la tasa y el tiempo, en la misma unidad (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la tasa y el tiempo, en la misma unidad</span><span class="ei-sub">Convierta meses y días a años, o reconozca cuándo ya coinciden, antes de calcular.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-ano-a-ano"><span aria-hidden="true" class="num-seccion">5</span>Crecimiento año tras año</h2>
+<p>En el interés <strong>simple</strong>, el interés de cada año es <strong>siempre el mismo</strong>, porque se calcula sobre el principal original. Por eso el dinero crece en escalones iguales: un crecimiento <strong>lineal</strong>.</p>
+<div aria-label="$1,000 al 8% (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Principal de $1,000 al 8% de interés simple anual</caption>
+<thead><tr><th scope="col">Año</th><th scope="col">Interés del año ($)</th><th scope="col">Interés acumulado ($)</th><th scope="col">Monto total ($)</th></tr></thead>
+<tbody>
+<tr><td>0</td><td>—</td><td>0</td><td>1,000</td></tr>
+<tr><td>1</td><td>80</td><td>80</td><td>1,080</td></tr>
+<tr><td>2</td><td>80</td><td>160</td><td>1,160</td></tr>
+<tr><td>3</td><td>80</td><td>240</td><td>1,240</td></tr>
+<tr><td>5</td><td>80</td><td>400</td><td>1,400</td></tr>
+<tr><td>10</td><td>80</td><td>800</td><td>1,800</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 240" role="img" aria-label="Barras de cada año, del 0 al 10. La parte oscura de cada barra, el principal de $1,000, no cambia; la parte clara, el interés, crece $80 cada año, hasta $1,800 en el año 10." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><rect x="67.1" y="105.6" width="36.7" height="94.4" fill="#b2dfdb"/><rect x="67.1" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="85.5" y="216" text-anchor="middle" font-size="13" fill="#424242">0</text><rect x="118.0" y="98.0" width="36.7" height="102.0" fill="#b2dfdb"/><rect x="118.0" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="136.4" y="216" text-anchor="middle" font-size="13" fill="#424242">1</text><rect x="168.9" y="90.4" width="36.7" height="109.6" fill="#b2dfdb"/><rect x="168.9" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="187.3" y="216" text-anchor="middle" font-size="13" fill="#424242">2</text><rect x="219.9" y="82.9" width="36.7" height="117.1" fill="#b2dfdb"/><rect x="219.9" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="238.2" y="216" text-anchor="middle" font-size="13" fill="#424242">3</text><rect x="270.8" y="75.3" width="36.7" height="124.7" fill="#b2dfdb"/><rect x="270.8" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="289.1" y="216" text-anchor="middle" font-size="13" fill="#424242">4</text><rect x="321.7" y="67.8" width="36.7" height="132.2" fill="#b2dfdb"/><rect x="321.7" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="340.0" y="216" text-anchor="middle" font-size="13" fill="#424242">5</text><rect x="372.6" y="60.2" width="36.7" height="139.8" fill="#b2dfdb"/><rect x="372.6" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="390.9" y="216" text-anchor="middle" font-size="13" fill="#424242">6</text><rect x="423.5" y="52.7" width="36.7" height="147.3" fill="#b2dfdb"/><rect x="423.5" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="441.8" y="216" text-anchor="middle" font-size="13" fill="#424242">7</text><rect x="474.4" y="45.1" width="36.7" height="154.9" fill="#b2dfdb"/><rect x="474.4" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="492.7" y="216" text-anchor="middle" font-size="13" fill="#424242">8</text><rect x="525.3" y="37.6" width="36.7" height="162.4" fill="#b2dfdb"/><rect x="525.3" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="543.6" y="216" text-anchor="middle" font-size="13" fill="#424242">9</text><rect x="576.2" y="30.0" width="36.7" height="170.0" fill="#b2dfdb"/><rect x="576.2" y="105.6" width="36.7" height="94.4" fill="#00695c"/><text x="594.5" y="216" text-anchor="middle" font-size="13" fill="#424242">10</text><line x1="60" y1="200" x2="620" y2="200" stroke="#424242" stroke-width="2"/><text x="340" y="236" text-anchor="middle" font-size="13" font-weight="700" fill="#424242">Año</text><text x="54" y="34.0" text-anchor="end" font-size="12" fill="#424242">$1,800</text><text x="54" y="109.6" text-anchor="end" font-size="12" fill="#424242">$1,000</text></svg></div>
+<p>La parte oscura (el principal) no cambia. La parte clara (el interés acumulado) crece $80 cada año.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Para saber más</span>
+<p>En el interés <strong>compuesto</strong>, cada año el interés se calcula sobre el monto del año anterior, y el dinero crece más rápido. En este nivel se estudia solo el interés simple.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — El año 5</h3></div>
+<p class="pregunta-int" id="t-p4">$1,000 al 8% de interés simple anual. ¿Cuánto interés gana solo en el año 5?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">$400</button>
+<button class="opcion" data-k="b" type="button">$80</button>
+<button class="opcion" data-k="c" type="button">$1,400</button>
+<button class="opcion" data-k="d" type="button">$86</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-1.html#ano-a-ano" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: crecimiento año tras año (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: crecimiento año tras año</span><span class="ei-sub">Mueva el capital y la tasa y vea la escalera de escalones iguales.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-despejar"><span aria-hidden="true" class="num-seccion">6</span>Despejar P, r o t</h2>
+<p>A veces lo que se desconoce no es el interés, sino otro dato: ¿cuánto hay que depositar?, ¿qué tasa cobra el préstamo?, ¿cuánto tiempo hay que esperar? Con I = P × r × t se puede hallar cualquiera de las cuatro cantidades si se conocen las otras tres.</p>
+<div aria-label="Despejar P, r o t (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">La fórmula despejada para cada cantidad</caption>
+<thead><tr><th scope="col">Se busca</th><th scope="col">Fórmula</th></tr></thead>
+<tbody>
+<tr><td>el principal</td><td>P = I ÷ (r × t)</td></tr>
+<tr><td>la tasa</td><td>r = I ÷ (P × t), y × 100 para el porcentaje</td></tr>
+<tr><td>el tiempo</td><td>t = I ÷ (P × r)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Una sola regla para las tres</span>
+<p>Se divide el interés entre el producto de los otros dos datos. Si el problema da el monto total A en lugar del interés, primero se calcula I = A − P.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: buscar la tasa<span style="display:block;font-weight:400;margin-top:6px">Un préstamo de $2,000 a 4 años generó $560 de interés. ¿Qué tasa anual se cobró?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>r = I ÷ (P × t).</strong> 560 ÷ (2,000 × 4) = 560 ÷ 8,000 = 0.07.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>A porcentaje.</strong> 0.07 × 100 = <strong>7% anual</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: buscar el tiempo<span style="display:block;font-weight:400;margin-top:6px">¿Cuánto tiempo deben estar $1,200 al 5% anual para ganar $150 de interés?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>t = I ÷ (P × r).</strong> 150 ÷ (1,200 × 0.05) = 150 ÷ 60 = 2.5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>2.5 años</strong>, es decir, 2 años y 6 meses.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: buscar el principal<span style="display:block;font-weight:400;margin-top:6px">¿Cuánto hay que depositar al 4% anual para ganar $360 en 3 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>P = I ÷ (r × t).</strong> 360 ÷ (0.04 × 3) = 360 ÷ 0.12 = 3,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Compruebe.</strong> 3,000 × 0.04 × 3 = 360. ✓</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$3,000</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: cuando el dato es el monto total<span style="display:block;font-weight:400;margin-top:6px">Por un préstamo de $4,000 se devolvieron $4,960 en total al cabo de 2 años. ¿Qué tasa anual se cobró?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primero el interés.</strong> I = A − P = 4,960 − 4,000 = 960.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>r = I ÷ (P × t).</strong> 960 ÷ (4,000 × 2) = 960 ÷ 8,000 = 0.12.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>12% anual</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Halle el principal</h3></div>
+<p class="pregunta-int" id="t-p5">Un ahorro al 4% anual ganó $96 en 3 años. ¿Cuánto es P?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">$11.52</button>
+<button class="opcion" data-k="b" type="button">$2,400</button>
+<button class="opcion" data-k="c" type="button">$800</button>
+<button class="opcion" data-k="d" type="button">$8</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Halle la tasa</h3></div>
+<p class="pregunta-int" id="t-p6">Un préstamo de $2,500 a 2 años generó $275 de interés. ¿Cuál es la tasa anual?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">11%</button>
+<button class="opcion" data-k="b" type="button">5.5%</button>
+<button class="opcion" data-k="c" type="button">0.055%</button>
+<button class="opcion" data-k="d" type="button">18.2%</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — Halle el tiempo</h3></div>
+<p class="pregunta-int" id="t-p7">$1,600 al 5% anual ganaron $200 de interés. ¿Cuánto tiempo fue?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">2.5 años</button>
+<button class="opcion" data-k="b" type="button">40 años</button>
+<button class="opcion" data-k="c" type="button">0.4 años</button>
+<button class="opcion" data-k="d" type="button">25 años</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-1.html#despejar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: despejar el capital, la tasa o el tiempo (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: despejar el capital, la tasa o el tiempo</span><span class="ei-sub">Elija qué dato falta y practique los tres despejes, incluso a partir del monto total.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-6-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Calcule el interés I en cuatro ejercicios (dos con el tiempo en meses). Calcule el monto total A = P + I en tres ejercicios, con ahorros y con préstamos. Resuelva tres ejercicios en que haya que despejar el principal, la tasa o el tiempo.</li>
+<li><strong>En su vida diaria.</strong> Busque una oferta real: una cuenta de ahorro, un plan de financiamiento de una tienda o un anuncio de préstamo. Anote P, r y t, compruebe si la tasa y el tiempo usan la misma unidad y calcule el interés.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Una tasa del 4.5% entra en la fórmula como:</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4.5</button><button class="opcion" data-k="b" type="button">0.45</button><button class="opcion" data-k="c" type="button">0.045</button><button class="opcion" data-k="d" type="button">45</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">18 meses, en años, son:</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">18</button><button class="opcion" data-k="b" type="button">1.8</button><button class="opcion" data-k="c" type="button">0.18</button><button class="opcion" data-k="d" type="button">1.5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuánto interés generan $3,500 al 4% anual durante 6 años?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$840</button><button class="opcion" data-k="b" type="button">$140</button><button class="opcion" data-k="c" type="button">$84,000</button><button class="opcion" data-k="d" type="button">$4,340</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Un préstamo de $1,800 al 12% anual se paga en 2 años. ¿Cuánto se devuelve en total?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$432</button><button class="opcion" data-k="b" type="button">$2,232</button><button class="opcion" data-k="c" type="button">$2,016</button><button class="opcion" data-k="d" type="button">$1,843.20</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Un préstamo de $4,000 al 6% anual por 9 meses. ¿Cuánto es el interés?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$2,160</button><button class="opcion" data-k="b" type="button">$240</button><button class="opcion" data-k="c" type="button">$180</button><button class="opcion" data-k="d" type="button">$18</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">$1,000 al 8% de interés simple anual. ¿Cuánto interés gana solo en el año 5?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$400</button><button class="opcion" data-k="b" type="button">$80</button><button class="opcion" data-k="c" type="button">$1,400</button><button class="opcion" data-k="d" type="button">$86</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Un préstamo de $2,000 a 4 años generó $560 de interés. ¿Cuál es la tasa anual?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">0.07%</button><button class="opcion" data-k="b" type="button">28%</button><button class="opcion" data-k="c" type="button">14%</button><button class="opcion" data-k="d" type="button">7%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Por un préstamo de $4,000 se devolvieron $4,960 en total en 2 años. ¿Cuál es la tasa anual?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12%</button><button class="opcion" data-k="b" type="button">62%</button><button class="opcion" data-k="c" type="button">24%</button><button class="opcion" data-k="d" type="button">6%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">9</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de interés simple (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de interés simple y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Convertir la tasa y el tiempo</th><td>Paso la tasa a decimal y el tiempo a años, y sé cuándo no hace falta (tasa mensual con tiempo en meses).</td><td>Convierto la tasa, pero me equivoco con el tiempo, o al revés.</td><td>Uso el porcentaje sin convertir o dejo el tiempo en meses.</td></tr>
+<tr><th scope="row">Aplicar I = P × r × t</th><td>Calculo el interés y el monto total y los compruebo con una estimación.</td><td>Calculo el interés, pero me equivoco con el monto total.</td><td>Confundo las variables.</td></tr>
+<tr><th scope="row">Despejar el dato que falta</th><td>Despejo P, r o t, doy la unidad y compruebo; también parto de A.</td><td>Despejo con apoyo; olvido las unidades.</td><td>No identifico qué dato se busca.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>El interés simple es un porcentaje del principal que se repite cada año: por eso el dinero crece en <strong>cantidades iguales</strong>. Con una sola fórmula, I = P × r × t, se calcula el interés, el monto total o cualquier dato que falte.</p>
+<p>En la <strong>Lección 6.2 · Depreciación y otras aplicaciones financieras</strong> estudiará el proceso contrario: bienes como un carro, una computadora o una herramienta de trabajo, que pierden una cantidad igual de valor cada año. Esa pérdida se llama <strong>depreciación lineal</strong>.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-6-2.html">Lección 6.2 · Depreciación y otras aplicaciones financieras</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>principal (P)</dt><dd>El dinero inicial que se deposita o se presta.</dd>
+<dt>interés simple</dt><dd>Interés que se calcula solo sobre el principal: la misma cantidad cada año.</dd>
+<dt>tasa (r)</dt><dd>El porcentaje por período, escrito en decimal en la fórmula.</dd>
+<dt>monto total (A)</dt><dd>Principal más interés: A = P + I.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 6 · Lección 6.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 6.2",
+ "review": "las secciones 3, 4 y 6",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "La tasa va en decimal: 6% = 0.06.",
+    "c": "$30 es un año. Multiplique por 2 años.",
+    "d": "Ese es el monto total. Se pide solo el interés."
+   },
+   "right": "500 × 0.06 × 2 = $60.",
+   "solution": "I = 500 × 0.06 × 2 = 60."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "$96 es el interés. Sume el principal.",
+    "c": "$24 es el interés de un año. Multiplique por 4.",
+    "d": "La tasa va en decimal: 3% = 0.03."
+   },
+   "right": "I = 96; A = 800 + 96 = $896.",
+   "solution": "I = 800 × 0.03 × 4 = 96; A = 800 + 96 = 896."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Usó 8 años. 8 meses = 8 ÷ 12 de año.",
+    "b": "$150 es un año completo.",
+    "d": "Revise: 150 × 8 ÷ 12."
+   },
+   "right": "3,000 × 0.05 × 8/12 = $100.",
+   "solution": "t = 8 ÷ 12 de año. I = 3,000 × 0.05 × 8/12 = 150 × 8/12 = 100."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "$400 es el interés acumulado en 5 años.",
+    "c": "$1,400 es el monto total a los 5 años.",
+    "d": "En el interés simple, el interés de cada año es el mismo."
+   },
+   "right": "Cada año: 1,000 × 0.08 = $80.",
+   "solution": "El interés simple se calcula sobre el principal original: 1,000 × 0.08 = $80 cada año."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiplicó. P = I ÷ (r × t).",
+    "b": "Revise: 0.04 × 3 = 0.12, y 96 ÷ 0.12.",
+    "d": "Dividió 96 entre 12. Use la tasa en decimal: 0.12."
+   },
+   "right": "96 ÷ 0.12 = $800.",
+   "solution": "P = 96 ÷ (0.04 × 3) = 96 ÷ 0.12 = 800."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Eso es de los 2 años juntos. Divida también entre el tiempo.",
+    "c": "0.055 es el decimal. Multiplique por 100.",
+    "d": "Revise: 275 ÷ (2,500 × 2)."
+   },
+   "right": "275 ÷ 5,000 = 0.055 = 5.5%.",
+   "solution": "r = 275 ÷ (2,500 × 2) = 275 ÷ 5,000 = 0.055 → 5.5% anual."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "Usó 5 en lugar de 0.05.",
+    "c": "Dividió al revés: 80 ÷ 200.",
+    "d": "Revise el punto decimal: 200 ÷ 80."
+   },
+   "right": "200 ÷ (1,600 × 0.05) = 200 ÷ 80 = 2.5 años.",
+   "solution": "t = 200 ÷ (1,600 × 0.05) = 200 ÷ 80 = 2.5 años."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "En la fórmula la tasa va en decimal.",
+    "b": "0.45 es 45%.",
+    "d": "Divida entre 100."
+   },
+   "solution": "4.5 ÷ 100 = 0.045."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Pase los meses a años.",
+    "b": "Divida entre 12, no entre 10.",
+    "c": "Revise: 18 ÷ 12."
+   },
+   "solution": "18 ÷ 12 = 1.5 años."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "$140 es un año.",
+    "c": "La tasa va en decimal.",
+    "d": "Ese es el monto total."
+   },
+   "solution": "3,500 × 0.04 × 6 = $840."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "$432 es el interés. Sume el préstamo.",
+    "c": "Eso es solo un año de interés.",
+    "d": "Revise el interés: 1,800 × 0.12 × 2."
+   },
+   "solution": "I = 432; A = 1,800 + 432 = $2,232."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "Usó 9 años.",
+    "b": "$240 es un año completo.",
+    "d": "Revise: 240 × 0.75."
+   },
+   "solution": "4,000 × 0.06 × 0.75 = $180."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "$400 son los 5 años juntos.",
+    "c": "$1,400 es el monto total.",
+    "d": "El interés simple no crece de un año a otro."
+   },
+   "solution": "Cada año: 1,000 × 0.08 = $80."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "0.07 es el decimal. Multiplique por 100.",
+    "b": "Eso es de los 4 años juntos.",
+    "c": "Revise: 2,000 × 4 = 8,000."
+   },
+   "solution": "560 ÷ 8,000 = 0.07 = 7%."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Usó el monto total como interés. Primero I = A − P.",
+    "c": "Eso es de los 2 años juntos.",
+    "d": "Revise: 960 ÷ 8,000."
+   },
+   "solution": "I = 960; r = 960 ÷ 8,000 = 0.12 = 12%."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

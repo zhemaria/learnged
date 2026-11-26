@@ -133,6 +133,7 @@ CCR_ES = {
  "6.RP.3b": "Resolver problemas de tasa unitaria, incluidos los de precio por unidad y velocidad constante.",
  "7.RP.2a": "Decidir si dos cantidades están en una relación proporcional; por ejemplo, comprobando si las razones de una tabla son equivalentes o si su gráfica es una recta que pasa por el origen.",
  "7.RP.2c": "Representar relaciones proporcionales con ecuaciones.",
+ "6.RP.3d": "Usar el razonamiento con razones para convertir unidades de medida; manipular y transformar las unidades de forma adecuada al multiplicar o dividir cantidades.",
  "6.RP.3c": "Hallar un porcentaje de una cantidad como una tasa por cada 100 (por ejemplo, el 30% de una cantidad es 30/100 por la cantidad); resolver problemas en los que se busca el todo conocidos una parte y el porcentaje.",
  "7.RP.3": "Usar relaciones proporcionales para resolver problemas de varios pasos con razones y porcentajes. Por ejemplo: interés simple, impuestos, aumentos y rebajas de precio, propinas y comisiones, cargos, aumento y disminución porcentual, error porcentual.",
  "6.NS.3": "Sumar, restar, multiplicar y dividir con fluidez decimales de varios dígitos con el algoritmo usual de cada operación.",

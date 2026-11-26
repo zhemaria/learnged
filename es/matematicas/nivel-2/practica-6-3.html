@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 6.3 · Conversiones entre el sistema inglés y el métrico — práctica (español) — construida con tools/build_n2_lesson_6_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 6.3 · Conversiones entre el sistema inglés y el métrico · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-6-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 6 · Matemáticas financieras y conversiones de medidas</div>
+    <h1>Lección 6.3 · Conversiones entre el sistema inglés y el métrico</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#consultorio">En el consultorio y en la farmacia</a></li>
+      <li><a href="#factores">La tabla de factores de conversión</a></li>
+      <li><a href="#fraccion-conversion">El método de la fracción de conversión</a></li>
+      <li><a href="#temperatura">La temperatura: un caso especial</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="consultorio" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>En el consultorio y en la farmacia</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En Estados Unidos se usa el sistema inglés (libras, pulgadas, galones); en casi todo el resto del mundo, el métrico (kilogramos, centímetros, litros). En el consultorio el peso suele anotarse en libras, pero muchas dosis de medicamentos se calculan por kilogramo.</p>
+      <h3>De libras a kilogramos</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="cs-lb">Peso (libras): <span id="cs-lbv"></span></label><input type="range" id="cs-lb" min="10" max="300" step="5" value="165"></div></div>
+        <div class="salida" id="cs-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-tip"><strong>Para comprobar:</strong> un kilogramo es un poco más de 2 libras, así que el peso en kilos es un poco menos de la mitad del peso en libras (libras ÷ 2.2).</div>
+      <h3>Practique: en el consultorio</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Redondee a una cifra decimal, por ejemplo 74.9.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="factores">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La tabla de factores de conversión</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>Entre los dos sistemas</caption>
+        <thead><tr><th scope="col">Magnitud</th><th scope="col">Equivalencia</th></tr></thead>
+        <tbody>
+          <tr><td>Longitud</td><td>1 in = 2.54 cm</td></tr>
+          <tr><td>Longitud</td><td>1 mi ≈ 1.609 km</td></tr>
+          <tr><td>Peso</td><td>1 lb ≈ 454 g</td></tr>
+          <tr><td>Capacidad</td><td>1 gal ≈ 3.785 L</td></tr>
+        </tbody>
+      </table>
+      <table class="reglas">
+        <caption>Dentro de cada sistema</caption>
+        <thead><tr><th scope="col">Inglés</th><th scope="col">Métrico</th></tr></thead>
+        <tbody>
+          <tr><td>1 ft = 12 in</td><td>1 m = 100 cm</td></tr>
+          <tr><td>1 yd = 3 ft</td><td>1 km = 1,000 m</td></tr>
+          <tr><td>1 mi = 5,280 ft</td><td>1 kg = 1,000 g</td></tr>
+          <tr><td>1 lb = 16 oz · 1 gal = 4 qt</td><td>1 L = 1,000 mL</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-tip"><strong>Para estimar:</strong> un metro es un poco más que una yarda; un kilogramo, un poco más de 2 libras; un litro, un poco más que un cuarto de galón; un kilómetro, unas 0.6 millas.</div>
+      <h3>Practique: ¿tiene sentido?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="fraccion-conversion">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El método de la fracción de conversión</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Como 1 in y 2.54 cm son la misma longitud, la fracción 2.54 cm / 1 in vale 1: multiplicar por ella cambia la unidad, no la cantidad. <strong>Regla de oro:</strong> la unidad que se quiere eliminar va abajo, para que se cancele. Si no hay un factor directo, se encadenan varias fracciones.</p>
+      <h3>Arme la cadena</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="fc-m">Magnitud</label><select id="fc-m"><option value="long">Longitud</option><option value="peso">Peso</option><option value="cap">Capacidad</option></select></div>
+          <div class="campo"><label for="fc-x">Cantidad</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="fc-x" value="6"></div>
+          <div class="campo"><label for="fc-de">De</label><select id="fc-de"></select></div>
+          <div class="campo"><label for="fc-a">A</label><select id="fc-a"></select></div>
+        </div>
+        <div class="caja-aviso" id="fc-aviso" role="alert"></div>
+        <div class="salida" id="fc-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>Error frecuente:</strong> poner la fracción al revés. 10 km × 1.609 da 16.09 «millas», más que los kilómetros, cuando las millas son más largas. Si la unidad nueva es más grande, el número tiene que salir más pequeño.</div>
+      <h3>Practique: convierta</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Redondee a dos cifras decimales, por ejemplo 30.48.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="temperatura">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La temperatura: un caso especial</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La temperatura no se convierte con un solo factor, porque las dos escalas no empiezan en el mismo cero: el agua se congela a 0 °C, que son 32 °F. Por eso se resta o se suma 32, respetando el orden de operaciones.</p>
+      <div class="formula">°C = (°F − 32) × 5 ÷ 9 &nbsp;&nbsp;&nbsp; °F = °C × 9 ÷ 5 + 32</div>
+      <h3>Los dos termómetros</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="tm-dir">Convertir</label><select id="tm-dir"><option value="fc">de °F a °C</option><option value="cf">de °C a °F</option></select></div>
+          <div class="campo" style="flex:1;min-width:200px;"><label for="tm-v">Temperatura: <span id="tm-vv"></span></label><input type="range" id="tm-v" min="-40" max="220" value="98.6" step="0.2"></div>
+        </div>
+        <div class="termo" id="tm-svg"></div>
+        <div class="salida" id="tm-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: temperatura</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Grados</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Redondee a una cifra decimal si hace falta; use el signo menos para temperaturas bajo cero.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 6 · Matemáticas financieras y conversiones de medidas · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script>
+var TXT = {
+ "nom": {
+  "in": "pulgadas",
+  "ft": "pies",
+  "yd": "yardas",
+  "mi": "millas",
+  "cm": "centímetros",
+  "m": "metros",
+  "km": "kilómetros",
+  "oz": "onzas",
+  "lb": "libras",
+  "g": "gramos",
+  "kg": "kilogramos",
+  "qt": "cuartos",
+  "gal": "galones",
+  "mL": "mililitros",
+  "L": "litros"
+ },
+ "por": " por ",
+ "sobre": " sobre ",
+ "cs1": "De libras a gramos: {lb} × 454 = {g} g. De gramos a kilogramos: {g} ÷ 1,000 = {kg} kg.",
+ "cs2": "Comprobación: {lb} ÷ 2.2 ≈ {e} kg. ✓",
+ "cs1q": "Un paciente pesa {lb} libras. ¿Cuántos kilogramos son? (1 lb ≈ 454 g; redondee a la décima)",
+ "cs1s": "{lb} × 454 = {g} g = {kg} kg ≈ {r} kg.",
+ "cs1p": "Se dividió en vez de multiplicar: el número de kilogramos debe ser menor que el de libras.",
+ "cs1g": "Ese es el peso en gramos. Falta dividir entre 1,000.",
+ "cs2q": "Un bebé pesa {kg} kg. ¿Cuántas libras son, aproximadamente? (1 lb ≈ 454 g; redondee a la décima)",
+ "cs2s": "{kg} kg = {g} g; {g} ÷ 454 ≈ {r} lb.",
+ "cs2p": "La fracción está al revés: de kilogramos a libras el número debe crecer.",
+ "cs3q": "Una receta médica indica {d} mg de un medicamento por cada kilogramo de peso. El paciente pesa {lb} lb. ¿Cuántos miligramos le corresponden? (1 lb ≈ 454 g; redondee a la décima)",
+ "cs3s": "{lb} lb × 0.454 = {kg} kg; × {d} = {r} mg.",
+ "cs3p": "Primero hay que pasar el peso a kilogramos.",
+ "sq": "¿Cuál de estos resultados tiene sentido para {x} {de} convertidos a {a}?",
+ "sAlReves": "Así sale con la fracción al revés.",
+ "sGrande": "La unidad nueva es más grande, así que el número sale más pequeño",
+ "sChica": "La unidad nueva es más pequeña, así que el número sale más grande",
+ "fcAviso": "Escriba una cantidad positiva.",
+ "fcIgual": "Las dos unidades son iguales: no hay nada que convertir.",
+ "fcCamino": "Camino: {c}. Cada fracción tiene abajo la unidad que se cancela (tachada).",
+ "fcQ": "Convierta {x} {de} a {a}. (Redondee a la centésima.)",
+ "fcP": "Parece que alguna fracción quedó al revés: la unidad que se elimina va abajo.",
+ "tmVoz": "{F} grados Fahrenheit son {C} grados Celsius.",
+ "tmFC1": "Paréntesis primero: {F} − 32 = {r}. Después × 5 ÷ 9: {m} ÷ 9 ≈ {C}.",
+ "tmCF1": "Multiplicación y división primero: {C} × 9 ÷ 5 = {m}. Después + 32 = {F}.",
+ "tmQ1": "Convierta {x} °F a grados Celsius. (Redondee a la décima si hace falta.)",
+ "tmS1": "({x} − 32) × 5 ÷ 9 = {r} × 5 ÷ 9 ≈ {c} °C.",
+ "tmP1": "Primero se resta 32 (dentro del paréntesis) y después se multiplica por 5 ÷ 9.",
+ "tmP2": "El 32 se resta antes de multiplicar.",
+ "tmQ2": "Convierta {x} °C a grados Fahrenheit. (Redondee a la décima si hace falta.)",
+ "tmS2": "{x} × 9 ÷ 5 + 32 = {m} + 32 = {c} °F.",
+ "tmP3": "Se suma 32 al final, después de multiplicar por 9 ÷ 5.",
+ "tmP4": "Esa es la fórmula de °F a °C. Para ir a Fahrenheit: × 9 ÷ 5 + 32."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function redon(v, d){ var p = Math.pow(10, d); return Math.round(v * p) / p; }
+
+/* ---------- Conversion engine ---------- */
+var UNI = { long: ["in", "ft", "yd", "mi", "cm", "m", "km"], peso: ["oz", "lb", "g", "kg"], cap: ["qt", "gal", "mL", "L"] };
+var ARISTAS = [["in","cm",2.54],["mi","km",1.609],["lb","g",454],["gal","L",3.785],["ft","in",12],["yd","ft",3],["mi","ft",5280],["lb","oz",16],["gal","qt",4],["m","cm",100],["km","m",1000],["kg","g",1000],["L","mL",1000]];
+function vecinos(u){ var v = []; ARISTAS.forEach(function(a){ if (a[0] === u) v.push(a[1]); else if (a[1] === u) v.push(a[0]); }); return v; }
+function camino(de, a){
+  var cola = [[de]], vistos = {}; vistos[de] = true;
+  while (cola.length){ var r = cola.shift(), u = r[r.length - 1]; if (u === a) return r; vecinos(u).forEach(function(v){ if (!vistos[v]){ vistos[v] = true; cola.push(r.concat([v])); } }); }
+  return null;
+}
+function arista(u, v){ for (var i = 0; i < ARISTAS.length; i++){ var e = ARISTAS[i]; if (e[0] === u && e[1] === v) return { arriba: [e[2], v], abajo: [1, u], f: e[2] }; if (e[1] === u && e[0] === v) return { arriba: [1, v], abajo: [e[2], u], f: 1 / e[2] }; } }
+function convertir(x, de, a){ var c = camino(de, a), v = x, pasos = []; for (var i = 0; i < c.length - 1; i++){ var e = arista(c[i], c[i + 1]); v *= e.f; pasos.push(e); } return { v: v, pasos: pasos, camino: c }; }
+function fracU(e){ return '<span class="fracc"><span class="fa">' + nd(e.arriba[0]) + ' ' + e.arriba[1] + '</span><span class="fb2">' + nd(e.abajo[0]) + ' <span class="tach">' + e.abajo[1] + '</span></span></span>'; }
+function cadenaHTML(x, de, R){
+  var h = nd(x) + ' <span class="tach">' + de + '</span>';
+  R.pasos.forEach(function(e){ h += ' × ' + fracU(e); });
+  var voz = nd(x) + " " + TXT.nom[de] + R.pasos.map(function(e){ return TXT.por + nd(e.arriba[0]) + " " + TXT.nom[e.arriba[1]] + TXT.sobre + nd(e.abajo[0]) + " " + TXT.nom[e.abajo[1]]; }).join("");
+  return '<span aria-hidden="true">' + h + '</span><span class="sr-only">' + voz + '</span>';
+}
+
+/* ============ MODULE 1 · doctor's office ============ */
+function pintaCS(){
+  var lb = +$("cs-lb").value, g = lb * 454, kg = g / 1000;
+  $("cs-lbv").textContent = lb;
+  $("cs-salida").innerHTML = '<div class="linea cadena">' + cadenaHTML(lb, "lb", convertir(lb, "lb", "kg")) + ' = ' + nd(redon(kg, 2)) + ' kg</div>' +
+    '<div class="linea">' + F(TXT.cs1, { lb: lb, g: nd(g), kg: nd(redon(kg, 2)) }) + '</div>' +
+    '<div class="linea">' + F(TXT.cs2, { lb: lb, e: nd(redon(lb / 2.2, 1)) }) + '</div>';
+}
+function genCS(){
+  var tp = aleatorio(1, 3), res, enun, sol, p = [];
+  if (tp === 1){ var lb = aleatorio(20, 250); res = redon(lb * 0.454, 1); enun = F(TXT.cs1q, { lb: lb }); sol = F(TXT.cs1s, { lb: lb, g: nd(lb * 454), kg: nd(redon(lb * 0.454, 3)), r: nd(res) });
+    p.push({ v: redon(lb / 0.454, 1), msg: TXT.cs1p }, { v: lb * 454, msg: TXT.cs1g }); }
+  else if (tp === 2){ var kg = aleatorio(3, 40); res = redon(kg * 1000 / 454, 1); enun = F(TXT.cs2q, { kg: kg }); sol = F(TXT.cs2s, { kg: kg, g: nd(kg * 1000), r: nd(res) }); p.push({ v: redon(kg * 0.454, 1), msg: TXT.cs2p }); }
+  else { var lb2 = 5 * aleatorio(4, 40), d = elige([2, 5, 10, 15]), kg2 = lb2 * 0.454; res = redon(d * kg2, 1); enun = F(TXT.cs3q, { d: d, lb: lb2 }); sol = F(TXT.cs3s, { lb: lb2, kg: nd(redon(kg2, 3)), d: d, r: nd(res) }); p.push({ v: d * lb2, msg: TXT.cs3p }); }
+  return { enun: enun, correcta: nd(res), solucion: sol, evalua: numD(res, p.filter(function(x){ return Math.abs(x.v - res) > 0.06; }), null, 0.051) };
+}
+
+/* ============ MODULE 2 · does it make sense? ============ */
+function genSentido(){
+  var casos = [[10, "km", "mi"], [5, "kg", "lb"], [2, "L", "qt"], [12, "in", "cm"], [3, "gal", "L"], [100, "m", "yd"], [26.2, "mi", "km"], [150, "lb", "kg"]];
+  var c = elige(casos), R = convertir(c[0], c[1], c[2]), bien = redon(R.v, 2), inv = redon(c[0] / R.v * c[0], 2);
+  var o = [bien, inv, redon(c[0], 2), redon(bien * 10, 2)].filter(function(x, i, a){ return a.indexOf(x) === i; }).map(function(x){ return { html: nd(x) + " " + c[2], clave: "v" + x }; });
+  var pc = {}; pc["v" + inv] = TXT.sAlReves;
+  var ex = (R.v < c[0] ? TXT.sGrande : TXT.sChica) + ": " + nd(c[0]) + " " + c[1] + " ≈ " + nd(bien) + " " + c[2] + ".";
+  return { enun: F(TXT.sq, { x: nd(c[0]), de: TXT.nom[c[1]], a: TXT.nom[c[2]] }), opciones: o, correcta: "v" + bien, pistas: pc, bien: ex, mal: ex };
+}
+
+/* ============ MODULE 3 · the conversion fraction ============ */
+function llenaUnidades(){
+  var m = $("fc-m").value, de = $("fc-de"), a = $("fc-a");
+  de.innerHTML = UNI[m].map(function(u){ return '<option value="' + u + '">' + TXT.nom[u] + ' (' + u + ')</option>'; }).join(""); a.innerHTML = de.innerHTML;
+  var def = { long: ["ft", "m"], peso: ["lb", "kg"], cap: ["gal", "L"] }[m]; de.value = def[0]; a.value = def[1];
+}
+function pintaFC(){
+  var x = leeD($("fc-x").value), de = $("fc-de").value, a = $("fc-a").value, av = $("fc-aviso");
+  if (x === null || x < 0){ av.className = "caja-aviso visible"; av.textContent = TXT.fcAviso; $("fc-x").classList.add("error"); $("fc-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = ""; $("fc-x").classList.remove("error");
+  if (de === a){ $("fc-salida").innerHTML = '<div class="linea">' + TXT.fcIgual + '</div>'; return; }
+  var R = convertir(x, de, a), parcial = x, h = '<div class="linea cadena">' + cadenaHTML(x, de, R) + ' = <strong>' + nd(redon(R.v, 4)) + ' ' + a + '</strong></div>';
+  h += '<div class="linea">' + F(TXT.fcCamino, { c: R.camino.map(function(u){ return TXT.nom[u]; }).join(" → ") }) + '</div>';
+  R.pasos.forEach(function(e){ var ant = parcial; parcial *= e.f; h += '<div class="linea">' + nd(redon(ant, 4)) + ' ' + e.abajo[1] + (e.f >= 1 ? ' × ' + nd(e.arriba[0]) : ' ÷ ' + nd(e.abajo[0])) + ' = ' + nd(redon(parcial, 4)) + ' ' + e.arriba[1] + '</div>'; });
+  $("fc-salida").innerHTML = h;
+}
+var PARES = [[12, "in", "cm"], [10, "km", "mi"], [3, "gal", "L"], [6, "ft", "m"], [2, "mi", "m"], [5, "yd", "m"], [250, "cm", "in"], [8, "L", "gal"], [3, "lb", "kg"], [500, "g", "oz"], [2, "kg", "lb"], [20, "m", "ft"], [5, "qt", "L"], [1500, "mL", "qt"]];
+function genFC(){
+  var c = elige(PARES), x = c[0] * elige([1, 2, 3, 0.5, 1.5]), R = convertir(x, c[1], c[2]), res = redon(R.v, 2), inv = redon(x * x / R.v, 2), tol = Math.max(0.011, Math.abs(res) * 0.002);
+  var p = Math.abs(inv - res) > tol * 2 ? [{ v: inv, msg: TXT.fcP }] : [];
+  return { enun: F(TXT.fcQ, { x: nd(x), de: TXT.nom[c[1]], a: TXT.nom[c[2]] }), correcta: nd(res), solucion: cadenaHTML(x, c[1], R) + " ≈ " + nd(res) + " " + c[2] + ".", evalua: numD(res, p, null, tol) };
+}
+
+/* ============ MODULE 4 · temperature ============ */
+function aC(f){ return (f - 32) * 5 / 9; }
+function aF(c){ return c * 9 / 5 + 32; }
+function termo(x, lo, hi, cx, et){
+  var y0 = 220, y1 = 20, y = y0 - (x - lo) / (hi - lo) * (y0 - y1);
+  return '<rect x="' + cx + '" y="' + y1 + '" width="22" height="' + (y0 - y1) + '" rx="11" fill="#fff" stroke="#004d40" stroke-width="2"/>' +
+    '<rect x="' + (cx + 4) + '" y="' + f1(y) + '" width="14" height="' + f1(y0 - y + 8) + '" rx="7" fill="#c62828"/><circle cx="' + (cx + 11) + '" cy="' + (y0 + 12) + '" r="16" fill="#c62828"/>' +
+    texto([cx + 11, 262], et, 16, "#004d40", 700) + '<text x="' + (cx + 34) + '" y="' + f1(y) + '" dominant-baseline="middle" font-size="16" font-weight="700" fill="#004d40">' + nd(redon(x, 1)) + ' ' + et + '</text>';
+}
+function pintaTM(){
+  var dir = $("tm-dir").value, sl = $("tm-v");
+  sl.min = -40; sl.max = dir === "fc" ? 220 : 105;
+  var v = +sl.value; if (v > +sl.max){ v = +sl.max; sl.value = v; }
+  var Fh = dir === "fc" ? v : aF(v), C = dir === "fc" ? aC(v) : v;
+  $("tm-vv").textContent = nd(redon(v, 1)) + (dir === "fc" ? " °F" : " °C");
+  $("tm-svg").innerHTML = '<svg class="figura" style="max-width:420px" viewBox="0 0 420 280" role="img" aria-label="' + F(TXT.tmVoz, { F: nd(redon(Fh, 1)), C: nd(redon(C, 1)) }) + '">' + termo(Fh, -40, 220, 80, "°F") + termo(C, -40, 105, 260, "°C") + '</svg>';
+  $("tm-salida").innerHTML = dir === "fc"
+    ? '<div class="linea">' + F(TXT.tmFC1, { F: nd(redon(Fh, 1)), r: nd(redon(Fh - 32, 2)), m: nd(redon((Fh - 32) * 5, 2)), C: nd(redon(C, 1)) }) + '</div><div class="linea veredicto">' + nd(redon(Fh, 1)) + ' °F ≈ ' + nd(redon(C, 1)) + ' °C</div>'
+    : '<div class="linea">' + F(TXT.tmCF1, { C: nd(redon(C, 1)), m: nd(redon(C * 9 / 5, 2)), F: nd(redon(Fh, 1)) }) + '</div><div class="linea veredicto">' + nd(redon(C, 1)) + ' °C ≈ ' + nd(redon(Fh, 1)) + ' °F</div>';
+}
+function genTM(){
+  var fc = Math.random() < 0.5, enun, res, sol, p = [];
+  if (fc){ var Fv = elige([98.6, 32, 212, 50, 68, 77, 104, 14, -4, 86, 59, 23]); res = redon(aC(Fv), 1);
+    enun = F(TXT.tmQ1, { x: nd(Fv) }); sol = F(TXT.tmS1, { x: nd(Fv), r: nd(redon(Fv - 32, 2)), c: nd(res) });
+    p.push({ v: redon(Fv - 32 * 5 / 9, 1), msg: TXT.tmP1 }, { v: redon(Fv * 5 / 9 - 32, 1), msg: TXT.tmP2 }); }
+  else { var Cv = elige([37, 20, 0, 100, 25, 30, -10, 15, 40, -5, 10]); res = redon(aF(Cv), 1);
+    enun = F(TXT.tmQ2, { x: nd(Cv) }); sol = F(TXT.tmS2, { x: nd(Cv), m: nd(redon(Cv * 9 / 5, 2)), c: nd(res) });
+    p.push({ v: redon((Cv + 32) * 9 / 5, 1), msg: TXT.tmP3 }, { v: redon(aC(Cv), 1), msg: TXT.tmP4 }); }
+  return { enun: enun, correcta: nd(res), solucion: sol, evalua: numD(res, p.filter(function(x){ return Math.abs(x.v - res) > 0.06; }), null, 0.051) };
+}
+
+/* ============ Start ============ */
+$("cs-lb").addEventListener("input", pintaCS); pintaCS();
+creaPracticaLibre("p1", genCS);
+creaPracticaOM("p2", genSentido);
+$("fc-m").addEventListener("change", function(){ llenaUnidades(); pintaFC(); }); ["fc-de", "fc-a"].forEach(function(id){ $(id).addEventListener("change", pintaFC); }); $("fc-x").addEventListener("input", pintaFC);
+llenaUnidades(); pintaFC();
+creaPracticaLibre("p3", genFC);
+$("tm-dir").addEventListener("change", function(){ $("tm-v").value = $("tm-dir").value === "fc" ? 98.6 : 20; pintaTM(); }); $("tm-v").addEventListener("input", pintaTM); pintaTM();
+creaPracticaLibre("p4", genTM);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
