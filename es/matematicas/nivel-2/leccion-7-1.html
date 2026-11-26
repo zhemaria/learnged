@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.1 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.1 · Área de figuras compuestas · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-7-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 7 — Geometría transicional</p>
+<h1>Lección 7.1 · Área de figuras compuestas</h1>
+<p class="lema">Dividir para conquistar: el área de figuras en L, esquinas recortadas y fachadas sumando o restando piezas simples, y el costo de los materiales.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Recordar</strong> las fórmulas de área de rectángulos, triángulos y trapecios.</li>
+<li><strong>Descomponer</strong> una figura compuesta en figuras simples mediante líneas auxiliares.</li>
+<li><strong>Aplicar</strong> la estrategia de adición: sumar las áreas de las piezas.</li>
+<li><strong>Aplicar</strong> la estrategia de sustracción: restar el trozo que falta de un rectángulo mayor.</li>
+<li><strong>Calcular</strong> el costo de un material (pintura, alfombra) a partir del área y de un precio por unidad.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.4.d</span> Calcular el perímetro y el área de figuras compuestas de dos dimensiones, que pueden incluir círculos, dadas las fórmulas geométricas necesarias.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.4.a</span> Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.</li><li><span class="std-cod std-base">Q.4.c</span> Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.G.1</span> <span class="std-nivel">Nivel D</span> Hallar el área de triángulos rectángulos, de otros triángulos, de cuadriláteros especiales y de polígonos, componiéndolos en rectángulos o descomponiéndolos en triángulos y otras figuras; aplicar estas técnicas para resolver problemas matemáticos y de la vida real.</li><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Nivel D</span> Resolver problemas de la vida real y de matemáticas sobre el área, el volumen y el área de la superficie de objetos de dos y tres dimensiones formados por triángulos, cuadriláteros, polígonos, cubos y prismas rectos.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-repaso">Repaso de las fórmulas básicas de área</a></li>
+<li><a href="#s-compuesta">Qué es una figura compuesta</a></li>
+<li><a href="#s-adicion">La estrategia de adición</a></li>
+<li><a href="#s-sustraccion">La estrategia de sustracción</a></li>
+<li><a href="#s-comparacion">Comparación de las dos estrategias</a></li>
+<li><a href="#s-costo">Aplicaciones reales: el costo de los materiales</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-repaso"><span aria-hidden="true" class="num-seccion">1</span>Repaso de las fórmulas básicas de área</h2>
+<p>Bienvenida al Tema 7. Hasta ahora el Nivel 2 ha trabajado con números y comparaciones: enteros con signo, fracciones, PEMDAS, razones, porcentajes y matemáticas financieras. Ahora el terreno cambia: se pasa a la <strong>medición del espacio</strong>. Esta primera lección abre el tema con una técnica esencial: cómo medir el área de figuras que no son simples rectángulos o triángulos, sino combinaciones de varias formas básicas.</p>
+<p>El área se mide siempre en <strong>unidades cuadradas</strong>: pulgadas cuadradas (in²), pies cuadrados (ft²), yardas cuadradas (yd²).</p>
+<div aria-label="Fórmulas básicas de área (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Fórmulas de área de las figuras básicas</caption>
+<thead><tr><th scope="col">Figura</th><th scope="col">Fórmula</th><th scope="col">En palabras</th></tr></thead>
+<tbody>
+<tr><td>Rectángulo</td><td>A = b × h</td><td>base por altura</td></tr>
+<tr><td>Cuadrado</td><td>A = s²</td><td>lado al cuadrado</td></tr>
+<tr><td>Paralelogramo</td><td>A = b × h</td><td>base por altura (la altura, no el lado inclinado)</td></tr>
+<tr><td>Triángulo</td><td>A = (b × h) ÷ 2</td><td>base por altura, entre dos</td></tr>
+<tr><td>Trapecio</td><td>A = ((B + b) × h) ÷ 2</td><td>suma de las bases por la altura, entre dos</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Una idea que las une</span>
+<p>Todas estas fórmulas comparten una estructura: <strong>base por altura</strong>, ajustada por un factor (1 en el rectángulo, ½ en el triángulo, el promedio de las bases en el trapecio). Pensar así ayuda a recordarlas sin memorizarlas a la fuerza.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#formulas-basicas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las fórmulas básicas de área (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las fórmulas básicas de área</span><span class="ei-sub">Explore el rectángulo, el cuadrado, el paralelogramo, el triángulo y el trapecio, y repase qué mide cada fórmula.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-compuesta"><span aria-hidden="true" class="num-seccion">2</span>Qué es una figura compuesta</h2>
+<p>Una <strong>figura compuesta</strong> se forma al combinar dos o más figuras simples. Aparecen en todas partes: un apartamento en forma de L, un patio con una esquina recortada, la fachada de una casa (un rectángulo con un triángulo encima).</p>
+<div style="text-align:center"><svg viewBox="0 0 640 260" role="img" aria-label="Tres figuras compuestas: una L formada por dos rectángulos, un rectángulo con una esquina recortada y una casa formada por un rectángulo con un triángulo encima." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="80.0,196.7 160.0,196.7 160.0,143.3 213.3,143.3 213.3,76.7 80.0,76.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="266.7,196.7 400.0,196.7 400.0,116.7 360.0,76.7 266.7,76.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="453.3,196.7 560.0,196.7 560.0,116.7 453.3,116.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="453.3,116.7 560.0,116.7 506.7,63.3" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><text x="146.7" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">En forma de L</text><text x="333.3" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">Esquina recortada</text><text x="506.7" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">Casa</text></svg></div>
+<p>Cualquiera de ellas se mide con una idea sencilla: <strong>dividir para conquistar</strong>. Se trazan una o varias líneas auxiliares que descomponen la figura en piezas simples cuya área se sabe calcular; luego se suman o, en algunos casos, se restan.</p>
+<div aria-label="Las dos estrategias (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Estrategias de adición y de sustracción</caption>
+<thead><tr><th scope="col">Estrategia</th><th scope="col">Qué se hace</th><th scope="col">Conviene cuando…</th></tr></thead>
+<tbody>
+<tr><td>Adición</td><td>se parte la figura en piezas y se suman sus áreas</td><td>la figura se divide fácilmente en piezas</td></tr>
+<tr><td>Sustracción</td><td>se calcula la figura completa y se resta lo que falta</td><td>la figura es una grande a la que le quitaron un trozo</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<a class="enlace-interactivo" href="practica-7-1.html#estrategia" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: qué es una figura compuesta (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: qué es una figura compuesta</span><span class="ei-sub">Reconozca figuras formadas por piezas simples y decida cómo dividirlas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-adicion"><span aria-hidden="true" class="num-seccion">3</span>La estrategia de adición</h2>
+<p>En la <strong>estrategia de adición</strong>, se traza una línea auxiliar que parte la figura en dos (o más) piezas simples. Se calcula el área de cada pieza por separado y se suman los resultados.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 330" role="img" aria-label="Plano en forma de L: 18 pies arriba, 20 pies del lado izquierdo y 12 pies abajo. Una línea punteada a 10 pies del borde superior lo divide en R1, de 18 por 10, arriba, y R2, de 12 por 10, abajo." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="212.0,285.0 356.0,285.0 356.0,165.0 428.0,165.0 428.0,45.0 212.0,45.0" fill="#eceff1" stroke="#37474f" stroke-width="3"/><line x1="212.0" y1="165.0" x2="356.0" y2="165.0" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 4"/><text x="320.0" y="105.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">R1</text><text x="284.0" y="225.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">R2</text><text x="284.0" y="301.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">12 ft</text><text x="320.0" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="203.0" y="165.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text><text x="437.0" y="105.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text><text x="392.0" y="181.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text><text x="365.0" y="225.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: forma de L<span style="display:block;font-weight:400;margin-top:6px">Un cuarto en forma de L tiene las medidas que muestra el plano. ¿Cuál es su área total?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Línea auxiliar.</strong> Trace una línea horizontal a 10 ft del borde superior. La figura queda dividida en dos rectángulos.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>R1 (arriba).</strong> 18 × 10 = 180 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>R2 (abajo).</strong> 12 × 10 = 120 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Sume.</strong> 180 + 120 = 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El cuarto tiene un área de <strong>300 pies cuadrados</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Estrategia visual</span>
+<p>Conviene marcar cada pieza con una letra o un color distinto (R1, R2, T1…) y anotar su área al lado. Al final, sumar todas las áreas se vuelve un paso mecánico.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Dos rectángulos</h3></div>
+<p class="pregunta-int" id="t-p1">Una figura está formada por dos rectángulos unidos: uno de 20 ft × 5 ft y otro de 12 ft × 5 ft. ¿Cuál es el área total?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button>
+<button class="opcion" data-k="b" type="button">160 ft²</button>
+<button class="opcion" data-k="c" type="button">42 ft²</button>
+<button class="opcion" data-k="d" type="button">6,000 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#adicion" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la estrategia de adición (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la estrategia de adición</span><span class="ei-sub">Mueva las medidas del cuarto en L, deduzca el lado que falta y sume las piezas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-sustraccion"><span aria-hidden="true" class="num-seccion">4</span>La estrategia de sustracción</h2>
+<p>A veces una figura compuesta se ve mejor como <strong>un rectángulo grande al que le falta un trozo</strong>. La <strong>estrategia de sustracción</strong> consiste en calcular el área del rectángulo completo y luego restar el área del trozo faltante.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="Un patio de 25 por 18 pies al que le falta una esquina de 8 por 6 pies arriba a la derecha, marcada con borde rojo punteado." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="174.2,255.0 465.8,255.0 465.8,115.0 372.5,115.0 372.5,45.0 174.2,45.0" fill="#c8e6c9" stroke="#37474f" stroke-width="3"/><polygon points="372.5,115.0 465.8,115.0 465.8,45.0 372.5,45.0" fill="#ffebee" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/><text x="419.2" y="80.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">falta</text><text x="320.0" y="271.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">25 ft</text><text x="165.2" y="150.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="419.2" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">8 ft</text><text x="474.8" y="80.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un patio con una esquina recortada<span style="display:block;font-weight:400;margin-top:6px">Un patio rectangular de 25 ft × 18 ft tiene una esquina recortada (un rectángulo de 8 ft × 6 ft). ¿Cuál es el área aprovechable?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El rectángulo completo.</strong> 25 × 18 = 450 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>El trozo que falta.</strong> 8 × 6 = 48 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Reste.</strong> 450 − 48 = 402 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El área aprovechable es de <strong>402 pies cuadrados</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Atención</span>
+<p>Elegir entre adición y sustracción es cuestión de comodidad. Una misma figura puede resolverse de las dos maneras, y el resultado debe ser idéntico. Si un camino resulta engorroso, conviene probar el otro.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — ¿Qué estrategia?</h3></div>
+<p class="pregunta-int" id="t-p2">A un campo rectangular se le quitó un triángulo en una esquina. ¿Qué estrategia es más cómoda?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">Sustracción: el rectángulo completo menos el triángulo</button>
+<button class="opcion" data-k="b" type="button">Adición: partirlo en piezas y sumar</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Reste lo que falta</h3></div>
+<p class="pregunta-int" id="t-p3">Una L es un rectángulo de 15 ft × 8 ft al que le falta una esquina de 6 ft × 4 ft. ¿Cuál es su área?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">120 ft²</button>
+<button class="opcion" data-k="b" type="button">24 ft²</button>
+<button class="opcion" data-k="c" type="button">96 ft²</button>
+<button class="opcion" data-k="d" type="button">144 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#sustraccion" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la estrategia de sustracción (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la estrategia de sustracción</span><span class="ei-sub">Complete el rectángulo, reste el trozo que falta y compruebe que da lo mismo que por adición.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-comparacion"><span aria-hidden="true" class="num-seccion">5</span>Comparación de las dos estrategias</h2>
+<p>En muchas figuras las dos estrategias funcionan y conducen al mismo resultado. Vale la pena verlo en un ejemplo concreto.</p>
+<div aria-label="Adición y sustracción (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las dos estrategias, lado a lado</caption>
+<thead><tr><th scope="col"></th><th scope="col">Adición ➕</th><th scope="col">Sustracción ➖</th></tr></thead>
+<tbody>
+<tr><td>Qué se hace</td><td>Se divide la figura en piezas simples y se suman sus áreas.</td><td>Se completa la figura hasta formar un rectángulo grande y se le resta el trozo que sobra.</td></tr>
+<tr><td>Fórmula</td><td>A = A₁ + A₂ + …</td><td>A = A<sub>completo</sub> − A<sub>falta</sub></td></tr>
+<tr><td>Útil cuando</td><td>las divisiones son fáciles de trazar</td><td>lo que falta se identifica claramente</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 330" role="img" aria-label="La misma L completada hasta un rectángulo de 18 por 20; la esquina que falta, de 6 por 10, aparece con borde rojo punteado." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="212.0,285.0 356.0,285.0 356.0,165.0 428.0,165.0 428.0,45.0 212.0,45.0" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="356.0,285.0 428.0,285.0 428.0,165.0 356.0,165.0" fill="#ffebee" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/><text x="392.0" y="225.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">falta</text><text x="320.0" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="203.0" y="165.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text><text x="392.0" y="301.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text><text x="437.0" y="225.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una misma figura por dos caminos<span style="display:block;font-weight:400;margin-top:6px">Compruebe que la L del ejemplo de adición (300 ft²) también se obtiene por sustracción.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El rectángulo completo.</strong> 18 × 20 = 360 ft² (las medidas exteriores).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>La esquina que falta.</strong> 6 × 10 = 60 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Reste.</strong> 360 − 60 = 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>300 ft²</strong>, igual que por adición. ✓</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-costo"><span aria-hidden="true" class="num-seccion">6</span>Aplicaciones reales: el costo de los materiales</h2>
+<p>Una vez calculada el área, es muy común multiplicarla por un <strong>precio por unidad</strong> para conocer el costo total de un material: pintura, alfombra o losetas por pie cuadrado.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: alfombrar la L<span style="display:block;font-weight:400;margin-top:6px">El cuarto en forma de L (300 ft²) se va a alfombrar a $4 por pie cuadrado. ¿Cuánto costará?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Área.</strong> 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Costo.</strong> 300 × $4 = $1,200.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Alfombrar el cuarto cuesta <strong>$1,200</strong>.</p>
+</div>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="Fachada: un rectángulo de 30 pies de ancho y 20 de alto con un triángulo encima de 12 pies de altura." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="221.6,255.0 418.4,255.0 418.4,123.8 221.6,123.8" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="221.6,123.8 418.4,123.8 320.0,45.0" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><line x1="320.0" y1="123.8" x2="320.0" y2="45.0" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 4"/><text x="343.6" y="90.9" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">12 ft</text><text x="320.0" y="271.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">30 ft</text><text x="427.4" y="189.4" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: pintar una fachada<span style="display:block;font-weight:400;margin-top:6px">La fachada de una casa es un rectángulo de 30 ft × 20 ft con un triángulo encima (base 30 ft, altura 12 ft). Un galón de pintura cubre 350 ft². ¿Cuántos galones se necesitan?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Rectángulo.</strong> 30 × 20 = 600 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Triángulo.</strong> (30 × 12) ÷ 2 = 180 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Total.</strong> 600 + 180 = 780 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Galones.</strong> 780 ÷ 350 ≈ 2.23. No se compran fracciones de galón, así que se redondea <strong>hacia arriba</strong>: 3 galones.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Hacen falta <strong>3 galones</strong> de pintura.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> El área y el costo en la calculadora</span>
+<p>Para la fachada: <span class="tecla num">30</span> <span class="tecla">×</span> <span class="tecla num">20</span> <span class="tecla">+</span> <span class="tecla num">30</span> <span class="tecla">×</span> <span class="tecla num">12</span> <span class="tecla">÷</span> <span class="tecla num">2</span> <span class="tecla">enter</span> da 780. La calculadora respeta PEMDAS, así que no hacen falta paréntesis. Después, <span class="tecla">÷</span> <span class="tecla num">350</span> <span class="tecla">enter</span> da 2.228…</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Una casa</h3></div>
+<p class="pregunta-int" id="t-p4">Una figura es un rectángulo de 10 ft × 6 ft con un triángulo encima (base 10 ft, altura 4 ft). ¿Cuál es su área?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button>
+<button class="opcion" data-k="b" type="button">64 ft²</button>
+<button class="opcion" data-k="c" type="button">80 ft²</button>
+<button class="opcion" data-k="d" type="button">120 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Losetas</h3></div>
+<p class="pregunta-int" id="t-p5">Un piso de 48 ft² se cubre con losetas a $15 por pie cuadrado. ¿Cuál es el costo total?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">$63</button>
+<button class="opcion" data-k="b" type="button">$720</button>
+<button class="opcion" data-k="c" type="button">$320</button>
+<button class="opcion" data-k="d" type="button">$3.20</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Galones de pintura</h3></div>
+<p class="pregunta-int" id="t-p6">Una cerca tiene 820 ft² por pintar. Un galón cubre 350 ft². ¿Cuántos galones hay que comprar?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">2 galones</button>
+<button class="opcion" data-k="b" type="button">2.34 galones</button>
+<button class="opcion" data-k="c" type="button">4 galones</button>
+<button class="opcion" data-k="d" type="button">3 galones</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#costo" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el costo de los materiales (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el costo de los materiales</span><span class="ei-sub">Pase del área al presupuesto y redondee hacia arriba los galones o los rollos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva cuatro figuras en forma de L o de T por adición y tres figuras con esquinas recortadas por sustracción. Después, resuelva tres problemas de costo (pintura, alfombra o losetas) y dos problemas inversos: dada el área total y un lado, halle el otro.</li>
+<li><strong>En su vida diaria.</strong> Mida un cuarto de su casa (o use un plano). Dibújelo, divídalo en rectángulos, calcule su área en pies cuadrados y estime cuánto costaría alfombrarlo a $4 por pie cuadrado.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Un triángulo tiene base de 10 ft y altura de 6 ft. ¿Cuál es su área?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 ft²</button><button class="opcion" data-k="b" type="button">16 ft²</button><button class="opcion" data-k="c" type="button">30 ft²</button><button class="opcion" data-k="d" type="button">32 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un trapecio tiene bases de 8 ft y 4 ft y altura de 5 ft. ¿Cuál es su área?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">30 ft²</button><button class="opcion" data-k="b" type="button">60 ft²</button><button class="opcion" data-k="c" type="button">40 ft²</button><button class="opcion" data-k="d" type="button">17 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Una figura está formada por dos rectángulos: 20 ft × 5 ft y 12 ft × 5 ft. ¿Cuál es su área total?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button><button class="opcion" data-k="b" type="button">60 ft²</button><button class="opcion" data-k="c" type="button">37 ft²</button><button class="opcion" data-k="d" type="button">160 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Un patio de 25 ft × 18 ft tiene una esquina recortada de 8 ft × 6 ft. ¿Cuál es el área aprovechable?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">498 ft²</button><button class="opcion" data-k="b" type="button">402 ft²</button><button class="opcion" data-k="c" type="button">450 ft²</button><button class="opcion" data-k="d" type="button">48 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Se quiere el área de una pared con una ventana, para pintarla. ¿Qué se hace?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sumar la pared y la ventana</button><button class="opcion" data-k="b" type="button">Multiplicar la pared por la ventana</button><button class="opcion" data-k="c" type="button">Restar la ventana de la pared</button><button class="opcion" data-k="d" type="button">Calcular solo la ventana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Una casa es un rectángulo de 10 ft × 6 ft con un triángulo encima (base 10 ft, altura 4 ft). ¿Cuál es su área?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">80 ft²</button><button class="opcion" data-k="b" type="button">100 ft²</button><button class="opcion" data-k="c" type="button">64 ft²</button><button class="opcion" data-k="d" type="button">120 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Un cuarto de 300 ft² se alfombra a $4 por pie cuadrado. ¿Cuánto cuesta?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$304</button><button class="opcion" data-k="b" type="button">$75</button><button class="opcion" data-k="c" type="button">$1,300</button><button class="opcion" data-k="d" type="button">$1,200</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Hay que pintar 780 ft². Un galón cubre 350 ft². ¿Cuántos galones se compran?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2 galones</button><button class="opcion" data-k="b" type="button">3 galones</button><button class="opcion" data-k="c" type="button">2.23 galones</button><button class="opcion" data-k="d" type="button">4 galones</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">9</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de figuras compuestas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas del área de figuras compuestas y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Descomponer la figura</th><td>Trazo las líneas auxiliares correctas sin ayuda y elijo la estrategia más cómoda.</td><td>Descompongo la figura con algo de apoyo.</td><td>No identifico cómo dividir la figura.</td></tr>
+<tr><th scope="row">Aplicar las fórmulas</th><td>Aplico la fórmula correcta a cada pieza y compruebo el resultado por el otro camino.</td><td>Aplico las fórmulas con apoyo.</td><td>Confundo las fórmulas de área.</td></tr>
+<tr><th scope="row">Aplicarlo a la vida real</th><td>Calculo el costo de los materiales y redondeo hacia arriba los galones o rollos.</td><td>Calculo el costo con guía.</td><td>No relaciono el área con el costo.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección de apertura del Tema 7 se incorporó una técnica esencial de la geometría: descomponer una figura compuesta en figuras simples para calcular su área, por <strong>adición</strong> o por <strong>sustracción</strong>. Y se conecta de inmediato con la vida real: planos de viviendas, presupuestos de remodelación, costos de materiales.</p>
+<p>En la <strong>Lección 7.2 · Circunferencia del círculo</strong> entra en juego una figura nueva, distinta de todas las anteriores: el <strong>círculo</strong>. Aparecerá el número <strong>π</strong> (pi), una constante universal que relaciona la circunferencia con el diámetro, y se descubrirá midiendo objetos reales.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 7.2 · Circunferencia del círculo</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>figura compuesta</dt><dd>Figura formada por dos o más figuras simples.</dd>
+<dt>línea auxiliar</dt><dd>Línea que se traza para dividir una figura en piezas simples.</dd>
+<dt>unidad cuadrada</dt><dd>La unidad del área: in², ft², yd².</dd>
+<dt>precio por unidad</dt><dd>El precio de cada unidad cuadrada de un material.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 7 · Lección 7.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.2",
+ "review": "las secciones 3, 4 y 6",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Ese es solo el primer rectángulo. Sume el segundo.",
+    "c": "Sumó los lados. El área es base por altura.",
+    "d": "Multiplicó las dos áreas. Súmelas."
+   },
+   "right": "100 + 60 = 160 ft².",
+   "solution": "20 × 5 = 100 y 12 × 5 = 60; 100 + 60 = 160 ft²."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "El campo es un rectángulo completo al que le falta un trozo: es más cómodo restar."
+   },
+   "right": "Rectángulo completo menos el triángulo que falta.",
+   "solution": "Sustracción: se calcula el rectángulo completo y se resta el triángulo."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es el rectángulo completo. Reste la esquina que falta.",
+    "b": "Esa es la esquina que falta.",
+    "d": "Sumó la esquina. Réstela."
+   },
+   "right": "120 − 24 = 96 ft².",
+   "solution": "15 × 8 = 120; 6 × 4 = 24; 120 − 24 = 96 ft²."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "El área del triángulo se divide entre 2.",
+    "b": "Sumó los lados del triángulo. Use (b × h) ÷ 2.",
+    "d": "Revise el rectángulo: 10 × 6."
+   },
+   "right": "60 + 20 = 80 ft².",
+   "solution": "Rectángulo 10 × 6 = 60; triángulo (10 × 4) ÷ 2 = 20; total 80 ft²."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó. Multiplique el área por el precio.",
+    "c": "Revise: 48 × 15.",
+    "d": "Dividió. Multiplique."
+   },
+   "right": "48 × 15 = $720.",
+   "solution": "Costo = área × precio = 48 × $15 = $720."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "2 galones cubren solo 700 ft². La pintura no alcanza.",
+    "b": "En la tienda no se vende parte de un galón. Redondee hacia arriba.",
+    "c": "3 galones ya cubren 1,050 ft²."
+   },
+   "right": "820 ÷ 350 ≈ 2.34 → 3 galones.",
+   "solution": "820 ÷ 350 ≈ 2.34; se redondea hacia arriba: 3 galones."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "El área del triángulo se divide entre 2.",
+    "b": "Sumó. Multiplique base por altura.",
+    "d": "Esa es la idea del perímetro, no del área."
+   },
+   "solution": "(10 × 6) ÷ 2 = 30 ft²."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "Falta dividir entre 2.",
+    "c": "Sume las dos bases antes de multiplicar.",
+    "d": "Use ((B + b) × h) ÷ 2."
+   },
+   "solution": "((8 + 4) × 5) ÷ 2 = 30 ft²."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Ese es solo el primer rectángulo.",
+    "b": "Ese es solo el segundo rectángulo.",
+    "c": "Sumó los lados."
+   },
+   "solution": "100 + 60 = 160 ft²."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "La esquina que falta se resta, no se suma.",
+    "c": "Ese es el rectángulo completo.",
+    "d": "Esa es la esquina que falta."
+   },
+   "solution": "450 − 48 = 402 ft²."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "La ventana no se pinta: se resta.",
+    "b": "Las áreas no se multiplican entre sí.",
+    "d": "Se pinta la pared, no la ventana."
+   },
+   "solution": "Sustracción: toda la pared menos la ventana."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "El área del triángulo se divide entre 2.",
+    "c": "Revise el triángulo: (10 × 4) ÷ 2.",
+    "d": "Revise las dos piezas otra vez."
+   },
+   "solution": "60 + 20 = 80 ft²."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó. Multiplique el área por el precio.",
+    "b": "Dividió. Multiplique.",
+    "c": "Revise: 300 × 4."
+   },
+   "solution": "300 × $4 = $1,200."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "2 galones cubren solo 700 ft².",
+    "c": "No se compra parte de un galón.",
+    "d": "3 galones ya alcanzan."
+   },
+   "solution": "780 ÷ 350 ≈ 2.23 → 3 galones."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

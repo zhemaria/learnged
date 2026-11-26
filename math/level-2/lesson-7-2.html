@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.2 · Math Level 2 (English) — built by tools/build_n2_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.2 · Circumference of a circle · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 7 — Geometry: circles and composite figures</p>
+<h1>Lesson 7.2 · Circumference of a circle</h1>
+<p class="lema">A new figure: the circle. Its parts, the discovery of π, the formulas C = πd and C = 2πr, and how to find the radius from the circumference.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Name</strong> the parts of a circle: center, radius, diameter, and circumference.</li>
+<li><strong>Use</strong> the relationship d = 2r between diameter and radius.</li>
+<li><strong>Discover</strong> π as the constant ratio of the circumference to the diameter.</li>
+<li><strong>Find</strong> the circumference with C = πd or C = 2πr.</li>
+<li><strong>Solve</strong> reverse problems: find the radius or the diameter from the circumference.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.4.b</span> Compute the area and circumference of circles. Determine the radius or diameter when given area or circumference.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Select the appropriate mathematical technique(s) to use in solving a problem or a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.G.4</span> <span class="std-nivel">Level D</span> Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-anatomy">The parts of a circle</a></li>
+<li><a href="#s-pi">The discovery of π</a></li>
+<li><a href="#s-formulas">The two circumference formulas</a></li>
+<li><a href="#s-solve-for-radius">The reverse problem: finding the radius</a></li>
+<li><a href="#s-applications">Real uses</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-anatomy"><span aria-hidden="true" class="num-seccion">1</span>The parts of a circle</h2>
+<p>In Lesson 7.1 you worked with rectangles, triangles, and trapezoids: figures with straight sides. This lesson brings in a completely different figure: the <strong>circle</strong>, a closed curve whose points are all the same distance from a center point. The old formulas are not enough to measure it; a famous constant appears: <strong>π</strong> (pi).</p>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="A circle with center O. A red segment from the center to the edge is the radius r. A blue segment through the center from edge to edge is the diameter d. The edge of the circle is the circumference C." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><circle cx="220" cy="150" r="115" fill="#eceff1" stroke="#37474f" stroke-width="5"/><line x1="105" y1="150" x2="335" y2="150" stroke="#0d47a1" stroke-width="4"/><line x1="220" y1="150" x2="293.9" y2="61.9" stroke="#b71c1c" stroke-width="4"/><circle cx="220" cy="150" r="6" fill="#222"/><text x="206.0" y="134.0" text-anchor="middle" dominant-baseline="middle" font-size="17" font-weight="700" fill="#222">O</text><text x="235.0" y="96.0" text-anchor="end" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">radius r</text><text x="220.0" y="172.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">diameter d</text><line x1="305.1" y1="235.1" x2="345.1" y2="261.1" stroke="#37474f" stroke-width="2"/><text x="351.1" y="265.1" text-anchor="start" dominant-baseline="middle" font-size="16" font-weight="700" fill="#37474f">circumference C (the edge)</text></svg></div>
+<div aria-label="Parts of a circle (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The parts of a circle</caption>
+<thead><tr><th scope="col">Part</th><th scope="col">What it is</th></tr></thead>
+<tbody>
+<tr><td>Center (O)</td><td>the point that is the same distance from every point on the circle</td></tr>
+<tr><td>Radius (r)</td><td>the distance from the center to any point on the circle</td></tr>
+<tr><td>Diameter (d)</td><td>the segment across the circle through the center; it is <strong>twice the radius</strong></td></tr>
+<tr><td>Circumference (C)</td><td>the length of the edge of the circle: its “perimeter”</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">d = 2 × r &nbsp;&nbsp;&nbsp; r = d ÷ 2</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Careful with the words</span>
+<p>The <strong>circle</strong> is the whole region, including the inside; the <strong>circumference</strong> is only the edge. People sometimes use the words loosely, but when you measure, be clear about which one you are measuring.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Radius and diameter</h3></div>
+<p class="pregunta-int" id="t-p1">A circle has a radius of 12 in. How long is its diameter?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">6 in</button>
+<button class="opcion" data-k="b" type="button">24 in</button>
+<button class="opcion" data-k="c" type="button">12 in</button>
+<button class="opcion" data-k="d" type="button">37.68 in</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#anatomy" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the parts of a circle (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the parts of a circle</span><span class="ei-sub">Move the radius and watch the diameter and the circumference change.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-pi"><span aria-hidden="true" class="num-seccion">2</span>The discovery of π</h2>
+<p>Measure the edge (the circumference, C) of several round objects with a string, and measure their diameter (d) with a ruler. Something amazing happens: the ratio C ÷ d <strong>always gives the same number</strong>, whatever the size of the object.</p>
+<div aria-label="C ÷ d in real objects (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The ratio C ÷ d in real objects</caption>
+<thead><tr><th scope="col">Object</th><th scope="col">Diameter d (in)</th><th scope="col">Circumference C (in)</th><th scope="col">C ÷ d</th></tr></thead>
+<tbody>
+<tr><td>Quarter (coin)</td><td>0.955</td><td>3.00</td><td>≈ 3.14</td></tr>
+<tr><td>Dinner plate</td><td>10</td><td>31.42</td><td>≈ 3.14</td></tr>
+<tr><td>Soda can</td><td>2.6</td><td>8.17</td><td>≈ 3.14</td></tr>
+<tr><td>Car tire</td><td>26</td><td>81.68</td><td>≈ 3.14</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div style="text-align:center"><svg viewBox="0 0 460 234" role="img" aria-label="The edge of a circle stretched into a straight line C. Three diameters fit along it, plus a small extra piece of about 0.14 diameter, shown in yellow." style="width:100%;max-width:460px;height:auto;display:block;margin:12px auto;"><circle cx="100.0" cy="70" r="60.0" fill="#eceff1" stroke="#37474f" stroke-width="4"/><line x1="40.0" y1="70" x2="160.0" y2="70" stroke="#0d47a1" stroke-width="3"/><line x1="40" y1="170.0" x2="417.0" y2="170.0" stroke="#37474f" stroke-width="6"/><rect x="40" y="180.0" width="120" height="14" fill="#0d47a1"/><text x="100.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="160" y="180.0" width="120" height="14" fill="#90caf9"/><text x="220.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="280" y="180.0" width="120" height="14" fill="#0d47a1"/><text x="340.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="400" y="180.0" width="17.0" height="14" fill="#f9a825"/><text x="425.0" y="170.0" text-anchor="start" dominant-baseline="middle" font-size="17" font-weight="700" fill="#37474f">C</text></svg></div>
+<p>That constant number has its own name: <strong>π</strong>, the Greek letter “pi”. Its exact value has infinitely many decimal places with no repeating pattern, but for calculations an approximation is enough:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">π ≈ 3.14159</p>
+<p>The usual approximation is <strong>π ≈ 3.14</strong>. Another useful one, as a fraction, is <strong>π ≈ 22/7</strong>. The calculator also has a π key, which gives a slightly more exact answer.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A key idea</span>
+<p>Nobody invented π. It is a constant of nature: every circle, of any size, has a circumference about 3.14159 times its diameter. That is why π shows up so often in mathematics.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — The ratio</h3></div>
+<p class="pregunta-int" id="t-p2">For any circle, the ratio circumference ÷ diameter is…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">different for each circle</button>
+<button class="opcion" data-k="b" type="button">always 2</button>
+<button class="opcion" data-k="c" type="button">always the same: π</button>
+<button class="opcion" data-k="d" type="button">larger for larger circles</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#pi" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the discovery of π (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the discovery of π</span><span class="ei-sub">Unroll the edge of a wheel and see that it is always a little more than three diameters: π.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">3</span>The two circumference formulas</h2>
+<p>The definition of π gives the circumference formula right away. If C ÷ d = π, then:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">C = π × d</p>
+<p style="text-align:center">when you know the <strong>diameter</strong></p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">C = 2 × π × r</p>
+<p style="text-align:center">when you know the <strong>radius</strong> (because d = 2r)</p>
+<p>The two formulas are the same; choose based on the data you have. Both are on the GED formula sheet.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: with the diameter<span style="display:block;font-weight:400;margin-top:6px">A pizza has a diameter of 14 inches. What is its circumference?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Data.</strong> d = 14 in. Use C = π × d.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute.</strong> C ≈ 3.14 × 14 = 43.96 in.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The circumference of the pizza is about <strong>44 inches</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: with the radius<span style="display:block;font-weight:400;margin-top:6px">A circular walking path has a radius of 40 feet. How long is one full lap?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Data.</strong> r = 40 ft. Use C = 2 × π × r.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute.</strong> C ≈ 2 × 3.14 × 40 = 251.2 ft.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> One lap is about <strong>251.2 feet</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Watch out</span>
+<p>Any result found with π ≈ 3.14 is approximate, not exact. That is why we write “≈” (approximately equal). If an exact answer is asked for, leave it <strong>in terms of π</strong>: C = 14π inches.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> π on the calculator</span>
+<p>For the walking path: <span class="tecla num">2</span> <span class="tecla">×</span> <span class="tecla">π</span> <span class="tecla">×</span> <span class="tecla num">40</span> <span class="tecla">enter</span> gives 251.327… With the π key the answer is a little more exact than with 3.14 (251.2). On the GED, both are usually close enough; read the answer choices.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — With the diameter</h3></div>
+<p class="pregunta-int" id="t-p3">d = 10 in. What is C? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">15.7 in</button>
+<button class="opcion" data-k="b" type="button">62.8 in</button>
+<button class="opcion" data-k="c" type="button">13.14 in</button>
+<button class="opcion" data-k="d" type="button">31.4 in</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — With the radius</h3></div>
+<p class="pregunta-int" id="t-p4">r = 6 ft. What is C? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">37.68 ft</button>
+<button class="opcion" data-k="b" type="button">18.84 ft</button>
+<button class="opcion" data-k="c" type="button">113.04 ft</button>
+<button class="opcion" data-k="d" type="button">12 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the two circumference formulas (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the two circumference formulas</span><span class="ei-sub">Use the calculator with the diameter or the radius and practice C = πd and C = 2πr.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-solve-for-radius"><span aria-hidden="true" class="num-seccion">4</span>The reverse problem: finding the radius</h2>
+<p>Sometimes you know the circumference and need the radius or the diameter. Just solve the formula:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">d = C ÷ π &nbsp;&nbsp;&nbsp; r = C ÷ (2π)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: find the radius<span style="display:block;font-weight:400;margin-top:6px">The edge of a round table is 188.4 in long. What is its radius?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Data.</strong> C = 188.4 in. You want r.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Solve.</strong> r = C ÷ (2π) ≈ 188.4 ÷ (2 × 3.14) = 188.4 ÷ 6.28.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divide.</strong> 188.4 ÷ 6.28 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The radius of the table is <strong>30 in</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Check</span>
+<p>Check by working backward. If r = 30 in, then C = 2 × 3.14 × 30 = 188.4 in. ✓ It matches. This quick check catches arithmetic mistakes.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Find the radius</h3></div>
+<p class="pregunta-int" id="t-p5">A circular track has a circumference of 314 ft. What is its radius? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">100 ft</button>
+<button class="opcion" data-k="b" type="button">25 ft</button>
+<button class="opcion" data-k="c" type="button">50 ft</button>
+<button class="opcion" data-k="d" type="button">157 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#solve-for-radius" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: finding the radius or the diameter (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: finding the radius or the diameter</span><span class="ei-sub">Start from the circumference and solve for the diameter or the radius.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-applications"><span aria-hidden="true" class="num-seccion">5</span>Real uses</h2>
+<p>The circumference shows up in very concrete situations: how much fencing goes around a round garden, how much trim covers the edge of a table, how far a tire rolls in one turn.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: fencing a garden<span style="display:block;font-weight:400;margin-top:6px">A round garden has a radius of 7 ft. How many feet of fencing go around it? Use π ≈ 22/7.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Formula.</strong> C = 2 × π × r ≈ 2 × (22/7) × 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplify.</strong> The 7 in the denominator cancels with the radius: 2 × 22 = 44.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> About <strong>44 ft</strong> of fencing. (22/7 is handy when the radius is a multiple of 7.)</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: a rolling tire<span style="display:block;font-weight:400;margin-top:6px">A car tire has a diameter of 24 in. How far does the car move in one full turn of the tire?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>One turn = the circumference.</strong> C ≈ 3.14 × 24 = 75.36 in.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>In feet.</strong> 75.36 ÷ 12 = 6.28 ft.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> With each turn the car moves about <strong>75.36 in</strong>, a little more than 6 feet.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — A fountain</h3></div>
+<p class="pregunta-int" id="t-p6">A round fountain has a radius of 4 ft. How long is its edge? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">12.56 ft</button>
+<button class="opcion" data-k="b" type="button">25.12 ft</button>
+<button class="opcion" data-k="c" type="button">50.24 ft</button>
+<button class="opcion" data-k="d" type="button">8 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#applications" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: uses of the circumference (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: uses of the circumference</span><span class="ei-sub">Solve problems about wheels, fences, and round tracks.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Find the circumference in four problems given the radius and four given the diameter. Find the radius or the diameter in three problems given the circumference. Solve three real problems (a round garden, a tire, a plate).</li>
+<li><strong>In your daily life.</strong> Find three round objects at home (a plate, a can, a lid). Measure the edge with a string and the diameter with a ruler, in inches. Divide C ÷ d for each one. How close do you get to 3.14?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">The distance from the center of a circle to its edge is called the…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">diameter</button><button class="opcion" data-k="b" type="button">circumference</button><button class="opcion" data-k="c" type="button">radius</button><button class="opcion" data-k="d" type="button">center</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">A circle has a radius of 12 in. Its diameter is…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">24 in</button><button class="opcion" data-k="b" type="button">6 in</button><button class="opcion" data-k="c" type="button">12 in</button><button class="opcion" data-k="d" type="button">37.68 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">π is approximately…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3.41</button><button class="opcion" data-k="b" type="button">2.14</button><button class="opcion" data-k="c" type="button">22.7</button><button class="opcion" data-k="d" type="button">3.14</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">For any circle, circumference ÷ diameter is…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">different for each circle</button><button class="opcion" data-k="b" type="button">always π</button><button class="opcion" data-k="c" type="button">larger for larger circles</button><button class="opcion" data-k="d" type="button">always 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A plate has a diameter of 9 in. Its circumference is… (π ≈ 3.14)</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">28.26 in</button><button class="opcion" data-k="b" type="button">14.13 in</button><button class="opcion" data-k="c" type="button">63.59 in</button><button class="opcion" data-k="d" type="button">4.5 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">A round fountain has a radius of 4 ft. How long is its edge? (π ≈ 3.14)</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12.56 ft</button><button class="opcion" data-k="b" type="button">50.24 ft</button><button class="opcion" data-k="c" type="button">25.12 ft</button><button class="opcion" data-k="d" type="button">8 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A track has a circumference of 314 ft. Its radius is… (π ≈ 3.14)</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 ft</button><button class="opcion" data-k="b" type="button">50 ft</button><button class="opcion" data-k="c" type="button">25 ft</button><button class="opcion" data-k="d" type="button">157 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A round garden has a radius of 7 ft. How much fencing goes around it? (π ≈ 22/7)</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">22 ft</button><button class="opcion" data-k="b" type="button">154 ft</button><button class="opcion" data-k="c" type="button">88 ft</button><button class="opcion" data-k="d" type="button">44 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the circumference (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the circumference of a circle and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Parts of the circle</th><td>I name the center, radius, diameter, and circumference and explain d = 2r on my own.</td><td>I tell the terms apart with some help.</td><td>I mix up the radius and the diameter.</td></tr>
+<tr><th scope="row">Use the formulas</th><td>I use C = πd or C = 2πr depending on the data and choose the easier one.</td><td>I use one formula with help.</td><td>I do not know which formula to use.</td></tr>
+<tr><th scope="row">Reverse problems and real uses</th><td>I solve for the radius, check by working backward, and explain the result.</td><td>I solve for the radius with help.</td><td>I cannot find the radius from the circumference.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson added a new figure: the <strong>circle</strong>. You learned its parts (center, radius, diameter, circumference), the relationship d = 2r, and, above all, you discovered π as a universal constant: the circumference ÷ diameter of any circle. With C = πd or C = 2πr you can already find the edge of gardens, fountains, and tracks.</p>
+<p>In <strong>Lesson 7.3 · Area of a circle and figures with semicircles</strong> you will measure not the edge of the circle but its <strong>inside surface</strong>. A new formula appears, A = πr², and circles combine with rectangles in real composite figures, like a running track.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 7.3 · Area of a circle and figures with semicircles</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>radius (r)</dt><dd>The distance from the center to the edge of a circle.</dd>
+<dt>diameter (d)</dt><dd>The segment across the circle through the center: d = 2r.</dd>
+<dt>circumference (C)</dt><dd>The length of the edge of a circle: C = πd.</dd>
+<dt>π (pi)</dt><dd>The ratio C ÷ d of any circle, about 3.14.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 7 · Lesson 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 7.3",
+ "review": "sections 3 and 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "It is the other way: the diameter is twice the radius.",
+    "c": "That is the radius.",
+    "d": "That is the circumference idea. The diameter is just 2 × r."
+   },
+   "right": "d = 2 × 12 = 24 in.",
+   "solution": "d = 2 × r = 2 × 12 = 24 in."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "Look at the table: big or small, the ratio is about 3.14.",
+    "b": "2 is the ratio of the diameter to the radius.",
+    "d": "Look at the table: the tire and the coin give the same ratio."
+   },
+   "right": "C ÷ d = π for every circle.",
+   "solution": "C ÷ d is always π ≈ 3.14, whatever the size."
+  },
+  "p3": {
+   "ok": "d",
+   "hints": {
+    "a": "With the diameter, C = π × d: do not divide by 2.",
+    "b": "That would be with the 10 as the radius.",
+    "c": "You added 3.14. Multiply."
+   },
+   "right": "3.14 × 10 = 31.4 in.",
+   "solution": "C = π × d ≈ 3.14 × 10 = 31.4 in."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "With the radius, C = 2 × π × r: multiply by 2 too.",
+    "c": "That is π × r², the area. The circumference is 2 × π × r.",
+    "d": "That is the diameter. Multiply by π."
+   },
+   "right": "2 × 3.14 × 6 = 37.68 ft.",
+   "solution": "C = 2 × π × r ≈ 2 × 3.14 × 6 = 37.68 ft."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the diameter (314 ÷ 3.14). The radius is half.",
+    "b": "Check: 314 ÷ 6.28.",
+    "d": "You divided by 2 only. Divide by 2π."
+   },
+   "right": "314 ÷ 6.28 = 50 ft.",
+   "solution": "r = C ÷ (2π) ≈ 314 ÷ 6.28 = 50 ft."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "With the radius you also multiply by 2.",
+    "c": "That is the area (π × r²). The edge is the circumference.",
+    "d": "That is the diameter."
+   },
+   "right": "2 × 3.14 × 4 = 25.12 ft.",
+   "solution": "C = 2 × π × r ≈ 2 × 3.14 × 4 = 25.12 ft."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "The diameter goes all the way across.",
+    "b": "The circumference is the edge.",
+    "d": "The center is a point."
+   },
+   "solution": "The distance from the center to the edge is the radius."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "It is the other way: the diameter is twice the radius.",
+    "c": "That is the radius.",
+    "d": "You do not need π to find the diameter."
+   },
+   "solution": "d = 2 × 12 = 24 in."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "The digits are switched.",
+    "b": "π is a little more than 3.",
+    "c": "The fraction is 22/7, not 22.7."
+   },
+   "solution": "π ≈ 3.14."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "It is the same for every circle.",
+    "c": "Size does not change it.",
+    "d": "2 is diameter ÷ radius."
+   },
+   "solution": "C ÷ d = π always."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "With the diameter, do not divide by 2.",
+    "c": "That is the area.",
+    "d": "That is the radius."
+   },
+   "solution": "3.14 × 9 = 28.26 in."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiply by 2 too.",
+    "b": "That is the area.",
+    "d": "That is the diameter."
+   },
+   "solution": "2 × 3.14 × 4 = 25.12 ft."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "That is the diameter.",
+    "c": "Check: 314 ÷ 6.28.",
+    "d": "Divide by 2π, not by 2."
+   },
+   "solution": "314 ÷ 6.28 = 50 ft."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "That is 22/7 × 7 only; multiply by 2 too.",
+    "b": "That is the area (π × r²).",
+    "c": "You used 14 as the radius."
+   },
+   "solution": "2 × (22/7) × 7 = 44 ft."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

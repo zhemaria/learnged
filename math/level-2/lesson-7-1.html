@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.1 · Math Level 2 (English) — built by tools/build_n2_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.1 · Area of composite figures · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 7 — Geometry: circles and composite figures</p>
+<h1>Lesson 7.1 · Area of composite figures</h1>
+<p class="lema">Divide and conquer: the area of L shapes, cut corners, and house fronts by adding or subtracting simple pieces, and the cost of materials.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Recall</strong> the area formulas for rectangles, triangles, and trapezoids.</li>
+<li><strong>Split</strong> a composite figure into simple figures with helper lines.</li>
+<li><strong>Use</strong> the addition strategy: add the areas of the pieces.</li>
+<li><strong>Use</strong> the subtraction strategy: subtract a missing piece from a bigger rectangle.</li>
+<li><strong>Find</strong> the cost of a material (paint, carpet) from the area and a unit price.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.4.d</span> Compute perimeter and area of 2-D composite geometric figures, which could include circles, given geometric formulas as needed.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.4.a</span> Compute the area and perimeter of triangles and rectangles. Determine side lengths of triangles and rectangles when given area or perimeter.</li><li><span class="std-cod std-base">Q.4.c</span> Compute the perimeter of a polygon. Given a geometric formula, compute the area of a polygon. Determine side lengths of the figure when given the perimeter or area.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.b</span> Represent real world problems visually.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">6.G.1</span> <span class="std-nivel">Level D</span> Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems.</li><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Level D</span> Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-review">Review of the basic area formulas</a></li>
+<li><a href="#s-composite">What a composite figure is</a></li>
+<li><a href="#s-addition">The addition strategy</a></li>
+<li><a href="#s-subtraction">The subtraction strategy</a></li>
+<li><a href="#s-compare">Comparing the two strategies</a></li>
+<li><a href="#s-cost">Real uses: the cost of materials</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-review"><span aria-hidden="true" class="num-seccion">1</span>Review of the basic area formulas</h2>
+<p>Welcome to Topic 7. So far Level 2 has worked with numbers and comparisons: integers, fractions, PEMDAS, ratios, percents, and money math. Now the setting changes: you start <strong>measuring space</strong>. This first lesson opens the topic with a key skill: finding the area of figures that are not simple rectangles or triangles, but combinations of several basic shapes.</p>
+<p>Area is always measured in <strong>square units</strong>: square inches (in²), square feet (ft²), square yards (yd²).</p>
+<div aria-label="Basic area formulas (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Area formulas for the basic figures</caption>
+<thead><tr><th scope="col">Figure</th><th scope="col">Formula</th><th scope="col">In words</th></tr></thead>
+<tbody>
+<tr><td>Rectangle</td><td>A = b × h</td><td>base times height</td></tr>
+<tr><td>Square</td><td>A = s²</td><td>side squared</td></tr>
+<tr><td>Parallelogram</td><td>A = b × h</td><td>base times height (the height, not the slanted side)</td></tr>
+<tr><td>Triangle</td><td>A = (b × h) ÷ 2</td><td>base times height, divided by two</td></tr>
+<tr><td>Trapezoid</td><td>A = ((B + b) × h) ÷ 2</td><td>sum of the bases times the height, divided by two</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">One idea behind all of them</span>
+<p>All these formulas share one structure: <strong>base times height</strong>, adjusted by a factor (1 for the rectangle, ½ for the triangle, the average of the bases for the trapezoid). Thinking this way helps you remember them without memorizing.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#basic-formulas" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the basic area formulas (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the basic area formulas</span><span class="ei-sub">Explore the rectangle, square, parallelogram, triangle, and trapezoid, and review what each formula measures.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-composite"><span aria-hidden="true" class="num-seccion">2</span>What a composite figure is</h2>
+<p>A <strong>composite figure</strong> is made by putting together two or more simple figures. They are everywhere: an L-shaped apartment, a yard with one corner cut off, the front of a house (a rectangle with a triangle on top).</p>
+<div style="text-align:center"><svg viewBox="0 0 640 260" role="img" aria-label="Three composite figures: an L shape made of two rectangles, a rectangle with one corner cut off, and a house made of a rectangle with a triangle on top." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="80.0,196.7 160.0,196.7 160.0,143.3 213.3,143.3 213.3,76.7 80.0,76.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="266.7,196.7 400.0,196.7 400.0,116.7 360.0,76.7 266.7,76.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="453.3,196.7 560.0,196.7 560.0,116.7 453.3,116.7" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="453.3,116.7 560.0,116.7 506.7,63.3" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><text x="146.7" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">L shape</text><text x="333.3" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">Cut corner</text><text x="506.7" y="223.3" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">House</text></svg></div>
+<p>Any of these can be measured with one simple idea: <strong>divide and conquer</strong>. Draw one or more helper lines that split the figure into simple pieces whose area you know how to find; then add them, or in some cases subtract.</p>
+<div aria-label="The two strategies (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Addition and subtraction strategies</caption>
+<thead><tr><th scope="col">Strategy</th><th scope="col">What you do</th><th scope="col">Best when…</th></tr></thead>
+<tbody>
+<tr><td>Addition</td><td>split the figure into pieces and add their areas</td><td>the figure splits easily into pieces</td></tr>
+<tr><td>Subtraction</td><td>find the area of the whole figure and subtract what is missing</td><td>the figure is a big one with a piece taken out</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<a class="enlace-interactivo" href="practice-7-1.html#strategy" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: what a composite figure is (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: what a composite figure is</span><span class="ei-sub">Recognize figures made of simple pieces and decide how to split them.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-addition"><span aria-hidden="true" class="num-seccion">3</span>The addition strategy</h2>
+<p>With the <strong>addition strategy</strong>, draw a helper line that splits the figure into two (or more) simple pieces. Find each area on its own and add the results.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 330" role="img" aria-label="L-shaped floor plan: 18 feet across the top, 20 feet on the left side, 12 feet across the bottom. A dashed line 10 feet down from the top splits it into R1, 18 by 10 on top, and R2, 12 by 10 below." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="212.0,285.0 356.0,285.0 356.0,165.0 428.0,165.0 428.0,45.0 212.0,45.0" fill="#eceff1" stroke="#37474f" stroke-width="3"/><line x1="212.0" y1="165.0" x2="356.0" y2="165.0" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 4"/><text x="320.0" y="105.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">R1</text><text x="284.0" y="225.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">R2</text><text x="284.0" y="301.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">12 ft</text><text x="320.0" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="203.0" y="165.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text><text x="437.0" y="105.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text><text x="392.0" y="181.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text><text x="365.0" y="225.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: an L shape<span style="display:block;font-weight:400;margin-top:6px">An L-shaped room has the measurements shown in the plan. What is its total area?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Helper line.</strong> Draw a horizontal line 10 ft below the top edge. The figure splits into two rectangles.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>R1 (top).</strong> 18 × 10 = 180 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>R2 (bottom).</strong> 12 × 10 = 120 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Add.</strong> 180 + 120 = 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The room has an area of <strong>300 square feet</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Visual strategy</span>
+<p>Label each piece with a letter or a different color (R1, R2, T1…) and write its area next to it. At the end, adding them up is a mechanical step.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Two rectangles</h3></div>
+<p class="pregunta-int" id="t-p1">A figure is made of two rectangles joined together: one is 20 ft × 5 ft and the other is 12 ft × 5 ft. What is the total area?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button>
+<button class="opcion" data-k="b" type="button">160 ft²</button>
+<button class="opcion" data-k="c" type="button">42 ft²</button>
+<button class="opcion" data-k="d" type="button">6,000 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#addition" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the addition strategy (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the addition strategy</span><span class="ei-sub">Change the measurements of the L-shaped room, figure out the missing side, and add the pieces.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-subtraction"><span aria-hidden="true" class="num-seccion">4</span>The subtraction strategy</h2>
+<p>Sometimes a composite figure looks more like <strong>a big rectangle with a piece missing</strong>. The <strong>subtraction strategy</strong>: find the area of the whole rectangle, then subtract the area of the missing piece.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="A 25 by 18 foot yard with an 8 by 6 foot corner cut off at the top right, shown with a red dashed outline." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="174.2,255.0 465.8,255.0 465.8,115.0 372.5,115.0 372.5,45.0 174.2,45.0" fill="#c8e6c9" stroke="#37474f" stroke-width="3"/><polygon points="372.5,115.0 465.8,115.0 465.8,45.0 372.5,45.0" fill="#ffebee" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/><text x="419.2" y="80.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">missing</text><text x="320.0" y="271.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">25 ft</text><text x="165.2" y="150.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="419.2" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">8 ft</text><text x="474.8" y="80.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: a yard with a corner cut off<span style="display:block;font-weight:400;margin-top:6px">A 25 ft × 18 ft rectangular yard has one corner cut off (a rectangle 8 ft × 6 ft). What is the usable area?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The whole rectangle.</strong> 25 × 18 = 450 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The missing piece.</strong> 8 × 6 = 48 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Subtract.</strong> 450 − 48 = 402 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The usable area is <strong>402 square feet</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Watch out</span>
+<p>Choosing addition or subtraction is a matter of convenience. The same figure can be solved both ways, and the result must be the same. If one way is clumsy, try the other.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Which strategy?</h3></div>
+<p class="pregunta-int" id="t-p2">A rectangular field had a triangle removed from one corner. Which strategy is easier?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">Subtraction: whole rectangle minus the triangle</button>
+<button class="opcion" data-k="b" type="button">Addition: split it into pieces and add</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — Subtract what is missing</h3></div>
+<p class="pregunta-int" id="t-p3">An L shape is a 15 ft × 8 ft rectangle with a 6 ft × 4 ft corner cut out. What is its area?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">120 ft²</button>
+<button class="opcion" data-k="b" type="button">24 ft²</button>
+<button class="opcion" data-k="c" type="button">96 ft²</button>
+<button class="opcion" data-k="d" type="button">144 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#subtraction" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the subtraction strategy (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the subtraction strategy</span><span class="ei-sub">Complete the rectangle, subtract the missing piece, and check that it matches the addition result.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-compare"><span aria-hidden="true" class="num-seccion">5</span>Comparing the two strategies</h2>
+<p>For many figures both strategies work and give the same result. It is worth seeing this in an example.</p>
+<div aria-label="Addition and subtraction (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The two strategies side by side</caption>
+<thead><tr><th scope="col"></th><th scope="col">Addition ➕</th><th scope="col">Subtraction ➖</th></tr></thead>
+<tbody>
+<tr><td>What you do</td><td>Split the figure into simple pieces and add their areas.</td><td>Complete the figure to a big rectangle and subtract the extra piece.</td></tr>
+<tr><td>Formula</td><td>A = A₁ + A₂ + …</td><td>A = A<sub>whole</sub> − A<sub>missing</sub></td></tr>
+<tr><td>Useful when</td><td>the cuts are easy to draw</td><td>what is missing is easy to see</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 330" role="img" aria-label="The same L shape completed to an 18 by 20 rectangle; the missing 6 by 10 corner is shown with a red dashed outline." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="212.0,285.0 356.0,285.0 356.0,165.0 428.0,165.0 428.0,45.0 212.0,45.0" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="356.0,285.0 428.0,285.0 428.0,165.0 356.0,165.0" fill="#ffebee" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/><text x="392.0" y="225.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">missing</text><text x="320.0" y="29.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">18 ft</text><text x="203.0" y="165.0" text-anchor="end" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text><text x="392.0" y="301.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">6 ft</text><text x="437.0" y="225.0" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">10 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: one figure, two ways<span style="display:block;font-weight:400;margin-top:6px">Check that the L shape from the addition example (300 ft²) also comes out by subtraction.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The whole rectangle.</strong> 18 × 20 = 360 ft² (the outside measurements).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The missing corner.</strong> 6 × 10 = 60 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Subtract.</strong> 360 − 60 = 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>300 ft²</strong>, the same as with addition. ✓</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-cost"><span aria-hidden="true" class="num-seccion">6</span>Real uses: the cost of materials</h2>
+<p>Once you have the area, you often multiply it by a <strong>unit price</strong> to find the total cost of a material: paint per square foot, carpet per square foot, tile per square foot.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: carpeting the L<span style="display:block;font-weight:400;margin-top:6px">The L-shaped room (300 ft²) will be carpeted at $4 per square foot. What will it cost?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Area.</strong> 300 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Cost.</strong> 300 × $4 = $1,200.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> Carpeting the room costs <strong>$1,200</strong>.</p>
+</div>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="House front: a rectangle 30 feet wide and 20 feet tall with a triangle on top whose height is 12 feet." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><polygon points="221.6,255.0 418.4,255.0 418.4,123.8 221.6,123.8" fill="#eceff1" stroke="#37474f" stroke-width="3"/><polygon points="221.6,123.8 418.4,123.8 320.0,45.0" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/><line x1="320.0" y1="123.8" x2="320.0" y2="45.0" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 4"/><text x="343.6" y="90.9" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#1c2a30">12 ft</text><text x="320.0" y="271.0" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">30 ft</text><text x="427.4" y="189.4" text-anchor="start" dominant-baseline="middle" font-size="18" font-weight="700" fill="#222">20 ft</text></svg></div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: painting the front of a house<span style="display:block;font-weight:400;margin-top:6px">The front of a house is a 30 ft × 20 ft rectangle with a triangle on top (base 30 ft, height 12 ft). One gallon of paint covers 350 ft². How many gallons do you need?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Rectangle.</strong> 30 × 20 = 600 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Triangle.</strong> (30 × 12) ÷ 2 = 180 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Total.</strong> 600 + 180 = 780 ft².</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Gallons.</strong> 780 ÷ 350 ≈ 2.23. You cannot buy part of a gallon, so round <strong>up</strong>: 3 gallons.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> You need <strong>3 gallons</strong> of paint.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Area and cost on the calculator</span>
+<p>For the front of the house: <span class="tecla num">30</span> <span class="tecla">×</span> <span class="tecla num">20</span> <span class="tecla">+</span> <span class="tecla num">30</span> <span class="tecla">×</span> <span class="tecla num">12</span> <span class="tecla">÷</span> <span class="tecla num">2</span> <span class="tecla">enter</span> gives 780. The calculator follows PEMDAS, so you do not need parentheses. Then <span class="tecla">÷</span> <span class="tecla num">350</span> <span class="tecla">enter</span> gives 2.228…</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A house</h3></div>
+<p class="pregunta-int" id="t-p4">A figure is a 10 ft × 6 ft rectangle with a triangle on top (base 10 ft, height 4 ft). What is its area?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button>
+<button class="opcion" data-k="b" type="button">64 ft²</button>
+<button class="opcion" data-k="c" type="button">80 ft²</button>
+<button class="opcion" data-k="d" type="button">120 ft²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Tile</h3></div>
+<p class="pregunta-int" id="t-p5">A 48 ft² floor is covered with tile at $15 per square foot. What is the total cost?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">$63</button>
+<button class="opcion" data-k="b" type="button">$720</button>
+<button class="opcion" data-k="c" type="button">$320</button>
+<button class="opcion" data-k="d" type="button">$3.20</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — Gallons of paint</h3></div>
+<p class="pregunta-int" id="t-p6">A fence has 820 ft² to paint. One gallon covers 350 ft². How many gallons must you buy?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">2 gallons</button>
+<button class="opcion" data-k="b" type="button">2.34 gallons</button>
+<button class="opcion" data-k="c" type="button">4 gallons</button>
+<button class="opcion" data-k="d" type="button">3 gallons</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-1.html#cost" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the cost of materials (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the cost of materials</span><span class="ei-sub">Go from the area to the budget, and round up the gallons or rolls.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">7</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve four L- or T-shaped figures by addition and three figures with cut corners by subtraction. Then solve three cost problems (paint, carpet, or tile) and two reverse problems: given the total area and one side, find the other side.</li>
+<li><strong>In your daily life.</strong> Measure a room in your home (or use a floor plan). Sketch it, split it into rectangles, find its area in square feet, and estimate what it would cost to carpet it at $4 per square foot.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A triangle has a base of 10 ft and a height of 6 ft. What is its area?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 ft²</button><button class="opcion" data-k="b" type="button">16 ft²</button><button class="opcion" data-k="c" type="button">30 ft²</button><button class="opcion" data-k="d" type="button">32 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">A trapezoid has bases of 8 ft and 4 ft and a height of 5 ft. What is its area?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">30 ft²</button><button class="opcion" data-k="b" type="button">60 ft²</button><button class="opcion" data-k="c" type="button">40 ft²</button><button class="opcion" data-k="d" type="button">17 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">A figure is made of two rectangles: 20 ft × 5 ft and 12 ft × 5 ft. What is its total area?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 ft²</button><button class="opcion" data-k="b" type="button">60 ft²</button><button class="opcion" data-k="c" type="button">37 ft²</button><button class="opcion" data-k="d" type="button">160 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">A 25 ft × 18 ft yard has an 8 ft × 6 ft corner cut off. What is the usable area?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">498 ft²</button><button class="opcion" data-k="b" type="button">402 ft²</button><button class="opcion" data-k="c" type="button">450 ft²</button><button class="opcion" data-k="d" type="button">48 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">You want the area of a wall with a window, to paint it. What do you do?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Add the wall and the window</button><button class="opcion" data-k="b" type="button">Multiply the wall by the window</button><button class="opcion" data-k="c" type="button">Subtract the window from the wall</button><button class="opcion" data-k="d" type="button">Find only the window</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">A house shape is a 10 ft × 6 ft rectangle with a triangle on top (base 10 ft, height 4 ft). What is its area?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">80 ft²</button><button class="opcion" data-k="b" type="button">100 ft²</button><button class="opcion" data-k="c" type="button">64 ft²</button><button class="opcion" data-k="d" type="button">120 ft²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A 300 ft² room is carpeted at $4 per square foot. What does it cost?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$304</button><button class="opcion" data-k="b" type="button">$75</button><button class="opcion" data-k="c" type="button">$1,300</button><button class="opcion" data-k="d" type="button">$1,200</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">You must paint 780 ft². One gallon covers 350 ft². How many gallons do you buy?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2 gallons</button><button class="opcion" data-k="b" type="button">3 gallons</button><button class="opcion" data-k="c" type="button">2.23 gallons</button><button class="opcion" data-k="d" type="button">4 gallons</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">9</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for composite figures (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the area of composite figures and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Split the figure</th><td>I draw the right helper lines on my own and choose the easier strategy.</td><td>I split the figure with some help.</td><td>I do not see how to split the figure.</td></tr>
+<tr><th scope="row">Use the formulas</th><td>I use the right formula for each piece and check the result the other way.</td><td>I use the formulas with help.</td><td>I mix up the area formulas.</td></tr>
+<tr><th scope="row">Use it in real life</th><td>I find the cost of materials and round gallons or rolls up.</td><td>I find the cost with guidance.</td><td>I do not connect the area with the cost.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This first lesson of Topic 7 added a key geometry skill: splitting a composite figure into simple figures to find its area, by <strong>addition</strong> or by <strong>subtraction</strong>. And it connects right away to real life: floor plans, remodeling budgets, the cost of materials.</p>
+<p>In <strong>Lesson 7.2 · Circumference of a circle</strong> a new figure comes in, different from all the others: the <strong>circle</strong>. You will meet the number <strong>π</strong> (pi), a universal constant that relates the circumference to the diameter, and you will discover it by measuring real objects.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 7.2 · Circumference of a circle</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>composite figure</dt><dd>A figure made of two or more simple figures.</dd>
+<dt>helper line</dt><dd>A line you draw to split a figure into simple pieces.</dd>
+<dt>square unit</dt><dd>The unit of area: in², ft², yd².</dd>
+<dt>unit price</dt><dd>The price of each square unit of a material.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 7 · Lesson 7.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 7.2",
+ "review": "sections 3, 4, and 6",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "That is only the first rectangle. Add the second one.",
+    "c": "You added the sides. Area is base times height.",
+    "d": "You multiplied the two areas. Add them."
+   },
+   "right": "100 + 60 = 160 ft².",
+   "solution": "20 × 5 = 100 and 12 × 5 = 60; 100 + 60 = 160 ft²."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "The field is a whole rectangle with a piece missing: it is easier to subtract."
+   },
+   "right": "Whole rectangle minus the missing triangle.",
+   "solution": "Subtraction: find the area of the whole rectangle and subtract the triangle."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the whole rectangle. Subtract the missing corner.",
+    "b": "That is the missing corner.",
+    "d": "You added the corner. Subtract it."
+   },
+   "right": "120 − 24 = 96 ft².",
+   "solution": "15 × 8 = 120; 6 × 4 = 24; 120 − 24 = 96 ft²."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "The triangle's area is divided by 2.",
+    "b": "You added the sides of the triangle. Use (b × h) ÷ 2.",
+    "d": "Check the rectangle: 10 × 6."
+   },
+   "right": "60 + 20 = 80 ft².",
+   "solution": "Rectangle 10 × 6 = 60; triangle (10 × 4) ÷ 2 = 20; total 80 ft²."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "You added. Multiply the area by the price.",
+    "c": "Check: 48 × 15.",
+    "d": "You divided. Multiply."
+   },
+   "right": "48 × 15 = $720.",
+   "solution": "Cost = area × price = 48 × $15 = $720."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "2 gallons cover only 700 ft². The paint would run out.",
+    "b": "The store does not sell part of a gallon. Round up.",
+    "c": "3 gallons already cover 1,050 ft²."
+   },
+   "right": "820 ÷ 350 ≈ 2.34 → 3 gallons.",
+   "solution": "820 ÷ 350 ≈ 2.34; round up: 3 gallons."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "The triangle's area is divided by 2.",
+    "b": "You added. Multiply base by height.",
+    "d": "That is the perimeter idea, not the area."
+   },
+   "solution": "(10 × 6) ÷ 2 = 30 ft²."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "You still need to divide by 2.",
+    "c": "Add both bases before you multiply.",
+    "d": "Use ((B + b) × h) ÷ 2."
+   },
+   "solution": "((8 + 4) × 5) ÷ 2 = 30 ft²."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "That is only the first rectangle.",
+    "b": "That is only the second rectangle.",
+    "c": "You added the sides."
+   },
+   "solution": "100 + 60 = 160 ft²."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Subtract the missing corner; do not add it.",
+    "c": "That is the whole rectangle.",
+    "d": "That is the missing corner."
+   },
+   "solution": "450 − 48 = 402 ft²."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "The window is not painted: it is subtracted.",
+    "b": "Areas are not multiplied by each other.",
+    "d": "You paint the wall, not the window."
+   },
+   "solution": "Subtraction: whole wall minus the window."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "The triangle's area is divided by 2.",
+    "c": "Check the triangle: (10 × 4) ÷ 2.",
+    "d": "Check both pieces again."
+   },
+   "solution": "60 + 20 = 80 ft²."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "You added. Multiply the area by the price.",
+    "b": "You divided. Multiply.",
+    "c": "Check: 300 × 4."
+   },
+   "solution": "300 × $4 = $1,200."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "2 gallons cover only 700 ft².",
+    "c": "You cannot buy part of a gallon.",
+    "d": "3 gallons are already enough."
+   },
+   "solution": "780 ÷ 350 ≈ 2.23 → 3 gallons."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

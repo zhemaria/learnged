@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 2 · Lesson 7.3 · practice (English) — built by tools/build_n2_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.3 · Area of a circle and figures with semicircles · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 2 · Topic 7 · Geometry: circles and composite figures</div>
+    <h1>Lesson 7.3 · Area of a circle and figures with semicircles</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#area-formula">The area formula</a></li>
+      <li><a href="#which-one">Circumference or area?</a></li>
+      <li><a href="#radius-from-area">The radius from the area</a></li>
+      <li><a href="#semicircles">Figures with semicircles</a></li>
+      <li><a href="#applications">Real uses</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="area-formula" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The area formula</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">A = π × r²</div>
+      <p>Cut the circle into slices and lay them alternately up and down: they form almost a parallelogram whose base is half the circumference (π × r) and whose height is the radius (r). The more slices, the closer it gets to a rectangle.</p>
+      <h3>Cut the circle</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="sc-n">Number of slices: <span id="sc-nv"></span></label><input type="range" id="sc-n" min="4" max="32" step="2" value="8"></div></div>
+        <div id="sc-svg"></div>
+        <div class="salida" id="sc-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>Order of operations:</strong> square the radius first, then multiply by π. If r = 5, then r² = 25 and A = π × 25.</div>
+      <h3>Practice: find the area</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Area</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 and round to two decimal places, or write the answer in terms of π, like 36π.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="which-one">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Circumference or area?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>Two measures of the circle</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Circumference (edge)</th><th scope="col">Area (surface)</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Key words</th><td>around, fence, edge, border, one lap</td><td>cover, paint, plant, carpet, how much fits</td></tr>
+          <tr><th scope="row">Formula</th><td>C = π × d</td><td>A = π × r²</td></tr>
+          <tr><th scope="row">Units</th><td>linear: in, ft, yd</td><td>square: in², ft², yd²</td></tr>
+        </tbody>
+      </table>
+      <h3>Practice: circumference or area?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="radius-from-area">
+    <summary><span class="num" aria-hidden="true">3</span><h2>The radius from the area</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Since the radius is squared, you need a square root at the end: first divide by π, then take the square root.</p>
+      <div class="formula">r² = A ÷ π &nbsp;&nbsp;&nbsp; r = √(A ÷ π)</div>
+      <div class="caja-tip"><strong>Example:</strong> a garden has an area of 78.5 ft². 78.5 ÷ 3.14 = 25, and √25 = 5 ft.</div>
+      <h3>Practice: from the area to the radius</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type only the number, for example 5.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="semicircles">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Figures with semicircles</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A semicircle is half a circle: its area is (π × r²) ÷ 2. When there are two equal semicircles, put them together into one whole circle.</p>
+      <h3>Build the figure</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="sm-t">Figure</label><select id="sm-t"><option value="1">Window: rectangle with a semicircle on top</option><option value="2">Track: rectangle with two semicircles</option></select></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="sm-w">Rectangle width (ft): <span id="sm-wv"></span></label><input type="range" id="sm-w" min="2" max="20" step="2" value="6"></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="sm-h">Rectangle length (ft): <span id="sm-hv"></span></label><input type="range" id="sm-h" min="2" max="30" value="8"></div>
+        </div>
+        <div id="sm-svg"></div>
+        <div class="salida" id="sm-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: rectangles and semicircles</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Area (ft²)</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 and round to two decimal places if needed.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="applications">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Real uses</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Pizzas, gardens, sprinklers, and fountains. Before you calculate, decide whether the problem asks for the edge or the surface.</p>
+      <h3>Practice: problems with circles</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 and round to two decimal places if needed.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 2 · Topic 7 · Geometry: circles and composite figures · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/geometry.js"></script>
+<script>
+var TXT = {
+ "scVoz": "A circle cut into {n} slices arranged like a parallelogram with base π times r and height r.",
+ "base": "base ≈ π × r",
+ "scCasi": "is almost a rectangle",
+ "scOnda": "still has wavy edges",
+ "scSal": "With {n} slices the shape {x}. Area ≈ base × height = (π × r) × r = <strong>π × r²</strong>.",
+ "ctx": [
+  "a circle",
+  "a pizza",
+  "a round garden",
+  "a round table",
+  "a round rug"
+ ],
+ "aQ": "Find the area of {c} with a {t} of {v} in.",
+ "diam": "diameter",
+ "radio": "radius",
+ "aS1": "r = {d} ÷ 2 = {r}. ",
+ "aS": "A ≈ 3.14 × {r}² = 3.14 × {k} ≈ {x} (or {k}π).",
+ "aP1": "That is the circumference (2 × π × r). The area is π × r².",
+ "aP2": "You used the diameter as the radius: divide by 2 first.",
+ "aP3": "The square applies only to the radius, not to π × r.",
+ "cu": [
+  [
+   "How much fencing do you need to go around a round garden?",
+   "c"
+  ],
+  [
+   "How much sod covers a round garden?",
+   "a"
+  ],
+  [
+   "How much pizza is there in a 14-inch pizza?",
+   "a"
+  ],
+  [
+   "How far does a wheel roll in one turn?",
+   "c"
+  ],
+  [
+   "How much paint do you need for the bottom of a round pool?",
+   "a"
+  ],
+  [
+   "How much ribbon do you need for the edge of a round cake?",
+   "c"
+  ],
+  [
+   "How much fabric do you need for a round tablecloth?",
+   "a"
+  ],
+  [
+   "How long is one lap of a circular track?",
+   "c"
+  ],
+  [
+   "What area does a sprinkler that reaches 5 ft water?",
+   "a"
+  ],
+  [
+   "How long is the frame of a round mirror?",
+   "c"
+  ]
+ ],
+ "cuC": "Circumference (edge): π × d",
+ "cuA": "Area (surface): π × r²",
+ "cuBC": "It measures the edge: circumference, in linear units.",
+ "cuBA": "It measures the surface: area, in square units.",
+ "cuMC": "It asks for the edge: circumference.",
+ "cuMA": "It asks for the surface: area.",
+ "ivCtx": [
+  "A round garden has an area of",
+  "A pizza has an area of",
+  "A round rug covers",
+  "A sprinkler waters a circle of"
+ ],
+ "ivQ": "{c} {A} square feet. How long is its {t}? (π ≈ 3.14)",
+ "ivS": "r² = {A} ÷ 3.14 = {k}; r = √{k} = {r}",
+ "ivSd": "; d = 2 × {r} = {d}",
+ "ivP1": "That is r². Take the square root.",
+ "ivP2": "That would be with the circumference. With the area, divide by π and take the square root.",
+ "ivP3": "That is the radius. The diameter is twice as long.",
+ "smV": "Window: a rectangle {w} by {h} with a semicircle of diameter {w} on top.",
+ "smP": "Track: a rectangle {h} by {w} with a semicircle on each end.",
+ "smR": "Rectangle: {w} × {h} = {A} ft².",
+ "smS1": "Semicircle with radius {r}: 3.14 × {r}² ÷ 2 = {x} ft².",
+ "smS2": "Two semicircles with radius {r} make one circle: 3.14 × {r}² = {x} ft².",
+ "smT": "Total area ≈ {x} ft²",
+ "seQ1": "A window is a rectangle {w} ft wide and {h} ft tall, with a semicircle on top. What is its area, in ft²?",
+ "seQ2": "A field is a rectangle {h} ft long and {w} ft wide, with a semicircle on each end. What is its area, in ft²?",
+ "seS": "Rectangle: {R}; {x}; total ≈ {T} ft².",
+ "seS1": "semicircle: 3.14 × {r}² ÷ 2 = {s}",
+ "seS2": "whole circle: 3.14 × {r}² = {s}",
+ "seP1": "On top there is half a circle: its area is divided by 2.",
+ "seP2": "The radius is half the width.",
+ "seP3": "Two semicircles make one circle, not two.",
+ "seP4": "There are two semicircles, one on each end.",
+ "pz": "A {d1}-inch pizza costs {p1} and a {d2}-inch pizza costs {p2}. How many inches across is the one that costs less per square inch?",
+ "pzP": "Compare the price per square inch: price ÷ area. The bigger pizza is not always the better deal.",
+ "pzS": "Areas: {a1} and {a2} in². Price per in²: {u1} and {u2}. The {m}-inch pizza is the better deal.",
+ "ce": "You will plant sod in a round garden with a radius of {r} ft. Sod costs {p} per square foot. What does it cost, in dollars? (π ≈ 3.14)",
+ "ceS": "A = 3.14 × {r}² = {A} ft²; × {p} ≈ {x}.",
+ "ceP": "You used the circumference. Planting asks for the area.",
+ "as": "A sprinkler waters in a circle up to {r} ft away. What area does it water, in ft²? (π ≈ 3.14)",
+ "asS": "The reach is the radius: 3.14 × {r}² ≈ {x} ft².",
+ "asP": "The sprinkler's reach is the radius, not the diameter.",
+ "bo": "You want to put a decorative border around a round fountain with a radius of {r} ft. How many feet of border do you need? (π ≈ 3.14)",
+ "boS": "It is the edge: C = 2 × 3.14 × {r} ≈ {x} ft.",
+ "boP": "You found the area. “Around” asks for the circumference."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+
+/* ============ MODULE 1 · the slices ============ */
+function pintaSC(){
+  var n = +$("sc-n").value, R = 70, ang = 2 * Math.PI / n, cx = 100, cy = 110, yb = 160, xs = 230;
+  var s = '<svg class="figura" viewBox="0 0 640 230" role="img" aria-label="' + F(TXT.scVoz, { n: n }) + '">';
+  for (var i = 0; i < n; i++){ var a1 = i * ang, a2 = (i + 1) * ang; s += '<path d="M' + cx + ' ' + cy + ' L' + f1(cx + R * Math.cos(a1)) + ' ' + f1(cy - R * Math.sin(a1)) + ' A' + R + ' ' + R + ' 0 0 0 ' + f1(cx + R * Math.cos(a2)) + ' ' + f1(cy - R * Math.sin(a2)) + ' Z" fill="' + (i % 2 ? "#90a4ae" : "#cfd8dc") + '" stroke="#37474f" stroke-width="1.5"/>'; }
+  var w = 2 * R * Math.sin(ang / 2), h = R * Math.cos(ang / 2);
+  for (var j = 0; j < n; j++){
+    var x = xs + j * w / 2;
+    if (j % 2 === 0) s += '<path d="M' + f1(x + w / 2) + ' ' + f1(yb - R) + ' L' + f1(x) + ' ' + yb + ' Q' + f1(x + w / 2) + ' ' + f1(yb + (R - h) * 2) + ' ' + f1(x + w) + ' ' + yb + ' Z" fill="#cfd8dc" stroke="#37474f" stroke-width="1.5"/>';
+    else s += '<path d="M' + f1(x + w / 2) + ' ' + yb + ' L' + f1(x) + ' ' + f1(yb - R) + ' Q' + f1(x + w / 2) + ' ' + f1(yb - R - (R - h) * 2) + ' ' + f1(x + w) + ' ' + f1(yb - R) + ' Z" fill="#90a4ae" stroke="#37474f" stroke-width="1.5"/>';
+  }
+  var L = n / 2 * w + w / 2;
+  s += textoA([xs + L / 2, yb + 30], TXT.base, 16, "#0d47a1") + textoA([xs - 14, yb - R / 2], "r", 18, "#b71c1c", 700, "end");
+  $("sc-svg").innerHTML = s + '</svg>';
+  $("sc-nv").textContent = n;
+  $("sc-salida").innerHTML = '<div class="linea">' + F(TXT.scSal, { n: n, x: n >= 20 ? TXT.scCasi : TXT.scOnda }) + '</div>';
+}
+function genA(){
+  var conD = Math.random() < 0.35, r = aleatorio(2, 20), k = r * r;
+  var p = [{ k: 2 * r, msg: TXT.aP1 }];
+  if (conD) p.push({ k: 4 * r * r, msg: TXT.aP2 });
+  var base = evaluaPiK(k, p.filter(function(x){ return x.k !== k; })), mal = r2(Math.pow(3.14 * r, 2));
+  return { enun: F(TXT.aQ, { c: elige(TXT.ctx), t: conD ? TXT.diam : TXT.radio, v: conD ? 2 * r : r }), correcta: nd(r2(3.14 * k)),
+    solucion: (conD ? F(TXT.aS1, { d: 2 * r, r: r }) : "") + F(TXT.aS, { r: r, k: k, x: nd(r2(3.14 * k)) }),
+    evalua: function(t){ var v = leeD(String(t)); if (v !== null && Math.abs(v - mal) < 0.02) return { estado: "mal", msg: TXT.aP3 }; return base(t); } };
+}
+
+/* ============ MODULE 2 · circumference or area ============ */
+function genCual(){
+  var e = elige(TXT.cu), c = e[1] === "c";
+  return { enun: e[0], opciones: [{ html: TXT.cuC, clave: "c" }, { html: TXT.cuA, clave: "a" }], correcta: e[1], enOrden: true, bien: c ? TXT.cuBC : TXT.cuBA, mal: c ? TXT.cuMC : TXT.cuMA };
+}
+
+/* ============ MODULE 3 · the radius from the area ============ */
+function genInvA(){
+  var r = aleatorio(2, 15), A = r2(3.14 * r * r), pideD = Math.random() < 0.3, res = pideD ? 2 * r : r;
+  var o = { c: elige(TXT.ivCtx), A: nd(A), t: pideD ? TXT.diam : TXT.radio, k: r * r, r: r, d: 2 * r };
+  var p = [{ v: r * r, msg: TXT.ivP1 }, { v: r2(A / 6.28), msg: TXT.ivP2 }];
+  if (pideD) p.push({ v: r, msg: TXT.ivP3 });
+  return { enun: F(TXT.ivQ, o), correcta: String(res), solucion: F(TXT.ivS, o) + (pideD ? F(TXT.ivSd, o) : "") + ".",
+    evalua: evaluaInvPi(res, pideD ? 2 * Math.sqrt(A / Math.PI) : Math.sqrt(A / Math.PI), p.filter(function(x){ return Math.abs(x.v - res) > 0.02; })) };
+}
+
+/* ============ MODULE 4 · semicircles ============ */
+function semiSVG(tp, w, h){
+  var u = " ft";
+  if (tp === 1) return figuraSVG([{ pts: [[0,0],[w,0],[w,h],[0,h]] }], [[[0,0],[w,0], w + u, 1], [[w,0],[w,h], h + u, 1]], F(TXT.smV, { w: w, h: h }), [{ arco: true, c: [w / 2, h], r: w / 2, pts: [[0,h + w / 2]] }], 300);
+  var r = w / 2, esc = Math.min(440 / (h + w), 200 / w), x0 = 320 - h * esc / 2, y0 = 140 - r * esc, R = r * esc;
+  var s = '<svg class="figura" viewBox="0 0 640 300" role="img" aria-label="' + F(TXT.smP, { h: h, w: w }) + '">';
+  s += '<path d="M' + f1(x0) + ' ' + f1(y0) + ' L' + f1(x0 + h * esc) + ' ' + f1(y0) + ' A' + f1(R) + ' ' + f1(R) + ' 0 0 1 ' + f1(x0 + h * esc) + ' ' + f1(y0 + 2 * R) + ' L' + f1(x0) + ' ' + f1(y0 + 2 * R) + ' A' + f1(R) + ' ' + f1(R) + ' 0 0 1 ' + f1(x0) + ' ' + f1(y0) + ' Z" fill="#cfd8dc" stroke="#37474f" stroke-width="3"/>';
+  s += '<rect x="' + f1(x0) + '" y="' + f1(y0) + '" width="' + f1(h * esc) + '" height="' + f1(2 * R) + '" fill="#eceff1" stroke="#37474f" stroke-width="2" stroke-dasharray="6 4"/>';
+  s += textoA([x0 + h * esc / 2, y0 + 2 * R + 24], h + u, 18, "#222") + lineaD([x0 + h * esc / 2, y0], [x0 + h * esc / 2, y0 + 2 * R]) + textoA([x0 + h * esc / 2 + 8, y0 + R], w + u, 18, "#b71c1c", 700, "start");
+  return s + '</svg>';
+}
+function pintaSM(){
+  var tp = +$("sm-t").value, w = +$("sm-w").value, h = +$("sm-h").value, r = w / 2, Ar = w * h, As = tp === 1 ? 3.14 * r * r / 2 : 3.14 * r * r;
+  $("sm-wv").textContent = w; $("sm-hv").textContent = h;
+  $("sm-svg").innerHTML = semiSVG(tp, w, h);
+  $("sm-salida").innerHTML = '<div class="linea">' + F(TXT.smR, { w: w, h: h, A: nd(Ar) }) + '</div><div class="linea">' + F(tp === 1 ? TXT.smS1 : TXT.smS2, { r: nd(r), x: nd(r2(As)) }) + '</div><div class="linea veredicto">' + F(TXT.smT, { x: nd(r2(Ar + As)) }) + '</div>';
+}
+function genSemi(){
+  var tp = aleatorio(1, 2), w = 2 * aleatorio(1, 8), h = aleatorio(3, 20), r = w / 2, S = tp === 1 ? 3.14 * r * r / 2 : 3.14 * r * r, A = w * h + S, Api = w * h + (tp === 1 ? Math.PI * r * r / 2 : Math.PI * r * r);
+  var p = tp === 1 ? [{ v: r2(w * h + 3.14 * r * r), msg: TXT.seP1 }, { v: r2(w * h + 3.14 * w * w / 2), msg: TXT.seP2 }] : [{ v: r2(w * h + 2 * 3.14 * r * r), msg: TXT.seP3 }, { v: r2(w * h + 3.14 * r * r / 2), msg: TXT.seP4 }];
+  var x = F(tp === 1 ? TXT.seS1 : TXT.seS2, { r: nd(r), s: nd(r2(S)) });
+  return { enun: F(tp === 1 ? TXT.seQ1 : TXT.seQ2, { w: w, h: h }) + semiSVG(tp, w, h), correcta: nd(r2(A)), solucion: F(TXT.seS, { R: nd(w * h), x: x, T: nd(r2(A)) }),
+    evalua: evaluaInvPi(r2(A), Api, p.filter(function(q){ return Math.abs(q.v - r2(A)) > 0.05; })) };
+}
+
+/* ============ MODULE 5 · real uses ============ */
+function genApl(){
+  var tp = aleatorio(1, 4), res, resPi, enun, sol, p = [];
+  if (tp === 1){ var d1 = elige([10, 12]), d2 = elige([14, 16, 18]), p1 = elige([8, 9, 10]), p2 = elige([13, 15, 17]), a1 = 3.14 * d1 * d1 / 4, a2 = 3.14 * d2 * d2 / 4, u1 = p1 / a1, u2 = p2 / a2, m = u1 < u2 ? d1 : d2;
+    if (Math.abs(u1 - u2) < 0.004) return genApl();
+    res = m; resPi = m; enun = F(TXT.pz, { d1: d1, d2: d2, p1: dinero(p1), p2: dinero(p2) });
+    sol = F(TXT.pzS, { a1: nd(r2(a1)), a2: nd(r2(a2)), u1: "$" + u1.toFixed(3), u2: "$" + u2.toFixed(3), m: m }); p.push({ v: m === d1 ? d2 : d1, msg: TXT.pzP }); }
+  else if (tp === 2){ var r = aleatorio(3, 12), pc = elige([1, 1.5, 2, 2.5]); res = r2(3.14 * r * r * pc); resPi = Math.PI * r * r * pc;
+    enun = F(TXT.ce, { r: r, p: dinero2(pc) }); sol = F(TXT.ceS, { r: r, A: nd(r2(3.14 * r * r)), p: dinero2(pc), x: dinero2(res) }); p.push({ v: r2(2 * 3.14 * r * pc), msg: TXT.ceP }); }
+  else if (tp === 3){ var ra = aleatorio(4, 20); res = r2(3.14 * ra * ra); resPi = Math.PI * ra * ra; enun = F(TXT.as, { r: ra }); sol = F(TXT.asS, { r: ra, x: nd(res) }); p.push({ v: r2(3.14 * ra * ra / 4), msg: TXT.asP }); }
+  else { var rr = aleatorio(2, 10); res = r2(2 * 3.14 * rr); resPi = 2 * Math.PI * rr; enun = F(TXT.bo, { r: rr }); sol = F(TXT.boS, { r: rr, x: nd(res) }); p.push({ v: r2(3.14 * rr * rr), msg: TXT.boP }); }
+  return { enun: enun, correcta: tp === 2 ? dinero2(res) : nd(res), solucion: sol, evalua: evaluaInvPi(res, resPi, p.filter(function(q){ return Math.abs(q.v - res) > 0.05; })) };
+}
+
+/* ============ Start ============ */
+$("sc-n").addEventListener("input", pintaSC); pintaSC();
+creaPracticaLibre("p1", genA);
+creaPracticaOM("p2", genCual);
+creaPracticaLibre("p3", genInvA);
+$("sm-t").addEventListener("change", pintaSM); ["sm-w", "sm-h"].forEach(function(id){ $(id).addEventListener("input", pintaSM); }); pintaSM();
+creaPracticaLibre("p4", genSemi);
+creaPracticaLibre("p5", genApl);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

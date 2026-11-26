@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 7.2 · Circunferencia del círculo — práctica (español) — construida con tools/build_n2_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 7.2 · Circunferencia del círculo · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-7-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 7 · Geometría transicional</div>
+    <h1>Lección 7.2 · Circunferencia del círculo</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#anatomia">Las partes del círculo</a></li>
+      <li><a href="#pi">El descubrimiento de π</a></li>
+      <li><a href="#formulas">Las dos fórmulas de la circunferencia</a></li>
+      <li><a href="#hallar-radio">Hallar el radio o el diámetro</a></li>
+      <li><a href="#aplicaciones">Aplicaciones reales</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="anatomia" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Las partes del círculo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El centro está a la misma distancia de todos los puntos del borde. Esa distancia es el <strong>radio</strong> (r). El <strong>diámetro</strong> (d) atraviesa el círculo pasando por el centro: es el doble del radio. La <strong>circunferencia</strong> (C) es la longitud del borde, el «perímetro» del círculo.</p>
+      <div class="formula">d = 2 × r &nbsp;&nbsp;&nbsp; r = d ÷ 2</div>
+      <h3>Mueva el radio</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="an-r">Radio: <span id="an-rv"></span></label><input type="range" id="an-r" min="1" max="12" value="5"></div></div>
+        <div id="an-svg"></div>
+        <div class="salida" id="an-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: partes del círculo</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="pi">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El descubrimiento de π</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si se mide el borde de cualquier objeto redondo y se divide entre su diámetro, siempre sale <strong>el mismo número</strong>, un poco más de 3. Ese número es <strong>π</strong> (pi): π ≈ 3.14159. En los cálculos se usa π ≈ 3.14.</p>
+      <table class="reglas">
+        <caption>La razón C ÷ d en objetos reales</caption>
+        <thead><tr><th scope="col">Objeto</th><th scope="col">Diámetro (in)</th><th scope="col">Circunferencia (in)</th><th scope="col">C ÷ d</th></tr></thead>
+        <tbody>
+          <tr><td>Moneda de 25 centavos</td><td>0.955</td><td>3.00</td><td>≈ 3.14</td></tr>
+          <tr><td>Plato</td><td>10</td><td>31.42</td><td>≈ 3.14</td></tr>
+          <tr><td>Lata de refresco</td><td>2.6</td><td>8.17</td><td>≈ 3.14</td></tr>
+          <tr><td>Llanta de carro</td><td>26</td><td>81.68</td><td>≈ 3.14</td></tr>
+        </tbody>
+      </table>
+      <h3>Desenrolle el borde</h3>
+      <p>El borde de la rueda, estirado en línea recta, mide <strong>un poco más de tres diámetros</strong>.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="pi-d">Diámetro: <span id="pi-dv"></span></label><input type="range" id="pi-d" min="2" max="8" step="0.5" value="4"></div></div>
+        <div id="pi-svg"></div>
+        <div class="salida" id="pi-salida" aria-live="polite"></div>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="formulas">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Las dos fórmulas de la circunferencia</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">C = π × d &nbsp;&nbsp;&nbsp; C = 2 × π × r</div>
+      <p>Las dos son la misma fórmula; se elige según el dato que se tenga. El resultado con π ≈ 3.14 es aproximado (≈). Si se pide exacto, se deja «en términos de π»: C = 14π.</p>
+      <h3>Calculadora</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="fo-t">Dato conocido</label><select id="fo-t"><option value="d">el diámetro</option><option value="r">el radio</option></select></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="fo-v">Valor: <span id="fo-vv"></span></label><input type="range" id="fo-v" min="1" max="60" value="14"></div>
+        </div>
+        <div class="salida" id="fo-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: calcule la circunferencia</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Circunferencia</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 y redondee a dos decimales, o escriba el resultado en términos de π, como 14π.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="hallar-radio">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Hallar el radio o el diámetro</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si se conoce la circunferencia, se despeja: el diámetro es C ÷ π, y el radio es C ÷ (2π).</p>
+      <div class="formula">d = C ÷ π &nbsp;&nbsp;&nbsp; r = C ÷ (2π)</div>
+      <div class="caja-tip"><strong>Ejemplo:</strong> el borde de una mesa redonda mide 188.4 in. r = 188.4 ÷ (2 × 3.14) = 188.4 ÷ 6.28 = 30 in.</div>
+      <h3>Practique: de la circunferencia al radio</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 y redondee a dos decimales si hace falta.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="aplicaciones">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Aplicaciones reales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una rueda avanza su circunferencia en cada vuelta. Una cerca que rodea un jardín redondo mide su circunferencia. Una vuelta a una pista circular es su circunferencia.</p>
+      <h3>Practique: problemas con circunferencia</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Use π ≈ 3.14 y redondee a dos decimales si hace falta.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 7 · Geometría transicional · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/geometry.js"></script>
+<script>
+var TXT = {
+ "anVoz": "Círculo de radio {r} y diámetro {d}.",
+ "anSal": "Radio (rojo): {r}. Diámetro (azul): 2 × {r} = {d}. El borde es la circunferencia: C ≈ 3.14 × {d} = {C}.",
+ "an1Q": "Un círculo tiene un radio de {v}. ¿Cuánto mide su diámetro?",
+ "an1P": "Es al revés: el diámetro es el doble del radio.",
+ "an1S": "d = 2 × {v} = {d}.",
+ "an1M": "El diámetro es el doble del radio: {d}.",
+ "an2Q": "Un círculo tiene un diámetro de {d}. ¿Cuánto mide su radio?",
+ "an2P": "Es al revés: el radio es la mitad del diámetro.",
+ "an2S": "r = {d} ÷ 2 = {v}.",
+ "an2M": "El radio es la mitad del diámetro: {v}.",
+ "an3": [
+  [
+   "la distancia del centro a cualquier punto del borde",
+   "r"
+  ],
+  [
+   "el segmento que atraviesa el círculo pasando por el centro",
+   "d"
+  ],
+  [
+   "la longitud del borde del círculo",
+   "c"
+  ],
+  [
+   "el punto que está a la misma distancia de todo el borde",
+   "o"
+  ]
+ ],
+ "an3Q": "¿Cómo se llama {x}?",
+ "nomP": {
+  "r": "El radio",
+  "d": "El diámetro",
+  "c": "La circunferencia",
+  "o": "El centro"
+ },
+ "an3M": "Es {x}.",
+ "piVoz": "El borde de la rueda, estirado, mide unas 3.14 veces su diámetro.",
+ "piSal": "C ÷ d = {C} ÷ {d} ≈ 3.14. Caben 3 diámetros completos y un pedacito (en amarillo) de 0.14 diámetros.",
+ "foD": "Con el diámetro: C = π × d ≈ 3.14 × {v}",
+ "foR": "Con el radio: C = 2 × π × r ≈ 2 × 3.14 × {v}",
+ "ctx": [
+  "un círculo",
+  "una pizza",
+  "una mesa redonda",
+  "un reloj de pared",
+  "una piscina redonda"
+ ],
+ "cQ": "Calcule la circunferencia de {c} con un {t} de {v} in.",
+ "diam": "diámetro",
+ "radio": "radio",
+ "cS": "{f} ≈ {x} in (o {k}π).",
+ "cP1": "Con el diámetro, C = π × d: no se divide entre 2.",
+ "cP2": "Con el radio se usa C = 2 × π × r: falta multiplicar por 2.",
+ "cP3": "Eso es π × r², el área. La circunferencia es 2 × π × r.",
+ "ivCtx": [
+  "El borde de una mesa redonda mide",
+  "La cerca que rodea un jardín redondo mide",
+  "Una vuelta a una pista circular mide",
+  "El contorno de un plato mide"
+ ],
+ "ivQ": "{c} {C} in. ¿Cuánto mide su {t}? (π ≈ 3.14)",
+ "ivSd": "d = {C} ÷ 3.14 = {x}.",
+ "ivSr": "r = {C} ÷ (2 × 3.14) = {C} ÷ 6.28 = {x}.",
+ "ivPd": "Ese es el radio. El diámetro es C ÷ π.",
+ "ivPr": "Ese es el diámetro. Para el radio se divide entre 2π.",
+ "ivPm": "Se multiplicó en vez de dividir.",
+ "ap1": "Una rueda de bicicleta tiene un diámetro de {d} pulgadas. ¿Cuántas pulgadas avanza en {n} vueltas? (π ≈ 3.14)",
+ "ap1S": "Una vuelta: 3.14 × {d} = {u}; en {n} vueltas: × {n} ≈ {x} in.",
+ "ap2": "Se quiere cercar un jardín redondo de {r} ft de radio. ¿Cuántos pies de cerca hacen falta? (π ≈ 3.14)",
+ "ap2S": "C = 2 × 3.14 × {r} ≈ {x} ft.",
+ "ap3": "Una pista circular tiene {r} ft de radio. Si una corredora da {v} vueltas, ¿cuántos pies recorre? (π ≈ 3.14)",
+ "ap3S": "Una vuelta: 2 × 3.14 × {r} = {u} ft; × {v} ≈ {x} ft.",
+ "ap4": "Se quiere poner un listón alrededor del borde de un pastel redondo de {d} pulgadas de diámetro. ¿Cuántas pulgadas de listón hacen falta? (π ≈ 3.14)",
+ "ap4S": "C = 3.14 × {d} ≈ {x} in.",
+ "apP": "Revise si el dato es el radio o el diámetro."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+
+/* ============ MODULE 1 · parts of the circle ============ */
+function circSVG(r){
+  var R = Math.min(120, 24 * r), cx = 320, cy = 150, a = rad(55), px = cx + R * Math.cos(a), py = cy - R * Math.sin(a);
+  var s = '<svg class="figura" viewBox="0 0 640 300" role="img" aria-label="' + F(TXT.anVoz, { r: r, d: 2 * r }) + '">';
+  s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + R + '" fill="#eceff1" stroke="#37474f" stroke-width="4"/>';
+  s += linea([cx - R, cy], [cx + R, cy], "#0d47a1", 3) + '<circle cx="' + cx + '" cy="' + cy + '" r="5" fill="#222"/>' + textoA([cx - 12, cy - 14], "O", 16, "#222");
+  s += linea([cx, cy], [px, py], "#b71c1c", 3) + textoA([(cx + px) / 2 - 10, (cy + py) / 2 - 10], "r = " + r, 16, "#b71c1c", 700, "end");
+  s += textoA([cx, cy + 22], "d = " + (2 * r), 16, "#0d47a1") + textoA([cx + R * 0.72 + 14, cy + R * 0.72 + 14], "C", 18, "#37474f", 700, "start");
+  return s + '</svg>';
+}
+function pintaAN(){ var r = +$("an-r").value; $("an-rv").textContent = r; $("an-svg").innerHTML = circSVG(r); $("an-salida").innerHTML = '<div class="linea">' + F(TXT.anSal, { r: r, d: 2 * r, C: nd(r2(3.14 * 2 * r)) }) + '</div>'; }
+function genAnat(){
+  var tp = aleatorio(1, 3), v = aleatorio(2, 40), pc = {};
+  if (tp === 1){ var o = baraja([2 * v, v / 2, v, r2(v * 3.14)]).map(function(x){ return { html: nd(x), clave: "n" + x }; }); pc["n" + v / 2] = TXT.an1P;
+    return { enun: F(TXT.an1Q, { v: v }), opciones: o, correcta: "n" + 2 * v, pistas: pc, bien: F(TXT.an1S, { v: v, d: 2 * v }), mal: F(TXT.an1M, { d: 2 * v }) }; }
+  if (tp === 2){ var d = 2 * v, o2 = baraja([v, 2 * d, d, d / 4]).map(function(x){ return { html: nd(x), clave: "n" + x }; }); pc["n" + 2 * d] = TXT.an2P;
+    return { enun: F(TXT.an2Q, { d: d }), opciones: o2, correcta: "n" + v, pistas: pc, bien: F(TXT.an2S, { d: d, v: v }), mal: F(TXT.an2M, { v: v }) }; }
+  var q = elige(TXT.an3);
+  return { enun: F(TXT.an3Q, { x: q[0] }), opciones: ["r", "d", "c", "o"].map(function(k){ return { html: TXT.nomP[k], clave: k }; }), correcta: q[1], enOrden: true, bien: TXT.nomP[q[1]] + ".", mal: F(TXT.an3M, { x: TXT.nomP[q[1]].toLowerCase() }) };
+}
+
+/* ============ MODULE 2 · the discovery of π ============ */
+function pintaPI(){
+  var d = +$("pi-d").value, u = 44, C = Math.PI * d, R = d * u / 2, cx = 30 + R, cy = 40 + R, y = cy + R + 30;
+  $("pi-dv").textContent = nd(d);
+  var s = '<svg class="figura" viewBox="0 0 ' + f1(Math.max(640, 80 + C * u)) + ' ' + f1(y + 60) + '" role="img" aria-label="' + TXT.piVoz + '">';
+  s += '<circle cx="' + f1(cx) + '" cy="' + f1(cy) + '" r="' + f1(R) + '" fill="#eceff1" stroke="#37474f" stroke-width="4"/>' + linea([cx - R, cy], [cx + R, cy], "#0d47a1", 3);
+  s += linea([30, y], [30 + C * u, y], "#37474f", 6);
+  for (var k = 0; k < 3; k++) s += '<rect x="' + f1(30 + k * d * u) + '" y="' + (y + 10) + '" width="' + f1(d * u) + '" height="14" fill="' + (k % 2 ? "#90caf9" : "#0d47a1") + '"/>' + textoA([30 + (k + 0.5) * d * u, y + 40], "d", 15, "#0d47a1");
+  s += '<rect x="' + f1(30 + 3 * d * u) + '" y="' + (y + 10) + '" width="' + f1(0.14159 * d * u) + '" height="14" fill="#f9a825"/>' + textoA([30 + C * u + 8, y], "C", 16, "#37474f", 700, "start");
+  $("pi-svg").innerHTML = s + '</svg>';
+  $("pi-salida").innerHTML = '<div class="linea">' + F(TXT.piSal, { C: nd(r2(C)), d: nd(d) }) + '</div>';
+}
+
+/* ============ MODULE 3 · the two formulas ============ */
+function pintaFO(){
+  var tp = $("fo-t").value, v = +$("fo-v").value, d = tp === "d" ? v : 2 * v;
+  $("fo-vv").textContent = v;
+  $("fo-salida").innerHTML = '<div class="linea">' + F(tp === "d" ? TXT.foD : TXT.foR, { v: v }) + ' ≈ <strong>' + nd(r2(3.14 * d)) + '</strong></div><div class="linea veredicto">C = ' + d + 'π ≈ ' + nd(r2(3.14 * d)) + '</div>';
+}
+function genC(){
+  var conD = Math.random() < 0.5, v = aleatorio(2, 40), d = conD ? v : 2 * v;
+  var f = conD ? "C = 3.14 × " + v : "C = 2 × 3.14 × " + v;
+  return { enun: F(TXT.cQ, { c: elige(TXT.ctx), t: conD ? TXT.diam : TXT.radio, v: v }), correcta: nd(r2(3.14 * d)), solucion: F(TXT.cS, { f: f, x: nd(r2(3.14 * d)), k: d }),
+    evalua: evaluaPiK(d, conD ? [{ k: d / 2, msg: TXT.cP1 }] : [{ k: v, msg: TXT.cP2 }, { k: v * v, msg: TXT.cP3 }].filter(function(x){ return x.k !== d; })) };
+}
+
+/* ============ MODULE 4 · from the circumference to the radius ============ */
+function genInv(){
+  var r = aleatorio(3, 40), C = r2(2 * 3.14 * r), pideD = Math.random() < 0.4, res = pideD ? 2 * r : r, o = { c: elige(TXT.ivCtx), C: nd(C), t: pideD ? TXT.diam : TXT.radio, x: res };
+  var p = pideD ? [{ v: r, msg: TXT.ivPd }] : [{ v: 2 * r, msg: TXT.ivPr }, { v: r2(C * 3.14), msg: TXT.ivPm }];
+  return { enun: F(TXT.ivQ, o), correcta: String(res), solucion: F(pideD ? TXT.ivSd : TXT.ivSr, o), evalua: evaluaInvPi(res, pideD ? C / Math.PI : C / (2 * Math.PI), p) };
+}
+
+/* ============ MODULE 5 · real uses ============ */
+function genApl(){
+  var tp = aleatorio(1, 4), enun, sol, k;
+  if (tp === 1){ var d = elige([20, 24, 26, 28]), n = aleatorio(10, 100); k = d * n; enun = F(TXT.ap1, { d: d, n: n }); sol = F(TXT.ap1S, { d: d, n: n, u: nd(r2(3.14 * d)), x: nd(r2(3.14 * k)) }); }
+  else if (tp === 2){ var r = aleatorio(3, 20); k = 2 * r; enun = F(TXT.ap2, { r: r }); sol = F(TXT.ap2S, { r: r, x: nd(r2(3.14 * k)) }); }
+  else if (tp === 3){ var rp = 10 * aleatorio(5, 20), v = aleatorio(2, 6); k = 2 * rp * v; enun = F(TXT.ap3, { r: rp, v: v }); sol = F(TXT.ap3S, { r: rp, v: v, u: nd(r2(6.28 * rp)), x: nd(r2(3.14 * k)) }); }
+  else { var dm = aleatorio(6, 18); k = dm; enun = F(TXT.ap4, { d: dm }); sol = F(TXT.ap4S, { d: dm, x: nd(r2(3.14 * dm)) }); }
+  return { enun: enun, correcta: nd(r2(3.14 * k)), solucion: sol, evalua: evaluaPiK(k, [{ k: k / 2, msg: TXT.apP }, { k: k * 2, msg: TXT.apP }]) };
+}
+
+/* ============ Start ============ */
+$("an-r").addEventListener("input", pintaAN); pintaAN();
+creaPracticaOM("p1", genAnat);
+$("pi-d").addEventListener("input", pintaPI); pintaPI();
+$("fo-t").addEventListener("change", pintaFO); $("fo-v").addEventListener("input", pintaFO); pintaFO();
+creaPracticaLibre("p2", genC);
+creaPracticaLibre("p3", genInv);
+creaPracticaLibre("p4", genApl);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

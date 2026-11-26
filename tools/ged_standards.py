@@ -174,6 +174,8 @@ CCR = {
  "3.MD.8": ("B", "Solve real world and mathematical problems involving perimeters of polygons, including finding the perimeter given the side lengths, finding an unknown side length, and exhibiting rectangles with the same perimeter and different areas or with the same area and different perimeters."),
  "4.MD.3": ("C", "Apply the area and perimeter formulas for rectangles in real world and mathematical problems."),
  "3.MD.7": ("B", "Relate area to the operations of multiplication and addition."),
+ "7.G.4": ("D", "Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle."),
+ "7.G.6": ("D", "Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms."),
  "6.G.1": ("D", "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems."),
  "3.MD.3": ("B", "Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step \"how many more\" and \"how many less\" problems using information presented in scaled bar graphs."),
  "6.SP.5": ("D", "Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability."),
@@ -299,6 +301,12 @@ LESSONS = [
   {"direct": ["Q.2.e"], "builds": ["Q.3.d", "Q.6.c"], "mp": ["MP.1.b", "MP.1.e", "MP.2.c"], "ccr": ["7.RP.3", "6.EE.7"]}),
  ("level-2/lesson-6-3.html", "6.3", "Converting between U.S. customary and metric units",
   {"direct": ["Q.3.c"], "builds": ["A.1.b"], "mp": ["MP.1.e", "MP.4.a", "MP.5.a"], "ccr": ["6.RP.3d", "5.MD.1"]}),
+ ("level-2/lesson-7-1.html", "7.1", "Area of composite figures",
+  {"direct": ["Q.4.d"], "builds": ["Q.4.a", "Q.4.c"], "mp": ["MP.1.b", "MP.2.b", "MP.4.a"], "ccr": ["6.G.1", "7.G.6"]}),
+ ("level-2/lesson-7-2.html", "7.2", "Circumference of a circle",
+  {"direct": ["Q.4.b"], "builds": [], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["7.G.4"]}),
+ ("level-2/lesson-7-3.html", "7.3", "Area of a circle and figures with semicircles",
+  {"direct": ["Q.4.b", "Q.4.d"], "builds": [], "mp": ["MP.1.b", "MP.2.c", "MP.4.a"], "ccr": ["7.G.4", "7.G.6"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

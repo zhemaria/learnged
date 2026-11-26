@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.2 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.2 · Circunferencia del círculo · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-7-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 7 — Geometría transicional</p>
+<h1>Lección 7.2 · Circunferencia del círculo</h1>
+<p class="lema">Una figura nueva: el círculo. Sus partes, el descubrimiento de π, las fórmulas C = πd y C = 2πr, y cómo hallar el radio a partir de la circunferencia.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Distinguir</strong> las partes de un círculo: centro, radio, diámetro y circunferencia.</li>
+<li><strong>Reconocer</strong> la relación d = 2r entre el diámetro y el radio.</li>
+<li><strong>Descubrir</strong> π como la razón constante entre la circunferencia y el diámetro.</li>
+<li><strong>Calcular</strong> la circunferencia con C = πd o C = 2πr.</li>
+<li><strong>Resolver</strong> problemas inversos: hallar el radio o el diámetro a partir de la circunferencia.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.4.b</span> Calcular el área y la circunferencia de círculos. Hallar el radio o el diámetro cuando se da el área o la circunferencia.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.G.4</span> <span class="std-nivel">Nivel D</span> Conocer las fórmulas del área y de la circunferencia de un círculo y usarlas para resolver problemas; dar una deducción informal de la relación entre la circunferencia y el área de un círculo.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-anatomia">Las partes del círculo</a></li>
+<li><a href="#s-pi">El descubrimiento de π</a></li>
+<li><a href="#s-formulas">Las dos fórmulas de la circunferencia</a></li>
+<li><a href="#s-hallar-radio">El problema inverso: hallar el radio</a></li>
+<li><a href="#s-aplicaciones">Aplicaciones reales</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-anatomia"><span aria-hidden="true" class="num-seccion">1</span>Las partes del círculo</h2>
+<p>En la Lección 7.1 se trabajó con rectángulos, triángulos y trapecios: figuras de lados rectos. Esta lección introduce una figura completamente distinta: el <strong>círculo</strong>, una curva cerrada cuyos puntos están todos a la misma distancia de un punto central. Para medirlo no bastan las fórmulas anteriores; aparece una constante célebre: <strong>π</strong> (pi).</p>
+<div style="text-align:center"><svg viewBox="0 0 640 300" role="img" aria-label="Un círculo con centro O. Un segmento rojo del centro al borde es el radio r. Un segmento azul que atraviesa el círculo por el centro es el diámetro d. El borde del círculo es la circunferencia C." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><circle cx="220" cy="150" r="115" fill="#eceff1" stroke="#37474f" stroke-width="5"/><line x1="105" y1="150" x2="335" y2="150" stroke="#0d47a1" stroke-width="4"/><line x1="220" y1="150" x2="293.9" y2="61.9" stroke="#b71c1c" stroke-width="4"/><circle cx="220" cy="150" r="6" fill="#222"/><text x="206.0" y="134.0" text-anchor="middle" dominant-baseline="middle" font-size="17" font-weight="700" fill="#222">O</text><text x="235.0" y="96.0" text-anchor="end" dominant-baseline="middle" font-size="16" font-weight="700" fill="#b71c1c">radio r</text><text x="220.0" y="172.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">diámetro d</text><line x1="305.1" y1="235.1" x2="345.1" y2="261.1" stroke="#37474f" stroke-width="2"/><text x="351.1" y="265.1" text-anchor="start" dominant-baseline="middle" font-size="16" font-weight="700" fill="#37474f">circunferencia C (el borde)</text></svg></div>
+<div aria-label="Partes del círculo (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las partes del círculo</caption>
+<thead><tr><th scope="col">Parte</th><th scope="col">Qué es</th></tr></thead>
+<tbody>
+<tr><td>Centro (O)</td><td>el punto que está a la misma distancia de todos los puntos del círculo</td></tr>
+<tr><td>Radio (r)</td><td>la distancia del centro a cualquier punto del círculo</td></tr>
+<tr><td>Diámetro (d)</td><td>el segmento que atraviesa el círculo pasando por el centro; es <strong>el doble del radio</strong></td></tr>
+<tr><td>Circunferencia (C)</td><td>la longitud del borde del círculo: su «perímetro»</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">d = 2 × r &nbsp;&nbsp;&nbsp; r = d ÷ 2</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cuidado con las palabras</span>
+<p>El <strong>círculo</strong> es la región completa, incluido el interior; la <strong>circunferencia</strong> es solo el borde. A veces se usan como sinónimos, pero al medir hay que tener claro qué se está midiendo.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Radio y diámetro</h3></div>
+<p class="pregunta-int" id="t-p1">Un círculo tiene un radio de 12 in. ¿Cuánto mide su diámetro?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">6 in</button>
+<button class="opcion" data-k="b" type="button">24 in</button>
+<button class="opcion" data-k="c" type="button">12 in</button>
+<button class="opcion" data-k="d" type="button">37.68 in</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#anatomia" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las partes del círculo (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las partes del círculo</span><span class="ei-sub">Mueva el radio y vea cómo cambian el diámetro y la circunferencia.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-pi"><span aria-hidden="true" class="num-seccion">2</span>El descubrimiento de π</h2>
+<p>Si se mide con una cuerda el contorno (la circunferencia, C) de varios objetos redondos y se mide también su diámetro (d) con una regla, se descubre algo asombroso: la razón C ÷ d <strong>siempre da el mismo número</strong>, sin importar el tamaño del objeto.</p>
+<div aria-label="C ÷ d en objetos reales (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">La razón C ÷ d en objetos reales</caption>
+<thead><tr><th scope="col">Objeto</th><th scope="col">Diámetro d (in)</th><th scope="col">Circunferencia C (in)</th><th scope="col">C ÷ d</th></tr></thead>
+<tbody>
+<tr><td>Moneda de 25 centavos</td><td>0.955</td><td>3.00</td><td>≈ 3.14</td></tr>
+<tr><td>Plato</td><td>10</td><td>31.42</td><td>≈ 3.14</td></tr>
+<tr><td>Lata de refresco</td><td>2.6</td><td>8.17</td><td>≈ 3.14</td></tr>
+<tr><td>Llanta de carro</td><td>26</td><td>81.68</td><td>≈ 3.14</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div style="text-align:center"><svg viewBox="0 0 460 234" role="img" aria-label="El borde de un círculo estirado en una línea recta C. A lo largo de ella caben tres diámetros, más un pedacito de unas 0.14 veces el diámetro, en amarillo." style="width:100%;max-width:460px;height:auto;display:block;margin:12px auto;"><circle cx="100.0" cy="70" r="60.0" fill="#eceff1" stroke="#37474f" stroke-width="4"/><line x1="40.0" y1="70" x2="160.0" y2="70" stroke="#0d47a1" stroke-width="3"/><line x1="40" y1="170.0" x2="417.0" y2="170.0" stroke="#37474f" stroke-width="6"/><rect x="40" y="180.0" width="120" height="14" fill="#0d47a1"/><text x="100.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="160" y="180.0" width="120" height="14" fill="#90caf9"/><text x="220.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="280" y="180.0" width="120" height="14" fill="#0d47a1"/><text x="340.0" y="210.0" text-anchor="middle" dominant-baseline="middle" font-size="16" font-weight="700" fill="#0d47a1">d</text><rect x="400" y="180.0" width="17.0" height="14" fill="#f9a825"/><text x="425.0" y="170.0" text-anchor="start" dominant-baseline="middle" font-size="17" font-weight="700" fill="#37474f">C</text></svg></div>
+<p>Ese número constante tiene nombre propio: <strong>π</strong>, la letra griega «pi». Su valor exacto tiene infinitas cifras decimales sin patrón que se repita, pero para los cálculos basta con aproximarlo:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">π ≈ 3.14159</p>
+<p>La aproximación habitual es <strong>π ≈ 3.14</strong>. Otra útil, en fracción, es <strong>π ≈ 22/7</strong>. La calculadora tiene además una tecla π, que da un resultado un poco más exacto.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Idea fundamental</span>
+<p>π no es una invención humana. Es una constante de la naturaleza: cualquier círculo, sin importar su tamaño, tiene una circunferencia de aproximadamente 3.14159 veces su diámetro. Por eso aparece tantas veces en las matemáticas.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — La razón</h3></div>
+<p class="pregunta-int" id="t-p2">En cualquier círculo, la razón circunferencia ÷ diámetro es…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">distinta para cada círculo</button>
+<button class="opcion" data-k="b" type="button">siempre 2</button>
+<button class="opcion" data-k="c" type="button">siempre la misma: π</button>
+<button class="opcion" data-k="d" type="button">mayor en los círculos grandes</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#pi" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el descubrimiento de π (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el descubrimiento de π</span><span class="ei-sub">Desenrolle el borde de una rueda y vea que siempre mide un poco más de tres diámetros: π.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">3</span>Las dos fórmulas de la circunferencia</h2>
+<p>La definición de π da de inmediato la fórmula de la circunferencia. Si C ÷ d = π, entonces:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">C = π × d</p>
+<p style="text-align:center">cuando se conoce el <strong>diámetro</strong></p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">C = 2 × π × r</p>
+<p style="text-align:center">cuando se conoce el <strong>radio</strong> (porque d = 2r)</p>
+<p>Las dos fórmulas son equivalentes; se elige según el dato que se tenga. Las dos aparecen en la hoja de fórmulas del GED.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: con el diámetro<span style="display:block;font-weight:400;margin-top:6px">Una pizza tiene un diámetro de 14 pulgadas. ¿Cuál es su circunferencia?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Datos.</strong> d = 14 in. Se usa C = π × d.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustituya.</strong> C ≈ 3.14 × 14 = 43.96 in.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La circunferencia de la pizza mide aproximadamente <strong>44 pulgadas</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: con el radio<span style="display:block;font-weight:400;margin-top:6px">Un sendero circular tiene un radio de 40 pies. ¿Cuánto mide una vuelta completa?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Datos.</strong> r = 40 ft. Se usa C = 2 × π × r.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustituya.</strong> C ≈ 2 × 3.14 × 40 = 251.2 ft.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Una vuelta completa mide aproximadamente <strong>251.2 pies</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Atención</span>
+<p>El resultado de un cálculo con π ≈ 3.14 es aproximado, no exacto. Por eso se escribe «≈» (aproximadamente igual). Si se pide un resultado exacto, se deja <strong>en términos de π</strong>: C = 14π pulgadas.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> π en la calculadora</span>
+<p>Para el sendero: <span class="tecla num">2</span> <span class="tecla">×</span> <span class="tecla">π</span> <span class="tecla">×</span> <span class="tecla num">40</span> <span class="tecla">enter</span> da 251.327… Con la tecla π el resultado es un poco más exacto que con 3.14 (251.2). En el GED, los dos suelen bastar; fíjese en las opciones de respuesta.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Con el diámetro</h3></div>
+<p class="pregunta-int" id="t-p3">d = 10 in. ¿Cuánto mide C? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">15.7 in</button>
+<button class="opcion" data-k="b" type="button">62.8 in</button>
+<button class="opcion" data-k="c" type="button">13.14 in</button>
+<button class="opcion" data-k="d" type="button">31.4 in</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Con el radio</h3></div>
+<p class="pregunta-int" id="t-p4">r = 6 ft. ¿Cuánto mide C? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">37.68 ft</button>
+<button class="opcion" data-k="b" type="button">18.84 ft</button>
+<button class="opcion" data-k="c" type="button">113.04 ft</button>
+<button class="opcion" data-k="d" type="button">12 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las dos fórmulas de la circunferencia (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las dos fórmulas de la circunferencia</span><span class="ei-sub">Use la calculadora con el diámetro o con el radio y practique C = πd y C = 2πr.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-hallar-radio"><span aria-hidden="true" class="num-seccion">4</span>El problema inverso: hallar el radio</h2>
+<p>A veces se conoce la circunferencia y se busca el radio o el diámetro. Basta con despejar la fórmula:</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">d = C ÷ π &nbsp;&nbsp;&nbsp; r = C ÷ (2π)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: hallar el radio<span style="display:block;font-weight:400;margin-top:6px">El borde de una mesa redonda mide 188.4 in. ¿Cuál es su radio?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Datos.</strong> C = 188.4 in. Se busca r.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Despeje.</strong> r = C ÷ (2π) ≈ 188.4 ÷ (2 × 3.14) = 188.4 ÷ 6.28.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divida.</strong> 188.4 ÷ 6.28 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El radio de la mesa es de <strong>30 in</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Comprobación</span>
+<p>Conviene comprobar calculando hacia atrás. Si r = 30 in, entonces C = 2 × 3.14 × 30 = 188.4 in. ✓ Coincide. Esta comprobación rápida atrapa los errores de cálculo.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Halle el radio</h3></div>
+<p class="pregunta-int" id="t-p5">Una pista circular tiene una circunferencia de 314 ft. ¿Cuál es su radio? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">100 ft</button>
+<button class="opcion" data-k="b" type="button">25 ft</button>
+<button class="opcion" data-k="c" type="button">50 ft</button>
+<button class="opcion" data-k="d" type="button">157 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#hallar-radio" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: hallar el radio o el diámetro (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: hallar el radio o el diámetro</span><span class="ei-sub">Parta de la circunferencia y despeje el diámetro o el radio.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-aplicaciones"><span aria-hidden="true" class="num-seccion">5</span>Aplicaciones reales</h2>
+<p>La circunferencia aparece en situaciones muy concretas: cuánta cerca rodea un jardín redondo, cuánto ribete cubre el borde de una mesa, qué distancia recorre una llanta en una vuelta.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: cercar un jardín<span style="display:block;font-weight:400;margin-top:6px">Un jardín redondo tiene un radio de 7 ft. ¿Cuántos pies de cerca hacen falta para rodearlo? Use π ≈ 22/7.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Fórmula.</strong> C = 2 × π × r ≈ 2 × (22/7) × 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplifique.</strong> El 7 del denominador se cancela con el radio: 2 × 22 = 44.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Unos <strong>44 ft</strong> de cerca. (La fracción 22/7 es cómoda cuando el radio es múltiplo de 7.)</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una llanta en movimiento<span style="display:block;font-weight:400;margin-top:6px">Una llanta de carro tiene un diámetro de 24 in. ¿Qué distancia recorre el carro en una vuelta completa de la llanta?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Una vuelta = la circunferencia.</strong> C ≈ 3.14 × 24 = 75.36 in.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>En pies.</strong> 75.36 ÷ 12 = 6.28 ft.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> En cada vuelta el carro avanza unas <strong>75.36 in</strong>, un poco más de 6 pies.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Una fuente</h3></div>
+<p class="pregunta-int" id="t-p6">Una fuente redonda tiene un radio de 4 ft. ¿Cuánto mide su borde? (π ≈ 3.14)</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">12.56 ft</button>
+<button class="opcion" data-k="b" type="button">25.12 ft</button>
+<button class="opcion" data-k="c" type="button">50.24 ft</button>
+<button class="opcion" data-k="d" type="button">8 ft</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#aplicaciones" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: aplicaciones de la circunferencia (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: aplicaciones de la circunferencia</span><span class="ei-sub">Resuelva problemas de ruedas, cercas y pistas circulares.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Calcule la circunferencia en cuatro ejercicios dado el radio y en cuatro dado el diámetro. Halle el radio o el diámetro en tres ejercicios dada la circunferencia. Resuelva tres aplicaciones reales (un jardín redondo, una llanta, un plato).</li>
+<li><strong>En su vida diaria.</strong> Busque tres objetos redondos en casa (un plato, una lata, una tapa). Mida el borde con una cuerda y el diámetro con una regla, en pulgadas. Divida C ÷ d en cada uno. ¿Qué tan cerca queda de 3.14?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">La distancia del centro de un círculo a su borde se llama…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">diámetro</button><button class="opcion" data-k="b" type="button">circunferencia</button><button class="opcion" data-k="c" type="button">radio</button><button class="opcion" data-k="d" type="button">centro</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un círculo tiene un radio de 12 in. Su diámetro mide…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">24 in</button><button class="opcion" data-k="b" type="button">6 in</button><button class="opcion" data-k="c" type="button">12 in</button><button class="opcion" data-k="d" type="button">37.68 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">π es aproximadamente…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3.41</button><button class="opcion" data-k="b" type="button">2.14</button><button class="opcion" data-k="c" type="button">22.7</button><button class="opcion" data-k="d" type="button">3.14</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">En cualquier círculo, circunferencia ÷ diámetro es…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">distinta para cada círculo</button><button class="opcion" data-k="b" type="button">siempre π</button><button class="opcion" data-k="c" type="button">mayor en los círculos grandes</button><button class="opcion" data-k="d" type="button">siempre 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Un plato tiene un diámetro de 9 in. Su circunferencia mide… (π ≈ 3.14)</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">28.26 in</button><button class="opcion" data-k="b" type="button">14.13 in</button><button class="opcion" data-k="c" type="button">63.59 in</button><button class="opcion" data-k="d" type="button">4.5 in</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Una fuente redonda tiene un radio de 4 ft. ¿Cuánto mide su borde? (π ≈ 3.14)</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12.56 ft</button><button class="opcion" data-k="b" type="button">50.24 ft</button><button class="opcion" data-k="c" type="button">25.12 ft</button><button class="opcion" data-k="d" type="button">8 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Una pista tiene una circunferencia de 314 ft. Su radio mide… (π ≈ 3.14)</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 ft</button><button class="opcion" data-k="b" type="button">50 ft</button><button class="opcion" data-k="c" type="button">25 ft</button><button class="opcion" data-k="d" type="button">157 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Un jardín redondo tiene un radio de 7 ft. ¿Cuánta cerca lo rodea? (π ≈ 22/7)</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">22 ft</button><button class="opcion" data-k="b" type="button">154 ft</button><button class="opcion" data-k="c" type="button">88 ft</button><button class="opcion" data-k="d" type="button">44 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la circunferencia (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de la circunferencia del círculo y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Partes del círculo</th><td>Identifico el centro, el radio, el diámetro y la circunferencia, y explico d = 2r sin ayuda.</td><td>Distingo los términos con algo de apoyo.</td><td>Confundo el radio con el diámetro.</td></tr>
+<tr><th scope="row">Aplicar las fórmulas</th><td>Aplico C = πd o C = 2πr según el dato y elijo la más cómoda.</td><td>Aplico una fórmula con apoyo.</td><td>No reconozco qué fórmula usar.</td></tr>
+<tr><th scope="row">Problemas inversos y aplicaciones</th><td>Despejo el radio, compruebo calculando hacia atrás y explico el resultado.</td><td>Despejo el radio con apoyo.</td><td>No despejo el radio a partir de la circunferencia.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se incorporó una figura nueva: el <strong>círculo</strong>. Quedaron claras sus partes (centro, radio, diámetro, circunferencia), la relación d = 2r y, sobre todo, se descubrió π como una constante universal: la razón circunferencia ÷ diámetro de cualquier círculo. Con C = πd o C = 2πr ya se calcula el borde de jardines, fuentes y pistas.</p>
+<p>En la <strong>Lección 7.3 · Área del círculo y figuras compuestas con semicírculos</strong> se medirá no el borde del círculo, sino su <strong>superficie interior</strong>. Aparecerá una nueva fórmula, A = πr², y se combinarán círculos con rectángulos en figuras compuestas reales, como una pista de atletismo.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 7.3 · Área del círculo y figuras compuestas con semicírculos</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>radio (r)</dt><dd>La distancia del centro al borde del círculo.</dd>
+<dt>diámetro (d)</dt><dd>El segmento que atraviesa el círculo por el centro: d = 2r.</dd>
+<dt>circunferencia (C)</dt><dd>La longitud del borde del círculo: C = πd.</dd>
+<dt>π (pi)</dt><dd>La razón C ÷ d de cualquier círculo, unos 3.14.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 7 · Lección 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.3",
+ "review": "las secciones 3 y 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Es al revés: el diámetro es el doble del radio.",
+    "c": "Ese es el radio.",
+    "d": "Esa es la idea de la circunferencia. El diámetro es solo 2 × r."
+   },
+   "right": "d = 2 × 12 = 24 in.",
+   "solution": "d = 2 × r = 2 × 12 = 24 in."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "Mire la tabla: grande o pequeño, la razón es unos 3.14.",
+    "b": "2 es la razón entre el diámetro y el radio.",
+    "d": "Mire la tabla: la llanta y la moneda dan la misma razón."
+   },
+   "right": "C ÷ d = π en todos los círculos.",
+   "solution": "C ÷ d es siempre π ≈ 3.14, sea cual sea el tamaño."
+  },
+  "p3": {
+   "ok": "d",
+   "hints": {
+    "a": "Con el diámetro, C = π × d: no se divide entre 2.",
+    "b": "Eso sería si 10 fuera el radio.",
+    "c": "Sumó 3.14. Multiplique."
+   },
+   "right": "3.14 × 10 = 31.4 in.",
+   "solution": "C = π × d ≈ 3.14 × 10 = 31.4 in."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Con el radio, C = 2 × π × r: falta multiplicar por 2.",
+    "c": "Eso es π × r², el área. La circunferencia es 2 × π × r.",
+    "d": "Ese es el diámetro. Multiplique por π."
+   },
+   "right": "2 × 3.14 × 6 = 37.68 ft.",
+   "solution": "C = 2 × π × r ≈ 2 × 3.14 × 6 = 37.68 ft."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es el diámetro (314 ÷ 3.14). El radio es la mitad.",
+    "b": "Revise: 314 ÷ 6.28.",
+    "d": "Dividió solo entre 2. Divida entre 2π."
+   },
+   "right": "314 ÷ 6.28 = 50 ft.",
+   "solution": "r = C ÷ (2π) ≈ 314 ÷ 6.28 = 50 ft."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Con el radio también se multiplica por 2.",
+    "c": "Esa es el área (π × r²). El borde es la circunferencia.",
+    "d": "Ese es el diámetro."
+   },
+   "right": "2 × 3.14 × 4 = 25.12 ft.",
+   "solution": "C = 2 × π × r ≈ 2 × 3.14 × 4 = 25.12 ft."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "El diámetro atraviesa todo el círculo.",
+    "b": "La circunferencia es el borde.",
+    "d": "El centro es un punto."
+   },
+   "solution": "La distancia del centro al borde es el radio."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "Es al revés: el diámetro es el doble del radio.",
+    "c": "Ese es el radio.",
+    "d": "Para el diámetro no hace falta π."
+   },
+   "solution": "d = 2 × 12 = 24 in."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Las cifras están cambiadas.",
+    "b": "π es un poco más de 3.",
+    "c": "La fracción es 22/7, no 22.7."
+   },
+   "solution": "π ≈ 3.14."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Es la misma para todos los círculos.",
+    "c": "El tamaño no la cambia.",
+    "d": "2 es diámetro ÷ radio."
+   },
+   "solution": "C ÷ d = π siempre."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Con el diámetro no se divide entre 2.",
+    "c": "Esa es el área.",
+    "d": "Ese es el radio."
+   },
+   "solution": "3.14 × 9 = 28.26 in."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiplique también por 2.",
+    "b": "Esa es el área.",
+    "d": "Ese es el diámetro."
+   },
+   "solution": "2 × 3.14 × 4 = 25.12 ft."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "Ese es el diámetro.",
+    "c": "Revise: 314 ÷ 6.28.",
+    "d": "Divida entre 2π, no entre 2."
+   },
+   "solution": "314 ÷ 6.28 = 50 ft."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Eso es solo 22/7 × 7; falta multiplicar por 2.",
+    "b": "Esa es el área (π × r²).",
+    "c": "Usó 14 como radio."
+   },
+   "solution": "2 × (22/7) × 7 = 44 ft."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

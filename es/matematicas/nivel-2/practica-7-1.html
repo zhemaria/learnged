@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 7.1 · Área de figuras compuestas — práctica (español) — construida con tools/build_n2_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 7.1 · Área de figuras compuestas · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-7-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 7 · Geometría transicional</div>
+    <h1>Lección 7.1 · Área de figuras compuestas</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#formulas-basicas">Fórmulas básicas de área</a></li>
+      <li><a href="#estrategia">Qué es una figura compuesta</a></li>
+      <li><a href="#adicion">La estrategia de adición</a></li>
+      <li><a href="#sustraccion">La estrategia de sustracción</a></li>
+      <li><a href="#costo">El costo de los materiales</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="formulas-basicas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Fórmulas básicas de área</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>Fórmulas de área (el área va siempre en unidades cuadradas)</caption>
+        <thead><tr><th scope="col">Figura</th><th scope="col">Fórmula</th><th scope="col">En palabras</th></tr></thead>
+        <tbody>
+          <tr><td>Rectángulo</td><td>A = b × h</td><td>base por altura</td></tr>
+          <tr><td>Cuadrado</td><td>A = s²</td><td>lado al cuadrado</td></tr>
+          <tr><td>Paralelogramo</td><td>A = b × h</td><td>base por altura (la altura, no el lado inclinado)</td></tr>
+          <tr><td>Triángulo</td><td>A = (b × h) ÷ 2</td><td>base por altura, entre dos</td></tr>
+          <tr><td>Trapecio</td><td>A = ((B + b) × h) ÷ 2</td><td>suma de las bases por la altura, entre dos</td></tr>
+        </tbody>
+      </table>
+      <h3>Explore cada figura</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="ba-f">Figura</label><select id="ba-f"><option value="rect">Rectángulo</option><option value="cuad">Cuadrado</option><option value="par">Paralelogramo</option><option value="tri">Triángulo</option><option value="trap">Trapecio</option></select></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="ba-b" id="ba-bl">Base</label><input type="range" id="ba-b" min="2" max="20" step="1" value="10"></div>
+          <div class="campo" style="flex:1;min-width:130px;" id="ba-hc"><label for="ba-h">Altura: <span id="ba-hv"></span></label><input type="range" id="ba-h" min="2" max="15" step="1" value="6"></div>
+          <div class="campo" style="flex:1;min-width:130px;" id="ba-Bc"><label for="ba-B">Base menor: <span id="ba-Bv"></span></label><input type="range" id="ba-B" min="1" max="19" step="1" value="5"></div>
+        </div>
+        <div id="ba-svg"></div>
+        <div class="salida" id="ba-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: área de figuras básicas</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Área</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba solo el número, sin unidades.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="estrategia">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Qué es una figura compuesta</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una figura compuesta está formada por dos o más figuras simples: el plano de un apartamento en L, un patio con una esquina recortada, una casa con su techo. Se mide con una idea sencilla: <strong>dividir para conquistar</strong>. Hay dos caminos:</p>
+      <table class="reglas">
+        <caption>Las dos estrategias</caption>
+        <thead><tr><th scope="col">Estrategia</th><th scope="col">Qué se hace</th><th scope="col">Conviene cuando…</th></tr></thead>
+        <tbody>
+          <tr><td>Adición</td><td>se parte en piezas y se suman sus áreas</td><td>la figura se divide fácilmente en piezas</td></tr>
+          <tr><td>Sustracción</td><td>se calcula la figura completa y se resta lo que falta</td><td>la figura es una grande a la que le quitaron un trozo</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: ¿adición o sustracción?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="adicion">
+    <summary><span class="num" aria-hidden="true">3</span><h2>La estrategia de adición</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se traza una línea auxiliar que parte la figura en piezas simples; se calcula cada área y se suman. Si falta alguna medida, se deduce de las otras: en una L, el lado que falta es la diferencia de dos que sí se conocen.</p>
+      <h3>El cuarto en L</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:130px;"><label for="lf-W">Ancho total (ft): <span id="lf-Wv"></span></label><input type="range" id="lf-W" min="8" max="30" step="1" value="18"></div>
+          <div class="campo" style="flex:1;min-width:130px;"><label for="lf-H">Alto total (ft): <span id="lf-Hv"></span></label><input type="range" id="lf-H" min="8" max="30" step="1" value="20"></div>
+          <div class="campo" style="flex:1;min-width:130px;"><label for="lf-a">Recorte, ancho (ft): <span id="lf-av"></span></label><input type="range" id="lf-a" min="1" max="25" step="1" value="6"></div>
+          <div class="campo" style="flex:1;min-width:130px;"><label for="lf-b">Recorte, alto (ft): <span id="lf-bv"></span></label><input type="range" id="lf-b" min="1" max="25" step="1" value="10"></div>
+        </div>
+        <div id="lf-svg"></div>
+        <div class="salida" id="lf-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: sume las piezas</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Área (ft²)</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba solo el número, sin unidades.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sustraccion">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La estrategia de sustracción</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se imagina la figura completa (casi siempre un rectángulo), se calcula su área y se le resta el trozo que falta. La misma L del módulo anterior, por este camino:</p>
+      <div class="panel">
+        <div id="ls-svg"></div>
+        <div class="salida" id="ls-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-tip">Los dos caminos dan lo mismo. Si uno resulta engorroso, pruebe el otro; y si tiene tiempo, use el segundo para comprobar el primero.</div>
+      <h3>Practique: reste lo que falta</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Área (ft²)</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número, sin unidades.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="costo">
+    <summary><span class="num" aria-hidden="true">5</span><h2>El costo de los materiales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Del área al presupuesto: se calcula el área y se multiplica por el precio de cada unidad cuadrada. Si el material se vende en envases o rollos que cubren una cantidad fija, se divide y se <strong>redondea hacia arriba</strong>: en la tienda no se vende medio galón de pintura.</p>
+      <h3>Practique: ¿cuánto cuesta?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escriba solo el número; puede llevar centavos.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 7 · Geometría transicional · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/geometry.js"></script>
+<script>
+var TXT = {
+ "u": "ft",
+ "u2": "ft²",
+ "ladoL": "Lado: ",
+ "baseMay": "Base mayor: ",
+ "baseL": "Base: ",
+ "lado": "lado",
+ "unid": " unidades cuadradas",
+ "alturaNota": "La altura (línea roja punteada) es perpendicular a la base: no es el lado inclinado.",
+ "figVoz": "Figura con sus medidas; área {A}.",
+ "nom": {
+  "rect": "rectángulo",
+  "cuad": "cuadrado",
+  "par": "paralelogramo",
+  "tri": "triángulo",
+  "trap": "trapecio"
+ },
+ "baQ": "¿Cuál es el área de este {f}?",
+ "baTri": "En el triángulo falta dividir entre 2.",
+ "baTrap1": "En el trapecio falta dividir entre 2.",
+ "baTrap2": "En el trapecio se suman las dos bases antes de multiplicar.",
+ "baCuad1": "Lado al cuadrado es lado × lado, no lado × 2.",
+ "baCuad2": "Ese es el perímetro. El área es lado × lado.",
+ "baRect": "Ese es el perímetro. El área es base por altura.",
+ "estr": [
+  [
+   "Una habitación en forma de L que se parte fácilmente en dos rectángulos.",
+   "a",
+   "Se parte en dos rectángulos y se suman."
+  ],
+  [
+   "Un campo rectangular al que se le quitó un triángulo en una esquina.",
+   "s",
+   "Se calcula el rectángulo completo y se resta el triángulo."
+  ],
+  [
+   "Una casa dibujada como un rectángulo con un triángulo encima (el techo).",
+   "a",
+   "Rectángulo más triángulo: se suman."
+  ],
+  [
+   "Un marco de fotos: un rectángulo con un hueco rectangular en el centro.",
+   "s",
+   "Rectángulo grande menos el hueco."
+  ],
+  [
+   "Un patio rectangular con una piscina rectangular en medio; se quiere el área del césped.",
+   "s",
+   "Todo el patio menos la piscina."
+  ],
+  [
+   "Una figura en forma de T formada por dos rectángulos.",
+   "a",
+   "Se parte en dos rectángulos y se suman."
+  ],
+  [
+   "Una pared con una ventana; se quiere el área que hay que pintar.",
+   "s",
+   "Toda la pared menos la ventana."
+  ],
+  [
+   "Un terreno formado por un cuadrado y un triángulo pegados a un lado.",
+   "a",
+   "Cuadrado más triángulo."
+  ]
+ ],
+ "estrQ": " ¿Qué estrategia es más cómoda?",
+ "estrA": "Adición: partir y sumar",
+ "estrS": "Sustracción: completar y restar",
+ "lVoz": "Figura en L de {W} por {H}, con una esquina recortada de {a} por {b}.",
+ "lSubVoz": "La figura en L completada con el rectángulo que falta, con borde rojo punteado.",
+ "falta": "falta",
+ "lf1": "R1 (arriba): {a1} × {b} = {A1} ft². R2 (abajo): {W} × {hb} = {A2} ft².",
+ "lf2": "Área total: {A1} + {A2} = {T} ft²",
+ "ls1": "Rectángulo completo: {W} × {H} = {WH} ft². Lo que falta: {a} × {b} = {ab} ft².",
+ "ls2": "Área: {WH} − {ab} = {T} ft², lo mismo que por adición.",
+ "suQ": "¿Cuál es el área de esta figura, en ft²?",
+ "suS": "Se parte en dos rectángulos: {a1} × {b} = {A1} y {W} × {hb} = {A2}; total {T} ft².",
+ "suP": "Ese sería el rectángulo completo: a esta figura le falta una esquina.",
+ "su2Q": "Una fachada es un rectángulo de {b} ft de ancho y {h} ft de alto, con un techo triangular de {ht} ft de altura encima. ¿Cuál es su área, en ft²?",
+ "su2Voz": "Casa: rectángulo con un triángulo encima.",
+ "su2S": "Rectángulo: {b} × {h} = {R}; triángulo: ({b} × {ht}) ÷ 2 = {Tr}; total {T} ft².",
+ "su2P": "El área del triángulo se divide entre 2.",
+ "re1Q": "Un patio de {W} ft × {H} ft tiene una piscina rectangular de {a} ft × {b} ft en medio. ¿Cuántos pies cuadrados de césped hay?",
+ "re1S": "{W} × {H} = {WH}; menos {a} × {b} = {ab}: {T} ft².",
+ "re1Voz": "Patio con una piscina en medio.",
+ "re1P": "La piscina se resta, no se suma.",
+ "re2Q": "A un terreno rectangular de {W} ft × {H} ft se le quitó una esquina triangular con catetos de {a} ft y {b} ft. ¿Cuál es el área que queda, en ft²?",
+ "re2S": "{WH} − ({a} × {b}) ÷ 2 = {WH} − {tr} = {T} ft².",
+ "re2Voz": "Terreno con una esquina triangular recortada.",
+ "re2P": "El trozo que falta es un triángulo: su área se divide entre 2.",
+ "re3Q": "Un terreno en forma de L es un rectángulo de {W} ft × {H} ft al que le falta una esquina de {a} ft × {b} ft. ¿Cuál es su área, en ft²?",
+ "re3S": "{WH} − {ab} = {T} ft².",
+ "re3Voz": "Terreno en L.",
+ "co1Q": "Un cuarto en forma de L mide {W} ft × {H} ft, pero le falta una esquina de {a} ft × {b} ft. El piso cuesta {p} por pie cuadrado. ¿Cuánto cuesta cubrir el cuarto, en dólares?",
+ "co1S": "Área: {WH} − {ab} = {A} ft²; {A} × {p} = {x}.",
+ "co1P": "Falta restar la esquina que no existe.",
+ "co2Q": "Una pared mide {L} ft × {H} ft y tiene {v} {vent} de 3 ft × 4 ft. Un galón de pintura cubre 350 ft². ¿Cuántos galones hay que comprar?",
+ "vent1": "ventana",
+ "vent2": "ventanas",
+ "co2S": "Área a pintar: {LH} − {vv} = {A} ft²; {A} ÷ 350 ≈ {q}; se redondea hacia arriba: {g} galones.",
+ "co2P1": "Si se redondea hacia abajo, la pintura no alcanza. Se redondea hacia arriba.",
+ "co2P2": "Las ventanas no se pintan: se restan.",
+ "co3Q": "Un jardín triangular tiene una base de {b} ft y una altura de {h} ft. El césped en rollo cuesta {p} por pie cuadrado. ¿Cuánto cuesta el césped, en dólares?",
+ "co3S": "Área: ({b} × {h}) ÷ 2 = {A} ft²; × {p} = {x}.",
+ "co3P": "El área del triángulo se divide entre 2."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+
+/* ============ MODULE 1 · basic formulas ============ */
+function forma(f, b, h, bm){
+  var P, cot = [], ex = [], A, txt;
+  if (f === "rect"){ P = [[0,0],[b,0],[b,h],[0,h]]; cot = [[[0,0],[b,0],"b = " + b, 1], [[b,0],[b,h],"h = " + h, 1]]; A = b * h; txt = b + " × " + h + " = " + A; }
+  else if (f === "cuad"){ P = [[0,0],[b,0],[b,b],[0,b]]; cot = [[[0,0],[b,0],TXT.lado + " = " + b, 1]]; A = b * b; txt = b + "² = " + b + " × " + b + " = " + A; }
+  else if (f === "par"){ var d = Math.max(1, b * 0.3); P = [[0,0],[b,0],[b + d,h],[d,h]]; cot = [[[0,0],[b,0],"b = " + b, 1]]; ex = [{ linea: true, pts: [[d,0],[d,h]] }, { txt: "h = " + h, p: [d + 0.8 + b * 0.08, h / 2] }]; A = b * h; txt = b + " × " + h + " = " + A; }
+  else if (f === "tri"){ var c = b * 0.35; P = [[0,0],[b,0],[c,h]]; cot = [[[0,0],[b,0],"b = " + b, 1]]; ex = [{ linea: true, pts: [[c,0],[c,h]] }, { txt: "h = " + h, p: [c + 0.8 + b * 0.08, h / 2.5] }]; A = b * h / 2; txt = "(" + b + " × " + h + ") ÷ 2 = " + nd(A); }
+  else { var bb = Math.min(bm, b - 1), o = (b - bb) / 2; P = [[0,0],[b,0],[o + bb,h],[o,h]]; cot = [[[0,0],[b,0],"B = " + b, 1], [[o + bb,h],[o,h],"b = " + bb, 1]]; ex = [{ linea: true, pts: [[o,0],[o,h]] }, { txt: "h = " + h, p: [o + 0.8 + b * 0.08, h / 2] }]; A = (b + bb) * h / 2; txt = "((" + b + " + " + bb + ") × " + h + ") ÷ 2 = " + nd(A); }
+  return { svg: figuraSVG([{ pts: P }], cot, F(TXT.figVoz, { A: nd(A) }), ex, 280), A: A, txt: txt };
+}
+function pintaBA(){
+  var f = $("ba-f").value, b = +$("ba-b").value, h = +$("ba-h").value, bm = +$("ba-B").value;
+  $("ba-bl").textContent = (f === "cuad" ? TXT.ladoL : (f === "trap" ? TXT.baseMay : TXT.baseL)) + b; $("ba-hv").textContent = h; $("ba-Bv").textContent = Math.min(bm, b - 1);
+  $("ba-hc").style.display = f === "cuad" ? "none" : ""; $("ba-Bc").style.display = f === "trap" ? "" : "none";
+  var Fm = forma(f, b, h, bm);
+  $("ba-svg").innerHTML = Fm.svg;
+  $("ba-salida").innerHTML = '<div class="linea veredicto">A = ' + Fm.txt + TXT.unid + '</div>' + (f === "par" || f === "tri" || f === "trap" ? '<div class="linea">' + TXT.alturaNota + '</div>' : "");
+}
+function genBasica(){
+  var f = elige(["rect", "cuad", "par", "tri", "trap"]), b = aleatorio(4, 16), h = aleatorio(3, 12), bm = aleatorio(2, b - 2), Fm = forma(f, b, h, bm), p = [];
+  if (f === "tri") p.push({ v: b * h, msg: TXT.baTri });
+  if (f === "trap") p.push({ v: (b + Math.min(bm, b - 1)) * h, msg: TXT.baTrap1 }, { v: b * h, msg: TXT.baTrap2 });
+  if (f === "cuad") p.push({ v: 2 * b, msg: TXT.baCuad1 }, { v: 4 * b, msg: TXT.baCuad2 });
+  if (f === "rect") p.push({ v: 2 * (b + h), msg: TXT.baRect });
+  p = p.filter(function(x){ return Math.abs(x.v - Fm.A) > 0.01; });
+  return { enun: F(TXT.baQ, { f: TXT.nom[f] }) + Fm.svg, correcta: nd(Fm.A), solucion: "A = " + Fm.txt + ".", evalua: numD(Fm.A, p) };
+}
+
+/* ============ MODULE 2 · addition or subtraction ============ */
+function genEstrategia(){
+  var e = elige(TXT.estr);
+  return { enun: e[0] + TXT.estrQ, opciones: [{ html: TXT.estrA, clave: "a" }, { html: TXT.estrS, clave: "s" }], correcta: e[1], enOrden: true, bien: e[2], mal: e[2] };
+}
+
+/* ============ MODULES 3 and 4 · the L shape ============ */
+function figL(W, H, a, b, modo){
+  var u = " " + TXT.u, P = [[0,0],[W,0],[W,H - b],[W - a,H - b],[W - a,H],[0,H]];
+  if (modo === "sub") return figuraSVG([{ pts: P }, { pts: [[W - a,H - b],[W,H - b],[W,H],[W - a,H]], fill: "#ffebee", stroke: "#b71c1c", dash: true, sw: 2 }],
+    [[[0,0],[W,0],W + u, 1], [[0,H],[0,0],H + u, 1], [[W,H],[W - a,H],a + u, 1], [[W,H - b],[W,H],b + u, 1]], TXT.lSubVoz, [{ txt: TXT.falta, p: [W - a / 2, H - b / 2], col: "#b71c1c" }], 320);
+  var cot = [[[0,0],[W,0],W + u, 1], [[0,H],[0,0],H + u, 1], [[W - a,H],[0,H],(W - a) + u, 1], [[W,0],[W,H - b],(H - b) + u, 1], [[W,H - b],[W - a,H - b],a + u, 1], [[W - a,H - b],[W - a,H],b + u, 1]];
+  var ex = modo === "add" ? [{ linea: true, pts: [[0,H - b],[W - a,H - b]] }, { txt: "R1", p: [(W - a) / 2, H - b / 2] }, { txt: "R2", p: [W / 2, (H - b) / 2] }] : [];
+  return figuraSVG([{ pts: P }], cot, F(TXT.lVoz, { W: W, H: H, a: a, b: b }), ex, 320);
+}
+function pintaLF(){
+  var W = +$("lf-W").value, H = +$("lf-H").value, a = Math.min(+$("lf-a").value, W - 1), b = Math.min(+$("lf-b").value, H - 1);
+  $("lf-Wv").textContent = W; $("lf-Hv").textContent = H; $("lf-av").textContent = a; $("lf-bv").textContent = b;
+  var A1 = (W - a) * b, A2 = W * (H - b), Tt = A1 + A2;
+  $("lf-svg").innerHTML = figL(W, H, a, b, "add");
+  $("lf-salida").innerHTML = '<div class="linea">' + F(TXT.lf1, { a1: W - a, b: b, A1: nd(A1), W: W, hb: H - b, A2: nd(A2) }) + '</div><div class="linea veredicto">' + F(TXT.lf2, { A1: nd(A1), A2: nd(A2), T: nd(Tt) }) + '</div>';
+  $("ls-svg").innerHTML = figL(W, H, a, b, "sub");
+  $("ls-salida").innerHTML = '<div class="linea">' + F(TXT.ls1, { W: W, H: H, WH: nd(W * H), a: a, b: b, ab: nd(a * b) }) + '</div><div class="linea veredicto">' + F(TXT.ls2, { WH: nd(W * H), ab: nd(a * b), T: nd(W * H - a * b) }) + '</div>';
+}
+function genSuma(){
+  var u = " " + TXT.u;
+  if (Math.random() < 0.6){
+    var W = aleatorio(8, 24), H = aleatorio(8, 24), a = aleatorio(2, W - 3), b = aleatorio(2, H - 3), Tt = W * H - a * b;
+    var P = [[0,0],[W,0],[W,H - b],[W - a,H - b],[W - a,H],[0,H]], cot = [[[0,0],[W,0],W + u, 1], [[0,H],[0,0],H + u, 1], [[W - a,H],[0,H],(W - a) + u, 1], [[W,0],[W,H - b],(H - b) + u, 1]];
+    return { enun: TXT.suQ + figuraSVG([{ pts: P }], cot, F(TXT.lVoz, { W: W, H: H, a: a, b: b }), [], 300), correcta: nd(Tt),
+      solucion: F(TXT.suS, { a1: W - a, b: b, A1: nd((W - a) * b), W: W, hb: H - b, A2: nd(W * (H - b)), T: nd(Tt) }), evalua: numD(Tt, [{ v: W * H, msg: TXT.suP }]) };
+  }
+  var b2 = 2 * aleatorio(3, 10), h = aleatorio(4, 12), ht = aleatorio(2, 8), T2 = b2 * h + b2 * ht / 2;
+  var svgC = figuraSVG([{ pts: [[0,0],[b2,0],[b2,h],[0,h]] }, { pts: [[0,h],[b2,h],[b2 / 2,h + ht]], fill: "#cfd8dc" }], [[[0,0],[b2,0],b2 + u, 1], [[b2,0],[b2,h],h + u, 1]], TXT.su2Voz,
+    [{ linea: true, pts: [[b2 / 2,h],[b2 / 2,h + ht]] }, { txt: ht + u, p: [b2 / 2 + b2 * 0.1 + 0.6, h + ht / 2.5] }], 300);
+  return { enun: F(TXT.su2Q, { b: b2, h: h, ht: ht }) + svgC, correcta: nd(T2), solucion: F(TXT.su2S, { b: b2, h: h, ht: ht, R: nd(b2 * h), Tr: nd(b2 * ht / 2), T: nd(T2) }), evalua: numD(T2, [{ v: b2 * h + b2 * ht, msg: TXT.su2P }]) };
+}
+function genResta(){
+  var u = " " + TXT.u, tp = aleatorio(1, 3), W = aleatorio(10, 30), H = aleatorio(8, 24), a, b, Tt, enun, sol, svgC, p = [];
+  if (tp === 1){ a = aleatorio(2, Math.floor(W / 2)); b = aleatorio(2, Math.floor(H / 2)); Tt = W * H - a * b;
+    var o = { W: W, H: H, a: a, b: b, WH: nd(W * H), ab: nd(a * b), T: nd(Tt) }; enun = F(TXT.re1Q, o); sol = F(TXT.re1S, o);
+    svgC = figuraSVG([{ pts: [[0,0],[W,0],[W,H],[0,H]], fill: "#c8e6c9" }, { pts: [[W / 2 - a / 2,H / 2 - b / 2],[W / 2 + a / 2,H / 2 - b / 2],[W / 2 + a / 2,H / 2 + b / 2],[W / 2 - a / 2,H / 2 + b / 2]], fill: "#bbdefb", stroke: "#0d47a1" }], [[[0,0],[W,0],W + u, 1], [[W,0],[W,H],H + u, 1]], TXT.re1Voz, [{ txt: a + " × " + b, p: [W / 2, H / 2], col: "#0d47a1" }], 280);
+    p.push({ v: W * H + a * b, msg: TXT.re1P }); }
+  else if (tp === 2){ a = aleatorio(2, W - 4); b = aleatorio(2, H - 4); Tt = W * H - a * b / 2;
+    var o2 = { W: W, H: H, a: a, b: b, WH: nd(W * H), tr: nd(a * b / 2), T: nd(Tt) }; enun = F(TXT.re2Q, o2); sol = F(TXT.re2S, o2);
+    svgC = figuraSVG([{ pts: [[0,0],[W,0],[W,H - b],[W - a,H],[0,H]] }, { pts: [[W,H - b],[W,H],[W - a,H]], fill: "#ffebee", stroke: "#b71c1c", dash: true, sw: 2 }], [[[0,0],[W,0],W + u, 1], [[0,H],[0,0],H + u, 1], [[W - a,H],[W,H],a + u, -1], [[W,H],[W,H - b],b + u, -1]], TXT.re2Voz, [], 300);
+    p.push({ v: W * H - a * b, msg: TXT.re2P }); }
+  else { a = aleatorio(2, W - 3); b = aleatorio(2, H - 3); Tt = W * H - a * b;
+    var o3 = { W: W, H: H, a: a, b: b, WH: nd(W * H), ab: nd(a * b), T: nd(Tt) }; enun = F(TXT.re3Q, o3); sol = F(TXT.re3S, o3);
+    svgC = figuraSVG([{ pts: [[0,0],[W,0],[W,H - b],[W - a,H - b],[W - a,H],[0,H]] }], [[[0,0],[W,0],W + u, 1], [[0,H],[0,0],H + u, 1], [[W,H - b],[W - a,H - b],a + u, 1], [[W - a,H - b],[W - a,H],b + u, 1]], TXT.re3Voz, [], 300); }
+  return { enun: enun + svgC, correcta: nd(Tt), solucion: sol, evalua: numD(Tt, p) };
+}
+
+/* ============ MODULE 5 · cost of materials ============ */
+function genCosto(){
+  var tp = aleatorio(1, 3), res, enun, sol, p = [];
+  if (tp === 1){ var W = aleatorio(10, 24), H = aleatorio(10, 20), a = aleatorio(3, W - 4), b = aleatorio(3, H - 4), A = W * H - a * b, pr = elige([2, 3, 3.5, 4, 5.25]); res = A * pr;
+    var o = { W: W, H: H, a: a, b: b, p: dinero2(pr), WH: nd(W * H), ab: nd(a * b), A: nd(A), x: dinero(res) }; enun = F(TXT.co1Q, o); sol = F(TXT.co1S, o); p.push({ v: W * H * pr, msg: TXT.co1P }); }
+  else if (tp === 2){ var L = aleatorio(10, 40), Hh = aleatorio(8, 12), v = aleatorio(1, 3), Ap = L * Hh - v * 12, g = Math.ceil(Ap / 350); res = g;
+    if (Ap % 350 === 0) return genCosto();
+    var o2 = { L: L, H: Hh, v: v, vent: v === 1 ? TXT.vent1 : TXT.vent2, LH: nd(L * Hh), vv: v * 12, A: nd(Ap), q: nd(Math.round(Ap / 350 * 100) / 100), g: g }; enun = F(TXT.co2Q, o2); sol = F(TXT.co2S, o2);
+    p.push({ v: Math.floor(Ap / 350), msg: TXT.co2P1 }); if (Math.ceil(L * Hh / 350) !== g) p.push({ v: Math.ceil(L * Hh / 350), msg: TXT.co2P2 }); }
+  else { var b2 = aleatorio(6, 30), h2 = aleatorio(4, 20), At = b2 * h2 / 2, pc = elige([0.5, 0.75, 1, 1.25]); res = At * pc;
+    var o3 = { b: b2, h: h2, A: nd(At), p: dinero2(pc), x: dinero2(res) }; enun = F(TXT.co3Q, o3); sol = F(TXT.co3S, o3); p.push({ v: b2 * h2 * pc, msg: TXT.co3P }); }
+  res = Math.round(res * 100) / 100;
+  return { enun: enun, correcta: tp === 2 ? String(res) : dinero(res), solucion: sol, evalua: numD(res, p.filter(function(x){ return Math.abs(x.v - res) > 0.01; })) };
+}
+
+/* ============ Start ============ */
+$("ba-f").addEventListener("change", pintaBA); ["ba-b", "ba-h", "ba-B"].forEach(function(id){ $(id).addEventListener("input", pintaBA); }); pintaBA();
+creaPracticaLibre("p1", genBasica);
+creaPracticaOM("p2", genEstrategia);
+["lf-W", "lf-H", "lf-a", "lf-b"].forEach(function(id){ $(id).addEventListener("input", pintaLF); }); pintaLF();
+creaPracticaLibre("p3", genSuma);
+creaPracticaLibre("p4", genResta);
+creaPracticaLibre("p5", genCosto);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
