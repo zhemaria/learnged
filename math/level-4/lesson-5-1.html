@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 5.1 · Math Level 4 (English) — built by tools/build_n4_lesson_5_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 5.1 · Simplifying rational expressions: factor and cancel · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 5 — Rational expressions</p>
+<h1>Lesson 5.1 · Simplifying rational expressions: factor and cancel</h1>
+<p class="lema">Simplify a rational expression by factoring the top and the bottom and cancelling only common factors, and find the values excluded from the domain.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">✏️</span> No calculator</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Relate</strong> simplifying rational expressions to simplifying fractions of numbers.</li>
+<li><strong>Simplify</strong> by factoring the numerator and the denominator and cancelling common factors.</li>
+<li><strong>Find</strong> the values excluded from the domain.</li>
+<li><strong>Tell</strong> a factor from a term, and avoid cancelling terms.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.1.h</span> Add, subtract, multiply and divide rational expressions.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.1.f</span> Factor polynomial expressions.</li><li><span class="std-cod std-base">A.1.i</span> Evaluate rational expressions by substituting integers for unknown quantities.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.3.c</span> Improve or correct a flawed line of reasoning.</li><li><span class="std-cod std-mp">MP.4.b</span> Transform and solve algebraic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">A-SSE.2</span> <span class="std-nivel">Level E</span> Use the structure of an expression to identify ways to rewrite it. For example, see x⁴ − y⁴ as (x²)² − (y²)², thus recognizing it as a difference of squares that can be factored as (x² − y²)(x² + y²).</li><li><span class="std-cod std-ccr">A-APR.6</span> <span class="std-nivel">Level E</span> Rewrite simple rational expressions in different forms; write a(x)/b(x) in the form q(x) + r(x)/b(x), where a(x), b(x), q(x), and r(x) are polynomials with the degree of r(x) less than the degree of b(x), using inspection, long division, or, for the more complicated examples, a computer algebra system.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-analogy">Just like fractions of numbers</a></li>
+<li><a href="#s-simplify">Simplifying algebraic fractions</a></li>
+<li><a href="#s-excluded">Values excluded from the domain</a></li>
+<li><a href="#s-trap">The trap: factors, not terms</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-analogy"><span aria-hidden="true" class="num-seccion">1</span>Just like fractions of numbers</h2>
+<p><strong>A link with Topics 3 and 4.</strong> In Topics 3 and 4, factoring was the key tool. It is again: a <strong>rational expression</strong> is a fraction whose numerator and denominator are polynomials. To simplify it you factor the top and the bottom and cancel the common factors, exactly as with fractions of numbers.</p>
+<p>To simplify 12/18, you factor the top and the bottom and cancel the common factor:</p>
+<p class="formula" style="text-align:center;font-size:1.25rem;"><span class="ex" aria-hidden="true"><span class="fracc"><span class="fa">12</span><span class="fb2">18</span></span></span><span class="cap-oculto">12 over 18</span> = <span class="ex" aria-hidden="true"><span class="fracc"><span class="fa">2 · <s style="text-decoration-color:#c62828;text-decoration-thickness:3px">6</s></span><span class="fb2">3 · <s style="text-decoration-color:#c62828;text-decoration-thickness:3px">6</s></span></span></span><span class="cap-oculto">2 times 6 over 3 times 6, with the 6 crossed out</span> = <span class="ex" aria-hidden="true"><span class="fracc"><span class="fa">2</span><span class="fb2">3</span></span></span><span class="cap-oculto">2 over 3</span></p>
+<p>The 6 cancels because it is a factor (something that multiplies) on the top and on the bottom. With polynomials it works the same way:</p>
+<p class="formula" style="text-align:center;font-size:1.25rem;"><span class="ex" aria-hidden="true"><span class="fracc"><span class="fa"><s style="text-decoration-color:#c62828;text-decoration-thickness:3px">(x + 3)</s>(x − 3)</span><span class="fb2"><s style="text-decoration-color:#c62828;text-decoration-thickness:3px">(x + 3)</s>(x − 2)</span></span></span><span class="cap-oculto">x plus 3 times x minus 3, over x plus 3 times x minus 2, with x plus 3 crossed out</span> = <span class="ex" aria-hidden="true"><span class="fracc"><span class="fa">x − 3</span><span class="fb2">x − 2</span></span></span><span class="cap-oculto">x − 3 over x − 2</span></p>
+<a class="enlace-interactivo" href="practice-5-1.html#simplify" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: simplifying step by step (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: simplifying step by step</span><span class="ei-sub">Watch the factors cancel on the fraction itself, one step at a time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-simplify"><span aria-hidden="true" class="num-seccion">2</span>Simplifying algebraic fractions</h2>
+<p>There are three steps: factor the numerator, factor the denominator, and cancel the common factors.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: monomials. Simplify 6x² / 9x.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Write it in factors:</strong> (3 · 2 · x · x) / (3 · 3 · x).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Cancel the 3 and one x.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>2x / 3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: with a trinomial. Simplify (x² + 5x + 6) / (x + 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Factor the numerator:</strong> (x + 2)(x + 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Cancel the common factor (x + 2).</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>x + 3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: simplify (x² − 4) / (x² − x − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Numerator:</strong> (x + 2)(x − 2). Denominator: (x − 2)(x + 1).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Cancel (x − 2).</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>(x + 2) / (x + 1)</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — 4x² / 6x</h3></div>
+<p class="pregunta-int" id="t-p1">Choose the simplified form.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">2x² / 3</button>
+<button class="opcion" data-k="b" type="button">4x / 6</button>
+<button class="opcion" data-k="c" type="button">2x / 3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — (x² − 1) / (x − 1)</h3></div>
+<p class="pregunta-int" id="t-p2">Choose the simplified form.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x − 1</button>
+<button class="opcion" data-k="b" type="button">x + 1</button>
+<button class="opcion" data-k="c" type="button">x² − 1</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — (x² + 4x + 4) / (x + 2)</h3></div>
+<p class="pregunta-int" id="t-p3">Choose the simplified form.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x + 2</button>
+<button class="opcion" data-k="b" type="button">x + 4</button>
+<button class="opcion" data-k="c" type="button">x² + 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-5-1.html#simplify" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: simplifying (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: simplifying</span><span class="ei-sub">A step-by-step simplifier with the cancelled factors crossed out, and exercises that change every time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-excluded"><span aria-hidden="true" class="num-seccion">3</span>Values excluded from the domain</h2>
+<p>A fraction can never have a denominator of zero: division by zero is not defined. The <strong>excluded values</strong> are the ones that make the <strong>original</strong> denominator zero (before cancelling). To find them, factor the denominator and set each factor equal to zero.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: which values are excluded in (x + 1) / (x² − 9)?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Factor the denominator:</strong> (x + 3)(x − 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Set each factor equal to zero:</strong> x + 3 = 0 or x − 3 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Excluded values.</strong> <strong>x = −3 and x = 3</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Write them down before cancelling</span>
+<p>Even if a factor cancels when you simplify, the value that made it zero is still excluded. That is why you read the excluded values in the original denominator. And watch the sign: (x − 3) is zero at x = 3, and (x + 2) at x = −2.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — 3 / (x − 5)</h3></div>
+<p class="pregunta-int" id="t-p4">Which values are excluded?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x = 5</button>
+<button class="opcion" data-k="b" type="button">x = −5</button>
+<button class="opcion" data-k="c" type="button">x = 3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — (x + 1) / [(x − 4)(x + 2)]</h3></div>
+<p class="pregunta-int" id="t-p5">Which values are excluded?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = −4 and x = 2</button>
+<button class="opcion" data-k="b" type="button">x = −1</button>
+<button class="opcion" data-k="c" type="button">x = 4 and x = −2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — x / (x² − 16)</h3></div>
+<p class="pregunta-int" id="t-p6">Which values are excluded?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">x = 16</button>
+<button class="opcion" data-k="b" type="button">x = 4 and x = −4</button>
+<button class="opcion" data-k="c" type="button">x = 4 only</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-5-1.html#excluded" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: excluded values (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: excluded values</span><span class="ei-sub">Build a denominator (x − p)(x − q), try values of x, and see what happens when the denominator becomes zero.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-trap"><span aria-hidden="true" class="num-seccion">4</span>The trap: factors, not terms</h2>
+<p>You can only cancel <strong>factors</strong> (things that multiply everything), never <strong>terms</strong> (things that are added or subtracted).</p>
+<div aria-label="Factor or term (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The difference between a factor and a term in the numerator</caption>
+<thead><tr><th scope="col">Expression</th><th scope="col">What is the x?</th><th scope="col">Can it cancel?</th></tr></thead>
+<tbody>
+<tr><td>x(x + 4)</td><td>A factor: it multiplies the whole parentheses</td><td>Yes</td></tr>
+<tr><td>x + 4</td><td>A term: it is added</td><td>No</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: done right. Simplify (x + 2) / (x² − 4).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Factor the denominator:</strong> (x + 2)(x − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>(x + 2) is a common factor: it cancels.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>1 / (x − 2)</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">A wrong cancellation</span>
+<p>In (x + 4) / x you cannot cancel the x to get 4, because on top the x is added (it is a term, not a factor). In the same way, in (x + 3) / 3 the 3 is not a factor of the whole numerator, so it does not cancel. Cancelling terms is the most common mistake with algebraic fractions. The quick test: if there is a + or − sign between what you want to cancel and the rest, with no parentheses grouping them, it is a term.</p>
+</div>
+<a class="enlace-interactivo" href="practice-5-1.html#trap" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: factors, not terms (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: factors, not terms</span><span class="ei-sub">Judge cancellations: some are valid and some are not, with the reason in each case.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-5-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook open: (1) Which values do I exclude? Simplify these eight expressions and write down the excluded values from the original denominator: 6x / 9x², (x² − 9) / (x + 3), (x² + 5x + 6) / (x² − 4), (2x + 8) / (x² + 4x), (x² − x − 12) / (x² − 16), (3x − 6) / (x² − 4x + 4), (x² − 25) / (x² − 10x + 25), and (4x² − 1) / (2x² + x). Mark in each one the factor you cancelled. (2) Mistake hunters: each simplification is wrong. Explain in one sentence why it cannot be cancelled and correct it: (x + 5) / 5 = x; (x² + 4) / (x + 2) = x + 2; (x + 3) / (x + 6) = 1/2. (3) From numbers to polynomials: simplify 12/18 and, next to it, (x² + 5x + 6) / (x² + 6x + 9), writing the factor-and-cancel steps side by side. Then make up two more pairs. Then do several exercises of each activity on the practice page, solving them in your notebook first. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Explain to someone at home why (x + 4) / x is not 4. Ask them to try x = 2: (2 + 4) / 2 = 3, not 4. A number check like this catches a wrong cancellation every time.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">Simplify 8x³ / 12x.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2x³ / 3</button><button class="opcion" data-k="b" type="button">8x² / 12</button><button class="opcion" data-k="c" type="button">2x² / 3</button><button class="opcion" data-k="d" type="button">4x² / 6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">Simplify (x² − 9) / (x + 3).</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x + 3</button><button class="opcion" data-k="b" type="button">x − 9</button><button class="opcion" data-k="c" type="button">x² − 3</button><button class="opcion" data-k="d" type="button">x − 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">Simplify (x + 2) / (x² − 4).</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1 / (x − 2)</button><button class="opcion" data-k="b" type="button">1 / (x + 2)</button><button class="opcion" data-k="c" type="button">x − 2</button><button class="opcion" data-k="d" type="button">(x + 2) / (x − 2)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">Simplify (x² + 5x + 6) / (x + 2).</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x + 2</button><button class="opcion" data-k="b" type="button">x + 3</button><button class="opcion" data-k="c" type="button">x + 5</button><button class="opcion" data-k="d" type="button">x² + 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Which value is excluded in 5 / (x − 7)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">7</button><button class="opcion" data-k="b" type="button">−7</button><button class="opcion" data-k="c" type="button">5</button><button class="opcion" data-k="d" type="button">0</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Which values are excluded in (x + 1) / (x² − 9)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 9</button><button class="opcion" data-k="b" type="button">x = −1</button><button class="opcion" data-k="c" type="button">x = 3 and x = −3</button><button class="opcion" data-k="d" type="button">x = 3 only</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Which values are excluded in x / [(x − 2)(x + 5)]?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −2 and x = 5</button><button class="opcion" data-k="b" type="button">x = 0</button><button class="opcion" data-k="c" type="button">x = 2 only</button><button class="opcion" data-k="d" type="button">x = 2 and x = −5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">When you simplify (x + 3) / (x² + x − 6), which values must be excluded?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2 only</button><button class="opcion" data-k="b" type="button">x = 2 and x = −3</button><button class="opcion" data-k="c" type="button">x = −3 only</button><button class="opcion" data-k="d" type="button">x = 3 and x = −2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for simplifying rational expressions (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for simplifying rational expressions and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Factoring top and bottom</th><td>I factor both correctly and see the quickest pattern.</td><td>I factor only one of them, or with mistakes.</td><td>I cannot factor them.</td></tr>
+<tr><th scope="row">Cancelling only factors</th><td>I cancel only common factors and can explain why terms do not cancel.</td><td>I cancel factors, but sometimes I mix up terms.</td><td>I cancel terms instead of factors.</td></tr>
+<tr><th scope="row">Excluded values</th><td>I find all of them, writing them down before cancelling.</td><td>I find some, but I leave out the ones of the cancelled factor.</td><td>I do not find excluded values.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned to simplify rational expressions by factoring and cancelling only common factors, and to find the values excluded from the domain.</p>
+<p>In <strong>Lesson 5.2 · Adding, subtracting, multiplying, and dividing rational expressions</strong> you will operate with these algebraic fractions: multiply (factor and cancel), divide (multiply by the reciprocal), and add or subtract with a common denominator and with different denominators, always just as with fractions of numbers.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-5-2.html">Lesson 5.2 · Adding, subtracting, multiplying, and dividing rational expressions</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>rational expression</dt><dd>A fraction whose numerator and denominator are polynomials.</dd>
+<dt>factor</dt><dd>Something that multiplies the whole expression.</dd>
+<dt>term</dt><dd>A part of an expression separated by + or −.</dd>
+<dt>excluded value</dt><dd>A value of x that makes the original denominator zero.</dd>
+<dt>domain</dt><dd>All the values that x can take.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 5 · Lesson 5.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 5.2",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "One x cancels: x² / x = x.",
+    "b": "4/6 can still be simplified: divide by 2."
+   },
+   "right": "(2 · 2 · x · x) / (2 · 3 · x) = 2x / 3.",
+   "solution": "2x / 3."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Factor x² − 1 = (x + 1)(x − 1) and cancel (x − 1).",
+    "c": "The denominator (x − 1) cancels with a factor of the numerator."
+   },
+   "right": "(x + 1)(x − 1) / (x − 1) = x + 1.",
+   "solution": "x + 1."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Factor: x² + 4x + 4 = (x + 2)(x + 2).",
+    "c": "You cannot cancel terms: factor first."
+   },
+   "right": "(x + 2)(x + 2) / (x + 2) = x + 2.",
+   "solution": "x + 2."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "x − 5 = 0 gives x = 5, not −5.",
+    "c": "The 3 is in the numerator: it does not matter."
+   },
+   "right": "x − 5 = 0 at x = 5.",
+   "solution": "x = 5."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Watch the signs: x − 4 = 0 gives x = 4.",
+    "b": "Excluded values come from the denominator, not the numerator."
+   },
+   "right": "x − 4 = 0 or x + 2 = 0.",
+   "solution": "x = 4 and x = −2."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Factor x² − 16 = (x + 4)(x − 4).",
+    "c": "(−4)² is also 16."
+   },
+   "right": "(x + 4)(x − 4) = 0.",
+   "solution": "x = 4 and x = −4."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "One x cancels: x³ / x = x².",
+    "b": "8/12 can still be simplified.",
+    "d": "4/6 can still be simplified."
+   },
+   "solution": "2x² / 3."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "(x + 3) is the factor that cancels.",
+    "b": "Factor: x² − 9 = (x + 3)(x − 3).",
+    "c": "You cannot cancel terms."
+   },
+   "solution": "x − 3."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "(x + 2) cancels; (x − 2) stays.",
+    "c": "The numerator becomes 1, so (x − 2) stays in the denominator.",
+    "d": "(x + 2) cancels top and bottom."
+   },
+   "solution": "1 / (x − 2)."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "(x + 2) is the factor that cancels.",
+    "c": "Factor: (x + 2)(x + 3).",
+    "d": "You cannot cancel terms."
+   },
+   "solution": "x + 3."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "x − 7 = 0 gives x = 7.",
+    "c": "The 5 is in the numerator.",
+    "d": "At x = 0 the denominator is −7, not 0."
+   },
+   "solution": "7."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Factor: x² − 9 = (x + 3)(x − 3).",
+    "b": "The numerator does not matter.",
+    "d": "(−3)² is also 9."
+   },
+   "solution": "x = 3 and x = −3."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Watch the signs: x − 2 = 0 gives x = 2.",
+    "b": "The numerator does not matter.",
+    "c": "x + 5 = 0 also makes it zero."
+   },
+   "solution": "x = 2 and x = −5."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "x = −3 is still excluded even though (x + 3) cancels.",
+    "c": "x = 2 also makes the original denominator zero.",
+    "d": "Factor: x² + x − 6 = (x + 3)(x − 2)."
+   },
+   "solution": "x = 2 and x = −3."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

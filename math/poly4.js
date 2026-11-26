@@ -149,3 +149,34 @@ function evaluaSol(txt, raices, tol){
   if (v.length === u.length && v.every(function(x){ return esta(u, -x); })) return {estado: "mal", msg: T("Check the signs: x + 3 = 0 gives x = −3, not 3.", "Revise los signos: x + 3 = 0 da x = −3, no 3.")};
   return {estado: "mal", msg: T("Substitute to check: ", "Sustituya para comprobar: ") + mal.map(function(x){ return "x = " + sg(Math.round(x * 1000) / 1000); }).join(", ") + T(" does not make the equation true.", " no hace cierta la ecuación.")};
 }
+
+/* ===== Rational expressions (Topic 5): a fraction N/D with each part factored, {k, m, f} as in fVis ===== */
+function Fm(k, m, f){ return {k: k, m: m || 0, f: f || []}; }
+/* Text of a factored part; tachar: list of indexes of binomials to cross out */
+function parteVis(FF, tachar, tacharMono){
+  var mono = (FF.k === 1 && (FF.m || FF.f.length) ? "" : FF.k === -1 && (FF.m || FF.f.length) ? "−" : sg(FF.k)) + (FF.m ? "x" + (FF.m > 1 ? "<sup>" + FF.m + "</sup>" : "") : "");
+  if (tacharMono && mono) mono = '<span class="tachado">' + mono + "</span>";
+  var b = FF.f.map(function(q, i){ var s = "(" + pVis(q) + ")"; return tachar && tachar.indexOf(i) >= 0 ? '<span class="tachado">' + s + "</span>" : s; }).join("");
+  if (!mono && FF.f.length === 1 && !tachar) return pVis(FF.f[0]);
+  return mono + b || "1";
+}
+function parteVoz(FF){ var l = []; if (FF.k !== 1 || (!FF.m && !FF.f.length)) l.push(String(FF.k).replace("-", T("negative ", "menos "))); if (FF.m) l.push(FF.m === 1 ? "x" : T("x to the " + FF.m, "x a la " + FF.m)); FF.f.forEach(function(q){ l.push(pVoz(q)); }); return l.join(T(" times ", " por ")); }
+function esUno(FF){ return FF.k === 1 && !FF.m && !FF.f.length; }
+function racF(N, D){ var nv = parteVis(N), dv = parteVis(D); if (esUno(D)) return envuelve(nv, parteVoz(N)); return envuelve('<span class="fracc"><span class="fa">' + nv + '</span><span class="fb2">' + dv + "</span></span>", parteVoz(N) + T(", over ", ", sobre ") + parteVoz(D)); }
+function racP(Np, Dp){ return envuelve('<span class="fracc"><span class="fa">' + pVis(Np) + '</span><span class="fb2">' + pVis(Dp) + "</span></span>", pVoz(Np) + T(", over ", ", sobre ") + pVoz(Dp)); }
+/* Simplify N/D (factored parts): cancel common binomials, reduce the number and the power of x */
+function simplifica(N, D){
+  var fn = N.f.slice(), fd = D.f.slice(), cn = [], cd = [], i, j;
+  for (i = 0; i < fn.length; i++) for (j = 0; j < fd.length; j++) if (cd.indexOf(j) < 0 && pClave(fn[i]) === pClave(fd[j])){ cn.push(i); cd.push(j); break; }
+  var g = mcd(Math.abs(N.k), Math.abs(D.k)) || 1, kn = N.k / g, kd = D.k / g; if (kd < 0){ kn = -kn; kd = -kd; }
+  var mm = Math.min(N.m, D.m);
+  return {N: Fm(kn, N.m - mm, fn.filter(function(q, k){ return cn.indexOf(k) < 0; })), D: Fm(kd, D.m - mm, fd.filter(function(q, k){ return cd.indexOf(k) < 0; })), cn: cn, cd: cd, g: g, mm: mm};
+}
+function excluidos(D){ var l = []; if (D.m) l.push(0); D.f.forEach(function(q){ var v = raizVal(q); if (l.indexOf(v) < 0) l.push(v); }); return l; }
+function exclTxt(D){ var l = []; if (D.m) l.push("x = 0"); D.f.forEach(function(q){ var s = "x = " + raizTxt(q); if (l.indexOf(s) < 0) l.push(s); }); return l.join(T(" and ", " y ")); }
+/* A rational expression as {N, D}: product, reciprocal, and multiple-choice options without repeats */
+function racMul(A, B){ return {N: Fm(A.N.k * B.N.k, A.N.m + B.N.m, A.N.f.concat(B.N.f)), D: Fm(A.D.k * B.D.k, A.D.m + B.D.m, A.D.f.concat(B.D.f))}; }
+function racInv(A){ return {N: A.D, D: A.N}; }
+function racR(A){ return racF(A.N, A.D); }
+/* lista: [{clave, html}] or [{clave, N, D}]; the first is the right one. Keeps up to n distinct options. */
+function racOpciones(lista, n){ var vis = {}, ops = []; lista.forEach(function(o){ var h = o.html || racF(o.N, o.D); if (!vis[h] && ops.length < (n || 4)){ vis[h] = 1; ops.push({clave: o.clave, html: h}); } }); return ops; }

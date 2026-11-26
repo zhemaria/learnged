@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar — práctica (español) — construida con tools/build_n4_lesson_5_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-5-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .tachado{text-decoration:line-through;text-decoration-color:#c62828;text-decoration-thickness:3px;color:#78909c;}
+  .fraccion-grande .fracc{font-size:22px;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 5 · Expresiones racionales</div>
+    <h1>Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#simplificar">Simplificar fracciones algebraicas</a></li>
+      <li><a href="#excluidos">Valores excluidos del dominio</a></li>
+      <li><a href="#trampa">El error trampa: factores, no términos</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="simplificar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Simplificar fracciones algebraicas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Simplificar una fracción algebraica es lo mismo que simplificar 12/18: se factoriza arriba y abajo y se cancelan los factores comunes. Tres pasos, siempre en el mismo orden.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="sp-ex">Expresión que se va a simplificar</label><select id="sp-ex"><option value="azar">Una nueva, al azar</option><option value="0">6x² / 9x</option><option value="1" selected>(x² + 5x + 6) / (x + 2)</option><option value="2">(x² − 4) / (x² − x − 2)</option><option value="3">(x² − 9) / (x² + 7x + 12)</option><option value="4">(x² + 4x + 4) / (x + 2)</option><option value="5">(2x² + 6x) / (x² − 9)</option><option value="6">(x² − 1) / (x² + 2x + 1)</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="sp-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="sp-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="sp-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="sp-nuevo">Otra expresión</button></div></div>
+      <div class="pasos" id="sp-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Anote los valores excluidos antes de cancelar: al cancelar, el factor desaparece de la expresión, pero el valor que lo anulaba sigue prohibido. Por eso los valores excluidos se leen siempre en el denominador original.</div>
+      <h3>Practique: ¿cuál es la forma simplificada?</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="opciones" id="sq-opciones"></div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="sq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="excluidos">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Valores excluidos del dominio</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una fracción nunca puede tener el denominador igual a cero: la división entre cero no está definida. Los valores excluidos son los que hacen cero al denominador. Para hallarlos se factoriza el denominador y se iguala cada factor a cero.</p>
+      <div class="panel"><p><strong>Explorador del denominador.</strong> Arme (x − p)(x − q) eligiendo p y q, y pruebe distintos valores de x.</p><div class="campos"><div class="campo"><label for="ex-p">Valor de p</label><input type="text" inputmode="numeric" autocomplete="off" id="ex-p" value="3" style="width:6em"></div><div class="campo"><label for="ex-q">Valor de q</label><input type="text" inputmode="numeric" autocomplete="off" id="ex-q" value="-2" style="width:6em"></div><div class="campo"><label for="ex-x">Pruebe con x =</label><input type="text" inputmode="numeric" autocomplete="off" id="ex-x" value="1" style="width:6em"></div></div></div>
+      <div class="salida" aria-live="polite" id="ex-txt"></div>
+      <div class="caja-atencion"><strong>Ojo con el signo:</strong> el factor (x − 3) se anula en x = 3, y el factor (x + 2) se anula en x = −2. El valor excluido es el que hace cero al factor, no el número que aparece escrito en él.</div>
+      <h3>Practique: ¿qué valores se excluyen?</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="campos"><div class="campo"><label for="eq-r">Valores excluidos</label><input type="text" autocomplete="off" class="ancho" id="eq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="eq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="eq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="trampa">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El error trampa: factores, no términos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Solo se cancelan factores, es decir, cosas que multiplican a toda la expresión. Nunca se cancelan términos, que son las partes separadas por signos de suma o resta.</p>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Diferencia entre factor y término</caption><thead><tr><th scope="col">Expresión</th><th scope="col">¿Qué es la x?</th><th scope="col">¿Se puede cancelar?</th></tr></thead><tbody><tr><td>x(x + 4)</td><td>Un factor: multiplica a todo el paréntesis</td><td>Sí</td></tr><tr><td>x + 4</td><td>Un término: está sumado</td><td>No</td></tr></tbody></table></div>
+      <div class="caja-tip">La prueba rápida: si entre la parte que quiere cancelar y el resto hay un signo + o − sin paréntesis que los agrupe, es un término y no se cancela. Si multiplica a todo lo demás, es un factor y sí se cancela. En caso de duda, pruebe con un número: con x = 2, (x + 4)/x = 3, no 4.</div>
+      <h3>Practique: ¿es correcta esta cancelación?</h3>
+      <div class="practica" id="tq">
+        <div class="enun" id="tq-enun"></div>
+        <div class="opciones" id="tq-opciones"></div>
+        <div class="fb" id="tq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="tq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="tq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 5 · Expresiones racionales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+var O = T(" or ", " o ");
+var SOL_AYUDA = T("Type the excluded values separated by a comma, like: 3, −2.", "Escriba los valores excluidos separados por una coma, como: 3, −2.");
+function bin(a, b){ return [b, a]; }
+function casoSimp(){
+  var tipo = elige(["mono", "bin", "bin", "bin", "comun"]), N, D;
+  if (tipo === "mono"){ var g = elige([2, 3, 4, 5, 6]), a, b; do { a = aleatorio(1, 6); b = aleatorio(1, 6); } while (a === b || mcd(a, b) !== 1); var m1 = aleatorio(1, 4), m2 = aleatorio(1, 3); N = Fm(g * a, m1, []); D = Fm(g * b, m2, []); }
+  else { var c = nz(-7, 7), u, v; do { u = nz(-7, 7); v = nz(-7, 7); } while (u === c || v === c || u === v);
+    var forma = aleatorio(0, 3);
+    if (forma === 0){ N = Fm(1, 0, [bin(1, c), bin(1, u)]); D = Fm(1, 0, [bin(1, c)]); }
+    else if (forma === 1){ N = Fm(1, 0, [bin(1, c)]); D = Fm(1, 0, [bin(1, c), bin(1, v)]); }
+    else { N = Fm(1, 0, [bin(1, c), bin(1, u)]); D = Fm(1, 0, [bin(1, c), bin(1, v)]); }
+    if (tipo === "comun"){ N = Fm(elige([2, 3]), elige([0, 1]), [bin(1, c)]); D = Fm(1, 0, [bin(1, c), bin(1, v)]); } }
+  var S = simplifica(N, D);
+  return {N: N, D: D, S: S, Np: fProducto(N), Dp: fProducto(D)};
+}
+function pasosSimp(c){
+  var S = c.S, P = [];
+  P.push(T("Factor the numerator: ", "Se factoriza el numerador: ") + pVis(c.Np) + " = " + parteVis(c.N) + ".");
+  P.push(T("Factor the denominator: ", "Se factoriza el denominador: ") + pVis(c.Dp) + " = " + parteVis(c.D) + ".");
+  P.push(T("Excluded values (from the original denominator): ", "Valores excluidos (del denominador original): ") + exclTxt(c.D) + ".");
+  var tn = S.cn, td = S.cd, mono = S.g > 1 || S.mm > 0;
+  P.push(T("Cancel the common factors: ", "Se cancelan los factores comunes: ") + envuelve('<span class="fracc"><span class="fa">' + parteVis(c.N, tn, mono && false) + '</span><span class="fb2">' + parteVis(c.D, td) + "</span></span>", "") + (mono ? T(" and the common number and power of x", " y el número y la potencia de x comunes") + (S.g > 1 ? " (" + S.g + ")" : "") + (S.mm ? " (x" + (S.mm > 1 ? "<sup>" + S.mm + "</sup>" : "") + ")" : "") : "") + ".");
+  P.push(T("Simplified form: ", "Forma simplificada: ") + "<strong>" + racF(S.N, S.D) + "</strong>.");
+  return P;
+}
+var SIMP_FIJAS = [
+  [Fm(6, 2, []), Fm(9, 1, [])], [Fm(1, 0, [bin(1, 2), bin(1, 3)]), Fm(1, 0, [bin(1, 2)])], [Fm(1, 0, [bin(1, 2), bin(1, -2)]), Fm(1, 0, [bin(1, -2), bin(1, 1)])],
+  [Fm(1, 0, [bin(1, 3), bin(1, -3)]), Fm(1, 0, [bin(1, 3), bin(1, 4)])], [Fm(1, 0, [bin(1, 2), bin(1, 2)]), Fm(1, 0, [bin(1, 2)])], [Fm(2, 1, [bin(1, 3)]), Fm(1, 0, [bin(1, 3), bin(1, -3)])], [Fm(1, 0, [bin(1, 1), bin(1, -1)]), Fm(1, 0, [bin(1, 1), bin(1, 1)])]];
+pasoAPaso4("sp", function(){
+  var i = $("sp-ex").value, c;
+  if (i === "azar") c = casoSimp(); else { var p = SIMP_FIJAS[+i]; c = {N: p[0], D: p[1], S: simplifica(p[0], p[1]), Np: fProducto(p[0]), Dp: fProducto(p[1])}; }
+  return {enun: T("Simplify ", "Simplifique ") + racP(c.Np, c.Dp) + ".", pasos: pasosSimp(c)};
+});
+$("sp-ex").addEventListener("change", function(){ $("sp-nuevo").click(); });
+OMR("sq", function(){
+  var c = casoSimp(), S = c.S, ok = racF(S.N, S.D), vis = {}, ops = [];
+  function mete(clave, N, D){ var h = racF(N, D); if (!vis[h]){ vis[h] = 1; ops.push({clave: clave, html: h}); } }
+  mete("ok", S.N, S.D);
+  mete("inv", S.D, S.N);
+  if (S.N.f.length) mete("s1", Fm(S.N.k, S.N.m, [[-S.N.f[0][0], S.N.f[0][1]]].concat(S.N.f.slice(1))), S.D);
+  if (S.D.f.length) mete("s2", S.N, Fm(S.D.k, S.D.m, [[-S.D.f[0][0], S.D.f[0][1]]].concat(S.D.f.slice(1))));
+  mete("nada", c.N, c.D.f.length ? Fm(c.D.k, c.D.m, c.D.f.slice(1)) : Fm(c.D.k, c.D.m + 1, []));
+  if (!S.N.f.length && !S.D.f.length){ mete("m1", Fm(S.N.k, S.N.m + 1, []), S.D); mete("m2", Fm(c.N.k, S.N.m, []), Fm(c.D.k, S.D.m, [])); }
+  while (ops.length < 3) mete("e" + ops.length, Fm(S.N.k + ops.length, S.N.m, S.N.f), S.D);
+  return {enun: T("Choose the simplified form of ", "Seleccione la forma simplificada de ") + racP(c.Np, c.Dp) + ".", correcta: "ok", opciones: baraja(ops.slice(0, 4)),
+    porClave: {inv: T("The numerator stays on top and the denominator on the bottom.", "El numerador se queda arriba y el denominador abajo."), s1: T("Check the sign inside the parentheses.", "Revise el signo dentro del paréntesis."), s2: T("Check the sign inside the parentheses.", "Revise el signo dentro del paréntesis."), nada: T("Factor both parts first and cancel only the common factor.", "Primero factorice las dos partes y cancele solo el factor común.")},
+    pista: T("Factor the top and the bottom, then cancel the common factors.", "Factorice arriba y abajo y después cancele los factores comunes."), bien: pasosSimp(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 2 · Excluded values ===== */
+function exDibuja(){
+  var p = leeSol($("ex-p").value), q = leeSol($("ex-q").value), x = leeSol($("ex-x").value), out = $("ex-txt");
+  if (!p || !q || !x || p.length !== 1 || q.length !== 1 || x.length !== 1){ out.innerHTML = '<div class="linea">' + T("Type one number in each box.", "Escriba un número en cada casilla.") + "</div>"; return; }
+  p = p[0]; q = q[0]; x = x[0];
+  var den = "(" + pVis(bin(1, -p)) + ")(" + pVis(bin(1, -q)) + ")", f1 = x - p, f2 = x - q, v = f1 * f2, r = function(n){ return sg(Math.round(n * 1000) / 1000); };
+  out.innerHTML = '<div class="linea">' + T("Denominator: ", "Denominador: ") + "<strong>" + den + "</strong></div>" +
+    '<div class="linea">' + T("With x = ", "Con x = ") + r(x) + ": (" + r(x) + (p < 0 ? " + " + r(-p) : " − " + r(p)) + ")(" + r(x) + (q < 0 ? " + " + r(-q) : " − " + r(q)) + ") = (" + r(f1) + ")(" + r(f2) + ") = <strong>" + r(v) + "</strong></div>" +
+    '<div class="linea">' + (v === 0 ? '<strong style="color:#c62828">' + T("The denominator is 0: the fraction is not defined. x = " + r(x) + " is an excluded value.", "El denominador vale 0: la fracción no está definida. x = " + r(x) + " es un valor excluido.") + "</strong>" : T("The denominator is not 0: x = " + r(x) + " is allowed. Try x = " + r(p) + " or x = " + r(q) + ".", "El denominador no es 0: x = " + r(x) + " está permitido. Pruebe con x = " + r(p) + " o con x = " + r(q) + ".")) + "</div>";
+}
+["ex-p", "ex-q", "ex-x"].forEach(function(id){ $(id).addEventListener("input", exDibuja); }); exDibuja();
+creaPracticaLibre("eq", function(){
+  var tipo = elige(["uno", "dos", "dos", "dif", "tri", "x"]), D, Np;
+  if (tipo === "uno") D = Fm(1, 0, [bin(1, nz(-9, 9))]);
+  else if (tipo === "dos"){ var a = nz(-9, 9), b; do { b = nz(-9, 9); } while (b === a); D = Fm(1, 0, [bin(1, a), bin(1, b)]); }
+  else if (tipo === "dif"){ var r = aleatorio(1, 9); D = Fm(1, 0, [bin(1, r), bin(1, -r)]); }
+  else if (tipo === "tri"){ var a2 = nz(-7, 7), b2; do { b2 = nz(-7, 7); } while (b2 === a2 || a2 + b2 === 0); D = Fm(1, 0, [bin(1, a2), bin(1, b2)]); }
+  else D = Fm(1, 1, [bin(1, nz(-9, 9))]);
+  Np = elige([[nz(1, 9)], [nz(-9, 9), 1], [0, 1]]);
+  var muestra = tipo === "dos" ? envuelve('<span class="fracc"><span class="fa">' + pVis(Np) + '</span><span class="fb2">' + parteVis(D) + "</span></span>", pVoz(Np) + T(", over ", ", sobre ") + parteVoz(D)) : racP(Np, fProducto(D));
+  var ex = excluidos(D);
+  return {enun: T("Which values of x are excluded in ", "¿Qué valores de x se excluyen en ") + muestra + "? " + SOL_AYUDA,
+    evalua: function(txt){ var v = leeSol(txt); if (v && v.length && v.every(function(x){ return Math.abs(pEval(Np, x)) < 1e-9; }) && !v.every(function(x){ return ex.indexOf(x) >= 0; })) return {estado: "mal", msg: T("Those values make the numerator zero, and that is allowed. Look at the denominator.", "Esos valores anulan el numerador, y eso está permitido. Mire el denominador.")}; return evaluaSol(txt, ex); },
+    solucion: (D.f.length > 1 || D.m ? T("Factor the denominator: ", "Se factoriza el denominador: ") + parteVis(D) + ". " : "") + T("Set each factor equal to zero: ", "Se iguala cada factor a cero: ") + exclTxt(D) + "."};
+});
+
+/* ===== MODULE 3 · Factors, not terms ===== */
+var BANCO3 = [
+  {a: "x + 4", b: "x", c: "x", ok: false, e: T("On top the x is added to 4: it is a term, not a factor. (x + 4) / x does not simplify.", "Arriba la x está sumada al 4: es un término, no un factor. (x + 4) / x no se simplifica.")},
+  {a: "(x + 2)(x − 3)", b: "(x + 2)", c: "(x + 2)", ok: true, e: T("(x + 2) multiplies everything on top and is the whole denominator: it is a common factor and it cancels. x − 3 is left.", "(x + 2) multiplica a todo arriba y es todo el denominador: es un factor común y sí se cancela. Queda x − 3.")},
+  {a: "x + 3", b: "3", c: "3", ok: false, e: T("The 3 on top is added to x: it is a term. It could cancel only if it multiplied the whole numerator.", "El 3 de arriba está sumado a la x: es un término. Solo se podría cancelar si multiplicara a todo el numerador.")},
+  {a: "2x + 6", b: "2", c: "2", ok: true, e: T("2x + 6 = 2(x + 3): the 2 is a factor of the whole numerator. It cancels and x + 3 is left.", "2x + 6 = 2(x + 3): el 2 sí es factor común de todo el numerador. Se cancela y queda x + 3.")},
+  {a: "x² + 4", b: "x²", c: "x²", ok: false, e: T("On top x² is added to 4: it is a term. The expression does not simplify.", "Arriba x² está sumado al 4: es un término. La expresión no se simplifica.")},
+  {a: "5(x − 1)", b: "10(x − 1)", c: "(x − 1)", ok: true, e: T("(x − 1) multiplies on top and on the bottom: it cancels. 5/10 also simplifies, and 1/2 is left.", "(x − 1) multiplica arriba y abajo: se cancela. También se simplifica 5/10, y queda 1/2.")},
+  {a: "x² − 9", b: "x − 3", c: "(x − 3)", ok: true, e: T("Factor first: x² − 9 = (x + 3)(x − 3). Then (x − 3) is a common factor. x + 3 is left.", "Primero se factoriza: x² − 9 = (x + 3)(x − 3). Entonces (x − 3) sí es factor común. Queda x + 3.")},
+  {a: "x − 5", b: "x", c: "x", ok: false, e: T("On top the x has 5 subtracted from it: it is a term. Cancelling it to leave −5 is the most common mistake.", "Arriba la x está restando 5: es un término. Cancelarla para dejar −5 es el error más común.")},
+  {a: "x² + 4", b: "x + 2", c: "(x + 2)", ok: false, e: T("x² + 4 is a sum of squares: it does not factor, so (x + 2) is not a factor of the numerator.", "x² + 4 es una suma de cuadrados: no se factoriza, así que (x + 2) no es factor del numerador.")},
+  {a: "x + 3", b: "x + 6", c: "x", ok: false, e: T("The x is a term on top and on the bottom. Check with x = 1: 4/7 is not 3/6 = 1/2.", "La x es un término arriba y abajo. Compruebe con x = 1: 4/7 no es 3/6 = 1/2.")},
+  {a: "3x(x + 1)", b: "6x", c: "3x", ok: true, e: T("3x multiplies the whole numerator and 6x = 2 · 3x: it cancels and (x + 1)/2 is left.", "3x multiplica a todo el numerador y 6x = 2 · 3x: se cancela y queda (x + 1)/2.")}];
+var B3 = -1;
+OMR("tq", function(){ var i; do { i = aleatorio(0, BANCO3.length - 1); } while (i === B3); B3 = i; var b = BANCO3[i];
+  return {enun: T("Is it correct to cancel ", "¿Es correcto cancelar ") + "<strong>" + b.c + "</strong>" + T(" in ", " en ") + envuelve('<span class="fracc"><span class="fa">' + b.a + '</span><span class="fb2">' + b.b + "</span></span>", b.a + T(", over ", ", sobre ") + b.b) + "?", correcta: b.ok ? "si" : "no",
+    opciones: [{clave: "si", html: T("Yes: what cancels is a factor", "Sí: lo que se cancela es un factor")}, {clave: "no", html: T("No: what cancels is a term", "No: lo que se cancela es un término")}], enOrden: true,
+    pista: T("Is there a + or − sign between it and the rest, with no parentheses grouping them?", "¿Hay un signo + o − entre eso y el resto, sin paréntesis que los agrupe?"), bien: b.e};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

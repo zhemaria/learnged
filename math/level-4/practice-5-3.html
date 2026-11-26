@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 5.3 · practice (English) — built by tools/build_n4_lesson_5_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 5.3 · Solving rational equations · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .enun .fracc,.paso4 .fracc,.salida .fracc{margin:4px 3px;}
+  .barra-trabajo{display:flex;height:34px;border:2px solid #37474f;border-radius:6px;overflow:hidden;max-width:520px;margin:10px auto;}
+  .barra-trabajo span{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 5 · Rational expressions</div>
+    <h1>Lesson 5.3 · Solving rational equations</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try. You may use the calculator.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#lcd">Clearing the denominators with the LCD</a></li>
+      <li><a href="#extraneous">Extraneous solutions: the checker</a></li>
+      <li><a href="#work">Working together</a></li>
+      <li><a href="#distance">Distance, speed, and time</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="lcd" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Clearing the denominators with the LCD</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Four moves: write down the excluded values, multiply both sides by the LCD of all the denominators, solve the equation that is left, and check the solution against the excluded values.</p>
+      <div class="panel"><p class="enun" id="mc-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="mc-sig">Show the next step</button><button type="button" class="btn-sec" id="mc-todo">Show all the steps</button><button type="button" class="btn-sec" id="mc-nuevo">Another equation</button></div></div>
+      <div class="pasos" id="mc-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Multiplying by the LCD is not the same as adding fractions: here there is an equals sign, so you can multiply everything by the LCD and the denominators disappear. In a sum with no equals sign, the denominators stay.</div>
+      <h3>Practice: solve the equation</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="campos"><div class="campo"><label for="mq-r">Solution</label><input type="text" autocomplete="off" class="ancho" id="mq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="mq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="mq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="extraneous">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Extraneous solutions: the checker</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Multiplying by the LCD can produce a value that solves the equation without fractions but makes a denominator of the original equation zero. That value is an extraneous solution and is thrown out. The only way to catch it is to check.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="xt-ex">Kind of equation</label><select id="xt-ex"><option value="0">x/(x − r) = r/(x − r) + c</option><option value="1">x²/(x − r) = r²/(x − r)</option><option value="2">a/x + 1 = b/x</option><option value="3">x/(x + r) = −r/(x + r) + c</option></select></div></div>
+        <p class="enun" id="xt-eq"></p>
+        <div class="campos"><div class="campo"><label for="xt-x">Check the value x =</label><input type="text" inputmode="decimal" autocomplete="off" id="xt-x" value="" style="width:6em"></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="xt-ver">Check</button><button type="button" class="btn-sec" id="xt-alg">Use the values the algebra gives</button></div></div>
+      <div class="salida" aria-live="polite" id="xt-txt"></div>
+      <div class="caja-atencion"><strong>An extraneous solution is not an arithmetic mistake.</strong> The algebra is right: multiplying by the LCD multiplied by something that is zero for that value of x, and that adds a solution the original equation did not have. If every solution is extraneous, the equation has no solution.</div>
+      <h3>Practice: valid or extraneous?</h3>
+      <div class="practica" id="xq">
+        <div class="enun" id="xq-enun"></div>
+        <div class="opciones" id="xq-opciones"></div>
+        <div class="fb" id="xq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="xq-nuevo">New exercise</button></div>
+        <p class="marcador" id="xq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="work">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Working together</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">1/a + 1/b = 1/t</div>
+      <p>If a person takes a hours to do a whole job, in one hour they do 1/a of it. That is the whole idea: add the parts each one does in one hour.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="tr-a">The first person takes (hours)</label><input type="text" inputmode="decimal" autocomplete="off" id="tr-a" value="3" style="width:6em"></div><div class="campo"><label for="tr-b">The second person takes (hours)</label><input type="text" inputmode="decimal" autocomplete="off" id="tr-b" value="6" style="width:6em"></div></div></div>
+      <div id="tr-barra"></div>
+      <div class="salida" aria-live="polite" id="tr-txt"></div>
+      <div class="caja-tip">Common-sense check: together they always take less than the faster one alone. If the result is greater, the times were added instead of the rates.</div>
+      <h3>Practice: working together</h3>
+      <div class="practica" id="wq">
+        <div class="enun" id="wq-enun"></div>
+        <div class="opciones" id="wq-opciones"></div>
+        <div class="fb" id="wq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="wq-nuevo">New exercise</button></div>
+        <p class="marcador" id="wq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="distance">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Distance, speed, and time</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">time = distance / speed</div>
+      <p>Since the speed is in the denominator, as soon as the speed has a variable a rational equation appears. The classic case is a boat on a river or a plane in the wind: with the current the real speed is v + c, and against it, v − c.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="bo-v">Boat speed in still water: <output id="bo-vv"></output> mph</label><input type="range" id="bo-v" min="4" max="30" step="1" value="15"></div>
+        <div class="campo"><label for="bo-c">Speed of the current: <output id="bo-cv"></output> mph</label><input type="range" id="bo-c" min="0" max="20" step="1" value="5"></div>
+        <div class="campo"><label for="bo-d">Distance each way: <output id="bo-dv"></output> miles</label><input type="range" id="bo-d" min="5" max="60" step="5" value="20"></div></div></div>
+      <div class="geo-svg" id="bo-svg"></div>
+      <div class="salida" aria-live="polite" id="bo-txt"></div>
+      <div class="caja-tip">Try making the current equal to the speed of the boat. The denominator v − c becomes zero and the upstream time stops existing: it is the excluded value of the first activity, told as a real story.</div>
+      <h3>Practice: distance, speed, and time</h3>
+      <div class="practica" id="vq">
+        <div class="enun" id="vq-enun"></div>
+        <div class="opciones" id="vq-opciones"></div>
+        <div class="fb" id="vq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="vq-nuevo">New exercise</button></div>
+        <p class="marcador" id="vq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 5 · Rational expressions · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+var O = T(" or ", " o ");
+function fr(a, b){ return '<span class="fracc"><span class="fa">' + a + '</span><span class="fb2">' + b + "</span></span>"; }
+function bx(p){ return pVis([p, 1]); }
+function r3(x){ return Math.round(x * 1000) / 1000; }
+function num(x){ var g = r3(x); return Math.abs(g - Math.round(g)) < 1e-9 ? sg(Math.round(g)) : (function(){ for (var d = 2; d <= 12; d++){ var n = Math.round(x * d); if (Math.abs(n / d - x) < 1e-9) return frTxt(n, d); } return sg(g); })(); }
+var SOL_AYUDA = T("Type the solution (if there are two, separate them with a comma). A fraction can be written as 1/2.", "Escriba la solución (si hay dos, sepárelas con una coma). Una fracción se escribe como 1/2.");
+
+/* ===== MODULE 1 · Clear the denominators with the LCD ===== */
+/* Each case: vis (aria-hidden picture), voz, excl (numbers), lcd (text), mult (equation after multiplying), solve (text), sols (valid numbers) */
+function casoMCM(tipo){
+  tipo = tipo || elige(["a", "a", "b", "c", "d"]);
+  var k = 0;
+  while (k++ < 300){
+    if (tipo === "a"){ var x0 = nz(-6, 6), m = nz(-5, 5), K = x0 * m, c = nz(-6, 6), d = c + m; if (!K || !d) continue;
+      return {vis: fr(sg(K), "x") + " " + (c < 0 ? "− " + -c : "+ " + c) + " = " + sg(d), voz: K + T(" over x, plus ", " sobre x, más ") + c + T(", equals ", ", es igual a ") + d, f: function(x){ return K / x + c - d; }, excl: [0], lcd: "x",
+        mult: sg(K) + " " + (c < 0 ? "− " + -c + "x" : "+ " + c + "x") + " = " + sg(d) + "x", solve: sg(K) + " = " + tVis(d - c, 1, true) + ", x = " + num(K / (d - c)), sols: [K / (d - c)]}; }
+    if (tipo === "b"){ var x1 = nz(-6, 6), p = nz(-6, 6), b = aleatorio(1, 6), a = b * (x1 + p) / x1; if (!(x1 + p) || a !== Math.round(a) || !a || a === b) continue;
+      return {vis: fr(sg(a), bx(p)) + " = " + fr(sg(b), "x"), voz: a + T(" over ", " sobre ") + pVoz([p, 1]) + T(", equals ", ", es igual a ") + b + T(" over x", " sobre x"), f: function(x){ return a / (x + p) - b / x; }, excl: [-p, 0], lcd: "x(" + bx(p) + ")",
+        mult: sg(a) + "x = " + b + "(" + bx(p) + ")", solve: sg(a) + "x = " + pVis([b * p, b]) + ", " + sg(a - b) + "x = " + sg(b * p) + ", x = " + num(b * p / (a - b)), sols: [b * p / (a - b)]}; }
+    if (tipo === "c"){ var k1 = elige([2, 3, 4, 5]), k2 = elige([2, 3, 4, 5, 6]), q = nz(-6, 6); if (k1 === k2) continue; var xs = k2 * q / (k1 - k2); if (xs !== Math.round(xs)) continue;
+      return {vis: fr(bx(q), k1) + " = " + fr("x", k2), voz: pVoz([q, 1]) + T(" over ", " sobre ") + k1 + T(", equals x over ", ", es igual a x sobre ") + k2, f: function(x){ return (x + q) / k1 - x / k2; }, excl: [], lcd: String(k1 * k2 / mcd(k1, k2)),
+        mult: (k1 * k2 / mcd(k1, k2) / k1 === 1 ? "" : k1 * k2 / mcd(k1, k2) / k1) + "(" + bx(q) + ") = " + (k1 * k2 / mcd(k1, k2) / k2 === 1 ? "" : k1 * k2 / mcd(k1, k2) / k2) + "x", solve: "x = " + num(xs), sols: [xs]}; }
+    if (tipo === "d"){ var r1 = nz(-6, 6), r2 = nz(-6, 6); if (r1 === r2 || r1 + r2 === 0) continue; var Kd = r1 * r2, s = r1 + r2;
+      return {vis: "x " + (Kd < 0 ? "− " + fr(-Kd, "x") : "+ " + fr(Kd, "x")) + " = " + sg(s), voz: T("x plus ", "x más ") + Kd + T(" over x, equals ", " sobre x, es igual a ") + s, f: function(x){ return x + Kd / x - s; }, excl: [0], lcd: "x",
+        mult: "x<sup>2</sup> " + (Kd < 0 ? "− " + -Kd : "+ " + Kd) + " = " + sg(s) + "x", solve: pVis([Kd, -s, 1]) + " = 0, " + fVis({k: 1, m: 0, f: [[-r1, 1], [-r2, 1]]}) + " = 0, x = " + sg(r1) + O + "x = " + sg(r2), sols: [r1, r2]}; }
+  }
+  return casoMCM("a");
+}
+function pasosMCM(c){
+  var P = [T("Excluded values: ", "Valores excluidos: ") + (c.excl.length ? c.excl.map(function(v){ return "x = " + sg(v); }).join(T(" and ", " y ")) : T("none (there is no x in a denominator)", "ninguno (no hay x en un denominador)")) + "."];
+  P.push(T("LCD of all the denominators: ", "MCM de todos los denominadores: ") + c.lcd + ".");
+  P.push(T("Multiply both sides by the LCD: ", "Se multiplican los dos lados por el MCM: ") + c.mult + ".");
+  P.push(T("Solve: ", "Se resuelve: ") + c.solve + ".");
+  P.push(T("Check: ", "Verificación: ") + c.sols.map(function(v){ return "x = " + num(v); }).join(T(" and ", " y ")) + T(" do not make any denominator zero.", " no anula ningún denominador.").replace("no anula", c.sols.length > 1 ? "no anulan" : "no anula").replace(" do not", c.sols.length > 1 ? " do not" : " does not"));
+  P.push(T("Solution: ", "Solución: ") + "<strong>" + c.sols.map(function(v){ return "x = " + num(v); }).join(O) + "</strong>.");
+  return P;
+}
+pasoAPaso4("mc", function(){ var c = casoMCM(); return {enun: T("Solve ", "Resuelva ") + envuelve(c.vis, c.voz) + ".", pasos: pasosMCM(c)}; });
+creaPracticaLibre("mq", function(){ var c = casoMCM();
+  return {enun: T("Solve ", "Resuelva ") + envuelve(c.vis, c.voz) + ". " + SOL_AYUDA, evalua: function(txt){ var v = leeSol(txt); if (v && v.some(function(x){ return c.excl.indexOf(x) >= 0; })) return {estado: "mal", msg: T("That value makes a denominator zero: it is excluded.", "Ese valor anula un denominador: está excluido.")}; return evaluaSol(txt, c.sols, .006); },
+    solucion: pasosMCM(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 2 · Extraneous solutions ===== */
+function casoExt(i){
+  var r = aleatorio(2, 6), cc = elige([2, 3]);
+  var L = [
+    {vis: fr("x", "x − " + r) + " = " + fr(r, "x − " + r) + " + " + cc, voz: T("x over x minus " + r + ", equals " + r + " over x minus " + r + ", plus " + cc, "x sobre x menos " + r + ", es igual a " + r + " sobre x menos " + r + ", más " + cc), den: [[-r, 1]], alg: [r], vale: [], f: function(x){ return x / (x - r) - r / (x - r) - cc; },
+     mult: "x = " + r + " + " + cc + "(x − " + r + ")"},
+    {vis: fr("x<sup>2</sup>", "x − " + r) + " = " + fr(r * r, "x − " + r), voz: T("x squared over x minus " + r + ", equals " + r * r + " over x minus " + r, "x al cuadrado sobre x menos " + r + ", es igual a " + r * r + " sobre x menos " + r), den: [[-r, 1]], alg: [r, -r], vale: [-r], f: function(x){ return (x * x - r * r) / (x - r); },
+     mult: "x<sup>2</sup> = " + r * r},
+    {vis: fr(cc + 1, "x") + " + 1 = " + fr(cc + 1 + r, "x"), voz: (cc + 1) + T(" over x, plus 1, equals ", " sobre x, más 1, es igual a ") + (cc + 1 + r) + T(" over x", " sobre x"), den: [[0, 1]], alg: [r], vale: [r], f: function(x){ return (cc + 1) / x + 1 - (cc + 1 + r) / x; },
+     mult: (cc + 1) + " + x = " + (cc + 1 + r)},
+    {vis: fr("x", "x + " + r) + " = " + fr("−" + r, "x + " + r) + " + " + cc, voz: T("x over x plus " + r + ", equals negative " + r + " over x plus " + r + ", plus " + cc, "x sobre x más " + r + ", es igual a menos " + r + " sobre x más " + r + ", más " + cc), den: [[r, 1]], alg: [-r], vale: [], f: null,
+     mult: "x = −" + r + " + " + cc + "(x + " + r + ")"}];
+  return L[i === undefined ? aleatorio(0, L.length - 1) : i];
+}
+var XT = null;
+function xtNuevo(){ XT = casoExt(+$("xt-ex").value); $("xt-eq").innerHTML = envuelve(XT.vis, XT.voz); $("xt-x").value = ""; $("xt-txt").innerHTML = '<div class="linea">' + T("Multiplying by the LCD gives ", "Al multiplicar por el MCM queda ") + XT.mult + T(", and the algebra gives ", ", y el álgebra da ") + XT.alg.map(function(v){ return "x = " + sg(v); }).join(O) + ". " + T("Check each value.", "Verifique cada valor.") + "</div>"; }
+function xtVerifica(vals){
+  $("xt-txt").innerHTML = vals.map(function(x){
+    var ceros = XT.den.filter(function(q){ return Math.abs(pEval(q, x)) < 1e-9; });
+    return '<div class="linea">x = ' + sg(x) + ": " + XT.den.map(function(q){ return pVis(q) + " = " + sg(r3(pEval(q, x))); }).join("; ") + ". " + (ceros.length ? '<strong style="color:#c62828">' + T("A denominator is zero: x = " + sg(x) + " is extraneous and is thrown out.", "Un denominador vale cero: x = " + sg(x) + " es una solución extraña y se descarta.") + "</strong>" : '<strong style="color:#2e7d32">' + T("No denominator is zero" + (XT.alg.indexOf(x) >= 0 ? ": x = " + sg(x) + " is valid." : "."), "Ningún denominador vale cero" + (XT.alg.indexOf(x) >= 0 ? ": x = " + sg(x) + " es válida." : ".")) + "</strong>") + "</div>";
+  }).join("") + (vals === XT.alg ? '<div class="linea"><strong>' + (XT.vale.length ? T("Solution: ", "Solución: ") + XT.vale.map(function(v){ return "x = " + sg(v); }).join(O) : T("Every solution is extraneous: the equation has no solution.", "Todas las soluciones son extrañas: la ecuación no tiene solución.")) + "</strong></div>" : "");
+}
+$("xt-ex").addEventListener("change", xtNuevo);
+$("xt-ver").addEventListener("click", function(){ var v = leeSol($("xt-x").value); if (!v || v.length !== 1){ $("xt-txt").innerHTML = '<div class="linea">' + T("Type one number.", "Escriba un número.") + "</div>"; return; } xtVerifica(v); });
+$("xt-alg").addEventListener("click", function(){ xtVerifica(XT.alg); });
+xtNuevo();
+OMR("xq", function(){ var c = casoExt();
+  var ok = c.vale.length ? "v" + c.vale.join("") : "ninguna", ops = [{clave: "ninguna", html: T("No solution: every value is extraneous", "Ninguna solución: todos los valores son extraños")}];
+  c.alg.forEach(function(v){ ops.push({clave: "v" + v, html: "x = " + sg(v) + T(" only", " solamente")}); });
+  if (c.alg.length > 1) ops.push({clave: "ambas", html: c.alg.map(function(v){ return "x = " + sg(v); }).join(T(" and ", " y "))});
+  return {enun: T("Solving ", "Al resolver ") + envuelve(c.vis, c.voz) + T(" with the LCD gives ", " con el MCM se obtiene ") + c.alg.map(function(v){ return "x = " + sg(v); }).join(O) + ". " + T("What is the solution?", "¿Cuál es la solución?"), correcta: ok, opciones: ops,
+    pista: T("Substitute each value in the denominators of the original equation.", "Sustituya cada valor en los denominadores de la ecuación original."),
+    bien: c.alg.map(function(v){ var z = c.den.some(function(q){ return Math.abs(pEval(q, v)) < 1e-9; }); return "x = " + sg(v) + (z ? T(" makes a denominator zero: extraneous.", " anula un denominador: extraña.") : T(" is valid.", " es válida.")); }).join(" ")};
+});
+
+/* ===== MODULE 3 · Working together ===== */
+function trDibuja(){
+  var a = leeSol($("tr-a").value), b = leeSol($("tr-b").value), out = $("tr-txt");
+  if (!a || !b || a.length !== 1 || b.length !== 1 || a[0] <= 0 || b[0] <= 0){ out.innerHTML = '<div class="linea">' + T("Type two positive times.", "Escriba dos tiempos positivos.") + "</div>"; $("tr-barra").innerHTML = ""; return; }
+  a = a[0]; b = b[0]; var t = a * b / (a + b), pa = 1 / a, pb = 1 / b;
+  var ancho = function(p){ return Math.min(100, p * 100); };
+  $("tr-barra").innerHTML = '<div class="barra-trabajo" role="img" aria-label="' + T("In one hour, the first person does " + num(pa) + " of the job and the second " + num(pb) + "; together, " + num(pa + pb) + ".", "En una hora, la primera persona hace " + num(pa) + " del trabajo y la segunda " + num(pb) + "; juntas, " + num(pa + pb) + ".") + '"><span style="width:' + ancho(pa) + '%;background:#1565c0">' + (pa >= .12 ? num(pa) : "") + '</span><span style="width:' + Math.min(100 - ancho(pa), ancho(pb)) + '%;background:#2e7d32">' + (pb >= .12 ? num(pb) : "") + '</span></div>';
+  out.innerHTML = '<div class="linea">' + T("In one hour: ", "En una hora: ") + "1/" + num(a) + " + 1/" + num(b) + " = " + num(pa + pb) + T(" of the job.", " del trabajo.") + "</div>" +
+    '<div class="linea">1/t = ' + num(pa + pb) + ", t = " + num(t) + (Math.abs(t - Math.round(t * 100) / 100) > 1e-9 ? " ≈ " + sg(Math.round(t * 100) / 100) : "") + T(" hours", " horas") + " (" + Math.round(t * 60) + T(" minutes).", " minutos).") + "</div>" +
+    '<div class="linea">' + T("Check: " + num(t) + " h is less than the faster one alone (" + num(Math.min(a, b)) + " h). ✓", "Comprobación: " + num(t) + " h es menos que el más rápido solo (" + num(Math.min(a, b)) + " h). ✓") + "</div>";
+}
+["tr-a", "tr-b"].forEach(function(id){ $(id).addEventListener("input", trDibuja); }); trDibuja();
+var PARES = [[2, 2], [3, 6], [4, 12], [6, 3], [5, 20], [10, 15], [12, 6], [4, 4], [6, 12], [8, 24], [2, 6], [3, 3], [12, 4], [20, 30], [6, 6], [9, 18]];
+var CONTX = [[T("paints a room", "pinta un cuarto"), T("painting", "pintar")], [T("fills a tank (one faucet)", "llena un tanque (una llave)"), T("filling", "llenar")], [T("mows a lawn", "corta el césped de un jardín"), T("mowing", "cortar")], [T("prints an order (one printer)", "imprime un pedido (una impresora)"), T("printing", "imprimir")]];
+OMR("wq", function(){ var p = elige(PARES), a = p[0], b = p[1], t = a * b / (a + b), ctx = elige(CONTX);
+  var ops = [{clave: "ok", html: num(t) + " h"}, {clave: "suma", html: num(a + b) + " h"}, {clave: "media", html: num((a + b) / 2) + " h"}, {clave: "dif", html: num(Math.abs(a - b) || a / 4) + " h"}];
+  var vis = {}; ops = ops.filter(function(o){ if (vis[o.html]) return false; vis[o.html] = 1; return true; });
+  return {enun: T("One alone ", "Uno solo ") + ctx[0] + T(" in ", " en ") + a + T(" h; the other, in ", " h; el otro, en ") + b + T(" h. How long do they take working together?", " h. ¿Cuánto tardan trabajando juntos?"), correcta: "ok", opciones: ops,
+    porClave: {suma: T("Do not add the times: together they take less, not more.", "No sume los tiempos: juntos tardan menos, no más."), media: T("The average is not right either: add the rates 1/a + 1/b.", "El promedio tampoco: sume los ritmos 1/a + 1/b."), dif: T("Use 1/a + 1/b = 1/t.", "Use 1/a + 1/b = 1/t.")},
+    pista: T("Each one does 1/a and 1/b of the job per hour. Add them and flip.", "Cada uno hace 1/a y 1/b del trabajo por hora. Súmelos y voltee."), bien: "1/" + a + " + 1/" + b + " = " + num(1 / a + 1 / b) + " = 1/t, t = " + num(t) + " h."};
+});
+
+/* ===== MODULE 4 · Distance, speed, and time ===== */
+function boDibuja(){
+  var v = +$("bo-v").value, c = +$("bo-c").value, d = +$("bo-d").value, out = $("bo-txt");
+  $("bo-vv").textContent = v; $("bo-cv").textContent = c; $("bo-dv").textContent = d;
+  var baja = d / (v + c), sube = v - c > 0 ? d / (v - c) : null, h = function(x){ var m = Math.round(x * 60); return Math.floor(m / 60) + " h" + (m % 60 ? " " + (m % 60) + " min" : ""); };
+  var W = 460, H = 120, s = '<rect x="10" y="30" width="440" height="60" rx="10" fill="#e3f2fd" stroke="#90caf9"/>';
+  for (var i = 0; i < 4; i++) s += '<path d="M' + (40 + i * 110) + ' 60 h40" stroke="#1e88e5" stroke-width="3" marker-end="url(#fc)"/>';
+  s += '<defs><marker id="fc" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8z" fill="#1e88e5"/></marker></defs><text x="230" y="22" text-anchor="middle" font-size="13" fill="#1565c0">' + T("current: " + c + " mph", "corriente: " + c + " mph") + '</text><text x="230" y="112" text-anchor="middle" font-size="13" fill="#37474f">' + d + T(" miles each way", " millas en cada sentido") + "</text>";
+  $("bo-svg").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + T("A river with a current of " + c + " miles per hour.", "Un río con una corriente de " + c + " millas por hora.") + '" style="display:block;margin:auto;max-width:' + W + 'px;width:100%">' + s + "</svg>";
+  out.innerHTML = '<div class="linea">' + T("Downstream (with the current): speed ", "A favor de la corriente: velocidad ") + v + " + " + c + " = " + (v + c) + " mph; " + T("time ", "tiempo ") + d + "/" + (v + c) + " = " + num(baja) + " h (" + h(baja) + ").</div>" +
+    '<div class="linea">' + T("Upstream (against the current): speed ", "En contra de la corriente: velocidad ") + v + " − " + c + " = " + (v - c) + " mph; " + (sube !== null ? T("time ", "tiempo ") + d + "/" + (v - c) + " = " + num(sube) + " h (" + h(sube) + ")." : '<strong style="color:#c62828">' + (v === c ? T("the denominator v − c is 0: the boat never moves forward. It is the same as an excluded value.", "el denominador v − c vale 0: el bote nunca avanza. Es lo mismo que un valor excluido.") : T("the speed is negative: the current pushes the boat back.", "la velocidad es negativa: la corriente arrastra el bote hacia atrás.")) + "</strong>") + "</div>";
+}
+["bo-v", "bo-c", "bo-d"].forEach(function(id){ $(id).addEventListener("input", boDibuja); }); boDibuja();
+var BO_ULT = -1;
+OMR("vq", function(){
+  var tipo; do { tipo = aleatorio(0, 2); } while (tipo === BO_ULT); BO_ULT = tipo;
+  var c = aleatorio(2, 6), v = c + aleatorio(3, 15), veh = elige([[T("A boat", "Un bote"), T("still water", "agua quieta"), T("the current", "la corriente"), T("the current", "de la corriente")], [T("A small plane", "Una avioneta"), T("calm air", "aire en calma"), T("the wind", "el viento"), T("the wind", "del viento")]]);
+  if (veh[0] !== T("A boat", "Un bote")){ v *= 10; c *= 10; }
+  if (tipo === 0){ var a = Math.random() < .5;
+    return {enun: veh[0] + T(" goes ", " va a ") + v + T(" mph in ", " mph en ") + veh[1] + T(". With ", ". Con ") + veh[2] + " (" + c + " mph) " + (a ? T("helping it", "a favor") : T("against it", "en contra")) + T(", what is its real speed?", ", ¿cuál es su velocidad efectiva?"), correcta: "ok",
+      opciones: [{clave: "ok", html: (a ? v + c : v - c) + " mph"}, {clave: "m", html: (a ? v - c : v + c) + " mph"}, {clave: "v", html: v + " mph"}, {clave: "p", html: v * c + " mph"}], pista: a ? T("Helping: add.", "A favor: se suma.") : T("Against: subtract.", "En contra: se resta."), bien: (a ? v + " + " + c + " = " + (v + c) : v + " − " + c + " = " + (v - c)) + " mph."}; }
+  if (tipo === 1){ var k = aleatorio(1, 4), d = k * (v + c);
+    return {enun: veh[0] + T(" goes ", " va a ") + v + T(" mph in ", " mph en ") + veh[1] + T(" and travels ", " y recorre ") + d + T(" miles with ", " millas con ") + veh[2] + " (" + c + " mph) " + T("helping it. How long does it take?", "a favor. ¿Cuánto tarda?"), correcta: "ok",
+      opciones: [{clave: "ok", html: num(d / (v + c)) + " h"}, {clave: "m", html: num(d / (v - c)) + " h"}, {clave: "v", html: num(d / v) + " h"}, {clave: "x", html: num(d * (v + c) / 100) + " h"}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }),
+      pista: T("time = distance / speed, with the real speed.", "tiempo = distancia / velocidad, con la velocidad efectiva."), bien: d + " / (" + v + " + " + c + ") = " + d + "/" + (v + c) + " = " + num(d / (v + c)) + " h."}; }
+  var kk = aleatorio(1, 3), d1 = kk * (v + c), d2 = kk * (v - c);
+  return {enun: veh[0] + T(" goes ", " va a ") + v + T(" mph in ", " mph en ") + veh[1] + T(". It takes the same time to go ", ". Tarda lo mismo en recorrer ") + d1 + T(" miles with ", " millas con ") + veh[2] + T(" as ", " a favor que ") + d2 + T(" miles against it. How fast is ", " millas en contra. ¿Cuál es la velocidad ") + veh[3] + "?", correcta: "ok",
+    opciones: [{clave: "ok", html: c + " mph"}, {clave: "a", html: (c + aleatorio(1, 3)) + " mph"}, {clave: "b", html: Math.max(1, c - aleatorio(1, c - 1 || 1)) + " mph"}, {clave: "d", html: (d1 - d2) + " mph"}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }),
+    pista: d1 + "/(" + v + " + c) = " + d2 + "/(" + v + " − c). " + T("Multiply by the LCD.", "Multiplique por el MCM."), bien: d1 + "(" + v + " − c) = " + d2 + "(" + v + " + c) → " + (d1 * v) + " − " + d1 + "c = " + (d2 * v) + " + " + d2 + "c → " + (d1 * v - d2 * v) + " = " + (d1 + d2) + "c → c = " + c + " mph."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

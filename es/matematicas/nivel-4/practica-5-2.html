@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 5.2 · Sumar, restar, multiplicar y dividir expresiones racionales — práctica (español) — construida con tools/build_n4_lesson_5_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.2 · Sumar, restar, multiplicar y dividir expresiones racionales · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-5-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .tachado{text-decoration:line-through;text-decoration-color:#c62828;text-decoration-thickness:3px;color:#78909c;}
+  .enun .fracc,.paso4 .fracc,.opciones .fracc{margin:4px 3px;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 5 · Expresiones racionales</div>
+    <h1>Lección 5.2 · Sumar, restar, multiplicar y dividir expresiones racionales</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#multiplicar">Multiplicar</a></li>
+      <li><a href="#dividir">Dividir</a></li>
+      <li><a href="#sumar-igual">Sumar y restar con igual denominador</a></li>
+      <li><a href="#sumar-distinto">Sumar y restar con denominadores diferentes</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="multiplicar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Multiplicar</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se factoriza, se cancela cualquier factor común (de arriba con abajo, incluso en cruz entre las dos fracciones) y se multiplica lo que queda. Cancelar antes de multiplicar ahorra mucho trabajo.</p>
+      <div class="panel"><p class="enun" id="mu-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="mu-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="mu-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="mu-nuevo">Otro producto</button></div></div>
+      <div class="pasos" id="mu-pasos" aria-live="polite"></div>
+      <h3>Practique: elija el producto simplificado</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="opciones" id="mq-opciones"></div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="mq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="dividir">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Dividir</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">a/b ÷ c/d = a/b · d/c</div>
+      <p>Dividir es multiplicar por el recíproco: se deja la primera fracción, se cambia ÷ por · y se voltea la segunda. A partir de ahí es una multiplicación.</p>
+      <div class="panel"><p class="enun" id="dv-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="dv-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="dv-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="dv-nuevo">Otro cociente</button></div></div>
+      <div class="pasos" id="dv-pasos" aria-live="polite"></div>
+      <h3>Practique: elija el cociente simplificado</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sumar-igual">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Sumar y restar con igual denominador</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando los denominadores son iguales, se combinan los numeradores y se conserva el denominador. En una resta, el signo menos se reparte a todo el segundo numerador.</p>
+      <div class="panel"><p class="enun" id="ig-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ig-bien">Ver la resolución correcta</button><button type="button" class="btn-sec" id="ig-error">Ver el error frecuente</button><button type="button" class="btn-sec" id="ig-otro">Otra resta</button></div></div>
+      <div class="salida" aria-live="polite" id="ig-txt"></div>
+      <h3>Practique: sume o reste</h3>
+      <div class="practica" id="iq">
+        <div class="enun" id="iq-enun"></div>
+        <div class="opciones" id="iq-opciones"></div>
+        <div class="fb" id="iq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="iq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="iq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sumar-distinto">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Sumar y restar con denominadores diferentes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se busca el mínimo común múltiplo (MCM) de los denominadores, se reescribe cada fracción con él y se combinan los numeradores: el mismo proceso que 1/2 + 1/3 = 3/6 + 2/6 = 5/6.</p>
+      <div class="panel"><p class="enun" id="di-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="di-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="di-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="di-nuevo">Otra suma o resta</button></div></div>
+      <div class="pasos" id="di-pasos" aria-live="polite"></div>
+      <div class="caja-tip">El MCM de números y potencias de x: el MCM de los números y la mayor potencia de x (para x y 2x², es 2x²). El MCM de dos binomios distintos es su producto.</div>
+      <h3>Practique: elija el resultado</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="opciones" id="eq-opciones"></div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="eq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 5 · Expresiones racionales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function X(c){ return [c, 1]; }
+function R(N, D){ return {N: N, D: D}; }
+var POR = envuelve(" · ", T(" times ", " por ")), ENTRE = envuelve(" ÷ ", T(" divided by ", " entre "));
+function frPD(Np, D){ return envuelve('<span class="fracc"><span class="fa">' + pVis(Np) + '</span><span class="fb2">' + parteVis(D) + "</span></span>", pVoz(Np) + T(", over ", ", sobre ") + parteVoz(D)); }
+function frPDvis(Np, D){ return '<span class="fracc"><span class="fa">' + pVis(Np) + '</span><span class="fb2">' + parteVis(D) + "</span></span>"; }
+function distintos(n, lim){ var l = []; while (l.length < n){ var v = nz(-lim, lim); if (l.indexOf(v) < 0) l.push(v); } return l; }
+/* Wrong answers built from the right one: flipped, a sign changed, a number changed */
+function malas(S){
+  var l = [{clave: "inv", N: S.D, D: S.N}];
+  if (S.N.f.length) l.push({clave: "sn", N: Fm(S.N.k, S.N.m, [[-S.N.f[0][0], 1]].concat(S.N.f.slice(1))), D: S.D});
+  if (S.D.f.length) l.push({clave: "sd", N: S.N, D: Fm(S.D.k, S.D.m, [[-S.D.f[0][0], 1]].concat(S.D.f.slice(1)))});
+  l.push({clave: "k", N: Fm(S.N.k * 2, S.N.m, S.N.f), D: S.D});
+  l.push({clave: "m", N: Fm(S.N.k, S.N.m + 1, S.N.f), D: S.D});
+  return l;
+}
+var PISTAS_RAC = {inv: T("The result is upside down: check which part goes on top.", "El resultado está al revés: revise qué parte va arriba."), sn: T("Check the sign inside the parentheses.", "Revise el signo dentro del paréntesis."), sd: T("Check the sign inside the parentheses.", "Revise el signo dentro del paréntesis."), k: T("Check the numbers: divide the top and bottom numbers by their common factor.", "Revise los números: divida los números de arriba y de abajo entre su factor común."), m: T("Check the powers of x: one x on top cancels one x on the bottom.", "Revise las potencias de x: una x de arriba cancela una x de abajo.")};
+
+/* ===== MODULE 1 · Multiply ===== */
+function casoMul(){
+  var t = aleatorio(0, 3), A, B2, v = distintos(3, 7), a = X(v[0]), b = X(v[1]), c = X(v[2]);
+  if (t === 0){ A = R(Fm(1, 0, [a]), Fm(1, 0, [b])); B2 = R(Fm(1, 0, [b]), Fm(1, 0, [c])); }
+  else if (t === 1){ var q = elige([2, 3, 4, 5]), k2 = elige([2, 3, 4]); A = R(Fm(q * k2, 1, []), Fm(1, 0, [a])); B2 = R(Fm(1, 0, [a]), Fm(k2, 0, [])); }
+  else if (t === 2){ var k1 = elige([2, 4, 6, 8, 10, 12]), k3 = elige([2, 3, 4, 5]); A = R(Fm(k1, 0, []), Fm(1, 1, [])); B2 = R(Fm(1, 1, []), Fm(k3, 0, [])); }
+  else { var r = aleatorio(1, 6), kk = elige([2, 3, 4]); A = R(Fm(1, 0, [X(r), X(-r)]), Fm(kk, 1, [])); B2 = R(Fm(kk * elige([1, 2]), 2, []), Fm(1, 0, [X(r)])); }
+  var P = racMul(A, B2), S = simplifica(P.N, P.D);
+  return {A: A, B: B2, P: P, S: S, t: t};
+}
+function verRac(A, expandir){ return expandir ? racP(fProducto(A.N), fProducto(A.D)) : racF(A.N, A.D); }
+function pasosMul(c, extra){
+  var P = extra || [], S = c.S;
+  if (c.t === 3) P.push(T("Factor first: ", "Primero se factoriza: ") + pVis(fProducto(c.A.N)) + " = " + parteVis(c.A.N) + ".");
+  P.push(T("Write it as one fraction, numerators times numerators and denominators times denominators: ", "Se escribe como una sola fracción, numeradores por numeradores y denominadores por denominadores: ") + envuelve('<span class="fracc"><span class="fa">' + parteVis(c.P.N, S.cn, false) + '</span><span class="fb2">' + parteVis(c.P.D, S.cd) + "</span></span>", "") + (S.cn.length ? T(" (the common factors are crossed out)", " (se tachan los factores comunes)") : "") + ".");
+  if (S.g > 1 || S.mm) P.push(T("Simplify the numbers and the powers of x: ", "Se simplifican los números y las potencias de x: ") + (S.g > 1 ? T("divide by ", "se divide entre ") + S.g : "") + (S.g > 1 && S.mm ? T(" and ", " y ") : "") + (S.mm ? T("cancel ", "se cancela ") + "x" + (S.mm > 1 ? "<sup>" + S.mm + "</sup>" : "") : "") + ".");
+  P.push(T("Result: ", "Resultado: ") + "<strong>" + racR(S) + "</strong>.");
+  return P;
+}
+pasoAPaso4("mu", function(){ var c = casoMul(); return {enun: T("Multiply ", "Multiplique ") + verRac(c.A, c.t === 3) + POR + racR(c.B) + ".", pasos: pasosMul(c)}; });
+OMR("mq", function(){ var c = casoMul();
+  return {enun: T("Choose the simplified product: ", "Seleccione el producto simplificado: ") + verRac(c.A, c.t === 3) + POR + racR(c.B) + ".", correcta: "ok", opciones: baraja(racOpciones([{clave: "ok", N: c.S.N, D: c.S.D}].concat(malas(c.S)), 4)),
+    porClave: PISTAS_RAC, pista: T("Cancel the common factors (a top one with a bottom one), then multiply.", "Cancele los factores comunes (de arriba con abajo) y después multiplique."), bien: pasosMul(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 2 · Divide ===== */
+function casoDiv(){ var c = casoMul(); c.Bdiv = racInv(c.B); return c; }
+function pasosDiv(c){ return pasosMul(c, [T("Keep, change, flip: ", "Deja, cambia, voltea: ") + verRac(c.A, c.t === 3) + ENTRE + racR(c.Bdiv) + " = " + verRac(c.A, c.t === 3) + POR + racR(c.B) + "."]); }
+pasoAPaso4("dv", function(){ var c = casoDiv(); return {enun: T("Divide ", "Divida ") + verRac(c.A, c.t === 3) + ENTRE + racR(c.Bdiv) + ".", pasos: pasosDiv(c)}; });
+OMR("dq", function(){ var c = casoDiv(), sinVoltear = racMul(c.A, c.Bdiv), S2 = simplifica(sinVoltear.N, sinVoltear.D);
+  return {enun: T("Choose the simplified quotient: ", "Seleccione el cociente simplificado: ") + verRac(c.A, c.t === 3) + ENTRE + racR(c.Bdiv) + ".", correcta: "ok", opciones: baraja(racOpciones([{clave: "ok", N: c.S.N, D: c.S.D}, {clave: "nv", N: S2.N, D: S2.D}].concat(malas(c.S)), 4)),
+    porClave: Object.assign({nv: T("That is the product without flipping. To divide, flip the second fraction first.", "Ese es el producto sin voltear. Para dividir, primero voltee la segunda fracción.")}, PISTAS_RAC), pista: T("Keep the first fraction, change ÷ to ·, and flip the second.", "Deje la primera fracción, cambie ÷ por · y voltee la segunda."), bien: pasosDiv(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 3 · Same denominator ===== */
+function casoIgual(op){
+  op = op || elige(["+", "−", "−"]);
+  var D = Math.random() < .3 ? Fm(1, 1, []) : Fm(1, 0, [X(nz(-8, 8))]), raiz = D.m ? 0 : -D.f[0][0], n1, n2, res;
+  do { n1 = [aleatorio(-9, 9), aleatorio(1, 6)]; n2 = Math.random() < .5 ? [aleatorio(1, 9), 0] : [aleatorio(-9, 9), aleatorio(1, 5)]; n1 = pLimpia(n1); n2 = pLimpia(n2); res = op === "+" ? pSuma(n1, n2) : pResta(n1, n2); }
+  while (pGrado(res) === 0 && !res[0] || Math.abs(pEval(res, raiz)) < 1e-9 || (res.length > 1 && res[0] && mcd(Math.abs(res[0]), Math.abs(res[1])) > 1 && !D.m) || (D.m && !res[0]));
+  return {op: op, D: D, n1: n1, n2: n2, res: res};
+}
+function errorResta(c){ return pLimpia([(c.n1[0] || 0) + (c.n2[0] || 0), (c.n1[1] || 0) - (c.n2[1] || 0)]); }
+function pasosIgual(c){
+  var P = [T("The denominators are the same: keep ", "Los denominadores son iguales: se conserva ") + parteVis(c.D) + T(" and combine the numerators.", " y se combinan los numeradores.")];
+  if (c.op === "+") P.push("(" + pVis(c.n1) + ") + (" + pVis(c.n2) + ") = " + pVis(c.res) + ".");
+  else P.push(T("The minus sign goes to the whole second numerator: ", "El signo menos se reparte a todo el segundo numerador: ") + "(" + pVis(c.n1) + ") − (" + pVis(c.n2) + ") = " + pVis(c.n1) + " " + pVis(pEsc(c.n2, -1)).replace(/^−/, "− ").replace(/^(?=\d|x)/, "+ ") + " = " + pVis(c.res) + ".");
+  P.push(T("Result: ", "Resultado: ") + "<strong>" + frPD(c.res, c.D) + "</strong>.");
+  return P;
+}
+var IG = null;
+function igNuevo(){ IG = casoIgual("−"); $("ig-enun").innerHTML = T("Subtract ", "Reste ") + frPD(IG.n1, IG.D) + envuelve(" − ", T(" minus ", " menos ")) + frPD(IG.n2, IG.D) + "."; $("ig-txt").innerHTML = ""; }
+$("ig-bien").addEventListener("click", function(){ $("ig-txt").innerHTML = pasosIgual(IG).map(function(x){ return '<div class="linea">' + x + "</div>"; }).join(""); });
+$("ig-error").addEventListener("click", function(){ var e = errorResta(IG);
+  $("ig-txt").innerHTML = '<div class="linea"><strong style="color:#c62828">' + T("The common mistake:", "El error frecuente:") + "</strong> " + pVis(IG.n1) + " − " + pVis(IG.n2) + " = " + pVis(e) + T(" (only the first term was subtracted).", " (solo se restó el primer término).") + "</div>" +
+    '<div class="linea">' + T("Check with x = 1: the right result gives ", "Compruebe con x = 1: el resultado correcto da ") + sg(pEval(IG.res, 1)) + T(" on top, the mistake gives ", " arriba, el error da ") + sg(pEval(e, 1)) + ". " + T("With parentheses: ", "Con paréntesis: ") + "(" + pVis(IG.n1) + ") − (" + pVis(IG.n2) + ") = " + pVis(IG.res) + ".</div>"; });
+$("ig-otro").addEventListener("click", igNuevo); igNuevo();
+OMR("iq", function(){ var c = casoIgual(), ops = [{clave: "ok", html: frPD(c.res, c.D)}, {clave: "dd", html: envuelve('<span class="fracc"><span class="fa">' + pVis(c.res) + '</span><span class="fb2">' + pVis(pEsc(fProducto(c.D), 2)) + "</span></span>", "")}, {clave: "d2", html: envuelve('<span class="fracc"><span class="fa">' + pVis(c.res) + '</span><span class="fb2">' + (c.D.m ? "x<sup>2</sup>" : "(" + pVis(c.D.f[0]) + ")<sup>2</sup>") + "</span></span>", "")}];
+  if (c.op === "−" && pClave(errorResta(c)) !== pClave(c.res) && pGrado(errorResta(c)) >= 0 && (errorResta(c)[0] || errorResta(c)[1])) ops.push({clave: "par", html: frPD(errorResta(c), c.D)});
+  else ops.push({clave: "sn", html: pVis(c.res)});
+  var vis = {}; ops = ops.filter(function(o){ if (vis[o.html]) return false; vis[o.html] = 1; return true; });
+  return {enun: (c.op === "+" ? T("Add ", "Sume ") : T("Subtract ", "Reste ")) + frPD(c.n1, c.D) + envuelve(" " + c.op + " ", c.op === "+" ? T(" plus ", " más ") : T(" minus ", " menos ")) + frPD(c.n2, c.D) + ".", correcta: "ok", opciones: baraja(ops),
+    porClave: {dd: T("The denominator stays the same: denominators are not added.", "El denominador se conserva: los denominadores no se suman."), d2: T("The denominator stays the same, not squared.", "El denominador se conserva, sin elevarlo al cuadrado."), par: T("The minus sign goes to the whole second numerator: use parentheses.", "El signo menos se reparte a todo el segundo numerador: use paréntesis."), sn: T("The denominator does not disappear.", "El denominador no desaparece.")},
+    pista: T("Same denominator: combine only the numerators.", "Mismo denominador: combine solo los numeradores."), bien: pasosIgual(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 4 · Different denominators ===== */
+function cociente(L, D){ var f = L.f.slice(); D.f.forEach(function(q){ for (var i = 0; i < f.length; i++) if (pClave(f[i]) === pClave(q)){ f.splice(i, 1); break; } }); return Fm(L.k / D.k, L.m - D.m, f); }
+function casoDist(){
+  var t = aleatorio(0, 2), D1, D2, L, n1, n2, op = elige(["+", "+", "−"]), res, k = 0;
+  do {
+    if (t === 0){ var a = elige([1, 1, 2, 3]), b = elige([2, 3, 4, 6]), m1 = elige([1, 1, 2]), m2 = elige([1, 2]); if (a === b && m1 === m2) b = a * 2; D1 = Fm(a, m1, []); D2 = Fm(b, m2, []); var l = a * b / mcd(a, b); L = Fm(l, Math.max(m1, m2), []); }
+    else if (t === 1){ var v = distintos(2, 6); D1 = Fm(1, 0, [X(v[0])]); D2 = Fm(1, 0, [X(v[1])]); L = Fm(1, 0, [X(v[0]), X(v[1])]); }
+    else { var w = nz(-6, 6); D1 = Fm(1, 1, []); D2 = Fm(1, 0, [X(w)]); L = Fm(1, 1, [X(w)]); }
+    n1 = [nz(1, 7)]; n2 = [nz(1, 7)];
+    var q1 = fProducto(cociente(L, D1)), q2 = fProducto(cociente(L, D2)), t1 = pMul(n1, q1), t2 = pMul(n2, q2);
+    res = op === "+" ? pSuma(t1, t2) : pResta(t1, t2); k++;
+  } while ((excluidos(L).some(function(x){ return Math.abs(pEval(res, x)) < 1e-9; }) || (pGrado(res) === 0 && !res[0]) || (L.k > 1 && contenido(res) > 1 && mcd(contenido(res), L.k) > 1)) && k < 200);
+  return {t: t, D1: D1, D2: D2, L: L, n1: n1, n2: n2, op: op, res: res, q1: cociente(L, D1), q2: cociente(L, D2), t1: t1, t2: t2};
+}
+function pasosDist(c){
+  var P = [T("Least common denominator of ", "MCM de ") + parteVis(c.D1) + T(" and ", " y ") + parteVis(c.D2) + ": <strong>" + parteVis(c.L) + "</strong>."];
+  P.push(T("Rewrite each fraction with the LCD: ", "Se reescribe cada fracción con el MCM: ") + envuelve(frPDvis(c.n1, c.D1) + " = " + frPDvis(c.t1, c.L) + "; " + frPDvis(c.n2, c.D2) + " = " + frPDvis(c.t2, c.L), "") + " " + T("(multiply the top and the bottom by what is missing: ", "(se multiplica arriba y abajo por lo que falta: ") + parteVis(c.q1) + T(" and ", " y ") + parteVis(c.q2) + ").");
+  P.push(T("Combine the numerators: ", "Se combinan los numeradores: ") + "(" + pVis(c.t1) + ") " + c.op + " (" + pVis(c.t2) + ") = " + pVis(c.res) + ".");
+  P.push(T("Result: ", "Resultado: ") + "<strong>" + frPD(c.res, c.L) + "</strong>.");
+  return P;
+}
+pasoAPaso4("di", function(){ var c = casoDist(); return {enun: (c.op === "+" ? T("Add ", "Sume ") : T("Subtract ", "Reste ")) + frPD(c.n1, c.D1) + envuelve(" " + c.op + " ", c.op === "+" ? T(" plus ", " más ") : T(" minus ", " menos ")) + frPD(c.n2, c.D2) + ".", pasos: pasosDist(c)}; });
+OMR("eq", function(){ var c = casoDist(), sumaD = pSuma(fProducto(c.D1), fProducto(c.D2)), sumaN = c.op === "+" ? pSuma(c.n1, c.n2) : pResta(c.n1, c.n2);
+  var ops = [{clave: "ok", html: frPD(c.res, c.L)}, {clave: "nd", html: envuelve('<span class="fracc"><span class="fa">' + pVis(sumaN) + '</span><span class="fb2">' + pVis(sumaD) + "</span></span>", "")}, {clave: "nl", html: frPD(sumaN, c.L)}, {clave: "sg", html: frPD(c.op === "+" ? pResta(c.t1, c.t2) : pSuma(c.t1, c.t2), c.L)}];
+  var vis = {}; ops = ops.filter(function(o){ if (vis[o.html] || /fa">0</.test(o.html)) return false; vis[o.html] = 1; return true; });
+  return {enun: (c.op === "+" ? T("Add ", "Sume ") : T("Subtract ", "Reste ")) + frPD(c.n1, c.D1) + envuelve(" " + c.op + " ", c.op === "+" ? T(" plus ", " más ") : T(" minus ", " menos ")) + frPD(c.n2, c.D2) + ".", correcta: "ok", opciones: baraja(ops),
+    porClave: {nd: T("Numerators and denominators are not added directly: find the LCD.", "No se suman numeradores y denominadores directamente: busque el MCM."), nl: T("The LCD is right, but each numerator must be multiplied by what its denominator is missing.", "El MCM está bien, pero cada numerador debe multiplicarse por lo que le falta a su denominador."), sg: T("Check the operation: " + (c.op === "+" ? "it is an addition." : "it is a subtraction."), "Revise la operación: " + (c.op === "+" ? "es una suma." : "es una resta."))},
+    pista: T("Find the LCD, rewrite each fraction, and combine the numerators.", "Halle el MCM, reescriba cada fracción y combine los numeradores."), bien: pasosDist(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -194,6 +194,9 @@ CCR = {
  "A-REI.4": ("E", "Solve quadratic equations in one variable. Solve quadratic equations by inspection (e.g., for x² = 49), taking square roots, completing the square, the quadratic formula and factoring, as appropriate to the initial form of the equation. Recognize when the quadratic formula gives complex solutions and write them as a ± bi for real numbers a and b."),
  "A-SSE.3": ("E", "Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression: factor a quadratic expression to reveal the zeros of the function it defines; complete the square in a quadratic expression to reveal the maximum or minimum value of the function it defines."),
  "A-CED.1": ("E", "Create equations and inequalities in one variable and use them to solve problems. Include equations arising from linear and quadratic functions, and simple rational and exponential functions."),
+ "A-APR.6": ("E", "Rewrite simple rational expressions in different forms; write a(x)/b(x) in the form q(x) + r(x)/b(x), where a(x), b(x), q(x), and r(x) are polynomials with the degree of r(x) less than the degree of b(x), using inspection, long division, or, for the more complicated examples, a computer algebra system."),
+ "A-APR.7": ("E", "Understand that rational expressions form a system analogous to the rational numbers, closed under addition, subtraction, multiplication, and division by a nonzero rational expression; add, subtract, multiply, and divide rational expressions."),
+ "A-REI.2": ("E", "Solve simple rational and radical equations in one variable, and give examples showing how extraneous solutions may arise."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -423,6 +426,12 @@ LESSONS = [
   {"direct": ["A.4.a"], "builds": [], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["A-REI.4", "A-SSE.3"]}),
  ("level-4/lesson-4-3.html", "4.3", "The quadratic formula, the discriminant, and applications",
   {"direct": ["A.4.a", "A.4.b"], "builds": [], "mp": ["MP.1.e", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.4", "A-CED.1"]}),
+ ("level-4/lesson-5-1.html", "5.1", "Simplifying rational expressions: factor and cancel",
+  {"direct": ["A.1.h"], "builds": ["A.1.f", "A.1.i"], "mp": ["MP.3.a", "MP.3.c", "MP.4.b"], "ccr": ["A-SSE.2", "A-APR.6"]}),
+ ("level-4/lesson-5-2.html", "5.2", "Adding, subtracting, multiplying, and dividing rational expressions",
+  {"direct": ["A.1.h"], "builds": ["A.1.f"], "mp": ["MP.3.a", "MP.4.b", "MP.5.a"], "ccr": ["A-APR.7", "A-APR.6"]}),
+ ("level-4/lesson-5-3.html", "5.3", "Solving rational equations",
+  {"direct": ["A.1.h"], "builds": ["A.2.b", "A.4.a"], "mp": ["MP.1.b", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.2", "A-CED.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
