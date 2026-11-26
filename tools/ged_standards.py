@@ -209,6 +209,10 @@ CCR = {
  "F-BF.1": ("E", "Write a function that describes a relationship between two quantities: determine an explicit expression, a recursive process, or steps for calculation from a context; combine standard function types using arithmetic operations; compose functions."),
  "F-IF.6": ("E", "Calculate and interpret the average rate of change of a function (presented symbolically or as a table) over a specified interval. Estimate the rate of change from a graph."),
  "F-LE.1": ("E", "Distinguish between situations that can be modeled with linear functions and with exponential functions: prove that linear functions grow by equal differences over equal intervals, and that exponential functions grow by equal factors over equal intervals; recognize situations in which a quantity changes at a constant rate per unit interval relative to another."),
+ "F-IF.4": ("E", "For a function that models a relationship between two quantities, interpret key features of graphs and tables in terms of the quantities, and sketch graphs showing key features given a verbal description of the relationship. Key features include: intercepts; intervals where the function is increasing, decreasing, positive, or negative; relative maximums and minimums; symmetries; end behavior; and periodicity."),
+ "F-IF.8": ("E", "Write a function defined by an expression in different but equivalent forms to reveal and explain different properties of the function: use the process of factoring and completing the square in a quadratic function to show zeros, extreme values, and symmetry of the graph; use the properties of exponents to interpret expressions for exponential functions, such as identifying percent rate of change."),
+ "F-LE.2": ("E", "Construct linear and exponential functions, including arithmetic and geometric sequences, given a graph, a description of a relationship, or two input-output pairs (include reading these from a table)."),
+ "F-LE.5": ("E", "Interpret the parameters in a linear or exponential function in terms of a context."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -456,6 +460,12 @@ LESSONS = [
   {"direct": ["A.7.b", "A.7.c"], "builds": ["A.5.e"], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["8.F.1", "F-IF.1", "F-IF.2", "F-BF.1"]}),
  ("level-4/lesson-7-3.html", "7.3", "Average rate of change and kinds of functions",
   {"direct": ["A.5.e"], "builds": ["A.5.b", "A.7.d"], "mp": ["MP.2.a", "MP.2.c", "MP.4.c"], "ccr": ["F-IF.6", "F-LE.1", "8.F.4"]}),
+ ("level-4/lesson-8-1.html", "8.1", "Quadratic functions: the parabola, the vertex, and the intercepts",
+  {"direct": ["A.5.e", "A.7.c"], "builds": ["A.4.a", "A.7.d"], "mp": ["MP.1.b", "MP.2.a", "MP.4.c"], "ccr": ["F-IF.4", "F-IF.8", "A-SSE.3"]}),
+ ("level-4/lesson-8-2.html", "8.2", "Exponential functions, growth and decay, and a first look at logarithms",
+  {"direct": ["A.5.e"], "builds": ["A.7.c", "A.1.d"], "mp": ["MP.2.a", "MP.4.a", "MP.4.c"], "ccr": ["F-LE.1", "F-LE.2", "F-LE.5", "F-IF.8"]}),
+ ("level-4/lesson-8-3.html", "8.3", "Final project and practice GED math test",
+  {"direct": ["A.2.d", "A.4.a", "A.5.e", "A.7.c"], "builds": ["A.1.d", "A.1.h", "A.6.a"], "mp": ["MP.1.b", "MP.1.c", "MP.3.a", "MP.4.c"], "ccr": ["A-CED.2", "F-IF.4", "F-LE.5"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

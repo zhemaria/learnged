@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 8.1 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.1 · Funciones cuadráticas: la parábola, el vértice y los interceptos · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-8-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 8 — Modelado de funciones y simulacro GED</p>
+<h1>Lección 8.1 · Funciones cuadráticas: la parábola, el vértice y los interceptos</h1>
+<p class="lema">Lea la forma de una parábola, halle su vértice, su eje y sus interceptos, y use el vértice para resolver problemas de máximo y mínimo.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Se permite calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> hacia dónde abre una parábola según el signo de a.</li>
+<li><strong>Calcular</strong> el vértice con x = −b/(2a) y el eje de simetría.</li>
+<li><strong>Encontrar</strong> los interceptos con el eje x y con el eje y.</li>
+<li><strong>Usar</strong> el vértice para resolver problemas de máximo y mínimo en contexto.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.5.e</span> Para una función que modela una relación lineal o no lineal entre dos cantidades, interpretar las características clave de gráficas y tablas en términos de las cantidades, y trazar gráficas que muestren las características clave a partir de una descripción verbal de la relación.</li><li><span class="std-cod std-dir">A.7.c</span> Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.4.a</span> Resolver ecuaciones cuadráticas de una variable con coeficientes racionales y soluciones reales, con el método adecuado (por ejemplo, la fórmula cuadrática, completar el cuadrado, la factorización o la inspección).</li><li><span class="std-cod std-base">A.7.d</span> Comparar las propiedades de dos funciones lineales o cuadráticas representadas de distinta manera (algebraicamente, numéricamente en tablas, gráficamente o con descripciones verbales).</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.a</span> Representar algebraicamente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">F-IF.4</span> <span class="std-nivel">Nivel E</span> Para una función que modela una relación entre dos cantidades, interpretar las características clave de gráficas y tablas en términos de las cantidades, y trazar gráficas que muestren esas características a partir de una descripción verbal. Las características clave incluyen: interceptos; intervalos en que la función crece, decrece, es positiva o negativa; máximos y mínimos relativos; simetrías; comportamiento en los extremos y periodicidad.</li><li><span class="std-cod std-ccr">F-IF.8</span> <span class="std-nivel">Nivel E</span> Escribir una función definida por una expresión en formas distintas pero equivalentes para mostrar y explicar sus propiedades: usar la factorización y la completación del cuadrado en una función cuadrática para mostrar sus ceros, sus valores extremos y la simetría de la gráfica; usar las propiedades de los exponentes para interpretar expresiones de funciones exponenciales, por ejemplo, para identificar el porcentaje de cambio.</li><li><span class="std-cod std-ccr">A-SSE.3</span> <span class="std-nivel">Nivel E</span> Elegir y obtener una forma equivalente de una expresión para revelar y explicar propiedades de la cantidad que representa: factorizar una expresión cuadrática para revelar los ceros de la función que define; completar el cuadrado en una expresión cuadrática para revelar el valor máximo o mínimo de la función que define.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-parabola">La parábola y su forma</a></li>
+<li><a href="#s-vertice">El vértice y el eje de simetría</a></li>
+<li><a href="#s-interceptos">Los interceptos con los ejes</a></li>
+<li><a href="#s-maximo">Máximo y mínimo en contexto</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-parabola"><span aria-hidden="true" class="num-seccion">1</span>La parábola y su forma</h2>
+<p><strong>Conexión con el tema anterior.</strong> En el Tema 7 se clasificaron las funciones cuadráticas por su patrón. Ahora se estudian a fondo: su gráfica (la <strong>parábola</strong>), su punto más importante (el <strong>vértice</strong>) y cómo modelan situaciones de máximo o mínimo, como la altura de un proyectil o el beneficio de un negocio.</p>
+<p>La gráfica de una función cuadrática f(x) = ax² + bx + c es una parábola. El signo de a decide hacia dónde abre:</p>
+<div aria-label="Hacia dónde abre la parábola (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Dirección de apertura de la parábola según el signo de a</caption>
+<thead><tr><th scope="col">Si…</th><th scope="col">La parábola…</th><th scope="col">El vértice es…</th></tr></thead>
+<tbody>
+<tr><td>a &gt; 0</td><td>abre hacia arriba</td><td>un mínimo</td></tr>
+<tr><td>a &lt; 0</td><td>abre hacia abajo</td><td>un máximo</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Ancha o estrecha</span>
+<p>Cuanto mayor es |a|, más cerrada es la parábola. El número c es donde cruza el eje y, y b desplaza el vértice hacia un lado.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — ¿Hacia dónde?</h3></div>
+<p class="pregunta-int" id="t-p1">f(x) = 2x² − 5x + 1 abre hacia:</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">arriba</button>
+<button class="opcion" data-k="b" type="button">abajo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Una a negativa</h3></div>
+<p class="pregunta-int" id="t-p2">f(x) = −x² + 3x abre hacia:</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">arriba</button>
+<button class="opcion" data-k="b" type="button">abajo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — El vértice</h3></div>
+<p class="pregunta-int" id="t-p3">Una parábola que abre hacia arriba tiene:</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">un mínimo</button>
+<button class="opcion" data-k="b" type="button">un máximo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#parabola" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la forma de la parábola (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la forma de la parábola</span><span class="ei-sub">Deslizadores de a, b y c que abren, cierran y desplazan la parábola, con su vértice y su intercepto con el eje y.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-vertice"><span aria-hidden="true" class="num-seccion">2</span>El vértice y el eje de simetría</h2>
+<p>El <strong>vértice</strong> es el punto más alto o más bajo de la parábola. Su coordenada x se halla con la fórmula, y la y se obtiene evaluando la función. El <strong>eje de simetría</strong> es la recta vertical que pasa por el vértice.</p>
+      <div class="formula">x del vértice = −b / (2a) · eje de simetría: x = −b / (2a)</div>
+<svg viewBox="0 0 316 316" role="img" aria-label="La parábola f de x = x al cuadrado menos 4x más 3. Abre hacia arriba. Su vértice, el punto más bajo, es 2, −1, y el eje de simetría punteado es la recta vertical x = 2. Cruza el eje x en 1, 0 y 3, 0, y el eje y en 0, 3." style="width:100%;max-width:330px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="62" y1="30" x2="62" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="94" y1="30" x2="94" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="126" y1="30" x2="126" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="158" y1="30" x2="158" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="222" y1="30" x2="222" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="254" y1="30" x2="254" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="286" y1="30" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="286" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="254" x2="286" y2="254" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="222" x2="286" y2="222" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="286" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="158" x2="286" y2="158" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="126" x2="286" y2="126" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="94" x2="286" y2="94" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="62" x2="286" y2="62" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="286" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="222" x2="296" y2="222" stroke="#10174f" stroke-width="2"/><line x1="94" y1="294" x2="94" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="300,222 290,217 290,227" fill="#10174f"/><polygon points="94,16 89,26 99,26" fill="#10174f"/><text x="300" y="210" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="108" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="158.0" y1="286.0" x2="158.0" y2="30.0" stroke="#6a1b9a" stroke-width="2.5" stroke-dasharray="8 6" stroke-linecap="round"/><line x1="74.8" y1="37.7" x2="76.9" y2="48.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="76.9" y1="48.4" x2="79.0" y2="58.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="79.0" y1="58.8" x2="81.0" y2="68.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.0" y1="68.9" x2="83.1" y2="78.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="83.1" y1="78.8" x2="85.2" y2="88.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="85.2" y1="88.4" x2="87.3" y2="97.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.3" y1="97.7" x2="89.4" y2="106.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="89.4" y1="106.8" x2="91.4" y2="115.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="91.4" y1="115.6" x2="93.5" y2="124.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="93.5" y1="124.1" x2="95.6" y2="132.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="95.6" y1="132.3" x2="97.7" y2="140.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="97.7" y1="140.3" x2="99.8" y2="148.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="99.8" y1="148.0" x2="101.8" y2="155.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="101.8" y1="155.4" x2="103.9" y2="162.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.9" y1="162.6" x2="106.0" y2="169.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.0" y1="169.5" x2="108.1" y2="176.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="108.1" y1="176.1" x2="110.2" y2="182.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="110.2" y1="182.5" x2="112.2" y2="188.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="112.2" y1="188.6" x2="114.3" y2="194.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="114.3" y1="194.4" x2="116.4" y2="199.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="116.4" y1="199.9" x2="118.5" y2="205.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="118.5" y1="205.2" x2="120.6" y2="210.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="120.6" y1="210.2" x2="122.6" y2="214.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="122.6" y1="214.9" x2="124.7" y2="219.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="124.7" y1="219.4" x2="126.8" y2="223.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.8" y1="223.6" x2="128.9" y2="227.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="128.9" y1="227.5" x2="131.0" y2="231.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="131.0" y1="231.2" x2="133.0" y2="234.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="133.0" y1="234.5" x2="135.1" y2="237.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.1" y1="237.6" x2="137.2" y2="240.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="137.2" y1="240.5" x2="139.3" y2="243.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="139.3" y1="243.0" x2="141.4" y2="245.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="141.4" y1="245.3" x2="143.4" y2="247.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="143.4" y1="247.4" x2="145.5" y2="249.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.5" y1="249.1" x2="147.6" y2="250.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="147.6" y1="250.6" x2="149.7" y2="251.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="149.7" y1="251.8" x2="151.8" y2="252.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="151.8" y1="252.8" x2="153.8" y2="253.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="153.8" y1="253.5" x2="155.9" y2="253.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="155.9" y1="253.9" x2="158.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="158.0" y1="254.0" x2="160.1" y2="253.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="160.1" y1="253.9" x2="162.2" y2="253.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="162.2" y1="253.5" x2="164.2" y2="252.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="164.2" y1="252.8" x2="166.3" y2="251.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="166.3" y1="251.8" x2="168.4" y2="250.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="168.4" y1="250.6" x2="170.5" y2="249.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="170.5" y1="249.1" x2="172.6" y2="247.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="172.6" y1="247.4" x2="174.6" y2="245.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="174.6" y1="245.3" x2="176.7" y2="243.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="176.7" y1="243.0" x2="178.8" y2="240.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="178.8" y1="240.5" x2="180.9" y2="237.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="180.9" y1="237.6" x2="183.0" y2="234.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="183.0" y1="234.5" x2="185.0" y2="231.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="185.0" y1="231.2" x2="187.1" y2="227.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="187.1" y1="227.5" x2="189.2" y2="223.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="189.2" y1="223.6" x2="191.3" y2="219.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="191.3" y1="219.4" x2="193.4" y2="214.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="193.4" y1="214.9" x2="195.4" y2="210.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="195.4" y1="210.2" x2="197.5" y2="205.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="197.5" y1="205.2" x2="199.6" y2="199.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="199.6" y1="199.9" x2="201.7" y2="194.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="201.7" y1="194.4" x2="203.8" y2="188.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="203.8" y1="188.6" x2="205.8" y2="182.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="205.8" y1="182.5" x2="207.9" y2="176.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="207.9" y1="176.1" x2="210.0" y2="169.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="210.0" y1="169.5" x2="212.1" y2="162.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="212.1" y1="162.6" x2="214.2" y2="155.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="214.2" y1="155.4" x2="216.2" y2="148.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="216.2" y1="148.0" x2="218.3" y2="140.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="218.3" y1="140.3" x2="220.4" y2="132.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="220.4" y1="132.3" x2="222.5" y2="124.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="222.5" y1="124.1" x2="224.6" y2="115.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="224.6" y1="115.6" x2="226.6" y2="106.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="226.6" y1="106.8" x2="228.7" y2="97.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="228.7" y1="97.7" x2="230.8" y2="88.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="230.8" y1="88.4" x2="232.9" y2="78.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="232.9" y1="78.8" x2="235.0" y2="68.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="235.0" y1="68.9" x2="237.0" y2="58.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="237.0" y1="58.8" x2="239.1" y2="48.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="239.1" y1="48.4" x2="241.2" y2="37.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><circle cx="158.0" cy="254.0" r="6" fill="#c62828" stroke="#fff" stroke-width="2"/><text x="168.0" y="274.0" font-size="15" font-weight="700" fill="#c62828" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">vértice (2, −1)</text><circle cx="126.0" cy="222.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="190.0" cy="222.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="94.0" cy="126.0" r="6" fill="#ef6c00" stroke="#fff" stroke-width="2"/><text x="104.0" y="116.0" font-size="15" font-weight="700" fill="#ef6c00" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">(0, 3)</text><text x="118.0" y="210.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">(1, 0)</text><text x="198.0" y="210.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">(3, 0)</text><text x="166.0" y="49.2" font-size="14" font-weight="700" fill="#6a1b9a" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">eje x = 2</text><text x="30" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="62" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="126" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="158" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="190" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="222" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="254" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="88" y="290" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="88" y="258" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="88" y="194" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="88" y="162" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="88" y="130" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="88" y="98" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="88" y="66" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Hallar el vértice y el eje de f(x) = x² − 4x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Aquí a = 1 y b = −4.</strong> x del vértice: −(−4) / (2 · 1) = 4/2 = 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>La y del vértice:</strong> f(2) = (2)² − 4(2) + 3 = 4 − 8 + 3 = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>Vértice (2, −1); eje de simetría x = 2; como a &gt; 0, es un mínimo.</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — La x del vértice</h3></div>
+<p class="pregunta-int" id="t-p4">f(x) = x² − 6x + 5. ¿x del vértice?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">−3</button>
+<button class="opcion" data-k="c" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — El vértice completo</h3></div>
+<p class="pregunta-int" id="t-p5">f(x) = x² − 4x + 3. El vértice completo es:</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">(−2, −1)</button>
+<button class="opcion" data-k="b" type="button">(2, 1)</button>
+<button class="opcion" data-k="c" type="button">(2, −1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — El eje</h3></div>
+<p class="pregunta-int" id="t-p6">El eje de simetría de f(x) = x² − 6x + 5 es:</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">y = 3</button>
+<button class="opcion" data-k="b" type="button">x = 3</button>
+<button class="opcion" data-k="c" type="button">x = −3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#vertice" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el vértice y el eje de simetría (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el vértice y el eje de simetría</span><span class="ei-sub">Funciones resueltas paso a paso con −b/(2a), el eje dibujado y dos puntos simétricos que muestran por qué se llama eje de simetría.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-interceptos"><span aria-hidden="true" class="num-seccion">3</span>Los interceptos con los ejes</h2>
+<p>Los interceptos son donde la parábola cruza los ejes:</p>
+<div aria-label="Los interceptos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Cómo encontrar los interceptos de una parábola</caption>
+<thead><tr><th scope="col">Intercepto</th><th scope="col">Cómo se halla</th></tr></thead>
+<tbody>
+<tr><td>Con el eje y</td><td>Evaluar f(0) = c. Da el punto (0, c).</td></tr>
+<tr><td>Con el eje x</td><td>Resolver ax² + bx + c = 0 (factorizando o con la fórmula cuadrática del Tema 4).</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Interceptos de f(x) = x² − 4x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Con y:</strong> f(0) = 3, así que (0, 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Con x:</strong> x² − 4x + 3 = 0 → (x − 1)(x − 3) = 0 → x = 1 y x = 3, así que (1, 0) y (3, 0).</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Conexión con el Tema 4</span>
+<p>Hallar los interceptos con el eje x de una parábola es exactamente resolver una ecuación cuadrática. El discriminante b² − 4ac dice cuántos hay: positivo, dos; cero, uno (el vértice toca el eje); negativo, ninguno.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — El intercepto con y</h3></div>
+<p class="pregunta-int" id="t-p7">El intercepto con el eje y de f(x) = x² − 4x + 3 es:</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">(3, 0)</button>
+<button class="opcion" data-k="b" type="button">(0, −3)</button>
+<button class="opcion" data-k="c" type="button">(0, 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 8 — Los interceptos con x</h3></div>
+<p class="pregunta-int" id="t-p8">Los interceptos con el eje x de f(x) = (x − 1)(x − 3) son:</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 y x = −3</button>
+<button class="opcion" data-k="b" type="button">x = 1 y x = 3</button>
+<button class="opcion" data-k="c" type="button">x = 0 y x = 3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 9 — Cómo se halla</h3></div>
+<p class="pregunta-int" id="t-p9">El intercepto con el eje y se halla evaluando:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">f(0)</button>
+<button class="opcion" data-k="b" type="button">f(1)</button>
+<button class="opcion" data-k="c" type="button">x = y</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#interceptos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los interceptos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los interceptos</span><span class="ei-sub">Los interceptos hallados paso a paso, con el discriminante decidiendo si hay dos, uno o ninguno con el eje x.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-maximo"><span aria-hidden="true" class="num-seccion">4</span>Máximo y mínimo en contexto</h2>
+<p>El vértice resuelve problemas reales: la altura máxima de un proyectil, el beneficio máximo de un negocio, el área máxima de un terreno. Si la parábola abre hacia abajo, el vértice es el máximo; si abre hacia arriba, es el mínimo.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · El proyectil. La altura es h(t) = −16t² + 64t + 5 pies (t en segundos). ¿Cuándo alcanza la altura máxima y cuál es?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Como a = −16 &lt; 0,</strong> abre hacia abajo: el vértice es un máximo.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>t del vértice:</strong> −64 / (2 · −16) = −64 / −32 = 2 segundos.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Altura máxima:</strong> <strong>h(2) = −16(4) + 64(2) + 5 = −64 + 128 + 5 = 69 pies.</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · El beneficio. El beneficio es B(x) = −2x² + 120x − 800 dólares. ¿Cuántas unidades lo maximizan?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x del vértice:</strong> −120 / (2 · −2) = −120 / −4 = 30 unidades.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Beneficio máximo:</strong> <strong>B(30) = −2(900) + 120(30) − 800 = −1,800 + 3,600 − 800 = $1,000.</strong></p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Sobre la calculadora</span>
+<p>En el examen GED se usa la calculadora TI-30XS MultiView. La calculadora de esta página hace las mismas operaciones, aunque algunas teclas tienen otro nombre o están en otro lugar. Úsela para evaluar la función en el vértice, con paréntesis alrededor de los números negativos.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 10 — Máximo o mínimo</h3></div>
+<p class="pregunta-int" id="t-p10">En h(t) = −16t² + 64t + 5, el vértice es un:</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">máximo</button>
+<button class="opcion" data-k="b" type="button">mínimo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 11 — ¿Cuándo?</h3></div>
+<p class="pregunta-int" id="t-p11">La altura máxima de h(t) = −16t² + 64t + 5 ocurre en t =</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">4 s</button>
+<button class="opcion" data-k="b" type="button">2 s</button>
+<button class="opcion" data-k="c" type="button">64 s</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 12 — El beneficio</h3></div>
+<p class="pregunta-int" id="t-p12">B(x) = −2x² + 120x − 800 se maximiza en x =</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">60</button>
+<button class="opcion" data-k="b" type="button">120</button>
+<button class="opcion" data-k="c" type="button">30</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#maximo" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el máximo y el mínimo (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el máximo y el mínimo</span><span class="ei-sub">Cuatro situaciones (proyectil, jardín cercado, ingreso y costo) con el vértice marcado y un deslizador para comprobar que ningún otro valor lo supera.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-8-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno, papel cuadriculado, la calculadora y la hoja de fórmulas del GED: (1) El proyectil y el beneficio: la altura de una pelota es h(t) = −16t² + 64t + 5 (en pies, con t en segundos). Grafíquela, halle la altura máxima con el vértice y calcule cuándo toca el suelo. Después, halle cuántas unidades x maximizan el beneficio B(x) = −2x² + 120x − 800 y cuál es ese beneficio máximo. (2) Las cuatro características: haga una tabla con la dirección de apertura, el vértice, el eje de simetría y los interceptos de y = x² − 4x + 3, y = −x² + 6x − 5, y = 2x² + 8x e y = x² + 2x + 5. En una de ellas no hay interceptos con el eje x; explique cómo lo sabe. (3) Del vértice a la respuesta: con 40 pies de cerca se quiere cercar un jardín rectangular. Plantee el área como función del ancho, halle el vértice y diga qué medidas dan el área máxima. Repita el problema si un lado del jardín queda contra una pared y no necesita cerca. Después haga varios ejercicios de cada actividad de la página de práctica. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Lance una pelota hacia arriba y cuente los segundos hasta que vuelve a caer. Use h(t) = −16t² + vt con ese tiempo para estimar con qué rapidez la lanzó y qué altura alcanzó.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">f(x) = x² − 6x + 5. ¿Cuál es la x del vértice?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6</button><button class="opcion" data-k="b" type="button">−3</button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">f(x) = x² − 6x + 5. ¿Cuál es el vértice completo?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(−3, −4)</button><button class="opcion" data-k="b" type="button">(3, 4)</button><button class="opcion" data-k="c" type="button">(6, 5)</button><button class="opcion" data-k="d" type="button">(3, −4)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">El eje de simetría de f(x) = 2x² − 8x + 1 es:</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2</button><button class="opcion" data-k="b" type="button">y = 2</button><button class="opcion" data-k="c" type="button">x = −2</button><button class="opcion" data-k="d" type="button">x = 4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">f(x) = −3x² + x − 2 abre hacia:</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">arriba</button><button class="opcion" data-k="b" type="button">abajo</button><button class="opcion" data-k="c" type="button">la derecha</button><button class="opcion" data-k="d" type="button">la izquierda</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Una parábola con a &gt; 0 tiene un:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">máximo</button><button class="opcion" data-k="b" type="button">ni máximo ni mínimo</button><button class="opcion" data-k="c" type="button">dos vértices</button><button class="opcion" data-k="d" type="button">mínimo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">El intercepto con el eje y de f(x) = x² + 2x − 6 es:</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(0, −6)</button><button class="opcion" data-k="b" type="button">(−6, 0)</button><button class="opcion" data-k="c" type="button">(0, 6)</button><button class="opcion" data-k="d" type="button">(2, −6)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Proyectil h(t) = −16t² + 96t. ¿En qué tiempo alcanza la altura máxima?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6 s</button><button class="opcion" data-k="b" type="button">3 s</button><button class="opcion" data-k="c" type="button">96 s</button><button class="opcion" data-k="d" type="button">16 s</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Con h(t) = −16t² + 96t, la altura máxima es:</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">288 pies</button><button class="opcion" data-k="b" type="button">96 pies</button><button class="opcion" data-k="c" type="button">144 pies</button><button class="opcion" data-k="d" type="button">48 pies</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de las funciones cuadráticas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de la parábola, el vértice y los interceptos y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcular el vértice</th><td>Calculo el vértice completo (x e y) y lo verifico con la simetría.</td><td>Hallo la x del vértice, pero no la y.</td><td>No aplico x = −b/(2a).</td></tr>
+<tr><th scope="row">Apertura e interceptos</th><td>Identifico la apertura por el signo de a y hallo todos los interceptos.</td><td>Hallo solo un tipo de intercepto.</td><td>No relaciono a con la apertura.</td></tr>
+<tr><th scope="row">Máximo y mínimo en contexto</th><td>Interpreto el vértice como máximo o mínimo, con sus unidades.</td><td>Hallo el vértice, pero no lo interpreto.</td><td>No uso el vértice en contexto.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se estudiaron las funciones cuadráticas: la parábola, su dirección de apertura, el vértice y el eje de simetría, los interceptos y el uso del vértice para hallar máximos y mínimos en contexto.</p>
+<p>En la <strong>Lección 8.2 · Funciones exponenciales, crecimiento/decaimiento e introducción a logaritmos</strong> se estudia el otro gran modelo del GED: las funciones exponenciales, con aplicaciones como el interés compuesto y la vida media, y una primera mirada al logaritmo.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-8-2.html">Lección 8.2 · Funciones exponenciales, crecimiento/decaimiento e introducción a logaritmos</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>parábola</dt><dd>La gráfica en forma de U de una función cuadrática.</dd>
+<dt>vértice</dt><dd>El punto más alto o más bajo de una parábola; su x es −b/(2a).</dd>
+<dt>eje de simetría</dt><dd>La recta vertical que pasa por el vértice: x = −b/(2a).</dd>
+<dt>intercepto</dt><dd>Un punto donde la gráfica cruza un eje.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 8 · Lección 8.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 8.2",
+ "review": "las secciones 2 y 4",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "a = 2 es positivo."
+   },
+   "right": "a &gt; 0: abre hacia arriba.",
+   "solution": "Arriba."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "a = −1 es negativo."
+   },
+   "right": "a &lt; 0: abre hacia abajo.",
+   "solution": "Abajo."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Si abre hacia arriba, el vértice es el punto más bajo."
+   },
+   "right": "El vértice es el punto más bajo.",
+   "solution": "Un mínimo."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "−b = −(−6) = 6, positivo.",
+    "c": "Divida entre 2a = 2."
+   },
+   "right": "6 / 2 = 3.",
+   "solution": "3."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "x = −(−4)/2 = 2, positivo.",
+    "b": "f(2) = 4 − 8 + 3 = −1."
+   },
+   "right": "x = 2; f(2) = −1.",
+   "solution": "(2, −1)."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "El eje es vertical: x = …",
+    "c": "x = −(−6)/2 = 3."
+   },
+   "right": "Una recta vertical por el vértice.",
+   "solution": "x = 3."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "En el eje y, x = 0: (0, …).",
+    "b": "f(0) = c = 3, positivo."
+   },
+   "right": "f(0) = 3.",
+   "solution": "(0, 3)."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "x − 1 = 0 da x = 1, no −1.",
+    "c": "Iguale cada factor a 0."
+   },
+   "right": "Cada factor igual a cero.",
+   "solution": "x = 1 y x = 3."
+  },
+  "p9": {
+   "ok": "a",
+   "hints": {
+    "b": "En el eje y, x vale 0.",
+    "c": "Sustituya x = 0."
+   },
+   "right": "En el eje y, x = 0.",
+   "solution": "f(0)."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "a = −16 es negativo: abre hacia abajo."
+   },
+   "right": "Abre hacia abajo: máximo.",
+   "solution": "Un máximo."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "A los 4 s la pelota vuelve cerca de donde salió. Use t = −b/(2a).",
+    "c": "64 es b; divida −b entre 2a."
+   },
+   "right": "−64 / (−32) = 2.",
+   "solution": "2 s."
+  },
+  "p12": {
+   "ok": "c",
+   "hints": {
+    "a": "Divida −120 entre 2a = −4.",
+    "b": "120 es b; divida −b entre 2a."
+   },
+   "right": "−120 / (−4) = 30.",
+   "solution": "30."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "−b/(2a) = 6/2.",
+    "b": "−(−6) es positivo.",
+    "d": "5 es c."
+   },
+   "solution": "x = 3."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "x = 3, positivo.",
+    "b": "f(3) = 9 − 18 + 5 = −4.",
+    "c": "Use x = −b/(2a), no b y c."
+   },
+   "solution": "(3, −4)."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "El eje es una recta vertical: x = …",
+    "c": "−(−8) = 8, positivo.",
+    "d": "Divida 8 entre 2a = 4."
+   },
+   "solution": "x = 2."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "a = −3 es negativo.",
+    "c": "La parábola de una función abre hacia arriba o hacia abajo.",
+    "d": "La parábola de una función abre hacia arriba o hacia abajo."
+   },
+   "solution": "Abajo."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "a &gt; 0 abre hacia arriba.",
+    "b": "El vértice siempre es máximo o mínimo.",
+    "c": "Una parábola tiene un solo vértice."
+   },
+   "solution": "Un mínimo."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "En el eje y, x = 0: (0, …).",
+    "c": "f(0) = −6, negativo.",
+    "d": "x debe ser 0."
+   },
+   "solution": "(0, −6)."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "A los 6 s el objeto vuelve al suelo.",
+    "c": "96 es b.",
+    "d": "16 es |a|."
+   },
+   "solution": "−96 / (−32) = 3 s."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "Evalúe h(3) = −16(9) + 96(3).",
+    "b": "96 es b, no la altura.",
+    "d": "h(3) = −144 + 288."
+   },
+   "solution": "h(3) = 144 pies."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

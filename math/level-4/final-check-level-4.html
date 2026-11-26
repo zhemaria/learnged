@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Final check — built by tools/build_n4_final.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 4 final check · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="es" href="/es/matematicas/nivel-4/evaluacion-final-nivel-4.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  fieldset.pregunta-c{border:2px solid var(--tema-bg2);border-radius:12px;padding:14px 18px;margin:16px 0;background:#fff;}
+  fieldset.pregunta-c legend{font-weight:700;color:var(--tema-d);padding:0 6px;font-size:17px;}
+  fieldset.pregunta-c legend .num{display:inline-flex;width:28px;height:28px;font-size:14px;margin-right:4px;vertical-align:middle;}
+  .opciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .opcion{font-size:18px;min-width:90px;}
+  .opcion.elegida{border-color:var(--tema);background:var(--tema-bg);font-weight:700;}
+  .frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.1;font-size:.9em;}
+  .frac span:first-child{border-bottom:2px solid currentColor;padding:0 3px;}
+  .resultado{font-size:18px;margin:16px 0;padding:14px 18px;border-radius:10px;}
+  .resultado:empty{display:none;}
+  .resultado.aprob{background:var(--ok-bg);border-left:6px solid var(--ok);}
+  .resultado.repro{background:#fff8e1;border-left:6px solid #f9a825;}
+  .datos-est{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;}
+  #contador{font-weight:700;color:var(--tema-d);}
+  table.informe{border-collapse:collapse;width:100%;margin:10px 0;font-size:15px;}
+  table.informe th,table.informe td{border:1px solid #c8c8c8;padding:8px 12px;text-align:left;}
+  table.informe thead th{background:var(--tema-bg);color:var(--tema-d);}
+  .solo-imp{display:none;}
+  @media print{
+    .lg-bar,.saltar,.fila-btn,.no-imp,footer.pie .tm,#gph-calc-btn,.gph-calc,[data-gph-calculadora]{display:none !important;}
+    .solo-imp{display:block;}
+    header.principal{background:#fff !important;color:#000 !important;border:2px solid #000;}
+    fieldset.pregunta-c{break-inside:avoid;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="lesson-8-3.html">← Back to Lesson 8.3</a></nav>
+<a class="saltar" href="#preguntas">Skip to the questions</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 8 · Lesson 8.3</div>
+    <h1>Level 4 final check</h1>
+    <div class="meta">30 questions that cover the eight topics of the level</div>
+  </header>
+
+  <section class="panel no-imp">
+    <h2>How it works</h2>
+    <p>Take it in one sitting, with no interruptions and without looking at the lessons: that way you will really know whether you are ready for the GED test. Answer the 30 questions, then press <strong>Check my answers</strong>. You will see why each answer is right and a report by topic with the lessons to review. You pass with <strong>21 right answers (70 %)</strong>. You may use the calculator and the GED formula sheet, as on the real test.</p>
+    <div class="datos-est">
+      <div class="campo"><label for="nombre">Your name (for the printed report)</label><input type="text" id="nombre" autocomplete="name" style="min-width:260px"></div>
+      <p>Date: <span id="fecha"></span></p>
+    </div>
+  </section>
+  <p class="solo-imp" id="nombre-imp"></p>
+
+  <div id="preguntas"></div>
+
+  <p id="contador" aria-live="polite"></p>
+  <p class="caja-aviso" id="aviso" role="alert"></p>
+  <div class="resultado" id="resultado" tabindex="-1" aria-live="polite"></div>
+  <div class="fila-btn">
+    <button type="button" class="btn" id="b-comprobar">Check my answers</button>
+    <button type="button" class="btn" id="b-nueva" hidden>Try again</button>
+    <button type="button" class="btn-sec" id="b-imprimir" hidden>Print the report</button>
+  </div>
+
+  <section id="informe" hidden>
+    <h2>Report by topic</h2>
+    <p>For each topic, the lessons of the questions you missed. Go back to them and to their practice pages before you take the check again.</p>
+    <div class="tabla-scroll" role="region" tabindex="0" aria-label="Report by topic (table you can scroll sideways)">
+    <table class="informe"><caption class="cap-oculto">Right answers, percent, and level for each topic</caption>
+    <thead><tr><th scope="col">Topic</th><th scope="col">Right</th><th scope="col">Percent</th><th scope="col">Level</th></tr></thead>
+    <tbody id="informe-cuerpo"></tbody></table></div>
+    <p class="no-imp">Your other piece of the level is the <a href="project-level-4.html">final project «My mathematical model»</a>.</p>
+  </section>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Final check · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-NC-SA 4.0</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script>
+window.PREG = [{"tema": 1, "lec": "1-1", "en": "A. The distance between (0, 0) and (3, 4) is:", "ops": ["7", "25", "12", "5"], "ok": 3, "ex": "d = √(3² + 4²) = √25 = 5. Adding the differences (7) is not the formula; 25 is d², not d."}, {"tema": 1, "lec": "1-1", "en": "B. The midpoint of (2, 4) and (6, 8) is:", "ops": ["(4, 6)", "(8, 12)", "(2, 2)", "(4, 4)"], "ok": 0, "ex": "Average each coordinate: ((2 + 6)/2, (4 + 8)/2) = (4, 6)."}, {"tema": 1, "lec": "1-2", "en": "C. The slope between (1, 2) and (3, 8) is:", "ops": ["2", "<span class=\"frac\" aria-hidden=\"true\"><span>1</span><span>3</span></span><span class=\"sr-only\">1 over 3</span>", "3", "4"], "ok": 2, "ex": "m = (8 − 2) / (3 − 1) = 6/2 = 3. 1/3 is the fraction upside down."}, {"tema": 2, "lec": "2-1", "en": "D. The volume of a sphere with radius 3 inches (V = ⁴⁄₃πr³) is:", "ops": ["27π in³", "36π in³", "12π in³", "9π in³"], "ok": 1, "ex": "⁴⁄₃ · π · 3³ = ⁴⁄₃ · 27π = 36π cubic inches."}, {"tema": 2, "lec": "2-1", "en": "E. The volume of a cone with r = 3 ft and h = 4 ft (V = ⅓πr²h) is:", "ops": ["12π ft³", "36π ft³", "9π ft³", "24π ft³"], "ok": 0, "ex": "⅓ · π · 3² · 4 = ⅓ · 36π = 12π cubic feet. 36π is the cylinder; the cone is one third."}, {"tema": 3, "lec": "3-1", "en": "F. (x + 3)(x − 3) =", "ops": ["x² + 9", "x² − 6x + 9", "x² − 3", "x² − 9"], "ok": 3, "ex": "A sum times a difference: x² − 3² = x² − 9. The middle terms cancel."}, {"tema": 3, "lec": "3-3", "en": "G. Factor x² − 5x + 6.", "ops": ["(x + 2)(x + 3)", "(x − 1)(x − 6)", "(x − 2)(x − 3)", "(x − 2)(x + 3)"], "ok": 2, "ex": "Two numbers with product 6 and sum −5: −2 and −3."}, {"tema": 3, "lec": "3-1", "en": "H. (x + 4)² =", "ops": ["x² + 16", "x² + 8x + 16", "x² + 4x + 16", "x² + 8x + 8"], "ok": 1, "ex": "(x + 4)(x + 4) = x² + 2 · 4 · x + 16 = x² + 8x + 16. x² + 16 forgets the middle term."}, {"tema": 3, "lec": "3-2", "en": "I. The greatest common factor of 6x² + 9x gives:", "ops": ["x(6x + 9)", "3(2x² + 3x)", "3x(2x + 3)", "6x(x + 3)"], "ok": 2, "ex": "The greatest common factor is 3x: 6x² ÷ 3x = 2x and 9x ÷ 3x = 3. The other choices are not completely factored, or are wrong."}, {"tema": 3, "lec": "3-2", "en": "J. Factor x² − 16.", "ops": ["(x − 16)(x + 1)", "(x + 4)(x − 4)", "(x + 8)(x − 2)", "(x − 4)²"], "ok": 1, "ex": "A difference of squares: x² − 4² = (x + 4)(x − 4)."}, {"tema": 4, "lec": "4-1", "en": "K. Solve x² − 9 = 0.", "ops": ["x = 3 and x = −3", "x = 9", "x = 3", "x = ±81"], "ok": 0, "ex": "x² = 9, so x = 3 or x = −3. Do not forget the negative root."}, {"tema": 4, "lec": "4-1", "en": "L. Solve (x − 2)(x + 5) = 0.", "ops": ["x = −2 and x = 5", "x = 2 and x = 5", "x = 10", "x = 2 and x = −5"], "ok": 3, "ex": "Each factor equal to 0: x − 2 = 0 → x = 2; x + 5 = 0 → x = −5."}, {"tema": 4, "lec": "4-3", "en": "M. The discriminant of x² + 2x + 1 is b² − 4ac = 0. That means there is:", "ops": ["two different real roots", "no real root", "one double root", "three roots"], "ok": 2, "ex": "Discriminant 0: one double root (x = −1). Positive would be two; negative, none."}, {"tema": 4, "lec": "4-1", "en": "N. Solve x² − 7x + 12 = 0.", "ops": ["−3 and −4", "7 and 12", "3 and 4", "1 and 12"], "ok": 2, "ex": "(x − 3)(x − 4) = 0, so x = 3 and x = 4. Check: 9 − 21 + 12 = 0."}, {"tema": 4, "lec": "4-3", "en": "O. The quadratic formula is x =", "ops": ["−b / (2a)", "(b ± √(b² − 4ac)) / (2a)", "b² − 4ac", "(−b ± √(b² − 4ac)) / (2a)"], "ok": 3, "ex": "x = (−b ± √(b² − 4ac)) / (2a). −b/(2a) is only the x of the vertex, and b² − 4ac is the discriminant."}, {"tema": 5, "lec": "5-1", "en": "P. Simplify (x² − 9) / (x − 3), with x ≠ 3.", "ops": ["x − 3", "x + 3", "x + 9", "3"], "ok": 1, "ex": "(x + 3)(x − 3) / (x − 3) = x + 3. You cancel factors, never terms."}, {"tema": 5, "lec": "5-1", "en": "Q. For which value is 1 / (x − 2) NOT defined?", "ops": ["x = 2", "x = 0", "x = −2", "x = 1"], "ok": 0, "ex": "The denominator is 0 when x = 2, and you cannot divide by zero."}, {"tema": 5, "lec": "5-2", "en": "R. <span class=\"frac\" aria-hidden=\"true\"><span>2</span><span>x</span></span><span class=\"sr-only\">2 over x</span> · <span class=\"frac\" aria-hidden=\"true\"><span>x</span><span>5</span></span><span class=\"sr-only\">x over 5</span> =", "ops": ["<span class=\"frac\" aria-hidden=\"true\"><span>2x</span><span>5</span></span><span class=\"sr-only\">2x over 5</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>10</span><span>x</span></span><span class=\"sr-only\">10 over x</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>2</span><span>5x</span></span><span class=\"sr-only\">2 over 5x</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>2</span><span>5</span></span><span class=\"sr-only\">2 over 5</span>"], "ok": 3, "ex": "Multiply: 2x / 5x, and the x cancels: 2/5."}, {"tema": 5, "lec": "5-2", "en": "S. <span class=\"frac\" aria-hidden=\"true\"><span>1</span><span>x</span></span><span class=\"sr-only\">1 over x</span> + <span class=\"frac\" aria-hidden=\"true\"><span>2</span><span>x</span></span><span class=\"sr-only\">2 over x</span> =", "ops": ["<span class=\"frac\" aria-hidden=\"true\"><span>3</span><span>x</span></span><span class=\"sr-only\">3 over x</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>3</span><span>2x</span></span><span class=\"sr-only\">3 over 2x</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>2</span><span>x²</span></span><span class=\"sr-only\">2 over x²</span>", "<span class=\"frac\" aria-hidden=\"true\"><span>3</span><span>x²</span></span><span class=\"sr-only\">3 over x²</span>"], "ok": 0, "ex": "Same denominator: add the numerators and keep the denominator: 3/x."}, {"tema": 5, "lec": "5-2", "en": "T. Dividing by a fraction is multiplying by its:", "ops": ["opposite", "reciprocal", "square", "square root"], "ok": 1, "ex": "Dividing by a/b is multiplying by b/a, its reciprocal."}, {"tema": 6, "lec": "6-1", "en": "U. Solve y = 2x and x + y = 9.", "ops": ["(6, 3)", "(3, 3)", "(3, 6)", "(9, 0)"], "ok": 2, "ex": "Substitute: x + 2x = 9, x = 3, y = 6. Check: 6 = 2(3) and 3 + 6 = 9."}, {"tema": 6, "lec": "6-2", "en": "V. Solve by elimination x + y = 10 and x − y = 4.", "ops": ["(3, 7)", "(7, 3)", "(5, 5)", "(10, 4)"], "ok": 1, "ex": "Add the equations: 2x = 14, x = 7; then y = 10 − 7 = 3."}, {"tema": 6, "lec": "6-2", "en": "W. Solving a system, you get 0 = 5. The system:", "ops": ["has one solution", "has infinitely many solutions", "has no solution", "has two solutions"], "ok": 2, "ex": "A false statement means the lines are parallel: no solution. 0 = 0 would mean infinitely many."}, {"tema": 6, "lec": "6-3", "en": "X. Two parallel lines make a system:", "ops": ["with one solution", "with infinitely many solutions", "that is dependent", "with no solution"], "ok": 3, "ex": "Parallel lines never cross, so no point is on both: no solution (inconsistent)."}, {"tema": 6, "lec": "6-3", "en": "Y. Two adult tickets and one child ticket cost $25; one adult and one child cost $15. What is the price of the adult ticket?", "ops": ["$10", "$5", "$15", "$12"], "ok": 0, "ex": "Subtract the equations: (2a + c) − (a + c) = 25 − 15, so a = $10 (and the child ticket is $5)."}, {"tema": 7, "lec": "7-2", "en": "Z. If f(x) = 2x² − 3x + 1, what is f(2)?", "ops": ["1", "0", "11", "3"], "ok": 3, "ex": "f(2) = 2(4) − 3(2) + 1 = 8 − 6 + 1 = 3."}, {"tema": 8, "lec": "8-1", "en": "AA. The vertex of f(x) = x² − 4x + 3 is:", "ops": ["(−2, −1)", "(2, −1)", "(2, 1)", "(4, 3)"], "ok": 1, "ex": "x = −(−4)/(2 · 1) = 2; f(2) = 4 − 8 + 3 = −1."}, {"tema": 8, "lec": "8-2", "en": "AB. f(x) = 3ˣ is a function that is:", "ops": ["exponential", "linear", "quadratic", "rational"], "ok": 0, "ex": "x is in the exponent: exponential (it grows, because the base 3 is greater than 1)."}, {"tema": 7, "lec": "7-3", "en": "AC. The average rate of change if f(1) = 4 and f(5) = 20 is:", "ops": ["16", "5", "4", "24"], "ok": 2, "ex": "(20 − 4) / (5 − 1) = 16/4 = 4. 16 is only the change in y."}, {"tema": 7, "lec": "7-3", "en": "AD. The outputs 2, 4, 8, 16 (multiplied by 2 each time) belong to a function that is:", "ops": ["linear", "quadratic", "constant", "exponential"], "ok": 3, "ex": "A constant ratio (×2) is the pattern of an exponential function. A linear one would add the same."}];
+window.TEMAS = ["Analytic geometry", "3D volume and polynomials", "Multiplying and factoring", "Quadratic equations", "Rational expressions", "Systems of linear equations", "Systems of inequalities and functions", "Modeling with functions"];
+function T(en, es){ return ES ? es : en; }
+var PREG = window.PREG, TEMAS = window.TEMAS, APRUEBA = 21, corregida = false;
+var LEC = function(l){ return (ES ? "leccion-" : "lesson-") + l + ".html"; };
+function fechaHoy(){
+  var d = new Date(), m = ES ? ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"]
+                            : ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  return ES ? d.getDate() + " de " + m[d.getMonth()] + " de " + d.getFullYear() : m[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+}
+function pinta(){
+  var c = $("preguntas"); c.innerHTML = "";
+  PREG.forEach(function(q, i){
+    q.orden = baraja(q.ops.map(function(_, j){ return j; })); q.elegida = null;
+    var d = document.createElement("fieldset"); d.className = "pregunta-c"; d.id = "p-" + (i + 1);
+    d.innerHTML = "<legend><span class=\"num\" aria-hidden=\"true\">" + (i + 1) + "</span> <span class=\"sr-only\">" + T("Question ", "Pregunta ") + (i + 1) + T(" of 30. ", " de 30. ") + "</span>" + q.en + "</legend>";
+    var o = document.createElement("div"); o.className = "opciones";
+    q.orden.forEach(function(j){
+      var b = document.createElement("button"); b.type = "button"; b.className = "opcion"; b.setAttribute("aria-pressed", "false"); b.innerHTML = q.ops[j];
+      b.addEventListener("click", function(){
+        if (corregida) return;
+        q.elegida = j;
+        [].forEach.call(o.children, function(x){ x.setAttribute("aria-pressed", "false"); x.classList.remove("elegida"); });
+        b.setAttribute("aria-pressed", "true"); b.classList.add("elegida"); cuenta();
+      });
+      o.appendChild(b);
+    });
+    d.appendChild(o);
+    var fb = document.createElement("div"); fb.className = "fb"; fb.setAttribute("role", "status"); d.appendChild(fb);
+    c.appendChild(d);
+  });
+  cuenta();
+}
+function cuenta(){ var n = PREG.filter(function(q){ return q.elegida !== null; }).length; $("contador").textContent = T("Answered: ", "Respondidas: ") + n + T(" of 30", " de 30"); }
+function comprueba(){
+  var sin = PREG.filter(function(q){ return q.elegida === null; }).length;
+  if (sin && !$("b-comprobar").dataset.aviso){ $("b-comprobar").dataset.aviso = "1"; $("aviso").className = "caja-aviso visible"; $("aviso").innerHTML = T("You have " + sin + " questions with no answer. A blank answer counts as wrong. Press the button again to check anyway.", "Le quedan " + sin + " preguntas sin responder. Una pregunta en blanco cuenta como incorrecta. Pulse el botón otra vez para revisar de todos modos."); return; }
+  $("aviso").className = "caja-aviso"; $("aviso").textContent = "";
+  corregida = true;
+  var ok = 0, por = TEMAS.map(function(){ return {c: 0, t: 0, mal: []}; });
+  var fs = $("preguntas").querySelectorAll("fieldset");
+  PREG.forEach(function(q, i){
+    var bs = fs[i].querySelectorAll(".opcion"), fb = fs[i].querySelector(".fb"), bien = q.elegida === q.ok, m = por[q.tema - 1];
+    m.t++; if (bien){ ok++; m.c++; } else if (m.mal.indexOf(q.lec) < 0) m.mal.push(q.lec);
+    q.orden.forEach(function(j, k){ bs[k].disabled = true; if (j === q.ok) bs[k].classList.add("correcta"); if (j === q.elegida && !bien) bs[k].classList.add("incorrecta"); });
+    fb.className = "fb " + (bien ? "bien" : "mal");
+    fb.innerHTML = "<strong>" + (bien ? T("Correct.", "Correcto.") : (q.elegida === null ? T("Not answered.", "Sin responder.") : T("Not correct.", "Incorrecto.")) + T(" The right answer is ", " La respuesta correcta es ") + q.ops[q.ok] + ".") + "</strong> " + q.ex +
+      (bien ? "" : ' <a href="' + LEC(q.lec) + '">' + T("Lesson ", "Lección ") + q.lec.replace("-", ".") + "</a>");
+  });
+  var pct = Math.round(ok / 30 * 100), r = $("resultado");
+  r.className = "resultado " + (ok >= APRUEBA ? "aprob" : "repro");
+  r.innerHTML = T("Score: ", "Resultado: ") + "<strong>" + ok + T(" of 30", " de 30") + "</strong> (" + pct + " %). " +
+    (ok >= APRUEBA ? T("You passed the Level 4 final check. Together with your project, you have finished Level 4: you are ready for the GED Mathematical Reasoning test.", "Aprobó la evaluación final del Nivel 4. Junto con su proyecto, ha terminado el Nivel 4: está listo para el GED Mathematical Reasoning.")
+                   : T("You need 21 right answers (70 %). Review the lessons marked in the report and try again.", "Hacen falta 21 aciertos (70 %). Repase las lecciones señaladas en el informe e inténtelo de nuevo."));
+  $("informe-cuerpo").innerHTML = TEMAS.map(function(nom, k){
+    var m = por[k], p = Math.round(m.c / m.t * 100), j = m.c === m.t ? T("Mastered", "Dominado") : (p >= 50 ? T("Getting there", "En desarrollo") : T("Needs review", "Requiere repaso"));
+    return '<tr><th scope="row">' + T("Topic ", "Tema ") + (k + 1) + " · " + nom + "</th><td>" + m.c + T(" of ", " de ") + m.t + "</td><td>" + p + " %</td><td>" + j +
+      (m.mal.length ? " · " + T("Review: ", "Repase: ") + m.mal.map(function(l){ return '<a href="' + LEC(l) + '">' + T("Lesson ", "Lección ") + l.replace("-", ".") + "</a>"; }).join(", ") : "") + "</td></tr>";
+  }).join("");
+  $("informe").hidden = false; $("b-comprobar").hidden = true; $("b-nueva").hidden = false; $("b-imprimir").hidden = false;
+  $("nombre-imp").textContent = $("nombre").value.trim() ? T("Student: ", "Estudiante: ") + $("nombre").value.trim() + " · " + fechaHoy() : fechaHoy();
+  r.focus();
+}
+function nueva(){
+  corregida = false; delete $("b-comprobar").dataset.aviso; $("resultado").className = "resultado"; $("resultado").textContent = "";
+  $("informe").hidden = true; $("b-comprobar").hidden = false; $("b-nueva").hidden = true; $("b-imprimir").hidden = true;
+  pinta(); window.scrollTo({top: $("preguntas").offsetTop - 20, behavior: "smooth"});
+}
+$("fecha").textContent = fechaHoy();
+$("b-comprobar").addEventListener("click", comprueba);
+$("b-nueva").addEventListener("click", nueva);
+$("b-imprimir").addEventListener("click", function(){ window.print(); });
+pinta();
+</script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 8.1 · Math Level 4 (English) — built by tools/build_n4_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 8 — Modeling with functions and a practice GED test</p>
+<h1>Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts</h1>
+<p class="lema">Read the shape of a parabola, find its vertex, its axis, and its intercepts, and use the vertex to solve maximum and minimum problems.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator allowed</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Tell</strong> which way a parabola opens from the sign of a.</li>
+<li><strong>Find</strong> the vertex with x = −b/(2a) and the axis of symmetry.</li>
+<li><strong>Find</strong> the intercepts with the x-axis and the y-axis.</li>
+<li><strong>Use</strong> the vertex to solve maximum and minimum problems in context.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.5.e</span> For a function that models a linear or nonlinear relationship between two quantities, interpret key features of graphs and tables in terms of quantities, and sketch graphs showing key features given a verbal description of the relationship.</li><li><span class="std-cod std-dir">A.7.c</span> Evaluate linear and quadratic functions for values in their domain when represented using function notation.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.4.a</span> Solve quadratic equations in one variable with rational coefficients and real solutions, using appropriate methods (e.g., quadratic formula, completing the square, factoring, inspection).</li><li><span class="std-cod std-base">A.7.d</span> Compare properties of two linear or quadratic functions each represented in a different way (algebraically, numerically in tables, graphically or by verbal descriptions).</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.a</span> Represent real world problems algebraically.</li><li><span class="std-cod std-mp">MP.4.c</span> Display data or algebraic expressions graphically.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">F-IF.4</span> <span class="std-nivel">Level E</span> For a function that models a relationship between two quantities, interpret key features of graphs and tables in terms of the quantities, and sketch graphs showing key features given a verbal description of the relationship. Key features include: intercepts; intervals where the function is increasing, decreasing, positive, or negative; relative maximums and minimums; symmetries; end behavior; and periodicity.</li><li><span class="std-cod std-ccr">F-IF.8</span> <span class="std-nivel">Level E</span> Write a function defined by an expression in different but equivalent forms to reveal and explain different properties of the function: use the process of factoring and completing the square in a quadratic function to show zeros, extreme values, and symmetry of the graph; use the properties of exponents to interpret expressions for exponential functions, such as identifying percent rate of change.</li><li><span class="std-cod std-ccr">A-SSE.3</span> <span class="std-nivel">Level E</span> Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression: factor a quadratic expression to reveal the zeros of the function it defines; complete the square in a quadratic expression to reveal the maximum or minimum value of the function it defines.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-parabola">The parabola and its shape</a></li>
+<li><a href="#s-vertex">The vertex and the axis of symmetry</a></li>
+<li><a href="#s-intercepts">The intercepts with the axes</a></li>
+<li><a href="#s-maximum">Maximum and minimum in context</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-parabola"><span aria-hidden="true" class="num-seccion">1</span>The parabola and its shape</h2>
+<p><strong>A link with Topic 7.</strong> In Topic 7 you classified quadratic functions by their pattern. Now you study them in depth: their graph (the <strong>parabola</strong>), their most important point (the <strong>vertex</strong>), and how they model maximum and minimum situations, such as the height of a ball or the profit of a business.</p>
+<p>The graph of a quadratic function f(x) = ax² + bx + c is a parabola. The sign of a decides which way it opens:</p>
+<div aria-label="Which way the parabola opens (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">How the sign of a decides the way the parabola opens</caption>
+<thead><tr><th scope="col">If…</th><th scope="col">The parabola…</th><th scope="col">The vertex is…</th></tr></thead>
+<tbody>
+<tr><td>a &gt; 0</td><td>opens up</td><td>a minimum</td></tr>
+<tr><td>a &lt; 0</td><td>opens down</td><td>a maximum</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Wide or narrow</span>
+<p>The larger |a| is, the narrower the parabola. The number c is where it crosses the y-axis, and b moves the vertex to the side.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Which way?</h3></div>
+<p class="pregunta-int" id="t-p1">f(x) = 2x² − 5x + 1 opens:</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">up</button>
+<button class="opcion" data-k="b" type="button">down</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — A negative a</h3></div>
+<p class="pregunta-int" id="t-p2">f(x) = −x² + 3x opens:</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">up</button>
+<button class="opcion" data-k="b" type="button">down</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — The vertex</h3></div>
+<p class="pregunta-int" id="t-p3">A parabola that opens up has:</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">a minimum</button>
+<button class="opcion" data-k="b" type="button">a maximum</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#parabola" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the shape of the parabola (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the shape of the parabola</span><span class="ei-sub">Sliders for a, b, and c that open, close, and move the parabola, with its vertex and its y-intercept.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-vertex"><span aria-hidden="true" class="num-seccion">2</span>The vertex and the axis of symmetry</h2>
+<p>The <strong>vertex</strong> is the highest or lowest point of the parabola. You find its x-coordinate with the formula, and its y-coordinate by evaluating the function. The <strong>axis of symmetry</strong> is the vertical line through the vertex.</p>
+      <div class="formula">x of the vertex = −b / (2a) · axis of symmetry: x = −b / (2a)</div>
+<svg viewBox="0 0 316 316" role="img" aria-label="The parabola f of x = x squared minus 4x plus 3. It opens up. Its vertex, the lowest point, is 2, negative 1, and the dashed axis of symmetry is the vertical line x = 2. It crosses the x-axis at 1, 0 and 3, 0, and the y-axis at 0, 3." style="width:100%;max-width:330px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="62" y1="30" x2="62" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="94" y1="30" x2="94" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="126" y1="30" x2="126" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="158" y1="30" x2="158" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="222" y1="30" x2="222" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="254" y1="30" x2="254" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="286" y1="30" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="286" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="254" x2="286" y2="254" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="222" x2="286" y2="222" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="286" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="158" x2="286" y2="158" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="126" x2="286" y2="126" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="94" x2="286" y2="94" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="62" x2="286" y2="62" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="286" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="222" x2="296" y2="222" stroke="#10174f" stroke-width="2"/><line x1="94" y1="294" x2="94" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="300,222 290,217 290,227" fill="#10174f"/><polygon points="94,16 89,26 99,26" fill="#10174f"/><text x="300" y="210" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="108" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="158.0" y1="286.0" x2="158.0" y2="30.0" stroke="#6a1b9a" stroke-width="2.5" stroke-dasharray="8 6" stroke-linecap="round"/><line x1="74.8" y1="37.7" x2="76.9" y2="48.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="76.9" y1="48.4" x2="79.0" y2="58.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="79.0" y1="58.8" x2="81.0" y2="68.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.0" y1="68.9" x2="83.1" y2="78.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="83.1" y1="78.8" x2="85.2" y2="88.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="85.2" y1="88.4" x2="87.3" y2="97.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.3" y1="97.7" x2="89.4" y2="106.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="89.4" y1="106.8" x2="91.4" y2="115.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="91.4" y1="115.6" x2="93.5" y2="124.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="93.5" y1="124.1" x2="95.6" y2="132.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="95.6" y1="132.3" x2="97.7" y2="140.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="97.7" y1="140.3" x2="99.8" y2="148.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="99.8" y1="148.0" x2="101.8" y2="155.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="101.8" y1="155.4" x2="103.9" y2="162.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.9" y1="162.6" x2="106.0" y2="169.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.0" y1="169.5" x2="108.1" y2="176.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="108.1" y1="176.1" x2="110.2" y2="182.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="110.2" y1="182.5" x2="112.2" y2="188.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="112.2" y1="188.6" x2="114.3" y2="194.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="114.3" y1="194.4" x2="116.4" y2="199.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="116.4" y1="199.9" x2="118.5" y2="205.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="118.5" y1="205.2" x2="120.6" y2="210.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="120.6" y1="210.2" x2="122.6" y2="214.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="122.6" y1="214.9" x2="124.7" y2="219.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="124.7" y1="219.4" x2="126.8" y2="223.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.8" y1="223.6" x2="128.9" y2="227.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="128.9" y1="227.5" x2="131.0" y2="231.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="131.0" y1="231.2" x2="133.0" y2="234.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="133.0" y1="234.5" x2="135.1" y2="237.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.1" y1="237.6" x2="137.2" y2="240.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="137.2" y1="240.5" x2="139.3" y2="243.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="139.3" y1="243.0" x2="141.4" y2="245.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="141.4" y1="245.3" x2="143.4" y2="247.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="143.4" y1="247.4" x2="145.5" y2="249.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.5" y1="249.1" x2="147.6" y2="250.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="147.6" y1="250.6" x2="149.7" y2="251.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="149.7" y1="251.8" x2="151.8" y2="252.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="151.8" y1="252.8" x2="153.8" y2="253.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="153.8" y1="253.5" x2="155.9" y2="253.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="155.9" y1="253.9" x2="158.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="158.0" y1="254.0" x2="160.1" y2="253.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="160.1" y1="253.9" x2="162.2" y2="253.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="162.2" y1="253.5" x2="164.2" y2="252.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="164.2" y1="252.8" x2="166.3" y2="251.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="166.3" y1="251.8" x2="168.4" y2="250.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="168.4" y1="250.6" x2="170.5" y2="249.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="170.5" y1="249.1" x2="172.6" y2="247.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="172.6" y1="247.4" x2="174.6" y2="245.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="174.6" y1="245.3" x2="176.7" y2="243.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="176.7" y1="243.0" x2="178.8" y2="240.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="178.8" y1="240.5" x2="180.9" y2="237.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="180.9" y1="237.6" x2="183.0" y2="234.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="183.0" y1="234.5" x2="185.0" y2="231.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="185.0" y1="231.2" x2="187.1" y2="227.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="187.1" y1="227.5" x2="189.2" y2="223.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="189.2" y1="223.6" x2="191.3" y2="219.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="191.3" y1="219.4" x2="193.4" y2="214.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="193.4" y1="214.9" x2="195.4" y2="210.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="195.4" y1="210.2" x2="197.5" y2="205.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="197.5" y1="205.2" x2="199.6" y2="199.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="199.6" y1="199.9" x2="201.7" y2="194.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="201.7" y1="194.4" x2="203.8" y2="188.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="203.8" y1="188.6" x2="205.8" y2="182.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="205.8" y1="182.5" x2="207.9" y2="176.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="207.9" y1="176.1" x2="210.0" y2="169.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="210.0" y1="169.5" x2="212.1" y2="162.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="212.1" y1="162.6" x2="214.2" y2="155.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="214.2" y1="155.4" x2="216.2" y2="148.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="216.2" y1="148.0" x2="218.3" y2="140.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="218.3" y1="140.3" x2="220.4" y2="132.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="220.4" y1="132.3" x2="222.5" y2="124.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="222.5" y1="124.1" x2="224.6" y2="115.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="224.6" y1="115.6" x2="226.6" y2="106.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="226.6" y1="106.8" x2="228.7" y2="97.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="228.7" y1="97.7" x2="230.8" y2="88.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="230.8" y1="88.4" x2="232.9" y2="78.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="232.9" y1="78.8" x2="235.0" y2="68.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="235.0" y1="68.9" x2="237.0" y2="58.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="237.0" y1="58.8" x2="239.1" y2="48.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="239.1" y1="48.4" x2="241.2" y2="37.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><circle cx="158.0" cy="254.0" r="6" fill="#c62828" stroke="#fff" stroke-width="2"/><text x="168.0" y="274.0" font-size="15" font-weight="700" fill="#c62828" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">vertex (2, −1)</text><circle cx="126.0" cy="222.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="190.0" cy="222.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="94.0" cy="126.0" r="6" fill="#ef6c00" stroke="#fff" stroke-width="2"/><text x="104.0" y="116.0" font-size="15" font-weight="700" fill="#ef6c00" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">(0, 3)</text><text x="118.0" y="210.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">(1, 0)</text><text x="198.0" y="210.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">(3, 0)</text><text x="166.0" y="49.2" font-size="14" font-weight="700" fill="#6a1b9a" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">axis x = 2</text><text x="30" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="62" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="126" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="158" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="190" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="222" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="254" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="88" y="290" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="88" y="258" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="88" y="194" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="88" y="162" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="88" y="130" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="88" y="98" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="88" y="66" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: find the vertex and the axis of f(x) = x² − 4x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Here a = 1 and b = −4.</strong> x of the vertex: −(−4) / (2 · 1) = 4/2 = 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The y of the vertex:</strong> f(2) = (2)² − 4(2) + 3 = 4 − 8 + 3 = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>Vertex (2, −1); axis of symmetry x = 2; since a &gt; 0, it is a minimum.</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — The x of the vertex</h3></div>
+<p class="pregunta-int" id="t-p4">f(x) = x² − 6x + 5. What is the x of the vertex?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">−3</button>
+<button class="opcion" data-k="c" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — The whole vertex</h3></div>
+<p class="pregunta-int" id="t-p5">f(x) = x² − 4x + 3. The whole vertex is:</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">(−2, −1)</button>
+<button class="opcion" data-k="b" type="button">(2, 1)</button>
+<button class="opcion" data-k="c" type="button">(2, −1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The axis</h3></div>
+<p class="pregunta-int" id="t-p6">The axis of symmetry of f(x) = x² − 6x + 5 is:</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">y = 3</button>
+<button class="opcion" data-k="b" type="button">x = 3</button>
+<button class="opcion" data-k="c" type="button">x = −3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#vertex" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the vertex and the axis of symmetry (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the vertex and the axis of symmetry</span><span class="ei-sub">Functions solved step by step with −b/(2a), the axis drawn, and two symmetric points that show why it is called the axis of symmetry.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-intercepts"><span aria-hidden="true" class="num-seccion">3</span>The intercepts with the axes</h2>
+<p>The intercepts are where the parabola crosses the axes:</p>
+<div aria-label="The intercepts (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">How to find the intercepts of a parabola</caption>
+<thead><tr><th scope="col">Intercept</th><th scope="col">How to find it</th></tr></thead>
+<tbody>
+<tr><td>With the y-axis</td><td>Evaluate f(0) = c. It gives the point (0, c).</td></tr>
+<tr><td>With the x-axis</td><td>Solve ax² + bx + c = 0 (by factoring or with the quadratic formula of Topic 4).</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: the intercepts of f(x) = x² − 4x + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>With y:</strong> f(0) = 3, so (0, 3).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>With x:</strong> x² − 4x + 3 = 0 → (x − 1)(x − 3) = 0 → x = 1 and x = 3, so (1, 0) and (3, 0).</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A link with Topic 4</span>
+<p>Finding the x-intercepts of a parabola is exactly solving a quadratic equation. The discriminant b² − 4ac tells you how many there are: positive, two; zero, one (the vertex touches the axis); negative, none.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — The y-intercept</h3></div>
+<p class="pregunta-int" id="t-p7">The y-intercept of f(x) = x² − 4x + 3 is:</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">(3, 0)</button>
+<button class="opcion" data-k="b" type="button">(0, −3)</button>
+<button class="opcion" data-k="c" type="button">(0, 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 8 — The x-intercepts</h3></div>
+<p class="pregunta-int" id="t-p8">The x-intercepts of f(x) = (x − 1)(x − 3) are:</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 and x = −3</button>
+<button class="opcion" data-k="b" type="button">x = 1 and x = 3</button>
+<button class="opcion" data-k="c" type="button">x = 0 and x = 3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 9 — How to find it</h3></div>
+<p class="pregunta-int" id="t-p9">You find the y-intercept by evaluating:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">f(0)</button>
+<button class="opcion" data-k="b" type="button">f(1)</button>
+<button class="opcion" data-k="c" type="button">x = y</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#intercepts" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the intercepts (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the intercepts</span><span class="ei-sub">The intercepts found step by step, with the discriminant deciding whether there are two, one, or no x-intercepts.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-maximum"><span aria-hidden="true" class="num-seccion">4</span>Maximum and minimum in context</h2>
+<p>The vertex solves real problems: the greatest height of a ball, the greatest profit of a business, the greatest area of a yard. If the parabola opens down, the vertex is the maximum; if it opens up, it is the minimum.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3 (a ball): its height is h(t) = −16t² + 64t + 5 feet (t in seconds). When does it reach its greatest height, and what is it?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Since a = −16 &lt; 0,</strong> it opens down: the vertex is a maximum.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>t of the vertex:</strong> −64 / (2 · −16) = −64 / −32 = 2 seconds.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Greatest height:</strong> <strong>h(2) = −16(4) + 64(2) + 5 = −64 + 128 + 5 = 69 feet.</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4 (profit): the profit is P(x) = −2x² + 120x − 800 dollars. How many units give the greatest profit?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x of the vertex:</strong> −120 / (2 · −2) = −120 / −4 = 30 units.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Greatest profit:</strong> <strong>P(30) = −2(900) + 120(30) − 800 = −1,800 + 3,600 − 800 = $1,000.</strong></p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> About the calculator</span>
+<p>The GED test uses the TI-30XS MultiView calculator. The calculator on this page does the same operations, although some keys have other names or are in other places. Use it to evaluate the function at the vertex, with parentheses around negative numbers.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 10 — Maximum or minimum</h3></div>
+<p class="pregunta-int" id="t-p10">In h(t) = −16t² + 64t + 5, the vertex is a:</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">maximum</button>
+<button class="opcion" data-k="b" type="button">minimum</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 11 — When?</h3></div>
+<p class="pregunta-int" id="t-p11">The greatest height of h(t) = −16t² + 64t + 5 happens at t =</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">4 s</button>
+<button class="opcion" data-k="b" type="button">2 s</button>
+<button class="opcion" data-k="c" type="button">64 s</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 12 — The profit</h3></div>
+<p class="pregunta-int" id="t-p12">P(x) = −2x² + 120x − 800 is greatest at x =</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">60</button>
+<button class="opcion" data-k="b" type="button">120</button>
+<button class="opcion" data-k="c" type="button">30</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#maximum" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: maximum and minimum (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: maximum and minimum</span><span class="ei-sub">Four situations (a ball, a fenced yard, income, and cost) with the vertex marked and a slider to check that no other value beats it.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-8-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook, graph paper, the calculator, and the GED formula sheet: (1) The ball and the profit: the height of a ball is h(t) = −16t² + 64t + 5 (in feet, with t in seconds). Graph it, find the greatest height with the vertex, and find when it hits the ground. Then find how many units x give the greatest profit P(x) = −2x² + 120x − 800 and what that profit is. (2) The four features: make a table with the direction of opening, the vertex, the axis of symmetry, and the intercepts of y = x² − 4x + 3, y = −x² + 6x − 5, y = 2x² + 8x, and y = x² + 2x + 5. One of them has no x-intercepts; explain how you know. (3) From the vertex to the answer: you have 40 feet of fence for a rectangular garden. Write the area as a function of the width, find the vertex, and say which measurements give the greatest area. Do it again if one side of the garden is against a wall and needs no fence. Then do several exercises of each activity on the practice page. About 70 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Throw a ball straight up and count the seconds until it comes back down. Use h(t) = −16t² + vt with that time to estimate how fast you threw it and how high it went.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">f(x) = x² − 6x + 5. What is the x of the vertex?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6</button><button class="opcion" data-k="b" type="button">−3</button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">f(x) = x² − 6x + 5. What is the whole vertex?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(−3, −4)</button><button class="opcion" data-k="b" type="button">(3, 4)</button><button class="opcion" data-k="c" type="button">(6, 5)</button><button class="opcion" data-k="d" type="button">(3, −4)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">The axis of symmetry of f(x) = 2x² − 8x + 1 is:</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2</button><button class="opcion" data-k="b" type="button">y = 2</button><button class="opcion" data-k="c" type="button">x = −2</button><button class="opcion" data-k="d" type="button">x = 4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">f(x) = −3x² + x − 2 opens:</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">up</button><button class="opcion" data-k="b" type="button">down</button><button class="opcion" data-k="c" type="button">to the right</button><button class="opcion" data-k="d" type="button">to the left</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A parabola with a &gt; 0 has a:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">maximum</button><button class="opcion" data-k="b" type="button">neither a maximum nor a minimum</button><button class="opcion" data-k="c" type="button">two vertices</button><button class="opcion" data-k="d" type="button">minimum</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">The y-intercept of f(x) = x² + 2x − 6 is:</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(0, −6)</button><button class="opcion" data-k="b" type="button">(−6, 0)</button><button class="opcion" data-k="c" type="button">(0, 6)</button><button class="opcion" data-k="d" type="button">(2, −6)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A ball: h(t) = −16t² + 96t. At what time does it reach its greatest height?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6 s</button><button class="opcion" data-k="b" type="button">3 s</button><button class="opcion" data-k="c" type="button">96 s</button><button class="opcion" data-k="d" type="button">16 s</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">With h(t) = −16t² + 96t, the greatest height is:</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">288 ft</button><button class="opcion" data-k="b" type="button">96 ft</button><button class="opcion" data-k="c" type="button">144 ft</button><button class="opcion" data-k="d" type="button">48 ft</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for quadratic functions (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the parabola, the vertex, and the intercepts and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Finding the vertex</th><td>I find the whole vertex (x and y) and check it with symmetry.</td><td>I find the x of the vertex, but not the y.</td><td>I do not use x = −b/(2a).</td></tr>
+<tr><th scope="row">Opening and intercepts</th><td>I tell the opening from a and find all the intercepts.</td><td>I find only one kind of intercept.</td><td>I do not connect a with the opening.</td></tr>
+<tr><th scope="row">Maximum and minimum in context</th><td>I explain the vertex as the maximum or the minimum, with its units.</td><td>I find the vertex but do not explain it.</td><td>I do not use the vertex in context.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you studied quadratic functions: the parabola, the way it opens, the vertex and the axis of symmetry, the intercepts, and the vertex as a maximum or a minimum in context.</p>
+<p>In <strong>Lesson 8.2 · Exponential functions, growth and decay, and a first look at logarithms</strong> you study the other great model of the GED test: exponential functions, with compound interest and half-life, and a first look at the logarithm.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-8-2.html">Lesson 8.2 · Exponential functions, growth and decay, and a first look at logarithms</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>parabola</dt><dd>The U-shaped graph of a quadratic function.</dd>
+<dt>vertex</dt><dd>The highest or lowest point of a parabola; its x is −b/(2a).</dd>
+<dt>axis of symmetry</dt><dd>The vertical line through the vertex: x = −b/(2a).</dd>
+<dt>intercept</dt><dd>A point where the graph crosses an axis.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 8 · Lesson 8.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.2",
+ "review": "sections 2 and 4",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "a = 2 is positive."
+   },
+   "right": "a &gt; 0: it opens up.",
+   "solution": "Up."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "a = −1 is negative."
+   },
+   "right": "a &lt; 0: it opens down.",
+   "solution": "Down."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Opening up, the vertex is the lowest point."
+   },
+   "right": "The vertex is the lowest point.",
+   "solution": "A minimum."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "−b = −(−6) = 6, positive.",
+    "c": "Divide by 2a = 2."
+   },
+   "right": "6 / 2 = 3.",
+   "solution": "3."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "x = −(−4)/2 = 2, positive.",
+    "b": "f(2) = 4 − 8 + 3 = −1."
+   },
+   "right": "x = 2; f(2) = −1.",
+   "solution": "(2, −1)."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "The axis is vertical: x = …",
+    "c": "x = −(−6)/2 = 3."
+   },
+   "right": "A vertical line through the vertex.",
+   "solution": "x = 3."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "On the y-axis, x = 0: (0, …).",
+    "b": "f(0) = c = 3, positive."
+   },
+   "right": "f(0) = 3.",
+   "solution": "(0, 3)."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "x − 1 = 0 gives x = 1, not −1.",
+    "c": "Set each factor equal to 0."
+   },
+   "right": "Each factor equal to zero.",
+   "solution": "x = 1 and x = 3."
+  },
+  "p9": {
+   "ok": "a",
+   "hints": {
+    "b": "On the y-axis, x is 0.",
+    "c": "Substitute x = 0."
+   },
+   "right": "On the y-axis, x = 0.",
+   "solution": "f(0)."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "a = −16 is negative: it opens down."
+   },
+   "right": "It opens down: maximum.",
+   "solution": "A maximum."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "At 4 s the ball is back near where it started. Use t = −b/(2a).",
+    "c": "64 is b; divide −b by 2a."
+   },
+   "right": "−64 / (−32) = 2.",
+   "solution": "2 s."
+  },
+  "p12": {
+   "ok": "c",
+   "hints": {
+    "a": "Divide −120 by 2a = −4.",
+    "b": "120 is b; divide −b by 2a."
+   },
+   "right": "−120 / (−4) = 30.",
+   "solution": "30."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "−b/(2a) = 6/2.",
+    "b": "−(−6) is positive.",
+    "d": "5 is c."
+   },
+   "solution": "x = 3."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "x = 3, positive.",
+    "b": "f(3) = 9 − 18 + 5 = −4.",
+    "c": "Use x = −b/(2a), not b and c."
+   },
+   "solution": "(3, −4)."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "The axis is a vertical line: x = …",
+    "c": "−(−8) = 8, positive.",
+    "d": "Divide 8 by 2a = 4."
+   },
+   "solution": "x = 2."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "a = −3 is negative.",
+    "c": "A function's parabola opens up or down.",
+    "d": "A function's parabola opens up or down."
+   },
+   "solution": "Down."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "a &gt; 0 opens up.",
+    "b": "The vertex is always a maximum or a minimum.",
+    "c": "A parabola has one vertex."
+   },
+   "solution": "A minimum."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "On the y-axis, x = 0: (0, …).",
+    "c": "f(0) = −6, negative.",
+    "d": "x must be 0."
+   },
+   "solution": "(0, −6)."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "At 6 s the ball is back on the ground.",
+    "c": "96 is b.",
+    "d": "16 is |a|."
+   },
+   "solution": "−96 / (−32) = 3 s."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "Evaluate h(3) = −16(9) + 96(3).",
+    "b": "96 is b, not the height.",
+    "d": "h(3) = −144 + 288."
+   },
+   "solution": "h(3) = 144 feet."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

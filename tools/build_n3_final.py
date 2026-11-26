@@ -210,7 +210,7 @@ def pagina():
 </style>
 </head>
 <body>
-<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="{t("LearnGED home", "Inicio de LearnGED")}" height="34"></a><a class="lg-link" href="{t("lesson-8-3", "leccion-8-3")}.html">{t("← Back to Lesson 8.3", "← Volver a la Lección 8.3")}</a></nav>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="{"/" if lang == "en" else "/es/"}"><img src="/img/learnged-logo-horizontal.svg" alt="{t("LearnGED home", "Inicio de LearnGED")}" height="34"></a><a class="lg-link" href="{t("lesson-8-3", "leccion-8-3")}.html">{t("← Back to Lesson 8.3", "← Volver a la Lección 8.3")}</a></nav>
 <a class="saltar" href="#preguntas">{t("Skip to the questions", "Saltar a las preguntas")}</a>
 <div class="contenedor">
   <header class="principal">
@@ -254,7 +254,7 @@ def pagina():
     <p><strong>{t("Level 3 · Final check · LearnGED", "Nivel 3 · Evaluación final · LearnGED")}</strong><br>
     José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
     <p>{t("This work is licensed under", "Esta obra está bajo la licencia")} <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons BY-NC-SA 4.0</a>.</p>
-    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>
+    <p class="tm">{t("GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.", "GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.")}</p>
   </footer>
 </div>
 <script src="{pre}practice.js"></script>

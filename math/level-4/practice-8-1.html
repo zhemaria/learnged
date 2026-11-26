@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 8.1 · practice (English) — built by tools/build_n4_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .tabla-lados.centro td,.tabla-lados.centro th{text-align:center;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 8 · Modeling with functions and a practice GED test</div>
+    <h1>Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try. You may use the calculator.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#parabola">The parabola and its shape</a></li>
+      <li><a href="#vertex">The vertex and the axis of symmetry</a></li>
+      <li><a href="#intercepts">The intercepts with the axes</a></li>
+      <li><a href="#maximum">Maximum and minimum in context</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="parabola" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The parabola and its shape</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Move a, b, and c in f(x) = ax² + bx + c. The sign of a opens the parabola up or down, |a| makes it narrower or wider, b moves the vertex to the side, and c is the y-intercept.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="f-a">a = <output id="f-av"></output></label><input type="range" id="f-a" min="-3" max="3" step="0.5" value="1"></div><div class="campo"><label for="f-b">b = <output id="f-bv"></output></label><input type="range" id="f-b" min="-6" max="6" step="1" value="-2"></div><div class="campo"><label for="f-c">c = <output id="f-cv"></output></label><input type="range" id="f-c" min="-6" max="6" step="1" value="-3"></div></div></div>
+      <div class="salida" aria-live="polite" id="f-txt"></div>
+      <div id="f-graf"></div>
+      <h3>Practice: which way does it open?</h3>
+      <div class="practica" id="aq">
+        <div class="enun" id="aq-enun"></div>
+        <div class="opciones" id="aq-opciones"></div>
+        <div class="fb" id="aq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="aq-nuevo">New exercise</button></div>
+        <p class="marcador" id="aq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="vertex">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The vertex and the axis of symmetry</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">x of the vertex = −b / (2a) · axis: x = −b / (2a)</div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="v-fun">Function</label><select id="v-fun"><option value="0">f(x) = x² − 4x + 3</option><option value="1">f(x) = x² − 6x + 5</option><option value="2">f(x) = −x² + 4x + 1</option><option value="3">f(x) = x² + 2x − 3</option><option value="4">f(x) = 2x² − 8x + 5</option><option value="5">f(x) = x² + 4</option><option value="6">f(x) = −2x² − 4x + 6</option><option value="7">f(x) = −x² + 6x − 5</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="v-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="v-sig">Show the next step</button><button type="button" class="btn-sec" id="v-todo">Show all the steps</button><button type="button" class="btn-sec" id="v-nuevo">Start again</button></div></div>
+      <div class="pasos" id="v-pasos" aria-live="polite"></div>
+      <div id="v-graf"></div>
+      <h3>Practice: find the vertex</h3>
+      <div class="practica" id="vq">
+        <div class="enun" id="vq-enun"></div>
+        <div class="par-campos" role="group" aria-label="Your answer as an ordered pair"><span class="pa" aria-hidden="true">(</span>
+          <div class="campo"><label for="vq-x">x</label><input type="text" inputmode="decimal" autocomplete="off" id="vq-x"></div><span class="pa" aria-hidden="true">,</span>
+          <div class="campo"><label for="vq-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="vq-y"></div><span class="pa" aria-hidden="true">)</span></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="vq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="vq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="vq-fb" role="status"></div>
+        <p class="marcador" id="vq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="intercepts">
+    <summary><span class="num" aria-hidden="true">3</span><h2>The intercepts with the axes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The y-intercept is f(0) = c. The x-intercepts are the solutions of ax² + bx + c = 0; the discriminant b² − 4ac tells you how many there are.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="i-fun">Function</label><select id="i-fun"><option value="0">f(x) = x² − 4x + 3</option><option value="1">f(x) = x² − 2x − 8</option><option value="2">f(x) = x² − 6x + 9</option><option value="3">f(x) = x² + 2x + 5</option><option value="4">f(x) = 2x² − 3x − 2</option><option value="5">f(x) = x² − 2x − 1</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="i-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="i-sig">Show the next step</button><button type="button" class="btn-sec" id="i-todo">Show all the steps</button><button type="button" class="btn-sec" id="i-nuevo">Start again</button></div></div>
+      <div class="pasos" id="i-pasos" aria-live="polite"></div>
+      <div id="i-graf"></div>
+      <h3>Practice: the intercepts</h3>
+      <div class="practica" id="iq">
+        <div class="enun" id="iq-enun"></div>
+        <div class="opciones" id="iq-opciones"></div>
+        <div class="fb" id="iq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="iq-nuevo">New exercise</button></div>
+        <p class="marcador" id="iq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="maximum">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Maximum and minimum in context</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Choose a situation. The vertex gives the answer; move the slider to check that no other value does better.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="x-caso">Situation</label><select id="x-caso"><option value="0">The ball</option><option value="1">The fenced garden</option><option value="2">The store's income</option><option value="3">The cost of production</option></select></div><div class="campo"><label for="x-val">Try a value: <output id="x-valv"></output></label><input type="range" id="x-val" min="0" max="6" step="0.5" value="1"></div></div><p class="enun" id="x-enun"></p></div>
+      <div id="x-graf"></div>
+      <div class="salida" aria-live="polite" id="x-txt"></div>
+      <h3>Practice: maximum and minimum</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="opciones" id="mq-opciones"></div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="mq-nuevo">New exercise</button></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 8 · Modeling with functions and a practice GED test · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script src="/math/func4.js"></script>
+<script>
+function uniq(l){ return l.filter(function(o, i){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }); }
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function qTxt(a, b, c, n){ return (n || "f") + "(x) = " + pVis([c, b, a]); }
+function vert(a, b, c){ var x = -b / (2 * a); return [x, a * x * x + b * x + c]; }
+function rr(v){ return Math.round(v * 100) / 100; }
+function rangoPara(a, b, c){ var v = vert(a, b, c), x0 = Math.floor(v[0] - 5), x1 = Math.ceil(v[0] + 5), ys = [v[1], a * x0 * x0 + b * x0 + c, a * x1 * x1 + b * x1 + c, c];
+  var y0 = Math.floor(Math.min(0, Math.min.apply(null, ys))) - 1, y1 = Math.ceil(Math.max(0, Math.max.apply(null, ys))) + 1; if (y1 - y0 > 40){ if (a > 0) y1 = Math.ceil(Math.max(v[1] + 30, c + 2, 2)); else y0 = Math.floor(Math.min(v[1] - 30, c - 2, -2)); }
+  return {x0: Math.min(x0, -1), x1: Math.max(x1, 1), y0: y0, y1: y1}; }
+
+/* ===== MODULE 1 · The shape of the parabola ===== */
+function paDibuja(){ var a = +$("f-a").value, b = +$("f-b").value, c = +$("f-c").value;
+  if (!a){ a = .5; $("f-a").value = .5; }
+  $("f-av").textContent = sg(a); $("f-bv").textContent = sg(b); $("f-cv").textContent = sg(c);
+  var v = vert(a, b, c), R = {x0: -8, x1: 8, y0: -10, y1: 10};
+  $("f-graf").innerHTML = grafFun({rango: R, paso: 2, curvas: [{f: function(x){ return a * x * x + b * x + c; }}], puntos: [[v[0], v[1], "#c62828", T("vertex ", "vértice ") + par(rr(v[0]), rr(v[1])), 6.5, a < 0], [0, c, "#ef6c00", par(0, c), 6, a < 0, v[0] < 0]],
+    voz: T("Graph of ", "Gráfica de ") + qTxt(a, b, c) + T(". Vertex ", ". Vértice ") + par(rr(v[0]), rr(v[1])) + "."});
+  $("f-txt").innerHTML = '<div class="linea"><strong>' + qTxt(a, b, c) + "</strong></div>" +
+    '<div class="linea">' + (a > 0 ? T("a = " + sg(a) + " is positive: the parabola opens <strong>up</strong> and the vertex is a <strong>minimum</strong>.", "a = " + sg(a) + " es positivo: la parábola abre <strong>hacia arriba</strong> y el vértice es un <strong>mínimo</strong>.") : T("a = " + sg(a) + " is negative: the parabola opens <strong>down</strong> and the vertex is a <strong>maximum</strong>.", "a = " + sg(a) + " es negativo: la parábola abre <strong>hacia abajo</strong> y el vértice es un <strong>máximo</strong>.")) +
+    " " + (Math.abs(a) > 1 ? T("|a| &gt; 1: narrower than y = x².", "|a| &gt; 1: más cerrada que y = x².") : Math.abs(a) < 1 ? T("|a| &lt; 1: wider than y = x².", "|a| &lt; 1: más abierta que y = x².") : T("|a| = 1: as wide as y = x².", "|a| = 1: igual de abierta que y = x².")) + "</div>" +
+    '<div class="linea">' + T("Vertex: x = −b/(2a) = ", "Vértice: x = −b/(2a) = ") + sg(rr(v[0])) + ", y = " + sg(rr(v[1])) + T(". The y-intercept is c: ", ". El intercepto con el eje y es c: ") + par(0, c) + ".</div>"; }
+["f-a", "f-b", "f-c"].forEach(function(id){ $(id).addEventListener("input", paDibuja); }); paDibuja();
+OMR("aq", function(){ var a = nz(-4, 4), b = aleatorio(-6, 6), c = aleatorio(-9, 9), arriba = a > 0;
+  return {enun: T("Which way does ", "¿Hacia dónde abre ") + "<strong>" + qTxt(a, b, c) + "</strong>" + T(" open, and what is its vertex?", " y qué es su vértice?"), correcta: arriba ? "am" : "bM", enOrden: true,
+    opciones: [{clave: "am", html: T("up · the vertex is a minimum", "hacia arriba · el vértice es un mínimo")}, {clave: "aM", html: T("up · the vertex is a maximum", "hacia arriba · el vértice es un máximo")}, {clave: "bM", html: T("down · the vertex is a maximum", "hacia abajo · el vértice es un máximo")}, {clave: "bm", html: T("down · the vertex is a minimum", "hacia abajo · el vértice es un mínimo")}],
+    pista: T("Look only at a, the number in front of x². Then think: opening up, is the vertex the top or the bottom?", "Fíjese solo en a, el número delante de x². Después piense: si abre hacia arriba, ¿el vértice es lo más alto o lo más bajo?"),
+    bien: "a = " + sg(a) + (arriba ? T(" &gt; 0: it opens up, and the vertex is the lowest point (a minimum).", " &gt; 0: abre hacia arriba y el vértice es el punto más bajo (un mínimo).") : T(" &lt; 0: it opens down, and the vertex is the highest point (a maximum).", " &lt; 0: abre hacia abajo y el vértice es el punto más alto (un máximo)."))};
+});
+
+/* ===== MODULE 2 · The vertex and the axis of symmetry ===== */
+var QV = [[1, -4, 3], [1, -6, 5], [-1, 4, 1], [1, 2, -3], [2, -8, 5], [1, 0, 4], [-2, -4, 6], [-1, 6, -5]];
+function pasosVert(a, b, c){ var v = vert(a, b, c), d = 2, p = [c, b, a];
+  return [T("The coefficients: a = " + sg(a) + ", b = " + sg(b) + ", c = " + sg(c) + ".", "Los coeficientes: a = " + sg(a) + ", b = " + sg(b) + " y c = " + sg(c) + "."),
+    T("The x of the vertex: ", "La x del vértice: ") + "x = −b / (2a) = −(" + sg(b) + ") / (2 · " + (a < 0 ? "(" + sg(a) + ")" : a) + ") = " + sg(-b) + " / " + sg(2 * a) + " = <strong>" + sg(rr(v[0])) + "</strong>.",
+    T("The y of the vertex: ", "La y del vértice: ") + "f(" + sg(rr(v[0])) + ") = " + sustP(p, rr(v[0])) + " = <strong>" + sg(rr(v[1])) + "</strong>.",
+    T("Vertex ", "Vértice ") + "<strong>" + par(rr(v[0]), rr(v[1])) + "</strong>; " + T("axis of symmetry ", "eje de simetría ") + "<strong>x = " + sg(rr(v[0])) + "</strong>" + T(" (an equation in x: a vertical line).", " (una ecuación en x: una recta vertical)."),
+    T("Symmetry check: f(" + sg(rr(v[0] - d)) + ") = " + sg(rr(pEval(p, v[0] - d))) + " and f(" + sg(rr(v[0] + d)) + ") = " + sg(rr(pEval(p, v[0] + d))) + ": the same height on both sides of the axis.", "Comprobación con la simetría: f(" + sg(rr(v[0] - d)) + ") = " + sg(rr(pEval(p, v[0] - d))) + " y f(" + sg(rr(v[0] + d)) + ") = " + sg(rr(pEval(p, v[0] + d))) + ": la misma altura a los dos lados del eje."),
+    "<strong>" + (a > 0 ? T("a &gt; 0: the vertex is a minimum.", "a &gt; 0: el vértice es un mínimo.") : T("a &lt; 0: the vertex is a maximum.", "a &lt; 0: el vértice es un máximo.")) + "</strong>"]; }
+function grafVert(a, b, c, sim){ var v = vert(a, b, c), p = [c, b, a], R = rangoPara(a, b, c), d = 2, pts = [[v[0], v[1], "#c62828", T("vertex ", "vértice ") + par(rr(v[0]), rr(v[1])), 7, a < 0, true]];
+  if (sim) pts.push([v[0] - d, pEval(p, v[0] - d), "#2e7d32", null, 6], [v[0] + d, pEval(p, v[0] + d), "#2e7d32", null, 6]);
+  return grafFun({rango: R, curvas: [{f: function(x){ return pEval(p, x); }}], segmentos: [[[v[0], R.y0], [v[0], R.y1], "#6a1b9a", "8 6", 2.5]].concat(sim ? [[[v[0] - d, pEval(p, v[0] - d)], [v[0] + d, pEval(p, v[0] + d)], "#2e7d32", "4 4", 2]] : []), puntos: pts,
+    voz: T("Graph of ", "Gráfica de ") + qTxt(a, b, c) + T(" with its vertex ", " con su vértice ") + par(rr(v[0]), rr(v[1])) + T(" and its axis x = ", " y su eje x = ") + sg(rr(v[0])) + "."}); }
+var VA = null;
+pasoAPaso4("v", function(){ var q = QV[+$("v-fun").value]; VA = q; return {enun: T("Find the vertex and the axis of ", "Halle el vértice y el eje de ") + "<strong>" + qTxt(q[0], q[1], q[2]) + "</strong>.", pasos: pasosVert(q[0], q[1], q[2]), inicio: function(){ $("v-graf").innerHTML = ""; }, fin: function(){ $("v-graf").innerHTML = grafVert(VA[0], VA[1], VA[2], true); }}; });
+$("v-fun").addEventListener("change", function(){ $("v-nuevo").click(); });
+creaPracticaPar("vq", function(){ var a = elige([1, 1, -1, 2, -2, 3]), h = aleatorio(-4, 4), k = aleatorio(-8, 8), b = -2 * a * h, c = a * h * h + k;
+  return {enun: T("Find the vertex of ", "Halle el vértice de ") + "<strong>" + qTxt(a, b, c) + "</strong>.", x: h, y: k,
+    diag: function(x, y){ if (x === -h && h) return T("Check the sign of the x: x = −b/(2a) = −(" + sg(b) + ") / " + sg(2 * a) + ".", "Revise el signo de la x: x = −b/(2a) = −(" + sg(b) + ") / " + sg(2 * a) + "."); if (x === h) return T("The x is right. Now evaluate f(" + sg(h) + ") to find the y.", "La x está bien. Ahora evalúe f(" + sg(h) + ") para hallar la y."); return T("Use x = −b/(2a), then evaluate the function at that x.", "Use x = −b/(2a) y después evalúe la función en esa x."); },
+    solucion: "x = −(" + sg(b) + ") / (2 · " + (a < 0 ? "(" + sg(a) + ")" : a) + ") = " + sg(h) + "; f(" + sg(h) + ") = " + sustP([c, b, a], h) + " = " + sg(k) + T(". Vertex ", ". Vértice ") + par(h, k) + "."};
+});
+
+/* ===== MODULE 3 · The intercepts ===== */
+var QI = [[1, -4, 3], [1, -2, -8], [1, -6, 9], [1, 2, 5], [2, -3, -2], [1, -2, -1]];
+function pasosInter(a, b, c){ var p = [c, b, a], D = b * b - 4 * a * c, st = [];
+  st.push(T("With the y-axis: f(0) = c = " + sg(c) + ", so the point is ", "Con el eje y: f(0) = c = " + sg(c) + ", así que el punto es ") + "<strong>" + par(0, c) + "</strong>.");
+  st.push(T("With the x-axis, solve ", "Con el eje x se resuelve ") + pVis(p) + " = 0. " + T("Discriminant: ", "Discriminante: ") + "b² − 4ac = " + (b < 0 ? "(" + sg(b) + ")" : b) + "² − 4(" + sg(a) + ")(" + sg(c) + ") = " + sg(D) + ".");
+  if (D < 0){ st.push(T("The discriminant is negative: the equation has no real solutions.", "El discriminante es negativo: la ecuación no tiene soluciones reales.")); st.push("<strong>" + T("No x-intercepts: the parabola does not touch the x-axis.", "Ningún intercepto con el eje x: la parábola no toca el eje x.") + "</strong>"); return st; }
+  var r = Math.sqrt(D), x1 = (-b - r) / (2 * a), x2 = (-b + r) / (2 * a);
+  if (D === 0){ st.push(T("The discriminant is 0: one double root, x = −b/(2a) = " + sg(rr(x1)) + ".", "El discriminante es 0: una raíz doble, x = −b/(2a) = " + sg(rr(x1)) + ".")); st.push("<strong>" + T("One x-intercept, ", "Un intercepto con el eje x, ") + par(rr(x1), 0) + T(": the vertex touches the axis.", ": el vértice toca el eje.") + "</strong>"); return st; }
+  st.push(T("Positive discriminant: two solutions. ", "Discriminante positivo: dos soluciones. ") + "x = (" + sg(-b) + " ± √" + D + ") / " + sg(2 * a) + (r === Math.round(r) ? " = (" + sg(-b) + " ± " + r + ") / " + sg(2 * a) : " ≈ (" + sg(-b) + " ± " + rr(r) + ") / " + sg(2 * a)) + ".");
+  var lo = Math.min(x1, x2), hi = Math.max(x1, x2);
+  st.push("<strong>" + T("Two x-intercepts: ", "Dos interceptos con el eje x: ") + par(rr(lo), 0) + T(" and ", " y ") + par(rr(hi), 0) + (r === Math.round(r) ? "" : T(" (rounded)", " (redondeados)")) + ".</strong>"); return st; }
+var IA = null;
+pasoAPaso4("i", function(){ var q = QI[+$("i-fun").value]; IA = q; return {enun: T("Find the intercepts of ", "Halle los interceptos de ") + "<strong>" + qTxt(q[0], q[1], q[2]) + "</strong>.", pasos: pasosInter(q[0], q[1], q[2]), inicio: function(){ $("i-graf").innerHTML = ""; },
+  fin: function(){ var a = IA[0], b = IA[1], c = IA[2], p = [c, b, a], D = b * b - 4 * a * c, pts = [[0, c, "#ef6c00", par(0, c), 6.5, a < 0, vert(a, b, c)[0] < 0]];
+    if (D >= 0){ var r = Math.sqrt(D); [(-b - r) / (2 * a), (-b + r) / (2 * a)].forEach(function(x, i){ if (i && D === 0) return; pts.push([x, 0, "#2e7d32", par(rr(x), 0), 6.5, a < 0, x > vert(a, b, c)[0]]); }); }
+    $("i-graf").innerHTML = grafFun({rango: rangoPara(a, b, c), curvas: [{f: function(x){ return pEval(p, x); }}], puntos: pts, voz: T("Graph of ", "Gráfica de ") + qTxt(a, b, c) + T(" with its intercepts.", " con sus interceptos.")}); }}; });
+$("i-fun").addEventListener("change", function(){ $("i-nuevo").click(); });
+OMR("iq", function(){ var t = aleatorio(0, 2);
+  if (t === 0){ var a = nz(-3, 3), b = aleatorio(-6, 6), c = nz(-9, 9);
+    return {enun: T("What is the y-intercept of ", "¿Cuál es el intercepto con el eje y de ") + "<strong>" + qTxt(a, b, c) + "</strong>?", correcta: "ok",
+      opciones: uniq([{clave: "ok", html: par(0, c)}, {clave: "x", html: par(c, 0)}, {clave: "s", html: par(0, -c)}, {clave: "a", html: par(0, a)}]),
+      pista: T("On the y-axis, x = 0: evaluate f(0).", "En el eje y, x = 0: evalúe f(0)."), bien: "f(0) = " + sg(c) + "."}; }
+  if (t === 1){ var r1 = aleatorio(-6, 6), r2; do { r2 = aleatorio(-6, 6); } while (r2 === r1); var k = elige([1, 1, 2]), p = pMul([-r1 * k, k], [-r2, 1]), fact = Math.random() < .5;
+    var txt = fact ? "f(x) = " + (k === 1 ? "" : k) + "(x " + (r1 < 0 ? "+ " + -r1 : "− " + r1) + ")(x " + (r2 < 0 ? "+ " + -r2 : "− " + r2) + ")" : "f(x) = " + pVis(p);
+    var lo = Math.min(r1, r2), hi = Math.max(r1, r2), op = function(u, v){ return T("x = " + sg(u) + " and x = " + sg(v), "x = " + sg(u) + " y x = " + sg(v)); };
+    return {enun: T("What are the x-intercepts of ", "¿Cuáles son los interceptos con el eje x de ") + "<strong>" + txt.replace(/\(x − 0\)/g, "x").replace(/\(x \+ 0\)/g, "x") + "</strong>?", correcta: "ok",
+      opciones: uniq([{clave: "ok", html: op(lo, hi)}, {clave: "s", html: op(-hi, -lo)}, {clave: "y", html: op(0, p[0])}, {clave: "m", html: op(lo, -hi)}]),
+      pista: fact ? T("Set each factor equal to 0. Careful with the signs: x − 3 = 0 gives x = 3.", "Iguale cada factor a 0. Cuidado con los signos: x − 3 = 0 da x = 3.") : T("Factor the trinomial (or use the quadratic formula) and set each factor equal to 0.", "Factorice el trinomio (o use la fórmula cuadrática) e iguale cada factor a 0."),
+      bien: T("The factors give ", "Los factores dan ") + op(lo, hi) + "."}; }
+  var a2 = nz(-2, 3), b2 = aleatorio(-6, 6), c2 = aleatorio(-6, 6), D = b2 * b2 - 4 * a2 * c2, n = D > 0 ? "2" : D === 0 ? "1" : "0";
+  if (Math.random() < .35){ var h = aleatorio(-3, 3); a2 = 1; b2 = -2 * h; c2 = h * h; D = 0; n = "1"; }
+  return {enun: T("How many x-intercepts does ", "¿Cuántos interceptos con el eje x tiene ") + "<strong>" + qTxt(a2, b2, c2) + "</strong>" + T(" have?", "?"), correcta: n, enOrden: true,
+    opciones: [{clave: "2", html: T("two", "dos")}, {clave: "1", html: T("one", "uno")}, {clave: "0", html: T("none", "ninguno")}],
+    pista: T("Find the discriminant b² − 4ac: positive, two; zero, one; negative, none.", "Calcule el discriminante b² − 4ac: positivo, dos; cero, uno; negativo, ninguno."),
+    bien: "b² − 4ac = " + (b2 < 0 ? "(" + sg(b2) + ")" : b2) + "² − 4(" + sg(a2) + ")(" + sg(c2) + ") = " + sg(D) + "."};
+});
+
+/* ===== MODULE 4 · Maximum and minimum in context ===== */
+var CTX = [
+ {a: -16, b: 64, c: 80, x0: 0, x1: 5, p: .5, n: "h(t)", vx: "t", ux: T("seconds", "segundos"), uy: T("feet", "pies"), ex: T("A ball is thrown from a roof, and its height in feet after t seconds is h(t) = −16t² + 64t + 80.", "Una pelota se lanza desde una azotea y su altura en pies a los t segundos es h(t) = −16t² + 64t + 80."), qx: T("After how many seconds is it highest?", "¿A los cuántos segundos alcanza la altura máxima?"), qy: T("What is that greatest height?", "¿Cuál es esa altura máxima?")},
+ {a: -2, b: 40, c: 0, x0: 0, x1: 20, p: .5, n: "A(x)", vx: "x", ux: T("feet", "pies"), uy: T("square feet", "pies cuadrados"), ex: T("A rectangular garden against a wall is fenced on three sides with 40 feet of fence. If each side perpendicular to the wall is x, the area is A(x) = x(40 − 2x) = −2x² + 40x.", "Un jardín rectangular contra una pared se cerca por tres lados con 40 pies de cerca. Si cada lado perpendicular a la pared mide x, el área es A(x) = x(40 − 2x) = −2x² + 40x."), qx: T("How long should x be for the greatest area?", "¿Cuánto debe medir x para que el área sea máxima?"), qy: T("What is the greatest area?", "¿Cuál es el área máxima?")},
+ {a: -2, b: 100, c: 0, x0: 0, x1: 50, p: 1, n: "I(x)", vx: "x", ux: T("dollars", "dólares"), uy: T("dollars", "dólares"), ex: T("A store sells (100 − 2x) T-shirts when the price is x dollars. The income is I(x) = x(100 − 2x) = −2x² + 100x.", "Una tienda vende (100 − 2x) camisetas cuando el precio es x dólares. El ingreso es I(x) = x(100 − 2x) = −2x² + 100x."), qx: T("Which price gives the greatest income?", "¿Qué precio deja el ingreso máximo?"), qy: T("What is that greatest income?", "¿Cuál es ese ingreso máximo?")},
+ {a: 1, b: -20, c: 150, x0: 0, x1: 20, p: 1, n: "C(x)", vx: "x", ux: T("pieces", "piezas"), uy: T("dollars", "dólares"), ex: T("A shop's daily cost, in dollars, is C(x) = x² − 20x + 150, where x is the number of pieces made.", "El costo diario de un taller, en dólares, es C(x) = x² − 20x + 150, donde x es la cantidad de piezas producidas."), qx: T("How many pieces give the least cost?", "¿Con cuántas piezas el costo es mínimo?"), qy: T("What is that least cost?", "¿Cuál es ese costo mínimo?")}];
+function cuDibuja(){ var C = CTX[+$("x-caso").value], s = $("x-val"); s.min = C.x0; s.max = C.x1; s.step = C.p; if (+s.value > C.x1 || +s.value < C.x0) s.value = C.x0 + (C.x1 - C.x0) / 4;
+  var x = +s.value, p = [C.c, C.b, C.a], v = vert(C.a, C.b, C.c), fx = pEval(p, x), ys = [pEval(p, C.x0), pEval(p, C.x1), v[1]], y0 = Math.min(0, Math.min.apply(null, ys)), y1 = Math.max.apply(null, ys);
+  $("x-valv").textContent = sg(x); $("x-enun").innerHTML = C.ex;
+  var dol = C.uy === T("dollars", "dólares"), f = function(y){ return dol ? "$" + rr(y).toLocaleString("en-US") : rr(y).toLocaleString("en-US") + " " + C.uy; };
+  var R = {x0: C.x0, x1: C.x1, y0: Math.floor(y0 - (y1 - y0) * .05), y1: Math.ceil(y1 + (y1 - y0) * .12)};
+  $("x-graf").innerHTML = grafFun({rango: R, curvas: [{f: function(t){ return t >= C.x0 && t <= C.x1 ? pEval(p, t) : NaN; }}], segmentos: [[[x, R.y0], [x, fx], "#00695c", "5 5", 2]],
+    puntos: [[v[0], v[1], "#c62828", (C.a < 0 ? T("maximum ", "máximo ") : T("minimum ", "mínimo ")) + f(v[1]), 7, C.a < 0, v[0] < (C.x0 + C.x1) / 2], [x, fx, "#00695c", C.vx + " = " + sg(x), 6, C.a > 0, x < v[0]]],
+    voz: C.n + ": " + (C.a < 0 ? T("greatest value ", "valor máximo ") : T("least value ", "valor mínimo ")) + f(v[1]) + T(" at ", " en ") + C.vx + " = " + sg(v[0]) + "."});
+  var dif = Math.abs(fx - v[1]) < 1e-9;
+  $("x-txt").innerHTML = '<div class="linea">' + C.qx + " " + C.vx + " = −b / (2a) = −(" + sg(C.b) + ") / (2 · " + (C.a < 0 ? "(" + sg(C.a) + ")" : C.a) + ") = <strong>" + sg(v[0]) + " " + C.ux + "</strong>.</div>" +
+    '<div class="linea">' + C.qy + " " + C.n.replace(/\(.\)/, "(" + sg(v[0]) + ")") + " = <strong>" + f(v[1]) + "</strong>.</div>" +
+    '<div class="linea">' + T("With the slider: ", "Con el deslizador: ") + C.n.replace(/\(.\)/, "(" + sg(x) + ")") + " = " + f(fx) + ". " + (dif ? T("That is the vertex: no other value does better.", "Ese es el vértice: ningún otro valor lo mejora.") : (C.a < 0 ? T("Less than the maximum, ", "Menos que el máximo, ") : T("More than the minimum, ", "Más que el mínimo, ")) + f(v[1]) + ".") + "</div>"; }
+$("x-caso").addEventListener("change", cuDibuja); $("x-val").addEventListener("input", cuDibuja); cuDibuja();
+OMR("mq", function(){ var t = aleatorio(0, 2);
+  if (t === 0){ var tv = aleatorio(1, 4), v0 = 32 * tv, h0 = elige([0, 0, 5, 10, 20, 48]), hm = -16 * tv * tv + v0 * tv + h0, pide = Math.random() < .5;
+    var en = T("A ball's height in feet after t seconds is h(t) = " + pVis([h0, v0, -16]).replace(/x/g, "t") + ". ", "La altura en pies de una pelota a los t segundos es h(t) = " + pVis([h0, v0, -16]).replace(/x/g, "t") + ". ");
+    if (pide) return {enun: en + T("When is it highest?", "¿Cuándo alcanza la altura máxima?"), correcta: "ok", opciones: uniq([{clave: "ok", html: tv + " s"}, {clave: "d", html: 2 * tv + " s"}, {clave: "b", html: v0 + " s"}, {clave: "m", html: tv + 1 + " s"}]),
+      pista: "t = −b / (2a).", bien: "t = −" + v0 + " / (2 · (−16)) = " + tv + " s."};
+    return {enun: en + T("What is its greatest height?", "¿Cuál es su altura máxima?"), correcta: "ok", opciones: uniq([{clave: "ok", html: hm + T(" ft", " pies")}, {clave: "b", html: v0 + T(" ft", " pies")}, {clave: "d", html: 2 * hm + T(" ft", " pies")}, {clave: "s", html: (16 * tv * tv + v0 * tv + h0) + T(" ft", " pies")}]),
+      pista: T("First the time of the vertex, t = −b/(2a); then evaluate h at that time.", "Primero el tiempo del vértice, t = −b/(2a); después evalúe h en ese tiempo."), porClave: {s: T("Careful: −16t² is negative.", "Cuidado: −16t² es negativo.")},
+      bien: "t = " + tv + "; h(" + tv + ") = −16(" + tv * tv + ") + " + v0 + "(" + tv + ")" + (h0 ? " + " + h0 : "") + " = " + hm + T(" ft.", " pies.")}; }
+  if (t === 1){ var a = elige([-1, -2, -3, -5]), xv = elige([10, 15, 20, 25, 30, 40]), b = -2 * a * xv, c = aleatorio(1, 9) * 100, pm = a * xv * xv + b * xv - c;
+    return {enun: T("The profit of a business is P(x) = " + pVis([-c, b, a]) + " dollars. How many units give the greatest profit?", "El beneficio de un negocio es B(x) = " + pVis([-c, b, a]) + " dólares. ¿Cuántas unidades lo maximizan?"), correcta: "ok",
+      opciones: uniq([{clave: "ok", html: String(xv)}, {clave: "b", html: String(b)}, {clave: "d", html: String(2 * xv)}, {clave: "p", html: "$" + pm.toLocaleString("en-US")}]),
+      pista: "x = −b / (2a).", porClave: {p: T("That is the greatest profit, not the number of units.", "Ese es el beneficio máximo, no el número de unidades.")},
+      bien: "x = −" + b + " / (2 · (" + a + ")) = " + xv + T(" units; the profit is then $", " unidades; el beneficio es entonces $") + pm.toLocaleString("en-US") + "."}; }
+  var P = elige([24, 32, 40, 48, 60, 80]), lado = P / 4;
+  return {enun: T("A rectangular pen will use " + P + " feet of fence. Its area is A(x) = x(" + P / 2 + " − x). What is the greatest area?", "Un corral rectangular usará " + P + " pies de cerca. Su área es A(x) = x(" + P / 2 + " − x). ¿Cuál es el área máxima?"), correcta: "ok",
+    opciones: uniq([{clave: "ok", html: lado * lado + T(" square feet", " pies cuadrados")}, {clave: "l", html: lado + T(" square feet", " pies cuadrados")}, {clave: "p", html: P * P / 4 + T(" square feet", " pies cuadrados")}, {clave: "m", html: (lado - 1) * (lado + 1) + T(" square feet", " pies cuadrados")}]),
+    pista: T("A(x) = −x² + " + P / 2 + "x. The vertex is at x = −b/(2a).", "A(x) = −x² + " + P / 2 + "x. El vértice está en x = −b/(2a)."),
+    bien: "x = " + P / 2 + " / 2 = " + lado + "; A(" + lado + ") = " + lado + " · " + lado + " = " + lado * lado + T(" square feet: the best rectangle is a square.", " pies cuadrados: el mejor rectángulo es un cuadrado.")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

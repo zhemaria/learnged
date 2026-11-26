@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 8.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.2 · Funciones exponenciales, crecimiento/decaimiento e introducción a logaritmos · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-8-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 8 — Modelado de funciones y simulacro GED</p>
+<h1>Lección 8.2 · Funciones exponenciales, crecimiento/decaimiento e introducción a logaritmos</h1>
+<p class="lema">Distinga el crecimiento del decaimiento por la base, modele situaciones reales, use la fórmula del interés compuesto y lea un logaritmo como «¿a qué exponente?».</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Se permite calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Distinguir</strong> el crecimiento del decaimiento exponencial según la base b.</li>
+<li><strong>Modelar</strong> situaciones de crecimiento y decaimiento (población, vida media, valor).</li>
+<li><strong>Aplicar</strong> la fórmula del interés compuesto A = P(1 + r/n)<sup>nt</sup>.</li>
+<li><strong>Entender</strong> el logaritmo como la operación inversa de la exponencial.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.5.e</span> Para una función que modela una relación lineal o no lineal entre dos cantidades, interpretar las características clave de gráficas y tablas en términos de las cantidades, y trazar gráficas que muestren las características clave a partir de una descripción verbal de la relación.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.7.c</span> Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.</li><li><span class="std-cod std-base">A.1.d</span> Sumar, restar y multiplicar polinomios, incluida la multiplicación de dos binomios, o dividir polinomios factorizables.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.2.a</span> Representar algebraicamente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">F-LE.1</span> <span class="std-nivel">Nivel E</span> Distinguir entre situaciones que se modelan con funciones lineales y con funciones exponenciales: demostrar que las lineales crecen en diferencias iguales en intervalos iguales y las exponenciales, en factores iguales en intervalos iguales; reconocer situaciones en las que una cantidad cambia a una tasa constante por unidad de intervalo respecto de otra.</li><li><span class="std-cod std-ccr">F-LE.2</span> <span class="std-nivel">Nivel E</span> Construir funciones lineales y exponenciales, incluidas las sucesiones aritméticas y geométricas, a partir de una gráfica, de la descripción de una relación o de dos pares de entrada y salida (también leídos de una tabla).</li><li><span class="std-cod std-ccr">F-LE.5</span> <span class="std-nivel">Nivel E</span> Interpretar los parámetros de una función lineal o exponencial en términos de un contexto.</li><li><span class="std-cod std-ccr">F-IF.8</span> <span class="std-nivel">Nivel E</span> Escribir una función definida por una expresión en formas distintas pero equivalentes para mostrar y explicar sus propiedades: usar la factorización y la completación del cuadrado en una función cuadrática para mostrar sus ceros, sus valores extremos y la simetría de la gráfica; usar las propiedades de los exponentes para interpretar expresiones de funciones exponenciales, por ejemplo, para identificar el porcentaje de cambio.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-exponencial">La función exponencial f(x) = a · bˣ</a></li>
+<li><a href="#s-contexto">Crecimiento y decaimiento en contexto</a></li>
+<li><a href="#s-interes">El interés compuesto</a></li>
+<li><a href="#s-logaritmo">Introducción al logaritmo</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-exponencial"><span aria-hidden="true" class="num-seccion">1</span>La función exponencial f(x) = a · bˣ</h2>
+<p><strong>Conexión con la lección anterior.</strong> Las cuadráticas (8.1) crecen y luego decrecen (o al revés) formando una parábola. Las funciones exponenciales son distintas: crecen (o decaen) cada vez más rápido al <strong>multiplicarse por una base fija</strong>. Modelan el dinero que gana interés, una población que se duplica o una sustancia que se desintegra.</p>
+<p>En f(x) = a · bˣ, el número a es el <strong>valor inicial</strong> (cuando x = 0) y la base b decide el comportamiento:</p>
+<div aria-label="Crecimiento o decaimiento (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Comportamiento de la función exponencial según la base b</caption>
+<thead><tr><th scope="col">Si la base b…</th><th scope="col">La función…</th><th scope="col">Ejemplo</th></tr></thead>
+<tbody>
+<tr><td>es mayor que 1 (b &gt; 1)</td><td>crece (crecimiento)</td><td>y = 2ˣ</td></tr>
+<tr><td>está entre 0 y 1 (0 &lt; b &lt; 1)</td><td>decae (decaimiento)</td><td>y = (1/2)ˣ</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<svg viewBox="0 0 264 366" role="img" aria-label="Las gráficas de y = 2 a la x, que crece cada vez más rápido hacia la derecha, e y = un medio a la x, que decae hacia cero por la derecha sin tocarlo. Las dos se cruzan en 0, 1." style="width:100%;max-width:330px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="64" y1="30" x2="64" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="98" y1="30" x2="98" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="132" y1="30" x2="132" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="166" y1="30" x2="166" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="234" y1="30" x2="234" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="336" x2="234" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="302" x2="234" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="268" x2="234" y2="268" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="234" x2="234" y2="234" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="200" x2="234" y2="200" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="166" x2="234" y2="166" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="132" x2="234" y2="132" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="98" x2="234" y2="98" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="64" x2="234" y2="64" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="234" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="302" x2="244" y2="302" stroke="#10174f" stroke-width="2"/><line x1="132" y1="344" x2="132" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="248,302 238,297 238,307" fill="#10174f"/><polygon points="132,16 127,26 137,26" fill="#10174f"/><text x="248" y="290" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="146" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="30.0" y1="297.8" x2="31.7" y2="297.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="31.7" y1="297.6" x2="33.4" y2="297.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="33.4" y1="297.4" x2="35.1" y2="297.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="35.1" y1="297.3" x2="36.8" y2="297.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="36.8" y1="297.1" x2="38.5" y2="296.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="38.5" y1="296.9" x2="40.2" y2="296.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="40.2" y1="296.8" x2="41.9" y2="296.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="41.9" y1="296.6" x2="43.6" y2="296.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="43.6" y1="296.4" x2="45.3" y2="296.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="45.3" y1="296.2" x2="47.0" y2="296.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="47.0" y1="296.0" x2="48.7" y2="295.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="48.7" y1="295.8" x2="50.4" y2="295.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="50.4" y1="295.6" x2="52.1" y2="295.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="52.1" y1="295.3" x2="53.8" y2="295.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="53.8" y1="295.1" x2="55.5" y2="294.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="55.5" y1="294.9" x2="57.2" y2="294.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="57.2" y1="294.6" x2="58.9" y2="294.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="58.9" y1="294.3" x2="60.6" y2="294.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="60.6" y1="294.1" x2="62.3" y2="293.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="62.3" y1="293.8" x2="64.0" y2="293.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="64.0" y1="293.5" x2="65.7" y2="293.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="65.7" y1="293.2" x2="67.4" y2="292.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="67.4" y1="292.9" x2="69.1" y2="292.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="69.1" y1="292.6" x2="70.8" y2="292.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="70.8" y1="292.2" x2="72.5" y2="291.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="72.5" y1="291.9" x2="74.2" y2="291.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="74.2" y1="291.5" x2="75.9" y2="291.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="75.9" y1="291.2" x2="77.6" y2="290.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="77.6" y1="290.8" x2="79.3" y2="290.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="79.3" y1="290.4" x2="81.0" y2="290.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.0" y1="290.0" x2="82.7" y2="289.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="82.7" y1="289.6" x2="84.4" y2="289.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="84.4" y1="289.1" x2="86.1" y2="288.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="86.1" y1="288.7" x2="87.8" y2="288.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.8" y1="288.2" x2="89.5" y2="287.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="89.5" y1="287.7" x2="91.2" y2="287.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="91.2" y1="287.2" x2="92.9" y2="286.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="92.9" y1="286.7" x2="94.6" y2="286.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="94.6" y1="286.1" x2="96.3" y2="285.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="96.3" y1="285.6" x2="98.0" y2="285.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="98.0" y1="285.0" x2="99.7" y2="284.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="99.7" y1="284.4" x2="101.4" y2="283.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="101.4" y1="283.8" x2="103.1" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.1" y1="283.1" x2="104.8" y2="282.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="104.8" y1="282.5" x2="106.5" y2="281.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.5" y1="281.8" x2="108.2" y2="281.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="108.2" y1="281.1" x2="109.9" y2="280.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="109.9" y1="280.3" x2="111.6" y2="279.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="111.6" y1="279.6" x2="113.3" y2="278.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="113.3" y1="278.8" x2="115.0" y2="278.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="115.0" y1="278.0" x2="116.7" y2="277.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="116.7" y1="277.1" x2="118.4" y2="276.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="118.4" y1="276.2" x2="120.1" y2="275.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="120.1" y1="275.3" x2="121.8" y2="274.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="121.8" y1="274.4" x2="123.5" y2="273.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="123.5" y1="273.4" x2="125.2" y2="272.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="125.2" y1="272.4" x2="126.9" y2="271.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.9" y1="271.4" x2="128.6" y2="270.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="128.6" y1="270.3" x2="130.3" y2="269.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="130.3" y1="269.2" x2="132.0" y2="268.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="132.0" y1="268.0" x2="133.7" y2="266.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="133.7" y1="266.8" x2="135.4" y2="265.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.4" y1="265.6" x2="137.1" y2="264.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="137.1" y1="264.3" x2="138.8" y2="262.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="138.8" y1="262.9" x2="140.5" y2="261.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="140.5" y1="261.6" x2="142.2" y2="260.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="142.2" y1="260.1" x2="143.9" y2="258.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="143.9" y1="258.7" x2="145.6" y2="257.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.6" y1="257.1" x2="147.3" y2="255.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="147.3" y1="255.6" x2="149.0" y2="253.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="149.0" y1="253.9" x2="150.7" y2="252.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="150.7" y1="252.2" x2="152.4" y2="250.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="152.4" y1="250.5" x2="154.1" y2="248.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="154.1" y1="248.6" x2="155.8" y2="246.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="155.8" y1="246.8" x2="157.5" y2="244.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="157.5" y1="244.8" x2="159.2" y2="242.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="159.2" y1="242.8" x2="160.9" y2="240.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="160.9" y1="240.7" x2="162.6" y2="238.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="162.6" y1="238.6" x2="164.3" y2="236.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="164.3" y1="236.3" x2="166.0" y2="234.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="166.0" y1="234.0" x2="167.7" y2="231.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="167.7" y1="231.6" x2="169.4" y2="229.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="169.4" y1="229.1" x2="171.1" y2="226.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="171.1" y1="226.5" x2="172.8" y2="223.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="172.8" y1="223.9" x2="174.5" y2="221.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="174.5" y1="221.1" x2="176.2" y2="218.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="176.2" y1="218.3" x2="177.9" y2="215.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="177.9" y1="215.3" x2="179.6" y2="212.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="179.6" y1="212.3" x2="181.3" y2="209.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="181.3" y1="209.1" x2="183.0" y2="205.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="183.0" y1="205.8" x2="184.7" y2="202.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="184.7" y1="202.4" x2="186.4" y2="198.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="186.4" y1="198.9" x2="188.1" y2="195.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="188.1" y1="195.3" x2="189.8" y2="191.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="189.8" y1="191.5" x2="191.5" y2="187.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="191.5" y1="187.6" x2="193.2" y2="183.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="193.2" y1="183.6" x2="194.9" y2="179.4" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="194.9" y1="179.4" x2="196.6" y2="175.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="196.6" y1="175.1" x2="198.3" y2="170.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="198.3" y1="170.6" x2="200.0" y2="166.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="200.0" y1="166.0" x2="201.7" y2="161.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="201.7" y1="161.2" x2="203.4" y2="156.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="203.4" y1="156.2" x2="205.1" y2="151.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="205.1" y1="151.1" x2="206.8" y2="145.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="206.8" y1="145.8" x2="208.5" y2="140.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="208.5" y1="140.3" x2="210.2" y2="134.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="210.2" y1="134.6" x2="211.9" y2="128.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="211.9" y1="128.7" x2="213.6" y2="122.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="213.6" y1="122.5" x2="215.3" y2="116.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="215.3" y1="116.2" x2="217.0" y2="109.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="217.0" y1="109.7" x2="218.7" y2="102.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="218.7" y1="102.9" x2="220.4" y2="95.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="220.4" y1="95.9" x2="222.1" y2="88.6" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="222.1" y1="88.6" x2="223.8" y2="81.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="223.8" y1="81.1" x2="225.5" y2="73.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="225.5" y1="73.3" x2="227.2" y2="65.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="227.2" y1="65.2" x2="228.9" y2="56.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="228.9" y1="56.9" x2="230.6" y2="48.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="230.6" y1="48.2" x2="232.3" y2="39.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="232.3" y1="39.3" x2="234.0" y2="30.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="30.0" y1="30.0" x2="31.7" y2="39.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="31.7" y1="39.3" x2="33.4" y2="48.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="33.4" y1="48.2" x2="35.1" y2="56.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="35.1" y1="56.9" x2="36.8" y2="65.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="36.8" y1="65.2" x2="38.5" y2="73.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="38.5" y1="73.3" x2="40.2" y2="81.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="40.2" y1="81.1" x2="41.9" y2="88.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="41.9" y1="88.6" x2="43.6" y2="95.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="43.6" y1="95.9" x2="45.3" y2="102.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="45.3" y1="102.9" x2="47.0" y2="109.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="47.0" y1="109.7" x2="48.7" y2="116.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="48.7" y1="116.2" x2="50.4" y2="122.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="50.4" y1="122.5" x2="52.1" y2="128.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="52.1" y1="128.7" x2="53.8" y2="134.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="53.8" y1="134.6" x2="55.5" y2="140.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="55.5" y1="140.3" x2="57.2" y2="145.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="57.2" y1="145.8" x2="58.9" y2="151.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="58.9" y1="151.1" x2="60.6" y2="156.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="60.6" y1="156.2" x2="62.3" y2="161.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="62.3" y1="161.2" x2="64.0" y2="166.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="64.0" y1="166.0" x2="65.7" y2="170.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="65.7" y1="170.6" x2="67.4" y2="175.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="67.4" y1="175.1" x2="69.1" y2="179.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="69.1" y1="179.4" x2="70.8" y2="183.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="70.8" y1="183.6" x2="72.5" y2="187.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="72.5" y1="187.6" x2="74.2" y2="191.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="74.2" y1="191.5" x2="75.9" y2="195.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="75.9" y1="195.3" x2="77.6" y2="198.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="77.6" y1="198.9" x2="79.3" y2="202.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="79.3" y1="202.4" x2="81.0" y2="205.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="81.0" y1="205.8" x2="82.7" y2="209.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="82.7" y1="209.1" x2="84.4" y2="212.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="84.4" y1="212.3" x2="86.1" y2="215.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="86.1" y1="215.3" x2="87.8" y2="218.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="87.8" y1="218.3" x2="89.5" y2="221.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="89.5" y1="221.1" x2="91.2" y2="223.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="91.2" y1="223.9" x2="92.9" y2="226.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="92.9" y1="226.5" x2="94.6" y2="229.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="94.6" y1="229.1" x2="96.3" y2="231.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="96.3" y1="231.6" x2="98.0" y2="234.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="98.0" y1="234.0" x2="99.7" y2="236.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="99.7" y1="236.3" x2="101.4" y2="238.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="101.4" y1="238.6" x2="103.1" y2="240.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="103.1" y1="240.7" x2="104.8" y2="242.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="104.8" y1="242.8" x2="106.5" y2="244.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="106.5" y1="244.8" x2="108.2" y2="246.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="108.2" y1="246.8" x2="109.9" y2="248.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="109.9" y1="248.6" x2="111.6" y2="250.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="111.6" y1="250.5" x2="113.3" y2="252.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="113.3" y1="252.2" x2="115.0" y2="253.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="115.0" y1="253.9" x2="116.7" y2="255.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="116.7" y1="255.6" x2="118.4" y2="257.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="118.4" y1="257.1" x2="120.1" y2="258.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="120.1" y1="258.7" x2="121.8" y2="260.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="121.8" y1="260.1" x2="123.5" y2="261.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="123.5" y1="261.6" x2="125.2" y2="262.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="125.2" y1="262.9" x2="126.9" y2="264.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="126.9" y1="264.3" x2="128.6" y2="265.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="128.6" y1="265.6" x2="130.3" y2="266.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="130.3" y1="266.8" x2="132.0" y2="268.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="132.0" y1="268.0" x2="133.7" y2="269.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="133.7" y1="269.2" x2="135.4" y2="270.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="135.4" y1="270.3" x2="137.1" y2="271.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="137.1" y1="271.4" x2="138.8" y2="272.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="138.8" y1="272.4" x2="140.5" y2="273.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="140.5" y1="273.4" x2="142.2" y2="274.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="142.2" y1="274.4" x2="143.9" y2="275.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="143.9" y1="275.3" x2="145.6" y2="276.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="145.6" y1="276.2" x2="147.3" y2="277.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="147.3" y1="277.1" x2="149.0" y2="278.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="149.0" y1="278.0" x2="150.7" y2="278.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="150.7" y1="278.8" x2="152.4" y2="279.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="152.4" y1="279.6" x2="154.1" y2="280.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="154.1" y1="280.3" x2="155.8" y2="281.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="155.8" y1="281.1" x2="157.5" y2="281.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="157.5" y1="281.8" x2="159.2" y2="282.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="159.2" y1="282.5" x2="160.9" y2="283.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="160.9" y1="283.1" x2="162.6" y2="283.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="162.6" y1="283.8" x2="164.3" y2="284.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="164.3" y1="284.4" x2="166.0" y2="285.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="166.0" y1="285.0" x2="167.7" y2="285.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="167.7" y1="285.6" x2="169.4" y2="286.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="169.4" y1="286.1" x2="171.1" y2="286.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="171.1" y1="286.7" x2="172.8" y2="287.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="172.8" y1="287.2" x2="174.5" y2="287.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="174.5" y1="287.7" x2="176.2" y2="288.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="176.2" y1="288.2" x2="177.9" y2="288.7" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="177.9" y1="288.7" x2="179.6" y2="289.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="179.6" y1="289.1" x2="181.3" y2="289.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="181.3" y1="289.6" x2="183.0" y2="290.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="183.0" y1="290.0" x2="184.7" y2="290.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="184.7" y1="290.4" x2="186.4" y2="290.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="186.4" y1="290.8" x2="188.1" y2="291.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="188.1" y1="291.2" x2="189.8" y2="291.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="189.8" y1="291.5" x2="191.5" y2="291.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="191.5" y1="291.9" x2="193.2" y2="292.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="193.2" y1="292.2" x2="194.9" y2="292.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="194.9" y1="292.6" x2="196.6" y2="292.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="196.6" y1="292.9" x2="198.3" y2="293.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="198.3" y1="293.2" x2="200.0" y2="293.5" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="200.0" y1="293.5" x2="201.7" y2="293.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="201.7" y1="293.8" x2="203.4" y2="294.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="203.4" y1="294.1" x2="205.1" y2="294.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="205.1" y1="294.3" x2="206.8" y2="294.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="206.8" y1="294.6" x2="208.5" y2="294.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="208.5" y1="294.9" x2="210.2" y2="295.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="210.2" y1="295.1" x2="211.9" y2="295.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="211.9" y1="295.3" x2="213.6" y2="295.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="213.6" y1="295.6" x2="215.3" y2="295.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="215.3" y1="295.8" x2="217.0" y2="296.0" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="217.0" y1="296.0" x2="218.7" y2="296.2" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="218.7" y1="296.2" x2="220.4" y2="296.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="220.4" y1="296.4" x2="222.1" y2="296.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="222.1" y1="296.6" x2="223.8" y2="296.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="223.8" y1="296.8" x2="225.5" y2="296.9" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="225.5" y1="296.9" x2="227.2" y2="297.1" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="227.2" y1="297.1" x2="228.9" y2="297.3" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="228.9" y1="297.3" x2="230.6" y2="297.4" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="230.6" y1="297.4" x2="232.3" y2="297.6" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><line x1="232.3" y1="297.6" x2="234.0" y2="297.8" stroke="#c62828" stroke-width="3.5" stroke-linecap="round"/><circle cx="132.0" cy="268.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><line x1="134.7" y1="262.9" x2="140.5" y2="225.5" stroke="#2e7d32" stroke-width="1.5" stroke-linecap="round"/><text x="136.1" y="213.6" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">(0, 1)</text><text x="232.3" y="234.0" font-size="15" font-weight="700" fill="#1565c0" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y = 2ˣ</text><text x="31.7" y="234.0" font-size="15" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y = (1/2)ˣ</text><text x="230.6" y="268.0" font-size="13" font-weight="700" fill="#1565c0" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">crecimiento</text><text x="33.4" y="268.0" font-size="13" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">decaimiento</text><text x="30" y="320" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="64" y="320" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="98" y="320" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="166" y="320" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="200" y="320" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="126" y="340" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="126" y="272" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="126" y="238" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="126" y="204" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="126" y="170" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="126" y="136" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="126" y="102" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">6</text><text x="126" y="68" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">7</text></svg>
+<p>Las dos curvas se cruzan en (0, 1) porque cualquier base elevada a 0 da 1. A la derecha, la de crecimiento sube cada vez más rápido; la de decaimiento se acerca a cero sin tocarlo.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Base 3</h3></div>
+<p class="pregunta-int" id="t-p1">f(x) = 3ˣ:</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">decae</button>
+<button class="opcion" data-k="b" type="button">crece</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Base 0.5</h3></div>
+<p class="pregunta-int" id="t-p2">f(x) = (0.5)ˣ:</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">decae</button>
+<button class="opcion" data-k="b" type="button">crece</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — ¿Cuándo decae?</h3></div>
+<p class="pregunta-int" id="t-p3">En f(x) = a · bˣ, la función decae cuando:</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">b &gt; 1</button>
+<button class="opcion" data-k="b" type="button">0 &lt; b &lt; 1</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-2.html#exponencial" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la función exponencial (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la función exponencial</span><span class="ei-sub">Deslizadores del valor inicial a y de la base b de f(x) = a · bˣ, con el punto (0, a) y la curva que crece o decae.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-contexto"><span aria-hidden="true" class="num-seccion">2</span>Crecimiento y decaimiento en contexto</h2>
+<p>El <strong>crecimiento</strong> exponencial aparece cuando algo se multiplica por un factor fijo en cada período: una población que se duplica, una cuenta que gana interés. El <strong>decaimiento</strong> aparece cuando algo se reduce por un factor fijo: la vida media de una sustancia radiactiva, un auto que pierde valor.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Vida media</span>
+<p>La vida media es el tiempo en que una cantidad se reduce a la mitad. Si hay 80 onzas y la vida media es 1 hora, tras 1 hora quedan 40 onzas, tras 2 horas 20 onzas, y así.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Del porcentaje a la base</span>
+<p>Crece un 8 % cada año: conserva todo más el 8 %, así que la base es 1 + 0.08 = 1.08. Pierde un 15 % cada año: conserva el 85 %, así que la base es 1 − 0.15 = 0.85.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Se duplica</h3></div>
+<p class="pregunta-int" id="t-p4">Una población que se duplica cada año es un ejemplo de:</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">crecimiento exponencial</button>
+<button class="opcion" data-k="b" type="button">decaimiento exponencial</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Vida media</h3></div>
+<p class="pregunta-int" id="t-p5">Una sustancia radiactiva con vida media es un ejemplo de:</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">crecimiento exponencial</button>
+<button class="opcion" data-k="b" type="button">decaimiento exponencial</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — ¿Qué es la vida media?</h3></div>
+<p class="pregunta-int" id="t-p6">«Vida media» es el tiempo en que la cantidad:</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">se reduce a la mitad</button>
+<button class="opcion" data-k="b" type="button">se duplica</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-2.html#contexto" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el crecimiento y el decaimiento (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el crecimiento y el decaimiento</span><span class="ei-sub">Población, bacterias, vida media, depreciación de un auto, eliminación de un medicamento y ahorro, con la tabla que muestra de dónde sale cada número.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-interes"><span aria-hidden="true" class="num-seccion">3</span>El interés compuesto</h2>
+<p>El interés compuesto es crecimiento exponencial aplicado al dinero. Está en la <strong>hoja de fórmulas del GED</strong>:</p>
+      <div class="formula">A = P(1 + r/n)<sup>nt</sup></div>
+<p>P es el capital inicial, r la tasa (en decimal), n las veces que se capitaliza por año, t el número de años y A el monto final.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · $1,000 al 5 % anual, capitalizado una vez al año (n = 1), durante 10 años.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye:</strong> A = 1000(1 + 0.05/1)<sup>1·10</sup> = 1000(1.05)<sup>10</sup>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Con la calculadora:</strong> (1.05)<sup>10</sup> ≈ 1.6289.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>A ≈ $1,628.89.</strong></p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Sobre la calculadora</span>
+<p>En el examen GED se usa la calculadora TI-30XS MultiView. Para potencias como (1.05)¹⁰ use la tecla de la potencia (^). Escriba la tasa en decimal (5 % = 0.05). La calculadora de esta página hace las mismas operaciones, aunque algunas teclas tienen otro nombre o están en otro lugar.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — P</h3></div>
+<p class="pregunta-int" id="t-p7">En A = P(1 + r/n)<sup>nt</sup>, ¿qué representa P?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">la cantidad inicial (capital)</button>
+<button class="opcion" data-k="b" type="button">la tasa de interés</button>
+<button class="opcion" data-k="c" type="button">el tiempo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 8 — Diez años</h3></div>
+<p class="pregunta-int" id="t-p8">$1,000 al 5 % anual (n = 1) en 10 años da aproximadamente:</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">$1,500.00</button>
+<button class="opcion" data-k="b" type="button">$5,000.00</button>
+<button class="opcion" data-k="c" type="button">$1,628.89</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 9 — r</h3></div>
+<p class="pregunta-int" id="t-p9">En la fórmula, r representa:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">el número de años</button>
+<button class="opcion" data-k="b" type="button">la tasa de interés</button>
+<button class="opcion" data-k="c" type="button">el capital</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-2.html#interes" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el interés compuesto (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el interés compuesto</span><span class="ei-sub">Calculadora paso a paso con la fórmula de la hoja del GED y una tabla que compara la capitalización anual, semestral, trimestral, mensual y diaria.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-logaritmo"><span aria-hidden="true" class="num-seccion">4</span>Introducción al logaritmo</h2>
+<p>El <strong>logaritmo</strong> es la operación inversa de la exponencial. Responde la pregunta: «¿a qué exponente hay que elevar la base para obtener este número?»</p>
+      <div class="formula">si b<sup>y</sup> = x, entonces log<sub>b</sub>(x) = y</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · log₁₀(1000).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La pregunta:</strong> ¿a qué potencia elevo 10 para obtener 1000?</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Como 10³ = 1000,</strong> <strong>log₁₀(1000) = 3.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La tecla log</span>
+<p>En la TI-30XS, la tecla log calcula log₁₀ directamente. Por ejemplo, log(100) da 2, porque 10² = 100.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 10 — La inversa</h3></div>
+<p class="pregunta-int" id="t-p10">El logaritmo es la operación inversa de:</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">la exponencial</button>
+<button class="opcion" data-k="b" type="button">la suma</button>
+<button class="opcion" data-k="c" type="button">la raíz cuadrada</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 11 — log 1000</h3></div>
+<p class="pregunta-int" id="t-p11">log₁₀(1000) = ? (¿10 a qué potencia da 1000?)</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">2</button>
+<button class="opcion" data-k="b" type="button">1000</button>
+<button class="opcion" data-k="c" type="button">3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 12 — log 100</h3></div>
+<p class="pregunta-int" id="t-p12">log₁₀(100) = ?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">100</button>
+<button class="opcion" data-k="b" type="button">2</button>
+<button class="opcion" data-k="c" type="button">1</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-2.html#logaritmo" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los logaritmos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los logaritmos</span><span class="ei-sub">El logaritmo planteado como pregunta, «¿a qué exponente?», con la tabla de potencias de la base y el cambio entre forma exponencial y logarítmica.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-8-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno, la calculadora y la hoja de fórmulas del GED: (1) El banco y el tiempo: calcule cuánto valen $1,000 al 5 % de interés compuesto anual después de 1, 5, 10 y 20 años. Grafique los puntos y describa la forma de la curva: ¿por qué el crecimiento se acelera? (2) ¿En cuántos años se duplica? Con la tabla anterior, estime entre qué dos años el dinero llega a $2,000 y afine la estimación probando años intermedios. Después calcule log₁₀(1000), log₁₀(100) y log₂(8), y compruebe cada resultado escribiéndolo como potencia. (3) ¿Crece o decae? Clasifique cada modelo y justifique con la base (mayor o menor que 1): una población P = 2000(1.03)ᵗ; un medicamento en la sangre M = 500(0.5)ᵗ; un ahorro A = 800(1.04)ᵗ; la diferencia de temperatura de un café que se enfría D = 60(0.9)ᵗ; el valor de un auto V = 25000(0.85)ᵗ. Después haga varios ejercicios de cada actividad de la página de práctica. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Mire un estado de cuenta de ahorro, de un préstamo o de una tarjeta de crédito. Busque su tasa anual y cada cuánto se capitaliza, y use la fórmula para ver cuánto crece (o cuánto se debe) en 5 años.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">f(x) = 4ˣ. ¿Crece o decae?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">decae</button><button class="opcion" data-k="b" type="button">es constante</button><button class="opcion" data-k="c" type="button">crece</button><button class="opcion" data-k="d" type="button">es lineal</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">f(x) = (1/3)ˣ. ¿Crece o decae?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">crece</button><button class="opcion" data-k="b" type="button">decae</button><button class="opcion" data-k="c" type="button">es lineal</button><button class="opcion" data-k="d" type="button">no es función</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">En f(x) = a · bˣ, ¿qué representa a?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la base</button><button class="opcion" data-k="b" type="button">el exponente</button><button class="opcion" data-k="c" type="button">la pendiente</button><button class="opcion" data-k="d" type="button">el valor inicial</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Las gráficas de y = 2ˣ e y = (1/2)ˣ se cruzan en el punto:</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(0, 1)</button><button class="opcion" data-k="b" type="button">(1, 0)</button><button class="opcion" data-k="c" type="button">(0, 0)</button><button class="opcion" data-k="d" type="button">(1, 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">$2,000 al 10 % anual (n = 1) en 1 año dan:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$2,100</button><button class="opcion" data-k="b" type="button">$2,010</button><button class="opcion" data-k="c" type="button">$2,200</button><button class="opcion" data-k="d" type="button">$4,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Una población se duplica cada año y empieza en 100. ¿Cuántos hay a los 3 años?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">800</button><button class="opcion" data-k="b" type="button">600</button><button class="opcion" data-k="c" type="button">300</button><button class="opcion" data-k="d" type="button">2,300</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Una sustancia de 80 onzas tiene una vida media de 1 hora. ¿Cuánto queda tras 2 horas?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">40 oz</button><button class="opcion" data-k="b" type="button">20 oz</button><button class="opcion" data-k="c" type="button">60 oz</button><button class="opcion" data-k="d" type="button">0 oz</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">log₁₀(1000) = ?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2</button><button class="opcion" data-k="b" type="button">100</button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button">1000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de las funciones exponenciales (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de funciones exponenciales, interés compuesto y logaritmos y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Crecimiento o decaimiento</th><td>Los distingo por la base y lo conecto con la gráfica.</td><td>A veces confundo crecimiento con decaimiento.</td><td>No relaciono la base con el comportamiento.</td></tr>
+<tr><th scope="row">Interés compuesto</th><td>Aplico A = P(1 + r/n)^(nt) con la tasa en decimal y la calculadora.</td><td>Sustituyo, pero con errores en las variables.</td><td>No uso la fórmula.</td></tr>
+<tr><th scope="row">Logaritmo y exponencial</th><td>Calculo logaritmos base 10 y los compruebo como potencias.</td><td>Reconozco la idea, pero cometo errores.</td><td>No reconozco el logaritmo como inversa.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se estudiaron las funciones exponenciales (crecimiento y decaimiento), el interés compuesto y una primera mirada al logaritmo como inversa de la exponencial.</p>
+<p>La <strong>Lección 8.3 · Proyecto final integrador y simulacro GED</strong> cierra el Nivel 4: presentará su proyecto «Mi modelo matemático» y hará la evaluación final del nivel. Es el último paso antes del GED Mathematical Reasoning.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-8-3.html">Lección 8.3 · Proyecto final integrador y simulacro GED</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>valor inicial</dt><dd>La a de f(x) = a · bˣ: el valor cuando x = 0.</dd>
+<dt>vida media</dt><dd>El tiempo en que una cantidad se reduce a la mitad.</dd>
+<dt>interés compuesto</dt><dd>Interés que también se gana sobre el interés: A = P(1 + r/n)^(nt).</dd>
+<dt>logaritmo</dt><dd>El exponente: log_b(x) = y significa bʸ = x.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 8 · Lección 8.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 8.3",
+ "review": "las secciones 1 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "3 es mayor que 1."
+   },
+   "right": "b &gt; 1: crece.",
+   "solution": "Crece."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "0.5 está entre 0 y 1."
+   },
+   "right": "0 &lt; b &lt; 1: decae.",
+   "solution": "Decae."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "b &gt; 1 es crecimiento."
+   },
+   "right": "Una base entre 0 y 1 la achica cada vez.",
+   "solution": "0 &lt; b &lt; 1."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Duplicar la hace más grande."
+   },
+   "right": "Se multiplica por 2 cada año: crecimiento.",
+   "solution": "Crecimiento exponencial."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Se hace más pequeña con el tiempo."
+   },
+   "right": "Se multiplica por 1/2 en cada vida media: decaimiento.",
+   "solution": "Decaimiento exponencial."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "Vida media: queda la mitad."
+   },
+   "right": "Queda la mitad.",
+   "solution": "Se reduce a la mitad."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "La tasa es r.",
+    "c": "El tiempo es t."
+   },
+   "right": "P es el capital.",
+   "solution": "La cantidad inicial."
+  },
+  "p8": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es interés simple: 50 × 10. El compuesto gana interés sobre el interés.",
+    "b": "Eso sería multiplicar por 5."
+   },
+   "right": "1000(1.05)¹⁰ ≈ 1,628.89.",
+   "solution": "$1,628.89."
+  },
+  "p9": {
+   "ok": "b",
+   "hints": {
+    "a": "Los años son t.",
+    "c": "El capital es P."
+   },
+   "right": "r es la tasa, en decimal.",
+   "solution": "La tasa de interés."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "La inversa de la suma es la resta.",
+    "c": "La inversa de la raíz es elevar al cuadrado."
+   },
+   "right": "Deshace la exponencial.",
+   "solution": "La exponencial."
+  },
+  "p11": {
+   "ok": "c",
+   "hints": {
+    "a": "10² = 100, no 1000.",
+    "b": "La respuesta es un exponente."
+   },
+   "right": "10³ = 1000.",
+   "solution": "3."
+  },
+  "p12": {
+   "ok": "b",
+   "hints": {
+    "a": "La respuesta es un exponente.",
+    "c": "10¹ = 10, no 100."
+   },
+   "right": "10² = 100.",
+   "solution": "2."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "4 es mayor que 1.",
+    "b": "Cambia: se multiplica por 4.",
+    "d": "La x está en el exponente."
+   },
+   "solution": "Crece."
+  },
+  "B": {
+   "ok": "b",
+   "hints": {
+    "a": "1/3 es menor que 1.",
+    "c": "La x está en el exponente.",
+    "d": "Es una función."
+   },
+   "solution": "Decae."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "La base es b.",
+    "b": "El exponente es x.",
+    "c": "Las exponenciales no tienen pendiente como las rectas."
+   },
+   "solution": "El valor inicial."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "Toda base a la 0 da 1: y = 1 cuando x = 0.",
+    "c": "Nunca tocan el 0.",
+    "d": "En x = 1 valen 2 y 1/2."
+   },
+   "solution": "(0, 1)."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "El 10 % de 2,000 es 200, no 100.",
+    "b": "El 10 % de 2,000 es 200.",
+    "d": "Eso lo duplicaría."
+   },
+   "solution": "2000(1.10) = $2,200."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Duplique tres veces: 100 → 200 → 400 → 800.",
+    "c": "Eso multiplica por 3; se duplica cada año.",
+    "d": "100 · 2³ = 800."
+   },
+   "solution": "100 · 2³ = 800."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "Eso es tras 1 hora.",
+    "c": "Se reduce a la mitad, no se resta 20.",
+    "d": "Nunca llega a 0."
+   },
+   "solution": "80 → 40 → 20 onzas."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "10² = 100.",
+    "b": "La respuesta es un exponente.",
+    "d": "La respuesta es un exponente."
+   },
+   "solution": "10³ = 1000, log₁₀(1000) = 3."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

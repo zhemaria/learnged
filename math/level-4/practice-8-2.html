@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 8.2 · practice (English) — built by tools/build_n4_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 8.2 · Exponential functions, growth and decay, and a first look at logarithms · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .tabla-lados.centro td,.tabla-lados.centro th{text-align:center;}
+  .tabla-lados td.sel{background:#e8f5e9;font-weight:700;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 8 · Modeling with functions and a practice GED test</div>
+    <h1>Lesson 8.2 · Exponential functions, growth and decay, and a first look at logarithms</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try. You may use the calculator.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#exponential">The exponential function f(x) = a · bˣ</a></li>
+      <li><a href="#context">Growth and decay in context</a></li>
+      <li><a href="#interest">Compound interest</a></li>
+      <li><a href="#logarithm">A first look at the logarithm</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="exponential" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The exponential function f(x) = a · bˣ</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Move the starting value a and the base b. The curve always passes through (0, a); each step to the right multiplies by b.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="e-a">a = <output id="e-av"></output></label><input type="range" id="e-a" min="1" max="8" step="1" value="2"></div><div class="campo"><label for="e-b">b = <output id="e-bv"></output></label><input type="range" id="e-b" min="0.25" max="3" step="0.25" value="2"></div></div></div>
+      <div class="salida" aria-live="polite" id="e-txt"></div>
+      <div id="e-graf"></div>
+      <h3>Practice: does it grow or decay?</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="opciones" id="eq-opciones"></div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="eq-nuevo">New exercise</button></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="context">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Growth and decay in context</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Choose a situation and move the time. The table shows where each number comes from: the amount before, times the base.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="c-caso">Situation</label><select id="c-caso"><option value="0">A population that doubles every year</option><option value="1">Bacteria that triple every hour</option><option value="2">A radioactive substance (half-life 1 hour)</option><option value="3">A car that loses 15% of its value a year</option><option value="4">A medicine that leaves the body at 25% an hour</option><option value="5">Savings that grow 8% a year</option></select></div><div class="campo"><label for="c-t">Periods t: <output id="c-tv"></output></label><input type="range" id="c-t" min="0" max="8" step="1" value="3"></div></div><p class="enun" id="c-enun"></p></div>
+      <div class="salida" aria-live="polite" id="c-txt"></div>
+      <div id="c-graf"></div>
+      <div id="c-tabla"></div>
+      <h3>Practice: the model</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="opciones" id="cq-opciones"></div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="cq-nuevo">New exercise</button></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="interest">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Compound interest</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">A = P(1 + r/n)<sup>nt</sup></div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="i-p">P = <output id="i-pv"></output></label><input type="range" id="i-p" min="100" max="10000" step="100" value="1000"></div><div class="campo"><label for="i-r">r = <output id="i-rv"></output></label><input type="range" id="i-r" min="1" max="12" step="0.5" value="5"></div><div class="campo"><label for="i-t">t (years) = <output id="i-tv"></output></label><input type="range" id="i-t" min="1" max="30" step="1" value="10"></div><div class="campo"><label for="i-n">Compounding</label><select id="i-n"><option value="1" selected>yearly (n = 1)</option><option value="2">twice a year (n = 2)</option><option value="4">quarterly (n = 4)</option><option value="12">monthly (n = 12)</option><option value="365">daily (n = 365)</option></select></div></div></div>
+      <div class="salida" aria-live="polite" id="i-txt"></div>
+      <div id="i-tabla"></div>
+      <h3>Practice: compound interest</h3>
+      <div class="practica" id="kq">
+        <div class="enun" id="kq-enun"></div>
+        <div class="campos"><div class="campo"><label for="kq-r">A (in dollars)</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="kq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="kq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="kq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="kq-fb" role="status"></div>
+        <p class="marcador" id="kq-marcador"></p>
+      </div>
+      <p class="nota">Use the calculator. Type the amount with or without the $ sign, rounded to the cent.</p>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="logarithm">
+    <summary><span class="num" aria-hidden="true">4</span><h2>A first look at the logarithm</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>log<sub>b</sub>(x) asks: “to what exponent must I raise b to get x?” Choose a base and a number.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="l-base">Base b</label><select id="l-base"><option value="2">2</option><option value="3">3</option><option value="5">5</option><option value="10" selected>10</option></select></div><div class="campo"><label for="l-x">x =</label><input type="text" inputmode="decimal" autocomplete="off" id="l-x" value="1000" style="width:7em"></div></div></div>
+      <div class="salida" aria-live="polite" id="l-txt"></div>
+      <div id="l-tabla"></div>
+      <h3>Two ways to write the same thing</h3>
+      <div class="panel"><div class="campos"><div class="campo"><label for="l-par">Power</label><select id="l-par"><option value="0">2^3 = 8</option><option value="1">3^2 = 9</option><option value="2">10^2 = 100</option><option value="3">5^3 = 125</option><option value="4">10^4 = 10,000</option><option value="5">2^5 = 32</option></select></div></div></div>
+      <div class="salida" aria-live="polite" id="l-par-txt"></div>
+      <h3>Practice: logarithms</h3>
+      <div class="practica" id="lq">
+        <div class="enun" id="lq-enun"></div>
+        <div class="opciones" id="lq-opciones"></div>
+        <div class="fb" id="lq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="lq-nuevo">New exercise</button></div>
+        <p class="marcador" id="lq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 8 · Modeling with functions and a practice GED test · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script src="/math/func4.js"></script>
+<script>
+function uniq(l){ return l.filter(function(o, i){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }); }
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function dn(v, d){ var r = Math.round(v * Math.pow(10, d === undefined ? 2 : d)) / Math.pow(10, d === undefined ? 2 : d); return (r < 0 ? "−" : "") + Math.abs(r).toLocaleString("en-US", {maximumFractionDigits: d === undefined ? 2 : d}); }
+function din(v){ return "$" + (Math.round(v * 100) / 100).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2}); }
+function bTxt(b){ return b === Math.round(b) ? String(b) : "(" + String(b) + ")"; }
+function eTxt(a, b, v){ return (a === 1 ? "" : dn(a) + " · ") + bTxt(b) + "<sup>" + (v || "x") + "</sup>"; }
+
+/* ===== MODULE 1 · The exponential function ===== */
+function exDibuja(){ var a = +$("e-a").value, b = +$("e-b").value; $("e-av").textContent = a; $("e-bv").textContent = b;
+  var top = Math.max(a * Math.pow(b, 4), a * Math.pow(b, -3), a) , R = {x0: -3, x1: 5, y0: -1, y1: Math.min(Math.ceil(top * 1.1), 200)};
+  $("e-graf").innerHTML = grafFun({rango: R, curvas: [{f: function(x){ return a * Math.pow(b, x); }}], puntos: [[0, a, "#2e7d32", par(0, a), 7, true, true], [1, a * b, "#6a1b9a", par(1, Math.round(a * b * 100) / 100), 6, b < 1, true]],
+    voz: T("Graph of f(x) = ", "Gráfica de f(x) = ") + a + " · " + b + T(" to the x.", " a la x.")});
+  var k = b > 1 ? T("b = " + b + " &gt; 1: the function <strong>grows</strong>, faster and faster.", "b = " + b + " &gt; 1: la función <strong>crece</strong>, cada vez más rápido.") : b < 1 ? T("0 &lt; b = " + b + " &lt; 1: the function <strong>decays</strong> toward 0 without touching it.", "0 &lt; b = " + b + " &lt; 1: la función <strong>decae</strong> hacia 0 sin tocarlo.") : T("b = 1: 1 to any power is 1, so the function is <strong>constant</strong> (not exponential).", "b = 1: 1 a cualquier potencia es 1, así que la función es <strong>constante</strong> (no es exponencial).");
+  $("e-txt").innerHTML = '<div class="linea"><strong>f(x) = ' + eTxt(a, b) + "</strong></div>" + '<div class="linea">' + k + "</div>" +
+    '<div class="linea">' + T("Starting value: f(0) = " + a + " · " + b + "⁰ = " + a + ". Each step to the right multiplies by " + b + ": f(1) = " + dn(a * b) + ", f(2) = " + dn(a * b * b) + ".", "Valor inicial: f(0) = " + a + " · " + b + "⁰ = " + a + ". Cada paso a la derecha multiplica por " + b + ": f(1) = " + dn(a * b) + ", f(2) = " + dn(a * b * b) + ".") + "</div>"; }
+["e-a", "e-b"].forEach(function(id){ $(id).addEventListener("input", exDibuja); }); exDibuja();
+OMR("eq", function(){ var opc = [[2, "2"], [3, "3"], [4, "4"], [1.05, "1.05"], [1.5, "1.5"], [.5, "0.5"], [.8, "0.8"], [.25, "0.25"], [1 / 3, "1/3"], [2 / 3, "2/3"], [1, "1"]], c = elige(opc), a = elige([1, 1, 2, 3, 5, 100]);
+  var txt = "f(x) = " + (a === 1 ? "" : a + " · ") + (c[1].length > 1 ? "(" + c[1] + ")" : c[1]) + "<sup>x</sup>", k = c[0] > 1 ? "c" : c[0] < 1 ? "d" : "k";
+  return {enun: T("Does ", "¿") + "<strong>" + txt + "</strong>" + T(" grow or decay?", " crece o decae?"), correcta: k, enOrden: true,
+    opciones: [{clave: "c", html: T("it grows", "crece")}, {clave: "d", html: T("it decays", "decae")}, {clave: "k", html: T("it stays the same", "se mantiene igual")}],
+    pista: T("Look only at the base, the number with the exponent x: more than 1, between 0 and 1, or exactly 1?", "Fíjese solo en la base, el número que lleva el exponente x: ¿mayor que 1, entre 0 y 1, o exactamente 1?"),
+    bien: T("The base is " + c[1] + ": ", "La base es " + c[1] + ": ") + (k === "c" ? T("greater than 1, so it grows.", "mayor que 1, así que crece.") : k === "d" ? T("between 0 and 1, so it decays.", "entre 0 y 1, así que decae.") : T("1, so it never changes.", "1, así que nunca cambia.")) + (a !== 1 ? T(" The " + a + " in front is only the starting value.", " El " + a + " de adelante es solo el valor inicial.") : "")};
+});
+
+/* ===== MODULE 2 · Growth and decay in context ===== */
+var CASOS = [
+ {a: 100, b: 2, u: T("people", "habitantes"), p: T("years", "años"), m: "P(t) = 100 · 2<sup>t</sup>", ex: T("A town has 100 people, and its population doubles every year.", "Un pueblo tiene 100 habitantes y su población se duplica cada año.")},
+ {a: 50, b: 3, u: T("bacteria", "bacterias"), p: T("hours", "horas"), m: "B(t) = 50 · 3<sup>t</sup>", ex: T("A culture starts with 50 bacteria and triples every hour.", "Un cultivo empieza con 50 bacterias y se triplica cada hora.")},
+ {a: 80, b: .5, u: T("ounces", "onzas"), p: T("hours", "horas"), m: "M(t) = 80 · (0.5)<sup>t</sup>", ex: T("There are 80 ounces of a substance with a half-life of one hour: every hour, half is left.", "Hay 80 onzas de una sustancia cuya vida media es de una hora: cada hora queda la mitad.")},
+ {a: 20000, b: .85, u: T("dollars", "dólares"), p: T("years", "años"), m: "V(t) = 20,000 · (0.85)<sup>t</sup>", ex: T("A car costs $20,000 and loses 15% of its value every year, so it keeps 85%.", "Un auto cuesta $20,000 y pierde el 15 % de su valor cada año, así que conserva el 85 %.")},
+ {a: 200, b: .75, u: "mg", p: T("hours", "horas"), m: "D(t) = 200 · (0.75)<sup>t</sup>", ex: T("A 200 mg dose of a medicine leaves the body at 25% each hour: 75% of what was there is left.", "Una dosis de 200 mg de un medicamento se elimina a razón del 25 % cada hora: queda el 75 % de lo que había.")},
+ {a: 500, b: 1.08, u: T("dollars", "dólares"), p: T("years", "años"), m: "A(t) = 500 · (1.08)<sup>t</sup>", ex: T("An account starts with $500 and grows 8% every year, so it is multiplied by 1.08.", "Una cuenta empieza con $500 y crece un 8 % cada año, es decir, se multiplica por 1.08.")}];
+function caDibuja(){ var C = CASOS[+$("c-caso").value], tt = +$("c-t").value, din2 = C.u === T("dollars", "dólares"), f = function(v){ return din2 ? din(v) : dn(v) + " " + C.u; };
+  $("c-tv").textContent = tt; $("c-enun").innerHTML = C.ex + " " + T("Model: ", "Modelo: ") + "<strong>" + C.m + "</strong>.";
+  var filas = "", pts = [];
+  for (var k = 0; k <= 8; k++){ var v = C.a * Math.pow(C.b, k); pts.push([k, v]); filas += "<tr><td" + (k === tt ? ' class="sel"' : "") + ">" + k + "</td><td" + (k === tt ? ' class="sel"' : "") + ">" + (k ? f(C.a * Math.pow(C.b, k - 1)) + " × " + C.b + " = " : "") + f(v) + "</td></tr>"; }
+  $("c-tabla").innerHTML = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Period by period", "Período a período") + '</caption><thead><tr><th scope="col">t (' + C.p + ')</th><th scope="col">' + T("Amount", "Cantidad") + "</th></tr></thead><tbody>" + filas + "</tbody></table></div>";
+  var top = Math.max.apply(null, pts.map(function(q){ return q[1]; }));
+  $("c-graf").innerHTML = grafFun({rango: {x0: 0, x1: 8, y0: 0, y1: Math.ceil(top * 1.08)}, curvas: [{f: function(x){ return x >= 0 ? C.a * Math.pow(C.b, x) : NaN; }, color: "#90caf9"}], puntos: pts.map(function(q){ return [q[0], q[1], q[0] === tt ? "#c62828" : "#1565c0", q[0] === tt ? f(q[1]) : null, q[0] === tt ? 7 : 4.5, true, q[0] < 5]; }),
+    voz: C.m.replace(/<\/?sup>/g, "") + ". " + T("After ", "Después de ") + tt + " " + C.p + ": " + f(C.a * Math.pow(C.b, tt)) + "."});
+  $("c-txt").innerHTML = '<div class="linea">' + C.m.split(" = ")[0] + " → " + C.m.split(" = ")[1].replace("<sup>t</sup>", "<sup>" + tt + "</sup>") + " = <strong>" + f(C.a * Math.pow(C.b, tt)) + "</strong> " + T("after ", "después de ") + tt + " " + C.p + ". " + (C.b > 1 ? T("Growth: base greater than 1.", "Crecimiento: base mayor que 1.") : T("Decay: base between 0 and 1.", "Decaimiento: base entre 0 y 1.")) + "</div>"; }
+$("c-caso").addEventListener("change", caDibuja); $("c-t").addEventListener("input", caDibuja); caDibuja();
+OMR("cq", function(){ var t = aleatorio(0, 2);
+  if (t === 0){ var b = elige([2, 3]), a = elige([10, 20, 50, 100, 250]), n = aleatorio(2, 5), r = a * Math.pow(b, n), nom = b === 2 ? T("doubles", "se duplica") : T("triples", "se triplica");
+    return {enun: T("A colony of " + a + " bacteria " + nom + " every hour. How many are there after " + n + " hours?", "Una colonia de " + a + " bacterias " + nom + " cada hora. ¿Cuántas hay a las " + n + " horas?"), correcta: "ok",
+      opciones: uniq([{clave: "ok", html: r.toLocaleString("en-US")}, {clave: "l", html: (a + a * b * n - a).toLocaleString("en-US")}, {clave: "m", html: (a * b * n).toLocaleString("en-US")}, {clave: "u", html: (a * Math.pow(b, n - 1)).toLocaleString("en-US")}]),
+      pista: T("Multiply by " + b + " once for each hour: " + a + " · " + b + "<sup>" + n + "</sup>.", "Multiplique por " + b + " una vez por cada hora: " + a + " · " + b + "<sup>" + n + "</sup>."),
+      bien: a + " · " + b + "<sup>" + n + "</sup> = " + a + " · " + Math.pow(b, n) + " = " + r.toLocaleString("en-US") + "."}; }
+  if (t === 1){ var a1 = elige([64, 80, 96, 160, 200, 320]), n1 = aleatorio(1, 4), r1 = a1 / Math.pow(2, n1), h = elige([1, 2, 3, 5]);
+    return {enun: T("A substance weighs " + a1 + " ounces, and its half-life is " + h + (h === 1 ? " hour" : " hours") + ". How much is left after " + n1 * h + " hours?", "Una sustancia pesa " + a1 + " onzas y su vida media es de " + h + (h === 1 ? " hora" : " horas") + ". ¿Cuánto queda tras " + n1 * h + " horas?"), correcta: "ok",
+      opciones: uniq([{clave: "ok", html: dn(r1) + " oz"}, {clave: "s", html: dn(Math.max(a1 - a1 / 2 * n1 * h, 0)) + " oz"}, {clave: "u", html: dn(a1 / Math.pow(2, n1 * h)) + " oz"}, {clave: "m", html: dn(a1 / 2) + " oz"}]),
+      pista: T(n1 * h + " hours are " + n1 + " half-lives: halve the amount " + n1 + (n1 === 1 ? " time." : " times."), n1 * h + " horas son " + n1 + (n1 === 1 ? " vida media" : " vidas medias") + ": reduzca la cantidad a la mitad " + n1 + (n1 === 1 ? " vez." : " veces.")),
+      bien: n1 + T(" half-lives: ", " vidas medias: ") + a1 + " · (1/2)<sup>" + n1 + "</sup> = " + dn(r1) + T(" ounces.", " onzas.")}; }
+  var p = elige([3, 4, 5, 6, 8, 10, 12, 15, 20, 25]), crece = Math.random() < .5, base = crece ? 1 + p / 100 : 1 - p / 100;
+  return {enun: crece ? T("A quantity grows " + p + "% every year. What is the base of its model a · bᵗ?", "Una cantidad crece un " + p + " % cada año. ¿Cuál es la base de su modelo a · bᵗ?") : T("A quantity loses " + p + "% every year. What is the base of its model a · bᵗ?", "Una cantidad pierde un " + p + " % cada año. ¿Cuál es la base de su modelo a · bᵗ?"), correcta: "ok",
+    opciones: uniq([{clave: "ok", html: dn(base)}, {clave: "o", html: dn(crece ? 1 - p / 100 : 1 + p / 100)}, {clave: "p", html: dn(p / 100)}, {clave: "e", html: String(p)}]),
+    pista: crece ? T("It keeps 100% and adds " + p + "%: 1 + 0." + (p < 10 ? "0" : "") + p + ".", "Conserva el 100 % y suma el " + p + " %: 1 + 0." + (p < 10 ? "0" : "") + p + ".") : T("It keeps 100% − " + p + "% = " + (100 - p) + "%.", "Conserva el 100 % − " + p + " % = " + (100 - p) + " %."),
+    bien: (crece ? "1 + " + dn(p / 100) : "1 − " + dn(p / 100)) + " = " + dn(base) + ". " + (crece ? T("A base greater than 1: growth.", "Base mayor que 1: crecimiento.") : T("A base between 0 and 1: decay.", "Base entre 0 y 1: decaimiento."))};
+});
+
+/* ===== MODULE 3 · Compound interest ===== */
+var NOMN = {1: T("yearly", "anual"), 2: T("twice a year", "semestral"), 4: T("quarterly", "trimestral"), 12: T("monthly", "mensual"), 365: T("daily", "diaria")};
+function inDibuja(){ var P = +$("i-p").value, r = +$("i-r").value, t = +$("i-t").value, n = +$("i-n").value;
+  $("i-pv").textContent = "$" + P.toLocaleString("en-US"); $("i-rv").textContent = r + " %"; $("i-tv").textContent = t;
+  var rd = r / 100, A = P * Math.pow(1 + rd / n, n * t), base = 1 + rd / n;
+  $("i-txt").innerHTML = '<div class="linea">P = ' + P.toLocaleString("en-US") + ", r = " + r + " % = " + dn(rd, 4) + ", n = " + n + " (" + NOMN[n] + "), t = " + t + ".</div>" +
+    '<div class="linea">A = ' + P.toLocaleString("en-US") + "(1 + " + dn(rd, 4) + "/" + n + ")<sup>" + n + "·" + t + "</sup> = " + P.toLocaleString("en-US") + "(" + dn(base, 6) + ")<sup>" + n * t + "</sup></div>" +
+    '<div class="linea">(' + dn(base, 6) + ")<sup>" + n * t + "</sup> ≈ " + dn(Math.pow(base, n * t), 4) + " → <strong>A ≈ " + din(A) + "</strong>. " + T("Interest earned: ", "Interés ganado: ") + din(A - P) + ".</div>";
+  $("i-tabla").innerHTML = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("The same money with different compounding", "El mismo dinero con distinta capitalización") + '</caption><thead><tr><th scope="col">' + T("Compounding", "Capitalización") + '</th><th scope="col">n</th><th scope="col">A</th></tr></thead><tbody>' +
+    [1, 2, 4, 12, 365].map(function(k){ var v = P * Math.pow(1 + rd / k, k * t); return "<tr><td" + (k === n ? ' class="sel"' : "") + ">" + NOMN[k] + "</td><td" + (k === n ? ' class="sel"' : "") + ">" + k + "</td><td" + (k === n ? ' class="sel"' : "") + ">" + din(v) + "</td></tr>"; }).join("") +
+    '<tr><td>' + T("simple interest (to compare)", "interés simple (para comparar)") + "</td><td>—</td><td>" + din(P * (1 + rd * t)) + "</td></tr></tbody></table></div>"; }
+["i-p", "i-r", "i-t"].forEach(function(id){ $(id).addEventListener("input", inDibuja); }); $("i-n").addEventListener("change", inDibuja); inDibuja();
+creaPracticaLibre("kq", function(){ var P = elige([500, 800, 1000, 1500, 2000, 2500, 5000]), r = elige([2, 3, 4, 5, 6, 8]), n = elige([1, 1, 2, 4, 12]), t = aleatorio(2, 10), rd = r / 100;
+  var A = Math.round(P * Math.pow(1 + rd / n, n * t) * 100) / 100, simple = P * (1 + rd * t), interes = A - P;
+  return {enun: T("$" + P.toLocaleString("en-US") + " is deposited at " + r + "% a year, compounded " + NOMN[n] + " (n = " + n + "), for " + t + " years. Use A = P(1 + r/n)<sup>nt</sup>. What is A, to the nearest cent?", "Se depositan $" + P.toLocaleString("en-US") + " al " + r + " % anual, con capitalización " + NOMN[n] + " (n = " + n + "), durante " + t + " años. Use A = P(1 + r/n)<sup>nt</sup>. ¿Cuánto es A, redondeado al centavo?"),
+    evalua: function(txt){ var v = leeDecimal(String(txt).replace(/[$,\s]/g, "")); if (v === null) return {estado: "invalido", msg: T("Type an amount, such as 1628.89.", "Escriba una cantidad, como 1628.89.")};
+      if (Math.abs(v - A) <= .011) return {estado: "bien"};
+      if (Math.abs(v - simple) < .02) return {estado: "mal", msg: T("That is simple interest. Compound interest uses the power: (1 + r/n)<sup>nt</sup>.", "Eso es interés simple. El compuesto usa la potencia: (1 + r/n)<sup>nt</sup>.")};
+      if (Math.abs(v - interes) <= .011) return {estado: "mal", msg: T("That is only the interest. A is the whole amount: add the $" + P.toLocaleString("en-US") + ".", "Eso es solo el interés. A es el monto total: sume los $" + P.toLocaleString("en-US") + ".")};
+      if (v > A * 3) return {estado: "mal", msg: T("Write the rate as a decimal: " + r + "% = " + dn(rd, 2) + ".", "Escriba la tasa en decimal: " + r + " % = " + dn(rd, 2) + ".")};
+      return {estado: "mal", msg: T("Check the exponent: n · t = " + n + " · " + t + " = " + n * t + ", and the base: 1 + " + dn(rd, 2) + "/" + n + ".", "Revise el exponente: n · t = " + n + " · " + t + " = " + n * t + ", y la base: 1 + " + dn(rd, 2) + "/" + n + ".")}; },
+    solucion: "A = " + P.toLocaleString("en-US") + "(1 + " + dn(rd, 2) + "/" + n + ")<sup>" + n * t + "</sup> = " + P.toLocaleString("en-US") + "(" + dn(1 + rd / n, 6) + ")<sup>" + n * t + "</sup> ≈ <strong>" + din(A) + "</strong>."};
+});
+
+/* ===== MODULE 4 · The logarithm ===== */
+function loDibuja(){ var b = +$("l-base").value, x = leeDecimal($("l-x").value), out = $("l-txt");
+  var pot = ""; for (var k = 0; k <= 6; k++) pot += "<tr><td>" + b + "<sup>" + k + "</sup></td><td>" + Math.pow(b, k).toLocaleString("en-US") + "</td></tr>";
+  $("l-tabla").innerHTML = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Powers of the base", "Potencias de la base") + '</caption><thead><tr><th scope="col">' + T("Power", "Potencia") + '</th><th scope="col">' + T("Value", "Valor") + "</th></tr></thead><tbody>" + pot + "</tbody></table></div>";
+  if (x === null || x <= 0){ out.innerHTML = '<div class="linea">' + T("Type a positive number. (There is no logarithm of 0 or of a negative number: no power of a positive base gives them.)", "Escriba un número positivo. (No hay logaritmo de 0 ni de un número negativo: ninguna potencia de una base positiva los da.)") + "</div>"; return; }
+  var y = Math.log(x) / Math.log(b), ent = Math.abs(y - Math.round(y)) < 1e-9;
+  out.innerHTML = '<div class="linea">log<sub>' + b + "</sub>(" + dn(x, 4) + ") " + T("asks: to what exponent must I raise ", "pregunta: ¿a qué exponente hay que elevar ") + b + T(" to get ", " para obtener ") + dn(x, 4) + "?</div>" +
+    '<div class="linea">' + (ent ? T("Since ", "Como ") + b + "<sup>" + Math.round(y) + "</sup> = " + dn(x, 4) + ", <strong>log<sub>" + b + "</sub>(" + dn(x, 4) + ") = " + Math.round(y) + "</strong>." :
+      T(dn(x, 4) + " is not a whole power of " + b + ": the answer is between " + Math.floor(y) + " and " + Math.ceil(y) + ". With the calculator, log", dn(x, 4) + " no es una potencia entera de " + b + ": la respuesta está entre " + Math.floor(y) + " y " + Math.ceil(y) + ". Con la calculadora, log") + "<sub>" + b + "</sub>(" + dn(x, 4) + ") ≈ <strong>" + dn(y, 3) + "</strong>.") + "</div>"; }
+$("l-base").addEventListener("change", loDibuja); $("l-x").addEventListener("input", loDibuja); loDibuja();
+var PARES = [[2, 3], [3, 2], [10, 2], [5, 3], [10, 4], [2, 5]];
+function paDibuja(){ var q = PARES[+$("l-par").value], v = Math.pow(q[0], q[1]);
+  $("l-par-txt").innerHTML = '<div class="linea">' + T("Exponential form: ", "Forma exponencial: ") + "<strong>" + q[0] + "<sup>" + q[1] + "</sup> = " + v.toLocaleString("en-US") + "</strong></div>" + '<div class="linea">' + T("Logarithmic form: ", "Forma logarítmica: ") + "<strong>log<sub>" + q[0] + "</sub>(" + v.toLocaleString("en-US") + ") = " + q[1] + "</strong></div>" +
+    '<div class="linea">' + T("The base stays the base; the exponent becomes the answer of the logarithm.", "La base sigue siendo la base; el exponente pasa a ser la respuesta del logaritmo.") + "</div>"; }
+$("l-par").addEventListener("change", paDibuja); paDibuja();
+OMR("lq", function(){ var t = aleatorio(0, 2), b = elige([2, 3, 5, 10]), k = aleatorio(b === 10 ? 1 : 2, b === 2 ? 6 : b === 10 ? 5 : 4), v = Math.pow(b, k);
+  if (t === 0) return {enun: "log<sub>" + b + "</sub>(" + v.toLocaleString("en-US") + ") = ?", correcta: "ok", opciones: uniq([{clave: "ok", html: String(k)}, {clave: "v", html: (v / b).toLocaleString("en-US")}, {clave: "m", html: String(k + 1)}, {clave: "d", html: (v / 10 === Math.round(v / 10) && b !== 10 ? v / 10 : k * b).toLocaleString("en-US")}]),
+    pista: T("Ask: " + b + " to what power gives " + v.toLocaleString("en-US") + "? Count how many times you multiply by " + b + ".", "Pregunte: ¿" + b + " a qué potencia da " + v.toLocaleString("en-US") + "? Cuente cuántas veces se multiplica por " + b + "."),
+    bien: b + "<sup>" + k + "</sup> = " + v.toLocaleString("en-US") + ", log<sub>" + b + "</sub>(" + v.toLocaleString("en-US") + ") = " + k + "."};
+  if (t === 1){ do { k = aleatorio(2, b === 10 ? 4 : 5); } while (k === b); v = Math.pow(b, k); }
+  if (t === 1) return {enun: T("Write ", "Escriba ") + "<strong>" + b + "<sup>" + k + "</sup> = " + v.toLocaleString("en-US") + "</strong>" + T(" in logarithmic form.", " en forma logarítmica."), correcta: "ok",
+    opciones: uniq([{clave: "ok", html: "log<sub>" + b + "</sub>(" + v.toLocaleString("en-US") + ") = " + k}, {clave: "a", html: "log<sub>" + k + "</sub>(" + v.toLocaleString("en-US") + ") = " + b}, {clave: "b", html: "log<sub>" + b + "</sub>(" + k + ") = " + v.toLocaleString("en-US")}, {clave: "c", html: "log<sub>" + v.toLocaleString("en-US") + "</sub>(" + b + ") = " + k}]),
+    pista: T("The base stays the base, and the exponent is the answer of the logarithm.", "La base sigue siendo la base, y el exponente es la respuesta del logaritmo."), bien: T("Base " + b + ", answer (exponent) " + k + ".", "Base " + b + ", respuesta (exponente) " + k + ".")};
+  var x = elige([10, 100, 1000, 10000, 100000, 1000000]), e = Math.round(Math.log10(x));
+  return {enun: T("On the calculator you type log(" + x.toLocaleString("en-US") + "). What does it show?", "En la calculadora se escribe log(" + x.toLocaleString("en-US") + "). ¿Qué muestra?"), correcta: "ok",
+    opciones: uniq([{clave: "ok", html: String(e)}, {clave: "z", html: String(x.toString().length)}, {clave: "d", html: (x / 10).toLocaleString("en-US")}, {clave: "m", html: String(e + 2)}]),
+    pista: T("The log key is log base 10: count the zeros of " + x.toLocaleString("en-US") + ".", "La tecla log es el logaritmo base 10: cuente los ceros de " + x.toLocaleString("en-US") + "."), bien: "10<sup>" + e + "</sup> = " + x.toLocaleString("en-US") + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

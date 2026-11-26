@@ -29,7 +29,7 @@ var C4 = {azul: "#0d47a1", rojo: "#b71c1c", verde: "#1b5e20", tinta: "#10174f", 
 function Plano(o){
   o = o || {};
   var xmin = o.xmin === undefined ? -10 : o.xmin, xmax = o.xmax === undefined ? 10 : o.xmax, ymin = o.ymin === undefined ? -10 : o.ymin, ymax = o.ymax === undefined ? 10 : o.ymax;
-  var u = o.u || Math.min(34, Math.floor(560 / (xmax - xmin))), uy = o.uy || u, m = 30, W = (xmax - xmin) * u + 2 * m, H = (ymax - ymin) * uy + 2 * m;
+  var u = o.u || Math.min(34, Math.floor(560 / (xmax - xmin))), uy = o.uy || u, m = o.m || 30, W = (xmax - xmin) * u + 2 * m, H = (ymax - ymin) * uy + 2 * m;
   var paso = o.paso || ((xmax - xmin) > 24 ? 5 : ((xmax - xmin) > 14 ? 2 : 1)), pasoY = o.pasoY || paso;   /* uy, pasoY: a different scale on the y-axis (optional) */
   var P = {xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax, u: u, uy: uy, W: W, H: H};
   P.X = function(x){ return m + (x - xmin) * u; };

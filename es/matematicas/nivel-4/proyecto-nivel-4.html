@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 8.3 · Proyecto final «Mi modelo matemático» — plantilla (español) — construida con tools/build_n4_proyecto.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto final · Lección 8.3 · Proyecto final: Mi modelo matemático · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/project-level-4.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  [hidden]{display:none !important;}
+  textarea.trabajo{width:100%;min-height:150px;font:inherit;font-size:17px;padding:10px;border:2px solid #b0bec5;border-radius:8px;}
+  .tabla-est{border-collapse:collapse;margin:10px 0;font-size:16px;width:100%;}
+  .tabla-est th,.tabla-est td{border:1px solid #c8c8c8;padding:6px 10px;text-align:left;}
+  .tabla-est th{background:var(--tema-bg);color:var(--tema-d);}
+  .guardado{font-size:14px;color:var(--gris);}
+  .lista-cierre label{display:flex;gap:10px;align-items:flex-start;margin:8px 0;}
+  .lista-cierre input{margin-top:5px;width:20px;height:20px;}
+  .titulo-graf{text-align:center;font-weight:700;margin:6px 0;}
+  @media print{
+    .lg-bar,.saltar,.fila-btn,.no-imp,#gph-calc-btn,.gph-calc,[data-gph-calculadora],.indice,.volver{display:none !important;}
+    details.modulo{break-inside:auto;} textarea.trabajo{border:1px solid #000;min-height:0;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="leccion-8-3.html">← Volver a la Lección 8.3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 8 · Modelado de funciones y simulacro GED</div>
+    <h1>Proyecto final · Mi modelo matemático</h1>
+    <div class="meta">Su plantilla de trabajo para el proyecto final del Nivel 4. Complétela, compruebe su trabajo y guárdela en PDF.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#instrucciones">Instrucciones del proyecto</a></li>
+      <li><a href="#estudiante">0 · Datos del estudiante y del modelo</a></li>
+      <li><a href="#situacion">1 · Situación real</a></li>
+      <li><a href="#funcion">2 · La función</a></li>
+      <li><a href="#grafica">3 · La gráfica</a></li>
+      <li><a href="#analisis">4 · Análisis algebraico</a></li>
+      <li><a href="#interpretacion">5 · Interpretación escrita</a></li>
+      <li><a href="#cierre">✓ Cómo cerrar el proyecto</a></li>
+      <li><a href="#rubrica">Rúbrica del proyecto</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="instrucciones" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Instrucciones del proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Este proyecto reúne lo aprendido en el Nivel 4 y es la última pieza del nivel. Usted modelará una situación real con una función <strong>cuadrática o exponencial</strong> y la presentará de forma completa. Debe incluir cinco partes:</p>
+      <ol><li><strong>Situación real:</strong> describa el fenómeno y justifique por qué es cuadrático o exponencial.</li>
+      <li><strong>La función:</strong> escriba la función que modela la situación.</li>
+      <li><strong>La gráfica:</strong> con ejes, escala, unidades y nombre de la función.</li>
+      <li><strong>Análisis algebraico:</strong> el vértice (cuadrática) o la tasa de crecimiento (exponencial), y el valor en un punto específico.</li>
+      <li><strong>Interpretación escrita:</strong> qué significa el resultado en el contexto real.</li></ol>
+      <p>Ideas: la trayectoria de una pelota (cuadrática), el ahorro con interés compuesto (exponencial), el área máxima de un jardín con cerca fija (cuadrática) o el crecimiento de seguidores en una red (exponencial).</p>
+      <div class="caja-tip">La plantilla dibuja la gráfica y comprueba su análisis, pero <strong>usted debe mostrar su procedimiento por escrito</strong>: la comprobación automática solo sirve para verificar el suyo.</div>
+      <div class="fila-btn no-imp"><button type="button" class="btn" id="b-pdf">Exportar como PDF</button><button type="button" class="btn-sec" id="b-ejemplo">Cargar un ejemplo (una pelota)</button><button type="button" class="btn-sec" id="b-borrar">Borrar todo</button><button type="button" class="btn" id="b-borrar-si" hidden>Sí, borrar</button><button type="button" class="btn-sec" id="b-borrar-no" hidden>No, conservar</button></div>
+      <p class="nota" id="borrar-msg" role="status"></p>
+      <p class="guardado" id="guardado" aria-live="polite">Su trabajo se guarda solo en este navegador. Para conservarlo, pulse «Exportar como PDF» y elija «Guardar como PDF» como destino.</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="estudiante">
+    <summary><span class="num" aria-hidden="true">2</span><h2>0 · Datos del estudiante y del modelo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="p-nombre">Nombre del estudiante</label><input type="text" id="p-nombre" autocomplete="off" ></div><div class="campo" style="flex:1;min-width:220px;"><label for="p-fecha">Fecha de entrega</label><input type="date" id="p-fecha" autocomplete="off" ></div></div>
+      <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="p-titulo">Título de su modelo (por ejemplo, «La altura de una pelota»)</label><input type="text" id="p-titulo" autocomplete="off" ></div></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="situacion">
+    <summary><span class="num" aria-hidden="true">3</span><h2>1 · Situación real</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="campo"><label for="si-texto">Describa la situación: qué cambia, qué se mide y en qué unidades</label><textarea class="trabajo" id="si-texto" style="min-height:110px"></textarea></div>
+      <div class="campo"><label for="si-por">¿Por qué es cuadrática o exponencial?</label><textarea class="trabajo" id="si-por" style="min-height:90px"></textarea></div>
+      <p class="nota">Cuadrática: sube y luego baja (o al revés), con un punto más alto o más bajo. Exponencial: se multiplica por el mismo factor en cada período.</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="funcion">
+    <summary><span class="num" aria-hidden="true">4</span><h2>2 · La función</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="campos"><div class="campo"><label for="fn-tipo">Tipo de función</label><select id="fn-tipo"><option value="cuad">Cuadrática: f(x) = ax² + bx + c</option><option value="exp">Exponencial: f(x) = a · bˣ</option></select></div>
+        <div class="campo"><label for="fn-nombre">Nombre de la función (por ejemplo, h, A, V)</label><input type="text" id="fn-nombre" class="corto" autocomplete="off" maxlength="3" value="f"></div></div>
+      <div class="campos" id="fn-cuad"><div class="campo"><label for="fn-a">a =</label><input type="text" inputmode="decimal" class="corto" id="fn-a" autocomplete="off" value=""></div><div class="campo"><label for="fn-b">b =</label><input type="text" inputmode="decimal" class="corto" id="fn-b" autocomplete="off" value=""></div><div class="campo"><label for="fn-c">c =</label><input type="text" inputmode="decimal" class="corto" id="fn-c" autocomplete="off" value=""></div></div>
+      <div class="campos" id="fn-exp" hidden><div class="campo"><label for="fn-a0">a (valor inicial) =</label><input type="text" inputmode="decimal" class="corto" id="fn-a0" autocomplete="off" value=""></div><div class="campo"><label for="fn-b0">b (base) =</label><input type="text" inputmode="decimal" class="corto" id="fn-b0" autocomplete="off" value=""></div></div>
+      <p id="fn-muestra" aria-live="polite"></p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="grafica">
+    <summary><span class="num" aria-hidden="true">5</span><h2>3 · La gráfica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija dónde empieza y dónde termina x y nombre los dos ejes con sus unidades. La gráfica lleva el título de su modelo.</p>
+      <div class="campos"><div class="campo"><label for="gr-x0">x desde</label><input type="text" inputmode="decimal" class="corto" id="gr-x0" autocomplete="off" value="0"></div><div class="campo"><label for="gr-x1">x hasta</label><input type="text" inputmode="decimal" class="corto" id="gr-x1" autocomplete="off" value="10"></div></div>
+      <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="gr-ex">Eje horizontal (qué es x, con unidades)</label><input type="text" id="gr-ex" autocomplete="off" ></div><div class="campo" style="flex:1;min-width:220px;"><label for="gr-ey">Eje vertical (qué es y, con unidades)</label><input type="text" id="gr-ey" autocomplete="off" ></div></div>
+      <div id="gr-svg"></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="analisis">
+    <summary><span class="num" aria-hidden="true">6</span><h2>4 · Análisis algebraico</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuadrática: halle el vértice con x = −b/(2a), el eje de simetría y los interceptos. Exponencial: el valor inicial y el porcentaje de cambio por período. En las dos: el valor en un punto específico que importe en su situación.</p>
+      <div class="campo"><label for="an-trabajo">Procedimiento y resultados (escriba aquí)</label><textarea class="trabajo" id="an-trabajo"></textarea></div>
+      <div class="campos"><div class="campo"><label for="an-x">Su punto específico: x =</label><input type="text" inputmode="decimal" class="corto" id="an-x" autocomplete="off" value=""></div></div>
+      <h3>Comprobación automática</h3>
+      <div id="an-auto"></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="interpretacion">
+    <summary><span class="num" aria-hidden="true">7</span><h2>5 · Interpretación escrita</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Redacte al menos cinco oraciones completas. Los números no hablan solos: explique qué significan.</p>
+      <div class="caja-tip"><strong>Guía de redacción</strong><ul>
+        <li>¿Qué significa el vértice (o la tasa de crecimiento) en su situación, con sus unidades?</li>
+        <li>¿Qué le dice el valor en su punto específico?</li>
+        <li>¿Para qué valores de x tiene sentido el modelo (su dominio en la vida real)?</li>
+        <li>Cierre con una conclusión propia: ¿qué aprendió sobre la situación?</li></ul></div>
+      <div class="campo"><label for="in-texto">Su interpretación</label><textarea class="trabajo" id="in-texto" style="min-height:200px"></textarea></div>
+      <p class="nota" id="in-cuenta" aria-live="polite"></p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cierre">
+    <summary><span class="num" aria-hidden="true">8</span><h2>✓ Cómo cerrar el proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Marque lo que vaya completando.</p>
+      <div class="lista-cierre"><label><input type="checkbox"><span><strong>Proyecto completo y guardado en PDF</strong>, con las cinco partes: situación, función, gráfica, análisis e interpretación. Es su constancia de haber terminado el Nivel 4.</span></label><label><input type="checkbox"><span><strong>Presentado en voz alta</strong>, de 3 a 4 minutos, a alguien de confianza o grabándose con el teléfono: la situación, la función y su gráfica, y qué significa el resultado. Pida que le hagan preguntas o hágaselas usted al ver el video.</span></label><label><input type="checkbox"><span><strong>Revisado al día siguiente</strong> con la rúbrica de abajo en la mano, criterio por criterio, como si el trabajo fuera de otra persona.</span></label><label><input type="checkbox"><span><strong>Evaluación final del Nivel 4 hecha</strong> en condiciones reales: de una sentada, tomando el tiempo, solo con la calculadora y la hoja de fórmulas.</span></label></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="rubrica">
+    <summary><span class="num" aria-hidden="true">9</span><h2>Rúbrica del proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cinco criterios en cuatro niveles de desempeño (20 puntos en total). Léalos antes de empezar y vuelva a ellos al terminar, para evaluar su propio trabajo con honestidad.</p>
+      <div class="tabla-scroll"><table class="tabla-est"><caption class="sr-only">Rúbrica del proyecto final, con cinco criterios y cuatro niveles</caption>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">Inicial (1)</th><th scope="col">En desarrollo (2)</th><th scope="col">Competente (3)</th><th scope="col">Destacado (4)</th></tr></thead>
+        <tbody><tr><th scope="row">1. Situación real y justificación</th><td>No describe una situación o no es modelable.</td><td>Describe la situación, pero no justifica el tipo de función.</td><td>Describe la situación y la justifica como cuadrática o exponencial.</td><td>Describe una situación rica y justifica con claridad el modelo elegido.</td></tr><tr><th scope="row">2. Gráfica con etiquetas</th><td>No presenta gráfica o es incorrecta.</td><td>Grafica, pero faltan etiquetas (ejes, escala o unidades).</td><td>Gráfica correcta con ejes, escala, unidades y nombre de la función.</td><td>Gráfica precisa y completa, fácil de leer e interpretar.</td></tr><tr><th scope="row">3. Análisis algebraico</th><td>No realiza análisis o tiene errores graves.</td><td>Análisis parcial o con errores de cálculo.</td><td>Halla el vértice o la tasa y el valor en un punto específico.</td><td>Análisis completo y correcto, con todos los elementos clave.</td></tr><tr><th scope="row">4. Interpretación escrita</th><td>No interpreta los resultados.</td><td>Interpreta de forma incompleta o sin contexto.</td><td>Interpreta los resultados de forma coherente en el contexto real.</td><td>Interpretación completa, clara y conectada con la situación.</td></tr><tr><th scope="row">5. Presentación oral</th><td>No presenta o no se entiende.</td><td>Presenta, pero con poca claridad o vocabulario impreciso.</td><td>Presenta de forma clara usando vocabulario matemático apropiado.</td><td>Presentación segura, precisa y convincente, con buen dominio del tema.</td></tr></tbody></table></div>
+      <p class="nota">La nota del proyecto se combina con la de la evaluación final del Nivel 4 (30 preguntas).</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 8 · Modelado de funciones y simulacro GED · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script src="/math/func4.js"></script>
+<script>
+var CLAVE = "learnged-n4-proyecto-" + (ES ? "es" : "en");
+function esc(x){ return String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function num(id){ return leeDecimal(String($(id).value).replace(/,/g, "")); }
+function r3(v){ return Math.round(v * 1000) / 1000; }
+function nn(v){ var r = r3(v); return (r < 0 ? "−" : "") + Math.abs(r).toLocaleString("en-US", {maximumFractionDigits: 3}); }
+function modelo(){ var tipo = $("fn-tipo").value;
+  if (tipo === "cuad"){ var a = num("fn-a"), b = num("fn-b"), c = num("fn-c"); if (a === null || b === null || c === null) return null; if (!a) return {error: T("a cannot be 0: without x² the function is not quadratic.", "a no puede ser 0: sin x² la función no es cuadrática.")};
+    return {tipo: tipo, a: a, b: b, c: c, f: function(x){ return a * x * x + b * x + c; }, txt: pVis([c, b, a])}; }
+  var A = num("fn-a0"), B = num("fn-b0"); if (A === null || B === null) return null; if (B <= 0 || B === 1) return {error: T("The base must be positive and different from 1.", "La base debe ser positiva y distinta de 1.")};
+  return {tipo: tipo, a: A, b: B, f: function(x){ return A * Math.pow(B, x); }, txt: nn(A) + " · (" + nn(B) + ")<sup>x</sup>"}; }
+function nombreF(){ return ($("fn-nombre").value.trim() || "f") ; }
+function pintaFuncion(M){ $("fn-cuad").hidden = $("fn-tipo").value !== "cuad"; $("fn-exp").hidden = $("fn-tipo").value === "cuad";
+  $("fn-muestra").innerHTML = !M ? T("Type the numbers of your function.", "Escriba los números de su función.") : M.error ? '<span style="color:#b71c1c">' + M.error + "</span>" : "<strong>" + esc(nombreF()) + "(x) = " + M.txt + "</strong>"; }
+function pintaGraf(M){ var x0 = num("gr-x0"), x1 = num("gr-x1"), out = $("gr-svg");
+  if (!M || M.error){ out.innerHTML = '<p class="nota">' + T("Type your function in section 2 to see the graph.", "Escriba su función en la sección 2 para ver la gráfica.") + "</p>"; return; }
+  if (x0 === null || x1 === null || x1 <= x0){ out.innerHTML = '<p class="nota">' + T("Type where x starts and ends (the end greater than the start).", "Escriba dónde empieza y dónde termina x (el final mayor que el inicio).") + "</p>"; return; }
+  x0 = Math.floor(x0); x1 = Math.ceil(x1); var ys = []; for (var i = 0; i <= 60; i++) ys.push(M.f(x0 + (x1 - x0) * i / 60));
+  var lo = Math.min(0, Math.min.apply(null, ys)), hi = Math.max(0, Math.max.apply(null, ys)); if (hi - lo < 1){ hi += 1; }
+  var R = {x0: Math.min(x0, 0), x1: Math.max(x1, 0), y0: Math.floor(lo - (hi - lo) * .05), y1: Math.ceil(hi + (hi - lo) * .1)};
+  var pts = []; if (M.tipo === "cuad"){ var xv = -M.b / (2 * M.a); if (xv >= R.x0 && xv <= R.x1) pts.push([xv, M.f(xv), "#c62828", (M.a < 0 ? T("maximum ", "máximo ") : T("minimum ", "mínimo ")) + "(" + nn(xv) + ", " + nn(M.f(xv)) + ")", 7, M.a < 0, true]); }
+  else if (0 >= R.x0 && 0 <= R.x1) pts.push([0, M.a, "#2e7d32", "(0, " + nn(M.a) + ")", 7, true, true]);
+  var xp = num("an-x"); if (xp !== null && xp >= R.x0 && xp <= R.x1) pts.push([xp, M.f(xp), "#6a1b9a", "(" + nn(xp) + ", " + nn(M.f(xp)) + ")", 6, M.tipo !== "cuad" || M.a > 0, xp < (R.x0 + R.x1) / 2]);
+  var tit = esc($("p-titulo").value.trim() || T("My mathematical model", "Mi modelo matemático")), ex = esc($("gr-ex").value.trim() || "x"), ey = esc($("gr-ey").value.trim() || "y");
+  out.innerHTML = '<p class="titulo-graf">' + tit + "</p>" + grafFun({rango: R, curvas: [{f: function(x){ return x >= x0 && x <= x1 ? M.f(x) : NaN; }}], puntos: pts,
+    voz: T("Graph of ", "Gráfica de ") + esc(nombreF()) + "(x) = " + M.txt.replace(/<\/?sup>/g, "") + T(" from x = ", " de x = ") + x0 + T(" to x = ", " a x = ") + x1 + ". " + T("Horizontal axis: ", "Eje horizontal: ") + ex + ". " + T("Vertical axis: ", "Eje vertical: ") + ey + "."}) +
+    '<p class="nota">' + T("Horizontal axis (x): ", "Eje horizontal (x): ") + "<strong>" + ex + "</strong> · " + T("Vertical axis (y): ", "Eje vertical (y): ") + "<strong>" + ey + "</strong></p>"; }
+function pintaAnalisis(M){ var out = $("an-auto");
+  if (!M || M.error){ out.innerHTML = '<p class="nota">' + T("The check appears when your function is complete.", "La comprobación aparece cuando su función está completa.") + "</p>"; return; }
+  var filas = [];
+  if (M.tipo === "cuad"){ var xv = -M.b / (2 * M.a), D = M.b * M.b - 4 * M.a * M.c;
+    filas.push([T("Opening", "Apertura"), M.a > 0 ? T("up (a &gt; 0): the vertex is a minimum", "hacia arriba (a &gt; 0): el vértice es un mínimo") : T("down (a &lt; 0): the vertex is a maximum", "hacia abajo (a &lt; 0): el vértice es un máximo")]);
+    filas.push([T("Vertex", "Vértice"), "x = −b/(2a) = " + nn(xv) + "; y = " + nn(M.f(xv)) + " → (" + nn(xv) + ", " + nn(M.f(xv)) + ")"]);
+    filas.push([T("Axis of symmetry", "Eje de simetría"), "x = " + nn(xv)]);
+    filas.push([T("y-intercept", "Intercepto con el eje y"), "(0, " + nn(M.c) + ")"]);
+    filas.push([T("x-intercepts", "Interceptos con el eje x"), D < 0 ? T("none (discriminant " + nn(D) + " &lt; 0)", "ninguno (discriminante " + nn(D) + " &lt; 0)") : D === 0 ? "(" + nn(xv) + ", 0)" : (function(){ var r = [(-M.b - Math.sqrt(D)) / (2 * M.a), (-M.b + Math.sqrt(D)) / (2 * M.a)].sort(function(u, v){ return u - v; }); return "(" + nn(r[0]) + ", 0) " + T("and", "y") + " (" + nn(r[1]) + ", 0)"; })()]); }
+  else { var pc = (M.b - 1) * 100;
+    filas.push([T("Behavior", "Comportamiento"), M.b > 1 ? T("growth (b &gt; 1)", "crecimiento (b &gt; 1)") : T("decay (0 &lt; b &lt; 1)", "decaimiento (0 &lt; b &lt; 1)")]);
+    filas.push([T("Starting value", "Valor inicial"), "f(0) = " + nn(M.a)]);
+    filas.push([T("Change per period", "Cambio por período"), (pc > 0 ? "+" : "−") + nn(Math.abs(pc)) + " % " + T("(each step multiplies by ", "(cada paso multiplica por ") + nn(M.b) + ")"]);
+    filas.push([M.b > 1 ? T("Doubling time", "Tiempo para duplicarse") : T("Half-life", "Vida media"), "≈ " + nn(Math.log(M.b > 1 ? 2 : .5) / Math.log(M.b)) + T(" periods", " períodos")]); }
+  var xp = num("an-x"); filas.push([T("Value at your point", "Valor en su punto"), xp === null ? T("type a value of x below", "escriba un valor de x abajo") : esc(nombreF()) + "(" + nn(xp) + ") = " + nn(M.f(xp))]);
+  out.innerHTML = '<div class="tabla-scroll"><table class="tabla-est"><caption class="sr-only">' + T("Automatic check of your analysis", "Comprobación automática de su análisis") + "</caption><tbody>" + filas.map(function(f){ return '<tr><th scope="row">' + f[0] + "</th><td>" + f[1] + "</td></tr>"; }).join("") + "</tbody></table></div>"; }
+function oraciones(s){ return (String(s).match(/[^.!?¡¿]*[a-záéíóúñü0-9][^.!?]*[.!?]/gi) || []).filter(function(x){ return x.trim().split(/\s+/).length >= 3; }).length; }
+var CAMPOS = ["p-nombre", "p-fecha", "p-titulo", "si-texto", "si-por", "fn-tipo", "fn-nombre", "fn-a", "fn-b", "fn-c", "fn-a0", "fn-b0", "gr-x0", "gr-x1", "gr-ex", "gr-ey", "an-x", "an-trabajo", "in-texto"];
+function guarda(){
+  var e = {cierre: [].map.call(document.querySelectorAll(".lista-cierre input"), function(c){ return c.checked; })};
+  CAMPOS.forEach(function(id){ e[id] = $(id).value; });
+  try { localStorage.setItem(CLAVE, JSON.stringify(e)); $("guardado").textContent = T("Saved in this browser at ", "Guardado en este navegador a las ") + new Date().toLocaleTimeString(ES ? "es" : "en-US", {hour: "2-digit", minute: "2-digit"}) + "."; }
+  catch (err){ $("guardado").textContent = T("This browser cannot save. Export to PDF to keep your work.", "Este navegador no puede guardar. Exporte a PDF para conservar su trabajo."); }
+}
+function restaura(){ var e = null; try { e = JSON.parse(localStorage.getItem(CLAVE) || "null"); } catch (err){} if (!e) return;
+  CAMPOS.forEach(function(id){ if (e[id] !== undefined) $(id).value = e[id]; });
+  [].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c, i){ c.checked = !!(e.cierre && e.cierre[i]); }); }
+var temporizador = null;
+function todo(){ var M = modelo(); pintaFuncion(M); pintaGraf(M); pintaAnalisis(M);
+  var k = oraciones($("in-texto").value); $("in-cuenta").textContent = T("Sentences found: ", "Oraciones detectadas: ") + k + (k < 5 ? T(" (write at least 5)", " (escriba al menos 5)") : " ✓");
+  clearTimeout(temporizador); temporizador = setTimeout(guarda, 500); }
+CAMPOS.forEach(function(id){ $(id).addEventListener("input", todo); $(id).addEventListener("change", todo); });
+[].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c){ c.addEventListener("change", guarda); });
+$("b-pdf").addEventListener("click", function(){ document.querySelectorAll("details.modulo").forEach(function(x){ x.open = true; }); window.print(); });
+window.addEventListener("beforeprint", function(){ document.querySelectorAll("details.modulo").forEach(function(x){ x.open = true; }); });
+$("b-borrar").addEventListener("click", function(){ $("b-borrar").hidden = true; $("b-borrar-si").hidden = false; $("b-borrar-no").hidden = false; $("borrar-msg").textContent = T("Erase all your work? This cannot be undone.", "¿Borrar todo su trabajo? No se puede deshacer."); });
+$("b-borrar-no").addEventListener("click", function(){ $("b-borrar").hidden = false; $("b-borrar-si").hidden = true; $("b-borrar-no").hidden = true; $("borrar-msg").textContent = ""; });
+$("b-borrar-si").addEventListener("click", function(){ try { localStorage.removeItem(CLAVE); } catch (err){} CAMPOS.forEach(function(id){ var x = $(id); if (x.tagName === "SELECT") x.selectedIndex = 0; else x.value = ""; }); [].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c){ c.checked = false; }); $("b-borrar-no").click(); todo(); });
+$("b-ejemplo").addEventListener("click", function(){ $("fn-tipo").value = "cuad"; $("fn-nombre").value = "h"; $("fn-a").value = "-16"; $("fn-b").value = "64"; $("fn-c").value = "5"; $("gr-x0").value = "0"; $("gr-x1").value = "4"; $("gr-ex").value = T("time (seconds)", "tiempo (segundos)"); $("gr-ey").value = T("height (feet)", "altura (pies)"); $("an-x").value = "1"; if (!$("p-titulo").value) $("p-titulo").value = T("The height of a ball", "La altura de una pelota"); todo(); });
+restaura(); todo();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

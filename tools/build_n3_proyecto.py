@@ -244,6 +244,8 @@ def construye():
     ruta_es = "es/matematicas/nivel-3/proyecto-nivel-3.html"
     tr.guarda(ruta_es)
     s = open(os.path.join(ROOT, ruta_es), encoding="utf-8").read()
+    s = s.replace('<a class="lg-logo" href="/">', '<a class="lg-logo" href="/es/">').replace('alt="LearnGED home"', 'alt="Inicio de LearnGED"').replace('href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a>', 'href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a>')
+    open(os.path.join(ROOT, ruta_es), "w", encoding="utf-8").write(s)
     for frase in ["Back to contents", "On this page", "Open all"]:
         if frase in s: print("  ¡OJO! queda en inglés en", ruta_es, ":", frase)
 

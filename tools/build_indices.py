@@ -295,10 +295,15 @@ def _tx4():
             X[L][k] = v.replace("level-1", "level-4").replace("nivel-1", "nivel-4").replace("Level 1", "Level 4").replace("Nivel 1", "Nivel 4")
     X["en"]["h1"] = "Math · Level 4 · Mastering the GED and problem solving"
     X["es"]["h1"] = "Matemáticas · Nivel 4 · Dominio del GED y resolución de problemas"
-    X["en"]["intro"] = "Eight topics, from the coordinate plane to functions and a practice GED test. Each lesson will have a practice page that makes new exercises every time."
-    X["es"]["intro"] = "Ocho temas, del plano cartesiano a las funciones y un simulacro del GED. Cada lección tendrá una página de práctica que genera ejercicios nuevos cada vez."
+    X["en"]["intro"] = "Eight topics, from the coordinate plane to functions, a final project, and a final check. Each lesson has a practice page that makes new exercises every time."
+    X["es"]["intro"] = "Ocho temas, del plano cartesiano a las funciones, un proyecto final y una evaluación final. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez."
     return X
 TX4 = _tx4()
+EXTRAS4 = {
+ "en": {"8-3": [("project", "project-level-4.html", None, "Final project: My mathematical model (template)"),
+                ("check", "final-check-level-4.html", None, "Level 4 final check: 30 questions")]},
+ "es": {"8-3": [("project", "proyecto-nivel-4.html", None, "Proyecto final: Mi modelo matemático (plantilla)"),
+                ("check", "evaluacion-final-nivel-4.html", None, "Evaluación final del Nivel 4: 30 preguntas")]}}
 
 RE_BARRA = re.compile(r'(<a class="lg-logo" href="(/|/es/)"><img [^>]*></a>)(?!<a class="lg-link lg-inicio")')
 RE_VIEJO = re.compile(r'<a class="lg-link lg-inicio" [^>]*><span aria-hidden="true">🏠 </span>(?:Home|Inicio)</a>')
@@ -330,4 +335,4 @@ if __name__ == "__main__":
     print("Level 2 ok:", construye("en", TEMAS2, EXTRAS2, TX2), "English lessons ·", construye("es", TEMAS2, EXTRAS2, TX2), "lecciones en español")
     print("Level 3 ok:", construye("en", TEMAS3, EXTRAS3, TX3), "English lessons ·", construye("es", TEMAS3, EXTRAS3, TX3), "lecciones en español")
     print("Home link added to", pon_inicio(), "pages")
-    print("Level 4 ok:", construye("en", TEMAS4, {"en": {}, "es": {}}, TX4), "English lessons ·", construye("es", TEMAS4, {"en": {}, "es": {}}, TX4), "lecciones en español")
+    print("Level 4 ok:", construye("en", TEMAS4, EXTRAS4, TX4), "English lessons ·", construye("es", TEMAS4, EXTRAS4, TX4), "lecciones en español")

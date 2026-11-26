@@ -14,14 +14,19 @@ function muestrea(f, x0, x1, y0, y1, n){
   if (cur.length > 1) piezas.push(cur);
   return piezas;
 }
+/* A round step for the numbers on an axis */
+function pasoBonito(v){ var l = [1, 2, 5, 10, 20, 25, 50, 100, 200, 250, 500, 1000, 2000, 2500, 5000, 10000]; for (var i = 0; i < l.length; i++) if (l[i] >= v) return l[i]; return 10000; }
 /* Graph: o.rango {x0, x1, y0, y1}; o.curvas [{f | piezas, color, raya}]; o.puntos [[x, y, color, label]];
    o.vertical x (a dashed vertical line); o.segmentos [[a, b, color, raya]]; o.dominio [a, b] / o.rangoY [c, d] (bands on the axes);
    o.voz (spoken text); o.ancho; o.paso */
 function grafFun(o){
   var R = o.rango || {x0: -7, x1: 7, y0: -7, y1: 7}, sx = R.x1 - R.x0, sy = R.y1 - R.y0, span = Math.max(sx, sy), P;
   if (sy > 1.3 * sx){ /* a tall graph: its own scale on the y-axis */
-    var u = Math.floor(440 / sx), uy = Math.min(u, 380 / sy), py = sy > 60 ? 10 : sy > 24 ? 5 : 2;
-    P = Plano({xmin: R.x0, xmax: R.x1, ymin: R.y0, ymax: R.y1, u: u, uy: uy, paso: o.paso || (sx > 14 ? 2 : 1), pasoY: py});
+    var u = Math.floor(440 / sx), uy = Math.min(u, 380 / sy);
+    var py = o.pasoY || pasoBonito(sy / 8), largo = String(Math.max(Math.abs(Math.floor(R.y0 / py) * py), Math.abs(Math.floor(R.y1 / py) * py))).length + (R.y0 < 0 ? 1 : 0);
+    var mg = R.x0 >= 0 ? Math.max(30, largo * 8 + 12) : 30;
+    if (mg > 30) u = Math.floor((440 - 2 * (mg - 30)) / sx);
+    P = Plano({xmin: R.x0, xmax: R.x1, ymin: R.y0, ymax: R.y1, u: u, uy: uy, m: mg, paso: o.paso || pasoBonito(sx / 9), pasoY: py});
   } else P = Plano({xmin: R.x0, xmax: R.x1, ymin: R.y0, ymax: R.y1, u: o.u || Math.floor(440 / span), paso: o.paso || (span > 30 ? 5 : span > 14 ? 2 : 1)});
   var s = "";
   var clip = "cf" + Math.floor(Math.random() * 1e9);
