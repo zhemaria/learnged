@@ -17,7 +17,7 @@ def fig_solidos():
     s = []
     # sphere
     s.append(f'<circle cx="100" cy="110" r="70" fill="#e3f2fd" stroke="{L}" stroke-width="2.5"/><path d="M30 110 A70 17 0 0 0 170 110" fill="none" stroke="{L}" stroke-width="2"/><path d="M30 110 A70 17 0 0 1 170 110" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/>')
-    s.append(f'<line x1="100" y1="110" x2="170" y2="110" stroke="{R}" stroke-width="3"/><text x="135" y="100" font-size="16" font-weight="700" fill="{R}" text-anchor="middle">r</text>')
+    s.append(f'<line x1="100" y1="110" x2="170" y2="110" stroke="{R}" stroke-width="3"/><text x="178" y="116" font-size="16" font-weight="700" fill="{R}">r</text>')
     s.append('<text x="100" y="215" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = 4/3 πr³</text>')
     # cone
     s.append(f'<path d="M230 170 L300 40 L370 170 A70 16 0 0 1 230 170 Z" fill="#e3f2fd" stroke="{L}" stroke-width="2.5"/><path d="M230 170 A70 16 0 0 1 370 170" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/>')

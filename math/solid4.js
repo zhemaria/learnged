@@ -58,7 +58,7 @@ function esferaSVG(o){
   if (o.cil) s += '<rect x="' + (cx - R) + '" y="' + (cy - R) + '" width="' + 2 * R + '" height="' + 2 * R + '" fill="#fff8e1" stroke="#f9a825" stroke-width="2" stroke-dasharray="7 5"/>' + elip(cx, cy - R, R, R * .22, "none", "#f9a825") + elip(cx, cy + R, R, R * .22, "none", "#f9a825", "frente");
   s += '<circle cx="' + cx + '" cy="' + cy + '" r="' + R + '" fill="' + S4.rell + '" stroke="' + S4.linea + '" stroke-width="2.5"/>';
   s += elip(cx, cy, R, R * .25, "none", S4.oculto, "atras") + elip(cx, cy, R, R * .25, "none", S4.linea, "frente");
-  s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="' + S4.linea + '"/>' + lin(cx, cy, cx + R, cy, S4.radio, 3.5) + etq(cx + R / 2, cy - 12, isNaN(+o.r) ? "r" : "r = " + o.r, S4.radio);
+  s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="' + S4.linea + '"/>' + lin(cx, cy, cx + R, cy, S4.radio, 3.5) + etq(cx + R + 8, cy + 6, isNaN(+o.r) ? "r" : "r = " + o.r, S4.radio, "start");
   if (o.diam) s += lin(cx - R, cy + 36, cx + R, cy + 36, "#6a1b9a", 2.5, "6 4") + etq(cx, cy + 58, isNaN(+o.r) ? "d" : "d = " + nd(2 * o.r), "#6a1b9a");
   return marco(W, H, o.voz, s, o.ancho || 340);
 }
@@ -87,7 +87,10 @@ function piramideSVG(o){
   s += lin(A[0], A[1], D[0], D[1], S4.oculto, 2, "6 5") + lin(D[0], D[1], C[0], C[1], S4.oculto, 2, "6 5") + lin(D[0], D[1], V[0], V[1], S4.oculto, 2, "6 5");
   s += '<polygon points="' + [A, B, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + S4.rell + '" stroke="' + S4.linea + '" stroke-width="2.5"/>';
   s += '<polygon points="' + [B, C, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="#bbdefb" stroke="' + S4.linea + '" stroke-width="2.5"/>';
-  s += lin(V[0], V[1], cen[0], cen[1], S4.alto, 3, "7 5") + etq(cen[0] - 10, (V[1] + cen[1]) / 2, "h = " + o.h, S4.alto, "end");
+  var ym = (V[1] + cen[1]) / 2;
+  s += lin(V[0], V[1], cen[0], cen[1], S4.alto, 3, "7 5");
+  if (o.prisma) s += lin(A[0] - 6, ym, cen[0] - 4, ym, S4.alto, 1.5, "2 4") + etq(A[0] - 10, ym + 5, "h = " + o.h, S4.alto, "end");
+  else s += etq(cen[0] - 10, ym, "h = " + o.h, S4.alto, "end");
   s += etq((A[0] + B[0]) / 2, y0 + 26, (o.cuadrada ? "L = " : "L = ") + o.L, S4.base) + etq((B[0] + C[0]) / 2 + 14, (B[1] + C[1]) / 2 + 6, (o.cuadrada ? "L = " : T("w = ", "a = ")) + o.b, S4.base, "start");
   return marco(W, H, o.voz, s, o.ancho || 360);
 }
@@ -97,5 +100,7 @@ function prismaSVG(o){
   s += lin(A[0], A[1], D[0], D[1], S4.oculto, 2, "6 5") + lin(D[0], D[1], C[0], C[1], S4.oculto, 2, "6 5") + lin(D[0], D[1], D[0], D[1] - h, S4.oculto, 2, "6 5");
   [[A, B, up(B), up(A), S4.rell], [B, C, up(C), up(B), "#bbdefb"], [up(A), up(B), up(C), up(D), "#e1f5fe"]].forEach(function(c){ s += '<polygon points="' + c.slice(0, 4).map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c[4] + '" stroke="' + S4.linea + '" stroke-width="2.5"/>'; });
   s += etq((A[0] + B[0]) / 2, y0 + 26, "L = " + o.L, S4.base) + etq((B[0] + C[0]) / 2 + 14, (B[1] + C[1]) / 2 + 6, T("w = ", "a = ") + o.b, S4.base, "start") + etq(A[0] - 10, y0 - h / 2, "h = " + o.h, S4.alto, "end");
+  var dims = [o.L, o.b, o.h].map(Number);
+  if (Math.max.apply(null, dims) / Math.min.apply(null, dims) > 6) s += etq(W / 2, 22, T("(drawing not to scale)", "(dibujo sin escala)"), "#607d8b", "middle", 13);
   return marco(W, H, o.voz, s, o.ancho || 360);
 }

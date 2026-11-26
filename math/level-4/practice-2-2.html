@@ -193,7 +193,7 @@ var FIG = {
   bloque: {nom: T("Drilled block (prism − cylinder)", "Bloque perforado (prisma − cilindro)"), partes: ["pri", "cil"], op: "−", dims: [["a", T("Length", "Largo"), 4, 14, 10], ["b", T("Width", "Ancho"), 4, 14, 10], ["h", T("Height", "Alto"), 2, 10, 5], ["r", T("Radius of the hole", "Radio del hueco"), 1, 3, 2]]}};
 /* Composite figure drawing; sep = draw the parts apart */
 function figSVG(f, d, sep, colorear){
-  var W = 420, H = 380, s = "", cx = 210, g = sep ? 26 : 0, c = function(k){ return colorear === false ? "#eceff1" : COL[k]; };
+  var W = 420, H = 380, s = "", cx = 210, g = sep ? 44 : 0, c = function(k){ return colorear === false ? "#eceff1" : COL[k]; };
   function cil(cx0, base, R, h, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base - h) + " L" + f1(cx0 - R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 0 " + f1(cx0 + R) + " " + f1(base) + " L" + f1(cx0 + R) + " " + f1(base - h) + '" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>' + elip(cx0, base - h, R, R * .25, col) + elip(cx0, base, R, R * .25, "none", S4.oculto, "atras"); }
   function cono(cx0, base, R, h, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base) + " L" + f1(cx0) + " " + f1(base - h) + " L" + f1(cx0 + R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 1 " + f1(cx0 - R) + " " + f1(base) + 'Z" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>'; }
   function semi(cx0, base, R, arriba, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base) + " A" + f1(R) + " " + f1(R) + " 0 0 " + (arriba ? 1 : 0) + " " + f1(cx0 + R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 " + (arriba ? 0 : 1) + " " + f1(cx0 - R) + " " + f1(base) + 'Z" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>'; }
@@ -205,14 +205,14 @@ function figSVG(f, d, sep, colorear){
     s += cil(cx, base, R, h, c("cil"));
     if (f === "silo") s += cono(cx, base - h - g, R, d.k * esc, c("cono"));
     else s += semi(cx, base - h - g, R, true, c("semi"));
-    s += lin(cx, base - h, cx + R, base - h, S4.radio, 3) + etq(cx + R / 2, base - h - 8, "r = " + d.r, S4.radio) + lin(cx + R + 18, base, cx + R + 18, base - h, S4.alto, 2.5, "6 4") + etq(cx + R + 24, base - h / 2, "h = " + d.h, S4.alto, "start");
-    if (f === "silo") s += etq(cx - R - 10, base - h - g - d.k * esc / 2, d.k, "#e65100", "end");
+    s += lin(cx, base - h / 2, cx + R, base - h / 2, S4.radio, 3) + '<circle cx="' + cx + '" cy="' + f1(base - h / 2) + '" r="3.5" fill="' + S4.radio + '"/>' + etq(cx + R / 2, base - h / 2 - 9, "r = " + d.r, S4.radio) + lin(cx + R + 18, base, cx + R + 18, base - h, S4.alto, 2.5, "6 4") + etq(cx + R + 24, base - h / 2, "h = " + d.h, S4.alto, "start");
+    if (f === "silo") s += lin(cx + R + 18, base - h - g, cx + R + 18, base - h - g - d.k * esc, "#e65100", 2.5, "6 4") + etq(cx + R + 24, base - h - g - d.k * esc / 2 + 5, "h = " + d.k, "#e65100", "start");
   } else if (f === "torre"){
     var tot2 = d.h + d.k, e2 = Math.min(26, 290 / tot2, 200 / (d.a * 1.6)), w = d.a * e2, dep = d.a * e2 * .7, x0 = 210 - (w + dep * .8) / 2, y0 = 350, hh = d.h * e2, kk = d.k * e2;
     s += caja(x0, y0, w, dep, hh, c("pri"));
     var A = [x0, y0 - hh - g], B = [x0 + w, y0 - hh - g], C = [x0 + w + dep * .8, y0 - hh - g - dep * .55], cen = [x0 + (w + dep * .8) / 2, y0 - hh - g - dep * .275], V = [cen[0], cen[1] - kk];
     s += '<polygon points="' + [A, B, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c("pir") + '" stroke="' + S4.linea + '" stroke-width="2.5"/><polygon points="' + [B, C, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c("pir") + '" fill-opacity=".8" stroke="' + S4.linea + '" stroke-width="2.5"/>';
-    s += etq(x0 + w / 2, y0 + 22, d.a, S4.base) + etq(x0 - 10, y0 - hh / 2, "h = " + d.h, S4.alto, "end") + etq(V[0] + 12, V[1] + kk / 2, d.k, "#e65100", "start");
+    s += etq(x0 + w / 2, y0 + 22, d.a, S4.base) + etq(x0 - 10, y0 - hh / 2, "h = " + d.h, S4.alto, "end") + etq(V[0] + 12, V[1] + kk / 2, T("pyramid h = ", "h de la pirámide = ") + d.k, "#e65100", "start");
   } else {
     var e3 = Math.min(22, 230 / (d.a + d.b * .8), 200 / d.h), w3 = d.a * e3, dp = d.b * e3, x3 = 210 - (w3 + dp * .8) / 2, y3 = 330, h3 = d.h * e3, R3 = d.r * e3, ccx = x3 + (w3 + dp * .8) / 2, ccy = y3 - h3 - dp * .275;
     s += caja(x3, y3, w3, dp, h3, c("pri"));
