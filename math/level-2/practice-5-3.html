@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 2 · Lesson 5.3 · practice (English) — built by tools/build_n2_lesson_5_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 5.3 · Discount, tax, tip, and mixed applications · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+.recibo{font-family:Consolas,'Courier New',monospace;background:#fffdf7;border:1px dashed #8d6e63;max-width:380px;margin:14px auto;padding:14px 18px;font-size:15px;}.recibo h4{text-align:center;margin:0 0 8px;color:#333;font-size:15px;} .recibo .l{display:flex;justify-content:space-between;gap:10px;}.recibo .sep{border-top:1px dashed #8d6e63;margin:6px 0;} .recibo .tot{font-weight:700;}.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;} .dos-col .recibo{width:100%;box-sizing:border-box;} @media (max-width:640px){ .dos-col{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 2 · Topic 5 · Percents</div>
+    <h1>Lesson 5.3 · Discount, tax, tip, and mixed applications</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#everyday">Everyday applications</a></li>
+      <li><a href="#tip">The tip in your head</a></li>
+      <li><a href="#chained">Chained percents</a></li>
+      <li><a href="#order">Does the order matter? The dollar coupon</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="everyday" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Everyday applications</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A <strong>discount</strong> is subtracted from the price; <strong>sales tax</strong> and a <strong>tip</strong> are added; a <strong>commission</strong> is a percent of the sales. In every case, first find the percent of the amount, then decide whether to add it, subtract it, or leave it alone.</p>
+      <h3>Practice: at the store and the restaurant</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Type only the number. It may have cents, like 9.90; you may use the $ sign.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="tip">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The tip in your head</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To find 10%, move the decimal point one place to the left. 5% is half of that, 15% is 10% + 5%, and 20% is twice 10%.</p>
+      <h3>Figure the tip step by step</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="pr-c">Bill ($)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="pr-c" value="48"></div></div>
+        <div class="salida" id="pr-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: tips</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Tip ($)</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type only the number. It may have cents, like 9.90; you may use the $ sign.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="chained">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Chained percents</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>When a purchase has several percents, apply each one to the value <strong>at that moment</strong>. Two discounts in a row are not added: you multiply their factors.</p>
+      <h3>Shopping simulator</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="si-p">Price ($)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="si-p" value="600"></div><div class="campo"><label for="si-d">Discount (%)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="si-d" value="15"></div><div class="campo"><label for="si-d2">Extra discount (%)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="si-d2" value="0"></div><div class="campo"><label for="si-i">Tax (%)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="si-i" value="8.25"></div></div>
+        <div id="si-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: chained purchases</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type only the number, with no % sign. It may have decimals; for money you may use the $ sign.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="order">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Does the order matter? The dollar coupon</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With two percents, the order does not change the answer. But with a percent and a fixed dollar coupon, it does: the coupon is worth more if it comes off at the end.</p>
+      <h3>Compare the two orders</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="or-p">Price ($)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="or-p" value="60"></div><div class="campo"><label for="or-c">Coupon ($)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="or-c" value="10"></div><div class="campo"><label for="or-d">Discount (%)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="or-d" value="20"></div></div>
+        <div id="or-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: how much do you pay?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 2 · Topic 5 · Percents · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/rates.js"></script>
+<script>
+var TXT = {
+ "c1": "An item that costs {P} has a {p}% discount. What is the final price?",
+ "c1s": "{P} × {r} = {d} off; {P} − {d2} = {x}.",
+ "c1a": "That is the discount. Subtract it from the original price.",
+ "c1b": "A discount is subtracted, not added.",
+ "c2": "A {P} purchase has a {p}% sales tax. What is the total?",
+ "c2s": "{P} × {r} = {d}; {P} + {d2} = {x}.",
+ "c2a": "That is the tax. Add it to the price.",
+ "c2b": "Tax is added, not subtracted.",
+ "c3": "A restaurant bill is {P}, and you leave a {p}% tip. How much do you pay in all?",
+ "c3s": "{P} × {r} = {d}; {P} + {d2} = {x}.",
+ "c3a": "That is the tip. Add it to the bill.",
+ "c4": "A salesperson earns a {p}% commission on sales. If the person sold {P}, how much is the commission?",
+ "c4s": "{P} × {r} = {x}.",
+ "c4a": "The commission is only the percent: do not subtract it from the sales.",
+ "c5": "A {P} sweater has a {p}% discount. How many dollars do you save?",
+ "c5s": "{P} × {r} = {x}.",
+ "c5a": "That is the final price. The question asks how much you save: the discount.",
+ "escribeCuenta": "Type the total of the bill.",
+ "t10": "<strong>10%:</strong> move the point: {c} → {a}.",
+ "t5": "<strong>5%:</strong> half of 10%: {a}.",
+ "t15": "<strong>15%</strong> = {a} + {b} = {c}.",
+ "t20": "<strong>20%</strong> = twice 10% = {a}.",
+ "tRaz": "A fair tip is between {a} and {b}.",
+ "propQ": "The restaurant bill is {c}. How much is a {p}% tip?",
+ "s15": "10% = {a}; 5% = {b}; 15% = {c}.",
+ "s20": "10% = {a}; twice that is {c}.",
+ "s10": "Move the point one place: {c}.",
+ "s18": "{x} × 0.18 = {c}.",
+ "pTotal": "That is the total with the tip. Only the tip is asked.",
+ "pDec": "Write the percent as a decimal: {p}% = {r}.",
+ "p10": "That is only 10%. Add 5% (half of 10%).",
+ "revisa": "Check the data: type numbers only.",
+ "recibo": "Receipt",
+ "precio": "Price",
+ "descuento": "Discount {p}%",
+ "adicional": "Extra {p}% (on {s})",
+ "impuesto": "Tax {p}%",
+ "unPaso": "In one step: {f} = {x} (before rounding each line).",
+ "equivalen": "The two discounts are the same as {a} off, not {b}.",
+ "e1": "An item that costs {P} has a {d}% discount, and a {i}% tax is charged on the sale price. How much do you pay?",
+ "e1s": "{P} × {f1} = {s}; {s} × {f2} = {x}.",
+ "e1a": "Percents are not added or subtracted together: first the discount, then the tax on the sale price.",
+ "e1b": "That is the sale price. Add the tax.",
+ "e1c": "The tax is figured on the sale price, not on the original.",
+ "e2": "A store gives {a}% off and then an extra {b}% off the sale price. What total discount is that?",
+ "e2s": "You pay {f1} × {f2} = {q}, that is, {p}. The total discount is {x}.",
+ "e2a": "The percents are not added: the second one is on a price that is already lower.",
+ "e2b": "That is the percent you pay. The question asks for the discount.",
+ "e3": "Shoes that cost {P} have a {d}% discount and, with the store card, an extra {e}% off the sale price. What is the final price?",
+ "e3s": "{P} × {f1} × {f2} = {x}.",
+ "e3a": "The discounts are not added: the {e}% is figured on the price that is already lower.",
+ "cupPrim": "Coupon first",
+ "pctPrim": "Percent first",
+ "cupon": "Coupon",
+ "queda": "Left",
+ "pagas": "You pay",
+ "coinciden": "With these numbers both orders give the same.",
+ "dif": "Difference: {d}. It is better to apply the percent first: then the coupon comes off whole at the end.",
+ "o3": "An item costs {P}, has a {d}% discount, and you have a {c} coupon. In which order is it better to apply them?",
+ "oPc": "First the percent, then the coupon",
+ "oCp": "First the coupon, then the percent",
+ "oIg": "It is the same",
+ "o3s": "Percent first: {P} × {f} − {c} = {b}. Coupon first: ({P} − {c}) × {f} = {a}. With the coupon at the end you save {d} more.",
+ "o3i": "With two percents the order does not matter, but with a dollar coupon it changes the answer.",
+ "o12": "An item costs {P}, has a {d}% discount, and a {c} coupon. The store applies {x}. How much do you pay?",
+ "oCupPrim": "<strong>the coupon first</strong> and then the percent",
+ "oPctPrim": "<strong>the percent first</strong> and then the coupon",
+ "oOtro": "That answer goes with the other order.",
+ "oFalta": "You still need to apply the coupon.",
+ "oDol": "{d}% is not {d} dollars.",
+ "oS1": "({P} − {c}) × {f} = {a}.",
+ "oS2": "{P} × {f} = {m}; minus {c} = {b}."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function pc(x){ return nd(Math.round(x * 1000) / 1000) + "%"; }
+function cent(x){ return Math.round((x + 1e-9) * 100) / 100; }
+function lee(id){ var v = leeD(String($(id).value).replace("%", "")); $(id).classList.toggle("error", v === null || v < 0); return v === null || v < 0 ? null : v; }
+function lin(a, b, cl){ return '<div class="l' + (cl ? " " + cl : "") + '"><span>' + a + '</span><span>' + b + '</span></div>'; }
+function sinPct(t){ return String(t).replace(/%/g, ""); }
+
+/* ============ MODULE 1 · everyday ============ */
+function genCotidiana(){
+  var tp = aleatorio(1, 5), P, p, res, o, pist = [];
+  if (tp === 1){ P = elige([40, 60, 85, 120, 75, 48, 150]); p = elige([10, 15, 20, 25, 30, 40]); var des = cent(P * p / 100); res = cent(P - des); o = { P: dinero(P), p: p, r: nd(p / 100), d: dinero(des), d2: nd(des), x: dinero(res) }; pist.push({ v: des, msg: TXT.c1a }, { v: P + des, msg: TXT.c1b }); }
+  else if (tp === 2){ P = elige([120, 80, 45, 250, 60, 36]); p = elige([6, 7, 8, 9, 10]); var imp = cent(P * p / 100); res = cent(P + imp); o = { P: dinero(P), p: p, r: nd(p / 100), d: dinero(imp), d2: nd(imp), x: dinero(res) }; pist.push({ v: imp, msg: TXT.c2a }, { v: P - imp, msg: TXT.c2b }); }
+  else if (tp === 3){ P = elige([48, 60, 36, 84, 52, 120]); p = elige([15, 18, 20]); var pr = cent(P * p / 100); res = cent(P + pr); o = { P: dinero(P), p: p, r: nd(p / 100), d: dinero(pr), d2: nd(pr), x: dinero(res) }; pist.push({ v: pr, msg: TXT.c3a }); }
+  else if (tp === 4){ P = elige([2000, 1500, 3200, 850, 12000]); p = elige([3, 4, 5, 6, 8, 10]); res = cent(P * p / 100); o = { P: dinero(P), p: p, r: nd(p / 100), x: dinero(res) }; pist.push({ v: P - res, msg: TXT.c4a }); }
+  else { P = elige([60, 80, 25, 45, 120]); p = elige([10, 20, 25, 30]); res = cent(P * p / 100); o = { P: dinero(P), p: p, r: nd(p / 100), x: dinero(res) }; pist.push({ v: P - res, msg: TXT.c5a }); }
+  return { enun: F(TXT["c" + tp], o), correcta: dinero(res), solucion: F(TXT["c" + tp + "s"], o), evalua: numD(res, pist) };
+}
+
+/* ============ MODULE 2 · the tip ============ */
+function pintaPR(){
+  var c = lee("pr-c"), s = $("pr-salida");
+  if (c === null){ s.innerHTML = '<div class="linea">' + TXT.escribeCuenta + '</div>'; return; }
+  var t10 = cent(c / 10), t5 = cent(c / 20), t15 = cent(c * 0.15), t20 = cent(c * 0.2);
+  s.innerHTML = '<div class="linea">' + F(TXT.t10, { c: dinero2(c), a: dinero2(t10) }) + '</div><div class="linea">' + F(TXT.t5, { a: dinero2(t5) }) + '</div>' +
+    '<div class="linea">' + F(TXT.t15, { a: dinero2(t10), b: dinero2(t5), c: dinero2(t15) }) + '</div><div class="linea">' + F(TXT.t20, { a: dinero2(t20) }) + '</div>' +
+    '<div class="linea veredicto">' + F(TXT.tRaz, { a: dinero2(t15), b: dinero2(t20) }) + '</div>';
+}
+function genPropina(){
+  var c = elige([24, 36, 42, 48, 52, 56, 64, 68, 72, 84, 96, 36.5, 42.5, 55, 45]), p = elige([10, 15, 20, 18]), tt = cent(c * p / 100);
+  var sol = p === 15 ? F(TXT.s15, { a: dinero2(c / 10), b: dinero2(c / 20), c: dinero2(tt) }) : (p === 20 ? F(TXT.s20, { a: dinero2(c / 10), c: dinero2(tt) }) : (p === 10 ? F(TXT.s10, { c: dinero2(tt) }) : F(TXT.s18, { x: nd(c), c: dinero2(tt) })));
+  var pist = [{ v: cent(c + tt), msg: TXT.pTotal }, { v: cent(c * p), msg: F(TXT.pDec, { p: p, r: nd(p / 100) }) }];
+  if (p === 15) pist.push({ v: cent(c / 10), msg: TXT.p10 });
+  return { enun: F(TXT.propQ, { c: dinero2(c), p: p }), correcta: dinero2(tt), solucion: sol, evalua: numD(tt, pist) };
+}
+
+/* ============ MODULE 3 · chained percents ============ */
+function pintaSI(){
+  var p = lee("si-p"), d = lee("si-d"), e = lee("si-d2"), i = lee("si-i"), s = $("si-salida");
+  if ([p, d, e, i].some(function(x){ return x === null; })){ s.innerHTML = '<div class="salida"><div class="linea">' + TXT.revisa + '</div></div>'; return; }
+  var desc1 = cent(p * d / 100), sub1 = cent(p - desc1), desc2 = cent(sub1 * e / 100), sub = cent(sub1 - desc2), imp = cent(sub * i / 100), tot = cent(sub + imp);
+  var h = '<div class="recibo" role="group" aria-label="' + TXT.recibo + '"><h4>' + TXT.recibo + '</h4>' + lin(TXT.precio, dinero2(p));
+  if (d > 0) h += lin(F(TXT.descuento, { p: nd(d) }), "−" + dinero2(desc1));
+  if (e > 0) h += lin(F(TXT.adicional, { p: nd(e), s: dinero2(sub1) }), "−" + dinero2(desc2));
+  h += '<div class="sep"></div>' + lin("Subtotal", dinero2(sub)) + lin(F(TXT.impuesto, { p: nd(i) }), dinero2(imp)) + '<div class="sep"></div>' + lin("TOTAL", dinero2(tot), "tot") + '</div>';
+  var f = [nd(p)]; if (d > 0) f.push(nd(Math.round((1 - d / 100) * 10000) / 10000)); if (e > 0) f.push(nd(Math.round((1 - e / 100) * 10000) / 10000)); if (i > 0) f.push(nd(Math.round((1 + i / 100) * 10000) / 10000));
+  h += '<div class="salida"><div class="linea">' + F(TXT.unPaso, { f: f.join(" × "), x: dinero2(p * (1 - d / 100) * (1 - e / 100) * (1 + i / 100)) }) + '</div>';
+  if (d > 0 && e > 0){ var real = Math.round((1 - (1 - d / 100) * (1 - e / 100)) * 10000) / 100; h += '<div class="linea">' + F(TXT.equivalen, { a: pc(real), b: pc(d + e) }) + '</div>'; }
+  s.innerHTML = h + '</div>';
+}
+function genEncadenado(){
+  var tp = aleatorio(1, 3);
+  if (tp === 1){
+    var P = elige([80, 120, 600, 250, 45, 360, 95]), d = elige([10, 15, 20, 25, 30]), i = elige([6, 7, 8, 8.25, 9, 10]), sub = cent(P * (1 - d / 100)), tot = cent(sub + cent(sub * i / 100));
+    var pist = [{ v: cent(P * (1 - d / 100 + i / 100)), msg: TXT.e1a }, { v: sub, msg: TXT.e1b }, { v: cent(P * (1 + i / 100) - P * d / 100), msg: TXT.e1c }].filter(function(x){ return Math.abs(x.v - tot) > 0.011; });
+    return { enun: F(TXT.e1, { P: dinero(P), d: d, i: nd(i) }), correcta: dinero2(tot), solucion: F(TXT.e1s, { P: nd(P), f1: nd(1 - d / 100), s: dinero2(sub), f2: nd(1 + i / 100), x: dinero2(tot) }), evalua: numD(tot, pist, null, 0.011) };
+  }
+  if (tp === 2){
+    var a = elige([10, 20, 25, 30, 40, 50]), b = elige([10, 15, 20, 25]), q = Math.round((1 - a / 100) * (1 - b / 100) * 10000) / 10000, eq = Math.round((1 - q) * 10000) / 100;
+    var ev = numD(eq, [{ v: a + b, msg: TXT.e2a }, { v: 100 - eq, msg: TXT.e2b }], null, 0.051);
+    return { enun: F(TXT.e2, { a: a, b: b }), correcta: pc(eq), solucion: F(TXT.e2s, { f1: nd(1 - a / 100), f2: nd(1 - b / 100), q: nd(q), p: pc(100 - eq), x: pc(eq) }), evalua: function(s){ return ev(sinPct(s)); } };
+  }
+  var P3 = elige([40, 60, 80, 120, 150]), d3 = elige([15, 20, 25, 30]), d4 = elige([10, 20]), fin = cent(P3 * (1 - d3 / 100) * (1 - d4 / 100));
+  return { enun: F(TXT.e3, { P: dinero(P3), d: d3, e: d4 }), correcta: dinero2(fin), solucion: F(TXT.e3s, { P: nd(P3), f1: nd(1 - d3 / 100), f2: nd(1 - d4 / 100), x: dinero2(fin) }),
+    evalua: numD(fin, [{ v: cent(P3 * (1 - (d3 + d4) / 100)), msg: F(TXT.e3a, { e: d4 }) }], null, 0.011) };
+}
+
+/* ============ MODULE 4 · order with a coupon ============ */
+function pintaOR(){
+  var p = lee("or-p"), c = lee("or-c"), d = lee("or-d"), s = $("or-salida");
+  if ([p, c, d].some(function(x){ return x === null; })){ s.innerHTML = '<div class="salida"><div class="linea">' + TXT.revisa + '</div></div>'; return; }
+  var f = 1 - d / 100, a = cent((p - c) * f), b = cent(p * f - c);
+  s.innerHTML = '<div class="dos-col"><div class="recibo"><h4>' + TXT.cupPrim + '</h4>' + lin(TXT.precio, dinero2(p)) + lin(TXT.cupon, "−" + dinero2(c)) + lin(TXT.queda, dinero2(p - c)) + lin("× " + nd(f) + " (" + nd(d) + "%)", "") + '<div class="sep"></div>' + lin(TXT.pagas, dinero2(a), "tot") + '</div>' +
+    '<div class="recibo"><h4>' + TXT.pctPrim + '</h4>' + lin(TXT.precio, dinero2(p)) + lin("× " + nd(f) + " (" + nd(d) + "%)", dinero2(cent(p * f))) + lin(TXT.cupon, "−" + dinero2(c)) + '<div class="sep"></div>' + lin(TXT.pagas, dinero2(b), "tot") + '</div></div>' +
+    '<div class="salida"><div class="linea">' + (a === b ? TXT.coinciden : F(TXT.dif, { d: dinero2(Math.abs(a - b)) })) + '</div></div>';
+}
+function genOrden(){
+  var P = elige([40, 50, 60, 80, 100, 120]), c = elige([5, 10, 15, 20]), d = elige([10, 20, 25, 30]), f = 1 - d / 100;
+  if (c >= P / 2) c = 5;
+  var a = cent((P - c) * f), b = cent(P * f - c), tp = aleatorio(1, 3), q = { pistas: {} }, o = { P: dinero(P), c: dinero(c), d: d, f: nd(f), a: dinero(a), b: dinero(b), m: dinero(cent(P * f)) };
+  if (tp === 3){
+    q.enun = F(TXT.o3, o); q.enOrden = true; q.correcta = "pc";
+    q.opciones = [{ html: TXT.oPc, clave: "pc" }, { html: TXT.oCp, clave: "cp" }, { html: TXT.oIg, clave: "igual" }];
+    o.d = dinero(cent(a - b)); q.bien = q.mal = F(TXT.o3s, o); q.pistas.igual = TXT.o3i;
+    return q;
+  }
+  var cup = tp === 1, cor = cup ? a : b, otro = cup ? b : a, sinC = cent(P * f), dol = cent(P - c - d);
+  q.enun = F(TXT.o12, { P: o.P, d: d, c: o.c, x: cup ? TXT.oCupPrim : TXT.oPctPrim });
+  var vals = [cor, otro, sinC, dol].filter(function(v, i, arr){ return v > 0 && arr.indexOf(v) === i; });
+  q.opciones = vals.map(function(v){ return { html: dinero2(v), clave: "v" + v }; }); q.correcta = "v" + cor;
+  q.pistas["v" + otro] = TXT.oOtro; q.pistas["v" + sinC] = TXT.oFalta; q.pistas["v" + dol] = F(TXT.oDol, { d: d });
+  q.bien = q.mal = F(cup ? TXT.oS1 : TXT.oS2, o);
+  return q;
+}
+
+/* ============ Start ============ */
+creaPracticaLibre("p1", genCotidiana);
+$("pr-c").addEventListener("input", pintaPR); pintaPR();
+creaPracticaLibre("p2", genPropina);
+["si-p", "si-d", "si-d2", "si-i"].forEach(function(id){ $(id).addEventListener("input", pintaSI); }); pintaSI();
+creaPracticaLibre("p3", genEncadenado);
+["or-p", "or-c", "or-d"].forEach(function(id){ $(id).addEventListener("input", pintaOR); }); pintaOR();
+creaPracticaOM("p4", genOrden);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

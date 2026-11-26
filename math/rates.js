@@ -7,16 +7,17 @@ var TXR = ES ? {
   numero: "Type only the number. It may have decimals (1.25) and, for money, a $ sign.",
   revise: "Check your work."
 };
-/* 1234.5 → "1,234.5"; up to 3 decimals; minus sign − */
+/* 1234.5 → "1,234.5"; up to 4 decimals; minus sign − */
 function nd(x){
-  var r = Math.round(x * 1000) / 1000, neg = r < 0, p = String(Math.abs(r)).split(".");
+  var r = Math.round(x * 10000) / 10000, neg = r < 0, p = String(Math.abs(r)).split(".");
   return (neg ? "−" : "") + com(p[0]) + (p[1] ? "." + p[1] : "");
 }
-/* money: $7.50, $1,200.00 */
-function dinero(x){
+/* money: $7.50, $1,200 (whole dollars without cents); dinero2 always shows cents: $1,200.00 */
+function dinero2(x){
   var neg = x < 0, c = Math.round(Math.abs(x) * 100), e = Math.floor(c / 100), d = c % 100;
   return (neg ? "−" : "") + "$" + com(e) + "." + (d < 10 ? "0" : "") + d;
 }
+function dinero(x){ var s = dinero2(x); return /\.00$/.test(s) ? s.slice(0, -3) : s; }
 /* "$1,200.50", "−3.5", "12" → number, or null */
 function leeD(t){
   var s = String(t).trim().replace(/[−–—]/g, "-").replace(/\$/g, "").replace(/\s+/g, "");

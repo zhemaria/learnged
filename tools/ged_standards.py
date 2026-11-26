@@ -198,6 +198,8 @@ CCR = {
  "6.RP.3b": ("D", "Solve unit rate problems including those involving unit pricing and constant speed."),
  "7.RP.2a": ("D", "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin."),
  "7.RP.2c": ("D", "Represent proportional relationships by equations."),
+ "6.RP.3c": ("D", "Find a percent of a quantity as a rate per 100 (e.g., 30% of a quantity means 30/100 times the quantity); solve problems involving finding the whole, given a part and the percent."),
+ "7.RP.3": ("D", "Use proportional relationships to solve multistep ratio and percent problems. Examples: simple interest, tax, markups and markdowns, gratuities and commissions, fees, percent increase and decrease, percent error."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
 CCR_ORDEN = list(CCR)
@@ -284,6 +286,12 @@ LESSONS = [
   {"direct": ["Q.3.c"], "builds": ["Q.3.b", "A.2.b"], "mp": ["MP.1.e", "MP.2.a", "MP.4.a"], "ccr": ["6.RP.3", "7.RP.2a", "7.RP.2c"]}),
  ("level-2/lesson-4-3.html", "4.3", "Inverse proportions and mixed applications",
   {"direct": ["Q.3.c"], "builds": ["Q.3.b"], "mp": ["MP.1.b", "MP.1.e", "MP.5.a"], "ccr": ["6.RP.3", "7.RP.2a"]}),
+ ("level-2/lesson-5-1.html", "5.1", "Percent: conversions and the three basic cases",
+  {"direct": ["Q.3.d"], "builds": ["Q.1.a", "Q.3.c"], "mp": ["MP.1.a", "MP.1.e", "MP.4.a"], "ccr": ["6.RP.3c", "7.RP.3"]}),
+ ("level-2/lesson-5-2.html", "5.2", "Percent change: increase and decrease",
+  {"direct": ["Q.3.d"], "builds": [], "mp": ["MP.1.e", "MP.3.a", "MP.5.a"], "ccr": ["7.RP.3"]}),
+ ("level-2/lesson-5-3.html", "5.3", "Discount, tax, tip, and mixed applications",
+  {"direct": ["Q.3.d"], "builds": ["Q.3.c"], "mp": ["MP.1.b", "MP.1.e", "MP.2.c"], "ccr": ["7.RP.3"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 5.2 · Cambio porcentual: aumento y disminución — práctica (español) — construida con tools/build_n2_lesson_5_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.2 · Cambio porcentual: aumento y disminución · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-5-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 5 · Porcentajes</div>
+    <h1>Lección 5.2 · Cambio porcentual: aumento y disminución</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#estimar">Antes de calcular, estimar</a></li>
+      <li><a href="#cambio">Cambio porcentual</a></li>
+      <li><a href="#absoluto-relativo">Cambio absoluto y cambio relativo</a></li>
+      <li><a href="#factor">El factor de cambio</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="estimar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Antes de calcular, estimar</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un buen hábito es <strong>estimar</strong> primero si el cambio es grande o pequeño comparado con el valor de partida. Así se detectan de inmediato los resultados absurdos.</p>
+      <div class="caja-tip"><strong>Referencias:</strong> el 10% mueve el punto un lugar a la izquierda; el 50% es la mitad; el 100% quiere decir que la cantidad se duplicó.</div>
+      <h3>Estime con el 10%</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="es-o">Valor original: <span id="es-ov"></span></label><input type="range" id="es-o" min="20" max="400" step="10" value="40"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="es-n">Valor nuevo: <span id="es-nv"></span></label><input type="range" id="es-n" min="5" max="800" step="1" value="52"></div>
+        </div>
+        <div class="salida" id="es-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿de qué tamaño es el cambio?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cambio">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Cambio porcentual</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El cambio porcentual dice cuánto creció o disminuyó una cantidad, en porcentaje <strong>del valor inicial</strong>.</p>
+      <div class="formula">% de cambio = <span class="fracc"><span class="fa">valor final − valor inicial</span><span class="fb2">valor inicial</span></span> × 100</div>
+      <h3>Antes y después</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="cp-i">Valor inicial: <span id="cp-iv"></span></label><input type="range" id="cp-i" min="10" max="200" step="5" value="40"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="cp-f">Valor final: <span id="cp-fv"></span></label><input type="range" id="cp-f" min="5" max="300" step="1" value="34"></div>
+        </div>
+        <div id="cp-svg"></div>
+        <div class="salida" id="cp-salida" aria-live="polite"></div>
+      </div>
+      <h3>¿Subir 10% y bajar 10% deja todo igual?</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:180px;"><label for="sb-p">Porcentaje que sube y después baja: <span id="sb-pv"></span></label><input type="range" id="sb-p" min="5" max="50" step="5" value="10"></div></div>
+        <div class="salida" id="sb-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: cambio porcentual</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Porcentaje</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número, sin el signo %. Puede llevar decimales.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="absoluto-relativo">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Cambio absoluto y cambio relativo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El <strong>cambio absoluto</strong> dice cuántas unidades cambió algo; el <strong>cambio relativo</strong> (el porcentual) dice cuánto representa ese cambio comparado con el punto de partida.</p>
+      <h3>El mismo aumento sobre precios distintos</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:180px;"><label for="ar-d">Aumento en dólares: <span id="ar-dv"></span></label><input type="range" id="ar-d" min="1" max="20" step="1" value="5"></div></div>
+        <div id="ar-tabla"></div>
+      </div>
+      <h3>Practique: ¿cuál cambió más?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="factor">
+    <summary><span class="num" aria-hidden="true">4</span><h2>El factor de cambio</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si se conoce el porcentaje y se quiere el valor nuevo, se puede calcular el cambio y sumarlo o restarlo, o multiplicar directamente por el <strong>factor de cambio</strong>: (1 + r) para aumentar, (1 − r) para disminuir.</p>
+      <h3>Pruebe el factor</h3>
+      <div class="panel">
+        <div class="elecciones" id="fa-botones" role="group" aria-label="Aumento o disminución">
+          <button type="button" class="eleccion" data-sentido="1" aria-pressed="true">Aumento</button>
+          <button type="button" class="eleccion" data-sentido="-1" aria-pressed="false">Disminución</button>
+        </div>
+        <div class="campos">
+          <div class="campo"><label for="fa-o">Valor original ($)</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="fa-o" value="1250"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="fa-p">Porcentaje: <span id="fa-pv"></span></label><input type="range" id="fa-p" min="1" max="60" step="1" value="4"></div>
+        </div>
+        <div class="salida" id="fa-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: con el factor de cambio</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 1.12; si es dinero, puede usar el signo $.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 5 · Porcentajes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script>
+var TXT = {
+ "diez": "El 10% de {o} es {d} (el punto se mueve un lugar).",
+ "arriba": " hacia arriba",
+ "abajo": " hacia abajo",
+ "cambioEs": "El cambio es de {c}{s}, que es {e}.",
+ "menos10": "menos que el 10%",
+ "veces": "unas {k} veces el 10%: alrededor del {p}",
+ "exacto": "Cálculo exacto: {d} ÷ {o} × 100 = {r}",
+ "sinCambio": "0%",
+ "aum": "aumento del ",
+ "dis": "disminución del ",
+ "ctxE": [
+  "Un precio",
+  "Un alquiler",
+  "Una factura de luz",
+  "El boleto de autobús",
+  "Un salario semanal"
+ ],
+ "pasa": "{c} pasa de {o} a {n}. Sin hacer la cuenta exacta, ¿de qué tamaño es {x}?",
+ "elAum": "el aumento",
+ "laDis": "la disminución",
+ "alrededor": "Alrededor del {r}%",
+ "expE": "El 10% de {o} es {d}. El cambio es de {c}, unas {k} veces el 10%: cerca del {r}%. (Exacto: {x}.)",
+ "antes": "Antes",
+ "despues": "Después",
+ "barrasVoz": "Barras del valor inicial, {i}, y del final, {f}.",
+ "cambio": "Cambio: {f} − {i} = {d}. Se divide entre el valor <strong>inicial</strong>: {d} ÷ {i} = {q}.",
+ "noHubo": "No hubo cambio: 0%.",
+ "aumento": "Aumento",
+ "disminucion": "Disminución",
+ "de": " del ",
+ "sb1": "Se empieza con $100. Sube {p}%: 100 × {f} = {a}.",
+ "sb2": "Baja {p}%, pero sobre {a}: {a2} × {g} = {b}.",
+ "sb3": "No vuelve a $100: queda en {b}. Cada cambio se calcula sobre el valor de ese momento.",
+ "subeObj": [
+  "Un café",
+  "El alquiler de una bicicleta",
+  "Una entrada al cine",
+  "Un boleto de tren"
+ ],
+ "bajaObj": [
+  "Una camisa rebajada",
+  "Un par de zapatos en oferta",
+  "Un libro usado",
+  "Una licuadora en liquidación"
+ ],
+ "pasoDe": "{o} pasó de {i} a {f}. ¿De qué porcentaje fue {x}?",
+ "aumentoW": "el aumento",
+ "descuentoW": "la disminución",
+ "solC": "Cambio: {d}. {d2} ÷ {i} = {q}, y × 100 = {p}%.",
+ "divFinal": "Se dividió entre el valor final. El cambio se divide entre el valor inicial.",
+ "enDolares": "Ese es el cambio en dólares. Falta dividir entre el valor inicial y multiplicar por 100.",
+ "items": [
+  "Almuerzo",
+  "Zapatos",
+  "Bicicleta"
+ ],
+ "arCap": "El mismo aumento de {d} sobre valores originales distintos",
+ "arCab": [
+  "Artículo",
+  "Original",
+  "Nuevo",
+  "Cambio absoluto",
+  "Cambio porcentual"
+ ],
+ "arNota": "El cambio absoluto es el mismo en los tres, pero el porcentual no: {d} pesa mucho sobre $10.00 y casi nada sobre $200.00.",
+ "A": [
+  "El pan",
+  "Un café",
+  "El pasaje de autobús",
+  "Una libra de tomates"
+ ],
+ "Bn": [
+  "Un carro usado",
+  "Una computadora",
+  "Un sofá",
+  "Un televisor"
+ ],
+ "sube": "{n} sube de {o} a {f}. ",
+ "masPct": "¿Cuál tuvo el mayor cambio <strong>porcentual</strong>?",
+ "masDol": "¿Cuál tuvo el mayor cambio <strong>en dólares</strong>?",
+ "igual": "Los dos cambiaron lo mismo",
+ "masDolNo": "{n} subió más dólares ({d}), pero comparado con su precio es poco.",
+ "relMayor": " El cambio relativo es mayor en {n}.",
+ "pctSi": "En porcentaje sí subió más, pero se pregunta por los dólares.",
+ "enDol": "En dólares: {a} frente a {b}. ",
+ "escribeOrig": "Escriba un valor original (un número positivo).",
+ "factorEs": "<strong>Factor:</strong> 1 {s} {r} = <strong>{f}</strong> ({x}).",
+ "factorSube": "el valor nuevo es el {p}% del original",
+ "factorBaja": "queda el {p}% del original",
+ "conFactor": "<strong>Con el factor:</strong> {o} × {f} = {n}.",
+ "conCambio": "<strong>Calculando el cambio:</strong> {o} × {r} = {c}; {o} {s} {c2} = {n}.",
+ "dosCaminos": "Los dos caminos dan {n}.",
+ "porQue": "¿Por qué número se multiplica un valor para {x}lo un {p}%?",
+ "aumentar": "aumentar",
+ "disminuir": "disminuir",
+ "fSube": "Se paga el 100% más el {p}%: 1 + {r} = {f}.",
+ "fBaja": "Queda el {q}%: 1 − {r} = {f}.",
+ "soloCambio": "Ese número da solo el cambio, no el valor nuevo.",
+ "suma": "Para aumentar se suma: 1 + r.",
+ "resta": "Para disminuir se resta: 1 − r.",
+ "enDecimal": "El porcentaje va en decimal: {p}% = {r}.",
+ "ctxSube": [
+  "Un alquiler de {o} aumenta un {p}%.",
+  "Un salario de {o} sube un {p}%.",
+  "Una tarifa de {o} se encarece un {p}%."
+ ],
+ "ctxBaja": [
+  "Un abrigo de {o} baja un {p}%.",
+  "Una computadora de {o} pierde el {p}% de su valor.",
+  "Una factura de {o} se reduce un {p}%."
+ ],
+ "usaFactor": " Use el factor de cambio: ¿cuál es el valor nuevo?",
+ "solF": "Factor: {f}. {o} × {f} = {n}.",
+ "soloEl": "Ese es solo el cambio. Falta {x} valor original, o multiplicar por {f}.",
+ "sumarlo": "sumarlo al",
+ "restarlo": "restarlo del",
+ "esAum": "Es un aumento: el factor es mayor que 1.",
+ "esDis": "Es una disminución: el factor es menor que 1."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function pc(x){ return nd(Math.round(x * 1000) / 1000) + "%"; }
+function sinPct(t){ return String(t).replace(/%/g, ""); }
+
+/* ============ MODULE 1 · estimate ============ */
+function pintaES(){
+  var o = +$("es-o").value, n = +$("es-n").value, d = n - o, diez = o / 10, k = Math.abs(d) / diez, c = d / o * 100, kk = Math.round(k * 2) / 2;
+  $("es-ov").textContent = dinero(o); $("es-nv").textContent = dinero(n);
+  var est = k < 0.75 ? TXT.menos10 : F(TXT.veces, { k: nd(kk), p: pc(kk * 10) });
+  $("es-salida").innerHTML = '<div class="linea">' + F(TXT.diez, { o: dinero(o), d: dinero(diez) }) + '</div>' +
+    '<div class="linea">' + F(TXT.cambioEs, { c: dinero(Math.abs(d)), s: d >= 0 ? TXT.arriba : TXT.abajo, e: est }) + '</div>' +
+    '<div class="linea veredicto">' + F(TXT.exacto, { d: nd(d), o: o, r: d === 0 ? TXT.sinCambio : (d > 0 ? TXT.aum : TXT.dis) + pc(Math.abs(Math.round(c * 10) / 10)) }) + '</div>';
+}
+var REFS = [5, 10, 25, 50, 100];
+function genEstimar(){
+  for (var z = 0; z < 300; z++){
+    var ref = elige(REFS), o = 10 * aleatorio(3, 40), sube = ref === 100 ? true : Math.random() < 0.6;
+    var ruido = 1 + (Math.random() - 0.5) * 0.16, cambio = Math.round(o * ref / 100 * ruido), n = sube ? o + cambio : o - cambio;
+    if (n <= 0 || cambio === 0) continue;
+    var real = Math.abs(n - o) / o * 100, orden = REFS.slice().sort(function(a, b){ return Math.abs(Math.log(a / real)) - Math.abs(Math.log(b / real)); });
+    if (orden[0] !== ref || Math.abs(Math.log(orden[1] / real)) - Math.abs(Math.log(ref / real)) < 0.35) continue;
+    var exp = F(TXT.expE, { o: dinero(o), d: dinero(o / 10), c: dinero(Math.abs(n - o)), k: nd(Math.round(Math.abs(n - o) / (o / 10) * 10) / 10), r: ref, x: pc(Math.round(real * 10) / 10) });
+    return { enun: F(TXT.pasa, { c: elige(TXT.ctxE), o: dinero(o), n: dinero(n), x: sube ? TXT.elAum : TXT.laDis }),
+      opciones: REFS.map(function(r){ return { html: F(TXT.alrededor, { r: r }), clave: "r" + r }; }), enOrden: true, correcta: "r" + ref, bien: exp, mal: exp };
+  }
+}
+
+/* ============ MODULE 2 · percent change ============ */
+function pintaCP(){
+  var i = +$("cp-i").value, f = +$("cp-f").value, d = f - i, c = d / i * 100;
+  $("cp-iv").textContent = dinero(i); $("cp-fv").textContent = dinero(f);
+  var esc = 480 / Math.max(i, f);
+  var s = '<svg class="figura" viewBox="0 0 640 110" role="img" aria-label="' + F(TXT.barrasVoz, { i: dinero(i), f: dinero(f) }) + '">';
+  s += '<text x="10" y="35" font-size="14" font-weight="700" fill="#263238">' + TXT.antes + '</text><rect x="90" y="16" width="' + f1(i * esc) + '" height="28" fill="#ffb74d"/><text x="' + f1(98 + i * esc) + '" y="35" font-size="14" font-weight="700" fill="#263238">' + dinero(i) + '</text>';
+  s += '<text x="10" y="85" font-size="14" font-weight="700" fill="#263238">' + TXT.despues + '</text><rect x="90" y="66" width="' + f1(f * esc) + '" height="28" fill="' + (d >= 0 ? "#2e7d32" : "#c62828") + '"/><text x="' + f1(98 + f * esc) + '" y="85" font-size="14" font-weight="700" fill="#263238">' + dinero(f) + '</text>';
+  $("cp-svg").innerHTML = s + '</svg>';
+  $("cp-salida").innerHTML = '<div class="linea">' + F(TXT.cambio, { f: f, i: i, d: nd(d), q: nd(Math.round(d / i * 10000) / 10000) }) + '</div>' +
+    '<div class="linea veredicto">' + (d === 0 ? TXT.noHubo : (d > 0 ? TXT.aumento : TXT.disminucion) + TXT.de + (Math.abs(c - Math.round(c * 10) / 10) > 1e-9 ? "≈ " : "") + pc(Math.abs(Math.round(c * 10) / 10))) + '</div>';
+}
+function pintaSB(){
+  var p = +$("sb-p").value, a = 100 * (1 + p / 100), b = a * (1 - p / 100);
+  $("sb-pv").textContent = p + "%";
+  $("sb-salida").innerHTML = '<div class="linea">' + F(TXT.sb1, { p: p, f: nd(1 + p / 100), a: dinero(a) }) + '</div><div class="linea">' + F(TXT.sb2, { p: p, a: dinero(a), a2: nd(a), g: nd(1 - p / 100), b: dinero(b) }) + '</div><div class="linea veredicto">' + F(TXT.sb3, { b: dinero(b) }) + '</div>';
+}
+function genCambio(){
+  for (var z = 0; z < 100; z++){
+    var ini = elige([20, 25, 40, 50, 60, 80, 120, 200, 250]), p = elige([5, 10, 15, 20, 25, 30, 40, 50]), sube = Math.random() < 0.5, fin = ini * (1 + (sube ? 1 : -1) * p / 100);
+    if (fin !== Math.round(fin * 100) / 100) continue;
+    var d = Math.abs(fin - ini), pist = [{ v: Math.round(d / fin * 1000) / 10, msg: TXT.divFinal }, { v: d, msg: TXT.enDolares }].filter(function(x){ return Math.abs(x.v - p) > 0.05; });
+    var ev = numD(p, pist, null, 0.051);
+    return { enun: F(TXT.pasoDe, { o: elige(sube ? TXT.subeObj : TXT.bajaObj), i: dinero(ini), f: dinero(fin), x: sube ? TXT.aumentoW : TXT.descuentoW }), correcta: p + "%",
+      solucion: F(TXT.solC, { d: dinero(d), d2: nd(d), i: ini, q: nd(d / ini), p: p }), evalua: function(s){ return ev(sinPct(s).replace(/^\s*[−-]/, "")); } };
+  }
+}
+
+/* ============ MODULE 3 · absolute and relative ============ */
+function pintaAR(){
+  var d = +$("ar-d").value, bases = [10, 50, 200]; $("ar-dv").textContent = dinero(d);
+  $("ar-tabla").innerHTML = '<div class="tabla-scroll"><table class="reglas"><caption>' + F(TXT.arCap, { d: dinero(d) }) + '</caption><thead><tr>' + TXT.arCab.map(function(c){ return '<th scope="col">' + c + '</th>'; }).join("") + '</tr></thead><tbody>' +
+    bases.map(function(b, i){ return '<tr><td>' + TXT.items[i] + '</td><td>' + dinero(b) + '</td><td>' + dinero(b + d) + '</td><td>' + dinero(d) + '</td><td><strong>' + pc(Math.round(d / b * 1000) / 10) + '</strong></td></tr>'; }).join("") + '</tbody></table></div>' +
+    '<div class="salida"><div class="linea">' + F(TXT.arNota, { d: dinero(d) }) + '</div></div>';
+}
+function genAbsRel(){
+  for (var z = 0; z < 300; z++){
+    var A = { n: elige(TXT.A), o: aleatorio(2, 12) }, Bb = { n: elige(TXT.Bn), o: 100 * aleatorio(3, 150) };
+    A.d = aleatorio(1, Math.max(1, Math.floor(A.o / 2))); Bb.d = 10 * aleatorio(Math.ceil(A.d / 10) + 1, Math.max(3, Math.floor(Bb.o / 40)));
+    if (Bb.d <= A.d) continue;
+    A.p = A.d / A.o * 100; Bb.p = Bb.d / Bb.o * 100;
+    if (!(A.p > Bb.p * 1.5)) continue;
+    var rel = Math.random() < 0.75;
+    var txt = F(TXT.sube, { n: A.n, o: dinero(A.o), f: dinero(A.o + A.d) }) + F(TXT.sube, { n: Bb.n, o: dinero(Bb.o), f: dinero(Bb.o + Bb.d) });
+    var exp = A.n + ": " + dinero(A.d) + " ÷ " + dinero(A.o) + " = " + pc(Math.round(A.p * 10) / 10) + ". " + Bb.n + ": " + dinero(Bb.d) + " ÷ " + dinero(Bb.o) + " = " + pc(Math.round(Bb.p * 10) / 10) + ".";
+    var q = { enun: txt + (rel ? TXT.masPct : TXT.masDol), enOrden: true, pistas: {}, opciones: [{ html: A.n, clave: "A" }, { html: Bb.n, clave: "B" }, { html: TXT.igual, clave: "igual" }] };
+    if (rel){ q.correcta = "A"; q.pistas.B = F(TXT.masDolNo, { n: Bb.n, d: dinero(Bb.d) }); q.bien = q.mal = exp + F(TXT.relMayor, { n: A.n }); }
+    else { q.correcta = "B"; q.pistas.A = TXT.pctSi; q.bien = q.mal = F(TXT.enDol, { a: dinero(A.d), b: dinero(Bb.d) }) + exp; }
+    return q;
+  }
+}
+
+/* ============ MODULE 4 · the change factor ============ */
+var SENTIDO = 1;
+function pintaFA(){
+  var o = leeD($("fa-o").value), p = +$("fa-p").value, s = $("fa-salida");
+  $("fa-pv").textContent = p + "%";
+  document.querySelectorAll("#fa-botones .eleccion").forEach(function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-sentido") === SENTIDO ? "true" : "false"); });
+  $("fa-o").classList.toggle("error", o === null || o < 0);
+  if (o === null || o < 0){ s.innerHTML = '<div class="linea">' + TXT.escribeOrig + '</div>'; return; }
+  var f = Math.round((1 + SENTIDO * p / 100) * 10000) / 10000, c = o * p / 100, n = o * f;
+  s.innerHTML = '<div class="linea">' + F(TXT.factorEs, { s: SENTIDO > 0 ? "+" : "−", r: nd(p / 100), f: nd(f), x: SENTIDO > 0 ? F(TXT.factorSube, { p: 100 + p }) : F(TXT.factorBaja, { p: 100 - p }) }) + '</div>' +
+    '<div class="linea">' + F(TXT.conFactor, { o: nd(o), f: nd(f), n: dinero(n) }) + '</div>' +
+    '<div class="linea">' + F(TXT.conCambio, { o: nd(o), r: nd(p / 100), c: dinero(c), s: SENTIDO > 0 ? "+" : "−", c2: nd(Math.round(c * 100) / 100), n: dinero(n) }) + '</div>' +
+    '<div class="linea veredicto">' + F(TXT.dosCaminos, { n: dinero(n) }) + '</div>';
+}
+function genFactor(){
+  var tp = aleatorio(1, 3), p = elige([3, 4, 5, 8, 10, 12, 15, 20, 25, 30, 35, 40]), sube = Math.random() < 0.5, fr_ = Math.round((1 + (sube ? 1 : -1) * p / 100) * 100) / 100, r = nd(p / 100);
+  if (tp === 1){
+    var otro = Math.round((1 - (sube ? 1 : -1) * p / 100) * 100) / 100;
+    return { enun: F(TXT.porQue, { x: sube ? TXT.aumentar : TXT.disminuir, p: p }), correcta: nd(fr_),
+      solucion: sube ? F(TXT.fSube, { p: p, r: r, f: nd(fr_) }) : F(TXT.fBaja, { q: 100 - p, r: r, f: nd(fr_) }),
+      evalua: numD(fr_, [{ v: p / 100, msg: TXT.soloCambio }, { v: otro, msg: sube ? TXT.suma : TXT.resta }, { v: p, msg: F(TXT.enDecimal, { p: p, r: r }) }], null, 0.0001) };
+  }
+  var o = elige([40, 60, 80, 120, 250, 500, 800, 1250, 1500, 2000, 36, 75]), n = Math.round(o * fr_ * 100) / 100;
+  var ctx = F(elige(sube ? TXT.ctxSube : TXT.ctxBaja), { o: dinero(o), p: p });
+  return { enun: ctx + TXT.usaFactor, correcta: dinero(n), solucion: F(TXT.solF, { f: nd(fr_), o: nd(o), n: dinero(n) }),
+    evalua: numD(n, [{ v: Math.round(o * p) / 100, msg: F(TXT.soloEl, { x: sube ? TXT.sumarlo : TXT.restarlo, f: nd(fr_) }) }, { v: Math.round(o * (1 - (sube ? 1 : -1) * p / 100) * 100) / 100, msg: sube ? TXT.esAum : TXT.esDis }]) };
+}
+
+/* ============ Start ============ */
+["es-o", "es-n"].forEach(function(id){ $(id).addEventListener("input", pintaES); }); pintaES();
+creaPracticaOM("p1", genEstimar);
+["cp-i", "cp-f"].forEach(function(id){ $(id).addEventListener("input", pintaCP); }); pintaCP();
+$("sb-p").addEventListener("input", pintaSB); pintaSB();
+creaPracticaLibre("p2", genCambio);
+$("ar-d").addEventListener("input", pintaAR); pintaAR();
+creaPracticaOM("p3", genAbsRel);
+document.querySelectorAll("#fa-botones .eleccion").forEach(function(b){ b.addEventListener("click", function(){ SENTIDO = +b.getAttribute("data-sentido"); pintaFA(); }); });
+$("fa-o").addEventListener("input", pintaFA); $("fa-p").addEventListener("input", pintaFA); pintaFA();
+creaPracticaLibre("p4", genFactor);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
