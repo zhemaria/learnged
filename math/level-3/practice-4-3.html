@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 4.3 · practice (English) — built by tools/build_n3_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 4.3 · Equations with fractions, decimals, and special cases · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 4 · Linear algebra</div>
+    <h1>Lesson 4.3 · Equations with fractions, decimals, and special cases</h1>
+    <div class="meta">Three practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#fractions">Clearing fractions with the LCM</a></li>
+      <li><a href="#decimals">Clearing decimals with a power of 10</a></li>
+      <li><a href="#special-cases">One, none, or infinitely many solutions?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="fractions" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Clearing fractions with the LCM</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>An equation with fractions becomes much easier if you clear the fractions first. To do that, multiply <strong>every term on both sides</strong> by the least common multiple (LCM) of the denominators.</p>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="lf-sel">Equation</label><select id="lf-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="lf-sig"></button><button type="button" class="btn-sec" id="lf-todo">Show all the steps</button><button type="button" class="btn-sec" id="lf-azar">Another one at random</button></div>
+      </div>
+      <div class="fraccion-grande" id="lf-expr"></div>
+      <div class="pasos" id="lf-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>Multiply every term:</strong> the LCM multiplies each term, including the ones with no fraction. Forgetting a term is the most common mistake when you clear fractions.</div>
+      <h3>Practice: what do you multiply by?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <h3>Practice: what equation do you get?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Practice: solve the equation</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Value of x</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type the number; it can be negative or a fraction like 3/2.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="decimals">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Clearing decimals with a power of 10</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With decimals the idea is the same: multiply every term by 10, 100, or 1000 to turn the decimals into whole numbers. Choose the power from the term with the <strong>most decimal places</strong>.</p>
+      <table class="reglas">
+        <caption>Which power of 10 to use</caption>
+        <thead><tr><th scope="col">Most decimal places</th><th scope="col">Example</th><th scope="col">Multiply by</th></tr></thead>
+        <tbody><tr><td>One</td><td>0.2</td><td>10</td></tr><tr><td>Two</td><td>0.25</td><td>100</td></tr><tr><td>Three</td><td>0.125</td><td>1000</td></tr></tbody>
+      </table>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="ld-sel">Equation</label><select id="ld-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="ld-sig"></button><button type="button" class="btn-sec" id="ld-todo">Show all the steps</button><button type="button" class="btn-sec" id="ld-azar">Another one at random</button></div>
+      </div>
+      <div class="fraccion-grande" id="ld-expr"></div>
+      <div class="pasos" id="ld-pasos" aria-live="polite"></div>
+      <h3>Practice: which power of 10?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <h3>Practice: solve the equation</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Value of x</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Type the number; it can be a decimal, like 2.5.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="special-cases">
+    <summary><span class="num" aria-hidden="true">3</span><h2>One, none, or infinitely many solutions?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Sometimes, as you solve, the variables disappear. What is left decides the type of equation:</p>
+      <table class="reglas">
+        <caption>Types of solution of a linear equation</caption>
+        <thead><tr><th scope="col">When you solve, you get…</th><th scope="col">Type of solution</th><th scope="col">Meaning</th></tr></thead>
+        <tbody>
+          <tr><td>x = a number</td><td>One solution</td><td>Exactly one value makes the equation true.</td></tr>
+          <tr><td>Something false (5 = 9)</td><td>No solution</td><td>No value works (a contradiction).</td></tr>
+          <tr><td>Something true (6 = 6)</td><td>Infinitely many solutions</td><td>Every value works (an identity).</td></tr>
+        </tbody>
+      </table>
+      <h3>Explorer: try several values of x</h3>
+      <p>Build an equation of the form a(x + b) = cx + d. The table tries six values of x and marks where the two sides match.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="ce-a">a</label><input type="text" class="corto" id="ce-a" value="3"></div><div class="campo"><label for="ce-b">b</label><input type="text" class="corto" id="ce-b" value="2"></div><div class="campo"><label for="ce-c">c</label><input type="text" class="corto" id="ce-c" value="3"></div><div class="campo"><label for="ce-d">d</label><input type="text" class="corto" id="ce-d" value="6"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="ce-ej1">Example with no solution</button><button type="button" class="btn-sec" id="ce-ej2">Example with infinitely many</button><button type="button" class="btn-sec" id="ce-ej3">Example with one</button></div>
+      </div>
+      <div class="caja-aviso" id="ce-aviso" role="alert"></div>
+      <div class="estado"><span class="grande" id="ce-ec"></span></div>
+      <div class="tabla-scroll" id="ce-tabla"></div>
+      <div class="salida" aria-live="polite" id="ce-salida"></div>
+      <h3>Practice: how many solutions does it have?</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="opciones" id="p6-opciones"></div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p6-nuevo">New exercise</button></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 4 · Linear algebra · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script>
+function P(){ return polVis(Array.prototype.slice.call(arguments)); }
+/* Loose terms {c: fraction, v: "x" or ""}, to show each term multiplied */
+function TT(c, v){ return {c: c.n !== undefined ? c : fr(c), v: v || ""}; }
+function listaVis(l, modo){ if (!l.length) return "0"; return l.map(function(tt, i){ return tt.v ? termXVis(tt.c, modo, i === 0) : constVis(tt.c, modo, i === 0); }).join(""); }
+function listaVoz(l){ if (!l.length) return "0"; return l.map(function(tt, i){ return tt.v ? termXVoz(tt.c, i === 0) : constVoz(tt.c, i === 0); }).join(""); }
+function ecLista(i, d, modo){ return envuelve(listaVis(i, modo) + " = " + listaVis(d, modo), listaVoz(i) + T(" equals ", " es igual a ") + listaVoz(d)); }
+function aLado(l){ var x = fr(0), k = fr(0); l.forEach(function(tt){ if (tt.v) x = fsum(x, tt.c); else k = fsum(k, tt.c); }); return L(x, k); }
+function valLista(l, s){ return l.reduce(function(a, tt){ return fsum(a, tt.v ? fmul(tt.c, s) : tt.c); }, fr(0)); }
+function porM(l, M){ return l.map(function(tt){ return TT(fmul(tt.c, fr(M)), tt.v); }); }
+function denoms(l){ return l.map(function(tt){ return tt.c.d; }).filter(function(d){ return d > 1; }); }
+function mcmLista(ds){ return ds.reduce(function(a, b){ return mcm(a, b); }, 1); }
+function numTxt(c, modo){ return modo === "dec" && fDecimal(c) !== null ? fDecimal(c) : fracVis(c.n, c.d); }
+
+/* Steps for an equation with no fractions left */
+function pasosEntera(izq, der){
+  var pasos = [], li = aLado(izq), ld = aLado(der);
+  var combinar = izq.length > (fcero(li.x) ? 0 : 1) + (fcero(li.k) ? 0 : 1) || der.length > (fcero(ld.x) ? 0 : 1) + (fcero(ld.k) ? 0 : 1);
+  if (combinar) pasos.push(T("Combine like terms on each side: ", "Se combinan los términos semejantes de cada lado: ") + ecHTML(li, ld) + ".");
+  if (!fcero(ld.x)){
+    var nx = fres(li.x, ld.x);
+    pasos.push(T("Subtract ", "Se resta ") + ladoHTML(L(ld.x, 0)) + T(" from both sides to gather the x terms: ", " en ambos lados para reunir las x: ") + ecHTML(L(nx, li.k), L(0, ld.k)) + ".");
+    li = L(nx, li.k); ld = L(0, ld.k);
+  }
+  if (fcero(li.x)) return {pasos: pasos, especial: true};
+  if (!fcero(li.k)){
+    var nk = fres(ld.k, li.k);
+    pasos.push((li.k.n > 0 ? T("Subtract " + fTxt(li.k) + " from both sides: ", "Se resta " + fTxt(li.k) + " en ambos lados: ") : T("Add " + fTxt(fneg(li.k)) + " to both sides: ", "Se suma " + fTxt(fneg(li.k)) + " en ambos lados: ")) + ecHTML(L(li.x, 0), L(0, nk)) + ".");
+    li = L(li.x, 0); ld = L(0, nk);
+  }
+  var sol = fdiv(ld.k, li.x);
+  if (!figual(li.x, fr(1))) pasos.push(T("Divide both sides by " + fTxt(li.x) + ": ", "Se divide entre " + fTxt(li.x) + " en ambos lados: ") + xIgual(sol, "dec") + ".");
+  return {pasos: pasos, sol: sol};
+}
+function explicaProductos(l, M, modo){
+  return l.map(function(tt, i){
+    var a = fr(Math.abs(tt.c.n), tt.c.d), dentro = tt.v ? termXVis(a, modo, true) : numTxt(a, modo);
+    if (i === 0 && tt.c.n < 0) return M + " · (−" + dentro + ")";
+    return (i === 0 ? "" : (tt.c.n < 0 ? " − " : " + ")) + M + " · " + (tt.c.d > 1 && modo !== "dec" ? "(" + dentro + ")" : dentro);
+  }).join("");
+}
+
+/* ============ Equations with fractions and with decimals ============ */
+function ecFraccion(){
+  var tp = aleatorio(1, 4), a, b, n, izq, der, M, s;
+  if (tp === 1){ a = elige([2, 3, 4, 5, 6]); s = a * elige([-3, -2, -1, 1, 2, 3, 4, 5]); b = nz(); izq = [TT(fr(1, a), "x"), TT(b)]; der = [TT(fsum(fr(s, a), fr(b)))]; }
+  else if (tp === 2){ var p = elige([[2, 4], [2, 3], [3, 6], [4, 6], [2, 5], [3, 4]]); a = p[0]; b = p[1]; M = mcm(a, b); s = M * elige([-2, -1, 1, 2, 3]);
+    izq = [TT(fr(1, a), "x"), TT(fr(1, b), "x")]; der = [TT(fsum(fr(s, a), fr(s, b)))]; }
+  else if (tp === 3){ a = elige([3, 4, 5]); n = elige([2, 3]); if (n === a) n = 2; s = a * elige([-2, -1, 1, 2, 3, 4]); b = aleatorio(1, 9);
+    izq = [TT(fr(n, a), "x"), TT(-b)]; der = [TT(fres(fr(n * s, a), fr(b)))]; }
+  else { var q = elige([[2, 3], [3, 4], [2, 5], [4, 6], [2, 6]]); a = q[0]; b = q[1]; M = mcm(a, b); s = M * elige([-2, -1, 1, 2, 3]); var k = nz();
+    izq = [TT(fr(1, a), "x"), TT(k)]; der = [TT(fr(1, b), "x"), TT(fres(fsum(fr(s, a), fr(k)), fr(s, b)))]; }
+  return {izq: izq, der: der, s: fr(s), modo: "frac"};
+}
+function decimalAzar(k){ var d = Math.pow(10, k), n; do { n = aleatorio(1, 3 * d); } while (n % 10 === 0); return fr(n, d); }
+function ecDecimal(){
+  var tp = aleatorio(1, 3), izq, der, s = fr(elige([-4, -2, -1, 1, 2, 3, 4, 5, 6, 8, 10, 12]));
+  if (Math.random() < 0.25) s = fr(elige([-3, 1, 3, 5, 7]), 2);
+  if (tp === 1){ var a = decimalAzar(aleatorio(1, 2)), b = fr(aleatorio(1, 9)); izq = [TT(a, "x"), TT(b)]; der = [TT(fsum(fmul(a, s), b))]; }
+  else if (tp === 2){ var a2 = decimalAzar(2), b2 = decimalAzar(1); izq = [TT(a2, "x"), TT(fneg(b2))]; der = [TT(fres(fmul(a2, s), b2))]; }
+  else { var a3 = fsum(fr(1), decimalAzar(1)), c3 = decimalAzar(1), b3 = decimalAzar(aleatorio(1, 2)); if (figual(a3, c3)) a3 = fsum(a3, fr(1));
+    izq = [TT(a3, "x"), TT(b3)]; der = [TT(c3, "x"), TT(fres(fsum(fmul(a3, s), b3), fmul(c3, s)))]; }
+  return {izq: izq, der: der, s: s, modo: "dec"};
+}
+function potenciaNecesaria(e){
+  var k = 0;
+  e.izq.concat(e.der).forEach(function(tt){ var j = 0; while (fmul(tt.c, fr(Math.pow(10, j))).d !== 1 && j < 6) j++; if (j > k) k = j; });
+  return k;
+}
+function pasosLimpiar(e){
+  var pasos = [], M, todos = e.izq.concat(e.der);
+  if (e.modo === "frac"){
+    var ds = denoms(todos), unicos = ds.filter(function(d, i){ return ds.indexOf(d) === i; });
+    M = mcmLista(ds);
+    pasos.push(unicos.length === 1 ? T("The only denominator is " + unicos[0] + ": multiply everything by " + M + ".", "El único denominador es " + unicos[0] + ": se multiplica todo por " + M + ".")
+                                   : T("The denominators are " + yLista(unicos) + ". The LCM is " + M + ": the smallest number they all divide into.", "Los denominadores son " + yLista(unicos) + ". El MCM es " + M + ": el número más pequeño que todos dividen."));
+  } else {
+    var k = potenciaNecesaria(e); M = Math.pow(10, k);
+    pasos.push(T("The term with the most decimals has " + k + (k === 1 ? " decimal place" : " decimal places") + ": multiply everything by " + M + ".", "El término con más decimales tiene " + k + (k === 1 ? " cifra decimal" : " cifras decimales") + ": se multiplica todo por " + M + "."));
+  }
+  pasos.push(T("Multiply <strong>every term on both sides</strong> by ", "Se multiplica <strong>cada término de ambos lados</strong> por ") + M + ": " + auto(explicaProductos(e.izq, M, e.modo) + " = " + explicaProductos(e.der, M, e.modo)) + ".");
+  var i2 = porM(e.izq, M), d2 = porM(e.der, M);
+  pasos.push((e.modo === "frac" ? T("You get an equation with no fractions: ", "Queda una ecuación sin fracciones: ") : T("You get an equation with no decimals: ", "Queda una ecuación sin decimales: ")) + ecLista(i2, d2, "frac") + ".");
+  pasos = pasos.concat(pasosEntera(i2, d2).pasos);
+  pasos.push("<strong>" + T("Check", "Verificar") + "</strong> " + T("in the original equation: with x = " + numTxt(e.s, e.modo) + ", both sides equal " + numTxt(valLista(e.izq, e.s), e.modo) + ".", "en la ecuación original: con x = " + numTxt(e.s, e.modo) + ", los dos lados valen " + numTxt(valLista(e.izq, e.s), e.modo) + "."));
+  pasos.push('<span class="veredicto">' + T("Solution: ", "Solución: ") + xIgual(e.s, e.modo) + "</span>");
+  return {pasos: pasos, M: M, i2: i2, d2: d2};
+}
+function creaPasoAPaso(pre, lista, genera){
+  var S = {lista: lista, pasos: [], visto: 0};
+  function texto(e){ return (listaVis(e.izq, e.modo) + " = " + listaVis(e.der, e.modo)).replace(/<span class="fracc"><span class="fa">(.*?)<\/span><span class="fb2">(.*?)<\/span><\/span>/g, "$1/$2").replace(/<[^>]+>/g, ""); }
+  function llena(){ var sel = $(pre + "-sel"); sel.innerHTML = ""; S.lista.forEach(function(e, i){ var o = document.createElement("option"); o.value = i; o.textContent = texto(e); sel.appendChild(o); }); }
+  function prepara(){
+    var e = S.lista[+$(pre + "-sel").value];
+    S.pasos = pasosLimpiar(e).pasos; S.visto = 0;
+    $(pre + "-expr").innerHTML = '<span class="grande">' + ecLista(e.izq, e.der, e.modo) + "</span>";
+    pinta();
+  }
+  function pinta(){
+    $(pre + "-pasos").innerHTML = S.pasos.slice(0, S.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === S.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+    var b = $(pre + "-sig"); b.disabled = S.visto >= S.pasos.length; $(pre + "-todo").disabled = b.disabled;
+    b.textContent = S.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+  }
+  $(pre + "-sel").addEventListener("change", prepara);
+  $(pre + "-sig").addEventListener("click", function(){ if (S.visto < S.pasos.length){ S.visto++; pinta(); } });
+  $(pre + "-todo").addEventListener("click", function(){ S.visto = S.pasos.length; pinta(); });
+  $(pre + "-azar").addEventListener("click", function(){ S.lista.push(genera()); llena(); $(pre + "-sel").value = S.lista.length - 1; prepara(); });
+  llena(); prepara();
+  return S;
+}
+var EJ_FRAC = [
+  {izq: [TT(fr(1, 2), "x"), TT(3)], der: [TT(7)], s: fr(8), modo: "frac"},
+  {izq: [TT(fr(1, 2), "x"), TT(fr(1, 4), "x")], der: [TT(6)], s: fr(8), modo: "frac"},
+  {izq: [TT(fr(2, 3), "x"), TT(-1)], der: [TT(5)], s: fr(9), modo: "frac"},
+  {izq: [TT(fr(1, 3), "x"), TT(2)], der: [TT(fr(1, 2), "x")], s: fr(12), modo: "frac"}
+];
+var EJ_DEC = [
+  {izq: [TT(fr(2, 10), "x"), TT(1)], der: [TT(3)], s: fr(10), modo: "dec"},
+  {izq: [TT(fr(25, 100), "x"), TT(fr(-5, 10))], der: [TT(fr(15, 10))], s: fr(8), modo: "dec"},
+  {izq: [TT(fr(15, 10), "x"), TT(fr(3, 10))], der: [TT(fr(1), "x"), TT(fr(33, 10))], s: fr(6), modo: "dec"}
+];
+
+function genMCM(){
+  var e = ecFraccion(), ds = denoms(e.izq.concat(e.der)), M = mcmLista(ds), unicos = ds.filter(function(d, i){ return ds.indexOf(d) === i; });
+  var prod = unicos.reduce(function(a, b){ return a * b; }, 1), mayor = Math.max.apply(null, ds), suma = unicos.reduce(function(a, b){ return a + b; }, 0);
+  var o = [], pc = {}, usadas = {};
+  function mete(v, msg){ var k = "m" + v; if (usadas[k]) return; usadas[k] = 1; o.push({html: String(v), clave: k}); if (msg) pc[k] = msg; }
+  mete(M);
+  mete(prod, T("Multiplying by the product also clears the fractions, but it gives bigger numbers than you need: the LCM is smaller.", "Multiplicar por el producto también limpia las fracciones, pero da números más grandes de lo necesario: el MCM es más pequeño."));
+  mete(mayor, T("The largest denominator does not always work: every denominator has to divide into it.", "El mayor denominador no siempre sirve: tiene que ser divisible entre todos los denominadores."));
+  mete(suma, T("You do not add the denominators: look for the smallest number they all divide into.", "Los denominadores no se suman: se busca el número más pequeño que todos dividen."));
+  mete(2 * M, T("That works, but it is not the smallest: the LCM is half of it.", "Funciona, pero no es el más pequeño: el MCM es la mitad."));
+  mete(M + 1, T("Not every denominator divides into that number.", "No todos los denominadores dividen a ese número."));
+  return {enun: T("To clear the fractions of ", "Para limpiar las fracciones de ") + ecLista(e.izq, e.der, "frac") + T(", what number should you multiply by?", ", ¿por qué número conviene multiplicar?"),
+    opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("The LCM of the denominators is " + M + ".", "El MCM de los denominadores es " + M + "."), mal: T("The LCM of the denominators is " + M + ": the smallest number they all divide into.", "El MCM de los denominadores es " + M + ": el número más pequeño que todos dividen.")};
+}
+function genQueda(){
+  var e, M;
+  do { e = ecFraccion(); M = mcmLista(denoms(e.izq.concat(e.der))); } while (!e.izq.concat(e.der).some(function(tt){ return tt.c.d === 1; }));
+  var bien = [porM(e.izq, M), porM(e.der, M)];
+  var soloFr = function(l){ return l.map(function(tt){ return tt.c.d > 1 ? TT(fmul(tt.c, fr(M)), tt.v) : tt; }); };
+  var numMal = function(l){ return l.map(function(tt){ return tt.c.d > 1 ? TT(fr(tt.c.n * M), tt.v) : TT(fmul(tt.c, fr(M)), tt.v); }); };
+  var o = [{html: ecLista(bien[0], bien[1], "frac"), clave: "b"}], pc = {};
+  o.push({html: ecLista(soloFr(e.izq), soloFr(e.der), "frac"), clave: "f"}); pc.f = T("You forgot to multiply the terms that have no fraction.", "Faltó multiplicar los términos que no tienen fracción.");
+  o.push({html: ecLista(porM(e.izq, M), e.der, "frac"), clave: "i"}); pc.i = T("Only one side was multiplied: the balance is broken.", "Se multiplicó solo un lado: la balanza se desequilibra.");
+  o.push({html: ecLista(numMal(e.izq), numMal(e.der), "frac"), clave: "n"}); pc.n = T("When you multiply a fraction by " + M + ", divide by its denominator too. For example, " + M + " · (x/2) = " + (M / 2) + "x.", "Al multiplicar una fracción por " + M + " hay que dividir entre su denominador. Por ejemplo, " + M + " · (x/2) = " + (M / 2) + "x.");
+  var vistos = {}; o = o.filter(function(x){ if (vistos[x.html]) return false; vistos[x.html] = 1; return true; });
+  return {enun: T("When you multiply each term of ", "Al multiplicar cada término de ") + ecLista(e.izq, e.der, "frac") + T(" by " + M + ", what equation do you get?", " por " + M + ", ¿qué ecuación queda?"),
+    opciones: o, correcta: "b", porClave: pc, pista: T("Multiply every term, on both sides, by " + M + ".", "Multiplique cada término, de los dos lados, por " + M + "."),
+    bien: T("Every term, on both sides, is multiplied by " + M + ".", "Cada término, de los dos lados, se multiplica por " + M + "."), mal: T("You get ", "Queda ") + ecLista(bien[0], bien[1], "frac") + "."};
+}
+function genResolverFr(){
+  var e = ecFraccion(), M = mcmLista(denoms(e.izq.concat(e.der))), pistas = [];
+  var soloFr = function(l){ return l.map(function(tt){ return tt.c.d > 1 ? TT(fmul(tt.c, fr(M)), tt.v) : tt; }); };
+  var r = resuelve(aLado(soloFr(e.izq)), aLado(soloFr(e.der)));
+  if (r.tipo === "una") pistas.push({v: r.x, msg: T("It looks like you forgot to multiply a term with no fraction by " + M + ".", "Parece que olvidó multiplicar por " + M + " algún término sin fracción.")});
+  var R = pasosLimpiar(e);
+  return {enun: T("Solve ", "Resuelva ") + ecLista(e.izq, e.der, "frac") + ".",
+    solucion: T("Multiply everything by " + M + ": ", "Se multiplica todo por " + M + ": ") + ecLista(R.i2, R.d2, "frac") + T(", and x = ", ", y x = ") + numTxt(e.s, "frac") + ".",
+    evalua: function(txt){ return evaluaNumero(txt, e.s, pistas); }};
+}
+function genPotencia(){
+  var e = ecDecimal(), k = potenciaNecesaria(e), M = Math.pow(10, k), o = [{html: String(M), clave: "p" + M}], pc = {};
+  [10, 100, 1000, 10000].forEach(function(v){ if (v !== M){ o.push({html: String(v), clave: "p" + v}); pc["p" + v] = v < M ? T("With " + v + " some decimals would still be left.", "Con " + v + " todavía quedarían decimales.") : T("It works, but it gives bigger numbers than you need.", "Funciona, pero da números más grandes de lo necesario."); } });
+  return {enun: T("To clear the decimals of ", "Para limpiar los decimales de ") + ecLista(e.izq, e.der, "dec") + T(", what power of 10 should you multiply by?", ", ¿por qué potencia de 10 conviene multiplicar?"),
+    opciones: o.slice(0, 4), correcta: "p" + M, porClave: pc, enOrden: true,
+    bien: T("The term with the most decimals has " + k + (k === 1 ? " decimal place" : " decimal places") + ", so multiply by " + M + ".", "El término con más decimales tiene " + k + (k === 1 ? " cifra" : " cifras") + ", así que se multiplica por " + M + "."),
+    mal: T("Look at the term with the most decimal places: it has " + k + ", so multiply by " + M + ".", "Se mira el término con más cifras decimales: tiene " + k + ", así que se multiplica por " + M + ".")};
+}
+function genResolverDec(){
+  var e = ecDecimal(), R = pasosLimpiar(e);
+  return {enun: T("Solve ", "Resuelva ") + ecLista(e.izq, e.der, "dec") + ".",
+    solucion: T("Multiply everything by " + R.M + ": ", "Se multiplica todo por " + R.M + ": ") + ecLista(R.i2, R.d2, "frac") + T(", and x = ", ", y x = ") + numTxt(e.s, "dec") + ".",
+    evalua: function(txt){ return evaluaNumero(txt, e.s, []); }};
+}
+
+/* ============ MODULE 3 · special cases ============ */
+function pintaCE(){
+  var a = leeEntero($("ce-a").value), b = leeEntero($("ce-b").value), c = leeEntero($("ce-c").value), d = leeEntero($("ce-d").value), av = $("ce-aviso");
+  if ([a, b, c, d].some(function(v){ return v === null || Math.abs(v) > 20; }) || a === 0){
+    av.className = "caja-aviso visible"; av.textContent = T("Type whole numbers from −20 to 20 (a cannot be 0).", "Escriba números enteros entre −20 y 20 (a distinto de 0).");
+    $("ce-ec").innerHTML = ""; $("ce-tabla").innerHTML = ""; $("ce-salida").innerHTML = ""; return;
+  }
+  av.className = "caja-aviso"; av.textContent = "";
+  var der = L(c, d);
+  $("ce-ec").innerHTML = auto(menosV(a) + "(" + polVis([tm(1, "x"), tm(b)]) + ") = " + ladoVis(der));
+  var h = '<table class="comparar"><caption>' + T("The value of each side for several values of x", "Valor de cada lado para varios valores de x") + '</caption><thead><tr><th scope="col">x</th><th scope="col">' + T("Left side", "Lado izquierdo") + '</th><th scope="col">' + T("Right side", "Lado derecho") + '</th><th scope="col">' + T("Do they match?", "¿Coinciden?") + "</th></tr></thead><tbody>";
+  [-2, -1, 0, 1, 2, 3].forEach(function(x){
+    var vi = a * (x + b), vd = c * x + d, si = vi === vd;
+    h += "<tr><td>" + menosV(x) + "</td><td>" + menosV(vi) + "</td><td>" + menosV(vd) + '</td><td class="' + (si ? "si" : "no") + '">' + (si ? T("Yes", "Sí") : "No") + "</td></tr>";
+  });
+  $("ce-tabla").innerHTML = h + "</tbody></table>";
+  var li = L(a, a * b), r = resuelve(li, der), s = '<div class="linea">' + T("Distribute: ", "Se distribuye: ") + ecHTML(li, der) + ".</div>";
+  if (r.tipo === "una"){
+    s += '<div class="linea">' + T("Subtract ", "Se resta ") + ladoHTML(L(c, 0)) + T(" from both sides: ", " en ambos lados: ") + ecHTML(L(a - c, a * b), L(0, d)) + ".</div>";
+    s += '<div class="linea veredicto">' + T("One solution: ", "Una solución: ") + xIgual(r.x, "frac") + ". " + (fent(r.x) && r.x.n >= -2 && r.x.n <= 3 ? T("In the table it is the only row with “Yes.”", "En la tabla es la única fila con «Sí».") : T("It is outside the table, so no row matches: try that value.", "Está fuera de la tabla, por eso ninguna fila coincide: pruebe con ese valor.")) + "</div>";
+  } else {
+    s += '<div class="linea">' + T("Subtract ", "Se resta ") + ladoHTML(L(c, 0)) + T(" from both sides and the x terms disappear: you get ", " en ambos lados y las x desaparecen: queda ") + menosV(a * b) + " = " + menosV(d) + ".</div>";
+    s += r.tipo === "ninguna" ? '<div class="linea veredicto">' + T("That is false: the equation has no solution. No row in the table matches, and no other value will.", "Eso es falso: la ecuación no tiene solución. En la tabla ninguna fila coincide, y ningún otro valor lo hará.") + "</div>"
+                              : '<div class="linea veredicto">' + T("That is always true: the equation has infinitely many solutions. Every row in the table matches, and so does any other value.", "Eso es siempre verdadero: la ecuación tiene infinitas soluciones. En la tabla coinciden todas las filas, y cualquier otro valor también.") + "</div>";
+  }
+  $("ce-salida").innerHTML = s;
+}
+function ponCE(v){ ["ce-a", "ce-b", "ce-c", "ce-d"].forEach(function(id, i){ $(id).value = v[i]; }); pintaCE(); }
+function genCasos(){
+  var tp = aleatorio(1, 6), vis, tipo, resto, a = aleatorio(2, 7), b = nz(), m = aleatorio(2, 6), p = nz(), c, d;
+  if (tp === 1){ d = b + elige([1, 2, 3, -2, -4]); vis = auto(P(tm(a, "x"), tm(b)) + " = " + P(tm(a, "x"), tm(d))); tipo = "ninguna"; resto = menosV(b) + " = " + menosV(d); }
+  else if (tp === 2){ vis = auto(m + "(" + P(tm(1, "x"), tm(p)) + ") = " + P(tm(m, "x"), tm(m * p))); tipo = "infinitas"; resto = menosV(m * p) + " = " + menosV(m * p); }
+  else if (tp === 3){ d = m * p + elige([1, -1, 2, 3]); vis = auto(m + "(" + P(tm(1, "x"), tm(p)) + ") = " + P(tm(m, "x"), tm(d))); tipo = "ninguna"; resto = menosV(m * p) + " = " + menosV(d); }
+  else if (tp === 4){ c = aleatorio(1, 4); vis = auto(P(tm(a, "x"), tm(b), tm(c, "x")) + " = " + P(tm(b), tm(a + c, "x"))); tipo = "infinitas"; resto = menosV(b) + " = " + menosV(b); }
+  else if (tp === 5){ do { c = aleatorio(1, 8); } while (c === a); d = nz(); vis = auto(P(tm(a, "x"), tm(b)) + " = " + P(tm(c, "x"), tm(d))); tipo = "una"; resto = "x = " + fTxt(fr(d - b, a - c)); }
+  else { do { c = aleatorio(1, 8); } while (c === m); d = nz(); vis = auto(m + "(" + P(tm(1, "x"), tm(p)) + ") = " + P(tm(c, "x"), tm(d))); tipo = "una"; resto = "x = " + fTxt(fr(d - m * p, m - c)); }
+  var exp = tipo === "una" ? T("The x terms do not disappear: you get " + resto + ".", "Las x no desaparecen: queda " + resto + ".") :
+            T("When you gather the x terms, they disappear and you get " + resto, "Al reunir las x, desaparecen y queda " + resto) + (tipo === "ninguna" ? T(", which is false: a contradiction.", ", que es falso: contradicción.") : T(", which is always true: an identity.", ", que es siempre verdadero: identidad."));
+  return {enun: T("How many solutions does ", "¿Cuántas soluciones tiene ") + vis + T(" have?", "?"), enOrden: true,
+    opciones: [{html: T("One solution", "Una solución"), clave: "una"}, {html: T("No solution", "Sin solución"), clave: "ninguna"}, {html: T("Infinitely many solutions", "Infinitas soluciones"), clave: "infinitas"}],
+    correcta: tipo, porClave: {}, pista: T("Gather the x terms on one side. Do they disappear? If so, is what is left true or false?", "Reúna las x en un lado. ¿Desaparecen? Si es así, ¿lo que queda es verdadero o falso?"), bien: exp, mal: exp};
+}
+
+/* ============ Start ============ */
+creaPasoAPaso("lf", EJ_FRAC, ecFraccion);
+OMR("p1", genMCM);
+OMR("p2", genQueda);
+creaPracticaLibre("p3", genResolverFr);
+creaPasoAPaso("ld", EJ_DEC, ecDecimal);
+OMR("p4", genPotencia);
+creaPracticaLibre("p5", genResolverDec);
+["ce-a", "ce-b", "ce-c", "ce-d"].forEach(function(id){ $(id).addEventListener("input", pintaCE); });
+$("ce-ej1").addEventListener("click", function(){ ponCE([2, 3, 2, 9]); });
+$("ce-ej2").addEventListener("click", function(){ ponCE([3, 2, 3, 6]); });
+$("ce-ej3").addEventListener("click", function(){ ponCE([2, 1, 1, 5]); });
+pintaCE();
+OMR("p6", genCasos);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

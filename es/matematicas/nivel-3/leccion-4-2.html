@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 4.2 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_4_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 4.2 · Resolver ecuaciones lineales: propiedades de igualdad y variables en ambos lados · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-4-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 4 — Álgebra lineal</p>
+<h1>Lección 4.2 · Resolver ecuaciones lineales: propiedades de igualdad y variables en ambos lados</h1>
+<p class="lema">Trate la ecuación como una balanza y siga cinco pasos para encontrar el valor de la variable.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">✏️</span> Sin calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Resolver</strong> ecuaciones lineales en una variable aplicando las propiedades de igualdad.</li>
+<li><strong>Resolver</strong> ecuaciones de uno y de varios pasos aislando la variable.</li>
+<li><strong>Resolver</strong> ecuaciones con variables en ambos lados.</li>
+<li><strong>Seguir</strong> una estrategia ordenada de cinco pasos.</li>
+<li><strong>Verificar</strong> la solución sustituyéndola en la ecuación original.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.2.a</span> Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.2.b</span> Resolver problemas de la vida real con ecuaciones lineales.</li><li><span class="std-cod std-base">A.2.c</span> Escribir ecuaciones lineales de una o de varias variables para representar una situación.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li><li><span class="std-cod std-mp">MP.5.c</span> Identificar la información necesaria para evaluar una línea de razonamiento.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.EE.5</span> <span class="std-nivel">Nivel D</span> Entender que resolver una ecuación o una desigualdad es responder la pregunta: ¿qué valores de un conjunto dado, si los hay, la hacen verdadera? Usar la sustitución para comprobar si un número dado la hace verdadera.</li><li><span class="std-cod std-ccr">8.EE.7</span> <span class="std-nivel">Nivel D</span> Resolver ecuaciones lineales de una variable. Dar ejemplos de ecuaciones lineales de una variable con una solución, con infinitas soluciones o sin solución. Resolver ecuaciones lineales con coeficientes racionales, incluidas las que requieren desarrollar expresiones con la propiedad distributiva y combinar términos semejantes.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-balanza">La ecuación como una balanza</a></li>
+<li><a href="#s-aislar">Aislar la variable: ecuaciones de uno y varios pasos</a></li>
+<li><a href="#s-cinco-pasos">La estrategia de cinco pasos</a></li>
+<li><a href="#s-ambos-lados">Variables en ambos lados</a></li>
+<li><a href="#s-verificar">Verificar la solución</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-balanza"><span aria-hidden="true" class="num-seccion">1</span>La ecuación como una balanza</h2>
+<p>En la Lección 4.1 se aprendió a simplificar y evaluar expresiones algebraicas. Cuando dos expresiones se unen con un signo de igual, se forma una <strong>ecuación</strong>: 2x + 3 = 11. A diferencia de una expresión, una ecuación tiene una <strong>solución</strong> —el valor de la variable que la hace verdadera—, y esta lección enseña a encontrarla de forma metódica.</p>
+<p>Una ecuación es como una balanza en equilibrio: lo que está a la izquierda del signo igual pesa lo mismo que lo que está a la derecha. Para mantener el equilibrio, cualquier operación que se haga en un lado debe hacerse igual en el otro. Esa es la idea de las <strong>propiedades de igualdad</strong>: se puede sumar, restar, multiplicar o dividir ambos lados por el mismo número.</p>
+<p>El objetivo siempre es el mismo: dejar la variable sola de un lado del igual (<strong>aislarla</strong>). Cada operación que se aplica busca deshacer lo que rodea a la variable, usando la <strong>operación inversa</strong>.</p>
+<a class="enlace-interactivo" href="practica-4-2.html#balanza" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la ecuación como una balanza (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la ecuación como una balanza</span><span class="ei-sub">Lo que se hace en un lado se hace en el otro.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-aislar"><span aria-hidden="true" class="num-seccion">2</span>Aislar la variable: ecuaciones de uno y varios pasos</h2>
+<p>Se deshacen las operaciones en orden inverso al de PEMDAS: primero la suma o resta, luego la multiplicación o división.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1: resuelva x + 7 = 15</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Deshacer «+ 7».</strong> Se resta 7 en ambos lados: x + 7 − 7 = 15 − 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 8</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: resuelva 2x + 5 = 13</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar 5 en ambos lados.</strong> 2x = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Dividir entre 2 en ambos lados.</strong> x = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 4</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Orden inverso</span>
+<p>En 2x + 5, la variable está primero multiplicada por 2 y luego se le suma 5. Para deshacerlo se procede al revés: primero se quita el + 5 (resta) y al final el × 2 (división).</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-cinco-pasos"><span aria-hidden="true" class="num-seccion">3</span>La estrategia de cinco pasos</h2>
+<p>Para cualquier ecuación lineal, esta lista ordenada funciona como una guía confiable.</p>
+<ol><li>Distribuir los paréntesis, si los hay.</li><li>Combinar los términos semejantes de cada lado.</li><li>Pasar las variables a un solo lado del igual.</li><li>Aislar la variable con las propiedades de igualdad.</li><li>Verificar sustituyendo la solución en la ecuación original.</li></ol>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un paso</h3></div>
+<p class="pregunta-int" id="t-p1">x − 6 = 10</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">x = 4</button>
+<button class="opcion" data-k="b" type="button">x = −16</button>
+<button class="opcion" data-k="c" type="button">x = 16</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Dividir</h3></div>
+<p class="pregunta-int" id="t-p2">4x = 28</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x = 7</button>
+<button class="opcion" data-k="b" type="button">x = 24</button>
+<button class="opcion" data-k="c" type="button">x = 32</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Dos pasos</h3></div>
+<p class="pregunta-int" id="t-p3">3x − 2 = 13</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x = 11</button>
+<button class="opcion" data-k="b" type="button">x = 5</button>
+<button class="opcion" data-k="c" type="button">x = 15</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#pasos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: ecuaciones de uno y varios pasos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: ecuaciones de uno y varios pasos</span><span class="ei-sub">Aplique la estrategia de cinco pasos para aislar la variable.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-ambos-lados"><span aria-hidden="true" class="num-seccion">4</span>Variables en ambos lados</h2>
+<p>Cuando la variable aparece en los dos lados del igual, primero se reúnen todas las variables en un solo lado (restando una de ellas en ambos lados) y todas las constantes en el otro. Después se aísla la variable como siempre.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: resuelva 5x + 2 = 3x + 10</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar 3x en ambos lados.</strong> 2x + 2 = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Restar 2 en ambos lados.</strong> 2x = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Dividir entre 2.</strong> x = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 4</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4: resuelva 7x + 1 = 2x + 16</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar 2x en ambos lados.</strong> 5x + 1 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Restar 1 en ambos lados.</strong> 5x = 15.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Dividir entre 5.</strong> x = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 3</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Truco práctico</span>
+<p>Conviene mover las variables al lado donde el coeficiente quede positivo. En el Ejemplo 3, restar 3x (el menor) deja 2x positivo, lo que evita trabajar con un coeficiente negativo.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Ambos lados</h3></div>
+<p class="pregunta-int" id="t-p4">6x = 2x + 12</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x = 3</button>
+<button class="opcion" data-k="b" type="button">x = 6</button>
+<button class="opcion" data-k="c" type="button">x = 12</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Reunir las x</h3></div>
+<p class="pregunta-int" id="t-p5">5x + 1 = 3x + 9</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = 5</button>
+<button class="opcion" data-k="b" type="button">x = 2</button>
+<button class="opcion" data-k="c" type="button">x = 4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Con resta</h3></div>
+<p class="pregunta-int" id="t-p6">8x − 5 = 6x + 7</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">x = 1</button>
+<button class="opcion" data-k="b" type="button">x = 6</button>
+<button class="opcion" data-k="c" type="button">x = 12</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#ambos-lados" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: variables en ambos lados (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: variables en ambos lados</span><span class="ei-sub">Reúna los términos con variable en un solo lado de la ecuación.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-verificar"><span aria-hidden="true" class="num-seccion">5</span>Verificar la solución</h2>
+<p>Toda solución se comprueba sustituyéndola en la ecuación original. Si ambos lados dan el mismo valor, la solución es correcta.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5: compruebe que x = 4 resuelve 2x + 1 = 9</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituir.</strong> 2(4) + 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Calcular.</strong> 8 + 1 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El lado izquierdo da 9, igual que el derecho: la solución x = 4 es correcta.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Verificar no es opcional</span>
+<p>Sustituir la solución es la mejor forma de detectar un error de signo cometido durante el proceso. Un minuto de verificación evita perder todos los puntos del problema.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#verificar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: verificar la solución (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: verificar la solución</span><span class="ei-sub">Sustituya la solución y compruebe que los dos lados coinciden.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-4-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva cuatro ecuaciones de dos o tres pasos, cuatro ecuaciones con variables en ambos lados y dos ecuaciones con paréntesis que requieran distribuir primero. Verifique por sustitución dos soluciones dadas. Compruebe cada solución antes de dar el ejercicio por bueno.</li>
+<li><strong>En su vida diaria.</strong> Un taxi cobra $3 de arranque más $2 por milla, y un servicio de viajes compartidos cobra $7 de arranque más $1.50 por milla. Escriba una ecuación para hallar con cuántas millas los dos cuestan lo mismo, resuélvala y verifique la respuesta. ¿Cuál elegiría para un viaje de 5 millas?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Resuelva: x + 7 = 15.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 22</button><button class="opcion" data-k="b" type="button">x = 7</button><button class="opcion" data-k="c" type="button">x = −8</button><button class="opcion" data-k="d" type="button">x = 8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Resuelva: 2x + 5 = 13.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 4</button><button class="opcion" data-k="b" type="button">x = 9</button><button class="opcion" data-k="c" type="button">x = 3</button><button class="opcion" data-k="d" type="button">x = 6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Resuelva: 5x + 2 = 3x + 10.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 6</button><button class="opcion" data-k="b" type="button">x = 4</button><button class="opcion" data-k="c" type="button">x = 3</button><button class="opcion" data-k="d" type="button">x = 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Resuelva: 4x − 3 = 2x + 7.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2</button><button class="opcion" data-k="b" type="button">x = 4</button><button class="opcion" data-k="c" type="button">x = 5</button><button class="opcion" data-k="d" type="button">x = 10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Resuelva: 7x + 1 = 2x + 16.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 5</button><button class="opcion" data-k="b" type="button">x = 3</button><button class="opcion" data-k="c" type="button">x = 17</button><button class="opcion" data-k="d" type="button">x = 15</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Para 3(x + 2) = 18, ¿cuál es un buen primer paso?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Distribuir: 3x + 6 = 18</button><button class="opcion" data-k="b" type="button">Dividir todo entre 18</button><button class="opcion" data-k="c" type="button">Restar x</button><button class="opcion" data-k="d" type="button">Sumar 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Para 5x + 4 = 2x + 13, ¿cuál es un buen primer paso?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sumar 5x</button><button class="opcion" data-k="b" type="button">Dividir entre 4</button><button class="opcion" data-k="c" type="button">Restar 13</button><button class="opcion" data-k="d" type="button">Restar 2x en ambos lados</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Cómo se verifica que x = 4 resuelve 2x + 1 = 9?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sustituir x = 4 en la ecuación</button><button class="opcion" data-k="b" type="button">Sumar 4 a ambos lados</button><button class="opcion" data-k="c" type="button">Dividir entre 2</button><button class="opcion" data-k="d" type="button">No se puede verificar</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación para resolver ecuaciones lineales (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para resolver y verificar ecuaciones lineales y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Propiedades de igualdad</th><td>Aplico la misma operación a ambos lados y elijo la operación inversa adecuada.</td><td>Aplico las propiedades con errores ocasionales.</td><td>Opero solo un lado de la ecuación.</td></tr>
+<tr><th scope="row">Variables en ambos lados</th><td>Reúno las variables en el lado que deja el coeficiente positivo.</td><td>Reúno las variables con errores de signo.</td><td>No reúno las variables en un solo lado.</td></tr>
+<tr><th scope="row">Aislar y verificar</th><td>Aíslo la variable sin errores de signo y verifico sustituyendo en la ecuación original.</td><td>Aíslo la variable, pero no siempre verifico.</td><td>Cometo errores de signo y no verifico la solución.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió a resolver ecuaciones lineales tratando la ecuación como una balanza: lo que se hace a un lado se hace al otro. Con la estrategia de cinco pasos se resolvieron ecuaciones de varios pasos y con variables en ambos lados, y se comprobó cada solución por sustitución.</p>
+<p>En la <strong>Lección 4.3 · Ecuaciones con coeficientes fraccionarios, decimales y casos especiales</strong> se aplicarán estos mismos pasos a ecuaciones que primero conviene «limpiar»: se eliminarán las fracciones multiplicando por el mínimo común múltiplo y los decimales multiplicando por una potencia de 10. Además, se descubrirán ecuaciones con un resultado especial: sin solución o con infinitas soluciones.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-4-3.html">Lección 4.3 · Ecuaciones con coeficientes fraccionarios, decimales y casos especiales</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>ecuación</dt><dd>Dos expresiones unidas por un signo de igual, como 2x + 3 = 11.</dd>
+<dt>solución</dt><dd>El valor de la variable que hace verdadera la ecuación.</dd>
+<dt>operación inversa</dt><dd>La operación que deshace a otra: la resta deshace la suma y la división deshace la multiplicación.</dd>
+<dt>aislar</dt><dd>Dejar la variable sola en un lado del signo igual.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 4 · Lección 4.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 4.3",
+ "review": "las secciones 2 a 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Para deshacer «− 6» se suma 6; no se resta.",
+    "b": "Sume 6 en ambos lados: 10 + 6."
+   },
+   "right": "Se suma 6 en ambos lados: x = 16.",
+   "solution": "x − 6 + 6 = 10 + 6, x = 16."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "4x significa 4 por x: se deshace dividiendo.",
+    "c": "4x significa 4 por x: se deshace dividiendo."
+   },
+   "right": "28 ÷ 4 = 7.",
+   "solution": "Se divide entre 4 en ambos lados: x = 7."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Primero se deshace el − 2 (sumando 2) y después se divide entre 3.",
+    "c": "Al sumar 2 queda 3x = 15: todavía falta dividir."
+   },
+   "right": "3x = 15, x = 5.",
+   "solution": "Se suma 2: 3x = 15. Se divide entre 3: x = 5."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Reste 2x en ambos lados: 4x = 12.",
+    "c": "Al restar 2x queda 4x = 12: divida entre 4."
+   },
+   "right": "4x = 12, x = 3.",
+   "solution": "6x − 2x = 12, 4x = 12, x = 3."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Compruébelo: 5(5) + 1 = 26, pero 3(5) + 9 = 24.",
+    "b": "Al restar 3x: 2x + 1 = 9. Después reste 1."
+   },
+   "right": "2x + 1 = 9, 2x = 8, x = 4.",
+   "solution": "5x − 3x + 1 = 9, 2x = 8, x = 4."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Para deshacer «− 5» se suma 5: 7 + 5 = 12.",
+    "c": "Queda 2x = 12: falta dividir entre 2."
+   },
+   "right": "2x − 5 = 7, 2x = 12, x = 6.",
+   "solution": "8x − 6x − 5 = 7, 2x = 12, x = 6."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "Se resta 7, no se suma.",
+    "b": "15 − 7 = 8.",
+    "c": "15 − 7 es positivo."
+   },
+   "solution": "x = 15 − 7 = 8."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "Primero reste 5: 2x = 8.",
+    "c": "2x = 8, así que x = 8 ÷ 2.",
+    "d": "Compruébelo: 2(6) + 5 = 17."
+   },
+   "solution": "2x = 8, x = 4."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "Compruébelo: 5(6) + 2 = 32, 3(6) + 10 = 28.",
+    "c": "2x + 2 = 10, así que 2x = 8.",
+    "d": "2x = 8: divida entre 2."
+   },
+   "solution": "2x + 2 = 10, 2x = 8, x = 4."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "Sume 3 en ambos lados: 2x = 10.",
+    "b": "2x = 10, así que x = 5.",
+    "d": "2x = 10: falta dividir."
+   },
+   "solution": "2x − 3 = 7, 2x = 10, x = 5."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "5x + 1 = 16, así que 5x = 15.",
+    "c": "Se resta 1, no se suma.",
+    "d": "5x = 15: divida entre 5."
+   },
+   "solution": "5x + 1 = 16, 5x = 15, x = 3."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Dividir entre 18 no deshace nada.",
+    "c": "La x está dentro del paréntesis.",
+    "d": "El 2 está dentro del paréntesis: distribuya primero."
+   },
+   "solution": "Primero se distribuye: 3x + 6 = 18."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Eso pone más x en el lado izquierdo.",
+    "b": "Primero se reúnen las x.",
+    "c": "Primero se reúnen las x en un lado."
+   },
+   "solution": "Se resta 2x en ambos lados: 3x + 4 = 13."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Eso cambia la ecuación; no la verifica.",
+    "c": "Eso es un paso para resolver, no para verificar.",
+    "d": "Siempre se puede verificar sustituyendo."
+   },
+   "solution": "2(4) + 1 = 9: los dos lados coinciden."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 4.1 · Variables, expresiones algebraicas y traducción — práctica (español) — construida con tools/build_n3_lesson_4_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 4.1 · Variables, expresiones algebraicas y traducción · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-4-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 4 · Álgebra lineal</div>
+    <h1>Lección 4.1 · Variables, expresiones algebraicas y traducción</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#vocabulario">Variables, términos y coeficientes</a></li>
+      <li><a href="#traducir">Traducir entre palabras y álgebra</a></li>
+      <li><a href="#semejantes">Combinar términos semejantes</a></li>
+      <li><a href="#distributiva">La propiedad distributiva</a></li>
+      <li><a href="#evaluar">Evaluar expresiones</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="vocabulario" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Variables, términos y coeficientes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una <strong>variable</strong> es una letra que representa un número desconocido. Una <strong>expresión algebraica</strong> combina variables, números y operaciones. Cada parte separada por + o − es un <strong>término</strong>; el número que multiplica a la variable es su <strong>coeficiente</strong>, y el término sin variable es la <strong>constante</strong>.</p>
+      <h3>Anatomía de una expresión</h3>
+      <p>Cada término aparece desarmado en sus partes. Fíjese en los signos: el signo que va delante pertenece al término.</p>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="an-expr"></span></div>
+        <div class="tabla-scroll"><table class="comparar" id="an-tabla"></table></div>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn-sec" id="an-nuevo">Otra expresión</button></div>
+      </div>
+      <div class="caja-tip"><strong>Coeficiente invisible:</strong> cuando una variable aparece sola, como x, su coeficiente es 1 (x = 1x). De igual modo, −x significa −1x.</div>
+      <h3>Practique: identifique las partes</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="traducir">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Traducir entre palabras y álgebra</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Ciertas palabras señalan siempre la misma operación:</p>
+      <table class="reglas">
+        <caption>Palabras clave y su operación</caption>
+        <thead><tr><th scope="col">Operación</th><th scope="col">Palabras que la indican</th></tr></thead>
+        <tbody>
+          <tr><td>Suma</td><td>más, aumentado en, la suma de, más que</td></tr>
+          <tr><td>Resta</td><td>menos, disminuido en, la diferencia entre, menos que</td></tr>
+          <tr><td>Multiplicación</td><td>veces, el doble, el triple, el producto de</td></tr>
+          <tr><td>División</td><td>la mitad, el tercio, dividido entre, el cociente de</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-atencion"><strong>El orden importa en la resta:</strong> «un número disminuido en 4» es x − 4, pero «4 disminuido en un número» es 4 − x. Y «8 menos que un número» es x − 8: al número se le quitan 8.</div>
+      <h3>Practique: de palabras a álgebra</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Practique: de álgebra a palabras</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="semejantes">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Combinar términos semejantes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Dos términos son <strong>semejantes</strong> si tienen la misma variable elevada al mismo exponente. Cada tipo de término forma una «familia», y solo se combinan los de la misma familia, sumando o restando sus coeficientes. Las constantes forman su propia familia.</p>
+      <p><span class="fam-x2">x<sup>2</sup></span> &nbsp; <span class="fam-x">x</span> &nbsp; <span class="fam-y">y</span> &nbsp; <span class="fam-k">constantes</span></p>
+      <h3>Paso a paso por familias</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="fa-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="fa-sig"></button><button type="button" class="btn-sec" id="fa-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="fa-nuevo">Otro ejemplo</button></div>
+      </div>
+      <div class="pasos" id="fa-pasos" aria-live="polite"></div>
+      <h3>Practique: clasifique cada término en su familia</h3>
+      <div class="practica" id="cf">
+        <div class="enun" id="cf-enun"></div>
+        <div id="cf-filas"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="cf-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="cf-nuevo">Otra expresión</button>
+        </div>
+        <div class="fb" id="cf-fb" role="status"></div>
+        <p class="marcador" id="cf-marcador"></p>
+      </div>
+      <div class="caja-atencion"><strong>No se combinan términos distintos:</strong> 4x + 2y no se simplifica, porque x y y son variables diferentes. Tampoco 3x + 5 da 8x, porque el 5 no tiene x. Y 3x<sup>2</sup> + 2x no es 5x<sup>2</sup>: los exponentes son distintos.</div>
+      <h3>Practique: simplifique la expresión</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="distributiva">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La propiedad distributiva</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando un número multiplica a una suma o a una resta entre paréntesis, multiplica a <strong>cada término</strong> de adentro, no solo al primero.</p>
+      <div class="formula">a(b + c) = a · b + a · c</div>
+      <h3>Por qué funciona: el modelo de área</h3>
+      <p>Un rectángulo de altura a y base (x + c) se puede partir en dos. El área total es la misma, se calcule como se calcule.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="ar-a">Altura (de 1 a 9)</label><input type="text" inputmode="numeric" class="corto" id="ar-a" value="3"></div>
+        <div class="campo"><label for="ar-c">Número dentro del paréntesis (de 1 a 9)</label><input type="text" inputmode="numeric" class="corto" id="ar-c" value="4"></div>
+      </div></div>
+      <div id="ar-svg"></div>
+      <div class="salida" aria-live="polite" id="ar-salida"></div>
+      <div class="caja-atencion"><strong>Con signos:</strong> el signo del factor también se reparte. −2(x − 5) = −2x + 10, porque (−2)(−5) = +10. El error más frecuente es multiplicar solo el primer término: 3(x + 4) no es 3x + 4.</div>
+      <h3>Practique: distribuya</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p5-a">Coeficiente de x</label><input type="text" autocomplete="off" class="corto" id="p5-a"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;">x +</div>
+          <div class="campo"><label for="p5-b">Constante</label><input type="text" autocomplete="off" class="corto" id="p5-b"></div>
+        </div>
+        <p class="nota">Escriba los números con su signo. Por ejemplo, para −2x + 10 escriba −2 y 10; para 3x − 12 escriba 3 y −12.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <h3>Practique: distribuya y combine</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="opciones" id="p6-opciones"></div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p6-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="evaluar">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Evaluar expresiones</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Evaluar es sustituir la variable por un valor y calcular, respetando el orden de las operaciones: paréntesis, exponentes, multiplicación y división, suma y resta.</p>
+      <h3>Sustitución paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span id="ev-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="ev-sig"></button><button type="button" class="btn-sec" id="ev-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="ev-nuevo">Otro ejemplo</button></div>
+      </div>
+      <div class="pasos" id="ev-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>Use paréntesis al sustituir:</strong> escribir 2(3) en lugar de 23 evita confundir la multiplicación con un número de dos cifras. Con negativos es imprescindible: si x = −3, entonces x<sup>2</sup> = (−3)<sup>2</sup> = 9, pero −x<sup>2</sup> = −(−3)<sup>2</sup> = −9.</div>
+      <h3>Practique: evalúe la expresión</h3>
+      <div class="practica" id="p7">
+        <div class="enun" id="p7-enun"></div>
+        <div class="campos"><div class="campo"><label for="p7-r">Resultado</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p7-r"></div></div>
+        <p class="nota">Escriba un número entero, con signo menos si es negativo.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p7-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p7-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p7-fb" role="status"></div>
+        <p class="marcador" id="p7-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 4 · Álgebra lineal · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script>
+/* ============ MODULE 1 · the anatomy of an expression ============ */
+function expresionAzar(){
+  var p = [];
+  if (Math.random() < 0.4) p.push(tm(elige([2, 3, 4, 5, -2, -3, 1, -1]), "x2"));
+  p.push(tm(elige([2, 3, 4, 5, 6, 7, -2, -3, -4, -5, 1, -1]), "x"));
+  if (Math.random() < 0.5) p.push(tm(elige([2, 3, 4, -2, -3, -6, 1, -1]), "y"));
+  p.push(tm(nz(), ""));
+  return baraja(p.slice(0, -1)).concat([p[p.length - 1]]);
+}
+function tipoTermino(tt){ return tt.v === "" ? T("Constant", "Constante") : T("Term with ", "Término con ") + (tt.v === "x2" ? "x²" : tt.v); }
+function pintaAnatomia(){
+  var p = expresionAzar();
+  $("an-expr").innerHTML = polHTML(p);
+  var h = "<caption>" + T("The parts of each term of the expression", "Partes de cada término de la expresión") + '</caption><thead><tr><th scope="col">' + T("Term", "Término") + '</th><th scope="col">' + T("Coefficient", "Coeficiente") + '</th><th scope="col">' + T("Variable part", "Parte con variable") + '</th><th scope="col">' + T("Type", "Tipo") + "</th></tr></thead><tbody>";
+  p.forEach(function(tt){
+    h += "<tr><td>" + auto(termVis(tt, true)) + "</td><td>" + (tt.v === "" ? "—" : menosV(tt.c) + (Math.abs(tt.c) === 1 ? T(" (invisible)", " (invisible)") : "")) + "</td><td>" +
+         (tt.v === "" ? T("none", "ninguna") : auto(VAR_VIS[tt.v])) + "</td><td>" + tipoTermino(tt) + "</td></tr>";
+  });
+  $("an-tabla").innerHTML = h + "</tbody>";
+}
+function opNum(n){ return {html: menosV(n), clave: "n" + n}; }
+function genPartes(){
+  var p = expresionAzar(), tp = aleatorio(1, 4), vars = p.filter(function(x){ return x.v !== ""; }), pc = {}, o = [], usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  var enun0 = T("In the expression ", "En la expresión ") + polHTML(p) + ", ";
+  if (tp <= 2){
+    var obj = elige(vars), c = obj.c, nombre = obj.v === "x2" ? "x²" : obj.v, k = p[p.length - 1].c;
+    mete(opNum(c));
+    if (c < 0) mete(opNum(-c), T("The sign in front is part of the coefficient.", "El signo que va delante forma parte del coeficiente."));
+    if (Math.abs(c) === 1) mete(opNum(0), T("When the variable is alone, the coefficient is 1 (or −1 with a minus sign), not 0.", "Cuando la variable aparece sola, el coeficiente es 1 (o −1 si lleva signo menos), no 0."));
+    if (obj.v === "x2") mete(opNum(2), T("The 2 is the exponent, not the coefficient.", "El 2 es el exponente, no el coeficiente."));
+    mete(opNum(k), T("That is the constant, not a coefficient.", "Esa es la constante, no un coeficiente."));
+    vars.forEach(function(v){ if (v !== obj) mete(opNum(v.c), T("That is the coefficient of another term.", "Ese es el coeficiente de otro término.")); });
+    mete(opNum(c + (c > 0 ? 1 : -1)));
+    mete(opNum(c + (c > 0 ? 2 : -2)));
+    return {enun: enun0 + T("what is the coefficient of ", "¿cuál es el coeficiente de ") + auto(VAR_VIS[obj.v]) + "?", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+      bien: T("The coefficient is the number that multiplies " + nombre + ", with its sign: " + menosV(c) + ".", "El coeficiente es el número que multiplica a " + nombre + ", con su signo: " + menosV(c) + "."), mal: T("The coefficient of " + nombre + " is " + menosV(c) + ".", "El coeficiente de " + nombre + " es " + menosV(c) + ".")};
+  }
+  if (tp === 3){
+    var k2 = p[p.length - 1].c;
+    mete(opNum(k2)); mete(opNum(-k2), T("The sign in front is part of the term.", "El signo que va delante forma parte del término."));
+    vars.forEach(function(v){ mete(opNum(v.c), T("That is a coefficient: it multiplies a variable.", "Ese es un coeficiente: multiplica a una variable.")); });
+    mete(opNum(p.length)); mete(opNum(k2 + 10));
+    return {enun: enun0 + T("what is the constant?", "¿cuál es la constante?"), opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+      bien: T("The constant is the term with no variable, with its sign: " + menosV(k2) + ".", "La constante es el término sin variable, con su signo: " + menosV(k2) + "."), mal: T("The constant is " + menosV(k2) + ", the term that has no variable.", "La constante es " + menosV(k2) + ", el término que no tiene variable.")};
+  }
+  var n = p.length;
+  return {enun: enun0 + T("how many terms does it have?", "¿cuántos términos tiene?"), opciones: [opNum(n - 1), opNum(n), opNum(n + 1), opNum(n + 2)], correcta: "n" + n, porClave: {}, enOrden: true,
+    pista: T("Count the parts separated by + or −.", "Cuente las partes separadas por + o −."),
+    bien: T("Each part separated by + or − is a term: there are " + n + ".", "Cada parte separada por + o − es un término: hay " + n + "."), mal: T("Count the parts separated by + or −: there are " + n + ".", "Cuente las partes separadas por + o −: hay " + n + ".")};
+}
+
+/* ============ MODULE 2 · translating ============ */
+function fx(a, b){ return '<span class="fracc"><span class="fa">' + a + '</span><span class="fb2">' + b + "</span></span>"; }
+function frases(n, m){
+  return [
+    {f: T("twice a number", "el doble de un número"), e: "2x"},
+    {f: T("three times a number", "el triple de un número"), e: "3x"},
+    {f: T(n + " more than a number", n + " más que un número"), e: "x + " + n},
+    {f: T("a number increased by " + n, "un número aumentado en " + n), e: "x + " + n},
+    {f: T("a number decreased by " + n, "un número disminuido en " + n), e: "x − " + n},
+    {f: T(n + " decreased by a number", n + " disminuido en un número"), e: n + " − x"},
+    {f: T(n + " less than a number", n + " menos que un número"), e: "x − " + n},
+    {f: T("half of a number", "la mitad de un número"), e: fx("x", 2)},
+    {f: T("a number divided by " + n, "un número dividido entre " + n), e: fx("x", n)},
+    {f: T("the square of a number", "el cuadrado de un número"), e: "x<sup>2</sup>"},
+    {f: T(n + " times a number, increased by " + m, n + " veces un número, aumentado en " + m), e: n + "x + " + m},
+    {f: T("the product of " + n + " and a number, decreased by " + m, "el producto de " + n + " y un número, disminuido en " + m), e: n + "x − " + m},
+    {f: T("three times the sum of a number and " + n, "el triple de la suma de un número y " + n), e: "3(x + " + n + ")"},
+    {f: T("the difference of a number and " + n, "la diferencia entre un número y " + n), e: "x − " + n},
+    {f: T(n + " times a number", n + " veces un número"), e: n + "x"}
+  ];
+}
+function erroresDe(f, n, m){
+  var e = f.e;
+  if (e === "2x") return [["x + 2", T("“Twice” means multiply by 2, not add 2.", "«El doble» es multiplicar por 2, no sumar 2.")], ["x<sup>2</sup>", T("That is the square, x · x.", "Eso es el cuadrado, x · x.")], [fx("x", 2), T("That is half.", "Eso es la mitad.")]];
+  if (e === "3x") return [["x + 3", T("“Three times” means multiply by 3.", "«El triple» es multiplicar por 3.")], ["x<sup>3</sup>", T("That is x · x · x.", "Eso es x · x · x.")], [fx("x", 3), T("That is a third.", "Eso es la tercera parte.")]];
+  if (e === "x + " + n) return [[n + "x", T("That is multiplying.", "Eso es multiplicar.")], ["x − " + n, T("It is a sum, not a subtraction.", "Es una suma, no una resta.")], [n + " − x", T("It is a sum, not a subtraction.", "Es una suma, no una resta.")]];
+  if (e === "x − " + n) return [[n + " − x", T("Order matters: " + n + " is taken away from the number, so the number goes first.", "El orden importa: al número se le quitan " + n + ", así que el número va primero.")], ["x + " + n, T("It is a subtraction.", "Es una resta.")], [fx("x", n), T("That is dividing.", "Eso es dividir.")]];
+  if (e === n + " − x") return [["x − " + n, T("Order matters: here the number is taken away from " + n + ", so " + n + " goes first.", "El orden importa: aquí al " + n + " se le quita el número, así que el " + n + " va primero.")], [n + "x", T("That is multiplying.", "Eso es multiplicar.")], ["x + " + n, T("It is a subtraction.", "Es una resta.")]];
+  if (e === fx("x", 2)) return [["2x", T("That is twice the number.", "Eso es el doble.")], ["x − 2", T("Half means dividing by 2.", "La mitad es dividir entre 2.")], ["x<sup>2</sup>", T("That is the square.", "Eso es el cuadrado.")]];
+  if (e === fx("x", n)) return [[n + "x", T("That is multiplying.", "Eso es multiplicar.")], [fx(n, "x"), T("Order matters: the number is divided by " + n + ".", "El orden importa: el número se divide entre " + n + ".")], ["x − " + n, T("That is subtracting.", "Eso es restar.")]];
+  if (e === "x<sup>2</sup>") return [["2x", T("That is twice the number.", "Eso es el doble.")], [fx("x", 2), T("That is half.", "Eso es la mitad.")], ["x + 2", T("The square is x · x.", "El cuadrado es x · x.")]];
+  if (e === n + "x + " + m) return [[n + "(x + " + m + ")", T("Only the number is multiplied by " + n + "; then " + m + " is added.", "Solo el número se multiplica por " + n + "; después se suma " + m + ".")], [m + "x + " + n, T("The numbers are swapped.", "Los números están intercambiados.")], ["x + " + n + " + " + m, T("“Times” means multiply.", "«Veces» indica multiplicar.")]];
+  if (e === n + "x − " + m) return [[m + " − " + n + "x", T("Order matters: " + m + " is taken away from the product.", "El orden importa: al producto se le quitan " + m + ".")], [n + "(x − " + m + ")", T("Only the number is multiplied by " + n + ".", "Solo el número se multiplica por " + n + ".")], [n + "x + " + m, T("“Decreased” means subtract.", "«Disminuido» es restar.")]];
+  if (e === "3(x + " + n + ")") return [["3x + " + n, T("It is three times the whole sum: use parentheses.", "Es el triple de toda la suma: se usan paréntesis.")], ["x + 3 + " + n, T("“Three times” means multiply by 3.", "«El triple» es multiplicar por 3.")], ["3 + x + " + n, T("“Three times” means multiply by 3.", "«El triple» es multiplicar por 3.")]];
+  if (e === n + "x") return [["x + " + n, T("“Times” means multiply.", "«Veces» indica multiplicar.")], ["x<sup>" + n + "</sup>", T("That is a power, not a product.", "Eso es una potencia, no un producto.")], [fx("x", n), T("That is dividing.", "Eso es dividir.")]];
+  return [];
+}
+function mayus(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+function genTraducir(){
+  var n = aleatorio(3, 9), m = aleatorio(2, 9); while (m === n) m = aleatorio(2, 9);
+  var f = elige(frases(n, m)), o = [{html: auto(f.e), clave: f.e}], pc = {};
+  erroresDe(f, n, m).forEach(function(e){ o.push({html: auto(e[0]), clave: e[0]}); pc[e[0]] = e[1]; });
+  return {enun: T("Translate into algebra: “" + mayus(f.f) + ".” Use x for the number.", "Traduzca a álgebra: «" + mayus(f.f) + "». Use x para el número."),
+    opciones: [o[0]].concat(baraja(o.slice(1))), correcta: f.e, porClave: pc, bien: T("“" + f.f + "” is written ", "«" + f.f + "» se escribe ") + auto(f.e) + ".", mal: T("The translation is ", "La traducción es ") + auto(f.e) + "."};
+}
+function genAPalabras(){
+  var n = aleatorio(3, 9), m = aleatorio(2, 9); while (m === n) m = aleatorio(2, 9);
+  var fs = frases(n, m), f = elige(fs), otras = baraja(fs.filter(function(g){ return g.e !== f.e; }));
+  var errores = erroresDe(f, n, m).map(function(x){ return x[0]; }), prefer = otras.filter(function(g){ return errores.indexOf(g.e) >= 0; }), resto = otras.filter(function(g){ return errores.indexOf(g.e) < 0; });
+  var o = [{html: mayus(f.f), clave: "c"}], pc = {}, vistos = {};
+  vistos[f.e] = 1;
+  prefer.concat(resto).forEach(function(g){ if (o.length < 4 && !vistos[g.e]){ vistos[g.e] = 1; var k = "o" + o.length; o.push({html: mayus(g.f), clave: k}); pc[k] = T("That phrase is ", "Esa frase es ") + auto(g.e) + "."; } });
+  return {enun: T("Which phrase matches ", "¿Qué frase corresponde a ") + auto(f.e) + "?", opciones: [o[0]].concat(baraja(o.slice(1))), correcta: "c", porClave: pc,
+    bien: auto(f.e) + T(" is “" + f.f + ".”", " es «" + f.f + "»."), mal: auto(f.e) + T(" is “" + f.f + ".”", " es «" + f.f + "».")};
+}
+
+/* ============ MODULE 3 · families of like terms ============ */
+var FAM_CLASE = {x2: "fam-x2", x: "fam-x", y: "fam-y", "": "fam-k"};
+var FAM_NOMBRE = {x2: T("the x² family", "familia de x²"), x: T("the x family", "familia de x"), y: T("the y family", "familia de y"), "": T("constants", "constantes")};
+function termFamVis(tt, primero){
+  var a = Math.abs(tt.c), cuerpo = tt.v === "" ? String(a) : (a === 1 ? "" : a) + VAR_VIS[tt.v];
+  return (tt.c < 0 ? (primero ? "−" : " − ") : (primero ? "" : " + ")) + '<span class="' + FAM_CLASE[tt.v] + '">' + cuerpo + "</span>";
+}
+function polFamVis(p){ return p.map(function(tt, i){ return termFamVis(tt, i === 0); }).join(""); }
+function polSemejantes(){
+  var fams = baraja(["x", "y", ""]).slice(0, aleatorio(2, 3)); if (Math.random() < 0.3) fams.push("x2");
+  var p = [];
+  fams.forEach(function(v){ var k = aleatorio(1, 2); for (var i = 0; i < (k === 1 ? 2 : aleatorio(2, 3)); i++) p.push(tm(v === "" ? nz() : elige([1, 2, 3, 4, 5, 6, 7, -1, -2, -3, -4, -5]), v)); });
+  p = baraja(p);
+  if (p.length > 6) p = p.slice(0, 6);
+  return p;
+}
+var FA = {p: null, pasos: [], visto: 0};
+function preparaFA(p){
+  FA.p = p; FA.pasos = []; FA.visto = 0;
+  var r = reducePol(p), fams = ORDEN_VAR.filter(function(v){ return p.some(function(tt){ return tt.v === v; }); });
+  $("fa-expr").innerHTML = polHTML(p);
+  FA.pasos.push(T("Find the family of each term: ", "Se identifica la familia de cada término: ") + envuelve(polFamVis(p), polVoz(p)) + ".");
+  var grupos = fams.map(function(v){ return "(" + polVis(p.filter(function(tt){ return tt.v === v; })) + ")"; });
+  FA.pasos.push(T("Group them by family: ", "Se agrupan por familias: ") + auto(grupos.join(" + ")) + ".");
+  var lineas = fams.map(function(v){
+    var g = p.filter(function(tt){ return tt.v === v; }), s = g.reduce(function(a, tt){ return a + tt.c; }, 0);
+    return mayus(FAM_NOMBRE[v]) + ": " + g.map(function(tt){ return menosV(tt.c); }).join(" + ").replace(/\+ −/g, "− ") + " = " + menosV(s) + (s === 0 ? T(" (the family cancels out)", " (la familia se anula)") : "");
+  });
+  FA.pasos.push(T("Combine the coefficients in each family. ", "Se combinan los coeficientes de cada familia. ") + lineas.join(". ") + ".");
+  FA.pasos.push('<span class="veredicto">' + T("Answer: ", "Resultado: ") + polHTML(p) + " = " + polHTML(r) + "</span>");
+  pintaFA();
+}
+function pintaFA(){
+  $("fa-pasos").innerHTML = FA.pasos.slice(0, FA.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === FA.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("fa-sig"); b.disabled = FA.visto >= FA.pasos.length; $("fa-todo").disabled = b.disabled;
+  b.textContent = FA.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+var FA_COLA = [[tm(3, "x"), tm(5, "x")], [tm(7, "x"), tm(-2, "x"), tm(4)], [tm(3, "x"), tm(5), tm(-2, "y"), tm(1, "x"), tm(4, "y"), tm(-7)]];
+
+/* Sorting terms into families: two tries */
+var CF = {p: null, primero: 0, pista: 0, total: 0, resuelta: false, intentos: 0};
+function pintaCF(){
+  CF.p = polSemejantes(); CF.resuelta = false; CF.intentos = 0;
+  $("cf-enun").innerHTML = T("Expression: ", "Expresión: ") + polHTML(CF.p) + T(". Choose the family of each term.", ". Elija la familia de cada término.");
+  var h = "";
+  CF.p.forEach(function(tt, i){
+    h += '<div class="fila-term" id="cf-fila' + i + '"><span class="t">' + auto(termVis(tt, true)) + "</span>" +
+         '<label class="sr-only" for="cf-s' + i + '">' + T("Family of the term ", "Familia del término ") + vozAuto(termVis(tt, true)) + "</label>" +
+         '<select id="cf-s' + i + '"><option value="-">' + T("Choose the family", "Elija la familia") + '</option><option value="x2">' + T("x² family", "Familia de x²") + '</option><option value="x">' + T("x family", "Familia de x") + '</option><option value="y">' + T("y family", "Familia de y") + '</option><option value="k">' + T("Constants", "Constantes") + "</option></select></div>";
+  });
+  $("cf-filas").innerHTML = h;
+  $("cf-comprobar").disabled = false;
+  $("cf-fb").className = "fb"; $("cf-fb").innerHTML = "";
+}
+function compruebaCF(){
+  if (CF.resuelta) return;
+  var fb = $("cf-fb"), vacios = CF.p.filter(function(tt, i){ return $("cf-s" + i).value === "-"; }).length, bien = 0;
+  if (vacios){ fb.className = "fb pista"; fb.innerHTML = T("Choose the family of every term before you check.", "Elija la familia de todos los términos antes de comprobar."); return; }
+  CF.intentos++;
+  CF.p.forEach(function(tt, i){ var ok = $("cf-s" + i).value === (tt.v === "" ? "k" : tt.v); $("cf-fila" + i).className = "fila-term " + (ok ? "bien" : "mal"); if (ok) bien++; });
+  var final = T("Combining each family gives ", "Al combinar cada familia queda ") + polHTML(reducePol(CF.p)) + ".";
+  if (bien < CF.p.length && CF.intentos < 2){
+    fb.className = "fb pista";
+    fb.innerHTML = TX.todavia + T(bien + " of " + CF.p.length + " are right. Change the ones marked in red: the family depends on the variable part and its exponent, not on the coefficient.", "Acertó " + bien + " de " + CF.p.length + ". Cambie los marcados en rojo: la familia la decide la parte con variable y su exponente, no el coeficiente.") + TX.unoMas;
+    return;
+  }
+  CF.resuelta = true; CF.total++;
+  CF.p.forEach(function(tt, i){ $("cf-s" + i).disabled = true; if ($("cf-s" + i).value !== (tt.v === "" ? "k" : tt.v)) $("cf-s" + i).value = tt.v === "" ? "k" : tt.v; });
+  if (bien === CF.p.length){ if (CF.intentos === 1) CF.primero++; else CF.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + T("Every term is in its family. ", "Todos los términos están en su familia. ") + final; }
+  else { fb.className = "fb mal"; fb.innerHTML = TX.asi + T("The lists now show the right family of each term. ", "Las listas muestran ahora la familia correcta de cada término. ") + final + TX.nuevo; }
+  $("cf-comprobar").disabled = true;
+  $("cf-marcador").textContent = TX.resueltos(CF.primero + CF.pista, CF.primero, CF.total);
+}
+function genSimplificar(){
+  var p = polSemejantes(), r = reducePol(p), o = [], pc = {}, usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opPol(r));
+  var todo = p.reduce(function(a, tt){ return a + tt.c; }, 0);
+  mete(opPol(todo === 0 ? [] : [tm(todo, "x")]), T("Only terms in the same family combine.", "Solo se combinan términos de la misma familia."));
+  var neg = p.filter(function(tt){ return tt.c < 0; });
+  if (neg.length){ var cambia = neg[0]; mete(opPol(reducePol(p.map(function(tt){ return tt === cambia ? tm(-tt.c, tt.v) : tt; }))), T("Check the signs: the sign in front belongs to the term.", "Revise los signos: el signo que va delante pertenece al término.")); }
+  if (p.some(function(tt){ return tt.v === "x2"; })) mete(opPol(reducePol(p.map(function(tt){ return tt.v === "x2" ? tm(tt.c, "x") : tt; }))), T("x² and x are not like terms: the exponents are different.", "x² y x no son semejantes: los exponentes son distintos."));
+  if (p.some(function(tt){ return tt.v === ""; }) && p.some(function(tt){ return tt.v === "x"; })) mete(opPol(reducePol(p.map(function(tt){ return tt.v === "" ? tm(tt.c, "x") : tt; }))), T("Constants have no x: they do not combine with the x terms.", "Las constantes no tienen x: no se combinan con los términos en x."));
+  if (r.length) mete(opPol(r.map(function(tt, i){ return i === 0 ? tm(tt.c + 1, tt.v) : tt; })), T("Check the coefficients again.", "Revise otra vez los coeficientes."));
+  if (r.length) mete(opPol(r.map(function(tt, i){ return i === r.length - 1 ? tm(tt.c - 1 || -1, tt.v) : tt; })), T("Check the coefficients again.", "Revise otra vez los coeficientes."));
+  return {enun: T("Simplify ", "Simplifique ") + polHTML(p) + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("Grouping by families: ", "Agrupando por familias: ") + envuelve(polFamVis(p), polVoz(p)) + " = " + polHTML(r) + ".", mal: T("The simplified form is ", "La forma simplificada es ") + polHTML(r) + "."};
+}
+
+/* ============ MODULE 4 · the distributive property ============ */
+function pintaArea(){
+  var at = $("ar-a").value.trim(), ct = $("ar-c").value.trim(), a = /^\d$/.test(at) ? +at : 0, c = /^\d$/.test(ct) ? +ct : 0;
+  if (a < 1 || c < 1){ $("ar-svg").innerHTML = ""; $("ar-salida").innerHTML = T("Type whole numbers from 1 to 9.", "Escriba números enteros de 1 a 9."); return; }
+  var H = 40 + a * 16, wx = 220, wc = c * 28, x0 = 60, y0 = 30;
+  var s = '<svg class="balanza" viewBox="0 0 ' + (x0 + wx + wc + 30) + " " + (y0 + H + 50) + '" role="img" aria-label="' + T("Rectangle with height " + a + " and base x plus " + c + ", split in two: an area of " + a + " x and another of " + (a * c), "Rectángulo de altura " + a + " y base x más " + c + ", partido en dos: un área de " + a + " x y otra de " + (a * c)) + '">';
+  s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + wx + '" height="' + H + '" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2"/>';
+  s += '<rect x="' + (x0 + wx) + '" y="' + y0 + '" width="' + wc + '" height="' + H + '" fill="#fff8e1" stroke="#5c3900" stroke-width="2"/>';
+  s += '<text x="' + (x0 + wx / 2) + '" y="' + (y0 + H / 2 + 7) + '" text-anchor="middle" font-size="22" font-weight="700" fill="#0d47a1">' + a + "x</text>";
+  s += '<text x="' + (x0 + wx + wc / 2) + '" y="' + (y0 + H / 2 + 7) + '" text-anchor="middle" font-size="' + (wc < 60 ? 16 : 22) + '" font-weight="700" fill="#5c3900">' + (a * c) + "</text>";
+  s += '<text x="' + (x0 + wx / 2) + '" y="' + (y0 + H + 28) + '" text-anchor="middle" font-size="20" fill="#222">x</text>';
+  s += '<text x="' + (x0 + wx + wc / 2) + '" y="' + (y0 + H + 28) + '" text-anchor="middle" font-size="20" fill="#222">' + c + "</text>";
+  s += '<text x="' + (x0 - 14) + '" y="' + (y0 + H / 2 + 7) + '" text-anchor="end" font-size="20" fill="#222">' + a + "</text></svg>";
+  $("ar-svg").innerHTML = s;
+  $("ar-salida").innerHTML = '<div class="linea">' + T("Area as one piece: height times base = ", "Área de una sola pieza: altura por base = ") + auto(a + "(x + " + c + ")") + ".</div>" +
+    '<div class="linea">' + T("Area by parts: ", "Área por partes: ") + auto(a + " · x = " + a + "x") + T(" and ", " y ") + auto(a + " · " + c + " = " + (a * c)) + ".</div>" +
+    '<div class="linea veredicto">' + T("It is the same area: ", "Son la misma área: ") + auto(a + "(x + " + c + ") = " + a + "x + " + (a * c)) + "</div>";
+}
+var P5 = {primero: 0, pista: 0, total: 0, resuelta: false, intentos: 0, a: 0, b: 0, c: 0};
+function pintaP5(){
+  P5.a = elige([2, 3, 4, 5, 6, 7, -2, -3, -4, -5]); P5.b = elige([1, 1, 2, 3, 4]); P5.c = nz(); P5.resuelta = false; P5.intentos = 0;
+  $("p5-enun").innerHTML = T("Distribute: ", "Distribuya: ") + auto(menosV(P5.a) + "(" + polVis([tm(P5.b, "x"), tm(P5.c)]) + ")");
+  ["p5-a", "p5-b"].forEach(function(id){ $(id).value = ""; $(id).disabled = false; $(id).classList.remove("error"); });
+  $("p5-comprobar").disabled = false; $("p5-fb").className = "fb"; $("p5-fb").innerHTML = "";
+}
+function compruebaP5(){
+  if (P5.resuelta) return;
+  var A = leeEntero($("p5-a").value), Bb = leeEntero($("p5-b").value), fb = $("p5-fb");
+  $("p5-a").classList.toggle("error", A === null); $("p5-b").classList.toggle("error", Bb === null);
+  if (A === null || Bb === null){ fb.className = "fb pista"; fb.innerHTML = T("Type two whole numbers, with a minus sign if one is negative.", "Escriba dos números enteros, con su signo si es negativo."); return; }
+  var ra = P5.a * P5.b, rb = P5.a * P5.c, res = polHTML([tm(ra, "x"), tm(rb)]);
+  var explica = T("Multiply ", "Se multiplica ") + menosV(P5.a) + T(" by each term: ", " por cada término: ") + auto("(" + menosV(P5.a) + ")(" + polVis([tm(P5.b, "x")]) + ") = " + polVis([tm(ra, "x")])) + T(" and ", " y ") +
+                auto("(" + menosV(P5.a) + ")(" + menosV(P5.c) + ") = " + menosV(rb)) + ".";
+  P5.intentos++;
+  if (A === ra && Bb === rb){
+    P5.resuelta = true; P5.total++; if (P5.intentos === 1) P5.primero++; else P5.pista++;
+    fb.className = "fb bien"; fb.innerHTML = TX.bien + res + ". " + explica + " <em>" + elige(P5.intentos === 1 ? ELOGIO : ELOGIO2) + "</em>";
+  } else if (P5.intentos >= 2){
+    P5.resuelta = true; P5.total++; fb.className = "fb mal"; fb.innerHTML = TX.asi + res + ". " + explica + TX.nuevo;
+  } else {
+    var msg = T("Multiply the number outside by each term inside.", "Multiplique el número de fuera por cada término de dentro.");
+    if (A === ra && Bb === P5.c) msg = T("The first term is right, but " + menosV(P5.a) + " also multiplies the second term.", "El primer término está bien, pero el " + menosV(P5.a) + " también multiplica al segundo término.");
+    else if (A === ra && Bb === -rb) msg = T("Check the sign of the second product: (" + menosV(P5.a) + ")(" + menosV(P5.c) + ").", "Revise el signo del segundo producto: (" + menosV(P5.a) + ")(" + menosV(P5.c) + ").");
+    else if (A === -ra) msg = T("Check the sign of the first product.", "Revise el signo del primer producto.");
+    else if (Bb === rb) msg = T("The constant is right; check the coefficient of x.", "La constante está bien; revise el coeficiente de x.");
+    fb.className = "fb pista"; fb.innerHTML = TX.todavia + msg + TX.unoMas;
+  }
+  if (P5.resuelta){ $("p5-a").disabled = true; $("p5-b").disabled = true; $("p5-comprobar").disabled = true; }
+  $("p5-marcador").textContent = P5.total ? TX.resueltos(P5.primero + P5.pista, P5.primero, P5.total) : "";
+}
+function genDistCombina(){
+  var a = aleatorio(2, 6), b = nz(), c = elige([1, 2, 3, 4, 5, -1, -2, -3]), d = Math.random() < 0.5 ? nz() : 0;
+  var orig = auto(a + "(" + polVis([tm(1, "x"), tm(b)]) + ")" + termVis(tm(c, "x"), false) + (d ? termVis(tm(d), false) : ""));
+  var r = reducePol([tm(a, "x"), tm(a * b), tm(c, "x"), tm(d)]), o = [], pc = {}, usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opPol(r));
+  mete(opPol(reducePol([tm(a, "x"), tm(b), tm(c, "x"), tm(d)])), T("The " + a + " also multiplies the " + menosV(b) + " in the parentheses.", "El " + a + " multiplica también al " + menosV(b) + " del paréntesis."));
+  mete(opPol(reducePol([tm(a + c + a * b + d, "x")])), T("Constants do not combine with the x terms.", "Las constantes no se combinan con los términos en x."));
+  mete(opPol(reducePol([tm(a * c, "x"), tm(a * b), tm(d)])), T("Add the x terms after distributing; do not multiply them.", "Los términos en x se suman después de distribuir; no se multiplican."));
+  mete(opPol(reducePol([tm(a, "x"), tm(-a * b), tm(c, "x"), tm(d)])), T("Check the sign of " + a + " · " + menosV(b) + ".", "Revise el signo de " + a + " · " + menosV(b) + "."));
+  return {enun: T("Simplify ", "Simplifique ") + orig + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("First distribute: ", "Primero se distribuye: ") + polHTML([tm(a, "x"), tm(a * b), tm(c, "x")].concat(d ? [tm(d)] : [])) + T("; then combine like terms.", "; después se combinan los términos semejantes."),
+    mal: T("Distribute and combine: the result is ", "Se distribuye y se combina: el resultado es ") + polHTML(r) + "."};
+}
+
+/* ============ MODULE 5 · evaluating expressions ============ */
+function coefSust(c, primero, cuerpo){ var a = Math.abs(c), s = c < 0 ? (primero ? "−" : " − ") : (primero ? "" : " + "); return s + (a === 1 ? "" : a) + cuerpo; }
+function evaluaPasos(A, Bc, C, v){
+  var pv = "(" + menosV(v) + ")", pol = [], sust = "", primero = true, pasos = [];
+  if (A){ pol.push(tm(A, "x2")); sust += coefSust(A, primero, pv + "<sup>2</sup>"); primero = false; }
+  if (Bc){ pol.push(tm(Bc, "x")); sust += coefSust(Bc, primero, pv); primero = false; }
+  if (C || primero){ pol.push(tm(C)); sust += (C < 0 ? (primero ? "−" : " − ") : (primero ? "" : " + ")) + Math.abs(C); }
+  pasos.push(T("Replace x with ", "Se sustituye x por ") + auto(pv) + ": " + auto(sust) + ".");
+  var tA = A * v * v, tB = Bc * v, val = tA + tB + C;
+  if (A) pasos.push(T("First the power: ", "Primero la potencia: ") + auto(pv + "<sup>2</sup> = " + menosV(v * v)) + (v < 0 ? T(" (a negative number squared is positive).", " (un negativo al cuadrado da positivo).") : ".") +
+                    (A === -1 ? T(" The minus sign in front is not inside the parentheses, so it is applied afterward: ", " El signo menos de delante no está dentro del paréntesis, así que se aplica después: ") + auto("−" + menosV(v * v) + " = " + menosV(-v * v)) + "." : ""));
+  var mults = [];
+  if (A && Math.abs(A) !== 1) mults.push(auto(menosV(A) + " · " + menosV(v * v) + " = " + menosV(tA)));
+  if (Bc && Math.abs(Bc) !== 1) mults.push(auto(menosV(Bc) + " · " + pv + " = " + menosV(tB)));
+  if (mults.length) pasos.push(T("Then the multiplications: ", "Después las multiplicaciones: ") + mults.join(T(" and ", " y ")) + ".");
+  var partes = [];
+  if (A) partes.push(tA); if (Bc) partes.push(tB); if (C || !partes.length) partes.push(C);
+  var sumaTxt = partes.map(function(x, i){ return i === 0 ? menosV(x) : (x < 0 ? " − " + Math.abs(x) : " + " + x); }).join("");
+  if (partes.length > 1) pasos.push(T("Last, add and subtract from left to right: ", "Por último, sumas y restas de izquierda a derecha: ") + auto(sumaTxt + " = " + menosV(val)) + ".");
+  pasos.push('<span class="veredicto">' + T("Answer: when x = " + menosV(v) + ", the expression equals " + menosV(val) + ".", "Resultado: cuando x = " + menosV(v) + ", la expresión vale " + menosV(val) + ".") + "</span>");
+  return {pol: pol, pasos: pasos, val: val, tA: tA, tB: tB};
+}
+var EV = {pasos: [], visto: 0, cola: [[0, 2, 5, 3], [1, 0, 1, 4], [1, 0, 0, -3], [-1, 0, 0, -3], [3, -2, 1, -2]]};
+function nuevoEV(){
+  var e = EV.cola.length ? EV.cola.shift() : [elige([0, 1, -1, 2, 3]), elige([0, 2, 3, -4, 5, -1]), nz(), elige([-4, -3, -2, -1, 2, 3, 4, 5])];
+  if (!e[0] && !e[1]) e[1] = 2;
+  var R = evaluaPasos(e[0], e[1], e[2], e[3]);
+  EV.pasos = R.pasos; EV.visto = 0;
+  $("ev-expr").innerHTML = T("Evaluate ", "Evaluar ") + '<span class="grande">' + polHTML(R.pol) + "</span>" + T(" when x = ", " cuando x = ") + menosV(e[3]);
+  pintaEV();
+}
+function pintaEV(){
+  $("ev-pasos").innerHTML = EV.pasos.slice(0, EV.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === EV.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("ev-sig"); b.disabled = EV.visto >= EV.pasos.length; $("ev-todo").disabled = b.disabled;
+  b.textContent = EV.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function genEvaluar(){
+  var A = elige([0, 0, 1, -1, 2, 3]), Bc = elige([0, 2, 3, -2, -4, 5, 1, -1]), C = nz(), v = elige([-5, -4, -3, -2, -1, 2, 3, 4, 5, 6]);
+  if (!A && !Bc) Bc = 3;
+  var R = evaluaPasos(A, Bc, C, v), pistas = [];
+  if (A && v < 0) pistas.push({v: fr(-R.tA + R.tB + C), msg: T("Check the power: a negative number squared is positive, (" + menosV(v) + ")² = " + (v * v) + ".", "Revise la potencia: un número negativo al cuadrado da positivo, (" + menosV(v) + ")² = " + (v * v) + ".")});
+  if (A === -1) pistas.push({v: fr(v * v + R.tB + C), msg: T("The minus sign of −x² is applied after squaring: −(" + menosV(v) + ")² = " + menosV(-v * v) + ".", "El signo menos de −x² se aplica después de elevar al cuadrado: −(" + menosV(v) + ")² = " + menosV(-v * v) + ".")});
+  if (Bc && v < 0) pistas.push({v: fr(R.tA - R.tB + C), msg: T("Check the sign when you multiply by a negative number.", "Revise el signo al multiplicar por un número negativo.")});
+  if (A && Math.abs(A) > 1) pistas.push({v: fr(A * A * v * v + R.tB + C), msg: T("First square the value of x, then multiply by the coefficient.", "Primero se eleva al cuadrado el valor de x y después se multiplica por el coeficiente.")});
+  return {enun: T("Evaluate ", "Evalúe ") + polHTML(R.pol) + T(" when x = ", " cuando x = ") + menosV(v) + ".",
+    solucion: T("The value is ", "El valor es ") + menosV(R.val) + ". " + R.pasos.slice(0, -1).join(" "),
+    evalua: function(txt){ return evaluaNumero(txt, fr(R.val), pistas); }};
+}
+
+/* ============ Start ============ */
+$("an-nuevo").addEventListener("click", pintaAnatomia);
+pintaAnatomia();
+OMR("p1", genPartes);
+OMR("p2", genTraducir);
+OMR("p3", genAPalabras);
+$("fa-sig").addEventListener("click", function(){ if (FA.visto < FA.pasos.length){ FA.visto++; pintaFA(); } });
+$("fa-todo").addEventListener("click", function(){ FA.visto = FA.pasos.length; pintaFA(); });
+$("fa-nuevo").addEventListener("click", function(){ preparaFA(FA_COLA.length ? FA_COLA.shift() : polSemejantes()); });
+preparaFA(FA_COLA.shift());
+$("cf-comprobar").addEventListener("click", compruebaCF);
+$("cf-nuevo").addEventListener("click", pintaCF);
+pintaCF();
+OMR("p4", genSimplificar);
+["ar-a", "ar-c"].forEach(function(id){ $(id).addEventListener("input", pintaArea); });
+pintaArea();
+$("p5-comprobar").addEventListener("click", compruebaP5);
+$("p5-nuevo").addEventListener("click", pintaP5);
+["p5-a", "p5-b"].forEach(function(id){ $(id).addEventListener("keydown", function(ev){ if (ev.key === "Enter") compruebaP5(); }); });
+pintaP5();
+OMR("p6", genDistCombina);
+$("ev-sig").addEventListener("click", function(){ if (EV.visto < EV.pasos.length){ EV.visto++; pintaEV(); } });
+$("ev-todo").addEventListener("click", function(){ EV.visto = EV.pasos.length; pintaEV(); });
+$("ev-nuevo").addEventListener("click", nuevoEV);
+nuevoEV();
+creaPracticaLibre("p7", genEvaluar);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

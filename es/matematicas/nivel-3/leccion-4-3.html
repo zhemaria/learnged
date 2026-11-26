@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 4.3 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 4.3 · Ecuaciones con coeficientes fraccionarios, decimales y casos especiales · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-4-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 4 — Álgebra lineal</p>
+<h1>Lección 4.3 · Ecuaciones con coeficientes fraccionarios, decimales y casos especiales</h1>
+<p class="lema">Limpie fracciones y decimales antes de resolver, y reconozca las ecuaciones sin solución o con infinitas soluciones.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Resolver</strong> ecuaciones con coeficientes fraccionarios eliminando las fracciones (multiplicar por el MCM).</li>
+<li><strong>Resolver</strong> ecuaciones con coeficientes decimales multiplicando por la potencia de 10 adecuada.</li>
+<li><strong>Identificar</strong> la ecuación sin solución (contradicción: 0 = 5).</li>
+<li><strong>Identificar</strong> la ecuación con infinitas soluciones (identidad: 0 = 0).</li>
+<li><strong>Clasificar</strong> el resultado de una ecuación: una solución, sin solución o infinitas soluciones.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.2.a</span> Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.1.b</span> Aplicar propiedades de los números relacionadas con múltiplos y factores, como el mínimo común múltiplo, el máximo común divisor o la propiedad distributiva, para reescribir expresiones numéricas.</li><li><span class="std-cod std-base">A.2.b</span> Resolver problemas de la vida real con ecuaciones lineales.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.3.c</span> Mejorar o corregir una línea de razonamiento que tiene errores.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.EE.7</span> <span class="std-nivel">Nivel D</span> Resolver ecuaciones lineales de una variable. Dar ejemplos de ecuaciones lineales de una variable con una solución, con infinitas soluciones o sin solución. Resolver ecuaciones lineales con coeficientes racionales, incluidas las que requieren desarrollar expresiones con la propiedad distributiva y combinar términos semejantes.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-fracciones">Limpiar fracciones: multiplicar por el MCM</a></li>
+<li><a href="#s-decimales">Limpiar decimales: multiplicar por una potencia de 10</a></li>
+<li><a href="#s-sin-solucion">Caso especial: ecuación sin solución</a></li>
+<li><a href="#s-infinitas">Caso especial: infinitas soluciones</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-fracciones"><span aria-hidden="true" class="num-seccion">1</span>Limpiar fracciones: multiplicar por el MCM</h2>
+<p>En la Lección 4.2 se resolvieron ecuaciones lineales con la estrategia de cinco pasos. Esta lección añade dos herramientas para los casos más difíciles: una estrategia para «limpiar» fracciones y decimales antes de resolver, de modo que la ecuación quede con números enteros, y el reconocimiento de dos resultados especiales que no dan un único valor: sin solución e infinitas soluciones.</p>
+<p>Una ecuación con fracciones se vuelve mucho más fácil si primero se eliminan las fracciones. Para ello, se multiplican todos los términos de ambos lados por el <strong>mínimo común múltiplo (MCM)</strong> de los denominadores.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1: resuelva <span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span> + 3 = 7</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Multiplicar cada término por 2.</strong> El único denominador es 2: 2 · (<span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span>) + 2 · 3 = 2 · 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplificar.</strong> x + 6 = 14.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Restar 6.</strong> x = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 8</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: resuelva <span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span> + <span class="fracc"><span class="fa">x</span><span class="fb2">4</span></span> = 6</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El MCM de 2 y 4 es 4.</strong> 4 · (<span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span>) + 4 · (<span class="fracc"><span class="fa">x</span><span class="fb2">4</span></span>) = 4 · 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplificar.</strong> 2x + x = 24, es decir, 3x = 24.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Dividir entre 3.</strong> x = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 8</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Multiplicar todos los términos</span>
+<p>El MCM debe multiplicar cada término, incluidos los que no tienen fracción (como el 3 del Ejemplo 1 o el 6 del Ejemplo 2). Olvidar un término es el error más frecuente al limpiar fracciones.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#fracciones" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: limpiar fracciones con el MCM (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: limpiar fracciones con el MCM</span><span class="ei-sub">Multiplique toda la ecuación por el MCM de los denominadores.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-decimales"><span aria-hidden="true" class="num-seccion">2</span>Limpiar decimales: multiplicar por una potencia de 10</h2>
+<p>Con coeficientes decimales se aplica la misma idea: se multiplican todos los términos por 10, 100 o 1000, según la mayor cantidad de cifras decimales, para convertir los decimales en enteros.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: resuelva 0.2x + 1 = 3</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Una cifra decimal.</strong> La mayor cantidad de decimales es una cifra: se multiplica cada término por 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Enteros.</strong> 2x + 10 = 30.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Resolver.</strong> Se resta 10 y se divide entre 2: 2x = 20, x = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>x = 10</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Qué potencia usar</span>
+<p>Una cifra decimal → × 10; dos cifras (como 0.25) → × 100; tres cifras → × 1000. Se elige según el término con más decimales y se multiplica toda la ecuación por esa misma potencia.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Decimales en la calculadora</span>
+<p>Para comprobar x = 10 en 0.2x + 1 = 3: <span class="tecla num">.</span> <span class="tecla num">2</span> <span class="tecla">×</span> <span class="tecla num">1</span> <span class="tecla num">0</span> <span class="tecla">+</span> <span class="tecla num">1</span> <span class="tecla">enter</span> muestra 3, igual que el lado derecho.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Una fracción</h3></div>
+<p class="pregunta-int" id="t-p1"><span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span> = 9</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">x = 11</button>
+<button class="opcion" data-k="b" type="button">x = 4.5</button>
+<button class="opcion" data-k="c" type="button">x = 18</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Fracción y constante</h3></div>
+<p class="pregunta-int" id="t-p2"><span class="fracc"><span class="fa">x</span><span class="fb2">5</span></span> + 2 = 6</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x = 4</button>
+<button class="opcion" data-k="b" type="button">x = 20</button>
+<button class="opcion" data-k="c" type="button">x = 40</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un decimal</h3></div>
+<p class="pregunta-int" id="t-p3">0.5x = 7</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x = 14</button>
+<button class="opcion" data-k="b" type="button">x = 3.5</button>
+<button class="opcion" data-k="c" type="button">x = 7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#decimales" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: limpiar decimales con una potencia de 10 (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: limpiar decimales con una potencia de 10</span><span class="ei-sub">Elija la potencia de 10 que elimina todos los decimales.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-sin-solucion"><span aria-hidden="true" class="num-seccion">3</span>Caso especial: ecuación sin solución</h2>
+<p>A veces, al resolver, las variables desaparecen y queda una afirmación falsa, como 5 = 9. Eso significa que ningún valor de la variable puede hacer verdadera la ecuación: es una <strong>contradicción</strong> y la ecuación <strong>no tiene solución</strong>.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4: resuelva 2x + 5 = 2x + 9</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar 2x en ambos lados.</strong> 5 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>La variable desapareció.</strong> Queda 5 = 9, que es falso.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La ecuación <strong>no tiene solución</strong> (contradicción).</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-infinitas"><span aria-hidden="true" class="num-seccion">4</span>Caso especial: infinitas soluciones</h2>
+<p>En otros casos, al resolver, las variables desaparecen y queda una afirmación siempre verdadera, como 0 = 0. Eso significa que cualquier valor de la variable funciona: es una <strong>identidad</strong> y la ecuación tiene <strong>infinitas soluciones</strong>.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5: resuelva 3(x + 2) = 3x + 6</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Distribuir a la izquierda.</strong> 3x + 6 = 3x + 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Restar 3x en ambos lados.</strong> 6 = 6, que es siempre verdadero.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La ecuación tiene <strong>infinitas soluciones</strong> (identidad).</p>
+</div>
+<div aria-label="Tipos de solución (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Tipos de solución de una ecuación lineal según el resultado al resolver</caption>
+<thead><tr><th scope="col">Al resolver queda…</th><th scope="col">Tipo de solución</th><th scope="col">Significado</th></tr></thead>
+<tbody>
+<tr><td>x = un número</td><td>Una solución</td><td>Un único valor hace verdadera la ecuación.</td></tr>
+<tr><td>Algo falso (5 = 9)</td><td>Sin solución</td><td>Ningún valor funciona (contradicción).</td></tr>
+<tr><td>Algo verdadero (6 = 6)</td><td>Infinitas soluciones</td><td>Todo valor funciona (identidad).</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Las mismas x</h3></div>
+<p class="pregunta-int" id="t-p4">2x + 3 = 2x + 8</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Sin solución</button>
+<button class="opcion" data-k="b" type="button">Una solución</button>
+<button class="opcion" data-k="c" type="button">Infinitas soluciones</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Distribuir primero</h3></div>
+<p class="pregunta-int" id="t-p5">5(x + 1) = 5x + 5</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Sin solución</button>
+<button class="opcion" data-k="b" type="button">Una solución</button>
+<button class="opcion" data-k="c" type="button">Infinitas soluciones</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Una común</h3></div>
+<p class="pregunta-int" id="t-p6">3x + 1 = 7</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Sin solución</button>
+<button class="opcion" data-k="b" type="button">Una solución</button>
+<button class="opcion" data-k="c" type="button">Infinitas soluciones</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#casos-especiales" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: ¿una, ninguna o infinitas soluciones? (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: ¿una, ninguna o infinitas soluciones?</span><span class="ei-sub">Reconozca cuándo la ecuación es una contradicción o una identidad.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-4-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva cuatro ecuaciones con coeficientes fraccionarios (limpiándolas con el MCM) y tres con coeficientes decimales (limpiándolas con una potencia de 10). Después clasifique el tipo de solución de tres ecuaciones de casos especiales.</li>
+<li><strong>En su vida diaria.</strong> Una receta usa 3/4 de taza de arroz por persona más 1/2 taza extra para la olla. Escriba y resuelva una ecuación para hallar para cuántas personas puede cocinar con 5 tazas de arroz. Después, un plan de teléfono cuesta $0.15 por mensaje más $12.50 al mes: ¿cuántos mensajes puede enviar con $20?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Resuelva: <span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span> + 3 = 7.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 5</button><button class="opcion" data-k="b" type="button">x = 8</button><button class="opcion" data-k="c" type="button">x = 2</button><button class="opcion" data-k="d" type="button">x = 20</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Resuelva: <span class="fracc"><span class="fa">x</span><span class="fb2">2</span></span> + <span class="fracc"><span class="fa">x</span><span class="fb2">4</span></span> = 6.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 6</button><button class="opcion" data-k="b" type="button">x = 24</button><button class="opcion" data-k="c" type="button">x = 8</button><button class="opcion" data-k="d" type="button">x = 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Para resolver <span class="fracc"><span class="fa">x</span><span class="fb2">3</span></span> + <span class="fracc"><span class="fa">x</span><span class="fb2">6</span></span> = 2, ¿por cuánto conviene multiplicar?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6</button><button class="opcion" data-k="b" type="button">3</button><button class="opcion" data-k="c" type="button">2</button><button class="opcion" data-k="d" type="button">9</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Resuelva: 0.2x + 1 = 3.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2</button><button class="opcion" data-k="b" type="button">x = 20</button><button class="opcion" data-k="c" type="button">x = 4</button><button class="opcion" data-k="d" type="button">x = 10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Para limpiar 0.25x + 0.5 = 1, ¿por cuánto se multiplica?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">10</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">100</button><button class="opcion" data-k="d" type="button">1000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">La ecuación 2x + 5 = 2x + 9 lleva a 5 = 9. ¿Qué tipo es?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sin solución</button><button class="opcion" data-k="b" type="button">Una solución</button><button class="opcion" data-k="c" type="button">Infinitas soluciones</button><button class="opcion" data-k="d" type="button">x = 0</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">La ecuación 3(x + 1) = 3x + 3 lleva a 0 = 0. ¿Qué tipo es?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sin solución</button><button class="opcion" data-k="b" type="button">Una solución</button><button class="opcion" data-k="c" type="button">x = 3</button><button class="opcion" data-k="d" type="button">Infinitas soluciones</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">La ecuación 4x + 2 = 10 lleva a x = 2. ¿Qué tipo es?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Una solución</button><button class="opcion" data-k="b" type="button">Sin solución</button><button class="opcion" data-k="c" type="button">Infinitas soluciones</button><button class="opcion" data-k="d" type="button">Ninguna de las anteriores</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación para ecuaciones con fracciones, decimales y casos especiales (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para limpiar fracciones y decimales y clasificar casos especiales y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Eliminar fracciones y decimales</th><td>Multiplico todos los términos por el MCM o por la potencia de 10 correcta.</td><td>Multiplico, pero olvido algún término o uso una potencia incorrecta.</td><td>No identifico el MCM ni la potencia de 10.</td></tr>
+<tr><th scope="row">Resolver la ecuación limpia</th><td>Resuelvo correctamente la ecuación resultante y verifico la solución.</td><td>La resuelvo con algún error de signo u operación.</td><td>Cometo errores al resolver la ecuación limpia.</td></tr>
+<tr><th scope="row">Clasificar casos especiales</th><td>Distingo una solución, sin solución e infinitas, y explico cada caso.</td><td>Clasifico con errores los casos especiales.</td><td>No distingo contradicción de identidad.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Tema 4. Ya se resuelven ecuaciones lineales de cualquier tipo: con la estrategia de cinco pasos, limpiando fracciones con el MCM y decimales con una potencia de 10, y reconociendo los casos especiales de sin solución (contradicción) e infinitas soluciones (identidad).</p>
+<p>El Tema 5 abrirá con la <strong>Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica</strong>. Las inecuaciones se resuelven con los mismos pasos que las ecuaciones, con una sola regla nueva y crucial: al multiplicar o dividir por un número negativo, el signo de la desigualdad se invierte. Todo lo aprendido aquí será la base directa de ese nuevo tema.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>mínimo común múltiplo (MCM)</dt><dd>El número más pequeño que todos los denominadores dividen. El MCM de 2 y 4 es 4.</dd>
+<dt>contradicción</dt><dd>Una ecuación que lleva a algo falso, como 5 = 9: no tiene solución.</dd>
+<dt>identidad</dt><dd>Una ecuación que lleva a algo siempre verdadero, como 0 = 0: todo valor es solución.</dd>
+<dt>potencia de 10</dt><dd>10, 100, 1000…: multiplicar por una de ellas corre el punto decimal.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 4 · Lección 4.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 5.1",
+ "review": "las secciones 1 a 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "x/2 es x dividida entre 2: se deshace multiplicando, no sumando.",
+    "b": "Se multiplica por 2 en ambos lados; no se divide."
+   },
+   "right": "2 · 9 = 18.",
+   "solution": "Se multiplica por 2 en ambos lados: x = 18."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Al restar 2 queda x/5 = 4: falta multiplicar por 5.",
+    "c": "Multiplique cada término por 5, también el 2: x + 10 = 30."
+   },
+   "right": "x + 10 = 30, x = 20.",
+   "solution": "Se multiplica todo por 5: x + 10 = 30, así que x = 20."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Se divide 7 entre 0.5; no se multiplica.",
+    "c": "0.5x es la mitad de x, así que x es mayor que 7."
+   },
+   "right": "5x = 70, x = 14.",
+   "solution": "Se multiplica por 10: 5x = 70, así que x = 14."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Reste 2x en ambos lados: ¿qué queda?",
+    "c": "Queda 3 = 8. ¿Es verdadero?"
+   },
+   "right": "3 = 8 es falso: contradicción.",
+   "solution": "Al restar 2x queda 3 = 8, que es falso: sin solución."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Primero distribuya: 5x + 5 = 5x + 5.",
+    "b": "Al distribuir, los dos lados son iguales."
+   },
+   "right": "5 = 5 es siempre verdadero: identidad.",
+   "solution": "5x + 5 = 5x + 5 deja 5 = 5: infinitas soluciones."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Aquí la x no desaparece.",
+    "c": "Solo x = 2 funciona."
+   },
+   "right": "3x = 6, x = 2.",
+   "solution": "3x = 6, x = 2: una solución."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "El 3 también se multiplica por 2.",
+    "c": "x/2 = 4, así que x = 8.",
+    "d": "Compruébelo: 20/2 + 3 = 13."
+   },
+   "solution": "Por 2: x + 6 = 14, x = 8."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "Compruébelo: 6/2 + 6/4 = 4.5.",
+    "b": "3x = 24: divida entre 3.",
+    "d": "Compruébelo: 1 + 0.5 = 1.5."
+   },
+   "solution": "Por 4: 2x + x = 24, 3x = 24, x = 8."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "El 3 no elimina x/6.",
+    "c": "El 2 no elimina x/3.",
+    "d": "El 9 no elimina x/6."
+   },
+   "solution": "El MCM de 3 y 6 es 6."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "El 1 y el 3 también se multiplican por 10.",
+    "b": "2x = 20: divida entre 2.",
+    "c": "Compruébelo: 0.2(4) + 1 = 1.8."
+   },
+   "solution": "Por 10: 2x + 10 = 30, 2x = 20, x = 10."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "0.25 tiene dos cifras decimales.",
+    "b": "Use una potencia de 10.",
+    "d": "Basta con 100: la mayor cantidad de cifras es dos."
+   },
+   "solution": "25x + 50 = 100."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "5 = 9 es falso.",
+    "c": "5 = 9 es falso, no siempre verdadero.",
+    "d": "La x desapareció: ningún valor funciona."
+   },
+   "solution": "Afirmación falsa: sin solución."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "0 = 0 es verdadero.",
+    "b": "Funciona todo valor, no solo uno.",
+    "c": "Funciona todo valor, no solo 3."
+   },
+   "solution": "Siempre verdadero: infinitas soluciones."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Se encontró un valor: x = 2.",
+    "c": "Solo x = 2 funciona.",
+    "d": "x = 2 es una solución."
+   },
+   "solution": "x = 2: una solución."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

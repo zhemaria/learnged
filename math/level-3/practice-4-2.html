@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 4.2 · practice (English) — built by tools/build_n3_lesson_4_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 4.2 · Solving linear equations: properties of equality and variables on both sides · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 4 · Linear algebra</div>
+    <h1>Lesson 4.2 · Solving linear equations: properties of equality and variables on both sides</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#balance">The equation as a balance scale</a></li>
+      <li><a href="#steps">One-step and multi-step equations</a></li>
+      <li><a href="#both-sides">Variables on both sides</a></li>
+      <li><a href="#check">Checking the solution</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="balance" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The equation as a balance scale</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>An equation is a <strong>balanced scale</strong>: what is on the left of the equal sign weighs the same as what is on the right. To keep the balance, whatever you do to one side <strong>you do to the other</strong>. The goal is to leave the x box alone.</p>
+      <h3>Solve with the balance scale</h3>
+      <p>Each box weighs x and each circle weighs 1. Also try taking a weight off one side only to see what happens.</p>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="bz-ec" aria-live="polite"></span></div>
+        <div id="bz-svg"></div>
+        <div class="fila-btn" style="justify-content:center;">
+          <button type="button" class="btn" id="bz-ambos">Take a circle off each side</button>
+          <button type="button" class="btn-sec" id="bz-uno">Take a circle off the left side only</button>
+          <button type="button" class="btn" id="bz-dividir"></button>
+        </div>
+        <div class="fila-btn" style="justify-content:center;">
+          <button type="button" class="btn-sec" id="bz-deshacer">Undo</button>
+          <button type="button" class="btn-sec" id="bz-nuevo">Another equation</button>
+        </div>
+      <div class="caja-aviso" id="bz-aviso" role="alert"></div>
+        <div class="fb" id="bz-fb" role="status"></div>
+      </div>
+      <div class="caja-tip"><strong>Inverse operations:</strong> to undo addition, subtract; to undo subtraction, add; to undo multiplication, divide; and to undo division, multiply. Always on both sides.</div>
+      <h3>Practice: what do you do to both sides?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="steps">
+    <summary><span class="num" aria-hidden="true">2</span><h2>One-step and multi-step equations</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Undo the operations in <strong>reverse order</strong>: in 2x + 5, x is first multiplied by 2 and then 5 is added; to undo it, first remove the 5 and last the 2. This five-step strategy works for any linear equation:</p>
+      <div class="pasos">
+        <div class="paso"><span class="n" aria-hidden="true">1</span>Distribute to clear the parentheses, if there are any.</div>
+        <div class="paso"><span class="n" aria-hidden="true">2</span>Combine like terms on each side.</div>
+        <div class="paso"><span class="n" aria-hidden="true">3</span>Move the variables to one side of the equal sign.</div>
+        <div class="paso"><span class="n" aria-hidden="true">4</span>Isolate the variable with the properties of equality.</div>
+        <div class="paso"><span class="n" aria-hidden="true">5</span>Check by substituting into the original equation.</div>
+      </div>
+      <h3>The strategy in action</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="ps-ec"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="ps-sig"></button><button type="button" class="btn-sec" id="ps-todo">Show all the steps</button><button type="button" class="btn-sec" id="ps-nuevo">Another equation</button></div>
+      </div>
+      <div class="pasos" id="ps-pasos" aria-live="polite"></div>
+      <h3>Practice: solve the equation</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Value of x</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type only the number, for example 4 or −3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="both-sides">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Variables on both sides</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>When x appears on both sides, first gather all the x terms on one side by subtracting one of the terms from both sides, and the constants on the other. Then isolate the variable as usual.</p>
+      <h3>Which x do you move?</h3>
+      <p>Both choices lead to the same solution. Compare which one leaves a positive coefficient.</p>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="al-ec"></span></div>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn" id="al-der"></button><button type="button" class="btn" id="al-izq"></button><button type="button" class="btn-sec" id="al-nuevo">Another equation</button></div>
+      </div>
+      <div class="pasos" id="al-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>A useful trick:</strong> subtract the term with the <strong>smaller</strong> coefficient. That way x keeps a positive coefficient and you avoid sign mistakes.</div>
+      <h3>Practice: variables on both sides</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">New exercise</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="check">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Checking the solution</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>You check every solution by substituting it into the <strong>original equation</strong>. If both sides give the same value, the solution is right. One minute of checking catches almost every sign mistake.</p>
+      <h3>Practice: is it a solution?</h3>
+      <div class="practica" id="vf">
+        <div class="enun" id="vf-enun"></div>
+        <div class="campos">
+          <div class="campo"><label for="vf-i">Value of the left side</label><input type="text" autocomplete="off" class="corto" id="vf-i"></div>
+          <div class="campo"><label for="vf-d">Value of the right side</label><input type="text" autocomplete="off" class="corto" id="vf-d"></div>
+          <div class="campo"><label for="vf-s">Is it a solution?</label>
+            <select id="vf-s"><option value="">Choose</option><option value="si">Yes, the sides match</option><option value="no">No, the sides do not match</option></select></div>
+        </div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="vf-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="vf-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="vf-fb" role="status"></div>
+        <p class="marcador" id="vf-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 4 · Linear algebra · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script>
+function P(){ return polVis(Array.prototype.slice.call(arguments)); }
+function sumaResta(k){ return k > 0 ? T("Subtract " + k + " from both sides", "Se resta " + k + " en ambos lados") : T("Add " + (-k) + " to both sides", "Se suma " + (-k) + " en ambos lados"); }
+
+/* ============ MODULE 1 · the balance scale ============ */
+var BZ = {a: 1, x: 1, k: 0, r: 0, hist: []};
+function nuevaBZ(e){
+  if (!e){ do { e = [aleatorio(1, 3), aleatorio(1, 5), aleatorio(1, 7)]; } while (e[0] * e[1] + e[2] > 18); }
+  BZ.a = e[0]; BZ.x = e[1]; BZ.k = e[2]; BZ.r = e[0] * e[1] + e[2]; BZ.hist = [];
+  $("bz-aviso").className = "caja-aviso"; $("bz-aviso").textContent = "";
+  $("bz-fb").className = "fb"; $("bz-fb").innerHTML = "";
+  pintaBZ();
+}
+function objetosSVG(cx, yBase, cajas, circulos){
+  var s = "", items = [], i;
+  for (i = 0; i < cajas; i++) items.push("c"); for (i = 0; i < circulos; i++) items.push("o");
+  var porFila = 6, ancho = 32;
+  items.forEach(function(tp, j){
+    var fila = Math.floor(j / porFila), col = j % porFila, enFila = Math.min(porFila, items.length - fila * porFila);
+    var x = cx - (enFila * ancho) / 2 + col * ancho + ancho / 2, y = yBase - 18 - fila * 34;
+    if (tp === "c") s += '<rect x="' + (x - 15) + '" y="' + (y - 15) + '" width="30" height="30" rx="4" fill="#bf360c"/><text x="' + x + '" y="' + (y + 7) + '" text-anchor="middle" font-size="18" font-weight="700" fill="#fff">x</text>';
+    else s += '<circle cx="' + x + '" cy="' + y + '" r="13" fill="#fff8e1" stroke="#5c3900" stroke-width="2"/><text x="' + x + '" y="' + (y + 6) + '" text-anchor="middle" font-size="15" font-weight="700" fill="#5c3900">1</text>';
+  });
+  return s;
+}
+function cuenta(n, uno, varios){ return n + " " + (n === 1 ? uno : varios); }
+function pintaBZ(){
+  var izq = BZ.a * BZ.x + BZ.k, dif = izq - BZ.r, tp = dif > 0 ? 1 : (dif < 0 ? -1 : 0), dy = 22 * tp;
+  var yl = 170 + dy, yr = 170 - dy;
+  var lab = T("Balance scale: on the left " + cuenta(BZ.a, "box", "boxes") + " x and " + cuenta(BZ.k, "circle", "circles") + "; on the right " + cuenta(BZ.r, "circle", "circles") + ". " + (tp === 0 ? "It is balanced." : (tp > 0 ? "It tips to the left." : "It tips to the right.")),
+              "Balanza: a la izquierda " + cuenta(BZ.a, "caja", "cajas") + " x y " + cuenta(BZ.k, "círculo", "círculos") + "; a la derecha " + cuenta(BZ.r, "círculo", "círculos") + ". " + (tp === 0 ? "Está en equilibrio." : (tp > 0 ? "Se inclina hacia la izquierda." : "Se inclina hacia la derecha.")));
+  var s = '<svg class="balanza" viewBox="0 0 600 320" role="img" aria-label="' + lab + '">';
+  s += '<polygon points="300,175 270,300 330,300" fill="#9e9e9e"/><rect x="230" y="298" width="140" height="12" rx="4" fill="#757575"/>';
+  s += '<line x1="110" y1="' + yl + '" x2="490" y2="' + yr + '" stroke="#424242" stroke-width="8" stroke-linecap="round"/><circle cx="300" cy="170" r="9" fill="#424242"/>';
+  [[110, yl], [490, yr]].forEach(function(p){
+    s += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + (p[0] - 80) + '" y2="' + (p[1] + 60) + '" stroke="#757575" stroke-width="2"/>';
+    s += '<line x1="' + p[0] + '" y1="' + p[1] + '" x2="' + (p[0] + 80) + '" y2="' + (p[1] + 60) + '" stroke="#757575" stroke-width="2"/>';
+    s += '<rect x="' + (p[0] - 100) + '" y="' + (p[1] + 58) + '" width="200" height="10" rx="5" fill="#616161"/>';
+  });
+  s += objetosSVG(110, yl + 58, BZ.a, BZ.k) + objetosSVG(490, yr + 58, 0, BZ.r) + "</svg>";
+  $("bz-svg").innerHTML = s;
+  $("bz-ec").innerHTML = ecHTML(L(BZ.a, BZ.k), L(0, BZ.r)) + (tp === 0 ? "" : ' <span class="nota">' + T("(out of balance!)", "(¡desequilibrada!)") + "</span>");
+  var eq = tp === 0;
+  $("bz-ambos").disabled = !eq || BZ.k === 0 || BZ.r === 0;
+  $("bz-uno").disabled = !eq || BZ.k === 0;
+  $("bz-dividir").disabled = !eq || BZ.k !== 0 || BZ.a === 1;
+  $("bz-dividir").textContent = BZ.a > 1 ? T("Split into " + BZ.a + " equal groups", "Repartir en " + BZ.a + " grupos iguales") : T("Split into equal groups", "Repartir en grupos iguales");
+  $("bz-deshacer").disabled = !BZ.hist.length;
+  if (eq && BZ.a === 1 && BZ.k === 0){ $("bz-fb").className = "fb bien"; $("bz-fb").innerHTML = TX.bien + T("The box is alone and the scale is still balanced: x = " + BZ.r + ".", "La caja quedó sola y la balanza sigue en equilibrio: x = " + BZ.r + "."); }
+}
+function accionBZ(tipo){
+  var av = $("bz-aviso"), fb = $("bz-fb");
+  av.className = "caja-aviso"; av.textContent = ""; fb.className = "fb"; fb.innerHTML = "";
+  BZ.hist.push([BZ.a, BZ.k, BZ.r]);
+  if (tipo === "ambos"){ BZ.k--; BZ.r--; fb.className = "fb bien"; fb.innerHTML = T("You took 1 away from both sides: the scale is still balanced.", "Se quitó 1 en ambos lados: la balanza sigue en equilibrio."); }
+  else if (tipo === "uno"){ BZ.k--; av.className = "caja-aviso visible"; av.textContent = T("The balance is broken! You took a circle off the left side only, and now that side weighs less. Whatever you do to one side, you do to the other. Press “Undo.”", "¡Se rompió el equilibrio! Quitó un círculo solo de la izquierda y ahora ese lado pesa menos. Lo que se hace en un lado se hace en el otro. Pulse «Deshacer»."); }
+  else if (tipo === "dividir"){ var a = BZ.a; BZ.r = BZ.r / a; BZ.a = 1; fb.className = "fb bien"; fb.innerHTML = T("Each side was split into " + a + " equal groups and one group was kept: that is dividing both sides by " + a + ".", "Cada lado se repartió en " + a + " grupos iguales y se dejó uno: eso es dividir entre " + a + " en ambos lados."); }
+  pintaBZ();
+}
+function deshacerBZ(){
+  var h = BZ.hist.pop(); if (!h) return;
+  BZ.a = h[0]; BZ.k = h[1]; BZ.r = h[2];
+  $("bz-aviso").className = "caja-aviso"; $("bz-aviso").textContent = ""; $("bz-fb").className = "fb"; $("bz-fb").innerHTML = "";
+  pintaBZ();
+}
+function genPrimerPaso(){
+  var tp = aleatorio(1, 5), a = aleatorio(2, 9), b = aleatorio(2, 12), c = aleatorio(1, 20), ec, bueno, malos, exp;
+  while (b === a) b = aleatorio(2, 12);
+  var RA = function(k){ return T("Subtract " + k + " from both sides", "Restar " + k + " en ambos lados"); }, SA = function(k){ return T("Add " + k + " to both sides", "Sumar " + k + " en ambos lados"); };
+  var DA = function(k){ return T("Divide both sides by " + k, "Dividir entre " + k + " en ambos lados"); }, MA = function(k){ return T("Multiply both sides by " + k, "Multiplicar por " + k + " en ambos lados"); };
+  if (tp === 1){ ec = ecHTML(L(1, b), L(0, c)); bueno = RA(b); malos = [[SA(b), T("Adding makes it worse: + " + b + " is undone by subtracting.", "Sumar lo empeora: «+ " + b + "» se deshace restando.")], [T("Subtract " + b + " from the left side only", "Restar " + b + " solo del lado izquierdo"), T("Whatever you do to one side, you do to the other.", "Lo que se hace en un lado se hace en el otro.")], [DA(b), T("The " + b + " is added, not multiplied.", "El " + b + " se suma, no multiplica.")]]; exp = T("To undo “+ " + b + ",” subtract " + b + " from both sides.", "Para deshacer «+ " + b + "» se resta " + b + ", en los dos lados."); }
+  else if (tp === 2){ ec = ecHTML(L(1, -b), L(0, c)); bueno = SA(b); malos = [[RA(b), T("Subtracting makes it worse: − " + b + " is undone by adding.", "Restar lo empeora: «− " + b + "» se deshace sumando.")], [T("Add " + b + " to the right side only", "Sumar " + b + " solo del lado derecho"), T("Whatever you do to one side, you do to the other.", "Lo que se hace en un lado se hace en el otro.")], [MA(b), T("The " + b + " is subtracted, not divided.", "El " + b + " se resta, no divide.")]]; exp = T("To undo “− " + b + ",” add " + b + " to both sides.", "Para deshacer «− " + b + "» se suma " + b + ", en los dos lados."); }
+  else if (tp === 3){ ec = ecHTML(L(a, 0), L(0, a * c)); bueno = DA(a); malos = [[RA(a), T(a + "x means " + a + " times x: it is undone by dividing.", a + "x significa " + a + " por x: se deshace dividiendo.")], [MA(a), T("Multiplying makes it worse.", "Multiplicar lo empeora.")], [T("Divide the left side only by " + a, "Dividir entre " + a + " solo del lado izquierdo"), T("Whatever you do to one side, you do to the other.", "Lo que se hace en un lado se hace en el otro.")]]; exp = T(a + "x means " + a + " times x: undo it by dividing both sides by " + a + ".", a + "x significa " + a + " por x: se deshace dividiendo entre " + a + "."); }
+  else if (tp === 4){ ec = ecHTML(L(fr(1, a), 0), L(0, c)); bueno = MA(a); malos = [[DA(a), T("Dividing again makes it worse.", "Dividir otra vez lo empeora.")], [RA(a), T("x is divided by " + a + ": undo it by multiplying.", "La x está dividida entre " + a + ": se deshace multiplicando.")], [SA(a), T("x is divided by " + a + ": undo it by multiplying.", "La x está dividida entre " + a + ": se deshace multiplicando.")]]; exp = T("x/" + a + " means x divided by " + a + ": undo it by multiplying both sides by " + a + ".", "x/" + a + " significa x dividida entre " + a + ": se deshace multiplicando por " + a + "."); }
+  else { ec = ecHTML(L(a, b), L(0, a * aleatorio(1, 5) + b)); bueno = RA(b); malos = [[DA(b), T("The " + b + " is added, not multiplied.", "El " + b + " se suma, no multiplica.")], [RA(a), T("The " + a + " multiplies x: it is undone by dividing, at the end.", "El " + a + " multiplica a la x: se deshace dividiendo, al final.")], [SA(b), T("+ " + b + " is undone by subtracting.", "«+ " + b + "» se deshace restando.")]]; exp = T("In reverse order: first remove the addition (subtract " + b + "), and divide by " + a + " at the end.", "En orden inverso: primero se quita la suma (restando " + b + ") y al final se divide entre " + a + "."); }
+  var o = [{html: bueno, clave: "b"}], pc = {};
+  malos.forEach(function(m, i){ o.push({html: m[0], clave: "m" + i}); pc["m" + i] = m[1]; });
+  return {enun: T("To solve ", "Para resolver ") + ec + T(", what is the first step?", ", ¿cuál es el primer paso?"), opciones: o, correcta: "b", porClave: pc, bien: exp, mal: exp};
+}
+
+/* ============ Equations of several kinds (modules 2 and 4) ============ */
+function ecuacionForma(f){
+  var sol = aleatorio(-6, 9), a, b, c, d, e, pasos = [], A, K, vis, izq;
+  if (sol === 0) sol = 4;
+  if (f === 1){
+    a = elige([2, 3, 4, 5, 6, 7, -2, -3]); b = nz(); c = a * sol + b; A = a; K = b;
+    vis = auto(P(tm(a, "x"), tm(b)) + " = " + menosV(c)); izq = function(v){ return a * v + b; };
+  } else if (f === 2){
+    a = elige([2, 3, 4, 5, -2, -3]); b = nz(); c = a * (sol + b); A = a; K = a * b;
+    vis = auto(menosV(a) + "(" + P(tm(1, "x"), tm(b)) + ") = " + menosV(c)); izq = function(v){ return a * (v + b); };
+    pasos.push("<strong>" + T("Distribute:", "Distribuir:") + "</strong> " + auto("(" + menosV(a) + ")(x) = " + P(tm(a, "x"))) + T(" and ", " y ") + auto("(" + menosV(a) + ")(" + menosV(b) + ") = " + menosV(a * b)) + T(". You get ", ". Queda ") + auto(P(tm(a, "x"), tm(a * b)) + " = " + menosV(c)) + ".");
+  } else if (f === 3){
+    a = elige([2, 3, 4, 5]); b = nz(); d = nz(); c = a * (sol + b) + d; A = a; K = a * b + d;
+    vis = auto(a + "(" + P(tm(1, "x"), tm(b)) + ")" + termVis(tm(d), false) + " = " + menosV(c)); izq = function(v){ return a * (v + b) + d; };
+    pasos.push("<strong>" + T("Distribute:", "Distribuir:") + "</strong> " + auto(a + "(" + P(tm(1, "x"), tm(b)) + ") = " + P(tm(a, "x"), tm(a * b))) + T(". You get ", ". Queda ") + auto(P(tm(a, "x"), tm(a * b), tm(d)) + " = " + menosV(c)) + ".");
+    pasos.push("<strong>" + T("Combine", "Combinar") + "</strong> " + T("the constants on the left side: ", "las constantes del lado izquierdo: ") + auto(menosV(a * b) + termVis(tm(d), false) + " = " + menosV(a * b + d)) + T(". You get ", ". Queda ") + auto(P(tm(a, "x"), tm(a * b + d)) + " = " + menosV(c)) + ".");
+  } else {
+    a = aleatorio(2, 7); e = elige([1, 2, 3, -1]); b = nz(); c = (a + e) * sol + b; A = a + e; K = b;
+    vis = auto(P(tm(a, "x"), tm(b), tm(e, "x")) + " = " + menosV(c)); izq = function(v){ return a * v + b + e * v; };
+    pasos.push("<strong>" + T("Combine", "Combinar") + "</strong> " + T("the x terms: ", "los términos en x: ") + auto(P(tm(a, "x")) + termVis(tm(e, "x"), false) + " = " + P(tm(a + e, "x"))) + T(". You get ", ". Queda ") + auto(P(tm(A, "x"), tm(b)) + " = " + menosV(c)) + ".");
+  }
+  if (K !== 0) pasos.push("<strong>" + T("Isolate:", "Aislar:") + "</strong> " + sumaResta(K).toLowerCase().replace(/^./, function(z){ return z; }) + ": " + auto(P(tm(A, "x")) + " = " + menosV(c) + (K > 0 ? " − " + K : " + " + (-K)) + " = " + menosV(c - K)) + ".");
+  if (A !== 1) pasos.push("<strong>" + T("Isolate:", "Aislar:") + "</strong> " + T("divide both sides by ", "se divide entre ") + menosV(A) + T("", " en ambos lados") + ": " + auto("x = " + menosV(c - K) + " ÷ " + (A < 0 ? "(" + menosV(A) + ")" : A) + " = " + menosV(sol)) + ".");
+  pasos.push("<strong>" + T("Check:", "Verificar:") + "</strong> " + T("with x = " + menosV(sol) + ", the left side equals " + menosV(izq(sol)) + " and the right side " + menosV(c) + ". They match.", "con x = " + menosV(sol) + ", el lado izquierdo vale " + menosV(izq(sol)) + " y el derecho " + menosV(c) + ". Coinciden."));
+  pasos.push('<span class="veredicto">' + T("Solution: x = ", "Solución: x = ") + menosV(sol) + "</span>");
+  return {vis: vis, izq: izq, der: function(){ return c; }, sol: sol, pasos: pasos, A: A, K: K, c: c, f: f, a: a, b: b};
+}
+var PS = {pasos: [], visto: 0, cola: [1, 2, 3, 4]};
+function nuevoPS(){
+  var E = ecuacionForma(PS.cola.length ? PS.cola.shift() : aleatorio(1, 4));
+  PS.pasos = E.pasos; PS.visto = 0;
+  $("ps-ec").innerHTML = E.vis;
+  pintaPS();
+}
+function pintaPS(){
+  $("ps-pasos").innerHTML = PS.pasos.slice(0, PS.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === PS.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("ps-sig"); b.disabled = PS.visto >= PS.pasos.length; $("ps-todo").disabled = b.disabled;
+  b.textContent = PS.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function genResolver(){
+  var E = ecuacionForma(aleatorio(1, 4)), pistas = [];
+  pistas.push({v: fr(E.c + E.K, E.A), msg: T("Check the sign when you move the constant: to undo “" + (E.K > 0 ? "+ " + E.K : "− " + (-E.K)) + ",” " + (E.K > 0 ? "subtract" : "add") + " on both sides.", "Revise el signo al pasar la constante: para deshacer «" + (E.K > 0 ? "+ " + E.K : "− " + (-E.K)) + "» se " + (E.K > 0 ? "resta" : "suma") + " en ambos lados.")});
+  pistas.push({v: fr(E.c - E.K, -E.A), msg: T("Check the sign when you divide by " + menosV(E.A) + ".", "Revise el signo al dividir entre " + menosV(E.A) + ".")});
+  pistas.push({v: fsum(fr(E.c, E.A), fr(-E.K)), msg: T("Reverse order: remove the constant first and divide at the end.", "Orden inverso: primero se quita la constante y al final se divide.")});
+  if (E.f === 2) pistas.push({v: fr(E.c - E.b, E.a), msg: T("Distribute first: the " + menosV(E.a) + " also multiplies the " + menosV(E.b) + ".", "Primero hay que distribuir: el " + menosV(E.a) + " multiplica también al " + menosV(E.b) + ".")});
+  return {enun: T("Solve ", "Resuelva ") + E.vis + ".",
+    solucion: T("The solution is x = " + menosV(E.sol) + ". With x = " + menosV(E.sol) + " both sides equal " + menosV(E.c) + ".", "La solución es x = " + menosV(E.sol) + ". Con x = " + menosV(E.sol) + " los dos lados valen " + menosV(E.c) + "."),
+    evalua: function(txt){ return evaluaNumero(txt, fr(E.sol), pistas); }};
+}
+
+/* ============ MODULE 3 · variables on both sides ============ */
+function ambosAzar(){
+  var a, c; do { a = aleatorio(2, 9); c = aleatorio(1, 8); } while (a === c);
+  var sol = aleatorio(-5, 8); if (sol === 0) sol = 3;
+  var b = nz(), d = a * sol + b - c * sol;
+  return {a: a, b: b, c: c, d: d, sol: sol};
+}
+var AL = {e: null, cola: [{a: 5, b: 2, c: 3, d: 10, sol: 4}, {a: 7, b: 1, c: 2, d: 16, sol: 3}]};
+function nuevoAL(){
+  var e = AL.e = AL.cola.length ? AL.cola.shift() : ambosAzar();
+  $("al-ec").innerHTML = ecHTML(L(e.a, e.b), L(e.c, e.d));
+  $("al-der").textContent = T("Subtract " + (e.c === 1 ? "" : e.c) + "x from both sides", "Restar " + (e.c === 1 ? "" : e.c) + "x en ambos lados");
+  $("al-izq").textContent = T("Subtract " + e.a + "x from both sides", "Restar " + e.a + "x en ambos lados");
+  $("al-pasos").innerHTML = "";
+}
+function caminoAL(restaDer){
+  var e = AL.e, pasos = [], coef, R, h = "";
+  if (restaDer){
+    coef = e.a - e.c;
+    pasos.push(T("Subtract ", "Se resta ") + P(tm(e.c, "x")) + T(" from both sides: ", " en ambos lados: ") + ecHTML(L(coef, e.b), L(0, e.d)) + ".");
+    if (e.b) pasos.push(sumaResta(e.b) + ": " + ecHTML(L(coef, 0), L(0, e.d - e.b)) + ".");
+    R = e.d - e.b;
+  } else {
+    coef = e.c - e.a;
+    pasos.push(T("Subtract ", "Se resta ") + P(tm(e.a, "x")) + T(" from both sides: ", " en ambos lados: ") + ecHTML(L(0, e.b), L(coef, e.d)) + ".");
+    if (e.d) pasos.push(sumaResta(e.d) + ": " + ecHTML(L(0, e.b - e.d), L(coef, 0)) + ".");
+    R = e.b - e.d;
+  }
+  if (coef !== 1) pasos.push(T("Divide both sides by ", "Se divide entre ") + menosV(coef) + T("", " en ambos lados") + ": " + auto(menosV(R) + " ÷ " + (coef < 0 ? "(" + menosV(coef) + ")" : coef) + " = " + menosV(e.sol)) + ".");
+  h += "<p><strong>" + T("Path chosen: subtract ", "Camino elegido: restar ") + P(tm(restaDer ? e.c : e.a, "x")) + ".</strong></p>";
+  pasos.forEach(function(p, i){ h += '<div class="paso"><span class="n" aria-hidden="true">' + (i + 1) + "</span>" + p + "</div>"; });
+  h += '<div class="paso"><span class="n" aria-hidden="true">✓</span><span class="veredicto">x = ' + menosV(e.sol) + ".</span> " +
+       (coef > 0 ? T("This path left a positive coefficient (" + coef + "x).", "Este camino dejó el coeficiente positivo (" + coef + "x).") : T("This path left a negative coefficient (" + menosV(coef) + "x): you get the same answer, but you must be more careful with the signs.", "Este camino dejó el coeficiente negativo (" + menosV(coef) + "x): se llega a lo mismo, pero con más cuidado con los signos.")) + "</div>";
+  $("al-pasos").innerHTML = h;
+}
+function genAmbos(){
+  var e = ambosAzar(), o = [], pc = {}, usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opX(fr(e.sol)));
+  mete(opX(fr(e.d - e.b, e.a + e.c)), T("To gather the x terms, subtract ", "Para reunir las x se resta ") + P(tm(e.c, "x")) + T("; do not add it.", "; no se suma."));
+  mete(opX(fr(e.d + e.b, e.a - e.c)), T("Check the sign when you move the constant ", "Revise el signo al pasar la constante ") + menosV(e.b) + ".");
+  mete(opX(fr(e.b - e.d, e.a - e.c)), T("Check the order of the subtraction of the constants.", "Revise el orden de la resta de las constantes."));
+  mete(opX(fr(e.sol + 1)), T("Check your answer by substituting it.", "Compruebe su respuesta sustituyéndola."));
+  mete(opX(fr(e.sol - 1)), T("Check your answer by substituting it.", "Compruebe su respuesta sustituyéndola."));
+  return {enun: T("Solve ", "Resuelva ") + ecHTML(L(e.a, e.b), L(e.c, e.d)) + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+    bien: T("Subtract ", "Se resta ") + P(tm(e.c, "x")) + ": " + ecHTML(L(e.a - e.c, e.b), L(0, e.d)) + T(", and solve: x = ", ", y se despeja x = ") + menosV(e.sol) + ".",
+    mal: T("Subtract ", "Se resta ") + P(tm(e.c, "x")) + T(" from both sides: ", " en ambos lados: ") + ecHTML(L(e.a - e.c, e.b), L(0, e.d)) + T(". Then solve: x = ", ". Después se despeja: x = ") + menosV(e.sol) + "."};
+}
+
+/* ============ MODULE 4 · checking ============ */
+var VF = {primero: 0, pista: 0, total: 0, resuelta: false, intentos: 0, q: null};
+function pintaVF(){
+  var q;
+  if (Math.random() < 0.3){ var e = ambosAzar(); q = {vis: ecHTML(L(e.a, e.b), L(e.c, e.d)), izq: function(v){ return e.a * v + e.b; }, der: function(v){ return e.c * v + e.d; }, sol: e.sol}; }
+  else q = ecuacionForma(aleatorio(1, 4));
+  var v = Math.random() < 0.5 ? q.sol : elige([q.sol + 1, q.sol - 1, -q.sol, q.sol + 2].filter(function(z){ return z !== q.sol; }));
+  q.v = v; VF.q = q; VF.resuelta = false; VF.intentos = 0;
+  $("vf-enun").innerHTML = T("Is x = " + menosV(v) + " a solution of ", "¿Es x = " + menosV(v) + " solución de ") + q.vis + T("? Substitute into both sides.", "? Sustituya en los dos lados.");
+  ["vf-i", "vf-d"].forEach(function(id){ $(id).value = ""; $(id).disabled = false; $(id).classList.remove("error"); });
+  $("vf-s").value = ""; $("vf-s").disabled = false; $("vf-comprobar").disabled = false;
+  $("vf-fb").className = "fb"; $("vf-fb").innerHTML = "";
+}
+function compruebaVF(){
+  if (VF.resuelta) return;
+  var q = VF.q, I = leeEntero($("vf-i").value), D = leeEntero($("vf-d").value), s = $("vf-s").value, fb = $("vf-fb");
+  $("vf-i").classList.toggle("error", I === null); $("vf-d").classList.toggle("error", D === null);
+  if (I === null || D === null || !s){ fb.className = "fb pista"; fb.innerHTML = T("Fill in all three boxes: the value of each side (a whole number) and your conclusion.", "Complete los tres campos: el valor de cada lado (número entero) y su conclusión."); return; }
+  var vi = q.izq(q.v), vd = q.der(q.v), es = vi === vd ? "si" : "no", msgs = [];
+  if (I !== vi) msgs.push(T("Check the left side.", "Revise el lado izquierdo."));
+  if (D !== vd) msgs.push(T("Check the right side.", "Revise el lado derecho."));
+  if (!msgs.length && s !== es) msgs.push(T("The values are right, but the conclusion is not: ", "Los valores están bien, pero la conclusión no: ") + (es === "si" ? T("both sides match.", "los dos lados coinciden.") : T("the two sides are different.", "los dos lados son distintos.")));
+  VF.intentos++;
+  var resumen = T("With x = " + menosV(q.v) + ": the left side equals " + menosV(vi) + " and the right side " + menosV(vd) + ". ", "Con x = " + menosV(q.v) + ": el lado izquierdo vale " + menosV(vi) + " y el derecho " + menosV(vd) + ". ") +
+                (es === "si" ? T("They match: x = " + menosV(q.v) + " is the solution.", "Coinciden: x = " + menosV(q.v) + " es la solución.") : T("They do not match: x = " + menosV(q.v) + " is not a solution. The solution is x = " + menosV(q.sol) + ".", "No coinciden: x = " + menosV(q.v) + " no es solución. La solución es x = " + menosV(q.sol) + "."));
+  if (!msgs.length){ VF.resuelta = true; VF.total++; if (VF.intentos === 1) VF.primero++; else VF.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + resumen; }
+  else if (VF.intentos >= 2){ VF.resuelta = true; VF.total++; fb.className = "fb mal"; fb.innerHTML = TX.asi + resumen + TX.nuevo; }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + msgs.join(" ") + T(" Remember to write the value in parentheses when you substitute.", " Recuerde escribir el valor entre paréntesis al sustituir.") + TX.unoMas; }
+  if (VF.resuelta) ["vf-i", "vf-d", "vf-s", "vf-comprobar"].forEach(function(id){ $(id).disabled = true; });
+  $("vf-marcador").textContent = VF.total ? TX.resueltos(VF.primero + VF.pista, VF.primero, VF.total) : "";
+}
+
+/* ============ Start ============ */
+$("bz-ambos").addEventListener("click", function(){ accionBZ("ambos"); });
+$("bz-uno").addEventListener("click", function(){ accionBZ("uno"); });
+$("bz-dividir").addEventListener("click", function(){ accionBZ("dividir"); });
+$("bz-deshacer").addEventListener("click", deshacerBZ);
+$("bz-nuevo").addEventListener("click", function(){ nuevaBZ(); });
+nuevaBZ([2, 4, 5]);
+OMR("p1", genPrimerPaso);
+$("ps-sig").addEventListener("click", function(){ if (PS.visto < PS.pasos.length){ PS.visto++; pintaPS(); } });
+$("ps-todo").addEventListener("click", function(){ PS.visto = PS.pasos.length; pintaPS(); });
+$("ps-nuevo").addEventListener("click", nuevoPS);
+nuevoPS();
+creaPracticaLibre("p2", genResolver);
+$("al-der").addEventListener("click", function(){ caminoAL(true); });
+$("al-izq").addEventListener("click", function(){ caminoAL(false); });
+$("al-nuevo").addEventListener("click", nuevoAL);
+nuevoAL();
+OMR("p3", genAmbos);
+$("vf-comprobar").addEventListener("click", compruebaVF);
+$("vf-nuevo").addEventListener("click", pintaVF);
+pintaVF();
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
