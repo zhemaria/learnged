@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 6.2 · Resolver sistemas por eliminación y clasificar sistemas — práctica (español) — construida con tools/build_n4_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 6.2 · Resolver sistemas por eliminación y clasificar sistemas · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-6-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .sistema{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;margin:2px 4px;}
+  .sistema .llave{font-size:2.5em;line-height:1;font-weight:300;}
+  .sistema .ecs{display:flex;flex-direction:column;line-height:1.35;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales</div>
+    <h1>Lección 6.2 · Resolver sistemas por eliminación y clasificar sistemas</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#eliminacion">El método de eliminación</a></li>
+      <li><a href="#clasificar">Clasificar los sistemas</a></li>
+      <li><a href="#metodo">¿Sustitución o eliminación?</a></li>
+      <li><a href="#aplicacion">Mezclas, monedas y velocidades</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="eliminacion" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>El método de eliminación</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se logra que los coeficientes de una variable sean opuestos, multiplicando una o ambas ecuaciones si hace falta (todos los términos, también el independiente). Después se suman las ecuaciones: esa variable desaparece.</p>
+      <div class="panel"><p class="enun" id="el-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="el-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="el-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="el-nuevo">Otro sistema</button></div></div>
+      <div class="pasos" id="el-pasos" aria-live="polite"></div>
+      <h3>Practique: resuelva por eliminación</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="par-campos" role="group" aria-label="Su respuesta como par ordenado"><span class="pa" aria-hidden="true">(</span>
+          <div class="campo"><label for="eq-x">x</label><input type="text" inputmode="decimal" autocomplete="off" id="eq-x"></div><span class="pa" aria-hidden="true">,</span>
+          <div class="campo"><label for="eq-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="eq-y"></div><span class="pa" aria-hidden="true">)</span></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="eq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="eq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="clasificar">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Clasificar los sistemas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Los tres tipos de sistemas</caption><thead><tr><th scope="col">Tipo</th><th scope="col">Rectas</th><th scope="col">Soluciones</th><th scope="col">Al resolver…</th></tr></thead><tbody><tr><td>Independiente</td><td>Se cruzan</td><td>Una</td><td>x = …, y = …</td></tr><tr><td>Inconsistente</td><td>Paralelas</td><td>Ninguna</td><td>0 = 5 (falso)</td></tr><tr><td>Dependiente</td><td>La misma recta</td><td>Infinitas</td><td>0 = 0 (siempre cierto)</td></tr></tbody></table></div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="cl-ex">Sistema</label><select id="cl-ex"><option value="0">x + y = 4 ; x − y = 2</option><option value="1">x + y = 4 ; x + y = 7</option><option value="2">x + y = 4 ; 2x + 2y = 8</option><option value="3">2x − y = 3 ; 4x − 2y = 10</option><option value="4">y = 2x + 1 ; 4x − 2y = −2</option></select></div></div><p class="enun" id="cl-sis"></p></div>
+      <div class="salida" aria-live="polite" id="cl-txt"></div>
+      <div id="cl-graf"></div>
+      <h3>Practique: clasifique el sistema</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="opciones" id="cq-opciones"></div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="cq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="metodo">
+    <summary><span class="num" aria-hidden="true">3</span><h2>¿Sustitución o eliminación?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los dos métodos dan la misma solución. La sustitución conviene cuando una variable ya está despejada o tiene coeficiente 1 o −1; la eliminación, cuando las dos ecuaciones están en la forma ax + by = c y los coeficientes se alinean fácilmente.</p>
+      <h3>Practique: ¿qué método conviene?</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="opciones" id="mq-opciones"></div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="mq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="aplicacion">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Mezclas, monedas y velocidades</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Nombre las incógnitas, escriba una ecuación de cantidad y otra de valor (o una por cada dato), resuelva y relea la pregunta.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="ap-ex">Situación</label><select id="ap-ex"><option value="0">Monedas de 5¢ y de 10¢</option><option value="1">Boletos de adulto y de niño</option><option value="2">Mezcla de café</option><option value="3">El bote y la corriente</option><option value="4">Las edades</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="ap-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ap-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="ap-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="ap-nuevo">Empezar de nuevo</button></div></div>
+      <div class="pasos" id="ap-pasos" aria-live="polite"></div>
+      <h3>Practique: resuelva la situación</h3>
+      <div class="practica" id="aq">
+        <div class="enun" id="aq-enun"></div>
+        <div class="opciones" id="aq-opciones"></div>
+        <div class="fb" id="aq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="aq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="aq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/sys4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function mcd2(u, v){ u = Math.abs(u); v = Math.abs(v); while (v){ var w = u % v; u = v; v = w; } return u; }
+function mulL(L, k){ return L3(L.a * k, L.b * k, L.c * k); }
+/* A system to solve by elimination: tipo 0 already opposite, 1 multiply one, 2 multiply both */
+function sisElim(tipo){
+  var x0 = nz(-6, 6), y0 = aleatorio(-6, 6), L1, L2, k = 0;
+  tipo = tipo === undefined ? aleatorio(0, 2) : tipo;
+  do {
+    if (tipo === 0){ var b = aleatorio(1, 4), a1 = nz(-4, 4), a2 = nz(-4, 4); L1 = L3(a1, b, a1 * x0 + b * y0); L2 = L3(a2, -b, a2 * x0 - b * y0); }
+    else if (tipo === 1){ var bb = elige([2, 3, 4]), c1 = nz(-4, 4), c2 = nz(-3, 3), s = elige([1, -1]); L1 = L3(c1, bb, c1 * x0 + bb * y0); L2 = L3(c2, s, c2 * x0 + s * y0); }
+    else { var p = aleatorio(2, 5), q = aleatorio(2, 5), r = aleatorio(2, 5), u = aleatorio(2, 5) * elige([1, -1]); L1 = L3(p, q, p * x0 + q * y0); L2 = L3(r, u, r * x0 + u * y0); if (p === r || q === Math.abs(u) || p % r === 0 || r % p === 0 || q % Math.abs(u) === 0 || Math.abs(u) % q === 0){ k++; continue; } }
+    k++;
+  } while ((L1.a * L2.b - L2.a * L1.b === 0 || mcd2(mcd2(L1.a, L1.b), L1.c) > 1 && tipo !== 0) && k < 300);
+  return {L1: L1, L2: L2, x: x0, y: y0, tipo: tipo};
+}
+/* Elimination of y (or of x when it is easier) */
+function pasosElim(c){
+  var L1 = c.L1, L2 = c.L2, P = [], elimY = true;
+  if (c.tipo === 2 && Math.abs(L1.a) * Math.abs(L2.a) < Math.abs(L1.b) * Math.abs(L2.b)) elimY = false;
+  var k1, k2, g;
+  if (elimY){ g = mcd2(L1.b, L2.b); k1 = Math.abs(L2.b) / g; k2 = Math.abs(L1.b) / g; if (L1.b * L2.b > 0) k2 = -k2; }
+  else { g = mcd2(L1.a, L2.a); k1 = Math.abs(L2.a) / g; k2 = Math.abs(L1.a) / g; if (L1.a * L2.a > 0) k2 = -k2; }
+  var M1 = mulL(L1, k1), M2 = mulL(L2, k2), v = elimY ? "y" : "x", w = elimY ? "x" : "y";
+  if (k1 === 1 && Math.abs(k2) === 1 && k2 === 1) P.push(T("The " + v + " coefficients are already opposites: ", "Los coeficientes de " + v + " ya son opuestos: ") + terminoXY(elimY ? L1.b : L1.a, v, true) + T(" and ", " y ") + terminoXY(elimY ? L2.b : L2.a, v, true) + ".");
+  else { var l = []; if (k1 !== 1) l.push(T("the first by ", "la primera por ") + k1 + " (" + ecTxt(M1) + ")"); if (k2 !== 1) l.push(T("the second by ", "la segunda por ") + sg(k2) + " (" + ecTxt(M2) + ")"); P.push(T("To eliminate " + v + ", multiply ", "Para eliminar " + v + ", se multiplica ") + l.join(T(" and ", " y ")) + "."); }
+  var A = elimY ? M1.a + M2.a : M1.b + M2.b, C = M1.c + M2.c, val = C / A;
+  P.push(T("Add the equations: ", "Se suman las ecuaciones: ") + "(" + ecTxt(M1).split(" = ")[0] + ") + (" + ecTxt(M2).split(" = ")[0] + ") = " + sg(M1.c) + " + " + pn(M2.c) + " → " + terminoXY(A, w, true) + " = " + sg(C) + ", " + w + " = " + sg(val) + ".");
+  var other = elimY ? (L1.c - L1.a * val) / L1.b : (L1.c - L1.b * val) / L1.a;
+  P.push(T("Substitute into the first equation to find ", "Se sustituye en la primera ecuación para hallar ") + v + ": " + (elimY ? (L1.a === 1 ? "" : L1.a === -1 ? "−" : sg(L1.a)) + "(" + sg(val) + ")" + terminoXY(L1.b, "y", false) : terminoXY(L1.a, "x", true) + (L1.b < 0 ? " − " : " + ") + (Math.abs(L1.b) === 1 ? "" : Math.abs(L1.b)) + "(" + sg(val) + ")") + " = " + sg(L1.c) + ", " + v + " = " + sg(other) + ".");
+  P.push(T("Check in both: ", "Se verifica en las dos: ") + sustTxt(L1, c.x, c.y) + " ✓; " + sustTxt(L2, c.x, c.y) + " ✓.");
+  P.push(T("Solution: ", "Solución: ") + "<strong>" + par(c.x, c.y) + "</strong>.");
+  return P;
+}
+pasoAPaso4("el", function(){ var c = sisElim(); return {enun: T("Solve by elimination: ", "Resuelva por eliminación: ") + sisHTML(c.L1, c.L2) + ".", pasos: pasosElim(c)}; });
+creaPracticaPar("eq", function(){ var c = sisElim();
+  return {enun: T("Solve by elimination: ", "Resuelva por eliminación: ") + sisHTML(c.L1, c.L2), x: c.x, y: c.y, diag: diagSis(c.L1, c.L2, c), solucion: pasosElim(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 2 · Classifying ===== */
+var CLAS = [[L3(1, 1, 4), L3(1, -1, 2)], [L3(1, 1, 4), L3(1, 1, 7)], [L3(1, 1, 4), L3(2, 2, 8)], [L3(2, -1, 3), L3(4, -2, 10)], [L3(-2, 1, 1, "y = 2x + 1"), L3(4, -2, -2)]];
+function resultadoElim(L1, L2){
+  var g = mcd2(L1.a, L2.a) || 1, k1 = Math.abs(L2.a) / g, k2 = Math.abs(L1.a) / g; if (L1.a * L2.a > 0) k2 = -k2;
+  var M1 = mulL(L1, k1), M2 = mulL(L2, k2), B = M1.b + M2.b, C = M1.c + M2.c;
+  return {M1: M1, M2: M2, B: B, C: C, txt: T("Multiply the first by ", "Se multiplica la primera por ") + k1 + T(" and the second by ", " y la segunda por ") + sg(k2) + T(" and add: ", " y se suman: ") + (B ? terminoXY(B, "y", true) + " = " + sg(C) : "0 = " + sg(C))};
+}
+function claseDe(L1, L2){ var r = resuelveSis(L1, L2); return r.tipo === "uno" ? "ind" : r.tipo === "ninguna" ? "inc" : "dep"; }
+var NOM_CL = {ind: T("Independent: one solution", "Independiente: una solución"), inc: T("Inconsistent: no solution", "Inconsistente: ninguna solución"), dep: T("Dependent: infinitely many solutions", "Dependiente: infinitas soluciones")};
+function clDibuja(){
+  var S = CLAS[+$("cl-ex").value], L1 = S[0], L2 = S[1], r = resuelveSis(L1, L2), e = resultadoElim(L1, L2), cl = claseDe(L1, L2);
+  $("cl-sis").innerHTML = sisHTML(L1, L2);
+  $("cl-txt").innerHTML = '<div class="linea">' + T("Algebra: ", "Álgebra: ") + e.txt + (cl === "ind" ? "; " + T("then ", "luego ") + "x = " + sg(r.x) + ", y = " + sg(r.y) + "." : cl === "inc" ? T(" — false! ", " — ¡falso! ") : T(" — always true! ", " — ¡siempre cierto! ")) + "</div>" +
+    '<div class="linea">' + T("Graph: ", "Gráfica: ") + (cl === "ind" ? T("the lines cross at ", "las rectas se cruzan en ") + par(r.x, r.y) : cl === "inc" ? T("the lines are parallel (same slope, different intercept).", "las rectas son paralelas (misma pendiente, distinto intercepto).") : T("the two equations are the same line.", "las dos ecuaciones son la misma recta.")) + "</div>" +
+    '<div class="linea"><strong>' + NOM_CL[cl] + ".</strong></div>";
+  $("cl-graf").innerHTML = grafSis(L1, L2, {etiquetas: cl === "dep" ? [ecTxt(L1), ecTxt(L2) + T(" (the same line)", " (la misma recta)")] : null});
+}
+$("cl-ex").addEventListener("change", clDibuja); clDibuja();
+function sisClase(cl){
+  var a = nz(-4, 4), b = nz(-4, 4), x0 = aleatorio(-4, 4), y0 = aleatorio(-4, 4), c = a * x0 + b * y0, k = elige([2, 3, -1, -2]);
+  if (mcd2(a, b) > 1) b = b > 0 ? 1 : -1;
+  c = a * x0 + b * y0;
+  var L1 = L3(a, b, c);
+  if (cl === "ind"){ var S = sisCon(x0, y0, {lim: 4}); return S; }
+  if (cl === "dep") return [L1, L3(k * a, k * b, k * c)];
+  return [L1, L3(k * a, k * b, k * c + nz(-6, 6) * (Math.abs(k) === 1 ? 1 : 1))];
+}
+OMR("cq", function(){ var cl = elige(["ind", "inc", "dep"]), S = sisClase(cl), e = resultadoElim(S[0], S[1]);
+  return {enun: T("Classify the system ", "Clasifique el sistema ") + sisHTML(S[0], S[1]) + ".", correcta: claseDe(S[0], S[1]), enOrden: true, opciones: ["ind", "inc", "dep"].map(function(x){ return {clave: x, html: NOM_CL[x]}; }),
+    pista: T("Eliminate a variable and look at what is left.", "Elimine una variable y mire lo que queda."), bien: e.txt + ". " + NOM_CL[claseDe(S[0], S[1])] + "."};
+});
+
+/* ===== MODULE 3 · Choosing the method ===== */
+OMR("mq", function(){ var x0 = nz(-5, 5), y0 = aleatorio(-5, 5), sust = Math.random() < .5, S, motivo;
+  if (sust){ var f = elige(["y", "x"]); S = sisCon(x0, y0, {f1: f, f2: "std", lim: 5}); motivo = T("The first equation already has " + f + " alone: substitute it into the second.", "La primera ecuación ya tiene " + f + " despejada: se sustituye en la segunda."); }
+  else { var k = 0; do { S = sisCon(x0, y0, {lim: 6}); k++; } while ((Math.abs(S[0].a) === 1 || Math.abs(S[0].b) === 1 || Math.abs(S[1].a) === 1 || Math.abs(S[1].b) === 1) && k < 200);
+    if (Math.random() < .5){ var b = aleatorio(2, 5), a1 = aleatorio(2, 5), a2 = aleatorio(2, 5); if (a1 !== a2) S = [L3(a1, b, a1 * x0 + b * y0), L3(a2, -b, a2 * x0 - b * y0)]; }
+    motivo = T("Both equations are in the form ax + by = c and no coefficient is 1 or −1: solving for a variable would bring fractions. Eliminate.", "Las dos ecuaciones están en la forma ax + by = c y ningún coeficiente es 1 o −1: despejar traería fracciones. Conviene eliminar.");
+    if (S[0].b === -S[1].b) motivo = T("The y coefficients are already opposites: add the equations.", "Los coeficientes de y ya son opuestos: basta con sumar las ecuaciones."); }
+  return {enun: T("Which method is best for ", "¿Qué método conviene más para ") + sisHTML(S[0], S[1]) + "?", correcta: sust ? "s" : "e", enOrden: true,
+    opciones: [{clave: "s", html: T("Substitution", "Sustitución")}, {clave: "e", html: T("Elimination", "Eliminación")}], pista: T("Is a variable already alone, or with a coefficient of 1 or −1?", "¿Hay una variable ya despejada, o con coeficiente 1 o −1?"), bien: motivo};
+});
+
+/* ===== MODULE 4 · Applications ===== */
+var APL = [
+  {enun: T("There are 12 coins, some nickels (5¢) and some dimes (10¢), worth 95¢ in all. How many of each are there?", "Hay 12 monedas, unas de 5 centavos y otras de 10 centavos, que en total suman 95 centavos. ¿Cuántas hay de cada clase?"),
+   pasos: [T("Name: let <strong>n</strong> be the number of nickels and <strong>d</strong> the number of dimes.", "Nombrar: sea <strong>n</strong> el número de monedas de 5 centavos y <strong>d</strong> el de monedas de 10 centavos."), T("<strong>Amount</strong> equation: there are 12 coins in all → <strong>n + d = 12</strong>.", "Ecuación de <strong>cantidad</strong>: en total hay 12 monedas → <strong>n + d = 12</strong>."), T("<strong>Value</strong> equation: each nickel is worth 5 cents and each dime 10 → <strong>5n + 10d = 95</strong>.", "Ecuación de <strong>valor</strong>: cada moneda de 5¢ aporta 5 centavos y cada una de 10¢ aporta 10 → <strong>5n + 10d = 95</strong>."), T("Simplify the value equation by dividing it by 5: n + 2d = 19. Dividing a whole equation is allowed and leaves smaller numbers.", "Simplificar la de valor dividiéndola entre 5: n + 2d = 19. Dividir una ecuación entera es legítimo y deja números más pequeños."), T("Subtract the amount equation: (n + 2d) − (n + d) = 19 − 12, so <strong>d = 7</strong>; then n = 12 − 7 = <strong>5</strong>.", "Restar la de cantidad: (n + 2d) − (n + d) = 19 − 12, o sea <strong>d = 7</strong>; entonces n = 12 − 7 = <strong>5</strong>."), T("Reread the question: there are <strong>5 nickels and 7 dimes</strong>. Check: 5(5) + 10(7) = 25 + 70 = 95 ✓.", "Releer la pregunta: hay <strong>5 monedas de 5¢ y 7 de 10¢</strong>. Comprobación: 5(5) + 10(7) = 25 + 70 = 95 ✓.")]},
+  {enun: T("A show sold 200 tickets and took in $1,450. An adult ticket costs $8 and a child ticket, $5. How many tickets of each kind were sold?", "En una función se vendieron 200 boletos y se recaudaron $1,450. El boleto de adulto cuesta $8 y el de niño, $5. ¿Cuántos boletos de cada tipo se vendieron?"),
+   pasos: [T("Name: let <strong>a</strong> be the number of adult tickets and <strong>c</strong> the number of child tickets.", "Nombrar: sea <strong>a</strong> el número de boletos de adulto y <strong>n</strong> el de boletos de niño."), T("Amount equation: 200 tickets were sold → <strong>a + c = 200</strong>.", "Ecuación de cantidad: se vendieron 200 boletos → <strong>a + n = 200</strong>."), T("Value equation: each adult pays $8 and each child $5 → <strong>8a + 5c = 1,450</strong>.", "Ecuación de valor: cada adulto aporta 8 dólares y cada niño, 5 → <strong>8a + 5n = 1,450</strong>."), T("Multiply the amount equation by −5 to eliminate c: −5a − 5c = −1,000.", "Multiplicar la de cantidad por −5 para eliminar n: −5a − 5n = −1,000."), T("Add: <strong>3a = 450</strong> and <strong>a = 150</strong>; then c = 50.", "Sumar: <strong>3a = 450</strong> y <strong>a = 150</strong>; entonces n = 50."), T("Reread: <strong>150 adult tickets and 50 child tickets</strong> were sold. Check: 8(150) + 5(50) = 1,200 + 250 = 1,450 ✓.", "Releer: se vendieron <strong>150 boletos de adulto y 50 de niño</strong>. Comprobación: 8(150) + 5(50) = 1,200 + 250 = 1,450 ✓.")]},
+  {enun: T("A store mixes coffee at $6 a pound with coffee at $9 a pound to get 30 pounds to sell at $7 a pound. How many pounds of each does it use?", "Una tienda mezcla café de $6 la libra con café de $9 la libra para obtener 30 libras que se venderán a $7 la libra. ¿Cuántas libras usa de cada uno?"),
+   pasos: [T("Name: let <strong>x</strong> be the pounds of the $6 coffee and <strong>y</strong> the pounds of the $9 coffee.", "Nombrar: sea <strong>x</strong> las libras de café de $6 y <strong>y</strong> las libras de café de $9."), T("Amount equation: the mixture weighs 30 pounds → <strong>x + y = 30</strong>.", "Ecuación de cantidad: la mezcla pesa 30 libras → <strong>x + y = 30</strong>."), T("Value equation: the whole mixture is worth 30 · 7 = 210 dollars → <strong>6x + 9y = 210</strong>.", "Ecuación de valor: el valor total de la mezcla es 30 · 7 = 210 dólares → <strong>6x + 9y = 210</strong>."), T("Multiply the amount equation by −6: −6x − 6y = −180.", "Multiplicar la de cantidad por −6: −6x − 6y = −180."), T("Add: <strong>3y = 30</strong>, so <strong>y = 10</strong> and x = 30 − 10 = <strong>20</strong>.", "Sumar: <strong>3y = 30</strong>, entonces <strong>y = 10</strong> y x = 30 − 10 = <strong>20</strong>."), T("Reread: it uses <strong>20 pounds of the $6 coffee and 10 pounds of the $9 coffee</strong>. Check: 6(20) + 9(10) = 120 + 90 = 210 ✓.", "Releer: se usan <strong>20 libras del de $6 y 10 libras del de $9</strong>. Comprobación: 6(20) + 9(10) = 120 + 90 = 210 ✓.")]},
+  {enun: T("A boat goes 36 miles downstream in 3 hours, and the same 36 miles upstream in 6 hours. How fast does the boat go in still water, and how fast is the current?", "Un bote recorre 36 millas a favor de la corriente en 3 horas, y las mismas 36 millas en contra en 6 horas. ¿Cuál es la velocidad del bote en agua quieta y la de la corriente?"),
+   pasos: [T("Name: let <strong>v</strong> be the speed of the boat in still water and <strong>c</strong> the speed of the current, both in mph.", "Nombrar: sea <strong>v</strong> la velocidad del bote en agua quieta y <strong>c</strong> la velocidad de la corriente, las dos en mph."), T("Downstream the real speed is v + c, and it covers 36 miles in 3 hours: 36/3 = 12 → <strong>v + c = 12</strong>.", "A favor, la velocidad efectiva es v + c, y recorre 36 millas en 3 horas: 36/3 = 12 → <strong>v + c = 12</strong>."), T("Upstream the real speed is v − c, and it covers 36 miles in 6 hours: 36/6 = 6 → <strong>v − c = 6</strong>.", "En contra, la velocidad efectiva es v − c, y recorre 36 millas en 6 horas: 36/6 = 6 → <strong>v − c = 6</strong>."), T("The c coefficients are already opposites: this system calls for elimination.", "Los coeficientes de c ya son opuestos: este sistema pide eliminación."), T("Add: <strong>2v = 18</strong>, so <strong>v = 9</strong>; and from v + c = 12, <strong>c = 3</strong>.", "Sumar: <strong>2v = 18</strong>, entonces <strong>v = 9</strong>; y de v + c = 12 sale <strong>c = 3</strong>."), T("Reread: the boat goes <strong>9 mph</strong> in still water and the current, <strong>3 mph</strong>. Check: downstream, 12 mph for 3 hours is 36 miles ✓.", "Releer: el bote va a <strong>9 mph</strong> en agua quieta y la corriente, a <strong>3 mph</strong>. Comprobación: a favor, 12 mph durante 3 h son 36 millas ✓.")]},
+  {enun: T("A father is three times as old as his son. In 10 years he will be only twice as old. How old is each one today?", "Un padre tiene el triple de la edad de su hijo. Dentro de 10 años tendrá solo el doble. ¿Qué edad tiene cada uno hoy?"),
+   pasos: [T("Name: let <strong>f</strong> be the father's age today and <strong>s</strong> the son's.", "Nombrar: sea <strong>p</strong> la edad del padre hoy y <strong>h</strong> la del hijo hoy."), T("“Three times the son's age” → <strong>f = 3s</strong>.", "«El triple de la edad del hijo» → <strong>p = 3h</strong>."), T("In 10 years each will be 10 years older, and then the father will be twice as old → <strong>f + 10 = 2(s + 10)</strong>.", "Dentro de 10 años cada uno tendrá 10 años más, y entonces el padre tendrá el doble → <strong>p + 10 = 2(h + 10)</strong>."), T("Since f is already alone, substitution is best: 3s + 10 = 2(s + 10) = 2s + 20.", "Como p ya está despejada, conviene sustitución: 3h + 10 = 2(h + 10) = 2h + 20."), T("Solve: 3s − 2s = 20 − 10, so <strong>s = 10</strong> and f = 3(10) = <strong>30</strong>.", "Resolver: 3h − 2h = 20 − 10, entonces <strong>h = 10</strong> y p = 3(10) = <strong>30</strong>."), T("Reread: the son is <strong>10 years old</strong> and the father, <strong>30</strong>. Check: in 10 years they will be 20 and 40, which is twice ✓.", "Releer: el hijo tiene <strong>10 años</strong> y el padre, <strong>30</strong>. Comprobación: dentro de 10 años tendrán 20 y 40, que es el doble ✓.")]}];
+pasoAPaso4("ap", function(){ var c = APL[+$("ap-ex").value]; return {enun: c.enun, pasos: c.pasos}; });
+$("ap-ex").addEventListener("change", function(){ $("ap-nuevo").click(); });
+function opNum(l, suf){ var vis = {}, ops = []; l.forEach(function(v, i){ var h = sg(v) + (suf || ""); if (!vis[h] && v > 0 && v === Math.round(v) && ops.length < 4){ vis[h] = 1; ops.push({clave: i ? "m" + i : "ok", html: h}); } }); return ops; }
+OMR("aq", function(){ var tipo = aleatorio(0, 2);
+  if (tipo === 0){ var M = elige([[5, 10, T("nickels", "de 5¢"), T("dimes", "de 10¢")], [10, 25, T("dimes", "de 10¢"), T("quarters", "de 25¢")], [5, 25, T("nickels", "de 5¢"), T("quarters", "de 25¢")]]), a = aleatorio(2, 12), b = aleatorio(2, 12), tot = a + b, val = M[0] * a + M[1] * b, q = Math.random() < .5;
+    return {enun: T("There are " + tot + " coins, " + M[2] + " and " + M[3] + ", worth " + val + "¢ in all. How many " + (q ? M[3] : M[2]) + " are there?", "Hay " + tot + " monedas, unas " + M[2] + " y otras " + M[3] + ", que suman " + val + "¢. ¿Cuántas son " + (q ? M[3] : M[2]) + "?"), correcta: "ok", opciones: opNum([q ? b : a, q ? a : b, tot, Math.round(val / M[1])]),
+      pista: T("Amount: x + y = " + tot + ". Value: " + M[0] + "x + " + M[1] + "y = " + val + ".", "Cantidad: x + y = " + tot + ". Valor: " + M[0] + "x + " + M[1] + "y = " + val + "."), bien: T("Amount: x + y = " + tot + "; value: " + M[0] + "x + " + M[1] + "y = " + val + ". Multiply the first by −" + M[0] + " and add: " + (M[1] - M[0]) + "y = " + (val - M[0] * tot) + ", y = " + b + "; x = " + a + ".", "Cantidad: x + y = " + tot + "; valor: " + M[0] + "x + " + M[1] + "y = " + val + ". Se multiplica la primera por −" + M[0] + " y se suma: " + (M[1] - M[0]) + "y = " + (val - M[0] * tot) + ", y = " + b + "; x = " + a + ".")}; }
+  if (tipo === 1){ var pa = aleatorio(6, 15), pc = aleatorio(2, pa - 1), na = 10 * aleatorio(2, 15), nc = 10 * aleatorio(2, 15), tt = na + nc, din = pa * na + pc * nc, qa = Math.random() < .5;
+    return {enun: T("A show sold " + tt + " tickets and took in $" + din.toLocaleString("en-US") + ". An adult ticket costs $" + pa + " and a child ticket, $" + pc + ". How many " + (qa ? "adult" : "child") + " tickets were sold?", "En una función se vendieron " + tt + " boletos y se recaudaron $" + din.toLocaleString("en-US") + ". El boleto de adulto cuesta $" + pa + " y el de niño, $" + pc + ". ¿Cuántos boletos de " + (qa ? "adulto" : "niño") + " se vendieron?"), correcta: "ok", opciones: opNum([qa ? na : nc, qa ? nc : na, tt, tt / 2]),
+      pista: T("Amount: a + c = " + tt + ". Value: " + pa + "a + " + pc + "c = " + din + ".", "Cantidad: a + n = " + tt + ". Valor: " + pa + "a + " + pc + "n = " + din + "."), bien: T("Multiply the amount equation by −" + pc + " and add: " + (pa - pc) + "a = " + (din - pc * tt) + ", a = " + na + "; c = " + nc + ".", "Se multiplica la de cantidad por −" + pc + " y se suma: " + (pa - pc) + "a = " + (din - pc * tt) + ", a = " + na + "; n = " + nc + ".")}; }
+  var p1 = elige([5, 6, 7]), p2 = p1 + elige([2, 3, 4, 6]), x = aleatorio(2, 15), y = aleatorio(2, 15), lb = x + y, tv = p1 * x + p2 * y, qq = Math.random() < .5;
+  if (tv % lb){ y = x; lb = 2 * x; tv = (p1 + p2) * x; }
+  var pm = tv / lb;
+  return {enun: T("A store mixes coffee at $" + p1 + " a pound with coffee at $" + p2 + " a pound to get " + lb + " pounds worth $" + tv + " in all. How many pounds of the $" + (qq ? p2 : p1) + " coffee does it use?", "Una tienda mezcla café de $" + p1 + " la libra con café de $" + p2 + " la libra para obtener " + lb + " libras con un valor total de $" + tv + ". ¿Cuántas libras usa del café de $" + (qq ? p2 : p1) + "?"), correcta: "ok", opciones: opNum([qq ? y : x, qq ? x : y, lb, lb / 2 + 1]),
+    pista: T("Amount: x + y = " + lb + ". Value: " + p1 + "x + " + p2 + "y = " + tv + ".", "Cantidad: x + y = " + lb + ". Valor: " + p1 + "x + " + p2 + "y = " + tv + "."), bien: T("Multiply the amount equation by −" + p1 + " and add: " + (p2 - p1) + "y = " + (tv - p1 * lb) + ", y = " + y + "; x = " + x + ".", "Se multiplica la de cantidad por −" + p1 + " y se suma: " + (p2 - p1) + "y = " + (tv - p1 * lb) + ", y = " + y + "; x = " + x + ".")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

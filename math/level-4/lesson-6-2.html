@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 6.2 · Math Level 4 (English) — built by tools/build_n4_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 6.2 · Solving systems by elimination and classifying systems · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 6 — Systems of linear equations</p>
+<h1>Lesson 6.2 · Solving systems by elimination and classifying systems</h1>
+<p class="lema">Solve systems by elimination, classify them as independent, inconsistent, or dependent, and choose the best method.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">✏️</span> No calculator</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Solve</strong> systems by elimination, multiplying one or both equations when needed.</li>
+<li><strong>Classify</strong> systems as independent, inconsistent, or dependent.</li>
+<li><strong>Choose</strong> between substitution and elimination.</li>
+<li><strong>Solve</strong> coin, ticket, mixture, and speed problems.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.2.d</span> Solve a system of two simultaneous linear equations by graphing, substitution, or linear combination. Solve real-world problems leading to a system of linear equations.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.2.b</span> Solve real-world problems involving linear equations.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.c</span> Select the best solution pathway, according to given criteria.</li><li><span class="std-cod std-mp">MP.2.a</span> Represent real world problems algebraically.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">A-REI.5</span> <span class="std-nivel">Level E</span> Prove that, given a system of two equations in two variables, replacing one equation by the sum of that equation and a multiple of the other produces a system with the same solutions.</li><li><span class="std-cod std-ccr">A-REI.6</span> <span class="std-nivel">Level E</span> Solve systems of linear equations exactly and approximately (e.g., with graphs), focusing on pairs of linear equations in two variables.</li><li><span class="std-cod std-ccr">8.EE.8</span> <span class="std-nivel">Level D</span> Analyze and solve pairs of simultaneous linear equations: understand that solutions correspond to points of intersection of their graphs; solve systems algebraically and estimate solutions by graphing; solve real-world and mathematical problems leading to two linear equations in two variables.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-elimination">The elimination method</a></li>
+<li><a href="#s-classify">Classifying systems</a></li>
+<li><a href="#s-method">Substitution or elimination?</a></li>
+<li><a href="#s-applications">Application: mixtures, coins, and speeds</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-elimination"><span aria-hidden="true" class="num-seccion">1</span>The elimination method</h2>
+<p><strong>A link with Lesson 6.1.</strong> In Lesson 6.1 you solved systems by substitution. Substitution is ideal when a variable is already alone; but when both equations are in the form ax + by = c, the <strong>elimination</strong> method is usually faster: add the equations so that one variable disappears.</p>
+<p>The idea is to make the coefficients of one variable opposites (for example, +y and −y), so that when you add the equations that variable is eliminated. Sometimes they are already opposites; other times you multiply one or both equations first.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: coefficients already opposite. Solve x + y = 10 and x − y = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Add the two equations:</strong> (x + y) + (x − y) = 10 + 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The y disappears:</strong> 2x = 14, so x = 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Find y:</strong> 7 + y = 10, y = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solution.</strong> <strong>(7, 3)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: multiply one equation. Solve 2x + 3y = 13 and x − y = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Multiply the second by 3:</strong> 3x − 3y = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Add it to the first:</strong> (2x + 3y) + (3x − 3y) = 13 + (−3).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>The y disappears:</strong> 5x = 10, x = 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Find y:</strong> 2 − y = −1, y = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solution.</strong> <strong>(2, 3)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: multiply both. Solve 2x + 3y = 7 and 3x + 2y = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>To eliminate x: the first times 3 and the second times −2:</strong> 6x + 9y = 21; −6x − 4y = −16.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Add:</strong> 5y = 5, y = 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Find x:</strong> 2x + 3(1) = 7, x = 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solution.</strong> <strong>(2, 1)</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — x + y = 8 ; x − y = 2</h3></div>
+<p class="pregunta-int" id="t-p1">Choose the solution (x, y).</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">(5, 3)</button>
+<button class="opcion" data-k="b" type="button">(3, 5)</button>
+<button class="opcion" data-k="c" type="button">(5, 5)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — 2x + y = 7 ; x − y = 2</h3></div>
+<p class="pregunta-int" id="t-p2">Choose the solution (x, y).</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">(1, 3)</button>
+<button class="opcion" data-k="b" type="button">(3, 1)</button>
+<button class="opcion" data-k="c" type="button">(3, 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — 3x + 2y = 12 ; x − 2y = −4</h3></div>
+<p class="pregunta-int" id="t-p3">Choose the solution (x, y).</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">(3, 2)</button>
+<button class="opcion" data-k="b" type="button">(2, 2)</button>
+<button class="opcion" data-k="c" type="button">(2, 3)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#elimination" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: elimination (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: elimination</span><span class="ei-sub">Systems step by step: coefficients already opposite, multiplying one equation, and multiplying both.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-classify"><span aria-hidden="true" class="num-seccion">2</span>Classifying systems</h2>
+<p>Not every system has exactly one solution. Depending on the two lines, there are three kinds:</p>
+<div aria-label="Kinds of systems (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">How systems are classified by the number of solutions</caption>
+<thead><tr><th scope="col">Kind</th><th scope="col">Lines</th><th scope="col">Solutions</th><th scope="col">When you solve, you get…</th></tr></thead>
+<tbody>
+<tr><td>Independent</td><td>Cross at one point</td><td>One solution</td><td>x = … , y = …</td></tr>
+<tr><td>Inconsistent</td><td>Parallel</td><td>None</td><td>Something false (like 0 = 5)</td></tr>
+<tr><td>Dependent</td><td>The same line</td><td>Infinitely many</td><td>Something always true (0 = 0)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The result tells you the kind</span>
+<p>If both variables disappear and a false statement is left (like 0 = 5), the system is inconsistent; if a statement that is always true is left (0 = 0), it is dependent.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — 0 = 5</h3></div>
+<p class="pregunta-int" id="t-p4">When you solve, you get 0 = 5. What kind of system is it?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Inconsistent (no solution)</button>
+<button class="opcion" data-k="b" type="button">Dependent</button>
+<button class="opcion" data-k="c" type="button">Independent</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — 0 = 0</h3></div>
+<p class="pregunta-int" id="t-p5">When you solve, you get 0 = 0. What kind of system is it?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Inconsistent</button>
+<button class="opcion" data-k="b" type="button">Independent</button>
+<button class="opcion" data-k="c" type="button">Dependent (infinitely many solutions)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — x = 3, y = 1</h3></div>
+<p class="pregunta-int" id="t-p6">When you solve, you get x = 3, y = 1. What kind of system is it?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Inconsistent</button>
+<button class="opcion" data-k="b" type="button">Independent (one solution)</button>
+<button class="opcion" data-k="c" type="button">Dependent</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#classify" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: classifying systems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: classifying systems</span><span class="ei-sub">Choose a system and compare at the same time what you get when you solve it and how the lines look: crossing, parallel, or on top of each other.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-method"><span aria-hidden="true" class="num-seccion">3</span>Substitution or elimination?</h2>
+<p>Both methods lead to the same solution; what matters is choosing the faster one for each system.</p>
+<div aria-label="Substitution or elimination? (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">When substitution is best and when elimination is best</caption>
+<thead><tr><th scope="col">Best method</th><th scope="col">When</th></tr></thead>
+<tbody>
+<tr><td>Substitution</td><td>When a variable is already alone or has a coefficient of 1 or −1.</td></tr>
+<tr><td>Elimination</td><td>When both equations are in the form ax + by = c and the coefficients line up easily.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<a class="enlace-interactivo" href="practice-6-2.html#method" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: choosing the method (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: choosing the method</span><span class="ei-sub">Systems to decide whether substitution or elimination is best, with the sign that gives it away in each case.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-applications"><span aria-hidden="true" class="num-seccion">4</span>Application: mixtures, coins, and speeds</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: coins. There are 12 coins, some nickels (5¢) and some dimes (10¢), worth 95¢ in all. How many of each are there?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Let n be the number of nickels and d the number of dimes:</strong> n + d = 12 and 5n + 10d = 95.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Divide the second by 5:</strong> n + 2d = 19.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Subtract the first:</strong> d = 7. Then n = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>5 nickels and 7 dimes.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Two kinds of equations</span>
+<p>In coin, ticket, and mixture problems there is almost always an equation of <strong>amount</strong> (how many in all) and one of <strong>value</strong> (how much money in all).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — The dimes</h3></div>
+<p class="pregunta-int" id="t-p7">With the example (12 nickels and dimes worth 95¢), how many are dimes?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">12</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 8 — Two numbers</h3></div>
+<p class="pregunta-int" id="t-p8">Two numbers add up to 20 and their difference is 6. What is the bigger one?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">13</button>
+<button class="opcion" data-k="c" type="button">10</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#applications" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the applications (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the applications</span><span class="ei-sub">Situations set up step by step: coins, tickets, a coffee mixture, a boat and the current, and ages.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-6-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook open: (1) How many solutions does it have? Solve by elimination and classify each system as independent (one point), inconsistent (parallel), or dependent (the same line), using the result as your reason: x + y = 6 and x − y = 2; 2x + 3y = 12 and 2x − y = 4; 3x + 2y = 16 and x − 2y = 0; x + y = 4 and x + y = 9; 2x − y = 3 and 4x − 2y = 6. (2) Do I eliminate or substitute? Before solving, explain in two sentences which method is best: y = 3x − 1 and 2x + y = 9; 3x + 4y = 10 and 3x − 2y = 4; x = 2y and 5x − 3y = 14; 5x + 2y = 1 and 3x − 2y = 7. (3) Coins and mixtures: (a) you have 20 dimes and quarters worth $3.50; how many of each are there? (b) A store mixes coffee at $6 a pound with coffee at $10 a pound to get 20 pounds at $7 a pound; how many pounds of each does it use? Set up the system, solve it, and check. Then do several exercises of each activity on the practice page. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Empty a jar or a pocket of coins of two kinds. Count how many there are and how much they are worth, and ask someone at home to find how many of each there are with a system.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">Solve by elimination: x + y = 9 ; x − y = 1.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(4, 5)</button><button class="opcion" data-k="b" type="button">(5, 4)</button><button class="opcion" data-k="c" type="button">(5, 5)</button><button class="opcion" data-k="d" type="button">(9, 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">Solve: 2x + y = 8 ; x − y = 1.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2, 3)</button><button class="opcion" data-k="b" type="button">(3, 3)</button><button class="opcion" data-k="c" type="button">(3, 2)</button><button class="opcion" data-k="d" type="button">(1, 2)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">Solve: 3x + 2y = 12 ; 3x − 2y = 0.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(3, 2)</button><button class="opcion" data-k="b" type="button">(2, 2)</button><button class="opcion" data-k="c" type="button">(0, 6)</button><button class="opcion" data-k="d" type="button">(2, 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">Solve: 2x + 3y = 7 ; 3x + 2y = 8.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2, 1)</button><button class="opcion" data-k="b" type="button">(1, 2)</button><button class="opcion" data-k="c" type="button">(2, 2)</button><button class="opcion" data-k="d" type="button">(3, 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">When you solve, you get 0 = 7. What kind of system is it?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Independent</button><button class="opcion" data-k="b" type="button">Dependent</button><button class="opcion" data-k="c" type="button">Inconsistent (no solution)</button><button class="opcion" data-k="d" type="button">It has one solution</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">When you solve, you get 0 = 0. What kind of system is it?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Infinitely many solutions (dependent)</button><button class="opcion" data-k="b" type="button">No solution</button><button class="opcion" data-k="c" type="button">One solution</button><button class="opcion" data-k="d" type="button">Inconsistent</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">There are 10 coins, nickels (5¢) and quarters (25¢), worth 130¢. How many are quarters?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6</button><button class="opcion" data-k="b" type="button">5</button><button class="opcion" data-k="c" type="button">10</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">Two numbers add up to 15 and one is 3 more than the other. What is the smaller one?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">6</button><button class="opcion" data-k="c" type="button">7.5</button><button class="opcion" data-k="d" type="button">12</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for elimination (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for elimination and classifying systems and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Making opposite coefficients</th><td>I choose the multipliers well and multiply every term, including the constant.</td><td>I multiply, but I forget a term or a sign.</td><td>I add the equations without making opposite coefficients.</td></tr>
+<tr><th scope="row">Classifying</th><td>I read 0 = number or 0 = 0 and connect it with the graph.</td><td>I classify, but I mix up inconsistent and dependent.</td><td>I do not know what 0 = 5 or 0 = 0 means.</td></tr>
+<tr><th scope="row">Setting up applications</th><td>I write the amount and value equations and check the answer.</td><td>I write one of the two equations correctly.</td><td>I do not set up the system.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you solved systems by elimination, classified them by their number of solutions, and chose the best method. You also solved coin, ticket, and mixture problems.</p>
+<p>In <strong>Lesson 6.3 · Graphing systems and modeling</strong> you will add a third view, the graph, connect it with the algebra, translate word problems into systems, and find the break-even point of a business.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-6-3.html">Lesson 6.3 · Graphing systems and modeling</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>elimination</dt><dd>Adding the equations, after multiplying if needed, so that one variable disappears.</dd>
+<dt>independent system</dt><dd>One solution: the lines cross at one point.</dd>
+<dt>inconsistent system</dt><dd>No solution: the lines are parallel.</dd>
+<dt>dependent system</dt><dd>Infinitely many solutions: both equations are the same line.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 6 · Lesson 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 6.3",
+ "review": "sections 1 and 2",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Write x first: x is the bigger one, since x − y = 2.",
+    "c": "5 − 5 = 0, not 2."
+   },
+   "right": "2x = 10, x = 5, y = 3.",
+   "solution": "(5, 3)."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Write x first: 3x = 9.",
+    "c": "3 − 3 = 0, not 2."
+   },
+   "right": "Add: 3x = 9, x = 3, y = 1.",
+   "solution": "(3, 1)."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Write x first: 4x = 8.",
+    "b": "Check 3x + 2y = 12: 6 + 4 = 10."
+   },
+   "right": "Add: 4x = 8, x = 2, y = 3.",
+   "solution": "(2, 3)."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Dependent gives something always true, like 0 = 0.",
+    "c": "Independent gives values of x and y."
+   },
+   "right": "0 = 5 is false: parallel lines.",
+   "solution": "Inconsistent."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Inconsistent gives something false.",
+    "b": "Independent gives values of x and y."
+   },
+   "right": "0 = 0 is always true: the same line.",
+   "solution": "Dependent."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "There is a solution: x = 3, y = 1.",
+    "c": "Dependent gives 0 = 0."
+   },
+   "right": "One point: the lines cross.",
+   "solution": "Independent."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "5 is the number of nickels.",
+    "c": "12 is all the coins."
+   },
+   "right": "n + 2d = 19 minus n + d = 12: d = 7.",
+   "solution": "7."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "7 is the smaller one.",
+    "c": "10 + 10 = 20, but the difference must be 6."
+   },
+   "right": "2x = 26, x = 13; y = 7.",
+   "solution": "13."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Write x first: 2x = 10.",
+    "c": "5 − 5 = 0, not 1.",
+    "d": "9 + 1 = 10, not 9."
+   },
+   "solution": "(5, 4)."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "Write x first: 3x = 9.",
+    "b": "3 − 3 = 0, not 1.",
+    "d": "Check 2x + y = 8: 2 + 2 = 4."
+   },
+   "solution": "(3, 2)."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Check 3x − 2y = 0: 9 − 4 = 5.",
+    "b": "Check 3x + 2y = 12: 6 + 4 = 10.",
+    "c": "Check 3x − 2y = 0: 0 − 12."
+   },
+   "solution": "(2, 3)."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "Check 2x + 3y = 7: 2 + 6 = 8.",
+    "c": "Check 2x + 3y = 7: 4 + 6 = 10.",
+    "d": "Check 3x + 2y = 8: 9 + 2 = 11."
+   },
+   "solution": "(2, 1)."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "Independent gives x and y.",
+    "b": "Dependent gives 0 = 0.",
+    "d": "0 = 7 is false: there is no solution."
+   },
+   "solution": "Inconsistent (no solution)."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Something false means no solution; 0 = 0 is true.",
+    "c": "One solution gives x and y.",
+    "d": "Inconsistent gives something false."
+   },
+   "solution": "Infinitely many (dependent)."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "6 is the number of nickels.",
+    "b": "Check: 5(5) + 25(5) = 150, not 130.",
+    "c": "10 is all the coins."
+   },
+   "solution": "4."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "9 is the bigger one.",
+    "c": "7.5 + 7.5 = 15, but one is 3 more than the other.",
+    "d": "12 + 3 = 15, but 12 is not 3 more than 3."
+   },
+   "solution": "6."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

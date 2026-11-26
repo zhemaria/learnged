@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 6.3 · El método gráfico y el modelado — práctica (español) — construida con tools/build_n4_lesson_6_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 6.3 · El método gráfico y el modelado · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-6-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .sistema{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;margin:2px 4px;}
+  .sistema .llave{font-size:2.5em;line-height:1;font-weight:300;}
+  .sistema .ecs{display:flex;flex-direction:column;line-height:1.35;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales</div>
+    <h1>Lección 6.3 · El método gráfico y el modelado</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad. Puede usar la calculadora.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#grafico">El método gráfico</a></li>
+      <li><a href="#conectar">Conectar lo gráfico con lo algebraico</a></li>
+      <li><a href="#traducir">Traducir problemas verbales</a></li>
+      <li><a href="#equilibrio">El punto de equilibrio</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="grafico" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>El método gráfico</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Mueva la pendiente (m) y el intercepto (b) de cada recta y = mx + b y observe cómo se desplaza el punto de cruce. Cuando las pendientes son iguales, las rectas son paralelas o la misma.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="gr-m1">Recta azul: m = <output id="gr-m1v"></output></label><input type="range" id="gr-m1" min="-3" max="3" step="0.5" value="1"></div><div class="campo"><label for="gr-b1">b = <output id="gr-b1v"></output></label><input type="range" id="gr-b1" min="-6" max="6" step="1" value="1"></div><div class="campo"><label for="gr-m2">Recta roja: m = <output id="gr-m2v"></output></label><input type="range" id="gr-m2" min="-3" max="3" step="0.5" value="-1"></div><div class="campo"><label for="gr-b2">b = <output id="gr-b2v"></output></label><input type="range" id="gr-b2" min="-6" max="6" step="1" value="5"></div></div></div>
+      <div id="gr-graf"></div>
+      <div class="salida" aria-live="polite" id="gr-txt"></div>
+      <h3>Practique: lea la solución en la gráfica</h3>
+      <div class="practica" id="gq">
+        <div class="enun" id="gq-enun"></div>
+        <div class="par-campos" role="group" aria-label="Su respuesta como par ordenado"><span class="pa" aria-hidden="true">(</span>
+          <div class="campo"><label for="gq-x">x</label><input type="text" inputmode="decimal" autocomplete="off" id="gq-x"></div><span class="pa" aria-hidden="true">,</span>
+          <div class="campo"><label for="gq-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="gq-y"></div><span class="pa" aria-hidden="true">)</span></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="gq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="gq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="gq-fb" role="status"></div>
+        <p class="marcador" id="gq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="conectar">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Conectar lo gráfico con lo algebraico</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para saber el tipo de sistema antes de graficar, se escribe cada ecuación como y = mx + b. Pendientes distintas: las rectas se cruzan. Misma pendiente y distinto intercepto: paralelas. Misma pendiente y mismo intercepto: la misma recta.</p>
+      <div class="panel"><p class="enun" id="cn-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cn-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="cn-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="cn-nuevo">Otro sistema</button></div></div>
+      <div class="pasos" id="cn-pasos" aria-live="polite"></div>
+      <div id="cn-graf"></div>
+      <h3>Practique: ¿qué tipo de sistema es?</h3>
+      <div class="practica" id="kq">
+        <div class="enun" id="kq-enun"></div>
+        <div class="opciones" id="kq-opciones"></div>
+        <div class="fb" id="kq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="kq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="kq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="traducir">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Traducir problemas verbales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El paso clave es definir las variables y convertir cada frase del texto en una ecuación. Estas son las frases que más aparecen:</p>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Frases frecuentes y cómo se escriben en álgebra</caption><thead><tr><th scope="col">Frase</th><th scope="col">En álgebra</th></tr></thead><tbody><tr><td>la suma de x e y es 10</td><td>x + y = 10</td></tr><tr><td>su diferencia es 4</td><td>x − y = 4</td></tr><tr><td>a cuesta $3 más que n</td><td>a = n + 3</td></tr><tr><td>a cuesta $3 menos que n</td><td>a = n − 3</td></tr><tr><td>a es el doble de n</td><td>a = 2n</td></tr><tr><td>a es la mitad de n</td><td>a = n/2</td></tr><tr><td>dos cafés y un té cuestan $8</td><td>2c + t = 8</td></tr><tr><td>hay 20 monedas en total</td><td>n + d = 20</td></tr></tbody></table></div>
+      <div class="caja-tip">Cuidado con «más que»: «a cuesta $3 más que n» es a = n + 3, sumando el 3 al menor, y no 3 + a = n.</div>
+      <h3>Practique: elija el planteamiento</h3>
+      <div class="practica" id="tq">
+        <div class="enun" id="tq-enun"></div>
+        <div class="opciones" id="tq-opciones"></div>
+        <div class="fb" id="tq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="tq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="tq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="equilibrio">
+    <summary><span class="num" aria-hidden="true">4</span><h2>El punto de equilibrio</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Costos: C = costos fijos + costo por unidad · x. Ingresos: I = precio · x. El punto de equilibrio es donde C = I.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="pe-f">Costos fijos: $<output id="pe-fv"></output></label><input type="range" id="pe-f" min="50" max="500" step="10" value="100"></div><div class="campo"><label for="pe-v">Costo por unidad: $<output id="pe-vv"></output></label><input type="range" id="pe-v" min="1" max="20" step="1" value="5"></div><div class="campo"><label for="pe-p">Precio de venta: $<output id="pe-pv"></output></label><input type="range" id="pe-p" min="2" max="30" step="1" value="10"></div></div></div>
+      <div id="pe-graf"></div>
+      <div class="salida" aria-live="polite" id="pe-txt"></div>
+      <h3>Practique: halle e interprete el punto de equilibrio</h3>
+      <div class="practica" id="bq">
+        <div class="enun" id="bq-enun"></div>
+        <div class="opciones" id="bq-opciones"></div>
+        <div class="fb" id="bq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="bq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="bq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/sys4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function yMB(m, b){ return "y = " + (m ? terminoXY(m, "x", true) : "") + (b ? (m ? (b < 0 ? " − " + -b : " + " + b) : sg(b)) : (m ? "" : "0")); }
+function lineaMB(m, b){ return L3(-m, 1, b, yMB(m, b)); }
+function r2(x){ return Math.round(x * 100) / 100; }
+
+/* ===== MODULE 1 · The graphing method ===== */
+function grDibuja(){
+  var m1 = +$("gr-m1").value, b1 = +$("gr-b1").value, m2 = +$("gr-m2").value, b2 = +$("gr-b2").value;
+  $("gr-m1v").textContent = sg(m1); $("gr-b1v").textContent = sg(b1); $("gr-m2v").textContent = sg(m2); $("gr-b2v").textContent = sg(b2);
+  var L1 = lineaMB(m1, b1), L2 = lineaMB(m2, b2), r = resuelveSis(L1, L2);
+  $("gr-graf").innerHTML = grafSis(L1, L2, {sinPunto: r.tipo === "uno" && (r.x !== Math.round(r.x) || r.y !== Math.round(r.y))});
+  $("gr-txt").innerHTML = '<div class="linea">' + (r.tipo === "uno" ? T("The lines cross at ", "Las rectas se cruzan en ") + "<strong>(" + sg(r2(r.x)) + ", " + sg(r2(r.y)) + ")</strong>" + (r.x !== Math.round(r.x) || r.y !== Math.round(r.y) ? T(" (rounded): on the graph it is hard to read exactly; the algebra gives the exact value.", " (redondeado): en la gráfica es difícil de leer con exactitud; el álgebra da el valor exacto.") : T(": one solution (independent).", ": una solución (independiente).")) : r.tipo === "ninguna" ? T("Same slope, different intercept: the lines are parallel. No solution (inconsistent).", "Misma pendiente, distinto intercepto: las rectas son paralelas. Ninguna solución (inconsistente).") : T("Same slope and same intercept: it is the same line. Infinitely many solutions (dependent).", "Misma pendiente y mismo intercepto: es la misma recta. Infinitas soluciones (dependiente).")) + "</div>";
+}
+["gr-m1", "gr-b1", "gr-m2", "gr-b2"].forEach(function(id){ $(id).addEventListener("input", grDibuja); }); grDibuja();
+creaPracticaPar("gq", function(){ var x0 = aleatorio(-5, 5), y0 = aleatorio(-5, 5), m1, m2; do { m1 = elige([-3, -2, -1, 1, 2, 3]); m2 = elige([-2, -1, 0, 1, 2]); } while (m1 === m2);
+  var b1 = y0 - m1 * x0, b2 = y0 - m2 * x0, L1 = lineaMB(m1, b1), L2 = lineaMB(m2, b2);
+  return {enun: T("Read the solution on the graph: where do the lines cross?", "Lea la solución en la gráfica: ¿dónde se cruzan las rectas?") + grafSis(L1, L2, {sinPunto: true}), x: x0, y: y0, diag: diagSis(L1, L2, {x: x0, y: y0}),
+    solucion: T("The lines cross at ", "Las rectas se cruzan en ") + par(x0, y0) + ". " + T("Check: ", "Comprobación: ") + y0 + " = " + m1 + "(" + x0 + ") " + (b1 < 0 ? "− " + -b1 : "+ " + b1) + " ✓."};
+});
+
+/* ===== MODULE 2 · From standard form to the kind of system ===== */
+function frTxt(n, d){ d = d || 1; if (d < 0){ n = -n; d = -d; } var g = mcd(Math.abs(n), d) || 1; n /= g; d /= g; return d === 1 ? sg(n) : (n < 0 ? "−" : "") + Math.abs(n) + "/" + d; }
+function aMB(L){ /* ax + by = c → y = mx + b */ var s = "", mt = frTxt(-L.a, L.b), kt;
+  if (L.a) s = (mt === "1" ? "" : mt === "−1" ? "−" : mt.indexOf("/") > 0 ? (mt.charAt(0) === "−" ? "−(" + mt.slice(1) + ")" : "(" + mt + ")") : mt) + "x";
+  if (L.c){ kt = frTxt(L.c, L.b); s += s ? (kt.charAt(0) === "−" ? " − " + kt.slice(1) : " + " + kt) : kt; }
+  return "y = " + (s || "0"); }
+function sisConectar(cl){
+  var a = nz(-4, 4), b = elige([1, 2, -1, -2, 3]), x0 = aleatorio(-4, 4), y0 = aleatorio(-4, 4), k = elige([2, 3, -1, -2]), L1, L2;
+  if (cl === "ind"){ var S = sisCon(x0, y0, {lim: 4}); return S; }
+  if (a < 0 && b < 0){ a = -a; b = -b; }
+  var c = a * x0 + b * y0, g = mcd(mcd(Math.abs(a), Math.abs(b)), Math.abs(c)) || 1; L1 = L3(a / g, b / g, c / g); k = elige([2, 3]);
+  if (cl === "dep") L2 = L3(k * L1.a, k * L1.b, k * L1.c); else L2 = L3(k * L1.a, k * L1.b, k * (L1.c + nz(-5, 5)));
+  if (Math.random() < .5){ var tmp = L1; L1 = L2; L2 = tmp; }
+  return [L1, L2];
+}
+function pasosConectar(S){ var L1 = S[0], L2 = S[1], m1 = -L1.a / L1.b, m2 = -L2.a / L2.b, b1 = L1.c / L1.b, b2 = L2.c / L2.b, cl = Math.abs(m1 - m2) > 1e-9 ? "ind" : Math.abs(b1 - b2) > 1e-9 ? "inc" : "dep";
+  return [T("First equation: ", "Primera ecuación: ") + ecTxt(L1) + " → " + aMB(L1) + ". " + T("Slope ", "Pendiente ") + frTxt(-L1.a, L1.b) + T(", intercept ", ", intercepto ") + frTxt(L1.c, L1.b) + ".",
+    T("Second equation: ", "Segunda ecuación: ") + ecTxt(L2) + " → " + aMB(L2) + ". " + T("Slope ", "Pendiente ") + frTxt(-L2.a, L2.b) + T(", intercept ", ", intercepto ") + frTxt(L2.c, L2.b) + ".",
+    cl === "ind" ? T("The slopes are different: the lines cross at one point.", "Las pendientes son distintas: las rectas se cruzan en un punto.") : cl === "inc" ? T("Same slope, different intercept: parallel lines.", "Misma pendiente, distinto intercepto: rectas paralelas.") : T("Same slope and same intercept: the same line.", "Misma pendiente y mismo intercepto: la misma recta."),
+    "<strong>" + {ind: T("Independent: one solution.", "Independiente: una solución."), inc: T("Inconsistent: no solution.", "Inconsistente: ninguna solución."), dep: T("Dependent: infinitely many solutions.", "Dependiente: infinitas soluciones.")}[cl] + "</strong>"]; }
+var CN = null;
+pasoAPaso4("cn", function(){ CN = sisConectar(elige(["ind", "inc", "dep"])); return {enun: T("What kind of system is ", "¿Qué tipo de sistema es ") + sisHTML(CN[0], CN[1]) + "?", pasos: pasosConectar(CN), inicio: function(){ $("cn-graf").innerHTML = ""; }, fin: function(){ $("cn-graf").innerHTML = grafSis(CN[0], CN[1]); }}; });
+var NOMK = {ind: T("Independent: one solution", "Independiente: una solución"), inc: T("Inconsistent: no solution", "Inconsistente: ninguna solución"), dep: T("Dependent: infinitely many solutions", "Dependiente: infinitas soluciones")};
+OMR("kq", function(){ var cl = elige(["ind", "inc", "dep"]), S = sisConectar(cl), r = resuelveSis(S[0], S[1]), real = r.tipo === "uno" ? "ind" : r.tipo === "ninguna" ? "inc" : "dep";
+  return {enun: T("Without graphing, what kind of system is ", "Sin graficar, ¿qué tipo de sistema es ") + sisHTML(S[0], S[1]) + "?", correcta: real, enOrden: true, opciones: ["ind", "inc", "dep"].map(function(x){ return {clave: x, html: NOMK[x]}; }),
+    pista: T("Write each equation as y = mx + b and compare the slopes and the intercepts.", "Escriba cada ecuación como y = mx + b y compare las pendientes y los interceptos."), bien: pasosConectar(S).slice(0, 3).join(" ")};
+});
+
+/* ===== MODULE 3 · Translating ===== */
+function tradCaso(){
+  var tipo = aleatorio(0, 4), s, d, k, a, b, tot;
+  if (tipo === 0){ s = aleatorio(8, 30); d = aleatorio(2, 6); return {enun: T("“The sum of two numbers is " + s + " and their difference is " + d + ".” The system is:", "«La suma de dos números es " + s + " y su diferencia es " + d + ".» El sistema es:"), ok: "x + y = " + s + " ; x − y = " + d, mal: ["x + y = " + d + " ; x − y = " + s, "x · y = " + s + " ; x − y = " + d, "x + y = " + s + " ; x · y = " + d], porque: T("“Sum” is + and “difference” is −.", "«Suma» es + y «diferencia» es −.")}; }
+  if (tipo === 1){ k = aleatorio(2, 6); return {enun: T("“An adult ticket (a) costs $" + k + " more than a child ticket (c).” The equation is:", "«Un boleto de adulto (a) cuesta $" + k + " más que uno de niño (n).» La ecuación es:"), ok: T("a = c + " + k, "a = n + " + k), mal: [T("c = a + " + k, "n = a + " + k), T("a + c = " + k, "a + n = " + k), T("a = " + k + "c", "a = " + k + "n")], porque: T("The adult ticket is the child ticket plus " + k + ".", "El de adulto es el de niño más " + k + ".")}; }
+  if (tipo === 2){ k = elige([2, 3, 4]); var veces = {2: T("twice", "el doble de"), 3: T("three times", "el triple de"), 4: T("four times", "el cuádruple de")}[k]; return {enun: T("“A father's age (f) is " + veces + " his son's age (s).” The equation is:", "«La edad del padre (p) es " + veces + " la edad del hijo (h).» La ecuación es:"), ok: T("f = " + k + "s", "p = " + k + "h"), mal: [T("s = " + k + "f", "h = " + k + "p"), T("f = s + " + k, "p = h + " + k), T("f + s = " + k, "p + h = " + k)], porque: T("The father is the older one: multiply the son's age by " + k + ".", "El padre es el mayor: se multiplica la edad del hijo por " + k + ".")}; }
+  if (tipo === 3){ a = aleatorio(2, 5); do { b = aleatorio(1, 4); } while (b === a); tot = aleatorio(10, 40); return {enun: T("“" + a + " notebooks (n) and " + b + " pens (p) cost $" + tot + ".” The equation is:", "«" + a + " cuadernos (c) y " + b + " plumas (p) cuestan $" + tot + ".» La ecuación es:"), ok: T(a + "n + " + (b === 1 ? "" : b) + "p = " + tot, a + "c + " + (b === 1 ? "" : b) + "p = " + tot), mal: [T((b === 1 ? "" : b) + "n + " + a + "p = " + tot, (b === 1 ? "" : b) + "c + " + a + "p = " + tot), T("n + p = " + tot, "c + p = " + tot), T(a + "n + " + (b === 1 ? "" : b) + "p = 0", a + "c + " + (b === 1 ? "" : b) + "p = 0")], porque: T("Each number goes with its own item: " + a + " notebooks, " + b + " pens.", "Cada número va con su artículo: " + a + " cuadernos, " + b + " plumas.")}; }
+  tot = aleatorio(10, 40); k = aleatorio(2, 8); return {enun: T("“There are " + tot + " coins in all, and there are " + k + " more dimes (d) than nickels (n).” The system is:", "«Hay " + tot + " monedas en total, y hay " + k + " monedas de 10¢ (d) más que de 5¢ (n).» El sistema es:"), ok: "n + d = " + tot + " ; d = n + " + k, mal: ["n + d = " + tot + " ; n = d + " + k, "n + d = " + k + " ; d = n + " + tot, "5n + 10d = " + tot + " ; d = n + " + k], porque: T("“In all” is the sum; “more dimes than nickels” means d = n + " + k + ".", "«En total» es la suma; «más de 10¢ que de 5¢» significa d = n + " + k + ".")};
+}
+OMR("tq", function(){ var c = tradCaso(); return {enun: c.enun, correcta: "ok", opciones: [{clave: "ok", html: c.ok}].concat(c.mal.map(function(m, i){ return {clave: "m" + i, html: m}; })), pista: T("Translate one phrase at a time.", "Traduzca una frase a la vez."), bien: c.porque}; });
+
+/* ===== MODULE 4 · The break-even point ===== */
+function eqDibuja(){
+  var F = +$("pe-f").value, v = +$("pe-v").value, p = +$("pe-p").value;
+  $("pe-fv").textContent = F; $("pe-vv").textContent = v; $("pe-pv").textContent = p;
+  var W = 470, H = 300, m = 50, out = $("pe-txt");
+  if (p <= v){ $("pe-graf").innerHTML = ""; out.innerHTML = '<div class="linea"><strong style="color:#c62828">' + T("The price is not higher than the cost per unit: the business never breaks even. Every sale adds to the loss.", "El precio no supera el costo por unidad: el negocio nunca llega al equilibrio. Cada venta aumenta la pérdida.") + "</strong></div>"; return; }
+  var xe = F / (p - v), xmax = Math.max(10, Math.ceil(xe * 2 / 10) * 10), ymax = p * xmax * 1.05, X = function(x){ return m + x / xmax * (W - m - 20); }, Y = function(y){ return H - 40 - y / ymax * (H - 70); };
+  var s = '<polygon points="' + X(0) + "," + Y(F) + " " + X(xe) + "," + Y(F + v * xe) + " " + X(0) + "," + Y(0) + '" fill="rgba(198,40,40,.13)"/>' +
+    '<polygon points="' + X(xe) + "," + Y(p * xe) + " " + X(xmax) + "," + Y(p * xmax) + " " + X(xmax) + "," + Y(F + v * xmax) + '" fill="rgba(46,125,50,.15)"/>';
+  s += '<line x1="' + m + '" y1="' + Y(0) + '" x2="' + (W - 12) + '" y2="' + Y(0) + '" stroke="#263238" stroke-width="2"/><line x1="' + m + '" y1="' + Y(0) + '" x2="' + m + '" y2="16" stroke="#263238" stroke-width="2"/>';
+  var pt = xmax / 5, i; for (i = 0; i <= xmax + 1e-9; i += pt) s += '<text x="' + X(i).toFixed(1) + '" y="' + (Y(0) + 16) + '" font-size="11" text-anchor="middle" fill="#455a64">' + Math.round(i) + "</text>";
+  var py = Math.pow(10, Math.floor(Math.log10(ymax / 4))); var pp = Math.ceil(ymax / 5 / py) * py; for (i = pp; i < ymax; i += pp) s += '<text x="' + (m - 6) + '" y="' + (Y(i) + 4).toFixed(1) + '" font-size="11" text-anchor="end" fill="#455a64">$' + Math.round(i).toLocaleString("en-US") + "</text>";
+  s += '<text x="' + (W - 12) + '" y="' + (Y(0) + 32) + '" font-size="12" text-anchor="end" fill="#263238">' + T("units sold (x)", "unidades vendidas (x)") + "</text>";
+  s += '<line x1="' + X(0) + '" y1="' + Y(F) + '" x2="' + X(xmax) + '" y2="' + Y(F + v * xmax) + '" stroke="#c62828" stroke-width="3"/><line x1="' + X(0) + '" y1="' + Y(0) + '" x2="' + X(xmax) + '" y2="' + Y(p * xmax) + '" stroke="#1565c0" stroke-width="3"/>';
+  var xw = 160 / (W - m - 20) * xmax; s += '<text x="' + (X(0) + 6) + '" y="' + (Y(F + v * xw) - 9).toFixed(1) + '" font-size="13" font-weight="700" text-anchor="start" fill="#c62828" paint-order="stroke" stroke="#fff" stroke-width="4">' + T("costs", "costos") + " C = " + F + " + " + (v === 1 ? "" : v) + 'x</text><text x="' + (X(xmax) - 4) + '" y="' + (Y(p * xmax) - 8) + '" font-size="13" font-weight="700" text-anchor="end" fill="#1565c0" paint-order="stroke" stroke="#fff" stroke-width="4">' + T("revenue R = ", "ingresos I = ") + p + "x</text>";
+  var xl = xe * .3, gl = Y(p * xl) - Y(F + v * xl), ll = gl >= 22 ? [X(xl), (Y(F + v * xl) + Y(p * xl)) / 2 + 5, "middle"] : [X(xe * .6) + 6, Y(p * xe * .6) + 18, "start"], xg = xe + .7 * (xmax - xe), gap = Y(F + v * xg) - Y(p * xg), lg = gap >= 20 ? [X(xg), (Y(F + v * xg) + Y(p * xg)) / 2 + 5, "middle"] : [X((xe + xmax) / 2) - 6, Y(p * (xe + xmax) / 2) - 8, "end"];
+  s += '<text x="' + ll[0].toFixed(1) + '" y="' + ll[1].toFixed(1) + '" font-size="13" font-weight="700" fill="#c62828" text-anchor="' + ll[2] + '" paint-order="stroke" stroke="#fff" stroke-width="4">' + T("loss", "pérdida") + '</text><text x="' + lg[0].toFixed(1) + '" y="' + lg[1].toFixed(1) + '" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="' + lg[2] + '" paint-order="stroke" stroke="#fff" stroke-width="4">' + T("profit", "ganancia") + "</text>";
+  s += '<circle cx="' + X(xe).toFixed(1) + '" cy="' + Y(p * xe).toFixed(1) + '" r="7" fill="#2e7d32" stroke="#fff" stroke-width="2"/><text x="' + (X(xe) + 10).toFixed(1) + '" y="' + (Y(p * xe) + 24).toFixed(1) + '" font-size="13" font-weight="700" text-anchor="start" fill="#2e7d32" paint-order="stroke" stroke="#fff" stroke-width="4">' + T("break-even", "equilibrio") + " (" + r2(xe) + ", $" + r2(p * xe).toLocaleString("en-US") + ")</text>";
+  $("pe-graf").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + T("Costs and revenue: they meet at " + r2(xe) + " units. Before that, a loss; after it, a profit.", "Costos e ingresos: se igualan en " + r2(xe) + " unidades. Antes, pérdida; después, ganancia.") + '" style="display:block;margin:auto;max-width:' + W + 'px;width:100%">' + s + "</svg>";
+  out.innerHTML = '<div class="linea">' + F + " + " + (v === 1 ? "" : v) + "x = " + p + "x → " + F + " = " + (p - v === 1 ? "" : p - v) + "x → x = " + r2(xe) + (xe !== Math.round(xe) ? T(" (round up: " + Math.ceil(xe) + " units are needed to stop losing)", " (se redondea hacia arriba: hacen falta " + Math.ceil(xe) + " unidades para dejar de perder)") : "") + ".</div>" +
+    '<div class="linea">' + T("Below " + r2(xe) + " units, costs are above revenue: <strong>loss</strong>. Above it: <strong>profit</strong>.", "Por debajo de " + r2(xe) + " unidades, los costos superan a los ingresos: <strong>pérdida</strong>. Por encima: <strong>ganancia</strong>.") + "</div>";
+}
+["pe-f", "pe-v", "pe-p"].forEach(function(id){ $(id).addEventListener("input", eqDibuja); }); eqDibuja();
+OMR("bq", function(){ var v = aleatorio(2, 9), d = aleatorio(2, 8), p = v + d, xe = d * aleatorio(2, 6) * elige([1, 5]), F = d * xe, tipo = aleatorio(0, 2);
+  if (tipo === 0) return {enun: T("Costs C = " + F + " + " + v + "x; revenue R = " + p + "x. What is the break-even point (units)?", "Costos C = " + F + " + " + v + "x ; ingresos I = " + p + "x. ¿Punto de equilibrio (unidades)?"), correcta: "ok",
+    opciones: [{clave: "ok", html: String(xe)}, {clave: "f", html: String(Math.round(F / p))}, {clave: "c", html: String(F)}, {clave: "s", html: String(Math.round(F / (p + v)))}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }),
+    pista: T("Set C equal to R and solve for x.", "Iguale C con I y despeje x."), bien: F + " + " + v + "x = " + p + "x → " + F + " = " + d + "x → x = " + xe + "."};
+  var k = tipo === 1 ? xe + aleatorio(1, 10) : Math.max(1, xe - aleatorio(1, xe - 1));
+  return {enun: T("Costs C = " + F + " + " + v + "x; revenue R = " + p + "x. The break-even point is " + xe + " units. If it sells " + k + " units, the business:", "Costos C = " + F + " + " + v + "x ; ingresos I = " + p + "x. El punto de equilibrio es " + xe + " unidades. Si vende " + k + " unidades, la empresa:"), correcta: tipo === 1 ? "g" : "p", enOrden: true,
+    opciones: [{clave: "g", html: T("makes money", "gana dinero")}, {clave: "p", html: T("loses money", "pierde dinero")}, {clave: "i", html: T("stays even", "queda igual")}], pista: T("Is " + k + " above or below " + xe + "?", "¿" + k + " está por encima o por debajo de " + xe + "?"),
+    bien: "C = " + F + " + " + v + "(" + k + ") = " + (F + v * k) + "; I = " + p + "(" + k + ") = " + p * k + ". " + (p * k > F + v * k ? T("Revenue is greater: profit of $" + (p * k - F - v * k) + ".", "Los ingresos son mayores: ganancia de $" + (p * k - F - v * k) + ".") : T("Costs are greater: loss of $" + (F + v * k - p * k) + ".", "Los costos son mayores: pérdida de $" + (F + v * k - p * k) + "."))};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

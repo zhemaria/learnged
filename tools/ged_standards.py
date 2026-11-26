@@ -197,6 +197,11 @@ CCR = {
  "A-APR.6": ("E", "Rewrite simple rational expressions in different forms; write a(x)/b(x) in the form q(x) + r(x)/b(x), where a(x), b(x), q(x), and r(x) are polynomials with the degree of r(x) less than the degree of b(x), using inspection, long division, or, for the more complicated examples, a computer algebra system."),
  "A-APR.7": ("E", "Understand that rational expressions form a system analogous to the rational numbers, closed under addition, subtraction, multiplication, and division by a nonzero rational expression; add, subtract, multiply, and divide rational expressions."),
  "A-REI.2": ("E", "Solve simple rational and radical equations in one variable, and give examples showing how extraneous solutions may arise."),
+ "8.EE.8": ("D", "Analyze and solve pairs of simultaneous linear equations: understand that solutions correspond to points of intersection of their graphs; solve systems algebraically and estimate solutions by graphing; solve real-world and mathematical problems leading to two linear equations in two variables."),
+ "A-REI.5": ("E", "Prove that, given a system of two equations in two variables, replacing one equation by the sum of that equation and a multiple of the other produces a system with the same solutions."),
+ "A-REI.6": ("E", "Solve systems of linear equations exactly and approximately (e.g., with graphs), focusing on pairs of linear equations in two variables."),
+ "A-CED.2": ("E", "Create equations in two or more variables to represent relationships between quantities; graph equations on coordinate axes with labels and scales."),
+ "A-CED.3": ("E", "Represent constraints by equations or inequalities, and by systems of equations and/or inequalities, and interpret solutions as viable or nonviable options in a modeling context."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -432,6 +437,12 @@ LESSONS = [
   {"direct": ["A.1.h"], "builds": ["A.1.f"], "mp": ["MP.3.a", "MP.4.b", "MP.5.a"], "ccr": ["A-APR.7", "A-APR.6"]}),
  ("level-4/lesson-5-3.html", "5.3", "Solving rational equations",
   {"direct": ["A.1.h"], "builds": ["A.2.b", "A.4.a"], "mp": ["MP.1.b", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.2", "A-CED.1"]}),
+ ("level-4/lesson-6-1.html", "6.1", "Solving systems of equations by substitution",
+  {"direct": ["A.2.d"], "builds": ["A.2.b", "A.2.c"], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["A-REI.6", "8.EE.8"]}),
+ ("level-4/lesson-6-2.html", "6.2", "Solving systems by elimination and classifying systems",
+  {"direct": ["A.2.d"], "builds": ["A.2.b"], "mp": ["MP.1.c", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.5", "A-REI.6", "8.EE.8"]}),
+ ("level-4/lesson-6-3.html", "6.3", "Graphing systems and modeling",
+  {"direct": ["A.2.d", "A.2.b"], "builds": ["A.2.c", "A.5.b", "A.5.d", "A.6.c"], "mp": ["MP.2.a", "MP.2.c", "MP.4.c"], "ccr": ["A-REI.6", "8.EE.8", "A-CED.2", "A-CED.3"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

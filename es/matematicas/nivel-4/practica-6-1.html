@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 6.1 · Resolver sistemas de ecuaciones por sustitución — práctica (español) — construida con tools/build_n4_lesson_6_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 6.1 · Resolver sistemas de ecuaciones por sustitución · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-6-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .sistema{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;margin:2px 4px;}
+  .sistema .llave{font-size:2.5em;line-height:1;font-weight:300;}
+  .sistema .ecs{display:flex;flex-direction:column;line-height:1.35;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales</div>
+    <h1>Lección 6.1 · Resolver sistemas de ecuaciones por sustitución</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#sustitucion">Los cinco pasos de la sustitución</a></li>
+      <li><a href="#verificar">Verificar un par ordenado</a></li>
+      <li><a href="#contexto">Plantear problemas de contexto</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="sustitucion" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Los cinco pasos de la sustitución</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>1. Despejar una variable en una de las ecuaciones. 2. Sustituir esa expresión en la otra. 3. Resolver la ecuación de una variable. 4. Sustituir ese valor para hallar la otra variable. 5. Verificar en las dos ecuaciones.</p>
+      <div class="panel"><p class="enun" id="su-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="su-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="su-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="su-nuevo">Otro sistema</button></div></div>
+      <div class="pasos" id="su-pasos" aria-live="polite"></div>
+      <div id="su-graf"></div>
+      <div class="caja-tip">Despeje la variable de coeficiente 1 o −1, para evitar fracciones, y use paréntesis al sustituir.</div>
+      <h3>Practique: resuelva por sustitución</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="par-campos" role="group" aria-label="Su respuesta como par ordenado"><span class="pa" aria-hidden="true">(</span>
+          <div class="campo"><label for="sq-x">x</label><input type="text" inputmode="decimal" autocomplete="off" id="sq-x"></div><span class="pa" aria-hidden="true">,</span>
+          <div class="campo"><label for="sq-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="sq-y"></div><span class="pa" aria-hidden="true">)</span></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="sq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="sq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="verificar">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Verificar un par ordenado</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Escriba cualquier par (x, y). Se sustituye en las dos ecuaciones y se sitúa en la gráfica. Solo el punto de cruce cumple las dos.</p>
+      <div class="panel"><p class="enun" id="ve-sis"></p><div class="campos"><div class="campo"><label for="ve-x">x =</label><input type="text" inputmode="decimal" autocomplete="off" id="ve-x" style="width:6em"></div><div class="campo"><label for="ve-y">y =</label><input type="text" inputmode="decimal" autocomplete="off" id="ve-y" style="width:6em"></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="ve-ver">Verificar el par</button><button type="button" class="btn-sec" id="ve-otro">Otro sistema</button></div></div>
+      <div class="salida" aria-live="polite" id="ve-txt"></div>
+      <div id="ve-graf"></div>
+      <h3>Practique: ¿es solución?</h3>
+      <div class="practica" id="vq">
+        <div class="enun" id="vq-enun"></div>
+        <div class="opciones" id="vq-opciones"></div>
+        <div class="fb" id="vq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="vq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="vq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="contexto">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Plantear problemas de contexto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Nombre las incógnitas, traduzca cada dato en una ecuación, resuelva el sistema y relea la pregunta para responder lo que pide.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="ct-ex">Situación</label><select id="ct-ex"><option value="0">Cafés y tés</option><option value="1">Empanadas y refrescos</option><option value="2">Entradas de adulto y de niño</option><option value="3">Dos números</option><option value="4">El perímetro del terreno</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="ct-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ct-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="ct-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="ct-nuevo">Empezar de nuevo</button></div></div>
+      <div class="pasos" id="ct-pasos" aria-live="polite"></div>
+      <h3>Practique: resuelva la situación</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="opciones" id="cq-opciones"></div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="cq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 6 · Sistemas de ecuaciones lineales · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/sys4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function exprCF(p, q, v){ if (!q) return exprTxt(p, 0, v); return sg(q) + (p < 0 ? " − " : " + ") + terminoXY(Math.abs(p), v, true); }
+function exprTxt(p, q, v){ var s = terminoXY(p, v, true); if (q) s += s ? (q < 0 ? " − " + -q : " + " + q) : sg(q); return s || "0"; }
+function nuevoSis(){ var x0 = nz(-6, 6), y0 = aleatorio(-6, 6), f1 = elige(["y", "y", "x", "uno"]); var S = sisCon(x0, y0, {f1: f1, f2: "std", lim: 4}); return {L1: S[0], L2: S[1], x: x0, y: y0}; }
+/* Substitution steps for a system where L1 has a coefficient 1 or −1 */
+function pasosSust(c){
+  var L1 = c.L1, L2 = c.L2, P = [], despY = Math.abs(L1.b) === 1 && (L1.vis ? /^y/.test(L1.vis) : true) || Math.abs(L1.a) !== 1;
+  var p, q, ot, v, w;
+  if (despY){ p = -L1.a / L1.b; q = L1.c / L1.b; v = "y"; w = "x"; } else { p = -L1.b / L1.a; q = L1.c / L1.a; v = "x"; w = "y"; }
+  var expr = exprTxt(p, q, w);
+  P.push(L1.vis ? T("The first equation already has " + v + " alone: ", "La primera ecuación ya tiene " + v + " despejada: ") + v + " = " + expr + "." : T("Solve the first equation for " + v + ": ", "Se despeja " + v + " en la primera ecuación: ") + v + " = " + expr + ".");
+  var kw = despY ? L2.a : L2.b, kv = despY ? L2.b : L2.a;
+  var sustit = (despY ? terminoXY(kw, w, true) + (kv < 0 ? " − " : " + ") + (Math.abs(kv) === 1 ? "" : Math.abs(kv)) + "(" + expr + ")" : (kv === 1 ? "" : kv === -1 ? "−" : sg(kv)) + "(" + expr + ")" + terminoXY(kw, w, false)) + " = " + sg(L2.c);
+  P.push(T("Substitute it into the other equation: ", "Se sustituye en la otra ecuación: ") + sustit + ".");
+  var A = kw + kv * p, Bc = kv * q, val = (L2.c - Bc) / A;
+  P.push(T("Solve: ", "Se resuelve: ") + terminoXY(A, w, true) + (Bc ? (Bc < 0 ? " − " + -Bc : " + " + Bc) : "") + " = " + sg(L2.c) + (Bc ? ", " + terminoXY(A, w, true) + " = " + sg(L2.c - Bc) : "") + ", " + w + " = " + sg(val) + ".");
+  var otro = p * val + q;
+  P.push(T("Find ", "Se halla ") + v + ": " + v + " = " + (p ? (p === 1 ? "" : p === -1 ? "−" : p) + "(" + sg(val) + ")" + (q ? (q < 0 ? " − " + -q : " + " + q) : "") : sg(q)) + " = " + sg(otro) + ".");
+  P.push(T("Check in both equations: ", "Se verifica en las dos ecuaciones: ") + sustTxt(L1, c.x, c.y) + " ✓; " + sustTxt(L2, c.x, c.y) + " ✓.");
+  P.push(T("Solution: ", "Solución: ") + "<strong>" + par(c.x, c.y) + "</strong>. " + T("On the graph, it is the point where the two lines cross.", "En la gráfica es el punto donde se cruzan las dos rectas."));
+  return P;
+}
+var SU = null;
+pasoAPaso4("su", function(){ SU = nuevoSis(); return {enun: T("Solve the system ", "Resuelva el sistema ") + sisHTML(SU.L1, SU.L2) + ".", pasos: pasosSust(SU), inicio: function(){ $("su-graf").innerHTML = '<p class="nota">' + T("The graph appears when you reach the check.", "La gráfica aparece al llegar a la verificación.") + "</p>"; }, fin: function(){ $("su-graf").innerHTML = grafSis(SU.L1, SU.L2); }}; });
+creaPracticaPar("sq", function(){ var c = nuevoSis();
+  return {enun: T("Solve by substitution: ", "Resuelva por sustitución: ") + sisHTML(c.L1, c.L2), x: c.x, y: c.y, diag: diagSis(c.L1, c.L2, c), solucion: pasosSust(c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 2 · Checking an ordered pair ===== */
+var VE = null;
+function veNuevo(){ VE = nuevoSis(); $("ve-sis").innerHTML = sisHTML(VE.L1, VE.L2); $("ve-x").value = ""; $("ve-y").value = ""; $("ve-txt").innerHTML = ""; $("ve-graf").innerHTML = grafSis(VE.L1, VE.L2, {sinPunto: true}); }
+$("ve-ver").addEventListener("click", function(){
+  var x = leeDecimal($("ve-x").value), y = leeDecimal($("ve-y").value);
+  if (x === null || y === null){ $("ve-txt").innerHTML = '<div class="linea">' + T("Type a number in each box.", "Escriba un número en cada casilla.") + "</div>"; return; }
+  var c1 = cumple(VE.L1, x, y), c2 = cumple(VE.L2, x, y), ok = '<strong style="color:#2e7d32">✓</strong>', no = '<strong style="color:#c62828">✗</strong>';
+  $("ve-txt").innerHTML = '<div class="linea">' + T("First: ", "Primera: ") + sustTxt(VE.L1, x, y) + (c1 ? " = " + sg(VE.L1.c) + " " + ok : T(", not ", ", no ") + sg(VE.L1.c) + " " + no) + "</div>" +
+    '<div class="linea">' + T("Second: ", "Segunda: ") + sustTxt(VE.L2, x, y) + (c2 ? " = " + sg(VE.L2.c) + " " + ok : T(", not ", ", no ") + sg(VE.L2.c) + " " + no) + "</div>" +
+    '<div class="linea"><strong>' + (c1 && c2 ? T("It works in both: " + par(x, y) + " is the solution. It is where the lines cross.", "Cumple las dos: " + par(x, y) + " es la solución. Es donde se cruzan las rectas.") : c1 || c2 ? T("It works in only one: the point is on one line but not on the other. It is not the solution.", "Cumple solo una: el punto está sobre una recta pero no sobre la otra. No es la solución.") : T("It works in neither: the point is on neither line.", "No cumple ninguna: el punto no está en ninguna de las dos rectas.")) + "</strong></div>";
+  $("ve-graf").innerHTML = grafSis(VE.L1, VE.L2, {sinPunto: !(c1 && c2), punto: c1 && c2 ? null : [x, y]});
+});
+$("ve-otro").addEventListener("click", veNuevo); veNuevo();
+OMR("vq", function(){ var c = nuevoSis(), tipo = elige(["ambas", "primera", "segunda", "ninguna"]), x = c.x, y = c.y, k = 0;
+  if (tipo !== "ambas"){ do { if (tipo === "primera"){ var t = nz(-3, 3); if (c.L1.b){ x = c.x + t * c.L1.b; y = c.y - t * c.L1.a; } } else if (tipo === "segunda"){ var u = nz(-3, 3); x = c.x + u * c.L2.b; y = c.y - u * c.L2.a; } else { x = c.x + nz(-3, 3); y = c.y + nz(-3, 3); } k++; } while (((cumple(c.L1, x, y) ? 1 : 0) + (cumple(c.L2, x, y) ? 2 : 0)) !== {ambas: 3, primera: 1, segunda: 2, ninguna: 0}[tipo] && k < 50); }
+  var r = (cumple(c.L1, x, y) ? 1 : 0) + (cumple(c.L2, x, y) ? 2 : 0), ok = ["ninguna", "primera", "segunda", "ambas"][r];
+  return {enun: T("Is ", "¿Es ") + par(x, y) + T(" a solution of ", " solución de ") + sisHTML(c.L1, c.L2) + "?", correcta: ok, enOrden: true,
+    opciones: [{clave: "ambas", html: T("Yes, it works in both", "Sí, cumple ambas")}, {clave: "primera", html: T("No: it works only in the first", "No: solo cumple la primera")}, {clave: "segunda", html: T("No: it works only in the second", "No: solo cumple la segunda")}, {clave: "ninguna", html: T("No: it works in neither", "No: no cumple ninguna")}],
+    pista: T("Substitute the pair in each equation, with parentheses.", "Sustituya el par en cada ecuación, con paréntesis."), bien: T("First: ", "Primera: ") + sustTxt(c.L1, x, y) + (r & 1 ? " ✓" : T(" (should be ", " (debería dar ") + sg(c.L1.c) + ")") + ". " + T("Second: ", "Segunda: ") + sustTxt(c.L2, x, y) + (r & 2 ? " ✓" : T(" (should be ", " (debería dar ") + sg(c.L2.c) + ")") + "."};
+});
+
+/* ===== MODULE 3 · Setting up word problems ===== */
+var ART = [
+  {n: [T("coffee", "café"), T("tea", "té")], un: [T("one coffee", "un café"), T("one tea", "un té")], v: ["c", "t"], intro: T("At a coffee shop", "En una cafetería"), pl: [T("coffees", "cafés"), T("teas", "tés")], p: [2, 3]},
+  {n: [T("empanada", "empanada"), T("soda", "refresco")], un: [T("one empanada", "una empanada"), T("one soda", "un refresco")], v: ["e", "r"], intro: T("At a food stand", "En un puesto de comida"), pl: [T("empanadas", "empanadas"), T("sodas", "refrescos")], p: [2, 3]},
+  {n: [T("adult ticket", "entrada de adulto"), T("child ticket", "entrada de niño")], un: [T("one adult ticket", "una entrada de adulto"), T("one child ticket", "una entrada de niño")], v: ["a", "n"], intro: T("At the movies", "En el cine"), pl: [T("adult tickets", "entradas de adulto"), T("child tickets", "entradas de niño")], p: [8, 5]},
+  {n: [T("notebook", "cuaderno"), T("pen", "pluma")], un: [T("one notebook", "un cuaderno"), T("one pen", "una pluma")], v: ["c", "p"], intro: T("At a store", "En una papelería"), pl: [T("notebooks", "cuadernos"), T("pens", "plumas")], p: [3, 1]}];
+function casoPrecio(fijo){
+  var it = fijo !== undefined ? ART[fijo] : elige(ART), p1 = fijo !== undefined ? it.p[0] : aleatorio(2, 9), p2 = fijo !== undefined ? it.p[1] : aleatorio(1, 8), k1, k2, j1, j2;
+  if (fijo !== undefined){ k1 = [2, 3, 2, 3][fijo]; k2 = [1, 2, 3, 2][fijo]; j1 = 1; j2 = [1, 2, 1, 1][fijo]; }
+  else { do { k1 = aleatorio(1, 4); k2 = aleatorio(1, 4); j1 = 1; j2 = elige([1, 1, 2]); p2 = aleatorio(1, 8); } while (k1 * j2 === k2 * j1 || p1 === p2); }
+  var L1 = L3(k1, k2, k1 * p1 + k2 * p2), L2 = L3(j1, j2, j1 * p1 + j2 * p2), cnt = function(k, i){ return k + " " + (k === 1 ? it.n[i] : it.pl[i]); };
+  var txt = it.intro + ", " + cnt(k1, 0) + T(" and ", " y ") + cnt(k2, 1) + T(" cost $", " cuestan $") + L1.c + "; " + cnt(j1, 0) + T(" and ", " y ") + cnt(j2, 1) + T(" cost $", " cuestan $") + L2.c + ".";
+  return {it: it, p1: p1, p2: p2, L1: L1, L2: L2, txt: txt};
+}
+function pasosPrecio(c){ var v = c.it.v, L2 = c.L2, L1 = c.L1;
+  var expr = exprCF(-L2.b, L2.c, v[1]);
+  return [T("Name the unknowns: let ", "Nombrar las incógnitas: sea ") + "<strong>" + v[0] + "</strong>" + T(" be the price of ", " el precio de ") + c.it.un[0] + T(" and ", " y ") + "<strong>" + v[1] + "</strong>" + T(" the price of ", " el de ") + c.it.un[1] + T(", in dollars.", ", en dólares."),
+    T("First fact: ", "Primer dato: ") + "<strong>" + ecTxt(L1, v[0], v[1]) + "</strong>.", T("Second fact: ", "Segundo dato: ") + "<strong>" + ecTxt(L2, v[0], v[1]) + "</strong>.",
+    T("Solve the second for ", "Se despeja ") + v[0] + T(": ", " en la segunda: ") + v[0] + " = " + expr + ".",
+    T("Substitute: ", "Se sustituye: ") + (L1.a === 1 ? "" : L1.a) + "(" + expr + ") + " + terminoXY(L1.b, v[1], true) + " = " + L1.c + " → <strong>" + v[1] + " = " + c.p2 + "</strong>; " + v[0] + " = " + sg(L2.c) + " − " + (L2.b === 1 ? "" : L2.b) + "(" + c.p2 + ")" + " = <strong>" + c.p1 + "</strong>.",
+    T("Reread the question: ", "Releer la pregunta: ") + c.it.un[0] + T(" costs ", " cuesta ") + "<strong>$" + c.p1 + "</strong>" + T(" and ", " y ") + c.it.un[1] + ", <strong>$" + c.p2 + "</strong>. " + T("Check: ", "Comprobación: ") + sustTxt(L1, c.p1, c.p2) + " ✓."]; }
+function pasosNumeros(s, d){ var x = (s + d) / 2, y = (s - d) / 2; return [T("Name: let x be the bigger number and y the smaller.", "Nombrar: sean x el número mayor e y el menor."), T("“Their sum is " + s + "” → ", "«Su suma es " + s + "» → ") + "<strong>x + y = " + s + "</strong>.", T("“Their difference is " + d + "” → ", "«Su diferencia es " + d + "» → ") + "<strong>x − y = " + d + "</strong>.", T("Solve the second for x: x = y + " + d + ".", "Se despeja x en la segunda: x = y + " + d + "."), T("Substitute: (y + " + d + ") + y = " + s + ", so 2y = " + (s - d) + ", <strong>y = " + y + "</strong>, and x = <strong>" + x + "</strong>.", "Se sustituye: (y + " + d + ") + y = " + s + ", así que 2y = " + (s - d) + ", <strong>y = " + y + "</strong>, y x = <strong>" + x + "</strong>."), T("Reread: the numbers are <strong>" + x + " and " + y + "</strong>. Check: " + x + " + " + y + " = " + s + " ✓ and " + x + " − " + y + " = " + d + " ✓.", "Releer: los números son <strong>" + x + " y " + y + "</strong>. Comprobación: " + x + " + " + y + " = " + s + " ✓ y " + x + " − " + y + " = " + d + " ✓.")]; }
+function pasosPerimetro(P2, d){ var A = (P2 / 2 - d) / 2, L = A + d; return [T("Name: let L be the length and W the width, in feet.", "Nombrar: sea L el largo y A el ancho, en pies."), T("The perimeter of a rectangle is 2L + 2W → <strong>2L + 2W = " + P2 + "</strong>; divide by 2: L + W = " + P2 / 2 + ".", "El perímetro de un rectángulo es 2L + 2A → <strong>2L + 2A = " + P2 + "</strong>; se divide entre 2: L + A = " + P2 / 2 + "."), T("“The length is " + d + " feet more than the width” → <strong>L = W + " + d + "</strong>. It is already solved for L.", "«El largo mide " + d + " pies más que el ancho» → <strong>L = A + " + d + "</strong>. Ya viene despejado."), T("Substitute: (W + " + d + ") + W = " + P2 / 2 + ".", "Se sustituye: (A + " + d + ") + A = " + P2 / 2 + "."), T("Solve: 2W = " + (P2 / 2 - d) + ", <strong>W = " + A + "</strong>, and L = <strong>" + L + "</strong>.", "Se resuelve: 2A = " + (P2 / 2 - d) + ", <strong>A = " + A + "</strong>, y L = <strong>" + L + "</strong>."), T("Reread: the length is <strong>" + L + " ft</strong> and the width, <strong>" + A + " ft</strong>. Check: 2(" + L + ") + 2(" + A + ") = " + P2 + " ✓.", "Releer: el largo mide <strong>" + L + " pies</strong> y el ancho, <strong>" + A + " pies</strong>. Comprobación: 2(" + L + ") + 2(" + A + ") = " + P2 + " ✓.")]; }
+var CASOS_CT = [function(){ var c = casoPrecio(0); return {enun: c.txt + T(" How much does each one cost?", " ¿Cuánto cuesta cada uno?"), pasos: pasosPrecio(c)}; },
+  function(){ var c = casoPrecio(1); return {enun: c.txt + T(" How much does each thing cost?", " ¿Cuánto cuesta cada cosa?"), pasos: pasosPrecio(c)}; },
+  function(){ var c = casoPrecio(2); return {enun: c.txt + T(" How much is each ticket?", " ¿Cuánto vale cada entrada?"), pasos: pasosPrecio(c)}; },
+  function(){ return {enun: T("Two numbers add up to 20 and their difference is 4. What are they?", "La suma de dos números es 20 y su diferencia es 4. ¿Cuáles son?"), pasos: pasosNumeros(20, 4)}; },
+  function(){ return {enun: T("A rectangular yard has a perimeter of 26 feet. The length is 3 feet more than the width. How long is each side?", "Un terreno rectangular tiene 26 pies de perímetro. El largo mide 3 pies más que el ancho. ¿Cuánto mide cada lado?"), pasos: pasosPerimetro(26, 3)}; }];
+pasoAPaso4("ct", function(){ return CASOS_CT[+$("ct-ex").value](); });
+$("ct-ex").addEventListener("change", function(){ $("ct-nuevo").click(); });
+OMR("cq", function(){
+  if (Math.random() < .3){ var y = aleatorio(1, 12), x = y + aleatorio(1, 10), s = x + y, d = x - y, preg = Math.random() < .5;
+    return {enun: T("Two numbers add up to " + s + " and their difference is " + d + ". ", "Dos números suman " + s + " y su diferencia es " + d + ". ") + (preg ? T("What is the bigger one?", "¿Cuál es el mayor?") : T("What is the smaller one?", "¿Cuál es el menor?")), correcta: "ok",
+      opciones: racOpcionesNum([preg ? x : y, preg ? y : x, s, d, s / 2]), pista: T("x + y = " + s + " and x − y = " + d + ". Add or substitute.", "x + y = " + s + " y x − y = " + d + ". Sume o sustituya."), bien: pasosNumeros(s, d).slice(-2).join(" ").replace(/<\/?strong>/g, "")}; }
+  var c = casoPrecio(), q = Math.random() < .5 ? 0 : 1, val = q ? c.p2 : c.p1, otro = q ? c.p1 : c.p2;
+  return {enun: c.txt + T(" How much does ", " ¿Cuánto cuesta ") + c.it.un[q] + T(" cost?", "?"), correcta: "ok", opciones: racOpcionesNum([val, otro, c.L2.c, Math.abs(c.L1.c - c.L2.c)], "$"),
+    pista: T("Write the two equations, solve one for a variable, and substitute.", "Escriba las dos ecuaciones, despeje una variable y sustituya."), bien: pasosPrecio(c).slice(1).join(" ").replace(/<\/?strong>/g, "")};
+});
+function racOpcionesNum(l, pre){ var vis = {}, ops = []; l.forEach(function(v, i){ var h = (pre || "") + sg(v); if (!vis[h] && v > 0 && ops.length < 4){ vis[h] = 1; ops.push({clave: i ? "m" + i : "ok", html: h}); } }); return ops; }
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
