@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 5.2 · practice (English) — built by tools/build_n3_lesson_5_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 5.2 · Inequalities that need simplifying, and word problems · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+  .opcion[aria-pressed=true]{border-color:var(--tema);background:var(--tema-bg);font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 5 · Inequalities and formulas</div>
+    <h1>Lesson 5.2 · Inequalities that need simplifying, and word problems</h1>
+    <div class="meta">Three practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#simplify">Inequalities that need simplifying</a></li>
+      <li><a href="#vocabulary">The language of inequalities</a></li>
+      <li><a href="#context">Budget and time problems</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="simplify" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Inequalities that need simplifying</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>When there are parentheses or repeated terms, first simplify with the tools from Topic 4 (distribute and combine), then solve. The sign rule still holds: if at the end you divide by a negative number, the sign flips.</p>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="sm-ec"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="sm-sig"></button><button type="button" class="btn-sec" id="sm-todo">Show all the steps</button><button type="button" class="btn-sec" id="sm-nuevo">Another inequality</button></div>
+      </div>
+      <div class="pasos" id="sm-pasos" aria-live="polite"></div>
+      <div id="sm-recta"></div>
+      <h3>Practice: simplify and solve</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo" aria-hidden="true" style="font-size:22px;font-weight:700;padding-bottom:6px;">x</div>
+          <div class="campo"><label for="p1-s">Sign</label><select id="p1-s"><option value="">Choose</option><option value="&lt;">&lt;</option><option value="&gt;">&gt;</option><option value="≤">≤</option><option value="≥">≥</option></select></div>
+          <div class="campo"><label for="p1-v">Boundary number</label><input type="text" autocomplete="off" class="corto" id="p1-v"></div>
+        </div>
+        <p class="nota">Choose the sign of the solution and type the number. It can be negative or a fraction like 5/2.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="vocabulary">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The language of inequalities</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Certain words always point to the same sign. The ones that talk about a minimum or a maximum <strong>include</strong> the boundary; the ones that say “more than” or “less than” do not.</p>
+      <h3>From the sentence to the sign</h3>
+      <div class="panel"><div class="campos"><div class="campo" style="flex:1;min-width:240px;"><label for="vo-sel">Phrase</label><select id="vo-sel"></select></div></div></div>
+      <div class="salida" aria-live="polite" id="vo-salida"></div>
+      <div id="vo-recta"></div>
+      <div class="caja-atencion"><strong>“At least” and “at most” include the boundary:</strong> “at least 10” is 10 or more (≥ 10), and “at most 10” is 10 or less (≤ 10). That is why they are graphed with a closed point.</div>
+      <h3>Practice: translate into an inequality</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="context">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Budget and time problems</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Inequalities model real-life limits: a budget you cannot go over, a minimum number of hours you must work. You solve them in three parts: <strong>set up</strong>, <strong>solve</strong>, and <strong>explain</strong>.</p>
+      <div class="caja-tip"><strong>Explaining with whole numbers:</strong> you do not buy parts of an item or work parts of a day. If the solution is x ≤ 6.4 and x counts items, the most is 6 (round down). If it is x ≥ 3.2 and x counts days, the least is 4 (round up), because 3 days are not enough.</div>
+      <h3>Practice: set up, solve, and explain</h3>
+      <div class="practica" id="cx">
+        <div class="enun" id="cx-enun"></div>
+        <p><strong>1. Which inequality represents the problem?</strong></p>
+        <div class="opciones" id="cx-opciones" role="group" aria-label="Possible setups"></div>
+        <div class="campos" style="margin-top:12px;"><div class="campo"><label for="cx-r" id="cx-rlab">2. Answer</label><input type="text" autocomplete="off" class="corto" id="cx-r"></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="cx-comprobar">Check</button><button type="button" class="btn-sec" id="cx-nuevo">Another problem</button></div>
+        <div class="fb" id="cx-fb" role="status"></div>
+        <p class="marcador" id="cx-marcador"></p>
+      </div>
+      <div class="caja-atencion"><strong>Answer in words:</strong> a word problem does not end with “x ≤ 6,” but with a sentence like “you can buy at most 6 items.”</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 5 · Inequalities and formulas · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script>
+function pasosLista(pasos, visto){ return pasos.slice(0, visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join(""); }
+function botonPasos(pre, S){ var b = $(pre + "-sig"); b.disabled = S.visto >= S.pasos.length; $(pre + "-todo").disabled = b.disabled; b.textContent = S.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso")); }
+
+/* ============ MODULE 1 · inequalities that need simplifying ============ */
+function ineqCompuesta(tp){
+  var r = elige(RELS), v = aleatorio(-5, 8), m, p, a, b, c, d, e, vis, pre = [], izq, der;
+  if (tp === undefined) tp = aleatorio(1, 4);
+  if (tp === 1){ m = aleatorio(2, 6); p = nz(); izq = L(m, m * p); der = L(0, m * (v + p));
+    vis = auto(m + "(" + P(tm(1, "x"), tm(p)) + ")") + " " + relVis(r) + " " + menosV(der.k.n);
+    pre.push(T("Distribute: ", "Se distribuye: ") + ineqHTML(izq, r, der) + "."); }
+  else if (tp === 2){ do { a = aleatorio(2, 8); c = aleatorio(1, 7); } while (a === c); b = nz(); d = a * v + b - c * v; izq = L(a, b); der = L(c, d);
+    vis = ineqHTML(izq, r, der); }
+  else if (tp === 3){ m = -aleatorio(2, 5); p = nz(); izq = L(m, m * p); der = L(0, m * (v + p));
+    vis = auto(menosV(m) + "(" + P(tm(1, "x"), tm(p)) + ")") + " " + relVis(r) + " " + menosV(der.k.n);
+    pre.push(T("Distribute the " + menosV(m) + " to each term: ", "Se distribuye el " + menosV(m) + " a cada término: ") + ineqHTML(izq, r, der) + "."); }
+  else { a = aleatorio(2, 6); e = elige([1, 2, 3, -1]); b = nz(); izq = L(a + e, b); der = L(0, (a + e) * v + b);
+    vis = auto(P(tm(a, "x"), tm(b), tm(e, "x"))) + " " + relVis(r) + " " + menosV(der.k.n);
+    pre.push(T("Combine the x terms: ", "Se combinan los términos en x: ") + ineqHTML(izq, r, der) + "."); }
+  var R = pasosIneq(izq, r, der);
+  return {vis: vis, pasos: pre.concat(R.pasos), r: R.r, v: R.v, invierte: R.invierte};
+}
+var SM = {pasos: [], visto: 0, sol: null, cola: [1, 2, 3]};
+function nuevoSM(){
+  var E = ineqCompuesta(SM.cola.length ? SM.cola.shift() : undefined);
+  SM.pasos = E.pasos.concat(['<span class="veredicto">' + T("Solution: ", "Solución: ") + solHTML(E.r, E.v) + "</span>"]); SM.sol = E; SM.visto = 0;
+  $("sm-ec").innerHTML = E.vis;
+  pintaSM();
+}
+function pintaSM(){
+  $("sm-pasos").innerHTML = pasosLista(SM.pasos, SM.visto);
+  $("sm-recta").innerHTML = SM.visto >= SM.pasos.length ? ineqSVG(SM.sol.v, SM.sol.r) : "";
+  botonPasos("sm", SM);
+}
+function genCompuesta(){ var E = ineqCompuesta(); return {enun: T("Solve ", "Resuelva ") + E.vis + ".", r: E.r, v: E.v, invierte: E.invierte, explica: E.pasos.join(" ")}; }
+
+/* ============ MODULE 2 · the language of inequalities ============ */
+var FRASES = ES ? [
+  ["es al menos", "≥"], ["es como mínimo", "≥"], ["no es menos de", "≥"], ["es mayor o igual que", "≥"],
+  ["es como máximo", "≤"], ["es a lo sumo", "≤"], ["no es más de", "≤"], ["no excede", "≤"],
+  ["es más que", ">"], ["es mayor que", ">"], ["supera", ">"],
+  ["es menos que", "<"], ["es menor que", "<"], ["no llega a", "<"]
+] : [
+  ["is at least", "≥"], ["is no less than", "≥"], ["is not less than", "≥"], ["is greater than or equal to", "≥"],
+  ["is at most", "≤"], ["is no more than", "≤"], ["is not more than", "≤"], ["does not exceed", "≤"],
+  ["is more than", ">"], ["is greater than", ">"], ["exceeds", ">"],
+  ["is less than", "<"], ["is smaller than", "<"], ["is below", "<"]
+];
+function llenaVO(){ var sel = $("vo-sel"); FRASES.forEach(function(f, i){ var o = document.createElement("option"); o.value = i; o.textContent = T("A number ", "Un número ") + f[0] + " 10"; sel.appendChild(o); }); }
+function pintaVO(){
+  var f = FRASES[+$("vo-sel").value], r = f[1], incl = !REL_ESTRICTO[r];
+  $("vo-salida").innerHTML = '<div class="linea grande">' + T("“A number " + f[0] + " 10” → ", "«Un número " + f[0] + " 10» → ") + solHTML(r, fr(10)) + "</div>" +
+    '<div class="linea">' + (incl ? T("10 <strong>is</strong> included: closed point.", "El 10 <strong>sí</strong> se incluye: punto cerrado.") : T("10 is <strong>not</strong> included: open point.", "El 10 <strong>no</strong> se incluye: punto abierto.")) +
+    T(" The numbers that work are the ones " + (derecha(r) ? "greater" : "less") + " than 10" + (incl ? ", and 10 itself." : "."), " Los números que cumplen son los " + (derecha(r) ? "mayores" : "menores") + " que 10" + (incl ? ", y el propio 10." : ".")) + "</div>";
+  $("vo-recta").innerHTML = ineqSVG(fr(10), r);
+}
+function genVocabulario(){
+  var n = aleatorio(5, 30), f = elige(FRASES), r = f[1], pc = {};
+  function pistaRel(x){ return REL_ESTRICTO[x] !== REL_ESTRICTO[r] ? T("Check whether “" + f[0] + "” includes the boundary.", "Revise si «" + f[0] + "» incluye el límite.") : T("Check the direction: greater or less?", "Revise la dirección: ¿mayores o menores?"); }
+  if (Math.random() < 0.45){
+    RELS.forEach(function(x){ if (x !== r) pc[x + n + "/1"] = pistaRel(x); });
+    return {enun: T("Translate: “A number x " + f[0] + " " + n + ".”", "Traduzca: «Un número x " + f[0] + " " + n + "»."), opciones: RELS.map(function(x){ return opSol(x, fr(n)); }), correcta: r + n + "/1", porClave: pc, enOrden: true,
+      bien: T("“" + f[0] + "” matches ", "«" + f[0] + "» corresponde a ") + relVis(r) + ".", mal: T("“" + f[0] + "” matches ", "«" + f[0] + "» corresponde a ") + relVis(r) + ": " + solHTML(r, fr(n)) + "."};
+  }
+  var k = aleatorio(2, 9), tipo = elige(["doble", "aumentado", "disminuido", "veces"]), izq, frase;
+  if (tipo === "doble"){ izq = L(2, 0); frase = T("Twice a number", "El doble de un número"); }
+  else if (tipo === "aumentado"){ izq = L(1, k); frase = T("A number increased by " + k, "Un número aumentado en " + k); }
+  else if (tipo === "disminuido"){ izq = L(1, -k); frase = T("A number decreased by " + k, "Un número disminuido en " + k); }
+  else { izq = L(k, 0); frase = T(k + " times a number", k + " veces un número"); }
+  var der = L(0, n), op = function(rr, l){ return {html: ineqHTML(l, rr, der), clave: rr + ladoVis(l)}; };
+  var otroL = tipo === "doble" ? L(1, 2) : (tipo === "aumentado" ? L(k, 0) : (tipo === "disminuido" ? L(-1, k) : L(1, k)));
+  var rEst = REL_ESTRICTO[r] ? (r === "<" ? "≤" : "≥") : (r === "≤" ? "<" : ">");
+  var o2 = [op(r, izq), op(REL_INV[r], izq), op(rEst, izq), op(r, otroL)];
+  pc[o2[1].clave] = pistaRel(REL_INV[r]); pc[o2[2].clave] = pistaRel(rEst);
+  pc[o2[3].clave] = T("Check the translation of “" + frase.toLowerCase() + ".”", "Revise la traducción de «" + frase.toLowerCase() + "».");
+  return {enun: T("Translate: “" + frase + " " + f[0] + " " + n + ".”", "Traduzca: «" + frase + " " + f[0] + " " + n + "»."), opciones: o2, correcta: o2[0].clave, porClave: pc,
+    bien: T("“" + frase + "” is ", "«" + frase + "» es ") + ladoHTML(izq) + T(" and “" + f[0] + "” is ", " y «" + f[0] + "» es ") + relVis(r) + ".", mal: T("The translation is ", "La traducción es ") + ineqHTML(izq, r, der) + "."};
+}
+
+/* ============ MODULE 3 · problems in context ============ */
+function problemaAzar(){
+  var tp = aleatorio(1, 5), q;
+  function sinEntero(base, paso, lim){ var tries = 0, v; do { v = lim(); tries++; } while (tries < 50 && (v - base) % paso === 0); return v; }
+  if (tp === 1){
+    var G = aleatorio(5, 30), p = aleatorio(3, 12), B = sinEntero(G, p, function(){ return G + p * aleatorio(2, 8) + aleatorio(0, p - 1); });
+    q = {txt: T("You have at most $" + B + " to spend. You already spent $" + G + ", and each notebook costs $" + p + ". What is the greatest number of notebooks you can buy?", "Usted tiene como máximo $" + B + " para gastar. Ya gastó $" + G + " y cada cuaderno cuesta $" + p + ". ¿Cuántos cuadernos puede comprar como máximo?"),
+         izq: L(p, G), r: "≤", der: L(0, B), max: true, unidad: T("notebooks", "cuadernos"), etq: T("Most notebooks", "Máximo de cuadernos")};
+  } else if (tp === 2){
+    var h = aleatorio(2, 10), d = aleatorio(3, 6), H = sinEntero(h, d, function(){ return h + d * aleatorio(2, 7) + aleatorio(0, d - 1); });
+    q = {txt: T("A project needs at least " + H + " hours of work. " + h + " hours are already done, and " + d + " more hours are worked each day. What is the least number of days still needed?", "Un proyecto necesita al menos " + H + " horas de trabajo. Ya se trabajaron " + h + " horas y cada día se trabajan " + d + " horas más. ¿Cuántos días más hacen falta como mínimo?"),
+         izq: L(d, h), r: "≥", der: L(0, H), max: false, unidad: T("days", "días"), etq: T("Fewest days", "Mínimo de días")};
+  } else if (tp === 3){
+    var s = aleatorio(2, 6) * 50, c = aleatorio(2, 6) * 5, M = sinEntero(s, c, function(){ return s + c * aleatorio(4, 20) + aleatorio(1, c - 1); });
+    q = {txt: T("A salesperson earns $" + s + " a week plus $" + c + " for each sale. She wants to earn at least $" + M + " this week. What is the least number of sales she needs?", "Una vendedora gana $" + s + " fijos a la semana más $" + c + " por cada venta. Quiere ganar al menos $" + M + " esta semana. ¿Cuántas ventas necesita como mínimo?"),
+         izq: L(c, s), r: "≥", der: L(0, M), max: false, unidad: T("sales", "ventas"), etq: T("Fewest sales", "Mínimo de ventas")};
+  } else if (tp === 4){
+    var b = aleatorio(2, 5), k = aleatorio(2, 4), Tt = sinEntero(b, k, function(){ return b + k * aleatorio(3, 10) + aleatorio(1, k - 1); });
+    q = {txt: T("A taxi charges $" + b + " to start plus $" + k + " per mile. You do not want to spend more than $" + Tt + ". What is the greatest number of whole miles you can ride?", "Un taxi cobra $" + b + " al subir más $" + k + " por cada milla. Usted no quiere gastar más de $" + Tt + ". ¿Cuántas millas enteras puede recorrer como máximo?"),
+         izq: L(k, b), r: "≤", der: L(0, Tt), max: true, unidad: T("miles", "millas"), etq: T("Most miles", "Máximo de millas")};
+  } else {
+    var W = elige([1500, 1800, 2000, 2200, 2500]), o = aleatorio(150, 210), cj = elige([60, 75, 90, 100]);
+    q = {txt: T("An elevator holds at most " + W.toLocaleString("en-US") + " pounds. A worker who weighs " + o + " pounds rides with boxes of " + cj + " pounds each. What is the greatest number of boxes he can take in one trip?", "Un ascensor soporta a lo sumo " + W.toLocaleString("en-US") + " libras. Un operario de " + o + " libras sube con cajas de " + cj + " libras cada una. ¿Cuántas cajas puede llevar como máximo en un viaje?"),
+         izq: L(cj, o), r: "≤", der: L(0, W), max: true, unidad: T("boxes", "cajas"), etq: T("Most boxes", "Máximo de cajas")};
+  }
+  var R = resuelveIneq(q.izq, q.r, q.der);
+  q.lim = R.v; q.resp = q.max ? Math.floor(fval(R.v) + 1e-9) : Math.ceil(fval(R.v) - 1e-9);
+  return q;
+}
+var CX = {q: null, elegida: null, primero: 0, pista: 0, total: 0, resuelta: false, intentos: 0};
+function pintaCX(){
+  var q = CX.q = problemaAzar(); CX.elegida = null; CX.resuelta = false; CX.intentos = 0;
+  $("cx-enun").textContent = q.txt;
+  var alt = [{l: q.izq, r: q.r, clave: "b"}, {l: q.izq, r: REL_INV[q.r], clave: "inv"}, (figual(q.izq.k, q.izq.x) ? {l: L(q.izq.x, 0), r: q.r, clave: "cruz"} : {l: L(q.izq.k, q.izq.x), r: q.r, clave: "cruz"}), {l: q.izq, r: q.r === "≤" ? "<" : ">", clave: "estr"}];
+  var cont = $("cx-opciones"); cont.innerHTML = "";
+  baraja(alt).forEach(function(a){
+    var b = document.createElement("button"); b.type = "button"; b.className = "opcion"; b.setAttribute("aria-pressed", "false");
+    b.setAttribute("data-clave", a.clave); b.innerHTML = ineqHTML(a.l, a.r, q.der);
+    b.addEventListener("click", function(){ if (CX.resuelta) return; CX.elegida = a.clave; Array.prototype.forEach.call(cont.children, function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); });
+    cont.appendChild(b);
+  });
+  $("cx-rlab").textContent = "2. " + q.etq;
+  $("cx-r").value = ""; $("cx-r").disabled = false; $("cx-comprobar").disabled = false;
+  $("cx-fb").className = "fb"; $("cx-fb").innerHTML = "";
+}
+function compruebaCX(){
+  if (CX.resuelta) return;
+  var q = CX.q, fb = $("cx-fb"), n = leeEntero($("cx-r").value), vd = leeDecimal($("cx-r").value);
+  if (!CX.elegida || (n === null && vd === null)){ fb.className = "fb pista"; fb.innerHTML = T("Choose the setup and type your answer.", "Elija el planteamiento y escriba su respuesta."); return; }
+  CX.intentos++;
+  var okP = CX.elegida === "b", okR = n === q.resp, msgs = [];
+  if (!okP){
+    if (CX.elegida === "inv") msgs.push(T("The sign of the setup is backward: ", "El signo del planteamiento está al revés: ") + (q.max ? T("“at most” or “no more than” is ≤.", "«como máximo» o «no más de» es ≤.") : T("“at least” is ≥.", "«al menos» es ≥.")));
+    else if (CX.elegida === "cruz") msgs.push(figual(q.izq.k, q.izq.x) ? T("The setup must include the fixed amount too.", "El planteamiento también tiene que incluir la cantidad fija.") : T("In the setup, x multiplies the amount for each unit, not the fixed amount.", "En el planteamiento, x multiplica al valor de cada unidad, no a la cantidad fija."));
+    else msgs.push(T("The limit is included: use " + relVis(q.r) + ", not the strict sign.", "El límite se incluye: use " + relVis(q.r) + ", no el signo estricto."));
+  }
+  if (!okR){
+    if (n === null || Math.abs(vd - fval(q.lim)) < 1e-6) msgs.push(T("The solution of the inequality is ", "La solución de la inecuación es ") + solHTML(q.max ? "≤" : "≥", q.lim) + T(", but the answer has to be a whole number of " + q.unidad + ".", ", pero la respuesta tiene que ser un número entero de " + q.unidad + "."));
+    else if (n === q.resp + (q.max ? 1 : -1)) msgs.push(q.max ? T("With " + n + " you go over the limit. Since it is a maximum, round down.", "Con " + n + " se pasa del límite. Al ser un máximo, se redondea hacia abajo.") : T("With " + n + " you do not reach the minimum. Since it is a minimum, round up.", "Con " + n + " no se llega al mínimo. Al ser un mínimo, se redondea hacia arriba."));
+    else msgs.push(T("Check the answer: solve the inequality, then round " + (q.max ? "down." : "up."), "Revise la respuesta: resuelva la inecuación y después redondee " + (q.max ? "hacia abajo." : "hacia arriba.")));
+  }
+  var R = resuelveIneq(q.izq, q.r, q.der);
+  var sol = ineqHTML(q.izq, q.r, q.der) + " → " + solHTML(R.r, R.v) + (fent(R.v) ? "" : " (≈ " + aprox(fval(R.v), 2) + ")") + ". " +
+            T("Since x counts " + q.unidad + ", the " + (q.max ? "greatest" : "least") + " whole number is " + q.resp + ": " + (q.max ? "at most " : "at least ") + q.resp + " " + q.unidad + ".",
+              "Como x cuenta " + q.unidad + ", " + (q.max ? "el máximo entero es " : "el mínimo entero es ") + q.resp + ": " + (q.max ? "como máximo " : "como mínimo ") + q.resp + " " + q.unidad + ".");
+  if (okP && okR){ CX.resuelta = true; CX.total++; if (CX.intentos === 1) CX.primero++; else CX.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + sol; }
+  else if (CX.intentos >= 2){ CX.resuelta = true; CX.total++; fb.className = "fb mal"; fb.innerHTML = TX.asi + sol + TX.nuevo; }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + msgs.join(" ") + TX.unoMas; }
+  if (CX.resuelta){
+    $("cx-r").disabled = true; $("cx-comprobar").disabled = true;
+    Array.prototype.forEach.call($("cx-opciones").children, function(b){ b.disabled = true; if (b.getAttribute("data-clave") === "b") b.className = "opcion correcta"; else if (b.getAttribute("data-clave") === CX.elegida) b.className = "opcion incorrecta"; });
+  }
+  $("cx-marcador").textContent = CX.total ? TX.resueltos(CX.primero + CX.pista, CX.primero, CX.total) : "";
+}
+
+/* ============ Start ============ */
+$("sm-sig").addEventListener("click", function(){ if (SM.visto < SM.pasos.length){ SM.visto++; pintaSM(); } });
+$("sm-todo").addEventListener("click", function(){ SM.visto = SM.pasos.length; pintaSM(); });
+$("sm-nuevo").addEventListener("click", nuevoSM);
+nuevoSM();
+creaPracticaDesig("p1", genCompuesta);
+llenaVO();
+$("vo-sel").addEventListener("change", pintaVO);
+pintaVO();
+OMR("p2", genVocabulario);
+$("cx-comprobar").addEventListener("click", compruebaCX);
+$("cx-r").addEventListener("keydown", function(ev){ if (ev.key === "Enter") compruebaCX(); });
+$("cx-nuevo").addEventListener("click", pintaCX);
+pintaCX();
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -139,3 +139,24 @@ ESTILO_RAD = """  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--ac
   .fraccion-grande .grande{font-size:2rem;font-weight:700;}
   .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
   .salida:empty{display:none;}"""
+
+def desig(pid, titulo, nota=None):
+    """Typed practice for an inequality: sign + boundary number (creaPracticaDesig in inequalities.js)."""
+    nota = nota or t("Choose the sign of the solution and type the number. It can be negative or a fraction like 5/2.", "Elija el signo de la solución y escriba el número. Puede ser negativo o una fracción como 5/2.")
+    ops = "".join(f'<option value="{v}">{h}</option>' for v, h in (("&lt;", "&lt;"), ("&gt;", "&gt;"), ("≤", "≤"), ("≥", "≥")))
+    return f'''      <h3>{titulo}</h3>
+      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo" aria-hidden="true" style="font-size:22px;font-weight:700;padding-bottom:6px;">x</div>
+          <div class="campo"><label for="{pid}-s">{t("Sign", "Signo")}</label><select id="{pid}-s"><option value="">{t("Choose", "Elija")}</option>{ops}</select></div>
+          <div class="campo"><label for="{pid}-v">{t("Boundary number", "Número límite")}</label><input type="text" autocomplete="off" class="corto" id="{pid}-v"></div>
+        </div>
+        <p class="nota">{nota}</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''

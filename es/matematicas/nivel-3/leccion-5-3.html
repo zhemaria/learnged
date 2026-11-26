@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 5.3 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_5_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-5-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 5 — Inecuaciones y fórmulas</p>
+<h1>Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución</h1>
+<p class="lema">Despeje una fórmula para cualquiera de sus letras, tratando las demás como números, y úsela para resolver problemas.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para aplicar fórmulas</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Despejar</strong> una variable específica en una fórmula literal usando las propiedades de igualdad.</li>
+<li><strong>Tratar</strong> las demás letras de la fórmula como si fueran constantes.</li>
+<li><strong>Aplicar</strong> una estrategia general de cuatro pasos para despejar.</li>
+<li><strong>Usar</strong> la fórmula despejada para resolver un problema de contexto.</li>
+<li><strong>Reconocer</strong> las fórmulas de uso frecuente en el GED.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.2.a</span> Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.4.a</span> Calcular el área y el perímetro de triángulos y rectángulos. Hallar la medida de los lados de triángulos y rectángulos cuando se da el área o el perímetro.</li><li><span class="std-cod std-base">Q.5.a</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de prismas rectangulares. Hallar la medida de los lados o la altura dado el volumen o el área de superficie.</li><li><span class="std-cod std-base">A.2.b</span> Resolver problemas de la vida real con ecuaciones lineales.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.2.a</span> Representar algebraicamente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-CED.4</span> <span class="std-nivel">Nivel D</span> Reorganizar fórmulas para destacar una cantidad de interés, con el mismo razonamiento que al resolver ecuaciones.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-que-es">¿Qué es despejar una fórmula?</a></li>
+<li><a href="#s-cuatro-pasos">La estrategia de cuatro pasos</a></li>
+<li><a href="#s-comunes">Despejar en fórmulas comunes</a></li>
+<li><a href="#s-dos-pasos">Fórmulas de dos pasos</a></li>
+<li><a href="#s-aplicar">Aplicar la fórmula despejada</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-que-es"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es despejar una fórmula?</h2>
+<p>A lo largo del Tema 4 y la primera parte del Tema 5 se resolvieron ecuaciones e inecuaciones para encontrar el valor de x. Despejar una fórmula es exactamente lo mismo, con una diferencia: la variable que se busca está rodeada de otras letras en lugar de números. Como dice la idea clave, «despejar es resolver una ecuación donde la variable es un símbolo, no un número».</p>
+<p>Una <strong>fórmula literal</strong> relaciona varias cantidades con letras, como d = rt (distancia = rapidez × tiempo). <strong>Despejar</strong> una de ellas significa reescribir la fórmula para que esa variable quede sola de un lado. Las demás letras se tratan como si fueran números conocidos.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1: en d = rt, despeje t</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La t está multiplicada por r.</strong> Para aislarla, se divide entre r en ambos lados.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Dividir.</strong> <span class="fracc"><span class="fa">d</span><span class="fb2">r</span></span> = t.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>t = <span class="fracc"><span class="fa">d</span><span class="fb2">r</span></span></strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Las otras letras son «números»</span>
+<p>Al despejar t en d = rt, la r se trata igual que un número. Dividir entre r es como dividir entre 5 o entre cualquier número: una operación inversa para aislar la variable buscada.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-cuatro-pasos"><span aria-hidden="true" class="num-seccion">2</span>La estrategia de cuatro pasos</h2>
+<p>Para despejar cualquier variable se sigue siempre la misma secuencia.</p>
+<ol><li>Identificar qué variable se quiere despejar.</li><li>Aislarla con las propiedades de igualdad (operaciones inversas), tratando las demás letras como números.</li><li>Simplificar el resultado, con fracción si es necesario.</li><li>Verificar que la variable buscada quedó sola de un lado.</li></ol>
+<a class="enlace-interactivo" href="practica-5-3.html#despejar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la estrategia de cuatro pasos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la estrategia de cuatro pasos</span><span class="ei-sub">Despeje la variable pedida como si fuera una ecuación con letras.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-comunes"><span aria-hidden="true" class="num-seccion">3</span>Despejar en fórmulas comunes</h2>
+<p>Estas son algunas de las fórmulas que más aparecen en el examen GED. En cada una se puede despejar cualquiera de sus variables.</p>
+<div aria-label="Fórmulas de uso frecuente en el GED (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Fórmulas de uso frecuente en el GED</caption>
+<thead><tr><th scope="col">Contexto</th><th scope="col">Fórmula</th></tr></thead>
+<tbody>
+<tr><td>Área de un rectángulo</td><td>A = bh</td></tr>
+<tr><td>Perímetro de un rectángulo</td><td>P = 2l + 2w</td></tr>
+<tr><td>Volumen de una caja</td><td>V = lwh</td></tr>
+<tr><td>Interés simple</td><td>I = Prt</td></tr>
+<tr><td>Distancia</td><td>d = rt</td></tr>
+<tr><td>Temperatura (°F a partir de °C)</td><td>F = <span class="fracc"><span class="fa">9</span><span class="fb2">5</span></span>C + 32</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: en A = bh, despeje h</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La h está multiplicada por b.</strong> Se divide entre b en ambos lados.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>h = <span class="fracc"><span class="fa">A</span><span class="fb2">b</span></span></strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: en I = Prt, despeje P</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La P está multiplicada por r y por t.</strong> Se divide entre el producto rt.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>P = <span class="fracc"><span class="fa">I</span><span class="fb2">rt</span></span></strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Distancia</h3></div>
+<p class="pregunta-int" id="t-p1">En d = rt, despeje r.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">r = dt</button>
+<button class="opcion" data-k="b" type="button">r = <span class="fracc"><span class="fa">t</span><span class="fb2">d</span></span></button>
+<button class="opcion" data-k="c" type="button">r = <span class="fracc"><span class="fa">d</span><span class="fb2">t</span></span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Área</h3></div>
+<p class="pregunta-int" id="t-p2">En A = lw, despeje l.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">l = Aw</button>
+<button class="opcion" data-k="b" type="button">l = <span class="fracc"><span class="fa">A</span><span class="fb2">w</span></span></button>
+<button class="opcion" data-k="c" type="button">l = <span class="fracc"><span class="fa">w</span><span class="fb2">A</span></span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Una suma</h3></div>
+<p class="pregunta-int" id="t-p3">En P = a + b + c, despeje c.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">c = P − a − b</button>
+<button class="opcion" data-k="b" type="button">c = P + a + b</button>
+<button class="opcion" data-k="c" type="button">c = <span class="fracc"><span class="fa">P</span><span class="fb2">ab</span></span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-5-3.html#comunes" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: fórmulas comunes (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: fórmulas comunes</span><span class="ei-sub">Despeje variables en fórmulas de geometría, finanzas y física.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-dos-pasos"><span aria-hidden="true" class="num-seccion">4</span>Fórmulas de dos pasos</h2>
+<p>Algunas fórmulas requieren más de una operación para despejar, igual que las ecuaciones de varios pasos. Se deshacen las operaciones en orden inverso.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4: temperatura. En F = (9/5)C + 32, despeje C</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar 32 en ambos lados.</strong> F − 32 = <span class="fracc"><span class="fa">9</span><span class="fb2">5</span></span>C.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Multiplicar por 5/9 en ambos lados.</strong> Eso deshace el <span class="fracc"><span class="fa">9</span><span class="fb2">5</span></span>: <span class="fracc"><span class="fa">5</span><span class="fb2">9</span></span>(F − 32) = C.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>C = <span class="fracc"><span class="fa">5</span><span class="fb2">9</span></span>(F − 32)</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5: recta. En y = mx + b, despeje b</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Restar mx en ambos lados.</strong> y − mx = b.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>b = y − mx</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Orden inverso, y el paréntesis importa</span>
+<p>En F = (9/5)C + 32, primero se quita el «+ 32» (resta) y luego el «× 9/5» (multiplicación por el recíproco). Es el mismo orden inverso de las ecuaciones de dos pasos. Y <span class="fracc"><span class="fa">5</span><span class="fb2">9</span></span>(F − 32) no es lo mismo que <span class="fracc"><span class="fa">5</span><span class="fb2">9</span></span>F − 32: primero se resta 32 a toda la F y después se multiplica el resultado completo.</p>
+</div>
+<a class="enlace-interactivo" href="practica-5-3.html#dos-pasos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: fórmulas de dos pasos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: fórmulas de dos pasos</span><span class="ei-sub">Despeje en fórmulas que requieren deshacer dos operaciones.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-aplicar"><span aria-hidden="true" class="num-seccion">5</span>Aplicar la fórmula despejada</h2>
+<p>Una vez despejada, la fórmula sirve para calcular la variable buscada sustituyendo los valores conocidos.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 6: un auto recorrió d = 120 millas a una rapidez de r = 40 millas por hora. ¿Cuánto tiempo tardó?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Usar la fórmula despejada.</strong> t = <span class="fracc"><span class="fa">d</span><span class="fb2">r</span></span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustituir.</strong> t = <span class="fracc"><span class="fa">120</span><span class="fb2">40</span></span> = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El auto tardó <strong>3 horas</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Conexión con las ciencias</span>
+<p>La misma idea aplica a F = ma (fuerza = masa × aceleración). Para hallar la aceleración a, se despeja a = F/m. Despejar es una herramienta general que aparece en geometría, finanzas y ciencias.</p>
+</div>
+<a class="enlace-interactivo" href="practica-5-3.html#aplicar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: aplicar la fórmula despejada (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: aplicar la fórmula despejada</span><span class="ei-sub">Use la fórmula ya despejada para resolver un problema.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-5-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Despeje una variable en una fórmula dada en seis ejercicios, y aplique una fórmula despejada en cuatro problemas de contexto con valores numéricos. Escriba cada respuesta con sus unidades.</li>
+<li><strong>En su vida diaria.</strong> Planifique un viaje: elija una ciudad a la que le gustaría ir en auto, busque la distancia en millas y decida una rapidez promedio. Despeje t en d = rt y halle cuántas horas tomaría el viaje. Después busque el pronóstico del tiempo allí en °F y conviértalo a °C con C = (5/9)(F − 32).</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">En d = rt, despeje t.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">t = dr</button><button class="opcion" data-k="b" type="button">t = <span class="fracc"><span class="fa">d</span><span class="fb2">r</span></span></button><button class="opcion" data-k="c" type="button">t = <span class="fracc"><span class="fa">r</span><span class="fb2">d</span></span></button><button class="opcion" data-k="d" type="button">t = d − r</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">En I = Prt, despeje P.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">P = Irt</button><button class="opcion" data-k="b" type="button">P = <span class="fracc"><span class="fa">rt</span><span class="fb2">I</span></span></button><button class="opcion" data-k="c" type="button">P = I − rt</button><button class="opcion" data-k="d" type="button">P = <span class="fracc"><span class="fa">I</span><span class="fb2">rt</span></span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">En P = 2l + 2w, despeje w.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">w = P − 2l</button><button class="opcion" data-k="b" type="button">w = 2P − 2l</button><button class="opcion" data-k="c" type="button">w = <span class="fracc"><span class="fa">P − 2l</span><span class="fb2">2</span></span></button><button class="opcion" data-k="d" type="button">w = <span class="fracc"><span class="fa">P + 2l</span><span class="fb2">2</span></span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">En y = mx + b, despeje b.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">b = y + mx</button><button class="opcion" data-k="b" type="button">b = y − mx</button><button class="opcion" data-k="c" type="button">b = mx − y</button><button class="opcion" data-k="d" type="button">b = <span class="fracc"><span class="fa">y</span><span class="fb2">mx</span></span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">En V = lwh, despeje h.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">h = Vlw</button><button class="opcion" data-k="b" type="button">h = <span class="fracc"><span class="fa">lw</span><span class="fb2">V</span></span></button><button class="opcion" data-k="c" type="button">h = V − lw</button><button class="opcion" data-k="d" type="button">h = <span class="fracc"><span class="fa">V</span><span class="fb2">lw</span></span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">En d = rt, si d = 120 y r = 40, halle t.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">t = 80</button><button class="opcion" data-k="b" type="button">t = 160</button><button class="opcion" data-k="c" type="button">t = 3</button><button class="opcion" data-k="d" type="button">t = 4800</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">En I = Prt, si I = 100, r = 0.05 y t = 2, halle P.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">P = 10</button><button class="opcion" data-k="b" type="button">P = 100</button><button class="opcion" data-k="c" type="button">P = 500</button><button class="opcion" data-k="d" type="button">P = 1000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">En C = (F − 32) · 5/9, si F = 212, halle C.</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">C = 180</button><button class="opcion" data-k="b" type="button">C = 100</button><button class="opcion" data-k="c" type="button">C = 32</button><button class="opcion" data-k="d" type="button">C = 212</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación para despejar fórmulas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para despejar fórmulas literales y aplicarlas y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Aislar la variable buscada</th><td>Aíslo la variable buscada tratando las demás letras como constantes.</td><td>La aíslo con errores ocasionales.</td><td>No aplico las propiedades de igualdad para despejar.</td></tr>
+<tr><th scope="row">Simplificar el resultado</th><td>Presento el resultado en su forma más clara, con fracción si hace falta.</td><td>Simplifico con algún error en la fracción.</td><td>Dejo el despeje incompleto o mal escrito.</td></tr>
+<tr><th scope="row">Aplicar la fórmula despejada</th><td>Aplico la fórmula despejada, obtengo el valor correcto y lo doy con unidades.</td><td>Sustituyo los valores con errores.</td><td>No uso la fórmula despejada para calcular.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Tema 5. Ya se resuelven inecuaciones de todo tipo y se despejan fórmulas literales: identificar la variable buscada, aislarla tratando las demás letras como números, simplificar y aplicar la fórmula despejada en problemas reales. Con ello queda completa el álgebra lineal del Nivel 3.</p>
+<p>El Tema 6 dará un giro hacia la geometría. Abrirá con la <strong>Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal</strong>. El álgebra recién dominada será una herramienta constante: muchos problemas de geometría se resuelven planteando y resolviendo una ecuación, justo lo aprendido en estos dos temas.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>fórmula literal</dt><dd>Una fórmula que relaciona varias cantidades con letras, como d = rt.</dd>
+<dt>despejar</dt><dd>Reescribir una fórmula para que una variable quede sola de un lado.</dd>
+<dt>recíproco</dt><dd>La fracción dada vuelta: el recíproco de 9/5 es 5/9. Multiplicar por él deshace el 9/5.</dd>
+<dt>interés simple</dt><dd>I = Prt: el capital P por la tasa r por el tiempo t en años.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 5 · Lección 5.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 6.1",
+ "review": "las secciones 3 a 5",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "La r está multiplicada por t: se divide, no se multiplica.",
+    "b": "La fracción quedó al revés: la d va arriba."
+   },
+   "right": "Se divide entre t en ambos lados.",
+   "solution": "r = d/t."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "La l está multiplicada por w: se divide, no se multiplica.",
+    "c": "La fracción quedó al revés: la A va arriba."
+   },
+   "right": "Se divide entre w en ambos lados.",
+   "solution": "l = A/w."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "A la c se le suman a y b: se restan.",
+    "c": "Es una suma, no un producto."
+   },
+   "right": "Se restan a y b en ambos lados.",
+   "solution": "c = P − a − b."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "La t está multiplicada: se divide.",
+    "c": "La fracción está al revés.",
+    "d": "Es un producto, no una suma."
+   },
+   "solution": "t = d/r."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Se divide entre rt, no se multiplica.",
+    "b": "La fracción está al revés.",
+    "c": "Es un producto, no una suma."
+   },
+   "solution": "P = I/(rt)."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "La w también está multiplicada por 2.",
+    "b": "Se resta 2l a P, no a 2P.",
+    "d": "Se resta 2l, no se suma."
+   },
+   "solution": "2w = P − 2l, w = (P − 2l)/2."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "La b está sumada: se resta mx.",
+    "c": "El orden es y − mx.",
+    "d": "La b está sumada, no multiplicada."
+   },
+   "solution": "b = y − mx."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "Se divide entre lw.",
+    "b": "La fracción está al revés.",
+    "c": "Es un producto, no una suma."
+   },
+   "solution": "h = V/(lw)."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es 120 − 40.",
+    "b": "Eso es 120 + 40.",
+    "d": "Eso es 120 × 40."
+   },
+   "solution": "t = 120/40 = 3."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "rt = 0.05 · 2 = 0.1.",
+    "b": "100 es el interés, no P.",
+    "c": "Divida 100 entre 0.1, no entre 0.2."
+   },
+   "solution": "P = 100/(0.05 · 2) = 1000."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "212 − 32 = 180 y después se multiplica por 5/9.",
+    "c": "Primero se resta 32 y después se multiplica por 5/9.",
+    "d": "Sustituya F = 212 en la fórmula."
+   },
+   "solution": "(212 − 32) · 5/9 = 180 · 5/9 = 100."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

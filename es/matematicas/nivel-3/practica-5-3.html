@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución — práctica (español) — construida con tools/build_n3_lesson_5_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-5-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 5 · Inecuaciones y fórmulas</div>
+    <h1>Lección 5.3 · Despeje de fórmulas literales y estrategia general de resolución</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#despejar">La estrategia de cuatro pasos</a></li>
+      <li><a href="#comunes">Fórmulas comunes</a></li>
+      <li><a href="#dos-pasos">Fórmulas de dos pasos</a></li>
+      <li><a href="#aplicar">Aplicar la fórmula despejada</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="despejar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La estrategia de cuatro pasos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p><strong>Despejar</strong> una variable es reescribir la fórmula para que esa letra quede sola de un lado. La clave: las demás letras se tratan <strong>como si fueran números</strong>. Por eso despejar una fórmula es lo mismo que resolver una ecuación que ya sabe resolver.</p>
+      <div class="pasos">
+        <div class="paso"><span class="n" aria-hidden="true">1</span>Identificar qué variable se quiere despejar.</div>
+        <div class="paso"><span class="n" aria-hidden="true">2</span>Aislarla con operaciones inversas, tratando las demás letras como números.</div>
+        <div class="paso"><span class="n" aria-hidden="true">3</span>Simplificar el resultado, con fracción si hace falta.</div>
+        <div class="paso"><span class="n" aria-hidden="true">4</span>Verificar que la variable buscada quedó sola de un lado.</div>
+      </div>
+      <h3>Con números y con letras, en paralelo</h3>
+      <p>A la izquierda, una ecuación con números; a la derecha, la fórmula. Los pasos son los mismos.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:240px;"><label for="pl-sel">Fórmula y variable</label><select id="pl-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="pl-sig"></button><button type="button" class="btn-sec" id="pl-todo">Mostrar todos los pasos</button></div>
+      </div>
+      <div id="pl-pasos" aria-live="polite"></div>
+      <h3>Practique: despeje la variable</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comunes">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Fórmulas comunes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Estas fórmulas aparecen mucho en el examen. En cada una se puede despejar cualquiera de sus letras.</p>
+      <table class="reglas">
+        <caption>Fórmulas de uso frecuente</caption>
+        <thead><tr><th scope="col">Contexto</th><th scope="col">Fórmula</th><th scope="col">Significado de las letras</th></tr></thead>
+        <tbody>
+          <tr><td>Distancia</td><td>d = rt</td><td>d: distancia, r: rapidez, t: tiempo</td></tr>
+          <tr><td>Área de un rectángulo</td><td>A = bh</td><td>b: base, h: altura</td></tr>
+          <tr><td>Volumen de una caja</td><td>V = lwh</td><td>l: largo, w: ancho, h: altura</td></tr>
+          <tr><td>Interés simple</td><td>I = Prt</td><td>P: capital, r: tasa, t: tiempo en años</td></tr>
+          <tr><td>Perímetro de un triángulo</td><td>P = a + b + c</td><td>a, b, c: los tres lados</td></tr>
+          <tr><td>Fuerza</td><td>F = ma</td><td>m: masa, a: aceleración</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-tip"><strong>Si la letra está multiplicada</strong> por otras, se divide entre todas ellas: en I = Prt, P = I/(rt). <strong>Si está sumada,</strong> se restan las demás: en P = a + b + c, c = P − a − b.</div>
+      <h3>Practique: ¿qué fórmula necesita?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="dos-pasos">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Fórmulas de dos pasos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Algunas fórmulas necesitan más de una operación. Se deshacen en <strong>orden inverso</strong>, igual que las ecuaciones de dos pasos: primero se quita lo que está sumado o restado, y al final lo que multiplica.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:240px;"><label for="dp-sel">Fórmula y variable</label><select id="dp-sel"></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="dp-sig"></button><button type="button" class="btn-sec" id="dp-todo">Mostrar todos los pasos</button></div>
+      </div>
+      <div class="fraccion-grande" id="dp-expr"></div>
+      <div class="pasos" id="dp-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>El paréntesis importa:</strong> C = (5/9)(F − 32) no es lo mismo que C = (5/9)F − 32. Primero se resta 32 a toda la F y después se multiplica el resultado completo.</div>
+      <h3>Practique: despeje en dos pasos</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="aplicar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Aplicar la fórmula despejada</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Hay dos caminos para calcular una letra: <strong>despejar primero</strong> y sustituir después, o <strong>sustituir primero</strong> y resolver la ecuación que queda. Los dos dan el mismo resultado. Despejar primero conviene cuando hay que calcular muchas veces, porque la fórmula despejada sirve para todos los casos.</p>
+      <h3>Dos caminos, el mismo resultado</h3>
+      <div class="panel">
+        <p class="enun" id="ca-enun"></p>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn-sec" id="ca-nuevo">Otro problema</button></div>
+        <div class="lado-a-lado" id="ca-caminos" aria-live="polite"></div>
+      </div>
+      <h3>Practique: calcule con la fórmula</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Resultado</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número, sin unidades. Puede ser decimal o fracción.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 5 · Inecuaciones y fórmulas · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script>
+function Q(a, b){ return '<span class="fracc"><span class="fa">' + a + '</span><span class="fb2">' + b + "</span></span>"; }
+var R59 = Q(5, 9), R95 = Q(9, 5), MEDIO = Q(1, 2);
+function divide(x, y){ return T(x + " is multiplied by " + y + ": divide both sides by " + y + ".", "La " + x + " está multiplicada por " + y + ": se divide entre " + y + " en ambos lados."); }
+function dividePor(x, y, prod){ return T(x + " is multiplied by " + y + ": divide by the product " + prod + ".", "La " + x + " está multiplicada por " + y + ": se divide entre el producto " + prod + "."); }
+
+/* ============ One-operation formulas ============ */
+var UNA = [
+  {f: "d = rt", v: "t", res: "t = " + Q("d", "r"), op: divide("t", "r"),
+   num: ["120 = 40t", T("divide by 40", "se divide entre 40"), "t = " + Q(120, 40) + " = 3"], mal: ["t = dr", "t = " + Q("r", "d"), "t = d − r"], hallar: T("the time t, when you know the distance and the rate", "el tiempo t, conocidas la distancia y la rapidez")},
+  {f: "d = rt", v: "r", res: "r = " + Q("d", "t"), op: divide("r", "t"),
+   num: ["150 = 3r", T("divide by 3", "se divide entre 3"), "r = " + Q(150, 3) + " = 50"], mal: ["r = dt", "r = " + Q("t", "d"), "r = d − t"], hallar: T("the rate r, when you know the distance and the time", "la rapidez r, conocidos la distancia y el tiempo")},
+  {f: "A = bh", v: "h", res: "h = " + Q("A", "b"), op: divide("h", "b"),
+   num: ["24 = 6h", T("divide by 6", "se divide entre 6"), "h = " + Q(24, 6) + " = 4"], mal: ["h = Ab", "h = " + Q("b", "A"), "h = A − b"], hallar: T("the height h of a rectangle, when you know the area and the base", "la altura h de un rectángulo, conocidos el área y la base")},
+  {f: "V = lwh", v: "h", res: "h = " + Q("V", "lw"), op: dividePor("h", T("l and by w", "l y por w"), "lw"),
+   num: ["60 = 5 · 3 · h", T("divide by 15", "se divide entre 15"), "h = " + Q(60, 15) + " = 4"], mal: ["h = Vlw", "h = " + Q("lw", "V"), "h = " + Q("V", "l") + " − w"], hallar: T("the height h of a box, when you know the volume, the length, and the width", "la altura h de una caja, conocidos el volumen, el largo y el ancho")},
+  {f: "I = Prt", v: "P", res: "P = " + Q("I", "rt"), op: dividePor("P", T("r and by t", "r y por t"), "rt"),
+   num: ["90 = P · 0.05 · 3", T("divide by 0.15", "se divide entre 0.15"), "P = " + Q(90, "0.15") + " = 600"], mal: ["P = Irt", "P = " + Q("rt", "I"), "P = I − rt"], hallar: T("the principal P, when you know the interest, the rate, and the time", "el capital P, conocidos el interés, la tasa y el tiempo")},
+  {f: "I = Prt", v: "r", res: "r = " + Q("I", "Pt"), op: dividePor("r", T("P and by t", "P y por t"), "Pt"),
+   num: ["90 = 600 · r · 3", T("divide by 1800", "se divide entre 1800"), "r = " + Q(90, 1800) + " = 0.05"], mal: ["r = IPt", "r = " + Q("Pt", "I"), "r = " + Q("I", "P") + " − t"], hallar: T("the interest rate r, when you know the interest, the principal, and the time", "la tasa de interés r, conocidos el interés, el capital y el tiempo")},
+  {f: "I = Prt", v: "t", res: "t = " + Q("I", "Pr"), op: dividePor("t", T("P and by r", "P y por r"), "Pr"),
+   num: ["90 = 600 · 0.05 · t", T("divide by 30", "se divide entre 30"), "t = " + Q(90, 30) + " = 3"], mal: ["t = IPr", "t = " + Q("Pr", "I"), "t = I − Pr"], hallar: T("the time t of an investment, when you know the interest, the principal, and the rate", "el tiempo t de una inversión, conocidos el interés, el capital y la tasa")},
+  {f: "P = a + b + c", v: "c", res: "c = P − a − b", op: T("a and b are added to c: subtract a and b from both sides.", "A la c se le suman a y b: se restan a y b en ambos lados."),
+   num: ["20 = 6 + 5 + c", T("subtract 6 and 5", "se restan 6 y 5"), "c = 20 − 6 − 5 = 9"], mal: ["c = P + a + b", "c = " + Q("P", "ab"), "c = P − a + b"], hallar: T("the third side c of a triangle, when you know the perimeter and the other two sides", "el tercer lado c de un triángulo, conocidos el perímetro y los otros dos lados")},
+  {f: "F = ma", v: "a", res: "a = " + Q("F", "m"), op: divide("a", "m"),
+   num: ["50 = 10a", T("divide by 10", "se divide entre 10"), "a = " + Q(50, 10) + " = 5"], mal: ["a = Fm", "a = " + Q("m", "F"), "a = F − m"], hallar: T("the acceleration a, when you know the force and the mass", "la aceleración a, conocidas la fuerza y la masa")}
+];
+function etiqueta(d){ return T("In " + d.f + ", solve for " + d.v, "En " + d.f + ", despejar " + d.v); }
+
+/* MODULE 1 · numbers and letters side by side */
+var PL = {visto: 0, total: 4};
+function llenaPL(){ var sel = $("pl-sel"); UNA.forEach(function(d, i){ var o = document.createElement("option"); o.value = i; o.textContent = etiqueta(d); sel.appendChild(o); }); }
+function pintaPL(){
+  var d = UNA[+$("pl-sel").value], filas = [
+    [T("Identify", "Identificar"), T("You want " + d.v + " alone in ", "Se quiere dejar sola la " + d.v + " en ") + auto(d.num[0]) + ".", T("You want " + d.v + " alone in ", "Se quiere dejar sola la " + d.v + " en ") + auto(d.f) + "."],
+    [T("Isolate", "Aislar"), T("Inverse operation: ", "Operación inversa: ") + d.num[1] + T(" on both sides.", " en ambos lados."), d.op],
+    [T("Simplify", "Simplificar"), auto(d.num[2]) + ".", auto(d.res) + "."],
+    [T("Check", "Verificar"), T(d.v + " is alone, and the other side has only numbers.", "La " + d.v + " quedó sola y del otro lado solo hay números."), T(d.v + " is alone, and no " + d.v + " appears on the other side.", "La " + d.v + " quedó sola y del otro lado no aparece ninguna " + d.v + ".")]
+  ], h = "";
+  for (var i = 0; i < PL.visto; i++){
+    h += "<p><strong>" + T("Step ", "Paso ") + (i + 1) + " · " + filas[i][0] + '</strong></p><div class="lado-a-lado"><div><p class="nota">' + T("With numbers", "Con números") + "</p>" + filas[i][1] +
+         '</div><div><p class="nota">' + T("With letters", "Con letras") + "</p>" + filas[i][2] + "</div></div>";
+  }
+  $("pl-pasos").innerHTML = h;
+  var b = $("pl-sig"); b.disabled = PL.visto >= PL.total; $("pl-todo").disabled = b.disabled;
+  b.textContent = PL.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function pistasMal(d){
+  var izq = d.f.split(" = ")[0], suma = d.f.indexOf("+") >= 0;
+  return {m0: suma ? T("To undo an addition, subtract.", "Para deshacer una suma, se resta.") : T("If the letter is multiplied, you divide; you do not multiply.", "Si la letra está multiplicada, se divide; no se multiplica."),
+          m1: suma ? T("It is a sum, not a product.", "Es una suma, no un producto.") : T("The fraction is upside down: " + izq + ", which was alone, goes on top.", "La fracción quedó al revés: lo que estaba solo (" + izq + ") va arriba."),
+          m2: suma ? T("Check the signs: subtract both a and b.", "Revise los signos: se restan a y b.") : T("The letters are multiplied, not added: you divide.", "Las letras están multiplicadas, no sumadas: se divide.")};
+}
+function genDespejar(){
+  var d = elige(UNA), o = [{html: auto(d.res), clave: "b"}].concat(d.mal.map(function(m, i){ return {html: auto(m), clave: "m" + i}; }));
+  return {enun: T("In ", "En ") + auto(d.f) + T(", solve for ", ", despeje ") + d.v + ".", opciones: o, correcta: "b", porClave: pistasMal(d), bien: d.op, mal: d.op + T(" You get ", " Queda ") + auto(d.res) + "."};
+}
+function genNecesitas(){
+  var d = elige(UNA), otras = baraja(UNA.filter(function(x){ return x !== d && x.res !== d.res; })).slice(0, 2);
+  var o = [{html: auto(d.res), clave: "b"}, {html: auto(d.mal[1]), clave: "inv"}].concat(otras.map(function(x, i){ return {html: auto(x.res), clave: "o" + i}; }));
+  var pc = {inv: T("The fraction is upside down.", "La fracción está al revés."), o0: T("That formula finds a different amount.", "Esa fórmula halla otra cantidad."), o1: T("That formula finds a different amount.", "Esa fórmula halla otra cantidad.")};
+  return {enun: T("Which solved formula finds " + d.hallar + "? (The original formula is ", "¿Qué fórmula despejada sirve para hallar " + d.hallar + "? (La fórmula original es ") + auto(d.f) + ".)", opciones: o, correcta: "b", porClave: pc,
+    bien: T("Solve " + auto(d.f) + " for " + d.v + ": ", "Se despeja " + d.v + " en " + auto(d.f) + ": ") + auto(d.res) + ".", mal: T("Solve " + auto(d.f) + " for " + d.v + ": ", "Se despeja " + d.v + " en " + auto(d.f) + ": ") + auto(d.res) + "."};
+}
+
+/* ============ MODULE 3 · two-step formulas ============ */
+var DOS = [
+  {f: "F = " + R95 + "C + 32", v: "C", res: "C = " + R59 + "(F − 32)",
+   pasos: [T("First remove what is added: subtract 32 from both sides. You get ", "Se quita primero lo que está sumado: se resta 32 en ambos lados. Queda ") + auto("F − 32 = " + R95 + "C") + ".",
+           T("To undo the multiplication by " + R95 + ", multiply both sides by its reciprocal, " + R59 + ". You get ", "Para deshacer la multiplicación por " + R95 + " se multiplica por su recíproco, " + R59 + ", en ambos lados. Queda ") + auto(R59 + "(F − 32) = C") + "."],
+   mal: ["C = " + R59 + "F − 32", "C = " + R95 + "(F − 32)", "C = " + R59 + "(F + 32)"],
+   pc: [T("Order matters: subtract 32 from the whole F first, then multiply everything by 5/9.", "El orden importa: primero se resta 32 a toda la F y después se multiplica todo por 5/9."), T("Multiply by the reciprocal, 5/9, not by 9/5 again.", "Se multiplica por el recíproco, 5/9, no otra vez por 9/5."), T("To undo + 32, subtract 32.", "Para deshacer + 32 se resta 32.")]},
+  {f: "y = mx + b", v: "b", res: "b = y − mx",
+   pasos: [T("b is added: subtract mx from both sides. You get ", "La b está sumada: se resta mx en ambos lados. Queda ") + auto("y − mx = b") + "."],
+   mal: ["b = y + mx", "b = " + Q("y", "mx"), "b = mx − y"],
+   pc: [T("To undo + mx, subtract mx.", "Para deshacer + mx se resta mx."), T("b is added, not multiplied.", "La b está sumada, no multiplicada."), T("The order is y − mx.", "El orden es y − mx.")]},
+  {f: "y = mx + b", v: "x", res: "x = " + Q("y − b", "m"),
+   pasos: [T("First remove what is added: subtract b from both sides. You get ", "Se quita primero lo que está sumado: se resta b en ambos lados. Queda ") + auto("y − b = mx") + ".",
+           T("x is multiplied by m: divide both sides by m. You get ", "La x está multiplicada por m: se divide entre m en ambos lados. Queda ") + auto(Q("y − b", "m") + " = x") + "."],
+   mal: ["x = " + Q("y", "m") + " − b", "x = " + Q("y + b", "m"), "x = m(y − b)"],
+   pc: [T("Order matters: subtract b first, then divide the whole result by m.", "El orden importa: primero se resta b y después se divide todo entre m."), T("To undo + b, subtract b.", "Para deshacer + b se resta b."), T("x is multiplied by m: divide by m.", "La x está multiplicada por m: se divide entre m.")]},
+  {f: "P = 2l + 2w", v: "l", res: "l = " + Q("P − 2w", 2),
+   pasos: [T("First remove what is added: subtract 2w from both sides. You get ", "Se quita primero lo que está sumado: se resta 2w en ambos lados. Queda ") + auto("P − 2w = 2l") + ".",
+           T("l is multiplied by 2: divide both sides by 2. You get ", "La l está multiplicada por 2: se divide entre 2 en ambos lados. Queda ") + auto(Q("P − 2w", 2) + " = l") + "."],
+   mal: ["l = " + Q("P", 2) + " − 2w", "l = " + Q("P + 2w", 2), "l = P − w"],
+   pc: [T("Order matters: subtract 2w first, then divide the whole result by 2.", "El orden importa: primero se resta 2w y después se divide todo entre 2."), T("To undo + 2w, subtract 2w.", "Para deshacer + 2w se resta 2w."), T("Divide the whole P − 2w by 2.", "Se divide todo P − 2w entre 2.")]},
+  {f: "A = " + MEDIO + "bh", v: "h", res: "h = " + Q("2A", "b"),
+   pasos: [T("To undo the " + MEDIO + ", multiply both sides by 2. You get ", "Para deshacer el " + MEDIO + " se multiplica por 2 en ambos lados. Queda ") + auto("2A = bh") + ".",
+           T("h is multiplied by b: divide by b. You get ", "La h está multiplicada por b: se divide entre b. Queda ") + auto(Q("2A", "b") + " = h") + "."],
+   mal: ["h = " + Q("A", "2b"), "h = " + Q("A", "b"), "h = 2Ab"],
+   pc: [T("To undo the 1/2, multiply by 2; do not divide.", "Para deshacer el 1/2 se multiplica por 2; no se divide."), T("You forgot to undo the 1/2.", "Faltó deshacer el 1/2."), T("h is multiplied by b: divide by b.", "La h está multiplicada por b: se divide entre b.")]}
+];
+var DP = {pasos: [], visto: 0};
+function llenaDP(){ var sel = $("dp-sel"); DOS.forEach(function(d, i){ var o = document.createElement("option"); o.value = i; o.textContent = etiqueta(d).replace(/<span class="fracc"><span class="fa">(.*?)<\/span><span class="fb2">(.*?)<\/span><\/span>/g, "($1/$2)"); sel.appendChild(o); }); }
+function preparaDP(){
+  var d = DOS[+$("dp-sel").value];
+  DP.pasos = [T("You want " + d.v + " alone.", "Se quiere dejar sola la " + d.v + ".")].concat(d.pasos).concat(['<span class="veredicto">' + T("Answer: ", "Resultado: ") + auto(d.res) + "</span>"]); DP.visto = 0;
+  $("dp-expr").innerHTML = '<span class="grande">' + auto(d.f) + "</span>";
+  pintaDP();
+}
+function pintaDP(){
+  $("dp-pasos").innerHTML = DP.pasos.slice(0, DP.visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === DP.pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join("");
+  var b = $("dp-sig"); b.disabled = DP.visto >= DP.pasos.length; $("dp-todo").disabled = b.disabled;
+  b.textContent = DP.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso"));
+}
+function genDosPasos(){
+  var d = elige(DOS), o = [{html: auto(d.res), clave: "b"}].concat(d.mal.map(function(m, i){ return {html: auto(m), clave: "m" + i}; })), pc = {};
+  d.pc.forEach(function(p, i){ pc["m" + i] = p; });
+  return {enun: T("In ", "En ") + auto(d.f) + T(", solve for ", ", despeje ") + d.v + ".", opciones: o, correcta: "b", porClave: pc, bien: d.pasos.join(" "), mal: d.pasos.join(" ")};
+}
+
+/* ============ MODULE 4 · using the formula: two paths ============ */
+function problemaFormula(){
+  var tp = aleatorio(1, 6);
+  if (tp === 1){ var r = elige([40, 45, 50, 55, 60, 65]), tt = aleatorio(2, 6), d = r * tt;
+    return {txt: T("A car traveled " + d + " miles at " + r + " miles per hour. How many hours did it take?", "Un auto recorrió " + d + " millas a " + r + " millas por hora. ¿Cuántas horas tardó?"), f: "d = rt", des: "t = " + Q("d", "r"),
+      sust: d + " = " + r + "t", res: fr(tt), unidad: T("hours", "horas"), cuenta: "t = " + Q(d, r) + " = " + tt, resuelve: T("divide both sides by " + r, "se divide entre " + r + " en ambos lados")}; }
+  if (tp === 2){ var Pc = elige([500, 800, 1000, 1200, 2000]), rr = elige([2, 3, 4, 5, 6]), ti = aleatorio(2, 5), I = Pc * rr * ti / 100;
+    return {txt: T("An investment of $" + Pc + " earned $" + I + " in simple interest in " + ti + " years. What was the yearly interest rate? Give the answer as a decimal (for example, 0.04).", "Una inversión de $" + Pc + " produjo $" + I + " de interés simple en " + ti + " años. ¿Cuál fue la tasa de interés anual? Dé la respuesta en decimal (por ejemplo, 0.04)."), f: "I = Prt", des: "r = " + Q("I", "Pt"),
+      sust: I + " = " + Pc + " · r · " + ti, res: fr(rr, 100), unidad: T("(that is, " + rr + "%)", "(es decir, " + rr + " %)"), cuenta: "r = " + Q(I, Pc * ti) + " = " + (rr / 100), resuelve: T("multiply " + Pc + " · " + ti + " = " + (Pc * ti) + " and divide both sides by " + (Pc * ti), "se multiplica " + Pc + " · " + ti + " = " + (Pc * ti) + " y se divide entre " + (Pc * ti) + " en ambos lados")}; }
+  if (tp === 3){ var C = elige([-10, 0, 5, 10, 15, 20, 25, 30, 35, 40, 100]), F = 9 * C / 5 + 32;
+    return {txt: T("The thermometer reads " + F + " °F. How many degrees Celsius is that?", "El termómetro marca " + F + " °F. ¿Cuántos grados Celsius son?"), f: "F = " + R95 + "C + 32", des: "C = " + R59 + "(F − 32)",
+      sust: F + " = " + R95 + "C + 32", res: fr(C), unidad: "°C", cuenta: "C = " + R59 + "(" + F + " − 32) = " + R59 + " · " + (F - 32) + " = " + C, resuelve: T("subtract 32 from both sides and multiply by ", "se resta 32 en ambos lados y se multiplica por ") + R59}; }
+  if (tp === 4){ var w = aleatorio(3, 12), l = w + aleatorio(2, 10), Pp = 2 * l + 2 * w;
+    return {txt: T("A rectangle has a perimeter of " + Pp + " feet and a width of " + w + " feet. How long is it?", "Un rectángulo tiene un perímetro de " + Pp + " pies y un ancho de " + w + " pies. ¿Cuánto mide el largo?"), f: "P = 2l + 2w", des: "l = " + Q("P − 2w", 2),
+      sust: Pp + " = 2l + " + (2 * w), res: fr(l), unidad: T("feet", "pies"), cuenta: "l = " + Q(Pp + " − " + (2 * w), 2) + " = " + Q(Pp - 2 * w, 2) + " = " + l, resuelve: T("subtract " + (2 * w) + " from both sides and divide by 2", "se resta " + (2 * w) + " en ambos lados y se divide entre 2")}; }
+  if (tp === 5){ var lv = aleatorio(3, 10), wv = aleatorio(2, 8), hv = aleatorio(2, 9), V = lv * wv * hv;
+    return {txt: T("A box has a volume of " + V + " cubic inches, a length of " + lv + " inches, and a width of " + wv + " inches. How tall is it?", "Una caja tiene un volumen de " + V + " pulgadas cúbicas, un largo de " + lv + " pulgadas y un ancho de " + wv + " pulgadas. ¿Cuánto mide la altura?"), f: "V = lwh", des: "h = " + Q("V", "lw"),
+      sust: V + " = " + lv + " · " + wv + " · h", res: fr(hv), unidad: T("inches", "pulgadas"), cuenta: "h = " + Q(V, lv * wv) + " = " + hv, resuelve: T("multiply " + lv + " · " + wv + " = " + (lv * wv) + " and divide both sides by " + (lv * wv), "se multiplica " + lv + " · " + wv + " = " + (lv * wv) + " y se divide entre " + (lv * wv) + " en ambos lados")}; }
+  var m = elige([2, 3, 4, 5, -2]), b = nz(), x = aleatorio(-4, 8), y = m * x + b;
+  return {txt: T("On the line y = " + P(tm(m, "x"), tm(b)).replace(/<[^>]+>/g, "") + ", what is x when y = " + menosV(y) + "?", "En la recta y = " + P(tm(m, "x"), tm(b)).replace(/<[^>]+>/g, "") + ", ¿cuánto vale x cuando y = " + menosV(y) + "?"), f: "y = mx + b", des: "x = " + Q("y − b", "m"),
+    sust: menosV(y) + " = " + P(tm(m, "x"), tm(b)), res: fr(x), unidad: "", cuenta: "x = " + Q("(" + menosV(y) + ") − (" + menosV(b) + ")", menosV(m)) + " = " + Q(menosV(y - b), menosV(m)) + " = " + menosV(x), resuelve: (b > 0 ? T("subtract " + b, "se resta " + b) : T("add " + (-b), "se suma " + (-b))) + T(" on both sides and divide by ", " en ambos lados y se divide entre ") + menosV(m)};
+}
+function nuevoCA(){
+  var q = problemaFormula();
+  $("ca-enun").textContent = q.txt;
+  $("ca-caminos").innerHTML =
+    "<div><p><strong>" + T("Solve first", "Despejar primero") + "</strong></p><p>" + T("Formula: ", "Fórmula: ") + auto(q.f) + ".</p><p>" + T("Solve: ", "Se despeja: ") + auto(q.des) + ".</p><p>" + T("Substitute: ", "Se sustituye: ") + auto(q.cuenta) + ".</p></div>" +
+    "<div><p><strong>" + T("Substitute first", "Sustituir primero") + "</strong></p><p>" + T("Formula: ", "Fórmula: ") + auto(q.f) + ".</p><p>" + T("Substitute: ", "Se sustituye: ") + auto(q.sust) + ".</p><p>" + T("Solve the equation: ", "Se resuelve la ecuación: ") + auto(q.resuelve) + T(". The result is ", ". El resultado es ") + numHTML(q.res, "dec") + ".</p></div>";
+}
+function genAplicar(){
+  var q = problemaFormula();
+  return {enun: q.txt, solucion: T("With ", "Con ") + auto(q.des) + ": " + auto(q.cuenta) + " " + q.unidad + ".", evalua: function(tx){ return evaluaNumero(tx, q.res, []); }};
+}
+
+/* ============ Start ============ */
+llenaPL();
+$("pl-sel").addEventListener("change", function(){ PL.visto = 0; pintaPL(); });
+$("pl-sig").addEventListener("click", function(){ if (PL.visto < PL.total){ PL.visto++; pintaPL(); } });
+$("pl-todo").addEventListener("click", function(){ PL.visto = PL.total; pintaPL(); });
+pintaPL();
+OMR("p1", genDespejar);
+OMR("p2", genNecesitas);
+llenaDP();
+$("dp-sel").addEventListener("change", preparaDP);
+$("dp-sig").addEventListener("click", function(){ if (DP.visto < DP.pasos.length){ DP.visto++; pintaDP(); } });
+$("dp-todo").addEventListener("click", function(){ DP.visto = DP.pasos.length; pintaDP(); });
+preparaDP();
+OMR("p3", genDosPasos);
+$("ca-nuevo").addEventListener("click", nuevoCA);
+nuevoCA();
+creaPracticaLibre("p4", genAplicar);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

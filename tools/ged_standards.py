@@ -202,6 +202,9 @@ CCR = {
  "6.EE.2c": ("D", "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations)."),
  "7.EE.1": ("D", "Apply properties of operations as strategies to add, subtract, factor, and expand linear expressions with rational coefficients."),
  "8.EE.7": ("D", "Solve linear equations in one variable. Give examples of linear equations in one variable with one solution, infinitely many solutions, or no solutions. Solve linear equations with rational number coefficients, including equations whose solutions require expanding expressions using the distributive property and collecting like terms."),
+ "6.EE.8": ("D", "Write an inequality of the form x > c or x < c to represent a constraint or condition in a real-world or mathematical problem. Recognize that inequalities of the form x > c or x < c have infinitely many solutions; represent solutions of such inequalities on number line diagrams."),
+ "7.EE.4": ("D", "Use variables to represent quantities in a real-world or mathematical problem, and construct simple equations and inequalities to solve problems by reasoning about the quantities."),
+ "A-CED.4": ("D", "Rearrange formulas to highlight a quantity of interest, using the same reasoning as in solving equations."),
  "8.NS.1": ("D", "Know that numbers that are not rational are called irrational. Understand informally that every number has a decimal expansion; for rational numbers show that the decimal expansion repeats eventually, and convert a decimal expansion which repeats eventually into a rational number."),
  "8.NS.2": ("D", "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions."),
  "6.RP.1": ("D", "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities."),
@@ -348,6 +351,12 @@ LESSONS = [
   {"direct": ["A.2.a"], "builds": ["A.2.b", "A.2.c"], "mp": ["MP.3.a", "MP.4.b", "MP.5.c"], "ccr": ["6.EE.5", "8.EE.7"]}),
  ("level-3/lesson-4-3.html", "4.3", "Equations with fractions, decimals, and special cases",
   {"direct": ["A.2.a"], "builds": ["Q.1.b", "A.2.b"], "mp": ["MP.3.a", "MP.3.c", "MP.4.b"], "ccr": ["8.EE.7"]}),
+ ("level-3/lesson-5-1.html", "5.1", "Solving linear inequalities and graphing them on the number line",
+  {"direct": ["A.3.a", "A.3.b"], "builds": [], "mp": ["MP.3.a", "MP.4.b", "MP.5.c"], "ccr": ["6.EE.8", "7.EE.4"]}),
+ ("level-3/lesson-5-2.html", "5.2", "Inequalities that need simplifying, and word problems",
+  {"direct": ["A.3.a", "A.3.c", "A.3.d"], "builds": ["A.3.b"], "mp": ["MP.2.a", "MP.4.b", "MP.2.c"], "ccr": ["7.EE.4"]}),
+ ("level-3/lesson-5-3.html", "5.3", "Solving literal formulas, and a general strategy",
+  {"direct": ["A.2.a"], "builds": ["Q.4.a", "Q.5.a", "A.2.b"], "mp": ["MP.2.a", "MP.4.b", "MP.3.a"], "ccr": ["A-CED.4"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

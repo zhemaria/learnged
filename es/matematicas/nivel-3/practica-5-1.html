@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica — práctica (español) — construida con tools/build_n3_lesson_5_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-5-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.8rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 5 · Inecuaciones y fórmulas</div>
+    <h1>Lección 5.1 · Resolver inecuaciones lineales y graficar en la recta numérica</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#resolver">Resolver como una ecuación</a></li>
+      <li><a href="#invertir">La regla crítica: invertir el signo</a></li>
+      <li><a href="#graficar">Graficar en la recta numérica</a></li>
+      <li><a href="#prueba">Verificar con un valor de prueba</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="resolver" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Resolver como una ecuación</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una inecuación compara dos expresiones con uno de estos signos:</p>
+      <table class="reglas">
+        <caption>Significado de los signos de desigualdad</caption>
+        <thead><tr><th scope="col">Signo</th><th scope="col">Significado</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td>&lt;</td><td>menor que</td><td>x &lt; 5</td></tr>
+          <tr><td>&gt;</td><td>mayor que</td><td>x &gt; 5</td></tr>
+          <tr><td>≤</td><td>menor o igual que</td><td>x ≤ 5</td></tr>
+          <tr><td>≥</td><td>mayor o igual que</td><td>x ≥ 5</td></tr>
+        </tbody>
+      </table>
+      <p>Mientras no se multiplique ni se divida por un número negativo, una inecuación se resuelve <strong>exactamente igual</strong> que una ecuación. La diferencia está en la respuesta: no es un número, sino un <strong>rango</strong> de números.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="rs-ec"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="rs-sig"></button><button type="button" class="btn-sec" id="rs-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="rs-nuevo">Otra inecuación</button></div>
+      </div>
+      <div class="pasos" id="rs-pasos" aria-live="polite"></div>
+      <div id="rs-recta"></div>
+      <h3>Practique: resuelva la inecuación</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo" aria-hidden="true" style="font-size:22px;font-weight:700;padding-bottom:6px;">x</div>
+          <div class="campo"><label for="p1-s">Signo</label><select id="p1-s"><option value="">Elija</option><option value="&lt;">&lt;</option><option value="&gt;">&gt;</option><option value="≤">≤</option><option value="≥">≥</option></select></div>
+          <div class="campo"><label for="p1-v">Número límite</label><input type="text" autocomplete="off" class="corto" id="p1-v"></div>
+        </div>
+        <p class="nota">Elija el signo de la solución y escriba el número. Puede ser negativo o una fracción como 5/2.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="invertir">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La regla crítica: invertir el signo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Al <strong>multiplicar o dividir</strong> ambos lados por un número <strong>negativo</strong>, el signo de la desigualdad se invierte. Es la única diferencia real con las ecuaciones.</p>
+      <h3>Compruébelo con números</h3>
+      <p>Empiece con una desigualdad verdadera entre dos números y aplique la misma operación a los dos lados. Mire si la desigualdad sigue siendo verdadera.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="iv-p">Número de la izquierda</label><input type="text" class="corto" id="iv-p" value="6"></div>
+        <div class="campo"><label for="iv-q">Número de la derecha</label><input type="text" class="corto" id="iv-q" value="4"></div>
+        <div class="campo"><label for="iv-op">Operación en ambos lados</label><select id="iv-op"><option value="+">Sumar</option><option value="-">Restar</option><option value="*" selected>Multiplicar por</option><option value="/">Dividir entre</option></select></div>
+        <div class="campo"><label for="iv-k">Número</label><input type="text" class="corto" id="iv-k" value="-1"></div>
+      </div></div>
+      <div class="caja-aviso" id="iv-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="iv-salida"></div>
+      <div class="caja-atencion"><strong>Solo con negativos, y solo al multiplicar o dividir:</strong> sumar o restar un negativo no invierte el signo. El error más común es invertirlo sin que corresponda.</div>
+      <h3>Practique: ¿qué pasa con el signo?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="graficar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Graficar en la recta numérica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Graficar la solución requiere dos decisiones: el tipo de punto en el número límite y la dirección de la flecha.</p>
+      <table class="reglas">
+        <caption>Punto y dirección según el signo</caption>
+        <thead><tr><th scope="col">Signo</th><th scope="col">Punto en el límite</th><th scope="col">Flecha</th></tr></thead>
+        <tbody>
+          <tr><td>x &lt; a</td><td>abierto ○ (no se incluye)</td><td>hacia la izquierda</td></tr>
+          <tr><td>x ≤ a</td><td>cerrado ● (sí se incluye)</td><td>hacia la izquierda</td></tr>
+          <tr><td>x &gt; a</td><td>abierto ○</td><td>hacia la derecha</td></tr>
+          <tr><td>x ≥ a</td><td>cerrado ●</td><td>hacia la derecha</td></tr>
+        </tbody>
+      </table>
+      <h3>Arme la gráfica</h3>
+      <div class="panel">
+        <div class="estado">Grafique <span class="grande" id="gr-sol"></span></div>
+        <p><strong>El punto en el límite es…</strong></p>
+        <div class="elecciones" id="gr-punto"><button type="button" class="eleccion" data-v="abierto" aria-pressed="false">Abierto ○</button><button type="button" class="eleccion" data-v="cerrado" aria-pressed="false">Cerrado ●</button></div>
+        <p><strong>La flecha va hacia…</strong></p>
+        <div class="elecciones" id="gr-dir"><button type="button" class="eleccion" data-v="izq" aria-pressed="false">← la izquierda</button><button type="button" class="eleccion" data-v="der" aria-pressed="false">la derecha →</button></div>
+        <div id="gr-recta"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="gr-comprobar">Comprobar</button><button type="button" class="btn-sec" id="gr-nuevo">Otra solución</button></div>
+        <div class="fb" id="gr-fb" role="status"></div>
+        <p class="marcador" id="gr-marcador"></p>
+      </div>
+      <h3>Practique: ¿qué inecuación muestra la gráfica?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="prueba">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Verificar con un valor de prueba</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para comprobar una solución se eligen tres valores: uno claramente dentro del rango, el número límite y uno fuera. Se sustituyen en la <strong>inecuación original</strong>: solo los del rango deben hacerla verdadera.</p>
+      <h3>Probador de valores</h3>
+      <div class="panel">
+        <div class="estado">Inecuación: <span class="grande" id="pv-ec"></span></div>
+        <p class="centro">Solución propuesta: <strong id="pv-sol"></strong></p>
+        <div class="campo"><label for="pv-x">Valor de prueba: <span id="pv-val"></span></label><input type="range" id="pv-x" min="-10" max="10" step="1" value="0"></div>
+        <div id="pv-recta"></div>
+      <div class="salida" aria-live="polite" id="pv-salida"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="pv-nuevo">Otra inecuación</button></div>
+      </div>
+      <h3>Practique: ¿qué valor es solución?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 5 · Inecuaciones y fórmulas · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script>
+function ineqPositiva(){
+  var tp = aleatorio(1, 3), a = aleatorio(2, 7), v = aleatorio(-5, 9), b = nz(), r = elige(RELS);
+  if (tp === 1) return {izq: L(1, b), r: r, der: L(0, v + b)};
+  if (tp === 2) return {izq: L(a, 0), r: r, der: L(0, a * v)};
+  return {izq: L(a, b), r: r, der: L(0, a * v + b)};
+}
+function pasosLista(pasos, visto){ return pasos.slice(0, visto).map(function(p, i){ return '<div class="paso"><span class="n" aria-hidden="true">' + (i === pasos.length - 1 ? "✓" : i + 1) + "</span>" + p + "</div>"; }).join(""); }
+function botonPasos(pre, S){ var b = $(pre + "-sig"); b.disabled = S.visto >= S.pasos.length; $(pre + "-todo").disabled = b.disabled; b.textContent = S.visto === 0 ? T("Show the first step", "Mostrar el primer paso") : (b.disabled ? T("All the steps are showing", "Ya se ven todos los pasos") : T("Show the next step", "Mostrar el siguiente paso")); }
+
+/* ============ MODULE 1 · solving ============ */
+var RS = {pasos: [], visto: 0, sol: null, cola: [{izq: L(1, 5), r: "<", der: L(0, 12)}, {izq: L(3, 0), r: "≤", der: L(0, 15)}, {izq: L(2, 5), r: ">", der: L(0, 13)}]};
+function nuevoRS(){
+  var e = RS.cola.length ? RS.cola.shift() : ineqPositiva(), R = pasosIneq(e.izq, e.r, e.der);
+  var menores = !derecha(R.r);
+  RS.pasos = R.pasos.concat(['<span class="veredicto">' + T("Solution: ", "Solución: ") + solHTML(R.r, R.v) + ". " +
+     T("These are all the numbers " + (menores ? "less" : "greater") + " than " + fTxt(R.v) + (REL_ESTRICTO[R.r] ? ", not including it." : ", including " + fTxt(R.v) + " itself."),
+       "Son todos los números " + (menores ? "menores" : "mayores") + " que " + fTxt(R.v) + (REL_ESTRICTO[R.r] ? ", sin incluirlo." : ", incluido el " + fTxt(R.v) + ".")) + "</span>"]);
+  RS.sol = R; RS.visto = 0;
+  $("rs-ec").innerHTML = ineqHTML(e.izq, e.r, e.der);
+  pintaRS();
+}
+function pintaRS(){
+  $("rs-pasos").innerHTML = pasosLista(RS.pasos, RS.visto);
+  $("rs-recta").innerHTML = RS.visto >= RS.pasos.length ? ineqSVG(RS.sol.v, RS.sol.r) : "";
+  botonPasos("rs", RS);
+}
+function genResolver(){
+  var e = ineqPositiva(), R = pasosIneq(e.izq, e.r, e.der);
+  return {enun: T("Solve ", "Resuelva ") + ineqHTML(e.izq, e.r, e.der) + ".", r: R.r, v: R.v, invierte: R.invierte,
+    explica: T("You solve it like an equation; the coefficient is positive, so the sign stays the same.", "Se resuelve como una ecuación; el coeficiente es positivo, así que el signo se conserva.")};
+}
+
+/* ============ MODULE 2 · flipping the sign, checked with numbers ============ */
+function pintaIV(){
+  var p = leeEntero($("iv-p").value), q = leeEntero($("iv-q").value), k = leeEntero($("iv-k").value), op = $("iv-op").value, av = $("iv-aviso");
+  function aviso(m){ av.className = "caja-aviso visible"; av.textContent = m; $("iv-salida").innerHTML = ""; }
+  if (p === null || q === null || k === null || Math.abs(p) > 99 || Math.abs(q) > 99 || Math.abs(k) > 20) return aviso(T("Type whole numbers (from −99 to 99; the number for the operation from −20 to 20).", "Escriba números enteros (de −99 a 99; el número de la operación, de −20 a 20)."));
+  if (p === q) return aviso(T("Choose two different numbers, so there is an inequality.", "Elija dos números distintos, para que haya una desigualdad."));
+  if (k === 0 && (op === "*" || op === "/")) return aviso(op === "/" ? T("You cannot divide by 0.", "No se puede dividir entre 0.") : T("Multiplying by 0 leaves 0 = 0, and the information is lost. Choose another number.", "Multiplicar por 0 deja 0 = 0 y se pierde la información. Elija otro número."));
+  av.className = "caja-aviso"; av.textContent = "";
+  var r = p > q ? ">" : "<", P2, Q2, nombre;
+  if (op === "+"){ P2 = fr(p + k); Q2 = fr(q + k); nombre = T("adding ", "sumar ") + menosV(k); }
+  else if (op === "-"){ P2 = fr(p - k); Q2 = fr(q - k); nombre = T("subtracting ", "restar ") + menosV(k); }
+  else if (op === "*"){ P2 = fr(p * k); Q2 = fr(q * k); nombre = T("multiplying by ", "multiplicar por ") + menosV(k); }
+  else { P2 = fr(p, k); Q2 = fr(q, k); nombre = T("dividing by ", "dividir entre ") + menosV(k); }
+  var conserva = cumple(P2, r, Q2), ri = REL_INV[r], V = T("true", "verdadero"), F = T("false", "falso");
+  var h = '<div class="linea">' + T("Before: ", "Antes: ") + menosV(p) + " " + relVis(r) + " " + menosV(q) + ' <span class="verdad si">(' + V + ")</span>.</div>";
+  h += '<div class="linea">' + T("After ", "Después de ") + nombre + T(" on both sides: ", " en ambos lados: ") + numHTML(P2) + T(" and ", " y ") + numHTML(Q2) + ".</div>";
+  h += '<div class="linea">' + T("With the same sign: ", "Con el mismo signo: ") + numHTML(P2) + " " + relVis(r) + " " + numHTML(Q2) + ' <span class="verdad ' + (conserva ? "si" : "no") + '">(' + (conserva ? V : F) + ")</span>.</div>";
+  if (!conserva) h += '<div class="linea">' + T("With the sign flipped: ", "Con el signo invertido: ") + numHTML(P2) + " " + relVis(ri) + " " + numHTML(Q2) + ' <span class="verdad si">(' + V + ")</span>.</div>";
+  h += '<div class="linea veredicto">' + (conserva ? T("The sign stays the same. ", "El signo se conserva. ") : T("The sign flips. ", "El signo se invierte. ")) +
+       ((op === "*" || op === "/") ? (k < 0 ? T("That always happens when you multiply or divide by a negative number: the order of the numbers on the line turns around.", "Así pasa siempre al multiplicar o dividir por un negativo: el orden de los números se da vuelta en la recta.") : T("Multiplying or dividing by a positive number keeps the order.", "Multiplicar o dividir por un positivo conserva el orden."))
+                                   : T("Adding or subtracting, even a negative number, only shifts both numbers by the same amount.", "Sumar o restar, aunque sea un negativo, solo desplaza los dos números por igual.")) + "</div>";
+  $("iv-salida").innerHTML = h;
+}
+function genSigno(){
+  var tp = aleatorio(1, 4), r = elige(RELS), v, izq, der;
+  if (tp === 1){ var a = -aleatorio(2, 6); v = aleatorio(-6, 6); izq = L(a, 0); der = L(0, a * v); }
+  else if (tp === 2){ v = aleatorio(-6, 6); if (v === 0) v = 4; izq = L(-1, 0); der = L(0, -v); }
+  else if (tp === 3){ var a3 = aleatorio(2, 6); v = aleatorio(-6, 6); izq = L(a3, 0); der = L(0, a3 * v); }
+  else { var b = -aleatorio(2, 9); v = aleatorio(-4, 8); izq = L(1, b); der = L(0, v + b); }
+  var R = pasosIneq(izq, r, der), o = [], pc = {}, usadas = {};
+  function mete(op, msg){ if (usadas[op.clave]) return; usadas[op.clave] = 1; o.push(op); if (msg) pc[op.clave] = msg; }
+  mete(opSol(R.r, R.v));
+  mete(opSol(REL_INV[R.r], R.v), R.invierte ? T("You divided by a negative number: the sign has to flip.", "Se dividió entre un negativo: el signo tiene que invertirse.") : (tp === 4 ? T("Adding or subtracting, even a negative number, does not flip the sign.", "Sumar o restar, aunque sea un negativo, no invierte el signo.") : T("You divided by a positive number: the sign does not flip.", "Se dividió entre un positivo: el signo no se invierte.")));
+  if (!fcero(R.v)){ mete(opSol(R.r, fneg(R.v)), T("Check the sign of the boundary number.", "Revise el signo del número límite.")); mete(opSol(REL_INV[R.r], fneg(R.v)), T("Check the sign of the boundary number and the inequality sign.", "Revise el signo del número límite y el de la desigualdad.")); }
+  else { mete(opSol(REL_ESTRICTO[R.r] ? (R.r === "<" ? "≤" : "≥") : (R.r === "≤" ? "<" : ">"), R.v), T("Check whether the boundary is included.", "Revise si el límite se incluye.")); mete(opSol(R.r, fr(1)), T("Check the boundary number.", "Revise el número límite.")); }
+  return {enun: T("Solve ", "Resuelva ") + ineqHTML(izq, r, der) + ".", opciones: o, correcta: o[0].clave, porClave: pc,
+    bien: R.pasos.join(" "), mal: T("The solution is ", "La solución es ") + solHTML(R.r, R.v) + ". " + R.pasos.join(" ")};
+}
+
+/* ============ MODULE 3 · graphing ============ */
+var GR = {r: "<", v: fr(0), punto: null, dir: null, resuelto: false, intentos: 0, primero: 0, pista: 0, total: 0};
+function nuevoGR(){
+  GR.r = elige(RELS); GR.v = fr(aleatorio(-5, 5)); GR.punto = null; GR.dir = null; GR.resuelto = false; GR.intentos = 0;
+  $("gr-sol").innerHTML = solHTML(GR.r, GR.v);
+  ["gr-punto", "gr-dir"].forEach(function(id){ Array.prototype.forEach.call($(id).children, function(b){ b.setAttribute("aria-pressed", "false"); b.disabled = false; }); });
+  $("gr-comprobar").disabled = false; $("gr-fb").className = "fb"; $("gr-fb").innerHTML = "";
+  pintaGR();
+}
+function relDe(punto, dir){ return dir === "der" ? (punto === "abierto" ? ">" : "≥") : (punto === "abierto" ? "<" : "≤"); }
+function nombrePunto(p){ return p === "abierto" ? T("open", "abierto") : T("closed", "cerrado"); }
+function pintaGR(){
+  if (GR.punto && GR.dir) $("gr-recta").innerHTML = ineqSVG(GR.v, relDe(GR.punto, GR.dir), {voz: T("Your graph: " + nombrePunto(GR.punto) + " point at " + fTxt(GR.v) + " and arrow to the " + (GR.dir === "der" ? "right" : "left"), "Su gráfica: punto " + nombrePunto(GR.punto) + " en " + fTxt(GR.v) + " y flecha hacia la " + (GR.dir === "der" ? "derecha" : "izquierda"))});
+  else $("gr-recta").innerHTML = ineqSVG(GR.v, null, {voz: T("Empty number line. Choose the point and the direction.", "Recta numérica vacía. Elija el punto y la dirección.")});
+}
+function eligeGR(grupo, b){
+  if (GR.resuelto) return;
+  Array.prototype.forEach.call($(grupo).children, function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+  if (grupo === "gr-punto") GR.punto = b.getAttribute("data-v"); else GR.dir = b.getAttribute("data-v");
+  pintaGR();
+}
+function compruebaGR(){
+  if (GR.resuelto) return;
+  var fb = $("gr-fb");
+  if (!GR.punto || !GR.dir){ fb.className = "fb pista"; fb.innerHTML = T("Choose the kind of point and the direction of the arrow.", "Elija el tipo de punto y la dirección de la flecha."); return; }
+  GR.intentos++;
+  var bienP = (GR.punto === "abierto") === REL_ESTRICTO[GR.r], bienD = (GR.dir === "der") === derecha(GR.r);
+  var exp = T("With " + relVis(GR.r) + " the point is " + (REL_ESTRICTO[GR.r] ? "open, because " + fTxt(GR.v) + " is not included" : "closed, because " + fTxt(GR.v) + " is included") + ", and the arrow goes to the " + (derecha(GR.r) ? "right (greater numbers)." : "left (smaller numbers)."),
+              "Con " + relVis(GR.r) + " el punto es " + (REL_ESTRICTO[GR.r] ? "abierto, porque el " + fTxt(GR.v) + " no se incluye" : "cerrado, porque el " + fTxt(GR.v) + " sí se incluye") + ", y la flecha va hacia la " + (derecha(GR.r) ? "derecha (números mayores)." : "izquierda (números menores)."));
+  if (bienP && bienD){
+    GR.resuelto = true; GR.total++; if (GR.intentos === 1) GR.primero++; else GR.pista++;
+    fb.className = "fb bien"; fb.innerHTML = TX.bien + exp;
+  } else if (GR.intentos >= 2){
+    GR.resuelto = true; GR.total++; fb.className = "fb mal"; fb.innerHTML = TX.asi + exp + TX.nuevo;
+    $("gr-recta").innerHTML = ineqSVG(GR.v, GR.r, {voz: T("Correct graph: ", "Gráfica correcta: ") + exp});
+  } else {
+    fb.className = "fb pista";
+    fb.innerHTML = TX.todavia + (!bienP && !bienD ? T("Neither the point nor the direction matches.", "El punto y la dirección no corresponden.") : (!bienP ? T("The direction is right, but the point is not: is the boundary included?", "La dirección está bien, pero el punto no: ¿se incluye el límite?") : T("The point is right, but the direction is not: are the solutions greater or smaller?", "El punto está bien, pero la dirección no: ¿las soluciones son mayores o menores?"))) + TX.unoMas;
+  }
+  if (GR.resuelto){ ["gr-punto", "gr-dir"].forEach(function(id){ Array.prototype.forEach.call($(id).children, function(b){ b.disabled = true; }); }); $("gr-comprobar").disabled = true; }
+  $("gr-marcador").textContent = GR.total ? TX.resueltos(GR.primero + GR.pista, GR.primero, GR.total) : "";
+}
+function genLeerGrafica(){
+  var r = elige(RELS), v = fr(aleatorio(-5, 5)), pc = {};
+  RELS.forEach(function(x){ if (x !== r){ var bp = REL_ESTRICTO[x] === REL_ESTRICTO[r], bd = derecha(x) === derecha(r); pc[x + v.n + "/" + v.d] = bp ? T("Look at the direction of the arrow.", "Fíjese en la dirección de la flecha.") : (bd ? T("Look at the point: open or closed?", "Fíjese en el punto: ¿abierto o cerrado?") : T("Look at the point and at the arrow.", "Fíjese en el punto y en la flecha.")); } });
+  return {enun: T("Which inequality does this graph show?", "¿Qué inecuación muestra esta gráfica?") + ineqSVG(v, r, {voz: T("Graph: ", "Gráfica: ") + (REL_ESTRICTO[r] ? T("open", "abierto") : T("closed", "cerrado")) + T(" point at ", ", punto en ") + fTxt(v) + T(", arrow to the ", ", flecha hacia la ") + (derecha(r) ? T("right", "derecha") : T("left", "izquierda"))}),
+    opciones: RELS.map(function(x){ return opSol(x, v); }), correcta: r + v.n + "/" + v.d, porClave: pc, enOrden: true,
+    bien: T((REL_ESTRICTO[r] ? "Open" : "Closed") + " point and arrow to the " + (derecha(r) ? "right" : "left") + ": ", "Punto " + (REL_ESTRICTO[r] ? "abierto" : "cerrado") + " y flecha hacia la " + (derecha(r) ? "derecha" : "izquierda") + ": ") + solHTML(r, v) + ".",
+    mal: T("The " + (REL_ESTRICTO[r] ? "open point means < or >" : "closed point means ≤ or ≥") + ", and the arrow to the " + (derecha(r) ? "right means greater" : "left means smaller") + ": ", "El punto " + (REL_ESTRICTO[r] ? "abierto indica < o >" : "cerrado indica ≤ o ≥") + ", y la flecha hacia la " + (derecha(r) ? "derecha indica mayores" : "izquierda indica menores") + ": ") + solHTML(r, v) + "."};
+}
+
+/* ============ MODULE 4 · test value ============ */
+function ineqGeneral(){
+  if (Math.random() < 0.5) return ineqPositiva();
+  var a = -aleatorio(1, 5), v = aleatorio(-5, 5), b = nz(), r = elige(RELS);
+  return {izq: L(a, b), r: r, der: L(0, a * v + b)};
+}
+var PV = {e: null, R: null, cola: [{izq: L(-2, 0), r: "<", der: L(0, 8)}]};
+function nuevoPV(){
+  PV.e = PV.cola.length ? PV.cola.shift() : ineqGeneral(); PV.R = pasosIneq(PV.e.izq, PV.e.r, PV.e.der);
+  var c = fval(PV.R.v);
+  $("pv-x").min = Math.floor(c) - 6; $("pv-x").max = Math.floor(c) + 6; $("pv-x").value = Math.round(c) + (derecha(PV.R.r) ? 2 : -2);
+  $("pv-ec").innerHTML = ineqHTML(PV.e.izq, PV.e.r, PV.e.der);
+  $("pv-sol").innerHTML = solHTML(PV.R.r, PV.R.v);
+  pintaPV();
+}
+function pintaPV(){
+  var x = parseInt($("pv-x").value, 10), X = fr(x), li = evalLado(PV.e.izq, X), ld = evalLado(PV.e.der, X), verdad = cumple(li, PV.e.r, ld), enSol = cumple(X, PV.R.r, PV.R.v);
+  $("pv-val").textContent = menosV(x); $("pv-x").setAttribute("aria-valuetext", menosV(x));
+  $("pv-recta").innerHTML = ineqSVG(PV.R.v, PV.R.r, {marca: fval(X), voz: T("Solution x ", "Solución x ") + REL_VOZ[PV.R.r] + " " + numVoz(PV.R.v) + T("; the red mark is at ", "; la marca roja está en ") + x});
+  var h = '<div class="linea">' + T("With x = " + menosV(x) + ": the left side equals ", "Con x = " + menosV(x) + ": el lado izquierdo vale ") + numHTML(li) + T(" and the right side ", " y el derecho ") + numHTML(ld) + ".</div>";
+  h += '<div class="linea">' + numHTML(li) + " " + relVis(PV.e.r) + " " + numHTML(ld) + T(" is ", " es ") + '<span class="verdad ' + (verdad ? "si" : "no") + '">' + (verdad ? T("true", "verdadero") : T("false", "falso")) + "</span>.</div>";
+  h += '<div class="linea veredicto">' + (figual(X, PV.R.v) ? T("It is the boundary number: ", "Es el número límite: ") + (REL_ESTRICTO[PV.R.r] ? T("it is not included (open point).", "no se incluye (punto abierto).") : T("it is included (closed point).", "sí se incluye (punto cerrado).")) :
+       (enSol ? T("It is inside the range of the solution", "Está dentro del rango de la solución") : T("It is outside the range of the solution", "Está fuera del rango de la solución"))) + (verdad === enSol && !figual(X, PV.R.v) ? T(", and the original inequality confirms it.", " y la inecuación original lo confirma.") : (figual(X, PV.R.v) ? "" : ".")) + "</div>";
+  $("pv-salida").innerHTML = h;
+}
+function genValor(){
+  var e = ineqGeneral(), R = pasosIneq(e.izq, e.r, e.der), c = fval(R.v), cands = [], i;
+  for (i = Math.floor(c) - 4; i <= Math.floor(c) + 4; i++) cands.push(i);
+  var dentro = cands.filter(function(z){ return cumple(fr(z), R.r, R.v); }), fuera = cands.filter(function(z){ return !cumple(fr(z), R.r, R.v); });
+  var ok = elige(dentro), malos = baraja(fuera).slice(0, 3), pc = {};
+  var o = [{html: "x = " + menosV(ok), clave: "v" + ok}].concat(malos.map(function(z){ pc["v" + z] = (REL_ESTRICTO[R.r] && z === c) ? T("It is the boundary number and the sign is strict (" + relVis(R.r) + "): it is not included.", "Es el número límite y el signo es estricto (" + relVis(R.r) + "): no se incluye.") : T("Substitute it into the original inequality: it gives a false statement.", "Sustitúyalo en la inecuación original: da una afirmación falsa."); return {html: "x = " + menosV(z), clave: "v" + z}; }));
+  return {enun: T("Which of these values is a solution of ", "¿Cuál de estos valores es solución de ") + ineqHTML(e.izq, e.r, e.der) + "?", opciones: o, correcta: "v" + ok, porClave: pc,
+    bien: T("The solution is ", "La solución es ") + solHTML(R.r, R.v) + T(", and " + menosV(ok) + " meets that condition.", ", y " + menosV(ok) + " cumple esa condición."), mal: T("The solution is ", "La solución es ") + solHTML(R.r, R.v) + T(": only " + menosV(ok) + " meets it.", ": solo " + menosV(ok) + " la cumple.")};
+}
+
+/* ============ Start ============ */
+$("rs-sig").addEventListener("click", function(){ if (RS.visto < RS.pasos.length){ RS.visto++; pintaRS(); } });
+$("rs-todo").addEventListener("click", function(){ RS.visto = RS.pasos.length; pintaRS(); });
+$("rs-nuevo").addEventListener("click", nuevoRS);
+nuevoRS();
+creaPracticaDesig("p1", genResolver);
+["iv-p", "iv-q", "iv-k"].forEach(function(id){ $(id).addEventListener("input", pintaIV); });
+$("iv-op").addEventListener("change", pintaIV);
+pintaIV();
+OMR("p2", genSigno);
+Array.prototype.forEach.call($("gr-punto").children, function(b){ b.addEventListener("click", function(){ eligeGR("gr-punto", b); }); });
+Array.prototype.forEach.call($("gr-dir").children, function(b){ b.addEventListener("click", function(){ eligeGR("gr-dir", b); }); });
+$("gr-comprobar").addEventListener("click", compruebaGR);
+$("gr-nuevo").addEventListener("click", nuevoGR);
+nuevoGR();
+OMR("p3", genLeerGrafica);
+$("pv-x").addEventListener("input", pintaPV);
+$("pv-nuevo").addEventListener("click", nuevoPV);
+nuevoPV();
+OMR("p4", genValor);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
