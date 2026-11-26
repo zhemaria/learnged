@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 2.2 · Exponentes enteros positivos y potencias de base 10 — práctica (español) — construida con tools/build_n2_lesson_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.2 · Exponentes enteros positivos y potencias de base 10 · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-2-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 2 · Fracciones, exponentes y raíces</div>
+    <h1>Lección 2.2 · Exponentes enteros positivos y potencias de base 10</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#base-exponente">Base y exponente</a></li>
+      <li><a href="#casos-especiales">Casos especiales del exponente</a></li>
+      <li><a href="#base-10">Potencias de base 10</a></li>
+      <li><a href="#cuadrados">Los cuadrados perfectos del 1 al 225</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="base-exponente" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Base y exponente</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una <strong>potencia</strong> es una multiplicación repetida. La <strong>base</strong> es el número que se repite y el <strong>exponente</strong> dice cuántas veces es factor: 5<sup>3</sup> = 5 × 5 × 5 = 125.</p>
+      <h3>Construya la potencia</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="be-b">Base: <span id="be-bv"></span></label><input type="range" id="be-b" min="1" max="10" value="2"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="be-e">Exponente: <span id="be-ev"></span></label><input type="range" id="be-e" min="1" max="8" value="5"></div>
+        </div>
+        <div class="salida" id="be-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>El error más común:</strong> el exponente no multiplica a la base. 5<sup>3</sup> no es 5 × 3 = 15; es 5 × 5 × 5 = 125.</div>
+      <h3>Practique: evaluar la potencia</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Valor</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="casos-especiales">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Casos especiales del exponente</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Con el exponente 1, el resultado es la base misma: 9<sup>1</sup> = 9. Con el exponente 0, el resultado es siempre 1: 8<sup>0</sup> = 1. Y con una base negativa entre paréntesis, el signo también se multiplica: positivo si el exponente es par y negativo si es impar.</p>
+      <h3>¿Por qué el exponente 0 da 1? El patrón</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="ce-b">Base</label><select id="ce-b"><option>2</option><option>3</option><option>5</option><option>10</option></select></div></div>
+        <div class="tabla-scroll"><table class="comparar patron" id="ce-tabla"></table></div>
+      </div>
+      <h3>Una base negativa: con paréntesis y sin ellos</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="bn-b">Base negativa: <span id="bn-bv"></span></label><input type="range" id="bn-b" min="-6" max="-1" value="-3"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="bn-e">Exponente: <span id="bn-ev"></span></label><input type="range" id="bn-e" min="1" max="6" value="2"></div>
+        </div>
+        <div class="salida" id="bn-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: casos especiales</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="base-10">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Potencias de base 10</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En las potencias de 10, el exponente dice cuántos ceros siguen al 1: 10<sup>3</sup> = 1,000. Y multiplicar por 10<sup>n</sup> corre el punto decimal n lugares a la derecha.</p>
+      <h3>Corra el punto</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="b10-x">Número</label><select id="b10-x"><option>5.3</option><option>4.7</option><option>8</option><option>2.15</option><option>0.6</option><option>1.25</option></select></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="b10-e">Exponente de 10: <span id="b10-ev"></span></label><input type="range" id="b10-e" min="0" max="6" value="3"></div>
+        </div>
+        <div class="salida" id="b10-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: potencias de 10</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cuadrados">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Los cuadrados perfectos del 1 al 225</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un <strong>cuadrado perfecto</strong> es el resultado de elevar un entero al cuadrado. Apréndase de memoria los quince primeros: son la herramienta para las raíces cuadradas de la próxima lección.</p>
+      <h3>Tarjetas de repaso</h3>
+      <p>Cada tarjeta muestra una potencia; púlsela para ver el valor. Intente decirlo antes de voltearla.</p>
+      <div class="tarjetas-c" id="cu-tarjetas"></div>
+      <div class="caja-tip"><strong>Estrategia:</strong> apréndalos en bloques de cinco: 1 a 25, 36 a 100 y 121 a 225.</div>
+      <h3>Practique: cuadrados de memoria</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <h3>Practique: ¿es un cuadrado perfecto?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 2 · Fracciones, exponentes y raíces · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "aparece": "La base {b} es factor {e} {v}. Productos parciales: {p}.",
+ "vez": "vez",
+ "veces": "veces",
+ "noEs": "No es {b} × {e} = {r}.",
+ "evalua": "Evalúe {p}.",
+ "noMult": "El exponente no multiplica a la base: dice cuántas veces la base es factor.",
+ "noSuma": "No se suman la base y el exponente.",
+ "capPat": "El patrón de las potencias de {b}",
+ "cPot": "Potencia",
+ "cVal": "Valor",
+ "cBaja": "Al bajar el exponente 1",
+ "divEntre": "se divide entre {b}",
+ "conPar": "<strong>Con paréntesis:</strong> {p} = {m} = <strong>{r}</strong>. {s}",
+ "impar": "Exponente impar: negativo.",
+ "par": "Exponente par: positivo.",
+ "imparL": "el exponente es impar, así que el resultado es negativo.",
+ "parL": "el exponente es par, así que el resultado es positivo.",
+ "sinPar": "<strong>Sin paréntesis:</strong> {p} = −({m}) = <strong>{r}</strong>. El signo menos no es parte de la base: se aplica al final.",
+ "exp0": "Cualquier número distinto de cero elevado a 0 es 1.",
+ "no0": "Con el exponente 0 el resultado es 1, no 0.",
+ "eso1": "Ese sería el exponente 1.",
+ "exp1": "Con el exponente 1, la base aparece una sola vez: el resultado es la base.",
+ "pistaPar": "Cuente los signos menos que se multiplican: una cantidad par da resultado positivo.",
+ "conParE": "Con paréntesis, el signo también se multiplica: {s}",
+ "sinParE": "Sin paréntesis, el exponente afecta solo al {b}: {p} = −({v}) = {r}.",
+ "pistaSinPar": "¿El signo menos está dentro de los paréntesis, como parte de la base?",
+ "igualesQ": "¿Valen lo mismo {a} y {b}?",
+ "si1": "Sí, los dos valen 1",
+ "no0y": "No: {a} = 0 y {b} = {k}",
+ "no1y": "No: {a} = 1 y {b} = {k}",
+ "bienIg": "El exponente 0 da 1; el exponente 1 da la base.",
+ "unoSeguido": "el 1 seguido de {e} {z}",
+ "cero": "cero",
+ "ceros": "ceros",
+ "corre": "El punto decimal se corre {e} {l} a la derecha{x}",
+ "lugar": "lugar",
+ "lugares": "lugares",
+ "rellena": ", rellenando con ceros si hace falta.",
+ "porUno": ": multiplicar por 1 no cambia nada.",
+ "cuantoVale": "¿Cuánto vale {p}?",
+ "noDiezPor": "No es 10 × {e}: es el 1 seguido de {e} ceros.",
+ "bien10": "El 1 seguido de {e} ceros.",
+ "bienCorre": "El punto se corre {e} {l} a la derecha.",
+ "pistaCorre": "El exponente dice cuántos lugares se corre el punto a la derecha.",
+ "alCuad": "{n} al cuadrado",
+ "es": " es {v}",
+ "cuadradoQ": "¿Cuánto vale {p}?",
+ "noPor2": "Elevar al cuadrado no es multiplicar por 2: es multiplicar el número por sí mismo.",
+ "raizQ": "El número {c} es el cuadrado de ¿qué número positivo?",
+ "noMitad": "No se divide entre 2: se busca el número que multiplicado por sí mismo da {c}.",
+ "esCuadQ": "¿Cuál de estos números es un cuadrado perfecto?",
+ "bienEsCuad": "{c} = {s} × {s}.",
+ "pistaEsCuad": "Busque un número que sea un entero multiplicado por sí mismo.",
+ "malEsCuad": "El cuadrado perfecto es {c} = {s} × {s}. Los demás no son el cuadrado de ningún entero."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function esCuadrado(n){ var s = Math.round(Math.sqrt(n)); return s * s === n; }
+
+/* ============ MODULE 1 · base and exponent ============ */
+function pintaBE(){
+  var b = +$("be-b").value, e = +$("be-e").value, fac = [], parc = [], v = 1;
+  $("be-bv").textContent = b; $("be-ev").textContent = e;
+  for (var i = 0; i < e; i++){ fac.push(b); v *= b; parc.push(com(v)); }
+  $("be-salida").innerHTML = '<div class="linea grande">' + potH(b, e) + ' = ' + fac.join(" × ") + ' = ' + com(v) + '</div><div class="linea">' + F(TXT.aparece, { b: b, e: e, v: e === 1 ? TXT.vez : TXT.veces, p: parc.join(" → ") }) + '</div>' +
+    (e > 1 ? '<div class="linea">' + F(TXT.noEs, { b: b, e: e, r: b * e }) + '</div>' : "");
+}
+function genPot(){
+  var b = aleatorio(2, 10), e = b <= 3 ? aleatorio(2, 6) : (b <= 5 ? aleatorio(2, 4) : aleatorio(2, 3)), r = pw(b, e);
+  return { enun: F(TXT.evalua, { p: potH(b, e) }), correcta: String(r), solucion: potH(b, e) + " = " + Array(e).fill(b).join(" × ") + " = " + com(r) + ".",
+    evalua: numE(r, [{ v: b * e, msg: TXT.noMult }, { v: b + e, msg: TXT.noSuma }]) };
+}
+
+/* ============ MODULE 2 · special cases ============ */
+function pintaCE(){
+  var b = +$("ce-b").value, h = '<caption>' + F(TXT.capPat, { b: b }) + '</caption><thead><tr><th scope="col">' + TXT.cPot + '</th><th scope="col">' + TXT.cVal + '</th><th scope="col">' + TXT.cBaja + '</th></tr></thead><tbody>';
+  for (var e = 4; e >= 0; e--) h += '<tr' + (e === 0 ? ' class="nueva"' : '') + '><td>' + potH(b, e) + '</td><td><strong>' + com(pw(b, e)) + '</strong></td><td>' + (e === 4 ? "—" : F(TXT.divEntre, { b: b })) + '</td></tr>';
+  $("ce-tabla").innerHTML = h + '</tbody>';
+}
+function pintaBN(){
+  var b = +$("bn-b").value, e = +$("bn-e").value, con = pw(b, e), sin = -pw(-b, e);
+  $("bn-bv").textContent = ent(b); $("bn-ev").textContent = e;
+  $("bn-salida").innerHTML = '<div class="linea">' + F(TXT.conPar, { p: potH(b, e, true), m: Array(e).fill("(" + ent(b) + ")").join(" × "), r: ent(con), s: e % 2 ? TXT.impar : TXT.par }) + '</div>' +
+    '<div class="linea">' + F(TXT.sinPar, { p: "−" + (-b) + "<sup>" + e + "</sup>", m: Array(e).fill(-b).join(" × "), r: ent(sin) }) + '</div>';
+}
+function otro(r, b, e){ var c = [-b * e, b * e, -(b * e + 1), b * e + 1]; for (var i = 0; i < c.length; i++) if (c[i] !== r && c[i] !== -r) return c[i]; return r + 1; }
+function genEspecial(){
+  var tipo = aleatorio(1, 5), b = aleatorio(2, 50), pistas = {};
+  function op(v){ return { html: ent(v), clave: "n" + v }; }
+  if (tipo === 1){ pistas.n0 = TXT.no0; pistas["n" + b] = TXT.eso1; return { enun: potH(b, 0) + " =", opciones: [op(1), op(0), op(b)], correcta: "n1", pistas: pistas, pista: TXT.exp0, bien: TXT.exp0, mal: TXT.exp0 }; }
+  if (tipo === 2) return { enun: potH(b, 1) + " =", opciones: [op(b), op(1), op(0)], correcta: "n" + b, pista: TXT.exp1, bien: TXT.exp1, mal: TXT.exp1 };
+  var bb = aleatorio(2, 5), e = aleatorio(2, 4);
+  if (tipo === 3){ var r = pw(-bb, e), s = F(TXT.conParE, { s: e % 2 ? TXT.imparL : TXT.parL }), x3 = otro(r, bb, e); return { enun: potH(-bb, e, true) + " =", opciones: [op(r), op(-r), op(x3)], correcta: "n" + r, pista: TXT.pistaPar, bien: s, mal: s }; }
+  if (tipo === 4){ var r2 = -pw(bb, e), s2 = F(TXT.sinParE, { b: bb, p: "−" + bb + "<sup>" + e + "</sup>", v: pw(bb, e), r: ent(r2) }); var y3 = otro(r2, bb, e); return { enun: "−" + bb + "<sup>" + e + "</sup> =", opciones: [op(r2), op(-r2), op(y3)], correcta: "n" + r2, pista: TXT.pistaSinPar, bien: s2, mal: s2 }; }
+  var a = aleatorio(2, 9);
+  return { enun: F(TXT.igualesQ, { a: potH(a, 0), b: potH(a, 1) }), enOrden: true, opciones: [{ html: TXT.si1, clave: "s" }, { html: F(TXT.no0y, { a: potH(a, 0), b: potH(a, 1), k: a }), clave: "n1" }, { html: F(TXT.no1y, { a: potH(a, 0), b: potH(a, 1), k: a }), clave: "n2" }],
+    correcta: "n2", pista: TXT.bienIg, bien: TXT.bienIg, mal: TXT.bienIg };
+}
+
+/* ============ MODULE 3 · powers of 10 ============ */
+function porDiez(x, e){ var s = String(x), k = s.indexOf("."), en = k < 0 ? s : s.slice(0, k), de = k < 0 ? "" : s.slice(k + 1); while (de.length < e) de += "0"; var r = (en + de.slice(0, e)).replace(/^0+(?=\d)/, ""), resto = de.slice(e); return com(r) + (resto ? "." + resto : ""); }
+function pintaB10(){
+  var x = $("b10-x").value, e = +$("b10-e").value;
+  $("b10-ev").textContent = e;
+  $("b10-salida").innerHTML = '<div class="linea">' + potH(10, e) + ' = ' + (e === 0 ? "1" : F(TXT.unoSeguido, { e: e, z: e === 1 ? TXT.cero : TXT.ceros }) + " = " + com(pw(10, e))) + '.</div>' +
+    '<div class="linea grande">' + x + ' × ' + potH(10, e) + ' = ' + porDiez(x, e) + '</div><div class="linea">' + F(TXT.corre, { e: e, l: e === 1 ? TXT.lugar : TXT.lugares, x: e > 0 ? TXT.rellena : TXT.porUno }) + '</div>';
+}
+function genB10(){
+  if (Math.random() < 0.4){
+    var e = aleatorio(2, 7), v = pw(10, e);
+    return { enun: F(TXT.cuantoVale, { p: potH(10, e) }), opciones: [{ html: com(v), clave: "a" }, { html: com(v / 10), clave: "b" }, { html: com(v * 10), clave: "c" }, { html: String(10 * e), clave: "d" }], correcta: "a",
+      pistas: { d: F(TXT.noDiezPor, { e: e }) }, pista: F(TXT.noDiezPor, { e: e }), bien: F(TXT.bien10, { e: e }), mal: F(TXT.bien10, { e: e }) + " " + com(v) + "." };
+  }
+  var x = elige(["4.7", "5.3", "8", "2.15", "6.08", "3.9", "0.75", "12.5"]), k = aleatorio(1, 4), bien = porDiez(x, k);
+  var cand = [porDiez(x, k - 1), porDiez(x, k + 1), porDiez(x, k + 2)].filter(function(c){ return c !== bien; });
+  var l = k === 1 ? TXT.lugar : TXT.lugares;
+  return { enun: F(TXT.cuantoVale, { p: x + " × " + potH(10, k) }), opciones: [{ html: bien, clave: "a" }].concat(cand.map(function(c, i){ return { html: c, clave: "m" + i }; })), correcta: "a",
+    pista: TXT.pistaCorre, bien: F(TXT.bienCorre, { e: k, l: l }), mal: F(TXT.bienCorre, { e: k, l: l }) + " " + x + " × " + potH(10, k) + " = " + bien + "." };
+}
+
+/* ============ MODULE 4 · perfect squares ============ */
+function pintaTarjetas(){
+  var h = "";
+  for (var k = 1; k <= 15; k++) h += '<button type="button" aria-pressed="false" data-n="' + k + '" aria-label="' + F(TXT.alCuad, { n: k }) + '">' + k + '²</button>';
+  $("cu-tarjetas").innerHTML = h;
+  $("cu-tarjetas").querySelectorAll("button").forEach(function(b){ b.addEventListener("click", function(){ voltea(b, b.getAttribute("aria-pressed") !== "true"); }); });
+}
+function voltea(b, ver){ var k = +b.getAttribute("data-n"); b.setAttribute("aria-pressed", ver ? "true" : "false"); b.textContent = ver ? k + "² = " + k * k : k + "²"; b.setAttribute("aria-label", F(TXT.alCuad, { n: k }) + (ver ? F(TXT.es, { v: k * k }) : "")); }
+function genCuadrado(){
+  var k = aleatorio(2, 15);
+  if (Math.random() < 0.5) return { enun: F(TXT.cuadradoQ, { p: potH(k, 2) }), correcta: String(k * k), solucion: k + " × " + k + " = " + k * k + ".", evalua: numE(k * k, [{ v: 2 * k, msg: TXT.noPor2 }]) };
+  return { enun: F(TXT.raizQ, { c: k * k }), correcta: String(k), solucion: k + " × " + k + " = " + k * k + ".", evalua: numE(k, k * k % 2 ? [] : [{ v: k * k / 2, msg: F(TXT.noMitad, { c: k * k }) }]) };
+}
+function genEsCuadrado(){
+  var s = aleatorio(4, 15), c = s * s, malos = [];
+  while (malos.length < 3){ var mm = aleatorio(10, 230); if (!esCuadrado(mm) && malos.indexOf(mm) < 0) malos.push(mm); }
+  return { enun: TXT.esCuadQ, opciones: [{ html: String(c), clave: "s" }].concat(malos.map(function(mm, i){ return { html: String(mm), clave: "m" + i }; })), correcta: "s",
+    pista: TXT.pistaEsCuad, bien: F(TXT.bienEsCuad, { c: c, s: s }), mal: F(TXT.malEsCuad, { c: c, s: s }) };
+}
+
+/* ============ Start ============ */
+["be-b", "be-e"].forEach(function(id){ $(id).addEventListener("input", pintaBE); }); pintaBE();
+creaPracticaLibre("p1", genPot);
+$("ce-b").addEventListener("change", pintaCE); pintaCE();
+["bn-b", "bn-e"].forEach(function(id){ $(id).addEventListener("input", pintaBN); }); pintaBN();
+creaPracticaOM("p2", genEspecial);
+$("b10-x").addEventListener("change", pintaB10); $("b10-e").addEventListener("input", pintaB10); pintaB10();
+creaPracticaOM("p3", genB10);
+pintaTarjetas();
+creaPracticaLibre("p4", genCuadrado);
+creaPracticaOM("p5", genEsCuadrado);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

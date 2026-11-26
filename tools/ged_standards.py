@@ -185,6 +185,11 @@ CCR = {
  "7.NS.1": ("D", "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram."),
  "7.NS.2": ("D", "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers."),
  "7.NS.3": ("D", "Solve real-world and mathematical problems involving the four operations with rational numbers."),
+ "7.NS.2b": ("D", "Understand that integers can be divided, provided that the divisor is not zero, and every quotient of integers (with non-zero divisor) is a rational number. If p and q are integers, then –(p/q) = (–p)/q = p/(–q)."),
+ "5.NBT.2": ("C", "Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point when a decimal is multiplied or divided by a power of 10. Use whole-number exponents to denote powers of 10."),
+ "6.EE.1": ("D", "Write and evaluate numerical expressions involving whole-number exponents."),
+ "8.EE.2": ("D", "Use square root and cube root symbols to represent solutions to equations of the form x² = p and x³ = p, where p is a positive rational number. Evaluate square roots of small perfect squares and cube roots of small perfect cubes."),
+ "8.NS.2": ("D", "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
 CCR_ORDEN = list(CCR)
@@ -253,6 +258,12 @@ LESSONS = [
   {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.1.d"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["7.NS.1", "7.NS.3"]}),
  ("level-2/lesson-1-3.html", "1.3", "Multiplying and dividing integers; applications",
   {"direct": ["Q.2.a", "Q.2.d", "Q.2.e"], "builds": [], "mp": ["MP.2.a", "MP.3.a", "MP.4.a"], "ccr": ["7.NS.2", "7.NS.3"]}),
+ ("level-2/lesson-2-1.html", "2.1", "Fractions with negative signs",
+  {"direct": ["Q.2.a"], "builds": ["Q.1.b"], "mp": ["MP.3.a", "MP.4.a"], "ccr": ["7.NS.1", "7.NS.2", "7.NS.2b"]}),
+ ("level-2/lesson-2-2.html", "2.2", "Positive integer exponents and powers of 10",
+  {"direct": ["Q.2.b", "Q.2.c"], "builds": ["Q.1.c", "Q.2.e"], "mp": ["MP.4.a", "MP.3.a"], "ccr": ["5.NBT.2", "6.EE.1"]}),
+ ("level-2/lesson-2-3.html", "2.3", "Square roots of perfect squares",
+  {"direct": ["Q.2.b"], "builds": ["Q.4.e", "Q.4.a"], "mp": ["MP.4.a", "MP.5.c"], "ccr": ["8.EE.2", "8.NS.2"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

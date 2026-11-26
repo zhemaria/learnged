@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 2.1 · Fracciones complejas con coeficientes negativos — práctica (español) — construida con tools/build_n2_lesson_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.1 · Fracciones complejas con coeficientes negativos · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 2 · Fracciones, exponentes y raíces</div>
+    <h1>Lección 2.1 · Fracciones complejas con coeficientes negativos</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#tres-formas">Las tres formas de una fracción negativa</a></li>
+      <li><a href="#multiplicar-dividir">Multiplicar y dividir fracciones con signo</a></li>
+      <li><a href="#sumar-restar">Sumar y restar fracciones con signo</a></li>
+      <li><a href="#combinadas">Expresiones con entero y fracción</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="tres-formas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Las tres formas de una fracción negativa</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una fracción es una división, así que su signo sigue la regla de los signos. El signo menos puede ir <strong>delante</strong>, en el <strong>numerador</strong> o en el <strong>denominador</strong>, y el valor no cambia. Si el numerador y el denominador son negativos, los dos signos se cancelan y la fracción es positiva.</p>
+      <h3>Mueva los signos</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="tf-n">Numerador: <span id="tf-nv"></span></label><input type="range" id="tf-n" min="-12" max="12" value="-6"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="tf-d">Denominador: <span id="tf-dv"></span></label><input type="range" id="tf-d" min="-12" max="12" value="8"></div>
+        </div>
+        <div class="salida" id="tf-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-tip"><strong>La forma habitual:</strong> el signo menos se escribe delante de la fracción o en el numerador. En el denominador es correcto, pero se presta a errores de lectura.</div>
+      <h3>Practique: el signo de una fracción</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="multiplicar-dividir">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Multiplicar y dividir fracciones con signo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se trabaja en dos pasos separados: <strong>primero el signo</strong>, con la regla de los signos, y <strong>después el valor</strong>, con los valores absolutos. Para dividir, se multiplica por el recíproco de la segunda fracción.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="md-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="md-sig"></button><button type="button" class="btn-sec" id="md-todo">Mostrar todo</button><button type="button" class="btn-sec" id="md-nuevo">Otro ejemplo</button></div>
+        <div class="pasos" id="md-pasos" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>Al buscar el recíproco,</strong> se dan vuelta los números, pero el signo ya se decidió al principio con la regla de los signos: no se pierde en el camino.</div>
+      <h3>Practique: multiplicar o dividir</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba una fracción con la barra, como −3/10, con el signo menos delante si es negativa. Désela en su forma más simple.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sumar-restar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Sumar y restar fracciones con signo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para sumar o restar se necesita un <strong>denominador común</strong>. Con los denominadores iguales, los numeradores se suman o se restan con las reglas de los enteros del Tema 1. Y restar una fracción negativa es sumar su opuesto.</p>
+      <h3>El denominador común, paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="sr-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="sr-sig"></button><button type="button" class="btn-sec" id="sr-todo">Mostrar todo</button><button type="button" class="btn-sec" id="sr-nuevo">Otro ejemplo</button></div>
+        <div class="pasos" id="sr-pasos" aria-live="polite"></div>
+      </div>
+      <h3>Practique: sumar o restar</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba una fracción con la barra, como −3/10, con el signo menos delante si es negativa. Désela en su forma más simple.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="combinadas">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Expresiones con entero y fracción</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un entero se trata como una fracción de denominador 1 y se lleva al denominador común. Por ejemplo, −2 = −8/4. El resultado se puede dejar como fracción impropia (−11/4) o como número mixto (−2 3/4).</p>
+      <h3>Practique: entero y fracción</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba una fracción como −11/4 o un número mixto como −2 3/4 (con un espacio entre el entero y la fracción).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 2 · Fracciones, exponentes y raíces · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "noCero": "El denominador no puede ser 0: la división entre cero no está definida.",
+ "ceroEntre": "0 entre cualquier número distinto de cero es 0.",
+ "esDiv": "Es la división {n} ÷ {d}: {s}",
+ "iguales": "signos iguales, así que la fracción es <strong>positiva</strong>.",
+ "distintos": "signos distintos, así que la fracción es <strong>negativa</strong>.",
+ "tresFormas": "Las tres formas del mismo número:",
+ "queda": "Es {v}.",
+ "simplificada": "Simplificada: {v}.",
+ "pregSigno": "¿La fracción {f} es positiva o negativa?",
+ "positiva": "Positiva",
+ "negativa": "Negativa",
+ "depende": "Depende del tamaño de los números",
+ "pistaDepende": "El signo depende solo de los signos del numerador y del denominador.",
+ "pistaSigno": "Una fracción es una división. Mire los dos signos: ¿son iguales o distintos?",
+ "bienIg": "Signos iguales: positiva.",
+ "bienDis": "Signos distintos: negativa.",
+ "cualNo": "¿Qué fracción <strong>no</strong> es igual a las otras tres?",
+ "bienNo": "{f} es positiva; las otras tres son la misma fracción negativa escrita de tres formas.",
+ "pistaNo": "Cuente los signos menos de cada fracción.",
+ "signoMD": "<strong>Signo:</strong> la primera fracción es {a} y la segunda es {b}: {s}",
+ "pos": "positiva",
+ "neg": "negativa",
+ "sIg": "signos iguales, así que el resultado es <strong>positivo</strong>.",
+ "sDis": "signos distintos, así que el resultado es <strong>negativo</strong>.",
+ "recip": "<strong>Dividir es multiplicar por el recíproco:</strong> {a} ÷ {b} = {a} × {c}.",
+ "valor": "<strong>Valor:</strong> numeradores {an} × {bn} = {n} y denominadores {ad} × {bd} = {d}: {f}",
+ "seSimpl": ", que se simplifica a {v}",
+ "resultado": "Resultado: {e} = {r}",
+ "calcula": "Calcule {e}.",
+ "esMult": "Eso es la multiplicación. Para dividir, se multiplica por el recíproco de la segunda fracción.",
+ "volteoMal": "Dio vuelta la fracción equivocada: se usa el recíproco de la segunda.",
+ "opuesto": "Restar es sumar el opuesto: {a} − {b} = {a} + {c}.",
+ "yaIguales": "Los denominadores ya son iguales: {d}.",
+ "comun": "Denominador común: múltiplos de {a} ({ma}) y de {b} ({mb}). El primero que comparten es <strong>{d}</strong>.",
+ "reescribe": "Se reescriben: {a} = {a2} y {b} = {b2}.",
+ "sumaNum": "Se suman los numeradores como enteros: {s}. Queda {f}",
+ "denomSuma": "Los denominadores no se suman: primero se busca un denominador común.",
+ "revSigno": "Revise el signo al sumar los numeradores.",
+ "restaOp": "Restar {b} es sumar su opuesto, {c}.",
+ "comb1": "{k} = {f}; después, {s}, así que el resultado es {r}.",
+ "comb2": "{k} − {f} = {k2} + {o} = {r}.",
+ "comb3": "Se multiplica el entero por el numerador: {s}, sobre {d}: {r}.",
+ "comoMixto": " Como número mixto: {m}."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+/* a fraction with small terms and a random sign */
+function qAzar(maxD){ var d = aleatorio(2, maxD || 9), n = aleatorio(1, d + 3); while (mcdE(n, d) !== 1) n = aleatorio(1, d + 3); return q(Math.random() < 0.55 ? -n : n, d); }
+
+/* ============ MODULE 1 · the three forms ============ */
+function pintaTF(){
+  var n = +$("tf-n").value, d = +$("tf-d").value, sal = $("tf-salida");
+  $("tf-nv").textContent = ent(n); $("tf-dv").textContent = ent(d);
+  if (d === 0){ sal.innerHTML = '<div class="linea veredicto">' + TXT.noCero + '</div>'; return; }
+  var h = '<div class="linea grande">' + frH(n, d) + '</div>';
+  if (n === 0){ sal.innerHTML = h + '<div class="linea veredicto">' + TXT.ceroEntre + '</div>'; return; }
+  var v = q(n, d), an = Math.abs(n), ad = Math.abs(d);
+  h += '<div class="linea">' + F(TXT.esDiv, { n: par(n), d: par(d), s: (n < 0) === (d < 0) ? TXT.iguales : TXT.distintos }) + '</div>';
+  if (v.n < 0) h += '<div class="linea">' + TXT.tresFormas + '</div><div class="linea grande">' + qH(q(-an, ad)) + ' &nbsp;=&nbsp; ' + frH(-an, ad) + ' &nbsp;=&nbsp; ' + frH(an, -ad) + '</div>';
+  else h += '<div class="linea">' + F(TXT.queda, { v: frH(an, ad) }) + '</div>';
+  if (mcdE(an, ad) > 1) h += '<div class="linea">' + F(TXT.simplificada, { v: qH(v) }) + '</div>';
+  sal.innerHTML = h;
+}
+function genSigno(){
+  if (Math.random() < 0.6){
+    var n = azarEnt(-12, 12, true), d = azarEnt(-12, 12, true); while (Math.abs(d) === 1) d = azarEnt(-12, 12, true);
+    var pos = (n < 0) === (d < 0);
+    return { enun: F(TXT.pregSigno, { f: frH(n, d) }), opciones: [{ html: TXT.positiva, clave: "p" }, { html: TXT.negativa, clave: "n" }, { html: TXT.depende, clave: "x" }], enOrden: true,
+      correcta: pos ? "p" : "n", pistas: { x: TXT.pistaDepende }, pista: TXT.pistaSigno, bien: pos ? TXT.bienIg : TXT.bienDis, mal: pos ? TXT.bienIg : TXT.bienDis };
+  }
+  var a = aleatorio(1, 8), b = aleatorio(a + 1, 12); while (mcdE(a, b) !== 1) b = aleatorio(a + 1, 13);
+  var o = [{ html: frH(-a, -b), clave: "x" }, { html: frH(-a, b), clave: "a" }, { html: frH(a, -b), clave: "b" }, { html: qH(q(-a, b)), clave: "c" }];
+  return { enun: TXT.cualNo, opciones: o, correcta: "x", pista: TXT.pistaNo, bien: F(TXT.bienNo, { f: frH(-a, -b) }), mal: F(TXT.bienNo, { f: frH(-a, -b) }) };
+}
+
+/* ============ MODULE 2 · multiplying and dividing ============ */
+function pasosMD(a, b, op){
+  var neg = (a.n < 0) !== (b.n < 0), pasos = [], A = q(Math.abs(a.n), a.d), Bq = q(Math.abs(b.n), b.d);
+  pasos.push(F(TXT.signoMD, { a: a.n < 0 ? TXT.neg : TXT.pos, b: b.n < 0 ? TXT.neg : TXT.pos, s: neg ? TXT.sDis : TXT.sIg }));
+  if (op === "÷"){ pasos.push(F(TXT.recip, { a: qH(A), b: qH(Bq), c: frH(Bq.d, Bq.n) })); Bq = { n: Bq.d, d: Bq.n }; }
+  var nn = A.n * Bq.n, dd = A.d * Bq.d, r = q(nn, dd);
+  pasos.push(F(TXT.valor, { an: A.n, bn: Bq.n, n: nn, ad: A.d, bd: Bq.d, d: dd, f: frH(nn, dd) }) + (mcdE(nn, dd) > 1 ? F(TXT.seSimpl, { v: qH(r) }) : "") + ".");
+  var res = neg ? qneg(r) : r;
+  pasos.push('<span class="veredicto">' + F(TXT.resultado, { e: qP(a) + " " + op + " " + qP(b), r: qH(res) }) + '</span>');
+  return { pasos: pasos, res: res };
+}
+var MD_COLA = [[q(-3, 4), q(-2, 5), "×"], [q(2, 3), q(-4, 9), "÷"]], MDS;
+function nuevoMD(){ var e = MD_COLA.length ? MD_COLA.shift() : [qAzar(), qAzar(), elige(["×", "÷"])]; $("md-expr").innerHTML = qP(e[0]) + " " + e[2] + " " + qP(e[1]); MDS.carga(pasosMD(e[0], e[1], e[2]).pasos); }
+function genMD(){
+  var a = qAzar(), b = qAzar(), op = elige(["×", "÷"]), R = pasosMD(a, b, op), pistas = [];
+  if (op === "÷") pistas.push({ v: qmul(a, b), msg: TXT.esMult }, { v: qdiv(b, a), msg: TXT.volteoMal });
+  return { enun: F(TXT.calcula, { e: qP(a) + " " + op + " " + qP(b) }), correcta: qTxt(R.res), solucion: R.pasos.slice(0, -1).join(" "), evalua: evQ(R.res, pistas) };
+}
+
+/* ============ MODULE 3 · adding and subtracting ============ */
+function multiplos(d, hasta){ var l = []; for (var i = 1; d * i <= hasta; i++) l.push(d * i); return l; }
+function pasosSR(a, b, op){
+  var pasos = [], b2 = op === "−" ? qneg(b) : b, D = mcmE(a.d, b2.d);
+  if (op === "−") pasos.push(F(TXT.opuesto, { a: qP(a), b: qP(b), c: qP(b2) }));
+  if (a.d === b2.d) pasos.push(F(TXT.yaIguales, { d: D }));
+  else pasos.push(F(TXT.comun, { a: a.d, ma: multiplos(a.d, D).join(", "), b: b2.d, mb: multiplos(b2.d, D).join(", "), d: D }));
+  var na = a.n * (D / a.d), nb = b2.n * (D / b2.d), s = na + nb, r = q(s, D);
+  pasos.push(F(TXT.reescribe, { a: qH(a), a2: frH(na, D), b: qH(b2), b2: frH(nb, D) }));
+  pasos.push(F(TXT.sumaNum, { s: ent(na) + " + " + par(nb) + " = " + ent(s), f: frH(s, D) }) + (r.d !== D ? F(TXT.seSimpl, { v: qH(r) }) : "") + ".");
+  pasos.push('<span class="veredicto">' + F(TXT.resultado, { e: qP(a) + " " + op + " " + qP(b), r: qH(r) }) + '</span>');
+  return { pasos: pasos, res: r };
+}
+var SR_COLA = [[q(-5, 6), q(1, 4), "+"], [q(1, 3), q(-2, 5), "−"]], SRS;
+function nuevoSR(){ var e = SR_COLA.length ? SR_COLA.shift() : [qAzar(8), qAzar(8), elige(["+", "−"])]; $("sr-expr").innerHTML = qP(e[0]) + " " + e[2] + " " + qP(e[1]); SRS.carga(pasosSR(e[0], e[1], e[2]).pasos); }
+function genSR(){
+  var a = qAzar(8), b = qAzar(8), op = elige(["+", "−"]), R = pasosSR(a, b, op), b2 = op === "−" ? qneg(b) : b;
+  var pistas = [{ v: q(a.n + b2.n, a.d + b2.d), msg: TXT.denomSuma }];
+  if (op === "−") pistas.push({ v: qsum(a, b), msg: F(TXT.restaOp, { b: qP(b), c: qP(b2) }) });
+  return { enun: F(TXT.calcula, { e: qP(a) + " " + op + " " + qP(b) }), correcta: qTxt(R.res), solucion: R.pasos.slice(0, -1).join(" "), evalua: evQ(R.res, pistas) };
+}
+
+/* ============ MODULE 4 · integer and fraction ============ */
+function genCombinada(){
+  var k = azarEnt(-5, 5, true), f = qAzar(8), tipo = aleatorio(1, 3), res, e, sol;
+  if (tipo === 1){ res = qsum(q(k), f); e = ent(k) + " + " + qP(f); sol = F(TXT.comb1, { k: ent(k), f: frH(k * f.d, f.d), s: ent(k * f.d) + " + " + par(f.n) + " = " + ent(k * f.d + f.n), r: qH(res) }); }
+  else if (tipo === 2){ res = qres(q(k), f); e = ent(k) + " − " + qP(f); sol = F(TXT.comb2, { k: ent(k), f: qP(f), k2: frH(k * f.d, f.d), o: qP(qneg(f)), r: qH(res) }); }
+  else { res = qmul(q(k), f); e = par(k) + " × " + qP(f); sol = F(TXT.comb3, { s: par(k) + " × " + par(f.n) + " = " + ent(k * f.n), d: f.d, r: qH(res) }); }
+  var mx = qMixto(res);
+  return { enun: F(TXT.calcula, { e: e }), correcta: qTxt(res), solucion: sol + (mx ? F(TXT.comoMixto, { m: mx }) : ""), evalua: evQ(res, []) };
+}
+
+/* ============ Start ============ */
+["tf-n", "tf-d"].forEach(function(id){ $(id).addEventListener("input", pintaTF); }); pintaTF();
+creaPracticaOM("p1", genSigno);
+MDS = pasoAPaso("md", []); $("md-nuevo").addEventListener("click", nuevoMD); nuevoMD();
+creaPracticaLibre("p2", genMD);
+SRS = pasoAPaso("sr", []); $("sr-nuevo").addEventListener("click", nuevoSR); nuevoSR();
+creaPracticaLibre("p3", genSR);
+creaPracticaLibre("p4", genCombinada);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

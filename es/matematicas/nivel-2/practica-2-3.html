@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 2.3 · Raíces cuadradas de cuadrados perfectos — práctica (español) — construida con tools/build_n2_lesson_2_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.3 · Raíces cuadradas de cuadrados perfectos · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-2-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 2 · Fracciones, exponentes y raíces</div>
+    <h1>Lección 2.3 · Raíces cuadradas de cuadrados perfectos</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#inversa">La raíz como operación inversa</a></li>
+      <li><a href="#lado-cuadrado">La raíz como lado de un cuadrado</a></li>
+      <li><a href="#estimar">Estimar raíces no exactas</a></li>
+      <li><a href="#verificar">Verificar elevando al cuadrado</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="inversa" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La raíz como operación inversa</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La raíz cuadrada responde a la pregunta: <strong>«¿qué número, multiplicado por sí mismo, da este número?»</strong>. Elevar al cuadrado y sacar la raíz son operaciones inversas: una deshace a la otra. Por eso la tabla de cuadrados, leída al revés, es la tabla de raíces.</p>
+      <div class="formula">7<sup>2</sup> = 49 &nbsp;⟷&nbsp; √49 = 7</div>
+      <h3>Ida y vuelta</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="iv-n">Número: <span id="iv-nv"></span></label><input type="range" id="iv-n" min="1" max="15" value="7"></div></div>
+        <div class="salida" id="iv-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: raíces exactas</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="lado-cuadrado">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La raíz como lado de un cuadrado</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El área de un cuadrado es su lado al cuadrado. Por eso, si se conoce el área, <strong>la raíz del área es el lado</strong>. Un cuadrado de 36 cuadritos tiene 6 por lado.</p>
+      <h3>Del área al lado</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="lc-a">Área del cuadrado (unidades cuadradas)</label><select id="lc-a"></select></div></div>
+        <div id="lc-svg"></div>
+        <div class="salida" id="lc-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: hallar el lado</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Lado</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="estimar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Estimar raíces no exactas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si el número no es un cuadrado perfecto, su raíz no es entera, pero se puede <strong>acorralar</strong> entre dos cuadrados perfectos consecutivos: como 49 &lt; 50 &lt; 64, √50 está entre 7 y 8, y más cerca de 7.</p>
+      <h3>Acorrale la raíz</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="es-n">Número: <span id="es-nv"></span></label><input type="range" id="es-n" min="2" max="224" value="50"></div></div>
+        <div id="es-svg"></div>
+        <div class="salida" id="es-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿entre qué enteros está?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="verificar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Verificar elevando al cuadrado</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Toda raíz se comprueba con la operación inversa: si √144 = 12, entonces 12 × 12 tiene que dar 144. Así se detecta un error sin calculadora. La TI-30XS sirve de respaldo, pero conocer los cuadrados de memoria es más rápido en el examen.</p>
+      <h3>Practique: ¿es correcto?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <h3>Practique: la operación inversa</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 2 · Fracciones, exponentes y raíces · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "idaVuelta": "Elevar {n} al cuadrado da {c}; la raíz de {c} devuelve el {n}. Una operación deshace a la otra.",
+ "raizNoMitad": "La raíz no es la mitad: es el número que multiplicado por sí mismo da {c}.",
+ "siRx": "Si {r} = {n}, ¿cuánto vale x?",
+ "deshace": "Elevar al cuadrado deshace la raíz: x = {n}<sup>2</sup> = {c}.",
+ "noDoble": "Para deshacer la raíz, se eleva al cuadrado: no se duplica.",
+ "queNum": "¿Qué número positivo, multiplicado por sí mismo, da {c}?",
+ "porque": "{r} = {n}, porque {n} × {n} = {c}.",
+ "lado": "lado",
+ "vozLC": "Un cuadrado de {a} cuadritos, con {n} por lado.",
+ "salidaLC": "Área: {a} cuadritos. Lado: {r} = <strong>{n}</strong>, porque {n} × {n} = {a}.",
+ "ctx": [
+  [
+   "Un jardín cuadrado tiene un área de {a} pies cuadrados. ¿Cuánto mide cada lado, en pies?"
+  ],
+  [
+   "Una loseta cuadrada cubre {a} pulgadas cuadradas. ¿Cuánto mide su lado, en pulgadas?"
+  ],
+  [
+   "Un tablero cuadrado tiene {a} casillas en total. ¿Cuántas casillas hay en cada lado?"
+  ],
+  [
+   "Un patio cuadrado tiene un área de {a} yardas cuadradas. ¿Cuánto mide cada lado, en yardas?"
+  ]
+ ],
+ "solLado": "El lado es la raíz cuadrada del área: {r} = {n}.",
+ "noPerim": "Dividir entre 4 da el lado a partir del perímetro, no del área. Aquí hace falta la raíz cuadrada.",
+ "noMitadA": "La raíz no es la mitad del área.",
+ "exacto": "{n} es un cuadrado perfecto: {r} = {a} exactamente.",
+ "entre": "{a2} &lt; {n} &lt; {b2}, así que {a} &lt; {r} &lt; {b}.",
+ "cerca": "{n} está a {x} de {a2} y a {y} de {b2}: la raíz está más cerca de <strong>{c}</strong>. Con calculadora, {r} ≈ {v}.",
+ "igualDist": "{a} y de {b} por igual",
+ "vozES": "Recta numérica: la raíz cuadrada de {n} está {d}.",
+ "exactamenteEn": "exactamente en {a}",
+ "entreY": "entre {a} y {b}",
+ "entreQ": "¿Entre qué dos enteros consecutivos está {r}?",
+ "entreOp": "Entre {a} y {b}",
+ "bienEntre": "{a2} &lt; {n} &lt; {b2}.",
+ "malEntre": "Busque los cuadrados perfectos que lo rodean: {a2} y {b2}. Por eso está entre {a} y {b}.",
+ "pistaEntre": "¿Qué cuadrados perfectos quedan justo debajo y justo encima de {n}?",
+ "cercaQ": "{r} está entre {a} y {b}. ¿De cuál está más cerca?",
+ "masCerca": "Más cerca de {k}",
+ "medio": "Justo en el medio",
+ "bienCerca": "{n} está a {x} de {a2} y a {y} de {b2}. {r} ≈ {v}.",
+ "pistaCerca": "¿{n} está más cerca de {a2} o de {b2}?",
+ "verifQ": "Alguien escribió {r} = {k}. ¿Es correcto?",
+ "si": "Sí, es correcto",
+ "no": "No, no es correcto",
+ "calc": "Solo se puede saber con calculadora",
+ "pistaCalc": "Se puede comprobar a mano: multiplique {k} × {k}.",
+ "verifBien": "{k} × {k} = {c}, que es justo {n}: la raíz es correcta.",
+ "verifMal": "{k} × {k} = {c}, no {n}. La raíz correcta es {s}, porque {s} × {s} = {n}.",
+ "xEs": "Si {r} = {n}, entonces x es:",
+ "pistaX": "Para deshacer la raíz, se eleva al cuadrado.",
+ "bienX": "x = {n}<sup>2</sup> = {c}.",
+ "areaQ": "Un cuadrado tiene un área de {a} pulgadas cuadradas. ¿Cuánto mide cada lado?",
+ "pulg": "pulgadas",
+ "bienArea": "{r} = {n}.",
+ "malArea": "El lado es la raíz cuadrada del área: {n} pulgadas, porque {n} × {n} = {a}.",
+ "pistaArea": "Del área al lado: se saca la raíz cuadrada.",
+ "noEntQ": "¿Cuál de estas raíces <strong>no</strong> es un número entero?",
+ "bienNoEnt": "{m} no es un cuadrado perfecto; {a} y {b} sí lo son.",
+ "pistaNoEnt": "¿Qué radicando no es un entero multiplicado por sí mismo?"
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function esCuadrado(n){ var s = Math.round(Math.sqrt(n)); return s * s === n; }
+function aprox1(x){ return (Math.round(x * 10) / 10).toFixed(1); }
+
+/* ============ MODULE 1 · the inverse ============ */
+function pintaIV(){
+  var k = +$("iv-n").value; $("iv-nv").textContent = k;
+  $("iv-salida").innerHTML = '<div class="linea grande">' + k + '<sup>2</sup> = ' + k + ' × ' + k + ' = ' + k * k + ' &nbsp;⟷&nbsp; ' + rz(k * k) + ' = ' + k + '</div><div class="linea">' + F(TXT.idaVuelta, { n: k, c: k * k }) + '</div>';
+}
+function genRaiz(){
+  var k = aleatorio(2, 15), tipo = aleatorio(1, 3), c = k * k;
+  if (tipo === 1) return { enun: rz(c) + " =", correcta: String(k), solucion: F(TXT.porque, { r: rz(c), n: k, c: c }), evalua: numE(k, c % 2 ? [] : [{ v: c / 2, msg: F(TXT.raizNoMitad, { c: c }) }]) };
+  if (tipo === 2) return { enun: F(TXT.siRx, { r: rz("x"), n: k }), correcta: String(c), solucion: F(TXT.deshace, { n: k, c: c }), evalua: numE(c, [{ v: 2 * k, msg: TXT.noDoble }]) };
+  return { enun: F(TXT.queNum, { c: c }), correcta: String(k), solucion: F(TXT.porque, { r: rz(c), n: k, c: c }), evalua: numE(k, []) };
+}
+
+/* ============ MODULE 2 · the side of a square ============ */
+function pintaLC(){
+  var A = +$("lc-a").value, k = Math.round(Math.sqrt(A)), c = Math.min(26, 300 / k), x0 = 320 - k * c / 2, y0 = 16;
+  var s = '<svg class="figura" viewBox="0 0 640 ' + f1(k * c + 56) + '" role="img" aria-label="' + F(TXT.vozLC, { a: A, n: k }) + '">';
+  for (var i = 0; i < k; i++) for (var j = 0; j < k; j++) s += '<rect x="' + f1(x0 + j * c) + '" y="' + f1(y0 + i * c) + '" width="' + f1(c) + '" height="' + f1(c) + '" fill="#e3f2fd" stroke="#0d47a1" stroke-width="1"/>';
+  s += '<rect x="' + f1(x0) + '" y="' + y0 + '" width="' + f1(k * c) + '" height="' + f1(k * c) + '" fill="none" stroke="#0d47a1" stroke-width="3"/>';
+  s += texto([320, y0 + k * c + 24], TXT.lado + " = " + k, 18, "#0d47a1") + texto([x0 - 16, y0 + k * c / 2], k, 18, "#0d47a1");
+  $("lc-svg").innerHTML = s + '</svg>';
+  $("lc-salida").innerHTML = '<div class="linea">' + F(TXT.salidaLC, { a: A, r: rz(A), n: k }) + '</div>';
+}
+function genLado(){
+  var k = aleatorio(3, 15), A = k * k, ctx = elige(TXT.ctx), p = [];
+  if (A % 4 === 0 && A / 4 !== k) p.push({ v: A / 4, msg: TXT.noPerim });
+  if (A % 2 === 0 && A / 2 !== k) p.push({ v: A / 2, msg: TXT.noMitadA });
+  return { enun: F(ctx[0], { a: A }), correcta: String(k), solucion: F(TXT.solLado, { r: rz(A), n: k }), evalua: numE(k, p) };
+}
+
+/* ============ MODULE 3 · estimating ============ */
+function rectaRaiz(lo, hi, v, n, voz){
+  var W = 640, x0 = 40, x1 = 600, y = 70; function X(t){ return x0 + (t - lo) * (x1 - x0) / (hi - lo); }
+  var s = '<svg class="figura" viewBox="0 0 ' + W + ' 140" role="img" aria-label="' + voz + '">' + linea([x0 - 16, y], [x1 + 16, y], "#424242", 2);
+  for (var t = lo; t <= hi + 1e-9; t += 0.1){ var e = Math.abs(t - Math.round(t)) < 1e-6; s += linea([X(t), y - (e ? 10 : 5)], [X(t), y + (e ? 10 : 5)], "#424242", e ? 2 : 1); if (e){ s += texto([X(t), y + 28], Math.round(t), 18, "#222", 400) + texto([X(t), y + 50], "(√" + Math.round(t) * Math.round(t) + ")", 14, "#555", 400); } }
+  s += '<circle cx="' + f1(X(v)) + '" cy="' + y + '" r="8" fill="#b71c1c"/>' + texto([X(v), y - 26], "√" + n, 18, "#b71c1c");
+  return s + '</svg>';
+}
+function pintaES(){
+  var k = +$("es-n").value, a = Math.floor(Math.sqrt(k) + 1e-9), exacto = a * a === k, r = Math.sqrt(k);
+  $("es-nv").textContent = k;
+  var lo = exacto ? Math.max(0, a - 1) : a, hi = a + 1;
+  $("es-svg").innerHTML = rectaRaiz(lo, hi, r, k, F(TXT.vozES, { n: k, d: exacto ? F(TXT.exactamenteEn, { a: a }) : F(TXT.entreY, { a: a, b: a + 1 }) }));
+  var h;
+  if (exacto) h = '<div class="linea veredicto">' + F(TXT.exacto, { n: k, r: rz(k), a: a }) + '</div>';
+  else {
+    var x = k - a * a, y = (a + 1) * (a + 1) - k;
+    h = '<div class="linea">' + F(TXT.entre, { a2: a * a, n: k, b2: (a + 1) * (a + 1), a: a, r: rz(k), b: a + 1 }) + '</div><div class="linea">' +
+      F(TXT.cerca, { n: k, x: x, a2: a * a, y: y, b2: (a + 1) * (a + 1), c: x < y ? a : (x > y ? a + 1 : F(TXT.igualDist, { a: a, b: a + 1 })), r: rz(k), v: aprox1(r) }) + '</div>';
+  }
+  $("es-salida").innerHTML = h;
+}
+function genEstimar(){
+  var k; do { k = aleatorio(5, 224); } while (esCuadrado(k));
+  var a = Math.floor(Math.sqrt(k)), a2 = a * a, b2 = (a + 1) * (a + 1);
+  if (Math.random() < 0.65){
+    var o = [a - 1, a, a + 1].filter(function(x){ return x >= 1; }).map(function(x){ return { html: F(TXT.entreOp, { a: x, b: x + 1 }), clave: "e" + x }; });
+    if (o.length < 3) o.push({ html: F(TXT.entreOp, { a: a + 2, b: a + 3 }), clave: "e" + (a + 2) });
+    return { enun: F(TXT.entreQ, { r: rz(k) }), opciones: o, enOrden: true, correcta: "e" + a, pista: F(TXT.pistaEntre, { n: k }), bien: F(TXT.bienEntre, { a2: a2, n: k, b2: b2 }), mal: F(TXT.malEntre, { a2: a2, b2: b2, a: a, b: a + 1 }) };
+  }
+  var x = k - a2, y = b2 - k; if (x === y) return genEstimar();
+  var exp = F(TXT.bienCerca, { n: k, x: x, a2: a2, y: y, b2: b2, r: rz(k), v: aprox1(Math.sqrt(k)) });
+  return { enun: F(TXT.cercaQ, { r: rz(k), a: a, b: a + 1 }), enOrden: true, opciones: [{ html: F(TXT.masCerca, { k: a }), clave: "a" }, { html: F(TXT.masCerca, { k: a + 1 }), clave: "b" }, { html: TXT.medio, clave: "m" }],
+    correcta: x < y ? "a" : "b", pista: F(TXT.pistaCerca, { n: k, a2: a2, b2: b2 }), bien: exp, mal: exp };
+}
+
+/* ============ MODULE 4 · checking ============ */
+function genVerifica(){
+  var s = aleatorio(4, 15), ok = Math.random() < 0.5, k = ok ? s : s + elige([-1, 1, 2]), c = k * k, n = s * s;
+  var exp = ok ? F(TXT.verifBien, { k: k, c: c, n: n }) : F(TXT.verifMal, { k: k, c: c, n: n, s: s });
+  return { enun: F(TXT.verifQ, { r: rz(n), k: k }), enOrden: true, opciones: [{ html: TXT.si, clave: "s" }, { html: TXT.no, clave: "n" }, { html: TXT.calc, clave: "c" }],
+    correcta: ok ? "s" : "n", pistas: { c: F(TXT.pistaCalc, { k: k }) }, pista: F(TXT.pistaCalc, { k: k }), bien: exp, mal: exp };
+}
+function genInversa(){
+  var tipo = aleatorio(1, 3), k = aleatorio(4, 15);
+  if (tipo === 1) return { enun: F(TXT.xEs, { r: rz("x"), n: k }), opciones: [k * k, 2 * k, k, k * k + 1].map(function(v, i){ return { html: String(v), clave: "v" + i }; }), correcta: "v0", pista: TXT.pistaX, bien: F(TXT.bienX, { n: k, c: k * k }), mal: F(TXT.bienX, { n: k, c: k * k }) };
+  if (tipo === 2){ var A = k * k, o = [{ html: k + " " + TXT.pulg, clave: "a" }, { html: com(A / 2) + " " + TXT.pulg, clave: "b" }, { html: com(A / 4) + " " + TXT.pulg, clave: "c" }];
+    return { enun: F(TXT.areaQ, { a: A }), opciones: o, correcta: "a", pista: TXT.pistaArea, bien: F(TXT.bienArea, { r: rz(A), n: k }), mal: F(TXT.malArea, { n: k, a: A }) }; }
+  var mm; do { mm = aleatorio(20, 200); } while (esCuadrado(mm));
+  var s1 = aleatorio(4, 13), s2 = s1 + 1;
+  return { enun: TXT.noEntQ, opciones: [{ html: rz(mm), clave: "m" }, { html: rz(s1 * s1), clave: "a" }, { html: rz(s2 * s2), clave: "b" }], correcta: "m", pista: TXT.pistaNoEnt,
+    bien: F(TXT.bienNoEnt, { m: mm, a: s1 * s1, b: s2 * s2 }), mal: F(TXT.bienNoEnt, { m: mm, a: s1 * s1, b: s2 * s2 }) };
+}
+
+/* ============ Start ============ */
+$("iv-n").addEventListener("input", pintaIV); pintaIV();
+creaPracticaLibre("p1", genRaiz);
+(function(){ var sel = $("lc-a"), h = ""; for (var k = 2; k <= 12; k++) h += '<option value="' + k * k + '"' + (k === 6 ? " selected" : "") + '>' + k * k + '</option>'; sel.innerHTML = h; sel.addEventListener("change", pintaLC); pintaLC(); })();
+creaPracticaLibre("p2", genLado);
+$("es-n").addEventListener("input", pintaES); pintaES();
+creaPracticaOM("p3", genEstimar);
+creaPracticaOM("p4", genVerifica);
+creaPracticaOM("p5", genInversa);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -171,7 +171,7 @@ def construye(L, temas=None, extras=None, tx=None):
 TEMAS2 = {
  "en": [
   ("1", "Integers", [("1-1", "The number line, absolute value, and opposites"), ("1-2", "Adding and subtracting integers"), ("1-3", "Multiplying and dividing integers; applications")]),
-  ("2", "Fractions, exponents, and roots", [("2-1", "Complex fractions with negative coefficients"), ("2-2", "Positive integer exponents and powers of 10"), ("2-3", "Square roots of perfect squares")]),
+  ("2", "Fractions, exponents, and roots", [("2-1", "Fractions with negative signs"), ("2-2", "Positive integer exponents and powers of 10"), ("2-3", "Square roots of perfect squares")]),
   ("3", "The full order of operations (PEMDAS)", [("3-1", "Order of operations: review and nested parentheses"), ("3-2", "PEMDAS with powers, roots, fractions, and signs"), ("3-3", "PEMDAS with fractions and in algebra")]),
   ("4", "Ratios, rates, and proportions", [("4-1", "Ratios and unit rates"), ("4-2", "Direct proportions: the rule of three"), ("4-3", "Inverse proportions and mixed applications")]),
   ("5", "Percents", [("5-1", "Percent: conversions and the three basic cases"), ("5-2", "Percent change: increase and decrease"), ("5-3", "Discount, tax, tip, and mixed applications")]),

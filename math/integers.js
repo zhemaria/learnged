@@ -154,3 +154,68 @@ function pasoAPaso(pre, pasos){
   pinta();
   return S;
 }
+
+/* ---------- Signed fractions ---------- */
+var TXF = ES ? {
+  escriba: "Escriba una fracción con la barra, como −3/4 (con el signo menos delante si es negativa), un entero o un número mixto como −2 3/4.",
+  simplifique: "El valor está bien, pero todavía se puede simplificar.",
+  cero: "Una fracción nunca tiene 0 en el denominador.",
+  signo: "El valor está bien, pero revise el signo con la regla de los signos.",
+  mixtoMal: "En un número mixto, la parte de fracción tiene que ser menor que 1."
+} : {
+  escriba: "Type a fraction with a slash, like −3/4 (with the minus sign in front if it is negative), an integer, or a mixed number like −2 3/4.",
+  simplifique: "The value is right, but you can still simplify it.",
+  cero: "A fraction never has 0 in the denominator.",
+  signo: "The value is right, but check the sign with the sign rule.",
+  mixtoMal: "In a mixed number, the fraction part must be less than 1."
+};
+function mcdE(a, b){ a = Math.abs(a); b = Math.abs(b); while (b){ var x = a % b; a = b; b = x; } return a; }
+function mcmE(a, b){ return a / mcdE(a, b) * b; }
+/* fraction in simplest form, sign in the numerator */
+function q(n, d){ if (d === undefined) d = 1; if (d < 0){ n = -n; d = -d; } var g = mcdE(n, d) || 1; return { n: n / g, d: d / g }; }
+function qsum(a, b){ return q(a.n * b.d + b.n * a.d, a.d * b.d); }
+function qres(a, b){ return q(a.n * b.d - b.n * a.d, a.d * b.d); }
+function qmul(a, b){ return q(a.n * b.n, a.d * b.d); }
+function qdiv(a, b){ return q(a.n * b.d, a.d * b.n); }
+function qneg(a){ return q(-a.n, a.d); }
+function qigual(a, b){ return a && b && a.n === b.n && a.d === b.d; }
+/* HTML: stacked fraction, read correctly by screen readers. numerador and denominador may be negative (written as typed). */
+function frH(n, d){ return '<span aria-hidden="true"><span class="fracc"><span class="fa">' + ent(n) + '</span><span class="fb2">' + ent(d) + '</span></span></span><span class="sr-only">' + ent(n) + '/' + ent(d) + '</span>'; }
+/* a value {n, d}: integer, or fraction with the sign in front */
+function qH(v){
+  if (v.d === 1) return ent(v.n);
+  return '<span aria-hidden="true">' + (v.n < 0 ? "−" : "") + '<span class="fracc"><span class="fa">' + Math.abs(v.n) + '</span><span class="fb2">' + v.d + '</span></span></span><span class="sr-only">' + (v.n < 0 ? "−" : "") + Math.abs(v.n) + '/' + v.d + '</span>';
+}
+function qP(v){ return v.n < 0 ? "(" + qH(v) + ")" : qH(v); }
+function qTxt(v){ return v.d === 1 ? ent(v.n) : ent(v.n) + "/" + v.d; }
+function qMixto(v){ if (v.d === 1 || Math.abs(v.n) < v.d) return ""; var e = Math.floor(Math.abs(v.n) / v.d), r = Math.abs(v.n) % v.d;
+  return '<span aria-hidden="true">' + (v.n < 0 ? "−" : "") + e + '&nbsp;<span class="fracc"><span class="fa">' + r + '</span><span class="fb2">' + v.d + '</span></span></span><span class="sr-only">' + (v.n < 0 ? "−" : "") + e + ' ' + r + '/' + v.d + '</span>'; }
+/* Reads "−3/4", "-3/4", "3/-4", "-2 3/4", "5" → { v: value, simple: written in simplest form } or { cero } or null */
+function leeQ(t){
+  var s = String(t).trim().replace(/[−–—]/g, "-").replace(/\s*\/\s*/g, "/").replace(/\s+/g, " "), x;
+  if ((x = s.match(/^(-?\d+)$/))) return { v: q(+x[1]), simple: true };
+  if ((x = s.match(/^(-?\d+)\/(-?\d+)$/))){ if (+x[2] === 0) return { cero: true }; return { v: q(+x[1], +x[2]), simple: mcdE(+x[1], +x[2]) === 1 }; }
+  if ((x = s.match(/^(-?)(\d+) (\d+)\/(\d+)$/))){ if (+x[4] === 0) return { cero: true }; var nn = +x[2] * +x[4] + +x[3]; return { v: q(x[1] ? -nn : nn, +x[4]), simple: mcdE(+x[3], +x[4]) === 1, mixtoMal: +x[3] >= +x[4] }; }
+  return null;
+}
+/* Evaluator: obj = right value; pistas = [{ v, msg }] */
+function evQ(obj, pistas){
+  return function(t){
+    var r = leeQ(t);
+    if (r && r.cero) return { estado: "invalido", msg: TXF.cero };
+    if (!r) return { estado: "invalido", msg: TXF.escriba };
+    if (qigual(r.v, obj)){
+      if (r.mixtoMal) return { estado: "mal", msg: TXF.mixtoMal };
+      if (!r.simple) return { estado: "mal", msg: TXF.simplifique };
+      return { estado: "bien" };
+    }
+    for (var i = 0; i < (pistas || []).length; i++) if (qigual(r.v, pistas[i].v)) return { estado: "mal", msg: pistas[i].msg };
+    if (qigual(r.v, qneg(obj))) return { estado: "mal", msg: TXF.signo };
+    return { estado: "mal", msg: TX.revise };
+  };
+}
+/* Powers */
+function potH(b, e, parentesis){ return (parentesis && b < 0 ? "(" + ent(b) + ")" : ent(b)) + "<sup>" + e + "</sup>"; }
+function pw(b, e){ var r = 1; for (var i = 0; i < e; i++) r *= b; return r; }
+/* Square root sign with the radicand under the bar */
+function rz(n){ return '<span class="rad" aria-hidden="true">√<span class="rc">' + n + '</span></span><span class="sr-only">' + (ES ? "raíz cuadrada de " : "square root of ") + n + '</span>'; }

@@ -62,3 +62,26 @@ def fichas(a, b, label, pares=False):
             if cero:
                 s.append(f'<line x1="{x-12}" y1="{y+12}" x2="{x+12}" y2="{y-12}" stroke="#757575" stroke-width="2"/>')
     return B.svg(f"0 0 {W} {H}", label, "".join(s), min(560, int(W * 1.5)))
+
+# ---------- fracciones con signo ----------
+def fr(a, b):
+    """Fracción apilada tal como se escribe: fr(-3, 4) pone el signo en el numerador; fr(3, -4), en el denominador."""
+    return (f'<span class="fracc" aria-hidden="true"><span class="fa">{m(a) if isinstance(a, int) else a}</span><span class="fb2">{m(b) if isinstance(b, int) else b}</span></span>'
+            f'<span class="cap-oculto">{m(a) if isinstance(a, int) else a}/{m(b) if isinstance(b, int) else b}</span>')
+
+def frn(a, b):
+    """Fracción con el signo menos delante: −a/b."""
+    return f'<span aria-hidden="true">−<span class="fracc"><span class="fa">{a}</span><span class="fb2">{b}</span></span></span><span class="cap-oculto">−{a}/{b}</span>'
+
+def frp(a, b):
+    """Fracción negativa entre paréntesis si a < 0: (−3/4); positiva sin paréntesis."""
+    return f'({frn(-a, b)})' if a < 0 else fr(a, b)
+
+def mixto(e, a, b, neg=False):
+    """Número mixto: −2 3/4."""
+    s = "−" if neg else ""
+    return f'<span aria-hidden="true">{s}{e}&nbsp;<span class="fracc"><span class="fa">{a}</span><span class="fb2">{b}</span></span></span><span class="cap-oculto">{s}{e} {a}/{b}</span>'
+
+def pot(b, e):
+    """Potencia: b<sup>e</sup>."""
+    return f"{b}<sup>{e}</sup>"
