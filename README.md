@@ -16,6 +16,8 @@ Evolución bilingüe de GEDparaHispanos. Mascota: **Leo**, el búho.
 - `math/lesson.js` y `math/practice.js` sirven a los dos idiomas: si la página tiene `<html lang="es">`, los mensajes salen en español.
 - `js/calculator.js` (inglés) y `js/calculadora.js` (español) son el simulador de la TI-30XS; se generan con `tools/build-calculator-en.py` y `tools/build-calculadora-es.py` desde `algebra/calculadora-gph.js`.
 - Herramientas para el español: `tools/ged_standards_es.py` (cuadro de estándares) y `tools/build_indice_es.py` (índice del nivel). Los números se escriben igual en los dos idiomas: coma para los miles (3,482,651) y punto para los decimales (3.5), como en el examen GED.
+- Materias que vienen: `science/`, `social-studies/` y `rla/` (y en español `es/ciencias/`, `es/estudios-sociales/` y `es/artes-del-lenguaje/`) son, por ahora, las páginas del plan de cada curso (temas y lecciones previstos, cómo se organiza y cómo será cada lección). Las genera `tools/build_planes.py`, que también escribe `review/whats-next.html`. La portada enlaza «Coming soon · see the plan» / «Próximamente · vea el plan» a esas páginas.
+- Guías para los profesores revisores en `review/`: `index.html` (Nivel 1, escrita a mano), `level-2.html` (a mano), `level-3.html` y `level-4.html` (generadas con `tools/build_review.py`, que lee los títulos de las lecciones) y `whats-next.html` (las otras materias). Todas llevan arriba la barra para pasar de una guía a otra.
 - `learnged.css` — hoja de estilo común (paleta y tipografía Atkinson Hyperlegible).
 - `img/` — logotipos y mascota.
 - Favicon (`favicon.*`, `apple-touch-icon.png`, `android-chrome-*.png`, `site.webmanifest`) en la raíz.
