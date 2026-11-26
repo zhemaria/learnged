@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 8.3 · Math Level 2 (English) — built by tools/build_n2_lesson_8_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 8.3 · Simple probability · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 8 — Statistics and probability</p>
+<h1>Lesson 8.3 · Simple probability</h1>
+<p class="lema">How likely is it? Favorable ÷ total outcomes, the scale from 0 to 1, fraction, decimal, and percent, and the difference between theoretical and experimental probability.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>List</strong> the sample space of an experiment.</li>
+<li><strong>Find</strong> a simple probability: favorable ÷ total outcomes.</li>
+<li><strong>Write</strong> a probability as a fraction, a decimal, and a percent.</li>
+<li><strong>Tell</strong> impossible, possible, and certain events apart on the 0-to-1 scale.</li>
+<li><strong>Compare</strong> experimental and theoretical probability.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.8.b</span> Determine the probability of simple and compound events.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.1.a</span> Order fractions and decimals, including on a number line.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.a</span> Search for and recognize entry points for solving a problem.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.5.c</span> Identify the information required to evaluate a line of reasoning.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.SP.5</span> <span class="std-nivel">Level D</span> Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood.</li><li><span class="std-cod std-ccr">7.SP.6</span> <span class="std-nivel">Level D</span> Approximate the probability of a chance event by collecting data on the chance process that produces it and observing its long-run relative frequency, and predict the approximate relative frequency given the probability.</li><li><span class="std-cod std-ccr">7.SP.7</span> <span class="std-nivel">Level D</span> Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-sample-space">What simple probability is</a></li>
+<li><a href="#s-three-forms">Three ways to write a probability</a></li>
+<li><a href="#s-calculations">Typical probability problems</a></li>
+<li><a href="#s-experiment">Experiment and theory</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-sample-space"><span aria-hidden="true" class="num-seccion">1</span>What simple probability is</h2>
+<p>Welcome to the last lesson of Level 2. Here you meet <strong>probability</strong>, which measures how likely an event is to happen, on a universal scale from 0 to 1. You will learn to find a simple probability, to write it in three equivalent ways (fraction, decimal, and percent), and to tell impossible, possible, and certain events apart.</p>
+<p>The probability of an event is a number that tells how likely it is to happen. You find it with a simple ratio:</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">P(A) = favorable outcomes ÷ total outcomes</p>
+<p>The numerator counts the outcomes that match what you are looking for; the denominator counts all the possible outcomes. The set of all possible outcomes of an experiment is the <strong>sample space</strong>. Listing it correctly is the first step of any probability problem.</p>
+<div aria-label="Sample spaces (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Examples of sample spaces</caption>
+<thead><tr><th scope="col">Experiment</th><th scope="col">Sample space</th><th scope="col">Outcomes</th></tr></thead>
+<tbody>
+<tr><td>Toss a coin</td><td>{heads, tails}</td><td>2</td></tr>
+<tr><td>Roll a number cube (die)</td><td>{1, 2, 3, 4, 5, 6}</td><td>6</td></tr>
+<tr><td>Draw a marble from a bag with 3 red and 2 blue</td><td>5 marbles</td><td>5</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: rolling a die<span style="display:block;font-weight:400;margin-top:6px">You roll a six-sided die. What is the probability of getting an even number?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sample space.</strong> {1, 2, 3, 4, 5, 6}: 6 total outcomes.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Favorable outcomes.</strong> The even numbers {2, 4, 6}: 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Formula.</strong> P(even) = 3/6 = 1/2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The probability is <strong>1/2</strong>, or 0.5, or 50%. The three forms are the same.</p>
+</div>
+<a class="enlace-interactivo" href="practice-8-3.html#sample-space" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the definition of probability (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the definition of probability</span><span class="ei-sub">Explore the sample space of a die, a coin, a bag of marbles, and a spinner, and count the favorable outcomes.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-three-forms"><span aria-hidden="true" class="num-seccion">2</span>Three ways to write a probability</h2>
+<p>A probability is a ratio, so you can write it in the three ways from Topic 5: fraction, decimal, and percent.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">P(heads) = <span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span> = 0.5 = 50%</p>
+<p>The three numbers say the same thing. Choose the form that fits: the fraction is handy for calculating, the decimal goes straight into the calculator, and the percent is easy to understand in conversation.</p>
+<h3>The probability scale</h3>
+<p>Every probability is a number from 0 to 1, including 0 and 1. The scale works in any situation, from rolling a die to forecasting the weather.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 190" role="img" aria-label="A probability scale from 0 to 1. At 0, impossible; at one half, or 50 percent, as likely as not; at 1, certain. Everything between 0 and 1 is possible." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><defs><linearGradient id="gr83" x1="0" x2="1"><stop offset="0" stop-color="#ffcdd2"/><stop offset="0.5" stop-color="#fff9c4"/><stop offset="1" stop-color="#c8e6c9"/></linearGradient></defs><rect x="70" y="76" width="500" height="28" rx="14" fill="url(#gr83)" stroke="#37474f" stroke-width="2"/><line x1="70" y1="68" x2="70" y2="112" stroke="#37474f" stroke-width="3"/><text x="70" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">0</text><text x="70" y="134" text-anchor="middle" font-size="16" fill="#37474f">impossible</text><line x1="320" y1="68" x2="320" y2="112" stroke="#37474f" stroke-width="3"/><text x="320" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">½ = 0.5 = 50%</text><text x="320" y="134" text-anchor="middle" font-size="16" fill="#37474f">as likely as not</text><line x1="570" y1="68" x2="570" y2="112" stroke="#37474f" stroke-width="3"/><text x="570" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">1</text><text x="570" y="134" text-anchor="middle" font-size="16" fill="#37474f">certain</text><text x="320" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#0d47a1">possible: between 0 and 1</text></svg></div>
+<div aria-label="Three kinds of events (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Impossible, possible, and certain events</caption>
+<thead><tr><th scope="col">Event</th><th scope="col">Probability</th><th scope="col">Example with a die</th></tr></thead>
+<tbody>
+<tr><td>Impossible</td><td>P = 0</td><td>rolling a 7</td></tr>
+<tr><td>Possible</td><td>0 < P < 1</td><td>rolling an even number</td></tr>
+<tr><td>Certain</td><td>P = 1</td><td>rolling a number from 1 to 6</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Watch out</span>
+<p>A probability can never be negative or greater than 1. If a calculation gives a number outside 0 to 1, there is a mistake. It is a quick check worth doing every time.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — An even number</h3></div>
+<p class="pregunta-int" id="t-p1">Rolling an even number on a six-sided die is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Impossible (P = 0)</button>
+<button class="opcion" data-k="b" type="button">Certain (P = 1)</button>
+<button class="opcion" data-k="c" type="button">Possible (0 < P < 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — 24 hours</h3></div>
+<p class="pregunta-int" id="t-p2">That a day has 24 hours is…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">Certain (P = 1)</button>
+<button class="opcion" data-k="b" type="button">Impossible (P = 0)</button>
+<button class="opcion" data-k="c" type="button">Possible (0 < P < 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A 10</h3></div>
+<p class="pregunta-int" id="t-p3">Rolling a 10 on a six-sided die is…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">Possible (0 < P < 1)</button>
+<button class="opcion" data-k="b" type="button">Impossible (P = 0)</button>
+<button class="opcion" data-k="c" type="button">Certain (P = 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-3.html#three-forms" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: fraction, decimal, and percent (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: fraction, decimal, and percent</span><span class="ei-sub">Write the same probability in the three forms and place it between impossible and certain.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-calculations"><span aria-hidden="true" class="num-seccion">3</span>Typical probability problems</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Example: a number greater than 4<span style="display:block;font-weight:400;margin-top:6px">You roll a die. What is the probability of getting a number greater than 4?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Total outcomes.</strong> 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Favorable outcomes.</strong> Numbers greater than 4: {5, 6}, that is, 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 2/6 = 1/3 ≈ 0.333 ≈ 33.3%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The probability is <strong>1/3</strong>, about 33%.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: a bag of marbles<span style="display:block;font-weight:400;margin-top:6px">A bag has 5 red marbles, 3 blue, and 2 green. You pick one without looking. What is the probability that it is blue?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Total outcomes.</strong> 5 + 3 + 2 = 10 marbles.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Favorable outcomes.</strong> 3 blue.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 3/10 = 0.3 = 30%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The probability is <strong>3/10</strong>, or 30%.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: a small deck of cards<span style="display:block;font-weight:400;margin-top:6px">A small deck has 20 cards, 5 of each suit (hearts, diamonds, clubs, spades). You draw one at random. What is the probability of a heart?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Total outcomes.</strong> 20 cards.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Favorable outcomes.</strong> 5 hearts.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 5/20 = 1/4 = 0.25 = 25%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The probability is <strong>1/4</strong>, or 25%.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Fraction to percent on the calculator</span>
+<p>For 3/10: <span class="tecla num">3</span> <span class="tecla">÷</span> <span class="tecla num">10</span> <span class="tecla">enter</span> gives 0.3. Then <span class="tecla">×</span> <span class="tecla num">100</span> <span class="tecla">enter</span> gives 30, that is, 30%.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A 6</h3></div>
+<p class="pregunta-int" id="t-p4">What is P(rolling a 6 on a die)?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">5</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">5 over 6</span></button>
+<button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span></button>
+<button class="opcion" data-k="c" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">1 over 6</span></button>
+<button class="opcion" data-k="d" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Heads</h3></div>
+<p class="pregunta-int" id="t-p5">What is P(heads when you toss a coin)?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span></button>
+<button class="opcion" data-k="b" type="button">1</button>
+<button class="opcion" data-k="c" type="button">2</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">4</span></span><span class="cap-oculto">1 over 4</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — An odd number</h3></div>
+<p class="pregunta-int" id="t-p6">What is P(rolling an odd number on a die)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 over 3</span></button>
+<button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">2</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">2 over 3</span></button>
+<button class="opcion" data-k="c" type="button">1</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — Blue marble</h3></div>
+<p class="pregunta-int" id="t-p7">A bag has 5 red, 3 blue, and 2 green marbles. What is P(blue)?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">7</span></span><span class="cap-oculto">3 over 7</span></button>
+<button class="opcion" data-k="b" type="button">30%</button>
+<button class="opcion" data-k="c" type="button">3%</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 over 3</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-3.html#calculations" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: typical probability problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: typical probability problems</span><span class="ei-sub">Find probabilities with dice, marbles, and cards, including the probability of “not” getting something.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-experiment"><span aria-hidden="true" class="num-seccion">4</span>Experiment and theory</h2>
+<p>The probability you find with the formula, favorable ÷ total, is the <strong>theoretical probability</strong>. If you actually do the experiment many times and record the results, you get the <strong>experimental probability</strong> (also called the relative frequency).</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">experimental probability = times it happened ÷ total tries</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: tossing a coin 20 times<span style="display:block;font-weight:400;margin-top:6px">You toss a coin 20 times and get 12 heads and 8 tails. Compare the experimental probability of heads with the theoretical one.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Experimental.</strong> 12 ÷ 20 = 0.6 = 60%.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Theoretical.</strong> 1/2 = 0.5 = 50%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Comparison.</strong> A difference of 10 percentage points, which is normal with a small number of tries.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The law of large numbers (simple version)</span>
+<p>The more times you repeat an experiment, the closer the experimental probability gets to the theoretical one. With 20 tosses, being 10 points off is normal; with 10,000 tosses, the share of heads will be very close to 50%.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 8 — 20 tosses</h3></div>
+<p class="pregunta-int" id="t-p8">A coin was tossed 20 times and landed heads 12 times. What is the experimental probability of heads?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">50%</button>
+<button class="opcion" data-k="b" type="button">12%</button>
+<button class="opcion" data-k="c" type="button">60%</button>
+<button class="opcion" data-k="d" type="button">40%</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-3.html#experiment" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: experiment and theory (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: experiment and theory</span><span class="ei-sub">Roll a die 10, 100, or 1,000 times and watch the frequency get closer to the theoretical probability.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-8-3.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Find eight simple probabilities (dice, coins, marbles, and cards) and write each one as a fraction, a decimal, and a percent. Classify six events as impossible, possible, or certain.</li>
+<li><strong>In your daily life.</strong> Toss a coin 20 times (or roll a die 30 times) and record the results. Find the experimental probability and compare it with the theoretical one. Then put your results together with someone else's: does it get closer?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">You roll a die. What is the probability of an even number?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 over 3</span></button><button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span></button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">2</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">2 over 3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">The probability of an impossible event is…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1</button><button class="opcion" data-k="b" type="button">0.5</button><button class="opcion" data-k="c" type="button">0</button><button class="opcion" data-k="d" type="button">−1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">Which of these values <strong>cannot</strong> be a probability?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1.2</button><button class="opcion" data-k="b" type="button">0</button><button class="opcion" data-k="c" type="button">0.75</button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">5</span></span><span class="cap-oculto">3 over 5</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">You roll a die. What is P(a number greater than 4)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">4</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">4 over 6</span></button><button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 over 2</span></button><button class="opcion" data-k="c" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">1 over 6</span></button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 over 3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A bag has 5 red, 3 blue, and 2 green marbles. What is P(blue)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">7</span></span><span class="cap-oculto">3 over 7</span></button><button class="opcion" data-k="b" type="button">0.3</button><button class="opcion" data-k="c" type="button">0.03</button><button class="opcion" data-k="d" type="button">3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">A deck of 20 cards has 5 hearts. What is P(heart)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5%</button><button class="opcion" data-k="b" type="button">20%</button><button class="opcion" data-k="c" type="button">25%</button><button class="opcion" data-k="d" type="button">4%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A probability of 1/2 written as a percent is…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">50%</button><button class="opcion" data-k="b" type="button">0.5%</button><button class="opcion" data-k="c" type="button">12%</button><button class="opcion" data-k="d" type="button">2%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">When you repeat an experiment many, many times, the experimental probability…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">gets farther from the theoretical one</button><button class="opcion" data-k="b" type="button">equals the theoretical one from the start</button><button class="opcion" data-k="c" type="button">goes down to 0</button><button class="opcion" data-k="d" type="button">gets closer to the theoretical one</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for probability (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for simple probability and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Find the probability</th><td>I list the sample space, count the favorable outcomes, and simplify the fraction.</td><td>I find it with some help.</td><td>I mix up favorable and total outcomes.</td></tr>
+<tr><th scope="row">Three forms and the scale</th><td>I write it as a fraction, decimal, and percent, and I check that it is between 0 and 1.</td><td>I write it in one or two forms.</td><td>I give probabilities greater than 1.</td></tr>
+<tr><th scope="row">Experiment and theory</th><td>I find the experimental probability and explain why it gets closer to the theoretical one with many tries.</td><td>I find it with some help.</td><td>I do not tell the two apart.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you built the idea of <strong>simple probability</strong>: favorable outcomes ÷ total outcomes, always on the scale from <strong>0 to 1</strong>. You learned to list the sample space, to write a probability as a fraction, a decimal, and a percent, to tell impossible, possible, and certain events apart, and to compare experimental and theoretical probability.</p>
+<p><strong>This completes Level 2.</strong> Simple probability is the foundation on which Level 3 builds compound probability. Congratulations on all your work!</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Level 3 (coming soon)</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>probability</dt><dd>A number from 0 to 1 that tells how likely an event is.</dd>
+<dt>sample space</dt><dd>The set of all possible outcomes of an experiment.</dd>
+<dt>favorable outcome</dt><dd>An outcome that matches what you are looking for.</dd>
+<dt>experimental probability</dt><dd>Times it happened ÷ total tries.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 8 · Lesson 8.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Level 3",
+ "review": "sections 1 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "There are favorable outcomes: 2, 4, and 6.",
+    "b": "Odd numbers can come up too."
+   },
+   "right": "3 of the 6 outcomes are favorable.",
+   "solution": "Some outcomes are favorable, but not all: possible."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "Every day has 24 hours.",
+    "c": "It always happens."
+   },
+   "right": "It always happens: P = 1.",
+   "solution": "Every case is favorable: certain."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "A six-sided die only goes up to 6.",
+    "c": "It can never happen."
+   },
+   "right": "No outcome is a 10: P = 0.",
+   "solution": "There are no favorable outcomes: impossible."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the probability of NOT getting a 6.",
+    "b": "Only one face out of six is a 6.",
+    "d": "A probability is never more than 1."
+   },
+   "right": "1 favorable out of 6: 1/6.",
+   "solution": "P = 1/6."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Tails can come up too.",
+    "c": "A probability is never more than 1.",
+    "d": "A coin has only two sides."
+   },
+   "right": "1 out of 2: 1/2.",
+   "solution": "P = 1/2."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "The odd numbers are 1, 3, and 5: three of them.",
+    "b": "Count the odd numbers: 1, 3, 5.",
+    "c": "Even numbers can come up too."
+   },
+   "right": "3/6 = 1/2.",
+   "solution": "Odd: {1, 3, 5}; 3/6 = 1/2."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "The denominator is all the marbles: 10.",
+    "c": "Check: 3 ÷ 10 = 0.3 = 30%.",
+    "d": "There are 3 blue out of 10, not 3 colors."
+   },
+   "right": "3/10 = 30%.",
+   "solution": "Total 10; blue 3; 3/10 = 30%."
+  },
+  "p8": {
+   "ok": "c",
+   "hints": {
+    "a": "50% is the theoretical probability. Use what happened.",
+    "b": "12 is the count. Divide by 20.",
+    "d": "40% is the share of tails."
+   },
+   "right": "12 ÷ 20 = 0.6 = 60%.",
+   "solution": "12 ÷ 20 = 60%."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "The even numbers are 2, 4, and 6: three.",
+    "c": "A probability is never more than 1.",
+    "d": "Count the even numbers again."
+   },
+   "solution": "3/6 = 1/2."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "1 is a certain event.",
+    "b": "0.5 is as likely as not.",
+    "d": "A probability is never negative."
+   },
+   "solution": "Impossible: P = 0."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "0 is a valid probability: impossible.",
+    "c": "0.75 is between 0 and 1.",
+    "d": "3/5 is between 0 and 1."
+   },
+   "solution": "1.2 is greater than 1: it cannot be a probability."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "Greater than 4 means 5 or 6 only.",
+    "b": "Count: 5 and 6.",
+    "c": "There are two favorable numbers."
+   },
+   "solution": "2/6 = 1/3."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "The denominator is all 10 marbles.",
+    "c": "Check: 3 ÷ 10.",
+    "d": "A probability is never more than 1."
+   },
+   "solution": "3/10 = 0.3."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "5 is the count. Divide by 20.",
+    "b": "Check: 5 ÷ 20.",
+    "d": "You divided the other way."
+   },
+   "solution": "5/20 = 1/4 = 25%."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "0.5 is the decimal. Multiply by 100.",
+    "c": "1/2 does not mean the digits 1 and 2.",
+    "d": "Divide 1 by 2 and multiply by 100."
+   },
+   "solution": "1 ÷ 2 = 0.5 = 50%."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Try it with the die in the practice page.",
+    "b": "With few tries they can be quite different.",
+    "c": "It does not go to 0."
+   },
+   "solution": "With many tries, it gets closer to the theoretical probability."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

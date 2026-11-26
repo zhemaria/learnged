@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 2 · Lesson 8.2 · practice (English) — built by tools/build_n2_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 8.2 · Circle graphs: read, interpret, and make · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 2 · Topic 8 · Statistics and probability</div>
+    <h1>Lesson 8.2 · Circle graphs: read, interpret, and make</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#what-it-is">What a circle graph is</a></li>
+      <li><a href="#angle">The central angle</a></li>
+      <li><a href="#conversions">Percent, angle, and amount</a></li>
+      <li><a href="#build">Making a circle graph</a></li>
+      <li><a href="#read">Reading real graphs</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="what-it-is" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>What a circle graph is</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A circle graph is a circle divided into sectors. Each sector is the percent of one category, and <strong>all the percents add up to 100%</strong>, because the whole circle is the total.</p>
+      <div id="qe-svg"></div>
+      <div class="caja-tip">It is ideal to show how a whole is divided (a budget, a day, a population). To show change over time, a line graph is better.</div>
+      <h3>Practice: the missing percent</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="angle">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The central angle</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">angle = 360° × (percent ÷ 100)</div>
+      <p>Shortcuts: 50% = 180° · 25% = 90° · 10% = 36° · 1% = 3.6°.</p>
+      <h3>Move the sector</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="an-p">Percent: <span id="an-pv"></span></label><input type="range" id="an-p" min="1" max="100" value="25"></div></div>
+        <div id="an-svg"></div>
+        <div class="salida" id="an-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: percent and angle</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type only the number: degrees (72) or percent (20).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="conversions">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Percent, angle, and amount</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>amount = total × (percent ÷ 100) · percent = (angle ÷ 360°) × 100. The <strong>Total</strong> row checks everything: 100%, 360°, and the real total.</p>
+      <h3>The monthly budget</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="cv-t">Monthly income ($): <span id="cv-tv"></span></label><input type="range" id="cv-t" min="1000" max="6000" step="100" value="2000"></div></div>
+        <div class="tabla-scroll" id="cv-tabla"></div>
+      </div>
+      <h3>Practice: percent, angle, and amount</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type only the number: dollars or degrees.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="build">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Making a circle graph</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>From counts: divide each count by the total to get the percent, multiply by 3.6 to get the angle, and draw each sector from the last radius. A class of 24 students says how they get to school:</p>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="co-0">Bus</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="co-0" value="12"></div><div class="campo"><label for="co-1">Car</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="co-1" value="6"></div><div class="campo"><label for="co-2">Walking</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="co-2" value="4"></div><div class="campo"><label for="co-3">Bicycle</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="co-3" value="2"></div></div>
+        <div id="co-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: from counts to percents</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Percent</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type only the number (20 for 20%).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="read">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Reading real graphs</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Find the largest sector, compare two categories (the difference between two percents is measured in percentage points), and find the real amount of a part: total × percent.</p>
+      <h3>Practice: read the graph</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 2 · Topic 8 · Statistics and probability · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/stats.js"></script>
+<script>
+var TXT = {
+ "presu": [
+  [
+   "Food",
+   35
+  ],
+  [
+   "Rent",
+   30
+  ],
+  [
+   "Transportation",
+   15
+  ],
+  [
+   "Health",
+   10
+  ],
+  [
+   "Free time",
+   10
+  ]
+ ],
+ "temas": [
+  [
+   "How a budget is spent",
+   [
+    "Food",
+    "Rent",
+    "Transportation",
+    "Savings",
+    "Other"
+   ]
+  ],
+  [
+   "How a day is spent",
+   [
+    "Sleep",
+    "Work",
+    "Commute",
+    "Family",
+    "Other"
+   ]
+  ],
+  [
+   "Language spoken at home",
+   [
+    "Spanish",
+    "English",
+    "Both",
+    "Other"
+   ]
+  ],
+  [
+   "Favorite sport of a class",
+   [
+    "Soccer",
+    "Baseball",
+    "Basketball",
+    "Other"
+   ]
+  ]
+ ],
+ "presuVoz": "Monthly budget: food 35 percent, rent 30, transportation 15, health 10, and free time 10.",
+ "faVoz": "Circle graph with one unknown percent.",
+ "faQ": "{t}. What percent goes with “{c}”?",
+ "faB": "All the sectors add up to 100%: 100 − {r} = {f}%.",
+ "faM": "The others add up to {r}%; what is missing to reach 100% is {f}%.",
+ "anVoz": "Sector of {p} percent, which takes up {a} degrees.",
+ "elSector": "The sector",
+ "elResto": "The rest",
+ "anS1": "The sector takes up {a}° of the 360° of the circle.",
+ "anRecto": " It is a right angle: a fourth of the circle.",
+ "anMedia": " It is half a turn.",
+ "agQ1": "What central angle, in degrees, does a {p}% sector take up?",
+ "agS1": "360 × {d} = {a}°.",
+ "agP1": "You divided the wrong way. The angle is 360 × (percent ÷ 100).",
+ "agP2": "That is the angle of the rest of the circle.",
+ "agQ2": "A sector has a central angle of {a}°. What percent of the total is it?",
+ "agS2": "{a} ÷ 360 = {d}, and × 100 = {p}%.",
+ "agP3": "To go from angle to percent, divide by 360 (and multiply by 100).",
+ "cvCap": "Budget with an income of {T}",
+ "cvCab": [
+  "Category",
+  "Percent",
+  "Central angle",
+  "Amount"
+ ],
+ "cvTot": "Total",
+ "cvVoz": "Circle graph of the monthly budget.",
+ "cats": [
+  "Rent",
+  "Food",
+  "Savings",
+  "Transportation",
+  "Health"
+ ],
+ "cv1": "In a budget of {T}, “{c}” is {p}%. How many dollars is that?",
+ "cv1S": "{T2} × {d} = {v}.",
+ "cv1P": "That is the angle. The question asks for dollars: total × percent.",
+ "cv2": "In a budget of {T}, the sector “{c}” takes up {a}°. How many dollars is that?",
+ "cv2S": "{a} ÷ 360 = {d} ({p}%); {T2} × {d} = {v}.",
+ "cv2P": "The angle is not a percent: first divide by 360.",
+ "cv3": "Out of a budget of {T}, {v} is spent on “{c}”. What angle does that sector take up in the graph, in degrees?",
+ "cv3S": "{v2} ÷ {T2} = {d}; 360 × {d} = {a}°.",
+ "cv3P": "That is the percent. You still need to change it to degrees: × 3.6.",
+ "coCat": "Category",
+ "coCnt": "Count",
+ "coCap": "From counts to a circle graph",
+ "coCab": [
+  "Category",
+  "Count",
+  "Percent",
+  "Central angle"
+ ],
+ "coVoz": "Circle graph built from the counts.",
+ "coNada": "Type at least one count greater than 0.",
+ "coNom": [
+  "Bus",
+  "Car",
+  "Walking",
+  "Bicycle"
+ ],
+ "pcC": [
+  [
+   "In a survey of {T} people, {c} prefer soccer."
+  ],
+  [
+   "Of {T} students, {c} come by bus."
+  ],
+  [
+   "A store sold {T} shirts, {c} of them blue."
+  ]
+ ],
+ "pcQ": " What percent of the graph does that sector take up?",
+ "pcS": "{c} ÷ {T} = {d}, and × 100 = {p}%. Its angle would be {a}°.",
+ "pcP1": "Multiply by 100 to change it to a percent.",
+ "pcP2": "Divide the part by the total, not the other way around.",
+ "leVoz": "Circle graph: {x}.",
+ "porc": " percent",
+ "le1": "{t}. Which category is the largest?",
+ "le1B": "{c} has the largest sector.",
+ "le1M": "The largest is {c}, with {p}%.",
+ "le2": "{t}. How many percentage points apart are “{a}” and “{b}”?",
+ "le2o": " percentage points",
+ "le2B": "{p} − {q} = {d} (the difference).",
+ "le2M": "Subtract the two percents: the difference between {p} and {q} is {d}.",
+ "le3": "{t} (total: {T}). How much is “{c}”?",
+ "le3B": "{T} × {d} = {v}.",
+ "le3M": "Multiply the total by the percent: {T} × {d} = {v}.",
+ "le4": "{t}. What percent do “{a}” and “{b}” add up to together?",
+ "le4B": "{p} + {q} = {s}%.",
+ "le4M": "Add the two sectors: {p} + {q} = {s}%."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function r2(x){ return Math.round(x * 100) / 100; }
+function sinPct(t){ return String(t).replace(/[%°]/g, ""); }
+var PRESU = TXT.presu;
+
+/* ============ MODULE 1 · what a circle graph is ============ */
+function genFalta(){
+  var tm = elige(TXT.temas), n = tm[1].length, p = repartoAzar(n), i = aleatorio(0, n - 1), f = p[i];
+  var it = items(tm[1], p); it[i] = { nombre: tm[1][i], pct: f, etq: "?", color: "#757575" };
+  var o = [f, f + 5, 100 - f, f - 5].filter(function(x, k, a){ return x > 0 && x < 100 && a.indexOf(x) === k; }).map(function(x){ return { html: x + "%", clave: "p" + x }; });
+  return { enun: F(TXT.faQ, { t: tm[0], c: tm[1][i] }) + pieSVG(it, TXT.faVoz), opciones: baraja(o), correcta: "p" + f, bien: F(TXT.faB, { r: 100 - f, f: f }), mal: F(TXT.faM, { r: 100 - f, f: f }) };
+}
+
+/* ============ MODULE 2 · the central angle ============ */
+function pintaAN(){
+  var p = +$("an-p").value, a = 3.6 * p; $("an-pv").textContent = p + "%";
+  $("an-svg").innerHTML = pieSVG([{ nombre: TXT.elSector, pct: p }, { nombre: TXT.elResto, pct: 100 - p, color: "#bdbdbd" }], F(TXT.anVoz, { p: p, a: nd(r2(a)) }), { sinPct: true });
+  $("an-salida").innerHTML = '<div class="linea veredicto">360° × ' + nd(p / 100) + ' = ' + nd(r2(a)) + '°</div><div class="linea">' + F(TXT.anS1, { a: nd(r2(a)) }) + (p === 25 ? TXT.anRecto : (p === 50 ? TXT.anMedia : "")) + '</div>';
+}
+function genAng(){
+  if (Math.random() < 0.65){
+    var p = elige([5, 10, 15, 20, 25, 30, 35, 40, 45, 60, 75, 12.5, 2.5]), a = 3.6 * p;
+    var ev = numD(r2(a), [{ v: r2(p * 100 / 360), msg: TXT.agP1 }, { v: r2(360 - a), msg: TXT.agP2 }].filter(function(x){ return Math.abs(x.v - a) > 0.02; }), null, 0.011);
+    return { enun: F(TXT.agQ1, { p: nd(p) }), correcta: nd(r2(a)), solucion: F(TXT.agS1, { d: nd(p / 100), a: nd(r2(a)) }), evalua: function(s){ return ev(sinPct(s)); } };
+  }
+  var ang = elige([36, 72, 90, 108, 126, 144, 180, 54, 18]), pc = ang / 3.6, ev2 = numD(pc, [{ v: r2(ang * 3.6), msg: TXT.agP3 }], null, 0.011);
+  return { enun: F(TXT.agQ2, { a: ang }), correcta: nd(pc) + "%", solucion: F(TXT.agS2, { a: ang, d: nd(ang / 360), p: nd(pc) }), evalua: function(s){ return ev2(sinPct(s)); } };
+}
+
+/* ============ MODULE 3 · percent, angle, and amount ============ */
+function pintaCV(){
+  var Tt = +$("cv-t").value; $("cv-tv").textContent = dinero(Tt);
+  var h = '<table class="comparar"><caption>' + F(TXT.cvCap, { T: dinero(Tt) }) + '</caption><thead><tr>' + TXT.cvCab.map(function(c){ return '<th scope="col">' + c + '</th>'; }).join("") + '</tr></thead><tbody>';
+  PRESU.forEach(function(c){ h += '<tr><td>' + c[0] + '</td><td>' + c[1] + '%</td><td>' + nd(3.6 * c[1]) + '°</td><td>' + dinero(Tt * c[1] / 100) + '</td></tr>'; });
+  h += '<tr><td><strong>' + TXT.cvTot + '</strong></td><td><strong>100%</strong></td><td><strong>360°</strong></td><td><strong>' + dinero(Tt) + '</strong></td></tr></tbody></table>';
+  $("cv-tabla").innerHTML = pieSVG(items(PRESU.map(function(c){ return c[0]; }), PRESU.map(function(c){ return c[1]; })), TXT.cvVoz) + h;
+}
+function genConv(){
+  var Tt = 100 * aleatorio(10, 60), p = elige([5, 10, 15, 20, 25, 30, 35, 40]), v = Tt * p / 100, a = 3.6 * p, tp = aleatorio(1, 3), o = { T: dinero(Tt), T2: nd(Tt), c: elige(TXT.cats), p: p, d: nd(p / 100), a: nd(a), v: dinero2(v).replace(".00", ""), v2: nd(v) };
+  if (tp === 1) return { enun: F(TXT.cv1, o), correcta: dinero(v), solucion: F(TXT.cv1S, o), evalua: numD(v, [{ v: a, msg: TXT.cv1P }].filter(function(x){ return Math.abs(x.v - v) > 0.01; })) };
+  if (tp === 2) return { enun: F(TXT.cv2, o), correcta: dinero(v), solucion: F(TXT.cv2S, o), evalua: numD(v, [{ v: Tt * a / 100, msg: TXT.cv2P }]) };
+  var ev = numD(a, [{ v: p, msg: TXT.cv3P }], null, 0.011);
+  return { enun: F(TXT.cv3, o), correcta: nd(a), solucion: F(TXT.cv3S, o), evalua: function(s){ return ev(sinPct(s)); } };
+}
+
+/* ============ MODULE 4 · making a circle graph ============ */
+function pintaCO(){
+  var c = [0, 1, 2, 3].map(function(i){ var v = leeD($("co-" + i).value); $("co-" + i).classList.toggle("error", v === null || v < 0); return v === null || v < 0 ? 0 : Math.round(v); });
+  var tot = sumaDe(c);
+  if (!tot){ $("co-salida").innerHTML = '<p>' + TXT.coNada + '</p>'; return; }
+  var pc = c.map(function(x){ return x / tot * 100; });
+  var h = '<table class="comparar"><caption>' + TXT.coCap + '</caption><thead><tr>' + TXT.coCab.map(function(x){ return '<th scope="col">' + x + '</th>'; }).join("") + '</tr></thead><tbody>';
+  c.forEach(function(x, i){ h += '<tr><td>' + TXT.coNom[i] + '</td><td>' + x + '</td><td>' + x + ' ÷ ' + tot + ' ≈ ' + nd(r2(pc[i])) + '%</td><td>' + nd(r2(pc[i] * 3.6)) + '°</td></tr>'; });
+  h += '<tr><td><strong>' + TXT.cvTot + '</strong></td><td><strong>' + tot + '</strong></td><td><strong>100%</strong></td><td><strong>360°</strong></td></tr></tbody></table>';
+  $("co-salida").innerHTML = pieSVG(c.map(function(x, i){ return { nombre: TXT.coNom[i], pct: r2(pc[i]), etq: Math.round(pc[i]) + "%" }; }), TXT.coVoz) + '<div class="tabla-scroll">' + h + '</div>';
+}
+function genPct(){
+  var tot = elige([20, 25, 40, 50, 80, 200]), p = elige([5, 10, 15, 20, 25, 30, 40, 45, 60]), c = tot * p / 100;
+  if (c !== Math.round(c)) return genPct();
+  var ev = numD(p, [{ v: c / tot, msg: TXT.pcP1 }, { v: r2(tot / c * 100), msg: TXT.pcP2 }], null, 0.011);
+  return { enun: F(elige(TXT.pcC)[0], { T: tot, c: c }) + TXT.pcQ, correcta: p + "%", solucion: F(TXT.pcS, { c: c, T: tot, d: nd(c / tot), p: p, a: nd(3.6 * p) }), evalua: function(s){ return ev(sinPct(s)); } };
+}
+
+/* ============ MODULE 5 · reading real graphs ============ */
+function genLeer(){
+  var tm = elige(TXT.temas), n = tm[1].length, p, tp = aleatorio(1, 4);
+  do { p = repartoAzar(n); } while (p.filter(function(x){ return x === Math.max.apply(null, p); }).length > 1 || p[0] === p[1]);
+  var it = items(tm[1], p), sv = pieSVG(it, F(TXT.leVoz, { x: it.map(function(x){ return x.nombre + " " + x.pct + TXT.porc; }).join(", ") }));
+  if (tp === 1){ var mx = tm[1][p.indexOf(Math.max.apply(null, p))];
+    return { enun: F(TXT.le1, { t: tm[0] }) + sv, opciones: tm[1].map(function(x){ return { html: x, clave: x }; }), correcta: mx, enOrden: true, bien: F(TXT.le1B, { c: mx }), mal: F(TXT.le1M, { c: mx, p: Math.max.apply(null, p) }) }; }
+  if (tp === 2){ var d = Math.abs(p[0] - p[1]), o = [d, p[0] + p[1], d + 5, Math.max(p[0], p[1])].filter(function(x, k, a){ return a.indexOf(x) === k; });
+    return { enun: F(TXT.le2, { t: tm[0], a: tm[1][0], b: tm[1][1] }) + sv, opciones: baraja(o).map(function(x){ return { html: x + TXT.le2o, clave: "d" + x }; }), correcta: "d" + d, bien: F(TXT.le2B, { p: Math.max(p[0], p[1]), q: Math.min(p[0], p[1]), d: d }), mal: F(TXT.le2M, { p: p[0], q: p[1], d: d }) }; }
+  if (tp === 3){ var Tt = elige([200, 400, 500, 1000, 2000]), k = aleatorio(0, n - 1), v = Tt * p[k] / 100, o2 = [v, p[k], Tt - v, v * 2].filter(function(x, q, a){ return a.indexOf(x) === q; });
+    var oo = { t: tm[0], T: nd(Tt), c: tm[1][k], d: nd(p[k] / 100), v: nd(v) };
+    return { enun: F(TXT.le3, oo) + sv, opciones: baraja(o2).map(function(x){ return { html: nd(x), clave: "v" + x }; }), correcta: "v" + v, bien: F(TXT.le3B, oo), mal: F(TXT.le3M, oo) }; }
+  var s = p[0] + p[1], o3 = [s, 100 - s, Math.abs(p[0] - p[1]), s + 10].filter(function(x, q, a){ return x > 0 && a.indexOf(x) === q; });
+  var o4 = { t: tm[0], a: tm[1][0], b: tm[1][1], p: p[0], q: p[1], s: s };
+  return { enun: F(TXT.le4, o4) + sv, opciones: baraja(o3).map(function(x){ return { html: x + "%", clave: "s" + x }; }), correcta: "s" + s, bien: F(TXT.le4B, o4), mal: F(TXT.le4M, o4) };
+}
+
+/* ============ Start ============ */
+$("qe-svg").innerHTML = pieSVG(items(PRESU.map(function(c){ return c[0]; }), PRESU.map(function(c){ return c[1]; })), TXT.presuVoz);
+creaPracticaOM("p1", genFalta);
+$("an-p").addEventListener("input", pintaAN); pintaAN();
+creaPracticaLibre("p2", genAng);
+$("cv-t").addEventListener("input", pintaCV); pintaCV();
+creaPracticaLibre("p3", genConv);
+[0, 1, 2, 3].forEach(function(i){ $("co-" + i).addEventListener("input", pintaCO); }); pintaCO();
+creaPracticaLibre("p4", genPct);
+creaPracticaOM("p5", genLeer);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 2 · Lesson 8.3 · practice (English) — built by tools/build_n2_lesson_8_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 8.3 · Simple probability · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 2 · Topic 8 · Statistics and probability</div>
+    <h1>Lesson 8.3 · Simple probability</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#sample-space">What simple probability is</a></li>
+      <li><a href="#three-forms">Fraction, decimal, and percent</a></li>
+      <li><a href="#calculations">Typical probability problems</a></li>
+      <li><a href="#experiment">Experiment and theory</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="sample-space" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>What simple probability is</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">P(A) = favorable outcomes ÷ total outcomes</div>
+      <p>The <strong>sample space</strong> is the list of all possible outcomes. Choose an experiment and an event, and count the favorable outcomes.</p>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="em-x">Experiment</label><select id="em-x"><option value="dado">Roll a die</option><option value="moneda">Toss a coin</option><option value="urna">Draw a marble (3 red, 2 blue, 1 green)</option><option value="ruleta">Spin a spinner from 1 to 8</option></select></div>
+          <div class="campo"><label for="em-e">Event</label><select id="em-e"></select></div>
+        </div>
+        <div id="em-vis"></div>
+        <div class="salida" id="em-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: impossible, possible, or certain?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="three-forms">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Fraction, decimal, and percent</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The same probability can be written in three ways: 1/2 = 0.5 = 50%. Every probability is from 0 (impossible) to 1 (certain).</p>
+      <div class="panel">
+        <div class="campos"><div class="campo"><label for="tf-v">Probability (fraction, decimal, or percent)</label><input type="text" class="ancho" id="tf-v" autocomplete="off" value="3/8"></div></div>
+        <div class="salida" id="tf-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: the three forms</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">New exercise</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="calculations">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Typical probability problems</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Count the total outcomes (all the marbles, all the cards, all the faces) and the favorable ones. The probability of <strong>not</strong> getting something is 1 minus the probability of getting it.</p>
+      <div class="caja-tip">A standard deck has 52 cards: 4 suits (hearts and diamonds are red; clubs and spades are black) of 13 cards each (A, 2–10, J, Q, K).</div>
+      <h3>Practice: find the probability</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Probability</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Write it as a fraction (3/8), a decimal (0.375), or a percent (37.5%).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="experiment">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Experiment and theory</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The theoretical probability of each face of a die is 1/6 ≈ 16.7%. Roll the die and watch the experimental probability of each face.</p>
+      <div class="panel">
+        <div class="fila-btn">
+          <button type="button" class="btn" id="ex-10">Roll 10 times</button>
+          <button type="button" class="btn" id="ex-100">Roll 100 times</button>
+          <button type="button" class="btn" id="ex-1000">Roll 1,000 times</button>
+          <button type="button" class="btn-sec" id="ex-0">Start over</button>
+        </div>
+        <div id="ex-svg"></div>
+        <div class="salida" id="ex-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practice: experiment and theory</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 2 · Topic 8 · Statistics and probability · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/stats.js"></script>
+<script>
+var TXT = {
+ "exp": {
+  "dado": [
+   [
+    "an even number",
+    "par"
+   ],
+   [
+    "a number greater than 4",
+    "may4"
+   ],
+   [
+    "a 7",
+    "nunca"
+   ],
+   [
+    "a number from 1 to 6",
+    "siempre"
+   ],
+   [
+    "a multiple of 3",
+    "mul3"
+   ]
+  ],
+  "moneda": [
+   [
+    "heads",
+    "cara"
+   ],
+   [
+    "heads or tails",
+    "siempre"
+   ]
+  ],
+  "urna": [
+   [
+    "a red marble (R)",
+    "R"
+   ],
+   [
+    "a blue marble (B)",
+    "A"
+   ],
+   [
+    "a marble that is not green",
+    "noV"
+   ],
+   [
+    "a black marble",
+    "nunca"
+   ]
+  ],
+  "ruleta": [
+   [
+    "an odd number",
+    "impar"
+   ],
+   [
+    "a number less than 3",
+    "men3"
+   ],
+   [
+    "the 8",
+    "ocho"
+   ]
+  ]
+ },
+ "monedaEsp": [
+  "heads",
+  "tails"
+ ],
+ "urnaEsp": [
+  "R",
+  "R",
+  "R",
+  "B",
+  "B",
+  "G"
+ ],
+ "espacio": "Sample space ({n} outcomes):",
+ "favs": "Favorable (filled in color): {f} of {n}.",
+ "ninguno": "none",
+ "favVoz": "Favorable: {x}.",
+ "evento": " — {x} event",
+ "tipos": {
+  "i": "impossible",
+  "p": "possible",
+  "s": "certain"
+ },
+ "evt": [
+  [
+   "Rolling an even number on a die.",
+   "p"
+  ],
+  [
+   "That a day has 24 hours.",
+   "s"
+  ],
+  [
+   "Rolling a 10 on a six-sided die.",
+   "i"
+  ],
+  [
+   "Drawing a red marble from a bag with 4 red and 6 blue.",
+   "p"
+  ],
+  [
+   "Drawing a green marble from a bag with 5 red and 5 blue.",
+   "i"
+  ],
+  [
+   "Getting heads or tails when you toss a coin.",
+   "s"
+  ],
+  [
+   "Drawing an ace from a full deck of cards.",
+   "p"
+  ],
+  [
+   "Rolling a number less than 7 on a die.",
+   "s"
+  ],
+  [
+   "That a week has 8 days.",
+   "i"
+  ]
+ ],
+ "nomT": {
+  "i": "Impossible (P = 0)",
+  "p": "Possible (0 < P < 1)",
+  "s": "Certain (P = 1)"
+ },
+ "bienT": {
+  "i": "There are no favorable outcomes.",
+  "p": "There are favorable outcomes, but not all of them are.",
+  "s": "Every outcome is favorable."
+ },
+ "malT": "It is {x}.",
+ "tfNo": "Write a fraction (3/8), a decimal (0.375), or a percent (37.5%).",
+ "tfFr": "Fraction",
+ "tfDe": "Decimal",
+ "tfPc": "Percent",
+ "tfFuera": "That value cannot be a probability: it must be from 0 to 1.",
+ "tfImp": "Impossible event.",
+ "tfSeg": "Certain event.",
+ "tfVal": "A valid probability: the event is possible.",
+ "t1Q": "The probability {f} written as a decimal is:",
+ "t1": "{a} ÷ {b} = {d}.",
+ "t2Q": "The probability {f} written as a percent is:",
+ "t2B": "{d} × 100 = {p}%.",
+ "t2M": "{a} ÷ {b} = {d}, and × 100 = {p}%.",
+ "t3Q": "Which of these values <strong>cannot</strong> be a probability?",
+ "t3B": "{x} is outside the range from 0 to 1.",
+ "t3M": "The one that cannot be is {x}: every probability is from 0 to 1.",
+ "dado": "You roll a die. What is the probability of getting {x}?",
+ "evD": [
+  [
+   "a number greater than 4",
+   2
+  ],
+  [
+   "an even number",
+   3
+  ],
+  [
+   "a 1 or a 6",
+   2
+  ],
+  [
+   "a number less than 5",
+   4
+  ],
+  [
+   "a multiple of 3",
+   2
+  ]
+ ],
+ "urna1": "A bag has {r} red, {a} blue, and {v} green marbles. You pick one without looking. What is the probability that it is {c}?",
+ "colores": [
+  "red",
+  "blue",
+  "green"
+ ],
+ "urnaP": "The denominator is the total number of marbles, not the ones that are not {c}.",
+ "urna2": "A bag has {r} red, {a} blue, and {v} green marbles. What is the probability that the marble is <strong>not</strong> green?",
+ "urna2P": "That is the probability that it IS green. You want the opposite: 1 minus that.",
+ "carta": "You draw a card from a deck of 52. What is the probability of drawing {x}?",
+ "cartas": [
+  [
+   "a heart",
+   13
+  ],
+  [
+   "an ace",
+   4
+  ],
+  [
+   "a red card",
+   26
+  ],
+  [
+   "a face card (J, Q, or K)",
+   12
+  ],
+  [
+   "the king of spades",
+   1
+  ]
+ ],
+ "letra": "The letters of the word {w} are written on cards, and you draw one at random. What is the probability of drawing an “{l}”?",
+ "palabras": [
+  "MATHEMATICS",
+  "PROBABILITY",
+  "CHICAGO",
+  "STATISTICS"
+ ],
+ "calcS": "Favorable outcomes: {f}; total outcomes: {n}. P = {x}.",
+ "exVoz": "Experimental frequency of each face of the die compared with the theoretical one sixth.",
+ "exTeo": "theoretical probability: 1/6 ≈ 16.7%",
+ "exN": "Rolls: <strong>{n}</strong>. ",
+ "exF": "Frequencies: {x}.",
+ "exNada": "No rolls yet.",
+ "exDif": "The bar farthest from the red line is {d} percentage points away. ",
+ "exPocos": "With few rolls the differences are large.",
+ "exMuchos": "With many rolls, all the bars get close to the theoretical probability.",
+ "g1Q": "A die was rolled {n} times and landed on 3 {c} times. What is the experimental probability of a 3?",
+ "g1T": "That is the theoretical probability. The experimental one uses what happened: {c} out of {n}.",
+ "g1B": "Frequency ÷ tries: {c}/{n}.",
+ "g1M": "The experimental probability is frequency ÷ tries: {c}/{n}.",
+ "g2Q": "A coin is tossed 10 times and lands heads 7 times. What can you conclude?",
+ "g2": [
+  "It is normal with few tosses; the theoretical probability is still 1/2",
+  "The coin is surely unfair",
+  "The probability of heads is 7/10 forever"
+ ],
+ "g2B": "With few tries the experimental probability can be far from the theoretical one.",
+ "g2M": "With only 10 tosses, 7 heads is normal; with thousands, the share would get close to 1/2.",
+ "g3Q": "What happens to the experimental probability when you repeat an experiment many, many times?",
+ "g3": [
+  "It gets closer to the theoretical probability",
+  "It gets farther and farther from the theoretical one",
+  "It always equals the theoretical one from the start"
+ ],
+ "g3B": "With many tries, the relative frequency gets close to the theoretical one. Check it with the die above.",
+ "g3M": "It gets closer to the theoretical one. Try rolling the die 1,000 times above."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+
+/* ============ MODULE 1 · sample space ============ */
+var PRUEBA = { par: function(x){ return +x % 2 === 0; }, may4: function(x){ return +x > 4; }, nunca: function(){ return false; }, siempre: function(){ return true; }, mul3: function(x){ return +x % 3 === 0; },
+  cara: function(x){ return x === TXT.monedaEsp[0]; }, R: function(x){ return x === "R"; }, A: function(x){ return x === TXT.urnaEsp[3]; }, noV: function(x){ return x !== TXT.urnaEsp[5]; },
+  impar: function(x){ return +x % 2 === 1; }, men3: function(x){ return +x < 3; }, ocho: function(x){ return x === "8"; } };
+var ESP = { dado: ["1", "2", "3", "4", "5", "6"], moneda: TXT.monedaEsp, urna: TXT.urnaEsp, ruleta: ["1", "2", "3", "4", "5", "6", "7", "8"] };
+function llenaEv(){ var e = TXT.exp[$("em-x").value]; $("em-e").innerHTML = e.map(function(v, i){ return '<option value="' + i + '">' + v[0] + '</option>'; }).join(""); }
+function pintaEM(){
+  var x = $("em-x").value, esp = ESP[x], ev = TXT.exp[x][+$("em-e").value], f = PRUEBA[ev[1]], fav = esp.filter(f), n = esp.length, k = fav.length;
+  $("em-vis").innerHTML = '<p>' + F(TXT.espacio, { n: n }) + '</p>' + chipsN(esp.map(function(_, i){ return i; }), esp.map(function(v){ return f(v) ? "med" : ""; }), esp) + '<span class="sr-only">' + F(TXT.favVoz, { x: fav.join(", ") || TXT.ninguno }) + '</span>';
+  var tipo = k === 0 ? "i" : (k === n ? "s" : "p");
+  $("em-salida").innerHTML = '<div class="linea">' + F(TXT.favs, { f: k, n: n }) + '</div><div class="linea veredicto">P = ' + (k === 0 ? "0" : (k === n ? "1" : tresF(k, n))) + F(TXT.evento, { x: TXT.tipos[tipo] }) + '</div>';
+}
+function genTipo(){
+  var e = elige(TXT.evt);
+  return { enun: e[0], opciones: ["i", "p", "s"].map(function(k){ return { html: TXT.nomT[k], clave: k }; }), correcta: e[1], enOrden: true, bien: TXT.bienT[e[1]], mal: F(TXT.malT, { x: TXT.nomT[e[1]].toLowerCase() }) };
+}
+
+/* ============ MODULE 2 · three forms ============ */
+function aFr(v){ for (var k = 0; k <= 6; k++){ var d = Math.pow(10, k); if (Math.abs(Math.round(v * d) - v * d) < 1e-9) return reduce(Math.round(v * d), d); } return null; }
+function pintaTF(){
+  var s = $("tf-v").value, v = leeProb(s), sal = $("tf-salida");
+  if (v === null){ $("tf-v").classList.add("error"); sal.innerHTML = '<div class="linea">' + TXT.tfNo + '</div>'; return; }
+  $("tf-v").classList.remove("error");
+  var m = String(s).trim().replace(/\s+/g, "").match(/^(\d+)\/(\d+)$/), fr = m ? reduce(+m[1], +m[2]) : aFr(v);
+  sal.innerHTML = '<div class="linea">' + TXT.tfFr + ': <strong>' + (fr ? fracHTML(fr.p, fr.q) : "—") + '</strong> · ' + TXT.tfDe + ': <strong>' + nd(Math.round(v * 10000) / 10000) + '</strong> · ' + TXT.tfPc + ': <strong>' + nd(Math.round(v * 100000) / 1000) + '%</strong></div>' +
+    '<div class="linea veredicto">' + (v < 0 || v > 1 ? TXT.tfFuera : (v === 0 ? TXT.tfImp : (v === 1 ? TXT.tfSeg : TXT.tfVal))) + '</div>';
+}
+function genTres(){
+  var pr = elige([[1, 2], [1, 4], [3, 4], [1, 5], [2, 5], [3, 10], [1, 8], [3, 8], [7, 20], [1, 10]]), v = pr[0] / pr[1], tp = aleatorio(1, 3), o = { a: pr[0], b: pr[1], d: nd(v), p: nd(v * 100), f: fracHTML(pr[0], pr[1]) };
+  if (tp === 1){ var op = [nd(v), nd(pr[1] / pr[0]), nd(v * 10), pr[0] + "." + pr[1]].filter(function(x, i, a){ return a.indexOf(x) === i; });
+    return { enun: F(TXT.t1Q, o), opciones: baraja(op).map(function(x){ return { html: x, clave: "d" + x }; }), correcta: "d" + nd(v), bien: F(TXT.t1, o), mal: F(TXT.t1, o) }; }
+  if (tp === 2){ var op2 = [nd(v * 100) + "%", nd(v) + "%", nd(v * 1000) + "%", pr[0] + "%"].filter(function(x, i, a){ return a.indexOf(x) === i; });
+    return { enun: F(TXT.t2Q, o), opciones: baraja(op2).map(function(x){ return { html: x, clave: "p" + x }; }), correcta: "p" + nd(v * 100) + "%", bien: F(TXT.t2B, o), mal: F(TXT.t2M, o) }; }
+  var malo = elige(["1.5", "120%", "−0.2", "5/4"]), buenos = baraja(["0", "1", "0.99", "3%", "7/8", "100%"]).slice(0, 3);
+  return { enun: TXT.t3Q, opciones: baraja([{ html: malo, clave: "m" }].concat(buenos.map(function(b, i){ return { html: b, clave: "b" + i }; }))), correcta: "m", bien: F(TXT.t3B, { x: malo }), mal: F(TXT.t3M, { x: malo }) };
+}
+
+/* ============ MODULE 3 · typical problems ============ */
+function genCalc(){
+  var tp = aleatorio(1, 5), fav, tot, enun, p = [];
+  if (tp === 1){ var ev = elige(TXT.evD); fav = ev[1]; tot = 6; enun = F(TXT.dado, { x: ev[0] }); }
+  else if (tp === 2){ var r = aleatorio(2, 8), a = aleatorio(1, 6), v = aleatorio(1, 5), k = aleatorio(0, 2), cnt = [r, a, v][k]; fav = cnt; tot = r + a + v;
+    enun = F(TXT.urna1, { r: r, a: a, v: v, c: TXT.colores[k] }); if (tot - fav > 0) p.push({ v: fav / (tot - fav), msg: F(TXT.urnaP, { c: TXT.colores[k] }) }); }
+  else if (tp === 3){ var r2 = aleatorio(2, 8), a2 = aleatorio(2, 8), vv = aleatorio(1, 5); tot = r2 + a2 + vv; fav = tot - vv; enun = F(TXT.urna2, { r: r2, a: a2, v: vv }); p.push({ v: vv / tot, msg: TXT.urna2P }); }
+  else if (tp === 4){ var c = elige(TXT.cartas); fav = c[1]; tot = 52; enun = F(TXT.carta, { x: c[0] }); }
+  else { var w = elige(TXT.palabras), letras = w.split(""), rep = letras.filter(function(x, i, a){ return a.indexOf(x) !== a.lastIndexOf(x); }), l = elige(rep.length ? rep : letras);
+    fav = letras.filter(function(x){ return x === l; }).length; tot = letras.length; enun = F(TXT.letra, { w: w, l: l }); }
+  var val = fav / tot;
+  return { enun: enun, correcta: fav + "/" + tot, solucion: F(TXT.calcS, { f: fav, n: tot, x: tresF(fav, tot) }), evalua: evaluaProb(val, p.filter(function(x){ return Math.abs(x.v - val) > 0.001; })) };
+}
+
+/* ============ MODULE 4 · experiment and theory ============ */
+var EXPD = { c: [0, 0, 0, 0, 0, 0], n: 0 };
+function lanza(k){ for (var i = 0; i < k; i++){ EXPD.c[Math.floor(Math.random() * 6)]++; EXPD.n++; } pintaEX(); }
+function pintaEX(){
+  var W = 640, x0 = 60, yb = 220, w = 60, g = 30, mx = 0.3, yT = yb - (1 / 6) / mx * 170;
+  var s = '<svg class="figura" viewBox="0 0 640 260" role="img" aria-label="' + TXT.exVoz + '">';
+  EXPD.c.forEach(function(c, i){ var f = EXPD.n ? c / EXPD.n : 0, h = Math.min(f, mx) / mx * 170, x = x0 + i * (w + g);
+    s += '<rect x="' + x + '" y="' + f1(yb - h) + '" width="' + w + '" height="' + f1(h) + '" fill="#1565c0"/>' + texto([x + w / 2, yb + 18], i + 1, 16, "#222");
+    if (EXPD.n) s += h > 26 ? texto([x + w / 2, yb - h + 14], nd(Math.round(f * 1000) / 10) + "%", 13, "#fff", 700) : texto([x + w / 2, yb - h - 10], nd(Math.round(f * 1000) / 10) + "%", 13, "#0d47a1", 700); });
+  s += '<line x1="' + (x0 - 10) + '" y1="' + f1(yT) + '" x2="' + (W - 30) + '" y2="' + f1(yT) + '" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/>';
+  s += '<line x1="' + x0 + '" y1="22" x2="' + (x0 + 40) + '" y2="22" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/><text x="' + (x0 + 48) + '" y="22" dominant-baseline="middle" font-size="15" font-weight="700" fill="#b71c1c">' + TXT.exTeo + '</text>';
+  $("ex-svg").innerHTML = s + '</svg>';
+  var dif = EXPD.n ? Math.max.apply(null, EXPD.c.map(function(c){ return Math.abs(c / EXPD.n - 1 / 6); })) : 0;
+  $("ex-salida").innerHTML = '<div class="linea">' + F(TXT.exN, { n: nd(EXPD.n) }) + (EXPD.n ? F(TXT.exF, { x: EXPD.c.map(function(c, i){ return (i + 1) + ": " + c; }).join(" · ") }) : TXT.exNada) + '</div>' +
+    (EXPD.n ? '<div class="linea">' + F(TXT.exDif, { d: nd(Math.round(dif * 1000) / 10) }) + (EXPD.n < 100 ? TXT.exPocos : TXT.exMuchos) + '</div>' : '');
+}
+function genExp(){
+  var tp = aleatorio(1, 3);
+  if (tp === 1){ var n = elige([20, 50, 100, 200]), c = Math.round(n / 6) + aleatorio(-5, 5); if (c === Math.round(n / 6)) c++; var pc = {}; pc.t = F(TXT.g1T, { c: c, n: n });
+    return { enun: F(TXT.g1Q, { n: n, c: c }), opciones: baraja([{ html: fracHTML(c, n), clave: "e" }, { html: fracHTML(1, 6), clave: "t" }, { html: fracHTML(c, 6), clave: "x" }, { html: fracHTML(3, n), clave: "y" }]), correcta: "e", pistas: pc, bien: F(TXT.g1B, { c: c, n: n }), mal: F(TXT.g1M, { c: c, n: n }) }; }
+  var k = tp === 2 ? "g2" : "g3";
+  return { enun: TXT[k + "Q"], opciones: baraja(TXT[k].map(function(x, i){ return { html: x, clave: "abc"[i] }; })), correcta: "a", bien: TXT[k + "B"], mal: TXT[k + "M"] };
+}
+
+/* ============ Start ============ */
+$("em-x").addEventListener("change", function(){ llenaEv(); pintaEM(); }); $("em-e").addEventListener("change", pintaEM); llenaEv(); pintaEM();
+creaPracticaOM("p1", genTipo);
+$("tf-v").addEventListener("input", pintaTF); pintaTF();
+creaPracticaOM("p2", genTres);
+creaPracticaLibre("p3", genCalc);
+$("ex-10").addEventListener("click", function(){ lanza(10); }); $("ex-100").addEventListener("click", function(){ lanza(100); }); $("ex-1000").addEventListener("click", function(){ lanza(1000); }); $("ex-0").addEventListener("click", function(){ EXPD = { c: [0, 0, 0, 0, 0, 0], n: 0 }; pintaEX(); }); pintaEX();
+creaPracticaOM("p4", genExp);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

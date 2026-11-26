@@ -39,6 +39,7 @@ TARGETS_ES = {
  "Q.6.a": "Representar, mostrar e interpretar datos por categorías en gráficas de barras o gráficas circulares.",
  "Q.6.c": "Representar, mostrar e interpretar datos de dos variables en tablas y en el plano de coordenadas, incluidos los diagramas de dispersión y las gráficas.",
  "Q.7.a": "Calcular la media, la mediana, la moda y el rango. Calcular un dato que falta, dada la media y todos los demás datos, y también la media ponderada.",
+ "Q.8.b": "Hallar la probabilidad de eventos simples y compuestos.",
  "A.1.b": "Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.",
  "A.1.c": "Escribir expresiones lineales al traducir de palabras a símbolos o para representar situaciones comunes.",
  "A.2.a": "Resolver ecuaciones lineales de una variable con coeficientes racionales, incluidas las que requieren aplicar la propiedad distributiva y reducir términos semejantes, o las que tienen coeficientes representados con letras.",
@@ -63,6 +64,10 @@ TARGETS_ES = {
 CCR_ES = {
  "5.G.2": "Representar problemas matemáticos y de la vida real ubicando puntos en el primer cuadrante del plano de coordenadas, e interpretar las coordenadas de los puntos según la situación.",
  "3.MD.3": "Hacer una pictografía y una gráfica de barras a escala para representar datos con varias categorías. Resolver problemas de uno y de dos pasos de «cuántos más» y «cuántos menos» con la información de gráficas de barras a escala.",
+ "6.SP.3": "Reconocer que una medida de tendencia central de un conjunto de datos numéricos resume todos sus valores en un solo número, mientras que una medida de variación describe con un solo número cómo varían sus valores.",
+ "7.SP.5": "Entender que la probabilidad de un evento aleatorio es un número entre 0 y 1 que expresa qué tan posible es que ocurra. Los números mayores indican mayor posibilidad.",
+ "7.SP.6": "Aproximar la probabilidad de un evento aleatorio reuniendo datos del proceso que lo produce y observando su frecuencia relativa a largo plazo, y predecir la frecuencia relativa aproximada conocida la probabilidad.",
+ "7.SP.7": "Construir un modelo de probabilidad y usarlo para hallar la probabilidad de eventos. Comparar las probabilidades del modelo con las frecuencias observadas; si no coinciden bien, explicar las posibles causas de la diferencia.",
  "6.SP.5": "Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.",
  "3.MD.7": "Relacionar el área con las operaciones de multiplicación y suma.",
  "7.G.4": "Conocer las fórmulas del área y de la circunferencia de un círculo y usarlas para resolver problemas; dar una deducción informal de la relación entre la circunferencia y el área de un círculo.",

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 8.1 · Media, mediana, moda, rango y media ponderada — práctica (español) — construida con tools/build_n2_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 8.1 · Media, mediana, moda, rango y media ponderada · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-8-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 8 · Estadística y probabilidad</div>
+    <h1>Lección 8.1 · Media, mediana, moda, rango y media ponderada</h1>
+    <div class="meta">Seis actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#cuatro-medidas">Las cuatro medidas en una mirada</a></li>
+      <li><a href="#media">La media aritmética</a></li>
+      <li><a href="#mediana">La mediana</a></li>
+      <li><a href="#moda-rango">La moda y el rango</a></li>
+      <li><a href="#atipicos">Cuando la media engaña</a></li>
+      <li><a href="#ponderada">La media ponderada</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="cuatro-medidas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Las cuatro medidas en una mirada</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>Cuatro formas de resumir un conjunto de datos</caption>
+        <thead><tr><th scope="col">Medida</th><th scope="col">Qué dice</th><th scope="col">Cómo se calcula</th></tr></thead>
+        <tbody>
+          <tr><td>Media</td><td>el promedio</td><td>suma ÷ cantidad de datos</td></tr>
+          <tr><td>Mediana</td><td>el valor del centro</td><td>se ordenan y se busca el del medio</td></tr>
+          <tr><td>Moda</td><td>el valor más frecuente</td><td>el que más se repite</td></tr>
+          <tr><td>Rango</td><td>qué tan dispersos están</td><td>máximo − mínimo</td></tr>
+        </tbody>
+      </table>
+      <h3>Calculadora de las cuatro medidas</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;"><label for="md-d">Escriba los datos separados por comas</label><input type="text" class="ancho" id="md-d" autocomplete="off" value="78, 85, 90, 72, 95"></div></div>
+        <div class="caja-aviso" id="md-aviso" role="alert"></div>
+        <div id="md-salida" aria-live="polite"></div>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="media">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La media aritmética</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La media o promedio se obtiene sumando todos los datos y dividiendo entre cuántos son. Es lo que le tocaría a cada uno si todo se <strong>repartiera en partes iguales</strong>.</p>
+      <h3>Empareje las torres</h3>
+      <div class="panel">
+        <p id="me-datos"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="me-rep">Repartir en partes iguales</button><button type="button" class="btn-sec" id="me-nuevo">Otros datos</button></div>
+        <div id="me-svg"></div>
+        <div class="salida" id="me-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: la media</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Media</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 84.25.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="mediana">
+    <summary><span class="num" aria-hidden="true">3</span><h2>La mediana</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Primero se <strong>ordenan los datos</strong>. Si la cantidad es impar, la mediana es el del medio; si es par, es el promedio de los dos del medio.</p>
+      <div class="caja-atencion"><strong>Error frecuente:</strong> tomar el valor del centro de la lista sin haberla ordenado.</div>
+      <h3>Practique: la mediana</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Mediana</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 84.25.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="moda-rango">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La moda y el rango</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La <strong>moda</strong> es el valor que más se repite. Puede haber una, dos (bimodal) o ninguna. El <strong>rango</strong> es máximo − mínimo: mide qué tan dispersos están los datos.</p>
+      <h3>Practique: la moda</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <h3>Practique: el rango</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Rango</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="atipicos">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Cuando la media engaña</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cinco empleados ganan entre $2,900 y $3,300 al mes. Mueva el sexto salario, el del gerente, y observe la media y la mediana.</p>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:150px;"><label for="at-g">Salario del gerente ($): <span id="at-gv"></span></label><input type="range" id="at-g" min="3500" max="30000" step="500" value="3500"></div></div>
+        <div id="at-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿qué medida?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="ponderada">
+    <summary><span class="num" aria-hidden="true">6</span><h2>La media ponderada</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">media ponderada = Σ(valor × peso) ÷ Σ(pesos)</div>
+      <p>Cuando los pesos son porcentajes que suman 100%, se multiplica cada nota por su porcentaje en decimal y se suma.</p>
+      <h3>La nota de un curso</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:150px;"><label for="po-t">Tareas (20%): <span id="po-tv"></span></label><input type="range" id="po-t" min="0" max="100" step="1" value="90"></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="po-e">Exámenes (50%): <span id="po-ev"></span></label><input type="range" id="po-e" min="0" max="100" step="1" value="70"></div>
+          <div class="campo" style="flex:1;min-width:150px;"><label for="po-p">Proyecto (30%): <span id="po-pv"></span></label><input type="range" id="po-p" min="0" max="100" step="1" value="85"></div>
+        </div>
+        <div class="salida" id="po-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: la media ponderada</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="campos"><div class="campo"><label for="p6-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p6-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 84.25.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p6-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 8 · Estadística y probabilidad · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script src="/math/stats.js"></script>
+<script>
+var TXT = {
+ "md1": "Escriba por lo menos dos números separados por comas.",
+ "ord": "Ordenados:",
+ "media": "Media",
+ "mediana": "Mediana",
+ "moda": "Moda",
+ "rango": "Rango",
+ "medio": "el del medio",
+ "dosMedio": "promedio de los dos del medio",
+ "bimodal": "bimodal",
+ "mdNota": "En los datos ordenados, la mediana va rellena de color, la moda en amarillo y el menor y el mayor con borde azul.",
+ "meDatos": "Datos: {d}.",
+ "meVozR": "Todas las torres a la altura {m}.",
+ "meVoz": "Torres de alturas {d}.",
+ "meMedia": "media",
+ "meS": "Suma: {s} = {t}. Cantidad: {n}. Media: {t} ÷ {n} = <strong>{m}</strong>.",
+ "meRep": "Repartidos en partes iguales, a cada torre le tocan {m} bloques: eso es la media.",
+ "meLinea": "La línea roja punteada marca la media. Pulse «Repartir» para emparejar las torres.",
+ "meBtn": "Repartir en partes iguales",
+ "meBtn2": "Volver a los datos",
+ "gm1": "Notas de un estudiante: {d}. ¿Cuál es la media? (Redondee a la centésima si hace falta.)",
+ "gm2": "Minutos de ejercicio en {n} días: {d}. ¿Cuál es la media? (Redondee a la centésima si hace falta.)",
+ "gmS": "Suma: {s}; {s} ÷ {n} ≈ {m}.",
+ "gmP1": "Esa es la suma. Falta dividir entre la cantidad de datos.",
+ "gmP2": "Esa es la mediana. La media es suma ÷ cantidad.",
+ "gm3": "Una estudiante tiene {k} notas: {d}. ¿Qué nota necesita en el próximo examen para que el promedio de los {n} exámenes sea {o}?",
+ "gm3S": "La suma tiene que ser {o} × {n} = {T}. Ya tiene {y}: le faltan {f}.",
+ "gm3P": "Sacar {o} no basta si las otras notas son más bajas: la suma total tiene que ser {T}.",
+ "gmeQ": "Datos: {d}. ¿Cuál es la mediana?",
+ "gmeS1": "Ordenados: {o}. Hay {n} datos: el del medio es el {k}.º, {m}.",
+ "gmeS2": "Ordenados: {o}. Hay {n} datos: los del medio son {a} y {b}; ({a} + {b}) ÷ 2 = {m}.",
+ "gmeP": "Primero hay que ordenar los datos: el que queda en el centro de la lista desordenada no es la mediana.",
+ "gmoQ": "Datos: {d}. ¿Cuál es la moda?",
+ "gmoP": "Hay dos valores empatados en frecuencia: el conjunto es bimodal.",
+ "gmo1": "{m} aparece tres veces.",
+ "gmo2": "{m} aparecen dos veces cada uno: bimodal.",
+ "gmo3": "Ningún valor se repite: no hay moda.",
+ "gmoM1": "La moda es {m}, que aparece tres veces.",
+ "gmoM2": "Hay dos modas: {m}.",
+ "gmoM3": "Todos aparecen una sola vez: no hay moda.",
+ "graQ1": "Temperaturas mínimas (°F): {d}. ¿Cuál es el rango?",
+ "graQ2": "Datos: {d}. ¿Cuál es el rango?",
+ "graS": "Máximo {M}, mínimo {m}: {M} − {p} = {r}.",
+ "graP1": "Restar un negativo es sumar su opuesto: {M} − {p} = {M} + {q}.",
+ "graP2": "Se usan el mayor y el menor de todos, no el primero y el último de la lista.",
+ "atG": "El salario del gerente arrastra la media hasta {m}, más de lo que gana cualquiera de los otros cinco. La mediana, {me}, sigue representando bien al grupo.",
+ "atN": "Sin valores extremos, la media y la mediana quedan muy cerca.",
+ "sit": [
+  [
+   "Los precios de las casas de un barrio, donde hay una mansión.",
+   "med",
+   "Un valor muy alto arrastra la media: conviene la mediana."
+  ],
+  [
+   "La talla de zapato más vendida en una tienda.",
+   "moda",
+   "Se busca lo más frecuente: la moda."
+  ],
+  [
+   "Las notas de un examen sin valores extremos.",
+   "media",
+   "Sin valores extremos, la media resume bien."
+  ],
+  [
+   "Los salarios de una empresa donde el dueño gana 20 veces más que los demás.",
+   "med",
+   "El salario del dueño es atípico: conviene la mediana."
+  ],
+  [
+   "El color de carro preferido por los clientes.",
+   "moda",
+   "Con datos que no son números, solo sirve la moda."
+  ],
+  [
+   "Los minutos que tarda en llegar un autobús, todos parecidos.",
+   "media",
+   "Datos parecidos y sin extremos: la media."
+  ]
+ ],
+ "sitQ": " ¿Qué medida representa mejor al grupo?",
+ "opMedia": "La media",
+ "opMed": "La mediana",
+ "opModa": "La moda",
+ "po1": "{t} × 0.20 + {e} × 0.50 + {p} × 0.30 = {a} + {b} + {c}",
+ "po2": "Nota final: {f}",
+ "po3": "El promedio simple sería {s}. Como los exámenes pesan la mitad, su nota tira más de la media ponderada.",
+ "pq1": "En un curso, las tareas valen {a}%, los exámenes {b}% y el proyecto {c}%. Un estudiante tiene {x} en tareas, {y} en exámenes y {z} en el proyecto. ¿Cuál es su nota final?",
+ "pq1P": "Ese es el promedio simple. Cada nota tiene que multiplicarse por su peso.",
+ "pq2": "Una tienda vendió {a} artículos a ${p}, {b} a ${q} y {c} a ${r}. ¿Cuál fue el precio promedio por artículo, en dólares? (Redondee a la centésima.)",
+ "pq2P": "Ese es el promedio de los tres precios, sin tener en cuenta cuántos se vendieron de cada uno."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function par(n){ return n < 0 ? "(" + nd(n) + ")" : nd(n); }
+
+/* ============ MODULE 1 · the four measures ============ */
+function pintaMD(){
+  var d = leeLista($("md-d").value), av = $("md-aviso");
+  if (!d || d.length < 2){ av.className = "caja-aviso visible"; av.textContent = TXT.md1; $("md-d").classList.add("error"); $("md-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = ""; $("md-d").classList.remove("error");
+  var o = ordenaN(d), n = o.length, m = Math.floor(n / 2), mo = modasDe(d), me = mediaDe(d);
+  var cl = o.map(function(v, i){ return (n % 2 ? i === m : (i === m - 1 || i === m)) ? "med" : (mo.indexOf(v) >= 0 ? "moda" : ((i === 0 || i === n - 1) ? "ext" : "")); });
+  $("md-salida").innerHTML = '<p>' + TXT.ord + '</p>' + chipsN(o, cl) +
+    '<div class="medidas4"><div>' + TXT.media + '<strong>' + nd(Math.round(me * 100) / 100) + '</strong>' + nd(sumaDe(o)) + ' ÷ ' + n + '</div><div>' + TXT.mediana + '<strong>' + nd(medianaDe(d)) + '</strong>' + (n % 2 ? TXT.medio : TXT.dosMedio) + '</div><div>' + TXT.moda + '<strong>' + modaTxt(mo) + '</strong>' + (mo.length > 1 ? TXT.bimodal : "") + '</div><div>' + TXT.rango + '<strong>' + nd(o[n - 1] - o[0]) + '</strong>' + nd(o[n - 1]) + ' − ' + par(o[0]) + '</div></div>' +
+    '<p class="nota">' + TXT.mdNota + '</p>';
+}
+
+/* ============ MODULE 2 · the mean ============ */
+var ME = { d: [], rep: false };
+function nuevoME(){
+  var n = aleatorio(4, 6), prom = aleatorio(5, 12), d = [];
+  for (var i = 0; i < n - 1; i++) d.push(Math.max(1, prom + aleatorio(-4, 4)));
+  d.push(prom * n - sumaDe(d));
+  if (d[n - 1] < 1 || d[n - 1] > 16) return nuevoME();
+  ME.d = baraja(d); ME.rep = false; $("me-rep").textContent = TXT.meBtn; pintaME();
+}
+function pintaME(){
+  var d = ME.d, n = d.length, s = sumaDe(d), m = s / n, u = 12, W = 640, x0 = 60, w = 60, g = (W - 2 * x0 - n * w) / (n - 1), yb = 240;
+  $("me-datos").textContent = F(TXT.meDatos, { d: lista(d) });
+  var sv = '<svg class="figura" viewBox="0 0 640 275" role="img" aria-label="' + (ME.rep ? F(TXT.meVozR, { m: nd(Math.round(m * 100) / 100) }) : F(TXT.meVoz, { d: lista(d) })) + '">';
+  d.forEach(function(v, i){
+    var h = ME.rep ? m : v, x = x0 + i * (w + g);
+    for (var k = 0; k < Math.ceil(h); k++){ var hk = Math.min(1, h - k); sv += '<rect x="' + f1(x) + '" y="' + f1(yb - (k + hk) * u) + '" width="' + w + '" height="' + f1(hk * u - 1) + '" fill="' + (ME.rep ? "#64b5f6" : "#1565c0") + '"/>'; }
+    sv += texto([x + w / 2, yb + 18], nd(ME.rep ? Math.round(m * 100) / 100 : v), 15, "#222");
+  });
+  sv += '<line x1="' + (x0 - 10) + '" y1="' + f1(yb - m * u) + '" x2="' + (W - x0 + 10) + '" y2="' + f1(yb - m * u) + '" stroke="#b71c1c" stroke-width="2" stroke-dasharray="7 5"/>';
+  sv += '<text x="' + (W - x0 + 14) + '" y="' + f1(yb - m * u) + '" dominant-baseline="middle" font-size="13" font-weight="700" fill="#b71c1c">' + TXT.meMedia + '</text>';
+  $("me-svg").innerHTML = sv + '</svg>';
+  $("me-salida").innerHTML = '<div class="linea">' + F(TXT.meS, { s: d.join(" + "), t: s, n: n, m: nd(Math.round(m * 100) / 100) }) + '</div><div class="linea">' + (ME.rep ? F(TXT.meRep, { m: nd(Math.round(m * 100) / 100) }) : TXT.meLinea) + '</div>';
+}
+function genMedia(){
+  var tp = aleatorio(1, 3);
+  if (tp < 3){
+    var n = aleatorio(4, 7), d = []; for (var i = 0; i < n; i++) d.push(aleatorio(60, 100));
+    var m = Math.round(mediaDe(d) * 100) / 100, s = sumaDe(d), p = [{ v: s, msg: TXT.gmP1 }];
+    if (Math.abs(medianaDe(d) - m) > 0.01) p.push({ v: medianaDe(d), msg: TXT.gmP2 });
+    return { enun: F(tp === 1 ? TXT.gm1 : TXT.gm2, { d: lista(d), n: n }), correcta: nd(m), solucion: F(TXT.gmS, { s: s, n: n, m: nd(m) }), evalua: numD(m, p, null, 0.006) };
+  }
+  var k = aleatorio(3, 5), notas = [], obj = aleatorio(75, 90);
+  for (var j = 0; j < k - 1; j++) notas.push(aleatorio(65, 95));
+  var falta = obj * k - sumaDe(notas);
+  if (falta < 50 || falta > 100 || falta === obj) return genMedia();
+  return { enun: F(TXT.gm3, { k: k - 1, d: lista(notas), n: k, o: obj }), correcta: String(falta), solucion: F(TXT.gm3S, { o: obj, n: k, T: obj * k, y: obj * k - falta, f: falta }), evalua: numD(falta, [{ v: obj, msg: F(TXT.gm3P, { o: obj, T: obj * k }) }]) };
+}
+
+/* ============ MODULE 3 · the median ============ */
+function genMediana(){
+  var n = aleatorio(5, 10), d = [];
+  while (d.length < n){ var x = aleatorio(5, 60); if (d.indexOf(x) < 0 || Math.random() < 0.15) d.push(x); }
+  var o = ordenaN(d), me = medianaDe(d), m = Math.floor(n / 2), centro = n % 2 ? d[m] : (d[m - 1] + d[m]) / 2;
+  var sol = n % 2 ? F(TXT.gmeS1, { o: lista(o), n: n, k: m + 1, m: nd(me) }) : F(TXT.gmeS2, { o: lista(o), n: n, a: o[m - 1], b: o[m], m: nd(me) });
+  return { enun: F(TXT.gmeQ, { d: lista(d) }), correcta: nd(me), solucion: sol, evalua: numD(me, centro !== me ? [{ v: centro, msg: TXT.gmeP }] : [], null, 0.001) };
+}
+
+/* ============ MODULE 4 · the mode and the range ============ */
+function genModa(){
+  var tp = aleatorio(1, 3), d = [];
+  if (tp === 1){ var mo = aleatorio(5, 20); d = [mo, mo, mo]; while (d.length < 7){ var x = aleatorio(3, 25); if (d.indexOf(x) < 0) d.push(x); } }
+  else if (tp === 2){ var a = aleatorio(5, 12), b = aleatorio(13, 20); d = [a, a, b, b]; while (d.length < 7){ var y = aleatorio(3, 25); if (d.indexOf(y) < 0) d.push(y); } }
+  else { while (d.length < 6){ var z = aleatorio(3, 30); if (d.indexOf(z) < 0) d.push(z); } }
+  d = baraja(d);
+  var m = modasDe(d), cor = modaTxt(m), o = [cor, TXS.sinModa, nd(medianaDe(d)), nd(Math.max.apply(null, d))], pc = {};
+  if (tp === 2){ o.push(nd(m[0])); pc[nd(m[0])] = TXT.gmoP; }
+  if (tp === 1) o.push(nd(ordenaN(d)[0]));
+  o = o.filter(function(x, i, arr){ return arr.indexOf(x) === i; }).slice(0, 4);
+  var mm = m.map(nd).join(TXS.y);
+  return { enun: F(TXT.gmoQ, { d: lista(d) }), opciones: baraja(o).map(function(x){ return { html: x.charAt(0).toUpperCase() + x.slice(1), clave: x }; }), correcta: cor, pistas: pc,
+    bien: F(tp === 3 ? TXT.gmo3 : (tp === 2 ? TXT.gmo2 : TXT.gmo1), { m: mm }), mal: F(tp === 3 ? TXT.gmoM3 : (tp === 2 ? TXT.gmoM2 : TXT.gmoM1), { m: mm }) };
+}
+function genRango(){
+  var neg = Math.random() < 0.3, d = [], n = aleatorio(5, 9);
+  for (var i = 0; i < n; i++) d.push(neg ? aleatorio(-15, 20) : aleatorio(2, 99));
+  var mx = Math.max.apply(null, d), mn = Math.min.apply(null, d), r = mx - mn;
+  if (neg && mn >= 0) return genRango();
+  var p = mn < 0 ? [{ v: mx + mn, msg: F(TXT.graP1, { M: nd(mx), p: par(mn), q: nd(-mn) }) }] : [{ v: Math.abs(d[d.length - 1] - d[0]), msg: TXT.graP2 }];
+  p = p.filter(function(x){ return x.v !== r; });
+  return { enun: F(neg ? TXT.graQ1 : TXT.graQ2, { d: d.map(nd).join(", ") }), correcta: String(r), solucion: F(TXT.graS, { M: nd(mx), m: nd(mn), p: par(mn), r: r }), evalua: numD(r, p) };
+}
+
+/* ============ MODULE 5 · outliers ============ */
+var SAL = [2900, 3000, 3100, 3200, 3300];
+function pintaAT(){
+  var g = +$("at-g").value, d = SAL.concat([g]), m = mediaDe(d), me = medianaDe(d), o = ordenaN(d);
+  $("at-gv").textContent = dinero(g);
+  $("at-salida").innerHTML = chipsN(o, o.map(function(v){ return v === g && g > 5000 ? "ext" : ""; }), o.map(dinero)) +
+    '<div class="medidas4"><div>' + TXT.media + '<strong>' + dinero(Math.round(m)) + '</strong></div><div>' + TXT.mediana + '<strong>' + dinero(me) + '</strong></div></div>' +
+    '<div class="salida"><div class="linea">' + (g > 5000 ? F(TXT.atG, { m: dinero(Math.round(m)), me: dinero(me) }) : TXT.atN) + '</div></div>';
+}
+function genSit(){
+  var s = elige(TXT.sit);
+  return { enun: s[0] + TXT.sitQ, opciones: [{ html: TXT.opMedia, clave: "media" }, { html: TXT.opMed, clave: "med" }, { html: TXT.opModa, clave: "moda" }], correcta: s[1], enOrden: true, bien: s[2], mal: s[2] };
+}
+
+/* ============ MODULE 6 · the weighted mean ============ */
+function pintaPO(){
+  var tt = +$("po-t").value, e = +$("po-e").value, p = +$("po-p").value, f = tt * 0.2 + e * 0.5 + p * 0.3, s = (tt + e + p) / 3;
+  $("po-tv").textContent = tt; $("po-ev").textContent = e; $("po-pv").textContent = p;
+  $("po-salida").innerHTML = '<div class="linea">' + F(TXT.po1, { t: tt, e: e, p: p, a: nd(r2(tt * 0.2)), b: nd(r2(e * 0.5)), c: nd(r2(p * 0.3)) }) + '</div><div class="linea veredicto">' + F(TXT.po2, { f: nd(r2(f)) }) + '</div><div class="linea">' + F(TXT.po3, { s: nd(r2(s)) }) + '</div>';
+}
+function r2(x){ return Math.round(x * 100) / 100; }
+function genPond(){
+  if (Math.random() < 0.5){
+    var w = elige([[20, 50, 30], [25, 50, 25], [10, 60, 30], [30, 40, 30]]), n = [aleatorio(60, 100), aleatorio(55, 100), aleatorio(60, 100)], f = (n[0] * w[0] + n[1] * w[1] + n[2] * w[2]) / 100;
+    var p = Math.abs(r2((n[0] + n[1] + n[2]) / 3) - f) > 0.01 ? [{ v: r2((n[0] + n[1] + n[2]) / 3), msg: TXT.pq1P }] : [];
+    return { enun: F(TXT.pq1, { a: w[0], b: w[1], c: w[2], x: n[0], y: n[1], z: n[2] }), correcta: nd(r2(f)),
+      solucion: n[0] + " × " + nd(w[0] / 100) + " + " + n[1] + " × " + nd(w[1] / 100) + " + " + n[2] + " × " + nd(w[2] / 100) + " = " + nd(r2(f)) + ".", evalua: numD(f, p, null, 0.006) };
+  }
+  var pr = [aleatorio(2, 5), aleatorio(6, 9), aleatorio(10, 15)], c = [aleatorio(10, 40), aleatorio(10, 40), aleatorio(5, 20)], tot = sumaDe(c), sp = pr[0] * c[0] + pr[1] * c[1] + pr[2] * c[2], mp = sp / tot;
+  var p2 = Math.abs(r2(sumaDe(pr) / 3) - r2(mp)) > 0.01 ? [{ v: r2(sumaDe(pr) / 3), msg: TXT.pq2P }] : [];
+  return { enun: F(TXT.pq2, { a: c[0], p: pr[0], b: c[1], q: pr[1], c: c[2], r: pr[2] }), correcta: nd(r2(mp)),
+    solucion: "(" + pr[0] + " × " + c[0] + " + " + pr[1] + " × " + c[1] + " + " + pr[2] + " × " + c[2] + ") ÷ " + tot + " = " + nd(sp) + " ÷ " + tot + " ≈ " + nd(r2(mp)) + ".", evalua: numD(r2(mp), p2, null, 0.006) };
+}
+
+/* ============ Start ============ */
+$("md-d").addEventListener("input", pintaMD); pintaMD();
+$("me-rep").addEventListener("click", function(){ ME.rep = !ME.rep; $("me-rep").textContent = ME.rep ? TXT.meBtn2 : TXT.meBtn; pintaME(); }); $("me-nuevo").addEventListener("click", nuevoME); nuevoME();
+creaPracticaLibre("p1", genMedia);
+creaPracticaLibre("p2", genMediana);
+creaPracticaOM("p3", genModa);
+creaPracticaLibre("p4", genRango);
+$("at-g").addEventListener("input", pintaAT); pintaAT();
+creaPracticaOM("p5", genSit);
+["po-t", "po-e", "po-p"].forEach(function(id){ $(id).addEventListener("input", pintaPO); }); pintaPO();
+creaPracticaLibre("p6", genPond);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

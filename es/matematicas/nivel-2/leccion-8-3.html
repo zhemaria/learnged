@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 8.3 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_8_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.3 · Probabilidad simple · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-8-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 8 — Estadística y probabilidad</p>
+<h1>Lección 8.3 · Probabilidad simple</h1>
+<p class="lema">¿Qué tan posible es? Casos favorables ÷ casos totales, la escala de 0 a 1, fracción, decimal y porcentaje, y la diferencia entre la probabilidad teórica y la experimental.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Listar</strong> el espacio muestral de un experimento.</li>
+<li><strong>Calcular</strong> la probabilidad simple: casos favorables ÷ casos totales.</li>
+<li><strong>Expresar</strong> una probabilidad como fracción, decimal y porcentaje.</li>
+<li><strong>Distinguir</strong> los eventos imposibles, posibles y seguros en la escala de 0 a 1.</li>
+<li><strong>Comparar</strong> la probabilidad experimental con la teórica.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.8.b</span> Hallar la probabilidad de eventos simples y compuestos.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.1.a</span> Ordenar fracciones y decimales, también en la recta numérica.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.a</span> Buscar y reconocer por dónde empezar a resolver un problema.</li><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li><li><span class="std-cod std-mp">MP.5.c</span> Identificar la información necesaria para evaluar una línea de razonamiento.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.SP.5</span> <span class="std-nivel">Nivel D</span> Entender que la probabilidad de un evento aleatorio es un número entre 0 y 1 que expresa qué tan posible es que ocurra. Los números mayores indican mayor posibilidad.</li><li><span class="std-cod std-ccr">7.SP.6</span> <span class="std-nivel">Nivel D</span> Aproximar la probabilidad de un evento aleatorio reuniendo datos del proceso que lo produce y observando su frecuencia relativa a largo plazo, y predecir la frecuencia relativa aproximada conocida la probabilidad.</li><li><span class="std-cod std-ccr">7.SP.7</span> <span class="std-nivel">Nivel D</span> Construir un modelo de probabilidad y usarlo para hallar la probabilidad de eventos. Comparar las probabilidades del modelo con las frecuencias observadas; si no coinciden bien, explicar las posibles causas de la diferencia.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-espacio-muestral">La definición de probabilidad simple</a></li>
+<li><a href="#s-tres-formas">Las tres formas de expresar una probabilidad</a></li>
+<li><a href="#s-calculos">Cálculos típicos de probabilidad</a></li>
+<li><a href="#s-experimento">Experimento y teoría</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-espacio-muestral"><span aria-hidden="true" class="num-seccion">1</span>La definición de probabilidad simple</h2>
+<p>Bienvenida a la última lección del Nivel 2. Aquí se presenta la <strong>probabilidad</strong>, que mide qué tan posible es que ocurra un evento, en una escala universal de 0 a 1. Se aprende a calcular la probabilidad simple, a expresarla de tres formas equivalentes (fracción, decimal y porcentaje) y a distinguir los eventos imposibles, posibles y seguros.</p>
+<p>La probabilidad de un evento es un número que indica qué tan posible es que ocurra. Se calcula con una razón muy sencilla:</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">P(A) = casos favorables ÷ casos totales</p>
+<p>El numerador cuenta los resultados que cumplen lo que se busca; el denominador cuenta todos los resultados posibles. El conjunto de todos los resultados posibles de un experimento se llama <strong>espacio muestral</strong>. Listarlo bien es el primer paso de cualquier cálculo de probabilidad.</p>
+<div aria-label="Espacios muestrales (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Ejemplos de espacios muestrales</caption>
+<thead><tr><th scope="col">Experimento</th><th scope="col">Espacio muestral</th><th scope="col">Resultados</th></tr></thead>
+<tbody>
+<tr><td>Lanzar una moneda</td><td>{cara, cruz}</td><td>2</td></tr>
+<tr><td>Lanzar un dado</td><td>{1, 2, 3, 4, 5, 6}</td><td>6</td></tr>
+<tr><td>Sacar una bola de una bolsa con 3 rojas y 2 azules</td><td>5 bolas</td><td>5</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: lanzar un dado<span style="display:block;font-weight:400;margin-top:6px">Se lanza un dado de seis caras. ¿Cuál es la probabilidad de obtener un número par?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Espacio muestral.</strong> {1, 2, 3, 4, 5, 6}: 6 casos totales.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Casos favorables.</strong> Los pares {2, 4, 6}: 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Fórmula.</strong> P(par) = 3/6 = 1/2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La probabilidad es <strong>1/2</strong>, o 0.5, o 50%. Las tres formas son equivalentes.</p>
+</div>
+<a class="enlace-interactivo" href="practica-8-3.html#espacio-muestral" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la definición de probabilidad simple (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la definición de probabilidad simple</span><span class="ei-sub">Explore el espacio muestral del dado, la moneda, la bolsa de bolas y la ruleta, y cuente los casos favorables.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tres-formas"><span aria-hidden="true" class="num-seccion">2</span>Las tres formas de expresar una probabilidad</h2>
+<p>Como la probabilidad es una razón, se puede expresar de las tres maneras vistas en el Tema 5: fracción, decimal y porcentaje.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">P(cara) = <span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span> = 0.5 = 50%</p>
+<p>Los tres números dicen lo mismo. Se elige el formato según el contexto: la fracción es cómoda para calcular, el decimal va directo a la calculadora y el porcentaje se entiende rápido en una conversación.</p>
+<h3>La escala de probabilidades</h3>
+<p>Toda probabilidad es un número entre 0 y 1, ambos incluidos. Esa escala vale en cualquier situación, desde lanzar un dado hasta pronosticar el clima.</p>
+<div style="text-align:center"><svg viewBox="0 0 640 190" role="img" aria-label="Una escala de probabilidad de 0 a 1. En 0, imposible; en un medio, o 50 por ciento, igual de posible que no; en 1, seguro. Todo lo que está entre 0 y 1 es posible." style="width:100%;max-width:640px;height:auto;display:block;margin:12px auto;"><defs><linearGradient id="gr83" x1="0" x2="1"><stop offset="0" stop-color="#ffcdd2"/><stop offset="0.5" stop-color="#fff9c4"/><stop offset="1" stop-color="#c8e6c9"/></linearGradient></defs><rect x="70" y="76" width="500" height="28" rx="14" fill="url(#gr83)" stroke="#37474f" stroke-width="2"/><line x1="70" y1="68" x2="70" y2="112" stroke="#37474f" stroke-width="3"/><text x="70" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">0</text><text x="70" y="134" text-anchor="middle" font-size="16" fill="#37474f">imposible</text><line x1="320" y1="68" x2="320" y2="112" stroke="#37474f" stroke-width="3"/><text x="320" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">½ = 0.5 = 50%</text><text x="320" y="134" text-anchor="middle" font-size="16" fill="#37474f">igual de posible que no</text><line x1="570" y1="68" x2="570" y2="112" stroke="#37474f" stroke-width="3"/><text x="570" y="56" text-anchor="middle" font-size="18" font-weight="700" fill="#222">1</text><text x="570" y="134" text-anchor="middle" font-size="16" fill="#37474f">seguro</text><text x="320" y="168" text-anchor="middle" font-size="16" font-weight="700" fill="#0d47a1">posible: entre 0 y 1</text></svg></div>
+<div aria-label="Tres tipos de eventos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Eventos imposibles, posibles y seguros</caption>
+<thead><tr><th scope="col">Evento</th><th scope="col">Probabilidad</th><th scope="col">Ejemplo con un dado</th></tr></thead>
+<tbody>
+<tr><td>Imposible</td><td>P = 0</td><td>sacar un 7</td></tr>
+<tr><td>Posible</td><td>0 < P < 1</td><td>sacar un número par</td></tr>
+<tr><td>Seguro</td><td>P = 1</td><td>sacar un número del 1 al 6</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Atención</span>
+<p>Una probabilidad nunca puede ser negativa ni mayor que 1. Si un cálculo da un número fuera del intervalo de 0 a 1, hay un error. Es una comprobación rápida que conviene hacer siempre.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un número par</h3></div>
+<p class="pregunta-int" id="t-p1">Sacar un número par al lanzar un dado de seis caras es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Imposible (P = 0)</button>
+<button class="opcion" data-k="b" type="button">Seguro (P = 1)</button>
+<button class="opcion" data-k="c" type="button">Posible (0 < P < 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — 24 horas</h3></div>
+<p class="pregunta-int" id="t-p2">Que el día tenga 24 horas es…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">Seguro (P = 1)</button>
+<button class="opcion" data-k="b" type="button">Imposible (P = 0)</button>
+<button class="opcion" data-k="c" type="button">Posible (0 < P < 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un 10</h3></div>
+<p class="pregunta-int" id="t-p3">Sacar un 10 al lanzar un dado de seis caras es…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">Posible (0 < P < 1)</button>
+<button class="opcion" data-k="b" type="button">Imposible (P = 0)</button>
+<button class="opcion" data-k="c" type="button">Seguro (P = 1)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-3.html#tres-formas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: fracción, decimal y porcentaje (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: fracción, decimal y porcentaje</span><span class="ei-sub">Exprese una misma probabilidad de las tres formas y ubíquela entre imposible y seguro.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-calculos"><span aria-hidden="true" class="num-seccion">3</span>Cálculos típicos de probabilidad</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: un número mayor que 4<span style="display:block;font-weight:400;margin-top:6px">Se lanza un dado. ¿Cuál es la probabilidad de obtener un número mayor que 4?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Casos totales.</strong> 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Casos favorables.</strong> Números mayores que 4: {5, 6}, es decir, 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 2/6 = 1/3 ≈ 0.333 ≈ 33.3%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La probabilidad es <strong>1/3</strong>, aproximadamente el 33%.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una bolsa de bolas<span style="display:block;font-weight:400;margin-top:6px">Una bolsa tiene 5 bolas rojas, 3 azules y 2 verdes. Se saca una sin mirar. ¿Cuál es la probabilidad de que sea azul?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Casos totales.</strong> 5 + 3 + 2 = 10 bolas.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Casos favorables.</strong> 3 azules.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 3/10 = 0.3 = 30%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La probabilidad es <strong>3/10</strong>, o 30%.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una baraja pequeña<span style="display:block;font-weight:400;margin-top:6px">Una baraja pequeña tiene 20 cartas, 5 de cada palo (corazones, diamantes, tréboles y picas). Se saca una al azar. ¿Cuál es la probabilidad de sacar un corazón?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Casos totales.</strong> 20 cartas.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Casos favorables.</strong> 5 corazones.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>P.</strong> 5/20 = 1/4 = 0.25 = 25%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La probabilidad es <strong>1/4</strong>, o 25%.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> De fracción a porcentaje en la calculadora</span>
+<p>Para 3/10: <span class="tecla num">3</span> <span class="tecla">÷</span> <span class="tecla num">10</span> <span class="tecla">enter</span> da 0.3. Después, <span class="tecla">×</span> <span class="tecla num">100</span> <span class="tecla">enter</span> da 30, es decir, 30%.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Un 6</h3></div>
+<p class="pregunta-int" id="t-p4">¿Cuánto es P(sacar un 6 al lanzar un dado)?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">5</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">5 sobre 6</span></button>
+<button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span></button>
+<button class="opcion" data-k="c" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">1 sobre 6</span></button>
+<button class="opcion" data-k="d" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Cara</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuánto es P(sacar cara al lanzar una moneda)?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span></button>
+<button class="opcion" data-k="b" type="button">1</button>
+<button class="opcion" data-k="c" type="button">2</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">4</span></span><span class="cap-oculto">1 sobre 4</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Un número impar</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuánto es P(sacar un número impar al lanzar un dado)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 sobre 3</span></button>
+<button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">2</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">2 sobre 3</span></button>
+<button class="opcion" data-k="c" type="button">1</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — Bola azul</h3></div>
+<p class="pregunta-int" id="t-p7">Una bolsa tiene 5 bolas rojas, 3 azules y 2 verdes. ¿Cuánto es P(azul)?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">7</span></span><span class="cap-oculto">3 sobre 7</span></button>
+<button class="opcion" data-k="b" type="button">30%</button>
+<button class="opcion" data-k="c" type="button">3%</button>
+<button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 sobre 3</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-3.html#calculos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cálculos típicos de probabilidad (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cálculos típicos de probabilidad</span><span class="ei-sub">Calcule probabilidades con dados, bolas y barajas, incluso la de «no sacar» algo.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-experimento"><span aria-hidden="true" class="num-seccion">4</span>Experimento y teoría</h2>
+<p>La probabilidad calculada con la fórmula, favorables ÷ totales, se llama <strong>probabilidad teórica</strong>. Si se realiza el experimento muchas veces y se anotan los resultados, se obtiene la <strong>probabilidad experimental</strong> (también llamada frecuencia relativa).</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">probabilidad experimental = veces que ocurrió ÷ veces totales</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: lanzar una moneda 20 veces<span style="display:block;font-weight:400;margin-top:6px">Al lanzar una moneda 20 veces se obtienen 12 caras y 8 cruces. Compare la probabilidad experimental de «cara» con la teórica.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Experimental.</strong> 12 ÷ 20 = 0.6 = 60%.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Teórica.</strong> 1/2 = 0.5 = 50%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Comparación.</strong> Una diferencia de 10 puntos porcentuales, normal en una muestra pequeña.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La ley de los grandes números (versión sencilla)</span>
+<p>Cuantas más veces se repite un experimento, más se acerca la probabilidad experimental a la teórica. Con 20 lanzamientos, una diferencia de 10 puntos es normal; con 10,000 lanzamientos, la proporción de caras quedará muy cerca del 50%.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 8 — 20 lanzamientos</h3></div>
+<p class="pregunta-int" id="t-p8">Se lanzó una moneda 20 veces y salió cara 12 veces. ¿Cuál es la probabilidad experimental de cara?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">50%</button>
+<button class="opcion" data-k="b" type="button">12%</button>
+<button class="opcion" data-k="c" type="button">60%</button>
+<button class="opcion" data-k="d" type="button">40%</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-3.html#experimento" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: experimento y teoría (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: experimento y teoría</span><span class="ei-sub">Lance un dado 10, 100 o 1,000 veces y vea cómo la frecuencia se acerca a la probabilidad teórica.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-8-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Calcule ocho probabilidades simples (dados, monedas, bolas y cartas) y escriba cada una como fracción, decimal y porcentaje. Clasifique seis eventos como imposibles, posibles o seguros.</li>
+<li><strong>En su vida diaria.</strong> Lance una moneda 20 veces (o un dado 30 veces) y anote los resultados. Calcule la probabilidad experimental y compárela con la teórica. Después, junte sus resultados con los de otra persona: ¿se acerca más?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Se lanza un dado. ¿Cuál es la probabilidad de sacar un número par?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 sobre 3</span></button><button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span></button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">2</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">2 sobre 3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">La probabilidad de un evento imposible es…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1</button><button class="opcion" data-k="b" type="button">0.5</button><button class="opcion" data-k="c" type="button">0</button><button class="opcion" data-k="d" type="button">−1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuál de estos valores <strong>no</strong> puede ser una probabilidad?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1.2</button><button class="opcion" data-k="b" type="button">0</button><button class="opcion" data-k="c" type="button">0.75</button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">5</span></span><span class="cap-oculto">3 sobre 5</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Se lanza un dado. ¿Cuánto es P(un número mayor que 4)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">4</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">4 sobre 6</span></button><button class="opcion" data-k="b" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">2</span></span><span class="cap-oculto">1 sobre 2</span></button><button class="opcion" data-k="c" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">6</span></span><span class="cap-oculto">1 sobre 6</span></button><button class="opcion" data-k="d" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">1</span><span style="display:block;padding:0 4px">3</span></span><span class="cap-oculto">1 sobre 3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Una bolsa tiene 5 bolas rojas, 3 azules y 2 verdes. ¿Cuánto es P(azul)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span aria-hidden="true" style="display:inline-block;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px"><span style="display:block;border-bottom:2px solid currentColor;padding:0 4px">3</span><span style="display:block;padding:0 4px">7</span></span><span class="cap-oculto">3 sobre 7</span></button><button class="opcion" data-k="b" type="button">0.3</button><button class="opcion" data-k="c" type="button">0.03</button><button class="opcion" data-k="d" type="button">3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Una baraja de 20 cartas tiene 5 corazones. ¿Cuánto es P(corazón)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5%</button><button class="opcion" data-k="b" type="button">20%</button><button class="opcion" data-k="c" type="button">25%</button><button class="opcion" data-k="d" type="button">4%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Una probabilidad de 1/2 escrita como porcentaje es…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">50%</button><button class="opcion" data-k="b" type="button">0.5%</button><button class="opcion" data-k="c" type="button">12%</button><button class="opcion" data-k="d" type="button">2%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Cuando se repite un experimento muchísimas veces, la probabilidad experimental…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">se aleja de la teórica</button><button class="opcion" data-k="b" type="button">es igual a la teórica desde el principio</button><button class="opcion" data-k="c" type="button">baja hasta 0</button><button class="opcion" data-k="d" type="button">se acerca a la teórica</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de probabilidad (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de probabilidad simple y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcular la probabilidad</th><td>Listo el espacio muestral, cuento los casos favorables y simplifico la fracción.</td><td>La calculo con algo de apoyo.</td><td>Confundo los casos favorables con los totales.</td></tr>
+<tr><th scope="row">Tres formas y la escala</th><td>La escribo como fracción, decimal y porcentaje, y compruebo que esté entre 0 y 1.</td><td>La escribo de una o dos formas.</td><td>Doy probabilidades mayores que 1.</td></tr>
+<tr><th scope="row">Experimento y teoría</th><td>Calculo la probabilidad experimental y explico por qué se acerca a la teórica con muchos intentos.</td><td>La calculo con algo de apoyo.</td><td>No distingo una de la otra.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se construyó el concepto de <strong>probabilidad simple</strong>: casos favorables ÷ casos totales, siempre en la escala de <strong>0 a 1</strong>. Se aprendió a listar el espacio muestral, a escribir una probabilidad como fracción, decimal y porcentaje, a distinguir los eventos imposibles, posibles y seguros, y a comparar la probabilidad experimental con la teórica.</p>
+<p><strong>Con esto se completa el Nivel 2.</strong> La probabilidad simple es la base sobre la que el Nivel 3 construirá la probabilidad compuesta. ¡Felicidades por todo su trabajo!</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Nivel 3 (próximamente)</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>probabilidad</dt><dd>Un número de 0 a 1 que indica qué tan posible es un evento.</dd>
+<dt>espacio muestral</dt><dd>El conjunto de todos los resultados posibles de un experimento.</dd>
+<dt>caso favorable</dt><dd>Un resultado que cumple lo que se busca.</dd>
+<dt>probabilidad experimental</dt><dd>Veces que ocurrió ÷ veces totales.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 8 · Lección 8.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Nivel 3",
+ "review": "las secciones 1 y 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Hay casos favorables: 2, 4 y 6.",
+    "b": "También pueden salir números impares."
+   },
+   "right": "3 de los 6 casos son favorables.",
+   "solution": "Algunos casos son favorables, pero no todos: posible."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "Todos los días tienen 24 horas.",
+    "c": "Ocurre siempre."
+   },
+   "right": "Ocurre siempre: P = 1.",
+   "solution": "Todos los casos son favorables: seguro."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Un dado de seis caras solo llega al 6.",
+    "c": "No puede ocurrir nunca."
+   },
+   "right": "Ningún resultado es 10: P = 0.",
+   "solution": "No hay casos favorables: imposible."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Esa es la probabilidad de NO sacar un 6.",
+    "b": "Solo una cara de las seis es un 6.",
+    "d": "Una probabilidad nunca pasa de 1."
+   },
+   "right": "1 favorable de 6: 1/6.",
+   "solution": "P = 1/6."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "También puede salir cruz.",
+    "c": "Una probabilidad nunca pasa de 1.",
+    "d": "La moneda tiene solo dos lados."
+   },
+   "right": "1 de 2: 1/2.",
+   "solution": "P = 1/2."
+  },
+  "p6": {
+   "ok": "d",
+   "hints": {
+    "a": "Los impares son 1, 3 y 5: tres.",
+    "b": "Cuente los impares: 1, 3, 5.",
+    "c": "También pueden salir pares."
+   },
+   "right": "3/6 = 1/2.",
+   "solution": "Impares: {1, 3, 5}; 3/6 = 1/2."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "El denominador son todas las bolas: 10.",
+    "c": "Revise: 3 ÷ 10 = 0.3 = 30%.",
+    "d": "Hay 3 azules de 10, no 3 colores."
+   },
+   "right": "3/10 = 30%.",
+   "solution": "Total 10; azules 3; 3/10 = 30%."
+  },
+  "p8": {
+   "ok": "c",
+   "hints": {
+    "a": "50% es la probabilidad teórica. Use lo que ocurrió.",
+    "b": "12 es el conteo. Divida entre 20.",
+    "d": "40% es la proporción de cruces."
+   },
+   "right": "12 ÷ 20 = 0.6 = 60%.",
+   "solution": "12 ÷ 20 = 60%."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Los pares son 2, 4 y 6: tres.",
+    "c": "Una probabilidad nunca pasa de 1.",
+    "d": "Cuente otra vez los pares."
+   },
+   "solution": "3/6 = 1/2."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "1 es un evento seguro.",
+    "b": "0.5 es igual de posible que no.",
+    "d": "Una probabilidad nunca es negativa."
+   },
+   "solution": "Imposible: P = 0."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "0 es una probabilidad válida: imposible.",
+    "c": "0.75 está entre 0 y 1.",
+    "d": "3/5 está entre 0 y 1."
+   },
+   "solution": "1.2 es mayor que 1: no puede ser una probabilidad."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "Mayor que 4 son solo el 5 y el 6.",
+    "b": "Cuente: 5 y 6.",
+    "c": "Hay dos números favorables."
+   },
+   "solution": "2/6 = 1/3."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "El denominador son las 10 bolas.",
+    "c": "Revise: 3 ÷ 10.",
+    "d": "Una probabilidad nunca pasa de 1."
+   },
+   "solution": "3/10 = 0.3."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "5 es el conteo. Divida entre 20.",
+    "b": "Revise: 5 ÷ 20.",
+    "d": "Dividió al revés."
+   },
+   "solution": "5/20 = 1/4 = 25%."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "0.5 es el decimal. Multiplique por 100.",
+    "c": "1/2 no son los dígitos 1 y 2.",
+    "d": "Divida 1 entre 2 y multiplique por 100."
+   },
+   "solution": "1 ÷ 2 = 0.5 = 50%."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Pruébelo con el dado de la página de práctica.",
+    "b": "Con pocos intentos pueden ser bastante distintas.",
+    "c": "No se va a 0."
+   },
+   "solution": "Con muchos intentos, se acerca a la teórica."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 8.1 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.1 · Media, mediana, moda, rango y media ponderada · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-8-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 8 — Estadística y probabilidad</p>
+<h1>Lección 8.1 · Media, mediana, moda, rango y media ponderada</h1>
+<p class="lema">Resumir un conjunto de datos en un número: la media, la mediana, la moda y el rango; por qué los valores atípicos engañan a la media; y la media ponderada de un reporte de calificaciones.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Calcular</strong> la media como la suma de los datos dividida entre la cantidad.</li>
+<li><strong>Calcular</strong> la mediana ordenando los datos y buscando el valor central.</li>
+<li><strong>Identificar</strong> la moda como el valor que más se repite y el rango como máximo − mínimo.</li>
+<li><strong>Reconocer</strong> cuándo la media puede engañar por los valores atípicos.</li>
+<li><strong>Calcular</strong> la media ponderada cuando los datos tienen pesos distintos.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.7.a</span> Calcular la media, la mediana, la moda y el rango. Calcular un dato que falta, dada la media y todos los demás datos, y también la media ponderada.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.c</span> Elegir el mejor camino de solución según ciertos criterios.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li><li><span class="std-cod std-mp">MP.5.c</span> Identificar la información necesaria para evaluar una línea de razonamiento.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.SP.3</span> <span class="std-nivel">Nivel D</span> Reconocer que una medida de tendencia central de un conjunto de datos numéricos resume todos sus valores en un solo número, mientras que una medida de variación describe con un solo número cómo varían sus valores.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Nivel D</span> Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-cuatro-medidas">Las cuatro medidas, en una mirada</a></li>
+<li><a href="#s-media">La media aritmética</a></li>
+<li><a href="#s-mediana">La mediana: el valor del centro</a></li>
+<li><a href="#s-moda-rango">La moda y el rango</a></li>
+<li><a href="#s-atipicos">Cuando la media engaña: los valores atípicos</a></li>
+<li><a href="#s-ponderada">La media ponderada</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-cuatro-medidas"><span aria-hidden="true" class="num-seccion">1</span>Las cuatro medidas, en una mirada</h2>
+<p>Bienvenida al Tema 8, el último del Nivel 2. Hasta ahora se trabajó con números concretos: una operación, una distancia, un porcentaje. La estadística es diferente: trata con <strong>conjuntos de datos</strong>. La pregunta típica deja de ser «¿cuánto vale esto?» y pasa a ser «¿cómo se comporta este grupo de números?». Para responderla, se resume el grupo en uno o dos valores representativos.</p>
+<p>Cada una de estas cuatro medidas resume un conjunto de datos en un número, pero desde un punto de vista distinto. Saber cuándo usar cada una es tan importante como saber calcularla.</p>
+<div aria-label="Las cuatro medidas (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Cuatro formas de resumir un conjunto de datos</caption>
+<thead><tr><th scope="col">Medida</th><th scope="col">Qué dice</th><th scope="col">Cómo se calcula</th></tr></thead>
+<tbody>
+<tr><td>Media</td><td>el valor promedio</td><td>suma ÷ cantidad de datos</td></tr>
+<tr><td>Mediana</td><td>el valor del centro, una vez ordenados los datos</td><td>se ordenan y se busca el del medio</td></tr>
+<tr><td>Moda</td><td>el valor más frecuente</td><td>el que más se repite</td></tr>
+<tr><td>Rango</td><td>qué tan dispersos están los datos</td><td>máximo − mínimo</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<a class="enlace-interactivo" href="practica-8-1.html#cuatro-medidas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las cuatro medidas en una mirada (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las cuatro medidas en una mirada</span><span class="ei-sub">Escriba sus propios datos y la calculadora le da la media, la mediana, la moda y el rango.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-media"><span aria-hidden="true" class="num-seccion">2</span>La media aritmética</h2>
+<p>La <strong>media</strong>, llamada también <strong>promedio</strong>, es la medida más conocida. Se suman todos los datos y se divide entre la cantidad de datos.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">media = (suma de los datos) ÷ (cantidad de datos)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: notas del semestre<span style="display:block;font-weight:400;margin-top:6px">Un estudiante tuvo estas cinco notas: 78, 85, 90, 72, 95. ¿Cuál fue su promedio?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sume.</strong> 78 + 85 + 90 + 72 + 95 = 420.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Divida entre la cantidad.</strong> 420 ÷ 5 = 84.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El promedio es <strong>84</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La idea intuitiva</span>
+<p>La media «reparte en partes iguales» todos los datos. Si los 420 puntos del ejemplo se repartieran de forma pareja, cada nota sería exactamente 84. Por eso la media es tan útil para representar un grupo con un solo número.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> La media en la calculadora</span>
+<p>Escriba <span class="tecla">(</span> <span class="tecla num">78</span> <span class="tecla">+</span> <span class="tecla num">85</span> <span class="tecla">+</span> <span class="tecla num">90</span> <span class="tecla">+</span> <span class="tecla num">72</span> <span class="tecla">+</span> <span class="tecla num">95</span> <span class="tecla">)</span> <span class="tecla">÷</span> <span class="tecla num">5</span> <span class="tecla">enter</span>. Los paréntesis hacen que la calculadora sume primero. Sin ellos, dividiría solo el 95 entre 5.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — La media</h3></div>
+<p class="pregunta-int" id="t-p1">Datos: 5, 8, 8, 10, 14. ¿Cuál es la media?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">10</button>
+<button class="opcion" data-k="b" type="button">45</button>
+<button class="opcion" data-k="c" type="button">8</button>
+<button class="opcion" data-k="d" type="button">9</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#media" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la media aritmética (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la media aritmética</span><span class="ei-sub">Empareje las torres para ver la media como un reparto en partes iguales, y practique.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-mediana"><span aria-hidden="true" class="num-seccion">3</span>La mediana: el valor del centro</h2>
+<p>La <strong>mediana</strong> es el valor que ocupa la posición central cuando los datos están ordenados de menor a mayor. Divide el conjunto en dos mitades iguales: la mitad de los datos está debajo y la otra mitad, encima.</p>
+<h3>Caso 1: cantidad impar de datos</h3>
+<p>La mediana es el dato del medio.</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">65</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">72</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">78</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">85</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">95</span> → mediana = 78</p>
+<h3>Caso 2: cantidad par de datos</h3>
+<p>Hay dos datos en el centro. La mediana es la media de esos dos.</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">60</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">70</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">75</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">80</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">90</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">95</span> → mediana = (75 + 80) ÷ 2 = 77.5</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Paso obligatorio</span>
+<p>Antes de buscar la mediana, hay que ordenar los datos. Olvidarlo es el error más frecuente: el valor que queda en el centro de una lista desordenada no es la mediana.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: una lista desordenada<span style="display:block;font-weight:400;margin-top:6px">Halle la mediana de 12, 8, 15, 7, 10, 9, 14.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Ordene.</strong> 7, 8, 9, 10, 12, 14, 15.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Busque el centro.</strong> Hay 7 datos (cantidad impar). El del medio es el 4.º: 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La mediana es <strong>10</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — La mediana</h3></div>
+<p class="pregunta-int" id="t-p2">Datos: 5, 8, 8, 10, 14. ¿Cuál es la mediana?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">8</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">10</button>
+<button class="opcion" data-k="d" type="button">8.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#mediana" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la mediana (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la mediana</span><span class="ei-sub">Ordene los datos y encuentre el centro, con cantidad par e impar.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-moda-rango"><span aria-hidden="true" class="num-seccion">4</span>La moda y el rango</h2>
+<h3>La moda</h3>
+<p>La <strong>moda</strong> es el valor que aparece con más frecuencia. Un conjunto puede tener una moda, dos modas (cuando dos valores empatan en la frecuencia máxima) o ninguna (cuando todos aparecen el mismo número de veces).</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">4</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">7</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">12</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">15</span> → moda = 9 (aparece tres veces)</p>
+<h3>El rango</h3>
+<p>El <strong>rango</strong> mide qué tan dispersos están los datos: es la diferencia entre el valor mayor y el menor.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">rango = máximo − mínimo</p>
+<p style="text-align:center">En 4, 7, 9, 9, 9, 12, 15: rango = 15 − 4 = 11.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Cuándo usar cada una</span>
+<p>La <strong>media</strong> resume datos numéricos sin valores extremos. La <strong>mediana</strong> es mejor cuando hay valores atípicos (siguiente sección). La <strong>moda</strong> sirve incluso con datos que no son números (colores favoritos, tallas más vendidas). El <strong>rango</strong> da una idea rápida de la dispersión.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — La moda</h3></div>
+<p class="pregunta-int" id="t-p3">Datos: 5, 8, 8, 10, 14. ¿Cuál es la moda?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">14</button>
+<button class="opcion" data-k="c" type="button">8</button>
+<button class="opcion" data-k="d" type="button">No hay moda</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — El rango</h3></div>
+<p class="pregunta-int" id="t-p4">Datos: 5, 8, 8, 10, 14. ¿Cuál es el rango?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">19</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">14</button>
+<button class="opcion" data-k="d" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#moda-rango" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la moda y el rango (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la moda y el rango</span><span class="ei-sub">Encuentre el valor que más se repite y mida qué tan dispersos están los datos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-atipicos"><span aria-hidden="true" class="num-seccion">5</span>Cuando la media engaña: los valores atípicos</h2>
+<p>La media tiene un defecto importante: los valores muy distintos del resto, llamados <strong>valores atípicos</strong>, la arrastran con fuerza. Un solo dato extremo puede llevar el promedio lejos de lo que realmente representa al grupo.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: el salario «promedio»<span style="display:block;font-weight:400;margin-top:6px">En una pequeña empresa, cinco empleados ganan estos salarios mensuales: $3,000, $3,200, $3,100, $2,900, $3,300. Un sexto empleado, el director, gana $30,000. Compare la media y la mediana.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Suma.</strong> 3,000 + 3,200 + 3,100 + 2,900 + 3,300 + 30,000 = 45,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Media.</strong> 45,500 ÷ 6 ≈ 7,583. Parece un salario excelente para la empresa…</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Ordenados.</strong> 2,900, 3,000, 3,100, 3,200, 3,300, 30,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Mediana.</strong> (3,100 + 3,200) ÷ 2 = 3,150. Eso es lo que gana en realidad la mayoría.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Conclusión.</strong> El salario del director es un valor atípico que infla la media. La <strong>mediana</strong> representa mucho mejor el salario típico.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Una lección para las noticias</span>
+<p>Cuando un titular dice «el salario promedio subió un X%», conviene preguntar si se trata de la media o de la mediana. La diferencia entre las dos suele revelar la verdadera historia detrás de los datos.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — ¿Qué medida?</h3></div>
+<p class="pregunta-int" id="t-p5">En una empresa, el dueño gana 20 veces más que los demás. ¿Qué medida representa mejor el salario típico?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">La media</button>
+<button class="opcion" data-k="b" type="button">La moda</button>
+<button class="opcion" data-k="c" type="button">El rango</button>
+<button class="opcion" data-k="d" type="button">La mediana</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#atipicos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cuando la media engaña (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cuando la media engaña</span><span class="ei-sub">Mueva el salario del gerente y vea cómo se dispara la media mientras la mediana casi no cambia.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-ponderada"><span aria-hidden="true" class="num-seccion">6</span>La media ponderada</h2>
+<p>A veces no todos los datos tienen la misma importancia. En las calificaciones, por ejemplo, el examen final pesa más que un quiz. En esos casos se calcula la <strong>media ponderada</strong>: cada valor se multiplica por su «peso» antes de promediar.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">media ponderada = Σ(valor × peso) ÷ Σ(pesos)</p>
+<p>El símbolo Σ (sigma) significa «suma». Σ(valor × peso) es la suma de todos los productos; Σ(pesos) es la suma de los pesos.</p>
+<div aria-label="Un reporte de calificaciones (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Media ponderada de un reporte de calificaciones</caption>
+<thead><tr><th scope="col">Evaluación</th><th scope="col">Nota</th><th scope="col">Peso</th><th scope="col">Nota × peso</th></tr></thead>
+<tbody>
+<tr><td>Quiz</td><td>85</td><td>20</td><td>1,700</td></tr>
+<tr><td>Examen parcial</td><td>78</td><td>30</td><td>2,340</td></tr>
+<tr><td>Tarea</td><td>92</td><td>20</td><td>1,840</td></tr>
+<tr><td>Examen final</td><td>88</td><td>30</td><td>2,640</td></tr>
+<tr><td><strong>Totales</strong></td><td>—</td><td><strong>100</strong></td><td><strong>8,520</strong></td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: la nota final<span style="display:block;font-weight:400;margin-top:6px">Un curso evalúa el quiz con un 20%, el examen parcial con un 30%, la tarea con un 20% y el examen final con un 30%. Un estudiante obtuvo 85, 78, 92 y 88. ¿Cuál es su nota final?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Suma de productos.</strong> 1,700 + 2,340 + 1,840 + 2,640 = 8,520.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Suma de pesos.</strong> 20 + 30 + 20 + 30 = 100.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divida.</strong> 8,520 ÷ 100 = 85.2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La nota final es <strong>85.2</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Comparación útil</span>
+<p>La media simple de las cuatro notas sería (85 + 78 + 92 + 88) ÷ 4 = 85.75. La media ponderada, 85.2, es un poco menor porque el examen parcial (78), la nota más baja, pesa más que la tarea (92), la más alta. Los pesos cambian el resultado y lo hacen más justo con la importancia de cada evaluación.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Dos pesos</h3></div>
+<p class="pregunta-int" id="t-p6">Quiz 70 (peso 25%) y examen 90 (peso 75%). ¿Cuál es la nota final?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">80</button>
+<button class="opcion" data-k="b" type="button">85</button>
+<button class="opcion" data-k="c" type="button">160</button>
+<button class="opcion" data-k="d" type="button">82.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — Otro curso</h3></div>
+<p class="pregunta-int" id="t-p7">Tarea 80 (peso 40%) y examen 60 (peso 60%). ¿Cuál es la nota final?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">70</button>
+<button class="opcion" data-k="b" type="button">140</button>
+<button class="opcion" data-k="c" type="button">68</button>
+<button class="opcion" data-k="d" type="button">72</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-1.html#ponderada" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la media ponderada (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la media ponderada</span><span class="ei-sub">Calcule la nota final de un curso cuando cada parte tiene un peso distinto.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-8-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Calcule la media de tres conjuntos de datos. Halle tres medianas (una con cantidad impar, otra con cantidad par y otra con un valor atípico). Halle dos modas y dos rangos. Después, resuelva cuatro problemas de media ponderada con pesos distintos.</li>
+<li><strong>En su vida diaria.</strong> Anote un conjunto de datos real de su semana: las horas de trabajo de cada día, lo que gasta en el mercado o la temperatura de cada mañana. Halle la media, la mediana, la moda y el rango. ¿Cuál lo resume mejor y por qué?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Las notas de un estudiante son 78, 85, 90, 72 y 95. ¿Cuál es la media?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">420</button><button class="opcion" data-k="b" type="button">85</button><button class="opcion" data-k="c" type="button">84</button><button class="opcion" data-k="d" type="button">90</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">¿Cuál es la mediana de 12, 8, 15, 7, 10, 9, 14?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">10</button><button class="opcion" data-k="b" type="button">7</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">10.7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuál es la mediana de 60, 70, 75, 80, 90, 95?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">75</button><button class="opcion" data-k="b" type="button">80</button><button class="opcion" data-k="c" type="button">78.3</button><button class="opcion" data-k="d" type="button">77.5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">¿Cuál es la moda de 4, 7, 9, 9, 9, 12, 15?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9.29</button><button class="opcion" data-k="b" type="button">9</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">15</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Cuál es el rango de 4, 7, 9, 9, 9, 12, 15?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">4</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">19</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Salarios: $2,900, $3,000, $3,100, $3,200, $3,300 y $30,000. ¿Qué número representa mejor el salario típico?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$3,150 (la mediana)</button><button class="opcion" data-k="b" type="button">$7,583 (la media)</button><button class="opcion" data-k="c" type="button">$27,100</button><button class="opcion" data-k="d" type="button">$30,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Notas 85, 78, 92 y 88 con pesos de 20%, 30%, 20% y 30%. ¿Cuál es la media ponderada?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">85.75</button><button class="opcion" data-k="b" type="button">343</button><button class="opcion" data-k="c" type="button">84</button><button class="opcion" data-k="d" type="button">85.2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Para resumir el color preferido de los estudiantes de un salón, se usa…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la media</button><button class="opcion" data-k="b" type="button">la moda</button><button class="opcion" data-k="c" type="button">la mediana</button><button class="opcion" data-k="d" type="button">el rango</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">9</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de las medidas de tendencia central (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de las medidas de tendencia central y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">La media y la mediana</th><td>Calculo las dos, ordeno primero los datos y explico por qué la mediana resiste los valores atípicos.</td><td>Las calculo con algo de apoyo.</td><td>Confundo la suma con la media, o no ordeno los datos.</td></tr>
+<tr><th scope="row">La media ponderada</th><td>La calculo, la comparo con la media simple y explico el efecto de los pesos.</td><td>La calculo siguiendo la tabla.</td><td>No reconozco la diferencia con la media simple.</td></tr>
+<tr><th scope="row">Elegir la medida</th><td>Elijo la medida adecuada según la situación y lo justifico con los datos.</td><td>Elijo con algo de apoyo.</td><td>Uso la media en cualquier caso.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección de apertura del Tema 8 quedaron claras las cuatro medidas básicas para resumir un conjunto de datos: <strong>media</strong>, <strong>mediana</strong>, <strong>moda</strong> y <strong>rango</strong>. La <strong>media ponderada</strong> añadió flexibilidad para los casos en que no todos los datos pesan igual, como las calificaciones del semestre. Y una lección crucial: la media puede engañar cuando hay valores atípicos; la mediana suele ser más representativa.</p>
+<p>En la <strong>Lección 8.2 · Gráficos circulares: leer, interpretar y construir</strong>, los porcentajes del Tema 5 se reencuentran con el círculo del Tema 7 para mostrar cómo se reparte un total. Cada sector del gráfico indica qué parte ocupa cada categoría.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 8.2 · Gráficos circulares: leer, interpretar y construir</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>media (promedio)</dt><dd>La suma de los datos dividida entre la cantidad.</dd>
+<dt>mediana</dt><dd>El valor del centro de los datos ordenados.</dd>
+<dt>moda</dt><dd>El valor que más se repite.</dd>
+<dt>valor atípico</dt><dd>Un dato muy distinto del resto.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 8 · Lección 8.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 8.2",
+ "review": "las secciones 2, 3 y 6",
+ "practice": {
+  "p1": {
+   "ok": "d",
+   "hints": {
+    "a": "Revise la suma: 5 + 8 + 8 + 10 + 14 = 45.",
+    "b": "Esa es la suma. Divida entre la cantidad de datos.",
+    "c": "8 es la moda y la mediana. La media es suma ÷ cantidad."
+   },
+   "right": "45 ÷ 5 = 9.",
+   "solution": "Suma 45; 45 ÷ 5 = 9."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "9 es la media. La mediana es el valor del centro.",
+    "c": "Hay 5 datos: el del medio es el 3.º.",
+    "d": "Con 5 datos hay solo uno en el centro."
+   },
+   "right": "5, 8, <strong>8</strong>, 10, 14: la mediana es 8.",
+   "solution": "Ordenados: 5, 8, 8, 10, 14. El 3.º es 8."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "9 es la media. La moda es el valor que se repite.",
+    "b": "14 aparece una sola vez.",
+    "d": "8 aparece dos veces: sí hay moda."
+   },
+   "right": "8 aparece dos veces.",
+   "solution": "8 es el único valor que se repite."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó. El rango es máximo − mínimo.",
+    "c": "14 es el máximo. Reste el mínimo.",
+    "d": "5 es el mínimo. Réstelo del máximo."
+   },
+   "right": "14 − 5 = 9.",
+   "solution": "Rango = 14 − 5 = 9."
+  },
+  "p5": {
+   "ok": "d",
+   "hints": {
+    "a": "El salario del dueño arrastra la media hacia arriba.",
+    "b": "La moda es el valor más frecuente; los salarios pueden ser todos distintos.",
+    "c": "El rango mide la dispersión, no el valor típico."
+   },
+   "right": "A la mediana no la arrastra el valor atípico.",
+   "solution": "Con un valor atípico, la mediana representa mejor el valor típico."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "80 es la media simple. Multiplique por los pesos.",
+    "c": "Sumó las notas. Use 70 × 0.25 + 90 × 0.75.",
+    "d": "Revise: 70 × 0.25 = 17.5 y 90 × 0.75 = 67.5."
+   },
+   "right": "17.5 + 67.5 = 85.",
+   "solution": "70 × 0.25 + 90 × 0.75 = 17.5 + 67.5 = 85."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "70 es la media simple. Use los pesos.",
+    "b": "Sumó las notas.",
+    "d": "Cambió los pesos: el examen pesa el 60%."
+   },
+   "right": "32 + 36 = 68.",
+   "solution": "80 × 0.40 + 60 × 0.60 = 32 + 36 = 68."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "Esa es la suma.",
+    "b": "Revise: 420 ÷ 5.",
+    "d": "90 es la mediana."
+   },
+   "solution": "420 ÷ 5 = 84."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "Ese es el centro de la lista desordenada. Primero ordénela.",
+    "c": "Ordenados: 7, 8, 9, 10, 12, 14, 15.",
+    "d": "Esa es la media."
+   },
+   "solution": "7, 8, 9, 10, 12, 14, 15 → 10."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Con cantidad par, se promedian los dos del centro.",
+    "b": "Promedie 75 y 80.",
+    "c": "Esa es la media."
+   },
+   "solution": "(75 + 80) ÷ 2 = 77.5."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Esa es la media.",
+    "c": "Ese es el rango.",
+    "d": "Ese es el máximo."
+   },
+   "solution": "9 aparece tres veces."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es el máximo.",
+    "b": "Ese es el mínimo.",
+    "d": "Sumó. Reste."
+   },
+   "solution": "15 − 4 = 11."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "A la media la infla el salario del director.",
+    "c": "Ese es el rango.",
+    "d": "Ese es el propio valor atípico."
+   },
+   "solution": "La mediana, $3,150, representa el salario típico."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Esa es la media simple.",
+    "b": "Esa es la suma de las notas.",
+    "c": "Revise los productos: 8,520 ÷ 100."
+   },
+   "solution": "8,520 ÷ 100 = 85.2."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "No se puede promediar colores.",
+    "c": "Los colores no se pueden ordenar como números.",
+    "d": "No hay color máximo ni mínimo."
+   },
+   "solution": "Con datos que no son números se usa la moda."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

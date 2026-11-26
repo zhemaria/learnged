@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 8.1 · Math Level 2 (English) — built by tools/build_n2_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 8.1 · Mean, median, mode, range, and weighted mean · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 8 — Statistics and probability</p>
+<h1>Lesson 8.1 · Mean, median, mode, range, and weighted mean</h1>
+<p class="lema">Summing up a set of data in one number: the mean, the median, the mode, and the range; why outliers mislead the mean; and the weighted mean of a grade report.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Find</strong> the mean as the sum of the values divided by how many there are.</li>
+<li><strong>Find</strong> the median by putting the data in order and finding the middle value.</li>
+<li><strong>Name</strong> the mode as the most frequent value and the range as greatest − least.</li>
+<li><strong>Recognize</strong> when outliers make the mean misleading.</li>
+<li><strong>Find</strong> the weighted mean when the values have different weights.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.7.a</span> Calculate the mean, median, mode and range. Calculate a missing data value, given the average and all the missing data values but one, as well as calculating the average, given the frequency counts of all the data values, and calculating a weighted average.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.c</span> Select the best solution pathway, according to given criteria.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li><li><span class="std-cod std-mp">MP.5.c</span> Identify the information required to evaluate a line of reasoning.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">6.SP.3</span> <span class="std-nivel">Level D</span> Recognize that a measure of center for a numerical data set summarizes all of its values with a single number, while a measure of variation describes how its values vary with a single number.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Level D</span> Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-four-measures">The four measures at a glance</a></li>
+<li><a href="#s-mean">The mean</a></li>
+<li><a href="#s-median">The median: the middle value</a></li>
+<li><a href="#s-mode-range">The mode and the range</a></li>
+<li><a href="#s-outliers">When the mean misleads: outliers</a></li>
+<li><a href="#s-weighted-mean">The weighted mean</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-four-measures"><span aria-hidden="true" class="num-seccion">1</span>The four measures at a glance</h2>
+<p>Welcome to Topic 8, the last topic of Level 2. Until now you worked with single numbers: an operation, a distance, a percent. Statistics is different: it works with <strong>sets of data</strong>. The typical question is no longer “how much is this?” but “how does this group of numbers behave?” To answer it, you sum up the group in one or two representative values.</p>
+<p>Each of these four measures sums up a set of data in one number, but from a different point of view. Knowing when to use each one is as important as knowing how to find it.</p>
+<div aria-label="The four measures (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Four ways to sum up a set of data</caption>
+<thead><tr><th scope="col">Measure</th><th scope="col">What it tells you</th><th scope="col">How to find it</th></tr></thead>
+<tbody>
+<tr><td>Mean</td><td>the average value</td><td>sum ÷ number of values</td></tr>
+<tr><td>Median</td><td>the middle value, once the data is in order</td><td>put the data in order and find the middle</td></tr>
+<tr><td>Mode</td><td>the most frequent value</td><td>the value that repeats the most</td></tr>
+<tr><td>Range</td><td>how spread out the data is</td><td>greatest − least</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<a class="enlace-interactivo" href="practice-8-1.html#four-measures" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the four measures at a glance (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the four measures at a glance</span><span class="ei-sub">Type your own data and the calculator gives the mean, median, mode, and range.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-mean"><span aria-hidden="true" class="num-seccion">2</span>The mean</h2>
+<p>The <strong>mean</strong>, also called the <strong>average</strong>, is the best-known measure. Add all the values and divide by how many values there are.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">mean = (sum of the values) ÷ (number of values)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: test scores<span style="display:block;font-weight:400;margin-top:6px">A student had these five scores: 78, 85, 90, 72, 95. What was the average?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Add.</strong> 78 + 85 + 90 + 72 + 95 = 420.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Divide by how many.</strong> 420 ÷ 5 = 84.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The average is <strong>84</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The idea behind it</span>
+<p>The mean “shares out” all the values equally. If the 420 points were split evenly, each score would be exactly 84. That is why the mean is so useful to represent a group with a single number.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> The mean on the calculator</span>
+<p>Type <span class="tecla">(</span> <span class="tecla num">78</span> <span class="tecla">+</span> <span class="tecla num">85</span> <span class="tecla">+</span> <span class="tecla num">90</span> <span class="tecla">+</span> <span class="tecla num">72</span> <span class="tecla">+</span> <span class="tecla num">95</span> <span class="tecla">)</span> <span class="tecla">÷</span> <span class="tecla num">5</span> <span class="tecla">enter</span>. The parentheses make the calculator add first. Without them it would divide only the 95 by 5.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — The mean</h3></div>
+<p class="pregunta-int" id="t-p1">Data: 5, 8, 8, 10, 14. What is the mean?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">10</button>
+<button class="opcion" data-k="b" type="button">45</button>
+<button class="opcion" data-k="c" type="button">8</button>
+<button class="opcion" data-k="d" type="button">9</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#mean" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the mean (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the mean</span><span class="ei-sub">Level the towers to see the mean as equal shares, and practice.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-median"><span aria-hidden="true" class="num-seccion">3</span>The median: the middle value</h2>
+<p>The <strong>median</strong> is the value in the middle position when the data is in order from least to greatest. It splits the set into two equal halves: half the data is below it and half is above it.</p>
+<h3>Case 1: an odd number of values</h3>
+<p>The median is the value in the middle.</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">65</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">72</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">78</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">85</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">95</span> → median = 78</p>
+<h3>Case 2: an even number of values</h3>
+<p>There are two values in the middle. The median is the mean of those two.</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">60</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">70</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">75</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">80</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">90</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">95</span> → median = (75 + 80) ÷ 2 = 77.5</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">A step you must not skip</span>
+<p>Put the data in order before you look for the median. Forgetting this is the most common mistake: the value in the middle of an unordered list is not the median.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: an unordered list<span style="display:block;font-weight:400;margin-top:6px">Find the median of 12, 8, 15, 7, 10, 9, 14.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Put them in order.</strong> 7, 8, 9, 10, 12, 14, 15.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Find the middle.</strong> There are 7 values (odd). The middle one is the 4th: 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The median is <strong>10</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — The median</h3></div>
+<p class="pregunta-int" id="t-p2">Data: 5, 8, 8, 10, 14. What is the median?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">8</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">10</button>
+<button class="opcion" data-k="d" type="button">8.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#median" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the median (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the median</span><span class="ei-sub">Put the data in order and find the middle, with an even and an odd number of values.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-mode-range"><span aria-hidden="true" class="num-seccion">4</span>The mode and the range</h2>
+<h3>The mode</h3>
+<p>The <strong>mode</strong> is the value that appears most often. A set can have one mode, two modes (when two values tie for the most), or no mode (when every value appears the same number of times).</p>
+<p style="text-align:center"><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">4</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">7</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#1565c0;color:#fff;border-color:#0d47a1">9</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">12</span><span style="display:inline-block;min-width:44px;text-align:center;padding:5px 8px;margin:2px;border:2px solid #90caf9;border-radius:8px;font-weight:700;background:#fff">15</span> → mode = 9 (it appears three times)</p>
+<h3>The range</h3>
+<p>The <strong>range</strong> measures how spread out the data is: the difference between the greatest and the least value.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">range = greatest − least</p>
+<p style="text-align:center">In 4, 7, 9, 9, 9, 12, 15: range = 15 − 4 = 11.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">When to use each one</span>
+<p>The <strong>mean</strong> sums up numbers with no extreme values. The <strong>median</strong> is better when there are outliers (next section). The <strong>mode</strong> works even with data that is not numbers (favorite colors, best-selling sizes). The <strong>range</strong> gives a quick idea of the spread.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — The mode</h3></div>
+<p class="pregunta-int" id="t-p3">Data: 5, 8, 8, 10, 14. What is the mode?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">14</button>
+<button class="opcion" data-k="c" type="button">8</button>
+<button class="opcion" data-k="d" type="button">No mode</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — The range</h3></div>
+<p class="pregunta-int" id="t-p4">Data: 5, 8, 8, 10, 14. What is the range?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">19</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">14</button>
+<button class="opcion" data-k="d" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#mode-range" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the mode and the range (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the mode and the range</span><span class="ei-sub">Find the value that repeats the most and measure how spread out the data is.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-outliers"><span aria-hidden="true" class="num-seccion">5</span>When the mean misleads: outliers</h2>
+<p>The mean has one important weakness: values that are very different from the rest, called <strong>outliers</strong>, pull it strongly. A single extreme value can drag the average far from what really represents the group.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: the “average” salary<span style="display:block;font-weight:400;margin-top:6px">In a small company, five employees earn these monthly salaries: $3,000, $3,200, $3,100, $2,900, $3,300. A sixth employee, the director, earns $30,000. Compare the mean and the median.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sum.</strong> 3,000 + 3,200 + 3,100 + 2,900 + 3,300 + 30,000 = 45,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Mean.</strong> 45,500 ÷ 6 ≈ 7,583. It sounds like an excellent salary for the company…</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>In order.</strong> 2,900, 3,000, 3,100, 3,200, 3,300, 30,000.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Median.</strong> (3,100 + 3,200) ÷ 2 = 3,150. That is what most of them really earn.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Conclusion.</strong> The director's salary is an outlier that inflates the mean. The <strong>median</strong> represents the typical salary much better.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A lesson for the news</span>
+<p>When a headline says “the average salary went up X%”, ask whether it is the mean or the median. The difference between the two often tells the real story behind the data.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Which measure?</h3></div>
+<p class="pregunta-int" id="t-p5">In a company the owner earns 20 times more than everyone else. Which measure best represents the typical salary?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">The mean</button>
+<button class="opcion" data-k="b" type="button">The mode</button>
+<button class="opcion" data-k="c" type="button">The range</button>
+<button class="opcion" data-k="d" type="button">The median</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#outliers" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: when the mean misleads (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: when the mean misleads</span><span class="ei-sub">Move the manager's salary and watch the mean shoot up while the median hardly changes.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-weighted-mean"><span aria-hidden="true" class="num-seccion">6</span>The weighted mean</h2>
+<p>Sometimes not all the values are equally important. In grades, for example, the final exam counts more than a quiz. Then you find the <strong>weighted mean</strong>: multiply each value by its “weight” before you average.</p>
+<p style="text-align:center;font-size:1.3rem;font-weight:700;color:#0d47a1">weighted mean = Σ(value × weight) ÷ Σ(weights)</p>
+<p>The symbol Σ (sigma) means “sum”. Σ(value × weight) is the sum of all the products; Σ(weights) is the sum of the weights.</p>
+<div aria-label="A grade report (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Weighted mean of a grade report</caption>
+<thead><tr><th scope="col">Assessment</th><th scope="col">Score</th><th scope="col">Weight</th><th scope="col">Score × weight</th></tr></thead>
+<tbody>
+<tr><td>Quiz</td><td>85</td><td>20</td><td>1,700</td></tr>
+<tr><td>Midterm exam</td><td>78</td><td>30</td><td>2,340</td></tr>
+<tr><td>Homework</td><td>92</td><td>20</td><td>1,840</td></tr>
+<tr><td>Final exam</td><td>88</td><td>30</td><td>2,640</td></tr>
+<tr><td><strong>Totals</strong></td><td>—</td><td><strong>100</strong></td><td><strong>8,520</strong></td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: the final grade<span style="display:block;font-weight:400;margin-top:6px">A course counts the quiz 20%, the midterm 30%, homework 20%, and the final exam 30%. A student got 85, 78, 92, and 88. What is the final grade?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sum of the products.</strong> 1,700 + 2,340 + 1,840 + 2,640 = 8,520.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sum of the weights.</strong> 20 + 30 + 20 + 30 = 100.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divide.</strong> 8,520 ÷ 100 = 85.2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The final grade is <strong>85.2</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A useful comparison</span>
+<p>The simple mean of the four scores would be (85 + 78 + 92 + 88) ÷ 4 = 85.75. The weighted mean, 85.2, is a little lower because the midterm (78), the lowest score, weighs more than the homework (92), the highest. The weights change the result and make it fairer to the importance of each part.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — Two weights</h3></div>
+<p class="pregunta-int" id="t-p6">Quiz 70 (weight 25%) and exam 90 (weight 75%). What is the final grade?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">80</button>
+<button class="opcion" data-k="b" type="button">85</button>
+<button class="opcion" data-k="c" type="button">160</button>
+<button class="opcion" data-k="d" type="button">82.5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — Another course</h3></div>
+<p class="pregunta-int" id="t-p7">Homework 80 (weight 40%) and exam 60 (weight 60%). What is the final grade?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">70</button>
+<button class="opcion" data-k="b" type="button">140</button>
+<button class="opcion" data-k="c" type="button">68</button>
+<button class="opcion" data-k="d" type="button">72</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#weighted-mean" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the weighted mean (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the weighted mean</span><span class="ei-sub">Find the final grade of a course when each part has a different weight.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">7</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-8-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Find the mean of three sets of data. Find three medians (one with an odd number of values, one with an even number, one with an outlier). Find two modes and two ranges. Then solve four weighted-mean problems with different weights.</li>
+<li><strong>In your daily life.</strong> Write down a real set of data from your week: your work hours each day, what you spend on groceries, or the temperature each morning. Find its mean, median, mode, and range. Which one sums it up best, and why?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A student's scores are 78, 85, 90, 72, and 95. What is the mean?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">420</button><button class="opcion" data-k="b" type="button">85</button><button class="opcion" data-k="c" type="button">84</button><button class="opcion" data-k="d" type="button">90</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">What is the median of 12, 8, 15, 7, 10, 9, 14?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">10</button><button class="opcion" data-k="b" type="button">7</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">10.7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">What is the median of 60, 70, 75, 80, 90, 95?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">75</button><button class="opcion" data-k="b" type="button">80</button><button class="opcion" data-k="c" type="button">78.3</button><button class="opcion" data-k="d" type="button">77.5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">What is the mode of 4, 7, 9, 9, 9, 12, 15?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9.29</button><button class="opcion" data-k="b" type="button">9</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">15</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">What is the range of 4, 7, 9, 9, 9, 12, 15?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">4</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">19</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Salaries: $2,900, $3,000, $3,100, $3,200, $3,300, and $30,000. Which number best represents the typical salary?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$3,150 (the median)</button><button class="opcion" data-k="b" type="button">$7,583 (the mean)</button><button class="opcion" data-k="c" type="button">$27,100</button><button class="opcion" data-k="d" type="button">$30,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Scores 85, 78, 92, and 88 with weights 20%, 30%, 20%, and 30%. What is the weighted mean?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">85.75</button><button class="opcion" data-k="b" type="button">343</button><button class="opcion" data-k="c" type="button">84</button><button class="opcion" data-k="d" type="button">85.2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">To sum up the favorite color of the students in a class, you use the…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">mean</button><button class="opcion" data-k="b" type="button">mode</button><button class="opcion" data-k="c" type="button">median</button><button class="opcion" data-k="d" type="button">range</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">9</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the measures of center (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the measures of center and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">The mean and the median</th><td>I find both, put the data in order first, and explain why the median resists outliers.</td><td>I find them with some help.</td><td>I mix up the sum with the mean, or I do not put the data in order.</td></tr>
+<tr><th scope="row">The weighted mean</th><td>I find it, compare it with the simple mean, and explain the effect of the weights.</td><td>I find it by following the table.</td><td>I do not see how it differs from the simple mean.</td></tr>
+<tr><th scope="row">Choose the measure</th><td>I choose the right measure for the situation and justify it with the data.</td><td>I choose with some help.</td><td>I always use the mean.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This first lesson of Topic 8 gave you the four basic measures to sum up a set of data: <strong>mean</strong>, <strong>median</strong>, <strong>mode</strong>, and <strong>range</strong>. The <strong>weighted mean</strong> added flexibility for cases where not all values count the same, like a semester's grades. And one key lesson: the mean can mislead when there are outliers; the median is often more representative.</p>
+<p>In <strong>Lesson 8.2 · Circle graphs: read, interpret, and make</strong> the percents of Topic 5 meet the circle of Topic 7 to show how a whole is divided. Each slice of the “pie” shows what part each category takes.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 8.2 · Circle graphs: read, interpret, and make</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>mean (average)</dt><dd>The sum of the values divided by how many there are.</dd>
+<dt>median</dt><dd>The middle value of the data in order.</dd>
+<dt>mode</dt><dd>The value that appears most often.</dd>
+<dt>outlier</dt><dd>A value very different from the rest of the data.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 8 · Lesson 8.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.2",
+ "review": "sections 2, 3, and 6",
+ "practice": {
+  "p1": {
+   "ok": "d",
+   "hints": {
+    "a": "Check the sum: 5 + 8 + 8 + 10 + 14 = 45.",
+    "b": "That is the sum. Divide by how many values there are.",
+    "c": "8 is the mode and the median. The mean is sum ÷ number of values."
+   },
+   "right": "45 ÷ 5 = 9.",
+   "solution": "Sum 45; 45 ÷ 5 = 9."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "9 is the mean. The median is the middle value.",
+    "c": "There are 5 values: the middle one is the 3rd.",
+    "d": "With 5 values there is only one in the middle."
+   },
+   "right": "5, 8, <strong>8</strong>, 10, 14: the median is 8.",
+   "solution": "In order: 5, 8, 8, 10, 14. The 3rd value is 8."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "9 is the mean. The mode is the value that repeats.",
+    "b": "14 appears only once.",
+    "d": "8 appears twice: there is a mode."
+   },
+   "right": "8 appears twice.",
+   "solution": "8 is the only value that repeats."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "You added. The range is greatest − least.",
+    "c": "14 is the greatest value. Subtract the least.",
+    "d": "5 is the least value. Subtract it from the greatest."
+   },
+   "right": "14 − 5 = 9.",
+   "solution": "Range = 14 − 5 = 9."
+  },
+  "p5": {
+   "ok": "d",
+   "hints": {
+    "a": "The owner's salary drags the mean up.",
+    "b": "The mode is for the most frequent value; salaries may all be different.",
+    "c": "The range measures spread, not the typical value."
+   },
+   "right": "The median is not pulled by the outlier.",
+   "solution": "With an outlier, the median represents the typical value best."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "80 is the simple mean. Multiply by the weights.",
+    "c": "You added the scores. Use 70 × 0.25 + 90 × 0.75.",
+    "d": "Check: 70 × 0.25 = 17.5 and 90 × 0.75 = 67.5."
+   },
+   "right": "17.5 + 67.5 = 85.",
+   "solution": "70 × 0.25 + 90 × 0.75 = 17.5 + 67.5 = 85."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "70 is the simple mean. Use the weights.",
+    "b": "You added the scores.",
+    "d": "You switched the weights: the exam weighs 60%."
+   },
+   "right": "32 + 36 = 68.",
+   "solution": "80 × 0.40 + 60 × 0.60 = 32 + 36 = 68."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the sum.",
+    "b": "Check: 420 ÷ 5.",
+    "d": "90 is the median."
+   },
+   "solution": "420 ÷ 5 = 84."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "That is the middle of the unordered list. Put it in order first.",
+    "c": "In order: 7, 8, 9, 10, 12, 14, 15.",
+    "d": "That is the mean."
+   },
+   "solution": "7, 8, 9, 10, 12, 14, 15 → 10."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "With an even number of values, average the two in the middle.",
+    "b": "Average 75 and 80.",
+    "c": "That is the mean."
+   },
+   "solution": "(75 + 80) ÷ 2 = 77.5."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "That is the mean.",
+    "c": "That is the range.",
+    "d": "That is the greatest value."
+   },
+   "solution": "9 appears three times."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the greatest value.",
+    "b": "That is the least value.",
+    "d": "You added. Subtract."
+   },
+   "solution": "15 − 4 = 11."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "The mean is inflated by the director's salary.",
+    "c": "That is the range.",
+    "d": "That is the outlier itself."
+   },
+   "solution": "The median, $3,150, represents the typical salary."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "That is the simple mean.",
+    "b": "That is the sum of the scores.",
+    "c": "Check the products: 8,520 ÷ 100."
+   },
+   "solution": "8,520 ÷ 100 = 85.2."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "You cannot average colors.",
+    "c": "Colors cannot be put in number order.",
+    "d": "There is no greatest or least color."
+   },
+   "solution": "With data that is not numbers, use the mode."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

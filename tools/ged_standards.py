@@ -178,6 +178,10 @@ CCR = {
  "7.G.6": ("D", "Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms."),
  "6.G.1": ("D", "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems."),
  "3.MD.3": ("B", "Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step \"how many more\" and \"how many less\" problems using information presented in scaled bar graphs."),
+ "6.SP.3": ("D", "Recognize that a measure of center for a numerical data set summarizes all of its values with a single number, while a measure of variation describes how its values vary with a single number."),
+ "7.SP.5": ("D", "Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood."),
+ "7.SP.6": ("D", "Approximate the probability of a chance event by collecting data on the chance process that produces it and observing its long-run relative frequency, and predict the approximate relative frequency given the probability."),
+ "7.SP.7": ("D", "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy."),
  "6.SP.5": ("D", "Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability."),
  "5.G.2": ("C", "Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
@@ -307,6 +311,12 @@ LESSONS = [
   {"direct": ["Q.4.b"], "builds": [], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["7.G.4"]}),
  ("level-2/lesson-7-3.html", "7.3", "Area of a circle and figures with semicircles",
   {"direct": ["Q.4.b", "Q.4.d"], "builds": [], "mp": ["MP.1.b", "MP.2.c", "MP.4.a"], "ccr": ["7.G.4", "7.G.6"]}),
+ ("level-2/lesson-8-1.html", "8.1", "Mean, median, mode, range, and weighted mean",
+  {"direct": ["Q.7.a"], "builds": [], "mp": ["MP.1.c", "MP.4.a", "MP.5.c"], "ccr": ["6.SP.3", "6.SP.5"]}),
+ ("level-2/lesson-8-2.html", "8.2", "Circle graphs: read, interpret, and make",
+  {"direct": ["Q.6.a"], "builds": ["Q.3.d"], "mp": ["MP.2.b", "MP.4.c", "MP.1.e"], "ccr": ["7.RP.3"]}),
+ ("level-2/lesson-8-3.html", "8.3", "Simple probability",
+  {"direct": ["Q.8.b"], "builds": ["Q.1.a"], "mp": ["MP.1.a", "MP.2.c", "MP.5.c"], "ccr": ["7.SP.5", "7.SP.6", "7.SP.7"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
