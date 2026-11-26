@@ -189,6 +189,8 @@ CCR = {
  "5.NBT.2": ("C", "Explain patterns in the number of zeros of the product when multiplying a number by powers of 10, and explain patterns in the placement of the decimal point when a decimal is multiplied or divided by a power of 10. Use whole-number exponents to denote powers of 10."),
  "6.EE.1": ("D", "Write and evaluate numerical expressions involving whole-number exponents."),
  "8.EE.2": ("D", "Use square root and cube root symbols to represent solutions to equations of the form x² = p and x³ = p, where p is a positive rational number. Evaluate square roots of small perfect squares and cube roots of small perfect cubes."),
+ "5.OA.1": ("C", "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols."),
+ "6.EE.2c": ("D", "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations)."),
  "8.NS.2": ("D", "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
@@ -264,6 +266,12 @@ LESSONS = [
   {"direct": ["Q.2.b", "Q.2.c"], "builds": ["Q.1.c", "Q.2.e"], "mp": ["MP.4.a", "MP.3.a"], "ccr": ["5.NBT.2", "6.EE.1"]}),
  ("level-2/lesson-2-3.html", "2.3", "Square roots of perfect squares",
   {"direct": ["Q.2.b"], "builds": ["Q.4.e", "Q.4.a"], "mp": ["MP.4.a", "MP.5.c"], "ccr": ["8.EE.2", "8.NS.2"]}),
+ ("level-2/lesson-3-1.html", "3.1", "Order of operations: review and nested parentheses",
+  {"direct": ["Q.2.a"], "builds": ["A.1.b"], "mp": ["MP.3.a", "MP.4.a", "MP.5.a"], "ccr": ["5.OA.1", "6.EE.2c"]}),
+ ("level-2/lesson-3-2.html", "3.2", "PEMDAS with powers, roots, fractions, and signs",
+  {"direct": ["Q.2.a", "Q.2.b"], "builds": ["A.1.b"], "mp": ["MP.3.c", "MP.4.a", "MP.5.a"], "ccr": ["6.EE.1", "6.EE.2c", "7.NS.3"]}),
+ ("level-2/lesson-3-3.html", "3.3", "PEMDAS with fractions and in algebra",
+  {"direct": ["A.1.b", "A.1.e", "Q.2.e"], "builds": ["A.1.i"], "mp": ["MP.1.e", "MP.2.a", "MP.4.b"], "ccr": ["6.EE.2", "6.EE.2c", "7.NS.3"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

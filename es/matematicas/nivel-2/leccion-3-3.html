@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 3.3 · Matemáticas Nivel 2 (español) — construida con tools/build_n2_lesson_3_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-2/lesson-3-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 2 · Tema 3 — PEMDAS completo</p>
+<h1>Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico</h1>
+<p class="lema">Las fracciones dentro de PEMDAS y el paso de los números a las letras: sustituir entre paréntesis, evaluar y usar las fórmulas del GED.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Operar</strong> con fracciones (sumar, restar, multiplicar, dividir y elevar) respetando PEMDAS.</li>
+<li><strong>Distinguir</strong> (a/b)<sup>2</sup> de a<sup>2</sup>/b.</li>
+<li><strong>Sustituir</strong> valores positivos, negativos y fraccionarios en expresiones algebraicas y evaluarlas.</li>
+<li><strong>Aplicar</strong> fórmulas de la hoja del GED a problemas con contexto.</li>
+<li><strong>Verificar</strong> resultados con la calculadora usando los paréntesis necesarios.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.1.b</span> Evaluar expresiones lineales sustituyendo las cantidades desconocidas por números enteros.</li><li><span class="std-cod std-dir">A.1.e</span> Evaluar expresiones polinómicas sustituyendo las cantidades desconocidas por números enteros.</li><li><span class="std-cod std-dir">Q.2.e</span> Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.1.i</span> Evaluar expresiones racionales sustituyendo las cantidades desconocidas por números enteros.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.a</span> Representar algebraicamente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.EE.2</span> <span class="std-nivel">Nivel D</span> Escribir, leer y evaluar expresiones en las que las letras representan números.</li><li><span class="std-cod std-ccr">6.EE.2c</span> <span class="std-nivel">Nivel D</span> Evaluar expresiones para valores dados de sus variables, también expresiones que salen de fórmulas de problemas de la vida real. Hacer las operaciones, incluidas las de exponentes enteros, en el orden convencional cuando no hay paréntesis que indiquen otro orden (orden de las operaciones).</li><li><span class="std-cod std-ccr">7.NS.3</span> <span class="std-nivel">Nivel D</span> Resolver problemas matemáticos y de la vida real con las cuatro operaciones y números racionales.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-fracciones">Operar con fracciones siguiendo PEMDAS</a></li>
+<li><a href="#s-sustituir">Del número a la letra: sustituir y evaluar</a></li>
+<li><a href="#s-formulas">Fórmulas en contexto: así pregunta el GED</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-fracciones"><span aria-hidden="true" class="num-seccion">1</span>Operar con fracciones siguiendo PEMDAS</h2>
+<p>En la Lección 3.2 incorporó potencias, raíces y números negativos a PEMDAS, y vio que la barra de fracción agrupa. Esta lección cierra el Tema 3 con dos pasos más: operar con fracciones dentro de PEMDAS y pasar de los números a las <strong>letras</strong>, es decir, sustituir valores en expresiones algebraicas. Es exactamente lo que pide el GED cada vez que entrega una fórmula.</p>
+<p>Las fracciones no cambian el orden de las operaciones. Lo que cambia es la manera de hacer cada operación, que ya estudió en el Tema 2: para sumar y restar se busca un denominador común; para multiplicar, numerador por numerador y denominador por denominador; para dividir, se multiplica por el recíproco.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> + <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span> × <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>MD.</strong> La multiplicación antes que la suma: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px"><span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span> × <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span></mark> = <span class="fracc" aria-hidden="true"><span class="fa">6</span><span class="fb2">12</span></span><span class="cap-oculto">6/12</span> = <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>AS.</strong> <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> + <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> = <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">2</span></span><span class="cap-oculto">2/2</span> = 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>1</strong>. Si hubiera sumado primero, obtendría <span class="fracc" aria-hidden="true"><span class="fa">5</span><span class="fb2">4</span></span><span class="cap-oculto">5/4</span> × <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span> = <span class="fracc" aria-hidden="true"><span class="fa">5</span><span class="fb2">6</span></span><span class="cap-oculto">5/6</span>, que es incorrecto.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: (<span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span>)<sup>2</sup> − <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">9</span></span><span class="cap-oculto">1/9</span> ÷ <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">3</span></span><span class="cap-oculto">1/3</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>E.</strong> (<span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span>)<sup>2</sup> = <span class="fracc" aria-hidden="true"><span class="fa">2 × 2</span><span class="fb2">3 × 3</span></span><span class="cap-oculto">2 × 2/3 × 3</span> = <span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">9</span></span><span class="cap-oculto">4/9</span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>MD.</strong> Se divide multiplicando por el recíproco: <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">9</span></span><span class="cap-oculto">1/9</span> × <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">1</span></span><span class="cap-oculto">3/1</span> = <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">9</span></span><span class="cap-oculto">3/9</span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>AS.</strong> <span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">9</span></span><span class="cap-oculto">4/9</span> − <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">9</span></span><span class="cap-oculto">3/9</span> = <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">9</span></span><span class="cap-oculto">1/9</span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">9</span></span><span class="cap-oculto">1/9</span></strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cuidado con el exponente</span>
+<p>(<span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span>)<sup>2</sup> = <span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">9</span></span><span class="cap-oculto">4/9</span>, porque el paréntesis eleva la fracción completa. En cambio, <span class="fracc" aria-hidden="true"><span class="fa">2<sup>2</sup></span><span class="fb2">3</span></span><span class="cap-oculto">2<sup>2</sup>/3</span> = <span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">3</span></span><span class="cap-oculto">4/3</span>, porque el exponente solo afecta al 2. Es la misma idea de (−5)<sup>2</sup> frente a −5<sup>2</sup>: el exponente alcanza únicamente lo que tiene justo antes.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo con signos: <span class="fracc" aria-hidden="true"><span class="fa">12 − 2<sup>3</sup></span><span class="fb2">1 − 3</span></span><span class="cap-oculto">(12 − 2<sup>3</sup>) ÷ (1 − 3)</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Numerador.</strong> E antes que R: 2<sup>3</sup> = 8, así que 12 − 8 = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Denominador.</strong> 1 − 3 = −2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Divida.</strong> 4 ÷ (−2) = <strong>−2</strong> (signos distintos, negativo).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Primero se multiplica</h3></div>
+<p class="pregunta-int" id="t-p1">¿Cuánto es <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">3</span></span><span class="cap-oculto">1/3</span> + <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span> × <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span>?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button"><span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span></button>
+<button class="opcion" data-k="b" type="button"><span class="fracc" aria-hidden="true"><span class="fa">5</span><span class="fb2">6</span></span><span class="cap-oculto">5/6</span></button>
+<button class="opcion" data-k="c" type="button">1</button>
+<button class="opcion" data-k="d" type="button"><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — La potencia de una fracción</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cuánto es (<span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span>)<sup>2</sup> × 16?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">24</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">9</button>
+<button class="opcion" data-k="d" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#fracciones" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: PEMDAS con fracciones (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: PEMDAS con fracciones</span><span class="ei-sub">Resuelva expresiones con fracciones y escriba el resultado simplificado.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-sustituir"><span aria-hidden="true" class="num-seccion">2</span>Del número a la letra: sustituir y evaluar</h2>
+<p>Una <strong>variable</strong> es una letra que ocupa el lugar de un número. <strong>Evaluar</strong> una expresión algebraica quiere decir reemplazar cada letra por el valor indicado y calcular con PEMDAS. Hay dos reglas de oro.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Dos reglas de oro</span>
+<p><strong>Regla 1 · Sustituya siempre entre paréntesis.</strong> Si x = −2, escriba (−2) en cada lugar donde aparece x. El paréntesis protege el signo del número.</p><p><strong>Regla 2 · La letra pegada a un número indica multiplicación.</strong> 3x quiere decir 3 × x; 2ab quiere decir 2 × a × b.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: evalúe 4x − 7 para x = 3</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> 4<span style="color:#0d47a1;font-weight:700">(3)</span> − 7</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>MD.</strong> 4 × 3 = 12 → 12 − 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>AS.</strong> 12 − 7 = <strong>5</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: evalúe x<sup>2</sup> − 3x + 2 para x = −2</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> <span style="color:#0d47a1;font-weight:700">(−2)</span><sup>2</sup> − 3<span style="color:#0d47a1;font-weight:700">(−2)</span> + 2</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>E.</strong> (−2)<sup>2</sup> = 4. Gracias al paréntesis, el signo también se eleva al cuadrado → 4 − 3(−2) + 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>MD.</strong> 3 × (−2) = −6, y restar −6 es lo mismo que sumar 6 → 4 + 6 + 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>AS.</strong> 4 + 6 + 2 = <strong>12</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El error más frecuente del GED</span>
+<p>Evaluar −x<sup>2</sup> para x = −3. Como el exponente solo afecta a la x, se calcula −<span style="color:#0d47a1;font-weight:700">(−3)</span><sup>2</sup> = −(9) = <strong>−9</strong>, no 9. Primero se eleva el valor sustituido; después se aplica el signo que estaba delante.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo: evalúe <span class="fracc" aria-hidden="true"><span class="fa">a + b</span><span class="fb2">a − b</span></span><span class="cap-oculto">(a + b) ÷ (a − b)</span> para a = 5 y b = −3</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> <span class="fracc" aria-hidden="true"><span class="fa"><span style="color:#0d47a1;font-weight:700">(5)</span> + <span style="color:#0d47a1;font-weight:700">(−3)</span></span><span class="fb2"><span style="color:#0d47a1;font-weight:700">(5)</span> − <span style="color:#0d47a1;font-weight:700">(−3)</span></span></span><span class="cap-oculto">(<span style="color:#0d47a1;font-weight:700">(5)</span> + <span style="color:#0d47a1;font-weight:700">(−3)</span>) ÷ (<span style="color:#0d47a1;font-weight:700">(5)</span> − <span style="color:#0d47a1;font-weight:700">(−3)</span>)</span></p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Numerador y denominador.</strong> 5 + (−3) = 2. 5 − (−3) = 5 + 3 = 8.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Divida y simplifique.</strong> <span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">8</span></span><span class="cap-oculto">2/8</span> = <strong><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">4</span></span><span class="cap-oculto">1/4</span></strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo con fracción: evalúe 2x + <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> para x = <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> 2<span style="color:#0d47a1;font-weight:700">(<span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span>)</span> + <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span></p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>MD.</strong> 2 × <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">4</span></span><span class="cap-oculto">3/4</span> = <span class="fracc" aria-hidden="true"><span class="fa">6</span><span class="fb2">4</span></span><span class="cap-oculto">6/4</span> = <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">2</span></span><span class="cap-oculto">3/2</span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>AS.</strong> <span class="fracc" aria-hidden="true"><span class="fa">3</span><span class="fb2">2</span></span><span class="cap-oculto">3/2</span> + <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> = <span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">2</span></span><span class="cap-oculto">4/2</span> = <strong>2</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un valor negativo</h3></div>
+<p class="pregunta-int" id="t-p3">Evalúe 3x + 4 para x = −5.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">19</button>
+<button class="opcion" data-k="b" type="button">−11</button>
+<button class="opcion" data-k="c" type="button">−19</button>
+<button class="opcion" data-k="d" type="button">2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Un cuadrado</h3></div>
+<p class="pregunta-int" id="t-p4">Evalúe x<sup>2</sup> + 2x para x = −3.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">15</button>
+<button class="opcion" data-k="b" type="button">−15</button>
+<button class="opcion" data-k="c" type="button">−3</button>
+<button class="opcion" data-k="d" type="button">3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Dos variables</h3></div>
+<p class="pregunta-int" id="t-p5">Evalúe 2(a − b)<sup>2</sup> para a = 1 y b = 4.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">36</button>
+<button class="opcion" data-k="b" type="button">−18</button>
+<button class="opcion" data-k="c" type="button">18</button>
+<button class="opcion" data-k="d" type="button">−12</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#sustituir" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: sustituir y evaluar (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: sustituir y evaluar</span><span class="ei-sub">Cambie cada letra por su valor entre paréntesis, vea los pasos de PEMDAS y después practique.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">3</span>Fórmulas en contexto: así pregunta el GED</h2>
+<p>El examen GED de Matemáticas entrega una <strong>hoja de fórmulas</strong>. No hay que memorizar nada: hay que saber qué valor corresponde a cada letra, sustituir y aplicar PEMDAS. Es la misma destreza de la sección anterior, con palabras alrededor.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo · Temperatura<span style="display:block;font-weight:400;margin-top:6px">La fórmula F = <span class="fracc" aria-hidden="true"><span class="fa">9</span><span class="fb2">5</span></span><span class="cap-oculto">9/5</span>C + 32 convierte grados Celsius en grados Fahrenheit. ¿Cuántos grados Fahrenheit son 25 °C?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> F = <span class="fracc" aria-hidden="true"><span class="fa">9</span><span class="fb2">5</span></span><span class="cap-oculto">9/5</span><span style="color:#0d47a1;font-weight:700">(25)</span> + 32</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>MD.</strong> <span class="fracc" aria-hidden="true"><span class="fa">9</span><span class="fb2">5</span></span><span class="cap-oculto">9/5</span> × 25 = <span class="fracc" aria-hidden="true"><span class="fa">225</span><span class="fb2">5</span></span><span class="cap-oculto">225/5</span> = 45.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>AS.</strong> 45 + 32 = 77.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>77 °F</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo · Área de un trapecio<span style="display:block;font-weight:400;margin-top:6px">El área de un trapecio es A = <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span>(b<sub>1</sub> + b<sub>2</sub>)h. Calcule el área si b<sub>1</sub> = 6 pies, b<sub>2</sub> = 10 pies y h = 5 pies.</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Sustituya.</strong> A = <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span>(<span style="color:#0d47a1;font-weight:700">(6)</span> + <span style="color:#0d47a1;font-weight:700">(10)</span>)<span style="color:#0d47a1;font-weight:700">(5)</span></p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>P.</strong> 6 + 10 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>MD.</strong> De izquierda a derecha: <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> × 16 = 8; 8 × 5 = 40.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>40 pies cuadrados</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo · Interés simple<span style="display:block;font-weight:400;margin-top:6px">La fórmula del interés simple es I = Prt. ¿Cuánto interés producen $1,200 a una tasa anual del 5% durante 3 años?</span></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Los valores.</strong> P = 1,200; r = 5% = 0.05; t = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>MD.</strong> 1,200 × 0.05 = 60; 60 × 3 = 180.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>$180</strong>. Esta fórmula se estudiará a fondo en la Lección 6.1.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Estrategia para problemas con fórmula</span>
+<ol><li>Escriba la fórmula.</li><li>Anote debajo el valor de cada letra.</li><li>Sustituya entre paréntesis.</li><li>Aplique PEMDAS.</li><li>Responda con la unidad correcta y pregúntese si el resultado tiene sentido.</li></ol>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Fórmulas en la calculadora</span>
+<p>Para F = <span class="fracc" aria-hidden="true"><span class="fa">9</span><span class="fb2">5</span></span><span class="cap-oculto">9/5</span>C + 32 con C = 25, escriba <span class="tecla num">9</span> <span class="tecla">÷</span> <span class="tecla num">5</span> <span class="tecla">×</span> <span class="tecla num">25</span> <span class="tecla">+</span> <span class="tecla num">32</span> <span class="tecla">enter</span>. La pantalla muestra 77. Si C es negativo, escríbalo entre paréntesis con la tecla <span class="tecla">(−)</span>.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Un viaje en taxi</h3></div>
+<p class="pregunta-int" id="t-p6">Un taxi cobra según la fórmula C = 3.50 + 2.25m, donde m es el número de millas. ¿Cuánto cuesta un viaje de 8 millas?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">$46.00</button>
+<button class="opcion" data-k="b" type="button">$13.75</button>
+<button class="opcion" data-k="c" type="button">$21.50</button>
+<button class="opcion" data-k="d" type="button">$18.00</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — De Fahrenheit a Celsius</h3></div>
+<p class="pregunta-int" id="t-p7">La fórmula C = <span class="fracc" aria-hidden="true"><span class="fa">5</span><span class="fb2">9</span></span><span class="cap-oculto">5/9</span>(F − 32) convierte Fahrenheit en Celsius. ¿Cuántos grados Celsius son 68 °F?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">20 °C</button>
+<button class="opcion" data-k="b" type="button">36 °C</button>
+<button class="opcion" data-k="c" type="button">5.8 °C</button>
+<button class="opcion" data-k="d" type="button">68 °C</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 8 — Perímetro</h3></div>
+<p class="pregunta-int" id="t-p8">El perímetro de un rectángulo es P = 2(l + w). ¿Cuál es el perímetro si l = 7.5 pulgadas y w = 4 pulgadas?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">19 pulgadas</button>
+<button class="opcion" data-k="b" type="button">30 pulgadas</button>
+<button class="opcion" data-k="c" type="button">34 pulgadas</button>
+<button class="opcion" data-k="d" type="button">23 pulgadas</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-3-3.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: fórmulas en contexto (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: fórmulas en contexto</span><span class="ei-sub">Pruebe las fórmulas del GED con sus propios valores y responda preguntas tipo examen.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">4</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-3-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva ocho expresiones de PEMDAS con fracciones (barras de fracción, operaciones entre fracciones y potencias de fracciones), una línea por paso. Después evalúe cuatro expresiones de esta lección con valores nuevos: uno positivo, uno negativo y uno fraccionario. Por último, elija tres fórmulas del GED (temperatura, área del trapecio y costo con cargo fijo), invente valores razonables, evalúelas y compruébelas en la calculadora.</li>
+<li><strong>En su vida diaria.</strong> Busque una fórmula de su vida diaria: un plan de teléfono, un taxi o una aplicación de viajes, un gimnasio o un taller que cobre un cargo fijo más una tarifa. Escríbala como C = cargo fijo + tarifa × unidades y calcule el costo para dos cantidades distintas.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">5</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿Cómo se escribe <span class="fracc" aria-hidden="true"><span class="fa">10 + 6</span><span class="fb2">5 − 1</span></span><span class="cap-oculto">(10 + 6) ÷ (5 − 1)</span> en una sola línea?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">10 + 6 ÷ 5 − 1</button><button class="opcion" data-k="b" type="button">(10 + 6) ÷ (5 − 1)</button><button class="opcion" data-k="c" type="button">10 + (6 ÷ 5) − 1</button><button class="opcion" data-k="d" type="button">10 + 6 ÷ (5 − 1)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">¿Cuánto es <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> + <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span> × <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">3</span></span><span class="cap-oculto">1/3</span>?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button"><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">3</span></span><span class="cap-oculto">1/3</span></button><button class="opcion" data-k="b" type="button"><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">6</span></span><span class="cap-oculto">1/6</span></button><button class="opcion" data-k="c" type="button"><span class="fracc" aria-hidden="true"><span class="fa">4</span><span class="fb2">12</span></span><span class="cap-oculto">4/12</span></button><button class="opcion" data-k="d" type="button"><span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">3</span></span><span class="cap-oculto">2/3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuánto es (<span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span>)<sup>2</sup> × 8?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2</button><button class="opcion" data-k="b" type="button">4</button><button class="opcion" data-k="c" type="button">8</button><button class="opcion" data-k="d" type="button">1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Evalúe 5x − 1 para x = −4.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">19</button><button class="opcion" data-k="b" type="button">−19</button><button class="opcion" data-k="c" type="button">−21</button><button class="opcion" data-k="d" type="button">21</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Evalúe −x<sup>2</sup> para x = −3.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">−9</button><button class="opcion" data-k="c" type="button">6</button><button class="opcion" data-k="d" type="button">−6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Evalúe <span class="fracc" aria-hidden="true"><span class="fa">a + b</span><span class="fb2">a − b</span></span><span class="cap-oculto">(a + b) ÷ (a − b)</span> para a = 4 y b = −2.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1</button><button class="opcion" data-k="b" type="button">3</button><button class="opcion" data-k="c" type="button"><span class="fracc" aria-hidden="true"><span class="fa">2</span><span class="fb2">6</span></span><span class="cap-oculto">2/6</span></button><button class="opcion" data-k="d" type="button"><span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">3</span></span><span class="cap-oculto">1/3</span></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Use F = <span class="fracc" aria-hidden="true"><span class="fa">9</span><span class="fb2">5</span></span><span class="cap-oculto">9/5</span>C + 32. ¿Cuántos grados Fahrenheit son 10 °C?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">50 °F</button><button class="opcion" data-k="b" type="button">75.6 °F</button><button class="opcion" data-k="c" type="button">18 °F</button><button class="opcion" data-k="d" type="button">42 °F</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Use A = <span class="fracc" aria-hidden="true"><span class="fa">1</span><span class="fb2">2</span></span><span class="cap-oculto">1/2</span>(b<sub>1</sub> + b<sub>2</sub>)h con b<sub>1</sub> = 4 pies, b<sub>2</sub> = 8 pies y h = 3 pies.</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">36 pies cuadrados</button><button class="opcion" data-k="b" type="button">9 pies cuadrados</button><button class="opcion" data-k="c" type="button">18 pies cuadrados</button><button class="opcion" data-k="d" type="button">10 pies cuadrados</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">6</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de PEMDAS con fracciones y en álgebra (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de PEMDAS con fracciones y en álgebra y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Fracciones con PEMDAS</th><td>Sigo el orden y simplifico el resultado.</td><td>Sigo el orden, pero me equivoco con los denominadores comunes.</td><td>Sumo antes de multiplicar.</td></tr>
+<tr><th scope="row">Sustitución</th><td>Siempre sustituyo entre paréntesis, con valores positivos, negativos y fraccionarios.</td><td>Me va bien con valores positivos, pero pierdo signos con los negativos.</td><td>Sustituyo sin paréntesis.</td></tr>
+<tr><th scope="row">−x<sup>2</sup> y (−x)<sup>2</sup></th><td>Los distingo y explico por qué.</td><td>Los distingo solo a veces.</td><td>Doy el mismo resultado para los dos.</td></tr>
+<tr><th scope="row">Fórmulas</th><td>Identifico el valor de cada letra, respondo con la unidad y compruebo que tenga sentido.</td><td>Sustituyo, pero olvido la unidad.</td><td>No sé qué valor corresponde a cada letra.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección termina el <strong>Tema 3</strong>. PEMDAS ya funciona con todas las herramientas del Nivel 2: enteros, potencias, raíces, fracciones y, por primera vez, expresiones con <strong>variables</strong>. Sustituir un valor entre paréntesis y respetar el orden de las operaciones es la destreza que el GED exige cada vez que presenta una fórmula.</p>
+<p>El <strong>Tema 4 · Razones, tasas unitarias y proporciones</strong> abre con la Lección 4.1 · Razones y tasas unitarias en contexto. Del cálculo de expresiones pasará a <strong>comparar cantidades</strong>: precios por unidad, velocidades y consumos. Las fracciones que practicó hoy reaparecerán como razones.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 4.1 · Razones y tasas unitarias en contexto</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>variable</dt><dd>Una letra que ocupa el lugar de un número, como x.</dd>
+<dt>evaluar</dt><dd>Reemplazar cada letra por su valor y calcular.</dd>
+<dt>sustituir</dt><dd>Poner un número en el lugar de una letra, siempre entre paréntesis.</dd>
+<dt>fórmula</dt><dd>Una regla escrita con letras, como P = 2(l + w).</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 2 · Tema 3 · Lección 3.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "el Tema 4",
+ "review": "las secciones 1, 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó 1/3 + 2/3 = 1 primero. Primero se multiplica.",
+    "c": "Revise el producto: 2/3 × 3/4 = 6/12 = 1/2.",
+    "d": "1/2 es solo el producto. Ahora sume 1/3."
+   },
+   "right": "2/3 × 3/4 = 1/2; 1/3 + 1/2 = 2/6 + 3/6 = 5/6.",
+   "solution": "MD: 2/3 × 3/4 = 6/12 = 1/2. AS: 1/3 + 1/2 = 2/6 + 3/6 = 5/6."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "(3/4)<sup>2</sup> es 9/16, no 3/4 × 2.",
+    "b": "No elevó al cuadrado: 3/4 × 16 = 12. Primero eleve la fracción.",
+    "d": "El paréntesis eleva la fracción completa: 3 × 3 sobre 4 × 4."
+   },
+   "right": "(3/4)<sup>2</sup> = 9/16; 9/16 × 16 = 9.",
+   "solution": "E: (3/4)<sup>2</sup> = 9/16. MD: 9/16 × 16 = 144/16 = 9."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Usó x = 5. El valor es −5, entre paréntesis.",
+    "c": "Revise: 3 × (−5) = −15, y −15 + 4 no es −19.",
+    "d": "3x quiere decir 3 × x, no 3 + x."
+   },
+   "right": "3(−5) + 4 = −15 + 4 = −11.",
+   "solution": "Se sustituye: 3(−5) + 4. MD: 3 × (−5) = −15. AS: −15 + 4 = −11."
+  },
+  "p4": {
+   "ok": "d",
+   "hints": {
+    "a": "2x para x = −3 es −6, no 6.",
+    "b": "(−3)<sup>2</sup> = 9, positivo, gracias al paréntesis.",
+    "c": "(−3)<sup>2</sup> es 9, no −6."
+   },
+   "right": "(−3)<sup>2</sup> + 2(−3) = 9 − 6 = 3.",
+   "solution": "Se sustituye: (−3)<sup>2</sup> + 2(−3). E: 9. MD: 2 × (−3) = −6. AS: 9 − 6 = 3."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Multiplicó por 2 antes de elevar: (2 × (−3))<sup>2</sup>. El exponente va primero.",
+    "b": "(−3)<sup>2</sup> es positivo: 9.",
+    "d": "Elevar al cuadrado no es multiplicar por 2: (−3)<sup>2</sup> = 9."
+   },
+   "right": "2(1 − 4)<sup>2</sup> = 2(−3)<sup>2</sup> = 2 × 9 = 18.",
+   "solution": "P: 1 − 4 = −3. E: (−3)<sup>2</sup> = 9. MD: 2 × 9 = 18."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Sumó 3.50 + 2.25 primero. Primero se multiplica.",
+    "b": "2.25m quiere decir 2.25 × m, no 2.25 + m.",
+    "d": "$18.00 es solo 2.25 × 8. Sume el cargo fijo."
+   },
+   "right": "2.25 × 8 = 18; 3.50 + 18 = $21.50.",
+   "solution": "MD: 2.25 × 8 = 18. AS: 3.50 + 18 = 21.50. El viaje cuesta $21.50."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "36 es solo 68 − 32. Ahora multiplique por 5/9.",
+    "c": "El paréntesis va primero: reste 32 antes de multiplicar.",
+    "d": "68 es la temperatura en Fahrenheit. Use la fórmula."
+   },
+   "right": "68 − 32 = 36; 5/9 × 36 = 20 °C.",
+   "solution": "P: 68 − 32 = 36. MD: 5/9 × 36 = 180/9 = 20. El resultado es 20 °C."
+  },
+  "p8": {
+   "ok": "d",
+   "hints": {
+    "a": "19 = 2 × 7.5 + 4. El 2 multiplica a todo el paréntesis.",
+    "b": "30 = 7.5 × 4 es el área, no el perímetro.",
+    "c": "Revise la suma: 7.5 + 4 = 11.5."
+   },
+   "right": "2(7.5 + 4) = 2 × 11.5 = 23 pulgadas.",
+   "solution": "P: 7.5 + 4 = 11.5. MD: 2 × 11.5 = 23. El perímetro es 23 pulgadas."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Sin paréntesis, la calculadora divide solo el 6.",
+    "c": "La barra de fracción agrupa las dos partes.",
+    "d": "Aquí solo el denominador tiene paréntesis."
+   },
+   "solution": "(10 + 6) ÷ (5 − 1) = 16 ÷ 4 = 4."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó primero. Primero multiplique 1/2 × 1/3.",
+    "b": "1/6 es solo el producto. Ahora sume 1/2.",
+    "c": "1/2 + 1/6 = 3/6 + 1/6 = 4/6. Simplifíquelo."
+   },
+   "solution": "1/2 × 1/3 = 1/6; 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "El paréntesis eleva la fracción completa: 1/4.",
+    "c": "(1/2)<sup>2</sup> no es 1/2 × 2.",
+    "d": "Revise: 1/4 × 8 = 8/4 = 2."
+   },
+   "solution": "(1/2)<sup>2</sup> = 1/4; 1/4 × 8 = 2."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "Usó x = 4. El valor es −4.",
+    "b": "Revise: 5 × (−4) = −20, y −20 − 1 no es −19.",
+    "d": "Revise el signo: 5 × (−4) es negativo."
+   },
+   "solution": "5(−4) − 1 = −20 − 1 = −21."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "En −x<sup>2</sup> el exponente solo afecta a la x: −(−3)<sup>2</sup> = −9.",
+    "c": "(−3)<sup>2</sup> = 9, no 6.",
+    "d": "Primero eleve; después aplique el signo de delante."
+   },
+   "solution": "−(−3)<sup>2</sup> = −(9) = −9."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "Denominador: 4 − (−2) = 4 + 2 = 6.",
+    "b": "Numerador: 4 + (−2) = 2.",
+    "c": "2/6 se simplifica a 1/3."
+   },
+   "solution": "(4 + (−2)) ÷ (4 − (−2)) = 2 ÷ 6 = 1/3."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "Sumó antes de multiplicar.",
+    "c": "Falta sumar 32 después de multiplicar.",
+    "d": "Primero multiplique 10 por 9/5."
+   },
+   "solution": "9/5 × 10 = 18; 18 + 32 = 50 °F."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "No olvide el 1/2.",
+    "b": "La h multiplica; no se suma.",
+    "d": "Primero sume las bases: 4 + 8 = 12."
+   },
+   "solution": "1/2(4 + 8)(3) = 1/2 × 12 × 3 = 18 pies cuadrados."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

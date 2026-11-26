@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 3.1 · Math Level 2 (English) — built by tools/build_n2_lesson_3_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 3.1 · Order of operations: review and nested parentheses · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 2 · Topic 3 — The full order of operations (PEMDAS)</p>
+<h1>Lesson 3.1 · Order of operations: review and nested parentheses</h1>
+<p class="lema">One set of rules so that everyone gets the same answer: the four levels of PEMDAS, step by step, and nested grouping symbols.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator to check</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Name</strong> the four levels of the order of operations (PEMDAS).</li>
+<li><strong>Work</strong> multiplication and division, and addition and subtraction, from left to right.</li>
+<li><strong>Solve</strong> an expression step by step, one operation at a time.</li>
+<li><strong>Work</strong> nested parentheses, brackets, and braces from the inside out.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.2.a</span> Perform addition, subtraction, multiplication, and division on rational numbers.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.1.b</span> Evaluate linear expressions by substituting integers for unknown quantities.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li><li><span class="std-cod std-mp">MP.5.a</span> Recognize flaws in others&#x27; reasoning.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">5.OA.1</span> <span class="std-nivel">Level C</span> Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols.</li><li><span class="std-cod std-ccr">6.EE.2c</span> <span class="std-nivel">Level D</span> Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations).</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-pyramid">The four levels of PEMDAS</a></li>
+<li><a href="#s-step-by-step">Step by step</a></li>
+<li><a href="#s-nested">Nested grouping symbols: from the inside out</a></li>
+<li><a href="#s-combined">Putting it all together</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-pyramid"><span aria-hidden="true" class="num-seccion">1</span>The four levels of PEMDAS</h2>
+<p>Welcome to Topic 3. In Topics 1 and 2 you built separate tools: integers, fractions with signs, powers, and square roots. In Topic 3 all those pieces come together under one set of rules: the <strong>order of operations</strong>. Without it, the same expression could give different answers depending on who works it. With it, everyone gets exactly the same answer.</p>
+<p>The word <strong>PEMDAS</strong> sums up the order. Each letter is a stage, and the stages always go in the same order:</p>
+<div aria-label="The four levels of PEMDAS (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The four levels of the order of operations, from the first to the last</caption>
+<thead><tr><th scope="col">Level</th><th scope="col">Letters</th><th scope="col">What you do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>P</strong></td><td><strong>Parentheses</strong> and other grouping symbols. Whatever is inside goes first.</td></tr>
+<tr><td>2</td><td><strong>E</strong></td><td><strong>Exponents</strong> and roots. Find any power or root before you use its value.</td></tr>
+<tr><td>3</td><td><strong>MD</strong></td><td><strong>Multiplication and division</strong>, in the order they appear, <strong>from left to right</strong>. Neither one goes before the other.</td></tr>
+<tr><td>4</td><td><strong>AS</strong></td><td><strong>Addition and subtraction</strong>, in the order they appear, <strong>from left to right</strong>. Neither one goes before the other.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Key idea</span>
+<p>PEMDAS has six letters, but there are only <strong>four levels</strong>. M and D share a level, and so do A and S. Mixing this up causes most mistakes. Some people remember the order with the sentence "Please Excuse My Dear Aunt Sally."</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The most common mistake</span>
+<p>Thinking that multiplication always goes before division because "M comes first." It does not: in 20 ÷ 4 × 5, divide first because it is farther left (20 ÷ 4 = 5; 5 × 5 = 25). Multiplying first would give 20 ÷ 20 = 1, which is wrong.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — What goes first?</h3></div>
+<p class="pregunta-int" id="t-p1">In 5 + 2 × 7 − 3, which operation goes first?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">the addition 5 + 2</button>
+<button class="opcion" data-k="b" type="button">the subtraction 7 − 3</button>
+<button class="opcion" data-k="c" type="button">the multiplication 2 × 7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Left to right</h3></div>
+<p class="pregunta-int" id="t-p2">In 20 ÷ 5 × 2, which operation goes first?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">the multiplication 5 × 2</button>
+<button class="opcion" data-k="b" type="button">the division 20 ÷ 5</button>
+<button class="opcion" data-k="c" type="button">The order does not matter.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-3-1.html#pyramid" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the four levels of priority (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the four levels of priority</span><span class="ei-sub">Decide which operation goes first using the four levels of PEMDAS.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-step-by-step"><span aria-hidden="true" class="num-seccion">2</span>Step by step</h2>
+<p>The safest way is to <strong>copy the expression at every step</strong>, solving only the operation with the highest priority and leaving the rest as it is. That way you can clearly see the next move.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: 6 + 3 × 4 − 2</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>MD.</strong> No parentheses and no exponents. The multiplication goes first: 6 + <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">3 × 4</mark> − 2 → 6 + 12 − 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>AS.</strong> Add and subtract from left to right: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">6 + 12</mark> − 2 → 18 − 2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result.</strong> 18 − 2 = <strong>16</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: (8 − 3)<sup>2</sup> + 12 ÷ 4</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>P.</strong> Inside the parentheses: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">8 − 3</mark> = 5 → 5<sup>2</sup> + 12 ÷ 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>E.</strong> The exponent: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">5<sup>2</sup></mark> = 25 → 25 + 12 ÷ 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>MD.</strong> The division: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">12 ÷ 4</mark> = 3 → 25 + 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>AS.</strong> 25 + 3 = <strong>28</strong></p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> The calculator follows PEMDAS</span>
+<p>The TI-30XS follows the order of operations by itself. For (8 − 3)<sup>2</sup> + 12 ÷ 4, press <span class="tecla">(</span> <span class="tecla num">8</span> <span class="tecla">−</span> <span class="tecla num">3</span> <span class="tecla">)</span> <span class="tecla">x<sup>2</sup></span> <span class="tecla">+</span> <span class="tecla num">1</span><span class="tecla num">2</span> <span class="tecla">÷</span> <span class="tecla num">4</span> <span class="tecla">enter</span>. The screen shows 28. Work it on paper first: the GED asks you to know the steps.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — Solve it</h3></div>
+<p class="pregunta-int" id="t-p3">What is 7 + 6 × 2 − 4?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">22</button>
+<button class="opcion" data-k="b" type="button">15</button>
+<button class="opcion" data-k="c" type="button">9</button>
+<button class="opcion" data-k="d" type="button">11</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-3-1.html#step-by-step" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: step by step (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: step by step</span><span class="ei-sub">Follow the expression line by line, solving one operation at each step.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-nested"><span aria-hidden="true" class="num-seccion">3</span>Nested grouping symbols: from the inside out</h2>
+<p>When an expression has grouping symbols <strong>inside</strong> other grouping symbols, always work <strong>from the innermost to the outermost</strong>.</p>
+<p>To tell them apart at a glance, we use three kinds of grouping symbols:</p>
+<ul>
+<li>Parentheses <strong style="color:#0d47a1">(</strong>&nbsp;<strong style="color:#0d47a1">)</strong>: the innermost level.</li>
+<li>Brackets <strong style="color:#1b5e20">[</strong>&nbsp;<strong style="color:#1b5e20">]</strong>: the middle level.</li>
+<li>Braces <strong style="color:#6a1b9a">{</strong>&nbsp;<strong style="color:#6a1b9a">}</strong>: the outermost level.</li>
+</ul>
+<p>They all work exactly like parentheses: only the shape changes, so it is easier to match each opening symbol with its closing one.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: two levels &nbsp; 2 × <strong style="color:#1b5e20">[</strong>3 + <strong style="color:#0d47a1">(</strong>4 × 2<strong style="color:#0d47a1">)</strong><strong style="color:#1b5e20">]</strong></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Step 1.</strong> The inner parentheses: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">4 × 2</mark> = 8 → 2 × <strong style="color:#1b5e20">[</strong>3 + 8<strong style="color:#1b5e20">]</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Step 2.</strong> The brackets: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">3 + 8</mark> = 11 → 2 × 11.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result.</strong> 2 × 11 = <strong>22</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example: three levels &nbsp; 50 − <strong style="color:#6a1b9a">{</strong>4 + <strong style="color:#1b5e20">[</strong>3 × <strong style="color:#0d47a1">(</strong>6 − 2<strong style="color:#0d47a1">)</strong><strong style="color:#1b5e20">]</strong><strong style="color:#6a1b9a">}</strong></p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Step 1.</strong> Inner parentheses: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">6 − 2</mark> = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Step 2.</strong> Brackets: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">3 × 4</mark> = 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Step 3.</strong> Braces: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">4 + 12</mark> = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result.</strong> 50 − 16 = <strong>34</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A visual strategy</span>
+<p>Before you start, count and match the pairs. Each ( needs a ), each [ needs a ], and each { needs a }. This check prevents the most frustrating mistakes.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">On the calculator</span>
+<p>The calculator has only round parentheses. Type brackets and braces as parentheses too: 2 × [3 + (4 × 2)] is 2 × ((3 + (4 × 2))).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — Nested</h3></div>
+<p class="pregunta-int" id="t-p4">What is 3 × [2 + (8 ÷ 4)]?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">8</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">10</button>
+<button class="opcion" data-k="d" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-3-1.html#nested" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: nested grouping symbols (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: nested grouping symbols</span><span class="ei-sub">Work from the inside out with parentheses, brackets, and braces in different colors.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-combined"><span aria-hidden="true" class="num-seccion">4</span>Putting it all together</h2>
+<p>The plan for any expression is always the same: first the grouping symbols, <strong>from the inside out</strong>, and inside each one, use PEMDAS <strong>from the start</strong>. When all the grouping symbols are gone, use PEMDAS on what is left.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example: &nbsp; <strong style="color:#1b5e20">[</strong>2<sup>2</sup> + <strong style="color:#0d47a1">(</strong>15 − 3 × 4<strong style="color:#0d47a1">)</strong><strong style="color:#1b5e20">]</strong> × 5</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Step 1.</strong> Inside the parentheses, multiply before subtracting: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">3 × 4</mark> = 12 → (15 − 12).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Step 2.</strong> Finish the parentheses: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">15 − 12</mark> = 3 → [2<sup>2</sup> + 3] × 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Step 3.</strong> Inside the brackets, the exponent before the addition: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">2<sup>2</sup></mark> = 4 → [4 + 3] × 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Step 4.</strong> Finish the brackets: <mark style="background:#fff3e0;outline:2px solid #bf360c;border-radius:4px;padding:0 3px">4 + 3</mark> = 7 → 7 × 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result.</strong> 7 × 5 = <strong>35</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Watch out!</span>
+<p>With grouping symbols, you do not use PEMDAS "across the whole expression" at once. Each grouping symbol is a small expression that you finish completely before you move to the next one.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Everything together</h3></div>
+<p class="pregunta-int" id="t-p5">What is (10 − 4)<sup>2</sup> ÷ 9?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">4</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">6</button>
+<button class="opcion" data-k="d" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-3-1.html#combined" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: everything combined (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: everything combined</span><span class="ei-sub">Practice expressions that combine grouping symbols, powers, and the four operations.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practice-3-1.html#emoji-challenges" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: emoji challenges (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: emoji challenges</span><span class="ei-sub">Find the value of each emoji from the clues, then solve the final expression in the right order.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-3-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Write and solve five expressions with the four operations (no parentheses), five with parentheses and an exponent, and five with nested grouping symbols. Write one line for each step, and underline the operation you do in that step.</li>
+<li><strong>In your daily life.</strong> Look at a receipt or a bill: 3 items at $4 plus a $5 fee. Write it as one expression, like 3 × 4 + 5, and solve it in the right order. Then check that the bill says the same.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">What is 4 + 5 × 3?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">27</button><button class="opcion" data-k="b" type="button">17</button><button class="opcion" data-k="c" type="button">19</button><button class="opcion" data-k="d" type="button">60</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">What is 20 ÷ 4 × 5?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">25</button><button class="opcion" data-k="b" type="button">1</button><button class="opcion" data-k="c" type="button">10</button><button class="opcion" data-k="d" type="button">100</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">What is 12 − 8 ÷ 2 + 1?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3</button><button class="opcion" data-k="b" type="button">5</button><button class="opcion" data-k="c" type="button">7</button><button class="opcion" data-k="d" type="button">9</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">What is (2 + 3)<sup>2</sup> − 1?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">9</button><button class="opcion" data-k="d" type="button">25</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">What is 2 × [5 × (1 + 2) − 4]?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">22</button><button class="opcion" data-k="b" type="button">18</button><button class="opcion" data-k="c" type="button">26</button><button class="opcion" data-k="d" type="button">15</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">What is 40 − {3 + [2 × (9 − 5)]}?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">23</button><button class="opcion" data-k="b" type="button">33</button><button class="opcion" data-k="c" type="button">29</button><button class="opcion" data-k="d" type="button">11</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Which order is right?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Multiplication always before division</button><button class="opcion" data-k="b" type="button">Addition before multiplication</button><button class="opcion" data-k="c" type="button">Exponents before grouping symbols</button><button class="opcion" data-k="d" type="button">Grouping, exponents, multiplication and division, addition and subtraction</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">What is (6 + 4 × 3) ÷ 2?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">9</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the order of operations (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the order of operations and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">The four levels</th><td>I know them and I know that M and D (and A and S) share a level.</td><td>I know the order, but I put M before D.</td><td>I work from left to right without looking at the operations.</td></tr>
+<tr><th scope="row">Step by step</th><td>I copy the expression at each step and make no mistakes.</td><td>I get it right, but I skip steps and sometimes slip.</td><td>I try to do everything at once.</td></tr>
+<tr><th scope="row">Nested grouping symbols</th><td>I work from the inside out with three levels.</td><td>I can do two levels, but three confuse me.</td><td>I do not know where to start.</td></tr>
+<tr><th scope="row">Everything together</th><td>I use PEMDAS inside each grouping symbol and finish it before moving on.</td><td>I sometimes jump out of a grouping symbol too soon.</td><td>I mix up the levels.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>You now have the system that puts everything in order: the four levels of PEMDAS, step by step, and grouping symbols from the inside out.</p>
+<p>In <strong>Lesson 3.2 · PEMDAS with powers, roots, fractions, and signs</strong> you will add the rest of the tools of Level 2: square roots and fraction bars that work like hidden parentheses, and negative numbers with exponents.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 3.2 · PEMDAS with powers, roots, fractions, and signs</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>order of operations</dt><dd>The rules that say which operation to do first, so everyone gets the same answer.</dd>
+<dt>PEMDAS</dt><dd>Parentheses, Exponents, Multiplication and Division, Addition and Subtraction.</dd>
+<dt>grouping symbols</dt><dd>Parentheses ( ), brackets [ ], and braces { }. What is inside goes first.</dd>
+<dt>nested</dt><dd>One grouping symbol inside another. Work from the inside out.</dd>
+<dt>left to right</dt><dd>The way to work two operations on the same level.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 2 · Topic 3 · Lesson 3.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 3.2",
+ "review": "sections 1, 2, and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Addition is on the last level. Is there a multiplication or division?",
+    "b": "7 − 3 is not even an operation here: the 7 is multiplied by 2 first."
+   },
+   "right": "Multiplication comes before addition and subtraction.",
+   "solution": "No parentheses or exponents, so multiplication goes first: 2 × 7 = 14. Then 5 + 14 − 3 = 16."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Multiplication and division are on the same level. Which one is farther left?",
+    "c": "The order matters: 20 ÷ 5 × 2 = 8, but 20 ÷ 10 = 2."
+   },
+   "right": "Same level: from left to right. 20 ÷ 5 = 4, then 4 × 2 = 8.",
+   "solution": "Multiplication and division share a level, so you go from left to right: first 20 ÷ 5 = 4, then 4 × 2 = 8."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "You added 7 + 6 first. Multiplication goes before addition.",
+    "c": "Check: 6 × 2 = 12, then 7 + 12 − 4.",
+    "d": "You subtracted 2 − 4 first. Multiply 6 × 2 first."
+   },
+   "right": "6 × 2 = 12; 7 + 12 = 19; 19 − 4 = 15.",
+   "solution": "Multiply first: 6 × 2 = 12. Then from left to right: 7 + 12 = 19, and 19 − 4 = 15."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "You did 3 × 2 first. Start with the innermost parentheses: 8 ÷ 4.",
+    "c": "Check the brackets: 2 + 2 = 4, then 3 × 4.",
+    "d": "Finish the brackets first: 2 + 2 = 4. Then multiply by 3."
+   },
+   "right": "8 ÷ 4 = 2; 2 + 2 = 4; 3 × 4 = 12.",
+   "solution": "Inner parentheses: 8 ÷ 4 = 2. Brackets: 2 + 2 = 4. Then 3 × 4 = 12."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "6 × 2 is not 6<sup>2</sup>. Square means 6 × 6.",
+    "c": "You did not square: 6<sup>2</sup> = 36. Then 36 ÷ 9.",
+    "d": "36 is (10 − 4)<sup>2</sup>. You still need to divide by 9."
+   },
+   "right": "(10 − 4) = 6; 6<sup>2</sup> = 36; 36 ÷ 9 = 4.",
+   "solution": "P: 10 − 4 = 6. E: 6<sup>2</sup> = 36. D: 36 ÷ 9 = 4."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "You added 4 + 5 first. Multiply first.",
+    "b": "Check: 5 × 3 = 15, then 4 + 15.",
+    "d": "That is 4 × 5 × 3. The 4 is added."
+   },
+   "solution": "5 × 3 = 15; 4 + 15 = 19."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "You multiplied 4 × 5 first. Division and multiplication: from left to right.",
+    "c": "Check: 20 ÷ 4 = 5, then 5 × 5.",
+    "d": "Check: 20 ÷ 4 = 5, then 5 × 5."
+   },
+   "solution": "Left to right: 20 ÷ 4 = 5; 5 × 5 = 25."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "You subtracted 12 − 2 first. Divide first: 8 ÷ 2.",
+    "b": "Check the division: 8 ÷ 2 = 4.",
+    "c": "Check: 12 − 4 = 8, then 8 + 1."
+   },
+   "solution": "8 ÷ 2 = 4; 12 − 4 = 8; 8 + 1 = 9."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "The parentheses go first: 2 + 3 = 5.",
+    "c": "5<sup>2</sup> = 25, not 10.",
+    "d": "You still need to subtract 1."
+   },
+   "solution": "(2 + 3) = 5; 5<sup>2</sup> = 25; 25 − 1 = 24."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Start inside the parentheses: 1 + 2 = 3.",
+    "c": "Check the brackets: 5 × 3 = 15, then 15 − 4.",
+    "d": "Finish the brackets before you multiply by 2."
+   },
+   "solution": "(1 + 2) = 3; [5 × 3 − 4] = 15 − 4 = 11; 2 × 11 = 22."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Start with the innermost: (9 − 5) = 4.",
+    "b": "Check the brackets: 2 × 4 = 8.",
+    "d": "Check the braces: 3 + 8 = 11, then 40 − 11."
+   },
+   "solution": "(9 − 5) = 4; [2 × 4] = 8; {3 + 8} = 11; 40 − 11 = 29."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Multiplication and division share a level: neither always goes first.",
+    "b": "Addition and subtraction come last.",
+    "c": "Exponents come after grouping symbols, not before."
+   },
+   "solution": "Grouping symbols first, then exponents and roots, then multiplication and division (left to right), then addition and subtraction (left to right)."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "You added 6 + 4 first. Inside the parentheses, multiply first: 4 × 3.",
+    "c": "Check: 6 + 12 = 18, then 18 ÷ 2.",
+    "d": "Finish the parentheses before dividing."
+   },
+   "solution": "(6 + 4 × 3) = 6 + 12 = 18; 18 ÷ 2 = 9."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

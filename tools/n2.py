@@ -85,3 +85,12 @@ def mixto(e, a, b, neg=False):
 def pot(b, e):
     """Potencia: b<sup>e</sup>."""
     return f"{b}<sup>{e}</sup>"
+
+def pasos_panel(pre, otro=None):
+    """Panel «paso a paso» (pasoAPaso de integers.js): expresión, botones y pasos."""
+    t = B.t
+    return f'''      <div class="panel">
+        <div class="estado"><span class="grande" id="{pre}-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="{pre}-sig"></button><button type="button" class="btn-sec" id="{pre}-todo">{t("Show all", "Mostrar todo")}</button><button type="button" class="btn-sec" id="{pre}-nuevo">{otro or t("Another example", "Otro ejemplo")}</button></div>
+        <div class="pasos" id="{pre}-pasos" aria-live="polite"></div>
+      </div>'''

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico — práctica (español) — construida con tools/build_n2_lesson_3_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-3-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+.sust{color:#0d47a1;font-weight:700;} .formula-sel{font-size:22px;font-weight:700;text-align:center;margin:12px 0;color:var(--tema-d);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 3 · PEMDAS completo</div>
+    <h1>Lección 3.3 · PEMDAS en expresiones con fracciones y contexto algebraico</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#fracciones">PEMDAS con fracciones</a></li>
+      <li><a href="#sustituir">Sustituir y evaluar</a></li>
+      <li><a href="#formulas">Fórmulas en contexto</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="fracciones" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>PEMDAS con fracciones</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Las fracciones no cambian el orden. Para sumar o restar se busca un denominador común; para multiplicar, numerador por numerador y denominador por denominador; para dividir, se multiplica por el recíproco. Y el paréntesis de (a/b)<sup>2</sup> eleva la fracción completa.</p>
+      <h3>Practique: fracciones con PEMDAS</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba un entero o una fracción como −7/2, simplificada. Si es negativa, empiece con el signo menos.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sustituir">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Sustituir y evaluar</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Regla 1: sustituya siempre entre paréntesis; el paréntesis protege el signo. Regla 2: la letra pegada a un número indica multiplicación: 3x = 3 × x.</p>
+      <h3>Sustituya y vea los pasos</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:220px;"><label for="su-expr">Expresión</label><select id="su-expr"><option value="0">4x − 7</option><option value="1">x² − 3x + 2</option><option value="2">−x² + 4</option><option value="3">2(a − b)²</option><option value="4">(a + b) ÷ (a − b)</option></select></div>
+        </div>
+        <div class="campos" style="margin-top:10px;">
+          <div class="campo" style="flex:1;min-width:180px;" id="su-cx"><label for="su-x">x = <span id="su-xv"></span></label><input type="range" id="su-x" min="-6" max="6" value="-2"></div>
+          <div class="campo" style="flex:1;min-width:180px;" id="su-ca"><label for="su-a">a = <span id="su-av"></span></label><input type="range" id="su-a" min="-6" max="6" value="5"></div>
+          <div class="campo" style="flex:1;min-width:180px;" id="su-cb"><label for="su-b">b = <span id="su-bv"></span></label><input type="range" id="su-b" min="-6" max="6" value="-3"></div>
+        </div>
+        <div class="salida" id="su-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: sustituir y evaluar</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba un entero o una fracción como −7/2, simplificada. Si es negativa, empiece con el signo menos.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="formulas">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Fórmulas en contexto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Escriba la fórmula, anote el valor de cada letra, sustituya entre paréntesis, aplique PEMDAS y responda con la unidad.</p>
+      <h3>Pruebe la fórmula</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:240px;"><label for="fo-sel">Fórmula</label><select id="fo-sel"><option value="taxi">Taxi: C = 3.50 + 2.25m</option><option value="cf">Celsius a Fahrenheit: F = (9/5)C + 32</option><option value="fc">Fahrenheit a Celsius: C = (5/9)(F − 32)</option><option value="per">Perímetro del rectángulo: P = 2(l + w)</option><option value="tra">Área del trapecio: A = ½(b₁ + b₂)h</option><option value="int">Interés simple: I = Prt</option></select></div>
+        </div>
+        <div class="formula-sel" id="fo-form"></div>
+        <div class="campos" id="fo-campos" style="margin-top:8px;"></div>
+        <div class="salida" id="fo-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: preguntas tipo GED</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 3 · PEMDAS completo · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script src="/math/pemdas.js"></script>
+<script>
+var TXT = {
+ "calcula": "¿Cuánto es {e}? Escríbalo simplificado.",
+ "multPrimero": "MD antes que AS: {b} × {c} = {p}.",
+ "luegoSuma": "Después AS: {a} + {p} = {r}.",
+ "potPrimero": "E: {a}² = {p}.",
+ "divRecip": "MD: se divide multiplicando por el recíproco: {b} ÷ {c} = {d}.",
+ "luegoResta": "AS: {p} − {d} = {r}.",
+ "parPrimero": "P: {a} − {b} = {s}.",
+ "luegoMult": "MD: {s} × {k} = {r}.",
+ "barraNum": "Numerador: {n}.",
+ "barraDen": "Denominador: {d}.",
+ "barraDiv": "Se divide y se simplifica: {r}.",
+ "sumoAntes": "Sumó antes de multiplicar. Primero se multiplica.",
+ "restoAntes": "Restó antes de dividir. Primero se divide.",
+ "potSolo": "El paréntesis eleva la fracción completa: eleve el numerador y el denominador.",
+ "divMal": "Para dividir, multiplique por el recíproco de la segunda fracción.",
+ "parAntes": "El paréntesis va primero: reste dentro de él y después multiplique.",
+ "restaNeg": "En el denominador, restar un negativo es sumar.",
+ "evalua": "Evalúe {e}.",
+ "para": " para ",
+ "y": " y ",
+ "sustituyendo": "Sustituyendo: {s}.",
+ "numDen": "Numerador: {n}. Denominador: {d}. Resultado: {r}.",
+ "pSuma": "{a}x quiere decir {a} × x, no {a} + x.",
+ "pSigno": "Revise el signo: el valor que se sustituye es {x}.",
+ "pCuad": "Sin paréntesis, {x}² se lee como −({b}²). Con paréntesis, ({x})² = {c}.",
+ "pNegCuad": "En −x² el exponente solo afecta a la x: primero se eleva y después se aplica el signo de delante.",
+ "pAntesMul": "El exponente va antes que la multiplicación por {a}: solo se eleva lo que está dentro del paréntesis.",
+ "pPor2": "Elevar al cuadrado es multiplicar el número por sí mismo, no por 2.",
+ "pB2": "Con paréntesis, ({b})² es positivo: {c}.",
+ "susti": "<strong>Sustituir entre paréntesis:</strong> ",
+ "enNum": "En el numerador: {a} + {b} = {n}.",
+ "enDen": "En el denominador: {a} − {b} = {d}{x}",
+ "restarNeg": " (restar un negativo es sumar).",
+ "denCero": "El denominador da 0, y no se puede dividir entre 0. Elija otros valores.",
+ "barra": "La barra de fracción: {n} ÷ {d}{x}",
+ "simpl": ", que simplificado queda {q}.",
+ "resultado": "Resultado: ",
+ "escribeNum": "Escriba un número en cada casilla para ver el cálculo.",
+ "taxi": [
+  "<strong>Sustituir:</strong> C = 3.50 + 2.25{m}",
+  "Primero la multiplicación: 2.25 × {m2} = {u}.",
+  "Después la suma: 3.50 + {u} = {r}.",
+  "El viaje cuesta {d}."
+ ],
+ "taxiNeg": "Con millas negativas el resultado no tiene sentido: una distancia no puede ser negativa.",
+ "cf": [
+  "<strong>Sustituir:</strong> F = (9/5){C} + 32",
+  "Primero la multiplicación: 9/5 × {C2} = {u}.",
+  "Después la suma: {u} + 32 = {r}.",
+  "{C3} °C = {r} °F"
+ ],
+ "fc": [
+  "<strong>Sustituir:</strong> C = (5/9)({F} − 32)",
+  "Primero el paréntesis: {F2} − 32 = {d}.",
+  "Después la multiplicación: 5/9 × {d2} = {r}{x}.",
+  "{F2} °F = {r} °C"
+ ],
+ "redondeado": " (redondeado)",
+ "per": [
+  "<strong>Sustituir:</strong> P = 2({l} + {w})",
+  "Primero el paréntesis: {l2} + {w2} = {s}.",
+  "Después la multiplicación: 2 × {s} = {r}.",
+  "El perímetro es {r} pulgadas."
+ ],
+ "perNeg": "Un largo o un ancho de 0 o menos no tiene sentido en un rectángulo.",
+ "tra": [
+  "<strong>Sustituir:</strong> A = ½({b1} + {b2}){h}",
+  "Primero el paréntesis: {b12} + {b22} = {s}.",
+  "Multiplicaciones de izquierda a derecha: ½ × {s} = {m}; {m} × {h2} = {r}.",
+  "El área es {r} pies cuadrados."
+ ],
+ "int": [
+  "<strong>Sustituir:</strong> I = {P}{r}{t}",
+  "La tasa se escribe en decimal: {rp}% = {rd}.",
+  "Multiplicaciones de izquierda a derecha: {P2} × {rd} = {u}; {u} × {t2} = {i}.",
+  "El interés es {d}."
+ ],
+ "fTaxi": [
+  [
+   "Taxi",
+   "Un taxi cobra según la fórmula C = {f} + {t}m, donde m es el número de millas. ¿Cuánto cuesta un viaje de {n} millas?"
+  ],
+  [
+   "Gimnasio",
+   "Un gimnasio cobra C = {f} + {t}m, donde m es el número de meses. ¿Cuánto paga una persona por {n} meses?"
+  ],
+  [
+   "Plomero",
+   "Un plomero cobra C = {f} + {t}h, donde h es el número de horas. ¿Cuánto cobra por un trabajo de {n} horas?"
+  ]
+ ],
+ "mSumaAntes": "Se sumó antes de multiplicar; PEMDAS pide multiplicar primero.",
+ "mFijo": "Falta sumar el cargo fijo de {f}.",
+ "mLetra": "La letra pegada al número indica multiplicación, no suma.",
+ "solTaxi": "Primero se multiplica: {t} × {n} = {u}; después se suma el cargo fijo: {f} + {u} = {c}.",
+ "qCF": "La fórmula F = (9/5)C + 32 convierte grados Celsius en grados Fahrenheit. ¿Cuántos grados Fahrenheit son {C} °C?",
+ "mFalta32": "Falta sumar 32 después de multiplicar.",
+ "m32Antes": "Se sumó 32 antes de multiplicar; la multiplicación va primero.",
+ "mFalta95": "Falta multiplicar por 9/5.",
+ "solCF": "9/5 × {C} = {u}; {u} + 32 = {F} °F.",
+ "qFC": "La fórmula C = (5/9)(F − 32) convierte grados Fahrenheit en grados Celsius. ¿Cuántos grados Celsius son {F} °F?",
+ "mParPrimero": "El paréntesis va primero: hay que restar 32 antes de multiplicar.",
+ "mFalta59": "Falta multiplicar por 5/9.",
+ "mFaltaRestar": "Falta restar 32 dentro del paréntesis.",
+ "solFC": "Paréntesis: {F} − 32 = {d}; 5/9 × {d2} = {C} °C.",
+ "qPer": "El perímetro de un rectángulo es P = 2(l + w). ¿Cuál es el perímetro si l = {l} pulgadas y w = {w} pulgadas?",
+ "pulg": " pulgadas",
+ "mTodo2": "El 2 multiplica a todo el paréntesis: primero se suma l + w.",
+ "mFalta2": "Falta multiplicar por 2.",
+ "mArea": "Eso es el área (l × w), no el perímetro.",
+ "solPer": "Paréntesis: {l} + {w} = {s}; 2 × {s} = {P} pulgadas.",
+ "qTra": "El área de un trapecio es A = ½(b₁ + b₂)h. Calcule el área si b₁ = {b1} pies, b₂ = {b2} pies y h = {h} pies.",
+ "pies2": " pies cuadrados",
+ "mFaltaMedio": "Falta multiplicar por ½.",
+ "mMedioTodo": "El ½ y la h multiplican a toda la suma del paréntesis.",
+ "mHSuma": "La h pegada al paréntesis indica multiplicación, no suma.",
+ "solTra": "Paréntesis: {b1} + {b2} = {s}; ½ × {s} = {m}; {m} × {h} = {A} pies cuadrados.",
+ "qInt": "La fórmula del interés simple es I = Prt. ¿Cuánto interés producen {P} a una tasa anual del {r}% durante {t} años?",
+ "mTasaDec": "La tasa se escribe en decimal: {r}% = {rd}.",
+ "mUnAno": "Ese es el interés de un solo año; falta multiplicar por {t}.",
+ "mMonto": "Ese es el monto final (capital más interés), no el interés.",
+ "solInt": "{P} × {rd} = {u}; {u} × {t} = {I}.",
+ "tpl": [
+  "4x − 7",
+  "x² − 3x + 2",
+  "−x² + 4",
+  "2(a − b)²",
+  "(a + b) ÷ (a − b)"
+ ]
+};
+var FORMULA = {"taxi": "C = 3.50 + 2.25m", "cf": "F = (9/5)C + 32", "fc": "C = (5/9)(F − 32)", "per": "P = 2(l + w)", "tra": "A = ½(b<sub>1</sub> + b<sub>2</sub>)h", "int": "I = Prt"};
+var ETIQ = {"taxi-m": "Millas (m)", "cf-C": "Grados Celsius (C)", "fc-F": "Grados Fahrenheit (F)", "per-l": "Largo en pulgadas (l)", "per-w": "Ancho en pulgadas (w)", "tra-b1": "Base b₁ en pies", "tra-b2": "Base b₂ en pies", "tra-h": "Altura h en pies", "int-P": "Capital P en dólares", "int-r": "Tasa r en %", "int-t": "Tiempo t en años"};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function S(v){ return '<span class="sust">(' + (typeof v === "number" ? ent(v) : v) + ')</span>'; }
+function mk(v){ return G("(", [N(v)]); }
+function fmt(x){ return menos(Number(x).toLocaleString("en-US", { maximumFractionDigits: 2 })); }
+function dinero(x){ return (x < 0 ? "−" : "") + "$" + Math.abs(x).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function redondea(x, d){ var p = Math.pow(10, d === undefined ? 2 : d); return Math.round(x * p) / p; }
+function lineas(arr){ return arr.map(function(h){ return '<div class="linea">' + h + '</div>'; }).join(""); }
+function signoTxt(b){ return b < 0 ? " − " + Math.abs(b) : " + " + b; }
+function nzr(a, b){ var n; do { n = aleatorio(a, b); } while (n === 0); return n; }
+function quita(pistas, res){ return pistas.filter(function(p){ return p.v !== res; }); }
+
+/* ============ MODULE 1 · fractions with PEMDAS ============ */
+function rq(){ var d = aleatorio(2, 6); return q(aleatorio(1, d - 1), d); }
+function genFrac(){
+  var tipo = aleatorio(1, 4), a, b, c, r, e, sol, pistas = [];
+  if (tipo === 1){
+    a = rq(); b = rq(); c = rq(); var p = qmul(b, c); r = qsum(a, p);
+    e = qH(a) + " + " + qH(b) + " × " + qH(c);
+    sol = F(TXT.multPrimero, { b: qH(b), c: qH(c), p: qH(p) }) + " " + F(TXT.luegoSuma, { a: qH(a), p: qH(p), r: qH(r) });
+    pistas.push({ v: qmul(qsum(a, b), c), msg: TXT.sumoAntes });
+  } else if (tipo === 2){
+    do { a = rq(); b = rq(); c = rq(); var pw2 = qmul(a, a), d = qdiv(b, c); r = qres(pw2, d); } while (Math.abs(r.n) > 40 || r.d > 72);
+    e = "(" + qH(a) + ")<sup>2</sup> − " + qH(b) + " ÷ " + qH(c);
+    sol = F(TXT.potPrimero, { a: "(" + qH(a) + ")", p: qH(pw2) }) + " " + F(TXT.divRecip, { b: qH(b), c: qH(c), d: qH(d) }) + " " + F(TXT.luegoResta, { p: qH(pw2), d: qH(d), r: qH(r) });
+    pistas.push({ v: qres(q(a.n * a.n, a.d), d), msg: TXT.potSolo });
+    pistas.push({ v: qdiv(qres(pw2, b), c), msg: TXT.restoAntes });
+    pistas.push({ v: qres(pw2, qmul(b, c)), msg: TXT.divMal });
+  } else if (tipo === 3){
+    a = rq(); if (Math.random() < 0.4) a = qneg(a); b = rq(); var k = aleatorio(2, 12), s = qres(a, b); r = qmul(s, q(k));
+    e = "(" + qH(a) + " − " + qH(b) + ") × " + k;
+    sol = F(TXT.parPrimero, { a: qH(a), b: qH(b), s: qH(s) }) + " " + F(TXT.luegoMult, { s: qP(s), k: k, r: qH(r) });
+    pistas.push({ v: qres(a, qmul(b, q(k))), msg: TXT.parAntes });
+  } else {
+    var n1, n2, d1, d2;
+    do { n1 = nzr(-9, 9); n2 = nzr(-9, 9); d1 = nzr(-9, 9); d2 = nzr(-9, 9); } while (d1 === d2 || n1 + n2 === 0 || (n1 + n2) % (d1 - d2) === 0 && Math.random() < 0.6);
+    r = q(n1 + n2, d1 - d2);
+    e = '<span class="fracc"><span class="fa">' + ent(n1) + signoTxt(n2).replace("-", "−") + '</span><span class="fb2">' + ent(d1) + " − " + par(d2) + '</span></span>';
+    sol = F(TXT.barraNum, { n: ent(n1) + signoTxt(n2) + " = " + ent(n1 + n2) }) + " " + F(TXT.barraDen, { d: ent(d1) + " − " + par(d2) + " = " + ent(d1 - d2) }) + " " + F(TXT.barraDiv, { r: qH(r) });
+    if (d2 < 0) pistas.push({ v: q(n1 + n2, d1 + d2), msg: TXT.restaNeg });
+  }
+  pistas = pistas.filter(function(p){ return p.v.d && !qigual(p.v, r); });
+  return { enun: F(TXT.calcula, { e: '<span class="ex">' + e + '</span>' }), correcta: qTxt(r), solucion: sol, evalua: evQ(r, pistas) };
+}
+
+/* ============ MODULE 2 · substitute and evaluate ============ */
+var TPL = [
+  { vars: ["x"], vis: function(v){ return "4" + S(v.x) + " − 7"; }, e: function(v){ return [N(4), "×", mk(v.x), "−", N(7)]; } },
+  { vars: ["x"], vis: function(v){ return S(v.x) + "<sup>2</sup> − 3" + S(v.x) + " + 2"; }, e: function(v){ return [Pw(mk(v.x), 2), "−", N(3), "×", mk(v.x), "+", N(2)]; } },
+  { vars: ["x"], vis: function(v){ return "−" + S(v.x) + "<sup>2</sup> + 4"; }, e: function(v){ return [Mn(Pw(mk(v.x), 2)), "+", N(4)]; } },
+  { vars: ["a", "b"], vis: function(v){ return "2(" + S(v.a) + " − " + S(v.b) + ")<sup>2</sup>"; }, e: function(v){ return [N(2), "×", Pw(G("(", [mk(v.a), "−", mk(v.b)]), 2)]; } },
+  { vars: ["a", "b"], frac: true, vis: function(v){ return '<span class="fracc"><span class="fa">' + S(v.a) + " + " + S(v.b) + '</span><span class="fb2">' + S(v.a) + " − " + S(v.b) + '</span></span>'; } }
+];
+function pintaSU(){
+  var tp = TPL[+$("su-expr").value], v = { x: +$("su-x").value, a: +$("su-a").value, b: +$("su-b").value };
+  $("su-xv").textContent = ent(v.x); $("su-av").textContent = ent(v.a); $("su-bv").textContent = ent(v.b);
+  $("su-cx").style.display = tp.vars.indexOf("x") >= 0 ? "" : "none";
+  $("su-ca").style.display = tp.vars.indexOf("a") >= 0 ? "" : "none";
+  $("su-cb").style.display = tp.vars.indexOf("b") >= 0 ? "" : "none";
+  var h = [TXT.susti + '<span class="ex">' + tp.vis(v) + '</span>'];
+  if (tp.frac){
+    var nu = v.a + v.b, de = v.a - v.b;
+    h.push(F(TXT.enNum, { a: ent(v.a), b: par(v.b), n: ent(nu) }));
+    h.push(F(TXT.enDen, { a: ent(v.a), b: par(v.b), d: ent(de), x: v.b < 0 ? TXT.restarNeg : "." }));
+    if (de === 0) h.push('<span class="veredicto">' + TXT.denCero + '</span>');
+    else { var qq = q(nu, de); h.push(F(TXT.barra, { n: ent(nu), d: par(de), x: qq.d === 1 ? "." : F(TXT.simpl, { q: qH(qq) }) })); h.push('<span class="veredicto">' + TXT.resultado + qH(qq) + '</span>'); }
+  } else h = h.concat(pasosHTML(resolver(tp.e(v))));
+  $("su-salida").innerHTML = lineas(h);
+}
+function genSustituir(){
+  var tipo = aleatorio(1, 6), e, enun, res, pistas = [], sust;
+  if (tipo === 1){
+    var a = aleatorio(2, 9), b = nzr(-12, 12), x = nzr(-6, 6);
+    enun = a + "x" + signoTxt(b) + TXT.para + "x = " + ent(x);
+    e = [N(a), "×", mk(x), b < 0 ? "−" : "+", N(Math.abs(b))]; sust = a + S(x) + signoTxt(b);
+    res = a * x + b;
+    pistas.push({ v: a + x + b, msg: F(TXT.pSuma, { a: a }) });
+    pistas.push({ v: a * Math.abs(x) + b, msg: F(TXT.pSigno, { x: ent(x) }) });
+  } else if (tipo === 2){
+    var b2 = nzr(-6, 6), c = aleatorio(-9, 9), x2 = aleatorio(-6, -1);
+    enun = "x<sup>2</sup>" + signoTxt(b2) + "x" + (c ? signoTxt(c) : "") + TXT.para + "x = " + ent(x2);
+    e = [Pw(mk(x2), 2), b2 < 0 ? "−" : "+", N(Math.abs(b2)), "×", mk(x2)].concat(c ? [c < 0 ? "−" : "+", N(Math.abs(c))] : []);
+    sust = S(x2) + "<sup>2</sup>" + signoTxt(b2) + S(x2) + (c ? signoTxt(c) : "");
+    res = x2 * x2 + b2 * x2 + c;
+    pistas.push({ v: -x2 * x2 + b2 * x2 + c, msg: F(TXT.pCuad, { x: ent(x2), b: Math.abs(x2), c: x2 * x2 }) });
+  } else if (tipo === 3){
+    var x3 = nzr(-6, 6), c3 = aleatorio(1, 20);
+    enun = "−x<sup>2</sup> + " + c3 + TXT.para + "x = " + ent(x3);
+    e = [Mn(Pw(mk(x3), 2)), "+", N(c3)]; sust = "−" + S(x3) + "<sup>2</sup> + " + c3;
+    res = -x3 * x3 + c3;
+    pistas.push({ v: x3 * x3 + c3, msg: TXT.pNegCuad });
+  } else if (tipo === 4){
+    var a4 = aleatorio(2, 4), b4 = aleatorio(-5, 5), x4; do { x4 = aleatorio(-5, 5); } while (x4 === b4);
+    enun = (b4 === 0 ? a4 + "x<sup>2</sup>" : a4 + "(x" + signoTxt(-b4) + ")<sup>2</sup>") + TXT.para + "x = " + ent(x4);
+    e = b4 === 0 ? [N(a4), "×", Pw(mk(x4), 2)] : [N(a4), "×", Pw(G("(", [mk(x4), b4 > 0 ? "−" : "+", N(Math.abs(b4))]), 2)];
+    sust = b4 === 0 ? a4 + S(x4) + "<sup>2</sup>" : a4 + "(" + S(x4) + signoTxt(-b4) + ")<sup>2</sup>";
+    var d4 = x4 - b4; res = a4 * d4 * d4;
+    pistas.push({ v: a4 * a4 * d4 * d4, msg: F(TXT.pAntesMul, { a: a4 }) });
+    pistas.push({ v: a4 * d4 * 2, msg: TXT.pPor2 });
+  } else if (tipo === 5){
+    var a5, b5; do { a5 = nzr(-9, 9); b5 = nzr(-9, 9); } while (a5 === b5 || a5 + b5 === 0);
+    enun = '<span class="fracc"><span class="fa">a + b</span><span class="fb2">a − b</span></span>' + TXT.para + "a = " + ent(a5) + TXT.y + "b = " + ent(b5);
+    sust = '<span class="fracc"><span class="fa">' + S(a5) + " + " + S(b5) + '</span><span class="fb2">' + S(a5) + " − " + S(b5) + '</span></span>';
+    var obj = q(a5 + b5, a5 - b5), pf = [];
+    if (b5 < 0) pf.push({ v: q(a5 + b5, a5 + b5), msg: TXT.restaNeg });
+    pf = pf.filter(function(p){ return !qigual(p.v, obj); });
+    return { enun: F(TXT.evalua, { e: '<span class="ex">' + enun + '</span>' }), correcta: qTxt(obj),
+      solucion: F(TXT.sustituyendo, { s: sust }) + " " + F(TXT.numDen, { n: ent(a5 + b5), d: ent(a5 - b5), r: qH(obj) }), evalua: evQ(obj, pf) };
+  } else {
+    var a6 = aleatorio(-8, 8), b6 = aleatorio(-6, -1);
+    enun = "2a + b<sup>2</sup>" + TXT.para + "a = " + ent(a6) + TXT.y + "b = " + ent(b6);
+    e = [N(2), "×", mk(a6), "+", Pw(mk(b6), 2)]; sust = "2" + S(a6) + " + " + S(b6) + "<sup>2</sup>";
+    res = 2 * a6 + b6 * b6;
+    pistas.push({ v: 2 * a6 - b6 * b6, msg: F(TXT.pB2, { b: ent(b6), c: b6 * b6 }) });
+  }
+  var R = resolver(e);
+  return { enun: F(TXT.evalua, { e: '<span class="ex">' + enun + '</span>' }), correcta: String(res),
+    solucion: F(TXT.sustituyendo, { s: sust }) + " " + R.pasos.map(function(p){ return p.desc; }).join(" "), evalua: numE(res, quita(pistas, res)) };
+}
+
+/* ============ MODULE 3 · formulas ============ */
+var CAMPOS = {
+  taxi: [["m", 8]], cf: [["C", 25]], fc: [["F", 68]], per: [["l", 7.5], ["w", 4]], tra: [["b1", 6], ["b2", 10], ["h", 5]], int: [["P", 1200], ["r", 5], ["t", 3]]
+};
+function leeNum(s){ s = String(s).trim().replace(/[−–]/g, "-").replace(/,/g, ""); return /^-?\d*\.?\d+$/.test(s) ? parseFloat(s) : null; }
+function armaCamposFO(){
+  var k = $("fo-sel").value;
+  $("fo-form").innerHTML = FORMULA[k];
+  $("fo-campos").innerHTML = CAMPOS[k].map(function(c){
+    return '<div class="campo"><label for="fo-' + c[0] + '">' + ETIQ[k + "-" + c[0]] + '</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="fo-' + c[0] + '" value="' + c[1] + '"></div>';
+  }).join("");
+  CAMPOS[k].forEach(function(c){ $("fo-" + c[0]).addEventListener("input", pintaFO); });
+  pintaFO();
+}
+function pintaFO(){
+  var k = $("fo-sel").value, v = {}, malo = false;
+  CAMPOS[k].forEach(function(c){ var x = leeNum($("fo-" + c[0]).value); $("fo-" + c[0]).classList.toggle("error", x === null); if (x === null) malo = true; v[c[0]] = x; });
+  if (malo){ $("fo-salida").innerHTML = lineas([TXT.escribeNum]); return; }
+  var h, r, L, u;
+  function arma(L, o){ return L.map(function(s, i){ var x = F(s, o); return i === L.length - 1 ? '<span class="veredicto">' + x + '</span>' : x; }); }
+  if (k === "taxi"){ u = redondea(2.25 * v.m); r = redondea(3.50 + u); h = arma(TXT.taxi, { m: S(fmt(v.m)), m2: par(v.m), u: fmt(u), r: fmt(r), d: dinero(r) }); if (v.m < 0) h.push(TXT.taxiNeg); }
+  if (k === "cf"){ u = redondea(9 / 5 * v.C); r = redondea(u + 32); h = arma(TXT.cf, { C: S(fmt(v.C)), C2: par(v.C), C3: fmt(v.C), u: fmt(u), r: fmt(r) }); }
+  if (k === "fc"){ var d = redondea(v.F - 32); r = redondea(5 / 9 * d); h = arma(TXT.fc, { F: S(fmt(v.F)), F2: fmt(v.F), d: fmt(d), d2: d < 0 ? "(" + fmt(d) + ")" : fmt(d), r: fmt(r), x: Math.abs(5 / 9 * d - r) > 1e-9 ? TXT.redondeado : "" }); }
+  if (k === "per"){ var s = redondea(v.l + v.w); r = redondea(2 * s); h = arma(TXT.per, { l: S(fmt(v.l)), w: S(fmt(v.w)), l2: fmt(v.l), w2: fmt(v.w), s: fmt(s), r: fmt(r) }); if (v.l <= 0 || v.w <= 0) h.push(TXT.perNeg); }
+  if (k === "tra"){ var s2 = redondea(v.b1 + v.b2), m = redondea(s2 / 2); r = redondea(m * v.h); h = arma(TXT.tra, { b1: S(fmt(v.b1)), b2: S(fmt(v.b2)), h: S(fmt(v.h)), b12: fmt(v.b1), b22: fmt(v.b2), h2: par(v.h), s: fmt(s2), m: fmt(m), r: fmt(r) }); }
+  if (k === "int"){ var rd = v.r / 100; u = redondea(v.P * rd); r = redondea(u * v.t); h = arma(TXT.int, { P: S(fmt(v.P)), r: S(fmt(rd)), t: S(fmt(v.t)), rp: fmt(v.r), rd: fmt(rd), P2: fmt(v.P), u: fmt(u), t2: par(v.t), i: fmt(r), d: dinero(r) }); }
+  $("fo-salida").innerHTML = lineas(h);
+}
+function genFormula(){
+  var tipo = aleatorio(1, 6), Q = { opciones: [], pistas: {} };
+  function ok(txt){ Q.opciones.push({ html: txt, clave: txt }); Q.correcta = txt; }
+  function mal(txt, msg){ if (txt === Q.correcta || Q.pistas[txt]) return; Q.opciones.push({ html: txt, clave: txt }); Q.pistas[txt] = msg; }
+  if (tipo === 1){
+    var i = aleatorio(0, 2), f, tr, n;
+    if (i === 0){ f = elige([2.5, 3, 3.5, 4]); tr = elige([1.75, 2, 2.25, 2.5]); n = aleatorio(3, 15); }
+    else if (i === 1){ f = 5 * aleatorio(4, 10); tr = 5 * aleatorio(3, 8); n = aleatorio(2, 12); }
+    else { f = 5 * aleatorio(9, 16); tr = 5 * aleatorio(7, 12); n = aleatorio(2, 6); }
+    var c = redondea(f + tr * n), u = redondea(tr * n);
+    Q.enun = F(TXT.fTaxi[i][1], { f: fmt(f), t: fmt(tr), n: n }); ok(dinero(c));
+    mal(dinero(redondea((f + tr) * n)), TXT.mSumaAntes); mal(dinero(u), F(TXT.mFijo, { f: dinero(f) })); mal(dinero(redondea(f + tr + n)), TXT.mLetra);
+    Q.bien = Q.mal = F(TXT.solTaxi, { t: fmt(tr), n: n, u: fmt(u), f: fmt(f), c: dinero(c) });
+  } else if (tipo === 2){
+    var C = 5 * aleatorio(-2, 8), Fv = 9 * C / 5 + 32;
+    Q.enun = F(TXT.qCF, { C: ent(C) }); ok(fmt(Fv) + " °F");
+    mal(fmt(9 * C / 5) + " °F", TXT.mFalta32); mal(fmt(redondea(9 / 5 * (C + 32), 1)) + " °F", TXT.m32Antes); mal(fmt(C + 32) + " °F", TXT.mFalta95);
+    Q.bien = Q.mal = F(TXT.solCF, { C: par(C), u: fmt(9 * C / 5), F: fmt(Fv) });
+  } else if (tipo === 3){
+    var kk = aleatorio(-2, 8), Cc = 5 * kk, Ff = 9 * kk + 32;
+    Q.enun = F(TXT.qFC, { F: ent(Ff) }); ok(fmt(Cc) + " °C");
+    mal(fmt(redondea(5 / 9 * Ff - 32, 1)) + " °C", TXT.mParPrimero); mal(fmt(Ff - 32) + " °C", TXT.mFalta59); mal(fmt(redondea(5 / 9 * Ff, 1)) + " °C", TXT.mFaltaRestar);
+    Q.bien = Q.mal = F(TXT.solFC, { F: ent(Ff), d: ent(Ff - 32), d2: par(Ff - 32), C: fmt(Cc) });
+  } else if (tipo === 4){
+    var l = aleatorio(6, 40) / 2, w = aleatorio(2, 12), Pp = 2 * (l + w);
+    Q.enun = F(TXT.qPer, { l: fmt(l), w: w }); ok(fmt(Pp) + TXT.pulg);
+    mal(fmt(2 * l + w) + TXT.pulg, TXT.mTodo2); mal(fmt(l + w) + TXT.pulg, TXT.mFalta2); mal(fmt(l * w) + TXT.pulg, TXT.mArea);
+    Q.bien = Q.mal = F(TXT.solPer, { l: fmt(l), w: w, s: fmt(l + w), P: fmt(Pp) });
+  } else if (tipo === 5){
+    var b1 = aleatorio(3, 14), b2; do { b2 = aleatorio(4, 18); } while ((b1 + b2) % 2 || b2 === b1);
+    var h = aleatorio(2, 10), A = (b1 + b2) / 2 * h;
+    Q.enun = F(TXT.qTra, { b1: b1, b2: b2, h: h }); ok(fmt(A) + TXT.pies2);
+    mal(fmt((b1 + b2) * h) + TXT.pies2, TXT.mFaltaMedio); mal(fmt(b1 / 2 + b2 * h) + TXT.pies2, TXT.mMedioTodo); mal(fmt((b1 + b2) / 2 + h) + TXT.pies2, TXT.mHSuma);
+    Q.bien = Q.mal = F(TXT.solTra, { b1: b1, b2: b2, s: b1 + b2, m: (b1 + b2) / 2, h: h, A: fmt(A) });
+  } else {
+    var Pc = 100 * aleatorio(5, 50), r = aleatorio(2, 8), tt = aleatorio(2, 6), I = Pc * r / 100 * tt;
+    Q.enun = F(TXT.qInt, { P: dinero(Pc), r: r, t: tt }); ok(dinero(I));
+    mal(dinero(Pc * r * tt), F(TXT.mTasaDec, { r: r, rd: fmt(r / 100) })); mal(dinero(Pc * r / 100), F(TXT.mUnAno, { t: tt })); mal(dinero(Pc + I), TXT.mMonto);
+    Q.bien = Q.mal = F(TXT.solInt, { P: fmt(Pc), rd: fmt(r / 100), u: fmt(Pc * r / 100), t: tt, I: dinero(I) });
+  }
+  return Q;
+}
+
+/* ============ Start ============ */
+creaPracticaLibre("p1", genFrac);
+$("su-expr").addEventListener("change", pintaSU);
+["su-x", "su-a", "su-b"].forEach(function(id){ $(id).addEventListener("input", pintaSU); });
+pintaSU();
+creaPracticaLibre("p2", genSustituir);
+$("fo-sel").addEventListener("change", armaCamposFO); armaCamposFO();
+creaPracticaOM("p3", genFormula);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

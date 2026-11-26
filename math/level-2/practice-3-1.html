@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 2 · Lesson 3.1 · practice (English) — built by tools/build_n2_lesson_3_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 3.1 · Order of operations: review and nested parentheses · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+.retos{margin:8px 0;}
+.reto-linea{font-size:24px;line-height:1.6;margin:4px 0;}
+.reto-final{border-top:2px dashed var(--tema-bg2);padding-top:6px;margin-top:8px;}
+.emo{font-size:28px;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 2 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 2 · Topic 3 · The full order of operations (PEMDAS)</div>
+    <h1>Lesson 3.1 · Order of operations: review and nested parentheses</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#pyramid">The four levels of priority</a></li>
+      <li><a href="#step-by-step">Step by step</a></li>
+      <li><a href="#nested">Nested grouping symbols</a></li>
+      <li><a href="#combined">Everything combined</a></li>
+      <li><a href="#emoji-challenges">Emoji challenges</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="pyramid" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The four levels of priority</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas">
+        <caption>The four levels of PEMDAS</caption>
+        <thead><tr><th scope="col">Level</th><th scope="col">What you do</th></tr></thead>
+        <tbody>
+          <tr><td>1 · P</td><td>grouping symbols: ( ), [ ], { }, from the inside out</td></tr>
+          <tr><td>2 · E</td><td>exponents and roots</td></tr>
+          <tr><td>3 · MD</td><td>multiplication and division, from left to right</td></tr>
+          <tr><td>4 · AS</td><td>addition and subtraction, from left to right</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-atencion"><strong>Six letters, four levels.</strong> M and D share a level, and so do A and S. In 20 ÷ 4 × 5, divide first because it is farther left.</div>
+      <h3>Practice: what goes first?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="step-by-step">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Step by step</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Copy the expression at every step and solve only the operation with the highest priority. The operation you are working on is marked.</p>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="pp-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="pp-sig"></button><button type="button" class="btn-sec" id="pp-todo">Show all</button><button type="button" class="btn-sec" id="pp-nuevo">Another expression</button></div>
+        <div class="pasos" id="pp-pasos" aria-live="polite"></div>
+      </div>
+      <h3>Practice: solve</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type only the number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="nested">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Nested grouping symbols</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Work from the <strong>innermost</strong> grouping symbol to the outermost. Each kind has its own color: <span class="n1">( )</span> parentheses, <span class="n2">[ ]</span> brackets, <span class="n3">{ }</span> braces.</p>
+      <h3>From the inside out</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="an-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="an-sig"></button><button type="button" class="btn-sec" id="an-todo">Show all</button><button type="button" class="btn-sec" id="an-nuevo">Another expression</button></div>
+        <div class="pasos" id="an-pasos" aria-live="polite"></div>
+      </div>
+      <h3>Practice: nested grouping symbols</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type only the number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="combined">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Everything combined</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Grouping symbols first, from the inside out; inside each one, use PEMDAS from the start. Finish each grouping symbol before you move on.</p>
+      <h3>Practice: combined expressions</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type only the number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="emoji-challenges">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Emoji challenges</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Each emoji stands for a whole number. Use the first three lines to find each one, and then solve the last line. The last line always needs the order of operations.</p>
+      <h3>Practice: emoji challenge</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Answer</label><input type="text" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Type only the number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 2 · Topic 3 · The full order of operations (PEMDAS) · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/integers.js"></script>
+<script src="/math/pemdas.js"></script>
+<script>
+var TXT = {
+ "primeroQ": "In {e}, what do you solve first?",
+ "primeroVa": "First comes {x}. ",
+ "pistaPrimero": "Look for grouping symbols first, then exponents, then multiplication and division from left to right.",
+ "pistaIzq": "It looks like you worked from left to right without the order: multiplication and division come before addition and subtraction.",
+ "emojiIntro": "Find the value of each emoji from the clues. Then solve the last line in the right order.",
+ "pista1a": "{e} + {e} + {e} = {r}, so 3 × {e} = {r} and {e} = {r} ÷ 3 = {v}.",
+ "pista1b": "{e} × 3 = {r}, so {e} = {r} ÷ 3 = {v}.",
+ "pista2a": "{e} + {k} + {e} = {r}. Since {k} = {kv}, 2 × {e} = {r} − {kv} = {d}, and {e} = {v}.",
+ "pista2b": "{e} × 2 + {k} = {r}. Since {k} = {kv}, {e} × 2 = {r} − {kv} = {d}, and {e} = {v}.",
+ "pista2c": "({e} + {k}) × 2 = {r}. So {e} + {k} = {h}; since {k} = {kv}, {e} = {v}.",
+ "pista3a": "{e} + {e} + {k} = {r}. Since {k} = {kv}, 2 × {e} = {d}, and {e} = {v}.",
+ "pista3b": "{e} × {k} = {r}. Since {k} = {kv}, {e} = {r} ÷ {kv} = {v}.",
+ "pista3c": "{e} × 3 − {k} = {r}. Since {k} = {kv}, {e} × 3 = {d}, and {e} = {v}.",
+ "valores": "The values: {l}.",
+ "final": "The last line: {e} = {s}. ",
+ "pistaEmoji": "First find each emoji from its clue. Then, in the last line, use PEMDAS: multiply and divide before you add and subtract."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+var OPS = ["+", "−", "×", "÷"];
+function n(a, b){ return nA(a, b); }
+function op(l){ return elige(l || OPS); }
+/* Expressions with no nesting */
+function fabSimple(){
+  var tipo = aleatorio(1, 5);
+  if (tipo === 1) return [n(), op(["+", "−"]), n(), op(["×", "÷"]), n(), op(["+", "−"]), n()];
+  if (tipo === 2) return [n(2, 40), "÷", n(2, 9), "×", n()];
+  if (tipo === 3) return [G("(", [n(), op(["+", "−"]), n()]), "×", n(), op(["+", "−"]), n()];
+  if (tipo === 4) return [Pw(G("(", [n(2, 9), op(["+", "−"]), n(1, 6)]), 2), op(["+", "−"]), n(2, 40), "÷", n(2, 9)];
+  return [n(), op(["+", "−"]), n(), "×", G("(", [n(), op(["+", "−"]), n()])];
+}
+/* Two or three levels of grouping symbols */
+function fabAnidada(){
+  var tipo = aleatorio(1, 5);
+  if (tipo === 1) return [n(2, 9), "×", G("[", [n(), "+", G("(", [n(), op(), n()])])];
+  if (tipo === 2) return [n(30, 90), "−", G("{", [n(), "+", G("[", [n(2, 6), "×", G("(", [n(), "−", n()])])])];
+  if (tipo === 3) return [G("[", [G("(", [n(), "+", n()]), "×", n(2, 6), "−", n()]), "÷", n(2, 9)];
+  if (tipo === 4) return [G("{", [n(), "+", G("[", [n(2, 6), "×", G("(", [n(), "−", n()]), "−", n()])]), "÷", n(2, 6)];
+  return [n(), "+", G("[", [n(10, 60), "÷", G("(", [n(), "−", n()]), "+", n()]), "×", n(2, 5)];
+}
+function fabCombinada(){
+  var tipo = aleatorio(1, 4);
+  if (tipo === 1) return [Pw(G("(", [n(2, 9), "−", n(1, 5)]), 2), "÷", n(2, 9), "+", G("[", [n(), "×", G("(", [n(), "−", n()])])];
+  if (tipo === 2) return [n(20, 99), "−", n(2, 6), "×", G("[", [n(), "+", G("(", [n(10, 40), "÷", n(2, 9)])])];
+  if (tipo === 3) return [G("{", [n(2, 5), "×", G("[", [Pw(n(2, 5), 2), "−", G("(", [n(), "+", n()])])]), "+", n()];
+  return [n(), "×", n(), "−", G("[", [n(10, 50), "÷", G("(", [n(2, 9), "−", n(1, 6)]), "×", n(2, 4)])];
+}
+/* Level 2 Topic 3 starts with whole numbers: no negative numbers on the way */
+function sinNeg(R){ return R.res >= 0 && R.pasos.length >= 2 && R.pasos.every(function(p){ return !hayNeg(p.despues); }); }
+
+/* ============ MODULE 1 · what goes first? ============ */
+function genPrimero(){
+  for (var k = 0; k < 200; k++){
+    var e = norm(generaExacta(Math.random() < 0.5 ? fabSimple : fabAnidada, 400, sinNeg).e), ok = primerSitio(e), s = sitios(e);
+    var extras = []; e.forEach(function(x, i){ if (i % 2 === 0 && (x.t === "p" || x.t === "g")) extras.push(rTerm(x, i > 0)); });
+    s = s.concat(extras).filter(function(x, i, a){ return a.indexOf(x) === i && x !== ok; });
+    if (!ok || s.length < 2) continue;
+    var o = [{ html: ok, clave: "ok" }].concat(baraja(s).slice(0, 3).map(function(x, i){ return { html: x, clave: "m" + i }; }));
+    var R = resolver(e);
+    return { enun: F(TXT.primeroQ, { e: exprHTML(e) }), opciones: o, correcta: "ok", pista: TXT.pistaPrimero, bien: R.pasos[0].desc, mal: F(TXT.primeroVa, { x: ok }) + R.pasos[0].desc };
+  }
+}
+
+/* ============ MODULE 5 · emoji challenges ============ */
+var EMOJIS = ["🍎", "🍌", "🍊", "🍇", "🍓", "🥝", "🍒", "🍍", "🐱", "🐶", "🐰", "🦊", "🐻", "🐼", "🐸", "🌻", "🌷", "⭐", "🌙", "🌈", "🔥", "💎", "🎈", "🎁", "🏆", "🎯"];
+function emo(x){ return '<span class="emo">' + x + '</span>'; }
+function genEmoji(){
+  var em = baraja(EMOJIS).slice(0, 3), A = emo(em[0]), Bm = emo(em[1]), C = emo(em[2]);
+  var a = aleatorio(2, 12), b = aleatorio(2, 10), c = aleatorio(2, 9), pistas = [], expl = [];
+  var t1 = aleatorio(1, 2);
+  if (t1 === 1){ pistas.push(A + " + " + A + " + " + A + " = " + 3 * a); expl.push(F(TXT.pista1a, { e: A, r: 3 * a, v: a })); }
+  else { pistas.push(A + " × 3 = " + 3 * a); expl.push(F(TXT.pista1b, { e: A, r: 3 * a, v: a })); }
+  var t2 = aleatorio(1, 3);
+  if (t2 === 1){ pistas.push(Bm + " + " + A + " + " + Bm + " = " + (2 * b + a)); expl.push(F(TXT.pista2a, { e: Bm, k: A, r: 2 * b + a, kv: a, d: 2 * b, v: b })); }
+  else if (t2 === 2){ pistas.push(Bm + " × 2 + " + A + " = " + (2 * b + a)); expl.push(F(TXT.pista2b, { e: Bm, k: A, r: 2 * b + a, kv: a, d: 2 * b, v: b })); }
+  else { pistas.push("(" + Bm + " + " + A + ") × 2 = " + 2 * (a + b)); expl.push(F(TXT.pista2c, { e: Bm, k: A, r: 2 * (a + b), h: a + b, kv: a, v: b })); }
+  var t3 = aleatorio(1, 3);
+  if (t3 === 1){ pistas.push(C + " + " + C + " + " + Bm + " = " + (2 * c + b)); expl.push(F(TXT.pista3a, { e: C, k: Bm, r: 2 * c + b, kv: b, d: 2 * c, v: c })); }
+  else if (t3 === 2){ pistas.push(C + " × " + Bm + " = " + c * b); expl.push(F(TXT.pista3b, { e: C, k: Bm, r: c * b, kv: b, v: c })); }
+  else { pistas.push(C + " × 3 − " + Bm + " = " + (3 * c - b)); expl.push(F(TXT.pista3c, { e: C, k: Bm, r: 3 * c - b, kv: b, d: 3 * c, v: c })); }
+  /* the last line: always needs the order of operations */
+  var formas = [
+    [[N(a), "+", N(b), "×", N(c)], A + " + " + Bm + " × " + C],
+    [[N(a), "×", N(b), "−", N(c)], A + " × " + Bm + " − " + C],
+    [[N(a * c), "÷", N(c), "+", N(b)], null],
+    [[N(b), "+", N(a), "×", N(c), "−", N(b)], Bm + " + " + A + " × " + C + " − " + Bm],
+    [[G("(", [N(a), "+", N(b)]), "×", N(c)], "(" + A + " + " + Bm + ") × " + C]];
+  var f = elige(formas.filter(function(x){ return x[1]; }));
+  var R = resolver(f[0]), pist = pistasErrores(f[0], R.res, ["izqder"]);
+  var enun = '<p class="nota" style="margin-top:0">' + TXT.emojiIntro + '</p><div class="retos">' + pistas.map(function(x){ return '<div class="reto-linea">' + x + '</div>'; }).join("") + '<div class="reto-linea reto-final">' + f[1] + ' = ❓</div></div>';
+  var sol = expl.join(" ") + " " + F(TXT.valores, { l: em[0] + " = " + a + ", " + em[1] + " = " + b + ", " + em[2] + " = " + c }) + " " + F(TXT.final, { e: f[1], s: rLista(f[0]) }) + R.pasos.map(function(p){ return p.desc; }).join(" ");
+  return { enun: enun, correcta: String(R.res), solucion: sol, evalua: numE(R.res, pist, TXT.pistaEmoji) };
+}
+
+/* ============ Start ============ */
+creaPracticaOM("p1", genPrimero);
+stepper("pp", fabSimple, [[N(6), "+", N(3), "×", N(4), "−", N(2)], [Pw(G("(", [N(8), "−", N(3)]), 2), "+", N(12), "÷", N(4)]], sinNeg);
+creaPracticaLibre("p2", practicaDe(fabSimple, sinNeg, ["izqder", "potmul"]));
+stepper("an", fabAnidada, [[N(2), "×", G("[", [N(3), "+", G("(", [N(4), "×", N(2)])])], [N(50), "−", G("{", [N(4), "+", G("[", [N(3), "×", G("(", [N(6), "−", N(2)])])])]], sinNeg);
+creaPracticaLibre("p3", practicaDe(fabAnidada, sinNeg, ["izqder"]));
+creaPracticaLibre("p4", practicaDe(fabCombinada, sinNeg, ["izqder", "potmul"]));
+creaPracticaLibre("p5", genEmoji);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
