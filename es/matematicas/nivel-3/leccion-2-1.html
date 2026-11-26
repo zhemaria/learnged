@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 2.1 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 2 — Notación científica</p>
+<h1>Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud</h1>
+<p class="lema">Una manera corta de escribir números enormes y diminutos: un coeficiente entre 1 y 10 por una potencia de 10.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculadora para comprobar</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Reconocer</strong> la notación científica válida: a × 10<sup>n</sup> con 1 ≤ a &lt; 10.</li>
+<li><strong>Escribir</strong> números grandes y pequeños en notación científica.</li>
+<li><strong>Escribir</strong> en notación decimal números dados en notación científica.</li>
+<li><strong>Comparar y ordenar</strong> cantidades según su orden de magnitud.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.1.a</span> Ordenar fracciones y decimales, también en la recta numérica.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.2.e</span> Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.EE.3</span> <span class="std-nivel">Nivel D</span> Usar números expresados como un solo dígito por una potencia entera de 10 para estimar cantidades muy grandes o muy pequeñas, y para expresar cuántas veces mayor es una que otra.</li><li><span class="std-cod std-ccr">8.EE.4</span> <span class="std-nivel">Nivel D</span> Operar con números expresados en notación científica, incluidos problemas en los que se usan a la vez la notación decimal y la científica. Usar la notación científica y elegir unidades de tamaño adecuado para medir cantidades muy grandes o muy pequeñas. Interpretar la notación científica que genera la tecnología.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-que-es">¿Qué es la notación científica?</a></li>
+<li><a href="#s-grandes">De decimal a científica: números grandes</a></li>
+<li><a href="#s-pequenos">De decimal a científica: números pequeños</a></li>
+<li><a href="#s-a-decimal">De científica a decimal</a></li>
+<li><a href="#s-magnitud">Orden de magnitud y comparación</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-que-es"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es la notación científica?</h2>
+<p>El Tema 1 dejó dominadas las reglas de los exponentes, incluidas las potencias de 10 y los exponentes negativos. La notación científica es la aplicación más útil de esas reglas: usa potencias de 10 (con exponente positivo para los números grandes y negativo para los pequeños) para escribir de forma compacta cantidades tan enormes como la masa del Sol o tan diminutas como la de un electrón.</p>
+<p>La notación científica expresa cualquier número como el producto de dos partes: un <strong>coeficiente</strong> y una <strong>potencia de 10</strong>.</p>
+<p style="text-align:center;font-size:1.4rem;font-weight:700;color:#0d47a1">a × 10<sup>n</sup>   con   1 ≤ a &lt; 10</p>
+<p>El coeficiente a es siempre mayor o igual que 1 y menor que 10: un solo dígito, distinto de cero, antes del punto decimal. El exponente n indica cuántos lugares se movió el punto decimal y en qué dirección.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Para qué sirve</span>
+<p>Escribir 5,970,000,000,000,000,000,000,000 se presta a errores. En notación científica es 5.97 × 10<sup>24</sup> (la masa de la Tierra en kilogramos). La notación científica hace manejables números que de otro modo serían imposibles de leer o comparar.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-grandes"><span aria-hidden="true" class="num-seccion">2</span>De decimal a científica: números grandes</h2>
+<p>Para un número grande, se mueve el punto decimal <strong>hacia la izquierda</strong> hasta que quede un solo dígito (de 1 a 9) antes del punto. La cantidad de lugares movidos es el exponente <strong>positivo</strong> de 10.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1: escriba 4,500,000 en notación científica</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Coeficiente.</strong> Se coloca el punto después del primer dígito distinto de cero: 4.5.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se cuenta.</strong> El punto se movió 6 lugares hacia la izquierda (desde el final de 4500000).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Exponente.</strong> Número grande: el exponente es +6.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> 4,500,000 = <strong>4.5 × 10<sup>6</sup></strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El coeficiente manda</span>
+<p>45 × 10<sup>5</sup> usa una potencia de 10, pero no es notación científica válida, porque 45 no está entre 1 y 10. La forma correcta es 4.5 × 10<sup>6</sup>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un número grande</h3></div>
+<p class="pregunta-int" id="t-p1">¿Cómo se escribe 6,200 en notación científica?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">6.2 × 10<sup>3</sup></button>
+<button class="opcion" data-k="b" type="button">6.2 × 10<sup>2</sup></button>
+<button class="opcion" data-k="c" type="button">62 × 10<sup>2</sup></button>
+<button class="opcion" data-k="d" type="button">6.2 × 10<sup>−3</sup></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Cuente los lugares</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cómo se escribe 410,000 en notación científica?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">4.1 × 10<sup>4</sup></button>
+<button class="opcion" data-k="b" type="button">41 × 10<sup>4</sup></button>
+<button class="opcion" data-k="c" type="button">4.1 × 10<sup>5</sup></button>
+<button class="opcion" data-k="d" type="button">4.1 × 10<sup>6</sup></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#grandes" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: números grandes a notación científica (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: números grandes a notación científica</span><span class="ei-sub">Mueva el punto decimal un lugar cada vez y observe cómo crece el exponente.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-pequenos"><span aria-hidden="true" class="num-seccion">3</span>De decimal a científica: números pequeños</h2>
+<p>Para un número pequeño (menor que 1), se mueve el punto decimal <strong>hacia la derecha</strong> hasta pasar el primer dígito distinto de cero. La cantidad de lugares movidos es el exponente <strong>negativo</strong> de 10.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: escriba 0.00032 en notación científica</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Coeficiente.</strong> Se mueve el punto hacia la derecha hasta pasar el 3: 3.2.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se cuenta.</strong> 4 lugares hacia la derecha.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Exponente.</strong> Número pequeño: el exponente es negativo, −4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> 0.00032 = <strong>3.2 × 10<sup>−4</sup></strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La regla de la dirección</span>
+<p>Número de 10 o más → exponente positivo. Número menor que 1 → exponente negativo. El signo del exponente dice de inmediato si la cantidad es enorme o diminuta.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un número pequeño</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cómo se escribe 0.0072 en notación científica?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">7.2 × 10<sup>−2</sup></button>
+<button class="opcion" data-k="b" type="button">7.2 × 10<sup>−3</sup></button>
+<button class="opcion" data-k="c" type="button">7.2 × 10<sup>3</sup></button>
+<button class="opcion" data-k="d" type="button">72 × 10<sup>−4</sup></button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#pequenos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: números pequeños a notación científica (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: números pequeños a notación científica</span><span class="ei-sub">Mueva el punto hacia la derecha pasando los ceros, y escriba usted números grandes y pequeños.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-a-decimal"><span aria-hidden="true" class="num-seccion">4</span>De científica a decimal</h2>
+<p>El proceso inverso usa el exponente para decidir hacia dónde se mueve el punto y cuántos lugares. Exponente <strong>positivo</strong>: el punto va a la derecha (el número crece). Exponente <strong>negativo</strong>: el punto va a la izquierda (el número se achica). Se rellena con ceros según haga falta.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: escriba 3.7 × 10<sup>5</sup> en notación decimal</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Dirección.</strong> El exponente +5 indica mover el punto 5 lugares a la derecha.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se rellena.</strong> 3.7 → 370000, agregando los ceros necesarios.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> 3.7 × 10<sup>5</sup> = <strong>370,000</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4: escriba 5.6 × 10<sup>−3</sup> en notación decimal</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Dirección.</strong> El exponente −3 indica mover el punto 3 lugares a la izquierda.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se rellena.</strong> 5.6 → 0.0056, agregando ceros a la izquierda.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> 5.6 × 10<sup>−3</sup> = <strong>0.0056</strong></p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> La notación científica en la calculadora</span>
+<p>Para escribir 3.7 × 10<sup>5</sup>, use la tecla <span class="tecla">×10<sup>n</sup></span>: <span class="tecla num">3</span> <span class="tecla num">.</span> <span class="tecla num">7</span> <span class="tecla">×10<sup>n</sup></span> <span class="tecla num">5</span> <span class="tecla">enter</span>. La pantalla muestra 370000. Para un exponente negativo, use <span class="tecla">(−)</span>: <span class="tecla num">5</span> <span class="tecla num">.</span> <span class="tecla num">6</span> <span class="tecla">×10<sup>n</sup></span> <span class="tecla">(−)</span> <span class="tecla num">3</span> <span class="tecla">enter</span> muestra 0.0056.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — De vuelta a decimal</h3></div>
+<p class="pregunta-int" id="t-p4">¿Cuánto es 4.8 × 10<sup>4</sup> en notación decimal?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">480</button>
+<button class="opcion" data-k="b" type="button">48,000</button>
+<button class="opcion" data-k="c" type="button">4,800</button>
+<button class="opcion" data-k="d" type="button">480,000</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Un exponente negativo</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuánto es 3 × 10<sup>−3</sup> en notación decimal?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">0.03</button>
+<button class="opcion" data-k="b" type="button">300</button>
+<button class="opcion" data-k="c" type="button">0.003</button>
+<button class="opcion" data-k="d" type="button">−3,000</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#a-decimal" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: de científica a decimal (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: de científica a decimal</span><span class="ei-sub">Elija usted la dirección del punto y rellene con ceros.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-magnitud"><span aria-hidden="true" class="num-seccion">5</span>Orden de magnitud y comparación</h2>
+<p>El exponente de 10 indica el <strong>orden de magnitud</strong>: el «tamaño» de una cantidad. Para comparar dos números en notación científica se mira <strong>primero el exponente</strong>; solo si los exponentes son iguales se comparan los coeficientes.</p>
+<div aria-label="Datos científicos reales en notación científica (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Datos científicos reales: cantidad, notación científica y orden de magnitud</caption>
+<thead><tr><th scope="col">Cantidad</th><th scope="col">Notación científica</th><th scope="col">Orden de magnitud</th></tr></thead>
+<tbody>
+<tr><td>Masa del Sol</td><td>1.989 × 10<sup>30</sup> kg</td><td>10<sup>30</sup></td></tr>
+<tr><td>Distancia de la Tierra al Sol</td><td>1.496 × 10<sup>11</sup> m</td><td>10<sup>11</sup></td></tr>
+<tr><td>Masa del electrón</td><td>9.109 × 10<sup>−31</sup> kg</td><td>10<sup>−31</sup></td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5: ¿cuál es mayor, 3 × 10<sup>8</sup> o 9 × 10<sup>7</sup>?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primero los exponentes.</strong> 8 > 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se decide.</strong> El número con el exponente mayor es mayor, sin importar el coeficiente.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>3 × 10<sup>8</sup></strong> es mayor que 9 × 10<sup>7</sup>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">No se deje engañar por el coeficiente</span>
+<p>Aunque 9 sea mayor que 3, el exponente 8 supera al 7. En notación científica, el orden de magnitud (el exponente) decide primero. Cada unidad que sube el exponente multiplica la cantidad por 10.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Compare</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuál cantidad es mayor: 5 × 10<sup>6</sup> o 8 × 10<sup>5</sup>?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">5 × 10<sup>6</sup></button>
+<button class="opcion" data-k="b" type="button">8 × 10<sup>5</sup></button>
+<button class="opcion" data-k="c" type="button">Son iguales</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#magnitud" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: orden de magnitud y comparación (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: orden de magnitud y comparación</span><span class="ei-sub">Ordene datos reales del universo y averigüe cuántas veces mayor es una cantidad.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-2-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Haga cuatro conversiones de decimal a científica (dos números grandes y dos pequeños), cuatro de científica a decimal (dos con exponente positivo y dos con negativo) y dos ejercicios de comparar y ordenar cantidades en notación científica. La notación científica es valor posicional con otro traje: si mover el punto y contar lugares le sale sin pensar, la conversión sale sola.</li>
+<li><strong>En su vida diaria.</strong> Busque dos números grandes y dos pequeños en las noticias, en una etiqueta de alimentos o en una caja de medicinas (por ejemplo, una población, un presupuesto o una dosis en gramos). Escriba cada uno en notación científica y diga su orden de magnitud.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Escriba 52,000 en notación científica.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5.2 × 10<sup>3</sup></button><button class="opcion" data-k="b" type="button">52 × 10<sup>3</sup></button><button class="opcion" data-k="c" type="button">5.2 × 10<sup>4</sup></button><button class="opcion" data-k="d" type="button">5.2 × 10<sup>−4</sup></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Escriba 8,300,000 en notación científica.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8.3 × 10<sup>6</sup></button><button class="opcion" data-k="b" type="button">8.3 × 10<sup>5</sup></button><button class="opcion" data-k="c" type="button">83 × 10<sup>5</sup></button><button class="opcion" data-k="d" type="button">8.3 × 10<sup>7</sup></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Escriba 0.0006 en notación científica.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6 × 10<sup>4</sup></button><button class="opcion" data-k="b" type="button">6 × 10<sup>−3</sup></button><button class="opcion" data-k="c" type="button">0.6 × 10<sup>−3</sup></button><button class="opcion" data-k="d" type="button">6 × 10<sup>−4</sup></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Escriba 0.00045 en notación científica.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4.5 × 10<sup>−3</sup></button><button class="opcion" data-k="b" type="button">4.5 × 10<sup>−4</sup></button><button class="opcion" data-k="c" type="button">45 × 10<sup>−5</sup></button><button class="opcion" data-k="d" type="button">4.5 × 10<sup>4</sup></button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Escriba 3.7 × 10<sup>5</sup> en notación decimal.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">370,000</button><button class="opcion" data-k="b" type="button">37,000</button><button class="opcion" data-k="c" type="button">3,700,000</button><button class="opcion" data-k="d" type="button">0.000037</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Escriba 2.1 × 10<sup>3</sup> en notación decimal.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">210</button><button class="opcion" data-k="b" type="button">21,000</button><button class="opcion" data-k="c" type="button">2,100</button><button class="opcion" data-k="d" type="button">0.0021</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Escriba 9 × 10<sup>−3</sup> en notación decimal.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">0.0009</button><button class="opcion" data-k="b" type="button">0.009</button><button class="opcion" data-k="c" type="button">0.09</button><button class="opcion" data-k="d" type="button">9,000</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Cuál cantidad es mayor: 3 × 10<sup>8</sup> o 9 × 10<sup>7</sup>?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3 × 10<sup>8</sup></button><button class="opcion" data-k="b" type="button">9 × 10<sup>7</sup></button><button class="opcion" data-k="c" type="button">Son iguales</button><button class="opcion" data-k="d" type="button">No se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la notación científica y los órdenes de magnitud (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de la notación científica y los órdenes de magnitud y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">El coeficiente (1 ≤ a &lt; 10)</th><td>Mi coeficiente siempre queda entre 1 y 10, y sé corregir uno que no lo está.</td><td>Ubico el coeficiente, con algunos errores.</td><td>Dejo coeficientes como 45 × 10<sup>5</sup>.</td></tr>
+<tr><th scope="row">El exponente de 10</th><td>Acierto el exponente y su signo, y lo relaciono con el movimiento del punto.</td><td>Acierto el número, pero a veces fallo el signo.</td><td>Confundo el signo o la cantidad de lugares.</td></tr>
+<tr><th scope="row">Comparar y ordenar</th><td>Comparo primero por el exponente y sé explicar por qué.</td><td>Comparo, pero me equivoco cuando los exponentes son distintos.</td><td>Comparo por el coeficiente sin mirar el exponente.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Aprendió a pasar de decimal a notación científica y al revés: el <strong>coeficiente</strong> entre 1 y 10 y el <strong>exponente</strong> de 10, positivo para los números grandes y negativo para los pequeños. También aprendió a comparar cantidades por su <strong>orden de magnitud</strong>.</p>
+<p>En la <strong>Lección 2.2 · Multiplicación y división en notación científica</strong> usará las reglas del producto y del cociente del Tema 1 con números en notación científica, y aprenderá a ajustar el resultado para que siga siendo válido.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 2.2 · Multiplicación y división en notación científica</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>notación científica</dt><dd>Un número escrito como a × 10<sup>n</sup>, con a mayor o igual que 1 y menor que 10.</dd>
+<dt>coeficiente</dt><dd>La primera parte, a. Tiene un solo dígito, distinto de cero, antes del punto decimal.</dd>
+<dt>orden de magnitud</dt><dd>El exponente de 10. Indica el tamaño de una cantidad.</dd>
+<dt>notación decimal</dt><dd>La forma habitual de escribir un número, como 370,000 o 0.0056.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 2 · Lección 2.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 2.2",
+ "review": "las secciones 2, 3 y 4",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Cuente otra vez: desde el final de 6200 hasta después del 6 hay 3 lugares.",
+    "c": "62 no está entre 1 y 10: no es notación científica válida.",
+    "d": "Un número grande lleva exponente positivo."
+   },
+   "right": "El punto se mueve 3 lugares a la izquierda.",
+   "solution": "6,200 = 6.2 × 1,000 = 6.2 × 10<sup>3</sup>."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "Cuente otra vez los lugares: son 5.",
+    "b": "41 no está entre 1 y 10.",
+    "d": "Cuente otra vez los lugares: sobra uno."
+   },
+   "right": "410000 → 4.10000: 5 lugares.",
+   "solution": "El punto se mueve 5 lugares a la izquierda: 4.1 × 10<sup>5</sup>."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Cuente los lugares hasta pasar el 7: son 3.",
+    "c": "Un número menor que 1 lleva exponente negativo.",
+    "d": "72 no está entre 1 y 10."
+   },
+   "right": "0.0072 → 7.2: 3 lugares a la derecha.",
+   "solution": "El punto se mueve 3 lugares a la derecha, hasta pasar el 7: 7.2 × 10<sup>−3</sup>."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "Así el punto se mueve solo 2 lugares. El exponente es 4.",
+    "c": "Así el punto se mueve 3 lugares. El exponente es 4.",
+    "d": "Así el punto se mueve 5 lugares. El exponente es 4."
+   },
+   "right": "4.8 → 48000: 4 lugares a la derecha.",
+   "solution": "Se mueve el punto 4 lugares a la derecha: 48,000."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Así el punto se mueve solo 2 lugares a la izquierda.",
+    "b": "Un exponente negativo mueve el punto a la izquierda: el número se achica.",
+    "d": "Un exponente negativo no hace negativo al número."
+   },
+   "right": "3 → 0.003: 3 lugares a la izquierda.",
+   "solution": "Se mueve el punto 3 lugares a la izquierda: 0.003."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "Mire primero los exponentes: 6 es mayor que 5.",
+    "c": "5,000,000 y 800,000 no son iguales."
+   },
+   "right": "El exponente 6 supera al 5.",
+   "solution": "5 × 10<sup>6</sup> = 5,000,000 y 8 × 10<sup>5</sup> = 800,000. Decide el exponente mayor."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "Cuente otra vez los lugares: son 4.",
+    "b": "52 no está entre 1 y 10.",
+    "d": "Un número grande lleva exponente positivo."
+   },
+   "solution": "52,000: el punto se mueve 4 lugares a la izquierda, 5.2 × 10<sup>4</sup>."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "Cuente otra vez: son 6 lugares.",
+    "c": "83 no está entre 1 y 10.",
+    "d": "Cuente otra vez: sobra uno."
+   },
+   "solution": "8,300,000: 6 lugares a la izquierda, 8.3 × 10<sup>6</sup>."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Un número menor que 1 lleva exponente negativo.",
+    "b": "Cuente hasta pasar el 6: son 4 lugares.",
+    "c": "0.6 no está entre 1 y 10."
+   },
+   "solution": "0.0006: 4 lugares a la derecha, 6 × 10<sup>−4</sup>."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Cuente hasta pasar el 4: son 4 lugares.",
+    "c": "45 no está entre 1 y 10.",
+    "d": "Un número menor que 1 lleva exponente negativo."
+   },
+   "solution": "0.00045: 4 lugares a la derecha, 4.5 × 10<sup>−4</sup>."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Así el punto se mueve 4 lugares; el exponente es 5.",
+    "c": "Así el punto se mueve 6 lugares; el exponente es 5.",
+    "d": "Un exponente positivo mueve el punto a la derecha."
+   },
+   "solution": "3.7 → 370000: 5 lugares a la derecha, 370,000."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Así el punto se mueve 2 lugares; el exponente es 3.",
+    "b": "Así el punto se mueve 4 lugares; el exponente es 3.",
+    "d": "Un exponente positivo mueve el punto a la derecha."
+   },
+   "solution": "2.1 → 2100: 3 lugares a la derecha, 2,100."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "Así el punto se mueve 4 lugares a la izquierda; el exponente es −3.",
+    "c": "Así el punto se mueve solo 2 lugares.",
+    "d": "Un exponente negativo mueve el punto a la izquierda."
+   },
+   "solution": "9 → 0.009: 3 lugares a la izquierda."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Mire primero los exponentes: 8 es mayor que 7.",
+    "c": "300,000,000 y 90,000,000 no son iguales.",
+    "d": "Siempre se puede comparar: mire primero los exponentes."
+   },
+   "solution": "El exponente 8 supera al 7, sin importar el coeficiente."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

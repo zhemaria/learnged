@@ -136,6 +136,8 @@ CCR_ES = {
  "5.NBT.2": "Explicar los patrones en la cantidad de ceros del producto al multiplicar un número por potencias de 10, y en la posición del punto decimal al multiplicar o dividir un decimal entre una potencia de 10. Usar exponentes enteros para indicar las potencias de 10.",
  "6.EE.1": "Escribir y evaluar expresiones numéricas con exponentes enteros.",
  "8.EE.1": "Conocer y aplicar las propiedades de los exponentes enteros para obtener expresiones numéricas equivalentes.",
+ "8.EE.3": "Usar números expresados como un solo dígito por una potencia entera de 10 para estimar cantidades muy grandes o muy pequeñas, y para expresar cuántas veces mayor es una que otra.",
+ "8.EE.4": "Operar con números expresados en notación científica, incluidos problemas en los que se usan a la vez la notación decimal y la científica. Usar la notación científica y elegir unidades de tamaño adecuado para medir cantidades muy grandes o muy pequeñas. Interpretar la notación científica que genera la tecnología.",
  "8.EE.2": "Usar los símbolos de raíz cuadrada y raíz cúbica para representar las soluciones de ecuaciones de la forma x² = p y x³ = p, donde p es un número racional positivo. Evaluar las raíces cuadradas de cuadrados perfectos pequeños y las raíces cúbicas de cubos perfectos pequeños.",
  "8.NS.2": "Usar aproximaciones racionales de números irracionales para comparar su tamaño, ubicarlos aproximadamente en la recta numérica y estimar el valor de expresiones.",
  "6.RP.1": "Comprender el concepto de razón y usar el lenguaje de las razones para describir la relación entre dos cantidades.",

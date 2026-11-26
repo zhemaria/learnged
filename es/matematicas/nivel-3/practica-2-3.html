@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 2.3 · Suma, resta y aplicaciones en ciencia y tecnología — práctica (español) — construida con tools/build_n3_lesson_2_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.3 · Suma, resta y aplicaciones en ciencia y tecnología · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-2-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .recorrido{display:flex;justify-content:center;align-items:flex-end;flex-wrap:wrap;gap:3px;margin:26px 0 10px;font-family:Consolas,'Courier New',monospace;}
+  .celda{position:relative;width:34px;height:46px;border:2px solid var(--tema-bg2);border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--txt);}
+  .celda.saltado{background:var(--tema-bg);border-color:var(--tema);}
+  .celda.relleno{background:#fff8e1;border-color:#f9a825;border-style:dashed;color:#6d4c00;}
+  .celda .marca{position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:13px;color:var(--tema-d);font-family:inherit;}
+  .punto{width:14px;height:46px;display:flex;align-items:flex-end;justify-content:center;font-size:34px;line-height:1;font-weight:900;color:#b71c1c;}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--gris);margin:4px 0 8px;}
+  .leyenda span::before{content:"";display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:2px solid var(--tema-bg2);}
+  .leyenda .l-salto::before{background:var(--tema-bg);border-color:var(--tema);}
+  .leyenda .l-relleno::before{background:#fff8e1;border-color:#f9a825;border-style:dashed;}
+  .estado .grande{font-size:20px;font-weight:700;}
+  .lista-orden{list-style:none;margin:12px 0;padding:0;counter-reset:ord;}
+  .lista-orden li{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid #d8d8d8;border-radius:8px;padding:8px 12px;margin:8px 0;counter-increment:ord;}
+  .lista-orden li::before{content:counter(ord);background:var(--tema-bg);color:var(--tema-d);width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
+  .lista-orden li.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .lista-orden li.mal{border-color:#b71c1c;background:#ffebee;}
+  .lista-orden .nombre{flex:1;min-width:160px;font-weight:600;}
+  .lista-orden .flechas{display:flex;gap:6px;}
+  .lista-orden .flechas button{background:#fff;border:2px solid var(--tema);color:var(--tema-d);border-radius:6px;width:40px;height:36px;font-weight:700;}
+  .columnas{font-family:Consolas,'Courier New',monospace;font-size:22px;text-align:right;display:inline-block;margin:6px auto;padding:10px 18px;background:#fff;border:1px solid #d8d8d8;border-radius:8px;line-height:1.5;}
+  .columnas .raya{border-top:3px solid var(--tema);}
+  .centro{text-align:center;}
+  .salida:empty{display:none;}
+  .enun .ex,.opcion .ex,.salida .ex,.lista-orden .ex,.estado .ex{font-size:18px;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 2 · Notación científica</div>
+    <h1>Lección 2.3 · Suma, resta y aplicaciones en ciencia y tecnología</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#sumar">Sumar con exponentes iguales</a></li>
+      <li><a href="#igualar">Igualar los exponentes</a></li>
+      <li><a href="#restar">Restar en notación científica</a></li>
+      <li><a href="#aplicaciones">Aplicaciones en ciencia y tecnología</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="sumar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Sumar con exponentes iguales</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Solo se suman directamente cantidades con la <strong>misma potencia de 10</strong>, igual que solo se suman objetos del mismo tipo: 4 cientos más 5 cientos son 9 cientos. Se suman los coeficientes y la potencia <strong>se conserva</strong>.</p>
+      <div class="formula">(a × 10<sup>n</sup>) + (b × 10<sup>n</sup>) = (a + b) × 10<sup>n</sup></div>
+      <h3>Compruébelo con la suma de siempre</h3>
+      <p>Elija los coeficientes y el exponente. La suma en columnas muestra que la potencia no cambia, y el recuadro de abajo muestra qué pasaría con el error de sumar también los exponentes.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="se-a">Primer coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" id="se-a" value="4"></div><div class="campo"><label for="se-b">Segundo coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" id="se-b" value="5"></div><div class="campo"><label for="se-n">Exponente común (de 0 a 6)</label><input type="text" inputmode="decimal" autocomplete="off" id="se-n" value="2" class="corto"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="se-azar">Otro ejemplo</button></div></div>
+      <div class="caja-aviso" id="se-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="se-salida"></div>
+      <div class="caja-atencion"><strong>La potencia no cambia:</strong> 3 × 10<sup>4</sup> + 2 × 10<sup>4</sup> es 5 × 10<sup>4</sup>, nunca 5 × 10<sup>8</sup>. Y si la suma de coeficientes llega a 10 o más, se ajusta igual que en la lección anterior: 14 × 10<sup>5</sup> = 1.4 × 10<sup>6</sup>.</div>
+      <h3>Practique: sumar con exponentes iguales</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="igualar">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Igualar los exponentes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si las potencias de 10 no coinciden, primero se <strong>reescribe una de las cantidades</strong> para que las dos tengan el mismo exponente. Después se suman o se restan los coeficientes y, al final, se ajusta si hace falta.</p>
+      <h3>Dos caminos, el mismo resultado</h3>
+      <p>Pruebe las dos maneras de igualar. Las dos llegan al mismo resultado; fíjese en cuál le ahorra el ajuste final.</p>
+      <div class="panel"><div class="estado" id="ig-expr"></div>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn" id="ig-subir">Subir el exponente menor</button><button type="button" class="btn" id="ig-bajar">Bajar el exponente mayor</button><button type="button" class="btn-sec" id="ig-nuevo">Otro ejemplo</button></div></div>
+      <div class="pasos" id="ig-pasos" aria-live="polite"></div>
+      <div class="caja-tip"><strong>Por qué conviene igualar al mayor:</strong> el término que se reescribe queda con un coeficiente menor que 1 (como 0.3), pero la suma casi siempre cae directamente en la forma válida, sin ajuste adicional.</div>
+      <h3>Practique: iguale y sume</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campo" style="margin-bottom:6px;">
+          <label for="p2-r" id="p2-rlab"></label>
+          <div style="display:flex;align-items:center;gap:10px;"><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="p2-r"><span aria-hidden="true" style="font-size:20px;font-weight:700;white-space:nowrap;" id="p2-rpot"></span></div>
+        </div>
+        <p class="nota">Paso 2: escriba el resultado final en notación científica válida.</p>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p2-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="p2-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="p2-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="p2-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5, no 4,5). Para un exponente negativo escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="restar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Restar en notación científica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La resta sigue la misma idea: con exponentes iguales se restan los coeficientes; si son distintos, se igualan primero. Hay que estar atentos a un caso: cuando las dos cantidades son parecidas, la diferencia puede quedar <strong>menor que 1</strong> y obliga a reajustar el coeficiente.</p>
+      <div class="formula">(a × 10<sup>n</sup>) − (b × 10<sup>n</sup>) = (a − b) × 10<sup>n</sup></div>
+      <h3>La resta en columnas</h3>
+      <p>Escriba dos cantidades, con el mismo exponente o con exponentes distintos, y compare la resta de siempre con la resta en notación científica.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="sr-a">Primer coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" id="sr-a" value="7"></div><div class="campo"><label for="sr-m">Primer exponente (0 a 6)</label><input type="text" inputmode="decimal" autocomplete="off" id="sr-m" value="4" class="corto"></div><div class="campo"><label for="sr-b">Segundo coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" id="sr-b" value="2"></div><div class="campo"><label for="sr-n">Segundo exponente (0 a 6)</label><input type="text" inputmode="decimal" autocomplete="off" id="sr-n" value="3" class="corto"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="sr-azar">Otro ejemplo</button></div></div>
+      <div class="caja-aviso" id="sr-aviso" role="alert"></div>
+      <div class="salida" aria-live="polite" id="sr-salida"></div>
+      <h3>Practique: restar</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="aplicaciones">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Aplicaciones en ciencia y tecnología</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Aquí se mezclan las cuatro operaciones en contextos reales: el espacio, las células y la tecnología. Antes de calcular, decida qué pide el problema.</p>
+      <div class="tabla-scroll" role="region" tabindex="0" aria-label="Pistas (tabla desplazable horizontalmente)"><table class="reglas"><caption>Pistas para elegir la operación</caption>
+      <thead><tr><th scope="col">Si la pregunta dice…</th><th scope="col">Suele ser</th></tr></thead><tbody><tr><td>«en total», «se añaden», «juntos»</td><td>una suma</td></tr><tr><td>«queda», «cuánto más», «diferencia»</td><td>una resta</td></tr><tr><td>«cada hora durante…», «por cada uno, cuántos en…»</td><td>una multiplicación</td></tr><tr><td>«cuántos caben», «por cada», «repartir»</td><td>una división</td></tr></tbody></table></div>
+      <h3>Practique: problemas mezclados</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo" style="margin-bottom:10px;"><label for="p4-op">¿Qué operación resuelve el problema?</label><select id="p4-op"><option value="">Elija una operación</option><option value="+">Sumar</option><option value="−">Restar</option><option value="×">Multiplicar</option><option value="÷">Dividir</option></select></div></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p4-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="p4-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="p4-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="p4-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5, no 4,5). Para un exponente negativo escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 2 · Notación científica · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/scinot.js"></script>
+<script>
+var NB = " ";
+function columnasHTML(A, Bn, so, R){
+  var f = [A, Bn, R].map(function(x){ return conComas(x); }), dec = f.map(function(x){ var p = x.indexOf("."); return p < 0 ? 0 : x.length - p - 1; }), md = Math.max.apply(null, dec);
+  f = f.map(function(x, i){ return md === 0 ? x : x + (dec[i] === 0 ? NB : "") + NB.repeat(md - dec[i]); });
+  return '<div class="centro"><div class="columnas" aria-hidden="true">' + NB + NB + f[0] + "<br>" + so + NB + f[1] + '<br><span class="raya" style="display:inline-block;min-width:100%;">' + f[2] + "</span></div></div>" +
+    '<p class="sr-only">' + T("In columns: ", "En columnas: ") + conComas(A) + (so === "+" ? T(" plus ", " más ") : T(" minus ", " menos ")) + conComas(Bn) + T(" equals ", " es igual a ") + conComas(R) + ".</p>";
+}
+function leeCoef(id){ var x = $(id).value.trim(); return esValida(x) ? plano(leeNumero(x)) : null; }
+function leeExp(id, min, max){ var x = $(id).value.trim().replace(/[−–]/g, "-"); if (!/^-?\d+$/.test(x)) return null; var k = parseInt(x, 10); return (k < min || k > max) ? null : k; }
+
+/* ============ MODULE 1 · adding with equal exponents ============ */
+function actualizaSE(){
+  var a = leeCoef("se-a"), b = leeCoef("se-b"), n = leeExp("se-n", 0, 6), av = $("se-aviso");
+  if (a === null || b === null || n === null){ av.className = "caja-aviso visible"; av.textContent = T("The coefficients must be from 1 to 10 (for example, 4 or 7.5) and the exponent must be a whole number from 0 to 6.", "Los coeficientes deben estar entre 1 y 10 (por ejemplo, 4 o 7.5) y el exponente debe ser un número entero de 0 a 6."); $("se-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var A = sci(a, n), Bn = sci(b, n), R = suma(A, Bn), sc = plano(suma(leeNumero(a), leeNumero(b)));
+  var h = columnasHTML(A, Bn, "+", R);
+  h += '<div class="linea">' + T("In scientific notation: ", "En notación científica: ") + sciHTML(a, n) + " + " + sciHTML(b, n) + " = " + sciHTML(sc, n) + (esValida(sc) ? "" : " = " + numSciHTML(R) + ' <span class="nota">' + T("(the coefficient " + sc + " was adjusted)", "(el coeficiente " + sc + " se ajustó)") + "</span>") + "</div>";
+  h += '<div class="linea veredicto">✓ ' + conComas(R) + " = " + numSciHTML(R) + T(". The power 10<sup>" + n + "</sup> stayed the same.", ". La potencia 10<sup>" + n + "</sup> se conservó.") + "</div>";
+  if (n === 0) h += '<div class="linea nota">' + T("With exponent 0 the mistake of adding exponents does not show, because 0 + 0 = 0. Try another exponent.", "Con exponente 0 el error de sumar exponentes no se nota, porque 0 + 0 = 0. Pruebe con otro exponente.") + "</div>";
+  else h += '<div class="linea">' + T("If the exponents were added too: ", "Si se sumaran también los exponentes: ") + sciHTML(sc, 2 * n) + " = " + conComas(sci(sc, 2 * n)) + T(". It <strong>does not match</strong> the real sum, ", ". <strong>No coincide</strong> con la suma real, ") + conComas(R) + ".</div>";
+  $("se-salida").innerHTML = h;
+}
+var SE_COLA = [["7", "7", 5], ["3", "2", 4]];
+function azarSE(){ var e = SE_COLA.length ? SE_COLA.shift() : [coefAzar(aleatorio(1, 2)), coefAzar(aleatorio(1, 2)), aleatorio(1, 6)]; $("se-a").value = e[0]; $("se-b").value = e[1]; $("se-n").value = e[2]; actualizaSE(); }
+function genSumar(){
+  var a = coefAzar(aleatorio(1, 2)), b = coefAzar(aleatorio(1, 2)), n = aleatorio(-5, 9), sc = suma(leeNumero(a), leeNumero(b)), R = porPot(sc, n), rs = aSci(R), o = [opNum(R)], pc = {};
+  var x1 = op(rs.c, 2 * n + (rs.e - n)); o.push(x1); pc[x1.clave] = T("When you add, the exponents are not added: the power of 10 stays.", "Al sumar, los exponentes no se suman: la potencia de 10 se conserva.");
+  var x2 = opNum(porPot(mul(leeNumero(a), leeNumero(b)), n)); o.push(x2); pc[x2.clave] = T("The coefficients are added, not multiplied.", "Los coeficientes se suman, no se multiplican.");
+  if (!esValida(plano(sc))){
+    var x3 = op(plano(sc), n); o.push(x3); pc[x3.clave] = T("The value is right, but " + plano(sc) + " is not from 1 to 10: it still needs adjusting.", "El valor es correcto, pero " + plano(sc) + " no está entre 1 y 10: falta ajustar.");
+    var x4 = op(rs.c, n); o.push(x4); pc[x4.clave] = T("When you adjust the coefficient, the exponent must go up 1.", "Al ajustar el coeficiente, el exponente tiene que subir 1.");
+  }
+  o.push(op(rs.c, rs.e + 1));
+  var expl = T("Add the coefficients, ", "Se suman los coeficientes, ") + a + " + " + b + " = " + plano(sc) + T(", and keep the power.", ", y la potencia se conserva.") + (esValida(plano(sc)) ? "" : T(" Since " + plano(sc) + " is 10 or more, it is adjusted to ", " Como " + plano(sc) + " es 10 o más, se ajusta a ") + numSciHTML(R) + ".");
+  return {enun: T("Find ", "Calcule ") + sciHTML(a, n) + " + " + sciHTML(b, n) + ".", opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc, bien: expl, mal: expl + " " + T("The answer is ", "La respuesta es ") + numSciHTML(R) + "."};
+}
+
+/* ============ MODULE 2 · making the exponents equal ============ */
+var IG = {a: "", M: 0, b: "", n: 0, op: "+", cola: [["4", 5, "3", 4, "+"], ["7", 4, "2", 3, "−"]]};
+function cargaIG(e){
+  IG.a = e[0]; IG.M = e[1]; IG.b = e[2]; IG.n = e[3]; IG.op = e[4];
+  $("ig-expr").innerHTML = '<span class="grande">' + sciHTML(IG.a, IG.M) + " " + IG.op + " " + sciHTML(IG.b, IG.n) + "</span><br>" + T("The exponents are different: " + expTexto(IG.M) + " and " + expTexto(IG.n) + ". Choose how to make them equal.", "Los exponentes son distintos: " + expTexto(IG.M) + " y " + expTexto(IG.n) + ". Elija cómo igualarlos.");
+  $("ig-pasos").innerHTML = "";
+}
+function azarIG(){ var M = aleatorio(-4, 9), g = aleatorio(1, 2); return [coefAzar(aleatorio(1, 2)), M, coefAzar(aleatorio(1, 2)), M - g, Math.random() < 0.6 ? "+" : "−"]; }
+function caminoIG(subir){
+  var A = sci(IG.a, IG.M), Bn = sci(IG.b, IG.n), g = IG.M - IG.n, obj = subir ? IG.M : IG.n, R = IG.op === "+" ? suma(A, Bn) : resta(A, Bn);
+  var ca = coefCon(A, obj), cb = coefCon(Bn, obj), rc = coefCon(R, obj), p = [];
+  if (subir) p.push(T("Rewrite the term with the smaller exponent: ", "Se reescribe el término con el exponente menor: ") + sciHTML(IG.b, IG.n) + " = " + sciHTML(cb, obj) + T(". The exponent goes up " + g + ", so the point of the coefficient moves " + g + lugares(g) + " to the left.", ". El exponente sube " + g + ", así que el punto del coeficiente se mueve " + g + lugares(g) + " a la izquierda."));
+  else p.push(T("Rewrite the term with the larger exponent: ", "Se reescribe el término con el exponente mayor: ") + sciHTML(IG.a, IG.M) + " = " + sciHTML(ca, obj) + T(". The exponent goes down " + g + ", so the point of the coefficient moves " + g + lugares(g) + " to the right.", ". El exponente baja " + g + ", así que el punto del coeficiente se mueve " + g + lugares(g) + " a la derecha."));
+  p.push(T("Now both powers are 10<sup>" + expTexto(obj) + "</sup>: ", "Ahora las dos potencias son 10<sup>" + expTexto(obj) + "</sup>: ") + (IG.op === "+" ? T("add", "se suman") : T("subtract", "se restan")) + T(" the coefficients, ", " los coeficientes, ") + ca + " " + IG.op + " " + cb + " = " + rc + T(". Partial answer: ", ". Resultado parcial: ") + sciHTML(rc, obj) + ".");
+  var nec = !esValida(rc);
+  p.push(nec ? T("The coefficient " + rc + " is not from 1 to 10, so it needs adjusting: ", "El coeficiente " + rc + " no está entre 1 y 10, así que hay que ajustar: ") + sciHTML(rc, obj) + " = " + numSciHTML(R) + "." : T("The coefficient " + rc + " is already from 1 to 10: no adjustment needed.", "El coeficiente " + rc + " ya está entre 1 y 10: no hace falta ajustar."));
+  var h = "<p><strong>" + T("Way chosen: ", "Camino elegido: ") + (subir ? T("raise the smaller exponent", "subir el exponente menor") : T("lower the larger exponent", "bajar el exponente mayor")) + ".</strong></p>";
+  p.forEach(function(x, i){ h += '<div class="paso"><span class="n" aria-hidden="true">' + (i + 1) + "</span>" + x + "</div>"; });
+  h += '<div class="paso"><span class="n" aria-hidden="true">✓</span><span class="veredicto">' + T("Answer: ", "Resultado: ") + numSciHTML(R) + ".</span> " + (nec ? T("This way needed an adjustment at the end.", "Este camino necesitó un ajuste al final.") : T("This way did not need a final adjustment.", "Este camino no necesitó ajuste final.")) + T(" Try the other way and compare.", " Pruebe el otro camino y compare.") + "</div>";
+  $("ig-pasos").innerHTML = h;
+}
+function genIgualar(){
+  var M = aleatorio(-4, 9), g = aleatorio(1, 2), a = coefAzar(aleatorio(1, 2)), b = coefAzar(aleatorio(1, 2)), n = M - g, A = sci(a, M), Bn = sci(b, n), R = suma(A, Bn), rr = coefCon(Bn, M), pg = Math.random() < 0.5;
+  return {enun: T("Find ", "Calcule ") + (pg ? sciHTML(a, M) + " + " + sciHTML(b, n) : sciHTML(b, n) + " + " + sciHTML(a, M)) + ".", resp: R,
+    alPintar: function(){ $("p2-rlab").textContent = T("Step 1: rewrite " + sciTexto(b, n) + " with the power 10" + supTexto(M) + ". Coefficient:", "Paso 1: reescriba " + sciTexto(b, n) + " con la potencia 10" + supTexto(M) + ". Coeficiente:"); $("p2-rpot").innerHTML = "× 10<sup>" + expTexto(M) + "</sup>"; },
+    previo: function(){
+      var v = leeNumero($("p2-r").value); $("p2-r").classList.toggle("error", !v || !igual(v, leeNumero(rr)));
+      if (!v) return T("Finish step 1: the coefficient of " + sciTexto(b, n) + " rewritten with 10" + supTexto(M) + ".", "Complete el paso 1: el coeficiente de " + sciTexto(b, n) + " reescrito con 10" + supTexto(M) + ".");
+      if (!igual(v, leeNumero(rr))) return T("Step 1 is not right: to raise the exponent from " + expTexto(n) + " to " + expTexto(M) + ", the point of the coefficient moves " + g + lugares(g) + " to the left.", "El paso 1 no es correcto: para subir el exponente de " + expTexto(n) + " a " + expTexto(M) + ", el punto del coeficiente se mueve " + g + lugares(g) + " a la izquierda.");
+      return null; },
+    explica: sciHTML(b, n) + " = " + sciHTML(rr, M) + T("; then ", "; después ") + a + " + " + rr + " = " + coefCon(R, M) + "." + (esValida(coefCon(R, M)) ? "" : T(" Since " + coefCon(R, M) + " is 10 or more, it is adjusted.", " Como " + coefCon(R, M) + " es 10 o más, se ajusta."))};
+}
+
+/* ============ MODULE 3 · subtracting ============ */
+function actualizaSR(){
+  var a = leeCoef("sr-a"), b = leeCoef("sr-b"), m = leeExp("sr-m", 0, 6), n = leeExp("sr-n", 0, 6), av = $("sr-aviso");
+  if (a === null || b === null || m === null || n === null){ av.className = "caja-aviso visible"; av.textContent = T("The coefficients must be from 1 to 10 and the exponents must be whole numbers from 0 to 6.", "Los coeficientes deben estar entre 1 y 10 y los exponentes deben ser números enteros de 0 a 6."); $("sr-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var A = sci(a, m), Bn = sci(b, n), R = resta(A, Bn), M = Math.max(m, n), h = columnasHTML(A, Bn, "−", R), ca = coefCon(A, M), cb = coefCon(Bn, M), rc = coefCon(R, M);
+  if (m !== n) h += '<div class="linea">' + T("Match the exponents to the larger one: ", "Se igualan los exponentes al mayor: ") + (m < n ? sciHTML(a, m) + " = " + sciHTML(ca, M) : sciHTML(b, n) + " = " + sciHTML(cb, M)) + ".</div>";
+  h += '<div class="linea">' + T("Subtract the coefficients: ", "Se restan los coeficientes: ") + ca + " − " + cb + " = " + signo(rc) + T(", so the difference is ", ", así que la diferencia es ") + (esCero(R) ? "0." : sciHTML(rc, M) + (esValida(rc) ? "." : " = " + numSciHTML(R) + ' <span class="nota">' + T("(the coefficient was adjusted)", "(el coeficiente se ajustó)") + "</span>.")) + "</div>";
+  h += '<div class="linea veredicto">✓ ' + (esCero(R) ? T("The two amounts are equal: the difference is 0.", "Las dos cantidades son iguales: la diferencia es 0.") : conComas(R) + " = " + numSciHTML(R) + ".") + "</div>";
+  if (compara(R, N(0)) < 0) h += '<div class="linea nota">' + T("The answer is negative because the second amount is larger: the coefficient has a minus sign.", "El resultado es negativo porque la segunda cantidad es mayor: el coeficiente lleva el signo menos.") + "</div>";
+  $("sr-salida").innerHTML = h;
+}
+var SR_COLA = [["1.2", 5, "9", 4], ["9", 6, "4", 6]];
+function azarSR(){ var e = SR_COLA.length ? SR_COLA.shift() : null; if (!e){ var m = aleatorio(1, 6), n = Math.max(0, m - aleatorio(0, 1)); e = [coefAzar(aleatorio(1, 2)), m, coefAzar(aleatorio(1, 2)), n]; } $("sr-a").value = e[0]; $("sr-m").value = e[1]; $("sr-b").value = e[2]; $("sr-n").value = e[3]; actualizaSR(); }
+function genRestar(){
+  var t = aleatorio(1, 4), a, b, m, n;
+  if (t === 1){ m = n = aleatorio(-5, 9); a = coefAzar(aleatorio(1, 2)); b = coefAzar(aleatorio(1, 2)); while (a === b) b = coefAzar(aleatorio(1, 2)); if (compara(leeNumero(a), leeNumero(b)) < 0){ var x = a; a = b; b = x; } }
+  else if (t === 2){ m = aleatorio(-4, 9); n = m - aleatorio(1, 2); a = coefAzar(aleatorio(1, 2)); b = coefAzar(1); }
+  else if (t === 3){ m = n = aleatorio(-4, 9); a = b = coefAzar(aleatorio(1, 2)); }
+  else { var ai = aleatorio(11, 19); m = aleatorio(-3, 9); n = m - 1; a = plano(sci(String(ai), -1)); b = String(aleatorio(ai - 9, 9)); }
+  var A = sci(a, m), Bn = sci(b, n), R = resta(A, Bn), o = [], pc = {}, enun = T("Find ", "Calcule ") + sciHTML(a, m) + " − " + sciHTML(b, n) + ".";
+  if (esCero(R)){
+    var z = op(a, m); pc[z.clave] = T("Subtract the coefficients: " + a + " − " + a + " = 0.", "Se restan los coeficientes: " + a + " − " + a + " = 0.");
+    return {enun: enun, opciones: [{html: "0", clave: "0"}, z, op("1", m), op(a, 0)], correcta: "0", porClave: pc, bien: T("Two equal amounts have a difference of 0.", "Dos cantidades iguales dan diferencia 0."), mal: T("The two amounts are equal, so the difference is 0.", "Las dos cantidades son iguales, así que la diferencia es 0.")};
+  }
+  var rs = aSci(R), rc = coefCon(R, m); o.push(opNum(R));
+  var x1 = op(plano(resta(leeNumero(a), leeNumero(b))).replace(/^-/, ""), m - n); o.push(x1); pc[x1.clave] = T("The exponents are not subtracted: the common power of 10 stays.", "Los exponentes no se restan: la potencia de 10 común se conserva.");
+  if (m !== n){ var d = resta(leeNumero(a), leeNumero(b)), x2 = opNum(porPot(d, m)); if (!esCero(x2) && compara(d, N(0)) > 0){ o.push(x2); pc[x2.clave] = T("Make the exponents equal before you subtract.", "Antes de restar hay que igualar los exponentes."); } }
+  if (!esValida(rc)){ var x3 = op(rc, m); o.push(x3); pc[x3.clave] = T("The value is right, but " + rc + " is less than 1: it still needs adjusting.", "El valor es correcto, pero " + rc + " es menor que 1: falta ajustar."); }
+  o.push(op(rs.c, rs.e + 1)); o.push(op(rs.c, rs.e - 1));
+  var expl = (m !== n ? sciHTML(b, n) + " = " + sciHTML(coefCon(Bn, m), m) + "; " : "") + a + " − " + coefCon(Bn, m) + " = " + rc + "." + (esValida(rc) ? "" : T(" Since " + rc + " is less than 1, it is adjusted to ", " Como " + rc + " es menor que 1, se ajusta a ") + numSciHTML(R) + ".");
+  return {enun: enun, opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc, bien: expl, mal: expl + " " + T("The answer is ", "La respuesta es ") + numSciHTML(R) + "."};
+}
+
+/* ============ MODULE 4 · mixed problems ============ */
+function genAplicacion(){
+  var t = aleatorio(1, 8), A, Bn, M;
+  if (t === 1){ var v = sci(coefAzar(1), 4), h = sci(coefAzar(1), 2);
+    return {operacion: "×", resp: mul(v, h), porQueOp: T("the probe goes the same distance every hour: multiply.", "la sonda recorre la misma distancia cada hora: se multiplica."), explica: T("Distance = distance per hour × number of hours.", "Distancia = distancia por hora × número de horas."),
+      enun: T("A space probe travels ", "Una sonda espacial recorre ") + numSciHTML(v) + T(" km each hour. How far does it go in ", " km cada hora. ¿Qué distancia recorre en ") + numSciHTML(h) + T(" hours?", " horas?")}; }
+  if (t === 2){ M = aleatorio(5, 7); A = sci(coefAzar(1), M); Bn = sci(coefAzar(1), M - 1);
+    return {operacion: "+", resp: suma(A, Bn), porQueOp: T("“are added” means putting the two amounts together: add.", "«se le añaden» indica juntar las dos cantidades: se suma."), explica: T("Make the exponents equal and add the coefficients.", "Se igualan los exponentes y se suman los coeficientes."),
+      enun: T("A blood sample has ", "Una muestra de sangre tiene ") + numSciHTML(A) + T(" red blood cells, and ", " glóbulos rojos y se le añaden ") + numSciHTML(Bn) + T(" more are added. How many red blood cells are there in all?", " más. ¿Cuántos glóbulos rojos hay en total?")}; }
+  if (t === 3){ var cn = sci(coefAzar(1), aleatorio(3, 7)), f = sci(coefAzar(1), aleatorio(4, 7)), D = mul(cn, f);
+    return {operacion: "÷", resp: cn, porQueOp: T("“how many fit” shares the capacity over the size of each file: divide.", "«cuántos caben» reparte la capacidad entre el tamaño de cada archivo: se divide."), explica: T("Number of files = capacity ÷ size of each file.", "Cantidad de archivos = capacidad ÷ tamaño de cada archivo."),
+      enun: T("A drive holds ", "Un disco guarda ") + numSciHTML(D) + T(" bytes, and each file takes up ", " bytes y cada archivo ocupa ") + numSciHTML(f) + T(" bytes. How many files fit?", " bytes. ¿Cuántos archivos caben?")}; }
+  if (t === 4){ M = aleatorio(6, 9); A = sci(String(aleatorio(2, 9)), M); Bn = sci(coefAzar(1), M - 1);
+    return {operacion: "−", resp: resta(A, Bn), porQueOp: T("“how much is left” after losing water: subtract.", "«cuánta le queda» después de perder agua: se resta."), explica: T("Make the exponents equal and subtract the coefficients.", "Se igualan los exponentes y se restan los coeficientes."),
+      enun: T("A reservoir holds ", "Un embalse tiene ") + numSciHTML(A) + T(" gallons of water, and over the summer it loses ", " galones de agua y durante el verano pierde ") + numSciHTML(Bn) + T(" gallons. How much water is left?", " galones. ¿Cuánta agua le queda?")}; }
+  if (t === 5){ var g = sci(elige(["6", "7", "5"]), -4), cg = sci(coefAzar(1), aleatorio(3, 6));
+    return {operacion: "×", resp: mul(g, cg), porQueOp: T("all the grains have the same mass: multiply the mass of one by the number of grains.", "todos los granos tienen la misma masa: se multiplica la masa de uno por la cantidad."), explica: T("Total mass = mass of one grain × number of grains.", "Masa total = masa de un grano × número de granos."),
+      enun: T("A grain of sand has a mass of about ", "Un grano de arena tiene una masa aproximada de ") + numSciHTML(g) + T(" grams. What is the mass of ", " gramos. ¿Cuál es la masa de ") + numSciHTML(cg) + T(" grains?", " granos?")}; }
+  if (t === 6){ var cel = sci(coefAzar(1), -5), nn = sci(coefAzar(1), aleatorio(2, 4)), L = mul(cel, nn);
+    return {operacion: "÷", resp: nn, porQueOp: T("“how many fit” in a length: divide the length by the width of one cell.", "«cuántas caben» en una longitud: se divide la longitud entre el ancho de una célula."), explica: T("Number = total length ÷ width of one cell.", "Cantidad = longitud total ÷ ancho de una célula."),
+      enun: T("A cell is ", "Una célula mide ") + numSciHTML(cel) + T(" meters wide. How many cells, set in a row, cover ", " metros de ancho. ¿Cuántas células, puestas en fila, cubren ") + numSciHTML(L) + T(" meters?", " metros?")}; }
+  if (t === 7){ A = sci(coefAzar(1), 13); Bn = sci(coefAzar(1), 12);
+    return {operacion: "+", resp: suma(A, Bn), porQueOp: T("“farther than the first” is added to its distance: add.", "«más lejos que la primera» se añade a su distancia: se suma."), explica: T("Make the exponents equal and add the coefficients.", "Se igualan los exponentes y se suman los coeficientes."),
+      enun: T("A star is ", "Una estrella está a ") + numSciHTML(A) + T(" km from the Earth. Another one is ", " km de la Tierra. Otra está ") + numSciHTML(Bn) + T(" km farther away than the first. How far from the Earth is the second star?", " km más lejos que la primera. ¿A qué distancia de la Tierra está la segunda?")}; }
+  A = sci("5.97", 24); Bn = sci("7.35", 22);
+  return {operacion: "−", resp: resta(A, Bn), porQueOp: T("“how much more mass” asks for the difference: subtract.", "«cuánta masa más» pide la diferencia: se resta."), explica: sciHTML("7.35", 22) + " = " + sciHTML("0.0735", 24) + T(", and 5.97 − 0.0735 = 5.8965.", ", y 5.97 − 0.0735 = 5.8965."),
+    enun: T("The mass of the Earth is ", "La masa de la Tierra es ") + numSciHTML(A) + T(" kg and the mass of the Moon is ", " kg y la de la Luna es ") + numSciHTML(Bn) + T(" kg. How much more mass does the Earth have than the Moon?", " kg. ¿Cuánta masa más tiene la Tierra que la Luna?")};
+}
+
+/* ============ Start ============ */
+["se-a", "se-b", "se-n"].forEach(function(id){ $(id).addEventListener("input", actualizaSE); });
+$("se-azar").addEventListener("click", azarSE);
+actualizaSE();
+OMS("p1", genSumar);
+$("ig-subir").addEventListener("click", function(){ caminoIG(true); });
+$("ig-bajar").addEventListener("click", function(){ caminoIG(false); });
+$("ig-nuevo").addEventListener("click", function(){ cargaIG(IG.cola.length ? IG.cola.shift() : azarIG()); });
+cargaIG(IG.cola.shift());
+creaPracticaSci("p2", genIgualar);
+["sr-a", "sr-m", "sr-b", "sr-n"].forEach(function(id){ $(id).addEventListener("input", actualizaSR); });
+$("sr-azar").addEventListener("click", azarSR);
+actualizaSR();
+OMS("p3", genRestar);
+creaPracticaSci("p4", genAplicacion);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

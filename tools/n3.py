@@ -80,3 +80,56 @@ def tabla_reglas(cinco=True):
         filas += [(t("Quotient of powers", "Cociente de potencias"), "a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m−n</sup>", t("subtract", "se restan"), "x<sup>7</sup> ÷ x<sup>2</sup> = x<sup>5</sup>"),
                   (t("Zero and negative exponents", "Exponente cero y negativo"), "a<sup>0</sup> = 1 · a<sup>−n</sup> = 1/a<sup>n</sup>", t("reciprocal", "recíproco"), "5<sup>0</sup> = 1 · 3<sup>−2</sup> = 1/9")]
     return filas
+
+# Estilos de las páginas de práctica del Tema 2 (notación científica): el recorrido del punto, ordenar y columnas.
+ESTILO_SCI = """  .recorrido{display:flex;justify-content:center;align-items:flex-end;flex-wrap:wrap;gap:3px;margin:26px 0 10px;font-family:Consolas,'Courier New',monospace;}
+  .celda{position:relative;width:34px;height:46px;border:2px solid var(--tema-bg2);border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--txt);}
+  .celda.saltado{background:var(--tema-bg);border-color:var(--tema);}
+  .celda.relleno{background:#fff8e1;border-color:#f9a825;border-style:dashed;color:#6d4c00;}
+  .celda .marca{position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:13px;color:var(--tema-d);font-family:inherit;}
+  .punto{width:14px;height:46px;display:flex;align-items:flex-end;justify-content:center;font-size:34px;line-height:1;font-weight:900;color:#b71c1c;}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--gris);margin:4px 0 8px;}
+  .leyenda span::before{content:"";display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:2px solid var(--tema-bg2);}
+  .leyenda .l-salto::before{background:var(--tema-bg);border-color:var(--tema);}
+  .leyenda .l-relleno::before{background:#fff8e1;border-color:#f9a825;border-style:dashed;}
+  .estado .grande{font-size:20px;font-weight:700;}
+  .lista-orden{list-style:none;margin:12px 0;padding:0;counter-reset:ord;}
+  .lista-orden li{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid #d8d8d8;border-radius:8px;padding:8px 12px;margin:8px 0;counter-increment:ord;}
+  .lista-orden li::before{content:counter(ord);background:var(--tema-bg);color:var(--tema-d);width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
+  .lista-orden li.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .lista-orden li.mal{border-color:#b71c1c;background:#ffebee;}
+  .lista-orden .nombre{flex:1;min-width:160px;font-weight:600;}
+  .lista-orden .flechas{display:flex;gap:6px;}
+  .lista-orden .flechas button{background:#fff;border:2px solid var(--tema);color:var(--tema-d);border-radius:6px;width:40px;height:36px;font-weight:700;}
+  .columnas{font-family:Consolas,'Courier New',monospace;font-size:22px;text-align:right;display:inline-block;margin:6px auto;padding:10px 18px;background:#fff;border:1px solid #d8d8d8;border-radius:8px;line-height:1.5;}
+  .columnas .raya{border-top:3px solid var(--tema);}
+  .centro{text-align:center;}
+  .salida:empty{display:none;}
+  .enun .ex,.opcion .ex,.salida .ex,.lista-orden .ex,.estado .ex{font-size:18px;}"""
+
+def selector(pid, ops):
+    """Lista para elegir la operación de un problema: ops = [(valor, texto)]."""
+    if not ops:
+        return ""
+    o = "".join(f'<option value="{v}">{x}</option>' for v, x in ops)
+    return f'\n        <div class="campos"><div class="campo" style="margin-bottom:10px;"><label for="{pid}-op">{t("Which operation solves the problem?", "¿Qué operación resuelve el problema?")}</label><select id="{pid}-op"><option value="">{t("Choose an operation", "Elija una operación")}</option>{o}</select></div></div>'
+
+def sci_input(pid, titulo, intro="", ops=None):
+    """Practice with a typed answer in scientific notation (creaPracticaSci)."""
+    return f'''      <h3>{titulo}</h3>{intro}
+      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>{selector(pid, ops)}
+        <div class="campos campos-sci">
+          <div class="campo"><label for="{pid}-c">{t("Coefficient", "Coeficiente")}</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="{pid}-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="{pid}-e">{t("Exponent", "Exponente")}</label><input type="text" autocomplete="off" class="corto" id="{pid}-e"></div>
+        </div>
+        <p class="nota">{t("Use a decimal point (4.5). For a negative exponent, type the minus sign: −3 or -3.", "Use punto decimal (4.5, no 4,5). Para un exponente negativo escriba el signo menos: −3 o -3.")}</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''
+

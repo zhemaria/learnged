@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud — práctica (español) — construida con tools/build_n3_lesson_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .recorrido{display:flex;justify-content:center;align-items:flex-end;flex-wrap:wrap;gap:3px;margin:26px 0 10px;font-family:Consolas,'Courier New',monospace;}
+  .celda{position:relative;width:34px;height:46px;border:2px solid var(--tema-bg2);border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;color:var(--txt);}
+  .celda.saltado{background:var(--tema-bg);border-color:var(--tema);}
+  .celda.relleno{background:#fff8e1;border-color:#f9a825;border-style:dashed;color:#6d4c00;}
+  .celda .marca{position:absolute;top:-22px;left:0;right:0;text-align:center;font-size:13px;color:var(--tema-d);font-family:inherit;}
+  .punto{width:14px;height:46px;display:flex;align-items:flex-end;justify-content:center;font-size:34px;line-height:1;font-weight:900;color:#b71c1c;}
+  .leyenda{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:14px;color:var(--gris);margin:4px 0 8px;}
+  .leyenda span::before{content:"";display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:6px;vertical-align:-2px;border:2px solid var(--tema-bg2);}
+  .leyenda .l-salto::before{background:var(--tema-bg);border-color:var(--tema);}
+  .leyenda .l-relleno::before{background:#fff8e1;border-color:#f9a825;border-style:dashed;}
+  .estado .grande{font-size:20px;font-weight:700;}
+  .lista-orden{list-style:none;margin:12px 0;padding:0;counter-reset:ord;}
+  .lista-orden li{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#fff;border:2px solid #d8d8d8;border-radius:8px;padding:8px 12px;margin:8px 0;counter-increment:ord;}
+  .lista-orden li::before{content:counter(ord);background:var(--tema-bg);color:var(--tema-d);width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;}
+  .lista-orden li.bien{border-color:var(--ok);background:var(--ok-bg);}
+  .lista-orden li.mal{border-color:#b71c1c;background:#ffebee;}
+  .lista-orden .nombre{flex:1;min-width:160px;font-weight:600;}
+  .lista-orden .flechas{display:flex;gap:6px;}
+  .lista-orden .flechas button{background:#fff;border:2px solid var(--tema);color:var(--tema-d);border-radius:6px;width:40px;height:36px;font-weight:700;}
+  .columnas{font-family:Consolas,'Courier New',monospace;font-size:22px;text-align:right;display:inline-block;margin:6px auto;padding:10px 18px;background:#fff;border:1px solid #d8d8d8;border-radius:8px;line-height:1.5;}
+  .columnas .raya{border-top:3px solid var(--tema);}
+  .centro{text-align:center;}
+  .salida:empty{display:none;}
+  .enun .ex,.opcion .ex,.salida .ex,.lista-orden .ex,.estado .ex{font-size:18px;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 2 · Notación científica</div>
+    <h1>Lección 2.1 · Conversión decimal ↔ científica y órdenes de magnitud</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#grandes">De decimal a científica: números grandes</a></li>
+      <li><a href="#pequenos">De decimal a científica: números pequeños</a></li>
+      <li><a href="#a-decimal">De científica a decimal</a></li>
+      <li><a href="#magnitud">Orden de magnitud y comparación</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="grandes" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>De decimal a científica: números grandes</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un número en notación científica tiene dos partes: un <strong>coeficiente</strong> mayor o igual que 1 y menor que 10, y una <strong>potencia de 10</strong>.</p>
+      <div class="formula">a × 10<sup>n</sup>   con   1 ≤ a &lt; 10</div>
+      <p>Para un número grande, el punto decimal se mueve <strong>hacia la izquierda</strong> hasta que quede un solo dígito, distinto de cero, antes del punto. Los lugares que se movió son el exponente, y es <strong>positivo</strong>.</p>
+      <h3>El recorrido del punto</h3>
+      <p>Mueva el punto un lugar cada vez y observe cómo cambian el coeficiente y el exponente. El valor del número nunca cambia: lo que pierde el coeficiente lo gana la potencia de 10.</p>
+      <div class="panel">
+        <div class="recorrido" id="rg-vis" aria-hidden="true"></div>
+        <div class="leyenda" aria-hidden="true"><span class="l-salto">lugar que ya saltó el punto</span></div>
+        <div class="estado" id="rg-estado" aria-live="polite"></div>
+        <div class="fila-btn" style="justify-content:center;">
+          <button type="button" class="btn" id="rg-izq">← Mover el punto a la izquierda</button>
+          <button type="button" class="btn-sec" id="rg-der">Deshacer un lugar →</button>
+          <button type="button" class="btn-sec" id="rg-nuevo">Otro número</button>
+        </div>
+      </div>
+      <div class="caja-atencion"><strong>El coeficiente manda:</strong> 45 × 10<sup>5</sup> vale lo mismo que 4,500,000, pero no es notación científica válida, porque 45 no está entre 1 y 10. La forma correcta es 4.5 × 10<sup>6</sup>.</div>
+      <h3>Practique: ¿cuál es la notación científica correcta?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="pequenos">
+    <summary><span class="num" aria-hidden="true">2</span><h2>De decimal a científica: números pequeños</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para un número menor que 1, el punto se mueve <strong>hacia la derecha</strong> hasta pasar el primer dígito distinto de cero. Los lugares que se movió son el exponente, y ahora es <strong>negativo</strong>.</p>
+      <h3>El recorrido del punto hacia la derecha</h3>
+      <p>Los ceros que el punto va dejando atrás son justamente los que el exponente negativo «guarda».</p>
+      <div class="panel">
+        <div class="recorrido" id="rp-vis" aria-hidden="true"></div>
+        <div class="leyenda" aria-hidden="true"><span class="l-salto">lugar que ya saltó el punto</span></div>
+        <div class="estado" id="rp-estado" aria-live="polite"></div>
+        <div class="fila-btn" style="justify-content:center;">
+          <button type="button" class="btn-sec" id="rp-izq">← Deshacer un lugar</button>
+          <button type="button" class="btn" id="rp-der">Mover el punto a la derecha →</button>
+          <button type="button" class="btn-sec" id="rp-nuevo">Otro número</button>
+        </div>
+      </div>
+      <div class="caja-tip"><strong>Regla de la dirección:</strong> número de 10 o más → exponente positivo; número menor que 1 → exponente negativo. El signo del exponente dice de inmediato si la cantidad es enorme o diminuta.</div>
+      <h3>Practique: números pequeños</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Escríbalo usted: números grandes y pequeños mezclados</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="p3-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="p3-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="p3-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="p3-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5, no 4,5). Para un exponente negativo escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="a-decimal">
+    <summary><span class="num" aria-hidden="true">3</span><h2>De científica a decimal</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El proceso inverso usa el exponente para decidir hacia dónde se mueve el punto y cuántos lugares:</p>
+      <div class="tabla-scroll" role="region" tabindex="0" aria-label="Dirección del punto (tabla desplazable horizontalmente)"><table class="reglas"><caption>Dirección del punto según el signo del exponente</caption>
+      <thead><tr><th scope="col">Exponente</th><th scope="col">El punto se mueve</th><th scope="col">El número</th></tr></thead>
+      <tbody><tr><td>Positivo</td><td>a la derecha</td><td>crece</td></tr><tr><td>Negativo</td><td>a la izquierda</td><td>se achica</td></tr></tbody></table></div>
+      <p>Cuando se acaban los dígitos, se rellena con ceros.</p>
+      <h3>Desempaquetar la potencia de 10</h3>
+      <p>Decida usted la dirección. Si elige mal, se le avisa antes de mover el punto.</p>
+      <div class="panel">
+        <div class="estado" id="ad-origen"></div>
+        <div class="recorrido" id="ad-vis" aria-hidden="true"></div>
+        <div class="leyenda" aria-hidden="true"><span class="l-relleno">cero de relleno</span></div>
+        <div class="caja-aviso" id="ad-aviso" role="alert"></div>
+        <div class="estado" id="ad-estado" aria-live="polite"></div>
+        <div class="fila-btn" style="justify-content:center;">
+          <button type="button" class="btn" id="ad-izq">← Mover a la izquierda</button>
+          <button type="button" class="btn" id="ad-der">Mover a la derecha →</button>
+          <button type="button" class="btn-sec" id="ad-nuevo">Otro número</button>
+        </div>
+      </div>
+      <h3>Practique: escriba el número en notación decimal</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Número en notación decimal</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <p class="nota">Las comas de los miles son opcionales: 370000 y 370,000 se aceptan igual.</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="magnitud">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Orden de magnitud y comparación</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El exponente de 10 es el <strong>orden de magnitud</strong>: dice de qué «tamaño» es una cantidad. Para comparar dos números en notación científica se mira <strong>primero el exponente</strong>; solo si los exponentes son iguales se comparan los coeficientes.</p>
+      <h3>Ordene de menor a mayor</h3>
+      <p>Son datos reales del universo, todos en la misma unidad. Use los botones ↑ y ↓ para ordenarlos y después compruebe.</p>
+      <div class="panel">
+        <p class="nota" id="or-unidad"></p>
+        <ol class="lista-orden" id="or-lista" aria-describedby="or-unidad"></ol>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="or-comprobar">Comprobar el orden</button>
+          <button type="button" class="btn-sec" id="or-nuevo">Otro conjunto</button>
+        </div>
+        <div class="fb" id="or-fb" role="status"></div>
+      </div>
+      <div class="caja-atencion"><strong>No se deje engañar por el coeficiente:</strong> 9 × 10<sup>7</sup> es menor que 3 × 10<sup>8</sup>, aunque 9 sea mayor que 3. El exponente 8 supera al 7, y eso decide.</div>
+      <h3>¿Cuántas veces mayor?</h3>
+      <p>Cada unidad que sube el exponente multiplica la cantidad por 10. Si dos números tienen el mismo coeficiente, la diferencia de exponentes dice cuántas veces cabe uno en el otro: 10<sup>8</sup> es 10<sup>8 − 5</sup> = 10<sup>3</sup> = 1,000 veces 10<sup>5</sup>.</p>
+      <h3>Practique: comparar y medir la distancia entre magnitudes</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 2 · Notación científica · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/scinot.js"></script>
+<script>
+/* ============ MODULES 1 and 2 · the point's trip (decimal → scientific) ============ */
+function creaRecorrido(pre, primeros, genera, haciaIzq){
+  var R = {n: null, D: "", p0: 0, p: 0, cola: primeros.slice()};
+  function absN(n){ return normaliza({m: abs(n.m), e: n.e}); }
+  function carga(n){
+    R.n = n; var s = plano(n), i = s.indexOf(".");
+    R.D = i < 0 ? s : s.slice(0, i) + s.slice(i + 1); R.p0 = i < 0 ? s.length : i; R.p = R.p0; pinta();
+  }
+  function pinta(){
+    var s = R.p0 - R.p, html = "";
+    for (var i = 0; i < R.D.length; i++){
+      var salto = haciaIzq ? (i >= R.p && i < R.p0) : (i >= R.p0 && i < R.p);
+      html += '<span class="celda' + (salto ? " saltado" : "") + '">' + (salto ? '<span class="marca">' + (haciaIzq ? (R.p0 - i) : (i - R.p0 + 1)) + "</span>" : "") + R.D.charAt(i) + "</span>";
+      if (i === R.p - 1) html += '<span class="punto">.</span>';
+    }
+    $(pre + "-vis").innerHTML = html;
+    var coef = porPot(R.n, -s), c = plano(coef), ok = esValida(c), l = Math.abs(s), dir = s > 0 ? T("to the left", "hacia la izquierda") : T("to the right", "hacia la derecha"), msg;
+    if (s === 0) msg = T("The point is where it started. Move it until one digit, not zero, is left before the point.", "El punto está en su lugar de partida. Muévalo hasta que quede un solo dígito, distinto de cero, antes del punto.");
+    else if (ok) msg = T("✓ Done: one digit before the point. You moved the point " + l + lugares(l) + " " + dir + ", so the exponent is " + (s > 0 ? "+" : "−") + l + ".", "✓ Listo: un solo dígito antes del punto. Movió el punto " + l + lugares(l) + " " + dir + ", así que el exponente es " + (s > 0 ? "+" : "−") + l + ".");
+    else if (compara(absN(coef), N(10)) >= 0) msg = T("So far " + l + lugares(l) + ". The coefficient " + c + " is still 10 or more: keep moving the point.", "Lleva " + l + lugares(l) + ". El coeficiente " + c + " todavía es 10 o más: siga moviendo el punto.");
+    else msg = T("So far " + l + lugares(l) + ". The coefficient " + c + " is less than 1: keep moving the point.", "Lleva " + l + lugares(l) + ". El coeficiente " + c + " es menor que 1: siga moviendo el punto.");
+    $(pre + "-estado").innerHTML = '<span class="grande">' + conComas(R.n) + " = " + sciHTML(c, s) + "</span><br>" + msg;
+    $(pre + "-izq").disabled = R.p <= 1 || (haciaIzq ? ok : R.p <= R.p0);
+    $(pre + "-der").disabled = R.p >= R.D.length || (haciaIzq ? R.p >= R.p0 : ok);
+  }
+  $(pre + "-izq").addEventListener("click", function(){ if (R.p > 1){ R.p--; pinta(); } });
+  $(pre + "-der").addEventListener("click", function(){ if (R.p < R.D.length){ R.p++; pinta(); } });
+  $(pre + "-nuevo").addEventListener("click", function(){ carga(R.cola.length ? R.cola.shift() : genera()); });
+  carga(R.cola.shift());
+}
+function grandeAzar(){ return sci(coefAzar(aleatorio(2, 3)), aleatorio(3, 9)); }
+function pequenoAzar(){ return sci(coefAzar(aleatorio(1, 3)), -aleatorio(2, 7)); }
+function escriba(n){ return T("Write ", "Escriba ") + conComas(n) + T(" in scientific notation.", " en notación científica."); }
+function genGrandes(){
+  var c = coefAzar(aleatorio(1, 3)), k = aleatorio(3, 9), n = sci(c, k), sin = leeNumero(c);
+  var ops = [op(c, k), op(c, k - 1), op(c, k + 1), op(plano(porPot(sin, 1)), k - 1), op(c, -k)], q = {
+    enun: escriba(n), opciones: [ops[0]].concat(baraja(ops.slice(1)).slice(0, 3)), correcta: ops[0].clave, porClave: {},
+    bien: T("The point moves " + k + " places to the left and the coefficient " + c + " is from 1 to 10.", "El punto se mueve " + k + " lugares hacia la izquierda y el coeficiente " + c + " queda entre 1 y 10."),
+    mal: T("The answer is ", "La respuesta es ") + sciHTML(c, k) + T(": the point moves " + k + " places to the left.", ": el punto se mueve " + k + " lugares hacia la izquierda.")};
+  q.porClave[ops[3].clave] = T("That coefficient is not from 1 to 10, so it is not valid scientific notation.", "Ese coeficiente no está entre 1 y 10, así que no es notación científica válida.");
+  q.porClave[ops[4].clave] = T("A large number has a positive exponent.", "Un número grande lleva exponente positivo.");
+  q.porClave[ops[1].clave] = T("Count the places again: one is missing.", "Cuente de nuevo los lugares: falta uno.");
+  q.porClave[ops[2].clave] = T("Count the places again: there is one too many.", "Cuente de nuevo los lugares: sobra uno.");
+  return q;
+}
+function genPequenos(){
+  var c = coefAzar(aleatorio(1, 3)), k = -aleatorio(2, 7), n = sci(c, k), sin = leeNumero(c);
+  var ops = [op(c, k), op(c, k + 1), op(c, k - 1), op(c, -k), op(plano(porPot(sin, 1)), k - 1)], q = {
+    enun: escriba(n), opciones: [ops[0]].concat(baraja(ops.slice(1)).slice(0, 3)), correcta: ops[0].clave, porClave: {},
+    bien: T("The point moves " + (-k) + " places to the right, until it passes the first digit that is not zero.", "El punto se mueve " + (-k) + " lugares hacia la derecha, hasta pasar el primer dígito distinto de cero."),
+    mal: T("The answer is ", "La respuesta es ") + sciHTML(c, k) + T(": the point moves " + (-k) + " places to the right.", ": el punto se mueve " + (-k) + " lugares hacia la derecha.")};
+  q.porClave[ops[3].clave] = T("A number less than 1 has a negative exponent.", "Un número menor que 1 lleva exponente negativo.");
+  q.porClave[ops[4].clave] = T("That coefficient is not from 1 to 10.", "Ese coeficiente no está entre 1 y 10.");
+  q.porClave[ops[1].clave] = T("Count the places until you pass the first digit that is not zero: one is missing.", "Cuente los lugares hasta pasar el primer dígito distinto de cero: falta uno.");
+  q.porClave[ops[2].clave] = T("Count the places until you pass the first digit that is not zero: there is one too many.", "Cuente los lugares hasta pasar el primer dígito distinto de cero: sobra uno.");
+  return q;
+}
+function genMezcla(){
+  var grande = Math.random() < 0.5, c = coefAzar(aleatorio(1, 3)), k = grande ? aleatorio(3, 9) : -aleatorio(2, 7), n = sci(c, k);
+  return {enun: escriba(n), resp: n,
+    explica: grande ? T("Large number: the point moves " + k + " places to the left and the exponent is positive.", "Número grande: el punto va " + k + " lugares a la izquierda y el exponente es positivo.")
+                    : T("Small number: the point moves " + (-k) + " places to the right and the exponent is negative.", "Número pequeño: el punto va " + (-k) + " lugares a la derecha y el exponente es negativo."),
+    diagnostico: function(v, cc, kk){ return (esValida(plano(cc)) && igual(cc, leeNumero(c)) && kk === -k) ? T("The coefficient is right, but the sign of the exponent is backward.", "El coeficiente está bien, pero el signo del exponente está al revés.") : null; }};
+}
+
+/* ============ MODULE 3 · from scientific notation to a decimal ============ */
+var AD = {c: "", k: 0, celdas: [], pos: 1, pasos: 0, cola: [["3.7", 5], ["5.6", -3]]};
+function cargaAD(pr){
+  AD.c = pr[0]; AD.k = pr[1]; AD.pasos = 0; AD.pos = 1;
+  AD.celdas = AD.c.replace(".", "").split("").map(function(d){ return {d: d, rel: false}; });
+  $("ad-origen").innerHTML = '<span class="grande">' + sciHTML(AD.c, AD.k) + "</span>";
+  $("ad-aviso").className = "caja-aviso"; $("ad-aviso").textContent = "";
+  pintaAD();
+}
+function pintaAD(){
+  var html = "";
+  AD.celdas.forEach(function(x, i){ html += '<span class="celda' + (x.rel ? " relleno" : "") + '">' + x.d + "</span>"; if (i === AD.pos - 1 && AD.pos < AD.celdas.length) html += '<span class="punto">.</span>'; });
+  $("ad-vis").innerHTML = html;
+  var falta = Math.abs(AD.k) - AD.pasos, actual = porPot(leeNumero(AD.c), AD.k > 0 ? AD.pasos : -AD.pasos), rel = AD.celdas.filter(function(x){ return x.rel; }).length, msg, ak = Math.abs(AD.k);
+  if (falta === 0) msg = '<span class="grande">✓ ' + sciHTML(AD.c, AD.k) + " = " + conComas(actual) + "</span><br>" +
+    T("The point moved " + ak + lugares(ak) + (AD.k > 0 ? " to the right" : " to the left") + (rel ? " and " + rel + (rel === 1 ? " zero was" : " zeros were") + " filled in." : "."),
+      "El punto se movió " + ak + lugares(ak) + (AD.k > 0 ? " a la derecha" : " a la izquierda") + (rel ? " y se agregaron " + rel + (rel === 1 ? " cero" : " ceros") + " de relleno." : "."));
+  else msg = T("Number now: ", "Número actual: ") + "<strong>" + conComas(actual) + "</strong>. " + (AD.pasos === 0 ? T("Which way does the point go? Look at the sign of the exponent.", "¿Hacia dónde va el punto? Mire el signo del exponente.") : (falta === 1 ? T("1 place to go.", "Falta 1 lugar.") : T(falta + " places to go.", "Faltan " + falta + " lugares.")));
+  $("ad-estado").innerHTML = msg;
+  $("ad-izq").disabled = falta === 0; $("ad-der").disabled = falta === 0;
+}
+function mueveAD(der){
+  if (AD.pasos >= Math.abs(AD.k)) return;
+  if (der !== (AD.k > 0)){
+    $("ad-aviso").className = "caja-aviso visible";
+    $("ad-aviso").textContent = AD.k > 0 ? T("The exponent is positive: the number must grow, so the point goes to the right.", "El exponente es positivo: el número tiene que crecer, así que el punto va a la derecha.")
+                                         : T("The exponent is negative: the number must get smaller, so the point goes to the left.", "El exponente es negativo: el número tiene que achicarse, así que el punto va a la izquierda.");
+    return;
+  }
+  $("ad-aviso").className = "caja-aviso"; $("ad-aviso").textContent = "";
+  if (der){ AD.pos++; if (AD.pos > AD.celdas.length) AD.celdas.push({d: "0", rel: true}); }
+  else { AD.pos--; if (AD.pos < 1){ AD.celdas.unshift({d: "0", rel: true}); AD.pos = 1; } }
+  AD.pasos++; pintaAD();
+}
+function azarAD(){ return [coefAzar(aleatorio(1, 3)), Math.random() < 0.5 ? aleatorio(2, 7) : -aleatorio(1, 5)]; }
+function genDecimal(){
+  var c = coefAzar(aleatorio(1, 3)), k = Math.random() < 0.5 ? aleatorio(2, 7) : -aleatorio(1, 5), resp = sci(c, k), ak = Math.abs(k);
+  return {enun: T("Write ", "Escriba ") + sciHTML(c, k) + T(" as a decimal.", " en notación decimal."), resp: resp,
+    explica: sciHTML(c, k) + " = <strong>" + conComas(resp) + "</strong>. " + T("The exponent " + expTexto(k) + " says: move the point " + ak + lugares(ak) + (k > 0 ? " to the right." : " to the left."), "El exponente " + expTexto(k) + " indica mover el punto " + ak + lugares(ak) + (k > 0 ? " a la derecha." : " a la izquierda.")),
+    pista: function(v){
+      if (igual(v, sci(c, -k))) return T("You moved the point the wrong way.", "Movió el punto hacia el lado contrario.");
+      if (igual(v, sci(c, k + 1)) || igual(v, sci(c, k - 1))) return T("Check how many places: there is one too many or one too few.", "Revise cuántos lugares: le sobra o le falta uno.");
+      return null; }};
+}
+
+/* ============ MODULE 4 · ordering real magnitudes ============ */
+var CONJUNTOS = [
+  {unidad: T("All the lengths are in meters (m).", "Todas las longitudes están en metros (m)."), u: "m", datos: [
+    [T("The width of a hydrogen atom (approx.)", "El diámetro de un átomo de hidrógeno (aprox.)"), "1.06", -10], [T("A flu virus (approx.)", "Un virus de la gripe (aprox.)"), "1.2", -7],
+    [T("A red blood cell (approx.)", "Un glóbulo rojo (aprox.)"), "8", -6], [T("A grain of fine sand (approx.)", "Un grano de arena fina (aprox.)"), "2", -4],
+    [T("The height of an adult (approx.)", "La estatura de una persona adulta (aprox.)"), "1.7", 0], [T("The height of Mount Everest", "La altura del monte Everest"), "8.849", 3],
+    [T("The width of the Earth", "El diámetro de la Tierra"), "1.2742", 7], [T("The distance from the Earth to the Moon", "La distancia de la Tierra a la Luna"), "3.844", 8],
+    [T("The distance from the Earth to the Sun", "La distancia de la Tierra al Sol"), "1.496", 11]]},
+  {unidad: T("All the masses are in kilograms (kg).", "Todas las masas están en kilogramos (kg)."), u: "kg", datos: [
+    [T("An electron", "Un electrón"), "9.109", -31], [T("A proton", "Un protón"), "1.673", -27], [T("A grain of rice (approx.)", "Un grano de arroz (aprox.)"), "2.5", -5],
+    [T("An adult (approx.)", "Una persona adulta (aprox.)"), "7", 1], [T("An African elephant (approx.)", "Un elefante africano (aprox.)"), "6", 3],
+    [T("The Moon", "La Luna"), "7.35", 22], [T("The Earth", "La Tierra"), "5.97", 24], [T("The Sun", "El Sol"), "1.989", 30]]}];
+var OR = {lista: [], u: ""};
+function valorDe(d){ return sci(d[1], d[2]); }
+function estaOrdenado(l){ for (var i = 1; i < l.length; i++) if (compara(valorDe(l[i - 1]), valorDe(l[i])) > 0) return false; return true; }
+function nuevoOrden(){
+  var cj = elige(CONJUNTOS), sel;
+  do { sel = baraja(cj.datos).slice(0, 4); } while (estaOrdenado(sel));
+  OR.lista = sel; OR.u = cj.u; $("or-unidad").textContent = cj.unidad;
+  $("or-fb").className = "fb"; $("or-fb").textContent = ""; pintaOrden();
+}
+function pintaOrden(foco){
+  var ol = $("or-lista"); ol.innerHTML = "";
+  OR.lista.forEach(function(d, i){
+    var li = document.createElement("li");
+    li.innerHTML = '<span class="nombre">' + d[0] + "</span><span>" + sciHTML(d[1], d[2]) + " " + OR.u + '</span><span class="flechas"><button type="button" data-i="' + i + '" data-d="-1" aria-label="' + T("Move up: ", "Subir: ") + d[0] + '">↑</button><button type="button" data-i="' + i + '" data-d="1" aria-label="' + T("Move down: ", "Bajar: ") + d[0] + '">↓</button></span>';
+    ol.appendChild(li);
+  });
+  ol.querySelectorAll("button").forEach(function(b){
+    var i = +b.getAttribute("data-i"), d = +b.getAttribute("data-d");
+    b.disabled = (d < 0 && i === 0) || (d > 0 && i === OR.lista.length - 1);
+    b.addEventListener("click", function(){ var j = i + d; if (j < 0 || j >= OR.lista.length) return; var x = OR.lista[i]; OR.lista[i] = OR.lista[j]; OR.lista[j] = x; $("or-fb").className = "fb"; $("or-fb").textContent = ""; pintaOrden({i: j, d: d}); });
+  });
+  if (foco){ var b = ol.querySelector('button[data-i="' + foco.i + '"][data-d="' + foco.d + '"]'); if (!b || b.disabled) b = ol.querySelector('button[data-i="' + foco.i + '"]:not([disabled])'); if (b) b.focus(); }
+}
+function compruebaOrden(){
+  var ok = true, bien = OR.lista.slice().sort(function(a, b){ return compara(valorDe(a), valorDe(b)); });
+  Array.prototype.forEach.call($("or-lista").children, function(li, i){ var x = OR.lista[i] === bien[i]; if (!x) ok = false; li.className = x ? "bien" : "mal"; });
+  $("or-fb").className = "fb " + (ok ? "bien" : "pista");
+  $("or-fb").innerHTML = ok ? T("✓ The order is right. Notice that the exponents go up: the exponent decides first.", "✓ Orden correcto. Fíjese en que los exponentes van creciendo: el exponente decide primero.")
+                            : T("The places in red are not in order. Compare the exponents first (remember that −7 is less than −4); only if two exponents are equal, look at the coefficient.", "Las posiciones en rojo no están en su lugar. Compare primero los exponentes (recuerde que −7 es menor que −4); solo si dos exponentes son iguales, mire el coeficiente.");
+}
+function vecesHTML(d){ var n = conComas(sci("1", d)); return '<span aria-hidden="true">' + n + T(" times (10<sup>", " veces (10<sup>") + d + '</sup>)</span><span class="sr-only">' + n + T(" times, 10 to the power of ", " veces, 10 elevado a ") + d + "</span>"; }
+function genComparar(){
+  var t = aleatorio(1, 4);
+  if (t <= 2){
+    var a1, a2, k1, k2, iguales = false;
+    if (t === 1){ k1 = aleatorio(-8, 9); k2 = k1 + aleatorio(1, 3); a1 = String(aleatorio(6, 9)); a2 = Math.random() < 0.3 ? coefAzar(2) : String(aleatorio(1, 5)); }
+    else if (Math.random() < 0.5){ k1 = k2 = aleatorio(-6, 9); a1 = coefAzar(2); a2 = coefAzar(2); while (a1 === a2) a2 = coefAzar(2); }
+    else { k2 = aleatorio(-5, 8); a2 = coefAzar(2); a1 = plano(porPot(leeNumero(a2), 1)); k1 = k2 - 1; iguales = true; }
+    var A = sci(a1, k1), Bn = sci(a2, k2), orden = compara(A, Bn);
+    if (Math.random() < 0.5){ var ta = a1, tk = k1; a1 = a2; k1 = k2; a2 = ta; k2 = tk; orden = -orden; }
+    var q = {enun: T("Which amount is larger: ", "¿Cuál cantidad es mayor: ") + sciHTML(a1, k1) + T(" or ", " o ") + sciHTML(a2, k2) + "?",
+      opciones: [{html: sciHTML(a1, k1), clave: "A"}, {html: sciHTML(a2, k2), clave: "B"}, {html: T("They are equal", "Son iguales"), clave: "="}], enOrden: true,
+      correcta: orden > 0 ? "A" : (orden < 0 ? "B" : "="), porClave: {}};
+    if (iguales){ q.bien = T("Both are the same amount: ", "Las dos valen lo mismo: ") + sciHTML(a1, k1) + " = " + numSciHTML(A) + T(". Only one of them is valid scientific notation.", ". Solo una de ellas está en notación científica válida."); q.mal = T("They are equal: ", "Son iguales: ") + sciHTML(a1, k1) + T(" can be rewritten as ", " se reescribe como ") + numSciHTML(A) + "."; q.pista = T("Rewrite the one whose coefficient is not from 1 to 10, then compare.", "Reescriba la que tiene el coeficiente fuera de 1 a 10 y después compare."); }
+    else if (k1 !== k2){ q.bien = T("The larger exponent decides, whatever the coefficient.", "El exponente mayor decide, sin importar el coeficiente."); q.mal = T("Look at the exponents first: ", "Mire primero los exponentes: ") + expTexto(Math.max(k1, k2)) + T(" is larger than ", " es mayor que ") + expTexto(Math.min(k1, k2)) + "."; q.pista = T("Look at the exponents first, not the coefficients.", "Mire primero los exponentes, no los coeficientes."); }
+    else { q.bien = T("With the same exponent, the larger coefficient decides.", "Con el mismo exponente, decide el coeficiente mayor."); q.mal = T("The exponents are equal, so the larger coefficient decides.", "Los exponentes son iguales, así que decide el coeficiente mayor."); q.pista = T("The exponents are equal: compare the coefficients.", "Los exponentes son iguales: compare los coeficientes."); }
+    return q;
+  }
+  var c = coefAzar(aleatorio(1, 2)), kb = aleatorio(-6, 6), d = aleatorio(1, 6), ka = kb + d;
+  var q2 = {enun: T("How many times larger is ", "¿Cuántas veces mayor es ") + sciHTML(c, ka) + T(" than ", " que ") + sciHTML(c, kb) + "?",
+    opciones: [{html: vecesHTML(d), clave: "p" + d}, {html: d + (d === 1 ? T(" time", " vez") : T(" times", " veces")), clave: "n" + d}, {html: vecesHTML(d + 1), clave: "p" + (d + 1)}, {html: vecesHTML(d > 1 ? d - 1 : d + 2), clave: "p" + (d > 1 ? d - 1 : d + 2)}],
+    correcta: "p" + d, porClave: {}, pista: T("Subtract the exponents: each step is a factor of 10.", "Reste los exponentes: cada unidad es un factor de 10."),
+    bien: T("The difference of the exponents is ", "La diferencia de exponentes es ") + expTexto(ka) + " − " + par(kb) + " = " + d + T(", and 10<sup>", ", y 10<sup>") + d + "</sup> = " + conComas(sci("1", d)) + ".",
+    mal: T("Subtract the exponents: ", "Reste los exponentes: ") + expTexto(ka) + " − " + par(kb) + " = " + d + T(". Each step is a factor of 10, so it is " + conComas(sci("1", d)) + " times larger.", ". Cada unidad es un factor de 10, así que es " + conComas(sci("1", d)) + " veces mayor.")};
+  q2.porClave["n" + d] = T("The difference of the exponents is not the number of times: each step multiplies by 10.", "La diferencia de exponentes no es el número de veces: cada unidad multiplica por 10.");
+  return q2;
+}
+
+/* ============ Start ============ */
+creaRecorrido("rg", [sci("4.5", 6)], grandeAzar, true);
+creaRecorrido("rp", [sci("3.2", -4)], pequenoAzar, false);
+OMS("p1", genGrandes);
+OMS("p2", genPequenos);
+creaPracticaSci("p3", genMezcla);
+$("ad-izq").addEventListener("click", function(){ mueveAD(false); });
+$("ad-der").addEventListener("click", function(){ mueveAD(true); });
+$("ad-nuevo").addEventListener("click", function(){ cargaAD(AD.cola.length ? AD.cola.shift() : azarAD()); });
+cargaAD(AD.cola.shift());
+creaPracticaDec("p4", genDecimal);
+$("or-comprobar").addEventListener("click", compruebaOrden);
+$("or-nuevo").addEventListener("click", nuevoOrden);
+nuevoOrden();
+OMS("p5", genComparar);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
