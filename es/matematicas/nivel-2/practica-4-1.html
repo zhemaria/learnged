@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 4.1 · Razones y tasas unitarias — práctica (español) — construida con tools/build_n2_lesson_4_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 4.1 · Razones y tasas unitarias · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-4-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 4 · Razones, proporciones y porcentajes</div>
+    <h1>Lección 4.1 · Razones y tasas unitarias</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#razon">Qué es una razón</a></li>
+      <li><a href="#tasa">La tasa unitaria</a></li>
+      <li><a href="#comparar">Comparar opciones</a></li>
+      <li><a href="#rapidez">Rapidez y otras tasas en contexto</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="razon" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Qué es una razón</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una <strong>razón</strong> compara dos cantidades del mismo tipo: «tantos por cada tantos». Se escribe de tres formas que significan lo mismo: <strong>4 a 1</strong>, <strong>4 : 1</strong> o <strong>4/1</strong>. Se simplifica como una fracción, dividiendo los dos términos entre su máximo común divisor.</p>
+      <h3>Forme los grupos</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rz-a">Estudiantes 🧑: <span id="rz-av"></span></label><input type="range" id="rz-a" min="1" max="24" step="1" value="12"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rz-b">Maestros 👩‍🏫: <span id="rz-bv"></span></label><input type="range" id="rz-b" min="1" max="12" step="1" value="3"></div>
+        </div>
+        <div class="grupos" id="rz-grupos" aria-hidden="true"></div>
+        <p class="sr-only" id="rz-grupos-voz"></p>
+        <div class="salida" id="rz-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>El orden importa:</strong> «trigo a centeno» es 3 a 2, pero «centeno a trigo» es 2 a 3. La cantidad que se nombra primero va primero.</div>
+      <h3>Practique: razones</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="tasa">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La tasa unitaria</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando las dos cantidades tienen <strong>unidades distintas</strong> (millas y horas, dólares y libras), la razón se llama <strong>tasa</strong>. La <strong>tasa unitaria</strong> tiene 1 como segundo término: se divide el primer término entre el segundo. Las palabras «por» y «cada» la delatan.</p>
+      <h3>Calcule la tasa unitaria</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="ts-c">Situación</label><select id="ts-c"><option value="0">millas / horas</option><option value="1">dólares / libras</option><option value="2">palabras / minutos</option><option value="3">dólares ganados / horas trabajadas</option></select></div>
+          <div class="campo"><label for="ts-a" id="ts-al">Millas</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="ts-a" value="240"></div>
+          <div class="campo"><label for="ts-b" id="ts-bl">Horas</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="ts-b" value="4"></div>
+        </div>
+        <div class="caja-aviso" id="ts-aviso" role="alert"></div>
+        <div class="salida" id="ts-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: tasas unitarias</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Tasa unitaria</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 1.25; si es dinero, puede usar el signo $.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comparar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Comparar opciones</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para saber qué opción conviene, se calcula el <strong>precio por unidad</strong> de cada una. El precio total más bajo no siempre es la mejor compra: un paquete pequeño cuesta menos en total, pero a veces más por unidad.</p>
+      <h3>Practique: ¿cuál es la mejor compra?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="rapidez">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Rapidez y otras tasas en contexto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Conocida la tasa unitaria, se usa para calcular: a 60 millas por hora, en 3 horas un auto recorre 60 × 3 = 180 millas, y 300 millas le toman 300 ÷ 60 = 5 horas. Lo mismo sirve para salarios, consumo de gasolina o mezclas.</p>
+      <div class="formula">distancia = rapidez × tiempo</div>
+      <h3>El viaje</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rp-v">Rapidez (millas por hora): <span id="rp-vv"></span></label><input type="range" id="rp-v" min="10" max="80" step="5" value="60"></div>
+          <div class="campo" style="flex:1;min-width:180px;"><label for="rp-t">Tiempo (horas): <span id="rp-tv"></span></label><input type="range" id="rp-t" min="0.5" max="8" step="0.5" value="3"></div>
+        </div>
+        <div id="rp-svg"></div>
+        <div class="salida" id="rp-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: tasas en contexto</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 1.25; si es dinero, puede usar el signo $.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 4 · Razones, proporciones y porcentajes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script>
+var TXT = {
+ "est": [
+  "estudiante",
+  "estudiantes"
+ ],
+ "mae": [
+  "maestro",
+  "maestros"
+ ],
+ "razonDe": "Razón de estudiantes a maestros: <strong>{a} a {b}</strong> = {a} : {b} = {f}.",
+ "grupos": "Se forman {g} grupos iguales (se divide entre {g}, el máximo común divisor). Simplificada: <strong>{p} a {q}</strong>.",
+ "yaSimple": "{a} y {b} no tienen divisores comunes: la razón ya está simplificada.",
+ "porCada": "Hay {p} {e} por cada {q2} {m}.",
+ "hay": [
+  "",
+  ""
+ ],
+ "aria": "{g} grupos iguales, cada uno con {p} {e} y {q} {m}.",
+ "ctx": [
+  [
+   "carros",
+   "espacios",
+   "En un estacionamiento hay {a} carros y {b} espacios."
+  ],
+  [
+   "partidos ganados",
+   "partidos perdidos",
+   "Un equipo ganó {a} partidos y perdió {b}."
+  ],
+  [
+   "panes de trigo",
+   "panes de centeno",
+   "En una panadería hay {a} panes de trigo y {b} de centeno."
+  ],
+  [
+   "mujeres",
+   "hombres",
+   "En una clase hay {a} mujeres y {b} hombres."
+  ],
+  [
+   "tazas de agua",
+   "tazas de arroz",
+   "Una receta lleva {a} tazas de agua y {b} de arroz."
+  ]
+ ],
+ "simplDe": " ¿Cuál es la razón simplificada de {x} a {y}?",
+ "a": " a ",
+ "inv": "El orden está invertido: se nombran primero los {x}.",
+ "sin": "Es la razón correcta, pero falta simplificarla (dividir entre {k}).",
+ "tot": "Esa compara con el total, no con los {y}.",
+ "bien1": "{a} a {b} dividido entre {k}: {r}.",
+ "mal1": "{a} a {b} ÷ {k} = {r}, en el orden en que se nombran las cantidades.",
+ "notacion": "La notación {p} : {q} es lo mismo que:",
+ "notOk": "{p} a {q}, o {p}/{q}",
+ "menos": "{p} menos {q}",
+ "bienNot": "Los dos puntos se leen «a»: {p} a {q}, que también se escribe {p}/{q}.",
+ "pistaNot": "Los dos puntos no son una operación. Se leen «a».",
+ "situ": [
+  [
+   "Millas",
+   "Horas",
+   "millas por hora"
+  ],
+  [
+   "Dólares",
+   "Libras",
+   "dólares por libra"
+  ],
+  [
+   "Palabras",
+   "Minutos",
+   "palabras por minuto"
+  ],
+  [
+   "Dólares ganados",
+   "Horas trabajadas",
+   "dólares por hora"
+  ]
+ ],
+ "dosPos": "Escriba dos números positivos.",
+ "divide": "Se divide el primer término entre el segundo: {a} ÷ {b} = {r}.",
+ "ts": [
+  "Un auto recorre {t} millas en {q} horas. ¿Cuántas millas recorre por hora?",
+  "Un paquete de {q} libras de pollo cuesta {t}. ¿Cuánto cuesta cada libra, en dólares?",
+  "Una persona escribe {t} palabras en {q} minutos. ¿Cuántas palabras escribe por minuto?",
+  "Por {q} horas de trabajo se cobran {t}. ¿Cuánto se gana por hora, en dólares?",
+  "Un auto recorre {t} millas con {q} galones de gasolina. ¿Cuántas millas recorre por galón?"
+ ],
+ "tsU": [
+  "millas por hora",
+  "dólares por libra",
+  "palabras por minuto",
+  "dólares por hora",
+  "millas por galón"
+ ],
+ "alReves": "Se dividió al revés: el primer término ({a}) va entre el segundo ({b}).",
+ "noMult": "Para la tasa unitaria se divide, no se multiplica.",
+ "prod": [
+  [
+   "arroz",
+   "libras",
+   "libra"
+  ],
+  [
+   "detergente",
+   "onzas",
+   "onza"
+  ],
+  [
+   "cereal",
+   "onzas",
+   "onza"
+  ],
+  [
+   "jugo",
+   "onzas",
+   "onza"
+  ],
+  [
+   "huevos",
+   "huevos",
+   "huevo"
+  ]
+ ],
+ "opcion": "Opción {l}",
+ "opcionDe": "Opción {l}: {n} {u} por {p}",
+ "cual": "¿Qué paquete de {x} conviene más (el precio más bajo por {u})?",
+ "linea": "Opción {l}: {p} ÷ {n} ≈ ${r} por {u}",
+ "conviene": ". Conviene la opción {l}.",
+ "masBarata": ". La más barata por {u} es la opción {l}.",
+ "engana": "Es la de menor precio total, pero no la más barata por {u}.",
+ "pistaComp": "Divida cada precio entre su cantidad y compare.",
+ "rpAria": "Un recorrido de {d} millas en {t} horas a {v} millas por hora.",
+ "millas": "640 millas",
+ "cadaHora": "Cada hora el auto avanza {v} millas (cada marca es una hora).",
+ "dist": "distancia = {v} × {t} = {d} millas",
+ "rp1": "Un autobús viaja a {v} millas por hora durante {h} horas. ¿Cuántas millas recorre?",
+ "rp1s": "{v} × {h} = {r} millas.",
+ "rp1p": "Aquí se conoce la rapidez y se busca la distancia: se multiplica.",
+ "rp2": "Un camión tiene que recorrer {d} millas a {v} millas por hora. ¿Cuántas horas tarda?",
+ "rp2s": "{d} ÷ {v} = {h} horas.",
+ "rp2p": "Para el tiempo se divide la distancia entre la rapidez.",
+ "rp3": "Una persona gana {s} por hora y trabaja {h} horas esta semana. ¿Cuánto gana en total, en dólares?",
+ "rp3s": "{s} × {h} = {r}.",
+ "rp4": "Un auto recorre {m} millas por galón. ¿Cuántos galones necesita para un viaje de {d} millas?",
+ "rp4s": "{d} ÷ {m} = {g} galones.",
+ "rp4p": "Se divide la distancia entre las millas por galón.",
+ "rp5": "Una mezcla de pintura lleva {a} partes de azul por cada {b} de blanca. Si se usan {ak} partes de azul, ¿cuántas partes de blanca hacen falta para mantener la razón?",
+ "rp5s": "El azul se multiplicó por {k} ({a} × {k} = {ak}), así que la blanca también: {b} × {k} = {r}.",
+ "rp5p": "En una razón no se suma la misma cantidad a los dos términos: se multiplican por el mismo número.",
+ "rp6": "Una impresora imprime {p} páginas por minuto. ¿Cuántas páginas imprime en {m} minutos?",
+ "rp6s": "{p} × {m} = {r} páginas."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function rzT(a, b){ return a + TXT.a + b; }
+function frH2(a, b){ return '<span aria-hidden="true"><span class="fracc"><span class="fa">' + a + '</span><span class="fb2">' + b + '</span></span></span><span class="sr-only">' + a + '/' + b + '</span>'; }
+function pl(n, par){ return n === 1 ? par[0] : par[1]; }
+
+/* ============ MODULE 1 · ratios ============ */
+function pintaRZ(){
+  var a = +$("rz-a").value, b = +$("rz-b").value, g = mcdR(a, b), p = a / g, q = b / g;
+  $("rz-av").textContent = a; $("rz-bv").textContent = b;
+  var h = "";
+  for (var i = 0; i < g; i++) h += '<div class="grupo">' + '<span class="ico">🧑</span>'.repeat(p) + '<span class="ico">👩‍🏫</span>'.repeat(q) + '</div>';
+  $("rz-grupos").innerHTML = h;
+  $("rz-grupos-voz").textContent = F(TXT.aria, { g: g, p: p, q: q, e: pl(p, TXT.est), m: pl(q, TXT.mae) });
+  $("rz-salida").innerHTML = '<div class="linea">' + F(TXT.razonDe, { a: a, b: b, f: frH2(a, b) }) + '</div>' +
+    '<div class="linea">' + (g > 1 ? F(TXT.grupos, { g: g, p: p, q: q }) : F(TXT.yaSimple, { a: a, b: b })) + '</div>' +
+    '<div class="linea veredicto">' + F(TXT.porCada, { ser: pl(p, TXT.hay), p: p, e: pl(p, TXT.est), q2: q === 1 ? (ES ? "" : "") : q, m: pl(q, TXT.mae) }).replace("  ", " ") + '</div>';
+}
+function genRazon(){
+  var c = elige(TXT.ctx), k = aleatorio(2, 6), p = aleatorio(1, 6), q = aleatorio(1, 6);
+  while (q === p || mcdR(p, q) > 1) q = aleatorio(1, 6);
+  var a = p * k, b = q * k, tp = aleatorio(1, 3), enun = F(c[2], { a: a, b: b });
+  function op(x, y, cl){ return { html: rzT(x, y), clave: cl }; }
+  if (tp === 1) return { enun: enun + F(TXT.simplDe, { x: c[0], y: c[1] }), opciones: [op(p, q, "ok"), op(q, p, "inv"), op(a, b, "sin"), op(p, p + q, "tot")], correcta: "ok",
+    pistas: { inv: F(TXT.inv, { x: c[0] }), sin: F(TXT.sin, { k: k }), tot: F(TXT.tot, { y: c[1] }) }, bien: F(TXT.bien1, { a: a, b: b, k: k, r: rzT(p, q) }), mal: F(TXT.mal1, { a: a, b: b, k: k, r: rzT(p, q) }) };
+  if (tp === 2) return { enun: enun + F(TXT.simplDe, { x: c[1], y: c[0] }), opciones: [op(q, p, "ok"), op(p, q, "inv"), op(b, a, "sin"), op(q, p + q, "tot")], correcta: "ok",
+    pistas: { inv: F(TXT.inv, { x: c[1] }), sin: F(TXT.sin, { k: k }), tot: F(TXT.tot, { y: c[0] }) }, bien: F(TXT.bien1, { a: b, b: a, k: k, r: rzT(q, p) }), mal: F(TXT.mal1, { a: b, b: a, k: k, r: rzT(q, p) }) };
+  return { enun: F(TXT.notacion, { p: p, q: q }), opciones: [{ html: F(TXT.notOk, { p: p, q: q }), clave: "ok" }, { html: p + " + " + q, clave: "s" }, { html: F(TXT.menos, { p: p, q: q }), clave: "r" }, { html: rzT(q, p), clave: "i" }],
+    correcta: "ok", pista: TXT.pistaNot, bien: F(TXT.bienNot, { p: p, q: q }), mal: F(TXT.bienNot, { p: p, q: q }) };
+}
+
+/* ============ MODULE 2 · unit rate ============ */
+function pintaTS(){
+  var c = TXT.situ[+$("ts-c").value]; $("ts-al").textContent = c[0]; $("ts-bl").textContent = c[1];
+  var a = leeD($("ts-a").value), b = leeD($("ts-b").value), av = $("ts-aviso");
+  if (a === null || b === null || b <= 0 || a < 0){ av.className = "caja-aviso visible"; av.textContent = TXT.dosPos; $("ts-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var r = Math.round(a / b * 100) / 100;
+  $("ts-salida").innerHTML = '<div class="linea">' + F(TXT.divide, { a: nd(a), b: nd(b), r: (Math.abs(r - a / b) > 1e-9 ? "≈ " : "") + nd(r) }) + '</div><div class="linea veredicto">' + nd(r) + ' ' + c[2] + '</div>';
+}
+function genTasa(){
+  var tp = aleatorio(0, 4), r, q;
+  if (tp === 0){ r = 5 * aleatorio(8, 14); q = aleatorio(2, 6); }
+  else if (tp === 1){ r = elige([1.25, 1.5, 2.25, 3, 3.5, 4.75]); q = aleatorio(2, 8); }
+  else if (tp === 2){ r = 5 * aleatorio(6, 16); q = aleatorio(2, 10); }
+  else if (tp === 3){ r = elige([12, 14.5, 15, 16.25, 18, 21]); q = aleatorio(4, 10); }
+  else { r = aleatorio(20, 35); q = aleatorio(8, 15); }
+  var tot = r * q, dn = tp === 1 || tp === 3, tt = dn ? dinero(tot) : nd(tot);
+  var pist = [{ v: q / tot, msg: F(TXT.alReves, { a: tt, b: q }) }, { v: tot * q, msg: TXT.noMult }];
+  return { enun: F(TXT.ts[tp], { t: tt, q: q }), correcta: dn ? dinero(r) : nd(r),
+    solucion: tt + " ÷ " + q + " = " + (dn ? dinero(r) : nd(r)) + " " + TXT.tsU[tp] + ".", evalua: numD(r, pist) };
+}
+
+/* ============ MODULE 3 · the better buy ============ */
+function genCompra(){
+  for (var k = 0; k < 200; k++){
+    var pi = aleatorio(0, 4), p = TXT.prod[pi], n = aleatorio(2, 3), ops = [];
+    var base = pi === 4 ? [6, 12, 18, 24] : (pi === 0 ? [2, 5, 10, 20] : [16, 24, 32, 48, 64]);
+    var tams = baraja(base).slice(0, n).sort(function(x, y){ return x - y; });
+    tams.forEach(function(tm, i){
+      var unit = Math.round((0.08 + Math.random() * 0.3) * (pi === 0 ? 8 : (pi === 4 ? 1.2 : 1)) * 100) / 100;
+      unit = unit * (1 - 0.06 * i + (Math.random() - 0.5) * 0.18);
+      var precio = Math.round(unit * tm * 4) / 4; ops.push({ t: tm, precio: precio, u: precio / tm, l: "ABC"[i] });
+    });
+    var us = ops.map(function(o){ return Math.round(o.u * 1000); });
+    if (us.some(function(x, i){ return us.indexOf(x) !== i; }) || ops.some(function(o){ return o.precio <= 0; })) continue;
+    var mejor = ops.reduce(function(m, o){ return o.u < m.u ? o : m; });
+    if (mejor === ops[0] && Math.random() < 0.7) continue;
+    var tabla = ops.map(function(o){ return F(TXT.linea, { l: o.l, p: dinero(o.precio), n: o.t, r: o.u.toFixed(3), u: p[2] }); }).join("; ");
+    var o = ops.map(function(x){ return { html: F(TXT.opcionDe, { l: x.l, n: x.t, u: p[1], p: dinero(x.precio) }), clave: x.l }; });
+    var pc = {}, barata = ops.reduce(function(m, x){ return x.precio < m.precio ? x : m; });
+    if (barata !== mejor) pc[barata.l] = F(TXT.engana, { u: p[2] });
+    return { enOrden: true, enun: F(TXT.cual, { x: p[0], u: p[2] }), opciones: o, correcta: mejor.l, pistas: pc, pista: TXT.pistaComp,
+      bien: tabla + F(TXT.conviene, { l: mejor.l }), mal: tabla + F(TXT.masBarata, { u: p[2], l: mejor.l }) };
+  }
+}
+
+/* ============ MODULE 4 · speed and other rates ============ */
+function pintaRP(){
+  var v = +$("rp-v").value, tm = +$("rp-t").value, d = v * tm, x0 = 30, x1 = 610, esc = (x1 - x0) / 640;
+  $("rp-vv").textContent = v; $("rp-tv").textContent = nd(tm);
+  var s = '<svg class="figura" viewBox="0 0 640 112" role="img" aria-label="' + F(TXT.rpAria, { d: nd(d), t: nd(tm), v: v }) + '">';
+  s += '<rect x="' + x0 + '" y="40" width="' + (x1 - x0) + '" height="22" rx="4" fill="#eeeeee"/>';
+  s += '<rect x="' + x0 + '" y="40" width="' + f1(d * esc) + '" height="22" rx="4" fill="#4db6ac"/>';
+  for (var h = 1; h <= Math.floor(tm); h++) s += linea([x0 + v * h * esc, 34], [x0 + v * h * esc, 68], "#004d40", 2) + texto([x0 + v * h * esc, 84], h + " h", 13, "#004d40", 700);
+  s += texto([x0 + d * esc, 22], "🚗", 22, "#000", 400);
+  s += '<text x="' + x0 + '" y="104" font-size="13" fill="#424242">0</text><text x="' + x1 + '" y="104" font-size="13" fill="#424242" text-anchor="end">' + TXT.millas + '</text>';
+  $("rp-svg").innerHTML = s + '</svg>';
+  $("rp-salida").innerHTML = '<div class="linea">' + F(TXT.cadaHora, { v: v }) + '</div><div class="linea veredicto">' + F(TXT.dist, { v: v, t: nd(tm), d: nd(d) }) + '</div>';
+}
+function genRapidez(){
+  var tp = aleatorio(1, 6), res, enun, sol, p = [];
+  if (tp === 1){ var v = 5 * aleatorio(8, 14), h = aleatorio(2, 6); res = v * h; enun = F(TXT.rp1, { v: v, h: h }); sol = F(TXT.rp1s, { v: v, h: h, r: nd(res) }); p.push({ v: v / h, msg: TXT.rp1p }); }
+  else if (tp === 2){ var v2 = 5 * aleatorio(8, 14), h2 = aleatorio(2, 6), d2 = v2 * h2; res = h2; enun = F(TXT.rp2, { d: nd(d2), v: v2 }); sol = F(TXT.rp2s, { d: nd(d2), v: v2, h: h2 }); p.push({ v: d2 * v2, msg: TXT.rp2p }); }
+  else if (tp === 3){ var sal = elige([13.5, 15, 16, 17.25, 18.5]), hh = aleatorio(15, 40); res = sal * hh; enun = F(TXT.rp3, { s: dinero(sal), h: hh }); sol = F(TXT.rp3s, { s: dinero(sal), h: hh, r: dinero(res) }); }
+  else if (tp === 4){ var mpg = aleatorio(22, 35), gal = aleatorio(4, 12), dist = mpg * gal; res = gal; enun = F(TXT.rp4, { m: mpg, d: nd(dist) }); sol = F(TXT.rp4s, { d: nd(dist), m: mpg, g: gal }); p.push({ v: dist * mpg, msg: TXT.rp4p }); }
+  else if (tp === 5){ var az = aleatorio(2, 4), bl = aleatorio(3, 7); while (mcdR(az, bl) > 1) bl++; var k = aleatorio(2, 5); res = bl * k; enun = F(TXT.rp5, { a: az, b: bl, ak: az * k }); sol = F(TXT.rp5s, { a: az, b: bl, k: k, ak: az * k, r: res }); p.push({ v: az * k + (bl - az), msg: TXT.rp5p }); }
+  else { var ppm = aleatorio(40, 70), mins = aleatorio(3, 10); res = ppm * mins; enun = F(TXT.rp6, { p: ppm, m: mins }); sol = F(TXT.rp6s, { p: ppm, m: mins, r: nd(res) }); }
+  return { enun: enun, correcta: tp === 3 ? dinero(res) : nd(res), solucion: sol, evalua: numD(res, p.filter(function(x){ return Math.abs(x.v - res) > 0.01; })) };
+}
+
+/* ============ Start ============ */
+["rz-a", "rz-b"].forEach(function(id){ $(id).addEventListener("input", pintaRZ); }); pintaRZ();
+creaPracticaOM("p1", genRazon);
+$("ts-c").addEventListener("change", pintaTS); ["ts-a", "ts-b"].forEach(function(id){ $(id).addEventListener("input", pintaTS); }); pintaTS();
+creaPracticaLibre("p2", genTasa);
+creaPracticaOM("p3", genCompra);
+["rp-v", "rp-t"].forEach(function(id){ $(id).addEventListener("input", pintaRP); }); pintaRP();
+creaPracticaLibre("p4", genRapidez);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

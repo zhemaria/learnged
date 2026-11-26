@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 4.3 · Proporciones inversas y aplicaciones mixtas — práctica (español) — construida con tools/build_n2_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 4.3 · Proporciones inversas y aplicaciones mixtas · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-4-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 4 · Razones, proporciones y porcentajes</div>
+    <h1>Lección 4.3 · Proporciones inversas y aplicaciones mixtas</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#directa-inversa">Directa frente a inversa</a></li>
+      <li><a href="#inversas">Resolver proporciones inversas</a></li>
+      <li><a href="#mixtas">Aplicaciones mixtas</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="directa-inversa" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Directa frente a inversa</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Vamos a construir casas. Mueva los controles y observe qué crece y qué disminuye.</p>
+      <div class="tableros">
+        <div class="tablero">
+          <h4>Casas y cemento: suben juntos ↑↑</h4>
+          <div class="campo"><label for="di-c">Número de casas: <span id="di-cv"></span></label><input type="range" id="di-c" min="1" max="10" value="2"></div>
+          <div class="salida" id="di-sd" aria-live="polite"></div>
+        </div>
+        <div class="tablero">
+          <h4>Obreros y días: uno sube, el otro baja ↑↓</h4>
+          <div class="campo"><label for="di-o">Número de obreros: <span id="di-ov"></span></label><input type="range" id="di-o" min="1" max="12" value="2"></div>
+          <div class="salida" id="di-si" aria-live="polite"></div>
+        </div>
+      </div>
+      <table class="reglas">
+        <caption>Las dos clases de proporcionalidad</caption>
+        <thead><tr><th scope="col"></th><th scope="col">Directa</th><th scope="col">Inversa</th></tr></thead>
+        <tbody>
+          <tr><td>Si una cantidad crece…</td><td>la otra crece</td><td>la otra disminuye</td></tr>
+          <tr><td>Si una se duplica…</td><td>la otra se duplica</td><td>la otra se reduce a la mitad</td></tr>
+          <tr><td>Lo que no cambia</td><td>el cociente (la razón)</td><td>el producto</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-tip"><strong>La pregunta de prueba:</strong> «si una cantidad crece, ¿qué hace la otra?». Si crece con ella, es directa; si disminuye, es inversa.</div>
+      <h3>Practique: ¿directa o inversa?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="inversas">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Resolver proporciones inversas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En una proporción inversa lo que se mantiene es el <strong>producto</strong>. Se calcula el producto con los datos conocidos y se divide entre la cantidad nueva.</p>
+      <div class="formula">4 obreros × 9 días = 36 &nbsp;→&nbsp; 6 obreros × x días = 36 &nbsp;→&nbsp; x = 6</div>
+      <h3>Practique: proporciones inversas</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Resultado</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba solo el número. Puede llevar decimales, como 1.25; si es dinero, puede usar el signo $.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="mixtas">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Aplicaciones mixtas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los problemas no dicen de qué tipo son. Primero hágase la pregunta diagnóstica y después elija el método: razón constante (directa) o producto constante (inversa). Al final, compruebe que el resultado tiene sentido.</p>
+      <h3>Practique: decida y resuelva</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 4 · Razones, proporciones y porcentajes · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/rates.js"></script>
+<script>
+var TXT = {
+ "casas": "Cemento: <strong>{s} sacos</strong>",
+ "cteCasas": "Lo constante es el cociente: {s} ÷ {c} = <strong>20 sacos por casa</strong>.",
+ "dias": "Días de obra: <strong>{d}</strong>",
+ "cteObreros": "Lo constante es el producto: {o} × {d} = <strong>60 días-obrero</strong>.",
+ "vozCasas": "{c} casas",
+ "vozObreros": "{o} obreros",
+ "sit": [
+  [
+   "Libras de manzanas y lo que se paga por ellas.",
+   "d",
+   "Más libras, más dinero: directa."
+  ],
+  [
+   "Número de obreros y días para terminar una obra.",
+   "i",
+   "Más obreros, menos días: inversa."
+  ],
+  [
+   "Velocidad de un auto y tiempo para recorrer la misma distancia.",
+   "i",
+   "Más velocidad, menos tiempo: inversa."
+  ],
+  [
+   "Galones de gasolina y millas que se pueden recorrer.",
+   "d",
+   "Más gasolina, más millas: directa."
+  ],
+  [
+   "Horas trabajadas y sueldo ganado (pago por hora).",
+   "d",
+   "Más horas, más sueldo: directa."
+  ],
+  [
+   "Número de llaves abiertas y tiempo para llenar un tanque.",
+   "i",
+   "Más llaves, menos tiempo: inversa."
+  ],
+  [
+   "Invitados a una fiesta y el tamaño del pedazo de un pastel que le toca a cada uno.",
+   "i",
+   "Más invitados, pedazos más pequeños: inversa."
+  ],
+  [
+   "Tazas de harina y número de galletas de una receta.",
+   "d",
+   "Más galletas, más harina: directa."
+  ],
+  [
+   "Número de personas que comparten una renta fija y lo que paga cada una.",
+   "i",
+   "Más personas, menos paga cada una: inversa."
+  ],
+  [
+   "Pulgadas en un mapa y millas reales.",
+   "d",
+   "Más pulgadas en el mapa, más millas: directa."
+  ]
+ ],
+ "queTipo": " ¿Qué tipo de proporción es?",
+ "dir": "Directa: las dos crecen juntas",
+ "inv": "Inversa: una crece y la otra disminuye",
+ "pistaTipo": "Pregúntese: si una cantidad se duplica, ¿la otra se duplica o se reduce a la mitad?",
+ "i1": "{a} obreros tardan {b} días en terminar una obra. ¿Cuántos días tardarían {c} obreros al mismo ritmo?",
+ "i1s": "{a} × {b} = {k}; {k} ÷ {c} = {r} días.",
+ "i2": "Un autobús cubre una ruta a {a} mph en {b} horas. ¿Cuántas horas tardaría a {c} mph?",
+ "i2s": "{a} × {b} = {k} millas; {k} ÷ {c} = {r} horas.",
+ "i3": "Con {a} llaves abiertas, un tanque se llena en {b} minutos. ¿Cuántos minutos tarda con {c} {f}?",
+ "i3s": "{a} × {b} = {k}; {k} ÷ {c} = {r} minutos.",
+ "llave": [
+  "llave",
+  "llaves"
+ ],
+ "i4": "Si {a} personas comparten la renta, cada una paga {b}. ¿Cuánto pagaría cada una si fueran {c} personas, en dólares?",
+ "i4s": "{a} × {b} = {k}; {k} ÷ {c} = {r}.",
+ "esInv": "Es inversa: el producto se mantiene. ",
+ "comoDir": "Así sería si fuera directa. Aquí, si una cantidad crece, la otra disminuye: se mantiene el producto.",
+ "m": [
+  [
+   "{a} libras de carne cuestan {b}. ¿Cuánto cuestan {c} libras?",
+   "d",
+   "$"
+  ],
+  [
+   "{a} obreros pintan una casa en {b} días. ¿Cuántos días tardan {c} obreros?",
+   "i",
+   " días"
+  ],
+  [
+   "Un auto gasta {a} galones cada {b} millas. ¿Cuántos galones necesita para {c} millas?",
+   "d",
+   " galones"
+  ],
+  [
+   "A {a} mph un viaje toma {b} horas. ¿Cuántas horas toma a {c} mph?",
+   "i",
+   " horas"
+  ],
+  [
+   "Una receta para {a} porciones lleva {b} tazas de arroz. ¿Cuántas tazas se necesitan para {c} porciones?",
+   "d",
+   " tazas"
+  ],
+  [
+   "La comida de un albergue alcanza para {a} personas durante {b} días. ¿Para cuántos días alcanza a {c} personas?",
+   "i",
+   " días"
+  ]
+ ],
+ "solD": "Directa: {b} ÷ {a} = {u} por unidad; {u} × {c} = {r}.",
+ "solI": "Inversa: k = {a} × {b} = {k}; {k} ÷ {c} = {r}.",
+ "pDir": "Usó el método inverso, pero esta es directa: las dos cantidades crecen juntas.",
+ "pInv": "Usó el producto cruzado, pero esta es inversa: una cantidad crece y la otra disminuye.",
+ "pSuma": "Las proporciones no se resuelven sumando o restando la diferencia.",
+ "pistaMix": "Primero decida: ¿es directa o inversa?"
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+
+/* ============ MODULE 1 · direct or inverse ============ */
+function pintaDI(){
+  var c = +$("di-c").value, o = +$("di-o").value, sacos = 20 * c, dias = Math.round(60 / o * 100) / 100;
+  $("di-cv").textContent = c; $("di-ov").textContent = o;
+  $("di-sd").innerHTML = '<div class="linea"><span aria-hidden="true">' + '🏠'.repeat(c) + '</span><span class="sr-only">' + F(TXT.vozCasas, { c: c }) + '</span></div><div class="linea">' + F(TXT.casas, { s: sacos }) + '</div><div class="barra-v" style="width:' + (sacos / 2) + '%" aria-hidden="true"></div>' +
+    '<div class="linea">' + F(TXT.cteCasas, { s: sacos, c: c }) + '</div>';
+  $("di-si").innerHTML = '<div class="linea"><span aria-hidden="true">' + '👷'.repeat(o) + '</span><span class="sr-only">' + F(TXT.vozObreros, { o: o }) + '</span></div><div class="linea">' + F(TXT.dias, { d: nd(dias) }) + '</div><div class="barra-v" style="width:' + (dias / 60 * 100) + '%" aria-hidden="true"></div>' +
+    '<div class="linea">' + F(TXT.cteObreros, { o: o, d: nd(dias) }) + '</div>';
+}
+function genTipo(){
+  var s = elige(TXT.sit);
+  return { enun: s[0] + TXT.queTipo, opciones: [{ html: TXT.dir, clave: "d" }, { html: TXT.inv, clave: "i" }], correcta: s[1], enOrden: true, pista: TXT.pistaTipo, bien: s[2], mal: s[2] };
+}
+
+/* ============ MODULE 2 · inverse proportions ============ */
+function genInversa(){
+  for (var z = 0; z < 100; z++){
+    var tp = aleatorio(1, 4), a, b, c, k, res, enun, sol, din = false, ds, x;
+    if (tp === 1){ a = aleatorio(2, 8); b = aleatorio(3, 12); k = a * b; ds = []; for (x = 2; x <= 24; x++) if (k % x === 0 && x !== a) ds.push(x); if (!ds.length) continue; c = elige(ds); res = k / c;
+      enun = F(TXT.i1, { a: a, b: b, c: c }); sol = F(TXT.i1s, { a: a, b: b, c: c, k: k, r: nd(res) }); }
+    else if (tp === 2){ a = 5 * aleatorio(8, 14); b = aleatorio(2, 6); k = a * b; var vs = [45, 50, 55, 60, 65, 70, 75, 80].filter(function(v){ return v !== a && (k / v) * 4 === Math.round((k / v) * 4); }); if (!vs.length) continue; c = elige(vs); res = k / c;
+      enun = F(TXT.i2, { a: a, b: b, c: c }); sol = F(TXT.i2s, { a: a, b: b, c: c, k: k, r: nd(res) }); }
+    else if (tp === 3){ a = aleatorio(2, 4); b = aleatorio(6, 12) * 2; k = a * b; var ls = [1, 2, 3, 4, 6, 8].filter(function(v){ return v !== a && k % v === 0; }); c = elige(ls); res = k / c;
+      enun = F(TXT.i3, { a: a, b: b, c: c, f: c === 1 ? TXT.llave[0] : TXT.llave[1] }); sol = F(TXT.i3s, { a: a, b: b, c: c, k: k, r: nd(res) }); }
+    else { a = aleatorio(3, 6); b = a * 60 * aleatorio(1, 3); k = a * b; var ps = [2, 3, 4, 5, 6, 8, 10, 12].filter(function(v){ return v !== a && k % v === 0; }); c = elige(ps); res = k / c; din = true;
+      enun = F(TXT.i4, { a: a, b: dinero(b), c: c }); sol = F(TXT.i4s, { a: a, b: dinero(b), c: c, k: dinero(k), r: dinero(res) }); }
+    var directa = b * c / a;
+    return { enun: enun, correcta: din ? dinero(res) : nd(res), solucion: TXT.esInv + sol, evalua: numD(res, Math.abs(directa - res) > 0.01 ? [{ v: directa, msg: TXT.comoDir }] : []) };
+  }
+}
+
+/* ============ MODULE 3 · mixed applications ============ */
+function genMixta(){
+  for (var z = 0; z < 200; z++){
+    var i = aleatorio(0, 5), m = TXT.m[i], tipo = m[1], a, b, c, res, din = i === 0;
+    if (i === 0){ a = aleatorio(2, 5); var pu = elige([2.5, 3.5, 4.5, 5.25, 6]); b = a * pu; c = aleatorio(2, 9); }
+    else if (i === 1 || i === 5){ a = aleatorio(2, 12); b = aleatorio(3, 15); c = aleatorio(2, 16); }
+    else if (i === 2){ a = aleatorio(2, 5); b = a * elige([25, 30, 35]); c = b / a * aleatorio(2, 12); }
+    else if (i === 3){ a = 5 * aleatorio(6, 14); b = aleatorio(2, 8); c = 5 * aleatorio(6, 16); }
+    else { a = aleatorio(2, 6); b = aleatorio(1, 4); c = aleatorio(2, 12); }
+    if (c === a) continue;
+    var d = b * c / a, inv = a * b / c;
+    res = tipo === "d" ? d : inv;
+    var otro = tipo === "d" ? inv : d, suma = b + (c - a);
+    if (Math.abs(res * 100 - Math.round(res * 100)) > 1e-6 || Math.abs(otro * 100 - Math.round(otro * 100)) > 1e-6 || res <= 0) continue;
+    var f = function(v){ return din ? dinero(v) : nd(v) + m[2]; };
+    var bt = din ? dinero(b) : nd(b), ops = [{ html: f(res), clave: "ok" }], pc = {};
+    ops.push({ html: f(otro), clave: "otro" }); pc.otro = tipo === "d" ? TXT.pDir : TXT.pInv;
+    if (suma > 0 && Math.abs(suma - res) > 0.01 && Math.abs(suma - otro) > 0.01){ ops.push({ html: f(suma), clave: "suma" }); pc.suma = TXT.pSuma; }
+    if (Math.abs(res - otro) < 0.01) continue;
+    var u = Math.round(b / a * 1000) / 1000, kk = a * b;
+    var sol = tipo === "d" ? F(TXT.solD, { a: a, b: bt, c: c, u: din ? dinero(u) : nd(u), r: f(res) }) : F(TXT.solI, { a: a, b: nd(b), c: c, k: nd(kk), r: f(res) });
+    return { enun: F(m[0], { a: a, b: bt, c: c }), opciones: ops, correcta: "ok", pistas: pc, pista: TXT.pistaMix, bien: sol, mal: sol };
+  }
+}
+
+/* ============ Start ============ */
+["di-c", "di-o"].forEach(function(id){ $(id).addEventListener("input", pintaDI); }); pintaDI();
+creaPracticaOM("p1", genTipo);
+creaPracticaLibre("p2", genInversa);
+creaPracticaOM("p3", genMixta);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

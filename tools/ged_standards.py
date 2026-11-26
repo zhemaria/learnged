@@ -192,6 +192,12 @@ CCR = {
  "5.OA.1": ("C", "Use parentheses, brackets, or braces in numerical expressions, and evaluate expressions with these symbols."),
  "6.EE.2c": ("D", "Evaluate expressions at specific values of their variables. Include expressions that arise from formulas used in real-world problems. Perform arithmetic operations, including those involving whole-number exponents, in the conventional order when there are no parentheses to specify a particular order (Order of Operations)."),
  "8.NS.2": ("D", "Use rational approximations of irrational numbers to compare the size of irrational numbers, locate them approximately on a number line diagram, and estimate the value of expressions."),
+ "6.RP.1": ("D", "Understand the concept of a ratio and use ratio language to describe a ratio relationship between two quantities."),
+ "6.RP.2": ("D", "Understand the concept of a unit rate a/b associated with a ratio a:b with b ≠ 0, and use rate language in the context of a ratio relationship."),
+ "6.RP.3": ("D", "Use ratio and rate reasoning to solve real-world and mathematical problems, e.g., by reasoning about tables of equivalent ratios, tape diagrams, double number line diagrams, or equations."),
+ "6.RP.3b": ("D", "Solve unit rate problems including those involving unit pricing and constant speed."),
+ "7.RP.2a": ("D", "Decide whether two quantities are in a proportional relationship, e.g., by testing for equivalent ratios in a table or graphing on a coordinate plane and observing whether the graph is a straight line through the origin."),
+ "7.RP.2c": ("D", "Represent proportional relationships by equations."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
 CCR_ORDEN = list(CCR)
@@ -272,6 +278,12 @@ LESSONS = [
   {"direct": ["Q.2.a", "Q.2.b"], "builds": ["A.1.b"], "mp": ["MP.3.c", "MP.4.a", "MP.5.a"], "ccr": ["6.EE.1", "6.EE.2c", "7.NS.3"]}),
  ("level-2/lesson-3-3.html", "3.3", "PEMDAS with fractions and in algebra",
   {"direct": ["A.1.b", "A.1.e", "Q.2.e"], "builds": ["A.1.i"], "mp": ["MP.1.e", "MP.2.a", "MP.4.b"], "ccr": ["6.EE.2", "6.EE.2c", "7.NS.3"]}),
+ ("level-2/lesson-4-1.html", "4.1", "Ratios and unit rates",
+  {"direct": ["Q.3.a"], "builds": ["Q.3.c"], "mp": ["MP.1.c", "MP.2.c", "MP.4.a"], "ccr": ["6.RP.1", "6.RP.2", "6.RP.3b"]}),
+ ("level-2/lesson-4-2.html", "4.2", "Direct proportions: the rule of three",
+  {"direct": ["Q.3.c"], "builds": ["Q.3.b", "A.2.b"], "mp": ["MP.1.e", "MP.2.a", "MP.4.a"], "ccr": ["6.RP.3", "7.RP.2a", "7.RP.2c"]}),
+ ("level-2/lesson-4-3.html", "4.3", "Inverse proportions and mixed applications",
+  {"direct": ["Q.3.c"], "builds": ["Q.3.b"], "mp": ["MP.1.b", "MP.1.e", "MP.5.a"], "ccr": ["6.RP.3", "7.RP.2a"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
