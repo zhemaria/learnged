@@ -68,7 +68,7 @@ function conoSVG(o){
   s += '<path d="M' + f1(cx - R) + " " + base + " L" + cx + " " + f1(ap) + " L" + f1(cx + R) + " " + base + ' A' + f1(R) + " " + f1(R * .25) + " 0 0 1 " + f1(cx - R) + " " + base + 'Z" fill="' + S4.rell + '" stroke="' + S4.linea + '" stroke-width="2.5"/>';
   s += elip(cx, base, R, R * .25, "none", S4.oculto, "atras");
   s += lin(cx, ap, cx, base, S4.alto, 3, "7 5") + lin(cx, base, cx + R, base, S4.radio, 3.5) + '<path d="M' + cx + " " + (base - 12) + " h12 v12" + '" fill="none" stroke="' + S4.alto + '" stroke-width="2"/>';
-  s += etq(cx - 10, (ap + base) / 2, "h = " + o.h, S4.alto, "end") + etq(cx + R / 2, base + 30, "r = " + o.r, S4.radio);
+  s += etq(R < 80 ? cx - R / 2 - 8 : cx - 10, (ap + base) / 2, "h = " + o.h, S4.alto, "end") + etq(cx + R / 2, Math.min(base + R * .25 + 19, H - 3), "r = " + o.r, S4.radio);
   return marco(W, H, o.voz, s, o.ancho || 340);
 }
 function cilindroSVG(o){

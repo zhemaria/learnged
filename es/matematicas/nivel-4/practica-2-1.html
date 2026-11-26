@@ -38,7 +38,7 @@
 </style>
 </head>
 <body>
-<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
 <a class="saltar" href="#titulo-indice">Saltar al contenido</a>
 <div class="contenedor">
   <header class="principal">
@@ -215,9 +215,9 @@ function foPinta(){
   ["esfera", "cono", "piramide"].forEach(function(k){ $("fo-" + k).setAttribute("aria-pressed", k === s ? "true" : "false"); });
   if (s === "esfera"){ svg = esferaSVG({r: "r", diam: dia, voz: T("A sphere with its radius r marked from the center to the surface", "Una esfera con su radio r marcado del centro a la superficie") + (dia ? T(" and its diameter d below.", " y su diámetro d debajo.") : ".")});
     txt = T("<strong>V = 4/3 πr³.</strong> The only measure is the radius r, from the center to the surface. ", "<strong>V = 4/3 πr³.</strong> La única medida es el radio r, del centro a la superficie. ") + (dia ? T("The diameter d goes all the way across: d = 2r, so r = d ÷ 2.", "El diámetro d cruza de lado a lado: d = 2r, así que r = d ÷ 2.") : ""); }
-  else if (s === "cono"){ svg = conoSVG({r: "r", h: "h", esc: 22, voz: T("A cone with the radius r of its base and its height h, from the center of the base to the point.", "Un cono con el radio r de su base y su altura h, del centro de la base a la punta.")}).replace("r = r", "r").replace("h = h", "h");
+  else if (s === "cono"){ svg = conoSVG({r: 5, h: 8, esc: 22, voz: T("A cone with the radius r of its base and its height h, from the center of the base to the point.", "Un cono con el radio r de su base y su altura h, del centro de la base a la punta.")}).replace("r = 5", "r").replace("h = 8", "h");
     txt = T("<strong>V = 1/3 πr²h.</strong> It needs the radius r of the round base and the height h, measured straight up from the center of the base to the point.", "<strong>V = 1/3 πr²h.</strong> Necesita el radio r de la base circular y la altura h, medida en vertical del centro de la base a la punta.") + (dia ? " " + T("If you are given the diameter of the base, halve it.", "Si se da el diámetro de la base, se divide entre 2.") : ""); }
-  else { svg = piramideSVG({L: "L", b: "L", h: "h", esc: 24, cuadrada: true, voz: T("A pyramid with a square base of side L and its height h, from the center of the base to the point.", "Una pirámide de base cuadrada de lado L y su altura h, del centro de la base a la punta.")}).replace(/L = L/g, "L").replace("h = h", "h");
+  else { svg = piramideSVG({L: 6, b: 6, h: 8, esc: 24, cuadrada: true, voz: T("A pyramid with a square base of side L and its height h, from the center of the base to the point.", "Una pirámide de base cuadrada de lado L y su altura h, del centro de la base a la punta.")}).replace(/L = 6/g, "L").replace("h = 8", "h");
     txt = T("<strong>V = 1/3 Bh.</strong> B is the area of the base (here L × L) and h is the straight-up height, not the slanted height of a face.", "<strong>V = 1/3 Bh.</strong> B es el área de la base (aquí L × L) y h es la altura vertical, no la altura inclinada de una cara."); }
   $("fo-svg").innerHTML = svg; $("fo-txt").innerHTML = '<div class="linea">' + txt + "</div>";
 }
