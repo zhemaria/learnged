@@ -3,6 +3,7 @@
 Only lessons that exist are linked; the others show as "coming soon" / «próximamente».
 Usage: python3 tools/build_indices.py   (run it each time you add a lesson)"""
 import os
+import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMAS = {
@@ -34,7 +35,7 @@ EXTRAS = {
 
 TX = {
  "en": {"dir": "math/level-1", "lec": "lesson-{}.html", "prac": "practice-{}.html", "lang": "en", "title": "Math · Level 1 · LearnGED",
-        "h1": "Math · Level 1 · Build your foundation", "home": "/", "logoalt": "LearnGED home", "skip": "Skip to content",
+        "h1": "Math · Level 1 · Build your foundation", "home": "/", "inicio": "Home", "migas": "Breadcrumb", "logoalt": "LearnGED home", "skip": "Skip to content",
         "intro": "Eight topics, from whole numbers to tables and graphs. Each lesson has a practice page that makes new exercises every time.",
         "otro": '<span lang="es">Versión en español: <a href="/es/matematicas/nivel-1/" hreflang="es">Matemáticas · Nivel 1</a></span>',
         "maestros": 'For teachers: <a href="../ged-standards.html">standards map</a>',
@@ -42,7 +43,7 @@ TX = {
         "alt": '<link rel="alternate" hreflang="es" href="/es/matematicas/nivel-1/">',
         "pie": '<p class="tm">© 2026. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a>. GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>'},
  "es": {"dir": "es/matematicas/nivel-1", "lec": "leccion-{}.html", "prac": "practica-{}.html", "lang": "es", "title": "Matemáticas · Nivel 1 · LearnGED",
-        "h1": "Matemáticas · Nivel 1 · Iniciación y dominio numérico", "home": "/es/", "logoalt": "Inicio de LearnGED", "skip": "Saltar al contenido",
+        "h1": "Matemáticas · Nivel 1 · Iniciación y dominio numérico", "home": "/es/", "inicio": "Inicio", "migas": "Ruta de navegación", "logoalt": "Inicio de LearnGED", "skip": "Saltar al contenido",
         "intro": "Ocho temas, de los números enteros a las tablas y gráficas. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez.",
         "otro": '<span lang="en">English version: <a href="/math/level-1/" hreflang="en">Math · Level 1</a></span>',
         "maestros": 'Para maestros: <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>',
@@ -121,6 +122,7 @@ def construye(L, temas=None, extras=None, tx=None):
   <div class="wrap">
     <a class="logo" href="{X["home"]}"><img src="/img/learnged-logo-horizontal.svg" alt="{X["logoalt"]}"></a>
     <div class="tools">
+      <a class="inicio" href="{X["home"]}"><span aria-hidden="true">🏠 </span>{X["inicio"]}</a>
       <button type="button" id="b-big" data-off="{X["big"]}" data-on="{X["small"]}">{X["big"]}</button>
       <button type="button" id="b-hc" data-off="{X["hc"]}" data-on="{X["lc"]}">{X["hc"]}</button>
       <nav class="lang" aria-label="Language / Idioma">
@@ -131,6 +133,7 @@ def construye(L, temas=None, extras=None, tx=None):
   </div>
 </header>
 <main id="main" class="wrap nivel">
+<nav class="migas" aria-label="{X["migas"]}"><a href="{X["home"]}">{X["inicio"]}</a> <span aria-hidden="true">›</span> <span aria-current="page">{" · ".join(X["h1"].split(" · ")[:2])}</span></nav>
 <h1>{X["h1"]}</h1>
 <p class="intro">{X["intro"]}</p>
 <p class="meta">{X["otro"]} · {X["maestros"]}</p>
@@ -288,8 +291,34 @@ def _tx4():
     return X
 TX4 = _tx4()
 
+RE_BARRA = re.compile(r'(<a class="lg-logo" href="(/|/es/)"><img [^>]*></a>)(?!<a class="lg-link lg-inicio")')
+RE_VIEJO = re.compile(r'<a class="lg-link lg-inicio" [^>]*><span aria-hidden="true">🏠 </span>(?:Home|Inicio)</a>')
+def pon_inicio():
+    """Adds a visible Home / Inicio link next to the logo in the top bar of every lesson, practice, and explore page.
+    The logo already goes home, but students may not know that. Safe to run again: pages that have the link are left alone."""
+    n = 0
+    for base, _, archivos in os.walk(ROOT):
+        if "/.git" in base or "/tools" in base:
+            continue
+        for a in archivos:
+            if not a.endswith(".html"):
+                continue
+            ruta = os.path.join(base, a)
+            s = open(ruta, encoding="utf-8").read()
+            if 'class="lg-bar"' not in s:
+                continue
+            def enlace(m):
+                es = m.group(2) == "/es/"
+                return (m.group(1) + '<a class="lg-link lg-inicio" href="' + m.group(2) + '" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px">'
+                        + '<span aria-hidden="true">🏠 </span>' + ("Inicio" if es else "Home") + "</a>")
+            t = RE_BARRA.sub(enlace, RE_VIEJO.sub("", s), count=1)
+            if t != s:
+                open(ruta, "w", encoding="utf-8").write(t); n += 1
+    return n
+
 if __name__ == "__main__":
     print("Level 1 ok:", construye("en"), "English lessons ·", construye("es"), "lecciones en español")
     print("Level 2 ok:", construye("en", TEMAS2, EXTRAS2, TX2), "English lessons ·", construye("es", TEMAS2, EXTRAS2, TX2), "lecciones en español")
     print("Level 3 ok:", construye("en", TEMAS3, EXTRAS3, TX3), "English lessons ·", construye("es", TEMAS3, EXTRAS3, TX3), "lecciones en español")
+    print("Home link added to", pon_inicio(), "pages")
     print("Level 4 ok:", construye("en", TEMAS4, {"en": {}, "es": {}}, TX4), "English lessons ·", construye("es", TEMAS4, {"en": {}, "es": {}}, TX4), "lecciones en español")
