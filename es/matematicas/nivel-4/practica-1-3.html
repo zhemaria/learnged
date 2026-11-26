@@ -167,6 +167,8 @@ function F(n, d){ return fr(n, d === undefined ? 1 : d); }
 function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
 function pnF(f){ return f.n < 0 ? "(" + fTxt(f) + ")" : fTxt(f); }
 function opEq(txt, clave){ return {clave: clave || txt, html: eqHTML(txt)}; }
+/* the right answer plus at most three different wrong ones */
+function opsEq(ok, malos){ var vistos = {}, l = [opEq(ok)]; vistos[ok] = 1; baraja(malos).forEach(function(x){ if (!vistos[x] && l.length < 4){ vistos[x] = 1; l.push(opEq(x)); } }); return l; }
 var PEND = [F(-3), F(-2), F(-3, 2), F(-1), F(-2, 3), F(-1, 2), F(0), F(1, 2), F(2, 3), F(1), F(3, 2), F(2), F(3)];
 function grafRecta(lineas, ptos, voz, ancho){
   var P = Plano({xmin: -8, xmax: 8, ymin: -8, ymax: 8, u: 26, paso: 2}), s = "";
@@ -205,7 +207,7 @@ OMR("sq", function(){
   var malos = [eqSI(fneg(m), b), eqSI(m, fneg(b)), m.d === 1 && b.n !== 0 && b.d === 1 ? eqSI(b, m) : eqSI(fdiv(F(1), m), b), eqSI(fneg(m), fneg(b))];
   if (r < 0.4){
     return {enun: T("Which equation matches this line?", "¿Qué ecuación corresponde a esta recta?") + grafRecta([{m: m, b: b}], [{p: [0, fval(b)], nombre: "", color: C4.rojo}], T("A line on the coordinate plane that crosses the y-axis at ", "Una recta en el plano que cruza el eje y en ") + fTxt(b) + T(" and goes ", " y que ") + (m.n > 0 ? T("up ", "sube ") : T("down ", "baja ")) + Math.abs(m.n) + T(" for every ", " por cada ") + m.d + T(" to the right.", " a la derecha."), 300),
-      correcta: eq, opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+      correcta: eq, opciones: opsEq(eq, malos),
       pista: T("Find b where the line crosses the y-axis. Then count the rise and the run from that point: m = rise ÷ run.", "Busque b donde la recta corta el eje y. Después cuente la elevación y el avance desde ese punto: m = elevación ÷ avance."), bien: eqHTML(eq) + "."};
   }
   if (r < 0.7){
@@ -215,7 +217,7 @@ OMR("sq", function(){
       pista: T("m is the number with x (keep its sign); b is the number by itself.", "m es el número que acompaña a la x (con su signo); b es el número solo."), bien: ok + "."};
   }
   return {enun: T("A line has slope ", "Una recta tiene pendiente ") + fTxt(m) + T(" and crosses the y-axis at ", " y cruza el eje y en ") + fTxt(b) + T(". What is its equation?", ". ¿Cuál es su ecuación?"), correcta: eq,
-    opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })), pista: T("Put m with x and b by itself: y = mx + b.", "Ponga m con la x y b sola: y = mx + b."), bien: eqHTML(eq) + "."};
+    opciones: opsEq(eq, malos), pista: T("Put m with x and b by itself: y = mx + b.", "Ponga m con la x y b sola: y = mx + b."), bien: eqHTML(eq) + "."};
 });
 
 /* ===== MODULE 2 · Point-slope ===== */
@@ -243,7 +245,7 @@ OMR("pq", function(){
   var malos = [eqSI(c.m, F(c.y1)), eqSI(c.m, fsum(F(c.y1), fmul(c.m, F(c.x1)))), eqSI(c.m, fneg(c.b)), eqSI(fneg(c.m), c.b)];
   return {enun: (c.dos ? T("Which is the line through ", "¿Cuál es la recta que pasa por ") + parHTML(c.x1, c.y1) + T(" and ", " y ") + parHTML(c.x2, c.y2) + "?" :
       T("Which is the line with slope ", "¿Cuál es la recta de pendiente ") + fTxt(c.m) + T(" through ", " que pasa por ") + parHTML(c.x1, c.y1) + "?"),
-    correcta: eq, opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+    correcta: eq, opciones: opsEq(eq, malos),
     pista: (c.dos ? T("Find the slope first. ", "Calcule primero la pendiente. ") : "") + T("Then use y − y₁ = m(x − x₁), distribute, and solve for y. Check: the point must make the equation true.", "Después use y − y₁ = m(x − x₁), distribuya y despeje y. Compruebe: el punto debe cumplir la ecuación."),
     bien: eqHTML(eq) + T(". Check: ", ". Comprobación: ") + fTxt(c.m) + " · " + pn(c.x1) + " " + (c.b.n < 0 ? "− " + fTxt(fneg(c.b)) : "+ " + fTxt(c.b)) + " = " + sg(c.y1) + "."};
 });
@@ -285,7 +287,7 @@ OMR("fq", function(){
   if (c.tipo === "si-std"){ var e = estandar(c.m, c.b); malos = [eqStd({A: e.A, B: e.B, C: -e.C}), eqStd({A: e.A, B: -e.B, C: e.C}), eqStd({A: -e.A, B: e.B, C: e.C})]; }
   else { malos = [eqSI(fneg(c.m), c.b), eqSI(c.m, fneg(c.b)), eqSI(fneg(c.m), fneg(c.b))]; }
   return {enun: c.enun.replace(T("Change ", "Convierta "), T("Which is ", "¿Cuál es ")).replace(T(" to standard form.", " a la forma estándar."), T(" in standard form?", " en forma estándar?")).replace(T(" to slope-intercept form.", " a la forma pendiente-intercepto."), T(" in slope-intercept form?", " en forma pendiente-intercepto?")),
-    correcta: c.res, opciones: [opEq(c.res)].concat(malos.map(function(x){ return opEq(x); })),
+    correcta: c.res, opciones: opsEq(c.res, malos),
     pista: T("Do one step at a time and watch the signs when a term changes sides. Check with a value of x: both forms must give the same y.", "Haga un paso a la vez y cuide los signos cuando un término cambia de lado. Compruebe con un valor de x: las dos formas deben dar la misma y."),
     bien: c.pasos.map(function(p){ return p.replace(/<strong>|<\/strong>/g, ""); }).join(" ")};
 });
@@ -336,7 +338,7 @@ OMR("pa", function(){
   var quiere2 = Math.random() < 0.5 ? "perp" : "par", mm = quiere2 === "perp" ? perp : m1, x1 = mm.d === 1 ? aleatorio(-3, 3) : mm.d * elige([-1, 1]), y1 = aleatorio(-4, 4), bb = fsum(F(y1), fmul(fneg(mm), F(x1))), eq = eqSI(mm, bb);
   var malos = [eqSI(quiere2 === "perp" ? m1 : perp, bb), eqSI(mm, F(y1)), eqSI(quiere2 === "perp" ? recip : fneg(m1), bb)];
   return {enun: T("Which line is ", "¿Qué recta es ") + (quiere2 === "perp" ? T("perpendicular", "perpendicular") : T("parallel", "paralela")) + T(" to ", " a ") + eqHTML(eqSI(m1, F(aleatorio(-5, 5)))) + T(" and goes through ", " y pasa por ") + parHTML(x1, y1) + "?", correcta: eq,
-    opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+    opciones: opsEq(eq, malos),
     pista: T("First the slope (", "Primero la pendiente (") + (quiere2 === "perp" ? T("flip and change the sign", "se invierte y se cambia el signo") : T("the same one", "la misma")) + T("), then use the point in y − y₁ = m(x − x₁).", "), después use el punto en y − y₁ = m(x − x₁)."), bien: "m = " + fTxt(mm) + ": " + eqHTML(eq) + "."};
 });
 iniciaNavegacion();

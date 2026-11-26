@@ -80,12 +80,18 @@ class Plano:
         s.append(f'<polygon points="{X(x0)},{Y(self.ymax) - 14} {X(x0) - 5},{Y(self.ymax) - 4} {X(x0) + 5},{Y(self.ymax) - 4}" fill="{TINTA}"/>')
         s.append(f'<text x="{X(self.xmax) + 14}" y="{Y(y0) - 12}" font-size="16" font-style="italic" font-weight="700" fill="{TINTA}" text-anchor="middle">x</text>')
         s.append(f'<text x="{X(x0) + 14}" y="{Y(self.ymax) - 10}" font-size="16" font-style="italic" font-weight="700" fill="{TINTA}">y</text>')
+        return "".join(s)
+    def numeros(self):
+        s, X, Y = [], self.X, self.Y
+        y0 = 0 if self.ymin <= 0 <= self.ymax else self.ymin
+        x0 = 0 if self.xmin <= 0 <= self.xmax else self.xmin
+        h = ' paint-order="stroke" stroke="#fff" stroke-width="3"'
         for x in range(self.xmin, self.xmax):
             if x and x % self.paso == 0:
-                s.append(f'<text x="{X(x)}" y="{Y(y0) + 18}" font-size="13" fill="#455a64" text-anchor="middle">{sg(x)}</text>')
+                s.append(f'<text x="{X(x)}" y="{Y(y0) + 18}" font-size="13" fill="#455a64" text-anchor="middle"{h}>{sg(x)}</text>')
         for y in range(self.ymin, self.ymax):
             if y and y % self.paso == 0:
-                s.append(f'<text x="{X(x0) - 6}" y="{Y(y) + 4}" font-size="13" fill="#455a64" text-anchor="end">{sg(y)}</text>')
+                s.append(f'<text x="{X(x0) - 6}" y="{Y(y) + 4}" font-size="13" fill="#455a64" text-anchor="end"{h}>{sg(y)}</text>')
         return "".join(s)
     def seg(self, a, b, color=TINTA, ancho=3, raya=None):
         r = f' stroke-dasharray="{raya}"' if raya else ""
@@ -99,6 +105,10 @@ class Plano:
         cx, cy = self.X(p[0]), self.Y(p[1])
         self.c.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="6" fill="{color}" stroke="#fff" stroke-width="2"/>')
         if etiqueta:
+            if p[0] == 0 and p[1] != 0:
+                lado = ("n" if p[1] > 0 else "s") + "e"
+            elif p[1] == 0 and p[0] != 0:
+                lado = "n" + ("e" if p[0] > 0 else "w")
             dx = 10 if "e" in lado else -10
             dy = -10 if "n" in lado else 20
             an = "start" if dx > 0 else "end"
@@ -108,4 +118,4 @@ class Plano:
         self.c.append(f'<text x="{self.X(p[0]) + dx:.1f}" y="{self.Y(p[1]) + dy:.1f}" font-size="{tam}" font-weight="700" fill="{color}" text-anchor="{ancla}" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">{txt}</text>')
         return self
     def svg(self, voz, ancho=440):
-        return B.svg(f"0 0 {self.W} {self.H}", voz, self.rejilla() + "".join(self.c), ancho)
+        return B.svg(f"0 0 {self.W} {self.H}", voz, self.rejilla() + "".join(self.c) + self.numeros(), ancho)

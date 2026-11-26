@@ -51,11 +51,15 @@ function Plano(o){
     s += '<polygon points="' + P.X(x0) + "," + (P.Y(ymax) - 14) + " " + (P.X(x0) - 5) + "," + (P.Y(ymax) - 4) + " " + (P.X(x0) + 5) + "," + (P.Y(ymax) - 4) + '" fill="' + C4.tinta + '"/>';
     s += '<text x="' + (P.X(xmax) + 14) + '" y="' + (P.Y(y0) - 12) + '" font-size="16" font-style="italic" font-weight="700" fill="' + C4.tinta + '" text-anchor="middle">x</text>';
     s += '<text x="' + (P.X(x0) + 14) + '" y="' + (P.Y(ymax) - 10) + '" font-size="16" font-style="italic" font-weight="700" fill="' + C4.tinta + '">y</text>';
+    return s;
+  };
+  P.numeros = function(){
+    var s = "", x, y, ex = xmin <= 0 && xmax >= 0, ey = ymin <= 0 && ymax >= 0, y0 = ey ? 0 : ymin, x0 = ex ? 0 : xmin, h = ' paint-order="stroke" stroke="#fff" stroke-width="3"';
     if (!o.sinNumeros){
       var fs = u < 22 ? 11 : 13;
-      for (x = xmin; x <= xmax; x++) if (x !== 0 && x % paso === 0 && x !== xmax) s += '<text x="' + P.X(x) + '" y="' + (P.Y(y0) + fs + 5) + '" font-size="' + fs + '" fill="#455a64" text-anchor="middle">' + sg(x) + "</text>";
-      for (y = ymin; y <= ymax; y++) if (y !== 0 && y % paso === 0 && y !== ymax) s += '<text x="' + (P.X(x0) - 6) + '" y="' + (P.Y(y) + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end">' + sg(y) + "</text>";
-      if (ex && ey) s += '<text x="' + (P.X(0) - 6) + '" y="' + (P.Y(0) + fs + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end">0</text>';
+      for (x = xmin; x <= xmax; x++) if (x !== 0 && x % paso === 0 && x !== xmax) s += '<text x="' + P.X(x) + '" y="' + (P.Y(y0) + fs + 5) + '" font-size="' + fs + '" fill="#455a64" text-anchor="middle"' + h + '>' + sg(x) + "</text>";
+      for (y = ymin; y <= ymax; y++) if (y !== 0 && y % paso === 0 && y !== ymax) s += '<text x="' + (P.X(x0) - 6) + '" y="' + (P.Y(y) + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end"' + h + '>' + sg(y) + "</text>";
+      if (ex && ey) s += '<text x="' + (P.X(0) - 6) + '" y="' + (P.Y(0) + fs + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end"' + h + '>0</text>';
     }
     return s;
   };
@@ -65,6 +69,8 @@ function Plano(o){
   P.punto = function(p, color, etiqueta, lado, r){
     var cx = P.X(p[0]), cy = P.Y(p[1]), s = '<circle cx="' + f1(cx) + '" cy="' + f1(cy) + '" r="' + (r || 6) + '" fill="' + (color || C4.azul) + '" stroke="#fff" stroke-width="2"/>';
     if (etiqueta){
+      if (p[0] === 0 && p[1] !== 0) lado = (p[1] > 0 ? "n" : "s") + "e";
+      else if (p[1] === 0 && p[0] !== 0) lado = "n" + (p[0] > 0 ? "e" : "w");
       lado = lado || ((p[0] >= (xmin + xmax) / 2 ? "w" : "e") === "w" ? (p[1] >= (ymin + ymax) / 2 ? "sw" : "nw") : (p[1] >= (ymin + ymax) / 2 ? "se" : "ne"));
       var dx = lado.indexOf("e") >= 0 ? 10 : -10, dy = lado.indexOf("n") >= 0 ? -10 : 20;
       s += '<text x="' + f1(cx + dx) + '" y="' + f1(cy + dy) + '" font-size="15" font-weight="700" fill="' + (color || C4.azul) + '" text-anchor="' + (dx > 0 ? "start" : "end") + '" paint-order="stroke" stroke="#fff" stroke-width="4">' + etiqueta + "</text>";
@@ -72,7 +78,7 @@ function Plano(o){
     return s;
   };
   P.texto = function(p, txt, color, tam, ancla, dx, dy){ return '<text x="' + f1(P.X(p[0]) + (dx || 0)) + '" y="' + f1(P.Y(p[1]) + (dy || 0)) + '" font-size="' + (tam || 14) + '" font-weight="700" fill="' + (color || C4.tinta) + '" text-anchor="' + (ancla || "middle") + '" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">' + txt + "</text>"; };
-  P.svg = function(cuerpo, voz, ancho){ return '<svg class="geo-svg plano-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + voz + '" style="max-width:' + (ancho || Math.min(W, 560)) + 'px">' + P.rejilla() + (cuerpo || "") + "</svg>"; };
+  P.svg = function(cuerpo, voz, ancho){ return '<svg class="geo-svg plano-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + voz + '" style="max-width:' + (ancho || Math.min(W, 560)) + 'px">' + P.rejilla() + (cuerpo || "") + P.numeros() + "</svg>"; };
   return P;
 }
 
@@ -82,20 +88,22 @@ function catetos(P, a, b){
   s += P.seg(a, c, C4.cateto, 2.5, "7 5") + P.seg(c, b, C4.cateto, 2.5, "7 5");
   var dx = Math.abs(b[0] - a[0]), dy = Math.abs(b[1] - a[1]), arriba = b[1] > a[1];
   if (dx) s += P.texto([(a[0] + b[0]) / 2, a[1]], "Δx = " + dx, C4.cateto, 14, "middle", 0, arriba ? 16 : -14);
-  if (dy) s += P.texto([b[0], (a[1] + b[1]) / 2], "Δy = " + dy, C4.cateto, 14, b[0] > a[0] ? "start" : "end", b[0] > a[0] ? 10 : -10, 0);
+  var der = b[0] > a[0] || P.X(b[0]) - 70 < P.X(P.xmin);
+  if (P.X(b[0]) + 70 > P.X(P.xmax)) der = false;
+  if (dy) s += P.texto([b[0], (a[1] + b[1]) / 2], "Δy = " + dy, C4.cateto, 14, der ? "start" : "end", der ? 10 : -10, 0);
   return s;
 }
 
 /* ---------- Clickable plane (place a point with the mouse, finger, or keyboard) ----------
    cont: element; o: options for Plano; cb(x, y) when a point is placed. Returns {pinta(cuerpo), cursor:[x,y], limpia()} */
 function PlanoActivo(cont, o, cb, voz){
-  var P = Plano(o), cuerpo = "", cur = [0, 0], marcado = null;
+  var P = Plano(o), cuerpo = "", cur = [0, 0], marcado = null, activo = false;
   cont.innerHTML = "";
   var cap = document.createElement("div"); cont.appendChild(cap);
   var lect = document.createElement("p"); lect.className = "nota lectura-plano"; lect.setAttribute("aria-live", "polite"); cont.appendChild(lect);
   function dibuja(){
     var s = P.svg(cuerpo + (marcado ? P.punto(marcado, C4.rojo, par(marcado[0], marcado[1])) : "") +
-      '<circle cx="' + P.X(cur[0]) + '" cy="' + P.Y(cur[1]) + '" r="11" fill="none" stroke="' + C4.morado + '" stroke-width="2.5" stroke-dasharray="4 3" class="cursor-plano"/>', voz);
+      (activo ? '<circle cx="' + P.X(cur[0]) + '" cy="' + P.Y(cur[1]) + '" r="11" fill="none" stroke="' + C4.morado + '" stroke-width="2.5" stroke-dasharray="4 3" class="cursor-plano"/>' : ""), voz);
     cap.innerHTML = s.replace("<svg ", '<svg tabindex="0" ');
     var svg = cap.querySelector("svg");
     svg.setAttribute("aria-label", voz + " " + T("Use the arrow keys to move the cursor and Enter to mark the point.", "Use las flechas para mover el cursor y Enter para marcar el punto."));
@@ -104,10 +112,10 @@ function PlanoActivo(cont, o, cb, voz){
       var pt = svg.createSVGPoint(); pt.x = ev.clientX; pt.y = ev.clientY;
       var q = pt.matrixTransform(svg.getScreenCTM().inverse()), c = P.desdePx(q.x, q.y);
       var x = Math.max(P.xmin, Math.min(P.xmax, Math.round(c[0]))), y = Math.max(P.ymin, Math.min(P.ymax, Math.round(c[1])));
-      cur = [x, y]; marca();
+      cur = [x, y]; activo = true; marca();
     });
     svg.addEventListener("keydown", function(ev){
-      var k = ev.key, d = ev.shiftKey ? 5 : 1, mov = true;
+      var k = ev.key, d = ev.shiftKey ? 5 : 1, mov = true; activo = true;
       if (k === "ArrowLeft") cur[0] -= d; else if (k === "ArrowRight") cur[0] += d; else if (k === "ArrowUp") cur[1] += d; else if (k === "ArrowDown") cur[1] -= d;
       else if (k === "Home") cur = [0, 0]; else if (k === "Enter" || k === " "){ ev.preventDefault(); marca(); return; } else mov = false;
       if (!mov) return;
@@ -122,7 +130,7 @@ function PlanoActivo(cont, o, cb, voz){
   return {
     P: P,
     pinta: function(c){ cuerpo = c || ""; dibuja(); },
-    limpia: function(){ marcado = null; cur = [0, 0]; cuerpo = ""; lect.textContent = ""; dibuja(); },
+    limpia: function(){ marcado = null; cur = [0, 0]; activo = false; cuerpo = ""; lect.textContent = ""; dibuja(); },
     marcado: function(){ return marcado; }
   };
 }
