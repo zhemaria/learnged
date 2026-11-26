@@ -189,6 +189,8 @@ CCR = {
  "8.F.4": ("D", "Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values."),
  "G-GPE.5": ("E", "Prove the slope criteria for parallel and perpendicular lines and use them to solve geometric problems (e.g., find the equation of a line parallel or perpendicular to a given line that passes through a given point)."),
  "G-GPE.7": ("E", "Use coordinates to compute perimeters of polygons and areas of triangles and rectangles, e.g., using the distance formula."),
+ "G-GMD.3": ("E", "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems."),
+ "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
  "6.SP.4": ("D", "Display numerical data in plots on a number line, including dot plots, histograms, and box plots."),
@@ -399,6 +401,12 @@ LESSONS = [
   {"direct": ["A.5.b", "A.5.c"], "builds": ["A.6.a"], "mp": ["MP.2.c", "MP.3.a", "MP.4.c"], "ccr": ["8.EE.5", "8.EE.6", "8.F.4"]}),
  ("level-4/lesson-1-3.html", "1.3", "Equations of a line: slope-intercept, point-slope, and standard form",
   {"direct": ["A.6.a", "A.6.b", "A.6.c", "A.5.d"], "builds": [], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["8.EE.6", "8.F.3", "G-GPE.5"]}),
+ ("level-4/lesson-2-1.html", "2.1", "Volume of spheres, cones, and pyramids",
+  {"direct": ["Q.5.d", "Q.5.e"], "builds": ["Q.5.f"], "mp": ["MP.1.e", "MP.2.c", "MP.4.a"], "ccr": ["8.G.9", "G-GMD.3"]}),
+ ("level-4/lesson-2-2.html", "2.2", "Composite 3D figures and surface area",
+  {"direct": ["Q.5.f", "Q.5.b", "Q.5.d"], "builds": [], "mp": ["MP.1.b", "MP.2.b", "MP.4.a"], "ccr": ["7.G.6", "G-GMD.3"]}),
+ ("level-4/lesson-2-3.html", "2.3", "Polynomials: types, adding, subtracting, and multiplying",
+  {"direct": ["A.1.d", "A.1.e"], "builds": ["A.1.g"], "mp": ["MP.3.a", "MP.4.b", "MP.5.a"], "ccr": ["A-APR.1", "6.EE.2c"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

@@ -26,7 +26,13 @@ ESTILO = """
   .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
   .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
   .tabla-lados tr.incl td{background:#fff8e1;}
-  .salida:empty{display:none;}"""
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}"""
 
 def par_libre(pid, titulo, nombre="", nota=None):
     """Práctica con respuesta de par ordenado (creaPracticaPar de coord4.js)."""
@@ -119,3 +125,10 @@ class Plano:
         return self
     def svg(self, voz, ancho=440):
         return B.svg(f"0 0 {self.W} {self.H}", voz, self.rejilla() + "".join(self.c) + self.numeros(), ancho)
+
+
+def pasos(pre, otro):
+    """Bloque «paso a paso» (pasoAPaso4 de coord4.js)."""
+    return f'''      <div class="panel"><p class="enun" id="{pre}-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="{pre}-sig">{t("Show the next step", "Mostrar el siguiente paso")}</button><button type="button" class="btn-sec" id="{pre}-todo">{t("Show all the steps", "Mostrar todos los pasos")}</button><button type="button" class="btn-sec" id="{pre}-nuevo">{otro}</button></div></div>
+      <div class="pasos" id="{pre}-pasos" aria-live="polite"></div>'''

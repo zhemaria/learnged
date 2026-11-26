@@ -285,3 +285,16 @@ function vozEq(txt){
   return txt.replace(/\((\d+)\/(\d+)\)/g, function(_, a, b){ return a + T(" over ", " sobre ") + b + T(" times ", " por "); }).replace(/(\d+)\/(\d+)/g, function(_, a, b){ return a + T(" over ", " sobre ") + b; })
     .replace(/−/g, T(" minus ", " menos ")).replace(/\+/g, T(" plus ", " más ")).replace(/=/g, T(" equals ", " es igual a ")).replace(/\s+/g, " ").trim();
 }
+
+/* Step-by-step widget: gen() returns {enun, pasos: [html], fin()} */
+function pasoAPaso4(pre, gen){
+  var caso, k;
+  function nuevo(){ caso = gen(); k = 0; $(pre + "-enun").innerHTML = caso.enun; $(pre + "-pasos").innerHTML = ""; $(pre + "-sig").disabled = false; $(pre + "-todo").disabled = false; if (caso.inicio) caso.inicio(); }
+  function uno(){ if (k >= caso.pasos.length) return; var d = document.createElement("div"); d.className = "paso4"; d.innerHTML = '<span class="nn" aria-hidden="true">' + (k === caso.pasos.length - 1 ? "✓" : k + 1) + "</span> " + caso.pasos[k]; $(pre + "-pasos").appendChild(d); k++;
+    if (k >= caso.pasos.length){ $(pre + "-sig").disabled = true; $(pre + "-todo").disabled = true; if (caso.fin) caso.fin(); } }
+  $(pre + "-sig").addEventListener("click", uno);
+  $(pre + "-todo").addEventListener("click", function(){ while (k < caso.pasos.length) uno(); });
+  $(pre + "-nuevo").addEventListener("click", nuevo);
+  nuevo();
+}
+

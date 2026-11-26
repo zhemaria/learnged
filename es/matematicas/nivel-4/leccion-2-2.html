@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 2.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 2.2 · Figuras 3D compuestas y área de superficie · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-2-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 2 — Volumen 3D y polinomios</p>
+<h1>Lección 2.2 · Figuras 3D compuestas y área de superficie</h1>
+<p class="lema">Descomponga figuras 3D en sólidos simples para hallar su volumen, calcule el área de superficie de cilindros y conos y compare diseños que guardan el mismo volumen.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Hoja de fórmulas y calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Descomponer</strong> una figura 3D compuesta en sólidos simples.</li>
+<li><strong>Calcular</strong> el volumen de figuras compuestas sumando o restando volúmenes.</li>
+<li><strong>Calcular</strong> el área de superficie lateral y total de cilindros, conos y otros sólidos.</li>
+<li><strong>Comparar</strong> diseños del mismo volumen según el material que usan.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.5.f</span> Calcular el área de superficie y el volumen de figuras geométricas compuestas de tres dimensiones, dadas las fórmulas geométricas necesarias.</li><li><span class="std-cod std-dir">Q.5.b</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de cilindros. Hallar la altura, el radio o el diámetro dado el volumen o el área de superficie.</li><li><span class="std-cod std-dir">Q.5.d</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de pirámides rectas y conos. Hallar la medida de los lados, la altura, el radio o el diámetro dado el volumen o el área de superficie.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Nivel D</span> Resolver problemas de la vida real y de matemáticas sobre el área, el volumen y el área de la superficie de objetos de dos y tres dimensiones formados por triángulos, cuadriláteros, polígonos, cubos y prismas rectos.</li><li><span class="std-cod std-ccr">G-GMD.3</span> <span class="std-nivel">Nivel E</span> Usar las fórmulas del volumen de cilindros, pirámides, conos y esferas para resolver problemas.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-descomponer">Descomponer una figura compuesta</a></li>
+<li><a href="#s-volumen">Volumen de figuras compuestas</a></li>
+<li><a href="#s-superficie">Área de superficie</a></li>
+<li><a href="#s-optimizacion">Una idea de optimización</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-descomponer"><span aria-hidden="true" class="num-seccion">1</span>Descomponer una figura compuesta</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 2.1 se calculó el volumen de sólidos sueltos (esfera, cono, pirámide). Muchos objetos reales, sin embargo, no son un solo sólido: un silo es un cilindro coronado por un cono; una cápsula de medicina es un cilindro con dos semiesferas. Esta lección enseña a <strong>descomponer</strong> esas figuras en partes simples para hallar su volumen, y a calcular cuánto material cubre su superficie.</p>
+<p>Una <strong>figura compuesta</strong> es la unión (o la diferencia) de sólidos simples. La estrategia es siempre la misma:</p>
+<ol><li>Identificar las partes simples que la forman (cilindro, cono, semiesfera, prisma…).</li>
+<li>Calcular el volumen de cada parte por separado.</li>
+<li><strong>Sumar</strong> los volúmenes si las partes se unen, o <strong>restar</strong> si hay un hueco.</li></ol>
+<svg viewBox="0 0 480 320" role="img" aria-label="Un silo: un cilindro de radio 3 y altura 8 con un cono de altura 2 encima. Su volumen es el volumen del cilindro más el volumen del cono." style="width:100%;max-width:440px;height:auto;display:block;margin:12px auto;"><path d="M120 100 L120 250 A70 18 0 0 0 260 250 L260 100" fill="#bbdefb" stroke="#37474f" stroke-width="2.5"/><path d="M120 250 A70 18 0 0 1 260 250" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><path d="M120 100 L190 30 L260 100 A70 18 0 0 1 120 100 Z" fill="#ffe0b2" stroke="#37474f" stroke-width="2.5"/><path d="M120 100 A70 18 0 0 0 260 100" fill="none" stroke="#37474f" stroke-width="2"/><line x1="190" y1="100" x2="260" y2="100" stroke="#c62828" stroke-width="3"/><text x="225" y="92" font-size="15" font-weight="700" fill="#c62828" text-anchor="middle">r = 3</text><line x1="285" y1="30" x2="285" y2="100" stroke="#e65100" stroke-width="2.5" stroke-dasharray="6 4"/><text x="292" y="70" font-size="15" font-weight="700" fill="#e65100">2</text><line x1="285" y1="100" x2="285" y2="250" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="6 4"/><text x="292" y="180" font-size="15" font-weight="700" fill="#1565c0">8</text><text x="380" y="80" font-size="15" font-weight="700" fill="#e65100">cono</text><text x="380" y="180" font-size="15" font-weight="700" fill="#1565c0">cilindro</text><text x="190" y="300" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = V(cilindro) + V(cono)</text></svg>
+<a class="enlace-interactivo" href="practica-2-2.html#descomponer" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cómo descomponer una figura (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cómo descomponer una figura</span><span class="ei-sub">Identifique las piezas de cada figura y decida si los volúmenes se suman o se restan.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-volumen"><span aria-hidden="true" class="num-seccion">2</span>Volumen de figuras compuestas</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Cilindro con semiesfera. Un tanque está formado por un cilindro de 3 pies de radio y 10 pies de altura, coronado por una semiesfera de 3 pies de radio. Hallar su volumen total.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Volumen del cilindro.</strong> V = πr²h = π · 9 · 10 = 90π.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Volumen de la semiesfera: la mitad de 4/3 πr³.</strong> 1/2 · 4/3 · π · 27 = 1/2 · 36π = 18π.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se suman.</strong> 90π + 18π = 108π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>V = 108π ≈ 339.3 pies cúbicos</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Con un hueco (resta). A un bloque de 10 × 10 × 5 pulgadas se le perfora un cilindro de 2 pulgadas de radio y 5 pulgadas de altura. Hallar el volumen del sólido que queda.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Volumen del bloque (un prisma).</strong> 10 · 10 · 5 = 500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Volumen del hueco.</strong> π · 2² · 5 = 20π.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se resta.</strong> 500 − 20π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>V = 500 − 20π ≈ 437.2 pulgadas cúbicas</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¿Sumar o restar?</span>
+<p>Si las partes se juntan para formar un cuerpo más grande, se suman. Si una parte se quita (un agujero, un hueco), se resta. Conviene hacer un dibujo y rotular cada parte antes de calcular.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Cilindro y cono</h3></div>
+<p class="pregunta-int" id="t-p1">Un cilindro de radio 2 y altura 6 tiene encima un cono de radio 2 y altura 3. ¿Cuál es el volumen total?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">24π</button>
+<button class="opcion" data-k="b" type="button">28π</button>
+<button class="opcion" data-k="c" type="button">32π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Cubo y pirámide</h3></div>
+<p class="pregunta-int" id="t-p2">Un cubo de lado 5 tiene encima una pirámide de base 5 × 5 y altura 3. ¿Cuál es el volumen total?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">150</button>
+<button class="opcion" data-k="b" type="button">175</button>
+<button class="opcion" data-k="c" type="button">125</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Una semiesfera</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cuál es el volumen de una semiesfera de radio 6?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">288π</button>
+<button class="opcion" data-k="b" type="button">72π</button>
+<button class="opcion" data-k="c" type="button">144π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#volumen" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el volumen de figuras compuestas (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el volumen de figuras compuestas</span><span class="ei-sub">Arme silos, tanques, cápsulas, torres y bloques perforados, y observe cómo se suman los volúmenes de las partes.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-superficie"><span aria-hidden="true" class="num-seccion">3</span>Área de superficie</h2>
+<p>El <strong>área de superficie</strong> es la suma de las áreas de todas las caras o superficies de un sólido. Responde preguntas como cuánta pintura, papel o material se necesita para cubrirlo. Estas fórmulas también están en la hoja de fórmulas:</p>
+<div aria-label="Área lateral y total del cilindro y del cono (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Fórmulas del área lateral y total del cilindro y del cono</caption>
+<thead><tr><th scope="col">Sólido</th><th scope="col">Área lateral</th><th scope="col">Área total</th></tr></thead>
+<tbody>
+<tr><td>Cilindro</td><td>2πrh</td><td>2πrh + 2πr²</td></tr>
+<tr><td>Cono</td><td>πrℓ (ℓ = altura inclinada)</td><td>πrℓ + πr²</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Área lateral de un cilindro. ¿Cuánta pintura cubre la superficie lateral de un tanque cilíndrico de 4 pies de radio y 10 pies de altura?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se usa el área lateral.</strong> 2πrh.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> 2 · π · 4 · 10 = 80π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>80π ≈ 251.3 pies cuadrados</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Área lateral de un cono. Un cono tiene 6 pulgadas de radio y 10 pulgadas de altura inclinada (ℓ). Hallar su área lateral.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se usa el área lateral del cono.</strong> πrℓ.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> π · 6 · 10 = 60π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>60π ≈ 188.5 pulgadas cuadradas</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Altura inclinada, no altura vertical</span>
+<p>El área lateral del cono usa la altura inclinada ℓ (la distancia del borde de la base a la punta, por la superficie), no la altura vertical h. Si solo se da h, la inclinada se obtiene con Pitágoras: ℓ = √(r² + h²). Y «lateral» quiere decir sin la base ni la tapa: el área total las añade.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — El lado de un cilindro</h3></div>
+<p class="pregunta-int" id="t-p4">¿Cuál es el área lateral de un cilindro de radio 3 y altura 7?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">21π</button>
+<button class="opcion" data-k="b" type="button">42π</button>
+<button class="opcion" data-k="c" type="button">84π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — El lado de un cono</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuál es el área lateral de un cono de radio 5 y altura inclinada 12?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">60π</button>
+<button class="opcion" data-k="b" type="button">30π</button>
+<button class="opcion" data-k="c" type="button">120π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — El cilindro completo</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuál es el área total de un cilindro de radio 2 y altura 5?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">20π</button>
+<button class="opcion" data-k="b" type="button">40π</button>
+<button class="opcion" data-k="c" type="button">28π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#superficie" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el área de superficie (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el área de superficie</span><span class="ei-sub">Vea cada sólido cerrado y abierto en el plano (su desarrollo), y construya el área pieza por pieza.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-optimizacion"><span aria-hidden="true" class="num-seccion">4</span>Una idea de optimización</h2>
+<p>En diseño e ingeniería interesa lograr un volumen dado con la <strong>menor cantidad de material</strong> posible, es decir, con la menor área de superficie. Por ejemplo, entre dos latas que guardan el mismo volumen, la que tenga menor área de superficie cuesta menos material.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Comparar material. Dos cajas guardan 100 pulgadas cúbicas. La caja A mide 10 × 10 × 1 y la caja B, 5 × 5 × 4. ¿Cuál usa menos cartón (menor área de superficie)?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Área de A.</strong> 2(10·10 + 10·1 + 10·1) = 2(100 + 10 + 10) = 240.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Área de B.</strong> 2(5·5 + 5·4 + 5·4) = 2(25 + 20 + 20) = 130.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> Con el mismo volumen, la <strong>caja B</strong> usa mucho menos cartón. Las formas más parecidas a un cubo tienden a tener menor área de superficie.</p>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#optimizacion" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la idea de optimización (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la idea de optimización</span><span class="ei-sub">Compare cajas del mismo volumen y encuentre la que usa menos cartón.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-2-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno, la hoja de fórmulas y la calculadora: (1) Tres figuras compuestas dibujadas por usted. Descomponga cada una, anote el volumen de cada parte y súmelos (o réstelos, si hay un hueco). (2) Un silo formado por un cilindro de 10 pies de radio y 30 pies de altura con un cono de 8 pies de altura encima. Calcule por separado el volumen del cilindro y el del cono, y luego el total. (3) Una cápsula de medicina: un cilindro de 0.2 pulgadas de radio y 0.8 pulgadas de largo con una semiesfera en cada extremo. Calcule su volumen y explique por qué las dos semiesferas forman una esfera completa. (4) La pintura del silo: calcule el área lateral del cilindro (2πrh) y decida si debe incluir la tapa y la base. Si un galón de pintura cubre 350 pies cuadrados, ¿cuántos galones hacen falta? (5) Cuatro áreas de superficie de sólidos distintos (prisma, cilindro, cono o esfera), usando la hoja de fórmulas. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Tome de su cocina dos cajas o latas que guarden más o menos lo mismo (una caja de cereal y otra más baja y ancha, por ejemplo). Mídalas en pulgadas, calcule el volumen y el área de superficie de cada una y decida qué diseño usa menos cartón o metal. ¿Por qué cree que la compañía eligió esa forma?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Un cilindro de radio 3 y altura 10 tiene encima una semiesfera de radio 3. ¿Cuál es el volumen total?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">90π</button><button class="opcion" data-k="b" type="button">126π</button><button class="opcion" data-k="c" type="button">108π</button><button class="opcion" data-k="d" type="button">72π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Un cilindro de radio 2 y altura 5 tiene encima un cono de radio 2 y altura 3. ¿Cuál es el volumen total?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">28π</button><button class="opcion" data-k="b" type="button">20π</button><button class="opcion" data-k="c" type="button">16π</button><button class="opcion" data-k="d" type="button">24π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">A un bloque de 10 × 10 × 5 se le perfora un cilindro de radio 2 y altura 5. ¿Qué volumen queda?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">500 − 100π</button><button class="opcion" data-k="b" type="button">500 − 20π</button><button class="opcion" data-k="c" type="button">500 + 20π</button><button class="opcion" data-k="d" type="button">480π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Una cápsula: un cilindro de radio 3 y altura 10 con una semiesfera de radio 3 en cada extremo. ¿Cuál es el volumen total?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">126π</button><button class="opcion" data-k="b" type="button">108π</button><button class="opcion" data-k="c" type="button">90π</button><button class="opcion" data-k="d" type="button">162π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Cuál es el área lateral de un cilindro de radio 4 y altura 10?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">160π</button><button class="opcion" data-k="b" type="button">40π</button><button class="opcion" data-k="c" type="button">100π</button><button class="opcion" data-k="d" type="button">80π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Cuál es el área lateral de un cono de radio 6 y altura inclinada 10?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">120π</button><button class="opcion" data-k="b" type="button">60π</button><button class="opcion" data-k="c" type="button">30π</button><button class="opcion" data-k="d" type="button">360π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">¿Cuánta superficie cubre la pintura en el lado de un tanque cilíndrico de radio 5 y altura 4?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">40π</button><button class="opcion" data-k="b" type="button">20π</button><button class="opcion" data-k="c" type="button">80π</button><button class="opcion" data-k="d" type="button">100π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Cuál es el volumen de un cono de helado de radio 3 y altura 8?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">72π</button><button class="opcion" data-k="b" type="button">8π</button><button class="opcion" data-k="c" type="button">24π</button><button class="opcion" data-k="d" type="button">216π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de figuras compuestas y área de superficie (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de figuras compuestas y área de superficie y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Descomponer la figura</th><td>Descompongo la figura en sus partes y elijo sumar o restar.</td><td>Identifico algunas partes, pero omito o duplico alguna.</td><td>No identifico las partes simples.</td></tr>
+<tr><th scope="row">Calcular el volumen total</th><td>Sumo o resto las partes correctamente y compruebo que el total tenga sentido.</td><td>Calculo las partes, pero las sumo o resto mal.</td><td>Calculo mal los volúmenes de las partes.</td></tr>
+<tr><th scope="row">Área de superficie</th><td>Uso la fórmula lateral o total correcta y la aplico a un problema de material o costo.</td><td>Uso la fórmula, pero confundo la altura con la altura inclinada.</td><td>No identifico la fórmula adecuada.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió a <strong>descomponer</strong> figuras 3D compuestas para hallar su volumen <strong>sumando o restando</strong> partes simples, a calcular el <strong>área de superficie</strong> de cilindros, conos y otros sólidos, y a comparar el material que usan distintos diseños del mismo volumen.</p>
+<p>Con esto se cierra la geometría del espacio. La <strong>Lección 2.3 · Polinomios: clasificación, suma, resta y multiplicación básica</strong> abre la puerta del álgebra superior. Se verá que combinar términos semejantes (como 3x² + 5x²) es la misma idea de «juntar lo parecido» que ya se usa al simplificar, y que los polinomios permiten expresar medidas geométricas de forma general.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 2.3 · Polinomios: clasificación, suma, resta y multiplicación básica</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>figura compuesta</dt><dd>Un sólido formado por sólidos simples unidos o con uno quitado.</dd>
+<dt>semiesfera</dt><dd>La mitad de una esfera: su volumen es 1/2 · 4/3 πr³ = 2/3 πr³.</dd>
+<dt>área de superficie</dt><dd>La suma de las áreas de todas las superficies de un sólido.</dd>
+<dt>área lateral</dt><dd>El área de superficie sin las bases.</dd>
+<dt>altura inclinada (ℓ)</dt><dd>En un cono o una pirámide, la distancia por la superficie del borde de la base a la punta.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 2 · Lección 2.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 2.3",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "Ese es solo el cilindro: π · 4 · 6 = 24π. Falta sumar el cono.",
+    "c": "El cono lleva 1/3: 1/3 · π · 4 · 3 = 4π, no 8π."
+   },
+   "right": "24π + 4π = 28π.",
+   "solution": "V = 24π + 4π = 28π."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "La pirámide lleva 1/3: 1/3 · 25 · 3 = 25, no 50.",
+    "c": "Ese es solo el cubo. Falta sumar la pirámide."
+   },
+   "right": "125 + 25 = 150.",
+   "solution": "V = 125 + 25 = 150."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "288π es la esfera entera. Tome la mitad.",
+    "b": "Revise: 4/3 · 216 = 288, y la mitad es 144."
+   },
+   "right": "1/2 · 4/3 · π · 216 = 144π.",
+   "solution": "V = 144π."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "Olvidó el 2: la fórmula es 2πrh.",
+    "c": "2 · 3 · 7 = 42, no 84."
+   },
+   "right": "2 · π · 3 · 7 = 42π.",
+   "solution": "42π."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "π · 5 · 12 = 60π; aquí no hay 1/2.",
+    "c": "El área lateral del cono es πrℓ, sin el 2."
+   },
+   "right": "π · 5 · 12 = 60π.",
+   "solution": "60π."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es solo el lado: 2π · 2 · 5 = 20π. Falta sumar los dos círculos: 2πr².",
+    "b": "Los dos círculos suman 2π · 4 = 8π, no 20π."
+   },
+   "right": "20π + 8π = 28π.",
+   "solution": "2πrh + 2πr² = 20π + 8π = 28π."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es solo el cilindro. Falta sumar la semiesfera.",
+    "b": "La semiesfera es 18π, no 36π: tome la mitad de la esfera.",
+    "d": "Restó. Las partes se juntan: se suman."
+   },
+   "solution": "90π + 18π = 108π."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "El cono lleva 1/3: 1/3 · 4 · 3 = 4.",
+    "b": "Ese es solo el cilindro. Falta sumar el cono.",
+    "c": "Restó. Las partes se juntan: se suman."
+   },
+   "solution": "20π + 4π = 24π."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "El hueco: π · 2² · 5 = 20π.",
+    "c": "El hueco quita material: se resta.",
+    "d": "El bloque no lleva π: 10 · 10 · 5 = 500."
+   },
+   "solution": "500 − 20π."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "Las dos semiesferas forman una esfera entera: 36π, no 18π.",
+    "c": "Ese es solo el cilindro.",
+    "d": "La esfera es 4/3 · 27 = 36, o sea 36π."
+   },
+   "solution": "90π + 36π = 126π."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "2 · 4 · 10 = 80, no 160.",
+    "b": "Olvidó el 2 o el radio.",
+    "c": "Eso usa r², que es para los círculos, no para el lado."
+   },
+   "solution": "2π · 4 · 10 = 80π."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "El cono no lleva 2: πrℓ.",
+    "c": "π · 6 · 10 = 60π.",
+    "d": "No se eleva nada al cuadrado: πrℓ."
+   },
+   "solution": "π · 6 · 10 = 60π."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "Olvidó el 2: 2πrh.",
+    "c": "2 · 5 · 4 = 40, no 80.",
+    "d": "Eso usa r²: el lado es 2πrh."
+   },
+   "solution": "2π · 5 · 4 = 40π."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "Olvidó el 1/3.",
+    "b": "Eleve el radio al cuadrado: 3² = 9.",
+    "d": "Solo el radio va al cuadrado, y se divide entre 3."
+   },
+   "solution": "1/3 · 9 · 8 = 24: 24π."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

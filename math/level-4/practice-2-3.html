@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 2.3 · practice (English) — built by tools/build_n4_lesson_2_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 2.3 · Polynomials: types, adding, subtracting, and multiplying · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 2 · 3D volume and polynomials</div>
+    <h1>Lesson 2.3 · Polynomials: types, adding, subtracting, and multiplying</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#what-is">What is a polynomial?</a></li>
+      <li><a href="#add-subtract">Adding and subtracting polynomials</a></li>
+      <li><a href="#multiply">A monomial times a polynomial</a></li>
+      <li><a href="#evaluate">Evaluating a polynomial</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="what-is" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>What is a polynomial?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A polynomial is made of terms added or subtracted. Each term has a coefficient (the number) and a power of x with a whole-number exponent, 0 or more. Choose what to highlight, ask for another polynomial, or put it in standard form.</p>
+      <div class="modos" role="group" aria-label="Highlight"><button type="button" class="btn-sec" id="qe-term">Terms</button><button type="button" class="btn-sec" id="qe-coef">Coefficients</button><button type="button" class="btn-sec" id="qe-grado">Degree</button></div>
+      <p id="qe-pol" style="font-size:30px;text-align:center;margin:18px 0;" aria-live="polite"></p>
+      <div class="salida" aria-live="polite" id="qe-info"></div>
+      <div class="fila-btn"><button type="button" class="btn-sec" id="qe-otro">Another polynomial</button><button type="button" class="btn-sec" id="qe-ordena">Put in standard form</button><button type="button" class="btn-sec" id="qe-ej">The lesson example</button></div>
+      <div class="caja-tip">Each sign goes with the term after it: in 3x − 5 the second term is −5. When no number is written in front of x, the coefficient is 1: in x² it is 1 and in −x³ it is −1.</div>
+      <h3>When is an expression not a polynomial?</h3>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Expressions that are and are not polynomials</caption><thead><tr><th scope="col">Expression</th><th scope="col">Polynomial?</th><th scope="col">Reason</th></tr></thead><tbody>
+        <tr><td>x²/2 + 0.5x − 3</td><td>Yes</td><td>The coefficients are fractions or decimals, but the exponents (2, 1, and 0) are whole numbers.</td></tr>
+        <tr><td>−8</td><td>Yes</td><td>A monomial of degree 0.</td></tr>
+        <tr><td>4x<sup>−2</sup> + 1</td><td>No</td><td>The exponent −2 is negative.</td></tr>
+        <tr><td>6x<sup>1/2</sup> − x</td><td>No</td><td>The exponent 1/2 is a fraction.</td></tr>
+        <tr><td>5/x + 2</td><td>No</td><td>x is in a denominator (5/x is 5x⁻¹).</td></tr></tbody></table></div>
+      <h3>Practice: terms, degree, and type</h3>
+      <div class="practica" id="qq">
+        <div class="enun" id="qq-enun"></div>
+        <div class="opciones" id="qq-opciones"></div>
+        <div class="fb" id="qq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="qq-nuevo">New exercise</button></div>
+        <p class="marcador" id="qq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="add-subtract">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Adding and subtracting polynomials</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Golden rule: only like terms go together, the ones with the same power of x. It is like sorting laundry: shirts with shirts, pants with pants. Only the numbers are added or subtracted; the x part is copied.</p>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">The most common traps</caption><thead><tr><th scope="col">#</th><th scope="col">Wrong</th><th scope="col">Right</th><th scope="col">Why</th></tr></thead><tbody><tr><td>1</td><td>✗ 3x² + 5x² = 8x⁴</td><td>✓ 3x² + 5x² = 8x²</td><td>When you add, the exponent is copied.</td></tr><tr><td>2</td><td>✗ 3x² + 2x = 5x³</td><td>✓ 3x² + 2x (already simplified)</td><td>x² and x are different families.</td></tr><tr><td>3</td><td>✗ −(2x² − x + 4) = −2x² − x + 4</td><td>✓ −(2x² − x + 4) = −2x² + x − 4</td><td>The minus changes every sign.</td></tr><tr><td>4</td><td>✗ 7 − 3x + 5x = 7 + 8x</td><td>✓ 7 − 3x + 5x = 7 + 2x</td><td>Each term keeps the sign on its left.</td></tr><tr><td>5</td><td>✗ x² + 4x² = 4x²</td><td>✓ x² + 4x² = 5x²</td><td>x² has an invisible 1.</td></tr></tbody></table></div>
+      <h3>Guided workshop</h3>
+      <div class="panel"><p class="enun" id="sr-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="sr-sig">Show the next step</button><button type="button" class="btn-sec" id="sr-todo">Show all the steps</button><button type="button" class="btn-sec" id="sr-nuevo">Another exercise</button></div></div>
+      <div class="pasos" id="sr-pasos" aria-live="polite"></div>
+      <h3>Practice: add or subtract</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="campos"><div class="campo"><label for="sq-r">Result</label><input type="text" autocomplete="off" class="ancho" id="sq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="sq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="sq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="multiply">
+    <summary><span class="num" aria-hidden="true">3</span><h2>A monomial times a polynomial</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">a(b + c + d) = ab + ac + ad</div>
+      <p>The monomial visits every term of the parentheses, one by one. In each product there are two separate jobs: the numbers are multiplied (with the sign rule), and the exponents of x are added. A lone x has exponent 1, and a number alone has no x.</p>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">The most common traps</caption><thead><tr><th scope="col">#</th><th scope="col">Wrong</th><th scope="col">Right</th><th scope="col">Why</th></tr></thead><tbody><tr><td>1</td><td>✗ 5(x + 2) = 5x + 2</td><td>✓ 5(x + 2) = 5x + 10</td><td>The monomial multiplies every term.</td></tr><tr><td>2</td><td>✗ −3x(x − 4) = −3x² − 12x</td><td>✓ −3x(x − 4) = −3x² + 12x</td><td>Same signs give positive.</td></tr><tr><td>3</td><td>✗ x² · x³ = x⁶</td><td>✓ x² · x³ = x⁵</td><td>The exponents are added.</td></tr><tr><td>4</td><td>✗ 4x · 3x = 7x²</td><td>✓ 4x · 3x = 12x²</td><td>The numbers are multiplied.</td></tr><tr><td>5</td><td>✗ 3x · 5 = 15</td><td>✓ 3x · 5 = 15x</td><td>The x does not disappear.</td></tr></tbody></table></div>
+      <h3>The arrows, step by step</h3>
+      <div class="panel"><p class="enun" id="mp-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="mp-sig">Show the next step</button><button type="button" class="btn-sec" id="mp-todo">Show all the steps</button><button type="button" class="btn-sec" id="mp-nuevo">Another product</button></div></div>
+      <div class="pasos" id="mp-pasos" aria-live="polite"></div>
+      <h3>Practice: multiply</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="campos"><div class="campo"><label for="mq-r">Product</label><input type="text" autocomplete="off" class="ancho" id="mq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="mq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="mq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="evaluate">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Evaluating a polynomial</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To evaluate, put the number in place of x, always in parentheses, and follow the order of operations: powers, then multiplications, then additions and subtractions.</p>
+      <div class="panel"><p class="enun" id="ev-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ev-sig">Show the next step</button><button type="button" class="btn-sec" id="ev-todo">Show all the steps</button><button type="button" class="btn-sec" id="ev-nuevo">Another polynomial</button></div></div>
+      <div class="pasos" id="ev-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>Parentheses for negative numbers.</strong> (−3)² = 9, but −3² = −9. When you put a negative number in place of x, write it in parentheses so the exponent reaches the sign too.</div>
+      <h3>Practice: evaluate</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="campos"><div class="campo"><label for="eq-r">Value</label><input type="text" autocomplete="off" class="ancho" id="eq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="eq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="eq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 2 · 3D volume and polynomials · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+var NOMBRE = {1: T("monomial", "monomio"), 2: T("binomial", "binomio"), 3: T("trinomial", "trinomio")};
+function nomP(p){ var k = pTerminos(p); return k <= 3 ? NOMBRE[k] : T("polynomial with " + k + " terms", "polinomio de " + k + " términos"); }
+function mon(c, g){ return pMono(c, g); }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+
+/* ===== MODULE 1 · What is a polynomial ===== */
+var QE = {orden: null, p: null, modo: "term"};
+function qeNuevo(ejemplo){
+  if (ejemplo){ QE.p = pDe({3: 4, 1: -2, 0: 7}); QE.orden = [[4, 3], [-2, 1], [7, 0]]; }
+  else { QE.p = azarP(aleatorio(1, 4), aleatorio(1, 3) + (Math.random() < .3 ? 1 : 0), 9); QE.orden = baraja(listaTerm(QE.p)); }
+  qePinta();
+}
+function qePinta(){
+  var p = QE.p, l = QE.orden, g = pGrado(p), modo = QE.modo;
+  var html = l.map(function(t, i){
+    var vis = tVis(t[0], t[1], i === 0), est = "";
+    if (modo === "term") est = "background:" + ["#e3f2fd", "#fff8e1", "#e8f5e9", "#f3e5f5"][i % 4] + ";border-radius:8px;padding:2px 4px;";
+    if (modo === "grado" && t[1] === g) est = "background:#ffe0b2;border-radius:8px;padding:2px 4px;";
+    return '<span style="' + est + '">' + vis + "</span>" + (modo === "coef" ? '<sub style="font-size:13px;color:#c62828;font-weight:700;margin-left:2px">' + sg(t[0]) + "</sub>" : "") + (modo === "grado" ? '<sub style="font-size:13px;color:#1565c0;font-weight:700;margin-left:2px">' + t[1] + "</sub>" : "");
+  }).join("");
+  $("qe-pol").innerHTML = '<span aria-hidden="true">' + html + '</span><span class="sr-only">' + pVoz(p, l) + "</span>";
+  var lead = p[g], std = l.every(function(t, i){ return i === 0 || t[1] < l[i - 1][1]; });
+  $("qe-info").innerHTML = '<div class="linea">' + T("Terms: ", "Términos: ") + l.length + " → <strong>" + nomP(p) + "</strong></div>" +
+    '<div class="linea">' + T("Degree: ", "Grado: ") + "<strong>" + g + "</strong> · " + T("leading coefficient: ", "coeficiente principal: ") + "<strong>" + sg(lead) + "</strong></div>" +
+    '<div class="linea">' + (std ? T("It is in standard form (highest degree first).", "Está en forma estándar (el mayor grado primero).") : T("It is not in standard form yet: press “Put in standard form.”", "Todavía no está en forma estándar: pulse «Ordenar en forma estándar».")) + "</div>";
+  ["term", "coef", "grado"].forEach(function(k){ $("qe-" + k).setAttribute("aria-pressed", k === modo ? "true" : "false"); });
+}
+["term", "coef", "grado"].forEach(function(k){ $("qe-" + k).addEventListener("click", function(){ QE.modo = k; qePinta(); }); });
+$("qe-otro").addEventListener("click", function(){ qeNuevo(false); });
+$("qe-ordena").addEventListener("click", function(){ QE.orden = listaTerm(QE.p); qePinta(); });
+$("qe-ej").addEventListener("click", function(){ qeNuevo(true); });
+qeNuevo(true);
+OMR("qq", function(){
+  var tipo = elige(["nombre", "grado", "lider", "espol"]);
+  if (tipo === "espol"){
+    var c = elige([["x²/2 + 0.5x − 3", true], ["−8", true], ["4x<sup>−2</sup> + 1", false], ["6x<sup>1/2</sup> − x", false], ["5/x + 2", false], ["x³ − x + 1", true], ["3/x²", false], ["0.25x² + x", true]]);
+    return {enun: T("Is ", "¿Es ") + c[0] + T(" a polynomial?", " un polinomio?"), correcta: c[1] ? "si" : "no", enOrden: true, opciones: [{clave: "si", html: T("Yes", "Sí")}, {clave: "no", html: "No"}],
+      pista: T("The exponents of x must be whole numbers that are not negative; x cannot be in a denominator. The coefficients may be fractions or decimals.", "Los exponentes de la x deben ser enteros no negativos; la x no puede estar en un denominador. Los coeficientes sí pueden ser fracciones o decimales."), bien: c[1] ? T("Yes: every exponent is a whole number, 0 or more.", "Sí: todos los exponentes son enteros, 0 o más.") : T("No: there is a negative or fractional exponent, or x in a denominator.", "No: hay un exponente negativo o fraccionario, o la x en un denominador.")};
+  }
+  var p = azarP(aleatorio(1, 5), aleatorio(1, 3), 9), orden = baraja(listaTerm(p)), g = pGrado(p), lead = p[g], vis = pHTML(p, orden);
+  if (tipo === "nombre"){ var k = pTerminos(p), ok = NOMBRE[k] + T(" of degree ", " de grado ") + g;
+    var ops = [ok, NOMBRE[k] + T(" of degree ", " de grado ") + (g + 1), NOMBRE[k === 3 ? 2 : k + 1] + T(" of degree ", " de grado ") + g, NOMBRE[k === 1 ? 3 : k - 1] + T(" of degree ", " de grado ") + Math.max(1, g - 1)];
+    return {enun: T("Name the polynomial ", "Clasifique el polinomio ") + vis + T(" by its terms and its degree.", " por sus términos y su grado."), correcta: ok, opciones: ops.map(function(o){ return {clave: o, html: o}; }),
+      pista: T("Count the terms first; then look for the largest exponent.", "Primero cuente los términos; después busque el mayor exponente."), bien: ok + "."}; }
+  if (tipo === "grado") return {enun: T("What is the degree of ", "¿Cuál es el grado de ") + vis + "?", correcta: String(g), opciones: [g, g + 1, Math.max(0, g - 1), pTerminos(p) === g ? g + 2 : pTerminos(p)].map(function(x){ return {clave: String(x), html: String(x)}; }),
+    pista: T("The degree is the largest exponent, wherever that term is written.", "El grado es el mayor exponente, esté donde esté escrito ese término."), bien: T("The largest exponent is ", "El mayor exponente es ") + g + "."};
+  var otros = orden.filter(function(t){ return t[1] !== g; }).map(function(t){ return t[0]; });
+  return {enun: T("What is the leading coefficient of ", "¿Cuál es el coeficiente principal de ") + vis + "?", correcta: String(lead), opciones: [lead, -lead, orden[0][0], otros.length ? otros[0] : lead + 1, g].map(function(x){ return {clave: String(x), html: sg(x)}; }),
+    pista: T("Find the term with the largest exponent; its number (with its sign) is the leading coefficient. It is not always the first one written.", "Busque el término con el mayor exponente; su número (con su signo) es el coeficiente principal. No siempre es el primero que aparece escrito."), bien: T("The term of degree ", "El término de grado ") + g + T(" has the number ", " lleva el número ") + sg(lead) + "."};
+});
+
+/* ===== MODULE 2 · Adding and subtracting ===== */
+function casoSR(){
+  var resta = Math.random() < .5, g = elige([1, 2, 2]), a = azarP(g, g + 1, 9), b = azarP(g, aleatorio(2, g + 1), 9);
+  var r = resta ? pResta(a, b) : pSuma(a, b), quitado = resta ? pEsc(b, -1) : b;
+  var enun = "(" + pVis(a) + ") " + (resta ? "−" : "+") + " (" + pVis(b) + ")", voz = "(" + pVoz(a) + ") " + (resta ? T(" minus ", " menos ") : T(" plus ", " más ")) + " (" + pVoz(b) + ")";
+  var fam = []; for (var k = Math.max(a.length, b.length) - 1; k >= 0; k--){ var x = a[k] || 0, y = quitado[k] || 0; if (x || y) fam.push([k, x, y]); }
+  var COLF = ["#e3f2fd", "#fff8e1", "#e8f5e9"];
+  var pasos = [(resta ? T("Remove the parentheses. The minus sign changes <strong>every</strong> sign of the second polynomial: ", "Se quitan los paréntesis. El signo menos cambia <strong>todos</strong> los signos del segundo polinomio: ") : T("Remove the parentheses (with a plus sign, nothing changes): ", "Se quitan los paréntesis (con un signo más, nada cambia): ")) + pVis(a) + pVis(quitado).replace(/^(?!−)/, " + ").replace(/^−/, " − ") + ".",
+    T("Group each family of like terms: ", "Se agrupa cada familia de términos semejantes: ") + fam.map(function(f, i){ return '<span style="background:' + COLF[i % 3] + ';border-radius:6px;padding:1px 4px">' + [f[1] ? tVis(f[1], f[0], true) : "", f[2] ? tVis(f[2], f[0], !f[1]) : ""].join("") + "</span>"; }).join("  ") + ".",
+    T("Combine each family (only the numbers; the x part is copied): ", "Se combina cada familia (solo los números; la parte con x se copia): ") + "<strong>" + pVis(r) + "</strong>."];
+  return {a: a, b: b, r: r, resta: resta, enun: '<span aria-hidden="true">' + enun + '</span><span class="sr-only">' + voz + "</span>", pasos: pasos};
+}
+pasoAPaso4("sr", function(){ var c = casoSR(); return {enun: T("Simplify: ", "Simplifique: ") + c.enun, pasos: c.pasos}; });
+creaPracticaLibre("sq", function(){
+  var c = casoSR(), trampas = [];
+  if (c.resta){ var gb = pGrado(c.b), lead = pMono(c.b[gb], gb), soloPrimero = pSuma(pResta(c.a, lead), pResta(c.b, lead)); trampas.push({p: soloPrimero, msg: T("Trap 3: the minus sign changes the sign of every term of the second polynomial, not only the first one.", "Trampa 3: el signo menos cambia el signo de todos los términos del segundo polinomio, no solo el del primero.")}); trampas.push({p: pSuma(c.a, c.b), msg: T("It is a subtraction: change the signs of the second polynomial.", "Es una resta: cambie los signos del segundo polinomio.")}); }
+  var dobles = []; c.r.forEach(function(x, i){ if (x) dobles[2 * i] = x; }); for (var i = 0; i < dobles.length; i++) dobles[i] = dobles[i] || 0;
+  trampas.push({p: dobles, msg: T("Trap 1: when you add or subtract, the exponent is copied. Exponents are added only when you multiply.", "Trampa 1: al sumar o restar, el exponente se copia. Los exponentes solo se suman al multiplicar.")});
+  return {enun: T("Simplify ", "Simplifique ") + c.enun + T(". Use ^ for exponents: x^2.", ". Use ^ para los exponentes: x^2."), evalua: function(txt){ return evaluaP(txt, c.r, trampas, function(p){ return pTerminos(p) < pTerminos(c.r) ? T("A term is missing: each family of like terms gives one term.", "Falta un término: cada familia de términos semejantes da un término.") : null; }); },
+    solucion: c.pasos.join(" ")};
+});
+
+/* ===== MODULE 3 · A monomial times a polynomial ===== */
+function casoMP(){
+  var c = elige([-5, -4, -3, -2, -1, 2, 3, 4, 5, 6]), g = aleatorio(0, 3), q = azarP(aleatorio(1, 3), aleatorio(2, 3), 7), m = pMono(c, g), r = pMul(m, q);
+  var mVis = tVis(c, g, true), lista = listaTerm(q);
+  var pasos = lista.map(function(t){ var cc = c * t[0], gg = g + t[1]; return mVis + " · " + (t[0] < 0 ? "(" + tVis(t[0], t[1], true) + ")" : tVis(t[0], t[1], true)) + " = " + tVis(cc, gg, true) + ' <span class="nota">(' + T("numbers: ", "números: ") + pn(c) + " · " + pn(t[0]) + " = " + sg(cc) + "; " + T("exponents: ", "exponentes: ") + g + " + " + t[1] + " = " + gg + ")</span>"; });
+  pasos.push(T("Put the pieces together: ", "Se juntan los resultados: ") + "<strong>" + pVis(r) + "</strong>.");
+  return {c: c, g: g, q: q, m: m, r: r, enun: '<span aria-hidden="true">' + mVis + "(" + pVis(q) + ')</span><span class="sr-only">' + pVoz(m) + T(" times ", " por ") + "(" + pVoz(q) + ")</span>", pasos: pasos};
+}
+pasoAPaso4("mp", function(){ var c = casoMP(); return {enun: T("Multiply: ", "Multiplique: ") + c.enun, pasos: c.pasos}; });
+creaPracticaLibre("mq", function(){
+  var k = casoMP(), lst = listaTerm(k.q), trampas = [];
+  trampas.push({p: pSuma(pMul(k.m, pMono(lst[0][0], lst[0][1])), pResta(k.q, pMono(lst[0][0], lst[0][1]))), msg: T("Trap 1: the monomial must multiply every term, not only the first.", "Trampa 1: el monomio debe multiplicar a todos los términos, no solo al primero.")});
+  var expMal = {}; lst.forEach(function(t){ var gg = k.g * t[1]; expMal[gg] = (expMal[gg] || 0) + k.c * t[0]; }); if (k.g > 1) trampas.push({p: pDe(expMal), msg: T("Trap 3: when you multiply powers of x, the exponents are added, not multiplied.", "Trampa 3: al multiplicar potencias de x, los exponentes se suman, no se multiplican.")});
+  var coefMal = {}; lst.forEach(function(t){ coefMal[k.g + t[1]] = (coefMal[k.g + t[1]] || 0) + (t[1] && k.g ? k.c + t[0] : k.c * t[0]); }); trampas.push({p: pDe(coefMal), msg: T("Trap 4: the numbers are multiplied, not added.", "Trampa 4: los números se multiplican, no se suman.")});
+  var signoMal = {}; lst.forEach(function(t){ signoMal[k.g + t[1]] = Math.abs(k.c * t[0]) * (k.c < 0 && t[0] < 0 ? -1 : (k.c * t[0] < 0 ? -1 : 1)); }); if (k.c < 0) trampas.push({p: pDe(signoMal), msg: T("Trap 2: negative times negative is positive.", "Trampa 2: negativo por negativo da positivo.")});
+  return {enun: T("Multiply ", "Multiplique ") + k.enun + T(". Use ^ for exponents: x^3.", ". Use ^ para los exponentes: x^3."), evalua: function(txt){ return evaluaP(txt, k.r, trampas.filter(function(t){ return !pIgual(t.p, k.r); })); }, solucion: k.pasos.join(" ").replace(/<span class="nota">|<\/span>/g, "")};
+});
+
+/* ===== MODULE 4 · Evaluating ===== */
+function casoEv(){
+  var p = azarP(aleatorio(1, 3), aleatorio(2, 3), 6), x = elige([-3, -2, -1, 1, 2, 3, 4, 5]), l = listaTerm(p);
+  var sust = l.map(function(t, i){ var a = Math.abs(t[0]), s = t[0] < 0 ? (i ? " − " : "−") : (i ? " + " : ""); return s + (t[1] === 0 ? a : (a === 1 ? "" : a) + "(" + sg(x) + ")" + (t[1] > 1 ? "<sup>" + t[1] + "</sup>" : "")); }).join("");
+  var pots = l.map(function(t, i){ var a = Math.abs(t[0]), s = t[0] < 0 ? (i ? " − " : "−") : (i ? " + " : ""); return s + (t[1] === 0 ? a : (a === 1 ? "" : a) + "(" + sg(Math.pow(x, t[1])) + ")"); }).join("");
+  var prods = l.map(function(t, i){ var v = t[0] * Math.pow(x, t[1]); return i ? (v < 0 ? " − " + Math.abs(v) : " + " + v) : sg(v); }).join("");
+  var val = pEval(p, x);
+  return {p: p, x: x, val: val, pasos: [T("Put ", "Se sustituye la x por ") + pn(x) + T(" in place of x (in parentheses): ", " (entre paréntesis): ") + sust + "."].concat(pGrado(p) > 1 ? [T("Powers first: ", "Primero las potencias: ") + pots + "."] : []).concat([T("Then the multiplications: ", "Después las multiplicaciones: ") + prods + ".", T("Add and subtract from left to right: ", "Se suma y se resta de izquierda a derecha: ") + "<strong>" + sg(val) + "</strong>."]),
+    malo: l.reduce(function(s, t){ return s + t[0] * (t[1] % 2 === 0 && x < 0 ? -Math.pow(-x, t[1]) : Math.pow(x, t[1])); }, 0)};
+}
+pasoAPaso4("ev", function(){ var c = casoEv(); return {enun: T("Evaluate ", "Evalúe ") + pHTML(c.p) + T(" when x = ", " cuando x = ") + sg(c.x) + ".", pasos: c.pasos}; });
+creaPracticaLibre("eq", function(){
+  var c = casoEv();
+  return {enun: T("Evaluate ", "Evalúe ") + pHTML(c.p) + T(" when x = ", " cuando x = ") + sg(c.x) + ".",
+    evalua: function(txt){ var v = leeEntero(txt); if (v === null) return {estado: "invalido", msg: T("Type a whole number, like −7 or 12.", "Escriba un número entero, como −7 o 12.")};
+      if (v === c.val) return {estado: "bien"}; if (c.malo !== c.val && v === c.malo) return {estado: "mal", msg: T("Write the negative value in parentheses: (−3)² = 9, not −9.", "Escriba el valor negativo entre paréntesis: (−3)² = 9, no −9.")};
+      return {estado: "mal", msg: T("Follow the order: powers, then multiplications, then additions and subtractions.", "Siga el orden: potencias, después multiplicaciones y, al final, sumas y restas.")}; },
+    solucion: c.pasos.join(" ")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 2.2 · Figuras 3D compuestas y área de superficie — práctica (español) — construida con tools/build_n4_lesson_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.2 · Figuras 3D compuestas y área de superficie · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-2-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  tr.fila-activa td{background:#fff8e1;font-weight:700;}
+  tr.mejor td{background:#e8f5e9;}
+  button.tarjeta{font:inherit;cursor:pointer;}
+  button.tarjeta[aria-pressed="true"]{border-color:var(--tema);box-shadow:0 0 0 3px var(--tema-bg2);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 2 · Volumen 3D y polinomios</div>
+    <h1>Lección 2.2 · Figuras 3D compuestas y área de superficie</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#descomponer">Descomponer una figura compuesta</a></li>
+      <li><a href="#volumen">Volumen de figuras compuestas</a></li>
+      <li><a href="#superficie">Área de superficie: el sólido y su desarrollo</a></li>
+      <li><a href="#optimizacion">Una idea de optimización</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="descomponer" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Descomponer una figura compuesta</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija una figura. Marque los sólidos simples en que se descompone y decida si sus volúmenes se suman o se restan. Después compruebe: cuando acierte, las partes se dibujan separadas, cada una con su color.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="dc-fig">Figura</label><select id="dc-fig"><option value="silo">Silo (cilindro + cono)</option><option value="tanque">Tanque (cilindro + semiesfera)</option><option value="capsula">Cápsula (cilindro + 2 semiesferas)</option><option value="torre">Torre (prisma + pirámide)</option><option value="bloque">Bloque perforado (prisma − cilindro)</option></select></div></div></div>
+      <div id="dc-svg"></div>
+      <fieldset class="panel" id="dc-piezas"><legend><strong>1. ¿En qué sólidos simples se descompone?</strong></legend>
+        <label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="cil"> Cilindro</label><label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="cono"> Cono</label><label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="semi"> Semiesfera</label><label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="esf"> Esfera completa</label><label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="pri"> Prisma rectangular</label><label style="display:inline-flex;gap:6px;margin:4px 14px 4px 0;"><input type="checkbox" value="pir"> Pirámide</label></fieldset>
+      <fieldset class="panel"><legend><strong>2. ¿Los volúmenes se suman o se restan?</strong></legend>
+        <label style="margin-right:18px;"><input type="radio" name="dc-op" id="dc-mas"> Se suman</label><label><input type="radio" name="dc-op" id="dc-menos"> Se restan</label></fieldset>
+      <div class="fila-btn"><button type="button" class="btn" id="dc-comprobar">Comprobar mi descomposición</button><button type="button" class="btn-sec" id="dc-ver">Mostrar la respuesta</button><button type="button" class="btn-sec" id="dc-limpia">Reiniciar</button></div>
+      <div class="fb" id="dc-fb" role="status"></div>
+      <div class="caja-tip">¿Sumar o restar? Si las partes se juntan para formar un cuerpo más grande, se suman. Si una parte se quita (un agujero, un hueco), se resta.</div>
+      <h3>Practique: las piezas y la operación</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="volumen">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Volumen de figuras compuestas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija una figura y cambie sus medidas. La tabla calcula el volumen de cada parte con su fórmula y los suma (o los resta). Marque «Separar las partes» para ver cada pieza por separado.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="cv-fig">Figura</label><select id="cv-fig"><option value="silo">Silo (cilindro + cono)</option><option value="tanque">Tanque (cilindro + semiesfera)</option><option value="capsula">Cápsula (cilindro + 2 semiesferas)</option><option value="torre">Torre (prisma + pirámide)</option><option value="bloque">Bloque perforado (prisma − cilindro)</option></select></div><div class="campo"><label for="cv-u">Unidad</label><select id="cv-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <div class="campos" id="cv-dims"></div>
+        <div class="campo"><label><input type="checkbox" id="cv-sep"> Separar las partes</label></div></div>
+      <div id="cv-svg"></div>
+      <div class="tabla-scroll"><table class="tabla-lados" id="cv-tabla"></table></div>
+      <h3>Practique: el volumen total</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div><div id="cq-svg"></div>
+        <div class="campos"><div class="campo"><label for="cq-r">Volumen</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="cq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="cq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="cq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="superficie">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Área de superficie: el sólido y su desarrollo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cada sólido aparece cerrado y abierto en el plano (su desarrollo). Elija el área lateral o la total, o pulse una pieza para iluminarla en el desarrollo. El área se construye pieza por pieza.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="su-sol">Sólido</label><select id="su-sol"><option value="prisma">Prisma rectangular</option><option value="cilindro">Cilindro</option><option value="cono">Cono</option><option value="piramide">Pirámide de base cuadrada</option><option value="esfera">Esfera</option></select></div><div class="campo"><label for="su-u">Unidad</label><select id="su-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <div class="campos" id="su-dims"></div>
+        <div class="modos" role="group" aria-label="Área que se muestra"><button type="button" class="btn-sec" id="su-total" aria-pressed="true">Área total</button><button type="button" class="btn-sec" id="su-lat" aria-pressed="false">Solo el área lateral</button></div></div>
+      <div class="tarjetas"><div style="flex:1;min-width:260px" id="su-cerrado"></div><div style="flex:1.4;min-width:300px" id="su-red"></div></div>
+      <div class="tarjetas" id="su-cards"></div>
+      <div class="salida" aria-live="polite" id="su-res"></div>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Área lateral y total de los sólidos de la hoja de fórmulas</caption>
+        <thead><tr><th scope="col">Sólido</th><th scope="col">Área lateral</th><th scope="col">Área total</th></tr></thead><tbody>
+        <tr><td>Prisma rectangular</td><td>perímetro de la base × altura</td><td>2ab + 2ac + 2bc</td></tr>
+        <tr><td>Cilindro</td><td>2πrh</td><td>2πrh + 2πr²</td></tr>
+        <tr><td>Cono</td><td>πrℓ (ℓ = altura inclinada)</td><td>πrℓ + πr²</td></tr>
+        <tr><td>Pirámide</td><td>1/2 × perímetro × ℓ</td><td>1/2 × perímetro × ℓ + B</td></tr>
+        <tr><td>Esfera</td><td>—</td><td>4πr²</td></tr></tbody></table></div>
+      <div class="caja-tip">Lateral quiere decir «sin las tapas». El área lateral cuenta solo las superficies que rodean el cuerpo; el área total añade la base y, si existe, la tapa. Lea bien el problema: un tanque abierto no tiene tapa.</div>
+      <h3>Practique: el área de superficie</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="campos"><div class="campo"><label for="sq-r">Área</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="sq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="sq-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="sq-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="optimizacion">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Una idea de optimización</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">Área de la caja = 2(largo·ancho + largo·alto + ancho·alto)</div>
+      <p>Elija un volumen y mueva el deslizador para recorrer todas las cajas de medidas enteras que guardan exactamente ese volumen. La tabla marca en verde la que usa menos cartón.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="op-v">Volumen que debe guardar la caja</label><select id="op-v"><option value="24">24</option><option value="36">36</option><option value="48">48</option><option value="64" selected>64</option><option value="100">100</option></select></div>
+        <div class="campo" style="flex:1;min-width:220px;"><label for="op-i">Caja: <span id="op-iv"></span></label><input type="range" id="op-i" min="0" max="5" step="1" value="0"></div><div class="campo"><label for="op-u">Unidad</label><select id="op-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <p class="nota">El deslizador va de la caja que más cartón usa a la que menos usa.</p></div>
+      <div id="op-svg"></div>
+      <div class="salida" aria-live="polite" id="op-res"></div>
+      <div class="tabla-scroll"><table class="tabla-lados" id="op-tabla"></table></div>
+      <div class="caja-tip">Mismo volumen no significa mismo material. El volumen mide lo que cabe dentro; el área de superficie mide el material que lo envuelve. Las formas más parecidas a un cubo tienden a tener menor área de superficie.</div>
+      <h3>Practique: ¿qué diseño usa menos material?</h3>
+      <div class="practica" id="oq">
+        <div class="enun" id="oq-enun"></div>
+        <div class="opciones" id="oq-opciones"></div>
+        <div class="fb" id="oq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="oq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="oq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 2 · Volumen 3D y polinomios · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/solid4.js"></script>
+<script>
+function F(n, d){ return fr(n, d === undefined ? 1 : d); }
+var COL = {cil: "#bbdefb", cono: "#ffe0b2", semi: "#c8e6c9", pri: "#d1c4e9", pir: "#ffe0b2", hueco: "#ffcdd2"};
+var NOMP = {cil: T("Cylinder", "Cilindro"), cono: T("Cone", "Cono"), semi: T("Half-sphere", "Semiesfera"), esf: T("Whole sphere", "Esfera completa"), pri: T("Rectangular prism", "Prisma rectangular"), pir: T("Pyramid", "Pirámide")};
+var FIG = {
+  silo: {nom: T("Silo (cylinder + cone)", "Silo (cilindro + cono)"), partes: ["cil", "cono"], op: "+", dims: [["r", T("Radius r", "Radio r"), 1, 6, 3], ["h", T("Height of the cylinder h", "Altura del cilindro h"), 2, 12, 8], ["k", T("Height of the cone", "Altura del cono"), 1, 8, 3]]},
+  tanque: {nom: T("Tank (cylinder + half-sphere)", "Tanque (cilindro + semiesfera)"), partes: ["cil", "semi"], op: "+", dims: [["r", T("Radius r", "Radio r"), 1, 6, 3], ["h", T("Height of the cylinder h", "Altura del cilindro h"), 2, 12, 10]]},
+  capsula: {nom: T("Capsule (cylinder + 2 half-spheres)", "Cápsula (cilindro + 2 semiesferas)"), partes: ["cil", "semi"], op: "+", dos: true, dims: [["r", T("Radius r", "Radio r"), 1, 5, 2], ["h", T("Length of the cylinder h", "Largo del cilindro h"), 2, 12, 8]]},
+  torre: {nom: T("Tower (prism + pyramid)", "Torre (prisma + pirámide)"), partes: ["pri", "pir"], op: "+", dims: [["a", T("Side of the base", "Lado de la base"), 1, 8, 4], ["h", T("Height of the prism", "Altura del prisma"), 2, 12, 8], ["k", T("Height of the pyramid", "Altura de la pirámide"), 1, 9, 3]]},
+  bloque: {nom: T("Drilled block (prism − cylinder)", "Bloque perforado (prisma − cilindro)"), partes: ["pri", "cil"], op: "−", dims: [["a", T("Length", "Largo"), 4, 14, 10], ["b", T("Width", "Ancho"), 4, 14, 10], ["h", T("Height", "Alto"), 2, 10, 5], ["r", T("Radius of the hole", "Radio del hueco"), 1, 3, 2]]}};
+/* Composite figure drawing; sep = draw the parts apart */
+function figSVG(f, d, sep, colorear){
+  var W = 420, H = 380, s = "", cx = 210, g = sep ? 26 : 0, c = function(k){ return colorear === false ? "#eceff1" : COL[k]; };
+  function cil(cx0, base, R, h, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base - h) + " L" + f1(cx0 - R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 0 " + f1(cx0 + R) + " " + f1(base) + " L" + f1(cx0 + R) + " " + f1(base - h) + '" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>' + elip(cx0, base - h, R, R * .25, col) + elip(cx0, base, R, R * .25, "none", S4.oculto, "atras"); }
+  function cono(cx0, base, R, h, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base) + " L" + f1(cx0) + " " + f1(base - h) + " L" + f1(cx0 + R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 1 " + f1(cx0 - R) + " " + f1(base) + 'Z" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>'; }
+  function semi(cx0, base, R, arriba, col){ return '<path d="M' + f1(cx0 - R) + " " + f1(base) + " A" + f1(R) + " " + f1(R) + " 0 0 " + (arriba ? 1 : 0) + " " + f1(cx0 + R) + " " + f1(base) + " A" + f1(R) + " " + f1(R * .25) + " 0 0 " + (arriba ? 0 : 1) + " " + f1(cx0 - R) + " " + f1(base) + 'Z" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/>'; }
+  function caja(x0, y0, w, dep, h, col){ var A = [x0, y0], B = [x0 + w, y0], C = [x0 + w + dep * .8, y0 - dep * .55], D = [x0 + dep * .8, y0 - dep * .55], up = function(p){ return [p[0], p[1] - h]; }, P = function(l){ return l.map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" "); };
+    return '<polygon points="' + P([A, B, up(B), up(A)]) + '" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5"/><polygon points="' + P([B, C, up(C), up(B)]) + '" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5" fill-opacity=".8"/><polygon points="' + P([up(A), up(B), up(C), up(D)]) + '" fill="' + col + '" stroke="' + S4.linea + '" stroke-width="2.5" fill-opacity=".6"/>'; }
+  if (f === "silo" || f === "tanque" || f === "capsula"){
+    var tot = (f === "silo" ? d.h + d.k : (f === "tanque" ? d.h + d.r : d.h + 2 * d.r)), esc = Math.min(28, 300 / tot, 130 / d.r), R = d.r * esc, h = d.h * esc, base = 345 - (f === "capsula" ? R : 0);
+    if (f === "capsula") s += semi(cx, base + g, R, false, c("semi"));
+    s += cil(cx, base, R, h, c("cil"));
+    if (f === "silo") s += cono(cx, base - h - g, R, d.k * esc, c("cono"));
+    else s += semi(cx, base - h - g, R, true, c("semi"));
+    s += lin(cx, base - h, cx + R, base - h, S4.radio, 3) + etq(cx + R / 2, base - h - 8, "r = " + d.r, S4.radio) + lin(cx + R + 18, base, cx + R + 18, base - h, S4.alto, 2.5, "6 4") + etq(cx + R + 24, base - h / 2, "h = " + d.h, S4.alto, "start");
+    if (f === "silo") s += etq(cx - R - 10, base - h - g - d.k * esc / 2, d.k, "#e65100", "end");
+  } else if (f === "torre"){
+    var tot2 = d.h + d.k, e2 = Math.min(26, 290 / tot2, 200 / (d.a * 1.6)), w = d.a * e2, dep = d.a * e2 * .7, x0 = 210 - (w + dep * .8) / 2, y0 = 350, hh = d.h * e2, kk = d.k * e2;
+    s += caja(x0, y0, w, dep, hh, c("pri"));
+    var A = [x0, y0 - hh - g], B = [x0 + w, y0 - hh - g], C = [x0 + w + dep * .8, y0 - hh - g - dep * .55], cen = [x0 + (w + dep * .8) / 2, y0 - hh - g - dep * .275], V = [cen[0], cen[1] - kk];
+    s += '<polygon points="' + [A, B, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c("pir") + '" stroke="' + S4.linea + '" stroke-width="2.5"/><polygon points="' + [B, C, V].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="' + c("pir") + '" fill-opacity=".8" stroke="' + S4.linea + '" stroke-width="2.5"/>';
+    s += etq(x0 + w / 2, y0 + 22, d.a, S4.base) + etq(x0 - 10, y0 - hh / 2, "h = " + d.h, S4.alto, "end") + etq(V[0] + 12, V[1] + kk / 2, d.k, "#e65100", "start");
+  } else {
+    var e3 = Math.min(22, 230 / (d.a + d.b * .8), 200 / d.h), w3 = d.a * e3, dp = d.b * e3, x3 = 210 - (w3 + dp * .8) / 2, y3 = 330, h3 = d.h * e3, R3 = d.r * e3, ccx = x3 + (w3 + dp * .8) / 2, ccy = y3 - h3 - dp * .275;
+    s += caja(x3, y3, w3, dp, h3, c("pri"));
+    s += elip(ccx, ccy, R3, R3 * .5, colorear === false ? "#fff" : COL.hueco) + lin(ccx, ccy, ccx + R3, ccy, S4.radio, 3) + etq(ccx + R3 / 2, ccy - 8, "r = " + d.r, S4.radio);
+    if (sep) s += cil(370, 330, R3, h3, COL.hueco);
+    s += etq(x3 + w3 / 2, y3 + 22, d.a, S4.base) + etq(x3 + w3 + dp * .4 + 14, y3 - dp * .3, d.b, S4.base, "start") + etq(x3 - 10, y3 - h3 / 2, d.h, S4.alto, "end");
+  }
+  return marco(W, H, FIG[f].nom + ". " + T("Measures: ", "Medidas: ") + Object.keys(d).map(function(k){ return k + " = " + d[k]; }).join(", ") + ".", s, 400);
+}
+/* Partial volumes: [{part, formula, sub, k (coef of π) or n (plain number)}] */
+function partes(f, d){
+  var l = [];
+  if (f === "silo" || f === "tanque" || f === "capsula") l.push({p: "cil", form: "πr²h", sub: "π · " + d.r + "² · " + d.h, k: F(d.r * d.r * d.h), n: 0});
+  if (f === "silo") l.push({p: "cono", form: "1/3 πr²h", sub: "1/3 · π · " + d.r + "² · " + d.k, k: F(d.r * d.r * d.k, 3), n: 0});
+  if (f === "tanque") l.push({p: "semi", form: "1/2 · 4/3 πr³", sub: "2/3 · π · " + d.r + "³", k: F(2 * d.r * d.r * d.r, 3), n: 0});
+  if (f === "capsula") l.push({p: "esf", form: "2 · (1/2 · 4/3 πr³)", sub: "4/3 · π · " + d.r + "³", k: F(4 * d.r * d.r * d.r, 3), n: 0});
+  if (f === "torre"){ l.push({p: "pri", form: "Bh", sub: d.a + " · " + d.a + " · " + d.h, k: F(0), n: d.a * d.a * d.h}); l.push({p: "pir", form: "1/3 Bh", sub: "1/3 · " + d.a * d.a + " · " + d.k, k: F(0), n: d.a * d.a * d.k / 3}); }
+  if (f === "bloque"){ l.push({p: "pri", form: "L · w · h", sub: d.a + " · " + d.b + " · " + d.h, k: F(0), n: d.a * d.b * d.h}); l.push({p: "cil", form: "πr²h", sub: "π · " + d.r + "² · " + d.h, k: F(-d.r * d.r * d.h), n: 0, resta: true}); }
+  return l;
+}
+function totalTxt(l){
+  var n = l.reduce(function(a, x){ return a + x.n; }, 0), k = l.reduce(function(a, x){ return fsum(a, x.k); }, F(0));
+  var s = (n ? n1(n, 2) : "") + (k.n ? (n ? (k.n < 0 ? " − " : " + ") + piTxt(F(Math.abs(k.n), k.d)) : piTxt(k)) : "");
+  return {txt: s, val: n + piVal(k)};
+}
+function parteTxt(x){ return x.n ? n1(x.n, 2) : piTxt(F(Math.abs(x.k.n), x.k.d)); }
+
+/* ===== MODULE 1 · Decompose ===== */
+function dcPinta(){
+  var f = $("dc-fig").value, d = {}; FIG[f].dims.forEach(function(x){ d[x[0]] = x[4]; });
+  $("dc-svg").innerHTML = figSVG(f, d, false, false); $("dc-fb").className = "fb"; $("dc-fb").innerHTML = "";
+  document.querySelectorAll("#dc-piezas input").forEach(function(i){ i.checked = false; }); $("dc-mas").checked = false; $("dc-menos").checked = false;
+}
+$("dc-fig").addEventListener("change", dcPinta);
+function dcRespuesta(f){ var p = FIG[f].partes.slice(); if (FIG[f].dos){ p = ["cil", "semi"]; } return p; }
+$("dc-comprobar").addEventListener("click", function(){
+  var f = $("dc-fig").value, sel = [].filter.call(document.querySelectorAll("#dc-piezas input"), function(i){ return i.checked; }).map(function(i){ return i.value; }), ok = dcRespuesta(f), op = $("dc-mas").checked ? "+" : ($("dc-menos").checked ? "−" : null), fb = $("dc-fb");
+  var piezasOk = sel.length === ok.length && ok.every(function(p){ return sel.indexOf(p) >= 0; }) || (f === "capsula" && sel.length === 2 && sel.indexOf("cil") >= 0 && (sel.indexOf("semi") >= 0 || sel.indexOf("esf") >= 0));
+  if (piezasOk && op === FIG[f].op){ fb.className = "fb bien"; fb.innerHTML = TX.bien + ok.map(function(p){ return NOMP[p]; }).join(FIG[f].op === "+" ? " + " : " − ") + (f === "capsula" ? T(" (the two half-spheres together make one whole sphere).", " (las dos semiesferas juntas forman una esfera completa).") : ".");
+    var d = {}; FIG[f].dims.forEach(function(x){ d[x[0]] = x[4]; }); $("dc-svg").innerHTML = figSVG(f, d, true, true); return; }
+  fb.className = "fb pista"; fb.innerHTML = TX.todavia + (!piezasOk ? T("Check the pieces: look for each simple solid (a round body, a point, a dome, a box).", "Revise las piezas: busque cada sólido simple (un cuerpo redondo, una punta, una cúpula, una caja).") : "") + (op !== FIG[f].op ? " " + T("Think again about the operation: is a part joined on, or taken out?", "Piense otra vez la operación: ¿una parte se añade o se quita?") : "");
+});
+$("dc-ver").addEventListener("click", function(){ var f = $("dc-fig").value, d = {}; FIG[f].dims.forEach(function(x){ d[x[0]] = x[4]; }); $("dc-svg").innerHTML = figSVG(f, d, true, true); $("dc-fb").className = "fb mal"; $("dc-fb").innerHTML = TX.asi + dcRespuesta(f).map(function(p){ return NOMP[p]; }).join(FIG[f].op === "+" ? " + " : " − ") + "."; });
+$("dc-limpia").addEventListener("click", dcPinta);
+dcPinta();
+OMR("dq", function(){
+  var f = elige(Object.keys(FIG)), ok = dcRespuesta(f).map(function(p){ return NOMP[p]; }).join(" " + FIG[f].op + " "), d = {}; FIG[f].dims.forEach(function(x){ d[x[0]] = x[4]; });
+  var malos = [dcRespuesta(f).map(function(p){ return NOMP[p]; }).join(FIG[f].op === "+" ? " − " : " + "), NOMP.cil + " + " + NOMP.esf, NOMP.pri + " + " + NOMP.cil, NOMP.cil + " + " + NOMP.cono, NOMP.pri + " − " + NOMP.pir];
+  var ops = [{clave: "ok", html: ok}], vistos = {}; vistos[ok] = 1;
+  baraja(malos).forEach(function(m){ if (!vistos[m] && ops.length < 4){ vistos[m] = 1; ops.push({clave: m, html: m}); } });
+  return {enun: T("Which simple solids make up this figure, and are their volumes added or subtracted?", "¿Qué sólidos simples forman esta figura y sus volúmenes se suman o se restan?") + figSVG(f, d, false, false).replace('max-width:400px', 'max-width:260px'),
+    correcta: "ok", opciones: ops, pista: T("Name each part, then ask: is it joined on (add) or taken out (subtract)?", "Nombre cada parte y pregúntese: ¿se añade (suma) o se quita (resta)?"), bien: ok + "."};
+});
+
+/* ===== MODULE 2 · Composite volume workshop ===== */
+var CV = {d: {}};
+function cvCampos(){
+  var f = $("cv-fig").value;
+  $("cv-dims").innerHTML = FIG[f].dims.map(function(x){ return '<div class="campo" style="flex:1;min-width:180px;"><label for="cv-' + x[0] + '">' + x[1] + ' = <span id="cv-' + x[0] + 'v"></span></label><input type="range" id="cv-' + x[0] + '" min="' + x[2] + '" max="' + x[3] + '" step="1" value="' + x[4] + '"></div>'; }).join("");
+  FIG[f].dims.forEach(function(x){ $("cv-" + x[0]).addEventListener("input", cvPinta); });
+  cvPinta();
+}
+function cvPinta(){
+  var f = $("cv-fig").value, d = {}, u = UNID[$("cv-u").value];
+  FIG[f].dims.forEach(function(x){ d[x[0]] = +$("cv-" + x[0]).value; $("cv-" + x[0] + "v").textContent = d[x[0]]; });
+  if (f === "bloque" && 2 * d.r >= Math.min(d.a, d.b)){ d.r = Math.max(1, Math.floor((Math.min(d.a, d.b) - 1) / 2)); $("cv-r").value = d.r; $("cv-rv").textContent = d.r; }
+  $("cv-svg").innerHTML = figSVG(f, d, $("cv-sep").checked, true);
+  var l = partes(f, d), tot = totalTxt(l);
+  $("cv-tabla").innerHTML = '<caption class="sr-only">' + T("Volume of each part and total volume of the composite figure", "Volumen de cada parte y volumen total de la figura compuesta") + '</caption><thead><tr><th scope="col">' + T("Part", "Parte") + '</th><th scope="col">' + T("Formula", "Fórmula") + '</th><th scope="col">' + T("Substitution", "Sustitución") + '</th><th scope="col">' + T("Volume", "Volumen") + "</th></tr></thead><tbody>" +
+    l.map(function(x){ return '<tr><td><span style="display:inline-block;width:14px;height:14px;border-radius:3px;background:' + (COL[x.p] || COL.semi) + ';border:1px solid #607d8b;margin-right:6px;vertical-align:middle"></span>' + NOMP[x.p] + (x.resta ? T(" (hole)", " (hueco)") : "") + "</td><td>" + x.form + "</td><td>" + x.sub + "</td><td>" + (x.resta ? "− " : "") + parteTxt(x) + "</td></tr>"; }).join("") +
+    '<tr class="fila-activa"><td colspan="3"><strong>' + T("Total", "Total") + " (" + (FIG[f].op === "+" ? T("add", "se suman") : T("subtract", "se resta")) + ")</strong></td><td><strong>" + tot.txt + " ≈ " + n1(tot.val) + " " + u[2] + "</strong></td></tr></tbody>";
+}
+$("cv-fig").addEventListener("change", cvCampos); $("cv-u").addEventListener("change", cvPinta); $("cv-sep").addEventListener("change", cvPinta);
+cvCampos();
+creaPracticaLibre("cq", function(){
+  var f = elige(Object.keys(FIG)), d = {}, u = UNID[elige(["in", "ft"])];
+  FIG[f].dims.forEach(function(x){ d[x[0]] = aleatorio(x[2], Math.min(x[3], x[2] + 6)); });
+  if (f === "silo" || f === "torre"){ d.k = 3 * aleatorio(1, 3); }
+  if (f === "bloque"){ d.r = Math.min(d.r, Math.floor((Math.min(d.a, d.b) - 1) / 2)) || 1; }
+  var l = partes(f, d), tot = totalTxt(l), conPi = l.some(function(x){ return x.k.n; }), soloPi = l.every(function(x){ return x.n === 0; });
+  var desc = {silo: T("A silo: a cylinder with radius " + d.r + " and height " + d.h + ", with a cone of height " + d.k + " on top.", "Un silo: un cilindro de radio " + d.r + " y altura " + d.h + ", con un cono de altura " + d.k + " encima."),
+    tanque: T("A tank: a cylinder with radius " + d.r + " and height " + d.h + ", with a half-sphere on top.", "Un tanque: un cilindro de radio " + d.r + " y altura " + d.h + ", con una semiesfera encima."),
+    capsula: T("A capsule: a cylinder with radius " + d.r + " and length " + d.h + ", with a half-sphere at each end.", "Una cápsula: un cilindro de radio " + d.r + " y largo " + d.h + ", con una semiesfera en cada extremo."),
+    torre: T("A tower: a prism with a square base " + d.a + " on each side and height " + d.h + ", with a pyramid of height " + d.k + " on top.", "Una torre: un prisma de base cuadrada de lado " + d.a + " y altura " + d.h + ", con una pirámide de altura " + d.k + " encima."),
+    bloque: T("A block " + d.a + " × " + d.b + " × " + d.h + " with a hole of radius " + d.r + " drilled straight through its height.", "Un bloque de " + d.a + " × " + d.b + " × " + d.h + " con un agujero de radio " + d.r + " que lo atraviesa de arriba abajo.")}[f];
+  $("cq-svg").innerHTML = figSVG(f, d, false, true).replace("max-width:400px", "max-width:300px");
+  return {enun: desc + " " + T("Find the total volume (measures in ", "Calcule el volumen total (medidas en ") + u[1] + ")." + (soloPi ? T(" Give it with π or as a decimal.", " Escríbalo con π o en decimal.") : T(" Give it as a decimal, rounded to the tenth.", " Escríbalo en decimal, redondeado a la décima.")),
+    evalua: function(txt){
+      if (soloPi){ var k = l.reduce(function(a, x){ return fsum(a, x.k); }, F(0)), r = evaluaPi(txt, k, l.map(function(x){ return {k: fval(x.k), msg: T("That is only one part. Add the other one.", "Esa es solo una parte. Falta la otra.")}; }));
+        if (f === "capsula" && r.estado === "mal"){ var x = leePi(txt); if (x && Math.abs((x.pi !== null ? x.pi : x.val / Math.PI) - (d.r * d.r * d.h + 2 * d.r * d.r * d.r / 3)) < .02 * d.r * d.r * d.h) r.msg = T("There are two half-spheres: together they make a whole sphere.", "Hay dos semiesferas: juntas forman una esfera completa."); }
+        return r; }
+      var m = String(txt).replace(/\s/g, "").replace(/[−–]/g, "-").match(/^(\d+(?:\.\d+)?)([-+])(\d+(?:\.\d+)?)π$/);
+      if (m){ var v = +m[1] + (m[2] === "-" ? -1 : 1) * +m[3] * Math.PI; if (Math.abs(v - tot.val) < 0.01) return {estado: "bien"}; }
+      var parc = l.map(function(x){ return {v: Math.abs(x.n + piVal(x.k)), msg: T("That is only one part. Combine it with the other.", "Esa es solo una parte. Combínela con la otra.")}; });
+      if (f === "bloque") parc.push({v: l[0].n + Math.abs(piVal(l[1].k)), msg: T("The hole takes material away: subtract it.", "El hueco quita material: se resta.")});
+      return evaluaNum(txt, tot.val, Math.max(0.051, tot.val * 0.002), parc.map(function(p){ return {v: p.v, msg: p.msg}; }).filter(function(p){ return Math.abs(p.v - tot.val) > 0.06; }).map(function(p){ return {v: Math.round(p.v * 10) / 10, msg: p.msg}; }));
+    },
+    solucion: l.map(function(x){ return NOMP[x.p] + ": " + x.sub + " = " + parteTxt(x); }).join("; ") + ". " + T("Total: ", "Total: ") + tot.txt + " ≈ " + n1(tot.val) + " " + u[2] + "."};
+});
+
+/* ===== MODULE 3 · Surface area and the net ===== */
+var SUP = {s: "prisma", modo: "total", sel: null};
+function piezasDe(s, d){
+  if (s === "prisma") return [["base", T("Bottom", "Base"), d.a * d.b, d.a + " · " + d.b, 0], ["tapa", T("Top", "Tapa"), d.a * d.b, d.a + " · " + d.b, 0], ["f1", T("Front", "Frente"), d.a * d.c, d.a + " · " + d.c, 1], ["f2", T("Back", "Atrás"), d.a * d.c, d.a + " · " + d.c, 1], ["f3", T("Left side", "Lado izquierdo"), d.b * d.c, d.b + " · " + d.c, 1], ["f4", T("Right side", "Lado derecho"), d.b * d.c, d.b + " · " + d.c, 1]];
+  if (s === "cilindro") return [["base", T("Bottom circle", "Círculo de la base"), F(d.r * d.r), "π · " + d.r + "²", 0], ["tapa", T("Top circle", "Círculo de la tapa"), F(d.r * d.r), "π · " + d.r + "²", 0], ["lat", T("Side (a rectangle when unrolled)", "Lado (un rectángulo al desenrollarlo)"), F(2 * d.r * d.c), "2π · " + d.r + " · " + d.c, 1]];
+  if (s === "cono") return [["base", T("Base circle", "Círculo de la base"), F(d.r * d.r), "π · " + d.r + "²", 0], ["lat", T("Side (a fan shape when unrolled)", "Lado (un abanico al desenrollarlo)"), F(d.r * d.l), "π · " + d.r + " · " + d.l, 1]];
+  if (s === "piramide") return [["base", T("Square base", "Base cuadrada"), d.a * d.a, d.a + " · " + d.a, 0]].concat([1, 2, 3, 4].map(function(i){ return ["t" + i, T("Triangle ", "Triángulo ") + i, d.a * d.l / 2, "1/2 · " + d.a + " · " + d.l, 1]; }));
+  return [["esf", T("The whole surface", "Toda la superficie"), F(4 * d.r * d.r), "4π · " + d.r + "²", 1]];
+}
+var SDIM = {prisma: [["a", T("Length", "Largo"), 4], ["b", T("Width", "Ancho"), 3], ["c", T("Height", "Alto"), 2]], cilindro: [["r", T("Radius", "Radio"), 2], ["c", T("Height", "Altura"), 5]], cono: [["r", T("Radius", "Radio"), 3], ["l", T("Slant height ℓ", "Altura inclinada ℓ"), 5]], piramide: [["a", T("Side of the base", "Lado de la base"), 4], ["l", T("Slant height ℓ of a face", "Altura inclinada ℓ de una cara"), 5]], esfera: [["r", T("Radius", "Radio"), 3]]};
+function areaTxt(v){ return typeof v === "object" ? piTxt(v) : n1(v, 2); }
+function supCampos(){ var s = $("su-sol").value; SUP.s = s; SUP.sel = null;
+  $("su-dims").innerHTML = SDIM[s].map(function(x){ return '<div class="campo"><label for="su-' + x[0] + '">' + x[1] + '</label><input type="number" class="corto" id="su-' + x[0] + '" min="1" max="12" value="' + x[2] + '"></div>'; }).join("");
+  SDIM[s].forEach(function(x){ $("su-" + x[0]).addEventListener("input", supPinta); }); supPinta(); }
+function redSVG(s, d, pz){
+  var on = function(id, lat){ return (SUP.sel ? SUP.sel === id : (SUP.modo === "total" || lat)); }, col = function(id, lat){ return on(id, lat) ? (lat ? "#ffe0b2" : "#bbdefb") : "#f5f5f5"; }, st = function(id, lat){ return on(id, lat) ? S4.linea : "#cfd8dc"; }, r = "";
+  var W = 460, H = 330, u;
+  function rect(id, x, y, w, h, lat, txt){ return '<rect x="' + f1(x) + '" y="' + f1(y) + '" width="' + f1(w) + '" height="' + f1(h) + '" fill="' + col(id, lat) + '" stroke="' + st(id, lat) + '" stroke-width="2"/>' + (txt ? etq(x + w / 2, y + h / 2 + 5, txt, S4.linea, "middle", 13) : ""); }
+  if (s === "prisma"){ u = Math.min(28, 440 / (2 * d.a + 2 * d.b), 300 / (d.b * 2 + d.c)); var a = d.a * u, b = d.b * u, c = d.c * u, x0 = (W - 2 * a - 2 * b) / 2, y0 = (H - c - 2 * b) / 2 + b;
+    r += rect("f3", x0, y0, b, c, 1) + rect("f1", x0 + b, y0, a, c, 1, T("front", "frente")) + rect("f4", x0 + a + b, y0, b, c, 1) + rect("f2", x0 + a + 2 * b, y0, a, c, 1, T("back", "atrás")) + rect("tapa", x0 + b, y0 - b, a, b, 0, T("top", "tapa")) + rect("base", x0 + b, y0 + c, a, b, 0, T("bottom", "base")); }
+  else if (s === "cilindro"){ u = Math.min(24, 420 / (2 * Math.PI * d.r), 300 / (d.c + 4 * d.r)); var R = d.r * u, Lr = 2 * Math.PI * R, hc = d.c * u, x1 = (W - Lr) / 2, y1 = (H - hc) / 2;
+    r += rect("lat", x1, y1, Lr, hc, 1, "2πr × h") + '<circle cx="' + f1(W / 2) + '" cy="' + f1(y1 - R) + '" r="' + f1(R) + '" fill="' + col("tapa", 0) + '" stroke="' + st("tapa", 0) + '" stroke-width="2"/><circle cx="' + f1(W / 2) + '" cy="' + f1(y1 + hc + R) + '" r="' + f1(R) + '" fill="' + col("base", 0) + '" stroke="' + st("base", 0) + '" stroke-width="2"/>'; }
+  else if (s === "cono"){ u = Math.min(30, 160 / d.l, 70 / d.r); var Lc = d.l * u, ang = 2 * Math.PI * d.r / d.l, cx = W / 2, cy = 40, a0 = Math.PI / 2 - ang / 2, a1 = Math.PI / 2 + ang / 2, big = ang > Math.PI ? 1 : 0;
+    r += '<path d="M' + cx + " " + cy + " L" + f1(cx + Lc * Math.cos(a0)) + " " + f1(cy + Lc * Math.sin(a0)) + " A" + f1(Lc) + " " + f1(Lc) + " 0 " + big + " 1 " + f1(cx + Lc * Math.cos(a1)) + " " + f1(cy + Lc * Math.sin(a1)) + 'Z" fill="' + col("lat", 1) + '" stroke="' + st("lat", 1) + '" stroke-width="2"/>' + etq(cx, cy + Lc * .6, "ℓ = " + d.l, S4.linea, "middle", 13);
+    r += '<circle cx="' + cx + '" cy="' + f1(Math.min(H - d.r * u - 6, cy + Lc + d.r * u + 4)) + '" r="' + f1(d.r * u) + '" fill="' + col("base", 0) + '" stroke="' + st("base", 0) + '" stroke-width="2"/>'; }
+  else if (s === "piramide"){ u = Math.min(24, 300 / (d.a + 2 * d.l)); var A = d.a * u, Lp = d.l * u, x2 = (W - A) / 2, y2 = (H - A) / 2, P = function(l){ return l.map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" "); };
+    r += rect("base", x2, y2, A, A, 0, "L × L");
+    [["t1", [[x2, y2], [x2 + A, y2], [x2 + A / 2, y2 - Lp]]], ["t2", [[x2 + A, y2], [x2 + A, y2 + A], [x2 + A + Lp, y2 + A / 2]]], ["t3", [[x2, y2 + A], [x2 + A, y2 + A], [x2 + A / 2, y2 + A + Lp]]], ["t4", [[x2, y2], [x2, y2 + A], [x2 - Lp, y2 + A / 2]]]].forEach(function(q){ r += '<polygon points="' + P(q[1]) + '" fill="' + col(q[0], 1) + '" stroke="' + st(q[0], 1) + '" stroke-width="2"/>'; }); }
+  else { r += '<circle cx="230" cy="165" r="120" fill="' + col("esf", 1) + '" stroke="' + S4.linea + '" stroke-width="2.5"/>' + elip(230, 165, 120, 30, "none", S4.linea, "frente") + etq(230, 175, T("A sphere cannot be laid flat: SA = 4πr²", "La esfera no se puede abrir en el plano: SA = 4πr²"), S4.linea, "middle", 13); }
+  return marco(W, H, T("The net of the solid: its surfaces laid out flat. ", "El desarrollo del sólido: sus superficies extendidas en el plano. ") + pz.map(function(p){ return p[1]; }).join(", ") + ".", r, 440);
+}
+function supPinta(){
+  var s = SUP.s, d = {}, u = UNID[$("su-u").value];
+  SDIM[s].forEach(function(x){ var v = Math.max(1, Math.min(12, Math.round(+$("su-" + x[0]).value || 1))); d[x[0]] = v; });
+  if (s === "cono" && d.l <= d.r){ d.l = d.r + 1; } if (s === "piramide" && d.l * 2 <= d.a){ d.l = Math.floor(d.a / 2) + 1; }
+  var pz = piezasDe(s, d);
+  var cerr = s === "prisma" ? prismaSVG({L: d.a, b: d.b, h: d.c, esc: 22, voz: T("A closed rectangular prism.", "Un prisma rectangular cerrado.")}) : s === "cilindro" ? cilindroSVG({r: d.r, h: d.c, esc: 22, voz: T("A closed cylinder.", "Un cilindro cerrado.")}) : s === "cono" ? conoSVG({r: d.r, h: Math.sqrt(d.l * d.l - d.r * d.r), esc: 22, voz: T("A closed cone.", "Un cono cerrado.")}).replace(/h = [\d.]+/, "") : s === "piramide" ? piramideSVG({L: d.a, b: d.a, h: Math.sqrt(d.l * d.l - d.a * d.a / 4), esc: 22, cuadrada: true, voz: T("A closed pyramid with a square base.", "Una pirámide cerrada de base cuadrada.")}).replace(/h = [\d.]+/, "") : esferaSVG({r: d.r, voz: T("A sphere.", "Una esfera.")});
+  $("su-cerrado").innerHTML = cerr.replace(/max-width:\d+px/, "max-width:300px"); $("su-red").innerHTML = redSVG(s, d, pz);
+  var lat = pz.filter(function(p){ return p[4]; }), mostrar = SUP.modo === "total" ? pz : lat;
+  $("su-cards").innerHTML = pz.map(function(p){ var on = SUP.sel ? SUP.sel === p[0] : (SUP.modo === "total" || p[4]); return '<button type="button" class="tarjeta pieza" data-id="' + p[0] + '" aria-pressed="' + (SUP.sel === p[0]) + '" style="text-align:left;opacity:' + (on ? 1 : .45) + '"><strong>' + p[1] + (p[4] && SUP.s !== "esfera" ? T(" · lateral", " · lateral") : "") + "</strong>" + p[3] + " = " + areaTxt(p[2]) + "</button>"; }).join("");
+  [].forEach.call(document.querySelectorAll("#su-cards .pieza"), function(b){ b.addEventListener("click", function(){ SUP.sel = SUP.sel === b.getAttribute("data-id") ? null : b.getAttribute("data-id"); supPinta(); }); });
+  function suma(l){ var n = 0, k = F(0); l.forEach(function(p){ if (typeof p[2] === "object") k = fsum(k, p[2]); else n += p[2]; }); return (n ? n1(n, 2) : "") + (k.n ? (n ? " + " : "") + piTxt(k) : "") + (k.n ? " ≈ " + n1(n + piVal(k)) : ""); }
+  $("su-res").innerHTML = '<div class="linea">' + T("Lateral area (without the bases): ", "Área lateral (sin las bases): ") + "<strong>" + suma(lat) + " " + u[3] + "</strong></div>" + '<div class="linea">' + T("Total area: ", "Área total: ") + "<strong>" + suma(pz) + " " + u[3] + "</strong></div>";
+}
+$("su-sol").addEventListener("change", supCampos); $("su-u").addEventListener("change", supPinta);
+$("su-total").addEventListener("click", function(){ SUP.modo = "total"; SUP.sel = null; $("su-total").setAttribute("aria-pressed", "true"); $("su-lat").setAttribute("aria-pressed", "false"); supPinta(); });
+$("su-lat").addEventListener("click", function(){ SUP.modo = "lat"; SUP.sel = null; $("su-lat").setAttribute("aria-pressed", "true"); $("su-total").setAttribute("aria-pressed", "false"); supPinta(); });
+supCampos();
+creaPracticaLibre("sq", function(){
+  var tipo = elige(["cl", "ct", "kl", "kt", "pt", "es", "kh"]), u = UNID[elige(["in", "ft", "yd"])], r = aleatorio(1, 8), h = aleatorio(2, 12), l, k, enun, sol, pist = [];
+  if (tipo === "cl"){ k = F(2 * r * h); enun = T("Find the lateral area of a cylinder with radius " + r + " and height " + h, "Calcule el área lateral de un cilindro de radio " + r + " y altura " + h); sol = "2π · " + r + " · " + h + " = " + piTxt(k); pist = [{k: r * h, msg: T("You left out the 2: 2πrh.", "Olvidó el 2: 2πrh.")}, {k: 2 * r * h + 2 * r * r, msg: T("Lateral means without the two circles.", "Lateral quiere decir sin los dos círculos.")}]; }
+  else if (tipo === "ct"){ k = F(2 * r * h + 2 * r * r); enun = T("Find the total surface area of a cylinder with radius " + r + " and height " + h, "Calcule el área total de un cilindro de radio " + r + " y altura " + h); sol = "2π · " + r + " · " + h + " + 2π · " + r + "² = " + piTxt(F(2 * r * h)) + " + " + piTxt(F(2 * r * r)) + " = " + piTxt(k); pist = [{k: 2 * r * h, msg: T("That is only the side. Add the two circles, 2πr².", "Eso es solo el lado. Falta sumar los dos círculos, 2πr².")}, {k: 2 * r * h + r * r, msg: T("There are two circles: 2πr².", "Son dos círculos: 2πr².")}]; }
+  else if (tipo === "kl" || tipo === "kt"){ l = r + aleatorio(1, 6); k = tipo === "kl" ? F(r * l) : F(r * l + r * r); enun = T("Find the " + (tipo === "kl" ? "lateral" : "total surface") + " area of a cone with radius " + r + " and slant height " + l, "Calcule el área " + (tipo === "kl" ? "lateral" : "total") + " de un cono de radio " + r + " y altura inclinada " + l); sol = "π · " + r + " · " + l + (tipo === "kt" ? " + π · " + r + "² = " + piTxt(F(r * l)) + " + " + piTxt(F(r * r)) : "") + " = " + piTxt(k);
+    pist = [{k: 2 * r * l, msg: T("The cone has no 2: πrℓ.", "El cono no lleva 2: πrℓ.")}, tipo === "kt" ? {k: r * l, msg: T("That is only the side. Add the base, πr².", "Eso es solo el lado. Falta la base, πr².")} : {k: r * l + r * r, msg: T("Lateral means without the base.", "Lateral quiere decir sin la base.")}]; }
+  else if (tipo === "kh"){ var tr = elige([[3, 4], [6, 8], [5, 12], [8, 6], [4, 3]]); r = tr[0]; h = tr[1]; l = Math.sqrt(r * r + h * h); k = F(r * l); enun = T("A cone has radius " + r + " and height " + h + " (straight up). Find its lateral area", "Un cono tiene radio " + r + " y altura (vertical) " + h + ". Calcule su área lateral"); sol = "ℓ = √(" + r + "² + " + h + "²) = " + l + "; π · " + r + " · " + l + " = " + piTxt(k); pist = [{k: r * h, msg: T("Use the slant height ℓ, not h: ℓ = √(r² + h²).", "Use la altura inclinada ℓ, no h: ℓ = √(r² + h²).")}]; }
+  else if (tipo === "es"){ k = F(4 * r * r); enun = T("Find the surface area of a sphere with radius " + r, "Calcule el área de la superficie de una esfera de radio " + r); sol = "4π · " + r + "² = " + piTxt(k); pist = [{k: 4 * r * r * r / 3, msg: T("4/3 πr³ is the volume. The area is 4πr².", "4/3 πr³ es el volumen. El área es 4πr².")}, {k: r * r, msg: T("Multiply by 4: 4πr².", "Multiplique por 4: 4πr².")}]; }
+  else { var a = aleatorio(2, 9), b = aleatorio(2, 9), c = aleatorio(2, 9), A = 2 * (a * b + a * c + b * c);
+    return {enun: T("Find the total surface area of a box " + a + " × " + b + " × " + c + " (in " + u[1] + ").", "Calcule el área total de una caja de " + a + " × " + b + " × " + c + " (en " + u[1] + ")."),
+      evalua: function(txt){ return evaluaNum(txt, A, 0.01, [{v: a * b * c, msg: T("That is the volume. The area adds the six faces.", "Ese es el volumen. El área suma las seis caras.")}, {v: a * b + a * c + b * c, msg: T("Each face has a twin: multiply by 2.", "Cada cara tiene una gemela: multiplique por 2.")}]); },
+      solucion: "2(" + a + "·" + b + " + " + a + "·" + c + " + " + b + "·" + c + ") = 2(" + (a * b) + " + " + (a * c) + " + " + (b * c) + ") = " + A + " " + u[3] + "."}; }
+  return {enun: enun + " (" + u[1] + "). " + T("Give it with π or as a decimal.", "Escríbalo con π o en decimal."), evalua: function(txt){ return evaluaPi(txt, k, pist); }, solucion: sol + " ≈ " + n1(piVal(k)) + " " + u[3] + "."};
+});
+
+/* ===== MODULE 4 · Optimization ===== */
+function cajasDe(V){ var l = []; for (var a = 1; a <= V; a++) for (var b = a; b <= V; b++) if (V % (a * b) === 0){ var c = V / (a * b); if (c >= b) l.push([a, b, c, 2 * (a * b + a * c + b * c)]); } l.sort(function(x, y){ return y[3] - x[3]; }); return l; }
+function opPinta(){
+  var V = +$("op-v").value, l = cajasDe(V), i = Math.min(+$("op-i").value, l.length - 1), min = Math.min.apply(null, l.map(function(x){ return x[3]; })), q = l[i], u = UNID[$("op-u").value];
+  $("op-i").max = l.length - 1; $("op-iv").textContent = q[0] + " × " + q[1] + " × " + q[2];
+  $("op-svg").innerHTML = prismaSVG({L: q[2], b: q[1], h: q[0], esc: Math.min(26, 200 / q[2]), voz: T("A box " + q[0] + " × " + q[1] + " × " + q[2] + ".", "Una caja de " + q[0] + " × " + q[1] + " × " + q[2] + ".")});
+  $("op-res").innerHTML = '<div class="linea">V = ' + q[0] + " · " + q[1] + " · " + q[2] + " = " + V + " " + u[2] + "</div>" + '<div class="linea veredicto">' + T("Area = ", "Área = ") + "2(" + q[0] * q[1] + " + " + q[0] * q[2] + " + " + q[1] * q[2] + ") = " + q[3] + " " + u[3] + (q[3] === min ? T(" · the least cardboard!", " · ¡el menor cartón!") : "") + "</div>";
+  $("op-tabla").innerHTML = '<caption class="sr-only">' + T("All the boxes with whole-number sides that hold this volume, and their surface area", "Todas las cajas de lados enteros que guardan este volumen, con su área de superficie") + '</caption><thead><tr><th scope="col">' + T("Box", "Caja") + '</th><th scope="col">' + T("Surface area", "Área de superficie") + "</th></tr></thead><tbody>" +
+    l.map(function(x, k){ return '<tr class="' + (x[3] === min ? "mejor" : "") + (k === i ? " fila-activa" : "") + '"><td>' + x[0] + " × " + x[1] + " × " + x[2] + "</td><td>" + x[3] + (x[3] === min ? " ✓" : "") + "</td></tr>"; }).join("") + "</tbody>";
+}
+$("op-v").addEventListener("change", function(){ $("op-i").value = 0; opPinta(); }); $("op-i").addEventListener("input", opPinta); $("op-u").addEventListener("change", opPinta); opPinta();
+OMR("oq", function(){
+  var V = elige([24, 36, 48, 60, 64, 72, 100]), l = baraja(cajasDe(V)).slice(0, 3);
+  if (l.length < 3 || l[0][3] === l[1][3] || l[1][3] === l[2][3] || l[0][3] === l[2][3]) l = cajasDe(V).filter(function(x, i, a){ return i === 0 || i === a.length - 1 || i === Math.floor(a.length / 2); });
+  var best = l.reduce(function(a, b){ return b[3] < a[3] ? b : a; }), key = function(x){ return x.slice(0, 3).join("x"); };
+  return {enun: T("These boxes all hold " + V + " cubic inches. Which one uses the least cardboard?", "Todas estas cajas guardan " + V + " pulgadas cúbicas. ¿Cuál usa menos cartón?"), correcta: key(best),
+    opciones: l.map(function(x){ return {clave: key(x), html: x[0] + " × " + x[1] + " × " + x[2]}; }),
+    pista: T("Find the surface area of each box: 2(ab + ac + bc). The one closest to a cube usually wins.", "Calcule el área de cada caja: 2(ab + ac + bc). La más parecida a un cubo suele ganar."),
+    bien: l.map(function(x){ return x[0] + "×" + x[1] + "×" + x[2] + ": " + x[3]; }).join("; ") + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

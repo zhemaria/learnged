@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 2.1 · Volumen de esferas, conos y pirámides — práctica (español) — construida con tools/build_n4_lesson_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.1 · Volumen de esferas, conos y pirámides · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 2 · Volumen 3D y polinomios</div>
+    <h1>Lección 2.1 · Volumen de esferas, conos y pirámides</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#formulas">La hoja de fórmulas y los tres sólidos</a></li>
+      <li><a href="#esfera">Volumen de la esfera</a></li>
+      <li><a href="#cono">Volumen del cono</a></li>
+      <li><a href="#piramide">Volumen de la pirámide</a></li>
+      <li><a href="#despejar">Despejar una medida desconocida</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="formulas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La hoja de fórmulas y los tres sólidos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En el examen GED las fórmulas de volumen no se memorizan: están en la hoja de fórmulas (aquí, el botón <strong>Hoja de referencia</strong>, arriba en la página). La destreza es localizar la fórmula correcta, poner las medidas correctas y calcular. Elija un sólido: el dibujo marca las medidas que pide su fórmula.</p>
+      <div class="modos" role="group" aria-label="Sólido"><button type="button" class="btn-sec" id="fo-esfera">Esfera</button><button type="button" class="btn-sec" id="fo-cono">Cono</button><button type="button" class="btn-sec" id="fo-piramide">Pirámide</button></div>
+      <div class="campo"><label><input type="checkbox" id="fo-d"> Mostrar también el diámetro</label></div>
+      <div id="fo-svg"></div>
+      <div class="salida" aria-live="polite" id="fo-txt"></div>
+      <div class="caja-tip">El factor 1/3: un cono cabe tres veces dentro de un cilindro de la misma base y altura, y una pirámide cabe tres veces dentro de un prisma de la misma base y altura.</div>
+      <h3>Practique: la fórmula y los datos correctos</h3>
+      <div class="practica" id="fq">
+        <div class="enun" id="fq-enun"></div>
+        <div class="opciones" id="fq-opciones"></div>
+        <div class="fb" id="fq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="fq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="fq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="esfera">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Volumen de la esfera</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">V = 4/3 πr³</div>
+      <p>Mueva el deslizador y siga los pasos. Después use los botones para ver qué pasa con el volumen cuando el radio se duplica o se reduce a la mitad.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="es-dado">El problema da</label><select id="es-dado"><option value="r">el radio</option><option value="d">el diámetro</option></select></div>
+        <div class="campo" style="flex:1;min-width:190px;"><label for="es-r"><span id="es-rl"></span> = <span id="es-rv"></span></label><input type="range" id="es-r" min="1" max="12" step="1" value="3"></div>
+        <div class="campo"><label for="es-u">Unidad</label><select id="es-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <div class="campo"><label><input type="checkbox" id="es-cil"> Mostrar el cilindro que la contiene</label></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="es-x2">Duplicar el radio</button><button type="button" class="btn-sec" id="es-m2">Reducir el radio a la mitad</button></div></div>
+      <div id="es-svg"></div>
+      <div class="salida" aria-live="polite" id="es-pasos"></div>
+      <p class="nota" id="es-nota" aria-live="polite"></p>
+      <div class="tabla-scroll"><table class="tabla-lados" id="es-tabla"></table></div>
+      <div class="caja-tip">La regla del cubo: si el radio se multiplica por 2, el volumen se multiplica por 2³ = 8; si se multiplica por 3, el volumen se multiplica por 3³ = 27. Es la consecuencia directa del exponente 3 de la fórmula.</div>
+      <h3>Reto: alcance el volumen</h3>
+      <div class="practica"><p class="enun">Mueva el deslizador hasta que el volumen se acerque (con un margen del 2 %) a: <strong id="er-meta"></strong></p>
+        <div class="fb" id="er-fb" role="status"></div><div class="fila-btn"><button type="button" class="btn-sec" id="er-otro">Nuevo reto</button></div></div>
+      <h3>Practique: el volumen de la esfera</h3>
+      <div class="practica" id="pe">
+        <div class="enun" id="pe-enun"></div>
+        <div class="campos"><div class="campo"><label for="pe-r">Volumen</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="pe-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="pe-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="pe-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="pe-fb" role="status"></div>
+        <p class="marcador" id="pe-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cono">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Volumen del cono</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">V = 1/3 πr²h</div>
+      <div class="panel"><div class="campos"><div class="campo" style="flex:1;min-width:190px;"><label for="co-r">Radio r = <span id="co-rv"></span></label><input type="range" id="co-r" min="1" max="10" step="1" value="3"></div><div class="campo" style="flex:1;min-width:190px;"><label for="co-h">Altura h = <span id="co-hv"></span></label><input type="range" id="co-h" min="1" max="16" step="1" value="10"></div><div class="campo"><label for="co-u">Unidad</label><select id="co-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <div class="campo"><label><input type="checkbox" id="co-cil"> Mostrar el cilindro de igual base y altura</label></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="co-x2r">Duplicar el radio</button><button type="button" class="btn-sec" id="co-x2h">Duplicar la altura</button></div></div>
+      <div id="co-svg"></div>
+      <div class="salida" aria-live="polite" id="co-pasos"></div>
+      <div class="tarjetas" id="co-cards" aria-live="polite"></div>
+      <p class="nota" id="co-nota" aria-live="polite"></p>
+      <div class="caja-atencion"><strong>Solo el radio se eleva al cuadrado.</strong> En 1/3 πr²h el exponente afecta únicamente a r; la altura se multiplica tal como está. Por eso también el radio pesa más que la altura: duplicar r multiplica el volumen por 4; duplicar h solo lo duplica.</div>
+      <h3>Practique: el volumen del cono</h3>
+      <div class="practica" id="pc">
+        <div class="enun" id="pc-enun"></div>
+        <div class="campos"><div class="campo"><label for="pc-r">Volumen</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="pc-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="pc-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="pc-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="pc-fb" role="status"></div>
+        <p class="marcador" id="pc-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="piramide">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Volumen de la pirámide</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">V = 1/3 Bh</div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="pi-forma">Forma de la base</label><select id="pi-forma"><option value="c">Cuadrada</option><option value="r">Rectangular</option></select></div>
+        <div class="campo" style="flex:1;min-width:190px;"><label for="pi-L">Largo L = <span id="pi-Lv"></span></label><input type="range" id="pi-L" min="1" max="12" step="1" value="6"></div><div id="pi-wc" style="flex:1;min-width:190px;"><div class="campo" style="flex:1;min-width:190px;"><label for="pi-w">Ancho a = <span id="pi-wv"></span></label><input type="range" id="pi-w" min="1" max="12" step="1" value="4"></div></div><div class="campo" style="flex:1;min-width:190px;"><label for="pi-h">Altura h = <span id="pi-hv"></span></label><input type="range" id="pi-h" min="1" max="15" step="1" value="10"></div><div class="campo"><label for="pi-u">Unidad</label><select id="pi-u"><option value="in">pulgadas</option><option value="ft">pies</option><option value="yd">yardas</option></select></div></div>
+        <div class="campo"><label><input type="checkbox" id="pi-pri"> Mostrar el prisma de igual base y altura</label></div></div>
+      <div id="pi-svg"></div>
+      <div class="salida" aria-live="polite" id="pi-pasos"></div>
+      <div class="tarjetas" id="pi-cards" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>La altura de la pirámide, no la de una cara.</strong> La h de la fórmula es la altura vertical, del centro de la base a la punta (la línea azul discontinua). No es la altura inclinada de una cara triangular.</div>
+      <h3>Practique: el volumen de la pirámide</h3>
+      <div class="practica" id="pp">
+        <div class="enun" id="pp-enun"></div>
+        <div class="campos"><div class="campo"><label for="pp-r">Volumen</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="pp-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="pp-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="pp-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="pp-fb" role="status"></div>
+        <p class="marcador" id="pp-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="despejar">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Despejar una medida desconocida</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando se conoce el volumen, se sustituye todo lo conocido y se despeja la medida que falta. Si π aparece en los dos lados, se cancela.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel"><p class="enun" id="dz-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="dz-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="dz-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="dz-nuevo">Otro caso</button></div></div>
+      <div class="pasos" id="dz-pasos" aria-live="polite"></div>
+      <h3>Practique: halle la medida que falta</h3>
+      <div class="practica" id="pd">
+        <div class="enun" id="pd-enun"></div>
+        <div class="campos"><div class="campo"><label for="pd-r">Medida</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="pd-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="pd-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="pd-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="pd-fb" role="status"></div>
+        <p class="marcador" id="pd-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 2 · Volumen 3D y polinomios · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/solid4.js"></script>
+<script>
+function F(n, d){ return fr(n, d === undefined ? 1 : d); }
+function U(){ return UNID[$("es-u") ? $("es-u").value : "in"]; }
+function vPi(k){ return piTxt(k) + " ≈ " + n1(piVal(k)); }
+
+/* ===== MODULE 1 · The formula sheet ===== */
+var FO = {s: "esfera"};
+function foPinta(){
+  var dia = $("fo-d").checked, s = FO.s, svg, txt;
+  ["esfera", "cono", "piramide"].forEach(function(k){ $("fo-" + k).setAttribute("aria-pressed", k === s ? "true" : "false"); });
+  if (s === "esfera"){ svg = esferaSVG({r: "r", diam: dia, voz: T("A sphere with its radius r marked from the center to the surface", "Una esfera con su radio r marcado del centro a la superficie") + (dia ? T(" and its diameter d below.", " y su diámetro d debajo.") : ".")});
+    txt = T("<strong>V = 4/3 πr³.</strong> The only measure is the radius r, from the center to the surface. ", "<strong>V = 4/3 πr³.</strong> La única medida es el radio r, del centro a la superficie. ") + (dia ? T("The diameter d goes all the way across: d = 2r, so r = d ÷ 2.", "El diámetro d cruza de lado a lado: d = 2r, así que r = d ÷ 2.") : ""); }
+  else if (s === "cono"){ svg = conoSVG({r: "r", h: "h", esc: 22, voz: T("A cone with the radius r of its base and its height h, from the center of the base to the point.", "Un cono con el radio r de su base y su altura h, del centro de la base a la punta.")}).replace("r = r", "r").replace("h = h", "h");
+    txt = T("<strong>V = 1/3 πr²h.</strong> It needs the radius r of the round base and the height h, measured straight up from the center of the base to the point.", "<strong>V = 1/3 πr²h.</strong> Necesita el radio r de la base circular y la altura h, medida en vertical del centro de la base a la punta.") + (dia ? " " + T("If you are given the diameter of the base, halve it.", "Si se da el diámetro de la base, se divide entre 2.") : ""); }
+  else { svg = piramideSVG({L: "L", b: "L", h: "h", esc: 24, cuadrada: true, voz: T("A pyramid with a square base of side L and its height h, from the center of the base to the point.", "Una pirámide de base cuadrada de lado L y su altura h, del centro de la base a la punta.")}).replace(/L = L/g, "L").replace("h = h", "h");
+    txt = T("<strong>V = 1/3 Bh.</strong> B is the area of the base (here L × L) and h is the straight-up height, not the slanted height of a face.", "<strong>V = 1/3 Bh.</strong> B es el área de la base (aquí L × L) y h es la altura vertical, no la altura inclinada de una cara."); }
+  $("fo-svg").innerHTML = svg; $("fo-txt").innerHTML = '<div class="linea">' + txt + "</div>";
+}
+["esfera", "cono", "piramide"].forEach(function(k){ $("fo-" + k).addEventListener("click", function(){ FO.s = k; foPinta(); }); });
+$("fo-d").addEventListener("change", foPinta); foPinta();
+OMR("fq", function(){
+  var tipo = elige(["formula", "formula", "radio", "dato"]);
+  var FORM = {esfera: "V = 4/3 πr³", cono: "V = 1/3 πr²h", piramide: "V = 1/3 Bh", cilindro: "V = πr²h", prisma: "V = Bh", area: "SA = 4πr²"};
+  var NOM = {esfera: T("a sphere", "una esfera"), cono: T("a cone", "un cono"), piramide: T("a pyramid", "una pirámide"), cilindro: T("a cylinder", "un cilindro"), prisma: T("a prism", "un prisma")};
+  if (tipo === "formula"){
+    var s = elige(["esfera", "cono", "piramide", "cilindro"]);
+    return {enun: T("Which formula gives the volume of ", "¿Qué fórmula da el volumen de ") + NOM[s] + "?", correcta: s,
+      opciones: ["esfera", "cono", "piramide", "cilindro", "area"].map(function(k){ return {clave: k, html: FORM[k]}; }).filter(function(o, i, a){ return o.clave === s || i < 5; }).slice(0, 5),
+      porClave: {area: T("SA = 4πr² is the surface area of a sphere, not a volume.", "SA = 4πr² es el área de la superficie de la esfera, no un volumen."), cilindro: T("πr²h is the cylinder.", "πr²h es el cilindro."), cono: T("1/3 πr²h is the cone.", "1/3 πr²h es el cono."), piramide: T("1/3 Bh is the pyramid.", "1/3 Bh es la pirámide."), esfera: T("4/3 πr³ is the sphere.", "4/3 πr³ es la esfera.")},
+      pista: T("Look at the reference sheet: which measures does this solid have?", "Mire la hoja de referencia: ¿qué medidas tiene este sólido?"), bien: FORM[s] + "."};
+  }
+  if (tipo === "radio"){
+    var d = 2 * aleatorio(2, 12), u = elige(["in", "ft"]), obj = elige(["esfera", "cono"]);
+    return {enun: T("The problem gives ", "El problema da ") + NOM[obj] + T(" with a diameter of ", " con un diámetro de ") + d + " " + UNID[u][1] + T(". What number goes in place of r in the formula?", ". ¿Qué número va en lugar de r en la fórmula?"), correcta: "r",
+      opciones: [{clave: "r", html: String(d / 2)}, {clave: "d", html: String(d)}, {clave: "2d", html: String(2 * d)}, {clave: "dd", html: String(d * d)}],
+      porClave: {d: T("That is the diameter. The radius is half of it.", "Ese es el diámetro. El radio es la mitad."), "2d": T("The radius is smaller than the diameter: divide by 2.", "El radio es más pequeño que el diámetro: se divide entre 2.")},
+      pista: T("r = d ÷ 2.", "r = d ÷ 2."), bien: "r = " + d + " ÷ 2 = " + d / 2 + "."};
+  }
+  var q = elige([["piramide", T("the area of the base and the height", "el área de la base y la altura")], ["esfera", T("only the radius", "solo el radio")], ["cono", T("the radius of the base and the height", "el radio de la base y la altura")]]);
+  return {enun: T("Which measures do you need to find the volume of ", "¿Qué medidas se necesitan para el volumen de ") + NOM[q[0]] + "?", correcta: q[0], enOrden: true,
+    opciones: [{clave: "esfera", html: T("Only the radius", "Solo el radio")}, {clave: "cono", html: T("The radius of the base and the height", "El radio de la base y la altura")}, {clave: "piramide", html: T("The area of the base and the height", "El área de la base y la altura")}, {clave: "x", html: T("The radius and the diameter", "El radio y el diámetro")}],
+    pista: T("Read the formula: each letter is a measure you need.", "Lea la fórmula: cada letra es una medida que se necesita."), bien: q[1] + "."};
+});
+
+/* ===== MODULE 2 · Sphere workshop ===== */
+function esPinta(){
+  var dado = $("es-dado").value, v = +$("es-r").value, r = dado === "d" ? v / 2 : v, u = U(), k = fmul(F(4, 3), F(Math.round(r * r * r * 8), 8));
+  $("es-rv").textContent = v; $("es-rl").textContent = dado === "d" ? T("Diameter d", "Diámetro d") : T("Radius r", "Radio r");
+  $("es-svg").innerHTML = esferaSVG({r: nd(r), diam: dado === "d", cil: $("es-cil").checked, voz: T("A sphere with a radius of ", "Una esfera de radio ") + nd(r) + " " + u[1] + ($("es-cil").checked ? T(", inside the cylinder that holds it exactly.", ", dentro del cilindro que la contiene exactamente.") : ".")});
+  var pasos = '<div class="linea">' + T("Formula: ", "Fórmula: ") + "V = 4/3 πr³</div>";
+  if (dado === "d") pasos += '<div class="linea">' + T("First the radius: r = d ÷ 2 = ", "Primero el radio: r = d ÷ 2 = ") + v + " ÷ 2 = " + nd(r) + "</div>";
+  pasos += '<div class="linea">' + T("Substitute: ", "Sustitución: ") + "V = 4/3 · π · " + nd(r) + "³</div>" +
+    '<div class="linea">' + T("Cube the radius: ", "Se eleva al cubo: ") + nd(r) + "³ = " + nd(r * r * r) + "</div>" +
+    '<div class="linea veredicto">V = 4/3 · ' + nd(r * r * r) + " · π = " + piTxt(k) + " ≈ " + n1(piVal(k)) + " " + u[2] + "</div>" +
+    '<div class="linea">' + T("With π ≈ 3.14: ", "Con π ≈ 3.14: ") + n1(fval(k) * 3.14) + " " + u[2] + "</div>";
+  if ($("es-cil").checked) pasos += '<div class="linea">' + T("The cylinder that holds it has V = πr² · 2r = 2πr³ = ", "El cilindro que la contiene tiene V = πr² · 2r = 2πr³ = ") + piTxt(fmul(F(2), F(Math.round(r * r * r * 8), 8))) + T(": the sphere fills exactly 2/3 of it.", ": la esfera ocupa exactamente 2/3 de él.") + "</div>";
+  $("es-pasos").innerHTML = pasos;
+  $("es-tabla").innerHTML = '<caption class="sr-only">' + T("Volume of the sphere for the current radius and its multiples", "Volumen de la esfera para el radio actual y sus múltiplos") + '</caption><thead><tr><th scope="col">' + T("Radius", "Radio") + '</th><th scope="col">' + T("Volume (about)", "Volumen aproximado") + '</th><th scope="col">' + T("Compared with now", "Comparado con el actual") + "</th></tr></thead><tbody>" +
+    [1, 2, 3].map(function(m){ return "<tr><td>" + nd(r * m) + " " + u[4] + "</td><td>" + n1(4 / 3 * Math.PI * Math.pow(r * m, 3)) + " " + u[2] + "</td><td>× " + m * m * m + (m > 1 ? " (" + m + "³)" : "") + "</td></tr>"; }).join("") + "</tbody>";
+  esReto();
+}
+var RET = {v: null};
+function esRetoNuevo(){ var r = aleatorio(2, 12); RET.v = 4 / 3 * Math.PI * r * r * r; RET.bien = false; $("er-meta").textContent = "V ≈ " + n1(RET.v) + " " + U()[2]; esReto(); }
+function esReto(){
+  if (RET.v === null) return;
+  var dado = $("es-dado").value, v = +$("es-r").value, r = dado === "d" ? v / 2 : v, V = 4 / 3 * Math.PI * r * r * r, dif = (V - RET.v) / RET.v, fb = $("er-fb");
+  if (Math.abs(dif) <= 0.02){ fb.className = "fb bien"; fb.innerHTML = TX.bien + T("With r = ", "Con r = ") + nd(r) + T(" the volume is ", " el volumen es ") + n1(V) + "."; }
+  else { fb.className = "fb pista"; fb.innerHTML = T("Now V ≈ ", "Ahora V ≈ ") + n1(V) + ": " + (dif < 0 ? T("too small, make the radius bigger.", "se queda corto: aumente el radio.") : T("too big, make the radius smaller.", "se pasa: reduzca el radio.")); }
+}
+["es-r", "es-dado", "es-u", "es-cil"].forEach(function(i){ $(i).addEventListener("input", esPinta); $(i).addEventListener("change", esPinta); });
+$("es-x2").addEventListener("click", function(){ $("es-r").value = Math.min(12, +$("es-r").value * 2); esPinta(); $("es-nota").textContent = T("The radius doubled; the volume became 2³ = 8 times bigger.", "El radio se duplicó; el volumen se multiplicó por 2³ = 8."); });
+$("es-m2").addEventListener("click", function(){ $("es-r").value = Math.max(1, Math.round(+$("es-r").value / 2)); esPinta(); $("es-nota").textContent = T("Half the radius gives 1/8 of the volume.", "La mitad del radio da 1/8 del volumen."); });
+$("er-otro").addEventListener("click", esRetoNuevo);
+esPinta(); esRetoNuevo();
+function pistaPi(r){ return [{k: 4 * r * r * r, msg: T("Do not forget to divide by 3: the fraction is 4/3.", "No olvide dividir entre 3: la fracción es 4/3.")}, {k: 4 / 3 * r * r, msg: T("You squared the radius. For a sphere, cube it: r³.", "Elevó el radio al cuadrado. En la esfera se eleva al cubo: r³.")},
+  {k: 4 / 3 * 8 * r * r * r, msg: T("It looks like you used the diameter. Use the radius: half of the diameter.", "Parece que usó el diámetro. Use el radio: la mitad del diámetro.")}, {k: r * r * r, msg: T("Multiply r³ by 4/3.", "Multiplique r³ por 4/3.")}]; }
+creaPracticaLibre("pe", function(){
+  var r = aleatorio(1, 9), d = Math.random() < 0.35, u = UNID[elige(["in", "ft", "yd"])], k = fmul(F(4, 3), F(r * r * r));
+  return {enun: T("Find the volume of a sphere with a ", "Calcule el volumen de una esfera de ") + (d ? T("diameter of ", "diámetro ") + 2 * r : T("radius of ", "radio ") + r) + " " + u[1] + ". " + T("Give it with π (like 36π) or as a decimal.", "Escríbalo con π (como 36π) o en decimal."),
+    evalua: function(txt){ return evaluaPi(txt, k, pistaPi(r)); },
+    solucion: (d ? "r = " + 2 * r + " ÷ 2 = " + r + "; " : "") + "V = 4/3 · π · " + r + "³ = 4/3 · " + r * r * r + " · π = " + vPi(k) + " " + u[2] + "."};
+});
+
+/* ===== MODULE 3 · Cone workshop ===== */
+function coPinta(){
+  var r = +$("co-r").value, h = +$("co-h").value, u = UNID[$("co-u").value], k = F(r * r * h, 3), kc = F(r * r * h);
+  $("co-rv").textContent = r; $("co-hv").textContent = h;
+  $("co-svg").innerHTML = conoSVG({r: r, h: h, esc: 16, cil: $("co-cil").checked, voz: T("A cone with radius ", "Un cono de radio ") + r + T(" and height ", " y altura ") + h + " " + u[1] + ($("co-cil").checked ? T(", inside the cylinder with the same base and height.", ", dentro del cilindro de igual base y altura.") : ".")});
+  $("co-pasos").innerHTML = '<div class="linea">' + T("Formula: ", "Fórmula: ") + "V = 1/3 πr²h</div>" + '<div class="linea">' + T("Substitute: ", "Sustitución: ") + "V = 1/3 · π · " + r + "² · " + h + "</div>" +
+    '<div class="linea">' + T("Square only the radius: ", "Se eleva solo el radio al cuadrado: ") + r + "² = " + r * r + "</div>" + '<div class="linea veredicto">V = 1/3 · ' + r * r + " · " + h + " · π = " + vPi(k) + " " + u[2] + "</div>";
+  $("co-cards").innerHTML = '<div class="tarjeta"><strong>' + T("Cone", "Cono") + '</strong><span class="grande">' + piTxt(k) + "</span><br>≈ " + n1(piVal(k)) + " " + u[2] + '</div><div class="tarjeta"><strong>' + T("Cylinder with the same base and height", "Cilindro de igual base y altura") + '</strong><span class="grande">' + piTxt(kc) + "</span><br>≈ " + n1(piVal(kc)) + " " + u[2] + "</div>";
+}
+["co-r", "co-h", "co-u", "co-cil"].forEach(function(i){ $(i).addEventListener("input", coPinta); $(i).addEventListener("change", coPinta); });
+$("co-x2r").addEventListener("click", function(){ if (+$("co-r").value * 2 > 10){ $("co-nota").textContent = T("Make the radius 5 or less first.", "Primero deje el radio en 5 o menos."); return; } $("co-r").value = +$("co-r").value * 2; coPinta(); $("co-nota").textContent = T("Doubling the radius makes the volume 2² = 4 times bigger: the radius is squared.", "Al duplicar el radio, el volumen se multiplica por 2² = 4: el radio está al cuadrado."); });
+$("co-x2h").addEventListener("click", function(){ if (+$("co-h").value * 2 > 16){ $("co-nota").textContent = T("Make the height 8 or less first.", "Primero deje la altura en 8 o menos."); return; } $("co-h").value = +$("co-h").value * 2; coPinta(); $("co-nota").textContent = T("Doubling the height only doubles the volume.", "Al duplicar la altura, el volumen solo se duplica."); });
+coPinta();
+creaPracticaLibre("pc", function(){
+  var r = aleatorio(1, 8), h = 3 * aleatorio(1, 5) + (Math.random() < 0.3 ? 1 : 0), d = Math.random() < 0.25, u = UNID[elige(["in", "ft"])], k = F(r * r * h, 3);
+  return {enun: T("Find the volume of a cone with a ", "Calcule el volumen de un cono de ") + (d ? T("diameter of ", "diámetro ") + 2 * r : T("radius of ", "radio ") + r) + T(" and a height of ", " y altura ") + h + " " + u[1] + ". " + T("Give it with π or as a decimal.", "Escríbalo con π o en decimal."),
+    evalua: function(txt){ return evaluaPi(txt, k, [{k: r * r * h, msg: T("You left out the 1/3: divide by 3.", "Olvidó el 1/3: divida entre 3.")}, {k: r * h / 3, msg: T("Square the radius: r².", "Eleve el radio al cuadrado: r².")}, {k: r * r * h * h / 3, msg: T("Only the radius is squared, not the height.", "Solo el radio va al cuadrado, no la altura.")}, {k: 4 * r * r * h / 3, msg: T("It looks like you used the diameter. Use the radius.", "Parece que usó el diámetro. Use el radio.")}]); },
+    solucion: (d ? "r = " + 2 * r + " ÷ 2 = " + r + "; " : "") + "V = 1/3 · π · " + r + "² · " + h + " = 1/3 · " + r * r * h + " · π = " + vPi(k) + " " + u[2] + "."};
+});
+
+/* ===== MODULE 4 · Pyramid workshop ===== */
+function piPinta(){
+  var cuad = $("pi-forma").value === "c", L = +$("pi-L").value, w = cuad ? L : +$("pi-w").value, h = +$("pi-h").value, u = UNID[$("pi-u").value], Bv = L * w, V = Bv * h / 3;
+  $("pi-wc").hidden = cuad; $("pi-Lv").textContent = L; $("pi-wv").textContent = w; $("pi-hv").textContent = h;
+  $("pi-svg").innerHTML = piramideSVG({L: L, b: w, h: h, esc: 18, cuadrada: cuad, prisma: $("pi-pri").checked, voz: T("A pyramid with a ", "Una pirámide de base ") + (cuad ? T("square base " + L + " on each side", "cuadrada de lado " + L) : T(L + " by " + w + " rectangular base", "rectangular de " + L + " por " + w)) + T(" and a height of ", " y altura ") + h + " " + u[1] + "."});
+  $("pi-pasos").innerHTML = '<div class="linea">' + T("Step 1 · area of the base: ", "Paso 1 · área de la base: ") + "B = " + L + " × " + w + " = " + Bv + " " + u[3] + "</div>" +
+    '<div class="linea">' + T("Step 2 · substitute: ", "Paso 2 · sustitución: ") + "V = 1/3 · " + Bv + " · " + h + " = 1/3 · " + Bv * h + "</div>" + '<div class="linea veredicto">V = ' + n1(V, 2) + " " + u[2] + "</div>";
+  $("pi-cards").innerHTML = '<div class="tarjeta"><strong>' + T("Pyramid", "Pirámide") + '</strong><span class="grande">' + n1(V, 2) + "</span> " + u[2] + '</div><div class="tarjeta"><strong>' + T("Prism with the same base and height", "Prisma de igual base y altura") + '</strong><span class="grande">' + Bv * h + "</span> " + u[2] + "</div>";
+}
+["pi-forma", "pi-L", "pi-w", "pi-h", "pi-u", "pi-pri"].forEach(function(i){ $(i).addEventListener("input", piPinta); $(i).addEventListener("change", piPinta); });
+piPinta();
+creaPracticaLibre("pp", function(){
+  var cuad = Math.random() < 0.6, L = aleatorio(2, 12), w = cuad ? L : aleatorio(2, 10), h = 3 * aleatorio(1, 6), u = UNID[elige(["in", "ft", "yd"])], V = L * w * h / 3;
+  return {enun: T("Find the volume of a pyramid with a ", "Calcule el volumen de una pirámide de base ") + (cuad ? T("square base " + L + " " + u[1] + " on each side", "cuadrada de " + L + " " + u[1] + " de lado") : T(L + " × " + w + " rectangular base (in " + u[1] + ")", "rectangular de " + L + " × " + w + " (en " + u[1] + ")")) + T(" and a height of ", " y altura de ") + h + " " + u[1] + ".",
+    evalua: function(txt){ return evaluaNum(txt, V, 0.01, [{v: L * w * h, msg: T("You left out the 1/3: divide by 3.", "Olvidó el 1/3: divida entre 3.")}, {v: (L + w) * h / 3, msg: T("The base is an area: multiply, do not add.", "La base es un área: se multiplica, no se suma.")}, {v: L * h / 3, msg: T("Find the whole area of the base first: L × " + (cuad ? "L" : "w") + ".", "Primero el área completa de la base: L × " + (cuad ? "L" : "a") + ".")}]); },
+    solucion: "B = " + L + " × " + w + " = " + L * w + "; V = 1/3 · " + L * w + " · " + h + " = " + V + " " + u[2] + "."};
+});
+
+/* ===== MODULE 5 · A missing measure ===== */
+function casoDespeje(){
+  var tipo = elige(["hc", "hp", "re", "hc"]), u = UNID[elige(["in", "ft"])], r, h, L, k;
+  if (tipo === "hc"){ r = aleatorio(2, 6); h = aleatorio(2, 12); k = F(r * r * h, 3);
+    return {enun: T("A cone has a volume of ", "Un cono tiene un volumen de ") + piTxt(k) + " " + u[2] + T(" and a radius of ", " y un radio de ") + r + " " + u[1] + T(". What is its height?", ". ¿Cuál es su altura?"), res: h, u: u,
+      pasos: [T("Substitute in V = 1/3 πr²h: ", "Se sustituye en V = 1/3 πr²h: ") + piTxt(k) + " = 1/3 · π · " + r * r + " · h.", T("Simplify the right side: ", "Se simplifica el lado derecho: ") + piTxt(k) + " = " + piTxt(F(r * r, 3)) + " · h.", T("Divide both sides by ", "Se dividen los dos lados entre ") + piTxt(F(r * r, 3)) + ": h = " + fTxt(k) + " ÷ " + fTxt(F(r * r, 3)) + " = " + h + ".", T("The height is ", "La altura es de ") + "<strong>" + h + " " + u[1] + "</strong>."],
+      malos: [{v: fval(k), msg: T("That is the number in front of π in the volume. Solve for h.", "Ese es el número que acompaña a π en el volumen. Despeje h.")}, {v: fval(k) / (r * r), msg: T("Remember the 1/3: (1/3) · r² = " + nd(r * r / 3) + ".", "Recuerde el 1/3: (1/3) · r² = " + nd(r * r / 3) + ".")}]}; }
+  if (tipo === "hp"){ L = aleatorio(2, 10); h = aleatorio(2, 12); var V = L * L * h / 3;
+    return {enun: T("A pyramid with a square base " + L + " " + u[1] + " on each side has a volume of " + nd(V) + " " + u[2] + ". What is its height?", "Una pirámide de base cuadrada de " + L + " " + u[1] + " de lado tiene un volumen de " + nd(V) + " " + u[2] + ". ¿Cuál es su altura?"), res: h, u: u,
+      pasos: [T("Area of the base: ", "Área de la base: ") + "B = " + L + " × " + L + " = " + L * L + ".", T("Substitute in V = 1/3 Bh: ", "Se sustituye en V = 1/3 Bh: ") + nd(V) + " = 1/3 · " + L * L + " · h.", T("Multiply both sides by 3: ", "Se multiplican los dos lados por 3: ") + nd(3 * V) + " = " + L * L + " · h.", T("Divide by ", "Se divide entre ") + L * L + ": h = <strong>" + h + " " + u[1] + "</strong>."],
+      malos: [{v: V / (L * L), msg: T("Remember the 1/3: multiply the volume by 3 first.", "Recuerde el 1/3: primero multiplique el volumen por 3.")}, {v: 3 * V / L, msg: T("The base is L × L, not L.", "La base es L × L, no L.")}]}; }
+  r = aleatorio(1, 6); k = F(4 * r * r * r, 3);
+  return {enun: T("A sphere has a volume of ", "Una esfera tiene un volumen de ") + piTxt(k) + " " + u[2] + T(". What is its radius?", ". ¿Cuál es su radio?"), res: r, u: u,
+    pasos: [T("Substitute in V = 4/3 πr³: ", "Se sustituye en V = 4/3 πr³: ") + piTxt(k) + " = 4/3 · π · r³.", T("Cancel π and multiply both sides by 3/4: ", "Se cancela π y se multiplican los dos lados por 3/4: ") + "r³ = " + fTxt(k) + " · 3/4 = " + r * r * r + ".", T("Take the cube root: ", "Se saca la raíz cúbica: ") + "r = ∛" + r * r * r + " = " + r + ".", T("The radius is ", "El radio es de ") + "<strong>" + r + " " + u[1] + "</strong>."],
+    malos: [{v: r * r * r, msg: T("That is r³. Take the cube root.", "Ese es r³. Saque la raíz cúbica.")}, {v: 2 * r, msg: T("That is the diameter. The radius is half.", "Ese es el diámetro. El radio es la mitad.")}]};
+}
+pasoAPaso4("dz", function(){ var c = casoDespeje(); return {enun: c.enun, pasos: c.pasos}; });
+creaPracticaLibre("pd", function(){
+  var c = casoDespeje();
+  return {enun: c.enun, evalua: function(txt){ return evaluaNum(txt, c.res, 0.01, c.malos); }, solucion: c.pasos.join(" ").replace(/<\/?strong>/g, "")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

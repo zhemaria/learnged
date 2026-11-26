@@ -175,18 +175,6 @@ function grafRecta(lineas, ptos, voz, ancho){
   (ptos || []).forEach(function(p){ s += P.punto(p.p, p.color || C4.rojo, p.nombre, p.lado); });
   return P.svg(s, voz, ancho);
 }
-/* Step-by-step widget: gen() returns {enun, pasos: [html], fin()} */
-function pasoAPaso4(pre, gen){
-  var caso, k;
-  function nuevo(){ caso = gen(); k = 0; $(pre + "-enun").innerHTML = caso.enun; $(pre + "-pasos").innerHTML = ""; $(pre + "-sig").disabled = false; $(pre + "-todo").disabled = false; if (caso.inicio) caso.inicio(); }
-  function uno(){ if (k >= caso.pasos.length) return; var d = document.createElement("div"); d.className = "paso4"; d.innerHTML = '<span class="nn" aria-hidden="true">' + (k === caso.pasos.length - 1 ? "✓" : k + 1) + "</span> " + caso.pasos[k]; $(pre + "-pasos").appendChild(d); k++;
-    if (k >= caso.pasos.length){ $(pre + "-sig").disabled = true; $(pre + "-todo").disabled = true; if (caso.fin) caso.fin(); } }
-  $(pre + "-sig").addEventListener("click", uno);
-  $(pre + "-todo").addEventListener("click", function(){ while (k < caso.pasos.length) uno(); });
-  $(pre + "-nuevo").addEventListener("click", nuevo);
-  nuevo();
-}
-
 /* ===== MODULE 1 · y = mx + b ===== */
 function siPinta(){
   var m = PEND[+$("si-m").value], b = +$("si-b").value;
@@ -390,7 +378,7 @@ def practica_pagina():
 {B.om("pa", t("Practice: parallel and perpendicular", "Practique: paralelas y perpendiculares"))}''')]
     return B.pagina_practica(n, 1, t(*TEMA), t(*TIT),
         t("Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.", "Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad."),
-        mods, LOGICA, estilo=n4.ESTILO + "\n  .eq{white-space:nowrap;}\n  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}\n  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}", scripts=SCRIPTS)
+        mods, LOGICA, estilo=n4.ESTILO + "\n  .eq{white-space:nowrap;}", scripts=SCRIPTS)
 
 if __name__ == "__main__":
     B.construye(N, leccion, practica_pagina, "Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar")

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 2.2 · Math Level 4 (English) — built by tools/build_n4_lesson_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 2.2 · Composite 3D figures and surface area · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 2 — 3D volume and polynomials</p>
+<h1>Lesson 2.2 · Composite 3D figures and surface area</h1>
+<p class="lema">Break 3D figures into simple solids to find their volume, find the surface area of cylinders and cones, and compare designs that hold the same volume.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📐</span> Formula sheet and calculator</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Break</strong> a composite 3D figure into simple solids.</li>
+<li><strong>Find</strong> the volume of composite figures by adding or subtracting volumes.</li>
+<li><strong>Find</strong> the lateral and total surface area of cylinders, cones, and other solids.</li>
+<li><strong>Compare</strong> designs with the same volume by how much material they use.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.5.f</span> Compute surface area and volume of composite 3-D geometric figures, given geometric formulas as needed.</li><li><span class="std-cod std-dir">Q.5.b</span> When given geometric formulas, compute volume and surface area of cylinders. Solve for height, radius, or diameter when given volume or surface area.</li><li><span class="std-cod std-dir">Q.5.d</span> When given geometric formulas, compute volume and surface area of right pyramids and cones. Solve for side lengths, height, radius, or diameter when given volume or surface area.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.b</span> Represent real world problems visually.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.G.6</span> <span class="std-nivel">Level D</span> Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms.</li><li><span class="std-cod std-ccr">G-GMD.3</span> <span class="std-nivel">Level E</span> Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-decompose">Breaking a composite figure into parts</a></li>
+<li><a href="#s-volume">The volume of composite figures</a></li>
+<li><a href="#s-surface">Surface area</a></li>
+<li><a href="#s-optimize">An idea of optimization</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-decompose"><span aria-hidden="true" class="num-seccion">1</span>Breaking a composite figure into parts</h2>
+<p><strong>A link with Lesson 2.1.</strong> In Lesson 2.1 you found the volume of single solids (sphere, cone, pyramid). Many real objects, though, are not one single solid: a silo is a cylinder topped with a cone; a medicine capsule is a cylinder with two half-spheres. This lesson teaches you to <strong>break</strong> those figures into simple parts to find their volume, and to find how much material covers their surface.</p>
+<p>A <strong>composite figure</strong> is simple solids put together (or one taken out of another). The plan is always the same:</p>
+<ol><li>Name the simple parts that make it up (cylinder, cone, half-sphere, prism…).</li>
+<li>Find the volume of each part separately.</li>
+<li><strong>Add</strong> the volumes if the parts are joined, or <strong>subtract</strong> if there is a hole.</li></ol>
+<svg viewBox="0 0 480 320" role="img" aria-label="A silo: a cylinder with radius 3 and height 8, with a cone of height 2 on top. Its volume is the volume of the cylinder plus the volume of the cone." style="width:100%;max-width:440px;height:auto;display:block;margin:12px auto;"><path d="M120 100 L120 250 A70 18 0 0 0 260 250 L260 100" fill="#bbdefb" stroke="#37474f" stroke-width="2.5"/><path d="M120 250 A70 18 0 0 1 260 250" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><path d="M120 100 L190 30 L260 100 A70 18 0 0 1 120 100 Z" fill="#ffe0b2" stroke="#37474f" stroke-width="2.5"/><path d="M120 100 A70 18 0 0 0 260 100" fill="none" stroke="#37474f" stroke-width="2"/><line x1="190" y1="100" x2="260" y2="100" stroke="#c62828" stroke-width="3"/><text x="225" y="92" font-size="15" font-weight="700" fill="#c62828" text-anchor="middle">r = 3</text><line x1="285" y1="30" x2="285" y2="100" stroke="#e65100" stroke-width="2.5" stroke-dasharray="6 4"/><text x="292" y="70" font-size="15" font-weight="700" fill="#e65100">2</text><line x1="285" y1="100" x2="285" y2="250" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="6 4"/><text x="292" y="180" font-size="15" font-weight="700" fill="#1565c0">8</text><text x="380" y="80" font-size="15" font-weight="700" fill="#e65100">cone</text><text x="380" y="180" font-size="15" font-weight="700" fill="#1565c0">cylinder</text><text x="190" y="300" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = V(cylinder) + V(cone)</text></svg>
+<a class="enlace-interactivo" href="practice-2-2.html#decompose" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: breaking a figure into parts (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: breaking a figure into parts</span><span class="ei-sub">Name the pieces of each figure and decide whether the volumes are added or subtracted.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-volume"><span aria-hidden="true" class="num-seccion">2</span>The volume of composite figures</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: a cylinder with a half-sphere. A tank is a cylinder with radius 3 feet and height 10 feet, topped by a half-sphere with radius 3 feet. Find its total volume.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Volume of the cylinder.</strong> V = πr²h = π · 9 · 10 = 90π.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Volume of the half-sphere: half of 4/3 πr³.</strong> 1/2 · 4/3 · π · 27 = 1/2 · 36π = 18π.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Add.</strong> 90π + 18π = 108π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>V = 108π ≈ 339.3 cubic feet</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: with a hole (subtract). A 10 × 10 × 5 inch block has a hole drilled through it: a cylinder with radius 2 inches and height 5 inches. Find the volume of what is left.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Volume of the block (a prism).</strong> 10 · 10 · 5 = 500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Volume of the hole.</strong> π · 2² · 5 = 20π.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Subtract.</strong> 500 − 20π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>V = 500 − 20π ≈ 437.2 cubic inches</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Add or subtract?</span>
+<p>If the parts come together to make a bigger body, add. If a part is taken away (a hole, a hollow), subtract. Make a drawing and label each part before you calculate.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Cylinder and cone</h3></div>
+<p class="pregunta-int" id="t-p1">A cylinder with radius 2 and height 6 has a cone with radius 2 and height 3 on top. What is the total volume?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">24π</button>
+<button class="opcion" data-k="b" type="button">28π</button>
+<button class="opcion" data-k="c" type="button">32π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Cube and pyramid</h3></div>
+<p class="pregunta-int" id="t-p2">A cube with side 5 has a pyramid with a 5 × 5 base and height 3 on top. What is the total volume?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">150</button>
+<button class="opcion" data-k="b" type="button">175</button>
+<button class="opcion" data-k="c" type="button">125</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A half-sphere</h3></div>
+<p class="pregunta-int" id="t-p3">What is the volume of a half-sphere with radius 6?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">288π</button>
+<button class="opcion" data-k="b" type="button">72π</button>
+<button class="opcion" data-k="c" type="button">144π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#volume" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the volume of composite figures (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the volume of composite figures</span><span class="ei-sub">Build silos, tanks, capsules, towers, and drilled blocks, and see how the volumes of the parts add up.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-surface"><span aria-hidden="true" class="num-seccion">3</span>Surface area</h2>
+<p>The <strong>surface area</strong> is the sum of the areas of all the faces or surfaces of a solid. It answers questions like how much paint, paper, or material you need to cover it. These formulas are on the formula sheet too:</p>
+<div aria-label="Lateral and total surface area of the cylinder and the cone (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Lateral and total surface area formulas of the cylinder and the cone</caption>
+<thead><tr><th scope="col">Solid</th><th scope="col">Lateral area</th><th scope="col">Total area</th></tr></thead>
+<tbody>
+<tr><td>Cylinder</td><td>2πrh</td><td>2πrh + 2πr²</td></tr>
+<tr><td>Cone</td><td>πrℓ (ℓ = slant height)</td><td>πrℓ + πr²</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: the lateral area of a cylinder. How much paint covers the side of a round tank with radius 4 feet and height 10 feet?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use the lateral area.</strong> 2πrh.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute.</strong> 2 · π · 4 · 10 = 80π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>80π ≈ 251.3 square feet</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: the lateral area of a cone. A cone has radius 6 inches and slant height (ℓ) 10 inches. Find its lateral area.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use the lateral area of the cone.</strong> πrℓ.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute.</strong> π · 6 · 10 = 60π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>60π ≈ 188.5 square inches</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Slant height, not the straight-up height</span>
+<p>The lateral area of a cone uses the slant height ℓ (the distance from the edge of the base to the point, along the surface), not the height h. If you only have h, find the slant height with Pythagoras: ℓ = √(r² + h²). And “lateral” means without the base and the top: the total area adds them.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — The side of a cylinder</h3></div>
+<p class="pregunta-int" id="t-p4">What is the lateral area of a cylinder with radius 3 and height 7?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">21π</button>
+<button class="opcion" data-k="b" type="button">42π</button>
+<button class="opcion" data-k="c" type="button">84π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — The side of a cone</h3></div>
+<p class="pregunta-int" id="t-p5">What is the lateral area of a cone with radius 5 and slant height 12?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">60π</button>
+<button class="opcion" data-k="b" type="button">30π</button>
+<button class="opcion" data-k="c" type="button">120π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The whole cylinder</h3></div>
+<p class="pregunta-int" id="t-p6">What is the total area of a cylinder with radius 2 and height 5?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">20π</button>
+<button class="opcion" data-k="b" type="button">40π</button>
+<button class="opcion" data-k="c" type="button">28π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#surface" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the surface area (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the surface area</span><span class="ei-sub">See each solid closed and opened flat (its net), and build the area piece by piece.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-optimize"><span aria-hidden="true" class="num-seccion">4</span>An idea of optimization</h2>
+<p>In design and engineering you want a given volume with the <strong>least material</strong> possible, that is, with the smallest surface area. For example, of two cans that hold the same volume, the one with less surface area costs less material.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: comparing material. Two boxes hold 100 cubic inches. Box A is 10 × 10 × 1 and box B is 5 × 5 × 4. Which one uses less cardboard (less surface area)?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Area of A.</strong> 2(10·10 + 10·1 + 10·1) = 2(100 + 10 + 10) = 240.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Area of B.</strong> 2(5·5 + 5·4 + 5·4) = 2(25 + 20 + 20) = 130.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> With the same volume, <strong>box B</strong> uses much less cardboard. Shapes closer to a cube tend to have less surface area.</p>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#optimize" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: an idea of optimization (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: an idea of optimization</span><span class="ei-sub">Compare boxes with the same volume and find the one that uses the least cardboard.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-2-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with a notebook, the formula sheet, and a calculator: (1) Three composite figures that you draw. Break each one into parts, write the volume of each part, and add them (or subtract, if there is a hole). (2) A silo made of a cylinder with radius 10 feet and height 30 feet, with a cone 8 feet tall on top. Find the volume of the cylinder and of the cone separately, then the total. (3) A medicine capsule: a cylinder with radius 0.2 inch and length 0.8 inch, with a half-sphere at each end. Find its volume and explain why the two half-spheres make a whole sphere. (4) Painting the silo: find the lateral area of the cylinder (2πrh) and decide whether to include the top and the bottom. If a gallon of paint covers 350 square feet, how many gallons do you need? (5) Four surface areas of different solids (prism, cylinder, cone, or sphere), using the formula sheet. About 70 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Take two boxes or cans from your kitchen that hold about the same amount (a cereal box and a shorter, wider box, for example). Measure them in inches, find the volume and the surface area of each one, and decide which design uses less cardboard or metal. Why do you think the company chose its shape?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A cylinder with radius 3 and height 10 has a half-sphere with radius 3 on top. What is the total volume?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">90π</button><button class="opcion" data-k="b" type="button">126π</button><button class="opcion" data-k="c" type="button">108π</button><button class="opcion" data-k="d" type="button">72π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">A cylinder with radius 2 and height 5 has a cone with radius 2 and height 3 on top. What is the total volume?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">28π</button><button class="opcion" data-k="b" type="button">20π</button><button class="opcion" data-k="c" type="button">16π</button><button class="opcion" data-k="d" type="button">24π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">A 10 × 10 × 5 block has a cylinder with radius 2 and height 5 drilled out. What volume is left?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">500 − 100π</button><button class="opcion" data-k="b" type="button">500 − 20π</button><button class="opcion" data-k="c" type="button">500 + 20π</button><button class="opcion" data-k="d" type="button">480π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">A capsule: a cylinder with radius 3 and height 10 with a half-sphere of radius 3 at each end. What is the total volume?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">126π</button><button class="opcion" data-k="b" type="button">108π</button><button class="opcion" data-k="c" type="button">90π</button><button class="opcion" data-k="d" type="button">162π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">What is the lateral area of a cylinder with radius 4 and height 10?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">160π</button><button class="opcion" data-k="b" type="button">40π</button><button class="opcion" data-k="c" type="button">100π</button><button class="opcion" data-k="d" type="button">80π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">What is the lateral area of a cone with radius 6 and slant height 10?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">120π</button><button class="opcion" data-k="b" type="button">60π</button><button class="opcion" data-k="c" type="button">30π</button><button class="opcion" data-k="d" type="button">360π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">How much area does the paint cover on the side of a round tank with radius 5 and height 4?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">40π</button><button class="opcion" data-k="b" type="button">20π</button><button class="opcion" data-k="c" type="button">80π</button><button class="opcion" data-k="d" type="button">100π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">What is the volume of an ice cream cone with radius 3 and height 8?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">72π</button><button class="opcion" data-k="b" type="button">8π</button><button class="opcion" data-k="c" type="button">24π</button><button class="opcion" data-k="d" type="button">216π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for composite figures and surface area (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for composite figures and surface area and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Breaking the figure apart</th><td>I break the figure into its parts and choose to add or subtract.</td><td>I find some parts but leave one out or count one twice.</td><td>I do not find the simple parts.</td></tr>
+<tr><th scope="row">Finding the total volume</th><td>I add or subtract the parts correctly and check that the total makes sense.</td><td>I find the parts but add or subtract them wrong.</td><td>I find the volumes of the parts wrong.</td></tr>
+<tr><th scope="row">Surface area</th><td>I use the right lateral or total formula and apply it to a material or cost problem.</td><td>I use the formula but mix up the height and the slant height.</td><td>I do not find the right formula.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned to <strong>break</strong> composite 3D figures into parts to find their volume by <strong>adding or subtracting</strong> simple parts, to find the <strong>surface area</strong> of cylinders, cones, and other solids, and to compare how much material different designs with the same volume use.</p>
+<p>This closes the geometry of space. <strong>Lesson 2.3 · Polynomials: types, adding, subtracting, and multiplying</strong> opens the door to higher algebra. You will see that combining like terms (such as 3x² + 5x²) is the same idea of “putting together what is alike” that you already use to simplify, and that polynomials let you write geometric measures in general form.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 2.3 · Polynomials: types, adding, subtracting, and multiplying</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>composite figure</dt><dd>A solid made of simple solids joined together or with one taken out.</dd>
+<dt>half-sphere (hemisphere)</dt><dd>Half of a sphere: its volume is 1/2 · 4/3 πr³ = 2/3 πr³.</dd>
+<dt>surface area</dt><dd>The sum of the areas of all the surfaces of a solid.</dd>
+<dt>lateral area</dt><dd>The surface area without the bases.</dd>
+<dt>slant height (ℓ)</dt><dd>In a cone or pyramid, the distance along the surface from the edge of the base to the point.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 2 · Lesson 2.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 2.3",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "That is only the cylinder: π · 4 · 6 = 24π. Add the cone.",
+    "c": "The cone has 1/3: 1/3 · π · 4 · 3 = 4π, not 8π."
+   },
+   "right": "24π + 4π = 28π.",
+   "solution": "V = 24π + 4π = 28π."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "The pyramid has 1/3: 1/3 · 25 · 3 = 25, not 50.",
+    "c": "That is only the cube. Add the pyramid."
+   },
+   "right": "125 + 25 = 150.",
+   "solution": "V = 125 + 25 = 150."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "288π is the whole sphere. Take half.",
+    "b": "Check: 4/3 · 216 = 288, and half is 144."
+   },
+   "right": "1/2 · 4/3 · π · 216 = 144π.",
+   "solution": "V = 144π."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "You left out the 2: the formula is 2πrh.",
+    "c": "2 · 3 · 7 = 42, not 84."
+   },
+   "right": "2 · π · 3 · 7 = 42π.",
+   "solution": "42π."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "π · 5 · 12 = 60π; there is no 1/2 here.",
+    "c": "The lateral area of a cone is πrℓ, without a 2."
+   },
+   "right": "π · 5 · 12 = 60π.",
+   "solution": "60π."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "That is only the side: 2π · 2 · 5 = 20π. Add the two circles: 2πr².",
+    "b": "The two circles add 2π · 4 = 8π, not 20π."
+   },
+   "right": "20π + 8π = 28π.",
+   "solution": "2πrh + 2πr² = 20π + 8π = 28π."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "That is only the cylinder. Add the half-sphere.",
+    "b": "The half-sphere is 18π, not 36π: take half of the sphere.",
+    "d": "You subtracted. The parts are joined: add."
+   },
+   "solution": "90π + 18π = 108π."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "The cone has 1/3: 1/3 · 4 · 3 = 4.",
+    "b": "That is only the cylinder. Add the cone.",
+    "c": "You subtracted. The parts are joined: add."
+   },
+   "solution": "20π + 4π = 24π."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "The hole: π · 2² · 5 = 20π.",
+    "c": "The hole takes material away: subtract.",
+    "d": "The block has no π: 10 · 10 · 5 = 500."
+   },
+   "solution": "500 − 20π."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "The two half-spheres make a whole sphere: 36π, not 18π.",
+    "c": "That is only the cylinder.",
+    "d": "The sphere is 4/3 · 27 = 36, so 36π."
+   },
+   "solution": "90π + 36π = 126π."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "2 · 4 · 10 = 80, not 160.",
+    "b": "You left out the 2 or the radius.",
+    "c": "That uses r², which is for the circles, not the side."
+   },
+   "solution": "2π · 4 · 10 = 80π."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "The cone has no 2: πrℓ.",
+    "c": "π · 6 · 10 = 60π.",
+    "d": "Do not square anything: πrℓ."
+   },
+   "solution": "π · 6 · 10 = 60π."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "You left out the 2: 2πrh.",
+    "c": "2 · 5 · 4 = 40, not 80.",
+    "d": "That uses r²: the side is 2πrh."
+   },
+   "solution": "2π · 5 · 4 = 40π."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "You left out the 1/3.",
+    "b": "Square the radius: 3² = 9.",
+    "d": "Only the radius is squared, and divide by 3."
+   },
+   "solution": "1/3 · 9 · 8 = 24: 24π."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

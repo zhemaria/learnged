@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 2.1 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 2.1 · Volumen de esferas, conos y pirámides · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-2-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 2 — Volumen 3D y polinomios</p>
+<h1>Lección 2.1 · Volumen de esferas, conos y pirámides</h1>
+<p class="lema">Use la hoja de fórmulas para hallar el volumen de esferas, conos y pirámides, y despeje una medida desconocida a partir del volumen.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Hoja de fórmulas y calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Localizar</strong> en la hoja de fórmulas la fórmula adecuada para cada sólido.</li>
+<li><strong>Calcular</strong> el volumen de una esfera, un cono y una pirámide.</li>
+<li><strong>Expresar</strong> el resultado en forma exacta (con π) y aproximada, con unidades cúbicas.</li>
+<li><strong>Despejar</strong> una medida desconocida (radio o altura) a partir del volumen.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.5.d</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de pirámides rectas y conos. Hallar la medida de los lados, la altura, el radio o el diámetro dado el volumen o el área de superficie.</li><li><span class="std-cod std-dir">Q.5.e</span> Dadas las fórmulas geométricas, calcular el volumen y el área de superficie de esferas. Hallar el radio o el diámetro dada el área de superficie.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.5.f</span> Calcular el área de superficie y el volumen de figuras geométricas compuestas de tres dimensiones, dadas las fórmulas geométricas necesarias.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.G.9</span> <span class="std-nivel">Nivel D</span> Conocer las fórmulas del volumen de conos, cilindros y esferas, y usarlas para resolver problemas de la vida real y de matemáticas.</li><li><span class="std-cod std-ccr">G-GMD.3</span> <span class="std-nivel">Nivel E</span> Usar las fórmulas del volumen de cilindros, pirámides, conos y esferas para resolver problemas.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-formulas">La hoja de fórmulas y los tres sólidos</a></li>
+<li><a href="#s-esfera">Volumen de la esfera</a></li>
+<li><a href="#s-cono">Volumen del cono y de la pirámide</a></li>
+<li><a href="#s-despejar">Despejar una medida desconocida</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-formulas"><span aria-hidden="true" class="num-seccion">1</span>La hoja de fórmulas y los tres sólidos</h2>
+<p><strong>Conexión con el tema anterior.</strong> En el Tema 1 se midieron distancias y figuras en el plano (dos dimensiones). Ahora se pasa al <strong>espacio</strong> (tres dimensiones). Los volúmenes de prismas y cilindros ya se conocen del Nivel 3; esta lección añade tres sólidos nuevos: la esfera, el cono y la pirámide. A partir de este tema se trabaja siempre con la <strong>hoja de fórmulas</strong>, la misma que se recibe el día del examen.</p>
+<p>En el examen GED las fórmulas de volumen no se memorizan: se entregan en una hoja de fórmulas. La destreza que se evalúa es <strong>localizar la fórmula correcta</strong>, sustituir bien las medidas y calcular. En este sitio, la hoja de fórmulas se abre con el botón <strong>Hoja de referencia</strong>, arriba en cada lección.</p>
+<svg viewBox="0 0 600 230" role="img" aria-label="Tres sólidos. Una esfera con su radio r: V = 4/3 πr³. Un cono con su radio r y su altura h: V = 1/3 πr²h. Una pirámide con su altura h: V = 1/3 Bh, donde B es el área de la base." style="width:100%;max-width:600px;height:auto;display:block;margin:12px auto;"><circle cx="100" cy="110" r="70" fill="#e3f2fd" stroke="#37474f" stroke-width="2.5"/><path d="M30 110 A70 17 0 0 0 170 110" fill="none" stroke="#37474f" stroke-width="2"/><path d="M30 110 A70 17 0 0 1 170 110" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><line x1="100" y1="110" x2="170" y2="110" stroke="#c62828" stroke-width="3"/><text x="135" y="100" font-size="16" font-weight="700" fill="#c62828" text-anchor="middle">r</text><text x="100" y="215" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = 4/3 πr³</text><path d="M230 170 L300 40 L370 170 A70 16 0 0 1 230 170 Z" fill="#e3f2fd" stroke="#37474f" stroke-width="2.5"/><path d="M230 170 A70 16 0 0 1 370 170" fill="none" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><line x1="300" y1="40" x2="300" y2="170" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5"/><line x1="300" y1="170" x2="370" y2="170" stroke="#c62828" stroke-width="3"/><text x="290" y="110" font-size="16" font-weight="700" fill="#1565c0" text-anchor="end">h</text><text x="335" y="195" font-size="16" font-weight="700" fill="#c62828" text-anchor="middle">r</text><text x="300" y="215" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = 1/3 πr²h</text><polygon points="430,175 540,175 500,40" fill="#e3f2fd" stroke="#37474f" stroke-width="2.5"/><polygon points="540,175 575,150 500,40" fill="#bbdefb" stroke="#37474f" stroke-width="2.5"/><line x1="430" y1="175" x2="465" y2="150" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><line x1="465" y1="150" x2="575" y2="150" stroke="#90a4ae" stroke-width="2" stroke-dasharray="6 5"/><line x1="500" y1="40" x2="502" y2="162" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5"/><text x="492" y="110" font-size="16" font-weight="700" fill="#1565c0" text-anchor="end">h</text><text x="505" y="215" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle">V = 1/3 Bh</text></svg>
+<div aria-label="Fórmulas de volumen de la esfera, el cono y la pirámide (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Fórmula del volumen de cada sólido y las medidas que necesita</caption>
+<thead><tr><th scope="col">Sólido</th><th scope="col">Fórmula del volumen</th><th scope="col">Datos que se necesitan</th></tr></thead>
+<tbody>
+<tr><td>Esfera</td><td>V = 4/3 πr³</td><td>el radio r</td></tr>
+<tr><td>Cono</td><td>V = 1/3 πr²h</td><td>el radio r de la base y la altura h</td></tr>
+<tr><td>Pirámide</td><td>V = 1/3 Bh</td><td>el área de la base B y la altura h</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El factor 1/3</span>
+<p>Tanto el cono como la pirámide llevan 1/3. Un cono cabe tres veces dentro de un cilindro de la misma base y altura, y una pirámide cabe tres veces dentro de un prisma de la misma base y altura.</p>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#formulas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la hoja de fórmulas y los tres sólidos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la hoja de fórmulas y los tres sólidos</span><span class="ei-sub">Reconozca cada sólido, elija su fórmula y distinga el radio del diámetro.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-esfera"><span aria-hidden="true" class="num-seccion">2</span>Volumen de la esfera</h2>
+<p>Una esfera queda definida solo por su <strong>radio</strong>. Su volumen es:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = 4/3 πr³</p>
+<p>El radio se eleva al cubo (es una medida en tres dimensiones) y se multiplica por π y por 4/3.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Hallar el volumen de una esfera de 3 pulgadas de radio.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se eleva el radio al cubo.</strong> 3³ = 27.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> V = 4/3 · π · 27.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se simplifica.</strong> 4/3 · 27 = 36, así que V = 36π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>V = 36π ≈ 113.1 pulgadas cúbicas</strong> (con la tecla π; con π ≈ 3.14 da 113.0).</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El radio, no el diámetro</span>
+<p>Si el problema da el diámetro, primero se divide entre 2 para obtener el radio. Un error común es usar el diámetro directamente en la fórmula.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Exacto o aproximado</span>
+<p>La respuesta exacta deja π (por ejemplo, 36π). Para el valor aproximado, use lo que indique el problema: π ≈ 3.14 o la tecla π de la calculadora. Las dos formas pueden diferir un poco en las últimas cifras; si no se indica nada, la tecla π es más exacta.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Radio 1</h3></div>
+<p class="pregunta-int" id="t-p1">¿Cuál es el volumen de una esfera de radio 1?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">4/3 π</button>
+<button class="opcion" data-k="b" type="button">4π</button>
+<button class="opcion" data-k="c" type="button">3/4 π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Radio 6</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cuál es el volumen de una esfera de radio 6?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">144π</button>
+<button class="opcion" data-k="b" type="button">72π</button>
+<button class="opcion" data-k="c" type="button">288π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — La fórmula</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cuál es la fórmula del volumen de una esfera?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">πr²h</button>
+<button class="opcion" data-k="b" type="button">4/3 πr³</button>
+<button class="opcion" data-k="c" type="button">1/3 πr²h</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#esfera" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el volumen de la esfera (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el volumen de la esfera</span><span class="ei-sub">Cambie el radio, siga el cálculo de V = 4/3 πr³ paso a paso y vea por qué al duplicar el radio el volumen se multiplica por 8.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-cono"><span aria-hidden="true" class="num-seccion">3</span>Volumen del cono y de la pirámide</h2>
+<p>El <strong>cono</strong> tiene una base circular y una punta. Su volumen es un tercio del de un cilindro con la misma base y altura:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = 1/3 πr²h</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Cono. Hallar el volumen de un cono de 3 pulgadas de radio y 10 pulgadas de altura.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se eleva el radio al cuadrado.</strong> 3² = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> V = 1/3 · π · 9 · 10 = 1/3 · π · 90.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se simplifica.</strong> 1/3 · 90 = 30, así que V = 30π.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>V = 30π ≈ 94.2 pulgadas cúbicas</strong>.</p>
+</div>
+<p>La <strong>pirámide</strong> tiene una base poligonal (con frecuencia un cuadrado o un rectángulo). Su volumen es un tercio del área de la base por la altura:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">V = 1/3 Bh</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Pirámide. Hallar el volumen de una pirámide de base cuadrada de 6 pies de lado y 10 pies de altura.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Área de la base.</strong> B = 6 × 6 = 36 pies cuadrados.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> V = 1/3 · 36 · 10 = 1/3 · 360.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se simplifica.</strong> V = 120.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>V = 120 pies cúbicos</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Dos cuidados</span>
+<p>En el cono, solo el radio se eleva al cuadrado; la altura se multiplica tal como está. En la pirámide, primero se calcula el área de la base (lado × lado si es cuadrada, largo × ancho si es rectangular) y solo después se aplica 1/3 × B × h. La h es la altura vertical, no la altura inclinada de una cara.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Un cono</h3></div>
+<p class="pregunta-int" id="t-p4">¿Cuál es el volumen de un cono de radio 5 y altura 6?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">50π</button>
+<button class="opcion" data-k="b" type="button">150π</button>
+<button class="opcion" data-k="c" type="button">30π</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Una pirámide</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuál es el volumen de una pirámide de base cuadrada de lado 4 y altura 9?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">144</button>
+<button class="opcion" data-k="b" type="button">48</button>
+<button class="opcion" data-k="c" type="button">24</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Cono y cilindro</h3></div>
+<p class="pregunta-int" id="t-p6">El volumen de un cono es ___ del de un cilindro con la misma base y altura.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">la mitad</button>
+<button class="opcion" data-k="b" type="button">el doble</button>
+<button class="opcion" data-k="c" type="button">un tercio</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#cono" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el volumen del cono (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el volumen del cono</span><span class="ei-sub">Cambie el radio y la altura, compare el cono con su cilindro y vea por qué el radio pesa más que la altura.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-2-1.html#piramide" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el volumen de la pirámide (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el volumen de la pirámide</span><span class="ei-sub">Cambie la base y la altura y compare la pirámide con su prisma.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-despejar"><span aria-hidden="true" class="num-seccion">4</span>Despejar una medida desconocida</h2>
+<p>A veces se conoce el volumen y se busca el radio o la altura. Se sustituyen los datos conocidos y se despeja la incógnita como en cualquier ecuación.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · La altura de un cono. Un cono tiene un volumen de 30π pulgadas cúbicas y un radio de 3 pulgadas. ¿Cuál es su altura?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye en V = 1/3 πr²h.</strong> 30π = 1/3 · π · 9 · h.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se simplifica el lado derecho.</strong> 1/3 · 9 = 3, queda 30π = 3πh.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se dividen los dos lados entre 3π.</strong> h = 30π ÷ 3π = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La altura es de <strong>10 pulgadas</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Cancelar π facilita el cálculo</span>
+<p>Cuando π aparece en los dos lados de la ecuación, se cancela. Así el despeje se reduce a operaciones con números sencillos.</p>
+</div>
+<a class="enlace-interactivo" href="practica-2-1.html#despejar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: despejar una medida desconocida (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: despejar una medida desconocida</span><span class="ei-sub">Casos paso a paso: la altura de un cono o de una pirámide y el radio de una esfera a partir del volumen.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-2-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno, la hoja de fórmulas y la calculadora: (1) Cuatro volúmenes de esferas, dos a partir del radio y dos a partir del diámetro. Copie la fórmula de la hoja y escriba la sustitución antes de calcular. (2) Un tanque de agua esférico de 4 pies de radio: ¿cuántos pies cúbicos de agua caben? Exprese también el resultado en galones (1 pie cúbico ≈ 7.48 galones). (3) Tres conos, entre ellos uno de helado de 1.5 pulgadas de radio y 4 pulgadas de altura. En cada uno, subraye que solo el radio se eleva al cuadrado y no olvide el factor 1/3. (4) Tres pirámides, entre ellas una de base cuadrada de 755 pies de lado y 481 pies de altura (la Gran Pirámide de Guiza). Calcule primero el área de la base y comente si el tamaño del resultado le parece razonable. (5) Dos problemas de medida desconocida: conocido el volumen, despeje el radio o la altura. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Busque en casa una pelota, un gorro de fiesta o un vaso de papel en forma de cono, y un recipiente en forma de caja. Mídalos en pulgadas y calcule sus volúmenes. ¿Cuál tiene más capacidad? Llene el cono de arroz o de agua y viértalo en un vaso cilíndrico de la misma base y altura: ¿cuántos conos hacen falta?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿Cuál es el volumen de una esfera de radio 3?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12π</button><button class="opcion" data-k="b" type="button">27π</button><button class="opcion" data-k="c" type="button">108π</button><button class="opcion" data-k="d" type="button">36π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">¿Qué fórmula da el volumen de una esfera?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">πr²h</button><button class="opcion" data-k="b" type="button">4/3 πr³</button><button class="opcion" data-k="c" type="button">1/3 πr²h</button><button class="opcion" data-k="d" type="button">4πr²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuál es el volumen de un cono de radio 3 y altura 10?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">90π</button><button class="opcion" data-k="b" type="button">10π</button><button class="opcion" data-k="c" type="button">30π</button><button class="opcion" data-k="d" type="button">270π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">¿Cuál es el volumen de un cono de radio 2 y altura 9?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">36π</button><button class="opcion" data-k="b" type="button">18π</button><button class="opcion" data-k="c" type="button">6π</button><button class="opcion" data-k="d" type="button">12π</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Cuál es el volumen de una pirámide de base cuadrada de lado 6 y altura 10?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">360</button><button class="opcion" data-k="b" type="button">120</button><button class="opcion" data-k="c" type="button">60</button><button class="opcion" data-k="d" type="button">40</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Cuál es el volumen de una pirámide de base rectangular de 4 × 3 y altura 5?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">20</button><button class="opcion" data-k="b" type="button">60</button><button class="opcion" data-k="c" type="button">30</button><button class="opcion" data-k="d" type="button">40</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">¿Cuál es el volumen de una pirámide de base cuadrada de lado 12 y altura 5?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">720</button><button class="opcion" data-k="b" type="button">120</button><button class="opcion" data-k="c" type="button">480</button><button class="opcion" data-k="d" type="button">240</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Un cono tiene un volumen de 30π y un radio de 3. ¿Cuál es su altura?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">30</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">3</button><button class="opcion" data-k="d" type="button">90</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación del volumen de sólidos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas del volumen de esferas, conos y pirámides y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Localizar y aplicar la fórmula</th><td>Selecciono y aplico la fórmula correcta de la hoja con seguridad y rapidez.</td><td>Localizo una fórmula, pero la aplico al sólido equivocado.</td><td>No localizo la fórmula correcta en la hoja.</td></tr>
+<tr><th scope="row">Sustituir y calcular</th><td>Sustituyo correctamente, calculo con π y compruebo que el resultado sea razonable.</td><td>Cometo errores ocasionales en los exponentes o en el 1/3.</td><td>Uso el diámetro u olvido el exponente.</td></tr>
+<tr><th scope="row">Expresar el resultado</th><td>Doy el resultado en unidades cúbicas y despejo una medida cuando hace falta.</td><td>Pongo unidades, pero no cúbicas, o redondeo demasiado.</td><td>Omito las unidades.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se calculó el volumen de <strong>esferas</strong> (4/3 πr³), <strong>conos</strong> (1/3 πr²h) y <strong>pirámides</strong> (1/3 Bh), siempre con la <strong>hoja de fórmulas</strong>, y se aprendió a <strong>despejar</strong> una medida a partir del volumen.</p>
+<p>En la <strong>Lección 2.2 · Figuras 3D compuestas y área de superficie</strong> se combinarán estos sólidos: un silo es un cilindro coronado por un cono, una cápsula es un cilindro con dos semiesferas. Se calculará el volumen <strong>sumando o restando</strong> partes y se introducirá el <strong>área de superficie</strong>, para responder preguntas como cuánta pintura o material se necesita.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 2.2 · Figuras 3D compuestas y área de superficie</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>esfera</dt><dd>Un sólido en el que todos los puntos están a la misma distancia (el radio) del centro.</dd>
+<dt>cono</dt><dd>Un sólido con una base circular y una punta.</dd>
+<dt>pirámide</dt><dd>Un sólido con un polígono de base y caras triangulares que se juntan en una punta.</dd>
+<dt>altura (h)</dt><dd>La distancia vertical de la base a la punta, no la inclinada.</dd>
+<dt>unidades cúbicas</dt><dd>Las unidades del volumen: pulgadas cúbicas, pies cúbicos, yardas cúbicas.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 2 · Lección 2.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 2.2",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "No olvide el 4/3: 4/3 · π · 1³.",
+    "c": "La fracción es 4/3, no 3/4."
+   },
+   "right": "4/3 · π · 1³ = 4/3 π.",
+   "solution": "V = 4/3 π."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "Elevó el radio al cuadrado (36). Hay que elevarlo al cubo: 6³ = 216.",
+    "b": "6³ = 216 y 4/3 · 216 = 288."
+   },
+   "right": "6³ = 216, 4/3 · 216 = 288: 288π.",
+   "solution": "V = 288π."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "πr²h es el cilindro.",
+    "c": "1/3 πr²h es el cono."
+   },
+   "right": "La esfera solo necesita el radio: 4/3 πr³.",
+   "solution": "V = 4/3 πr³."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Olvidó el 1/3: 25 · 6 = 150, después se divide entre 3.",
+    "c": "Eleve el radio al cuadrado: 5² = 25, no 5."
+   },
+   "right": "1/3 · π · 25 · 6 = 50π.",
+   "solution": "V = 50π."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Olvidó el 1/3: 16 · 9 = 144, después se divide entre 3.",
+    "c": "La base es 4 × 4 = 16, no 8."
+   },
+   "right": "B = 16, V = 1/3 · 16 · 9 = 48.",
+   "solution": "V = 48."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Mire la fórmula: V = 1/3 πr²h.",
+    "b": "El cono es más pequeño que su cilindro."
+   },
+   "right": "Tres conos llenan el cilindro.",
+   "solution": "Un tercio."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "Usó 4 · 3 en lugar de 3³.",
+    "b": "27 es r³. Multiplíquelo por 4/3.",
+    "c": "4 · 27 = 108; falta dividir entre 3."
+   },
+   "solution": "4/3 · 27 = 36: 36π."
+  },
+  "B": {
+   "ok": "b",
+   "hints": {
+    "a": "πr²h es el cilindro.",
+    "c": "1/3 πr²h es el cono.",
+    "d": "4πr² es el área de la superficie de la esfera, no su volumen."
+   },
+   "solution": "V = 4/3 πr³."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "Olvidó el 1/3.",
+    "b": "Eleve el radio al cuadrado: 3² = 9.",
+    "d": "Solo el radio va al cuadrado, y no olvide el 1/3."
+   },
+   "solution": "1/3 · 9 · 10 = 30: 30π."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "Olvidó el 1/3: 4 · 9 = 36, después se divide entre 3.",
+    "b": "Eleve el radio al cuadrado: 2² = 4, no 2.",
+    "c": "Eleve el radio al cuadrado: 2² = 4."
+   },
+   "solution": "1/3 · 4 · 9 = 12: 12π."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Olvidó el 1/3.",
+    "c": "La base es 6 × 6 = 36, no 6 + 6.",
+    "d": "Primero la base: 6 × 6 = 36."
+   },
+   "solution": "1/3 · 36 · 10 = 120."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Olvidó el 1/3.",
+    "c": "La base es 4 × 3 = 12. Después 1/3 · 12 · 5.",
+    "d": "1/3 · 12 · 5 = 20."
+   },
+   "solution": "B = 12, V = 1/3 · 12 · 5 = 20."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Olvidó el 1/3: 144 · 5 = 720, después se divide entre 3.",
+    "b": "La base es 12 × 12 = 144.",
+    "c": "1/3 · 144 · 5 = 240."
+   },
+   "solution": "1/3 · 144 · 5 = 240."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "30 es el número que acompaña a π en el volumen. Despeje 30π = 3πh.",
+    "c": "3 es el radio.",
+    "d": "Multiplicó en lugar de dividir."
+   },
+   "solution": "30π = 1/3 · π · 9 · h = 3πh → h = 10."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
