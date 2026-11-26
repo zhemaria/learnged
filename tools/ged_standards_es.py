@@ -17,7 +17,9 @@ g = importlib.util.module_from_spec(spec); spec.loader.exec_module(g)
 TARGETS_ES = {
  "Q.1.a": "Ordenar fracciones y decimales, también en la recta numérica.",
  "Q.1.b": "Aplicar propiedades de los números relacionadas con múltiplos y factores, como el mínimo común múltiplo, el máximo común divisor o la propiedad distributiva, para reescribir expresiones numéricas.",
+ "Q.1.d": "Identificar el valor absoluto de un número racional como su distancia al 0 en la recta numérica, y hallar la distancia entre dos números racionales en la recta numérica, también con el valor absoluto de su diferencia.",
  "Q.2.a": "Sumar, restar, multiplicar y dividir números racionales.",
+ "Q.2.d": "Determinar cuándo una expresión numérica no está definida.",
  "Q.2.e": "Resolver problemas aritméticos de la vida real, de uno o de varios pasos, con las cuatro operaciones y números racionales, incluidos los que usan notación científica.",
  "Q.3.a": "Calcular tasas unitarias. Por ejemplo: precio por unidad, velocidad constante, personas por milla cuadrada, BTU por pie cúbico.",
  "Q.3.c": "Resolver problemas aritméticos de la vida real, de varios pasos, con razones o proporciones, incluidos los que requieren convertir unidades de medida.",
@@ -103,6 +105,12 @@ CCR_ES = {
  "6.EE.5": "Entender que resolver una ecuación o una desigualdad es responder la pregunta: ¿qué valores de un conjunto dado, si los hay, la hacen verdadera? Usar la sustitución para comprobar si un número dado la hace verdadera.",
  "6.EE.7": "Resolver problemas de la vida real y de matemáticas escribiendo y resolviendo ecuaciones de la forma x + p = q y px = q, en las que p, q y x son números racionales no negativos.",
  "6.NS.1": "Interpretar y calcular cocientes de fracciones, y resolver problemas verbales de división de fracciones entre fracciones, por ejemplo, con modelos visuales y ecuaciones.",
+ "6.NS.5": "Entender que los números positivos y negativos se usan juntos para describir cantidades de sentido o valor opuesto (temperaturas sobre o bajo cero, altura sobre o bajo el nivel del mar, créditos y débitos); usarlos para representar cantidades de la vida real y explicar qué significa el 0 en cada situación.",
+ "6.NS.6a": "Reconocer que los signos opuestos indican posiciones a lados contrarios del 0 en la recta numérica; reconocer que el opuesto del opuesto de un número es el mismo número, por ejemplo, −(−3) = 3, y que el 0 es su propio opuesto.",
+ "6.NS.7": "Entender el orden y el valor absoluto de los números racionales: interpretar una desigualdad como la posición relativa de dos números en la recta numérica, y entender el valor absoluto de un número racional como su distancia al 0 en la recta numérica.",
+ "7.NS.1": "Ampliar lo que se sabe de la suma y la resta para sumar y restar números racionales; representar la suma y la resta en una recta numérica horizontal o vertical.",
+ "7.NS.2": "Ampliar lo que se sabe de la multiplicación, la división y las fracciones para multiplicar y dividir números racionales.",
+ "7.NS.3": "Resolver problemas matemáticos y de la vida real con las cuatro operaciones y números racionales.",
  "6.NS.3": "Sumar, restar, multiplicar y dividir con fluidez decimales de varios dígitos con el algoritmo usual de cada operación.",
  "6.NS.4": "Hallar el máximo común divisor de dos números enteros menores o iguales que 100 y el mínimo común múltiplo de dos números enteros menores o iguales que 12. Usar la propiedad distributiva para sacar un factor común de una suma.",
  "7.NS.2d": "Convertir un número racional en decimal con la división larga; saber que la forma decimal de un número racional termina en ceros o termina por repetirse.",
@@ -110,9 +118,9 @@ CCR_ES = {
 
 # Lección en inglés → lección en español
 def ruta_es(path):
-    m = re.match(r"level-1/lesson-(.+)\.html$", path)
-    nombre = m.group(1).replace("-gcf-lcm", "-mcd-mcm")
-    return os.path.join(ROOT, "es", "matematicas", "nivel-1", f"leccion-{nombre}.html")
+    m = re.match(r"level-(\d)/lesson-(.+)\.html$", path)
+    nombre = m.group(2).replace("-gcf-lcm", "-mcd-mcm")
+    return os.path.join(ROOT, "es", "matematicas", "nivel-" + m.group(1), f"leccion-{nombre}.html")
 
 e = html.escape
 def li(code, cls):

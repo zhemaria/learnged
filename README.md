@@ -8,6 +8,8 @@ Evolución bilingüe de GEDparaHispanos. Mascota: **Leo**, el búho.
 ## Estructura
 - `index.html` — portada en inglés (detecta el idioma del navegador; si es español, abre `/es/`).
 - `es/` — versión en español. Las lecciones de Matemáticas en español están en `es/matematicas/nivel-1/` (leccion-T-N.html y practica-T-N.html), con el mismo contenido que las de `math/level-1/`.
+- Nivel 2: `math/level-2/` (lesson-T-N.html y practice-T-N.html) y `es/matematicas/nivel-2/` (leccion-T-N.html y practica-T-N.html). `math/integers.js` reúne lo común de los números con signo (recta numérica, fichas, práctica de signo y valor). `math/level-2/tengo-debo.html` es el complemento bilingüe de la Lección 1.2 (el idioma va en el enlace: `?lang=en` o `?lang=es`).
+- Cada lección del Nivel 2 se construye en los dos idiomas a la vez con `tools/build_n2_lesson_T_N.py` (usa `tools/bilingue.py` y `tools/n2.py`). Después: `tools/ged_standards.py`, `tools/ged_standards_es.py` y `tools/build_indices.py`.
 - `math/lesson.js` y `math/practice.js` sirven a los dos idiomas: si la página tiene `<html lang="es">`, los mensajes salen en español.
 - `js/calculator.js` (inglés) y `js/calculadora.js` (español) son el simulador de la TI-30XS; se generan con `tools/build-calculator-en.py` y `tools/build-calculadora-es.py` desde `algebra/calculadora-gph.js`.
 - Herramientas para el español: `tools/ged_standards_es.py` (cuadro de estándares) y `tools/build_indice_es.py` (índice del nivel). Los números se escriben igual en los dos idiomas: coma para los miles (3,482,651) y punto para los decimales (3.5), como en el examen GED.

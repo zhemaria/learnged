@@ -14,9 +14,14 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "es"))
 from traduce import Traductor
 
 L = "en"
+NIVEL = 1   # el constructor de cada lección del Nivel 2 pone B.NIVEL = 2
 def t(en, es):
     """El texto en el idioma que se está construyendo."""
     return en if L == "en" else es
+
+def constructor(n):
+    """Nombre del script que construye la lección n."""
+    return f"build_{'' if NIVEL == 1 else f'n{NIVEL}_'}lesson_{n.replace('-', '_')}.py"
 
 def existe(ruta):
     return os.path.exists(os.path.join(ROOT, ruta))
@@ -25,7 +30,7 @@ def lec(n):   return f"lesson-{n}.html" if L == "en" else f"leccion-{n}.html"
 def prac(n):  return f"practice-{n}.html" if L == "en" else f"practica-{n}.html"
 def ruta_lec(n, lang=None):
     lang = lang or L
-    return f"math/level-1/lesson-{n}.html" if lang == "en" else f"es/matematicas/nivel-1/leccion-{n}.html"
+    return f"math/level-{NIVEL}/lesson-{n}.html" if lang == "en" else f"es/matematicas/nivel-{NIVEL}/leccion-{n}.html"
 
 # ---------- piezas de la lección ----------
 def T(*keys):
@@ -99,7 +104,7 @@ def pagina_leccion(n, tema_num, tema, titulo, lema, chip, objetivos, secciones, 
                    if L == "en" else
                    f'<li><strong>La página de práctica.</strong> Abra la <a href="{prac(n)}">página de práctica de esta lección</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>')
     return f'''<!DOCTYPE html>
-<!-- LearnGED · Lesson {num} · Math Level 1 (English) — built by tools/build_lesson_{n.replace("-", "_")}.py
+<!-- LearnGED · Lesson {num} · Math Level {NIVEL} (English) — built by tools/{constructor(n)}
      José M. Fernández · CC BY-NC-SA 4.0 -->
 
 <html lang="en">
@@ -112,11 +117,11 @@ def pagina_leccion(n, tema_num, tema, titulo, lema, chip, objetivos, secciones, 
 <link rel="stylesheet" href="../lesson.css">
 </head>
 <body>
-<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level {NIVEL} lessons</a></nav>
 <a class="saltar" href="#indice">Skip to the lesson contents</a>
 <header class="principal">
 <div class="envoltura-header">
-<p class="ruta">{t("Math · Level 1 · Topic", "Matemáticas · Nivel 1 · Tema")} {tema_num} — {tema}</p>
+<p class="ruta">{t(f"Math · Level {NIVEL} · Topic", f"Matemáticas · Nivel {NIVEL} · Tema")} {tema_num} — {tema}</p>
 <h1>{t("Lesson", "Lección")} {num} · {titulo}</h1>
 <p class="lema">{lema}</p>
 <div class="chips">
@@ -201,7 +206,7 @@ def pagina_leccion(n, tema_num, tema, titulo, lema, chip, objetivos, secciones, 
 </dl>
 </section>
 </div>
-<footer><p>LearnGED · {t("Math · Level 1 · Topic", "Matemáticas · Nivel 1 · Tema")} {tema_num} · {t("Lesson", "Lección")} {num}</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<footer><p>LearnGED · {t(f"Math · Level {NIVEL} · Topic", f"Matemáticas · Nivel {NIVEL} · Tema")} {tema_num} · {t("Lesson", "Lección")} {num}</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
 <script>
 window.LESSON = {json.dumps(lesson, ensure_ascii=False, indent=1)};
 </script>
@@ -254,15 +259,48 @@ def libre(pid, titulo, etiqueta, nota=True):
         <p class="marcador" id="{pid}-marcador"></p>
       </div>'''
 
-def pagina_practica(n, tema_num, tema, titulo, meta, modulos, js, estilo=""):
+def libre_e(pid, titulo, etiqueta=None):
+    """Práctica con respuesta escrita de un entero con signo (creaPracticaLibre + numE de integers.js)."""
+    et = etiqueta or t("Answer", "Respuesta")
+    return f'''      <h3>{titulo}</h3>
+      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>
+        <div class="campos"><div class="campo"><label for="{pid}-r">{et}</label><input type="text" autocomplete="off" class="ancho" id="{pid}-r"></div></div>
+        <p class="nota">{t("Type an integer. If it is negative, start with the minus sign: −7 or -7.", "Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.")}</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''
+
+def signo_valor(pid, titulo):
+    """Práctica en dos pasos: el signo y el valor (creaSignoValor de integers.js)."""
+    return f'''      <h3>{titulo}</h3>
+      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>
+        <p><strong>{t("Step 1.", "Paso 1.")}</strong> {t("What is the sign of the answer?", "¿Qué signo tiene el resultado?")}</p>
+        <div class="signos" role="group" aria-label="{t("Sign of the answer", "Signo del resultado")}"><button type="button" id="{pid}-mas" aria-pressed="false" aria-label="{t("Positive", "Positivo")}">+</button><button type="button" id="{pid}-menos" aria-pressed="false" aria-label="{t("Negative", "Negativo")}">−</button></div>
+        <div class="campos"><div class="campo"><label for="{pid}-v"><strong>{t("Step 2.", "Paso 2.")}</strong> {t("The value of the answer, without the sign", "El valor del resultado, sin signo")}</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="{pid}-v"></div></div>
+        <p class="nota">{t("If the answer is 0, you do not need to choose a sign.", "Si el resultado es 0, no hace falta elegir signo.")}</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''
+
+def pagina_practica(n, tema_num, tema, titulo, meta, modulos, js, estilo="", scripts=()):
     """modulos: lista de (id, título, html). js: el código de la página (después de practice.js)."""
     num = n.replace("-", ".")
     idx = "\n".join(f'      <li><a href="#{mid}">{tt}</a></li>' for mid, tt, _ in modulos)
     mods = "\n\n".join(modulo(mid, i + 1, tt, h, i == 0) for i, (mid, tt, h) in enumerate(modulos))
-    ruta = f'{t("Level 1 · Topic", "Nivel 1 · Tema")} {tema_num} · {tema}'
+    ruta = f'{t(f"Level {NIVEL} · Topic", f"Nivel {NIVEL} · Tema")} {tema_num} · {tema}'
     est = f"\n<style>\n{estilo}\n</style>" if estilo else ""
     return f'''<!DOCTYPE html>
-<!-- LearnGED · Level 1 · Lesson {num} · practice (English) — built by tools/build_lesson_{n.replace("-", "_")}.py
+<!-- LearnGED · Level {NIVEL} · Lesson {num} · practice (English) — built by tools/{constructor(n)}
      José M. Fernández · CC BY-NC-SA 4.0 -->
 <html lang="en">
 <head>
@@ -274,7 +312,7 @@ def pagina_practica(n, tema_num, tema, titulo, meta, modulos, js, estilo=""):
 <link rel="stylesheet" href="../practice.css">{est}
 </head>
 <body>
-<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 1 lessons</a></nav>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level {NIVEL} lessons</a></nav>
 <a class="saltar" href="#titulo-indice">Skip to contents</a>
 <div class="contenedor">
   <header class="principal">
@@ -297,7 +335,7 @@ def pagina_practica(n, tema_num, tema, titulo, meta, modulos, js, estilo=""):
 
 {PIE_PRACTICA.format(tema=ruta)}
 </div>
-<script src="../practice.js"></script>
+<script src="../practice.js"></script>{"".join(chr(10) + '<script src="' + x + '"></script>' for x in scripts)}
 <script>
 {js.strip()}
 iniciaNavegacion();
@@ -316,18 +354,18 @@ def construye(n, hacer_leccion, hacer_practica, cabecera_es):
         L = lang
         salida[lang] = (hacer_leccion(), hacer_practica())
     L = "en"
-    en_l = f"math/level-1/lesson-{n}.html"; en_p = f"math/level-1/practice-{n}.html"
+    en_l = f"math/level-{NIVEL}/lesson-{n}.html"; en_p = f"math/level-{NIVEL}/practice-{n}.html"
     for ruta, html in ((en_l, salida["en"][0]), (en_p, salida["en"][1])):
         open(os.path.join(ROOT, ruta), "w", encoding="utf-8").write(html); print("ok", ruta)
     # español: el marco en inglés lo traduce traduce.py
-    tl = Traductor(en_l, texto=salida["es"][0]); tl.leccion(""); tl.frecuentes()
-    tl.cabecera(f"<!-- LearnGED · Lección {n.replace('-', '.')} · Matemáticas Nivel 1 (español) — construida con tools/build_lesson_{n.replace('-', '_')}.py\n     José M. Fernández · CC BY-NC-SA 4.0 -->")
-    tl.guarda(f"es/matematicas/nivel-1/leccion-{n}.html")
-    tp = Traductor(en_p, texto=salida["es"][1]); tp.frecuentes()
-    tp.cabecera(f"<!-- LearnGED · Nivel 1 · Lección {n.replace('-', '.')} · {cabecera_es} — práctica (español) — construida con tools/build_lesson_{n.replace('-', '_')}.py\n     José M. Fernández · CC BY-NC-SA 4.0 -->")
-    tp.guarda(f"es/matematicas/nivel-1/practica-{n}.html")
+    tl = Traductor(en_l, texto=salida["es"][0], nivel=NIVEL); tl.leccion(""); tl.frecuentes()
+    tl.cabecera(f"<!-- LearnGED · Lección {n.replace('-', '.')} · Matemáticas Nivel {NIVEL} (español) — construida con tools/{constructor(n)}\n     José M. Fernández · CC BY-NC-SA 4.0 -->")
+    tl.guarda(f"es/matematicas/nivel-{NIVEL}/leccion-{n}.html")
+    tp = Traductor(en_p, texto=salida["es"][1], nivel=NIVEL); tp.frecuentes()
+    tp.cabecera(f"<!-- LearnGED · Nivel {NIVEL} · Lección {n.replace('-', '.')} · {cabecera_es} — práctica (español) — construida con tools/{constructor(n)}\n     José M. Fernández · CC BY-NC-SA 4.0 -->")
+    tp.guarda(f"es/matematicas/nivel-{NIVEL}/practica-{n}.html")
     # comprobación: no debe quedar marco en inglés en las páginas en español
-    for ruta in (f"es/matematicas/nivel-1/leccion-{n}.html", f"es/matematicas/nivel-1/practica-{n}.html"):
+    for ruta in (f"es/matematicas/nivel-{NIVEL}/leccion-{n}.html", f"es/matematicas/nivel-{NIVEL}/practica-{n}.html"):
         s = open(os.path.join(ROOT, ruta), encoding="utf-8").read()
         for frase in ["Open the activity", "Practice more", "Homework", "Self-check", "Coming next", "Key words", "New exercise", "Back to contents", "On this page", "(opens in a new tab)", "table you can scroll", "Question A", "and do each activity"]:
             if frase in s: print("  ¡OJO! queda en inglés en", ruta, ":", frase)

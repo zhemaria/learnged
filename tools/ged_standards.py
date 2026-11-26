@@ -179,6 +179,12 @@ CCR = {
  "6.SP.5": ("D", "Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability."),
  "5.G.2": ("C", "Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation."),
  "6.NS.3": ("C", "Fluently add, subtract, multiply, and divide multi-digit decimals using the standard algorithm for each operation."),
+ "6.NS.5": ("D", "Understand that positive and negative numbers are used together to describe quantities having opposite directions or values (e.g., temperature above/below zero, elevation above/below sea level, credits/debits, positive/negative electric charge); use positive and negative numbers to represent quantities in real-world contexts, explaining the meaning of 0 in each situation."),
+ "6.NS.6a": ("D", "Recognize opposite signs of numbers as indicating locations on opposite sides of 0 on the number line; recognize that the opposite of the opposite of a number is the number itself, e.g., –(–3) = 3, and that 0 is its own opposite."),
+ "6.NS.7": ("D", "Understand ordering and absolute value of rational numbers: interpret statements of inequality as statements about the relative position of two numbers on a number line diagram, and understand the absolute value of a rational number as its distance from 0 on the number line."),
+ "7.NS.1": ("D", "Apply and extend previous understandings of addition and subtraction to add and subtract rational numbers; represent addition and subtraction on a horizontal or vertical number line diagram."),
+ "7.NS.2": ("D", "Apply and extend previous understandings of multiplication and division and of fractions to multiply and divide rational numbers."),
+ "7.NS.3": ("D", "Solve real-world and mathematical problems involving the four operations with rational numbers."),
 }
 CCR_FUENTE = "Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education"
 CCR_ORDEN = list(CCR)
@@ -240,6 +246,13 @@ LESSONS = [
   {"direct": ["Q.6.a", "Q.6.c"], "builds": [], "mp": ["MP.2.b", "MP.4.c", "MP.5.c"], "ccr": ["3.MD.3", "5.G.2"]}),
  ("level-1/lesson-8-3.html", "8.3", "Final project",
   {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.4.a", "Q.6.a", "Q.7.a"], "mp": ["MP.1.b", "MP.1.c", "MP.3.a", "MP.5.c"], "ccr": ["4.OA.3", "4.MD.2", "4.MD.3", "5.NBT.7"]}),
+ # ---------- Level 2 ----------
+ ("level-2/lesson-1-1.html", "1.1", "The number line, absolute value, and opposites",
+  {"direct": ["Q.1.a", "Q.1.d"], "builds": [], "mp": ["MP.2.b", "MP.4.a"], "ccr": ["6.NS.5", "6.NS.6a", "6.NS.7"]}),
+ ("level-2/lesson-1-2.html", "1.2", "Adding and subtracting integers",
+  {"direct": ["Q.2.a", "Q.2.e"], "builds": ["Q.1.d"], "mp": ["MP.2.b", "MP.3.a", "MP.4.a"], "ccr": ["7.NS.1", "7.NS.3"]}),
+ ("level-2/lesson-1-3.html", "1.3", "Multiplying and dividing integers; applications",
+  {"direct": ["Q.2.a", "Q.2.d", "Q.2.e"], "builds": [], "mp": ["MP.2.a", "MP.3.a", "MP.4.a"], "ccr": ["7.NS.2", "7.NS.3"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
@@ -289,14 +302,15 @@ def page():
                 links = []
                 for path, num, name, m in LESSONS:
                     url = path
-                    if c in m["direct"]: links.append(f'<a class="std-dir" href="{url}">Lesson {num}</a> <span class="std-tipo">works on it</span>')
-                    elif c in m["builds"]: links.append(f'<a class="std-base" href="{url}">Lesson {num}</a> <span class="std-tipo">foundation</span>')
-                    elif c in m["mp"]: links.append(f'<a class="std-mp" href="{url}">Lesson {num}</a>')
+                    nom = ("Level " + path[6] + " · Lesson " if not path.startswith("level-1/") else "Lesson ") + num
+                    if c in m["direct"]: links.append(f'<a class="std-dir" href="{url}">{nom}</a> <span class="std-tipo">works on it</span>')
+                    elif c in m["builds"]: links.append(f'<a class="std-base" href="{url}">{nom}</a> <span class="std-tipo">foundation</span>')
+                    elif c in m["mp"]: links.append(f'<a class="std-mp" href="{url}">{nom}</a>')
                 cell = "<br>".join(links) if links else '<span class="std-pend">Coming in later lessons</span>'
                 rows.append(f'<tr><th scope="row">{c}</th><td>{e(TARGETS[c])}</td><td>{cell}</td></tr>')
             rows.append('</tbody></table></div>')
     rows.append('<h2 id="ccr">College and Career Readiness (CCR) Standards for Adult Education</h2>')
-    rows.append('<p>The GED® targets describe what the test asks. The CCR Standards describe the steps before it, by level (A to E). Level 1 lessons work mostly on Levels B and C. The list shows only the CCR standards that LearnGED lessons teach so far.</p>')
+    rows.append('<p>The GED® targets describe what the test asks. The CCR Standards describe the steps before it, by level (A to E). Level 1 lessons work mostly on Levels B and C; Level 2 lessons, on Levels C and D. The list shows only the CCR standards that LearnGED lessons teach so far.</p>')
     rows.append('<div class="tabla-scroll" role="region" tabindex="0" aria-label="CCR Standards (table you can scroll sideways)"><table class="std-tabla"><caption class="cap-oculto">CCR Standards for Adult Education and the LearnGED lessons that teach them</caption><thead><tr><th scope="col">Code</th><th scope="col">Level</th><th scope="col">Standard</th><th scope="col">LearnGED lessons</th></tr></thead><tbody>')
     for c in CCR_ORDEN:
         links = [f'<a class="std-ccr" href="{p}">Lesson {n}</a>' for p, n, t, m in LESSONS if c in m.get("ccr", [])]
@@ -351,6 +365,6 @@ if __name__ == "__main__":
             assert c in TARGETS, c
         for c in m.get("ccr", []):
             assert c in CCR, c
-        insert(path, m)
+        if os.path.exists(os.path.join(ROOT, "math", path)): insert(path, m)
     open(os.path.join(ROOT, "math", "ged-standards.html"), "w", encoding="utf-8").write(page())
     print("ok:", len(LESSONS), "lessons")

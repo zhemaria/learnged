@@ -99,12 +99,13 @@ FRECUENTES = [
  ('<h3>Step by step</h3>', '<h3>Paso a paso</h3>'),
 ]
 class Traductor:
-    def __init__(self, en, alterna=None, texto=None):
+    def __init__(self, en, alterna=None, texto=None, nivel=1):
         """en: ruta de la página en inglés. texto: borrador ya escrito en español con el marco en inglés
         (lo usan los constructores bilingües de tools/bilingue.py)."""
         self.en = en
         self.s = texto if texto is not None else open(os.path.join(ROOT, en), encoding="utf-8").read()
         for a, b in COMUNES:
+            a = a.replace("Level 1 lessons", f"Level {nivel} lessons"); b = b.replace("del Nivel 1", f"del Nivel {nivel}")
             if a in self.s: self.s = self.s.replace(a, b)
         for a, b in TODAS: self.s = self.s.replace(a, b)
         i = self.s.index("</title>")

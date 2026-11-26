@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 1.1 · La recta numérica, el valor absoluto y los opuestos — práctica (español) — construida con tools/build_n2_lesson_1_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.1 · La recta numérica, el valor absoluto y los opuestos · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-1-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 1 · Enteros con signo</div>
+    <h1>Lección 1.1 · La recta numérica, el valor absoluto y los opuestos</h1>
+    <div class="meta">Tres actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#recta">La recta numérica completa</a></li>
+      <li><a href="#valor-absoluto">El valor absoluto: la distancia al cero</a></li>
+      <li><a href="#opuestos">Los opuestos</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="recta" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La recta numérica completa</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En la recta numérica, el cero está en el centro: los positivos a la derecha y los negativos a la izquierda. Los números <strong>crecen hacia la derecha</strong>: cualquier número es mayor que todos los que tiene a su izquierda. Por eso −2 es mayor que −5.</p>
+      <h3>Compare dos enteros</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rc-a">Número A: <span id="rc-av"></span></label><input type="range" id="rc-a" min="-10" max="10" value="-5"></div>
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rc-b">Número B: <span id="rc-bv"></span></label><input type="range" id="rc-b" min="-10" max="10" value="-2"></div>
+        </div>
+        <div id="rc-svg"></div>
+        <div class="salida" id="rc-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-tip"><strong>En la vida real:</strong> un termómetro es una recta numérica de pie. −10 °F está más abajo, y es más fría, que −3 °F.</div>
+      <h3>Practique: comparar</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <h3>Practique: ordenar de menor a mayor</h3>
+      <div class="panel">
+        <p>Use las flechas para mover los números. El menor va primero.</p>
+        <ol class="lista-orden" id="or-lista"></ol>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="or-comprobar">Comprobar el orden</button>
+          <button type="button" class="btn-sec" id="or-nuevo">Otros números</button>
+        </div>
+        <div class="fb" id="or-fb" role="status"></div>
+        <p class="marcador" id="or-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="valor-absoluto">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El valor absoluto: la distancia al cero</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>El <strong>valor absoluto</strong> de un número es su <strong>distancia al cero</strong>. Una distancia nunca es negativa, así que el valor absoluto siempre es positivo o cero. Se escribe entre dos barras: |−5| = 5 y |5| = 5.</p>
+      <h3>Mida la distancia</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="va-n">Número: <span id="va-nv"></span></label><input type="range" id="va-n" min="-10" max="10" value="-7"></div></div>
+        <div id="va-svg"></div>
+        <div class="salida" id="va-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>El valor absoluto mide distancia.</strong> Un signo menos fuera de las barras se queda: en −|−6|, primero |−6| = 6, y después el signo de afuera lo vuelve −6.</div>
+      <h3>Practique: valor absoluto</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="opuestos">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Los opuestos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Dos números son <strong>opuestos</strong> cuando están a la misma distancia del cero, en lados contrarios. Un número y su opuesto siempre <strong>suman cero</strong>; por eso al opuesto también se le llama inverso aditivo. El cero es su propio opuesto.</p>
+      <h3>El cero es un espejo</h3>
+      <div class="panel">
+        <div class="campos"><div class="campo" style="flex:1;min-width:200px;"><label for="op-n">Número: <span id="op-nv"></span></label><input type="range" id="op-n" min="-10" max="10" value="6"></div></div>
+        <div id="op-svg"></div>
+        <div class="salida" id="op-salida" aria-live="polite"></div>
+      </div>
+      <div class="caja-tip"><strong>Dos signos menos:</strong> el signo menos delante de un número quiere decir «el opuesto de». Así, −(−8) es «el opuesto de −8», que es 8.</div>
+      <h3>Practique: opuestos</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 1 · Enteros con signo · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "A": "Número A",
+ "B": "Número B",
+ "mismo": "A y B están en el mismo punto: {a} = {b}.",
+ "derecha": "<strong>{x}</strong> está más a la derecha, así que es mayor: {a} {s} {b}.",
+ "dosNeg": " Entre dos números negativos, el que está más cerca del cero es el mayor.",
+ "vozRC": "Recta numérica con A en {a} y B en {b}.",
+ "fria": "¿Cuál temperatura es más fría: {a} °F o {b} °F?",
+ "iguales": "Son iguales",
+ "bienFria": "La más fría es la que está más abajo en el termómetro: {f} °F.",
+ "pistaFria": "Imagine un termómetro. La temperatura más fría es la más baja.",
+ "compara": "¿Qué símbolo va en el espacio? &nbsp; {a} ___ {b}",
+ "pistaDosNeg": "Cuidado: entre dos negativos, el que tiene el «número» más grande es el menor. ¿Cuál está más cerca del cero?",
+ "pistaComp": "¿Cuál está más a la derecha en la recta numérica?",
+ "bienComp": "{M} está más a la derecha en la recta numérica.",
+ "mismoNum": "Son el mismo número.",
+ "subir": "Subir el {v}",
+ "bajar": "Bajar el {v}",
+ "ordenBien": "Orden correcto: ",
+ "ordenPista": "Algunos números todavía no están en su lugar (marcados en rojo). Empiece por el que está más a la izquierda: el negativo más lejano del cero. Corrija el orden y compruebe otra vez.",
+ "ordenMal": "El orden correcto es: ",
+ "ordenMal2": " Se empieza por el negativo más lejano del cero.",
+ "vozVA": "Recta numérica: {n} está a {d} unidades del cero.",
+ "unidad": "unidad",
+ "unidades": "unidades",
+ "cero0": "El cero está a 0 unidades de sí mismo.",
+ "salidaVA": "{n} está a {d} {u} del cero. Su opuesto, {o} (en gris), está a la misma distancia: |{o}| = {d}.",
+ "solAbs1": "{a} está a {r} unidades del cero, así que |{a}| = {r}.",
+ "distNeg": "Una distancia nunca es negativa.",
+ "solAbs2": "|{a}| = {x} y |{b}| = {y}; después, {x} + {y} = {r}.",
+ "antesSumar": "Primero halle cada valor absoluto y después sume.",
+ "solAbs3": "|{a}| = {x} y |{b}| = {y}; después, {x} − {y} = {r}.",
+ "solAbs4": "|{a}| = {k}, y el signo menos de afuera se queda: −{k}.",
+ "fuera": "El signo menos está fuera de las barras. Se queda después de hallar el valor absoluto.",
+ "deuda": "Una cuenta tiene un saldo de −${d}. ¿Cuántos dólares debe la persona? (Es decir, ¿cuánto es |−{d}|?)",
+ "solDeuda": "|−{d}| = {d}: la persona debe ${d}.",
+ "vozOP": "Recta numérica con {n} y su opuesto {o}, a la misma distancia del cero.",
+ "propio": "El cero es su propio opuesto: está en el centro.",
+ "salidaOP": "El opuesto de {n} es <strong>{o}</strong>: los dos están a {d} unidades del cero, en lados contrarios.",
+ "suman": "{n} + {po} = 0. Y −({n}) = {o}.",
+ "opDe": "¿Cuál es el opuesto de {v}?",
+ "bienOp": "El opuesto de {v} es {o}: la misma distancia al cero, del otro lado.",
+ "pistaOp": "El opuesto está a la misma distancia del cero, del otro lado.",
+ "dobleQ": "¿Cuánto es −(−{k})?",
+ "bienDoble": "−(−{k}) es «el opuesto de −{k}», que es {k}.",
+ "pistaDoble": "Lea el primer signo menos como «el opuesto de».",
+ "propioQ": "¿Qué número es su propio opuesto?",
+ "ninguno": "Ninguno",
+ "bienPropio": "El cero: no está a ningún lado del cero.",
+ "pistaPropio": "¿Qué número está en el centro de la recta?",
+ "sumaQ": "{a} + {k} =",
+ "bienSuma": "Un número y su opuesto siempre suman cero.",
+ "pistaSuma": "{k} es el opuesto de {a}. ¿Cuánto suman un número y su opuesto?",
+ "comunQ": "{k} y −{k} son opuestos. ¿Qué tienen en común?",
+ "c1": "Tienen el mismo valor absoluto",
+ "c2": "Tienen el mismo signo",
+ "c3": "Suman {d}",
+ "c4": "Uno es el doble del otro",
+ "bienComun": "Los dos están a {k} unidades del cero: |{k}| = |−{k}| = {k}.",
+ "pistaComun": "Piense en su distancia al cero."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function simb(a, b){ return a < b ? "&lt;" : (a > b ? "&gt;" : "="); }
+
+/* ============ MODULE 1 · the number line ============ */
+function pintaRC(){
+  var a = +$("rc-a").value, b = +$("rc-b").value;
+  $("rc-av").textContent = ent(a); $("rc-bv").textContent = ent(b);
+  $("rc-svg").innerHTML = rectaEnt(-10, 10, [{ v: a, txt: "A", color: "#b71c1c" }, { v: b, txt: "B", color: "#0d47a1", abajo: a === b }], [], F(TXT.vozRC, { a: ent(a), b: ent(b) }));
+  var h;
+  if (a === b) h = F(TXT.mismo, { a: ent(a), b: ent(b) });
+  else { h = F(TXT.derecha, { x: a > b ? "A" : "B", a: ent(a), s: simb(a, b), b: ent(b) }); if (a < 0 && b < 0) h += TXT.dosNeg; }
+  $("rc-salida").innerHTML = '<div class="linea">' + h + '</div>';
+}
+function genComparar(){
+  var tipo = aleatorio(1, 3), a, b;
+  if (tipo === 3){
+    a = -aleatorio(1, 20); b = -aleatorio(1, 20); while (b === a) b = -aleatorio(1, 20);
+    var fria = Math.min(a, b);
+    return { enun: F(TXT.fria, { a: ent(a), b: ent(b) }), opciones: [{ html: ent(a) + " °F", clave: "t" + a }, { html: ent(b) + " °F", clave: "t" + b }, { html: TXT.iguales, clave: "=" }],
+      correcta: "t" + fria, pista: TXT.pistaFria, bien: F(TXT.bienFria, { f: ent(fria) }), mal: F(TXT.bienFria, { f: ent(fria) }) };
+  }
+  if (tipo === 1){ a = -aleatorio(1, 15); b = -aleatorio(1, 15); while (b === a) b = -aleatorio(1, 15); }
+  else { a = azarEnt(-15, 15); b = azarEnt(-15, 15); if (Math.random() < 0.15) b = a; }
+  var r = a < b ? "<" : (a > b ? ">" : "=");
+  var o = [{ html: "&lt;", clave: "<" }, { html: "&gt;", clave: ">" }, { html: "=", clave: "=" }], pistas = {};
+  if (a < 0 && b < 0) pistas[r === "<" ? ">" : "<"] = TXT.pistaDosNeg;
+  var exp = a === b ? TXT.mismoNum : F(TXT.bienComp, { M: ent(Math.max(a, b)) });
+  return { enun: F(TXT.compara, { a: ent(a), b: ent(b) }), opciones: o, enOrden: true, correcta: r, pistas: pistas, pista: TXT.pistaComp, bien: exp, mal: exp + " " + ent(a) + " " + simb(a, b) + " " + ent(b) + "." };
+}
+var OR = { lista: [], primero: 0, pista: 0, total: 0, resuelto: false, intentos: 0 };
+function nuevoOR(){
+  var s = []; while (s.length < 5){ var n = azarEnt(-15, 15); if (s.indexOf(n) < 0) s.push(n); }
+  if (s.filter(function(x){ return x < 0; }).length < 2){ s[0] = -Math.abs(s[0]) || -3; s[1] = -Math.abs(s[1]) || -8; if (s[0] === s[1]) s[1]--; }
+  OR.lista = baraja(s); OR.resuelto = false; OR.intentos = 0; $("or-fb").className = "fb"; $("or-fb").innerHTML = "";
+  $("or-comprobar").disabled = false; pintaOR();
+}
+function pintaOR(foco, marcas){
+  var ol = $("or-lista"); ol.innerHTML = "";
+  OR.lista.forEach(function(v, i){
+    var li = document.createElement("li");
+    if (marcas) li.className = marcas[i] ? "bien" : "mal";
+    li.innerHTML = '<span class="nombre">' + ent(v) + '</span><span class="flechas"><button type="button" class="btn-sec" data-i="' + i + '" data-d="-1" aria-label="' + F(TXT.subir, { v: ent(v) }) + '">↑</button><button type="button" class="btn-sec" data-i="' + i + '" data-d="1" aria-label="' + F(TXT.bajar, { v: ent(v) }) + '">↓</button></span>';
+    ol.appendChild(li);
+  });
+  ol.querySelectorAll("button").forEach(function(b){
+    var i = +b.getAttribute("data-i"), d = +b.getAttribute("data-d");
+    b.disabled = OR.resuelto || (d < 0 && i === 0) || (d > 0 && i === OR.lista.length - 1);
+    b.addEventListener("click", function(){ var j = i + d, x = OR.lista[i]; OR.lista[i] = OR.lista[j]; OR.lista[j] = x; pintaOR({ i: j, d: d }); });
+  });
+  if (foco){ var bb = ol.querySelector('button[data-i="' + foco.i + '"][data-d="' + foco.d + '"]'); if (!bb || bb.disabled) bb = ol.querySelector('button[data-i="' + foco.i + '"]:not([disabled])'); if (bb) bb.focus(); }
+}
+function compruebaOR(){
+  if (OR.resuelto) return;
+  var bien = OR.lista.slice().sort(function(a, b){ return a - b; }), marcas = OR.lista.map(function(v, i){ return v === bien[i]; }), ok = marcas.every(Boolean), fb = $("or-fb");
+  OR.intentos++;
+  if (ok){
+    OR.resuelto = true; OR.total++; if (OR.intentos === 1) OR.primero++; else OR.pista++;
+    fb.className = "fb bien"; fb.innerHTML = TX.bien + TXT.ordenBien + bien.map(ent).join(" &lt; ") + ". <em>" + (OR.intentos === 1 ? elige(ELOGIO) : elige(ELOGIO2)) + "</em>";
+  } else if (OR.intentos === 1){
+    fb.className = "fb pista"; fb.innerHTML = TX.todavia + TXT.ordenPista; pintaOR(null, marcas); return;
+  } else {
+    OR.resuelto = true; OR.total++;
+    fb.className = "fb mal"; fb.innerHTML = TX.asi + TXT.ordenMal + bien.map(ent).join(" &lt; ") + "." + TXT.ordenMal2;
+  }
+  $("or-comprobar").disabled = OR.resuelto;
+  $("or-marcador").textContent = TX.resueltos(OR.primero + OR.pista, OR.primero, OR.total);
+  pintaOR(null, marcas);
+}
+
+/* ============ MODULE 2 · absolute value ============ */
+function pintaVA(){
+  var n = +$("va-n").value, d = Math.abs(n); $("va-nv").textContent = ent(n);
+  $("va-svg").innerHTML = rectaEnt(-10, 10, [{ v: n, txt: ent(n), color: "#b71c1c", abajo: true }, { v: -n, txt: n === 0 ? "" : ent(-n), color: "#757575", abajo: true }], n === 0 ? [] : [{ de: 0, a: n, txt: d + " " + (d === 1 ? TXT.unidad : TXT.unidades), color: "#b71c1c" }],
+    F(TXT.vozVA, { n: ent(n), d: d }), { de: 0, a: n, color: "#ffcdd2" });
+  $("va-salida").innerHTML = '<div class="linea grande">|' + ent(n) + '| = ' + d + '</div><div class="linea">' + (n === 0 ? TXT.cero0 : F(TXT.salidaVA, { n: ent(n), d: d, u: d === 1 ? TXT.unidad : TXT.unidades, o: ent(-n) })) + '</div>';
+}
+function genAbsoluto(){
+  var tipo = aleatorio(1, 5), a = azarEnt(-30, 30, true), b = azarEnt(-20, 20, true), enun, res, sol, pistas = [];
+  if (tipo === 1){ if (a > 0 && Math.random() < 0.7) a = -a; res = Math.abs(a); enun = "|" + ent(a) + "| ="; sol = F(TXT.solAbs1, { a: ent(a), r: res }); if (a < 0) pistas.push({ v: a, msg: TXT.distNeg }); }
+  else if (tipo === 2){ res = Math.abs(a) + Math.abs(b); enun = "|" + ent(a) + "| + |" + ent(b) + "| ="; sol = F(TXT.solAbs2, { a: ent(a), b: ent(b), x: Math.abs(a), y: Math.abs(b), r: res }); if (Math.abs(a + b) !== res) pistas.push({ v: Math.abs(a + b), msg: TXT.antesSumar }); if (a + b !== res) pistas.push({ v: a + b, msg: TXT.antesSumar }); }
+  else if (tipo === 3){ var x = Math.max(Math.abs(a), Math.abs(b)), y = Math.min(Math.abs(a), Math.abs(b)), A = Math.abs(a) === x ? a : b, Bb = Math.abs(a) === x ? b : a; res = x - y; enun = "|" + ent(A) + "| − |" + ent(Bb) + "| ="; sol = F(TXT.solAbs3, { a: ent(A), b: ent(Bb), x: x, y: y, r: res }); }
+  else if (tipo === 4){ var k = aleatorio(2, 25); res = -k; enun = "−|" + ent(-k) + "| ="; sol = F(TXT.solAbs4, { a: ent(-k), k: k }); pistas.push({ v: k, msg: TXT.fuera }); }
+  else { var dd = aleatorio(20, 200); res = dd; enun = F(TXT.deuda, { d: dd }); sol = F(TXT.solDeuda, { d: dd }); pistas.push({ v: -dd, msg: TXT.distNeg }); }
+  return { enun: enun, correcta: String(res), solucion: sol, evalua: numE(res, pistas) };
+}
+
+/* ============ MODULE 3 · opposites ============ */
+function pintaOP(){
+  var n = +$("op-n").value; $("op-nv").textContent = ent(n);
+  $("op-svg").innerHTML = rectaEnt(-10, 10, [{ v: n, txt: ent(n), color: "#b71c1c", abajo: true }, { v: -n, txt: n === 0 ? "" : ent(-n), color: "#0d47a1", abajo: true }], n === 0 ? [] : [{ de: 0, a: n, color: "#b71c1c" }, { de: 0, a: -n, color: "#0d47a1" }],
+    F(TXT.vozOP, { n: ent(n), o: ent(-n) }));
+  $("op-salida").innerHTML = '<div class="linea">' + (n === 0 ? TXT.propio : F(TXT.salidaOP, { n: ent(n), o: ent(-n), d: Math.abs(n) })) + '</div><div class="linea">' + F(TXT.suman, { n: ent(n), po: par(-n), o: ent(-n) }) + '</div>';
+}
+function genOpuesto(){
+  var tipo = aleatorio(1, 5), k = aleatorio(2, 50);
+  function op(v){ return { html: ent(v), clave: "n" + v }; }
+  if (tipo === 1){ var v = elige([k, -k]); return { enun: F(TXT.opDe, { v: ent(v) }), opciones: [op(-v), op(v), op(0), op(2 * v)], correcta: "n" + (-v), pista: TXT.pistaOp, bien: F(TXT.bienOp, { v: ent(v), o: ent(-v) }), mal: F(TXT.bienOp, { v: ent(v), o: ent(-v) }) }; }
+  if (tipo === 2) return { enun: F(TXT.dobleQ, { k: k }), opciones: [op(k), op(-k), op(-2 * k), op(0)], correcta: "n" + k, pista: TXT.pistaDoble, bien: F(TXT.bienDoble, { k: k }), mal: F(TXT.bienDoble, { k: k }) };
+  if (tipo === 3) return { enun: TXT.propioQ, opciones: [op(0), op(1), op(-1), { html: TXT.ninguno, clave: "x" }], correcta: "n0", pista: TXT.pistaPropio, bien: TXT.bienPropio, mal: TXT.bienPropio };
+  if (tipo === 4) return { enun: F(TXT.sumaQ, { a: ent(-k), k: k }), opciones: [op(0), op(2 * k), op(-2 * k), op(k)], correcta: "n0", pista: F(TXT.pistaSuma, { a: ent(-k), k: k }), bien: TXT.bienSuma, mal: TXT.bienSuma };
+  return { enun: F(TXT.comunQ, { k: k }), opciones: [{ html: TXT.c1, clave: "a" }, { html: TXT.c2, clave: "s" }, { html: F(TXT.c3, { d: 2 * k }), clave: "u" }, { html: TXT.c4, clave: "d" }],
+    correcta: "a", pista: TXT.pistaComun, bien: F(TXT.bienComun, { k: k }), mal: F(TXT.bienComun, { k: k }) };
+}
+
+/* ============ Start ============ */
+["rc-a", "rc-b"].forEach(function(id){ $(id).addEventListener("input", pintaRC); }); pintaRC();
+creaPracticaOM("p1", genComparar);
+$("or-comprobar").addEventListener("click", compruebaOR); $("or-nuevo").addEventListener("click", nuevoOR); nuevoOR();
+$("va-n").addEventListener("input", pintaVA); pintaVA();
+creaPracticaLibre("p2", genAbsoluto);
+$("op-n").addEventListener("input", pintaOP); pintaOP();
+creaPracticaOM("p3", genOpuesto);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

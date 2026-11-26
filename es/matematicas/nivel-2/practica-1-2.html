@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 1.2 · Suma y resta de enteros con signo — práctica (español) — construida con tools/build_n2_lesson_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.2 · Suma y resta de enteros con signo · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-1-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 1 · Enteros con signo</div>
+    <h1>Lección 1.2 · Suma y resta de enteros con signo</h1>
+    <div class="meta">Cinco actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#recta-suma">Sumar en la recta numérica</a></li>
+      <li><a href="#fichas">El modelo de fichas de dos colores</a></li>
+      <li><a href="#regla-suma">La regla de la suma</a></li>
+      <li><a href="#restar">Restar es sumar el opuesto</a></li>
+      <li><a href="#contexto">Problemas de la vida real</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="recta-suma" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Sumar en la recta numérica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Sumar es moverse en la recta: se parte del primer número y se avanza. Si se suma un positivo, se avanza hacia la <strong>derecha</strong>; si se suma un negativo, hacia la <strong>izquierda</strong>.</p>
+      <h3>El recorrido</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rs-a">Punto de partida: <span id="rs-av"></span></label><input type="range" id="rs-a" min="-10" max="10" value="-5"></div>
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rs-b">Número que se suma: <span id="rs-bv"></span></label><input type="range" id="rs-b" min="-10" max="10" value="8"></div>
+        </div>
+        <div id="rs-svg"></div>
+        <div class="salida" id="rs-salida" aria-live="polite"></div>
+      </div>
+      <h3>Practique: ¿dónde se llega?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="fichas">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El modelo de fichas de dos colores</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cada ficha amarilla (+) vale +1 y cada ficha roja (−) vale −1. Una amarilla y una roja forman un <strong>par cero</strong>, porque +1 + (−1) = 0. Se retiran los pares cero: <strong>lo que queda es el resultado</strong>.</p>
+      <h3>Forme los pares cero</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:200px;"><label for="fc-a">Primer número: <span id="fc-av"></span></label><input type="range" id="fc-a" min="-12" max="12" value="-6"></div>
+          <div class="campo" style="flex:1;min-width:200px;"><label for="fc-b">Segundo número: <span id="fc-bv"></span></label><input type="range" id="fc-b" min="-12" max="12" value="4"></div>
+        </div>
+        <div class="fila-btn"><button type="button" class="btn" id="fc-pares">Formar los pares cero</button><button type="button" class="btn-sec" id="fc-reinicia">Empezar de nuevo</button></div>
+        <div id="fc-svg"></div>
+        <div class="salida" id="fc-salida" aria-live="polite"></div>
+      </div>
+      <p>¿Quiere entenderlo con dinero? Abra el complemento <a href="/math/level-2/tengo-debo.html?lang=es" target="_blank" rel="noopener noreferrer">Tengo y debo</a> (se abre en una pestaña nueva): las monedas son lo que tiene y las deudas, lo que debe.</p>
+      <h3>Practique: ¿qué queda?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="regla-suma">
+    <summary><span class="num" aria-hidden="true">3</span><h2>La regla de la suma</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La recta y las fichas llevan a una regla que permite sumar sin dibujar:</p>
+      <table class="reglas">
+        <caption>La regla de la suma de enteros</caption>
+        <thead><tr><th scope="col">Caso</th><th scope="col">Los valores absolutos</th><th scope="col">Signo del resultado</th></tr></thead>
+        <tbody>
+          <tr><td>Mismo signo</td><td>se suman</td><td>el signo común</td></tr>
+          <tr><td>Signos distintos</td><td>se resta el menor del mayor</td><td>el del número con mayor valor absoluto</td></tr>
+        </tbody>
+      </table>
+      <div class="caja-atencion"><strong>El error más común:</strong> con signos distintos no se suman los valores absolutos. −13 + 8 no es −21: es −5.</div>
+      <h3>Practique: primero el signo, después el valor</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <p><strong>Paso 1.</strong> ¿Qué signo tiene el resultado?</p>
+        <div class="signos" role="group" aria-label="Signo del resultado"><button type="button" id="p3-mas" aria-pressed="false" aria-label="Positivo">+</button><button type="button" id="p3-menos" aria-pressed="false" aria-label="Negativo">−</button></div>
+        <div class="campos"><div class="campo"><label for="p3-v"><strong>Paso 2.</strong> El valor del resultado, sin signo</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p3-v"></div></div>
+        <p class="nota">Si el resultado es 0, no hace falta elegir signo.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="restar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Restar es sumar el opuesto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Toda resta se convierte en una suma: <strong>restar un número es sumar su opuesto</strong>. Después se aplica la regla de la suma. No hay reglas nuevas que memorizar.</p>
+      <div class="formula">a − b = a + (−b)</div>
+      <h3>Reescriba y resuelva</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rt-a">Primer número: <span id="rt-av"></span></label><input type="range" id="rt-a" min="-10" max="10" value="-4"></div>
+          <div class="campo" style="flex:1;min-width:200px;"><label for="rt-b">Número que se resta: <span id="rt-bv"></span></label><input type="range" id="rt-b" min="-10" max="10" value="-9"></div>
+        </div>
+        <div class="salida" id="rt-salida" aria-live="polite"></div>
+        <div id="rt-svg"></div>
+      </div>
+      <div class="caja-tip"><strong>Dos signos menos seguidos se convierten en un signo más:</strong> «− (−9)» es «+ 9». Quitar una deuda es como recibir dinero.</div>
+      <h3>Practique: ¿cómo se reescribe?</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <h3>Practique: restar</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="contexto">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Problemas de la vida real</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La clave está en darle a cada cantidad su signo: lo que sube, se gana o se deposita es positivo; lo que baja, se pierde o se retira es negativo.</p>
+      <table class="reglas">
+        <caption>Palabras y signos</caption>
+        <thead><tr><th scope="col">Positivo (+)</th><th scope="col">Negativo (−)</th></tr></thead>
+        <tbody>
+          <tr><td>sube, aumenta, sobre cero</td><td>baja, disminuye, bajo cero</td></tr>
+          <tr><td>depósito, ganancia, ingreso</td><td>retiro, pérdida, deuda, sobregiro</td></tr>
+          <tr><td>sobre el nivel del mar, avanza</td><td>bajo el nivel del mar, retrocede</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: problemas con enteros</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="campos"><div class="campo"><label for="p6-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p6-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p6-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 1 · Enteros con signo · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "inicio": "inicio",
+ "derecha": "derecha",
+ "izquierda": "izquierda",
+ "vozRS": "Recta numérica: se parte de {a} y se avanzan {n} lugares hacia la {d}, hasta {r}.",
+ "salidaRS": "Se parte de {a} y se avanzan {n} {l} hacia la {d} ({por}).",
+ "lugar": "lugar",
+ "lugares": "lugares",
+ "porMas": "se suma un positivo",
+ "porMenos": "se suma un negativo",
+ "suma0": "Sumar 0 no cambia el número.",
+ "enunRS": "Se parte de {a} y se suma {b}.",
+ "vozRS2": "Recta numérica con el punto de partida en {a}.",
+ "preguntaRS": "¿Cuánto es {s}?",
+ "solRS": "Desde {a} se avanzan {n} lugares hacia la {d}: se llega a {r}.",
+ "amarilla": "ficha amarilla",
+ "amarillas": "fichas amarillas",
+ "roja": "ficha roja",
+ "rojas": "fichas rojas",
+ "hay": "Hay {p} {pa} y {q} {qr}.",
+ "pulse": "Pulse «Formar los pares cero» para ver qué sobra.",
+ "pares1": "Se forma {k} par cero, que se retira.",
+ "paresN": "Se forman {k} pares cero, que se retiran.",
+ "quedan0": "No queda nada: todas las fichas tienen pareja.",
+ "quedanP": "Quedan {x} {c} sin pareja.",
+ "quedan1": "Queda {x} {c} sin pareja.",
+ "vozFC": "Fichas: {p} amarillas y {q} rojas.",
+ "vozFC2": "; {k} pares cero tachados",
+ "enunFC": "¿Qué queda después de retirar los pares cero? Escriba el resultado de {s}.",
+ "vozFC3": "Fichas: una fila para {a} y otra para {b}.",
+ "mismoSigno": "Mismo signo: {x} + {y} = {r}, y el resultado conserva el signo {sg}.",
+ "positivo": "positivo",
+ "negativo": "negativo",
+ "distintos": "Signos distintos: {x} − {y} = {r}",
+ "conSigno": ", con el signo del {M}, que tiene mayor valor absoluto.",
+ "pistaDist": "Con signos distintos no se suman los valores absolutos: se resta el menor del mayor.",
+ "pistaSigno": "El valor está bien, pero el signo no: el resultado lleva el signo del número con mayor valor absoluto.",
+ "calcula": "Calcule {s}.",
+ "reescribe": "¿Cómo se escribe {a} − {b} como una suma?",
+ "pistaOpuesto": "Al cambiar − por +, el número que se resta cambia por su opuesto.",
+ "pistaPrimero": "El primer número no cambia. Solo cambia el que se resta.",
+ "bienRe": "Se conserva el {a} y se suma el opuesto de {b}, que es {o}. El resultado es {r}.",
+ "malRe": "Se conserva el primer número y se suma el opuesto del segundo: {a} + {po} = {r}.",
+ "sumoNum": "Parece que sumó el número en vez de su opuesto. Restar {pb} es sumar {po}.",
+ "vozRT": "Recta numérica: {a} más {o} es {r}.",
+ "cambio": "Se cambia la resta por una suma y el {b} por su opuesto, {o}. ",
+ "c1": "A las 6 de la mañana la temperatura era de {a} °F. Para el mediodía había subido {b} grados. ¿Qué temperatura hacía al mediodía, en °F?",
+ "s1": "«Subió» es +{b}: {a} + {b} = {r} °F.",
+ "c2": "En la tarde la temperatura era de {a} °F. Durante la noche bajó {b} grados. ¿Qué temperatura hacía en la noche, en °F?",
+ "s2": "«Bajó» es −{b}: {a} − {b} = {r} °F.",
+ "c3": "Una cuenta tiene un saldo de −${d} (está sobregirada). El dueño deposita ${b}. ¿Cuál es el nuevo saldo, en dólares?",
+ "s3": "{a} + {b} = {r}.",
+ "s3b": " La cuenta sigue sobregirada.",
+ "c4": "Un buzo está a {d} pies bajo el nivel del mar y desciende {b} pies más. ¿Dónde queda ahora respecto del nivel del mar? (Bajo el nivel del mar es negativo.)",
+ "s4": "{a} − {b} = {r} pies.",
+ "c5": "Un equipo de fútbol americano gana {a} yardas, pierde {b} y luego gana {c}. ¿Cuál es el cambio total, en yardas?",
+ "s5": "{a} − {b} + {c} = {r} yardas.",
+ "c6": "Un elevador está en el piso {a} y baja {b} pisos. Los sótanos se numeran con negativos (−1, −2, …) y la planta baja es el piso 0. ¿En qué piso queda?",
+ "s6": "{a} − {b} = {r}."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function suma(a, b){ return ent(a) + " + " + par(b); }
+function pistasSuma(a, b){
+  var r = a + b, p = [];
+  if ((a < 0) !== (b < 0) && a !== 0 && b !== 0){ var mal = (Math.abs(a) + Math.abs(b)) * (Math.abs(a) > Math.abs(b) ? Math.sign(a) : Math.sign(b)); if (mal !== r) p.push({ v: mal, msg: TXT.pistaDist }); }
+  if (-r !== r) p.push({ v: -r, msg: TXT.pistaSigno });
+  return p;
+}
+function explicaSuma(a, b){
+  var r = a + b;
+  if (a === 0 || b === 0) return TXT.suma0;
+  if ((a < 0) === (b < 0)) return F(TXT.mismoSigno, { x: Math.abs(a), y: Math.abs(b), r: Math.abs(r), sg: a < 0 ? TXT.negativo : TXT.positivo });
+  var M = Math.abs(a) > Math.abs(b) ? a : b;
+  return F(TXT.distintos, { x: Math.max(Math.abs(a), Math.abs(b)), y: Math.min(Math.abs(a), Math.abs(b)), r: Math.abs(r) }) + (r === 0 ? "." : F(TXT.conSigno, { M: ent(M) }));
+}
+
+/* ============ MODULE 1 · adding on the number line ============ */
+function pintaRS(){
+  var a = +$("rs-a").value, b = +$("rs-b").value, r = a + b, lo = Math.min(-10, r - 1), hi = Math.max(10, r + 1), d = b >= 0 ? TXT.derecha : TXT.izquierda, n = Math.abs(b);
+  $("rs-av").textContent = ent(a); $("rs-bv").textContent = ent(b);
+  $("rs-svg").innerHTML = rectaEnt(lo, hi, [{ v: a, txt: TXT.inicio, color: "#424242", abajo: true }, { v: r, txt: ent(r), color: "#b71c1c", abajo: true }], b === 0 ? [] : [{ de: a, a: r, txt: (b > 0 ? "+" : "−") + n, color: b > 0 ? "#1b5e20" : "#b71c1c" }],
+    F(TXT.vozRS, { a: ent(a), n: n, d: d, r: ent(r) }));
+  $("rs-salida").innerHTML = '<div class="linea">' + (b === 0 ? TXT.suma0 : F(TXT.salidaRS, { a: ent(a), n: n, l: n === 1 ? TXT.lugar : TXT.lugares, d: d, por: b > 0 ? TXT.porMas : TXT.porMenos })) + '</div><div class="linea veredicto">' + suma(a, b) + ' = ' + ent(r) + '</div>';
+}
+function genRecta(){
+  var a = azarEnt(-10, 10), b = azarEnt(-10, 10, true), r = a + b;
+  return { enun: F(TXT.enunRS, { a: ent(a), b: par(b) }) + rectaEnt(Math.min(-10, r - 1), Math.max(10, r + 1), [{ v: a, txt: TXT.inicio, color: "#424242", abajo: true }], [], F(TXT.vozRS2, { a: ent(a) })) + F(TXT.preguntaRS, { s: suma(a, b) }),
+    correcta: String(r), solucion: F(TXT.solRS, { n: Math.abs(b), d: b > 0 ? TXT.derecha : TXT.izquierda, a: ent(a), r: ent(r) }), evalua: numE(r, pistasSuma(a, b)) };
+}
+
+/* ============ MODULE 2 · counters ============ */
+var FC = { pares: false };
+function pintaFC(){
+  var a = +$("fc-a").value, b = +$("fc-b").value, r = a + b, pos = Math.max(a, 0) + Math.max(b, 0), neg = Math.max(-a, 0) + Math.max(-b, 0), k = Math.min(pos, neg);
+  $("fc-av").textContent = ent(a); $("fc-bv").textContent = ent(b);
+  $("fc-svg").innerHTML = fichasSVG(a, b, FC.pares, F(TXT.vozFC, { p: pos, q: neg }) + (FC.pares ? F(TXT.vozFC2, { k: k }) : "") + ".");
+  var h = '<div class="linea">' + F(TXT.hay, { p: pos, pa: pos === 1 ? TXT.amarilla : TXT.amarillas, q: neg, qr: neg === 1 ? TXT.roja : TXT.rojas }) + '</div>';
+  if (FC.pares){
+    var x = Math.abs(r), c = r > 0 ? (x === 1 ? TXT.amarilla : TXT.amarillas) : (x === 1 ? TXT.roja : TXT.rojas);
+    h += '<div class="linea">' + (k ? F(k === 1 ? TXT.pares1 : TXT.paresN, { k: k }) + " " : "") + (r === 0 ? TXT.quedan0 : F(x === 1 ? TXT.quedan1 : TXT.quedanP, { x: x, c: c })) + '</div><div class="linea veredicto">' + suma(a, b) + ' = ' + ent(r) + '</div>';
+  } else h += '<div class="linea">' + TXT.pulse + '</div>';
+  $("fc-salida").innerHTML = h;
+}
+function genFichas(){
+  var a = azarEnt(-9, 9, true), b = azarEnt(-9, 9, true), r = a + b;
+  return { enun: fichasSVG(a, b, false, F(TXT.vozFC3, { a: ent(a), b: ent(b) })) + F(TXT.enunFC, { s: suma(a, b) }),
+    correcta: String(r), solucion: explicaSuma(a, b), evalua: numE(r, pistasSuma(a, b)) };
+}
+
+/* ============ MODULE 3 · the addition rule ============ */
+function genRegla(){
+  var a = azarEnt(-25, 25, true), b = azarEnt(-25, 25, true);
+  return { enun: F(TXT.calcula, { s: suma(a, b) }), res: a + b, explica: explicaSuma(a, b) };
+}
+
+/* ============ MODULE 4 · subtracting ============ */
+function pintaRT(){
+  var a = +$("rt-a").value, b = +$("rt-b").value, r = a - b, lo = Math.min(-10, r - 1), hi = Math.max(10, r + 1);
+  $("rt-av").textContent = ent(a); $("rt-bv").textContent = ent(b);
+  $("rt-salida").innerHTML = '<div class="linea grande">' + ent(a) + ' − ' + par(b) + ' = ' + ent(a) + ' + ' + par(-b) + ' = ' + ent(r) + '</div><div class="linea">' + F(TXT.cambio, { b: ent(b), o: ent(-b) }) + explicaSuma(a, -b) + '</div>';
+  $("rt-svg").innerHTML = rectaEnt(lo, hi, [{ v: a, txt: TXT.inicio, color: "#424242", abajo: true }, { v: r, txt: ent(r), color: "#b71c1c", abajo: true }], -b === 0 ? [] : [{ de: a, a: r, txt: (-b > 0 ? "+" : "−") + Math.abs(b), color: -b > 0 ? "#1b5e20" : "#b71c1c" }], F(TXT.vozRT, { a: ent(a), o: ent(-b), r: ent(r) }));
+}
+function genReescribe(){
+  var a = azarEnt(-15, 15, true), b = azarEnt(-15, 15, true);
+  var o = [{ html: ent(a) + " + " + par(-b), clave: "b" }, { html: ent(a) + " + " + par(b), clave: "m1" }, { html: ent(-a) + " + " + par(-b), clave: "m2" }, { html: ent(-a) + " + " + par(b), clave: "m3" }];
+  return { enun: F(TXT.reescribe, { a: ent(a), b: par(b) }), opciones: o, correcta: "b", pistas: { m1: TXT.pistaOpuesto, m2: TXT.pistaPrimero, m3: TXT.pistaPrimero }, pista: TXT.pistaOpuesto,
+    bien: F(TXT.bienRe, { a: ent(a), b: ent(b), o: ent(-b), r: ent(a - b) }), mal: F(TXT.malRe, { a: ent(a), po: par(-b), r: ent(a - b) }) };
+}
+function genResta(){
+  var a = azarEnt(-20, 20, true), b = azarEnt(-20, 20, true), r = a - b, p = [];
+  if (a + b !== r) p.push({ v: a + b, msg: F(TXT.sumoNum, { pb: par(b), po: par(-b) }) });
+  return { enun: F(TXT.calcula, { s: ent(a) + " − " + par(b) }), correcta: String(r), solucion: ent(a) + " − " + par(b) + " = " + ent(a) + " + " + par(-b) + " = " + ent(r) + ". " + explicaSuma(a, -b), evalua: numE(r, p) };
+}
+
+/* ============ MODULE 5 · real life ============ */
+function genContexto(){
+  var tipo = aleatorio(1, 6), a, b, c, r, enun, sol;
+  if (tipo === 1){ a = -aleatorio(2, 15); b = aleatorio(5, 25); r = a + b; enun = F(TXT.c1, { a: ent(a), b: b }); sol = F(TXT.s1, { a: ent(a), b: b, r: ent(r) }); }
+  else if (tipo === 2){ a = aleatorio(-5, 20); b = aleatorio(10, 30); r = a - b; enun = F(TXT.c2, { a: ent(a), b: b }); sol = F(TXT.s2, { a: ent(a), b: b, r: ent(r) }); }
+  else if (tipo === 3){ a = -aleatorio(10, 90); b = aleatorio(10, 80); r = a + b; enun = F(TXT.c3, { d: -a, b: b }); sol = F(TXT.s3, { a: ent(a), b: b, r: ent(r) }) + (r < 0 ? TXT.s3b : ""); }
+  else if (tipo === 4){ a = -aleatorio(10, 60); b = aleatorio(5, 40); r = a - b; enun = F(TXT.c4, { d: -a, b: b }); sol = F(TXT.s4, { a: ent(a), b: b, r: ent(r) }); }
+  else if (tipo === 5){ a = aleatorio(3, 12); b = aleatorio(3, 15); c = aleatorio(2, 10); r = a - b + c; enun = F(TXT.c5, { a: a, b: b, c: c }); sol = F(TXT.s5, { a: a, b: b, c: c, r: ent(r) }); }
+  else { a = aleatorio(1, 8); b = aleatorio(a + 1, a + 6); r = a - b; enun = F(TXT.c6, { a: a, b: b }); sol = F(TXT.s6, { a: a, b: b, r: ent(r) }); }
+  return { enun: enun, correcta: String(r), solucion: sol, evalua: numE(r, []) };
+}
+
+/* ============ Start ============ */
+["rs-a", "rs-b"].forEach(function(id){ $(id).addEventListener("input", pintaRS); }); pintaRS();
+creaPracticaLibre("p1", genRecta);
+["fc-a", "fc-b"].forEach(function(id){ $(id).addEventListener("input", function(){ FC.pares = false; pintaFC(); }); });
+$("fc-pares").addEventListener("click", function(){ FC.pares = true; pintaFC(); });
+$("fc-reinicia").addEventListener("click", function(){ FC.pares = false; pintaFC(); });
+pintaFC();
+creaPracticaLibre("p2", genFichas);
+creaSignoValor("p3", genRegla);
+["rt-a", "rt-b"].forEach(function(id){ $(id).addEventListener("input", pintaRT); }); pintaRT();
+creaPracticaOM("p4", genReescribe);
+creaPracticaLibre("p5", genResta);
+creaPracticaLibre("p6", genContexto);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

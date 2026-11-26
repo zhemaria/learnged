@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 2 · Lección 1.3 · Multiplicación y división de enteros; aplicaciones — práctica (español) — construida con tools/build_n2_lesson_1_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.3 · Multiplicación y división de enteros; aplicaciones · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-2/practice-1-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 2 · Tema 1 · Enteros con signo</div>
+    <h1>Lección 1.3 · Multiplicación y división de enteros; aplicaciones</h1>
+    <div class="meta">Seis actividades de práctica en una sola página. La última comprueba todo el tema. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#signos">La regla de los signos</a></li>
+      <li><a href="#por-que">¿Por qué negativo por negativo da positivo?</a></li>
+      <li><a href="#dividir">La división de enteros</a></li>
+      <li><a href="#cuatro-operaciones">Expresiones con las cuatro operaciones</a></li>
+      <li><a href="#contexto">Problemas de la vida real</a></li>
+      <li><a href="#comprobacion">Comprobación del Tema 1</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="signos" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La regla de los signos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para multiplicar dos enteros, se multiplican los valores absolutos como siempre. Lo nuevo es el signo: <strong>signos iguales dan positivo; signos distintos dan negativo</strong>.</p>
+      <table class="reglas">
+        <caption>La regla de los signos</caption>
+        <thead><tr><th scope="col">Factor 1</th><th scope="col">Factor 2</th><th scope="col">Producto</th></tr></thead>
+        <tbody>
+          <tr><td>positivo</td><td>positivo</td><td>positivo (+)</td></tr>
+          <tr><td>negativo</td><td>negativo</td><td>positivo (+)</td></tr>
+          <tr><td>positivo</td><td>negativo</td><td>negativo (−)</td></tr>
+          <tr><td>negativo</td><td>positivo</td><td>negativo (−)</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: multiplicar en dos pasos</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <p><strong>Paso 1.</strong> ¿Qué signo tiene el resultado?</p>
+        <div class="signos" role="group" aria-label="Signo del resultado"><button type="button" id="p1-mas" aria-pressed="false" aria-label="Positivo">+</button><button type="button" id="p1-menos" aria-pressed="false" aria-label="Negativo">−</button></div>
+        <div class="campos"><div class="campo"><label for="p1-v"><strong>Paso 2.</strong> El valor del resultado, sin signo</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p1-v"></div></div>
+        <p class="nota">Si el resultado es 0, no hace falta elegir signo.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="por-que">
+    <summary><span class="num" aria-hidden="true">2</span><h2>¿Por qué negativo por negativo da positivo?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La regla sale de un patrón. Multiplique un número negativo por una lista que baja de uno en uno: cada producto <strong>aumenta</strong> siempre lo mismo. Para que el patrón siga igual al pasar el cero, los productos de dos negativos tienen que ser positivos.</p>
+      <h3>Siga el patrón</h3>
+      <div class="panel">
+        <div class="campos">
+          <div class="campo"><label for="pt-m">Número negativo por el que se multiplica</label><select id="pt-m"><option value="-2">−2</option><option value="-3">−3</option><option value="-4">−4</option><option value="-5">−5</option></select></div>
+        </div>
+        <div class="tabla-scroll"><table class="comparar patron" id="pt-tabla"></table></div>
+        <div class="fila-btn"><button type="button" class="btn" id="pt-sig">Fila siguiente</button><button type="button" class="btn-sec" id="pt-reinicia">Empezar de nuevo</button></div>
+        <div class="salida" id="pt-salida" aria-live="polite"></div>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="dividir">
+    <summary><span class="num" aria-hidden="true">3</span><h2>La división de enteros</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La división usa <strong>exactamente la misma regla de los signos</strong> que la multiplicación. Y se comprueba multiplicando: si (−45) ÷ (−9) = 5, entonces 5 × (−9) debe dar −45.</p>
+      <div class="caja-atencion"><strong>No se puede dividir entre cero:</strong> 0 ÷ 5 = 0, pero 5 ÷ 0 no tiene respuesta, porque ningún número multiplicado por 0 da 5. Una división entre cero no está definida.</div>
+      <h3>Practique: dividir en dos pasos</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <p><strong>Paso 1.</strong> ¿Qué signo tiene el resultado?</p>
+        <div class="signos" role="group" aria-label="Signo del resultado"><button type="button" id="p2-mas" aria-pressed="false" aria-label="Positivo">+</button><button type="button" id="p2-menos" aria-pressed="false" aria-label="Negativo">−</button></div>
+        <div class="campos"><div class="campo"><label for="p2-v"><strong>Paso 2.</strong> El valor del resultado, sin signo</label><input type="text" inputmode="numeric" autocomplete="off" class="corto" id="p2-v"></div></div>
+        <p class="nota">Si el resultado es 0, no hace falta elegir signo.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <h3>Practique: ¿y el cero?</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="opciones" id="p3-opciones"></div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cuatro-operaciones">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Expresiones con las cuatro operaciones</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando se mezclan las cuatro operaciones, van <strong>primero las multiplicaciones y divisiones</strong>, de izquierda a derecha, y <strong>después las sumas y restas</strong>, de izquierda a derecha. El orden completo se estudia en el Tema 3.</p>
+      <h3>Paso a paso</h3>
+      <div class="panel">
+        <div class="estado"><span class="grande" id="cu-expr"></span></div>
+        <div class="fila-btn"><button type="button" class="btn" id="cu-sig"></button><button type="button" class="btn-sec" id="cu-todo">Mostrar todo</button><button type="button" class="btn-sec" id="cu-nuevo">Otra expresión</button></div>
+        <div class="pasos" id="cu-pasos" aria-live="polite"></div>
+      </div>
+      <div class="caja-atencion"><strong>El error más común:</strong> resolver de izquierda a derecha sin mirar las operaciones. En (−4) × 3 + (−10) ÷ 2, la multiplicación y la división van primero: −12 + (−5) = −17.</div>
+      <h3>Practique: resolver la expresión</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="contexto">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Problemas de la vida real</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Se multiplica cuando una cantidad con signo <strong>se repite</strong>, y se divide cuando <strong>se reparte</strong> en partes iguales. Una pérdida, un descenso o una deuda llevan signo negativo.</p>
+      <h3>Practique: problemas de multiplicación y división</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comprobacion">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Comprobación del Tema 1</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando termine las prácticas de las tres lecciones, compruebe el tema completo. Los ejercicios mezclan la suma, la resta, la multiplicación y la división de enteros. Antes de responder, pregúntese: <strong>¿qué operación es y qué regla de los signos le corresponde?</strong></p>
+      <table class="reglas">
+        <caption>Las dos reglas de los signos</caption>
+        <thead><tr><th scope="col">Operación</th><th scope="col">Regla</th></tr></thead>
+        <tbody>
+          <tr><td>suma</td><td>mismo signo: se suman los valores absolutos; signos distintos: se restan y se usa el signo del mayor</td></tr>
+          <tr><td>resta</td><td>se suma el opuesto y después se usa la regla de la suma</td></tr>
+          <tr><td>multiplicación y división</td><td>signos iguales: positivo; signos distintos: negativo</td></tr>
+        </tbody>
+      </table>
+      <h3>Practique: las cuatro operaciones mezcladas</h3>
+      <div class="practica" id="p6">
+        <div class="enun" id="p6-enun"></div>
+        <div class="campos"><div class="campo"><label for="p6-r">Respuesta</label><input type="text" autocomplete="off" class="ancho" id="p6-r"></div></div>
+        <p class="nota">Escriba un número entero. Si es negativo, empiece con el signo menos: −7 o -7.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p6-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p6-fb" role="status"></div>
+        <p class="marcador" id="p6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 2 · Tema 1 · Enteros con signo · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/integers.js"></script>
+<script>
+var TXT = {
+ "calcula": "Calcule {s}.",
+ "iguales": "Signos iguales → positivo.",
+ "distintos": "Signos distintos → negativo.",
+ "explica": "{x} {o} {y} = {r}. ",
+ "comprueba": " Comprobación: {c} = {a}.",
+ "pistaMult": "Primero decida el signo: ¿los dos signos son iguales o distintos?",
+ "cap": "Productos de una lista que baja de uno en uno por {m}",
+ "cMult": "Multiplicación",
+ "cProd": "Producto",
+ "cCambio": "Cambio respecto de la fila anterior",
+ "subio": "aumentó {d}",
+ "pt1": "Cada vez que el primer factor baja 1, el producto aumenta {d}. ¿Qué debería pasar en la fila siguiente?",
+ "pt2": "0 × {pm} = 0: el patrón llega al cero, aumentando {d} otra vez.",
+ "pt3": "Para seguir aumentando {d}, los productos tienen que volverse positivos: (−1) × {pm} = {r}. Por eso <strong>negativo por negativo da positivo</strong>.",
+ "noDef": "No está definida",
+ "expCero0": "Cero por cualquier número, o cero entre cualquier número distinto de cero, da 0.",
+ "expCeroX": "Ningún número multiplicado por 0 da {v}: no se puede dividir entre cero, así que no está definida.",
+ "pistaCero": "Compruébelo con una multiplicación. ¿Qué número multiplicado por el divisor da el dividendo?",
+ "primeroLa": "Primero la {op}: {a} {o} {b} = {r}. Queda {q}.",
+ "despuesLa": "Después la {op}: {a} {o} {b} = {r}.",
+ "mult": "multiplicación",
+ "div": "división",
+ "suma": "suma",
+ "resta": "resta",
+ "resultado": "Resultado: {e} = {r}",
+ "resuelve": "Resuelva {e}.",
+ "izqDer": "Parece que resolvió de izquierda a derecha sin respetar el orden: primero se multiplica y se divide.",
+ "c1": "La temperatura de una cámara frigorífica baja {a} °F cada hora. ¿Cuánto ha cambiado después de {b} horas? (Un descenso es negativo.)",
+ "s1": "{pa} × {b} = {r} °F.",
+ "c2": "Una tienda perdió en total ${t} en {b} días, la misma cantidad cada día. ¿Cuál fue el cambio de cada día, en dólares?",
+ "s2": "{pt} ÷ {b} = {r}: una pérdida de ${a} por día.",
+ "c3": "Un buzo baja {a} pies cada minuto desde la superficie. ¿Dónde está después de {b} minutos? (Bajo la superficie es negativo.)",
+ "s3": "{pa} × {b} = {r} pies.",
+ "c4": "El precio de una acción baja ${a} cada día durante {b} días. ¿Cuál es el cambio total del precio, en dólares?",
+ "s4": "{pa} × {b} = {r}.",
+ "c5": "Las temperaturas mínimas de {n} días fueron {l} °F. ¿Cuál fue la media (promedio), en °F?",
+ "s5": "Suma: {s}; ÷ {n} = {r} °F.",
+ "c6": "{b} amigos comparten por igual una deuda de ${t}. ¿Qué cambio representa para cada uno, en dólares?",
+ "s6": "{pt} ÷ {b} = {r}.",
+ "pistaCtx": "El valor está bien, pero una pérdida, un descenso o una deuda llevan signo negativo.",
+ "mezcla": "Calcule {e}."
+};
+
+function F(s, o){ return s.replace(/\{(\w+)\}/g, function(_, k){ return o[k]; }); }
+function prod(a, b){ return par(a) + " × " + par(b); }
+function coc(a, b){ return par(a) + " ÷ " + par(b); }
+function explicaSigno(a, b, o){
+  var r = o === "×" ? a * b : a / b;
+  return F(TXT.explica, { x: Math.abs(a), o: o, y: Math.abs(b), r: Math.abs(r) }) + ((a < 0) === (b < 0) ? TXT.iguales : TXT.distintos);
+}
+
+/* ============ MODULES 1 and 3 · two steps ============ */
+function genMult(){ var a = azarEnt(-12, 12, true), b = azarEnt(-12, 12, true); return { enun: F(TXT.calcula, { s: prod(a, b) }), res: a * b, explica: explicaSigno(a, b, "×"), pista: TXT.pistaMult }; }
+function genDiv(){ var q = azarEnt(-12, 12, true), b = azarEnt(-9, 9, true), a = q * b; return { enun: F(TXT.calcula, { s: coc(a, b) }), res: q, explica: explicaSigno(a, b, "÷") + F(TXT.comprueba, { c: prod(q, b), a: ent(a) }), pista: TXT.pistaMult }; }
+function genCero(){
+  var k = aleatorio(2, 30), tipo = aleatorio(1, 4), v = elige([k, -k]), enun, r;
+  var o = [{ html: "0", clave: "0" }, { html: ent(v), clave: "v" }, { html: ent(-v), clave: "w" }, { html: TXT.noDef, clave: "x" }];
+  if (tipo === 1){ enun = "0 ÷ " + par(v) + " ="; r = "0"; }
+  else if (tipo === 2){ enun = par(v) + " ÷ 0 ="; r = "x"; }
+  else if (tipo === 3){ enun = par(v) + " × 0 ="; r = "0"; }
+  else { enun = "0 × " + par(v) + " ="; r = "0"; }
+  var exp = r === "x" ? F(TXT.expCeroX, { v: ent(v) }) : TXT.expCero0;
+  return { enun: enun, opciones: o, enOrden: true, correcta: r, pista: TXT.pistaCero, bien: exp, mal: exp };
+}
+
+/* ============ MODULE 2 · the pattern ============ */
+var PT = { visto: 3 };
+function pintaPT(){
+  var mm = +$("pt-m").value, filas = [3, 2, 1, 0, -1, -2, -3], d = Math.abs(mm);
+  var h = '<caption>' + F(TXT.cap, { m: ent(mm) }) + '</caption><thead><tr><th scope="col">' + TXT.cMult + '</th><th scope="col">' + TXT.cProd + '</th><th scope="col">' + TXT.cCambio + '</th></tr></thead><tbody>';
+  filas.slice(0, PT.visto).forEach(function(k, i){
+    h += '<tr' + (k < 0 ? ' class="nueva"' : '') + '><td>' + par(k) + ' × ' + par(mm) + '</td><td><strong>' + ent(k * mm) + '</strong></td><td>' + (i === 0 ? "—" : F(TXT.subio, { d: d })) + '</td></tr>';
+  });
+  $("pt-tabla").innerHTML = h + '</tbody>';
+  $("pt-sig").disabled = PT.visto >= filas.length;
+  var s = PT.visto <= 3 ? F(TXT.pt1, { d: d }) : (PT.visto === 4 ? F(TXT.pt2, { pm: par(mm), d: d }) : F(TXT.pt3, { d: d, pm: par(mm), r: ent(-mm) }));
+  $("pt-salida").innerHTML = '<div class="linea">' + s + '</div>';
+}
+
+/* ============ MODULE 4 · four operations ============ */
+function exprAzar(){
+  var tipo = aleatorio(1, 4), a, b, c, d, q;
+  if (tipo === 1){ a = azarEnt(-9, 9, true); b = azarEnt(-9, 9, true); q = azarEnt(-9, 9, true); d = azarEnt(-5, 5, true); c = q * d; return [a, "×", b, "+", c, "÷", d]; }
+  if (tipo === 2){ a = azarEnt(-20, 20, true); b = azarEnt(-9, 9, true); c = azarEnt(-9, 9, true); return [a, "−", b, "×", c]; }
+  if (tipo === 3){ q = azarEnt(-9, 9, true); b = azarEnt(-6, 6, true); a = q * b; c = azarEnt(-9, 9, true); d = azarEnt(-6, 6, true); return [a, "÷", b, "−", c, "×", d]; }
+  a = azarEnt(-15, 15, true); b = azarEnt(-9, 9, true); c = azarEnt(-9, 9, true); d = azarEnt(-15, 15, true); return [a, "+", b, "×", c, "−", d];
+}
+function expTxt(tk){ return tk.map(function(x, i){ return typeof x === "number" ? (i === 0 ? ent(x) : par(x)) : " " + x + " "; }).join(""); }
+function opera(a, o, b){ return o === "×" ? a * b : (o === "÷" ? a / b : (o === "+" ? a + b : a - b)); }
+var NOMBRE = { "×": "mult", "÷": "div", "+": "suma", "−": "resta" };
+function resuelveExpr(tk){
+  var x = tk.slice(), pasos = [];
+  for (var i = 1; i < x.length; ){
+    if (x[i] === "×" || x[i] === "÷"){ var r = opera(x[i - 1], x[i], x[i + 1]), sig = x.slice(0, i - 1).concat([r], x.slice(i + 2)); pasos.push(F(TXT.primeroLa, { op: TXT[NOMBRE[x[i]]], a: par(x[i - 1]), o: x[i], b: par(x[i + 1]), r: ent(r), q: expTxt(sig) })); x = sig; }
+    else i += 2;
+  }
+  while (x.length > 1){ var r2 = opera(x[0], x[1], x[2]); pasos.push(F(TXT.despuesLa, { op: TXT[NOMBRE[x[1]]], a: ent(x[0]), o: x[1], b: par(x[2]), r: ent(r2) })); x = [r2].concat(x.slice(3)); }
+  pasos.push('<span class="veredicto">' + F(TXT.resultado, { e: expTxt(tk), r: ent(x[0]) }) + '</span>');
+  return { pasos: pasos, res: x[0] };
+}
+function izqDer(tk){ var v = tk[0]; for (var i = 1; i < tk.length; i += 2) v = opera(v, tk[i], tk[i + 1]); return v; }
+var CU_COLA = [[-4, "×", 3, "+", -10, "÷", 2]], CUS;
+function nuevoCU(){ var tk = CU_COLA.length ? CU_COLA.shift() : exprAzar(); $("cu-expr").textContent = expTxt(tk); CUS.carga(resuelveExpr(tk).pasos); }
+function genCuatro(){
+  var tk = exprAzar(), R = resuelveExpr(tk), p = [], mm = izqDer(tk);
+  if (mm !== R.res && mm === Math.round(mm)) p.push({ v: mm, msg: TXT.izqDer });
+  return { enun: F(TXT.resuelve, { e: expTxt(tk) }), correcta: String(R.res), solucion: R.pasos.slice(0, -1).join(" "), evalua: numE(R.res, p) };
+}
+
+/* ============ MODULE 5 · real life ============ */
+function genContexto(){
+  var tipo = aleatorio(1, 6), a, b, r, enun, sol;
+  if (tipo === 1){ a = aleatorio(2, 6); b = aleatorio(3, 8); r = -a * b; enun = F(TXT.c1, { a: a, b: b }); sol = F(TXT.s1, { pa: par(-a), b: b, r: ent(r) }); }
+  else if (tipo === 2){ b = aleatorio(3, 9); a = aleatorio(4, 25); r = -a; enun = F(TXT.c2, { t: com(a * b), b: b }); sol = F(TXT.s2, { pt: par(-a * b), b: b, r: ent(r), a: a }); }
+  else if (tipo === 3){ a = aleatorio(3, 12); b = aleatorio(2, 9); r = -a * b; enun = F(TXT.c3, { a: a, b: b }); sol = F(TXT.s3, { pa: par(-a), b: b, r: ent(r) }); }
+  else if (tipo === 4){ a = aleatorio(2, 9); b = aleatorio(3, 7); r = -a * b; enun = F(TXT.c4, { a: a, b: b }); sol = F(TXT.s4, { pa: par(-a), b: b, r: ent(r) }); }
+  else if (tipo === 5){ var n = aleatorio(3, 5), prom = -aleatorio(2, 9), ts = []; for (var i = 0; i < n - 1; i++) ts.push(prom + aleatorio(-4, 4)); ts.push(prom * n - ts.reduce(function(s, x){ return s + x; }, 0)); r = prom;
+    enun = F(TXT.c5, { n: n, l: ts.map(ent).join(", ") }); sol = F(TXT.s5, { s: ent(prom * n), n: n, r: ent(r) }); }
+  else { b = aleatorio(2, 6); a = aleatorio(10, 60); r = -a; enun = F(TXT.c6, { b: b, t: com(a * b) }); sol = F(TXT.s6, { pt: par(-a * b), b: b, r: ent(r) }); }
+  return { enun: enun, correcta: String(r), solucion: sol, evalua: numE(r, [{ v: -r, msg: TXT.pistaCtx }]) };
+}
+
+/* ============ MODULE 6 · Topic 1 check: the four operations mixed ============ */
+function genMezcla(){
+  var tipo = aleatorio(1, 5), a = azarEnt(-20, 20, true), b = azarEnt(-12, 12, true), r, e, p = [];
+  if (tipo === 1){ r = a + b; e = ent(a) + " + " + par(b); if ((a < 0) !== (b < 0)){ var mal = (Math.abs(a) + Math.abs(b)) * (Math.abs(a) > Math.abs(b) ? Math.sign(a) : Math.sign(b)); if (mal !== r) p.push({ v: mal, msg: ES ? "Con signos distintos, en la suma se restan los valores absolutos." : "With different signs, an addition subtracts the absolute values." }); } }
+  else if (tipo === 2){ r = a - b; e = ent(a) + " − " + par(b); if (a + b !== r) p.push({ v: a + b, msg: ES ? "Restar " + par(b) + " es sumar " + par(-b) + "." : "Subtracting " + par(b) + " is adding " + par(-b) + "." }); }
+  else if (tipo === 3){ a = azarEnt(-12, 12, true); r = a * b; e = par(a) + " × " + par(b); }
+  else if (tipo === 4){ var q = azarEnt(-12, 12, true); a = q * b; r = q; e = par(a) + " ÷ " + par(b); }
+  else { var tk = exprAzar(), R = resuelveExpr(tk); r = R.res; e = expTxt(tk); var mm = izqDer(tk); if (mm !== r && mm === Math.round(mm)) p.push({ v: mm, msg: TXT.izqDer });
+    return { enun: F(TXT.mezcla, { e: e }), correcta: String(r), solucion: R.pasos.slice(0, -1).join(" "), evalua: numE(r, p) }; }
+  return { enun: F(TXT.mezcla, { e: e }), correcta: String(r), solucion: e + " = " + ent(r) + ".", evalua: numE(r, p) };
+}
+
+/* ============ Start ============ */
+creaSignoValor("p1", genMult);
+$("pt-m").addEventListener("change", function(){ PT.visto = 3; pintaPT(); });
+$("pt-sig").addEventListener("click", function(){ PT.visto++; pintaPT(); });
+$("pt-reinicia").addEventListener("click", function(){ PT.visto = 3; pintaPT(); });
+pintaPT();
+creaSignoValor("p2", genDiv);
+creaPracticaOM("p3", genCero);
+CUS = pasoAPaso("cu", []);
+$("cu-nuevo").addEventListener("click", nuevoCU); nuevoCU();
+creaPracticaLibre("p4", genCuatro);
+creaPracticaLibre("p5", genContexto);
+creaPracticaLibre("p6", genMezcla);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

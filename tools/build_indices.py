@@ -78,11 +78,12 @@ CSS = """  main.nivel{max-width:1320px}
   @media (max-width:1099px){ .grid-temas{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:700px){ .nivel h1{font-size:1.4em} .grid-temas{grid-template-columns:1fr} }"""
 
-def construye(L):
-    X = TX[L]; d = os.path.join(ROOT, X["dir"])
-    existe = lambda f: os.path.exists(os.path.join(d, f))
+def construye(L, temas=None, extras=None, tx=None):
+    temas = temas or TEMAS; extras = extras or EXTRAS; tx = tx or TX
+    X = tx[L]; d = os.path.join(ROOT, X["dir"])
+    existe = lambda f: os.path.exists(os.path.join(ROOT, f.split("?")[0].lstrip("/")) if f.startswith("/") else os.path.join(d, f.split("?")[0]))
     nav, tarjetas = [], []
-    for n, nombre, lecs in TEMAS[L]:
+    for n, nombre, lecs in temas[L]:
         ancla = ("topic-" if L == "en" else "tema-") + n
         nav.append(f'<li><a href="#{ancla}">{n} · {nombre}</a></li>')
         items = []
@@ -91,7 +92,7 @@ def construye(L):
             if existe(X["lec"].format(k)):
                 p = f' <a class="prac" href="{X["prac"].format(k)}" aria-label="{X["ariaPrac"].format(num)}">{X["practica"]}</a>' if existe(X["prac"].format(k)) else ""
                 items.append(f'<li><span class="num" aria-hidden="true">{num}</span><a class="lec" href="{X["lec"].format(k)}"><span class="sr">{X["leccion"]} {num}: </span>{titulo}</a>{p}</li>')
-                x = EXTRAS[L].get(k)
+                x = extras[L].get(k)
                 if x and existe(x[1]):
                     pe = f' <a class="prac" href="{x[2]}" aria-label="{X["practica"]}: {x[3]}">{X["practica"]}</a>' if x[2] and existe(x[2]) else ""
                     items.append(f'<li class="extra"><span class="num" aria-hidden="true"></span><a class="lec" href="{x[1]}">{x[3]}</a>{pe}</li>')
@@ -123,8 +124,8 @@ def construye(L):
       <button type="button" id="b-big" aria-pressed="false">{X["big"]}</button>
       <button type="button" id="b-hc" aria-pressed="false">{X["hc"]}</button>
       <nav class="lang" aria-label="Language / Idioma">
-        <a href="/math/level-1/" lang="en" hreflang="en" data-lang="en"{' aria-current="true"' if L == "en" else ""}>EN</a>
-        <a href="/es/matematicas/nivel-1/" lang="es" hreflang="es" data-lang="es"{' aria-current="true"' if L == "es" else ""}>ES</a>
+        <a href="/{tx["en"]["dir"]}/" lang="en" hreflang="en" data-lang="en"{' aria-current="true"' if L == "en" else ""}>EN</a>
+        <a href="/{tx["es"]["dir"]}/" lang="es" hreflang="es" data-lang="es"{' aria-current="true"' if L == "es" else ""}>ES</a>
       </nav>
     </div>
   </div>
@@ -166,5 +167,44 @@ def construye(L):
     open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(html)
     return html.count(f'class="lec" href=')
 
+# ---------------- Level 2 · Connecting with algebra ----------------
+TEMAS2 = {
+ "en": [
+  ("1", "Integers", [("1-1", "The number line, absolute value, and opposites"), ("1-2", "Adding and subtracting integers"), ("1-3", "Multiplying and dividing integers; applications")]),
+  ("2", "Fractions, exponents, and roots", [("2-1", "Complex fractions with negative coefficients"), ("2-2", "Positive integer exponents and powers of 10"), ("2-3", "Square roots of perfect squares")]),
+  ("3", "The full order of operations (PEMDAS)", [("3-1", "Order of operations: review and nested parentheses"), ("3-2", "PEMDAS with powers, roots, fractions, and signs"), ("3-3", "PEMDAS with fractions and in algebra")]),
+  ("4", "Ratios, rates, and proportions", [("4-1", "Ratios and unit rates"), ("4-2", "Direct proportions: the rule of three"), ("4-3", "Inverse proportions and mixed applications")]),
+  ("5", "Percents", [("5-1", "Percent: conversions and the three basic cases"), ("5-2", "Percent change: increase and decrease"), ("5-3", "Discount, tax, tip, and mixed applications")]),
+  ("6", "Money math and unit conversions", [("6-1", "Simple interest: I = P × r × t"), ("6-2", "Depreciation and other money applications"), ("6-3", "Converting between U.S. customary and metric units")]),
+  ("7", "Geometry: circles and composite figures", [("7-1", "Area of composite figures"), ("7-2", "Circumference of a circle"), ("7-3", "Area of a circle and figures with semicircles")]),
+  ("8", "Statistics and probability", [("8-1", "Mean, median, mode, range, and weighted mean"), ("8-2", "Circle graphs: read, interpret, and make"), ("8-3", "Simple probability")])],
+ "es": [
+  ("1", "Enteros con signo", [("1-1", "La recta numérica, el valor absoluto y los opuestos"), ("1-2", "Suma y resta de enteros con signo"), ("1-3", "Multiplicación y división de enteros; aplicaciones")]),
+  ("2", "Fracciones, exponentes y raíces", [("2-1", "Fracciones complejas con coeficientes negativos"), ("2-2", "Exponentes enteros positivos y potencias de base 10"), ("2-3", "Raíces cuadradas de cuadrados perfectos")]),
+  ("3", "PEMDAS completo", [("3-1", "Orden de operaciones: repaso y paréntesis anidados"), ("3-2", "PEMDAS con potencias, raíces, fracciones y signos"), ("3-3", "PEMDAS en expresiones con fracciones y contexto algebraico")]),
+  ("4", "Razones, proporciones y porcentajes", [("4-1", "Razones y tasas unitarias"), ("4-2", "Proporciones directas: regla de tres y resolver proporciones"), ("4-3", "Proporciones inversas y aplicaciones mixtas")]),
+  ("5", "Porcentajes", [("5-1", "El porcentaje: conversiones y los tres casos fundamentales"), ("5-2", "Cambio porcentual: aumento y disminución"), ("5-3", "Descuento, impuesto, propina y aplicaciones mixtas")]),
+  ("6", "Matemáticas financieras y conversiones de medidas", [("6-1", "Interés simple: la fórmula I = P × r × t"), ("6-2", "Depreciación y otras aplicaciones financieras"), ("6-3", "Conversiones entre el sistema inglés y el métrico")]),
+  ("7", "Geometría transicional", [("7-1", "Área de figuras compuestas"), ("7-2", "Circunferencia del círculo"), ("7-3", "Área del círculo y figuras compuestas con semicírculos")]),
+  ("8", "Estadística y probabilidad", [("8-1", "Media, mediana, moda, rango y media ponderada"), ("8-2", "Gráficos circulares: leer, interpretar y construir"), ("8-3", "Probabilidad simple")])]}
+
+EXTRAS2 = {
+ "en": {"1-2": ("complement", "tengo-debo.html?lang=en", None, "Complement: What I have and what I owe")},
+ "es": {"1-2": ("complement", "/math/level-2/tengo-debo.html?lang=es", None, "Complemento: Tengo y debo")}}
+
+def _tx2():
+    import copy
+    X = copy.deepcopy(TX)
+    for L in X:
+        for k, v in X[L].items():
+            X[L][k] = v.replace("level-1", "level-2").replace("nivel-1", "nivel-2").replace("Level 1", "Level 2").replace("Nivel 1", "Nivel 2")
+    X["en"]["h1"] = "Math · Level 2 · Connecting with algebra"
+    X["es"]["h1"] = "Matemáticas · Nivel 2 · Conectando con el álgebra"
+    X["en"]["intro"] = "Eight topics, from integers to probability: the bridge from arithmetic to algebra. Each lesson has a practice page that makes new exercises every time."
+    X["es"]["intro"] = "Ocho temas, de los enteros con signo a la probabilidad: el puente entre la aritmética y el álgebra. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez."
+    return X
+TX2 = _tx2()
+
 if __name__ == "__main__":
-    print("ok:", construye("en"), "English lessons ·", construye("es"), "lecciones en español")
+    print("Level 1 ok:", construye("en"), "English lessons ·", construye("es"), "lecciones en español")
+    print("Level 2 ok:", construye("en", TEMAS2, EXTRAS2, TX2), "English lessons ·", construye("es", TEMAS2, EXTRAS2, TX2), "lecciones en español")
