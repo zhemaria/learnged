@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<!-- LearnGED · Fracciomanía: game of fractions (English and Spanish; the language goes in the link: ?lang=en or ?lang=es)
+     Copy of interactivos/fraccion_operacion, adapted for LearnGED · José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fracciomanía · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link href="/fonts/fonts.css" rel="stylesheet">
+<style>
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  .barra-lg{max-width:900px;margin:0 auto 6px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-size:15px;font-weight:700}
+  .barra-lg a{color:#002060}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --rosa: #ff4d8f;
+    --verde: #4ade80;
+    --amarillo: #fbbf24;
+    --azul: #38bdf8;
+    --tinta: #1e1b4b;
+    --tinta-suave: #4338ca;
+    --crema: #fff8e7;
+  }
+
+  html, body { height: 100%; }
+
+  body {
+    font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+    color: var(--tinta);
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ffd1dc 0%, #ffe5b4 25%, #c9f0ff 50%, #d6c5ff 75%, #ffc8e1 100%);
+    background-size: 400% 400%;
+    animation: fondoMovil 18s ease infinite;
+  }
+
+  @keyframes fondoMovil {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+  }
+
+  /* burbujas decorativas de fondo */
+  .burbuja {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(2px);
+  }
+  .burbuja.b1 { width: 220px; height: 220px; background: var(--rosa);     top: -60px;  left: -40px; animation: flotar 12s ease-in-out infinite; }
+  .burbuja.b2 { width: 180px; height: 180px; background: var(--amarillo); top: 30%;    right: -50px; animation: flotar 14s ease-in-out infinite reverse; }
+  .burbuja.b3 { width: 260px; height: 260px; background: var(--azul);     bottom: -80px; left: 20%;  animation: flotar 16s ease-in-out infinite; }
+  .burbuja.b4 { width: 140px; height: 140px; background: var(--verde);    top: 55%;    left: -30px;  animation: flotar 11s ease-in-out infinite reverse; }
+
+  @keyframes flotar {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%      { transform: translate(30px, -25px) scale(1.1); }
+  }
+
+  .pantalla {
+    position: relative;
+    z-index: 1;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+  }
+
+  /* HEADER */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.4rem, 7vw, 3.6rem);
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, var(--rosa) 0%, #f97316 35%, var(--amarillo) 60%, var(--verde) 85%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 0 rgba(255, 255, 255, 0.4);
+    transform: rotate(-1.5deg);
+  }
+  h1 .emoji-titulo { -webkit-text-fill-color: initial; background: none; }
+
+  .subtitulo {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--tinta-suave);
+    text-align: center;
+    background: white;
+    padding: 6px 16px;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 rgba(67, 56, 202, 0.25);
+  }
+
+  /* MARCADOR */
+  .marcador {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .indicador {
+    background: white;
+    padding: 10px 18px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.08);
+    min-width: 110px;
+    justify-content: center;
+  }
+
+  .indicador .icono {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+  .indicador .etiqueta {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+    display: block;
+    line-height: 1;
+  }
+  .indicador .valor {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--tinta);
+    line-height: 1.1;
+  }
+  .indicador .valor.pulso { animation: pulso 0.4s ease; }
+
+  @keyframes pulso {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.4); color: var(--rosa); }
+    100% { transform: scale(1); }
+  }
+
+  /* TARJETÓN DE PREGUNTA */
+  .tarjeton-pregunta {
+    background: white;
+    border-radius: 28px;
+    padding: 30px 20px;
+    box-shadow:
+      0 10px 0 rgba(67, 56, 202, 0.15),
+      0 20px 40px rgba(67, 56, 202, 0.18);
+    position: relative;
+    margin-bottom: 26px;
+    overflow: hidden;
+    border: 4px solid white;
+  }
+  .tarjeton-pregunta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255, 77, 143, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .etiqueta-tipo {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, var(--rosa), #f97316);
+    color: white;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .pregunta {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 5.5vw, 2.6rem);
+    text-align: center;
+    color: var(--tinta);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* FRACCIONES */
+  .frac {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    line-height: 1;
+    font-size: 0.85em;
+  }
+  .frac .num,
+  .frac .den {
+    padding: 0 6px;
+    line-height: 1.1;
+  }
+  .frac .num {
+    border-bottom: 3px solid currentColor;
+    padding-bottom: 2px;
+  }
+  .frac .den { padding-top: 2px; }
+
+  .mixto {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .neg { margin-right: 2px; }
+
+  .op {
+    color: var(--tinta-suave);
+    font-size: 0.85em;
+    margin: 0 4px;
+  }
+
+  /* TARJETAS DE RESPUESTA */
+  .tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .tarjeta {
+    background: white;
+    border: 4px solid;
+    border-radius: 22px;
+    padding: 22px 12px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    color: var(--tinta);
+    min-height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .tarjeta:nth-child(1) { border-color: var(--rosa);     box-shadow: 0 6px 0 var(--rosa); }
+  .tarjeta:nth-child(2) { border-color: var(--verde);    box-shadow: 0 6px 0 var(--verde); }
+  .tarjeta:nth-child(3) { border-color: var(--amarillo); box-shadow: 0 6px 0 var(--amarillo); }
+  .tarjeta:nth-child(4) { border-color: var(--azul);     box-shadow: 0 6px 0 var(--azul); }
+
+  .tarjeta::before {
+    content: attr(data-letra);
+    position: absolute;
+    top: 6px;
+    left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.25);
+  }
+
+  .tarjeta:hover:not(.bloqueada) {
+    transform: translateY(-3px) rotate(-0.5deg);
+  }
+  .tarjeta:nth-child(1):hover:not(.bloqueada) { box-shadow: 0 9px 0 var(--rosa); }
+  .tarjeta:nth-child(2):hover:not(.bloqueada) { box-shadow: 0 9px 0 var(--verde); }
+  .tarjeta:nth-child(3):hover:not(.bloqueada) { box-shadow: 0 9px 0 var(--amarillo); }
+  .tarjeta:nth-child(4):hover:not(.bloqueada) { box-shadow: 0 9px 0 var(--azul); }
+
+  .tarjeta:active:not(.bloqueada) {
+    transform: translateY(2px);
+  }
+  .tarjeta:nth-child(1):active:not(.bloqueada) { box-shadow: 0 2px 0 var(--rosa); }
+  .tarjeta:nth-child(2):active:not(.bloqueada) { box-shadow: 0 2px 0 var(--verde); }
+  .tarjeta:nth-child(3):active:not(.bloqueada) { box-shadow: 0 2px 0 var(--amarillo); }
+  .tarjeta:nth-child(4):active:not(.bloqueada) { box-shadow: 0 2px 0 var(--azul); }
+
+  .tarjeta.correcta {
+    background: linear-gradient(135deg, var(--verde), #22c55e);
+    color: white;
+    animation: rebotar 0.6s ease;
+  }
+  .tarjeta.incorrecta {
+    background: linear-gradient(135deg, var(--rosa), #e11d48);
+    color: white;
+    animation: temblar 0.5s ease;
+  }
+  .tarjeta.revelar {
+    background: linear-gradient(135deg, var(--verde), #22c55e);
+    color: white;
+    opacity: 0.85;
+  }
+  .tarjeta.bloqueada { cursor: default; }
+
+  @keyframes rebotar {
+    0%, 100% { transform: scale(1); }
+    30%      { transform: scale(1.12) rotate(2deg); }
+    60%      { transform: scale(0.96) rotate(-1deg); }
+  }
+  @keyframes temblar {
+    0%, 100% { transform: translateX(0); }
+    20%      { transform: translateX(-10px) rotate(-2deg); }
+    40%      { transform: translateX(10px)  rotate(2deg); }
+    60%      { transform: translateX(-8px)  rotate(-1deg); }
+    80%      { transform: translateX(8px)   rotate(1deg); }
+  }
+
+  /* OVERLAY DE FEEDBACK */
+  .feedback {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+  }
+  .feedback.activo { animation: aparecerFeedback 1.1s ease-out forwards; }
+
+  .feedback .carita {
+    font-size: clamp(8rem, 25vw, 13rem);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.25));
+  }
+
+  @keyframes aparecerFeedback {
+    0%   { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+    25%  { opacity: 1; transform: scale(1.15) rotate(5deg); }
+    45%  { transform: scale(0.95) rotate(-3deg); }
+    65%  { transform: scale(1.05) rotate(0deg); opacity: 1; }
+    100% { opacity: 0; transform: scale(0.9); }
+  }
+
+  /* CONFETI */
+  .confeti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 99;
+  }
+  .confeti span {
+    position: absolute;
+    width: 12px;
+    height: 16px;
+    top: -20px;
+    border-radius: 3px;
+    animation: caer linear forwards;
+  }
+
+  @keyframes caer {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0.7; }
+  }
+
+  /* CONTROLES INFERIORES */
+  .controles {
+    margin-top: 24px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .boton {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: white;
+    color: var(--tinta);
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.12);
+    transition: transform 0.15s, box-shadow 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .boton:hover { transform: translateY(-2px); box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12); }
+  .boton:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0, 0, 0, 0.12); }
+
+  .boton.primario {
+    background: linear-gradient(135deg, var(--rosa), #f97316);
+    color: white;
+    box-shadow: 0 4px 0 #be123c;
+  }
+  .boton.primario:hover { box-shadow: 0 6px 0 #be123c; }
+  .boton.primario:active { box-shadow: 0 2px 0 #be123c; }
+
+  /* PISTA */
+  .pista {
+    margin-top: 16px;
+    background: rgba(255, 255, 255, 0.85);
+    border-left: 5px solid var(--azul);
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: var(--tinta);
+    display: none;
+  }
+  .pista.activa { display: block; animation: deslizar 0.3s ease; }
+  .pista b { color: var(--tinta-suave); }
+
+  @keyframes deslizar {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--tinta-suave);
+    font-family: 'Poppins', sans-serif;
+  }
+  footer a { color: var(--tinta-suave); text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+
+  /* Responsive */
+  @media (min-width: 600px) {
+    .tarjetas { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  }
+  @media (min-width: 760px) {
+    .tarjetas { grid-template-columns: repeat(4, 1fr); }
+    .tarjeta { min-height: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="burbuja b1"></div>
+<div class="burbuja b2"></div>
+<div class="burbuja b3"></div>
+<div class="burbuja b4"></div>
+
+<div class="pantalla">
+  <nav class="barra-lg" aria-label="LearnGED"><a id="lnkInicio" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED" height="30"></a><a id="lnkVolver" href="/es/matematicas/nivel-2/practica-2-1.html" data-tx="volver">← Práctica de la Lección 2.1</a></nav>
+
+  <header>
+    <h1><span class="emoji-titulo">🍰</span> Fracciomanía <span class="emoji-titulo">🎲</span></h1>
+    <div class="subtitulo" data-tx="subtitulo">Suma, resta, multiplica y divide fracciones como en un juego.</div>
+
+    <div class="marcador" role="status" aria-live="polite">
+      <div class="indicador">
+        <span class="icono">⭐</span>
+        <div>
+          <span class="etiqueta" data-tx="puntos">Puntos</span>
+          <span class="valor" id="valorPuntos">0</span>
+        </div>
+      </div>
+      <div class="indicador">
+        <span class="icono">🔥</span>
+        <div>
+          <span class="etiqueta" data-tx="racha">Racha</span>
+          <span class="valor" id="valorRacha">0</span>
+        </div>
+      </div>
+      <div class="indicador">
+        <span class="icono">🎯</span>
+        <div>
+          <span class="etiqueta" data-tx="pregunta">Pregunta</span>
+          <span class="valor" id="valorRonda">1</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="tarjeton-pregunta" aria-label="Pregunta actual" data-txa="preguntaActual">
+      <span class="etiqueta-tipo" id="etiquetaTipo">Suma</span>
+      <div class="pregunta" id="pregunta" aria-live="polite"></div>
+    </section>
+
+    <section class="tarjetas" id="tarjetas" aria-label="Opciones de respuesta" data-txa="opciones"></section>
+
+    <div class="pista" id="pista" role="status" aria-live="polite"></div>
+
+    <div class="controles">
+      <button class="boton primario" id="botonSiguiente" type="button" data-tx="siguiente">Siguiente pregunta ➡️</button>
+      <button class="boton" id="botonReiniciar" type="button" data-tx="reiniciar">🔄 Empezar de nuevo</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>LearnGED · José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago · <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" style="color:inherit">CC BY-NC-SA 4.0</a></p>
+    <p data-tx="marca" style="font-size:.85em;margin-top:4px">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service.</p>
+  </footer>
+
+</div>
+
+<div class="feedback" id="feedback" aria-hidden="true"><span class="carita" id="caritaFeedback">😄</span></div>
+<div class="confeti" id="confeti" aria-hidden="true"></div>
+
+<script>
+(function() {
+  'use strict';
+  const LANG = (function(){ var l = null; try { l = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    if (l !== 'en' && l !== 'es') l = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en'; return l; })();
+  const T = LANG === 'en' ? {
+    subtitulo: 'Add, subtract, multiply, and divide fractions, like a game.', puntos: 'Points', racha: 'Streak', pregunta: 'Question',
+    preguntaActual: 'Current question', opciones: 'Answer choices', siguiente: 'Next question ➡️', reiniciar: '🔄 Start over',
+    volver: '← Practice for Lesson 2.1', marca: 'GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with ACE or GED Testing Service.',
+    ops: { '+': 'Addition', '−': 'Subtraction', '×': 'Multiplication', '÷': 'Division' },
+    entero: 'Remember: a whole number like <b>3</b> can be written as <b>3/1</b>.', mixto: 'First change the <b>mixed numbers</b> to improper fractions.',
+    suma: 'To <b>add or subtract</b> you need a <b>common denominator</b>.', mult: 'To <b>multiply</b>: numerator × numerator and denominator × denominator.',
+    div: 'To <b>divide</b>: <b>flip the second</b> fraction and multiply.', final: 'At the end, <b>simplify</b> and write it as a mixed number if it is more than 1.',
+    pista: (op) => `💡 <b>Hint for this ${op}:</b> `, otra: ' <b>Choose again.</b>', era: (x) => `The answer was ${x}. Press <b>Next question</b>.`,
+    menos: 'minus', y: 'and', sobre: 'over', igual: 'equals what?'
+  } : {
+    subtitulo: 'Sume, reste, multiplique y divida fracciones como en un juego.', puntos: 'Puntos', racha: 'Racha', pregunta: 'Pregunta',
+    preguntaActual: 'Pregunta actual', opciones: 'Opciones de respuesta', siguiente: 'Siguiente pregunta ➡️', reiniciar: '🔄 Empezar de nuevo',
+    volver: '← Práctica de la Lección 2.1', marca: 'GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service.',
+    ops: { '+': 'Suma', '−': 'Resta', '×': 'Multiplicación', '÷': 'División' },
+    entero: 'Recuerde: un entero como <b>3</b> se puede escribir como <b>3/1</b>.', mixto: 'Convierta primero los <b>números mixtos</b> en fracciones impropias.',
+    suma: 'Para <b>sumar o restar</b> hace falta un <b>denominador común</b>.', mult: 'Para <b>multiplicar</b>: numerador × numerador y denominador × denominador.',
+    div: 'Para <b>dividir</b>: <b>dé vuelta la segunda</b> fracción y multiplique.', final: 'Al final, <b>simplifique</b> y escríbala como número mixto si es mayor que 1.',
+    pista: (op) => `💡 <b>Pista para esta ${op}:</b> `, otra: ' <b>Elija otra vez.</b>', era: (x) => `La respuesta era ${x}. Pulse <b>Siguiente pregunta</b>.`,
+    menos: 'menos', y: 'y', sobre: 'sobre', igual: '¿igual a cuánto?'
+  };
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-tx]').forEach(e => { e.textContent = T[e.dataset.tx]; });
+  document.querySelectorAll('[data-txa]').forEach(e => { e.setAttribute('aria-label', T[e.dataset.txa]); });
+  document.getElementById('lnkInicio').href = LANG === 'en' ? '/' : '/es/';
+  document.getElementById('lnkVolver').href = LANG === 'en' ? '/math/level-2/practice-2-1.html' : '/es/matematicas/nivel-2/practica-2-1.html';
+
+  // ============================================================
+  // CLASE FRACCIÓN
+  // ============================================================
+  function gcd(a, b) {
+    a = Math.abs(a); b = Math.abs(b);
+    while (b) { [a, b] = [b, a % b]; }
+    return a || 1;
+  }
+
+  class Frac {
+    constructor(num, den = 1) {
+      if (den === 0) throw new Error('Denominador cero');
+      this.num = num;
+      this.den = den;
+      this.simp();
+    }
+    simp() {
+      if (this.den < 0) { this.num = -this.num; this.den = -this.den; }
+      const g = gcd(this.num, this.den);
+      this.num /= g;
+      this.den /= g;
+    }
+    add(o)      { return new Frac(this.num * o.den + o.num * this.den, this.den * o.den); }
+    sub(o)      { return new Frac(this.num * o.den - o.num * this.den, this.den * o.den); }
+    mul(o)      { return new Frac(this.num * o.num, this.den * o.den); }
+    div(o)      { return new Frac(this.num * o.den, this.den * o.num); }
+    eq(o)       { return this.num === o.num && this.den === o.den; }
+    isZero()    { return this.num === 0; }
+    val()       { return this.num / this.den; }
+    clone()     { return new Frac(this.num, this.den); }
+  }
+
+  // ============================================================
+  // RENDERIZADO HTML DE FRACCIONES
+  // ============================================================
+  // Convierte una Frac a HTML como número mixto cuando aplica.
+  function fracTxt(f) {
+    const neg = f.num < 0 ? T.menos + ' ' : '', a = Math.abs(f.num);
+    if (f.den === 1) return neg + a;
+    if (a < f.den) return neg + a + ' ' + T.sobre + ' ' + f.den;
+    const e = Math.trunc(a / f.den), rr = a % f.den;
+    return rr === 0 ? neg + e : neg + e + ' ' + T.y + ' ' + rr + ' ' + T.sobre + ' ' + f.den;
+  }
+  function frac2html(f) { return '<span aria-hidden="true">' + frac2html0(f) + '</span><span class="sr-only">' + fracTxt(f) + '</span>'; }
+  function frac2html0(f) {
+    if (f.den === 1) {
+      return `<span class="entero">${f.num}</span>`;
+    }
+    const negativo = f.num < 0;
+    const numAbs = Math.abs(f.num);
+
+    // Fracción propia
+    if (numAbs < f.den) {
+      const signo = negativo ? '<span class="neg">−</span>' : '';
+      return `${signo}<span class="frac"><span class="num">${numAbs}</span><span class="den">${f.den}</span></span>`;
+    }
+
+    // Mixto
+    const entero = Math.trunc(numAbs / f.den);
+    const resto = numAbs % f.den;
+    const signo = negativo ? '<span class="neg">−</span>' : '';
+    if (resto === 0) {
+      return `${signo}<span class="entero">${entero}</span>`;
+    }
+    return `${signo}<span class="mixto"><span class="entero">${entero}</span><span class="frac"><span class="num">${resto}</span><span class="den">${f.den}</span></span></span>`;
+  }
+
+  // ============================================================
+  // GENERACIÓN DE OPERANDOS
+  // ============================================================
+  function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+  function pick(arr)      { return arr[rand(0, arr.length - 1)]; }
+
+  // Genera una fracción propia con denominador "amigable"
+  function fracPropia() {
+    const den = pick([2, 3, 4, 5, 6, 8, 10, 12]);
+    const num = rand(1, den - 1);
+    return new Frac(num, den);
+  }
+
+  // Genera un número mixto (entero + propia)
+  function numMixto() {
+    const entero = rand(1, 4);
+    const f = fracPropia();
+    return new Frac(entero * f.den + f.num, f.den);
+  }
+
+  // Genera un entero pequeño
+  function entero() {
+    return new Frac(rand(2, 9), 1);
+  }
+
+  function generaOperando(forzarTipo) {
+    // 60% propia, 25% mixto, 15% entero
+    const tipo = forzarTipo || (Math.random() < 0.6 ? 'propia' : (Math.random() < 0.625 ? 'mixto' : 'entero'));
+    if (tipo === 'propia') return { f: fracPropia(), tipo };
+    if (tipo === 'mixto')  return { f: numMixto(),   tipo };
+    return { f: entero(), tipo };
+  }
+
+  // ============================================================
+  // GENERACIÓN DE PROBLEMAS
+  // ============================================================
+  const NOMBRES_OP = T.ops;
+
+  function generaProblema() {
+    const op = pick(['+', '−', '×', '÷']);
+
+    // Asegurar al menos uno con fracción (no dos enteros, sería trivial)
+    let a, b;
+    let intentos = 0;
+    do {
+      a = generaOperando();
+      b = generaOperando();
+      intentos++;
+    } while (intentos < 10 && a.tipo === 'entero' && b.tipo === 'entero');
+
+    let f1 = a.f, f2 = b.f;
+
+    // Resta: garantizar resultado positivo (el GED no asume negativos en ABE)
+    if (op === '−' && f1.val() < f2.val()) {
+      [f1, f2] = [f2, f1];
+      [a, b] = [b, a];
+    }
+
+    // División: f2 no puede ser 0
+    if (op === '÷' && f2.isZero()) {
+      f2 = fracPropia();
+    }
+
+    let resultado;
+    switch (op) {
+      case '+': resultado = f1.add(f2); break;
+      case '−': resultado = f1.sub(f2); break;
+      case '×': resultado = f1.mul(f2); break;
+      case '÷': resultado = f1.div(f2); break;
+    }
+
+    // Generar distractores
+    const distractores = generaDistractores(f1, f2, op, resultado);
+
+    // Mezclar opciones
+    const opciones = [resultado, ...distractores];
+    barajar(opciones);
+    const indiceCorrecto = opciones.findIndex(x => x.eq(resultado));
+
+    return { f1, f2, op, tipo1: a.tipo, tipo2: b.tipo, resultado, opciones, indiceCorrecto };
+  }
+
+  function barajar(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  // Distractores basados en errores comunes
+  function generaDistractores(f1, f2, op, correcto) {
+    const candidatos = [];
+
+    function tryAdd(num, den) {
+      try {
+        if (den === 0) return;
+        const f = new Frac(num, den);
+        if (f.eq(correcto)) return;
+        for (const c of candidatos) if (c.eq(f)) return;
+        // evitar valores absurdamente grandes o negativos
+        if (Math.abs(f.val()) > 50) return;
+        if (f.val() < 0) return;
+        candidatos.push(f);
+      } catch (e) {}
+    }
+
+    if (op === '+' || op === '−') {
+      // Error clásico: sumar/restar num y den por separado (posible sólo si ambos son fracciones)
+      if (f1.den !== 1 && f2.den !== 1) {
+        const s = op === '+' ? 1 : -1;
+        tryAdd(f1.num + s * f2.num, f1.den + f2.den);
+      }
+      // Sólo numeradores ignorando MCD
+      const s2 = op === '+' ? 1 : -1;
+      tryAdd(f1.num + s2 * f2.num, Math.max(f1.den, f2.den));
+      // Olvidar parte entera del mixto: usar sólo la fracción
+      const opp = op === '+' ? 'sub' : 'add';
+      tryAdd(correcto.num + (op === '+' ? 1 : -1), correcto.den);
+      tryAdd(correcto.num - (op === '+' ? 1 : -1), correcto.den);
+      // multiplicar en lugar de sumar
+      const mul = f1.mul(f2);
+      tryAdd(mul.num, mul.den);
+    } else if (op === '×') {
+      // Sumar en lugar de multiplicar
+      const sum = f1.add(f2);
+      tryAdd(sum.num, sum.den);
+      // Cruzar denominadores: (a*d)/(b*c)
+      tryAdd(f1.num * f2.den, f1.den * f2.num || 1);
+      // No simplificar / vecindad
+      tryAdd(correcto.num + 1, correcto.den);
+      tryAdd(correcto.num, correcto.den + 1);
+      // Multiplicar sólo numeradores y poner 1 en denom
+      tryAdd(f1.num * f2.num, 1);
+    } else if (op === '÷') {
+      // Multiplicar sin invertir (error súper común)
+      const sinInvertir = f1.mul(f2);
+      tryAdd(sinInvertir.num, sinInvertir.den);
+      // Invertir la primera en lugar de la segunda
+      tryAdd(f1.den * f2.num, f1.num * f2.den || 1);
+      // Sumar
+      const sum = f1.add(f2);
+      tryAdd(sum.num, sum.den);
+      // Vecino del correcto
+      tryAdd(correcto.num + 1, correcto.den);
+    }
+
+    // Rellenar si faltan
+    while (candidatos.length < 5) {
+      const variacion = pick([
+        () => new Frac(correcto.num + 1, correcto.den),
+        () => new Frac(correcto.num, correcto.den + 1),
+        () => new Frac(correcto.num + correcto.den, correcto.den),
+        () => correcto.add(new Frac(1, pick([2, 3, 4]))),
+        () => correcto.add(new Frac(-1, pick([2, 3, 4])))
+      ]);
+      try {
+        const f = variacion();
+        tryAdd(f.num, f.den);
+      } catch (e) {}
+      if (candidatos.length === 0) {
+        // safety fallback
+        tryAdd(correcto.num + 1, correcto.den);
+        break;
+      }
+    }
+
+    barajar(candidatos);
+    return candidatos.slice(0, 3);
+  }
+
+  // ============================================================
+  // AUDIO (Web Audio API)
+  // ============================================================
+  let audioCtx = null;
+  function getAudio() {
+    if (!audioCtx) {
+      try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+      catch (e) { return null; }
+    }
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
+  function tono({freq, dur = 0.25, tipo = 'sine', vol = 0.18, ataque = 0.01, retardo = 0}) {
+    const ctx = getAudio();
+    if (!ctx) return;
+    const t0 = ctx.currentTime + retardo;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = tipo;
+    osc.frequency.setValueAtTime(freq, t0);
+    gain.gain.setValueAtTime(0, t0);
+    gain.gain.linearRampToValueAtTime(vol, t0 + ataque);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(t0);
+    osc.stop(t0 + dur + 0.05);
+  }
+
+  function sonidoCorrecto() {
+    // Arpegio mayor C-E-G-C alegre
+    const notas = [523.25, 659.25, 783.99, 1046.50];
+    notas.forEach((f, i) => tono({ freq: f, dur: 0.22, tipo: 'triangle', vol: 0.18, retardo: i * 0.08 }));
+  }
+
+  function sonidoIncorrecto() {
+    // Sonido "boing" raro descendente
+    const ctx = getAudio();
+    if (!ctx) return;
+    const t0 = ctx.currentTime;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(330, t0);
+    osc.frequency.exponentialRampToValueAtTime(80, t0 + 0.6);
+    gain.gain.setValueAtTime(0, t0);
+    gain.gain.linearRampToValueAtTime(0.18, t0 + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.65);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(t0);
+    osc.stop(t0 + 0.7);
+
+    // Segundo "wah" más bajito
+    setTimeout(() => {
+      tono({ freq: 150, dur: 0.3, tipo: 'square', vol: 0.08 });
+    }, 250);
+  }
+
+  function sonidoClick() {
+    tono({ freq: 800, dur: 0.05, tipo: 'sine', vol: 0.06 });
+  }
+
+  // ============================================================
+  // CONFETI
+  // ============================================================
+  const COLORES_CONFETI = ['#ff4d8f', '#4ade80', '#fbbf24', '#38bdf8', '#a855f7', '#f97316'];
+  function lanzarConfeti() {
+    const cont = document.getElementById('confeti');
+    const N = 60;
+    for (let i = 0; i < N; i++) {
+      const p = document.createElement('span');
+      p.style.left = (Math.random() * 100) + '%';
+      p.style.background = COLORES_CONFETI[Math.floor(Math.random() * COLORES_CONFETI.length)];
+      p.style.animationDuration = (1.4 + Math.random() * 1.4) + 's';
+      p.style.animationDelay = (Math.random() * 0.3) + 's';
+      p.style.transform = `rotate(${Math.random() * 360}deg)`;
+      cont.appendChild(p);
+      setTimeout(() => p.remove(), 3500);
+    }
+  }
+
+  // ============================================================
+  // ESTADO Y UI
+  // ============================================================
+  const estado = {
+    puntos: 0,
+    racha: 0,
+    ronda: 1,
+    problema: null,
+    bloqueado: false
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  function generaPista(p) {
+    const op = LANG === 'en' ? NOMBRES_OP[p.op].toLowerCase() : NOMBRES_OP[p.op].toLowerCase();
+    const tieneMixto = p.tipo1 === 'mixto' || p.tipo2 === 'mixto';
+    const tieneEntero = p.tipo1 === 'entero' || p.tipo2 === 'entero';
+
+    const consejos = [];
+    if (tieneEntero) consejos.push(T.entero);
+    if (tieneMixto)  consejos.push(T.mixto);
+
+    if (p.op === '+' || p.op === '−') {
+      consejos.push(T.suma);
+    } else if (p.op === '×') {
+      consejos.push(T.mult);
+    } else if (p.op === '÷') {
+      consejos.push(T.div);
+    }
+    consejos.push(T.final);
+    return T.pista(op) + consejos.join(' ');
+  }
+
+  function pintarProblema() {
+    const p = estado.problema;
+    $('etiquetaTipo').textContent = NOMBRES_OP[p.op];
+
+    const html = `${frac2html(p.f1)} <span class="op">${p.op}</span> ${frac2html(p.f2)} <span class="op" aria-hidden="true">= ?</span><span class="sr-only">${T.igual}</span>`;
+    $('pregunta').innerHTML = html;
+
+    const cont = $('tarjetas');
+    cont.innerHTML = '';
+    const letras = ['A', 'B', 'C', 'D'];
+    p.opciones.forEach((op, i) => {
+      const t = document.createElement('button');
+      t.type = 'button';
+      t.className = 'tarjeta';
+      t.dataset.indice = i;
+      t.dataset.letra = letras[i];
+      t.innerHTML = frac2html(op);
+      t.addEventListener('click', () => responder(i, t));
+      cont.appendChild(t);
+    });
+
+    $('valorRonda').textContent = estado.ronda;
+    $('pista').classList.remove('activa');
+    $('pista').innerHTML = '';
+    estado.bloqueado = false;
+    estado.intentos = 0;
+  }
+
+  function mostrarFeedback(carita) {
+    const fb = $('feedback');
+    $('caritaFeedback').textContent = carita;
+    fb.classList.remove('activo');
+    void fb.offsetWidth; // reflow para reiniciar animación
+    fb.classList.add('activo');
+    setTimeout(() => fb.classList.remove('activo'), 1200);
+  }
+
+  function actualizaValor(idEl) {
+    const el = $(idEl);
+    el.classList.remove('pulso');
+    void el.offsetWidth;
+    el.classList.add('pulso');
+  }
+
+  function responder(indice, tarjeta) {
+    if (estado.bloqueado || tarjeta.classList.contains('incorrecta')) return;
+    sonidoClick();
+
+    const p = estado.problema;
+    const correcta = indice === p.indiceCorrecto;
+    estado.intentos = (estado.intentos || 0) + 1;
+    if (!correcta && estado.intentos === 1) {
+      tarjeta.classList.add('incorrecta');
+      tarjeta.disabled = true;
+      sonidoIncorrecto();
+      mostrarFeedback(pick(['🤔', '🧐', '💭']));
+      const pista1 = $('pista');
+      pista1.innerHTML = generaPista(p) + T.otra;
+      pista1.classList.add('activa');
+      return;
+    }
+    estado.bloqueado = true;
+    const todasTarjetas = document.querySelectorAll('.tarjeta');
+    todasTarjetas.forEach(t => t.classList.add('bloqueada'));
+
+    if (correcta) {
+      tarjeta.classList.add('correcta');
+      estado.puntos += 10 + estado.racha * 2;
+      estado.racha += 1;
+      $('valorPuntos').textContent = estado.puntos;
+      $('valorRacha').textContent = estado.racha;
+      actualizaValor('valorPuntos');
+      actualizaValor('valorRacha');
+      sonidoCorrecto();
+      mostrarFeedback(pick(['😄', '🤩', '🎉', '🥳', '😎']));
+      lanzarConfeti();
+      setTimeout(siguientePregunta, 1400);
+    } else {
+      tarjeta.classList.add('incorrecta');
+      estado.racha = 0;
+      $('valorRacha').textContent = '0';
+      sonidoIncorrecto();
+      mostrarFeedback(pick(['😱', '😵', '🫨', '🙀', '😬']));
+      // Revelar la correcta
+      const correctaEl = document.querySelector(`.tarjeta[data-indice="${p.indiceCorrecto}"]`);
+      if (correctaEl) setTimeout(() => correctaEl.classList.add('revelar'), 600);
+      // Mostrar pista
+      const pista = $('pista');
+      pista.innerHTML = generaPista(p) + ' ' + T.era('<b>' + fracTxt(p.opciones[p.indiceCorrecto]) + '</b>');
+      pista.classList.add('activa');
+    }
+  }
+
+  function siguientePregunta() {
+    estado.ronda += 1;
+    estado.problema = generaProblema();
+    pintarProblema();
+  }
+
+  function reiniciar() {
+    estado.puntos = 0;
+    estado.racha = 0;
+    estado.ronda = 1;
+    $('valorPuntos').textContent = '0';
+    $('valorRacha').textContent = '0';
+    estado.problema = generaProblema();
+    pintarProblema();
+  }
+
+  // ============================================================
+  // INIT (con flag para evitar duplicate listeners)
+  // ============================================================
+  if (window.__fracciomania_init) return;
+  window.__fracciomania_init = true;
+
+  $('botonSiguiente').addEventListener('click', () => {
+    if (!estado.bloqueado) {
+      // si aún no respondió, no avanzamos
+      return;
+    }
+    siguientePregunta();
+  });
+
+  $('botonReiniciar').addEventListener('click', reiniciar);
+
+  // arranque
+  estado.problema = generaProblema();
+  pintarProblema();
+
+})();
+</script>
+
+</body>
+</html>

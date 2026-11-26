@@ -189,8 +189,10 @@ TEMAS2 = {
   ("8", "Estadística y probabilidad", [("8-1", "Media, mediana, moda, rango y media ponderada"), ("8-2", "Gráficos circulares: leer, interpretar y construir"), ("8-3", "Probabilidad simple")])]}
 
 EXTRAS2 = {
- "en": {"1-2": ("complement", "tengo-debo.html?lang=en", None, "Complement: What I have and what I owe")},
- "es": {"1-2": ("complement", "/math/level-2/tengo-debo.html?lang=es", None, "Complemento: Tengo y debo")}}
+ "en": {"1-2": ("complement", "tengo-debo.html?lang=en", None, "Complement: What I have and what I owe"),
+        "2-1": ("game", "fracciomania.html?lang=en", None, "Game: Fracciomanía")},
+ "es": {"1-2": ("complement", "/math/level-2/tengo-debo.html?lang=es", None, "Complemento: Tengo y debo"),
+        "2-1": ("game", "/math/level-2/fracciomania.html?lang=es", None, "Juego: Fracciomanía")}}
 
 def _tx2():
     import copy

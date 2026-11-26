@@ -10,6 +10,14 @@ N = "2-1"
 TEMA = ("Fractions, exponents, and roots", "Fracciones, exponentes y raíces")
 TIT = ("Fractions with negative signs", "Fracciones complejas con coeficientes negativos")
 
+def juego():
+    """Tarjeta a Fracciomanía (un solo archivo bilingüe; el idioma va en el enlace)."""
+    href = "/math/level-2/fracciomania.html?lang=" + t("en", "es")
+    return f'''<a class="enlace-interactivo" href="{href}" target="_blank" rel="noopener noreferrer" aria-label="{t("Open the game: Fracciomanía (opens in a new tab)", "Abrir el juego: Fracciomanía (se abre en una pestaña nueva)")}">
+<span class="ei-icono" aria-hidden="true">🎲</span>
+<span class="ei-cuerpo"><span class="ei-titulo">{t("Game: Fracciomanía", "Juego: Fracciomanía")}</span><span class="ei-sub">{t("Review the four operations with fractions at your own pace, as a game with points and streaks.", "Repase las cuatro operaciones con fracciones a su ritmo, como un juego con puntos y rachas.")}</span><span class="ei-cta">{t("Open the game", "Abrir el juego")} <span aria-hidden="true">›</span></span></span>
+</a>'''
+
 def leccion():
     n = N
     s1 = f'''<p>{t("Welcome to Topic 2. In Topic 1 you learned the key rule: <strong>same signs give a positive answer; different signs give a negative answer</strong>. That same rule opens this topic. In Level 1 fractions were always positive; now they get a sign. The good news: there are no new sign rules. Fractions follow exactly the same rules as integers.",
@@ -84,7 +92,8 @@ f"""<p>Para escribir −5/6, pulse primero {T("(−)")} y después la fracción:
 "<p>−2 3/4 quiere decir −(2 + 3/4): el signo menos afecta al entero <strong>y</strong> a la fracción. No es −2 + 3/4.</p>"))}
 {practica("p6", t("Practice 6 — Integer and fraction", "Práctica 6 — Entero y fracción"), t("What is", "¿Cuánto es") + f" −1 + {fr(1, 3)}?",
           [("a", frn(4, 3)), ("b", fr(2, 3)), ("c", frn(2, 3)), ("d", frn(1, 3))])}
-{enlace(n, t("integer-fraction", "combinadas"), t("expressions with an integer and a fraction", "expresiones con entero y fracción"), t("Write the integer as a fraction and combine; give the answer as a fraction or a mixed number.", "Convierta el entero en fracción y combine; dé el resultado como fracción o número mixto."))}'''
+{enlace(n, t("integer-fraction", "combinadas"), t("expressions with an integer and a fraction", "expresiones con entero y fracción"), t("Write the integer as a fraction and combine; give the answer as a fraction or a mixed number.", "Convierta el entero en fracción y combine; dé el resultado como fracción o número mixto."))}
+{juego()}'''
 
     secciones = [("s-" + t("three-forms", "tres-formas"), t("The three forms of a negative fraction", "Las tres formas de una fracción negativa"), s1),
                  ("s-" + t("multiply-divide", "multiplicar-dividir"), t("Multiplying and dividing fractions with signs", "Multiplicar y dividir fracciones con signo"), s2),
@@ -373,10 +382,15 @@ def practica_pagina():
 {libre_q("p3", t("Practice: add or subtract", "Practique: sumar o restar"), nota_fr)}'''),
      (t("integer-fraction", "combinadas"), t("Expressions with an integer and a fraction", "Expresiones con entero y fracción"),
       f'''      <p>{t("Treat an integer as a fraction with denominator 1 and bring it to the common denominator. For example, −2 = −8/4. You can leave the answer as an improper fraction (−11/4) or as a mixed number (−2 3/4).", "Un entero se trata como una fracción de denominador 1 y se lleva al denominador común. Por ejemplo, −2 = −8/4. El resultado se puede dejar como fracción impropia (−11/4) o como número mixto (−2 3/4).")}</p>
-{libre_q("p4", t("Practice: integer and fraction", "Practique: entero y fracción"), t("Type a fraction like −11/4 or a mixed number like −2 3/4 (with a space between the whole number and the fraction).", "Escriba una fracción como −11/4 o un número mixto como −2 3/4 (con un espacio entre el entero y la fracción)."))}''')]
+{libre_q("p4", t("Practice: integer and fraction", "Practique: entero y fracción"), t("Type a fraction like −11/4 or a mixed number like −2 3/4 (with a space between the whole number and the fraction).", "Escriba una fracción como −11/4 o un número mixto como −2 3/4 (con un espacio entre el entero y la fracción)."))}'''),
+     ("fracciomania", "Fracciomanía",
+      f'''      <p>{t("To review the four operations with fractions at your own pace, play Fracciomanía: points, streaks, and a hint when you make a mistake. It opens in a new tab.", "Para repasar las cuatro operaciones con fracciones a su ritmo, juegue a Fracciomanía: puntos, rachas y una pista cuando se equivoca. Se abre en una pestaña nueva.")}</p>
+      <div class="tarjetas">
+        <a class="tarjeta-ext" href="/math/level-2/fracciomania.html?lang={t("en", "es")}" target="_blank" rel="noopener noreferrer"><strong>Fracciomanía</strong>{t("The fractions game of LearnGED.", "El juego de fracciones de LearnGED.")}<span class="ir">{t("Open in a new tab ›", "Abrir en una pestaña nueva ›")}</span></a>
+      </div>''')]
     js = "var TXT = " + json.dumps(TX[B.L], ensure_ascii=False, indent=1) + ";\n" + LOGICA
     return B.pagina_practica(n, 2, t(*TEMA), t(*TIT),
-        t("Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.", "Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad."),
+        t("Four practice activities and a game on one page. The exercises change every time. If you make a mistake, you get a hint and another try.", "Cuatro actividades de práctica y un juego en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad."),
         mods, js, scripts=("/math/integers.js",))
 
 if __name__ == "__main__":
