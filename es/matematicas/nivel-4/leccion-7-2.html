@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.2 · Relaciones y funciones, notación f(x), dominio y rango · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-7-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 7 — Sistemas de desigualdades y funciones</p>
+<h1>Lección 7.2 · Relaciones y funciones, notación f(x), dominio y rango</h1>
+<p class="lema">Reconozca una función, aplique la prueba de la línea vertical, evalúe f(x), halle el dominio y el rango, y componga dos funciones.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Se permite calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Decidir</strong> si una relación es función (una salida por cada entrada).</li>
+<li><strong>Aplicar</strong> la prueba de la línea vertical a una gráfica.</li>
+<li><strong>Evaluar</strong> f(x) con paréntesis y el orden de operaciones.</li>
+<li><strong>Identificar</strong> el dominio y el rango, y <strong>componer</strong> dos funciones.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.7.b</span> Representar o identificar una función en una tabla o una gráfica como una relación con exactamente una salida (un elemento del rango) para cada entrada (cada elemento del dominio).</li><li><span class="std-cod std-dir">A.7.c</span> Evaluar funciones lineales y cuadráticas para valores de su dominio cuando se representan con notación de función.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.5.e</span> Para una función que modela una relación lineal o no lineal entre dos cantidades, interpretar las características clave de gráficas y tablas en términos de las cantidades, y trazar gráficas que muestren las características clave a partir de una descripción verbal de la relación.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.F.1</span> <span class="std-nivel">Nivel D</span> Entender que una función es una regla que asigna a cada entrada exactamente una salida. La gráfica de una función es el conjunto de pares ordenados formados por una entrada y su salida correspondiente.</li><li><span class="std-cod std-ccr">F-IF.1</span> <span class="std-nivel">Nivel E</span> Entender que una función de un conjunto (llamado dominio) a otro (llamado rango) asigna a cada elemento del dominio exactamente un elemento del rango. Si f es una función y x es un elemento de su dominio, f(x) denota la salida de f que corresponde a la entrada x. La gráfica de f es la gráfica de la ecuación y = f(x).</li><li><span class="std-cod std-ccr">F-IF.2</span> <span class="std-nivel">Nivel E</span> Usar la notación de función, evaluar funciones para entradas de su dominio e interpretar enunciados que usan notación de función en un contexto.</li><li><span class="std-cod std-ccr">F-BF.1</span> <span class="std-nivel">Nivel E</span> Escribir una función que describa la relación entre dos cantidades: hallar una expresión explícita, un proceso recursivo o los pasos de cálculo a partir de un contexto; combinar tipos de funciones con operaciones aritméticas; componer funciones.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-funcion">¿Qué es una función? La máquina de funciones</a></li>
+<li><a href="#s-linea-vertical">La prueba de la línea vertical</a></li>
+<li><a href="#s-notacion">La notación f(x): evaluar funciones</a></li>
+<li><a href="#s-dominio-rango">Dominio y rango</a></li>
+<li><a href="#s-composicion">Composición de funciones</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-funcion"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es una función? La máquina de funciones</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 7.1 se trabajó con regiones del plano. Ahora se introduce uno de los conceptos centrales del GED: la <strong>función</strong>. Una función es una regla que toma una entrada y devuelve exactamente una salida. Es la base de todo el Tema 8.</p>
+<p>Conviene imaginar una función como una <strong>máquina</strong>: entra un número (la entrada x), la máquina aplica una regla y sale un resultado (la salida f(x)). La condición clave: <strong>cada entrada produce una sola salida</strong>.</p>
+<svg viewBox="0 0 520 150" role="img" aria-label="Una máquina de funciones: la entrada 4 entra en la regla f de x = 2x − 3 y sale la salida 5." style="width:100%;max-width:520px;height:auto;display:block;margin:12px auto;"><rect x="0" y="0" width="520" height="150" fill="#fff"/>
+<text x="40" y="82" font-size="30" font-weight="700" fill="#1565c0" text-anchor="middle">4</text>
+<line x1="68" y1="72" x2="148" y2="72" stroke="#1565c0" stroke-width="4"/><polygon points="160,72 146,64 146,80" fill="#1565c0"/>
+<text x="108" y="58" font-size="13" fill="#455a64" text-anchor="middle">entrada x</text>
+<rect x="164" y="26" width="192" height="92" rx="16" fill="#ede7f6" stroke="#6a1b9a" stroke-width="3"/>
+<text x="260" y="66" font-size="15" fill="#6a1b9a" text-anchor="middle">regla</text>
+<text x="260" y="92" font-size="19" font-weight="700" fill="#4a148c" text-anchor="middle">f(x) = 2x − 3</text>
+<line x1="356" y1="72" x2="436" y2="72" stroke="#2e7d32" stroke-width="4"/><polygon points="448,72 434,64 434,80" fill="#2e7d32"/>
+<text x="396" y="58" font-size="13" fill="#455a64" text-anchor="middle">salida f(x)</text>
+<text x="480" y="82" font-size="30" font-weight="700" fill="#2e7d32" text-anchor="middle">5</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La prueba de la entrada</span>
+<p>Si una misma entrada (un mismo valor de x) tuviera dos salidas distintas, la relación no sería función. Una máquina que diera dos resultados distintos para el mismo número estaría descompuesta.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#maquina" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la máquina de funciones (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la máquina de funciones</span><span class="ei-sub">Entradas y salidas de una función, con la tabla de pares que se va completando, y una máquina descompuesta que da dos salidas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-linea-vertical"><span aria-hidden="true" class="num-seccion">2</span>La prueba de la línea vertical</h2>
+<p>En una gráfica, una relación es función si <strong>ninguna línea vertical</strong> la corta en más de un punto. Si alguna vertical toca la gráfica dos o más veces, esa entrada tendría varias salidas y no sería función.</p>
+<svg viewBox="0 0 316 348" role="img" aria-label="La parábola y = x al cuadrado menos 2 con una línea vertical punteada en x = 1.5. La línea corta la parábola en un solo punto, así que la parábola es una función." style="width:100%;max-width:320px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="62" y1="30" x2="62" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="94" y1="30" x2="94" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="126" y1="30" x2="126" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="158" y1="30" x2="158" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="222" y1="30" x2="222" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="254" y1="30" x2="254" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="286" y1="30" x2="286" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="318" x2="286" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="286" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="254" x2="286" y2="254" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="222" x2="286" y2="222" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="286" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="158" x2="286" y2="158" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="126" x2="286" y2="126" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="94" x2="286" y2="94" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="62" x2="286" y2="62" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="286" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="222" x2="296" y2="222" stroke="#10174f" stroke-width="2"/><line x1="158" y1="326" x2="158" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="300,222 290,217 290,227" fill="#10174f"/><polygon points="158,16 153,26 163,26" fill="#10174f"/><text x="300" y="210" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="172" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="68.4" y1="35.1" x2="71.6" y2="52.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="71.6" y1="52.7" x2="74.8" y2="69.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="74.8" y1="69.7" x2="78.0" y2="86.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="78.0" y1="86.0" x2="81.2" y2="101.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.2" y1="101.7" x2="84.4" y2="116.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="84.4" y1="116.7" x2="87.6" y2="131.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.6" y1="131.1" x2="90.8" y2="144.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="90.8" y1="144.9" x2="94.0" y2="158.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="94.0" y1="158.0" x2="97.2" y2="170.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="97.2" y1="170.5" x2="100.4" y2="182.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="100.4" y1="182.3" x2="103.6" y2="193.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.6" y1="193.5" x2="106.8" y2="204.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.8" y1="204.1" x2="110.0" y2="214.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="110.0" y1="214.0" x2="113.2" y2="223.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="113.2" y1="223.3" x2="116.4" y2="231.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="116.4" y1="231.9" x2="119.6" y2="239.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="119.6" y1="239.9" x2="122.8" y2="247.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="122.8" y1="247.3" x2="126.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.0" y1="254.0" x2="129.2" y2="260.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="129.2" y1="260.1" x2="132.4" y2="265.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="132.4" y1="265.5" x2="135.6" y2="270.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.6" y1="270.3" x2="138.8" y2="274.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="138.8" y1="274.5" x2="142.0" y2="278.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="142.0" y1="278.0" x2="145.2" y2="280.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.2" y1="280.9" x2="148.4" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="148.4" y1="283.1" x2="151.6" y2="284.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="151.6" y1="284.7" x2="154.8" y2="285.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="154.8" y1="285.7" x2="158.0" y2="286.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="158.0" y1="286.0" x2="161.2" y2="285.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="161.2" y1="285.7" x2="164.4" y2="284.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="164.4" y1="284.7" x2="167.6" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="167.6" y1="283.1" x2="170.8" y2="280.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="170.8" y1="280.9" x2="174.0" y2="278.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="174.0" y1="278.0" x2="177.2" y2="274.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="177.2" y1="274.5" x2="180.4" y2="270.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="180.4" y1="270.3" x2="183.6" y2="265.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="183.6" y1="265.5" x2="186.8" y2="260.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="186.8" y1="260.1" x2="190.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="190.0" y1="254.0" x2="193.2" y2="247.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="193.2" y1="247.3" x2="196.4" y2="239.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="196.4" y1="239.9" x2="199.6" y2="231.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="199.6" y1="231.9" x2="202.8" y2="223.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="202.8" y1="223.3" x2="206.0" y2="214.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="214.0" x2="209.2" y2="204.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="209.2" y1="204.1" x2="212.4" y2="193.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="212.4" y1="193.5" x2="215.6" y2="182.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="215.6" y1="182.3" x2="218.8" y2="170.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="218.8" y1="170.5" x2="222.0" y2="158.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="222.0" y1="158.0" x2="225.2" y2="144.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="225.2" y1="144.9" x2="228.4" y2="131.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="228.4" y1="131.1" x2="231.6" y2="116.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="231.6" y1="116.7" x2="234.8" y2="101.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="234.8" y1="101.7" x2="238.0" y2="86.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="238.0" y1="86.0" x2="241.2" y2="69.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="241.2" y1="69.7" x2="244.4" y2="52.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="244.4" y1="52.7" x2="247.6" y2="35.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="318.0" x2="206.0" y2="30.0" stroke="#ef6c00" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"/><circle cx="206.0" cy="214.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><text x="216.0" y="204.0" font-size="15" font-weight="700" fill="#2e7d32" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">(1.5, 0.25)</text><text x="34.8" y="295.6" font-size="14" font-weight="700" fill="#1565c0" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y = x² − 2</text><text x="30" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−4</text><text x="62" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="94" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="126" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="190" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="222" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="254" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="152" y="322" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="152" y="290" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="152" y="258" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="152" y="194" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="152" y="162" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="152" y="130" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="152" y="98" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="152" y="66" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text></svg>
+<p>La parábola es una función: cualquier línea vertical la corta una sola vez. En cambio, una circunferencia o una parábola «acostada» fallarían la prueba.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Un conjunto de pares</h3></div>
+<p class="pregunta-int" id="t-p1">¿Es función {(1, 2), (2, 3), (3, 4)}?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Sí, es función</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">No se puede saber</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Una entrada repetida</h3></div>
+<p class="pregunta-int" id="t-p2">¿Es función {(1, 2), (1, 5), (2, 3)}?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">No, la entrada 1 tiene dos salidas</button>
+<button class="opcion" data-k="b" type="button">Sí, es función</button>
+<button class="opcion" data-k="c" type="button">Sí, siempre</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Una recta vertical</h3></div>
+<p class="pregunta-int" id="t-p3">Una recta vertical (x = 3), ¿es función?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button>
+<button class="opcion" data-k="b" type="button">No, falla la prueba de la línea vertical</button>
+<button class="opcion" data-k="c" type="button">A veces</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#linea-vertical" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la prueba de la línea vertical (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la prueba de la línea vertical</span><span class="ei-sub">Mueva la línea vertical sobre seis relaciones y cuente en cuántos puntos corta, incluidas la circunferencia y la parábola acostada.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-notacion"><span aria-hidden="true" class="num-seccion">3</span>La notación f(x): evaluar funciones</h2>
+<p>La notación f(x) se lee «f de x» e indica la salida de la función para una entrada x. Para <strong>evaluar</strong> se sustituye el valor de x y se simplifica respetando el orden de operaciones (PEMDAS).</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Si f(x) = 2x − 3, calcular f(4).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye x = 4:</strong> f(4) = 2(4) − 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se simplifica:</strong> 8 − 3 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>f(4) = 5.</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Cuadrática. Si f(x) = x² + 1, calcular f(−2).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye:</strong> f(−2) = (−2)² + 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se simplifica:</strong> 4 + 1 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>f(−2) = 5.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cuidado con los signos</span>
+<p>Al evaluar en un número negativo, conviene usar paréntesis: (−2)² = 4, no −4. El paréntesis evita el error de signo más común.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — f(3)</h3></div>
+<p class="pregunta-int" id="t-p4">f(x) = 4x ; ¿cuánto es f(3)?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">12</button>
+<button class="opcion" data-k="b" type="button">7</button>
+<button class="opcion" data-k="c" type="button">43</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — f(−2)</h3></div>
+<p class="pregunta-int" id="t-p5">f(x) = x + 5 ; ¿cuánto es f(−2)?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">3</button>
+<button class="opcion" data-k="c" type="button">−3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — f(4)</h3></div>
+<p class="pregunta-int" id="t-p6">f(x) = x² ; ¿cuánto es f(4)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">8</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">16</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#notacion" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la evaluación de f(x) (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la evaluación de f(x)</span><span class="ei-sub">Elija una función y un valor de x y vea la sustitución paso a paso, con el punto marcado en la gráfica.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-dominio-rango"><span aria-hidden="true" class="num-seccion">4</span>Dominio y rango</h2>
+<p>El <strong>dominio</strong> son todos los valores de entrada (x). El <strong>rango</strong> son todos los valores de salida (y). En un conjunto de puntos, basta listar las primeras coordenadas (dominio) y las segundas (rango).</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Para los puntos {(1, 2), (3, 4), (5, 6)}:</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Dominio (entradas):</strong> {1, 3, 5}.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Rango (salidas):</strong> {2, 4, 6}.</p>
+</div>
+<div aria-label="Clasificar funciones por su forma (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Tipos de función según su forma algebraica</caption>
+<thead><tr><th scope="col">Tipo</th><th scope="col">Forma</th></tr></thead>
+<tbody>
+<tr><td>Lineal</td><td>f(x) = mx + b</td></tr>
+<tr><td>Cuadrática</td><td>f(x) = ax² + bx + c</td></tr>
+<tr><td>Exponencial</td><td>f(x) = a · bˣ</td></tr>
+<tr><td>Racional</td><td>f(x) = fracción con variable en el denominador</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — El dominio</h3></div>
+<p class="pregunta-int" id="t-p7">Para los puntos {(0, 1), (2, 3), (4, 5)}, ¿cuál es el dominio?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">{0, 2, 4}</button>
+<button class="opcion" data-k="b" type="button">{1, 3, 5}</button>
+<button class="opcion" data-k="c" type="button">{0, 1}</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 8 — El rango</h3></div>
+<p class="pregunta-int" id="t-p8">Para los mismos puntos, ¿cuál es el rango?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">{0, 2, 4}</button>
+<button class="opcion" data-k="b" type="button">{1, 5}</button>
+<button class="opcion" data-k="c" type="button">{1, 3, 5}</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 9 — Salidas</h3></div>
+<p class="pregunta-int" id="t-p9">El rango está formado por los valores de:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">entrada (x)</button>
+<button class="opcion" data-k="b" type="button">salida (y)</button>
+<button class="opcion" data-k="c" type="button">la pendiente</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#dominio-rango" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el dominio y el rango (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el dominio y el rango</span><span class="ei-sub">Siete relaciones, de conjuntos de puntos a funciones racionales, con el dominio leído a lo ancho y el rango a lo alto.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-composicion"><span aria-hidden="true" class="num-seccion">5</span>Composición de funciones</h2>
+<p>¿Qué pasa si la salida de una función entra en otra? Eso es la <strong>composición de funciones</strong>. El examen GED la pregunta en la forma «si f(x) = … y g(x) = …, ¿cuál es el valor de f(g(3))?», y se resuelve con lo que ya sabe: evaluar funciones, dos veces y en el orden correcto.</p>
+<p>En f(g(x)), que se lee «f de g de x», hay dos máquinas en cadena. Primero el valor x entra en la máquina <strong>g</strong>. Lo que sale, g(x), entra después en la máquina <strong>f</strong>. Algunos libros escriben (f ∘ g)(x): significa lo mismo.</p>
+<svg viewBox="0 0 560 130" role="img" aria-label="Dos máquinas en cadena: el 4 entra en g, que suma 3 y da 7; el 7 entra en f, que multiplica por 2 y da 14. Por lo tanto, f de g de 4 es 14." style="width:100%;max-width:540px;height:auto;display:block;margin:12px auto;"><rect x="0" y="0" width="560" height="130" fill="#fff"/>
+<text x="26" y="72" font-size="26" font-weight="700" fill="#1565c0" text-anchor="middle">4</text>
+<line x1="46" y1="64" x2="88" y2="64" stroke="#1565c0" stroke-width="4"/><polygon points="100,64 86,56 86,72" fill="#1565c0"/>
+<rect x="102" y="22" width="132" height="84" rx="14" fill="#e3f2fd" stroke="#1565c0" stroke-width="3"/>
+<text x="168" y="56" font-size="16" font-weight="700" fill="#0d47a1" text-anchor="middle">g</text><text x="168" y="84" font-size="17" fill="#0d47a1" text-anchor="middle">suma 3</text>
+<line x1="234" y1="64" x2="266" y2="64" stroke="#455a64" stroke-width="4"/><polygon points="278,64 264,56 264,72" fill="#455a64"/>
+<text x="256" y="44" font-size="22" font-weight="700" fill="#263238" text-anchor="middle">7</text>
+<rect x="280" y="22" width="132" height="84" rx="14" fill="#ede7f6" stroke="#6a1b9a" stroke-width="3"/>
+<text x="346" y="56" font-size="16" font-weight="700" fill="#4a148c" text-anchor="middle">f</text><text x="346" y="84" font-size="17" fill="#4a148c" text-anchor="middle">por 2</text>
+<line x1="412" y1="64" x2="470" y2="64" stroke="#2e7d32" stroke-width="4"/><polygon points="482,64 468,56 468,72" fill="#2e7d32"/>
+<text x="522" y="73" font-size="26" font-weight="700" fill="#2e7d32" text-anchor="middle">14</text>
+<text x="168" y="124" font-size="14" fill="#455a64" text-anchor="middle">g(4) = 7</text><text x="346" y="124" font-size="14" fill="#455a64" text-anchor="middle">f(7) = 14</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Si f(x) = 3x − 2 y g(x) = x + 4, hallar f(g(2)).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primero adentro:</strong> g(2) = 2 + 4 = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Después afuera:</strong> f(6) = 3(6) − 2 = 18 − 2 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>f(g(2)) = 16.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El orden importa</span>
+<p>Actúa primero la función que está más cerca de la x: en f(g(x)), va primero la g. Con f(x) = 2x y g(x) = x + 5, f(g(3)) = f(8) = 16, pero g(f(3)) = g(6) = 11. Y la composición no es una multiplicación: f(g(2)) no es f(2) · g(2).</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Si f(x) = 3x + 1 y g(x) = x − 2, hallar la expresión de f(g(x)).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se escribe g(x) dentro de f, con paréntesis:</strong> f(g(x)) = 3(x − 2) + 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se distribuye y se combinan los términos:</strong> 3x − 6 + 1 = 3x − 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se comprueba con x = 4:</strong> g(4) = 2 y f(2) = 7; con la fórmula, 3(4) − 5 = 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>f(g(x)) = 3x − 5.</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 10 — De adentro hacia afuera</h3></div>
+<p class="pregunta-int" id="t-p10">f(x) = 2x + 1 y g(x) = x − 3. ¿Cuánto vale f(g(5))?</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">5</button>
+<button class="opcion" data-k="b" type="button">8</button>
+<button class="opcion" data-k="c" type="button">11</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 11 — Con un cuadrado</h3></div>
+<p class="pregunta-int" id="t-p11">f(x) = x² y g(x) = x + 2. ¿Cuánto vale f(g(3))?</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">11</button>
+<button class="opcion" data-k="b" type="button">25</button>
+<button class="opcion" data-k="c" type="button">15</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 12 — ¿Cuál va primero?</h3></div>
+<p class="pregunta-int" id="t-p12">En la expresión f(g(4)), ¿qué función se aplica primero?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">g</button>
+<button class="opcion" data-k="b" type="button">f</button>
+<button class="opcion" data-k="c" type="button">las dos a la vez</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-2.html#composicion" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las máquinas en cadena (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las máquinas en cadena</span><span class="ei-sub">La salida de g entra en f: recorra la cadena paso a paso y compare f(g(x)) con g(f(x)) para el mismo x.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-7-2.html#composicion-tablas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la composición con tablas, contexto y expresiones (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la composición con tablas, contexto y expresiones</span><span class="ei-sub">Lea f(g(a)) en tablas, en problemas de cupones e impuestos, y escriba la expresión de f(g(x)).</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno y papel cuadriculado: (1) ¿Función o no? Clasifique estas diez relaciones y justifique cada decisión con la prueba de la entrada o con la de la línea vertical (dibuje las gráficas): {(1, 2), (2, 4), (3, 6)}; {(1, 2), (1, 5), (3, 4)}; {(−2, 4), (2, 4), (0, 0)}; {(3, 1), (3, 2), (3, 3)}; y = 3x − 2; x = y²; y = x²; x² + y² = 9; x = 4; y = 4. (2) Evaluar la máquina: con f(x) = 2x² − 3x + 1, calcule f(0), f(1), f(−2) y f(1/2). Escriba cada sustitución entre paréntesis y explique qué pasaría con f(−2) si no los usara. (3) Dominio y rango: escriba el dominio y el rango de y = 2x + 1, y = x², y = 2ˣ e y = 1/x, y clasifique cada una como lineal, cuadrática, exponencial o racional. (4) Composición: con f(x) = 2x − 1 y g(x) = x² + 3, calcule f(g(0)), f(g(2)), g(f(0)) y g(f(2)), escribiendo siempre primero el resultado de adentro. Después escriba las expresiones de f(g(x)) y g(f(x)) para f(x) = 5x y g(x) = x − 3, y compruébelas con x = 2. Después haga varios ejercicios de cada actividad de la página de práctica. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Piense en dos pasos de su vida diaria en los que el resultado de uno entra en el otro, como un descuento y después el impuesto. Escriba cada paso como una función y compóngalas.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Una función asigna a cada entrada:</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">varias salidas</button><button class="opcion" data-k="b" type="button">exactamente una salida</button><button class="opcion" data-k="c" type="button">ninguna salida</button><button class="opcion" data-k="d" type="button">dos entradas</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">En la tabla x: 1, 2, 2 con y: 3, 4, 5 (la entrada 2 da dos salidas), ¿es función?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button><button class="opcion" data-k="b" type="button">Sí, siempre</button><button class="opcion" data-k="c" type="button">No, la entrada 2 tiene dos salidas</button><button class="opcion" data-k="d" type="button">No se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Si f(x) = 3x + 2, ¿cuánto es f(4)?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">14</button><button class="opcion" data-k="c" type="button">9</button><button class="opcion" data-k="d" type="button">20</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Si f(x) = x² + 2x, ¿cuánto es f(−2)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8</button><button class="opcion" data-k="b" type="button">−8</button><button class="opcion" data-k="c" type="button">4</button><button class="opcion" data-k="d" type="button">0</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Para los puntos {(1, 2), (3, 4), (5, 6)}, el dominio es:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">{2, 4, 6}</button><button class="opcion" data-k="b" type="button">{1, 3, 5}</button><button class="opcion" data-k="c" type="button">{1, 2, 3}</button><button class="opcion" data-k="d" type="button">todos los reales</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Para los mismos puntos, el rango es:</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">{2, 4, 6}</button><button class="opcion" data-k="b" type="button">{1, 3, 5}</button><button class="opcion" data-k="c" type="button">{2, 4}</button><button class="opcion" data-k="d" type="button">todos los reales</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">f(x) = 3x − 1 y g(x) = x². ¿Cuánto vale f(g(2))?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">12</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">f(x) = x + 3 y g(x) = x². ¿Cuál es la expresión de g(f(x))?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x² + 3</button><button class="opcion" data-k="b" type="button">x² + 9</button><button class="opcion" data-k="c" type="button">3x²</button><button class="opcion" data-k="d" type="button">(x + 3)²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de las funciones (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de funciones, f(x), dominio y rango, y composición y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Aplicar la definición de función</th><td>Aplico la prueba de la línea vertical y la de la entrada correctamente y explico por qué.</td><td>Distingo a veces, con las pruebas aplicadas de forma parcial.</td><td>No distingo función de no función.</td></tr>
+<tr><th scope="row">Evaluar f(x) y f(g(x))</th><td>Sustituyo con paréntesis, respeto PEMDAS y compongo de adentro hacia afuera.</td><td>Sustituyo, pero cometo errores de signo o de orden.</td><td>No sustituyo correctamente.</td></tr>
+<tr><th scope="row">Identificar dominio y rango</th><td>Identifico ambos desde tabla, gráfica o ecuación y clasifico la función por su forma.</td><td>Identifico uno de los dos o los confundo.</td><td>No identifico dominio ni rango.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se definió una función (una salida por cada entrada), se aplicó la prueba de la línea vertical, se evaluó f(x), se identificaron el dominio y el rango y se compusieron dos funciones.</p>
+<p>En la <strong>Lección 7.3 · Tasa de cambio promedio e identificar tipos de funciones</strong> se medirá cuánto cambia una función en un intervalo con la fórmula (f(b) − f(a)) / (b − a), y se distinguirán las funciones lineales, cuadráticas y exponenciales por su patrón de cambio.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-7-3.html">Lección 7.3 · Tasa de cambio promedio e identificar tipos de funciones</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>función</dt><dd>Una regla que da exactamente una salida para cada entrada.</dd>
+<dt>dominio</dt><dd>Todos los valores de entrada (x) de una relación.</dd>
+<dt>rango</dt><dd>Todos los valores de salida (y) de una relación.</dd>
+<dt>composición</dt><dd>f(g(x)): la salida de g entra en f.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 7 · Lección 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.3",
+ "review": "las secciones 3 y 5",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Mire las entradas 1, 2, 3: ninguna se repite.",
+    "c": "Sí se puede saber: revise si se repite una entrada."
+   },
+   "right": "Cada entrada tiene una sola salida.",
+   "solution": "Sí."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "La entrada 1 aparece dos veces, con 2 y con 5.",
+    "c": "Una entrada repetida con dos salidas rompe la regla."
+   },
+   "right": "1 → 2 y 1 → 5: dos salidas.",
+   "solution": "No."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "La entrada 3 tiene infinitas salidas.",
+    "c": "Falla siempre: la vertical en x = 3 la toca en todos sus puntos."
+   },
+   "right": "x = 3 da todas las y.",
+   "solution": "No."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "4x es 4 por x, no 4 + x.",
+    "c": "4x no es poner el 4 y el 3 juntos."
+   },
+   "right": "4(3) = 12.",
+   "solution": "12."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Eso es 2 + 5; la entrada es −2.",
+    "c": "−2 + 5 es positivo."
+   },
+   "right": "−2 + 5 = 3.",
+   "solution": "3."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "x² es x por x, no 2 por x.",
+    "b": "Eleve el 4 al cuadrado: 4 · 4."
+   },
+   "right": "4² = 16.",
+   "solution": "16."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "Esas son las salidas (el rango).",
+    "c": "Tome todas las primeras coordenadas."
+   },
+   "right": "Las primeras coordenadas.",
+   "solution": "{0, 2, 4}."
+  },
+  "p8": {
+   "ok": "c",
+   "hints": {
+    "a": "Esas son las entradas (el dominio).",
+    "b": "Tome todas las segundas coordenadas: 1, 3 y 5."
+   },
+   "right": "Las segundas coordenadas.",
+   "solution": "{1, 3, 5}."
+  },
+  "p9": {
+   "ok": "b",
+   "hints": {
+    "a": "Las entradas forman el dominio.",
+    "c": "La pendiente no es un conjunto de valores."
+   },
+   "right": "Rango = salidas.",
+   "solution": "La salida (y)."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "Primero adentro: g(5) = 2, luego f(2) = 2(2) + 1.",
+    "c": "Eso es f(5) = 11; pero se pide f de g(5)."
+   },
+   "right": "g(5) = 2; f(2) = 5.",
+   "solution": "5."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "Eso es g(f(3)) = 9 + 2. Primero adentro: g(3) = 5.",
+    "c": "No es un producto. g(3) = 5, luego 5²."
+   },
+   "right": "g(3) = 5; f(5) = 25.",
+   "solution": "25."
+  },
+  "p12": {
+   "ok": "a",
+   "hints": {
+    "b": "La f está afuera: actúa al final.",
+    "c": "Una después de la otra, nunca a la vez."
+   },
+   "right": "La g toca el 4: va primero.",
+   "solution": "g."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Varias salidas descompondrían la máquina.",
+    "c": "Toda entrada tiene salida.",
+    "d": "Asigna salidas, no entradas."
+   },
+   "solution": "Exactamente una salida."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "La entrada 2 tiene dos salidas.",
+    "b": "Una entrada repetida con dos salidas no se permite.",
+    "d": "Se puede saber con la tabla."
+   },
+   "solution": "No: la entrada 2 tiene dos salidas."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "3 · 4 = 12, y luego se suma 2.",
+    "c": "3x es 3 por x.",
+    "d": "Sustituya: 3(4) + 2."
+   },
+   "solution": "f(4) = 14."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "(−2)² = 4, y 2(−2) = −4.",
+    "b": "(−2)² es positivo.",
+    "c": "Sume los dos términos: 4 + (−4)."
+   },
+   "solution": "f(−2) = 4 − 4 = 0."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Esas son las salidas (rango).",
+    "c": "Tome las primeras coordenadas: 1, 3, 5.",
+    "d": "Es un conjunto finito de puntos."
+   },
+   "solution": "{1, 3, 5}."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Esas son las entradas (dominio).",
+    "c": "El rango tiene tres salidas: 2, 4, 6.",
+    "d": "Es un conjunto finito de puntos."
+   },
+   "solution": "{2, 4, 6}."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es 3(2) − 1 = 5: primero va g(2) = 4.",
+    "b": "25 sería (3 · 2 − 1)². Primero adentro: g(2) = 4.",
+    "d": "g(2) = 4, luego f(4) = 3(4) − 1."
+   },
+   "solution": "g(2) = 4; f(4) = 11."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Se eleva al cuadrado todo f(x) = x + 3, con paréntesis.",
+    "b": "(x + 3)² no es x² + 9: falta el término del medio.",
+    "c": "g eleva al cuadrado; no multiplica por 3."
+   },
+   "solution": "g(f(x)) = (x + 3)²."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

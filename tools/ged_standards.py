@@ -202,6 +202,13 @@ CCR = {
  "A-REI.6": ("E", "Solve systems of linear equations exactly and approximately (e.g., with graphs), focusing on pairs of linear equations in two variables."),
  "A-CED.2": ("E", "Create equations in two or more variables to represent relationships between quantities; graph equations on coordinate axes with labels and scales."),
  "A-CED.3": ("E", "Represent constraints by equations or inequalities, and by systems of equations and/or inequalities, and interpret solutions as viable or nonviable options in a modeling context."),
+ "A-REI.12": ("E", "Graph the solutions to a linear inequality in two variables as a half-plane (excluding the boundary in the case of a strict inequality), and graph the solution set to a system of linear inequalities in two variables as the intersection of the corresponding half-planes."),
+ "8.F.1": ("D", "Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output."),
+ "F-IF.1": ("E", "Understand that a function from one set (called the domain) to another set (called the range) assigns to each element of the domain exactly one element of the range. If f is a function and x is an element of its domain, then f(x) denotes the output of f corresponding to the input x. The graph of f is the graph of the equation y = f(x)."),
+ "F-IF.2": ("E", "Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context."),
+ "F-BF.1": ("E", "Write a function that describes a relationship between two quantities: determine an explicit expression, a recursive process, or steps for calculation from a context; combine standard function types using arithmetic operations; compose functions."),
+ "F-IF.6": ("E", "Calculate and interpret the average rate of change of a function (presented symbolically or as a table) over a specified interval. Estimate the rate of change from a graph."),
+ "F-LE.1": ("E", "Distinguish between situations that can be modeled with linear functions and with exponential functions: prove that linear functions grow by equal differences over equal intervals, and that exponential functions grow by equal factors over equal intervals; recognize situations in which a quantity changes at a constant rate per unit interval relative to another."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -443,6 +450,12 @@ LESSONS = [
   {"direct": ["A.2.d"], "builds": ["A.2.b"], "mp": ["MP.1.c", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.5", "A-REI.6", "8.EE.8"]}),
  ("level-4/lesson-6-3.html", "6.3", "Graphing systems and modeling",
   {"direct": ["A.2.d", "A.2.b"], "builds": ["A.2.c", "A.5.b", "A.5.d", "A.6.c"], "mp": ["MP.2.a", "MP.2.c", "MP.4.c"], "ccr": ["A-REI.6", "8.EE.8", "A-CED.2", "A-CED.3"]}),
+ ("level-4/lesson-7-1.html", "7.1", "Systems of linear inequalities: graphing the solution region",
+  {"direct": [], "builds": ["A.3.c", "A.5.a", "A.5.d"], "mp": ["MP.3.a", "MP.4.c", "MP.5.c"], "ccr": ["A-REI.12", "A-CED.3"]}),
+ ("level-4/lesson-7-2.html", "7.2", "Relations and functions, f(x) notation, and domain and range",
+  {"direct": ["A.7.b", "A.7.c"], "builds": ["A.5.e"], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["8.F.1", "F-IF.1", "F-IF.2", "F-BF.1"]}),
+ ("level-4/lesson-7-3.html", "7.3", "Average rate of change and kinds of functions",
+  {"direct": ["A.5.e"], "builds": ["A.5.b", "A.7.d"], "mp": ["MP.2.a", "MP.2.c", "MP.4.c"], "ccr": ["F-IF.6", "F-LE.1", "8.F.4"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

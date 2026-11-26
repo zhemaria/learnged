@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 7.2 · practice (English) — built by tools/build_n4_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.2 · Relations and functions, f(x) notation, and domain and range · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .maq{display:block;width:100%;max-width:560px;height:auto;margin:10px auto;}
+  .tabla-lados td.nueva{background:#e8f5e9;font-weight:700;}
+  .tabla-lados.centro td,.tabla-lados.centro th{text-align:center;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 7 · Systems of inequalities and functions</div>
+    <h1>Lesson 7.2 · Relations and functions, f(x) notation, and domain and range</h1>
+    <div class="meta">Six practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#machine">The function machine</a></li>
+      <li><a href="#vertical-line">The vertical line test</a></li>
+      <li><a href="#notation">f(x) notation: evaluating functions</a></li>
+      <li><a href="#domain-range">Domain and range</a></li>
+      <li><a href="#composition">Composition: two machines in a chain</a></li>
+      <li><a href="#composition-tables">Composition with tables, in context, and as an expression</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="machine" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The function machine</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A number goes in, the rule works on it, and one result comes out. Put several inputs in and watch the table of pairs fill in.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="m-regla">Rule</label><select id="m-regla"><option value="0">f(x) = 2x + 1</option><option value="1">f(x) = x²</option><option value="2">f(x) = 3x − 4</option><option value="3">f(x) = x² − 2x</option><option value="4">f(x) = 10 − x</option></select></div><div class="campo"><label for="m-x">Input x</label><input type="text" inputmode="decimal" autocomplete="off" id="m-x" value="3" style="width:5em"></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="m-meter">Put it in the machine</button></div></div>
+      <div id="m-svg"></div>
+      <div class="salida" aria-live="polite" id="m-txt"></div>
+      <div id="m-tabla"></div>
+      <h3>The broken machine</h3>
+      <p>This machine follows the rule y² = x: it looks for the numbers whose square is the input. Try 9, 0, and −4.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="m-rota-x">Input x</label><input type="text" inputmode="decimal" autocomplete="off" id="m-rota-x" value="9" style="width:5em"></div></div><div class="fila-btn"><button type="button" class="btn-sec" id="m-rota">Try it</button></div></div>
+      <div id="m-rota-svg"></div>
+      <div class="salida" aria-live="polite" id="m-rota-txt"></div>
+      <h3>Practice: function or not?</h3>
+      <div class="practica" id="fq">
+        <div class="enun" id="fq-enun"></div>
+        <div class="opciones" id="fq-opciones"></div>
+        <div class="fb" id="fq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="fq-nuevo">New exercise</button></div>
+        <p class="marcador" id="fq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="vertical-line">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The vertical line test</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Choose a relation and slide the vertical line across it. If some vertical line cuts the graph at more than one point, the relation is not a function.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="lv-rel">Relation</label><select id="lv-rel"><option value="0">y = x + 1 (line)</option><option value="1">y = x² − 2 (parabola)</option><option value="2">y = |x| (absolute value)</option><option value="3">x² + y² = 25 (circle)</option><option value="4">x = y² − 3 (parabola on its side)</option><option value="5">x = 2 (vertical line)</option></select></div><div class="campo"><label for="lv-x">Vertical line: x = <output id="lv-xv"></output></label><input type="range" id="lv-x" min="-6" max="6" step="0.5" value="1"></div></div></div>
+      <div id="lv-graf"></div>
+      <div class="salida" aria-live="polite" id="lv-txt"></div>
+      <h3>Practice: is the graph a function?</h3>
+      <div class="practica" id="lq">
+        <div class="enun" id="lq-enun"></div>
+        <div class="opciones" id="lq-opciones"></div>
+        <div class="fb" id="lq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="lq-nuevo">New exercise</button></div>
+        <p class="marcador" id="lq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="notation">
+    <summary><span class="num" aria-hidden="true">3</span><h2>f(x) notation: evaluating functions</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>To evaluate, put the input in parentheses in place of x and simplify with the order of operations. The point (x, f(x)) appears on the graph.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="n-fun">Function</label><select id="n-fun"><option value="0">f(x) = 2x − 3</option><option value="1">f(x) = x² + 1</option><option value="2">f(x) = −x² + 4</option><option value="3">f(x) = 3x + 5</option><option value="4">f(x) = x² − 2x</option><option value="5">f(x) = 2x² − 3x + 1</option></select></div><div class="campo"><label for="n-x">x =</label><input type="text" inputmode="decimal" autocomplete="off" id="n-x" value="-2" style="width:5em"></div></div></div>
+      <div class="salida" aria-live="polite" id="n-txt"></div>
+      <div id="n-graf"></div>
+      <h3>Practice: evaluate f(x)</h3>
+      <div class="practica" id="nq">
+        <div class="enun" id="nq-enun"></div>
+        <div class="campos"><div class="campo"><label for="nq-r">Answer</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="nq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="nq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="nq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="nq-fb" role="status"></div>
+        <p class="marcador" id="nq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="domain-range">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Domain and range</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The <strong>domain</strong> is read across, on the x-axis (orange); the <strong>range</strong> is read up and down, on the y-axis (purple).</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="d-rel">Relation</label><select id="d-rel"><option value="0">Points {(1, 2), (3, 4), (5, 6)}</option><option value="1">Points {(−2, 4), (−1, 1), (0, 0), (1, 1), (2, 4)}</option><option value="2">f(x) = 2x − 3 (linear)</option><option value="3">f(x) = x² (quadratic)</option><option value="4">f(x) = x² + 1 (quadratic, shifted)</option><option value="5">f(x) = √x (square root)</option><option value="6">f(x) = 1/x (rational)</option></select></div></div></div>
+      <div id="d-graf"></div>
+      <div class="salida" aria-live="polite" id="d-txt"></div>
+      <h3>Kinds of functions by their form</h3>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Kinds of functions by their algebraic form</caption><thead><tr><th scope="col">Kind</th><th scope="col">Form</th><th scope="col">Example</th></tr></thead><tbody>
+<tr><td>Linear</td><td>f(x) = mx + b</td><td>f(x) = 2x − 3</td></tr><tr><td>Quadratic</td><td>f(x) = ax² + bx + c</td><td>f(x) = x² + 1</td></tr>
+<tr><td>Exponential</td><td>f(x) = a · bˣ</td><td>f(x) = 3 · 2ˣ</td></tr><tr><td>Rational</td><td>a fraction with x in the denominator</td><td>f(x) = 1/x</td></tr></tbody></table></div>
+      <h3>Practice: domain, range, and kind</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">New exercise</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="composition">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Composition: two machines in a chain</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>In f(g(x)), x goes into g first, and the output of g goes into f. Choose g, f, and x, and compare the result with g(f(x)).</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="c-g">Inside: g(x) =</label><select id="c-g"><option value="0" selected>x + 3</option><option value="1">2x</option><option value="2">x²</option><option value="3">x − 4</option><option value="4">3x − 1</option><option value="5">−x</option></select></div><div class="campo"><label for="c-f">Outside: f(x) =</label><select id="c-f"><option value="0">x + 3</option><option value="1" selected>2x</option><option value="2">x²</option><option value="3">x − 4</option><option value="4">3x − 1</option><option value="5">−x</option></select></div><div class="campo"><label for="c-x">x =</label><input type="text" inputmode="decimal" autocomplete="off" id="c-x" value="4" style="width:5em"></div></div></div>
+      <div id="c-svg"></div>
+      <div class="salida" aria-live="polite" id="c-txt"></div>
+      <h3>Practice: follow the chain</h3>
+      <div class="practica" id="cq">
+        <div class="enun" id="cq-enun"></div>
+        <div class="campos"><div class="campo"><label for="cq-r">Answer</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="cq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="cq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="cq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="cq-fb" role="status"></div>
+        <p class="marcador" id="cq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="composition-tables">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Composition with tables, in context, and as an expression</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>When the functions come in a table, look up each value in its row, inside out.</p>
+      <div id="t-tabla"></div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="t-comp">Composition</label><select id="t-comp"><option value="fg">f(g(a))</option><option value="gf">g(f(a))</option></select></div><div class="campo"><label for="t-a">a =</label><select id="t-a"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="t-nueva">Another table</button></div></div>
+      <div class="salida" aria-live="polite" id="t-txt"></div>
+      <h3>In context: a coupon and the sales tax</h3>
+      <p>A store takes off a $10 coupon, d(x) = x − 10, and charges an 8% sales tax, t(x) = 1.08x. Does the order matter?</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="t-precio">Price of the item: <output id="t-preciov"></output></label><input type="range" id="t-precio" min="20" max="200" step="5" value="50"></div></div></div>
+      <div class="salida" aria-live="polite" id="t-ctx"></div>
+      <h3>The expression of f(g(x))</h3>
+      <div class="panel"><div class="campos"><div class="campo"><label for="e-par">Functions</label><select id="e-par"><option value="0">f(x) = 3x + 1 ; g(x) = x − 2</option><option value="1">f(x) = x² ; g(x) = x + 1</option><option value="2">f(x) = 2x − 3 ; g(x) = x + 4</option><option value="3">f(x) = 4x ; g(x) = x + 2</option><option value="4">f(x) = x + 3 ; g(x) = x²</option><option value="5">f(x) = 5x ; g(x) = x − 3</option></select></div><div class="campo"><label for="e-orden">Find</label><select id="e-orden"><option value="fg">f(g(x))</option><option value="gf">g(f(x))</option></select></div></div><p class="enun" id="e-fun"></p></div>
+      <div class="salida" aria-live="polite" id="e-txt"></div>
+      <h3>Practice: tables, context, and expressions</h3>
+      <div class="practica" id="eq">
+        <div class="enun" id="eq-enun"></div>
+        <div class="opciones" id="eq-opciones"></div>
+        <div class="fb" id="eq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="eq-nuevo">New exercise</button></div>
+        <p class="marcador" id="eq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 7 · Systems of inequalities and functions · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script src="/math/func4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function conj(l){ var u = []; l.forEach(function(v){ if (u.indexOf(v) < 0) u.push(v); }); u.sort(function(a, b){ return a - b; }); return "{" + u.map(sg).join(", ") + "}"; }
+function paresTxt(l){ return "{" + l.map(function(p){ return par(p[0], p[1]); }).join(", ") + "}"; }
+function maqSVG(x, regla, y, color){ color = color || "#6a1b9a";
+  return '<svg class="maq" viewBox="0 0 520 150" role="img" aria-label="' + T("Function machine: input ", "Máquina de funciones: entrada ") + x + T(", rule ", ", regla ") + regla + T(", output ", ", salida ") + y + '">' +
+  '<text x="40" y="82" font-size="28" font-weight="700" fill="#1565c0" text-anchor="middle">' + x + '</text><line x1="72" y1="72" x2="148" y2="72" stroke="#1565c0" stroke-width="4"/><polygon points="160,72 146,64 146,80" fill="#1565c0"/>' +
+  '<rect x="164" y="26" width="192" height="92" rx="16" fill="#ede7f6" stroke="' + color + '" stroke-width="3"/><text x="260" y="62" font-size="14" fill="' + color + '" text-anchor="middle">' + T("rule", "regla") + '</text><text x="260" y="92" font-size="18" font-weight="700" fill="#4a148c" text-anchor="middle">' + regla + "</text>" +
+  '<line x1="356" y1="72" x2="432" y2="72" stroke="#2e7d32" stroke-width="4"/><polygon points="444,72 430,64 430,80" fill="#2e7d32"/><text x="482" y="82" font-size="' + (String(y).length > 5 ? 17 : 26) + '" font-weight="700" fill="#2e7d32" text-anchor="middle">' + y + "</text></svg>"; }
+
+/* ===== MODULE 1 · The function machine ===== */
+var REGLAS = [[1, 2], [0, 0, 1], [-4, 3], [0, -2, 1], [10, -1]], mPares = [];
+function mRegla(){ return REGLAS[+$("m-regla").value]; }
+function mTabla(nueva){ $("m-tabla").innerHTML = mPares.length ? '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Pairs (input, output) of the machine", "Pares (entrada, salida) de la máquina") + '</caption><thead><tr><th scope="col">' + T("Input x", "Entrada x") + '</th><th scope="col">' + T("Output f(x)", "Salida f(x)") + "</th></tr></thead><tbody>" +
+  mPares.map(function(p, i){ return "<tr><td" + (i === nueva ? ' class="nueva"' : "") + ">" + sg(p[0]) + "</td><td" + (i === nueva ? ' class="nueva"' : "") + ">" + nf(p[1]) + "</td></tr>"; }).join("") + "</tbody></table></div>" : ""; }
+function mMeter(){ var p = mRegla(), x = leeDecimal($("m-x").value);
+  if (x === null){ $("m-txt").innerHTML = '<div class="linea">' + T("Type a number for the input.", "Escriba un número como entrada.") + "</div>"; return; }
+  var y = pEval(p, x); $("m-svg").innerHTML = maqSVG(sg(x), fDef(p), nf(y));
+  $("m-txt").innerHTML = pasosEval(p, x).map(function(s){ return '<div class="linea">' + s + "</div>"; }).join("");
+  var i = -1; mPares.forEach(function(q, k){ if (q[0] === x) i = k; }); if (i < 0){ mPares.push([x, y]); mPares.sort(function(a, b){ return a[0] - b[0]; }); mPares.forEach(function(q, k){ if (q[0] === x) i = k; }); }
+  mTabla(i); }
+$("m-meter").addEventListener("click", mMeter); $("m-x").addEventListener("keydown", function(e){ if (e.key === "Enter") mMeter(); });
+$("m-regla").addEventListener("change", function(){ mPares = []; mTabla(); $("m-svg").innerHTML = maqSVG("x", fDef(mRegla()), "f(x)"); $("m-txt").innerHTML = ""; });
+$("m-svg").innerHTML = maqSVG("x", fDef(mRegla()), "f(x)");
+function mRota(){ var x = leeDecimal($("m-rota-x").value), out = $("m-rota-txt");
+  if (x === null){ out.innerHTML = '<div class="linea">' + T("Type a number.", "Escriba un número.") + "</div>"; return; }
+  var s; if (x < 0){ s = T("No number squared gives " + sg(x) + ": no output at all.", "Ningún número al cuadrado da " + sg(x) + ": no hay ninguna salida."); $("m-rota-svg").innerHTML = maqSVG(sg(x), "y² = x", "—", "#b71c1c"); }
+  else if (x === 0){ s = T("Only 0² = 0: one output, y = 0.", "Solo 0² = 0: una salida, y = 0."); $("m-rota-svg").innerHTML = maqSVG("0", "y² = x", "0", "#b71c1c"); }
+  else { var r = Math.sqrt(x); s = T("Both " + nf(r) + " and −" + nf(r) + " squared give " + nf(x) + ": <strong>two outputs for one input</strong>. This machine is broken: y² = x is not a function.", "Tanto " + nf(r) + " como −" + nf(r) + " al cuadrado dan " + nf(x) + ": <strong>dos salidas para una sola entrada</strong>. Esta máquina está descompuesta: y² = x no es función."); $("m-rota-svg").innerHTML = maqSVG(sg(x), "y² = x", nf(r) + T(" and ", " y ") + "−" + nf(r), "#b71c1c"); }
+  out.innerHTML = '<div class="linea">' + s + "</div>"; }
+$("m-rota").addEventListener("click", mRota); $("m-rota-x").addEventListener("keydown", function(e){ if (e.key === "Enter") mRota(); });
+OMR("fq", function(){ var n = aleatorio(4, 5), xs = [], ys = [], k, es = Math.random() < .5, caso;
+  while (xs.length < n){ k = aleatorio(-5, 6); if (xs.indexOf(k) < 0) xs.push(k); }
+  var pares = xs.map(function(x){ return [x, aleatorio(-4, 8)]; });
+  if (es){ caso = aleatorio(0, 2); if (caso === 1){ pares[1][1] = pares[0][1]; } if (caso === 2){ pares.push([pares[0][0], pares[0][1]]); } }
+  else { var j = aleatorio(0, n - 1), y2; do { y2 = aleatorio(-4, 8); } while (y2 === pares[j][1]); pares.push([pares[j][0], y2]); }
+  pares = baraja(pares);
+  var rep = null; if (!es) pares.forEach(function(p){ pares.forEach(function(q){ if (p[0] === q[0] && p[1] !== q[1]) rep = p[0]; }); });
+  var tabla = Math.random() < .4;
+  var mostrar = tabla ? '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Table of the relation", "Tabla de la relación") + '</caption><tbody><tr><th scope="row">x</th>' + pares.map(function(p){ return "<td>" + sg(p[0]) + "</td>"; }).join("") + '</tr><tr><th scope="row">y</th>' + pares.map(function(p){ return "<td>" + sg(p[1]) + "</td>"; }).join("") + "</tr></tbody></table></div>" : "<strong>" + paresTxt(pares) + "</strong>";
+  var dupY = !tabla && es && caso === 1, dupP = es && caso === 2;
+  return {enun: T("Is this relation a function? ", "¿Es función esta relación? ") + mostrar, correcta: es ? "si" : "no", enOrden: true,
+    opciones: [{clave: "si", html: T("Yes, it is a function", "Sí, es función")}, {clave: "no", html: T("No, it is not a function", "No, no es función")}],
+    bien: es ? (dupP ? T("The pair " + par(pares.filter(function(p){ return pares.filter(function(q){ return q[0] === p[0]; }).length > 1; })[0][0], pares.filter(function(p){ return pares.filter(function(q){ return q[0] === p[0]; }).length > 1; })[0][1]) + " is written twice, but it is the same input with the same output: still one output. It is a function.", "El par " + par(pares.filter(function(p){ return pares.filter(function(q){ return q[0] === p[0]; }).length > 1; })[0][0], pares.filter(function(p){ return pares.filter(function(q){ return q[0] === p[0]; }).length > 1; })[0][1]) + " aparece dos veces, pero es la misma entrada con la misma salida: sigue siendo una sola salida. Es función.") :
+      T("No input repeats with a different output" + (caso === 1 ? " (a repeated output is allowed)" : "") + ": it is a function.", "Ninguna entrada se repite con otra salida" + (caso === 1 ? " (repetir una salida está permitido)" : "") + ": es función.")) :
+      T("The input " + sg(rep) + " has two different outputs: it is not a function.", "La entrada " + sg(rep) + " tiene dos salidas distintas: no es función.")};
+});
+
+/* ===== MODULE 2 · The vertical line test ===== */
+var RELS = [
+ {ramas: [function(x){ return x + 1; }], fun: true, com: T("Each value of x gives only one height: the vertical line always cuts at one point.", "Cada valor de x da una sola altura: la línea vertical corta siempre en un punto.")},
+ {ramas: [function(x){ return x * x - 2; }], fun: true, com: T("The parabola opens up with two branches, but for each x there is only one point.", "Aunque la parábola tenga dos ramas hacia arriba, para cada x hay un solo punto.")},
+ {ramas: [function(x){ return Math.abs(x); }], fun: true, com: T("The V also passes the test: one point for each value of x.", "La V también pasa la prueba: un solo punto por cada valor de x.")},
+ {ramas: [function(x){ return Math.abs(x) <= 5 ? Math.sqrt(25 - x * x) : NaN; }, function(x){ return Math.abs(x) <= 5 ? -Math.sqrt(25 - x * x) : NaN; }], fun: false, circ: 5, com: T("Between x = −5 and x = 5 the vertical line cuts at two points, above and below. It is not a function.", "Entre x = −5 y x = 5 la línea vertical corta en dos puntos: arriba y abajo. No es función.")},
+ {ramas: [function(x){ return x >= -3 ? Math.sqrt(x + 3) : NaN; }, function(x){ return x >= -3 ? -Math.sqrt(x + 3) : NaN; }], fun: false, com: T("To the right of x = −3 every vertical line cuts the parabola on its side twice. It is not a function.", "A la derecha de x = −3, cada vertical corta dos veces la parábola acostada. No es función.")},
+ {vert: 2, ramas: [], fun: false, com: T("The vertical line x = 2 is its own vertical line: at x = 2 it touches every point. It is not a function.", "La recta x = 2 es ella misma una vertical: en x = 2 la toca en todos sus puntos. No es función.")}];
+function cortes(Rl, k){ if (Rl.vert !== undefined) return Math.abs(k - Rl.vert) < 1e-9 ? Infinity : [];
+  var ys = []; Rl.ramas.forEach(function(r){ var y = r(k); if (isFinite(y) && Math.abs(y) <= 7 && !ys.some(function(v){ return Math.abs(v - y) < 1e-9; })) ys.push(y); }); return ys; }
+function curvasRel(Rl){ if (Rl.vert !== undefined) return {curvas: [], segmentos: [[[Rl.vert, -7], [Rl.vert, 7], "#1565c0", null, 3.5]]};
+  var cs = Rl.ramas.map(function(r){ return {f: r, color: "#1565c0"}; });
+  if (Rl.circ){ var pz = []; for (var i = 0; i <= 120; i++){ var a = i / 120 * 2 * Math.PI; pz.push([Rl.circ * Math.cos(a), Rl.circ * Math.sin(a)]); } cs = [{piezas: [pz], color: "#1565c0"}]; }
+  if (Rl.acostada !== undefined || Rl === RELS[4]){ var pz2 = []; for (var y = -3.2; y <= 3.2; y += .05) pz2.push([y * y - 3, y]); cs = [{piezas: [pz2], color: "#1565c0"}]; }
+  return {curvas: cs, segmentos: []}; }
+function lvDibuja(){ var Rl = RELS[+$("lv-rel").value], k = +$("lv-x").value, c = cortes(Rl, k), cr = curvasRel(Rl);
+  $("lv-xv").textContent = sg(k);
+  var pts = c === Infinity || c === 0 ? [] : c.map(function(y){ return [k, y, c.length > 1 ? "#b71c1c" : "#2e7d32"]; });
+  $("lv-graf").innerHTML = grafFun({curvas: cr.curvas, segmentos: cr.segmentos, vertical: k, puntos: pts, voz: T("The relation with a vertical line at x = ", "La relación con una línea vertical en x = ") + sg(k) + "."});
+  var n = c === Infinity ? Infinity : c.length;
+  $("lv-txt").innerHTML = '<div class="linea">' + T("The vertical line x = " + sg(k) + " cuts the graph at ", "La vertical x = " + sg(k) + " corta la gráfica en ") + "<strong>" + (n === Infinity ? T("infinitely many points", "infinitos puntos") : n + (n === 1 ? T(" point", " punto") : T(" points", " puntos"))) + "</strong>." + (n > 1 ? T(" This input has several outputs.", " Esta entrada tiene varias salidas.") : "") + "</div>" +
+    '<div class="linea"><strong>' + (Rl.fun ? T("It is a function.", "Es función.") : T("It is not a function.", "No es función.")) + "</strong> " + Rl.com + "</div>"; }
+$("lv-rel").addEventListener("change", lvDibuja); $("lv-x").addEventListener("input", lvDibuja); lvDibuja();
+OMR("lq", function(){ var tipo = aleatorio(0, 6), Rl, a, b, h, k, r, voz;
+  if (tipo === 0){ a = elige([-2, -1, -.5, .5, 1, 2, 3]); b = aleatorio(-3, 3); Rl = {ramas: [function(x){ return a * x + b; }], fun: true, por: T("a slanted line: one point for each x", "una recta inclinada: un punto por cada x")}; }
+  else if (tipo === 1){ a = elige([-1, -.5, .5, 1]); h = aleatorio(-2, 2); k = aleatorio(-3, 3); Rl = {ramas: [function(x){ return a * (x - h) * (x - h) + k; }], fun: true, por: T("a parabola that opens up or down: one point for each x", "una parábola que abre hacia arriba o hacia abajo: un punto por cada x")}; }
+  else if (tipo === 2){ h = aleatorio(-2, 2); k = aleatorio(-3, 2); Rl = {ramas: [function(x){ return Math.abs(x - h) + k; }], fun: true, por: T("a V shape: one point for each x", "una V: un punto por cada x")}; }
+  else if (tipo === 3){ r = aleatorio(2, 5); h = aleatorio(-1, 1); k = aleatorio(-1, 1); var pz = []; for (var i = 0; i <= 120; i++){ var an = i / 120 * 2 * Math.PI; pz.push([h + r * Math.cos(an), k + r * Math.sin(an)]); } Rl = {piezas: [pz], fun: false, por: T("a circle: a vertical line through it cuts it twice", "una circunferencia: una vertical que la atraviesa la corta dos veces")}; }
+  else if (tipo === 4){ h = aleatorio(-4, 0); var s = elige([1, -1]), pz2 = []; for (var y = -3.5; y <= 3.5; y += .05) pz2.push([h + s * y * y, y]); Rl = {piezas: [pz2], fun: false, por: T("a parabola on its side: vertical lines cut it twice", "una parábola acostada: las verticales la cortan dos veces")}; }
+  else if (tipo === 5){ h = nz(-5, 5); Rl = {segs: [[[h, -7], [h, 7], "#1565c0", null, 3.5]], fun: false, por: T("a vertical line: the input " + h + " has infinitely many outputs", "una recta vertical: la entrada " + h + " tiene infinitas salidas")}; }
+  else { k = aleatorio(-5, 5); Rl = {ramas: [function(){ return k; }], fun: true, por: T("a horizontal line: every x has the same single output", "una recta horizontal: cada x tiene una sola salida, la misma")}; }
+  var g = grafFun({curvas: Rl.piezas ? [{piezas: Rl.piezas, color: "#1565c0"}] : (Rl.ramas || []).map(function(f){ return {f: f, color: "#1565c0"}; }), segmentos: Rl.segs || [], voz: T("A relation drawn on the coordinate plane: ", "Una relación dibujada en el plano: ") + Rl.por + "."});
+  return {enun: T("Is this graph a function? Use the vertical line test.", "¿Esta gráfica es una función? Use la prueba de la línea vertical.") + g, correcta: Rl.fun ? "si" : "no", enOrden: true,
+    opciones: [{clave: "si", html: T("Yes, it is a function", "Sí, es función")}, {clave: "no", html: T("No, it is not a function", "No, no es función")}],
+    bien: T("It is ", "Es ") + Rl.por + ". " + (Rl.fun ? T("It passes the test: it is a function.", "Pasa la prueba: es función.") : T("It fails the test: it is not a function.", "Falla la prueba: no es función."))};
+});
+
+/* ===== MODULE 3 · f(x) notation ===== */
+var EVAL = [[-3, 2], [1, 0, 1], [4, 0, -1], [5, 3], [0, -2, 1], [1, -3, 2]];
+function nDibuja(){ var p = EVAL[+$("n-fun").value], x = leeDecimal($("n-x").value), out = $("n-txt");
+  if (x === null){ out.innerHTML = '<div class="linea">' + T("Type a number for x.", "Escriba un número en x.") + "</div>"; return; }
+  var y = pEval(p, x); out.innerHTML = pasosEval(p, x).map(function(s){ return '<div class="linea">' + s + "</div>"; }).join("");
+  var R = {x0: -6, x1: 6, y0: -8, y1: 12}, dentro = Math.abs(x) <= 6 && y >= -8 && y <= 12;
+  $("n-graf").innerHTML = grafFun({rango: R, paso: 2, curvas: [{f: function(t){ return pEval(p, t); }}], puntos: dentro ? [[x, y, "#2e7d32", par(x, Math.round(y * 100) / 100), 6.5, (x < 2.4) === (pEval(p, x + .3) < pEval(p, x - .3))]] : [], segmentos: dentro ? [[[x, 0], [x, y], "#2e7d32", "5 5", 2], [[0, y], [x, y], "#2e7d32", "5 5", 2]] : [],
+    voz: T("Graph of ", "Gráfica de ") + fDef(p) + (dentro ? T(" with the point ", " con el punto ") + par(x, Math.round(y * 100) / 100) : "") + "."});
+  if (!dentro) out.innerHTML += '<div class="linea">' + T("The point " + par(x, Math.round(y * 100) / 100) + " is outside this graph window.", "El punto " + par(x, Math.round(y * 100) / 100) + " queda fuera de esta ventana de la gráfica.") + "</div>"; }
+$("n-fun").addEventListener("change", nDibuja); $("n-x").addEventListener("input", nDibuja); nDibuja();
+creaPracticaLibre("nq", function(){ var t = aleatorio(0, 4), p, a = nz(-4, 5);
+  if (t === 0) p = [aleatorio(-9, 9), nz(-5, 6)];
+  else if (t === 1) p = [nz(-6, 6), 0, 1];
+  else if (t === 2) p = [nz(-2, 9), 0, -1];
+  else if (t === 3) p = [0, nz(-4, 4), 1];
+  else p = [aleatorio(-3, 3), nz(-4, 4), elige([2, 3, -2])];
+  if (t > 0 && Math.random() < .6) a = -aleatorio(1, 4);
+  var res = pEval(p, a), error = p.reduce(function(s, c, g){ return s + (g >= 2 ? -c * Math.pow(Math.abs(a), g) : c * Math.pow(a, g)); }, 0);
+  return {enun: T("If ", "Si ") + fDef(p) + T(", what is ", ", ¿cuánto es ") + "f(" + sg(a) + ")?",
+    evalua: function(txt){ var v = leeDecimal(txt); if (v === null) return {estado: "invalido", msg: T("Type a number, such as 7 or −12.", "Escriba un número, como 7 o −12.")};
+      if (Math.abs(v - res) < 1e-9) return {estado: "bien"};
+      if (a < 0 && p.length > 2 && Math.abs(v - error) < 1e-9) return {estado: "mal", msg: T("Careful with the sign: (" + sg(a) + ")² = " + a * a + ", positive. Use parentheses.", "Cuidado con el signo: (" + sg(a) + ")² = " + a * a + ", positivo. Use paréntesis.")};
+      return {estado: "mal", msg: T("Write " + sustP(p, a) + " and simplify: powers first, then products, then sums.", "Escriba " + sustP(p, a) + " y simplifique: primero las potencias, luego los productos y al final las sumas.")}; },
+    solucion: pasosEval(p, a).join(" ")};
+});
+
+/* ===== MODULE 4 · Domain and range ===== */
+var DR = [
+ {pts: [[1, 2], [3, 4], [5, 6]], dom: "{1, 3, 5}", ran: "{2, 4, 6}", com: T("With a set of points, list the first coordinates (domain) and the second coordinates (range).", "Con un conjunto de puntos basta con listar las primeras coordenadas (dominio) y las segundas (rango).")},
+ {pts: [[-2, 4], [-1, 1], [0, 0], [1, 1], [2, 4]], dom: "{−2, −1, 0, 1, 2}", ran: "{0, 1, 4}", com: T("1 and 4 appear twice as outputs, but in the range you write them once. Repeating outputs is allowed; repeating inputs with different outputs is not.", "El 1 y el 4 aparecen dos veces como salida, pero en el rango se escriben una sola vez. Repetir salidas está permitido; repetir entradas con salidas distintas, no.")},
+ {f: function(x){ return 2 * x - 3; }, d: [-7, 7], r: [-7, 7], dom: T("all real numbers", "todos los números reales"), ran: T("all real numbers", "todos los números reales"), com: T("The line goes on forever across and up and down: no input is forbidden and every output is reached.", "La recta se extiende sin límite a lo ancho y a lo alto: no hay entradas prohibidas ni salidas inalcanzables.")},
+ {f: function(x){ return x * x; }, d: [-7, 7], r: [0, 7], dom: T("all real numbers", "todos los números reales"), ran: "y ≥ 0", com: T("Across there is no limit, but the parabola never goes below the x-axis: no output is negative.", "A lo ancho no hay límite, pero la parábola nunca baja del eje x: ninguna salida es negativa.")},
+ {f: function(x){ return x * x + 1; }, d: [-7, 7], r: [1, 7], dom: T("all real numbers", "todos los números reales"), ran: "y ≥ 1", com: T("The lowest point (the vertex) is (0, 1): the outputs start at 1.", "El punto más bajo (el vértice) es (0, 1): las salidas empiezan en 1.")},
+ {f: function(x){ return x >= 0 ? Math.sqrt(x) : NaN; }, d: [0, 7], r: [0, 7], dom: "x ≥ 0", ran: "y ≥ 0", com: T("You cannot take the square root of a negative number: the graph starts at x = 0 and its outputs are never negative.", "No se puede sacar la raíz cuadrada de un número negativo: la gráfica empieza en x = 0 y sus salidas nunca son negativas.")},
+ {f: function(x){ return Math.abs(x) < 1e-9 ? NaN : 1 / x; }, d: [[-7, -.15], [.15, 7]], r: [[-7, -.15], [.15, 7]], dom: "x ≠ 0", ran: "y ≠ 0", com: T("You cannot divide by zero: x = 0 is excluded. And 1/x is never 0, so y = 0 is excluded too.", "No se puede dividir entre cero: x = 0 queda excluido. Y 1/x nunca vale 0, así que y = 0 también queda excluido.")}];
+function drDibuja(){ var D = DR[+$("d-rel").value], o = {voz: T("Domain: ", "Dominio: ") + D.dom + T(". Range: ", ". Rango: ") + D.ran + "."};
+  if (D.pts){ o.rango = {x0: -3, x1: 7, y0: -2, y1: 7}; o.puntos = D.pts.map(function(p){ return [p[0], p[1], "#1565c0", par(p[0], p[1])]; }); }
+  else { o.curvas = [{f: D.f}]; o.dominio = D.d; o.rangoY = D.r; }
+  var g = grafFun(o);
+  if (D.pts){ /* marks on the axes for a set of points */ var marcas = "", P = Plano({xmin: -3, xmax: 7, ymin: -2, ymax: 7, u: 44, paso: 1});
+    D.pts.forEach(function(p){ marcas += '<circle cx="' + P.X(p[0]) + '" cy="' + P.Y(0) + '" r="6" fill="#ef6c00"/><circle cx="' + P.X(0) + '" cy="' + P.Y(p[1]) + '" r="6" fill="#6a1b9a"/>' + P.seg([p[0], p[1]], [p[0], 0], "#ef6c00", 1.5, "4 4") + P.seg([p[0], p[1]], [0, p[1]], "#6a1b9a", 1.5, "4 4"); });
+    g = g.replace("</svg>", marcas + "</svg>"); }
+  $("d-graf").innerHTML = g;
+  $("d-txt").innerHTML = '<div class="linea"><strong style="color:#e65100">' + T("Domain (inputs, read across):", "Dominio (entradas, a lo ancho):") + "</strong> " + D.dom + '</div><div class="linea"><strong style="color:#6a1b9a">' + T("Range (outputs, read up and down):", "Rango (salidas, a lo alto):") + "</strong> " + D.ran + '</div><div class="linea">' + D.com + "</div>"; }
+$("d-rel").addEventListener("change", drDibuja); drDibuja();
+OMR("dq", function(){ var t = aleatorio(0, 2);
+  if (t < 2){ var n = aleatorio(3, 4), xs = []; while (xs.length < n){ var k = aleatorio(-3, 7); if (xs.indexOf(k) < 0) xs.push(k); }
+    var pts = xs.map(function(x){ return [x, aleatorio(-2, 9)]; }); if (Math.random() < .5) pts[2][1] = pts[0][1];
+    var dom = conj(pts.map(function(p){ return p[0]; })), ran = conj(pts.map(function(p){ return p[1]; })), pide = t === 0 ? "d" : "r";
+    var mezcla = conj([pts[0][0], pts[1][1], pts[2][0]]), todos = conj(pts.map(function(p){ return p[0]; }).concat(pts.map(function(p){ return p[1]; })));
+    return {enun: T("For the points ", "Para los puntos ") + paresTxt(pts) + T(", what is the ", ", ¿cuál es el ") + (pide === "d" ? T("domain", "dominio") : T("range", "rango")) + "?", correcta: pide === "d" ? dom : ran,
+      opciones: [{clave: dom, html: dom}, {clave: ran, html: ran}, {clave: mezcla, html: mezcla}, {clave: todos, html: todos}],
+      pista: pide === "d" ? T("The domain is the set of inputs: the first coordinates.", "El dominio es el conjunto de entradas: las primeras coordenadas.") : T("The range is the set of outputs: the second coordinates, each written once.", "El rango es el conjunto de salidas: las segundas coordenadas, cada una una sola vez."),
+      bien: T("Domain ", "Dominio ") + dom + T("; range ", "; rango ") + ran + "."}; }
+  var tipos = [["lin", fDef([nz(-5, 5), nz(-4, 4)])], ["cuad", fDef([aleatorio(-5, 5), aleatorio(-3, 3), nz(-3, 3)])], ["exp", "f(x) = " + elige([2, 3, 5]) + " · " + elige([2, 3, 4]) + "ˣ"], ["rac", "f(x) = " + nz(1, 6) + " / (x " + elige(["+ 1", "− 2", "+ 3"]) + ")"]], c = elige(tipos);
+  return {enun: T("What kind of function is ", "¿Qué tipo de función es ") + "<strong>" + c[1] + "</strong>?", correcta: c[0], enOrden: true,
+    opciones: ["lin", "cuad", "exp", "rac"].map(function(k){ return {clave: k, html: nomTipo(k)}; }),
+    pista: T("Look at where x is: alone (linear), squared (quadratic), in the exponent (exponential), or in a denominator (rational).", "Fíjese dónde está la x: sola (lineal), al cuadrado (cuadrática), en el exponente (exponencial) o en un denominador (racional)."),
+    bien: {lin: T("x appears alone, to the first power: linear.", "La x aparece sola, a la primera potencia: lineal."), cuad: T("The highest power of x is 2: quadratic.", "La mayor potencia de x es 2: cuadrática."), exp: T("x is in the exponent: exponential.", "La x está en el exponente: exponencial."), rac: T("x is in the denominator: rational.", "La x está en el denominador: racional.")}[c[0]]};
+});
+
+/* ===== MODULE 5 · Composition: machines in a chain ===== */
+var CF = [[3, 1], [0, 2], [0, 0, 1], [-4, 1], [-1, 3], [0, -1]];
+function cDibuja(){ var g = CF[+$("c-g").value], f = CF[+$("c-f").value], x = leeDecimal($("c-x").value), out = $("c-txt");
+  if (x === null){ out.innerHTML = '<div class="linea">' + T("Type a number for x.", "Escriba un número en x.") + "</div>"; return; }
+  var gx = pEval(g, x), fgx = pEval(f, gx), fx = pEval(f, x), gfx = pEval(g, fx);
+  $("c-svg").innerHTML = maqSVG(sg(x), fDef(g, "g"), nf(gx), "#1565c0") + maqSVG(nf(gx), fDef(f), nf(fgx));
+  out.innerHTML = '<div class="linea"><strong>f(g(' + sg(x) + "))</strong>: " + T("inside, ", "adentro, ") + "g(" + sg(x) + ") = " + sustP(g, x) + " = " + nf(gx) + "; " + T("outside, ", "afuera, ") + "f(" + nf(gx) + ") = " + sustP(f, gx) + " = <strong>" + nf(fgx) + "</strong>.</div>" +
+    '<div class="linea"><strong>g(f(' + sg(x) + "))</strong>: " + T("inside, ", "adentro, ") + "f(" + sg(x) + ") = " + sustP(f, x) + " = " + nf(fx) + "; " + T("outside, ", "afuera, ") + "g(" + nf(fx) + ") = " + sustP(g, fx) + " = <strong>" + nf(gfx) + "</strong>.</div>" +
+    '<div class="linea">' + (Math.abs(fgx - gfx) < 1e-9 ? T("This time both orders give the same result, but that is a coincidence: in general the order matters.", "Esta vez los dos órdenes dan lo mismo, pero es casualidad: en general el orden importa.") : T("The two orders give different results: <strong>the order matters</strong>. The function closest to the x acts first.", "Los dos órdenes dan resultados distintos: <strong>el orden importa</strong>. Actúa primero la función más cercana a la x.")) + "</div>"; }
+["c-g", "c-f"].forEach(function(id){ $(id).addEventListener("change", cDibuja); }); $("c-x").addEventListener("input", cDibuja); cDibuja();
+function fAzar(){ var t = aleatorio(0, 3); if (t === 0) return [nz(-5, 5), 1]; if (t === 1) return [0, elige([2, 3, 4, -2])]; if (t === 2) return [nz(-4, 4), elige([2, 3])]; return [nz(-3, 3), 0, 1]; }
+creaPracticaLibre("cq", function(){ var f, g; do { f = fAzar(); g = fAzar(); } while (pIgual(f, g) || (f.length > 2 && g.length > 2));
+  var a = aleatorio(-3, 4), orden = Math.random() < .5, ext = orden ? f : g, int = orden ? g : f, ni = orden ? "g" : "f", ne = orden ? "f" : "g";
+  var ia = pEval(int, a), res = pEval(ext, ia), otro = pEval(int, pEval(ext, a)), prod = pEval(f, a) * pEval(g, a);
+  return {enun: T("If ", "Si ") + fDef(f) + T(" and ", " y ") + fDef(g, "g") + T(", what is ", ", ¿cuánto vale ") + ne + "(" + ni + "(" + sg(a) + "))?",
+    evalua: function(txt){ var v = leeDecimal(txt); if (v === null) return {estado: "invalido", msg: T("Type a number.", "Escriba un número.")};
+      if (Math.abs(v - res) < 1e-9) return {estado: "bien"};
+      if (Math.abs(v - otro) < 1e-9) return {estado: "mal", msg: T("You worked in the opposite order. The function closest to the number goes first: " + ni + "(" + sg(a) + ").", "Trabajó en el orden contrario. Va primero la función más cercana al número: " + ni + "(" + sg(a) + ").")};
+      if (Math.abs(v - prod) < 1e-9) return {estado: "mal", msg: T("A composition is not a product. Find " + ni + "(" + sg(a) + ") and put that result into " + ne + ".", "La composición no es una multiplicación. Calcule " + ni + "(" + sg(a) + ") y meta ese resultado en " + ne + ".")};
+      return {estado: "mal", msg: T("Inside first: " + ni + "(" + sg(a) + "). Then put that result into " + ne + ".", "Primero adentro: " + ni + "(" + sg(a) + "). Después meta ese resultado en " + ne + ".")}; },
+    solucion: T("Inside: ", "Adentro: ") + ni + "(" + sg(a) + ") = " + sustP(int, a) + " = " + nf(ia) + ". " + T("Outside: ", "Afuera: ") + ne + "(" + nf(ia) + ") = " + sustP(ext, ia) + " = <strong>" + nf(res) + "</strong>."};
+});
+
+/* ===== MODULE 6 · Tables, context, and the expression ===== */
+var TB = null;
+function tbNueva(){ var v = [1, 2, 3, 4]; TB = {g: baraja(v.slice()), f: baraja(v.slice()).map(function(x){ return x + elige([0, 0, 4]); })};
+  /* f must accept the values of g (1–4), and g must accept the values of f when they are in 1–4 */
+  $("t-tabla").innerHTML = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Values of f and g for x = 1, 2, 3, and 4", "Valores de f y g para x = 1, 2, 3 y 4") + '</caption><thead><tr><th scope="col">x</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th></tr></thead><tbody><tr><th scope="row">g(x)</th>' + TB.g.map(function(y){ return "<td>" + y + "</td>"; }).join("") + '</tr><tr><th scope="row">f(x)</th>' + TB.f.map(function(y){ return "<td>" + y + "</td>"; }).join("") + "</tr></tbody></table></div>"; tbCalc(); }
+function tbCalc(){ var a = +$("t-a").value, fg = $("t-comp").value === "fg", out = $("t-txt");
+  var ext = fg ? TB.f : TB.g, int = fg ? TB.g : TB.f, ni = fg ? "g" : "f", ne = fg ? "f" : "g", v = int[a - 1];
+  if (v < 1 || v > 4){ out.innerHTML = '<div class="linea">' + ni + "(" + a + ") = " + v + T(", but the table has no column for x = " + v + ": " + ne + "(" + v + ") cannot be read here.", ", pero la tabla no tiene columna para x = " + v + ": " + ne + "(" + v + ") no se puede leer aquí.") + "</div>"; return; }
+  out.innerHTML = '<div class="linea">1. ' + T("In the row of " + ni + ", under x = " + a + ": ", "En la fila de " + ni + ", bajo x = " + a + ": ") + ni + "(" + a + ") = " + v + '.</div><div class="linea">2. ' + T("In the row of " + ne + ", under x = " + v + ": ", "En la fila de " + ne + ", bajo x = " + v + ": ") + ne + "(" + v + ") = " + ext[v - 1] + '.</div><div class="linea"><strong>' + ne + "(" + ni + "(" + a + ")) = " + ext[v - 1] + "</strong></div>"; }
+$("t-nueva").addEventListener("click", tbNueva); ["t-comp", "t-a"].forEach(function(id){ $(id).addEventListener("change", tbCalc); }); tbNueva();
+function dinero(n){ return "$" + (Math.round(n * 100) / 100).toFixed(2); }
+function ctDibuja(){ var x = +$("t-precio").value, d = x - 10, td = 1.08 * d, tx = 1.08 * x, dt = tx - 10; $("t-preciov").textContent = "$" + x;
+  $("t-ctx").innerHTML = '<div class="linea">' + T("Coupon first, then tax: ", "Primero el cupón y luego el impuesto: ") + "t(d(" + x + ")) = t(" + d + ") = 1.08 · " + d + " = <strong>" + dinero(td) + "</strong></div>" +
+    '<div class="linea">' + T("Tax first, then coupon: ", "Primero el impuesto y luego el cupón: ") + "d(t(" + x + ")) = d(" + dinero(tx) + ") = " + dinero(tx) + " − 10 = <strong>" + dinero(dt) + "</strong></div>" +
+    '<div class="linea">' + T("The order of the steps changes the price by ", "El orden de los pasos cambia el precio en ") + dinero(dt - td) + T(": with the coupon first, you pay less.", ": con el cupón primero se paga menos.") + "</div>"; }
+$("t-precio").addEventListener("input", ctDibuja); ctDibuja();
+var EP = [[[1, 3], [-2, 1]], [[0, 0, 1], [1, 1]], [[-3, 2], [4, 1]], [[0, 4], [2, 1]], [[3, 1], [0, 0, 1]], [[0, 5], [-3, 1]]];
+function pComp(ext, int){ var r = [0], pot = [1]; ext.forEach(function(c){ r = pSuma(r, pEsc(pot, c)); pot = pMul(pot, int); }); return r; }
+function dentroTxt(ext, intTxt){ var l = []; for (var g = ext.length - 1; g >= 0; g--) if (ext[g]) l.push([ext[g], g]);
+  return l.map(function(t, i){ var c = t[0], g = t[1], ab = Math.abs(c), cuerpo = g === 0 ? String(ab) : (ab === 1 ? "" : ab) + "(" + intTxt + ")" + (g > 1 ? SUPF[g] : ""); return (i === 0 ? (c < 0 ? "−" : "") : (c < 0 ? " − " : " + ")) + cuerpo; }).join(""); }
+function exprPasos(f, g, fg){ var ext = fg ? f : g, int = fg ? g : f, ne = fg ? "f" : "g", ni = fg ? "g" : "f", r = pComp(ext, int), x = 2;
+  return {r: r, pasos: [T("Write ", "Se escribe ") + ni + "(x) = " + pVis(int) + T(" inside ", " dentro de ") + ne + T(", in parentheses: ", ", entre paréntesis: ") + ne + "(" + ni + "(x)) = " + dentroTxt(ext, pVis(int)) + ".",
+    T("Expand and combine like terms: ", "Se desarrolla y se combinan los términos semejantes: ") + "<strong>" + ne + "(" + ni + "(x)) = " + pVis(r) + "</strong>.",
+    T("Check with x = 2: ", "Se comprueba con x = 2: ") + ni + "(2) = " + nf(pEval(int, 2)) + ", " + ne + "(" + nf(pEval(int, 2)) + ") = " + nf(pEval(ext, pEval(int, 2))) + T("; with the formula, ", "; con la fórmula, ") + nf(pEval(r, 2)) + ". ✓"]}; }
+function exDibuja(){ var par0 = EP[+$("e-par").value], fg = $("e-orden").value === "fg", E = exprPasos(par0[0], par0[1], fg);
+  $("e-fun").innerHTML = fDef(par0[0]) + " ; " + fDef(par0[1], "g");
+  $("e-txt").innerHTML = E.pasos.map(function(s, i){ return '<div class="linea">' + (i + 1) + ". " + s + "</div>"; }).join("") +
+    (par0[0].length > 2 || par0[1].length > 2 ? '<div class="linea">' + T("Careful: (x + 1)² is not x² + 1. Squaring a binomial gives a middle term.", "Cuidado: (x + 1)² no es x² + 1. Al elevar un binomio al cuadrado aparece el término del medio.") + "</div>" : ""); }
+["e-par", "e-orden"].forEach(function(id){ $(id).addEventListener("change", exDibuja); }); exDibuja();
+OMR("eq", function(){ var t = aleatorio(0, 2);
+  if (t === 0){ var g = baraja([1, 2, 3, 4]), f = baraja([1, 2, 3, 4]).map(function(x){ return x + elige([0, 3, 5]); }), a = aleatorio(1, 4), v = g[a - 1], res = f[v - 1];
+    var tb = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Values of f and g", "Valores de f y g") + '</caption><thead><tr><th scope="col">x</th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th></tr></thead><tbody><tr><th scope="row">g(x)</th>' + g.map(function(y){ return "<td>" + y + "</td>"; }).join("") + '</tr><tr><th scope="row">f(x)</th>' + f.map(function(y){ return "<td>" + y + "</td>"; }).join("") + "</tr></tbody></table></div>";
+    return {enun: T("Use the table. What is f(g(" + a + "))?", "Use la tabla. ¿Cuánto vale f(g(" + a + "))?") + tb, correcta: "ok",
+      opciones: [{clave: "ok", html: String(res)}, {clave: "fa", html: String(f[a - 1])}, {clave: "gv", html: String(v)}, {clave: "gf", html: String(f[a - 1] >= 1 && f[a - 1] <= 4 ? g[f[a - 1] - 1] : f[a - 1] + 1)}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }),
+      pista: T("First read g(" + a + ") in the row of g. Then look for that number in the x row, and read f below it.", "Primero lea g(" + a + ") en la fila de g. Después busque ese número en la fila de x y lea f debajo."),
+      bien: "g(" + a + ") = " + v + "; f(" + v + ") = " + res + "."}; }
+  if (t === 1){ var w = elige([12, 15, 18, 20]), h = elige([10, 20, 25, 30, 40]), q = elige([.8, .75, .9]), bruto = w * h, neto = Math.round(q * bruto * 100) / 100;
+    return {enun: T("A person earns p(h) = " + w + "h dollars for h hours of work, and after taxes keeps n(p) = " + q + "p. How much does the person keep for " + h + " hours, n(p(" + h + "))?", "Una persona gana p(h) = " + w + "h dólares por h horas de trabajo, y después de impuestos le queda n(p) = " + q + "p. ¿Cuánto le queda por " + h + " horas, n(p(" + h + "))?"), correcta: "ok",
+      opciones: [{clave: "ok", html: dinero(neto)}, {clave: "b", html: dinero(bruto)}, {clave: "c", html: dinero(Math.round((1 - q) * bruto * 100) / 100)}, {clave: "d", html: dinero(q * w)}],
+      pista: T("Inside first: p(" + h + ") is the pay before taxes. Then take " + q + " of it.", "Primero adentro: p(" + h + ") es el pago antes de impuestos. Después se toma " + q + " de eso."),
+      bien: "p(" + h + ") = " + w + " · " + h + " = " + dinero(bruto) + "; n(" + bruto + ") = " + q + " · " + bruto + " = " + dinero(neto) + "."}; }
+  var pr = elige(EP), fg = Math.random() < .5, E = exprPasos(pr[0], pr[1], fg), ext = fg ? pr[0] : pr[1], int = fg ? pr[1] : pr[0];
+  var mal2 = pComp(int, ext), mal3 = pMul(ext, int), mal1;
+  if (ext.length > 2) mal1 = [int[0] * int[0] + ext[0], 0, int[1] * int[1]];            /* squared each term */
+  else if (int.length > 2) mal1 = [int[0] + ext[0], 0, ext[1]];                       /* did not multiply the constant */
+  else mal1 = [int[0] + ext[0], ext[1] * int[1]];                                      /* did not distribute */
+  var ops = [{clave: "ok", html: pVis(E.r)}, {clave: "o", html: pVis(mal2)}, {clave: "p", html: pVis(mal3)}, {clave: "s", html: pVis(mal1)}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; });
+  return {enun: T("If ", "Si ") + fDef(pr[0]) + T(" and ", " y ") + fDef(pr[1], "g") + T(", what is the expression of ", ", ¿cuál es la expresión de ") + (fg ? "f(g(x))" : "g(f(x))") + "?", correcta: "ok", opciones: ops,
+    pista: T("Write the inside function, with parentheses, in place of the x of the outside function. Then simplify.", "Escriba la función de adentro, con paréntesis, en lugar de la x de la función de afuera. Después simplifique."),
+    bien: E.pasos.slice(0, 2).join(" ")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución — práctica (español) — construida con tools/build_n4_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-7-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .sistema{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;margin:2px 4px;}
+  .sistema .llave{font-size:2.5em;line-height:1;font-weight:300;}
+  .sistema .ecs{display:flex;flex-direction:column;line-height:1.35;}
+
+  .tabla-lados td.si{color:#1b5e20;font-weight:700;}
+  .tabla-lados td.no{color:#b71c1c;font-weight:700;}
+  .veredicto{font-weight:700;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 7 · Sistemas de desigualdades y funciones</div>
+    <h1>Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#graficar">Graficar una desigualdad lineal</a></li>
+      <li><a href="#punto-prueba">El método del punto de prueba</a></li>
+      <li><a href="#region">El sistema y la región factible</a></li>
+      <li><a href="#verificar">Verificar si un punto pertenece a la región</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="graficar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Graficar una desigualdad lineal</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija el símbolo y mueva la pendiente (m) y el intercepto (b) de y … mx + b. Observe cómo la línea se vuelve sólida o punteada y cómo se mueve el sombreado.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="g-op">Símbolo: y</label><select id="g-op"><option value="<">&lt;</option><option value="<=" selected>≤</option><option value=">">&gt;</option><option value=">=">≥</option></select></div><div class="campo"><label for="g-m">m = <output id="g-mv"></output></label><input type="range" id="g-m" min="-4" max="4" step="1" value="1"></div><div class="campo"><label for="g-b">b = <output id="g-bv"></output></label><input type="range" id="g-b" min="-6" max="6" step="1" value="1"></div></div></div>
+      <div class="salida" aria-live="polite" id="g-txt"></div>
+      <div id="g-graf"></div>
+      <h3>Practique: ¿qué desigualdad está graficada?</h3>
+      <div class="practica" id="gq">
+        <div class="enun" id="gq-enun"></div>
+        <div class="opciones" id="gq-opciones"></div>
+        <div class="fb" id="gq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="gq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="gq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="punto-prueba">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El método del punto de prueba</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija una desigualdad y un punto de prueba. El punto se sustituye: si cumple la desigualdad, se sombrea su lado; si no, el lado contrario.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="t-des">Desigualdad</label><select id="t-des"><option value="0">2x + y &gt; 4</option><option value="1">y ≤ x + 1</option><option value="2">y ≥ 2x − 3</option><option value="3">x + y &lt; 5</option><option value="4">y &lt; 2x</option><option value="5">3x − 2y ≥ 6</option></select></div><div class="campo"><label for="t-x">Punto de prueba · x</label><input type="text" inputmode="decimal" autocomplete="off" id="t-x" value="0" style="width:5em"></div><div class="campo"><label for="t-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="t-y" value="0" style="width:5em"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="t-origen">Usar el origen (0, 0)</button></div></div>
+      <div class="salida" aria-live="polite" id="t-txt"></div>
+      <div id="t-graf"></div>
+      <h3>Practique: ¿qué lado se sombrea?</h3>
+      <div class="practica" id="tq">
+        <div class="enun" id="tq-enun"></div>
+        <div class="opciones" id="tq-opciones"></div>
+        <div class="fb" id="tq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="tq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="tq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="region">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El sistema y la región factible</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un sistema se grafica una desigualdad a la vez. La <strong>región factible</strong> (en verde) es la zona donde se traslapan todos los sombreados. Añada las desigualdades y observe cómo se recorta la región.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="r-sis">Sistema</label><select id="r-sis"><option value="0">x ≥ 0 ; y ≥ 0 ; x + y ≤ 4</option><option value="1">y ≤ x + 1 ; y ≥ 0</option><option value="2">y &gt; 2x − 3 ; y &lt; −x + 4</option><option value="3">x ≥ 0 ; y ≥ 0 ; 2x + y ≤ 8 ; x + y ≤ 5</option><option value="4">y ≥ x + 2 ; y ≤ x − 1 (sin solución)</option></select></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="r-sig">Añadir la primera desigualdad</button><button type="button" class="btn-sec" id="r-todo">Mostrar la región completa</button><button type="button" class="btn-sec" id="r-reinicia">Reiniciar</button></div></div>
+      <div id="r-graf"></div>
+      <div class="salida" aria-live="polite" id="r-txt"></div>
+      <div class="caja-tip"><strong>Cada desigualdad recorta, nunca agranda.</strong> Con una condición más, la región solo puede quedarse igual o hacerse más pequeña, y a veces desaparece: entonces el sistema no tiene solución.</div>
+      <h3>Practique: ¿qué sistema tiene esta región?</h3>
+      <div class="practica" id="rq">
+        <div class="enun" id="rq-enun"></div>
+        <div class="opciones" id="rq-opciones"></div>
+        <div class="fb" id="rq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="rq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="rq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="verificar">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Verificar si un punto pertenece a la región</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Para saber si un punto pertenece a la región no hace falta el dibujo: se sustituye en <strong>todas</strong> las desigualdades. Si las cumple todas, está dentro; si falla en una sola, está fuera.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="v-sis">Sistema</label><select id="v-sis"><option value="0">x ≥ 0 ; y ≥ 0 ; x + y ≤ 4</option><option value="1">y ≤ x + 1 ; y ≥ 0</option><option value="2">y &gt; 2x − 3 ; y &lt; −x + 4</option><option value="3">x ≥ 0 ; y ≥ 0 ; 2x + y ≤ 8 ; x + y ≤ 5</option><option value="4">y ≥ x + 2 ; y ≤ x − 1 (sin solución)</option></select></div><div class="campo"><label for="v-x">Punto · x</label><input type="text" inputmode="decimal" autocomplete="off" id="v-x" value="1" style="width:5em"></div><div class="campo"><label for="v-y">y</label><input type="text" inputmode="decimal" autocomplete="off" id="v-y" value="1" style="width:5em"></div></div>
+        <p class="nota">Pruebe puntos justo sobre una frontera: ahí se nota la diferencia entre &lt; y ≤.</p></div>
+      <div class="salida" aria-live="polite" id="v-txt"></div>
+      <div id="v-graf"></div>
+      <h3>Practique: ¿está en la región?</h3>
+      <div class="practica" id="vq">
+        <div class="enun" id="vq-enun"></div>
+        <div class="opciones" id="vq-opciones"></div>
+        <div class="fb" id="vq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="vq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="vq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 7 · Sistemas de desigualdades y funciones · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/ineq4.js"></script>
+<script>
+var OPS = ["<", "<=", ">", ">="];
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function yDes(m, b, op){ var s = (m ? (m === 1 ? "" : m === -1 ? "−" : sg(m)) + "x" : "") + (b ? (m ? (b < 0 ? " − " + -b : " + " + b) : sg(b)) : (m ? "" : "0")); return D4(-m, 1, b, op, "y " + SIMB[op] + " " + s); }
+var NOMLIN = function(D){ return estricta(D) ? T("dashed", "punteada") : T("solid", "sólida"); };
+var LADO = function(D){ /* "above"/"below" for y op …, "right"/"left" for x op … */
+  if (D.b){ var op = D.b < 0 ? VOLTEA[D.op] : D.op; return op.charAt(0) === ">" ? T("above", "arriba") : T("below", "abajo"); }
+  var op2 = D.a < 0 ? VOLTEA[D.op] : D.op; return op2.charAt(0) === ">" ? T("to the right", "a la derecha") : T("to the left", "a la izquierda"); };
+
+/* ===== MODULE 1 · Graphing one inequality ===== */
+function grDibuja(){
+  var m = +$("g-m").value, b = +$("g-b").value, op = $("g-op").value, D = yDes(m, b, op);
+  $("g-mv").textContent = sg(m); $("g-bv").textContent = sg(b);
+  $("g-txt").innerHTML = '<div class="linea">' + dHTML(D) + "</div>" +
+    '<div class="linea">' + (estricta(D) ? T("The symbol " + SIMB[op] + " does not include the equal case: the boundary line is <strong>dashed</strong>.", "El símbolo " + SIMB[op] + " no incluye el caso igual: la línea frontera es <strong>punteada</strong>.") : T("The symbol " + SIMB[op] + " includes the equal case: the boundary line is <strong>solid</strong>.", "El símbolo " + SIMB[op] + " incluye el caso igual: la línea frontera es <strong>sólida</strong>.")) + "</div>" +
+    '<div class="linea">' + T("y " + SIMB[op] + " … : the shading goes <strong>" + LADO(D) + "</strong> the line, where y is " + (op.charAt(0) === ">" ? "greater" : "less") + ".", "y " + SIMB[op] + " … : se sombrea <strong>" + LADO(D) + "</strong> de la recta, donde y es " + (op.charAt(0) === ">" ? "mayor" : "menor") + ".") + "</div>";
+  $("g-graf").innerHTML = grafDes([D]);
+}
+["g-m", "g-b"].forEach(function(id){ $(id).addEventListener("input", grDibuja); }); $("g-op").addEventListener("change", grDibuja); grDibuja();
+/* practice: which inequality is graphed? */
+OMR("gq", function(){ var m = elige([-3, -2, -1, 1, 2, 3, 0]), b = aleatorio(-4, 4), op = elige(OPS), D = yDes(m, b, op), vert = Math.random() < .15, k;
+  if (vert){ k = nz(-5, 5); D = D4(1, 0, k, op, "x " + SIMB[op] + " " + sg(k)); }
+  var otros = OPS.filter(function(o){ return o !== op; }).map(function(o){ return vert ? D4(1, 0, k, o, "x " + SIMB[o] + " " + sg(k)) : yDes(m, b, o); });
+  return {enun: T("Which inequality is graphed?", "¿Qué desigualdad está graficada?") + grafDes([D], {etiquetas: false}), correcta: "ok",
+    opciones: [{clave: "ok", html: dHTML(D)}].concat(otros.map(function(E, i){ return {clave: "m" + i, html: dHTML(E)}; })),
+    pista: T("Look at two things: is the line solid or dashed? Is the shading " + (vert ? "to the right or to the left" : "above or below") + "?", "Fíjese en dos cosas: ¿la línea es sólida o punteada? ¿El sombreado está " + (vert ? "a la derecha o a la izquierda" : "arriba o abajo") + "?"),
+    bien: T("The line is " + NOMLIN(D) + " and the shading is " + LADO(D) + ": ", "La línea es " + NOMLIN(D) + " y el sombreado está " + LADO(D) + ": ") + dTxt(D) + "."};
+});
+
+/* ===== MODULE 2 · The test point ===== */
+var DES_T = [D4(2, 1, 4, ">"), D4(-1, 1, 1, "<=", "y ≤ x + 1"), D4(-2, 1, -3, ">=", "y ≥ 2x − 3"), D4(1, 1, 5, "<"), D4(-2, 1, 0, "<", "y < 2x"), D4(3, -2, 6, ">=")];
+function tpItem(){ return DES_T[+$("t-des").value]; }
+function tpDibuja(){
+  var D = tpItem(), x = leeDecimal($("t-x").value), y = leeDecimal($("t-y").value), out = $("t-txt");
+  if (x === null || y === null){ out.innerHTML = '<div class="linea">' + T("Type a number for x and for y.", "Escriba un número en x y en y.") + "</div>"; return; }
+  var S = dSust(D, x, y), v = dVerdad(S), fr = enFrontera(D, x, y);
+  out.innerHTML = '<div class="linea">' + T("Substitute ", "Se sustituye ") + par(x, y) + ": " + S.txt + " → " + sg(r4(S.izq)) + " " + SIMB[S.op] + " " + sg(r4(S.der)) + "</div>" +
+    '<div class="linea veredicto" style="color:' + (v ? "#1b5e20" : "#b71c1c") + '">' + (v ? T("True.", "Verdadero.") : T("False.", "Falso.")) + "</div>" +
+    '<div class="linea">' + (fr ? T("<strong>Careful:</strong> this point is ON the boundary line, so it does not tell you which side to shade. Choose a point off the line.", "<strong>Cuidado:</strong> este punto está SOBRE la línea frontera, así que no sirve para decidir el lado. Elija un punto fuera de la recta.") :
+      v ? T("The point makes it true: shade <strong>the side of the point</strong>.", "El punto la cumple: se sombrea <strong>el lado del punto</strong>.") : T("The point makes it false: shade <strong>the other side</strong>.", "El punto no la cumple: se sombrea <strong>el lado contrario</strong>.")) + "</div>";
+  $("t-graf").innerHTML = grafDes([D], {prueba: [x, y]});
+}
+["t-x", "t-y"].forEach(function(id){ $(id).addEventListener("input", tpDibuja); }); $("t-des").addEventListener("change", tpDibuja);
+$("t-origen").addEventListener("click", function(){ $("t-x").value = 0; $("t-y").value = 0; tpDibuja(); }); tpDibuja();
+OMR("tq", function(){ var a = nz(-4, 4), b = nz(-3, 3), c = Math.random() < .2 ? 0 : nz(-8, 8), op = elige(OPS), D = D4(a, b, c, op), pr = c ? [0, 0] : [1, 0];
+  if (a < 0 && b < 0){ D.a = -a; D.b = -b; D.c = -c; D.op = VOLTEA[op]; }
+  var g = dMcd(dMcd(D.a, D.b), D.c) || 1; D.a /= g; D.b /= g; D.c /= g;
+  if (!c && enFrontera(D, 1, 0)) pr = [0, 1];
+  var S = dSust(D, pr[0], pr[1]), v = dVerdad(S), txt = dStd(D);
+  return {enun: T("To graph ", "Para graficar ") + envuelve(txt, dVoz(txt)) + T(", which side do you shade?", ", ¿qué lado se sombrea?"), correcta: v ? "mismo" : "otro", enOrden: true,
+    opciones: [{clave: "mismo", html: T("the side of ", "el lado de ") + par(pr[0], pr[1])}, {clave: "otro", html: T("the side opposite ", "el lado contrario a ") + par(pr[0], pr[1])}, {clave: "linea", html: T("only the line", "solo la recta")}],
+    pista: (c ? "" : T("The line goes through (0, 0), so use " + par(pr[0], pr[1]) + ". ", "La recta pasa por (0, 0), así que se usa " + par(pr[0], pr[1]) + ". ")) + T("Substitute the test point and see whether it comes out true.", "Sustituya el punto de prueba y vea si resulta verdadero."),
+    porClave: {linea: T("You always shade a whole side (a half-plane).", "Siempre se sombrea todo un lado (un semiplano).")},
+    bien: (c ? "" : T("The line goes through the origin, so the test point is " + par(pr[0], pr[1]) + ". ", "La recta pasa por el origen, así que el punto de prueba es " + par(pr[0], pr[1]) + ". ")) + S.txt + " → " + sg(r4(S.izq)) + " " + SIMB[S.op] + " " + sg(r4(S.der)) + ": " + (v ? T("true, so shade its side.", "verdadero, se sombrea su lado.") : T("false, so shade the other side.", "falso, se sombrea el lado contrario.")) + grafDes([D], {prueba: pr})};
+});
+
+/* ===== MODULE 3 · The feasible region ===== */
+var R0 = {x0: -3, x1: 8, y0: -3, y1: 8}, R7 = {x0: -7, x1: 7, y0: -7, y1: 7}, R9 = {x0: -2, x1: 9, y0: -2, y1: 9};
+var SISTEMAS = [
+ {r: R0, ds: [D4(1, 0, 0, ">=", "x ≥ 0"), D4(0, 1, 0, ">=", "y ≥ 0"), D4(1, 1, 4, "<=", "x + y ≤ 4")],
+  com: [T("x ≥ 0 keeps the right half of the plane, including the y-axis.", "x ≥ 0 deja la mitad derecha del plano, incluido el eje y."), T("y ≥ 0 adds the top half: only the first quadrant is left.", "y ≥ 0 añade la mitad de arriba: queda solo el primer cuadrante."), T("x + y ≤ 4 cuts the quadrant with a diagonal and leaves a triangle with vertices (0, 0), (4, 0), and (0, 4).", "x + y ≤ 4 recorta el cuadrante con una diagonal y deja un triángulo de vértices (0, 0), (4, 0) y (0, 4).")]},
+ {r: R7, ds: [D4(-1, 1, 1, "<=", "y ≤ x + 1"), D4(0, 1, 0, ">=", "y ≥ 0")],
+  com: [T("Everything below the line y = x + 1, including the line itself.", "Todo lo que queda por debajo de la recta y = x + 1, incluida la propia recta."), T("y ≥ 0 removes everything below the x-axis: a wedge open to the right is left.", "y ≥ 0 elimina lo que está por debajo del eje x: queda una cuña abierta hacia la derecha.")]},
+ {r: R7, ds: [D4(-2, 1, -3, ">", "y > 2x − 3"), D4(1, 1, 4, "<", "y < −x + 4")],
+  com: [T("Everything above the line y = 2x − 3; the line is dashed because it is not included.", "Todo lo que queda por encima de la recta y = 2x − 3; la línea va punteada porque no se incluye."), T("The second one cuts from above and leaves a wedge with both boundaries dashed: no point of the lines belongs to the region.", "La segunda recorta por arriba y deja una cuña con las dos fronteras punteadas: ningún punto de las líneas pertenece a la región.")]},
+ {r: R9, ds: [D4(1, 0, 0, ">=", "x ≥ 0"), D4(0, 1, 0, ">=", "y ≥ 0"), D4(2, 1, 8, "<=", "2x + y ≤ 8"), D4(1, 1, 5, "<=", "x + y ≤ 5")],
+  com: [T("x ≥ 0: the right half.", "x ≥ 0: la mitad derecha."), T("y ≥ 0: the first quadrant, with no negative values.", "y ≥ 0: el primer cuadrante, sin valores negativos."), T("2x + y ≤ 8 leaves a triangle with vertices (0, 0), (4, 0), and (0, 8).", "2x + y ≤ 8 deja un triángulo de vértices (0, 0), (4, 0) y (0, 8)."), T("x + y ≤ 5 cuts one more corner: a quadrilateral with vertices (0, 0), (4, 0), (3, 2), and (0, 5). This is the typical shape of production problems.", "x + y ≤ 5 recorta una esquina más: un cuadrilátero de vértices (0, 0), (4, 0), (3, 2) y (0, 5). Es la forma típica de los problemas de producción.")]},
+ {r: R7, ds: [D4(-1, 1, 2, ">=", "y ≥ x + 2"), D4(-1, 1, -1, "<=", "y ≤ x − 1")],
+  com: [T("Everything above the line y = x + 2.", "Todo lo que queda por encima de la recta y = x + 2."), T("The second asks to be below y = x − 1, a parallel line three units lower. No point meets both: the region disappears and the system has no solution.", "La segunda pide estar por debajo de y = x − 1, una paralela tres unidades más abajo. Ningún punto cumple las dos: la región desaparece y el sistema no tiene solución.")]}];
+var rEst = {i: 0, n: 0};
+function rPinta(){
+  var S = SISTEMAS[rEst.i], L = S.ds.slice(0, rEst.n);
+  $("r-graf").innerHTML = grafDes(L, {rango: S.r, cada: false, region: true});
+  $("r-txt").innerHTML = S.ds.slice(0, rEst.n).map(function(D, k){ return '<div class="linea"><strong>' + (k + 1) + ".</strong> " + S.com[k] + "</div>"; }).join("") || '<div class="linea">' + T("Press the button to add the first inequality.", "Pulse el botón para añadir la primera desigualdad.") + "</div>";
+  var fin = rEst.n >= S.ds.length; $("r-sig").disabled = fin; $("r-todo").disabled = fin;
+  $("r-sig").textContent = rEst.n ? T("Add the next inequality", "Añadir la siguiente desigualdad") : T("Add the first inequality", "Añadir la primera desigualdad");
+}
+$("r-sis").addEventListener("change", function(){ rEst = {i: +$("r-sis").value, n: 0}; rPinta(); });
+$("r-sig").addEventListener("click", function(){ rEst.n++; rPinta(); });
+$("r-todo").addEventListener("click", function(){ rEst.n = SISTEMAS[rEst.i].ds.length; rPinta(); });
+$("r-reinicia").addEventListener("click", function(){ rEst.n = 0; rPinta(); }); rPinta();
+/* practice: which system has this region? */
+function sisAzar(){ var L, ok, k = 0;
+  do { var m1 = elige([-2, -1, 1, 2, 0]), m2, b1 = aleatorio(-3, 3), b2;
+    do { m2 = elige([-2, -1, 1, 2, 0]); } while (m2 === m1); b2 = aleatorio(-3, 3);
+    L = [yDes(m1, b1, elige(OPS)), yDes(m2, b2, elige(OPS))]; var reg = verticesReg(L, R7); ok = reg.length > 2 && areaPoli(reg) > 4; k++; } while (!ok && k < 100);
+  return L; }
+OMR("rq", function(){ var L = sisAzar(), op0 = L[0].op, op1 = L[1].op;
+  var cambia = function(D){ var m = -D.a, b = D.c; return yDes(m, b, VOLTEA[D.op]); };
+  var opc = [[cambia(L[0]), L[1]], [L[0], cambia(L[1])], [cambia(L[0]), cambia(L[1])]];
+  return {enun: T("The green region is the solution of which system?", "La región verde es la solución de ¿qué sistema?") + grafDes(L, {cada: false, etiquetas: false}), correcta: "ok",
+    opciones: [{clave: "ok", html: sisDesHTML(L)}].concat(opc.map(function(S, i){ return {clave: "m" + i, html: sisDesHTML(S)}; })),
+    pista: T("Look at each line on its own: is the green region above or below it? Is it solid or dashed?", "Mire cada recta por separado: ¿la región verde queda arriba o abajo de ella? ¿Es sólida o punteada?"),
+    bien: L.map(function(D){ return dTxt(D) + ": " + T("the region is ", "la región está ") + LADO(D) + T(" the ", " de la línea ") + NOMLIN(D) + (ES ? "" : " line"); }).join("; ") + "."};
+});
+
+/* ===== MODULE 4 · Checking a point ===== */
+function veDibuja(){
+  var S = SISTEMAS[+$("v-sis").value], x = leeDecimal($("v-x").value), y = leeDecimal($("v-y").value), out = $("v-txt");
+  if (x === null || y === null){ out.innerHTML = '<div class="linea">' + T("Type a number for x and for y.", "Escriba un número en x y en y.") + "</div>"; $("v-graf").innerHTML = grafDes(S.ds, {rango: S.r}); return; }
+  var todas = true, filas = S.ds.map(function(D){ var Sb = dSust(D, x, y), v = dVerdad(Sb); if (!v) todas = false;
+    return "<tr><td>" + dTxt(D) + "</td><td>" + Sb.txt + " → " + sg(r4(Sb.izq)) + " " + SIMB[Sb.op] + " " + sg(r4(Sb.der)) + (enFrontera(D, x, y) ? T(" (on the line)", " (sobre la línea)") : "") + '</td><td class="' + (v ? "si" : "no") + '">' + (v ? T("✓ true", "✓ verdadero") : T("✗ false", "✗ falso")) + "</td></tr>"; }).join("");
+  out.innerHTML = '<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">' + T("Substitution of the point in each inequality", "Sustitución del punto en cada desigualdad") + '</caption><thead><tr><th scope="col">' + T("Inequality", "Desigualdad") + '</th><th scope="col">' + T("Substitution", "Sustitución") + '</th><th scope="col">' + T("Result", "Resultado") + "</th></tr></thead><tbody>" + filas + "</tbody></table></div>" +
+    '<div class="linea veredicto" style="color:' + (todas ? "#1b5e20" : "#b71c1c") + '">' + (todas ? T(par(x, y) + " meets all of them: it IS in the region.", par(x, y) + " las cumple todas: SÍ está en la región.") : T(par(x, y) + " fails at least one: it is NOT in the region.", par(x, y) + " falla en al menos una: NO está en la región.")) + "</div>";
+  $("v-graf").innerHTML = grafDes(S.ds, {rango: S.r, punto: [x, y]});
+}
+["v-x", "v-y"].forEach(function(id){ $(id).addEventListener("input", veDibuja); }); $("v-sis").addEventListener("change", veDibuja); veDibuja();
+OMR("vq", function(){ var L = sisAzar(), x, y, k = 0, frontera = Math.random() < .35;
+  if (frontera){ var D = elige(L); do { x = aleatorio(-5, 5); y = (D.c - D.a * x) / D.b; k++; } while ((y !== Math.round(y) || Math.abs(y) > 6) && k < 50); if (k >= 50){ x = aleatorio(-5, 5); y = aleatorio(-5, 5); } }
+  else { x = aleatorio(-5, 5); y = aleatorio(-5, 5); }
+  var res = L.map(function(D){ return dVerdad(dSust(D, x, y)); }), dentro = res[0] && res[1];
+  return {enun: T("Is ", "¿Está ") + par(x, y) + T(" in the region of ", " en la región de ") + sisDesHTML(L) + "?", correcta: dentro ? "si" : res[0] || res[1] ? "una" : "ninguna", enOrden: true,
+    opciones: [{clave: "si", html: T("Yes: it meets both", "Sí: cumple las dos")}, {clave: "una", html: T("No: it meets only one", "No: cumple solo una")}, {clave: "ninguna", html: T("No: it meets neither", "No: no cumple ninguna")}],
+    pista: T("Substitute the point in each inequality. Careful with points on a line: ≤ and ≥ include them, &lt; and &gt; do not.", "Sustituya el punto en cada desigualdad. Cuidado con los puntos sobre una línea: ≤ y ≥ los incluyen, &lt; y &gt; no."),
+    bien: L.map(function(D, i){ var S = dSust(D, x, y); return S.txt + " → " + sg(r4(S.izq)) + " " + SIMB[S.op] + " " + sg(r4(S.der)) + ": " + (res[i] ? T("true", "verdadero") : T("false", "falso")) + (enFrontera(D, x, y) ? T(" (on the line)", " (sobre la línea)") : ""); }).join("; ") + "." + grafDes(L, {punto: [x, y]})};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

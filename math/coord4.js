@@ -29,16 +29,16 @@ var C4 = {azul: "#0d47a1", rojo: "#b71c1c", verde: "#1b5e20", tinta: "#10174f", 
 function Plano(o){
   o = o || {};
   var xmin = o.xmin === undefined ? -10 : o.xmin, xmax = o.xmax === undefined ? 10 : o.xmax, ymin = o.ymin === undefined ? -10 : o.ymin, ymax = o.ymax === undefined ? 10 : o.ymax;
-  var u = o.u || Math.min(34, Math.floor(560 / (xmax - xmin))), m = 30, W = (xmax - xmin) * u + 2 * m, H = (ymax - ymin) * u + 2 * m;
-  var paso = o.paso || ((xmax - xmin) > 24 ? 5 : ((xmax - xmin) > 14 ? 2 : 1));
-  var P = {xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax, u: u, W: W, H: H};
+  var u = o.u || Math.min(34, Math.floor(560 / (xmax - xmin))), uy = o.uy || u, m = 30, W = (xmax - xmin) * u + 2 * m, H = (ymax - ymin) * uy + 2 * m;
+  var paso = o.paso || ((xmax - xmin) > 24 ? 5 : ((xmax - xmin) > 14 ? 2 : 1)), pasoY = o.pasoY || paso;   /* uy, pasoY: a different scale on the y-axis (optional) */
+  var P = {xmin: xmin, xmax: xmax, ymin: ymin, ymax: ymax, u: u, uy: uy, W: W, H: H};
   P.X = function(x){ return m + (x - xmin) * u; };
-  P.Y = function(y){ return m + (ymax - y) * u; };
-  P.desdePx = function(px, py){ return [xmin + (px - m) / u, ymax - (py - m) / u]; };
+  P.Y = function(y){ return m + (ymax - y) * uy; };
+  P.desdePx = function(px, py){ return [xmin + (px - m) / u, ymax - (py - m) / uy]; };
   P.rejilla = function(){
     var s = "", x, y;
     for (x = xmin; x <= xmax; x++) s += '<line x1="' + P.X(x) + '" y1="' + P.Y(ymax) + '" x2="' + P.X(x) + '" y2="' + P.Y(ymin) + '" stroke="' + (x % paso === 0 ? "#cfd8dc" : "#eceff1") + '" stroke-width="1"/>';
-    for (y = ymin; y <= ymax; y++) s += '<line x1="' + P.X(xmin) + '" y1="' + P.Y(y) + '" x2="' + P.X(xmax) + '" y2="' + P.Y(y) + '" stroke="' + (y % paso === 0 ? "#cfd8dc" : "#eceff1") + '" stroke-width="1"/>';
+    for (y = ymin; y <= ymax; y++) if (uy >= 6 || y % pasoY === 0) s += '<line x1="' + P.X(xmin) + '" y1="' + P.Y(y) + '" x2="' + P.X(xmax) + '" y2="' + P.Y(y) + '" stroke="' + (y % pasoY === 0 ? "#cfd8dc" : "#eceff1") + '" stroke-width="1"/>';
     if (o.cuadrantes && xmin < 0 && xmax > 0 && ymin < 0 && ymax > 0){
       [["I", xmax * .62, ymax * .82], ["II", xmin * .62, ymax * .82], ["III", xmin * .62, ymin * .82], ["IV", xmax * .62, ymin * .82]].forEach(function(q){
         s += '<text x="' + f1(P.X(q[1])) + '" y="' + f1(P.Y(q[2])) + '" text-anchor="middle" dominant-baseline="middle" font-size="' + Math.max(20, u * .9) + '" font-weight="700" fill="#cfd8dc" font-family="Georgia, serif">' + q[0] + "</text>";
@@ -58,7 +58,7 @@ function Plano(o){
     if (!o.sinNumeros){
       var fs = u < 22 ? 11 : 13;
       for (x = xmin; x <= xmax; x++) if (x !== 0 && x % paso === 0 && x !== xmax) s += '<text x="' + P.X(x) + '" y="' + (P.Y(y0) + fs + 5) + '" font-size="' + fs + '" fill="#455a64" text-anchor="middle"' + h + '>' + sg(x) + "</text>";
-      for (y = ymin; y <= ymax; y++) if (y !== 0 && y % paso === 0 && y !== ymax) s += '<text x="' + (P.X(x0) - 6) + '" y="' + (P.Y(y) + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end"' + h + '>' + sg(y) + "</text>";
+      for (y = ymin; y <= ymax; y++) if (y !== 0 && y % pasoY === 0 && y !== ymax) s += '<text x="' + (P.X(x0) - 6) + '" y="' + (P.Y(y) + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end"' + h + '>' + sg(y) + "</text>";
       if (ex && ey) s += '<text x="' + (P.X(0) - 6) + '" y="' + (P.Y(0) + fs + 4) + '" font-size="' + fs + '" fill="#455a64" text-anchor="end"' + h + '>0</text>';
     }
     return s;

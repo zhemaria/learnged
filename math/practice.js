@@ -91,6 +91,8 @@ function creaPracticaOM(pre, gen){
   function pinta(){
     var q, n = 0;
     do { q = gen(); n++; } while (n < 50 && !valida(q));
+    if (q.mal === undefined) q.mal = q.bien || "";   /* the explanation after the second wrong try */
+    if (q.bien === undefined) q.bien = "";
     est.actual = q; est.resuelta = false; est.intentos = 0;
     $(pre + "-enun").innerHTML = q.enun;
     var cont = $(pre + "-opciones"); cont.innerHTML = "";

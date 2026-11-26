@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.2 · Math Level 4 (English) — built by tools/build_n4_lesson_7_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.2 · Relations and functions, f(x) notation, and domain and range · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 7 — Systems of inequalities and functions</p>
+<h1>Lesson 7.2 · Relations and functions, f(x) notation, and domain and range</h1>
+<p class="lema">Recognize a function, use the vertical line test, evaluate f(x), find the domain and the range, and compose two functions.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator allowed</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Decide</strong> whether a relation is a function (one output for each input).</li>
+<li><strong>Apply</strong> the vertical line test to a graph.</li>
+<li><strong>Evaluate</strong> f(x) with parentheses and the order of operations.</li>
+<li><strong>Find</strong> the domain and the range, and <strong>compose</strong> two functions.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.7.b</span> Represent or identify a function in a table or graph as having exactly one output (one element in the range) for each input (each element in the domain).</li><li><span class="std-cod std-dir">A.7.c</span> Evaluate linear and quadratic functions for values in their domain when represented using function notation.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.5.e</span> For a function that models a linear or nonlinear relationship between two quantities, interpret key features of graphs and tables in terms of quantities, and sketch graphs showing key features given a verbal description of the relationship.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.b</span> Transform and solve algebraic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">8.F.1</span> <span class="std-nivel">Level D</span> Understand that a function is a rule that assigns to each input exactly one output. The graph of a function is the set of ordered pairs consisting of an input and the corresponding output.</li><li><span class="std-cod std-ccr">F-IF.1</span> <span class="std-nivel">Level E</span> Understand that a function from one set (called the domain) to another set (called the range) assigns to each element of the domain exactly one element of the range. If f is a function and x is an element of its domain, then f(x) denotes the output of f corresponding to the input x. The graph of f is the graph of the equation y = f(x).</li><li><span class="std-cod std-ccr">F-IF.2</span> <span class="std-nivel">Level E</span> Use function notation, evaluate functions for inputs in their domains, and interpret statements that use function notation in terms of a context.</li><li><span class="std-cod std-ccr">F-BF.1</span> <span class="std-nivel">Level E</span> Write a function that describes a relationship between two quantities: determine an explicit expression, a recursive process, or steps for calculation from a context; combine standard function types using arithmetic operations; compose functions.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-function">What is a function? The function machine</a></li>
+<li><a href="#s-vertical-line">The vertical line test</a></li>
+<li><a href="#s-notation">f(x) notation: evaluating functions</a></li>
+<li><a href="#s-domain-range">Domain and range</a></li>
+<li><a href="#s-composition">Composition of functions</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-function"><span aria-hidden="true" class="num-seccion">1</span>What is a function? The function machine</h2>
+<p><strong>A link with Lesson 7.1.</strong> In Lesson 7.1 you worked with regions of the plane. Now comes one of the central ideas of the GED test: the <strong>function</strong>. A function is a rule that takes an input and gives back exactly one output. It is the base of all of Topic 8.</p>
+<p>Think of a function as a <strong>machine</strong>: a number goes in (the input x), the machine applies a rule, and a result comes out (the output f(x)). The key condition: <strong>each input gives only one output</strong>.</p>
+<svg viewBox="0 0 520 150" role="img" aria-label="A function machine: the input 4 goes into the rule f of x = 2x minus 3, and the output 5 comes out." style="width:100%;max-width:520px;height:auto;display:block;margin:12px auto;"><rect x="0" y="0" width="520" height="150" fill="#fff"/>
+<text x="40" y="82" font-size="30" font-weight="700" fill="#1565c0" text-anchor="middle">4</text>
+<line x1="68" y1="72" x2="148" y2="72" stroke="#1565c0" stroke-width="4"/><polygon points="160,72 146,64 146,80" fill="#1565c0"/>
+<text x="108" y="58" font-size="13" fill="#455a64" text-anchor="middle">input x</text>
+<rect x="164" y="26" width="192" height="92" rx="16" fill="#ede7f6" stroke="#6a1b9a" stroke-width="3"/>
+<text x="260" y="66" font-size="15" fill="#6a1b9a" text-anchor="middle">rule</text>
+<text x="260" y="92" font-size="19" font-weight="700" fill="#4a148c" text-anchor="middle">f(x) = 2x − 3</text>
+<line x1="356" y1="72" x2="436" y2="72" stroke="#2e7d32" stroke-width="4"/><polygon points="448,72 434,64 434,80" fill="#2e7d32"/>
+<text x="396" y="58" font-size="13" fill="#455a64" text-anchor="middle">output f(x)</text>
+<text x="480" y="82" font-size="30" font-weight="700" fill="#2e7d32" text-anchor="middle">5</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The input test</span>
+<p>If the same input (the same value of x) had two different outputs, the relation would not be a function. A machine that gave two different results for the same number would be broken.</p>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#machine" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the function machine (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the function machine</span><span class="ei-sub">Inputs and outputs of a function, with the table of pairs filling in, and a broken machine that gives two outputs.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-vertical-line"><span aria-hidden="true" class="num-seccion">2</span>The vertical line test</h2>
+<p>On a graph, a relation is a function if <strong>no vertical line</strong> cuts it at more than one point. If some vertical line touches the graph two or more times, that input would have several outputs, and the relation would not be a function.</p>
+<svg viewBox="0 0 316 348" role="img" aria-label="The parabola y = x squared minus 2 with a dashed vertical line at x = 1.5. The line cuts the parabola at only one point, so the parabola is a function." style="width:100%;max-width:320px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="62" y1="30" x2="62" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="94" y1="30" x2="94" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="126" y1="30" x2="126" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="158" y1="30" x2="158" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="222" y1="30" x2="222" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="254" y1="30" x2="254" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="286" y1="30" x2="286" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="318" x2="286" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="286" x2="286" y2="286" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="254" x2="286" y2="254" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="222" x2="286" y2="222" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="286" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="158" x2="286" y2="158" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="126" x2="286" y2="126" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="94" x2="286" y2="94" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="62" x2="286" y2="62" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="286" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="222" x2="296" y2="222" stroke="#10174f" stroke-width="2"/><line x1="158" y1="326" x2="158" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="300,222 290,217 290,227" fill="#10174f"/><polygon points="158,16 153,26 163,26" fill="#10174f"/><text x="300" y="210" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="172" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="68.4" y1="35.1" x2="71.6" y2="52.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="71.6" y1="52.7" x2="74.8" y2="69.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="74.8" y1="69.7" x2="78.0" y2="86.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="78.0" y1="86.0" x2="81.2" y2="101.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.2" y1="101.7" x2="84.4" y2="116.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="84.4" y1="116.7" x2="87.6" y2="131.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.6" y1="131.1" x2="90.8" y2="144.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="90.8" y1="144.9" x2="94.0" y2="158.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="94.0" y1="158.0" x2="97.2" y2="170.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="97.2" y1="170.5" x2="100.4" y2="182.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="100.4" y1="182.3" x2="103.6" y2="193.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.6" y1="193.5" x2="106.8" y2="204.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.8" y1="204.1" x2="110.0" y2="214.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="110.0" y1="214.0" x2="113.2" y2="223.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="113.2" y1="223.3" x2="116.4" y2="231.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="116.4" y1="231.9" x2="119.6" y2="239.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="119.6" y1="239.9" x2="122.8" y2="247.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="122.8" y1="247.3" x2="126.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.0" y1="254.0" x2="129.2" y2="260.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="129.2" y1="260.1" x2="132.4" y2="265.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="132.4" y1="265.5" x2="135.6" y2="270.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.6" y1="270.3" x2="138.8" y2="274.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="138.8" y1="274.5" x2="142.0" y2="278.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="142.0" y1="278.0" x2="145.2" y2="280.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.2" y1="280.9" x2="148.4" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="148.4" y1="283.1" x2="151.6" y2="284.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="151.6" y1="284.7" x2="154.8" y2="285.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="154.8" y1="285.7" x2="158.0" y2="286.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="158.0" y1="286.0" x2="161.2" y2="285.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="161.2" y1="285.7" x2="164.4" y2="284.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="164.4" y1="284.7" x2="167.6" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="167.6" y1="283.1" x2="170.8" y2="280.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="170.8" y1="280.9" x2="174.0" y2="278.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="174.0" y1="278.0" x2="177.2" y2="274.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="177.2" y1="274.5" x2="180.4" y2="270.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="180.4" y1="270.3" x2="183.6" y2="265.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="183.6" y1="265.5" x2="186.8" y2="260.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="186.8" y1="260.1" x2="190.0" y2="254.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="190.0" y1="254.0" x2="193.2" y2="247.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="193.2" y1="247.3" x2="196.4" y2="239.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="196.4" y1="239.9" x2="199.6" y2="231.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="199.6" y1="231.9" x2="202.8" y2="223.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="202.8" y1="223.3" x2="206.0" y2="214.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="214.0" x2="209.2" y2="204.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="209.2" y1="204.1" x2="212.4" y2="193.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="212.4" y1="193.5" x2="215.6" y2="182.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="215.6" y1="182.3" x2="218.8" y2="170.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="218.8" y1="170.5" x2="222.0" y2="158.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="222.0" y1="158.0" x2="225.2" y2="144.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="225.2" y1="144.9" x2="228.4" y2="131.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="228.4" y1="131.1" x2="231.6" y2="116.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="231.6" y1="116.7" x2="234.8" y2="101.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="234.8" y1="101.7" x2="238.0" y2="86.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="238.0" y1="86.0" x2="241.2" y2="69.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="241.2" y1="69.7" x2="244.4" y2="52.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="244.4" y1="52.7" x2="247.6" y2="35.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="206.0" y1="318.0" x2="206.0" y2="30.0" stroke="#ef6c00" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round"/><circle cx="206.0" cy="214.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><text x="216.0" y="204.0" font-size="15" font-weight="700" fill="#2e7d32" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">(1.5, 0.25)</text><text x="34.8" y="295.6" font-size="14" font-weight="700" fill="#1565c0" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y = x² − 2</text><text x="30" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−4</text><text x="62" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="94" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="126" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="190" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="222" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="254" y="240" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="152" y="322" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="152" y="290" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="152" y="258" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="152" y="194" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="152" y="162" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="152" y="130" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="152" y="98" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="152" y="66" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text></svg>
+<p>The parabola is a function: any vertical line cuts it only once. A circle or a parabola “lying on its side” would fail the test.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — A set of pairs</h3></div>
+<p class="pregunta-int" id="t-p1">Is {(1, 2), (2, 3), (3, 4)} a function?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Yes, it is a function</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">You cannot tell</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — A repeated input</h3></div>
+<p class="pregunta-int" id="t-p2">Is {(1, 2), (1, 5), (2, 3)} a function?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">No: the input 1 has two outputs</button>
+<button class="opcion" data-k="b" type="button">Yes, it is a function</button>
+<button class="opcion" data-k="c" type="button">Yes, always</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A vertical line</h3></div>
+<p class="pregunta-int" id="t-p3">Is a vertical line (x = 3) a function?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">Yes</button>
+<button class="opcion" data-k="b" type="button">No: it fails the vertical line test</button>
+<button class="opcion" data-k="c" type="button">Sometimes</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#vertical-line" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the vertical line test (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the vertical line test</span><span class="ei-sub">Move a vertical line across six relations and count how many points it cuts, including the circle and the parabola on its side.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-notation"><span aria-hidden="true" class="num-seccion">3</span>f(x) notation: evaluating functions</h2>
+<p>The notation f(x) is read “f of x” and means the output of the function for the input x. To <strong>evaluate</strong>, substitute the value of x and simplify following the order of operations (PEMDAS).</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: if f(x) = 2x − 3, find f(4).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Substitute x = 4:</strong> f(4) = 2(4) − 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplify:</strong> 8 − 3 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>f(4) = 5.</strong></p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2 (quadratic): if f(x) = x² + 1, find f(−2).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Substitute:</strong> f(−2) = (−2)² + 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Simplify:</strong> 4 + 1 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>f(−2) = 5.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Careful with the signs</span>
+<p>When you evaluate at a negative number, use parentheses: (−2)² = 4, not −4. The parentheses prevent the most common sign mistake.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — f(3)</h3></div>
+<p class="pregunta-int" id="t-p4">f(x) = 4x. What is f(3)?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">12</button>
+<button class="opcion" data-k="b" type="button">7</button>
+<button class="opcion" data-k="c" type="button">43</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — f(−2)</h3></div>
+<p class="pregunta-int" id="t-p5">f(x) = x + 5. What is f(−2)?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">3</button>
+<button class="opcion" data-k="c" type="button">−3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — f(4)</h3></div>
+<p class="pregunta-int" id="t-p6">f(x) = x². What is f(4)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">8</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">16</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#notation" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: evaluating f(x) (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: evaluating f(x)</span><span class="ei-sub">Choose a function and a value of x and see the substitution step by step, with the point marked on the graph.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-domain-range"><span aria-hidden="true" class="num-seccion">4</span>Domain and range</h2>
+<p>The <strong>domain</strong> is all the input values (x). The <strong>range</strong> is all the output values (y). For a set of points, just list the first coordinates (domain) and the second coordinates (range).</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: for the points {(1, 2), (3, 4), (5, 6)}:</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Domain (inputs):</strong> {1, 3, 5}.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Range (outputs):</strong> {2, 4, 6}.</p>
+</div>
+<div aria-label="Kinds of functions by their form (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Kinds of functions by their algebraic form</caption>
+<thead><tr><th scope="col">Kind</th><th scope="col">Form</th></tr></thead>
+<tbody>
+<tr><td>Linear</td><td>f(x) = mx + b</td></tr>
+<tr><td>Quadratic</td><td>f(x) = ax² + bx + c</td></tr>
+<tr><td>Exponential</td><td>f(x) = a · bˣ</td></tr>
+<tr><td>Rational</td><td>f(x) = a fraction with the variable in the denominator</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — The domain</h3></div>
+<p class="pregunta-int" id="t-p7">For the points {(0, 1), (2, 3), (4, 5)}, what is the domain?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">{0, 2, 4}</button>
+<button class="opcion" data-k="b" type="button">{1, 3, 5}</button>
+<button class="opcion" data-k="c" type="button">{0, 1}</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 8 — The range</h3></div>
+<p class="pregunta-int" id="t-p8">For the same points, what is the range?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">{0, 2, 4}</button>
+<button class="opcion" data-k="b" type="button">{1, 5}</button>
+<button class="opcion" data-k="c" type="button">{1, 3, 5}</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 9 — Outputs</h3></div>
+<p class="pregunta-int" id="t-p9">The range is made of the values of:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">the input (x)</button>
+<button class="opcion" data-k="b" type="button">the output (y)</button>
+<button class="opcion" data-k="c" type="button">the slope</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#domain-range" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: domain and range (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: domain and range</span><span class="ei-sub">Seven relations, from sets of points to rational functions, with the domain read across and the range read up and down.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-composition"><span aria-hidden="true" class="num-seccion">5</span>Composition of functions</h2>
+<p>What if the output of one function goes into another? That is the <strong>composition of functions</strong>. The GED test asks it as “if f(x) = … and g(x) = …, what is f(g(3))?”, and you solve it with what you already know: evaluate functions, twice, in the right order.</p>
+<p>In f(g(x)), read “f of g of x,” there are two machines in a chain. First x goes into machine <strong>g</strong>. What comes out, g(x), then goes into machine <strong>f</strong>. Some books write (f ∘ g)(x): it means the same thing.</p>
+<svg viewBox="0 0 560 130" role="img" aria-label="Two machines in a chain: 4 goes into g, which adds 3 and gives 7; 7 goes into f, which multiplies by 2 and gives 14. So f of g of 4 is 14." style="width:100%;max-width:540px;height:auto;display:block;margin:12px auto;"><rect x="0" y="0" width="560" height="130" fill="#fff"/>
+<text x="26" y="72" font-size="26" font-weight="700" fill="#1565c0" text-anchor="middle">4</text>
+<line x1="46" y1="64" x2="88" y2="64" stroke="#1565c0" stroke-width="4"/><polygon points="100,64 86,56 86,72" fill="#1565c0"/>
+<rect x="102" y="22" width="132" height="84" rx="14" fill="#e3f2fd" stroke="#1565c0" stroke-width="3"/>
+<text x="168" y="56" font-size="16" font-weight="700" fill="#0d47a1" text-anchor="middle">g</text><text x="168" y="84" font-size="17" fill="#0d47a1" text-anchor="middle">add 3</text>
+<line x1="234" y1="64" x2="266" y2="64" stroke="#455a64" stroke-width="4"/><polygon points="278,64 264,56 264,72" fill="#455a64"/>
+<text x="256" y="44" font-size="22" font-weight="700" fill="#263238" text-anchor="middle">7</text>
+<rect x="280" y="22" width="132" height="84" rx="14" fill="#ede7f6" stroke="#6a1b9a" stroke-width="3"/>
+<text x="346" y="56" font-size="16" font-weight="700" fill="#4a148c" text-anchor="middle">f</text><text x="346" y="84" font-size="17" fill="#4a148c" text-anchor="middle">times 2</text>
+<line x1="412" y1="64" x2="470" y2="64" stroke="#2e7d32" stroke-width="4"/><polygon points="482,64 468,56 468,72" fill="#2e7d32"/>
+<text x="522" y="73" font-size="26" font-weight="700" fill="#2e7d32" text-anchor="middle">14</text>
+<text x="168" y="124" font-size="14" fill="#455a64" text-anchor="middle">g(4) = 7</text><text x="346" y="124" font-size="14" fill="#455a64" text-anchor="middle">f(7) = 14</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: if f(x) = 3x − 2 and g(x) = x + 4, find f(g(2)).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Inside first:</strong> g(2) = 2 + 4 = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Then outside:</strong> f(6) = 3(6) − 2 = 18 − 2 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>f(g(2)) = 16.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The order matters</span>
+<p>The function closest to the x acts first: in f(g(x)), g goes first. With f(x) = 2x and g(x) = x + 5, f(g(3)) = f(8) = 16, but g(f(3)) = g(6) = 11. And a composition is not a product: f(g(2)) is not f(2) · g(2).</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: if f(x) = 3x + 1 and g(x) = x − 2, write the expression of f(g(x)).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Put g(x) inside f, with parentheses:</strong> f(g(x)) = 3(x − 2) + 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Distribute and combine:</strong> 3x − 6 + 1 = 3x − 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Check with x = 4:</strong> g(4) = 2 and f(2) = 7; with the formula, 3(4) − 5 = 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>f(g(x)) = 3x − 5.</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 10 — Inside out</h3></div>
+<p class="pregunta-int" id="t-p10">f(x) = 2x + 1 and g(x) = x − 3. What is f(g(5))?</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">5</button>
+<button class="opcion" data-k="b" type="button">8</button>
+<button class="opcion" data-k="c" type="button">11</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 11 — With a square</h3></div>
+<p class="pregunta-int" id="t-p11">f(x) = x² and g(x) = x + 2. What is f(g(3))?</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">11</button>
+<button class="opcion" data-k="b" type="button">25</button>
+<button class="opcion" data-k="c" type="button">15</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 12 — Which goes first?</h3></div>
+<p class="pregunta-int" id="t-p12">In f(g(4)), which function is applied first?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">g</button>
+<button class="opcion" data-k="b" type="button">f</button>
+<button class="opcion" data-k="c" type="button">both at once</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-2.html#composition" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: machines in a chain (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: machines in a chain</span><span class="ei-sub">The output of g goes into f: follow the chain step by step and compare f(g(x)) with g(f(x)) for the same x.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practice-7-2.html#composition-tables" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: composition with tables, context, and expressions (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: composition with tables, context, and expressions</span><span class="ei-sub">Read f(g(a)) in tables, in coupon and tax problems, and write the expression of f(g(x)).</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook and graph paper: (1) Function or not? Classify these ten relations and justify each decision with the input test or the vertical line test (draw the graphs): {(1, 2), (2, 4), (3, 6)}; {(1, 2), (1, 5), (3, 4)}; {(−2, 4), (2, 4), (0, 0)}; {(3, 1), (3, 2), (3, 3)}; y = 3x − 2; x = y²; y = x²; x² + y² = 9; x = 4; y = 4. (2) Evaluate the machine: with f(x) = 2x² − 3x + 1, find f(0), f(1), f(−2), and f(1/2). Write each substitution in parentheses and explain what would happen with f(−2) without them. (3) Domain and range: write the domain and range of y = 2x + 1, y = x², y = 2ˣ, and y = 1/x, and classify each as linear, quadratic, exponential, or rational. (4) Composition: with f(x) = 2x − 1 and g(x) = x² + 3, find f(g(0)), f(g(2)), g(f(0)), and g(f(2)), always writing the inside result first. Then write the expressions of f(g(x)) and g(f(x)) for f(x) = 5x and g(x) = x − 3, and check them with x = 2. Then do several exercises of each activity on the practice page. About 70 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Think of two steps in your daily life where the result of one goes into the other, such as a discount and then the sales tax. Write each step as a function and compose them.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A function assigns to each input:</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">several outputs</button><button class="opcion" data-k="b" type="button">exactly one output</button><button class="opcion" data-k="c" type="button">no output</button><button class="opcion" data-k="d" type="button">two inputs</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">In the table x: 1, 2, 2 with y: 3, 4, 5 (the input 2 gives two outputs), is it a function?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Yes</button><button class="opcion" data-k="b" type="button">Yes, always</button><button class="opcion" data-k="c" type="button">No: the input 2 has two outputs</button><button class="opcion" data-k="d" type="button">You cannot tell</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">If f(x) = 3x + 2, what is f(4)?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">14</button><button class="opcion" data-k="c" type="button">9</button><button class="opcion" data-k="d" type="button">20</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">If f(x) = x² + 2x, what is f(−2)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8</button><button class="opcion" data-k="b" type="button">−8</button><button class="opcion" data-k="c" type="button">4</button><button class="opcion" data-k="d" type="button">0</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">For the points {(1, 2), (3, 4), (5, 6)}, the domain is:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">{2, 4, 6}</button><button class="opcion" data-k="b" type="button">{1, 3, 5}</button><button class="opcion" data-k="c" type="button">{1, 2, 3}</button><button class="opcion" data-k="d" type="button">all real numbers</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">For the same points, the range is:</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">{2, 4, 6}</button><button class="opcion" data-k="b" type="button">{1, 3, 5}</button><button class="opcion" data-k="c" type="button">{2, 4}</button><button class="opcion" data-k="d" type="button">all real numbers</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">f(x) = 3x − 1 and g(x) = x². What is f(g(2))?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">11</button><button class="opcion" data-k="d" type="button">12</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">f(x) = x + 3 and g(x) = x². What is the expression of g(f(x))?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x² + 3</button><button class="opcion" data-k="b" type="button">x² + 9</button><button class="opcion" data-k="c" type="button">3x²</button><button class="opcion" data-k="d" type="button">(x + 3)²</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for functions (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for functions, f(x), domain and range, and composition and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Applying the definition of function</th><td>I use the vertical line test and the input test correctly and explain why.</td><td>I sometimes tell them apart, with the tests used partly.</td><td>I do not tell a function from a non-function.</td></tr>
+<tr><th scope="row">Evaluating f(x) and f(g(x))</th><td>I substitute with parentheses, follow PEMDAS, and compose inside out.</td><td>I substitute, but I make sign or order mistakes.</td><td>I do not substitute correctly.</td></tr>
+<tr><th scope="row">Finding the domain and range</th><td>I find both from a table, a graph, or an equation, and I classify the function by its form.</td><td>I find one of the two, or I mix them up.</td><td>I do not find the domain or the range.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you defined a function (one output for each input), applied the vertical line test, evaluated f(x), found the domain and the range, and composed two functions.</p>
+<p>In <strong>Lesson 7.3 · Average rate of change and kinds of functions</strong> you will measure how much a function changes over an interval with the formula (f(b) − f(a)) / (b − a), and tell linear, quadratic, and exponential functions apart by their pattern of change.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-7-3.html">Lesson 7.3 · Average rate of change and kinds of functions</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>function</dt><dd>A rule that gives exactly one output for each input.</dd>
+<dt>domain</dt><dd>All the input values (x) of a relation.</dd>
+<dt>range</dt><dd>All the output values (y) of a relation.</dd>
+<dt>composition</dt><dd>f(g(x)): the output of g goes into f.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 7 · Lesson 7.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 7.3",
+ "review": "sections 3 and 5",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Look at the inputs 1, 2, 3: none repeats.",
+    "c": "Yes, you can tell: check whether an input repeats."
+   },
+   "right": "Each input has one output.",
+   "solution": "Yes."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "The input 1 appears twice, with 2 and with 5.",
+    "c": "A repeated input with two outputs breaks the rule."
+   },
+   "right": "1 → 2 and 1 → 5: two outputs.",
+   "solution": "No."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "The input 3 has infinitely many outputs.",
+    "c": "It always fails: the vertical line at x = 3 touches it everywhere."
+   },
+   "right": "x = 3 gives every y.",
+   "solution": "No."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "4x means 4 times x, not 4 + x.",
+    "c": "4x is not the digits 4 and 3 side by side."
+   },
+   "right": "4(3) = 12.",
+   "solution": "12."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "That is 2 + 5; the input is −2.",
+    "c": "−2 + 5 is positive."
+   },
+   "right": "−2 + 5 = 3.",
+   "solution": "3."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "x² is x times x, not 2 times x.",
+    "b": "Square the 4: 4 · 4."
+   },
+   "right": "4² = 16.",
+   "solution": "16."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "Those are the outputs (the range).",
+    "c": "Take every first coordinate."
+   },
+   "right": "The first coordinates.",
+   "solution": "{0, 2, 4}."
+  },
+  "p8": {
+   "ok": "c",
+   "hints": {
+    "a": "Those are the inputs (the domain).",
+    "b": "Take every second coordinate: 1, 3, and 5."
+   },
+   "right": "The second coordinates.",
+   "solution": "{1, 3, 5}."
+  },
+  "p9": {
+   "ok": "b",
+   "hints": {
+    "a": "The inputs form the domain.",
+    "c": "The slope is not a set of values."
+   },
+   "right": "Range = outputs.",
+   "solution": "The output (y)."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "Inside first: g(5) = 2, then f(2) = 2(2) + 1.",
+    "c": "That is f(5) = 11; but you need f of g(5)."
+   },
+   "right": "g(5) = 2; f(2) = 5.",
+   "solution": "5."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "That is g(f(3)) = 9 + 2. Inside first: g(3) = 5.",
+    "c": "That is f(3) · … : it is not a product. g(3) = 5, then 5²."
+   },
+   "right": "g(3) = 5; f(5) = 25.",
+   "solution": "25."
+  },
+  "p12": {
+   "ok": "a",
+   "hints": {
+    "b": "f is outside: it acts last.",
+    "c": "One after the other, never at once."
+   },
+   "right": "g touches the 4: it goes first.",
+   "solution": "g."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "Several outputs would break the machine.",
+    "c": "Every input has an output.",
+    "d": "It assigns outputs, not inputs."
+   },
+   "solution": "Exactly one output."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "The input 2 has two outputs.",
+    "b": "A repeated input with two outputs is not allowed.",
+    "d": "You can tell from the table."
+   },
+   "solution": "No: the input 2 has two outputs."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "3 · 4 = 12, then add 2.",
+    "c": "3x is 3 times x.",
+    "d": "Substitute: 3(4) + 2."
+   },
+   "solution": "f(4) = 14."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "(−2)² = 4, and 2(−2) = −4.",
+    "b": "(−2)² is positive.",
+    "c": "Add both terms: 4 + (−4)."
+   },
+   "solution": "f(−2) = 4 − 4 = 0."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Those are the outputs (range).",
+    "c": "Take the first coordinates: 1, 3, 5.",
+    "d": "It is a finite set of points."
+   },
+   "solution": "{1, 3, 5}."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Those are the inputs (domain).",
+    "c": "The range has three outputs: 2, 4, 6.",
+    "d": "It is a finite set of points."
+   },
+   "solution": "{2, 4, 6}."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "That is 3(2) − 1 = 5: g(2) = 4 comes first.",
+    "b": "25 would be (3 · 2 − 1)². Inside first: g(2) = 4.",
+    "d": "g(2) = 4, then f(4) = 3(4) − 1."
+   },
+   "solution": "g(2) = 4; f(4) = 11."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Square the whole f(x) = x + 3, with parentheses.",
+    "b": "(x + 3)² is not x² + 9: the middle term is missing.",
+    "c": "g squares; it does not multiply by 3."
+   },
+   "solution": "g(f(x)) = (x + 3)²."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

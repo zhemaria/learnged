@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 7.1 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_7_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-7-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 7 — Sistemas de desigualdades y funciones</p>
+<h1>Lección 7.1 · Sistemas de desigualdades lineales: graficar la región solución</h1>
+<p class="lema">Grafique desigualdades lineales con línea sólida o punteada, elija el lado con el punto de prueba, halle la región factible de un sistema y verifique puntos.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Se permite calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Graficar</strong> una desigualdad lineal: línea sólida o punteada y sombreado del semiplano correcto.</li>
+<li><strong>Usar</strong> el punto de prueba (0, 0) para elegir el lado que se sombrea.</li>
+<li><strong>Graficar</strong> un sistema de desigualdades y hallar la región factible (la intersección).</li>
+<li><strong>Verificar</strong> si un punto pertenece a la región solución.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.3.c</span> Resolver problemas de la vida real con inecuaciones.</li><li><span class="std-cod std-base">A.5.a</span> Ubicar puntos en el plano de coordenadas.</li><li><span class="std-cod std-base">A.5.d</span> Graficar ecuaciones lineales de dos variables.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li><li><span class="std-cod std-mp">MP.5.c</span> Identificar la información necesaria para evaluar una línea de razonamiento.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-REI.12</span> <span class="std-nivel">Nivel E</span> Graficar las soluciones de una desigualdad lineal de dos variables como un semiplano (sin la frontera cuando la desigualdad es estricta), y graficar el conjunto solución de un sistema de desigualdades lineales de dos variables como la intersección de los semiplanos correspondientes.</li><li><span class="std-cod std-ccr">A-CED.3</span> <span class="std-nivel">Nivel E</span> Representar restricciones mediante ecuaciones o desigualdades, y mediante sistemas de ecuaciones y/o desigualdades, e interpretar las soluciones como opciones viables o no viables en un contexto de modelado.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-graficar">Graficar una desigualdad lineal</a></li>
+<li><a href="#s-punto-prueba">El método del punto de prueba</a></li>
+<li><a href="#s-sistema">El sistema de desigualdades: la región factible</a></li>
+<li><a href="#s-verificar">Verificar si un punto pertenece a la región</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-graficar"><span aria-hidden="true" class="num-seccion">1</span>Graficar una desigualdad lineal</h2>
+<p><strong>Conexión con el tema anterior.</strong> En el Tema 6, la solución de un sistema de ecuaciones era un <strong>punto</strong>. En el Tema 7 las igualdades (=) se cambian por desigualdades (&lt;, ≤, &gt;, ≥), y la solución ya no es un punto sino toda una <strong>región</strong> del plano: muchos puntos cumplen las condiciones a la vez.</p>
+<p>Graficar una desigualdad tiene dos partes: la <strong>línea frontera</strong> y el <strong>sombreado</strong> del lado correcto.</p>
+<div aria-label="Sólida o punteada (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Cómo dibujar la línea frontera según el símbolo de la desigualdad</caption>
+<thead><tr><th scope="col">Símbolo</th><th scope="col">Línea frontera</th></tr></thead>
+<tbody>
+<tr><td>&lt; o &gt;</td><td>Punteada (la frontera no se incluye)</td></tr>
+<tr><td>≤ o ≥</td><td>Sólida (la frontera sí se incluye)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<svg viewBox="0 0 400 400" role="img" aria-label="Gráfica de y menor o igual que x + 1: línea sólida, con el lado de abajo sombreado. El punto de prueba 0, 0 queda en el lado sombreado." style="width:100%;max-width:340px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="64" y1="30" x2="64" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="98" y1="30" x2="98" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="132" y1="30" x2="132" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="166" y1="30" x2="166" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="234" y1="30" x2="234" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="268" y1="30" x2="268" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="302" y1="30" x2="302" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="336" y1="30" x2="336" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="370" y1="30" x2="370" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="370" x2="370" y2="370" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="336" x2="370" y2="336" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="302" x2="370" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="268" x2="370" y2="268" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="234" x2="370" y2="234" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="200" x2="370" y2="200" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="166" x2="370" y2="166" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="132" x2="370" y2="132" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="98" x2="370" y2="98" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="64" x2="370" y2="64" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="370" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="200" x2="380" y2="200" stroke="#10174f" stroke-width="2"/><line x1="200" y1="378" x2="200" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="384,200 374,195 374,205" fill="#10174f"/><polygon points="200,16 195,26 205,26" fill="#10174f"/><text x="384" y="188" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="214" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><polygon points="30.0,370.0 370.0,370.0 370.0,30.0 336.0,30.0 30.0,336.0" fill="rgba(21,101,192,.2)" stroke="none" stroke-width="0" stroke-linejoin="round"/><line x1="30.0" y1="336.0" x2="336.0" y2="30.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><text x="125.2" y="142.2" font-size="15" font-weight="700" fill="#1565c0" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y ≤ x + 1</text><circle cx="200.0" cy="200.0" r="6" fill="#263238" stroke="#fff" stroke-width="2"/><text x="208.5" y="247.6" font-size="14" font-weight="700" fill="#263238" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">prueba (0, 0)</text><text x="30" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−5</text><text x="64" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−4</text><text x="98" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="132" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="166" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="234" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="268" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="302" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="336" y="218" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="194" y="374" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−5</text><text x="194" y="340" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−4</text><text x="194" y="306" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−3</text><text x="194" y="272" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="194" y="238" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="194" y="170" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="194" y="136" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="194" y="102" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="194" y="68" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text></svg>
+<p>En la gráfica, y ≤ x + 1 tiene línea sólida (por el ≤) y se sombrea el lado de abajo, donde está el punto de prueba (0, 0).</p>
+<a class="enlace-interactivo" href="practica-7-1.html#graficar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la gráfica de una desigualdad (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la gráfica de una desigualdad</span><span class="ei-sub">Elija el símbolo, la pendiente y el intercepto: la línea se vuelve sólida o punteada y el sombreado cambia al moverlos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-punto-prueba"><span aria-hidden="true" class="num-seccion">2</span>El método del punto de prueba</h2>
+<p>Para decidir qué lado de la recta se sombrea, se elige un <strong>punto de prueba</strong> que no esté sobre la recta (casi siempre (0, 0)) y se sustituye en la desigualdad.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Graficar 2x + y > 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>La línea es punteada</strong> (por el símbolo &gt;).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se prueba (0, 0):</strong> 2(0) + 0 &gt; 4, es decir, 0 &gt; 4. Falso.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Se sombrea.</strong> <strong>Como es falso, se sombrea el lado contrario al origen.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Verdadero o falso</span>
+<p>Si el punto de prueba cumple la desigualdad, se sombrea su lado; si no la cumple, se sombrea el lado contrario. Si la recta pasa por (0, 0), se usa otro punto, como (1, 0).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — La línea</h3></div>
+<p class="pregunta-int" id="t-p1">Para y ≤ x, la línea frontera se dibuja:</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">sólida</button>
+<button class="opcion" data-k="b" type="button">punteada</button>
+<button class="opcion" data-k="c" type="button">de ningún tipo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — y > 3</h3></div>
+<p class="pregunta-int" id="t-p2">Para y > 3, la línea frontera se dibuja:</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">sólida</button>
+<button class="opcion" data-k="b" type="button">punteada</button>
+<button class="opcion" data-k="c" type="button">doble</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — El lado</h3></div>
+<p class="pregunta-int" id="t-p3">En y < x + 2 se prueba (0, 0): 0 < 2 es verdadero. Se sombrea:</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">el lado opuesto</button>
+<button class="opcion" data-k="b" type="button">solo la recta</button>
+<button class="opcion" data-k="c" type="button">el lado del origen</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#punto-prueba" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el punto de prueba (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el punto de prueba</span><span class="ei-sub">Elija una desigualdad, mueva el punto de prueba y compruebe si la sustitución resulta verdadera o falsa, con un aviso cuando el punto cae sobre la frontera.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-sistema"><span aria-hidden="true" class="num-seccion">3</span>El sistema de desigualdades: la región factible</h2>
+<p>Un sistema de desigualdades se grafica desigualdad por desigualdad. La <strong>región factible</strong> es la zona donde se traslapan todos los sombreados: la intersección de los semiplanos. Cualquier punto de esa región cumple todas las desigualdades a la vez.</p>
+<svg viewBox="0 0 332 332" role="img" aria-label="La región factible de x mayor o igual que 0, y mayor o igual que 0, y x + y menor o igual que 4: el triángulo de vértices 0, 0; 4, 0 y 0, 4, sombreado en verde." style="width:100%;max-width:340px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="64" y1="30" x2="64" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="98" y1="30" x2="98" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="132" y1="30" x2="132" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="166" y1="30" x2="166" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="200" y1="30" x2="200" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="234" y1="30" x2="234" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="268" y1="30" x2="268" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="302" y1="30" x2="302" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="302" x2="302" y2="302" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="268" x2="302" y2="268" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="234" x2="302" y2="234" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="200" x2="302" y2="200" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="166" x2="302" y2="166" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="132" x2="302" y2="132" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="98" x2="302" y2="98" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="64" x2="302" y2="64" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="302" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="234" x2="312" y2="234" stroke="#10174f" stroke-width="2"/><line x1="98" y1="310" x2="98" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="316,234 306,229 306,239" fill="#10174f"/><polygon points="98,16 93,26 103,26" fill="#10174f"/><text x="316" y="222" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="112" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><polygon points="98.0,234.0 234.0,234.0 98.0,98.0" fill="rgba(46,125,50,.32)" stroke="#2e7d32" stroke-width="0" stroke-linejoin="round"/><line x1="98.0" y1="302.0" x2="98.0" y2="30.0" stroke="#c62828" stroke-width="3" stroke-linecap="round"/><line x1="30.0" y1="234.0" x2="302.0" y2="234.0" stroke="#6a1b9a" stroke-width="3" stroke-linecap="round"/><line x1="30.0" y1="30.0" x2="302.0" y2="302.0" stroke="#1565c0" stroke-width="3" stroke-linecap="round"/><text x="213.6" y="145.6" font-size="15" font-weight="700" fill="#1565c0" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">x + y ≤ 4</text><text x="106.0" y="53.8" font-size="14" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">x ≥ 0</text><text x="268.0" y="220.0" font-size="14" font-weight="700" fill="#6a1b9a" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">y ≥ 0</text><circle cx="98.0" cy="234.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="234.0" cy="234.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="98.0" cy="98.0" r="6" fill="#2e7d32" stroke="#fff" stroke-width="2"/><text x="30" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="64" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="132" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="166" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="200" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="234" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="268" y="252" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="92" y="306" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−2</text><text x="92" y="272" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="92" y="204" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="92" y="170" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="92" y="136" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="92" y="102" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="92" y="68" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text></svg>
+<p>El triángulo sombreado es la región factible del sistema x ≥ 0, y ≥ 0 y x + y ≤ 4. Todos sus puntos cumplen las tres condiciones.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cada desigualdad recorta, nunca agranda</span>
+<p>Al añadir una condición más, la región solo puede quedarse igual o hacerse más pequeña. A veces desaparece del todo: entonces el sistema no tiene solución.</p>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#region" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la región factible (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la región factible</span><span class="ei-sub">Añada las desigualdades del sistema una a una y observe cómo la región se va recortando, incluido el caso en que desaparece por completo.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-verificar"><span aria-hidden="true" class="num-seccion">4</span>Verificar si un punto pertenece a la región</h2>
+<p>Para comprobar si un punto está en la región solución, se sustituye en <strong>todas</strong> las desigualdades del sistema. Si las cumple todas, pertenece a la región; si falla en una, no.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · ¿Está (1, 1) en la región del sistema y ≤ x + 1 ; y ≥ 0?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primera:</strong> 1 ≤ 1 + 1, es decir, 1 ≤ 2. Verdadero.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Segunda:</strong> 1 ≥ 0. Verdadero.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>Sí, (1, 1) pertenece a la región.</strong></p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Una desigualdad</h3></div>
+<p class="pregunta-int" id="t-p4">¿Está (1, 1) en y ≤ x + 1?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">No</button>
+<button class="opcion" data-k="b" type="button">Solo en la recta</button>
+<button class="opcion" data-k="c" type="button">Sí</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — y ≤ 2x</h3></div>
+<p class="pregunta-int" id="t-p5">¿Está (2, 5) en y ≤ 2x?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">En la recta</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Un sistema</h3></div>
+<p class="pregunta-int" id="t-p6">¿Está (0, 0) en el sistema y ≥ 0 ; x ≥ 0?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Sí, cumple ambas</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">Solo una</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-7-1.html#verificar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la verificación de puntos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la verificación de puntos</span><span class="ei-sub">Escriba cualquier punto: una tabla muestra si cumple cada desigualdad y la gráfica lo sitúa dentro o fuera de la región.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-7-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno y papel cuadriculado: (1) El presupuesto de producción: un taller fabrica x sillas e y mesas. Cada silla lleva 2 horas y cada mesa 4, y hay como máximo 40 horas (2x + 4y ≤ 40). Cada silla usa 1 tabla y cada mesa 3, y hay 24 tablas (x + 3y ≤ 24). Además, x ≥ 0 e y ≥ 0. Grafique el sistema, sombree la región factible y escriba tres combinaciones (x, y) que sí se pueden fabricar y una que no. (2) Sólida o punteada: para cada desigualdad, decida cómo se traza la línea y qué lado se sombrea, usando el punto de prueba (0, 0): y > 2x − 1; y ≤ −x + 3; 2x + y ≥ 4; x − y < 2; y ≥ 3; x < −1. (3) ¿Punto viable? Con el sistema y ≤ x + 2, y > −x, x ≤ 3, sustituya cada punto en las tres desigualdades y diga si pertenece a la región: (0, 1), (2, −3), (3, 5), (4, 0) y (−1, 1). Para los que no, explique en una frase qué desigualdad no cumplen. Fíjese bien en los que caen sobre una línea. Después haga varios ejercicios de cada actividad de la página de práctica. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Piense en dos límites de su propia semana, como horas de trabajo y horas de estudio. Escríbalos como desigualdades y busque una combinación que cumpla los dos.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Para y < 2x + 1, la línea frontera se dibuja:</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">punteada</button><button class="opcion" data-k="b" type="button">sólida</button><button class="opcion" data-k="c" type="button">gruesa</button><button class="opcion" data-k="d" type="button">roja</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Para y ≥ x − 3, la línea frontera se dibuja:</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">punteada</button><button class="opcion" data-k="b" type="button">gruesa</button><button class="opcion" data-k="c" type="button">sólida</button><button class="opcion" data-k="d" type="button">invisible</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Para decidir qué lado sombrear, se usa:</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la pendiente</button><button class="opcion" data-k="b" type="button">el punto de prueba (0, 0)</button><button class="opcion" data-k="c" type="button">el eje y</button><button class="opcion" data-k="d" type="button">el vértice</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">La región factible de un sistema de desigualdades es:</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la unión de las rectas</button><button class="opcion" data-k="b" type="button">el eje x</button><button class="opcion" data-k="c" type="button">un solo punto</button><button class="opcion" data-k="d" type="button">la intersección de los semiplanos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Si un punto satisface todas las desigualdades del sistema, entonces:</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">está en la región factible</button><button class="opcion" data-k="b" type="button">está fuera</button><button class="opcion" data-k="c" type="button">está en la recta</button><button class="opcion" data-k="d" type="button">no se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Cuántas soluciones suele tener un sistema de desigualdades?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">una</button><button class="opcion" data-k="b" type="button">ninguna</button><button class="opcion" data-k="c" type="button">muchas (toda una región)</button><button class="opcion" data-k="d" type="button">exactamente dos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">¿Está (0, 0) en la región y ≤ x + 2?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button><button class="opcion" data-k="b" type="button">No</button><button class="opcion" data-k="c" type="button">Solo en la recta</button><button class="opcion" data-k="d" type="button">No se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Está (3, 1) en la región y > x?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button><button class="opcion" data-k="b" type="button">No</button><button class="opcion" data-k="c" type="button">En la recta</button><button class="opcion" data-k="d" type="button">Sí, justo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de los sistemas de desigualdades (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para graficar desigualdades y sus sistemas y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Dibujar la línea (sólida o punteada)</th><td>Dibujo la línea correcta según el símbolo y la grafico con precisión.</td><td>A veces confundo sólida con punteada.</td><td>No distingo el tipo de línea.</td></tr>
+<tr><th scope="row">Identificar el semiplano (punto de prueba)</th><td>Sombreo el lado correcto con el punto de prueba, incluso cuando la recta pasa por el origen.</td><td>Lo uso, pero interpreto mal el resultado.</td><td>No uso el punto de prueba.</td></tr>
+<tr><th scope="row">La región factible y verificar un punto</th><td>Hallo la región y verifico puntos en todas las desigualdades.</td><td>Identifico la región con errores.</td><td>No identifico la intersección.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se graficaron desigualdades lineales (línea sólida o punteada y sombreado con el punto de prueba) y se halló la región factible de un sistema como la intersección de los semiplanos.</p>
+<p>En la <strong>Lección 7.2 · Relaciones y funciones, notación f(x), dominio y rango</strong> se cambia de tema: se estudiará qué es una <strong>función</strong>, cómo reconocerla con la prueba de la línea vertical, cómo evaluar f(x) y cómo identificar el dominio y el rango.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-7-2.html">Lección 7.2 · Relaciones y funciones, notación f(x), dominio y rango</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>línea frontera</dt><dd>La recta ax + by = c que separa los dos semiplanos.</dd>
+<dt>semiplano</dt><dd>Cada uno de los dos lados en que una recta divide el plano.</dd>
+<dt>punto de prueba</dt><dd>Un punto fuera de la recta, casi siempre (0, 0), que se sustituye para elegir el lado que se sombrea.</dd>
+<dt>región factible</dt><dd>Los puntos que cumplen todas las desigualdades de un sistema a la vez.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 7 · Lección 7.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 7.2",
+ "review": "las secciones 1 y 2",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Punteada es para &lt; y &gt;. Esta tiene ≤.",
+    "c": "Toda desigualdad tiene línea frontera."
+   },
+   "right": "≤ incluye la recta: sólida.",
+   "solution": "Sólida."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Sólida es para ≤ y ≥. Esta tiene &gt;.",
+    "c": "No existe la línea doble."
+   },
+   "right": "&gt; no incluye la recta: punteada.",
+   "solution": "Punteada."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "La prueba fue verdadera: el origen está del lado correcto.",
+    "b": "Se sombrea todo un lado, no solo la recta."
+   },
+   "right": "Verdadero: se sombrea el lado de (0, 0).",
+   "solution": "El lado del origen."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Sustituya: 1 ≤ 1 + 1, es decir, 1 ≤ 2.",
+    "b": "En la recta, y valdría x + 1 = 2, pero y = 1."
+   },
+   "right": "1 ≤ 2 es verdadero.",
+   "solution": "Sí."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Sustituya: 5 ≤ 2(2), es decir, 5 ≤ 4.",
+    "c": "En la recta, y valdría 4, pero y = 5."
+   },
+   "right": "5 ≤ 4 es falso.",
+   "solution": "No."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "0 ≥ 0 es verdadero: ≥ incluye el caso igual.",
+    "c": "Revise las dos: 0 ≥ 0 y 0 ≥ 0."
+   },
+   "right": "0 ≥ 0 dos veces: verdadero.",
+   "solution": "Sí."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "a",
+   "hints": {
+    "b": "Sólida es para ≤ y ≥.",
+    "c": "El grosor no importa.",
+    "d": "El color no importa."
+   },
+   "solution": "Punteada."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "Punteada es para &lt; y &gt;.",
+    "b": "El grosor no importa.",
+    "d": "La frontera siempre se dibuja."
+   },
+   "solution": "Sólida."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "La pendiente da la inclinación, no el lado.",
+    "c": "El eje y no decide el lado.",
+    "d": "Las rectas no tienen vértice."
+   },
+   "solution": "El punto de prueba (0, 0)."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "Las rectas son solo las fronteras.",
+    "b": "No es el eje x.",
+    "c": "Es toda una región, no un punto."
+   },
+   "solution": "La intersección de los semiplanos."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Cumplirlas todas lo pone dentro.",
+    "c": "Puede estar o no en una recta.",
+    "d": "Sí se puede saber: las cumple todas."
+   },
+   "solution": "Está en la región factible."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Un punto es la respuesta de los sistemas de ecuaciones.",
+    "b": "Por lo general la región existe.",
+    "d": "Una región tiene infinitos puntos."
+   },
+   "solution": "Muchas: toda una región."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "Sustituya: 0 ≤ 0 + 2.",
+    "c": "En la recta, y valdría 2.",
+    "d": "Siempre se puede sustituir."
+   },
+   "solution": "Sí: 0 ≤ 2."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "Sustituya: ¿1 &gt; 3?",
+    "c": "En la recta, y valdría 3.",
+    "d": "1 &gt; 3 es falso."
+   },
+   "solution": "No: 1 &gt; 3 es falso."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

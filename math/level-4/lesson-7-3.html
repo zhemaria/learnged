@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 7.3 · Math Level 4 (English) — built by tools/build_n4_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 7.3 · Average rate of change and kinds of functions · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 7 — Systems of inequalities and functions</p>
+<h1>Lesson 7.3 · Average rate of change and kinds of functions</h1>
+<p class="lema">Find the average rate of change on an interval, read it with its units, and tell linear, quadratic, and exponential functions apart by their pattern.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator allowed</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Find</strong> the average rate of change with (f(b) − f(a)) / (b − a).</li>
+<li><strong>Connect</strong> the rate of change with the slope of the secant line.</li>
+<li><strong>Explain</strong> the rate in context, with its units and its sign.</li>
+<li><strong>Identify</strong> linear, quadratic, and exponential functions from a table.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.5.e</span> For a function that models a linear or nonlinear relationship between two quantities, interpret key features of graphs and tables in terms of quantities, and sketch graphs showing key features given a verbal description of the relationship.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.5.b</span> Determine the slope of a line from a graph, equation, or table.</li><li><span class="std-cod std-base">A.7.d</span> Compare properties of two linear or quadratic functions each represented in a different way (algebraically, numerically in tables, graphically or by verbal descriptions).</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.2.a</span> Represent real world problems algebraically.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.4.c</span> Display data or algebraic expressions graphically.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">F-IF.6</span> <span class="std-nivel">Level E</span> Calculate and interpret the average rate of change of a function (presented symbolically or as a table) over a specified interval. Estimate the rate of change from a graph.</li><li><span class="std-cod std-ccr">F-LE.1</span> <span class="std-nivel">Level E</span> Distinguish between situations that can be modeled with linear functions and with exponential functions: prove that linear functions grow by equal differences over equal intervals, and that exponential functions grow by equal factors over equal intervals; recognize situations in which a quantity changes at a constant rate per unit interval relative to another.</li><li><span class="std-cod std-ccr">8.F.4</span> <span class="std-nivel">Level D</span> Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-rate">The average rate of change</a></li>
+<li><a href="#s-context">Reading the rate in context</a></li>
+<li><a href="#s-kind">Identifying the kind of function</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-rate"><span aria-hidden="true" class="num-seccion">1</span>The average rate of change</h2>
+<p><strong>A link with Lesson 7.2.</strong> In Lesson 7.2 you learned what a function is and how to evaluate f(x). Now you study how a function <strong>changes</strong>: how fast it goes up or down between two points. That measure is the <strong>average rate of change</strong>, and its pattern reveals the kind of function.</p>
+<p>The average rate of change of a function on the interval from x = a to x = b measures how much the output changes for each unit of input. It is the slope between the points (a, f(a)) and (b, f(b)).</p>
+      <div class="formula">rate = (f(b) − f(a)) / (b − a)</div>
+<svg viewBox="0 0 300 390" role="img" aria-label="The graph of f of x = x squared with the points 1, 1 and 3, 9 joined by a red secant line. From x = 1 to x = 3, x changes by 2 and y changes by 8, so the average rate of change is 8 divided by 2, which is 4: the slope of the secant line." style="width:100%;max-width:340px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="60" y1="30" x2="60" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="90" y1="30" x2="90" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="120" y1="30" x2="120" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="150" y1="30" x2="150" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="180" y1="30" x2="180" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="240" y1="30" x2="240" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="270" y1="30" x2="270" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="360" x2="270" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="330" x2="270" y2="330" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="300" x2="270" y2="300" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="270" x2="270" y2="270" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="240" x2="270" y2="240" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="270" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="180" x2="270" y2="180" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="150" x2="270" y2="150" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="120" x2="270" y2="120" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="90" x2="270" y2="90" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="60" x2="270" y2="60" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="270" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="330" x2="280" y2="330" stroke="#10174f" stroke-width="2"/><line x1="60" y1="368" x2="60" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="284,330 274,325 274,335" fill="#10174f"/><polygon points="60,16 55,26 65,26" fill="#10174f"/><text x="284" y="318" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="74" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><line x1="30.0" y1="300.0" x2="31.5" y2="302.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="31.5" y1="302.9" x2="33.0" y2="305.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="33.0" y1="305.7" x2="34.5" y2="308.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="34.5" y1="308.3" x2="36.0" y2="310.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="36.0" y1="310.8" x2="37.5" y2="313.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="37.5" y1="313.1" x2="39.0" y2="315.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="39.0" y1="315.3" x2="40.5" y2="317.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="40.5" y1="317.3" x2="42.0" y2="319.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="42.0" y1="319.2" x2="43.5" y2="320.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="43.5" y1="320.9" x2="45.0" y2="322.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="45.0" y1="322.5" x2="46.5" y2="323.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="46.5" y1="323.9" x2="48.0" y2="325.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="48.0" y1="325.2" x2="49.5" y2="326.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="49.5" y1="326.3" x2="51.0" y2="327.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="51.0" y1="327.3" x2="52.5" y2="328.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="52.5" y1="328.1" x2="54.0" y2="328.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="54.0" y1="328.8" x2="55.5" y2="329.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="55.5" y1="329.3" x2="57.0" y2="329.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="57.0" y1="329.7" x2="58.5" y2="329.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="58.5" y1="329.9" x2="60.0" y2="330.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="60.0" y1="330.0" x2="61.5" y2="329.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="61.5" y1="329.9" x2="63.0" y2="329.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="63.0" y1="329.7" x2="64.5" y2="329.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="64.5" y1="329.3" x2="66.0" y2="328.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="66.0" y1="328.8" x2="67.5" y2="328.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="67.5" y1="328.1" x2="69.0" y2="327.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="69.0" y1="327.3" x2="70.5" y2="326.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="70.5" y1="326.3" x2="72.0" y2="325.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="72.0" y1="325.2" x2="73.5" y2="323.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="73.5" y1="323.9" x2="75.0" y2="322.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="75.0" y1="322.5" x2="76.5" y2="320.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="76.5" y1="320.9" x2="78.0" y2="319.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="78.0" y1="319.2" x2="79.5" y2="317.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="79.5" y1="317.3" x2="81.0" y2="315.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="81.0" y1="315.3" x2="82.5" y2="313.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="82.5" y1="313.1" x2="84.0" y2="310.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="84.0" y1="310.8" x2="85.5" y2="308.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="85.5" y1="308.3" x2="87.0" y2="305.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="87.0" y1="305.7" x2="88.5" y2="302.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="88.5" y1="302.9" x2="90.0" y2="300.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="90.0" y1="300.0" x2="91.5" y2="296.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="91.5" y1="296.9" x2="93.0" y2="293.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="93.0" y1="293.7" x2="94.5" y2="290.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="94.5" y1="290.3" x2="96.0" y2="286.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="96.0" y1="286.8" x2="97.5" y2="283.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="97.5" y1="283.1" x2="99.0" y2="279.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="99.0" y1="279.3" x2="100.5" y2="275.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="100.5" y1="275.3" x2="102.0" y2="271.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="102.0" y1="271.2" x2="103.5" y2="266.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="103.5" y1="266.9" x2="105.0" y2="262.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="105.0" y1="262.5" x2="106.5" y2="257.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="106.5" y1="257.9" x2="108.0" y2="253.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="108.0" y1="253.2" x2="109.5" y2="248.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="109.5" y1="248.3" x2="111.0" y2="243.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="111.0" y1="243.3" x2="112.5" y2="238.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="112.5" y1="238.1" x2="114.0" y2="232.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="114.0" y1="232.8" x2="115.5" y2="227.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="115.5" y1="227.3" x2="117.0" y2="221.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="117.0" y1="221.7" x2="118.5" y2="215.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="118.5" y1="215.9" x2="120.0" y2="210.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="120.0" y1="210.0" x2="121.5" y2="203.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="121.5" y1="203.9" x2="123.0" y2="197.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="123.0" y1="197.7" x2="124.5" y2="191.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="124.5" y1="191.3" x2="126.0" y2="184.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="126.0" y1="184.8" x2="127.5" y2="178.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="127.5" y1="178.1" x2="129.0" y2="171.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="129.0" y1="171.3" x2="130.5" y2="164.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="130.5" y1="164.3" x2="132.0" y2="157.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="132.0" y1="157.2" x2="133.5" y2="149.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="133.5" y1="149.9" x2="135.0" y2="142.5" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="135.0" y1="142.5" x2="136.5" y2="134.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="136.5" y1="134.9" x2="138.0" y2="127.2" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="138.0" y1="127.2" x2="139.5" y2="119.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="139.5" y1="119.3" x2="141.0" y2="111.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="141.0" y1="111.3" x2="142.5" y2="103.1" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="142.5" y1="103.1" x2="144.0" y2="94.8" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="144.0" y1="94.8" x2="145.5" y2="86.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="145.5" y1="86.3" x2="147.0" y2="77.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="147.0" y1="77.7" x2="148.5" y2="68.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="148.5" y1="68.9" x2="150.0" y2="60.0" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="150.0" y1="60.0" x2="151.5" y2="50.9" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="151.5" y1="50.9" x2="153.0" y2="41.7" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="153.0" y1="41.7" x2="154.5" y2="32.3" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round"/><line x1="75.0" y1="360.0" x2="157.5" y2="30.0" stroke="#c62828" stroke-width="2.5" stroke-linecap="round"/><line x1="90.0" y1="300.0" x2="150.0" y2="300.0" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/><line x1="150.0" y1="300.0" x2="150.0" y2="60.0" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6 5" stroke-linecap="round"/><text x="135.0" y="291.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">Δx = 2</text><text x="158.0" y="180.0" font-size="13" font-weight="700" fill="#2e7d32" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">Δy = 8</text><circle cx="90.0" cy="300.0" r="6" fill="#263238" stroke="#fff" stroke-width="2"/><text x="100.0" y="320.0" font-size="15" font-weight="700" fill="#263238" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">(1, 1)</text><circle cx="150.0" cy="60.0" r="6" fill="#263238" stroke="#fff" stroke-width="2"/><text x="140.0" y="50.0" font-size="15" font-weight="700" fill="#263238" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">(3, 9)</text><text x="267.0" y="222.0" font-size="14" font-weight="700" fill="#c62828" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">rate = 8/2 = 4</text><text x="267.0" y="81.0" font-size="14" font-weight="700" fill="#1565c0" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">f(x) = x²</text><text x="30" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="90" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="120" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="150" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="180" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="210" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="240" y="348" font-size="13" fill="#455a64" text-anchor="middle" paint-order="stroke" stroke="#fff" stroke-width="3">6</text><text x="54" y="364" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">−1</text><text x="54" y="304" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">1</text><text x="54" y="274" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">2</text><text x="54" y="244" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">3</text><text x="54" y="214" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">4</text><text x="54" y="184" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">5</text><text x="54" y="154" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">6</text><text x="54" y="124" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">7</text><text x="54" y="94" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">8</text><text x="54" y="64" font-size="13" fill="#455a64" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="3">9</text></svg>
+<p>In the graph, Δx (read “delta x”) means the change in x and Δy the change in y. From (1, 1) to (3, 9), Δy / Δx = 8 / 2 = 4.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: if f(2) = 10 and f(5) = 25, what is the average rate of change on [2, 5]?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Use the formula:</strong> (25 − 10) / (5 − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Compute:</strong> 15 / 3 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>On average, the function goes up 5 units for each unit of x.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Rate of change = slope</span>
+<p>Finding the average rate of change between two points is exactly the same as finding the slope of the line that joins them (the secant line). In a linear function, that rate is the same on every interval.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Find the rate</h3></div>
+<p class="pregunta-int" id="t-p1">f(1) = 3 and f(4) = 12. The average rate of change is:</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">3</button>
+<button class="opcion" data-k="c" type="button">4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — The same height</h3></div>
+<p class="pregunta-int" id="t-p2">f(0) = 5 and f(2) = 5. The average rate of change is:</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">5</button>
+<button class="opcion" data-k="b" type="button">2</button>
+<button class="opcion" data-k="c" type="button">0</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — Another interval</h3></div>
+<p class="pregunta-int" id="t-p3">f(2) = 8 and f(6) = 20. The average rate of change is:</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#rate" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the average rate of change (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the average rate of change</span><span class="ei-sub">Choose a function and the two ends of the interval: the change in y over the change in x, with the secant line drawn between the two points.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-context"><span aria-hidden="true" class="num-seccion">2</span>Reading the rate in context</h2>
+<p>The average rate of change makes sense with <strong>units</strong>: dollars per year, feet per second, people per month. The unit is always “unit of output per unit of input.”</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: a savings account goes from $100 to $160 in 3 years. What is the average rate of change?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Change in the money:</strong> 160 − 100 = 60 dollars.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>In 3 years:</strong> 60 / 3 = 20.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>On average, the account grows $20 per year.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">A negative rate</span>
+<p>Always take the final value minus the starting value. If the quantity goes down, the rate is negative: a tank that goes from 400 to 100 gallons in 6 hours changes at −50 gallons per hour. The minus sign is not a mistake: it says the quantity decreases.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — Savings</h3></div>
+<p class="pregunta-int" id="t-p4">An account goes from $200 to $260 in 3 years. The rate is:</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">$20 per year</button>
+<button class="opcion" data-k="b" type="button">$60 per year</button>
+<button class="opcion" data-k="c" type="button">$260 per year</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Speed</h3></div>
+<p class="pregunta-int" id="t-p5">A car goes from 0 to 150 feet in 5 seconds. The rate is:</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">150 ft/s</button>
+<button class="opcion" data-k="b" type="button">30 ft/s</button>
+<button class="opcion" data-k="c" type="button">5 ft/s</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The unit</h3></div>
+<p class="pregunta-int" id="t-p6">The average rate of change is measured in:</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">dollars only</button>
+<button class="opcion" data-k="b" type="button">feet only</button>
+<button class="opcion" data-k="c" type="button">units of output per unit of input</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#context" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: reading the rate with units (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: reading the rate with units</span><span class="ei-sub">Six situations solved step by step (savings, speed, a tank that drains, population, a bill, and temperature), including negative rates.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-kind"><span aria-hidden="true" class="num-seccion">3</span>Identifying the kind of function</h2>
+<p>The pattern of the outputs reveals the kind of function. Look at the differences or the ratios between consecutive values (with equally spaced inputs):</p>
+<div aria-label="The pattern of each kind (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The pattern of the outputs that identifies each kind of function</caption>
+<thead><tr><th scope="col">Kind</th><th scope="col">Pattern in the table</th><th scope="col">Example outputs</th></tr></thead>
+<tbody>
+<tr><td>Linear</td><td>Constant difference (adds the same)</td><td>2, 5, 8, 11 (+3)</td></tr>
+<tr><td>Quadratic</td><td>Constant second difference</td><td>0, 1, 4, 9 (differences 1, 3, 5)</td></tr>
+<tr><td>Exponential</td><td>Constant ratio (multiplies by the same)</td><td>1, 2, 4, 8 (×2)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Adds the same or multiplies by the same</span>
+<p>If to go from one value to the next you always add the same amount, the function is linear; if you always multiply by the same number, it is exponential; if the second difference is constant, it is quadratic.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — Adds 3</h3></div>
+<p class="pregunta-int" id="t-p7">Outputs: 2, 5, 8, 11 (add 3 each time). The function is:</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">quadratic</button>
+<button class="opcion" data-k="b" type="button">linear</button>
+<button class="opcion" data-k="c" type="button">exponential</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 8 — Times 2</h3></div>
+<p class="pregunta-int" id="t-p8">Outputs: 1, 2, 4, 8 (multiply by 2 each time). The function is:</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">exponential</button>
+<button class="opcion" data-k="b" type="button">linear</button>
+<button class="opcion" data-k="c" type="button">quadratic</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 9 — Second difference</h3></div>
+<p class="pregunta-int" id="t-p9">Outputs: 0, 1, 4, 9 (constant second difference). The function is:</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">linear</button>
+<button class="opcion" data-k="b" type="button">exponential</button>
+<button class="opcion" data-k="c" type="button">quadratic</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-7-3.html#kind" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: identifying the kind of function (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: identifying the kind of function</span><span class="ei-sub">A pattern detector: it finds the differences, the second differences, and the ratios, marks the constant column, and accepts tables you type yourself.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">4</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-7-3.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook and the calculator: (1) Savings, a falling object, and a viral post: find the average rate of change on the two intervals given and explain each result with its units. (a) A savings account with A(t) = 500 + 50t dollars, t in months: from 0 to 6 and from 6 to 12. (b) An object dropped from 100 feet, h(t) = 100 − 16t², t in seconds: from 0 to 1 and from 1 to 2. (c) A viral post with V(d) = 10 · 2ᵈ views, d in days: from 0 to 3 and from 3 to 5. Explain why only in the first one the rate does not change. (2) The pattern detective: classify each table (x = 0, 1, 2, 3, 4) as linear, quadratic, or exponential and write the evidence (constant difference, constant second difference, or constant ratio). A: 3, 5, 7, 9, 11. B: 1, 3, 9, 27, 81. C: 0, 1, 4, 9, 16. D: 10, 7, 4, 1, −2. E: 2, 3, 6, 11, 18. F: 64, 32, 16, 8, 4. (3) Slope and rate: with f(x) = −3x + 5, find the average rate of change from 0 to 2, from −1 to 4, and from 3 to 10. Check that it is always the same and explain why that number is the slope of the line. Then do several exercises of each activity on the practice page. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Find a quantity in your life that changes over time (a bill, your savings, the price of gas). Write two values with their dates and find its average rate of change with its units.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">5</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">f(2) = 10 and f(5) = 25. What is the average rate of change?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">3</button><button class="opcion" data-k="c" type="button">35</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">f(1) = 7 and f(3) = 7. What is the average rate of change?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">7</button><button class="opcion" data-k="b" type="button">14</button><button class="opcion" data-k="c" type="button">0</button><button class="opcion" data-k="d" type="button">2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">f(3) = 12 and f(6) = 3. What is the average rate of change?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3</button><button class="opcion" data-k="b" type="button">−3</button><button class="opcion" data-k="c" type="button">9</button><button class="opcion" data-k="d" type="button">−9</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">Outputs 3, 6, 9, 12 (constant difference). What kind of function?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">quadratic</button><button class="opcion" data-k="b" type="button">exponential</button><button class="opcion" data-k="c" type="button">linear</button><button class="opcion" data-k="d" type="button">rational</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Outputs 2, 6, 18, 54 (multiply by 3). What kind of function?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">linear</button><button class="opcion" data-k="b" type="button">exponential</button><button class="opcion" data-k="c" type="button">quadratic</button><button class="opcion" data-k="d" type="button">constant</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Outputs 1, 4, 9, 16 (constant second difference). What kind of function?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">linear</button><button class="opcion" data-k="b" type="button">exponential</button><button class="opcion" data-k="c" type="button">rational</button><button class="opcion" data-k="d" type="button">quadratic</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">An account grows from $300 to $360 in 2 years. What is the average rate of change?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">$30 per year</button><button class="opcion" data-k="b" type="button">$60 per year</button><button class="opcion" data-k="c" type="button">$360 per year</button><button class="opcion" data-k="d" type="button">$30</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">An object goes down from 80 feet to 20 feet in 3 seconds. What is the average rate of change?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 ft/s</button><button class="opcion" data-k="b" type="button">20 ft/s</button><button class="opcion" data-k="c" type="button">−20 ft/s</button><button class="opcion" data-k="d" type="button">−60 ft/s</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">6</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the rate of change (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the average rate of change and the kinds of functions and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Finding the rate</th><td>I use (f(b) − f(a)) / (b − a) correctly, with the right signs.</td><td>I use it, but I mix up the order or the signs.</td><td>I do not use the formula.</td></tr>
+<tr><th scope="row">Reading the rate in context</th><td>I explain the rate with its units and what a negative rate means.</td><td>I find the number but forget the units.</td><td>I do not explain what the rate means.</td></tr>
+<tr><th scope="row">Identifying the kind of function</th><td>I find differences, second differences, and ratios, and I classify the table.</td><td>I classify some tables, without evidence.</td><td>I do not tell the kinds apart.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson closes Topic 7 · Systems of inequalities and functions. You graphed systems of inequalities, worked with functions (f(x), domain and range, composition), found the average rate of change, and told the kinds of functions apart by their pattern.</p>
+<p>Topic 8 · Modeling with functions and the GED practice test begins with <strong>Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts</strong>, where you will graph parabolas and read their key points.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 8.1 · Quadratic functions: the parabola, the vertex, and the intercepts</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>average rate of change</dt><dd>(f(b) − f(a)) / (b − a): how much the output changes per unit of input.</dd>
+<dt>secant line</dt><dd>The line that joins two points of a graph; its slope is the average rate of change.</dd>
+<dt>second difference</dt><dd>The difference of the differences; it is constant in a quadratic function.</dd>
+<dt>ratio</dt><dd>The quotient of two consecutive values; it is constant in an exponential function.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 7 · Lesson 7.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.1",
+ "review": "sections 1 and 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "9 is the change in y; divide it by the change in x, 3.",
+    "c": "Change in y: 12 − 3 = 9. Change in x: 4 − 1 = 3."
+   },
+   "right": "9 / 3 = 3.",
+   "solution": "3."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "5 is the height, not the change: 5 − 5 = 0.",
+    "b": "2 is the change in x. The output did not change."
+   },
+   "right": "0 / 2 = 0.",
+   "solution": "0."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "12 is the change in y; divide it by 4.",
+    "c": "4 is the change in x. Divide 12 by it."
+   },
+   "right": "(20 − 8) / (6 − 2) = 12 / 4 = 3.",
+   "solution": "3."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "$60 is the total change; divide it by 3 years.",
+    "c": "$260 is the final amount, not the change."
+   },
+   "right": "60 / 3 = $20 per year.",
+   "solution": "$20 per year."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "150 feet is the total distance; divide it by 5 seconds.",
+    "c": "5 is the time. Divide 150 by 5."
+   },
+   "right": "150 / 5 = 30 ft/s.",
+   "solution": "30 ft/s."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "It depends on the situation: dollars, feet, people…",
+    "b": "It depends on the situation: dollars, feet, people…"
+   },
+   "right": "Output per input.",
+   "solution": "Units of output per unit of input."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "Quadratic has a constant SECOND difference.",
+    "c": "Exponential multiplies; this one adds."
+   },
+   "right": "It adds the same: linear.",
+   "solution": "Linear."
+  },
+  "p8": {
+   "ok": "a",
+   "hints": {
+    "b": "Linear adds the same; this one multiplies.",
+    "c": "The differences 1, 2, 4 are not a quadratic pattern: the ratio is constant."
+   },
+   "right": "It multiplies by the same: exponential.",
+   "solution": "Exponential."
+  },
+  "p9": {
+   "ok": "c",
+   "hints": {
+    "a": "The first differences 1, 3, 5 are not constant.",
+    "b": "The ratios are not constant (1 to 4 is ×4, 4 to 9 is ×2.25)."
+   },
+   "right": "Constant second difference: quadratic.",
+   "solution": "Quadratic."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "15 is the change in y; divide it by 3.",
+    "b": "3 is the change in x.",
+    "c": "Subtract the outputs, do not add them."
+   },
+   "solution": "(25 − 10) / (5 − 2) = 5."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "7 is the height, not the change.",
+    "b": "Subtract the outputs: 7 − 7.",
+    "d": "2 is the change in x."
+   },
+   "solution": "0 / 2 = 0."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "The output goes down: the rate is negative.",
+    "c": "9 is the size of the change in y; divide by 3.",
+    "d": "Divide −9 by the change in x, 3."
+   },
+   "solution": "(3 − 12) / (6 − 3) = −9 / 3 = −3."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "Quadratic has a constant second difference.",
+    "b": "Exponential multiplies by the same number.",
+    "d": "Rational has x in a denominator."
+   },
+   "solution": "Linear."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Linear adds the same number.",
+    "c": "Multiplying by the same is not quadratic.",
+    "d": "The values change: it is not constant."
+   },
+   "solution": "Exponential."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "The first differences 3, 5, 7 change.",
+    "b": "The ratios are not constant.",
+    "c": "Rational has x in a denominator."
+   },
+   "solution": "Quadratic."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "$60 is the total change; divide by 2 years.",
+    "c": "$360 is the final amount.",
+    "d": "A rate needs its unit: per year."
+   },
+   "solution": "60 / 2 = $30 per year."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "60 ft is the total change, and it goes down.",
+    "b": "It goes down: the rate is negative.",
+    "d": "Divide −60 by 3 seconds."
+   },
+   "solution": "(20 − 80) / 3 = −20 ft/s."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

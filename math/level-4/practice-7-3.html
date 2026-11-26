@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 7.3 · practice (English) — built by tools/build_n4_lesson_7_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 7.3 · Average rate of change and kinds of functions · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+  .tabla-lados.centro td,.tabla-lados.centro th{text-align:center;}
+  .tabla-lados td.cte{background:#e8f5e9;color:#1b5e20;font-weight:700;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 7 · Systems of inequalities and functions</div>
+    <h1>Lesson 7.3 · Average rate of change and kinds of functions</h1>
+    <div class="meta">Three practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try. You may use the calculator.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#rate">The average rate of change</a></li>
+      <li><a href="#context">Reading the rate in context</a></li>
+      <li><a href="#kind">Identifying the kind of function</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="rate" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The average rate of change</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The average rate of change from x = a to x = b is the change in y over the change in x: the slope of the <strong>secant line</strong> (red) that joins the two points.</p>
+      <div class="formula">rate = (f(b) − f(a)) / (b − a)</div>
+      <div class="panel"><div class="campos"><div class="campo"><label for="s-fun">Function</label><select id="s-fun"><option value="0">f(x) = 2x + 1 (linear)</option><option value="1">f(x) = −x + 6 (linear, decreasing)</option><option value="2">f(x) = x² (quadratic)</option><option value="3">f(x) = x² − 4x (quadratic with a minimum)</option><option value="4">f(x) = 2ˣ (exponential)</option></select></div><div class="campo"><label for="s-a">a = <output id="s-av"></output></label><input type="range" id="s-a" min="-4" max="6" step="1" value="1"></div><div class="campo"><label for="s-b">b = <output id="s-bv"></output></label><input type="range" id="s-b" min="-4" max="6" step="1" value="3"></div></div></div>
+      <div id="s-graf"></div>
+      <div class="salida" aria-live="polite" id="s-txt"></div>
+      <h3>Practice: find the rate</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="campos"><div class="campo"><label for="sq-r">Rate</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="sq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="sq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="sq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <p class="nota">You can type a whole number, a decimal, or a fraction such as 7/2.</p>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="context">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Reading the rate in context</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>In context, the rate always has a unit: unit of output per unit of input. Choose a situation and go through it step by step.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="ct-caso">Situation</label><select id="ct-caso"><option value="0">The savings account</option><option value="1">The moving car</option><option value="2">The tank that drains</option><option value="3">The town's population</option><option value="4">The phone bill</option><option value="5">The afternoon temperature</option></select></div></div></div>
+      <div class="panel"><p class="enun" id="ct-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ct-sig">Show the next step</button><button type="button" class="btn-sec" id="ct-todo">Show all the steps</button><button type="button" class="btn-sec" id="ct-nuevo">Start again</button></div></div>
+      <div class="pasos" id="ct-pasos" aria-live="polite"></div>
+      <h3>Practice: find and read the rate</h3>
+      <div class="practica" id="iq">
+        <div class="enun" id="iq-enun"></div>
+        <div class="opciones" id="iq-opciones"></div>
+        <div class="fb" id="iq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="iq-nuevo">New exercise</button></div>
+        <p class="marcador" id="iq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="kind">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Identifying the kind of function</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With equally spaced inputs, look for the constant column: differences (linear), second differences (quadratic), or ratios (exponential).</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="ti-tabla">Outputs for x = 0, 1, 2, 3, 4</label><select id="ti-tabla"><option value="0">2, 5, 8, 11, 14</option><option value="1">0, 1, 4, 9, 16</option><option value="2">1, 2, 4, 8, 16</option><option value="3">20, 17, 14, 11, 8</option><option value="4">81, 27, 9, 3, 1</option><option value="5">3, 4, 7, 12, 19</option><option value="6">5, 10, 20, 40, 80</option></select></div></div>
+        <div class="campos"><div class="campo"><label for="ti-propia">Or type your own outputs</label><input type="text" id="ti-propia" autocomplete="off" placeholder="3, 7, 11, 15" style="width:14em"></div></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="ti-usar">Use my table</button></div></div>
+      <div class="salida" aria-live="polite" id="ti-txt"></div>
+      <h3>Practice: classify the pattern</h3>
+      <div class="practica" id="kq">
+        <div class="enun" id="kq-enun"></div>
+        <div class="opciones" id="kq-opciones"></div>
+        <div class="fb" id="kq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="kq-nuevo">New exercise</button></div>
+        <p class="marcador" id="kq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 7 · Systems of inequalities and functions · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script src="/math/func4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function leeNumF(txt){ var s = String(txt).trim().replace(/\s+/g, "").replace(/[−–]/g, "-"), m = s.match(/^(-?\d+(?:\.\d+)?)\/(-?\d+(?:\.\d+)?)$/); if (m){ var d = parseFloat(m[2]); return d ? parseFloat(m[1]) / d : null; } return leeDecimal(s); }
+function pn(v){ return v < 0 ? "(" + nf(v) + ")" : nf(v); }
+
+/* ===== MODULE 1 · The average rate of change ===== */
+var FUNS = [
+ {p: [1, 2], txt: "f(x) = 2x + 1", min: -4, max: 6, R: {x0: -5, x1: 7, y0: -8, y1: 16}, nota: T("It is linear: the rate is 2 on every interval, which is its slope.", "Es lineal: la tasa de cambio vale 2 en cualquier intervalo, que es justamente su pendiente.")},
+ {p: [6, -1], txt: "f(x) = −x + 6", min: -2, max: 8, R: {x0: -3, x1: 9, y0: -4, y1: 10}, nota: T("The rate is always −1: for each unit x moves forward, the output goes down one unit.", "La tasa sale −1 siempre: por cada unidad que avanza x, la salida baja una unidad.")},
+ {p: [0, 0, 1], txt: "f(x) = x²", min: -4, max: 6, R: {x0: -5, x1: 7, y0: -4, y1: 38}, nota: T("It is quadratic: each interval gives a different rate. The farther right, the steeper the secant line.", "Es cuadrática: cada intervalo da una tasa distinta. Cuanto más a la derecha, más empinada la recta.")},
+ {p: [0, -4, 1], txt: "f(x) = x² − 4x", min: -2, max: 6, R: {x0: -3, x1: 7, y0: -6, y1: 14}, nota: T("Try the interval from 0 to 4: the rate is 0, because the function goes down and comes back up to the same height.", "Pruebe el intervalo de 0 a 4: la tasa sale 0, porque la función baja y vuelve a subir hasta la misma altura.")},
+ {e: true, txt: "f(x) = 2ˣ", min: -2, max: 5, R: {x0: -3, x1: 6, y0: -4, y1: 34}, nota: T("It is exponential: the rate grows faster and faster, because each step multiplies the value by 2.", "Es exponencial: la tasa crece cada vez más rápido, porque cada paso multiplica el valor por 2.")}];
+function fv(F, x){ return F.e ? Math.pow(2, x) : pEval(F.p, x); }
+function taDibuja(){ var F = FUNS[+$("s-fun").value];
+  ["s-a", "s-b"].forEach(function(id){ $(id).min = F.min; $(id).max = F.max; if (+$(id).value < F.min) $(id).value = F.min; if (+$(id).value > F.max) $(id).value = F.max; });
+  var a = +$("s-a").value, b = +$("s-b").value; $("s-av").textContent = sg(a); $("s-bv").textContent = sg(b);
+  var o = {rango: F.R, curvas: [{f: function(x){ return fv(F, x); }}], voz: T("Graph of ", "Gráfica de ") + F.txt + "."};
+  if (a === b){ $("s-graf").innerHTML = grafFun(o); $("s-txt").innerHTML = '<div class="linea"><strong>' + T("The two ends are equal.", "Los dos extremos son iguales.") + "</strong> " + T("With a = b, the denominator b − a would be 0, and you cannot divide by zero: you need a real interval, with two different values.", "Con a = b, el denominador b − a sería 0, y la división entre cero no está definida: hace falta un intervalo de verdad, con dos valores distintos.") + "</div>"; return; }
+  var fa = fv(F, a), fb = fv(F, b), m = (fb - fa) / (b - a), lado = Math.abs(F.R.x1 - F.R.x0);
+  o.segmentos = [[[F.R.x0, fa + m * (F.R.x0 - a)], [F.R.x1, fa + m * (F.R.x1 - a)], "#c62828", null, 2.5], [[a, fa], [b, fa], "#2e7d32", "6 5", 2.5], [[b, fa], [b, fb], "#2e7d32", "6 5", 2.5]];
+  var izq = Math.min(a, b), der = Math.max(a, b);
+  o.puntos = [[a, fa, "#263238", "(" + nf(a) + ", " + nf(fa) + ")", 6.5, true, a === der || a - F.R.x0 < 2.2], [b, fb, "#263238", "(" + nf(b) + ", " + nf(fb) + ")", 6.5, true, b === der || b - F.R.x0 < 2.2]];
+  o.voz = T("Graph of ", "Gráfica de ") + F.txt + T(" with the secant line through ", " con la recta secante por ") + par(a, fa) + T(" and ", " y ") + par(b, fb) + T(". Its slope is ", ". Su pendiente es ") + nf(m) + ".";
+  $("s-graf").innerHTML = grafFun(o);
+  var fr = F.e ? nf(m) : fracTxt(fb - fa, b - a);
+  $("s-txt").innerHTML = '<div class="linea">f(' + sg(a) + ") = " + nf(fa) + "; f(" + sg(b) + ") = " + nf(fb) + '.</div><div class="linea">' + T("rate = ", "tasa = ") + tasaTxt(fa, fb, a, b) + " = " + nf(fb - fa) + " / " + nf(b - a) + " = <strong>" + fr + (fr.indexOf("/") > 0 ? " = " + nf(m) : "") + "</strong></div>" +
+    '<div class="linea">' + (m > 0 ? T("On average, the output goes up " + nf(m) + " for each unit of x.", "En promedio, la salida sube " + nf(m) + " por cada unidad de x.") : m < 0 ? T("On average, the output goes down " + nf(-m) + " for each unit of x.", "En promedio, la salida baja " + nf(-m) + " por cada unidad de x.") : T("On average there is no change: the output ends at the same height.", "En promedio no hay cambio: la salida termina a la misma altura.")) + " " + F.nota + "</div>"; }
+["s-a", "s-b"].forEach(function(id){ $(id).addEventListener("input", taDibuja); }); $("s-fun").addEventListener("change", taDibuja); taDibuja();
+creaPracticaLibre("sq", function(){ var t = aleatorio(0, 2), a, b, fa, fb, enun, F;
+  do { a = aleatorio(-3, 4); b = a + aleatorio(1, 4); } while (a === b);
+  if (t === 0){ var m = nz(-6, 8) * elige([1, 1, .5]); fa = aleatorio(-10, 20); fb = fa + m * (b - a); if (fb !== Math.round(fb)){ fb = Math.round(fb); } enun = "f(" + sg(a) + ") = " + nf(fa) + T(" and ", " y ") + "f(" + sg(b) + ") = " + nf(fb) + T(". What is the average rate of change on [", ". ¿Cuál es la tasa de cambio promedio en [") + sg(a) + ", " + sg(b) + "]?"; }
+  else if (t === 1){ F = [aleatorio(-5, 5), nz(-4, 4), nz(-2, 2)]; fa = pEval(F, a); fb = pEval(F, b); enun = T("For ", "Para ") + fDef(F) + T(", what is the average rate of change from x = ", ", ¿cuál es la tasa de cambio promedio de x = ") + sg(a) + T(" to x = ", " a x = ") + sg(b) + "?"; }
+  else { a = aleatorio(0, 3); b = a + aleatorio(1, 3); var base = elige([2, 3]), k = elige([1, 2, 3]); fa = k * Math.pow(base, a); fb = k * Math.pow(base, b); enun = T("For ", "Para ") + "f(x) = " + (k === 1 ? "" : k + " · ") + base + '<sup>x</sup>' + T(", what is the average rate of change from x = ", ", ¿cuál es la tasa de cambio promedio de x = ") + a + T(" to x = ", " a x = ") + b + "?"; }
+  var res = (fb - fa) / (b - a);
+  return {enun: enun,
+    evalua: function(txt){ var v = leeNumF(txt); if (v === null) return {estado: "invalido", msg: T("Type a number or a fraction, such as 4, −2.5, or 7/2.", "Escriba un número o una fracción, como 4, −2.5 o 7/2.")};
+      if (Math.abs(v - res) < .011) return {estado: "bien"};
+      if (fb !== fa && Math.abs(v - (b - a) / (fb - fa)) < .011) return {estado: "mal", msg: T("You divided upside down: the change in y goes on top, the change in x on the bottom.", "Dividió al revés: el cambio en y va arriba y el cambio en x, abajo.")};
+      if (Math.abs(v + res) < .011) return {estado: "mal", msg: T("Check the sign: subtract in the same order on top and on the bottom (final minus starting).", "Revise el signo: reste en el mismo orden arriba y abajo (final menos inicial).")};
+      if (Math.abs(v - (fb - fa)) < .011) return {estado: "mal", msg: T("That is the change in y. Now divide it by the change in x, " + nf(b - a) + ".", "Ese es el cambio en y. Ahora divídalo entre el cambio en x, " + nf(b - a) + ".")};
+      return {estado: "mal", msg: T("Find f(" + sg(a) + ") and f(" + sg(b) + "), subtract them, and divide by " + sg(b) + " − " + pn(a) + ".", "Halle f(" + sg(a) + ") y f(" + sg(b) + "), réstelos y divida entre " + sg(b) + " − " + pn(a) + ".")}; },
+    solucion: (t > 0 ? "f(" + sg(a) + ") = " + nf(fa) + ", f(" + sg(b) + ") = " + nf(fb) + ". " : "") + tasaTxt(fa, fb, a, b) + " = " + nf(fb - fa) + " / " + nf(b - a) + " = <strong>" + nf(res) + "</strong>."};
+});
+
+/* ===== MODULE 2 · Reading the rate in context ===== */
+var CASOS = [
+ {enun: T("A savings account goes from $100 to $160 in 3 years. What is the average rate of change, and what does it mean?", "Una cuenta de ahorro pasa de $100 a $160 en 3 años. ¿Cuál es la tasa de cambio promedio y qué significa?"),
+  pasos: [T("Input: time in <strong>years</strong>. Output: money in <strong>dollars</strong>. The rate will be in dollars per year.", "Entrada: el <strong>tiempo en años</strong>. Salida: el <strong>dinero en dólares</strong>. La unidad de la tasa será dólares por año."), T("Change in the output: 160 − 100 = <strong>60 dollars</strong>.", "Cambio de la salida: 160 − 100 = <strong>60 dólares</strong>."), T("Change in the input: 3 − 0 = <strong>3 years</strong>.", "Cambio de la entrada: 3 − 0 = <strong>3 años</strong>."), T("Divide: 60 / 3 = <strong>20</strong>.", "Dividir: 60 / 3 = <strong>20</strong>."), T("On average, the account grows <strong>$20 per year</strong>. It is an average: some years it may have grown more and others less.", "La cuenta crece, en promedio, <strong>$20 por año</strong>. Es un promedio: algunos años pudo subir más y otros menos.")]},
+ {enun: T("A car starts from rest and travels 150 feet in 5 seconds. What is its average rate of change?", "Un auto parte del reposo y recorre 150 pies en 5 segundos. ¿Cuál es su tasa de cambio promedio?"),
+  pasos: [T("Input: time in seconds. Output: distance in feet. The rate will be in feet per second.", "Entrada: el tiempo en segundos. Salida: la distancia en pies. La unidad será pies por segundo."), T("Change in the output: 150 − 0 = <strong>150 feet</strong>.", "Cambio de la salida: 150 − 0 = <strong>150 pies</strong>."), T("Change in the input: 5 − 0 = <strong>5 seconds</strong>.", "Cambio de la entrada: 5 − 0 = <strong>5 segundos</strong>."), T("Divide: 150 / 5 = <strong>30</strong>.", "Dividir: 150 / 5 = <strong>30</strong>."), T("On average, the car goes <strong>30 feet per second</strong>. That is its average speed.", "El auto avanza, en promedio, <strong>30 pies por segundo</strong>. Eso es justamente su velocidad promedio.")]},
+ {enun: T("A tank holds 400 gallons, and six hours later it has 100 gallons left. What is the average rate of change?", "Un tanque tiene 400 galones y, seis horas después, le quedan 100. ¿Cuál es la tasa de cambio promedio?"),
+  pasos: [T("Input: hours. Output: gallons. The rate will be in gallons per hour.", "Entrada: horas. Salida: galones. La unidad será galones por hora."), T("Change in the output: 100 − 400 = <strong>−300 gallons</strong>. The order matters: always final minus starting.", "Cambio de la salida: 100 − 400 = <strong>−300 galones</strong>. El orden importa: siempre el valor final menos el inicial."), T("Change in the input: 6 − 0 = <strong>6 hours</strong>.", "Cambio de la entrada: 6 − 0 = <strong>6 horas</strong>."), T("Divide: −300 / 6 = <strong>−50</strong>.", "Dividir: −300 / 6 = <strong>−50</strong>."), T("The tank loses <strong>50 gallons per hour</strong>. The minus sign is not a mistake: it says the amount goes down.", "El tanque pierde <strong>50 galones por hora</strong>. El signo negativo no es un error: avisa de que la cantidad disminuye.")]},
+ {enun: T("A town goes from 1,200 to 1,500 people in 4 years. What is the average rate of change?", "Un pueblo pasa de 1,200 a 1,500 habitantes en 4 años. ¿Cuál es la tasa de cambio promedio?"),
+  pasos: [T("Input: years. Output: people. The rate will be in people per year.", "Entrada: años. Salida: habitantes. La unidad será habitantes por año."), T("Change in the output: 1,500 − 1,200 = <strong>300 people</strong>.", "Cambio de la salida: 1,500 − 1,200 = <strong>300 habitantes</strong>."), T("Change in the input: <strong>4 years</strong>.", "Cambio de la entrada: <strong>4 años</strong>."), T("Divide: 300 / 4 = <strong>75</strong>.", "Dividir: 300 / 4 = <strong>75</strong>."), T("The town gains, on average, <strong>75 people per year</strong>.", "El pueblo gana, en promedio, <strong>75 habitantes por año</strong>.")]},
+ {enun: T("A phone bill goes up from $45 to $60 when the minutes used go from 300 to 600. What is the average rate of change?", "La factura del teléfono sube de $45 a $60 cuando los minutos usados pasan de 300 a 600. ¿Cuál es la tasa de cambio promedio?"),
+  pasos: [T("Input: minutes used. Output: dollars. The rate will be in dollars per minute.", "Entrada: minutos usados. Salida: dólares. La unidad será dólares por minuto."), T("Change in the output: 60 − 45 = <strong>15 dollars</strong>.", "Cambio de la salida: 60 − 45 = <strong>15 dólares</strong>."), T("Change in the input: 600 − 300 = <strong>300 minutes</strong>.", "Cambio de la entrada: 600 − 300 = <strong>300 minutos</strong>."), T("Divide: 15 / 300 = <strong>0.05</strong>.", "Dividir: 15 / 300 = <strong>0.05</strong>."), T("Each extra minute costs, on average, <strong>5 cents</strong>. When the result is a small decimal, saying it in cents makes it clearer.", "Cada minuto extra cuesta, en promedio, <strong>5 centavos</strong>. Cuando el resultado es un decimal pequeño, conviene decirlo en centavos para que se entienda.")]},
+ {enun: T("At 3 p.m. it is 72 °F, and at 7 p.m. it is 60 °F. What is the average rate of change?", "A las 3 de la tarde hay 72 °F y a las 7 hay 60 °F. ¿Cuál es la tasa de cambio promedio?"),
+  pasos: [T("Input: hours. Output: degrees Fahrenheit. The rate will be in degrees per hour.", "Entrada: horas. Salida: grados Fahrenheit. La unidad será grados por hora."), T("Change in the output: 60 − 72 = <strong>−12 degrees</strong>.", "Cambio de la salida: 60 − 72 = <strong>−12 grados</strong>."), T("Change in the input: 7 − 3 = <strong>4 hours</strong>.", "Cambio de la entrada: 7 − 3 = <strong>4 horas</strong>."), T("Divide: −12 / 4 = <strong>−3</strong>.", "Dividir: −12 / 4 = <strong>−3</strong>."), T("The temperature drops, on average, <strong>3 °F per hour</strong> during the afternoon.", "La temperatura baja, en promedio, <strong>3 °F por hora</strong> durante la tarde.")]}];
+pasoAPaso4("ct", function(){ var C = CASOS[+$("ct-caso").value]; return {enun: C.enun, pasos: C.pasos}; });
+$("ct-caso").addEventListener("change", function(){ $("ct-nuevo").click(); });
+OMR("iq", function(){ var t = aleatorio(0, 4), a0, a1, d, u, ue, us, v0, v1, contexto;
+  if (t === 0){ d = aleatorio(2, 6); u = aleatorio(10, 60) * 5; v0 = aleatorio(10, 50) * 10; v1 = v0 + u * d; ue = T("years", "años"); us = T(" per year", " por año");
+    contexto = T("A savings account goes from $" + v0 + " to $" + v1 + " in " + d + " years.", "Una cuenta de ahorro pasa de $" + v0 + " a $" + v1 + " en " + d + " años."); return armaIQ(v1 - v0, d, "$", us, contexto); }
+  if (t === 1){ d = aleatorio(2, 8); u = aleatorio(5, 40); contexto = T("A runner covers " + u * d + " feet in " + d + " seconds.", "Una corredora recorre " + u * d + " pies en " + d + " segundos."); return armaIQ(u * d, d, "", T(" ft/s", " pies/s"), contexto); }
+  if (t === 2){ d = aleatorio(2, 6); u = aleatorio(4, 30); v0 = u * d + aleatorio(2, 30) * 10; v1 = v0 - u * d; contexto = T("A tank goes from " + v0 + " gallons to " + v1 + " gallons in " + d + " hours.", "Un tanque pasa de " + v0 + " galones a " + v1 + " galones en " + d + " horas."); return armaIQ(v1 - v0, d, "", T(" gallons per hour", " galones por hora"), contexto); }
+  if (t === 3){ d = aleatorio(2, 5); u = aleatorio(2, 6); v0 = aleatorio(60, 90); v1 = v0 - u * d * elige([1, -1]); a0 = aleatorio(1, 4); a1 = a0 + d;
+    contexto = T("At " + a0 + " p.m. it is " + v0 + " °F, and at " + a1 + " p.m. it is " + v1 + " °F.", "A las " + a0 + " de la tarde hay " + v0 + " °F y a las " + a1 + " hay " + v1 + " °F."); return armaIQ(v1 - v0, d, "", T(" °F per hour", " °F por hora"), contexto); }
+  d = aleatorio(2, 6); u = aleatorio(5, 60) * 5; v0 = aleatorio(20, 90) * 100; v1 = v0 + u * d;
+  contexto = T("A town goes from " + v0.toLocaleString("en-US") + " to " + v1.toLocaleString("en-US") + " people in " + d + " years.", "Un pueblo pasa de " + v0.toLocaleString("en-US") + " a " + v1.toLocaleString("en-US") + " habitantes en " + d + " años."); return armaIQ(v1 - v0, d, "", T(" people per year", " habitantes por año"), contexto); });
+function armaIQ(dy, dx, pre, suf, contexto){ var r = dy / dx, f = function(v){ return (v < 0 ? "−" : "") + pre + Math.abs(Math.round(v * 100) / 100).toLocaleString("en-US") + suf; };
+  return {enun: contexto + T(" What is the average rate of change?", " ¿Cuál es la tasa de cambio promedio?"), correcta: "ok",
+    opciones: [{clave: "ok", html: f(r)}, {clave: "t", html: f(dy)}, {clave: "s", html: f(-r)}, {clave: "i", html: f(Math.round(dx / dy * 1000) / 1000)}].filter(function(o, i, l){ return l.map(function(z){ return z.html; }).indexOf(o.html) === i; }),
+    pista: T("Change in the output (final minus starting) divided by the change in the input.", "Cambio de la salida (final menos inicial) entre el cambio de la entrada."),
+    porClave: {t: T("That is the total change. Divide it by " + dx + ".", "Ese es el cambio total. Divídalo entre " + dx + "."), s: T("Check the sign: does the quantity go up or down?", "Revise el signo: ¿la cantidad sube o baja?")},
+    bien: nf(dy) + " / " + dx + " = " + nf(r) + ": " + (r < 0 ? T("it goes down ", "baja ") + f(-r) : T("it goes up ", "sube ") + f(r)) + T(", on average.", ", en promedio.")}; }
+
+/* ===== MODULE 3 · Kind of function ===== */
+var TABLAS = [[2, 5, 8, 11, 14], [0, 1, 4, 9, 16], [1, 2, 4, 8, 16], [20, 17, 14, 11, 8], [81, 27, 9, 3, 1], [3, 4, 7, 12, 19], [5, 10, 20, 40, 80]];
+function tablaTipo(ys){ var d1 = difs(ys), d2 = difs(d1), q = razones(ys), k = tipoTabla(ys);
+  var fila = function(et, l, cte, desde){ var s = '<tr><th scope="row">' + et + "</th>"; for (var i = 0; i < ys.length; i++){ var j = i - desde; s += "<td" + (cte && j >= 0 && j < l.length ? ' class="cte"' : "") + ">" + (j >= 0 && j < l.length ? (isFinite(l[j]) ? nf(l[j]) : "—") : "") + "</td>"; } return s + "</tr>"; };
+  var html = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("The outputs with their differences and ratios", "Las salidas con sus diferencias y razones") + '</caption><tbody>' +
+    fila("x", ys.map(function(v, i){ return i; }), false, 0) + fila("y", ys, false, 0) + fila(T("difference", "diferencia"), d1, k === "lin", 1) + fila(T("2nd difference", "2.ª diferencia"), d2, k === "cuad", 2) + fila(T("ratio", "razón"), q, k === "exp", 1) + "</tbody></table></div>";
+  var conc = {lin: T("The differences are all " + nf(d1[0]) + ": it adds the same each time. <strong>Linear.</strong>", "Las diferencias valen todas " + nf(d1[0]) + ": suma lo mismo cada vez. <strong>Lineal.</strong>"),
+    cuad: T("The first differences change, but the second differences are all " + nf(d2[0]) + ". <strong>Quadratic.</strong>", "Las primeras diferencias cambian, pero las segundas valen todas " + nf(d2[0]) + ". <strong>Cuadrática.</strong>"),
+    exp: T("The ratios are all " + nf(q[0]) + ": it multiplies by the same each time. <strong>Exponential.</strong>", "Las razones valen todas " + nf(q[0]) + ": multiplica por lo mismo cada vez. <strong>Exponencial.</strong>"),
+    otra: T("No column is constant: the table is not linear, quadratic, or exponential (or it has too few values to tell).", "Ninguna columna es constante: la tabla no es lineal, ni cuadrática, ni exponencial (o tiene muy pocos valores para saberlo).")}[k];
+  return html + '<div class="linea">' + conc + "</div>"; }
+function tiDibuja(ys){ $("ti-txt").innerHTML = tablaTipo(ys); }
+$("ti-tabla").addEventListener("change", function(){ tiDibuja(TABLAS[+$("ti-tabla").value]); });
+$("ti-usar").addEventListener("click", function(){ var l = $("ti-propia").value.split(/[,;\s]+/).filter(function(s){ return s; }).map(leeDecimal);
+  if (l.length < 4 || l.some(function(v){ return v === null; })){ $("ti-txt").innerHTML = '<div class="linea">' + T("Type at least 4 numbers separated by commas, such as 3, 7, 11, 15.", "Escriba al menos 4 números separados por comas, como 3, 7, 11, 15.") + "</div>"; return; }
+  tiDibuja(l.slice(0, 7)); });
+tiDibuja(TABLAS[0]);
+OMR("kq", function(){ var k = elige(["lin", "cuad", "exp"]), ys = [], i, x0 = 0;
+  if (k === "lin"){ var a = aleatorio(-10, 20), m = nz(-6, 7); for (i = 0; i < 5; i++) ys.push(a + m * i); }
+  else if (k === "cuad"){ var A = nz(-2, 3), b = aleatorio(-4, 4), c = aleatorio(-5, 10); for (i = 0; i < 5; i++) ys.push(A * i * i + b * i + c); }
+  else { var r = elige([2, 3, .5, 4]), c0 = r === .5 ? elige([64, 128, 160]) : elige([1, 2, 3, 5]); for (i = 0; i < 5; i++) ys.push(c0 * Math.pow(r, i)); }
+  var tb = '<div class="tabla-scroll"><table class="tabla-lados centro"><caption class="sr-only">' + T("Table of values", "Tabla de valores") + '</caption><tbody><tr><th scope="row">x</th>' + ys.map(function(v, j){ return "<td>" + j + "</td>"; }).join("") + '</tr><tr><th scope="row">y</th>' + ys.map(function(v){ return "<td>" + nf(v) + "</td>"; }).join("") + "</tr></tbody></table></div>";
+  var d1 = difs(ys), d2 = difs(d1), q = razones(ys);
+  return {enun: T("What kind of function does this table show?", "¿Qué tipo de función muestra esta tabla?") + tb, correcta: k, enOrden: true,
+    opciones: ["lin", "cuad", "exp"].map(function(z){ return {clave: z, html: nomTipo(z)}; }),
+    pista: T("Find the differences between consecutive outputs. If they are not constant, try the second differences and the ratios.", "Calcule las diferencias entre salidas consecutivas. Si no son constantes, pruebe con las segundas diferencias y con las razones."),
+    bien: T("Differences: ", "Diferencias: ") + d1.map(nf).join(", ") + (k === "lin" ? "" : T("; second differences: ", "; segundas diferencias: ") + d2.map(nf).join(", ")) + (k === "exp" ? T("; ratios: ", "; razones: ") + q.map(nf).join(", ") : "") + ". " + nomTipo(k).charAt(0).toUpperCase() + nomTipo(k).slice(1) + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
