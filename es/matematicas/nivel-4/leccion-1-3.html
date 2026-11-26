@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 1.3 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_1_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-1-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 1 — Geometría analítica</p>
+<h1>Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar</h1>
+<p class="lema">Escriba la ecuación de una recta en forma pendiente-intercepto, punto-pendiente y estándar, convierta entre ellas y reconozca rectas paralelas y perpendiculares por sus pendientes.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Papel cuadriculado</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Escribir</strong> la ecuación de una recta en forma pendiente-intercepto (y = mx + b) e identificar m y b.</li>
+<li><strong>Usar</strong> la forma punto-pendiente para escribir la recta que pasa por un punto con una pendiente dada, o por dos puntos.</li>
+<li><strong>Convertir</strong> entre las formas pendiente-intercepto, punto-pendiente y estándar (Ax + By = C).</li>
+<li><strong>Reconocer</strong> rectas paralelas y perpendiculares a partir de sus pendientes.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.6.a</span> Escribir la ecuación de una recta con una pendiente dada que pasa por un punto dado.</li><li><span class="std-cod std-dir">A.6.b</span> Escribir la ecuación de una recta que pasa por dos puntos distintos dados.</li><li><span class="std-cod std-dir">A.6.c</span> Usar la pendiente para identificar rectas paralelas y perpendiculares y para resolver problemas geométricos.</li><li><span class="std-cod std-dir">A.5.d</span> Graficar ecuaciones lineales de dos variables.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.EE.6</span> <span class="std-nivel">Nivel D</span> Usar triángulos semejantes para explicar por qué la pendiente m es la misma entre dos puntos cualesquiera de una recta no vertical del plano de coordenadas; deducir la ecuación y = mx de una recta que pasa por el origen y la ecuación y = mx + b de una recta que corta el eje vertical en b.</li><li><span class="std-cod std-ccr">8.F.3</span> <span class="std-nivel">Nivel D</span> Interpretar la ecuación y = mx + b como la definición de una función lineal, cuya gráfica es una recta; dar ejemplos de funciones que no son lineales.</li><li><span class="std-cod std-ccr">G-GPE.5</span> <span class="std-nivel">Nivel E</span> Demostrar los criterios de pendiente de las rectas paralelas y perpendiculares y usarlos para resolver problemas geométricos (por ejemplo, hallar la ecuación de una recta paralela o perpendicular a otra dada que pasa por un punto dado).</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-pendiente-intercepto">La forma pendiente-intercepto: y = mx + b</a></li>
+<li><a href="#s-punto-pendiente">La forma punto-pendiente: y − y₁ = m(x − x₁)</a></li>
+<li><a href="#s-formas">La forma estándar y la conversión entre formas</a></li>
+<li><a href="#s-paralelas">Rectas paralelas y perpendiculares</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-pendiente-intercepto"><span aria-hidden="true" class="num-seccion">1</span>La forma pendiente-intercepto: y = mx + b</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 1.2 se calculó la pendiente (m) de una recta. Una recta, sin embargo, queda definida por dos datos: cuán inclinada está (la pendiente) y por dónde pasa (un punto o el intercepto). Esta lección une ambos para <strong>escribir la ecuación</strong> de cualquier recta y traducirla entre tres formas equivalentes. Es la herramienta que permite modelar situaciones lineales reales (tarifas, salarios, consumo) con una sola expresión algebraica.</p>
+<p>La forma más directa de escribir una recta es la <strong>pendiente-intercepto</strong>:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">y = mx + b</p>
+<p>Aquí <strong>m</strong> es la pendiente (cuánto sube o baja la recta por cada unidad hacia la derecha) y <strong>b</strong> es el <strong>intercepto en y</strong>: el valor de y donde la recta cruza el eje vertical, es decir, el punto (0, b).</p>
+<svg viewBox="0 0 348 384" role="img" aria-label="La recta y = 2x + 1. Cruza el eje y en (0, 1), así que b = 1. Por cada unidad que avanza a la derecha sube 2, así que m = 2." style="width:100%;max-width:320px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="66" y1="30" x2="66" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="102" y1="30" x2="102" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="138" y1="30" x2="138" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="174" y1="30" x2="174" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="246" y1="30" x2="246" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="282" y1="30" x2="282" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="318" y1="30" x2="318" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="354" x2="318" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="318" x2="318" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="282" x2="318" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="246" x2="318" y2="246" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="318" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="174" x2="318" y2="174" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="138" x2="318" y2="138" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="102" x2="318" y2="102" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="66" x2="318" y2="66" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="318" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="246" x2="328" y2="246" stroke="#10174f" stroke-width="2"/><line x1="174" y1="362" x2="174" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="332,246 322,241 322,251" fill="#10174f"/><polygon points="174,16 169,26 179,26" fill="#10174f"/><text x="332" y="234" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="188" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="264" font-size="13" fill="#455a64" text-anchor="middle">−4</text><text x="66" y="264" font-size="13" fill="#455a64" text-anchor="middle">−3</text><text x="102" y="264" font-size="13" fill="#455a64" text-anchor="middle">−2</text><text x="138" y="264" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="210" y="264" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="246" y="264" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="282" y="264" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="168" y="358" font-size="13" fill="#455a64" text-anchor="end">−3</text><text x="168" y="322" font-size="13" fill="#455a64" text-anchor="end">−2</text><text x="168" y="286" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="168" y="214" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="168" y="178" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="168" y="142" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="168" y="106" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="168" y="70" font-size="13" fill="#455a64" text-anchor="end">5</text><line x1="102.0" y1="354.0" x2="264.0" y2="30.0" stroke="#0d47a1" stroke-width="3" stroke-linecap="round"/><line x1="210.0" y1="138.0" x2="246.0" y2="138.0" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="246.0" y1="138.0" x2="246.0" y2="66.0" stroke="#c62828" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><text x="228.0" y="154.0" font-size="14" font-weight="700" fill="#1565c0" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">1</text><text x="256.0" y="102.0" font-size="14" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">2</text><text x="275.6" y="94.8" font-size="15" font-weight="700" fill="#10174f" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">m = 2</text><circle cx="174.0" cy="210.0" r="6" fill="#b71c1c" stroke="#fff" stroke-width="2"/><text x="164.0" y="200.0" font-size="15" font-weight="700" fill="#b71c1c" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">b = 1</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Desde la pendiente y el intercepto. Una recta tiene pendiente 2 y cruza el eje y en 3. ¿Cuál es su ecuación?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se identifican los datos.</strong> m = 2 y b = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituyen en y = mx + b.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>y = 2x + 3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Leer la pendiente y el intercepto. Dada la recta y = −3x + 5, identificar su pendiente y su intercepto.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El coeficiente de x es la pendiente.</strong> m = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>El término independiente es el intercepto.</strong> b = 5, es decir, pasa por (0, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>m = −3</strong> (la recta baja) y <strong>b = 5</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La ventaja de y = mx + b</span>
+<p>Con solo mirar la ecuación se sabe cómo se ve la recta: el signo de m dice si sube o baja, y b dice por dónde corta el eje y. Por eso es la forma preferida para graficar. Cuando m = 0, la recta es horizontal y su ecuación queda y = b.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-3.html#pendiente-intercepto" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la forma pendiente-intercepto (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la forma pendiente-intercepto</span><span class="ei-sub">Mueva la pendiente y el intercepto y observe la recta; lea m y b de una ecuación o de una gráfica.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-punto-pendiente"><span aria-hidden="true" class="num-seccion">2</span>La forma punto-pendiente: y − y₁ = m(x − x₁)</h2>
+<p>Cuando se conoce la pendiente y un punto cualquiera de la recta (no necesariamente el intercepto), conviene la forma <strong>punto-pendiente</strong>:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">y − y₁ = m(x − x₁)</p>
+<p>donde (x₁, y₁) es el punto conocido. Desde esta forma siempre se puede despejar y para llegar a y = mx + b.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Dados un punto y la pendiente. Escribir la ecuación de la recta de pendiente 3 que pasa por el punto (2, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye en la forma punto-pendiente.</strong> y − 5 = 3(x − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se distribuye.</strong> y − 5 = 3x − 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se despeja y.</strong> y = 3x − 6 + 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>y = 3x − 1</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Dados dos puntos. Escribir la ecuación de la recta que pasa por (1, 2) y (3, 8).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primero la pendiente.</strong> m = (8 − 2) ÷ (3 − 1) = 6 ÷ 2 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se usa un punto, por ejemplo (1, 2).</strong> y − 2 = 3(x − 1).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se distribuye y se despeja.</strong> y − 2 = 3x − 3 → y = 3x − 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>y = 3x − 1</strong>. (Se obtiene lo mismo usando el otro punto.)</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Con dos puntos, primero la pendiente</span>
+<p>La forma punto-pendiente necesita un valor de m. Por eso, cuando solo se dan dos puntos, el primer paso siempre es calcular la pendiente con m = (y₂ − y₁) ÷ (x₂ − x₁). Cuidado con los signos: con el punto (−2, 4), la forma queda y − 4 = m(x + 2).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Desde m y b</h3></div>
+<p class="pregunta-int" id="t-p1">Pendiente 4 e intercepto en y igual a −2. La ecuación es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">y = −2x + 4</button>
+<button class="opcion" data-k="b" type="button">y = 4x + 2</button>
+<button class="opcion" data-k="c" type="button">y = 4x − 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Leer la pendiente</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cuál es la pendiente de y = −5x + 7?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">−5</button>
+<button class="opcion" data-k="c" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un punto del eje y</h3></div>
+<p class="pregunta-int" id="t-p3">La recta de pendiente 2 que pasa por (0, 4) es…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">y = 2x + 4</button>
+<button class="opcion" data-k="b" type="button">y = 4x + 2</button>
+<button class="opcion" data-k="c" type="button">y = 2x − 4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-3.html#punto-pendiente" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la forma punto-pendiente (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la forma punto-pendiente</span><span class="ei-sub">Casos paso a paso, con un punto y la pendiente o con dos puntos, y la recta dibujada al terminar.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-formas"><span aria-hidden="true" class="num-seccion">3</span>La forma estándar y la conversión entre formas</h2>
+<p>La <strong>forma estándar</strong> de la ecuación de una recta es:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">Ax + By = C</p>
+<p>donde A, B y C son números enteros y, por convención, A es positivo. Las tres formas describen la misma recta; se elige una u otra según lo que se necesite.</p>
+<div aria-label="Las tres formas de la ecuación de la recta (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las tres formas de la ecuación de la recta, con su expresión general y su uso principal</caption>
+<thead><tr><th scope="col">Forma</th><th scope="col">Expresión</th><th scope="col">Cuándo conviene</th></tr></thead>
+<tbody>
+<tr><td>Pendiente-intercepto</td><td>y = mx + b</td><td>Para graficar y ver m y b de inmediato.</td></tr>
+<tr><td>Punto-pendiente</td><td>y − y₁ = m(x − x₁)</td><td>Para escribir la recta desde un punto y la pendiente.</td></tr>
+<tr><td>Estándar</td><td>Ax + By = C</td><td>Formato habitual del GED; útil para sistemas de ecuaciones.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · De pendiente-intercepto a estándar. Convertir y = 2x + 3 a la forma estándar.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se pasa el término con x al lado izquierdo.</strong> −2x + y = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se multiplica por −1 para que A sea positivo.</strong> 2x − y = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>2x − y = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 6 · De estándar a pendiente-intercepto. Convertir 2x + 3y = 12 a la forma pendiente-intercepto.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se despeja el término con y.</strong> 3y = −2x + 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se divide todo entre 3.</strong> y = −(2/3)x + 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>y = −(2/3)x + 4</strong>, con pendiente −2/3 e intercepto 4.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Comprobación que nunca falla</span>
+<p>Elija un valor de x, por ejemplo x = 3, y evalúe las dos formas. Si ambas dan la misma y, la conversión está bien hecha. En el Ejemplo 6: 2(3) + 3y = 12 da y = 2, y −(2/3)(3) + 4 = 2 también.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-3.html#formas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la conversión entre las tres formas (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la conversión entre las tres formas</span><span class="ei-sub">Conversiones paso a paso, incluidas las que dejan pendiente fraccionaria y las que obligan a quitar la fracción antes.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-paralelas"><span aria-hidden="true" class="num-seccion">4</span>Rectas paralelas y perpendiculares</h2>
+<p>Las pendientes revelan la relación entre dos rectas:</p>
+<ul><li>Las rectas <strong>paralelas</strong> tienen la <strong>misma pendiente</strong> (m₁ = m₂). Nunca se cruzan.</li>
+<li>Las rectas <strong>perpendiculares</strong> tienen pendientes <strong>recíprocas negativas</strong>; su producto es −1 (m₁ × m₂ = −1). Se cruzan formando un ángulo recto.</li></ul>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 7 · Clasificar dos rectas. ¿Qué relación tienen y = 2x + 1 e y = 2x − 4? ¿Y y = 2x + 1 con y = −(1/2)x + 3?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Las dos primeras tienen la misma pendiente (2).</strong> Son <strong>paralelas</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Para y = 2x + 1 e y = −(1/2)x + 3 se multiplican las pendientes.</strong> 2 × (−1/2) = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> y = 2x + 1 e y = −(1/2)x + 3 son <strong>perpendiculares</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 8 · Escribir una recta paralela. Escribir la ecuación de la recta paralela a y = 3x − 2 que pasa por (0, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Paralela significa misma pendiente.</strong> m = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Pasa por (0, 5).</strong> b = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>y = 3x + 5</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">La recíproca negativa: dos movimientos, no uno</span>
+<p>Para hallar la pendiente perpendicular a una dada, se invierte la fracción <strong>y</strong> se cambia el signo. La perpendicular a m = 3 (es decir, 3/1) es −1/3; la perpendicular a m = −2/5 es 5/2. Quedarse a medio camino (invertir sin cambiar el signo) es el error más frecuente.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Desde la forma estándar</h3></div>
+<p class="pregunta-int" id="t-p4">La forma pendiente-intercepto de 4x + 2y = 10 es…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">y = 4x + 5</button>
+<button class="opcion" data-k="b" type="button">y = −2x + 5</button>
+<button class="opcion" data-k="c" type="button">y = 2x − 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Una pendiente perpendicular</h3></div>
+<p class="pregunta-int" id="t-p5">La pendiente de una recta perpendicular a y = 4x + 1 es…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">−1/4</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">1/4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Una recta paralela</h3></div>
+<p class="pregunta-int" id="t-p6">¿Qué recta es paralela a y = −3x + 2?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">y = 3x + 2</button>
+<button class="opcion" data-k="b" type="button">y = (1/3)x − 1</button>
+<button class="opcion" data-k="c" type="button">y = −3x − 7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-3.html#paralelas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: las rectas paralelas y perpendiculares (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: las rectas paralelas y perpendiculares</span><span class="ei-sub">Pares de rectas con su gráfica y una calculadora de la recíproca negativa que muestra los dos movimientos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-1-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno y papel cuadriculado: (1) Cuatro rectas en forma pendiente-intercepto: dos a partir de m y b, y dos leyendo la pendiente y el intercepto en una gráfica que usted dibuje. (2) Cuatro rectas en forma punto-pendiente, dos con un punto y la pendiente y dos con dos puntos; después pase cada una a la forma pendiente-intercepto. (3) Tres ecuaciones convertidas entre las tres formas, una de ellas con pendiente fraccionaria. (4) Seis pares de rectas clasificados como paralelas, perpendiculares o ninguna de las dos, justificando cada decisión con las pendientes. (5) Un problema real: un taxi cobra $2.50 de arranque más $1.80 por milla. Escriba la ecuación del costo en las tres formas y calcule cuánto cuesta un viaje de 12 millas. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Busque un precio con una parte fija y una parte por unidad: un plan de teléfono, un gimnasio con cuota de inscripción, un cargo de envío más un precio por libra. Escríbalo como y = mx + b, diga qué significan m y b en esa situación y grafíquelo para las primeras 10 unidades. Compare dos planes: ¿sus rectas son paralelas? ¿Qué significaría eso?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Pendiente 5 e intercepto en y igual a −1. La ecuación es…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 5x − 1</button><button class="opcion" data-k="b" type="button">y = −x + 5</button><button class="opcion" data-k="c" type="button">y = 5x + 1</button><button class="opcion" data-k="d" type="button">y = x − 5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">La recta de pendiente −2 que pasa por (0, 6) es…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 6x − 2</button><button class="opcion" data-k="b" type="button">y = 2x + 6</button><button class="opcion" data-k="c" type="button">y = −2x + 6</button><button class="opcion" data-k="d" type="button">y = −2x − 6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">La recta de pendiente 4 que pasa por (1, 3), en forma pendiente-intercepto, es…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 4x + 3</button><button class="opcion" data-k="b" type="button">y = 3x + 4</button><button class="opcion" data-k="c" type="button">y = 4x + 1</button><button class="opcion" data-k="d" type="button">y = 4x − 1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">La recta que pasa por (0, −2) y (4, 6) es…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 2x + 2</button><button class="opcion" data-k="b" type="button">y = 2x − 2</button><button class="opcion" data-k="c" type="button">y = (1/2)x − 2</button><button class="opcion" data-k="d" type="button">y = −2x + 4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">La forma estándar de y = 3x + 5 (con A positivo) es…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3x + y = 5</button><button class="opcion" data-k="b" type="button">−3x + y = 5</button><button class="opcion" data-k="c" type="button">y − 3x = 5</button><button class="opcion" data-k="d" type="button">3x − y = −5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">La forma pendiente-intercepto de 6x + 3y = 9 es…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 6x + 3</button><button class="opcion" data-k="b" type="button">y = 2x − 3</button><button class="opcion" data-k="c" type="button">y = −2x − 3</button><button class="opcion" data-k="d" type="button">y = −2x + 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">La pendiente perpendicular a m = 2/3 es…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2/3</button><button class="opcion" data-k="b" type="button">3/2</button><button class="opcion" data-k="c" type="button">−3/2</button><button class="opcion" data-k="d" type="button">−2/3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Qué relación tienen y = 4x + 1 e y = −(1/4)x + 9?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Paralelas</button><button class="opcion" data-k="b" type="button">Perpendiculares</button><button class="opcion" data-k="c" type="button">Son la misma recta</button><button class="opcion" data-k="d" type="button">Ninguna de las dos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de las ecuaciones de la recta (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para escribir y convertir la ecuación de la recta y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Forma pendiente-intercepto</th><td>Escribo y leo y = mx + b con fluidez y la asocio a su gráfica.</td><td>Identifico m y b con errores ocasionales de signo.</td><td>Confundo la pendiente con el intercepto.</td></tr>
+<tr><th scope="row">Forma punto-pendiente</th><td>La aplico con fluidez, incluso partiendo de dos puntos.</td><td>Cometo errores al distribuir o despejar.</td><td>No planteo la forma o sustituyo en el lugar equivocado.</td></tr>
+<tr><th scope="row">Conversión entre formas</th><td>Convierto entre las tres formas sin errores y elijo la más útil.</td><td>Convierto con errores algebraicos al despejar.</td><td>No logro pasar de una forma a otra.</td></tr>
+<tr><th scope="row">Paralelas y perpendiculares</th><td>Decido con las pendientes y escribo paralelas y perpendiculares con la recíproca negativa correcta.</td><td>Reconozco las paralelas, pero confundo la condición de perpendicular.</td><td>No relaciono las pendientes con la posición de las rectas.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el <strong>Tema 1</strong>. Se aprendió a escribir la ecuación de una recta en tres formas, <strong>pendiente-intercepto</strong> (y = mx + b), <strong>punto-pendiente</strong> y <strong>estándar</strong> (Ax + By = C), a convertir entre ellas y a reconocer rectas <strong>paralelas</strong> y <strong>perpendiculares</strong> por sus pendientes. Con las Lecciones 1.1 y 1.2 ya se tiene completa la caja de herramientas básica de la geometría analítica.</p>
+<p>En el <strong>Tema 2</strong> se volverá a la geometría en tres dimensiones: <strong>Lección 2.1 · Volumen de esferas, conos y pirámides</strong>.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 2.1 · Volumen de esferas, conos y pirámides</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>forma pendiente-intercepto</dt><dd>y = mx + b, donde m es la pendiente y b el intercepto en y.</dd>
+<dt>intercepto en y</dt><dd>El punto (0, b) donde la recta cruza el eje y.</dd>
+<dt>forma punto-pendiente</dt><dd>y − y₁ = m(x − x₁)</dd>
+<dt>forma estándar</dt><dd>Ax + By = C, con números enteros y A positivo.</dd>
+<dt>recíproca negativa</dt><dd>La pendiente de una recta perpendicular: se invierte la fracción y se cambia el signo.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 1 · Lección 1.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 2.1",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Intercambió m y b. La pendiente va con la x.",
+    "b": "El intercepto es −2, así que el término independiente es − 2."
+   },
+   "right": "m = 4, b = −2: y = 4x − 2.",
+   "solution": "y = 4x − 2."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "7 es el intercepto b. La pendiente es el número que acompaña a la x.",
+    "c": "Conserve el signo: el número que acompaña a la x es −5."
+   },
+   "right": "El coeficiente de x: m = −5.",
+   "solution": "m = −5."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Intercambió m y b.",
+    "c": "(0, 4) quiere decir b = +4."
+   },
+   "right": "(0, 4) es el intercepto: b = 4.",
+   "solution": "y = 2x + 4."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "Al pasar 4x al otro lado queda −4x, y después se divide todo entre 2.",
+    "c": "Revise los signos: 2y = −4x + 10, así que y = −2x + 5."
+   },
+   "right": "2y = −4x + 10 → y = −2x + 5.",
+   "solution": "y = −2x + 5."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "4 es la pendiente paralela. Perpendicular: se invierte y se cambia el signo.",
+    "c": "La invirtió, pero falta cambiar el signo."
+   },
+   "right": "Se invierte 4/1 a 1/4 y se cambia el signo: −1/4.",
+   "solution": "−1/4."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Paralela pide la misma pendiente, con su signo: −3.",
+    "b": "(1/3) no es la misma pendiente que −3."
+   },
+   "right": "Misma pendiente, −3: paralelas.",
+   "solution": "y = −3x − 7."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "a",
+   "hints": {
+    "b": "Intercambió m y b.",
+    "c": "El intercepto es −1, no +1.",
+    "d": "La pendiente es 5: va con la x."
+   },
+   "solution": "y = 5x − 1."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "6 es el intercepto, no la pendiente.",
+    "b": "La pendiente es −2, no 2.",
+    "d": "(0, 6) quiere decir b = +6."
+   },
+   "solution": "y = −2x + 6."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "3 es y₁, no b. Use y − 3 = 4(x − 1).",
+    "b": "Intercambió la pendiente y la coordenada y.",
+    "c": "Revise el signo: y − 3 = 4x − 4, así que y = 4x − 1."
+   },
+   "solution": "y − 3 = 4(x − 1) → y = 4x − 1."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "(0, −2) quiere decir b = −2.",
+    "c": "Dividió el avance entre la elevación: m = 8 ÷ 4 = 2.",
+    "d": "La recta sube de (0, −2) a (4, 6): la pendiente es positiva."
+   },
+   "solution": "m = (6 − (−2)) ÷ 4 = 2, b = −2: y = 2x − 2."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "En la forma estándar las dos variables van a la izquierda y A es positivo.",
+    "b": "A debe ser positivo: multiplique por −1.",
+    "c": "El término con x va primero y A debe ser positivo."
+   },
+   "solution": "−3x + y = 5 → 3x − y = −5."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "No dividió entre 3.",
+    "b": "Revise los signos: 3y = −6x + 9.",
+    "c": "9 ÷ 3 = +3."
+   },
+   "solution": "3y = −6x + 9 → y = −2x + 3."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "Esa es la misma pendiente (paralela).",
+    "b": "La invirtió, pero falta cambiar el signo.",
+    "d": "Cambió el signo, pero falta invertirla."
+   },
+   "solution": "Se invierte 2/3 → 3/2 y se cambia el signo: −3/2."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "Las paralelas tienen la misma pendiente. Estas tienen 4 y −1/4.",
+    "c": "Las pendientes son distintas, así que no son la misma recta.",
+    "d": "Multiplique las pendientes: 4 × (−1/4) = −1."
+   },
+   "solution": "4 × (−1/4) = −1: perpendiculares."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

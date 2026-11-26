@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 1.2 · Math Level 4 (English) — built by tools/build_n4_lesson_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 1.2 · Slope: idea, formula, and meaning · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 1 — Analytic geometry</p>
+<h1>Lesson 1.2 · Slope: idea, formula, and meaning</h1>
+<p class="lema">Find the slope of a line from its graph and from two points, tell the four types apart, and read the slope as a rate of change.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📐</span> Graph paper</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Find</strong> the slope of a line from its graph (rise ÷ run).</li>
+<li><strong>Find</strong> the slope from two points with the formula m = (y₂ − y₁) ÷ (x₂ − x₁).</li>
+<li><strong>Identify</strong> positive, negative, zero, and undefined slopes.</li>
+<li><strong>Read</strong> the slope as a rate of change and compare two lines by how steep they are.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.5.b</span> Determine the slope of a line from a graph, equation, or table.</li><li><span class="std-cod std-dir">A.5.c</span> Interpret unit rate as the slope in a proportional relationship.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.6.a</span> Write the equation of a line with a given slope through a given point.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.c</span> Display data or algebraic expressions graphically.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">8.EE.5</span> <span class="std-nivel">Level D</span> Graph proportional relationships, interpreting the unit rate as the slope of the graph. Compare two different proportional relationships represented in different ways.</li><li><span class="std-cod std-ccr">8.EE.6</span> <span class="std-nivel">Level D</span> Use similar triangles to explain why the slope m is the same between any two distinct points on a non-vertical line in the coordinate plane; derive the equation y = mx for a line through the origin and the equation y = mx + b for a line intercepting the vertical axis at b.</li><li><span class="std-cod std-ccr">8.F.4</span> <span class="std-nivel">Level D</span> Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-slope">What is slope?</a></li>
+<li><a href="#s-two-points">The slope from two points</a></li>
+<li><a href="#s-types">The four types of slope</a></li>
+<li><a href="#s-rate">The slope as a rate of change</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-slope"><span aria-hidden="true" class="num-seccion">1</span>What is slope?</h2>
+<p><strong>A link with Lesson 1.1.</strong> In Lesson 1.1 you found the horizontal change (Δx) and the vertical change (Δy) between two points to get the distance. This lesson uses exactly those two changes, but now as a <strong>quotient</strong>: the slope measures how much a line goes up or down (Δy) for each unit it moves to the right (Δx). It is the idea that connects the geometry of the plane with the algebra of the line in Lesson 1.3.</p>
+<p>The <strong>slope</strong> of a line, written with the letter <strong>m</strong>, measures how steep it is. It is the <strong>rise</strong> (how much it goes up or down, the vertical change) divided by the <strong>run</strong> (how far it moves to the right, the horizontal change):</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">m = rise ÷ run = Δy ÷ Δx</p>
+<svg viewBox="0 0 340 340" role="img" aria-label="A line through (1, 1) and (3, 4). From the first point to the second the line moves 2 to the right (the run) and 3 up (the rise), so its slope is 3/2." style="width:100%;max-width:380px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="70" y1="30" x2="70" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="110" y1="30" x2="110" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="150" y1="30" x2="150" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="230" y1="30" x2="230" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="270" y1="30" x2="270" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="310" y1="30" x2="310" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="310" x2="310" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="270" x2="310" y2="270" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="230" x2="310" y2="230" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="310" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="150" x2="310" y2="150" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="110" x2="310" y2="110" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="70" x2="310" y2="70" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="310" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="270" x2="320" y2="270" stroke="#10174f" stroke-width="2"/><line x1="70" y1="318" x2="70" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="324,270 314,265 314,275" fill="#10174f"/><polygon points="70,16 65,26 75,26" fill="#10174f"/><text x="324" y="258" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="84" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="288" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="110" y="288" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="150" y="288" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="190" y="288" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="230" y="288" font-size="13" fill="#455a64" text-anchor="middle">4</text><text x="270" y="288" font-size="13" fill="#455a64" text-anchor="middle">5</text><text x="64" y="314" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="64" y="234" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="64" y="194" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="64" y="154" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="64" y="114" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="64" y="74" font-size="13" fill="#455a64" text-anchor="end">5</text><line x1="56.7" y1="310.0" x2="243.3" y2="30.0" stroke="#90a4ae" stroke-width="2.5" stroke-linecap="round"/><line x1="110.0" y1="230.0" x2="190.0" y2="230.0" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="190.0" y1="230.0" x2="190.0" y2="110.0" stroke="#c62828" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><text x="150.0" y="246.0" font-size="14" font-weight="700" fill="#1565c0" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">run = 2</text><text x="200.0" y="170.0" font-size="14" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">rise = 3</text><circle cx="110.0" cy="230.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="100.0" y="220.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">(1, 1)</text><circle cx="190.0" cy="110.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="180.0" y="100.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">(3, 4)</text><text x="242.0" y="102.0" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">m = 3/2</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A key idea</span>
+<p>The slope is the same all along a line. Whatever two points of the same line you choose, rise ÷ run always gives the same number.</p>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#slope" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the slope in motion (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the slope in motion</span><span class="ei-sub">Move two points on a line and watch how the rise, the run, and the slope change.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-two-points"><span aria-hidden="true" class="num-seccion">2</span>The slope from two points</h2>
+<p>When you know two points (x₁, y₁) and (x₂, y₂), find the slope with the formula:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">m = (y₂ − y₁) ÷ (x₂ − x₁)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: a positive slope. Find the slope of the line through (1, 2) and (4, 11).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Rise (top).</strong> y₂ − y₁ = 11 − 2 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Run (bottom).</strong> x₂ − x₁ = 4 − 1 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divide.</strong> m = 9 ÷ 3 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The slope is <strong>3</strong> (positive: the line goes up).</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: a negative slope. Find the slope of the line through (0, 0) and (5, −10).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Rise.</strong> −10 − 0 = −10.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Run.</strong> 5 − 0 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Divide.</strong> m = −10 ÷ 5 = −2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The slope is <strong>−2</strong> (negative: the line goes down).</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Keep the same order</span>
+<p>The point you subtract first on top must be the point you subtract first on the bottom. If you switch only one of the two, the sign of the slope comes out wrong. Rise goes on top: Δx ÷ Δy is the most common mistake.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Through (1, 1) and (3, 7)</h3></div>
+<p class="pregunta-int" id="t-p1">What is the slope of the line through (1, 1) and (3, 7)?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">1/3</button>
+<button class="opcion" data-k="b" type="button">2</button>
+<button class="opcion" data-k="c" type="button">3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Through (0, 4) and (2, 0)</h3></div>
+<p class="pregunta-int" id="t-p2">What is the slope of the line through (0, 4) and (2, 0)?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">2</button>
+<button class="opcion" data-k="b" type="button">−2</button>
+<button class="opcion" data-k="c" type="button">−1/2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — Through (2, 3) and (6, 3)</h3></div>
+<p class="pregunta-int" id="t-p3">What is the slope of the line through (2, 3) and (6, 3)?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">0</button>
+<button class="opcion" data-k="b" type="button">undefined</button>
+<button class="opcion" data-k="c" type="button">4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#two-points" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the slope from two points (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the slope from two points</span><span class="ei-sub">Find the rise, the run, and the quotient step by step, with new points every time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-types"><span aria-hidden="true" class="num-seccion">3</span>The four types of slope</h2>
+<p>The sign and the value of the slope describe the direction of the line. Always read lines from left to right.</p>
+<svg viewBox="0 0 560 170" role="img" aria-label="Four small graphs: a line that rises from left to right (positive slope), one that falls (negative slope), a horizontal line (zero slope), and a vertical line (undefined slope)." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><rect x="10" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="20" y1="72.5" x2="125" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="72.5" y1="20" x2="72.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="36.5" y1="108.5" x2="108.5" y2="36.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="72.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Positive</text><rect x="145" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="155" y1="72.5" x2="260" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="207.5" y1="20" x2="207.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="171.5" y1="36.5" x2="243.5" y2="108.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="207.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Negative</text><rect x="280" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="290" y1="72.5" x2="395" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="342.5" y1="20" x2="342.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="297.5" y1="54.5" x2="387.5" y2="54.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="342.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Zero</text><rect x="415" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="425" y1="72.5" x2="530" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="477.5" y1="20" x2="477.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="495.5" y1="117.5" x2="495.5" y2="27.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="477.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Undefined</text></svg>
+<div aria-label="The four types of slope (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Types of slope: what the line looks like and the sign or value of m</caption>
+<thead><tr><th scope="col">Type</th><th scope="col">What does the line look like?</th><th scope="col">Value of m</th></tr></thead>
+<tbody>
+<tr><td>Positive</td><td>It goes up from left to right.</td><td>m > 0</td></tr>
+<tr><td>Negative</td><td>It goes down from left to right.</td><td>m < 0</td></tr>
+<tr><td>Zero</td><td>Horizontal (flat).</td><td>m = 0</td></tr>
+<tr><td>Undefined</td><td>Vertical.</td><td>m does not exist (run = 0)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Why is a vertical line undefined?</span>
+<p>On a vertical line every point has the same x, so the run (x₂ − x₁) is 0. You cannot divide by 0, so the slope does not exist. On a horizontal line, the rise is 0, so m = 0 ÷ run = 0.</p>
+</div>
+<p>To compare two lines, the <strong>steeper</strong> one has the larger <strong>absolute value</strong> of the slope. For example, a line with m = −5 is steeper than one with m = 3, even though one goes down and the other goes up.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A line that goes up</h3></div>
+<p class="pregunta-int" id="t-p4">A line that goes up from left to right has a slope that is…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">negative</button>
+<button class="opcion" data-k="b" type="button">zero</button>
+<button class="opcion" data-k="c" type="button">positive</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — A vertical line</h3></div>
+<p class="pregunta-int" id="t-p5">A vertical line has a slope that is…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">undefined</button>
+<button class="opcion" data-k="b" type="button">zero</button>
+<button class="opcion" data-k="c" type="button">positive</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — The steepest line</h3></div>
+<p class="pregunta-int" id="t-p6">Which slope belongs to the steepest line?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">m = 2/3</button>
+<button class="opcion" data-k="b" type="button">m = 4</button>
+<button class="opcion" data-k="c" type="button">m = 1</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#types" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the four types of slope (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the four types of slope</span><span class="ei-sub">Positive, negative, zero, or undefined: recognize it on the graph and from the points.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-rate"><span aria-hidden="true" class="num-seccion">4</span>The slope as a rate of change</h2>
+<p>Outside the plane, the slope takes on a very useful meaning: it is a <strong>rate of change</strong>, that is, how much one quantity changes for each unit of the other. The units of a slope are always “units of y per unit of x.”</p>
+<div aria-label="The slope as a rate of change (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Examples of the slope read as a rate of change in different situations</caption>
+<thead><tr><th scope="col">Situation</th><th scope="col">The slope is…</th></tr></thead>
+<tbody>
+<tr><td>Distance traveled vs. time</td><td>the speed (miles per hour).</td></tr>
+<tr><td>Pay vs. hours worked</td><td>the pay per hour (dollars per hour).</td></tr>
+<tr><td>Total cost vs. items bought</td><td>the price per item (dollars per item).</td></tr>
+<tr><td>Water in a tank vs. time</td><td>how fast it fills or empties (gallons per minute).</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: reading the slope. The graph of the distance a car travels (in miles) against time (in hours) is a line with slope 60. What does that slope mean?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The units.</strong> Miles per hour.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The meaning.</strong> A slope of 60 means that for every hour that goes by, the distance grows by 60 miles.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The car travels at a steady speed of <strong>60 miles per hour</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The sign also has a meaning</span>
+<p>A positive rate means the quantity grows; a negative one, that it shrinks. A tank that empties at −10 gallons per minute loses 10 gallons every minute: say it in words, not only with the sign.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 7 — The electric bill</h3></div>
+<p class="pregunta-int" id="t-p7">The graph of the total cost of electricity against the kilowatt-hours used is a line with slope 0.15 (dollars per kWh). What does the slope mean?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Each extra kWh costs $0.15</button>
+<button class="opcion" data-k="b" type="button">The fixed charge for the service</button>
+<button class="opcion" data-k="c" type="button">The whole bill is $0.15</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#rate" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the slope as a rate of change (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the slope as a rate of change</span><span class="ei-sub">Find the rate, with its units, from tables and graphs, and say what it means.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-1-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with a notebook and graph paper: (1) Six slopes from two points, two of them with negative coordinates. Write the rise and the run before you divide, and simplify the fraction. (2) Four lines drawn, one of each type (positive, negative, zero, and undefined). Explain in one sentence why each one has that slope. (3) Three different lines with slope 3/5 that go through different points. Write what they have in common and why. (4) Three situations from your daily life (a fee, a speed, a savings plan) written as a rate of change with units, and one sentence that explains each one. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Look at an electric, gas, or phone bill. Find the price per unit (per kWh, per therm, per GB) and write it as a slope: “dollars per ___.” If you used 100 more units, how much more would you pay? Then look for a road sign that warns about a steep grade (for example, “7% grade”): that percent is a slope too, 7 feet of rise for every 100 feet of run.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">On a graph, a line goes up 3 units for every 2 units it moves to the right. What is its slope?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2/3</button><button class="opcion" data-k="b" type="button">5</button><button class="opcion" data-k="c" type="button">1</button><button class="opcion" data-k="d" type="button">3/2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">On a graph, a line goes down 4 units for every 1 unit it moves to the right. What is its slope?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4</button><button class="opcion" data-k="b" type="button">−1/4</button><button class="opcion" data-k="c" type="button">−4</button><button class="opcion" data-k="d" type="button">1/4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">What is the slope of a horizontal line?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">0</button><button class="opcion" data-k="b" type="button">1</button><button class="opcion" data-k="c" type="button">undefined</button><button class="opcion" data-k="d" type="button">negative</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">What is the slope of the line through (1, 2) and (4, 11)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">3</button><button class="opcion" data-k="c" type="button">1/3</button><button class="opcion" data-k="d" type="button">13</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">What is the slope of the line through (0, 0) and (5, −10)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2</button><button class="opcion" data-k="b" type="button">−1/2</button><button class="opcion" data-k="c" type="button">−2</button><button class="opcion" data-k="d" type="button">−10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">What is the slope of the line through (4, 1) and (4, 7)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">undefined</button><button class="opcion" data-k="b" type="button">0</button><button class="opcion" data-k="c" type="button">6</button><button class="opcion" data-k="d" type="button">3/2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Which of these slopes belongs to the steepest line?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">m = 1/2</button><button class="opcion" data-k="b" type="button">m = 3</button><button class="opcion" data-k="c" type="button">m = 0</button><button class="opcion" data-k="d" type="button">m = −5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">The graph of distance (miles) against time (hours) is a line with slope 60. What does that mean?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">It travels 60 miles in all</button><button class="opcion" data-k="b" type="button">It takes 60 hours</button><button class="opcion" data-k="c" type="button">It travels 60 miles each hour</button><button class="opcion" data-k="d" type="button">It goes 60 feet per second</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for slope (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for finding, classifying, and reading slope and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Finding the slope</th><td>I find the slope from a graph or from two points with no mistakes (rise over run).</td><td>I make occasional sign mistakes.</td><td>I mix up the rise and the run, or flip the quotient.</td></tr>
+<tr><th scope="row">Identifying the type of slope</th><td>I tell the four types apart and compare steepness by the absolute value.</td><td>I recognize some types but mix up zero and undefined.</td><td>I cannot tell the four types apart.</td></tr>
+<tr><th scope="row">Reading it as a rate of change</th><td>I read the slope as a rate with the right units and explain what its sign means.</td><td>I read the slope but leave out or confuse the units.</td><td>I do not connect the slope with a real meaning.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you defined the <strong>slope</strong> as rise over run (Δy ÷ Δx), found it from a graph and from two points, sorted the four types (positive, negative, zero, and undefined), and read it as a <strong>rate of change</strong> with units.</p>
+<p>In <strong>Lesson 1.3 · Equations of a line</strong> you will put the slope and the intercept together to <strong>write the equation</strong> of a line. You will use the form y = mx + b, change between the three forms of the equation, and recognize <strong>parallel</strong> lines (the same slope) and <strong>perpendicular</strong> lines (negative reciprocal slopes).</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 1.3 · Equations of a line: slope-intercept, point-slope, and standard form</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>slope (m)</dt><dd>How steep a line is: rise ÷ run, Δy ÷ Δx.</dd>
+<dt>rise</dt><dd>The vertical change between two points, y₂ − y₁.</dd>
+<dt>run</dt><dd>The horizontal change between two points, x₂ − x₁.</dd>
+<dt>undefined slope</dt><dd>The slope of a vertical line: the run is 0.</dd>
+<dt>rate of change</dt><dd>How much one quantity changes for each unit of another, like miles per hour.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 1 · Lesson 1.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 1.3",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "You divided the run by the rise. The rise goes on top: 6 ÷ 2.",
+    "b": "Check the rise: 7 − 1 = 6, and the run: 3 − 1 = 2."
+   },
+   "right": "(7 − 1) ÷ (3 − 1) = 6 ÷ 2 = 3.",
+   "solution": "m = 6 ÷ 2 = 3."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "The line goes down (y goes from 4 to 0), so the slope is negative.",
+    "c": "You divided the run by the rise. The rise goes on top: −4 ÷ 2."
+   },
+   "right": "(0 − 4) ÷ (2 − 0) = −4 ÷ 2 = −2.",
+   "solution": "m = −4 ÷ 2 = −2."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Undefined is for a vertical line (run = 0). Here the rise is 0.",
+    "c": "4 is the run. The rise is 3 − 3 = 0."
+   },
+   "right": "The rise is 0, so m = 0 ÷ 4 = 0: a horizontal line.",
+   "solution": "m = 0 ÷ 4 = 0."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "A negative slope goes down from left to right.",
+    "b": "A zero slope is a flat, horizontal line."
+   },
+   "right": "It goes up: m > 0.",
+   "solution": "Positive."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Zero is for a horizontal line. On a vertical line the run is 0.",
+    "c": "A vertical line neither rises nor falls from left to right: the run is 0."
+   },
+   "right": "The run is 0, and you cannot divide by 0.",
+   "solution": "undefined."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "2/3 is less than 1: a gentle line.",
+    "c": "Compare the absolute values: 4 is bigger than 1."
+   },
+   "right": "4 has the largest absolute value.",
+   "solution": "m = 4."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "The fixed charge is where the line starts (when the kWh are 0), not the slope.",
+    "c": "The slope is a rate: dollars per kWh, not a total."
+   },
+   "right": "Dollars per kWh: each extra kWh adds $0.15.",
+   "solution": "$0.15 per kWh."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "You divided the run by the rise.",
+    "b": "You added them. Divide the rise by the run.",
+    "c": "Divide: 3 ÷ 2."
+   },
+   "solution": "m = 3 ÷ 2 = 3/2."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "It goes down, so the slope is negative.",
+    "b": "You divided the run by the rise.",
+    "d": "It goes down, and the rise goes on top: −4 ÷ 1."
+   },
+   "solution": "m = −4 ÷ 1 = −4."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "A slope of 1 rises one unit per unit of run.",
+    "c": "Undefined is for a vertical line.",
+    "d": "A horizontal line neither goes up nor down."
+   },
+   "solution": "The rise is 0, so m = 0."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "9 is the rise. Divide it by the run, 3.",
+    "c": "You divided the run by the rise.",
+    "d": "You added. Divide the rise by the run."
+   },
+   "solution": "(11 − 2) ÷ (4 − 1) = 9 ÷ 3 = 3."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "The line goes down (y goes from 0 to −10), so the slope is negative.",
+    "b": "You divided the run by the rise.",
+    "d": "−10 is the rise. Divide it by the run, 5."
+   },
+   "solution": "−10 ÷ 5 = −2."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Zero is for a horizontal line. Here x stays at 4: the run is 0.",
+    "c": "6 is the rise. The run is 4 − 4 = 0.",
+    "d": "Find the run: 4 − 4 = 0."
+   },
+   "solution": "The run is 0: a vertical line, undefined slope."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "|1/2| is small: a gentle line.",
+    "b": "Compare absolute values: |−5| = 5 is more than 3.",
+    "c": "A zero slope is flat."
+   },
+   "solution": "|−5| = 5 is the largest absolute value."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "The slope is a rate (per hour), not the total distance.",
+    "b": "The units are miles per hour, not hours.",
+    "d": "The units are miles and hours."
+   },
+   "solution": "60 miles for each hour."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

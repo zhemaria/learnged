@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 1.1 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_1_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 1.1 · El plano cartesiano: pares ordenados, distancia y punto medio · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-1-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 1 — Geometría analítica</p>
+<h1>Lección 1.1 · El plano cartesiano: pares ordenados, distancia y punto medio</h1>
+<p class="lema">Grafique pares ordenados en los cuatro cuadrantes, halle la distancia entre dos puntos con el teorema de Pitágoras y calcule el punto medio de un segmento.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Papel cuadriculado y calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Graficar</strong> pares ordenados en los cuatro cuadrantes del plano cartesiano.</li>
+<li><strong>Calcular</strong> la distancia entre dos puntos con la fórmula que se deriva del teorema de Pitágoras.</li>
+<li><strong>Calcular</strong> el punto medio de un segmento y un extremo que falta a partir del punto medio.</li>
+<li><strong>Identificar</strong> figuras en el plano de coordenadas y calcular su perímetro.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.5.a</span> Ubicar puntos en el plano de coordenadas.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.4.e</span> Usar el teorema de Pitágoras para hallar la medida de un lado desconocido de un triángulo rectángulo.</li><li><span class="std-cod std-base">Q.4.c</span> Calcular el perímetro de un polígono. Dada una fórmula geométrica, calcular el área de un polígono. Hallar la medida de los lados de la figura cuando se da el área o el perímetro.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.b</span> Representar visualmente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.NS.8</span> <span class="std-nivel">Nivel D</span> Resolver problemas de la vida real y matemáticos graficando puntos en los cuatro cuadrantes del plano de coordenadas. Incluye usar las coordenadas y el valor absoluto para hallar la distancia entre puntos con la misma primera coordenada o la misma segunda coordenada.</li><li><span class="std-cod std-ccr">8.G.8</span> <span class="std-nivel">Nivel D</span> Aplicar el teorema de Pitágoras para hallar la distancia entre dos puntos de un sistema de coordenadas.</li><li><span class="std-cod std-ccr">G-GPE.7</span> <span class="std-nivel">Nivel E</span> Usar coordenadas para calcular el perímetro de polígonos y el área de triángulos y rectángulos, por ejemplo con la fórmula de la distancia.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-plano">El plano cartesiano y los pares ordenados</a></li>
+<li><a href="#s-distancia">La distancia entre dos puntos</a></li>
+<li><a href="#s-punto-medio">El punto medio de un segmento</a></li>
+<li><a href="#s-perimetro">Figuras en el plano: el perímetro</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-plano"><span aria-hidden="true" class="num-seccion">1</span>El plano cartesiano y los pares ordenados</h2>
+<p><strong>Conexión con el nivel anterior.</strong> En el Nivel 3 se usó el teorema de Pitágoras (a² + b² = c²) para hallar el lado que falta de un triángulo rectángulo. El Nivel 4 empieza llevando ese mismo teorema a un lugar nuevo: el plano cartesiano. La fórmula de la distancia no es una fórmula nueva que memorizar: es el teorema de Pitágoras escrito con coordenadas. Sobre esta base se construirá, en las próximas lecciones, todo el estudio de la recta y de las funciones.</p>
+<p>El <strong>plano cartesiano</strong> está formado por dos rectas numéricas perpendiculares: el <strong>eje x</strong> (horizontal) y el <strong>eje y</strong> (vertical). Se cruzan en el <strong>origen</strong>, (0, 0). Cada punto se localiza con un <strong>par ordenado</strong> (x, y): primero se cuenta horizontalmente (x) y después hacia arriba o hacia abajo (y).</p>
+<p>Los ejes dividen el plano en cuatro <strong>cuadrantes</strong>, numerados con números romanos en sentido contrario a las manecillas del reloj, a partir de la esquina superior derecha.</p>
+<svg viewBox="0 0 420 420" role="img" aria-label="Plano cartesiano con los cuatro cuadrantes numerados del I al IV, en sentido contrario a las manecillas del reloj desde la parte superior derecha. A(3, 2) está en el cuadrante I, B(−4, 3) en el II, C(−2, −3) en el III y D(4, −2) en el IV." style="width:100%;max-width:420px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="60" y1="30" x2="60" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="90" y1="30" x2="90" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="120" y1="30" x2="120" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="150" y1="30" x2="150" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="180" y1="30" x2="180" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="240" y1="30" x2="240" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="270" y1="30" x2="270" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="300" y1="30" x2="300" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="330" y1="30" x2="330" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="360" y1="30" x2="360" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="390" y1="30" x2="390" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="390" x2="390" y2="390" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="360" x2="390" y2="360" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="330" x2="390" y2="330" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="300" x2="390" y2="300" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="270" x2="390" y2="270" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="240" x2="390" y2="240" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="390" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="180" x2="390" y2="180" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="150" x2="390" y2="150" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="120" x2="390" y2="120" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="90" x2="390" y2="90" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="60" x2="390" y2="60" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="390" y2="30" stroke="#cfd8dc" stroke-width="1"/><text x="318.0" y="66.0" text-anchor="middle" dominant-baseline="middle" font-size="30" font-weight="700" fill="#b0bec5" font-family="Georgia, serif">I</text><text x="102.0" y="66.0" text-anchor="middle" dominant-baseline="middle" font-size="30" font-weight="700" fill="#b0bec5" font-family="Georgia, serif">II</text><text x="102.0" y="354.0" text-anchor="middle" dominant-baseline="middle" font-size="30" font-weight="700" fill="#b0bec5" font-family="Georgia, serif">III</text><text x="318.0" y="354.0" text-anchor="middle" dominant-baseline="middle" font-size="30" font-weight="700" fill="#b0bec5" font-family="Georgia, serif">IV</text><line x1="22" y1="210" x2="400" y2="210" stroke="#10174f" stroke-width="2"/><line x1="210" y1="398" x2="210" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="404,210 394,205 394,215" fill="#10174f"/><polygon points="210,16 205,26 215,26" fill="#10174f"/><text x="404" y="198" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="224" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="228" font-size="13" fill="#455a64" text-anchor="middle">−6</text><text x="90" y="228" font-size="13" fill="#455a64" text-anchor="middle">−4</text><text x="150" y="228" font-size="13" fill="#455a64" text-anchor="middle">−2</text><text x="270" y="228" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="330" y="228" font-size="13" fill="#455a64" text-anchor="middle">4</text><text x="204" y="394" font-size="13" fill="#455a64" text-anchor="end">−6</text><text x="204" y="334" font-size="13" fill="#455a64" text-anchor="end">−4</text><text x="204" y="274" font-size="13" fill="#455a64" text-anchor="end">−2</text><text x="204" y="154" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="204" y="94" font-size="13" fill="#455a64" text-anchor="end">4</text><circle cx="300.0" cy="150.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="310.0" y="140.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">A(3, 2)</text><circle cx="90.0" cy="120.0" r="6" fill="#b71c1c" stroke="#fff" stroke-width="2"/><text x="80.0" y="110.0" font-size="15" font-weight="700" fill="#b71c1c" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">B(−4, 3)</text><circle cx="150.0" cy="300.0" r="6" fill="#1b5e20" stroke="#fff" stroke-width="2"/><text x="140.0" y="320.0" font-size="15" font-weight="700" fill="#1b5e20" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">C(−2, −3)</text><circle cx="330.0" cy="270.0" r="6" fill="#6a1b9a" stroke="#fff" stroke-width="2"/><text x="340.0" y="290.0" font-size="15" font-weight="700" fill="#6a1b9a" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">D(4, −2)</text></svg>
+<div aria-label="Signo de las coordenadas en cada cuadrante (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Signo de x y de y en cada cuadrante, con un ejemplo</caption>
+<thead><tr><th scope="col">Cuadrante</th><th scope="col">Signo de x</th><th scope="col">Signo de y</th><th scope="col">Ejemplo</th></tr></thead>
+<tbody>
+<tr><td>I</td><td>positivo (+)</td><td>positivo (+)</td><td>(3, 2)</td></tr>
+<tr><td>II</td><td>negativo (−)</td><td>positivo (+)</td><td>(−4, 3)</td></tr>
+<tr><td>III</td><td>negativo (−)</td><td>negativo (−)</td><td>(−2, −3)</td></tr>
+<tr><td>IV</td><td>positivo (+)</td><td>negativo (−)</td><td>(4, −2)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El orden importa</span>
+<p>El par (3, 2) no es el mismo punto que (2, 3). En (x, y), la primera coordenada siempre indica el desplazamiento horizontal y la segunda, el vertical. Un punto sobre el eje x tiene la forma (x, 0); uno sobre el eje y, la forma (0, y).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — ¿Dónde está el punto?</h3></div>
+<p class="pregunta-int" id="t-p1">¿Dónde está el punto (−5, −1)?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Cuadrante II</button>
+<button class="opcion" data-k="b" type="button">Cuadrante III</button>
+<button class="opcion" data-k="c" type="button">Cuadrante IV</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-1.html#plano" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los pares ordenados y los cuadrantes (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los pares ordenados y los cuadrantes</span><span class="ei-sub">Ubique puntos en los cuatro cuadrantes y lea sus coordenadas hasta hacerlo sin dudar.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-distancia"><span aria-hidden="true" class="num-seccion">2</span>La distancia entre dos puntos</h2>
+<p>Para hallar la distancia entre dos puntos se forma, de manera natural, un triángulo rectángulo: la diferencia horizontal de las coordenadas (Δx, «delta x») es un cateto, la diferencia vertical (Δy) es el otro, y la distancia buscada es la hipotenusa. Por el teorema de Pitágoras:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">d = √[(x₂ − x₁)² + (y₂ − y₁)²]</p>
+<svg viewBox="0 0 348 348" role="img" aria-label="P(1, 2) y Q(4, 6) unidos por un segmento. Un cateto horizontal de 3 y uno vertical de 4 forman un triángulo rectángulo; el segmento PQ, la hipotenusa, mide 5." style="width:100%;max-width:360px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="66" y1="30" x2="66" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="102" y1="30" x2="102" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="138" y1="30" x2="138" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="174" y1="30" x2="174" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="246" y1="30" x2="246" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="282" y1="30" x2="282" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="318" y1="30" x2="318" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="318" x2="318" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="282" x2="318" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="246" x2="318" y2="246" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="318" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="174" x2="318" y2="174" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="138" x2="318" y2="138" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="102" x2="318" y2="102" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="66" x2="318" y2="66" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="318" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="282" x2="328" y2="282" stroke="#10174f" stroke-width="2"/><line x1="102" y1="326" x2="102" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="332,282 322,277 322,287" fill="#10174f"/><polygon points="102,16 97,26 107,26" fill="#10174f"/><text x="332" y="270" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="116" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="300" font-size="13" fill="#455a64" text-anchor="middle">−2</text><text x="66" y="300" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="138" y="300" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="174" y="300" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="210" y="300" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="246" y="300" font-size="13" fill="#455a64" text-anchor="middle">4</text><text x="282" y="300" font-size="13" fill="#455a64" text-anchor="middle">5</text><text x="96" y="322" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="96" y="250" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="96" y="214" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="96" y="178" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="96" y="142" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="96" y="106" font-size="13" fill="#455a64" text-anchor="end">5</text><text x="96" y="70" font-size="13" fill="#455a64" text-anchor="end">6</text><polygon points="138.0,210.0 246.0,210.0 246.0,66.0" fill="rgba(26,35,126,.07)" stroke="none" stroke-width="0" stroke-linejoin="round"/><line x1="138.0" y1="210.0" x2="246.0" y2="210.0" stroke="#00695c" stroke-width="2.5" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="246.0" y1="210.0" x2="246.0" y2="66.0" stroke="#00695c" stroke-width="2.5" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="138.0" y1="210.0" x2="246.0" y2="66.0" stroke="#0d47a1" stroke-width="3.5" stroke-linecap="round"/><text x="192.0" y="226.0" font-size="14" font-weight="700" fill="#00695c" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">Δx = 3</text><text x="256.0" y="138.0" font-size="14" font-weight="700" fill="#00695c" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">Δy = 4</text><text x="177.6" y="116.4" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">d = 5</text><circle cx="138.0" cy="210.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="128.0" y="200.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">P(1, 2)</text><circle cx="246.0" cy="66.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="256.0" y="56.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">Q(4, 6)</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Catetos 3 y 4. Hallar la distancia entre P(1, 2) y Q(4, 6).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se calculan las diferencias.</strong> x₂ − x₁ = 4 − 1 = 3 y y₂ − y₁ = 6 − 2 = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se sustituye.</strong> d = √(3² + 4²) = √(9 + 16).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se suma y se saca la raíz.</strong> d = √25 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La distancia es de <strong>5 unidades</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Con coordenadas negativas. Hallar la distancia entre A(−2, 1) y B(3, 13).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Diferencias.</strong> 3 − (−2) = 5 y 13 − 1 = 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustitución.</strong> d = √(5² + 12²) = √(25 + 144) = √169.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Raíz.</strong> d = 13.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La distancia es de <strong>13 unidades</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El orden de la resta no importa</span>
+<p>Como las diferencias se elevan al cuadrado, da igual restar (x₂ − x₁) o (x₁ − x₂): el cuadrado convierte cualquier resultado en positivo. Eso sí, cuidado con las coordenadas negativas: de −2 a 3 hay 3 − (−2) = 5, no 3 − 2.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Con la calculadora</span>
+<p>Cuando la suma de los cuadrados no es un cuadrado perfecto, use la calculadora. Entre (1, 1) y (4, 3): √(3² + 2²) = √13 ≈ 3.6. Redondee a la décima, salvo que el problema diga otra cosa.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Desde el origen</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cuál es la distancia entre (0, 0) y (3, 4)?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Un segmento vertical</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cuál es la distancia entre (1, 1) y (1, 6)?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">5</button>
+<button class="opcion" data-k="b" type="button">6</button>
+<button class="opcion" data-k="c" type="button">7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Con una coordenada negativa</h3></div>
+<p class="pregunta-int" id="t-p4">¿Cuál es la distancia entre (−1, 2) y (2, 6)?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">4</button>
+<button class="opcion" data-k="b" type="button">25</button>
+<button class="opcion" data-k="c" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-1.html#distancia" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la distancia entre dos puntos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la distancia entre dos puntos</span><span class="ei-sub">Vea cómo se forma el triángulo rectángulo entre los dos puntos, calcule la hipotenusa paso a paso y mida distancias reales en un mapa de Illinois.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-punto-medio"><span aria-hidden="true" class="num-seccion">3</span>El punto medio de un segmento</h2>
+<p>El <strong>punto medio</strong> es el punto que está exactamente a la mitad del segmento que une dos puntos. Su coordenada x es el promedio de las dos coordenadas x, y su coordenada y es el promedio de las dos coordenadas y:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">M = ( (x₁ + x₂) ÷ 2 , (y₁ + y₂) ÷ 2 )</p>
+<svg viewBox="0 0 384 312" role="img" aria-label="Segmento de A(1, 1) a B(7, 5). Su punto medio M(4, 3) está exactamente a mitad de camino." style="width:100%;max-width:380px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="66" y1="30" x2="66" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="102" y1="30" x2="102" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="138" y1="30" x2="138" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="174" y1="30" x2="174" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="246" y1="30" x2="246" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="282" y1="30" x2="282" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="318" y1="30" x2="318" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="354" y1="30" x2="354" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="282" x2="354" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="246" x2="354" y2="246" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="354" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="174" x2="354" y2="174" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="138" x2="354" y2="138" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="102" x2="354" y2="102" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="66" x2="354" y2="66" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="354" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="246" x2="364" y2="246" stroke="#10174f" stroke-width="2"/><line x1="66" y1="290" x2="66" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="368,246 358,241 358,251" fill="#10174f"/><polygon points="66,16 61,26 71,26" fill="#10174f"/><text x="368" y="234" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="80" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="264" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="102" y="264" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="138" y="264" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="174" y="264" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="210" y="264" font-size="13" fill="#455a64" text-anchor="middle">4</text><text x="246" y="264" font-size="13" fill="#455a64" text-anchor="middle">5</text><text x="282" y="264" font-size="13" fill="#455a64" text-anchor="middle">6</text><text x="318" y="264" font-size="13" fill="#455a64" text-anchor="middle">7</text><text x="60" y="286" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="60" y="214" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="60" y="178" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="60" y="142" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="60" y="106" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="60" y="70" font-size="13" fill="#455a64" text-anchor="end">5</text><line x1="102.0" y1="210.0" x2="318.0" y2="66.0" stroke="#0d47a1" stroke-width="3.5" stroke-linecap="round"/><circle cx="102.0" cy="210.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="92.0" y="200.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">A(1, 1)</text><circle cx="318.0" cy="66.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="308.0" y="56.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">B(7, 5)</text><circle cx="210.0" cy="138.0" r="6" fill="#b71c1c" stroke="#fff" stroke-width="2"/><text x="220.0" y="158.0" font-size="15" font-weight="700" fill="#b71c1c" text-anchor="start" paint-order="stroke" stroke="#fff" stroke-width="4">M(4, 3)</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Punto medio. Hallar el punto medio del segmento que une A(2, 4) y B(8, 10).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Promedio de las x.</strong> (2 + 8) ÷ 2 = 10 ÷ 2 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Promedio de las y.</strong> (4 + 10) ÷ 2 = 14 ÷ 2 = 7.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El punto medio es <strong>M(5, 7)</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Hallar un extremo a partir del punto medio. El punto medio de un segmento es M(4, 3) y uno de sus extremos es A(2, 1). ¿Cuál es el otro extremo B(x, y)?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Para la x.</strong> (2 + x) ÷ 2 = 4, entonces 2 + x = 8, de donde x = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Para la y.</strong> (1 + y) ÷ 2 = 3, entonces 1 + y = 6, de donde y = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El otro extremo es <strong>B(6, 5)</strong>. Comprobación: el punto medio de (2, 1) y (6, 5) es (4, 3).</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Dos descuidos frecuentes</span>
+<p>El primero es sumar y olvidar dividir entre 2: el punto queda al doble de distancia. El segundo es restar en lugar de sumar: la diferencia sirve para la distancia, no para el punto medio. Si una suma es impar, la coordenada termina en .5, y está bien.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Un punto medio</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuál es el punto medio del segmento de (2, 2) a (6, 8)?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">(8, 10)</button>
+<button class="opcion" data-k="b" type="button">(4, 5)</button>
+<button class="opcion" data-k="c" type="button">(4, 4)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Desde el origen</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuál es el punto medio del segmento de (0, 0) a (10, 4)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">(5, 2)</button>
+<button class="opcion" data-k="b" type="button">(10, 4)</button>
+<button class="opcion" data-k="c" type="button">(5, 4)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — Con coordenadas negativas</h3></div>
+<p class="pregunta-int" id="t-p7">¿Cuál es el punto medio del segmento de (−4, 2) a (2, −6)?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">(−2, −4)</button>
+<button class="opcion" data-k="b" type="button">(3, 4)</button>
+<button class="opcion" data-k="c" type="button">(−1, −2)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-1.html#punto-medio" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el punto medio de un segmento (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el punto medio de un segmento</span><span class="ei-sub">Promedie las coordenadas y compruebe en la gráfica que el punto queda justo en el centro; después halle un extremo que falta.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-perimetro"><span aria-hidden="true" class="num-seccion">4</span>Figuras en el plano: el perímetro</h2>
+<p>Cuando los vértices de una figura se dan como puntos del plano, la fórmula de la distancia permite medir cada lado y sumarlos para obtener el <strong>perímetro</strong>.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 5 · Perímetro de un triángulo. Un triángulo tiene vértices en A(0, 0), B(3, 0) y C(0, 4). Calcular su perímetro.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Lado AB (horizontal).</strong> Misma y, así que se restan las x: 3 − 0 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Lado AC (vertical).</strong> Misma x, así que se restan las y: 4 − 0 = 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Lado BC (inclinado).</strong> d = √[(0 − 3)² + (4 − 0)²] = √(9 + 16) = √25 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Perímetro.</strong> 3 + 4 + 5 = 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El perímetro es de <strong>12 unidades</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Atajo útil</span>
+<p>Cuando dos puntos comparten la misma coordenada x, el segmento es vertical y su longitud es la diferencia de las y. Si comparten la misma y, es horizontal y su longitud es la diferencia de las x. Solo los lados inclinados requieren la fórmula completa.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-1.html#perimetro" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el perímetro en el plano (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el perímetro en el plano</span><span class="ei-sub">Mida cada lado restando o con la fórmula de la distancia, y sume.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-1-1.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno y papel cuadriculado: (1) Ocho puntos en el plano: dos en cada cuadrante, uno sobre el eje x y otro sobre el eje y. Grafíquelos, escriba sus coordenadas y anote el cuadrante o el eje de cada uno. (2) Seis distancias entre dos puntos: dos de segmentos horizontales o verticales, dos con coordenadas negativas y dos cuya raíz no sea exacta (redondee a la décima con la calculadora). Escriba Δx y Δy antes de sustituir. (3) Cuatro puntos medios y dos problemas de extremo desconocido; compruebe cada extremo calculando de nuevo el punto medio con los dos extremos. (4) Un rectángulo con vértices en (−3, −1), (5, −1), (5, 4) y (−3, 4) y un triángulo con vértices en (0, 0), (6, 0) y (0, 8): grafíquelos y calcule el perímetro de cada uno. Indique qué lados pudo medir sin la fórmula completa. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Tome un mapa de su vecindario (impreso o en el teléfono) y trácele una cuadrícula, con su casa en el origen (0, 0) y 1 unidad = 1 cuadra. Escriba las coordenadas de tres lugares a los que va a menudo (la tienda, la escuela, la parada del autobús). Calcule la distancia en línea recta de su casa a cada uno y el punto medio entre dos de ellos: ¿qué hay en ese lugar?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿En qué cuadrante está el punto (−3, 5)?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Cuadrante II</button><button class="opcion" data-k="b" type="button">Cuadrante I</button><button class="opcion" data-k="c" type="button">Cuadrante III</button><button class="opcion" data-k="d" type="button">Cuadrante IV</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">¿Dónde se localiza el punto (0, −4)?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sobre el eje x</button><button class="opcion" data-k="b" type="button">Sobre el eje y</button><button class="opcion" data-k="c" type="button">En el cuadrante III</button><button class="opcion" data-k="d" type="button">En el origen</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Un punto está 2 unidades a la izquierda y 3 hacia abajo del origen. ¿Cuáles son sus coordenadas?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2, 3)</button><button class="opcion" data-k="b" type="button">(−2, 3)</button><button class="opcion" data-k="c" type="button">(−2, −3)</button><button class="opcion" data-k="d" type="button">(2, −3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">¿Cuál es la distancia entre (1, 2) y (4, 6)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">7</button><button class="opcion" data-k="b" type="button">12</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Cuál es el punto medio del segmento de (−3, 5) a (7, −1)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(2, 2)</button><button class="opcion" data-k="b" type="button">(2, 3)</button><button class="opcion" data-k="c" type="button">(4, 4)</button><button class="opcion" data-k="d" type="button">(−5, 3)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Un triángulo tiene vértices A(0, 0), B(3, 0) y C(0, 4). ¿Cuál es su perímetro?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">7</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">15</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">El punto medio de un segmento es (4, 3) y un extremo es (2, 1). ¿Cuál es el otro extremo?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">(3, 2)</button><button class="opcion" data-k="b" type="button">(2, 2)</button><button class="opcion" data-k="c" type="button">(8, 6)</button><button class="opcion" data-k="d" type="button">(6, 5)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">En la cuadrícula de un mapa, la biblioteca está en (−2, 4) y la clínica en (5, 4). Cada unidad es 1 cuadra. ¿A cuántas cuadras están en línea recta?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3</button><button class="opcion" data-k="b" type="button">7</button><button class="opcion" data-k="c" type="button">49</button><button class="opcion" data-k="d" type="button">8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación del plano cartesiano (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de pares ordenados, distancia y punto medio y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Graficar pares ordenados</th><td>Grafico puntos en los cuatro cuadrantes y nombro el cuadrante por los signos sin vacilar.</td><td>Grafico con errores ocasionales de signo o de cuadrante.</td><td>Invierto las coordenadas o confundo los cuadrantes.</td></tr>
+<tr><th scope="row">Aplicar la fórmula de la distancia</th><td>Aplico la fórmula sin errores de sustitución y reconozco cuándo el segmento es horizontal o vertical.</td><td>Aplico la fórmula con errores de sustitución o de signo.</td><td>Sumo las coordenadas sin elevarlas al cuadrado.</td></tr>
+<tr><th scope="row">Calcular el punto medio</th><td>Calculo el punto medio y hallo un extremo desconocido a partir del punto medio.</td><td>Calculo el punto medio con errores ocasionales.</td><td>Sumo las coordenadas sin dividir entre 2.</td></tr>
+<tr><th scope="row">Perímetro en el plano</th><td>Mido cada lado (restando o con la fórmula) y los sumo.</td><td>Olvido un lado o mido un lado inclinado sumando Δx y Δy.</td><td>No sé medir los lados a partir de las coordenadas.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se estableció el lenguaje del plano cartesiano: los pares ordenados y los cuatro cuadrantes, la fórmula de la distancia (que no es más que el teorema de Pitágoras con coordenadas) y la fórmula del punto medio (el promedio de las coordenadas). Con ellas se midieron los lados y el perímetro de figuras en el plano.</p>
+<p>En la <strong>Lección 1.2 · La pendiente: concepto, fórmula e interpretación</strong> se medirá la inclinación de una recta. La pendiente es el cambio vertical dividido entre el cambio horizontal (los mismos Δy y Δx de esta lección) y se interpretará como una tasa de cambio: dólares por hora, millas por hora o costo por unidad.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 1.2 · La pendiente: concepto, fórmula e interpretación</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>plano cartesiano</dt><dd>Dos rectas numéricas perpendiculares, el eje x y el eje y, que se cruzan en el origen.</dd>
+<dt>par ordenado</dt><dd>(x, y): primero el desplazamiento horizontal y después el vertical.</dd>
+<dt>cuadrante</dt><dd>Cada una de las cuatro regiones que forman los ejes, numeradas del I al IV en sentido contrario a las manecillas del reloj.</dd>
+<dt>fórmula de la distancia</dt><dd>d = √[(x₂ − x₁)² + (y₂ − y₁)²]</dd>
+<dt>punto medio</dt><dd>El punto a mitad de un segmento: el promedio de las x y el de las y.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 1 · Lección 1.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 1.2",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "En el cuadrante II la y es positiva. Aquí y = −1.",
+    "c": "En el cuadrante IV la x es positiva. Aquí x = −5."
+   },
+   "right": "Las dos coordenadas son negativas: cuadrante III.",
+   "solution": "x < 0 y y < 0: cuadrante III."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó los catetos (3 + 4). Hay que sumar sus cuadrados y sacar la raíz.",
+    "c": "25 es d². Falta sacar la raíz."
+   },
+   "right": "√(3² + 4²) = √25 = 5.",
+   "solution": "d = √(9 + 16) = √25 = 5."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Misma x: el segmento es vertical. Se restan las y: 6 − 1.",
+    "c": "Sumó las y. Hay que restarlas: 6 − 1."
+   },
+   "right": "Segmento vertical: 6 − 1 = 5.",
+   "solution": "6 − 1 = 5."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es solo Δy. Use las dos diferencias: Δx = 2 − (−1) = 3 y Δy = 4.",
+    "b": "25 es d². Saque la raíz."
+   },
+   "right": "Δx = 2 − (−1) = 3, Δy = 4, d = √25 = 5.",
+   "solution": "√(3² + 4²) = √25 = 5."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó pero no dividió entre 2.",
+    "c": "La x está bien. Para la y: (2 + 8) ÷ 2."
+   },
+   "right": "((2 + 6) ÷ 2, (2 + 8) ÷ 2) = (4, 5).",
+   "solution": "M = (8 ÷ 2, 10 ÷ 2) = (4, 5)."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "Ese es el otro extremo. Divida cada coordenada entre 2.",
+    "c": "La x está bien. Para la y: (0 + 4) ÷ 2."
+   },
+   "right": "(10 ÷ 2, 4 ÷ 2) = (5, 2).",
+   "solution": "M = (5, 2)."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "Sumó pero no dividió entre 2.",
+    "b": "Restó. Para el punto medio se suma y se divide entre 2: (−4 + 2) ÷ 2."
+   },
+   "right": "((−4 + 2) ÷ 2, (2 + (−6)) ÷ 2) = (−1, −2).",
+   "solution": "M = (−2 ÷ 2, −4 ÷ 2) = (−1, −2)."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "a",
+   "hints": {
+    "b": "En el cuadrante I las dos coordenadas son positivas. Aquí x = −3.",
+    "c": "En el cuadrante III las dos son negativas. Aquí y = 5.",
+    "d": "En el cuadrante IV la x es positiva y la y negativa. Aquí es al revés."
+   },
+   "solution": "x < 0 y y > 0: cuadrante II."
+  },
+  "B": {
+   "ok": "b",
+   "hints": {
+    "a": "Sobre el eje x, y = 0. Aquí es x = 0.",
+    "c": "Un punto con una coordenada 0 está sobre un eje, no en un cuadrante.",
+    "d": "El origen es (0, 0). Aquí y = −4."
+   },
+   "solution": "x = 0: el punto está sobre el eje y."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "A la izquierda, la x es negativa; abajo, la y es negativa.",
+    "b": "Abajo, la y es negativa.",
+    "d": "A la izquierda, la x es negativa."
+   },
+   "solution": "(−2, −3)."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados y sacar la raíz.",
+    "b": "Multiplicó los catetos. Hay que sumar sus cuadrados.",
+    "c": "25 es d². Saque la raíz."
+   },
+   "solution": "Δx = 3, Δy = 4, d = √25 = 5."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Restó las y. Hay que sumarlas y dividir entre 2.",
+    "c": "No dividió entre 2.",
+    "d": "Revise los signos: (−3 + 7) ÷ 2 = 2."
+   },
+   "solution": "((−3 + 7) ÷ 2, (5 + (−1)) ÷ 2) = (2, 2)."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es solo AB + AC. Falta el lado inclinado BC.",
+    "b": "Mida BC con la fórmula: √(9 + 16) = 5.",
+    "d": "Revise el lado inclinado: BC = 5, no 8."
+   },
+   "solution": "3 + 4 + 5 = 12."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "Ese es el punto medio entre A y M, no el otro extremo.",
+    "b": "Despeje x en (2 + x) ÷ 2 = 4.",
+    "c": "Duplicó M. Ahora reste A: 8 − 2 y 6 − 1."
+   },
+   "solution": "x = 2 · 4 − 2 = 6, y = 2 · 3 − 1 = 5."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "Restó 5 − 2 en lugar de 5 − (−2).",
+    "c": "49 es d². Saque la raíz.",
+    "d": "Misma y: el segmento es horizontal. Se restan las x."
+   },
+   "solution": "5 − (−2) = 7."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

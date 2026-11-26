@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 1.2 · practice (English) — built by tools/build_n4_lesson_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 1.2 · Slope: idea, formula, and meaning · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  tr.fila-activa td{background:#fff8e1;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 1 · Analytic geometry</div>
+    <h1>Lesson 1.2 · Slope: idea, formula, and meaning</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#slope">The slope in motion</a></li>
+      <li><a href="#two-points">The slope from two points</a></li>
+      <li><a href="#types">The four types of slope</a></li>
+      <li><a href="#rate">The slope as a rate of change</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="slope" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The slope in motion</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Drag point A or point B with the mouse or your finger, or tap any grid crossing to move the last point you used. With the keyboard, press Tab to reach a point and move it with the arrows. The triangle shows the run (Δx, across) and the rise (Δy, up or down) between the two points.</p>
+      <div id="mv-plano"></div>
+      <div class="salida" id="mv-lect" aria-live="polite"></div>
+      <div class="fila-btn"><button type="button" class="btn-sec" id="mv-cambia">Swap the two points</button><button type="button" class="btn-sec" id="mv-tramo">Another stretch of the same line</button></div>
+      <p class="nota" id="mv-nota" aria-live="polite"></p>
+      <h3>Challenge: build the line</h3>
+      <div class="practica"><p class="enun">Place A and B so that the line has this slope: <strong id="rt-meta" style="font-size:20px"></strong></p>
+        <div class="fila-btn"><button type="button" class="btn" id="rt-comprobar">Check</button><button type="button" class="btn-sec" id="rt-otro">Another challenge</button></div>
+        <div class="fb" id="rt-fb" role="status"></div><p class="marcador" id="rt-marcador"></p></div>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">How the position of the points changes the slope</caption>
+        <thead><tr><th scope="col">If you move the points like this…</th><th scope="col">…the slope does this</th></tr></thead><tbody>
+        <tr><td>B higher than A, to the right</td><td>m is positive: the line goes up.</td></tr>
+        <tr><td>B lower than A, to the right</td><td>m is negative: the line goes down.</td></tr>
+        <tr><td>A and B at the same height</td><td>Δy = 0, so m = 0: the line is horizontal.</td></tr>
+        <tr><td>A and B in the same column</td><td>Δx = 0, and you cannot divide by 0: the slope is undefined.</td></tr>
+        <tr><td>The points move apart without changing the tilt</td><td>The slope does not change: it is the same all along the line.</td></tr></tbody></table></div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="two-points">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The slope from two points</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">m = (y₂ − y₁) ÷ (x₂ − x₁)</div>
+      <p>The top is the rise (Δy); the bottom is the run (Δx). Subtract in the same order on top and on the bottom: the point you subtract first in one place is the point you subtract first in the other.</p>
+      <h3>Practice: find the slope</h3>
+      <div class="practica" id="dp">
+        <div class="enun" id="dp-enun"></div><div id="dp-svg"></div>
+        <div class="campos"><div class="campo"><label for="dp-r">Slope m</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="dp-r"></div></div>
+        <p class="nota">Type a whole number or a fraction like −3/4. If the run is 0, type “undefined.”</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="dp-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="dp-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="dp-fb" role="status"></div>
+        <p class="marcador" id="dp-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="types">
+    <summary><span class="num" aria-hidden="true">3</span><h2>The four types of slope</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The line starts at (−3, 0). Change the rise and the run, or choose a type directly. Read lines from left to right.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:200px;"><label for="tp-dy">Rise Δy = <span id="tp-dyv"></span></label><input type="range" id="tp-dy" min="-6" max="6" step="1" value="3"></div>
+        <div class="campo" style="flex:1;min-width:200px;"><label for="tp-dx">Run Δx = <span id="tp-dxv"></span></label><input type="range" id="tp-dx" min="0" max="6" step="1" value="2"></div></div>
+        <div class="modos" role="group" aria-label="Choose a type"><button type="button" class="btn-sec" id="tp-b-pos">Positive</button><button type="button" class="btn-sec" id="tp-b-neg">Negative</button><button type="button" class="btn-sec" id="tp-b-cero">Zero</button><button type="button" class="btn-sec" id="tp-b-ind">Undefined</button></div></div>
+      <div id="tp-svg"></div>
+      <div class="salida" aria-live="polite" id="tp-lect"></div>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">The four types of slope; the row of the current type is highlighted</caption>
+        <thead><tr><th scope="col">Type</th><th scope="col">What does the line look like?</th><th scope="col">Value of m</th></tr></thead><tbody>
+        <tr id="tp-f-pos"><td>Positive</td><td>It goes up from left to right.</td><td>m &gt; 0</td></tr>
+        <tr id="tp-f-neg"><td>Negative</td><td>It goes down from left to right.</td><td>m &lt; 0</td></tr>
+        <tr id="tp-f-cero"><td>Zero</td><td>Horizontal (flat).</td><td>m = 0</td></tr>
+        <tr id="tp-f-ind"><td>Undefined</td><td>Vertical.</td><td>m does not exist (run = 0)</td></tr></tbody></table></div>
+      <div class="caja-tip">Which is steeper? The one with the larger absolute value of the slope, |m|. A line with m = −5 is steeper than one with m = 3, even though one goes down and the other goes up.</div>
+      <h3>Practice: classify the slope</h3>
+      <div class="practica" id="tc">
+        <div class="enun" id="tc-enun"></div>
+        <div class="opciones" id="tc-opciones"></div>
+        <div class="fb" id="tc-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="tc-nuevo">New exercise</button></div>
+        <p class="marcador" id="tc-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="rate">
+    <summary><span class="num" aria-hidden="true">4</span><h2>The slope as a rate of change</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Outside the plane, the slope is a rate of change: how much one quantity changes for each unit of the other, in “units of y per unit of x.” Choose a situation and any two rows of the table: because the graph is a straight line, the rate always comes out the same.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="ts-sit">Situation</label><select id="ts-sit"><option value="auto">A car on the highway</option><option value="paga">Pay for hours worked</option><option value="gas">Filling up with gas</option><option value="tanque">A tank that drains</option></select></div>
+        <div class="campo"><label for="ts-f1">First row</label><select id="ts-f1"></select></div><div class="campo"><label for="ts-f2">Second row</label><select id="ts-f2"></select></div></div></div>
+      <div class="tabla-scroll"><table class="tabla-lados" id="ts-tabla"></table></div>
+      <div id="ts-svg"></div>
+      <div class="salida" aria-live="polite" id="ts-res"></div>
+      <div class="caja-tip">The sign has a meaning too. A positive rate means the quantity grows; a negative one, that it shrinks. A tank that drains at −12 gallons per minute loses 12 gallons every minute: say it in words, not only with the sign.</div>
+      <h3>Practice: find and read the rate</h3>
+      <div class="practica" id="tr">
+        <div class="enun" id="tr-enun"></div>
+        <div class="opciones" id="tr-opciones"></div>
+        <div class="fb" id="tr-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="tr-nuevo">New exercise</button></div>
+        <p class="marcador" id="tr-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 1 · Analytic geometry · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script>
+function frase(dy, dx){
+  if (dx === 0 && dy === 0) return T("The two points are the same point: move one of them.", "Los dos puntos coinciden: mueva uno de ellos.");
+  if (dx === 0) return T("The run is 0: the line is vertical and the slope is undefined (you cannot divide by 0).", "El avance es 0: la recta es vertical y la pendiente es indefinida (no se puede dividir entre 0).");
+  if (dy === 0) return T("The rise is 0: the line is horizontal and the slope is 0.", "La elevación es 0: la recta es horizontal y la pendiente es 0.");
+  var m = fr(dy, dx), up = fval(m) > 0, sube = Math.abs(m.n), av = m.d;
+  return (up ? T("The line goes up ", "La recta sube ") : T("The line goes down ", "La recta baja ")) + sube + (sube === 1 ? T(" unit", " unidad") : T(" units", " unidades")) + T(" for every ", " por cada ") + av + (av === 1 ? T(" unit", " unidad") : T(" units", " unidades")) + T(" it moves to the right.", " que avanza hacia la derecha.");
+}
+/* ===== MODULE 1 · The slope in motion ===== */
+var MV = PlanoArrastre($("mv-plano"), {xmin: -8, xmax: 8, ymin: -8, ymax: 8, u: 30, paso: 2}, [{x: 1, y: 1, nombre: "A", color: C4.azul}, {x: 3, y: 4, nombre: "B", color: C4.morado}],
+  function(pts, P){
+    var a = [pts[0].x, pts[0].y], b = [pts[1].x, pts[1].y], dx = b[0] - a[0], dy = b[1] - a[1];
+    if (typeof mvLee === "function") mvLee(a, b);
+    return rectaPor(P, a, b, "#90a4ae", 3) + trianguloPendiente(P, a, b);
+  }, T("Coordinate plane with two points, A and B, that you can move. The line through them and the run-and-rise triangle are drawn.", "Plano cartesiano con dos puntos, A y B, que se pueden mover. Se dibujan la recta que los une y el triángulo de avance y elevación."));
+function mvLee(a, b){
+  var dx = b[0] - a[0], dy = b[1] - a[1], m = dx ? fr(dy, dx) : null;
+  $("mv-lect").innerHTML = '<div class="linea">A ' + parHTML(a[0], a[1]) + " · B " + parHTML(b[0], b[1]) + "</div>" +
+    '<div class="linea">' + T("Rise", "Elevación") + " · Δy = y₂ − y₁ = " + sg(b[1]) + " − " + (a[1] < 0 ? "(" + sg(a[1]) + ")" : a[1]) + " = <strong>" + sg(dy) + "</strong> · " +
+    T("Run", "Avance") + " · Δx = x₂ − x₁ = " + sg(b[0]) + " − " + (a[0] < 0 ? "(" + sg(a[0]) + ")" : a[0]) + " = <strong>" + sg(dx) + "</strong></div>" +
+    '<div class="linea veredicto">m = ' + (dx === 0 ? (dy === 0 ? "—" : T("undefined", "indefinida")) : (m.d === 1 ? sg(dy) + " ÷ " + (dx < 0 ? "(" + sg(dx) + ")" : sg(dx)) + " = " : (Math.abs(dy) !== Math.abs(m.n) || dx < 0 ? sg(dy) + "/" + (dx < 0 ? "(" + sg(dx) + ")" : sg(dx)) + " = " : "")) + (m.d === 1 ? sg(m.n) : fracHTML(m.n, m.d) + T(", which is ", ", equivale a ") + aprox(fval(m), 2).replace(/\.?0+$/, ""))) +
+    (dx || dy ? " · " + T("slope ", "pendiente ") + (dx === 0 ? T("undefined", "indefinida") : tipoM(m)) : "") + "</div>" +
+    '<div class="linea">' + frase(dy, dx) + "</div>";
+}
+MV.pinta();
+$("mv-cambia").addEventListener("click", function(){ var p = MV.pts, x = p[0].x, y = p[0].y; p[0].x = p[1].x; p[0].y = p[1].y; p[1].x = x; p[1].y = y; MV.pinta();
+  $("mv-nota").textContent = T("Both differences changed sign at the same time, so the slope did not change.", "Las dos diferencias cambiaron de signo a la vez, así que la pendiente no cambió."); });
+$("mv-tramo").addEventListener("click", function(){
+  var p = MV.pts, dx = p[1].x - p[0].x, dy = p[1].y - p[0].y; if (!dx && !dy) return;
+  var g = mcd(Math.abs(dx), Math.abs(dy)) || 1, sx = dx / g, sy = dy / g, opciones = [];
+  for (var k1 = -8; k1 <= 8; k1++) for (var k2 = -8; k2 <= 8; k2++){
+    if (k1 === k2) continue;
+    var a = [p[0].x + k1 * sx, p[0].y + k1 * sy], b = [p[0].x + k2 * sx, p[0].y + k2 * sy];
+    if ([a[0], a[1], b[0], b[1]].every(function(v){ return v >= -8 && v <= 8; }) && !(k1 === 0 && k2 === g)) opciones.push([a, b]);
+  }
+  if (!opciones.length) return;
+  var o = elige(opciones); p[0].x = o[0][0]; p[0].y = o[0][1]; p[1].x = o[1][0]; p[1].y = o[1][1]; MV.pinta();
+  $("mv-nota").textContent = T("Another two points of the same line: the rise and the run changed, but the slope did not.", "Otros dos puntos de la misma recta: cambiaron la elevación y el avance, pero no la pendiente.");
+});
+var RETO = {m: null, bien: 0, total: 0};
+function retoNuevo(){
+  var l = [[3, 4], [1, 2], [2, 3], [-1, 2], [-3, 2], [2, 1], [-2, 1], [0, 1], [3, 1], [-1, 3], [4, 3], [-4, 5], [1, 1], [-1, 1], [5, 2]], q = elige(l);
+  RETO.m = q[1] === 0 ? null : fr(q[0], q[1]); RETO.cero = q[0] === 0;
+  $("rt-meta").innerHTML = "m = " + (RETO.cero ? "0" : fracHTML(RETO.m.n, RETO.m.d)); $("rt-fb").className = "fb"; $("rt-fb").innerHTML = "";
+}
+$("rt-comprobar").addEventListener("click", function(){
+  var p = MV.pts, dx = p[1].x - p[0].x, dy = p[1].y - p[0].y, fb = $("rt-fb"); RETO.total++;
+  if (!dx && !dy){ fb.className = "fb pista"; fb.innerHTML = T("A and B are the same point. Separate them.", "A y B son el mismo punto. Sepárelos."); return; }
+  var ok = dx !== 0 && figual(fr(dy, dx), RETO.cero ? fr(0, 1) : RETO.m);
+  if (ok){ RETO.bien++; fb.className = "fb bien"; fb.innerHTML = TX.bien + T("Rise ", "Elevación ") + sg(dy) + T(", run ", ", avance ") + sg(dx) + ": m = " + (RETO.cero ? "0" : fracHTML(RETO.m.n, RETO.m.d)) + "."; }
+  else { fb.className = "fb pista"; fb.innerHTML = TX.todavia + T("Now the rise is ", "Ahora la elevación es ") + sg(dy) + T(" and the run is ", " y el avance es ") + sg(dx) + ". " +
+    (RETO.cero ? T("For m = 0 the rise must be 0: put A and B at the same height.", "Para m = 0 la elevación debe ser 0: ponga A y B a la misma altura.") :
+     T("Start at A, move " + RETO.m.d + " to the right, then " + Math.abs(RETO.m.n) + (RETO.m.n > 0 ? " up" : " down") + ", and put B there.", "Desde A, avance " + RETO.m.d + " a la derecha, después " + (RETO.m.n > 0 ? "suba " : "baje ") + Math.abs(RETO.m.n) + " y ponga B ahí.")); }
+  $("rt-marcador").textContent = T("Challenges solved: ", "Retos resueltos: ") + RETO.bien + T(" in ", " en ") + RETO.total + T(" tries", " intentos");
+});
+$("rt-otro").addEventListener("click", retoNuevo); retoNuevo();
+
+/* ===== MODULE 2 · From two points ===== */
+function evaluaM(txt, m, a, b){
+  var s = String(txt).trim().toLowerCase();
+  var ind = /^(u|undef|undefined|indef|indefinida|no existe|none|n\/a)\.?$/.test(s);
+  if (m === null){ if (ind) return {estado: "bien"}; if (leeFraccion(s) || leeDecimal(s) !== null) return {estado: "mal", msg: T("Look at the run: x₂ − x₁ = 0. You cannot divide by 0.", "Fíjese en el avance: x₂ − x₁ = 0. No se puede dividir entre 0.")}; return {estado: "invalido", msg: T("Type a number, a fraction like −3/4, or the word “undefined.”", "Escriba un número, una fracción como −3/4 o la palabra «indefinida».")}; }
+  if (ind) return {estado: "mal", msg: T("The run is not 0 here, so the slope exists. Undefined is only for vertical lines.", "Aquí el avance no es 0, así que la pendiente existe. Indefinida es solo para rectas verticales.")};
+  var mm = s.replace(/\s+/g, "").replace(/[−–]/g, "-").match(/^(-?\d+)\/(-?\d+)$/), f = mm && +mm[2] !== 0 ? {p: +mm[1], q: +mm[2]} : leeFraccion(s), d = leeDecimal(s), v = f ? fr(f.p, f.q) : null;
+  if (!f && d === null) return {estado: "invalido", msg: T("Type a whole number, a fraction like −3/4, or a decimal.", "Escriba un número entero, una fracción como −3/4 o un decimal.")};
+  var ok = v ? figual(v, m) : Math.abs(d - fval(m)) < 0.005;
+  if (ok) return {estado: "bien"};
+  var dy = b[1] - a[1], dx = b[0] - a[0];
+  var val = v ? fval(v) : d;
+  if (dy !== 0 && Math.abs(val - dx / dy) < 0.005) return {estado: "mal", msg: T("You divided the run by the rise. The rise (Δy) goes on top.", "Dividió el avance entre la elevación. La elevación (Δy) va arriba.")};
+  if (Math.abs(val + fval(m)) < 0.005) return {estado: "mal", msg: T("The size is right, but the sign is not. Subtract in the same order on top and on the bottom.", "El valor está bien, pero el signo no. Reste en el mismo orden arriba y abajo.")};
+  return {estado: "mal", msg: T("Find the rise y₂ − y₁ and the run x₂ − x₁ first (watch the negative signs), then divide.", "Calcule primero la elevación y₂ − y₁ y el avance x₂ − x₁ (cuidado con los signos negativos) y después divida.")};
+}
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+creaPracticaLibre("dp", function(){
+  var a, b, r = Math.random();
+  do { a = [aleatorio(-8, 8), aleatorio(-8, 8)]; b = [aleatorio(-8, 8), aleatorio(-8, 8)]; if (r < 0.1) b[0] = a[0]; else if (r < 0.2) b[1] = a[1]; } while ((a[0] === b[0] && a[1] === b[1]) || (r >= 0.2 && (a[0] === b[0] || a[1] === b[1])));
+  var dy = b[1] - a[1], dx = b[0] - a[0], m = dx ? fr(dy, dx) : null;
+  var P = Plano({xmin: -9, xmax: 9, ymin: -9, ymax: 9, u: 22, paso: 3});
+  $("dp-svg").innerHTML = P.svg(rectaPor(P, a, b, "#90a4ae", 2.5) + P.punto(a, C4.azul, "A") + P.punto(b, C4.morado, "B"), T("The line through A", "La recta que pasa por A") + par(a[0], a[1]) + T(" and B", " y B") + par(b[0], b[1]) + ".", 380);
+  return {enun: T("Find the slope of the line through ", "Calcule la pendiente de la recta que pasa por ") + parHTML(a[0], a[1], "A") + T(" and ", " y ") + parHTML(b[0], b[1], "B") + ".",
+    evalua: function(txt){ return evaluaM(txt, m, a, b); },
+    solucion: "m = (" + sg(b[1]) + " − " + pn(a[1]) + ") ÷ (" + sg(b[0]) + " − " + pn(a[0]) + ") = " + sg(dy) + " ÷ " + (dx < 0 ? "(" + sg(dx) + ")" : sg(dx)) + " = " + (m === null ? T("undefined (the run is 0)", "indefinida (el avance es 0)") : fracHTML(m.n, m.d)) + "."};
+});
+
+/* ===== MODULE 3 · The four types ===== */
+function tpPinta(){
+  var dy = +$("tp-dy").value, dx = +$("tp-dx").value, a = [-3, 0], b = [-3 + dx, dy], tipo = dx === 0 ? (dy === 0 ? "" : "ind") : (dy === 0 ? "cero" : (dy * dx > 0 ? "pos" : "neg"));
+  $("tp-dyv").textContent = sg(dy); $("tp-dxv").textContent = dx;
+  var P = Plano({xmin: -8, xmax: 8, ymin: -7, ymax: 7, u: 26, paso: 2});
+  $("tp-svg").innerHTML = P.svg((dx || dy ? rectaPor(P, a, b, C4.azul, 3) + trianguloPendiente(P, a, b) : "") + P.punto(a, C4.tinta, "(−3, 0)", "nw"), T("A line that starts at (−3, 0) with a rise of ", "Una recta que parte de (−3, 0) con elevación ") + dy + T(" and a run of ", " y avance ") + dx + ".", 460);
+  ["pos", "neg", "cero", "ind"].forEach(function(k){ var f = $("tp-f-" + k); if (f) f.className = k === tipo ? "fila-activa" : ""; $("tp-b-" + k).setAttribute("aria-pressed", k === tipo ? "true" : "false"); });
+  $("tp-lect").innerHTML = '<div class="linea veredicto">' + (dx === 0 ? (dy === 0 ? T("Rise and run are both 0: there is no line.", "La elevación y el avance son 0: no hay recta.") : "m = " + dy + " ÷ 0 → " + T("undefined", "indefinida")) :
+    "m = " + sg(dy) + " ÷ " + dx + " = " + mHTML(fr(dy, dx)) + " · |m| = " + aprox(Math.abs(dy / dx), 2).replace(/\.?0+$/, "")) + "</div>";
+}
+["tp-dy", "tp-dx"].forEach(function(i){ $(i).addEventListener("input", tpPinta); });
+[["pos", 3, 2], ["neg", -3, 2], ["cero", 0, 3], ["ind", 4, 0]].forEach(function(q){ $("tp-b-" + q[0]).addEventListener("click", function(){ $("tp-dy").value = q[1]; $("tp-dx").value = q[2]; tpPinta(); }); });
+tpPinta();
+OMR("tc", function(){
+  var r = Math.random(), U = T("Undefined", "Indefinida");
+  if (r < 0.3){
+    var dx = elige([0, 1, 2, 3, 4]), dy = elige([-4, -3, -2, -1, 0, 1, 2, 3, 4]); if (!dx && !dy) dy = 3;
+    var a = [aleatorio(-5, 0), aleatorio(-3, 3)], b = [a[0] + dx, a[1] + dy], m = dx ? fr(dy, dx) : null, P = Plano({xmin: -7, xmax: 7, ymin: -7, ymax: 7, u: 18, paso: 7, sinNumeros: true});
+    var k = m === null ? "ind" : (m.n === 0 ? "cero" : (m.n > 0 ? "pos" : "neg"));
+    return {enun: T("What type of slope does this line have?", "¿Qué tipo de pendiente tiene esta recta?") + P.svg(rectaPor(P, a, b, C4.azul, 3.5), T("A line on the plane.", "Una recta en el plano.") + " " + (k === "ind" ? T("It is vertical.", "Es vertical.") : k === "cero" ? T("It is horizontal.", "Es horizontal.") : k === "pos" ? T("It goes up from left to right.", "Sube de izquierda a derecha.") : T("It goes down from left to right.", "Baja de izquierda a derecha.")), 260),
+      correcta: k, enOrden: true, opciones: [{clave: "pos", html: T("Positive", "Positiva")}, {clave: "neg", html: T("Negative", "Negativa")}, {clave: "cero", html: T("Zero", "Cero")}, {clave: "ind", html: U}],
+      porClave: {cero: T("Zero is a flat, horizontal line.", "Cero es una recta plana, horizontal."), ind: T("Undefined is a vertical line.", "Indefinida es una recta vertical.")},
+      pista: T("Read the line from left to right: does it go up, go down, stay flat, or stand straight up?", "Lea la recta de izquierda a derecha: ¿sube, baja, se queda plana o está de pie?"), bien: T("It is ", "Es ") + (k === "ind" ? U.toLowerCase() : tipoM(m)) + "."};
+  }
+  if (r < 0.6){
+    var x1 = aleatorio(-6, 6), y1 = aleatorio(-6, 6), s = elige(["pos", "neg", "cero", "ind"]), x2 = s === "ind" ? x1 : x1 + aleatorio(1, 5), y2 = s === "cero" ? y1 : (s === "pos" ? y1 + aleatorio(1, 6) : (s === "neg" ? y1 - aleatorio(1, 6) : y1 + aleatorio(1, 6)));
+    return {enun: T("What type of slope does the line through ", "¿Qué tipo de pendiente tiene la recta que pasa por ") + parHTML(x1, y1) + T(" and ", " y ") + parHTML(x2, y2) + T(" have?", "?"), correcta: s, enOrden: true,
+      opciones: [{clave: "pos", html: T("Positive", "Positiva")}, {clave: "neg", html: T("Negative", "Negativa")}, {clave: "cero", html: T("Zero", "Cero")}, {clave: "ind", html: U}],
+      porClave: {cero: T("Zero needs the same y in both points.", "Cero pide la misma y en los dos puntos."), ind: T("Undefined needs the same x in both points.", "Indefinida pide la misma x en los dos puntos.")},
+      pista: T("Find the rise (y₂ − y₁) and the run (x₂ − x₁) and look at their signs.", "Calcule la elevación (y₂ − y₁) y el avance (x₂ − x₁) y fíjese en sus signos."),
+      bien: T("Rise ", "Elevación ") + sg(y2 - y1) + T(", run ", ", avance ") + sg(x2 - x1) + "."};
+  }
+  var l = baraja([fr(1, 2), fr(2, 3), fr(3, 1), fr(-5, 1), fr(-1, 4), fr(4, 1), fr(-3, 2), fr(5, 2), fr(-6, 1), fr(1, 1)]).slice(0, 4), max = l.reduce(function(a, b){ return Math.abs(fval(b)) > Math.abs(fval(a)) ? b : a; });
+  return {enun: T("Which slope belongs to the steepest line?", "¿Qué pendiente corresponde a la recta más empinada?"), correcta: fTxt(max),
+    opciones: l.map(function(m){ return {clave: fTxt(m), html: "m = " + fracHTML(m.n, m.d)}; }),
+    pista: T("Compare the absolute values (ignore the sign): the biggest one is the steepest.", "Compare los valores absolutos (sin el signo): el mayor es el más empinado."), bien: "|" + fTxt(max) + "| " + T("is the largest absolute value.", "es el mayor valor absoluto.")};
+});
+
+/* ===== MODULE 4 · Rate of change ===== */
+var SIT = [
+  {id: "auto", x: T("Time (hours)", "Tiempo (horas)"), y: T("Distance (miles)", "Distancia (millas)"), ux: T("hour", "hora"), uy: T("miles", "millas"), filas: [[0, 0], [1, 55], [2, 110], [3, 165], [4, 220], [5, 275]], que: T("the speed of the car", "la velocidad del auto")},
+  {id: "paga", x: T("Hours worked", "Horas trabajadas"), y: T("Pay (dollars)", "Salario (dólares)"), ux: T("hour", "hora"), uy: T("dollars", "dólares"), filas: [[0, 0], [4, 66], [8, 132], [12, 198], [16, 264], [20, 330]], que: T("the pay per hour", "la paga por hora")},
+  {id: "gas", x: T("Gas (gallons)", "Gasolina (galones)"), y: T("Cost (dollars)", "Costo (dólares)"), ux: T("gallon", "galón"), uy: T("dollars", "dólares"), filas: [[0, 0], [2, 7], [4, 14], [6, 21], [8, 28], [10, 35]], que: T("the price per gallon", "el precio por galón")},
+  {id: "tanque", x: T("Time (minutes)", "Tiempo (minutos)"), y: T("Water in the tank (gallons)", "Agua en el tanque (galones)"), ux: T("minute", "minuto"), uy: T("gallons", "galones"), filas: [[0, 120], [2, 96], [4, 72], [6, 48], [8, 24], [10, 0]], que: T("how fast the tank empties", "qué tan rápido se vacía el tanque")}];
+function tsLlena(){
+  var s = SIT[$("ts-sit").selectedIndex];
+  ["ts-f1", "ts-f2"].forEach(function(id, k){ var sel = $(id), v = sel.selectedIndex; sel.innerHTML = s.filas.map(function(f, i){ return '<option value="' + i + '">' + f[0] + " → " + f[1] + "</option>"; }).join(""); sel.selectedIndex = v >= 0 && v < s.filas.length ? v : (k ? 3 : 1); });
+  tsPinta();
+}
+function tsPinta(){
+  var s = SIT[$("ts-sit").selectedIndex], i = +$("ts-f1").value, j = +$("ts-f2").value, a = s.filas[i], b = s.filas[j];
+  $("ts-tabla").innerHTML = '<caption class="sr-only">' + s.y + T(" for each value of ", " para cada valor de ") + s.x + "</caption><thead><tr><th scope=\"col\">" + s.x + "</th><th scope=\"col\">" + s.y + "</th></tr></thead><tbody>" +
+    s.filas.map(function(f, k){ return '<tr class="' + (k === i || k === j ? "fila-activa" : "") + '"><td>' + f[0] + "</td><td>" + f[1] + "</td></tr>"; }).join("") + "</tbody>";
+  var xs = s.filas.map(function(f){ return f[0]; }), ys = s.filas.map(function(f){ return f[1]; }), xM = Math.max.apply(null, xs), yM = Math.max.apply(null, ys);
+  var W = 520, H = 300, x0 = 60, y0 = 250, X = function(v){ return x0 + v / xM * 420; }, Y = function(v){ return y0 - v / yM * 210; }, g = "";
+  for (var k = 0; k <= 5; k++){ var yv = yM * k / 5, xv = xM * k / 5; g += '<line x1="' + x0 + '" y1="' + f1(Y(yv)) + '" x2="' + (x0 + 420) + '" y2="' + f1(Y(yv)) + '" stroke="#eceff1"/><text x="' + (x0 - 6) + '" y="' + f1(Y(yv) + 4) + '" font-size="12" text-anchor="end" fill="#455a64">' + Math.round(yv) + '</text><text x="' + f1(X(xv)) + '" y="' + (y0 + 18) + '" font-size="12" text-anchor="middle" fill="#455a64">' + Math.round(xv * 10) / 10 + "</text>"; }
+  g += '<line x1="' + x0 + '" y1="' + y0 + '" x2="' + (x0 + 430) + '" y2="' + y0 + '" stroke="#10174f" stroke-width="2"/><line x1="' + x0 + '" y1="' + y0 + '" x2="' + x0 + '" y2="30" stroke="#10174f" stroke-width="2"/>';
+  g += '<text x="' + (x0 + 210) + '" y="' + (y0 + 40) + '" font-size="13" font-weight="700" text-anchor="middle" fill="#10174f">' + s.x + '</text><text x="16" y="' + (y0 - 105) + '" font-size="13" font-weight="700" text-anchor="middle" fill="#10174f" transform="rotate(-90 16 ' + (y0 - 105) + ')">' + s.y + "</text>";
+  g += '<polyline points="' + s.filas.map(function(f){ return f1(X(f[0])) + "," + f1(Y(f[1])); }).join(" ") + '" fill="none" stroke="' + C4.azul + '" stroke-width="3"/>';
+  if (i !== j){ var p = [X(a[0]), Y(a[1])], q = [X(b[0]), Y(b[1])]; g += '<line x1="' + f1(p[0]) + '" y1="' + f1(p[1]) + '" x2="' + f1(q[0]) + '" y2="' + f1(p[1]) + '" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="6 4"/><line x1="' + f1(q[0]) + '" y1="' + f1(p[1]) + '" x2="' + f1(q[0]) + '" y2="' + f1(q[1]) + '" stroke="#c62828" stroke-width="2.5" stroke-dasharray="6 4"/>'; }
+  [a, b].forEach(function(f){ g += '<circle cx="' + f1(X(f[0])) + '" cy="' + f1(Y(f[1])) + '" r="7" fill="' + C4.morado + '" stroke="#fff" stroke-width="2"/>'; });
+  $("ts-svg").innerHTML = '<svg class="geo-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + T("Graph of ", "Gráfica de ") + s.y + T(" against ", " en función de ") + s.x + T(": a straight line. The two chosen rows are marked.", ": una recta. Las dos filas elegidas están marcadas.") + '" style="max-width:520px">' + g + "</svg>";
+  if (i === j){ $("ts-res").innerHTML = '<div class="linea">' + T("Choose two different rows.", "Elija dos filas distintas.") + "</div>"; return; }
+  var dy = b[1] - a[1], dx = b[0] - a[0], m = fr(dy, dx), v = fval(m);
+  $("ts-res").innerHTML = '<div class="linea">' + T("Rate = ", "Tasa = ") + "(" + b[1] + " − " + a[1] + ") ÷ (" + b[0] + " − " + a[0] + ") = " + sg(dy) + " ÷ " + sg(dx) + " = <strong>" + sg(Math.round(v * 100) / 100) + " " + s.uy + T(" per ", " por ") + s.ux + "</strong></div>" +
+    '<div class="linea">' + T("That is ", "Es ") + s.que + (v < 0 ? T(": it goes down ", ": baja ") + Math.abs(Math.round(v * 100) / 100) + " " + s.uy + T(" every ", " cada ") + s.ux + "." : ".") + "</div>";
+}
+$("ts-sit").addEventListener("change", tsLlena); $("ts-f1").addEventListener("change", tsPinta); $("ts-f2").addEventListener("change", tsPinta); tsLlena();
+OMR("tr", function(){
+  var c = elige([
+    function(){ var r = elige([45, 50, 55, 60, 65]), h = aleatorio(2, 5); return {en: T("A car's distance against time is a straight line. After 1 hour it has gone " + r + " miles; after " + (h + 1) + " hours, " + r * (h + 1) + " miles. What is the rate of change?", "La distancia de un auto en función del tiempo es una recta. A la hora ha recorrido " + r + " millas; a las " + (h + 1) + " horas, " + r * (h + 1) + " millas. ¿Cuál es la tasa de cambio?"),
+      ok: r + T(" miles per hour", " millas por hora"), mal: [r * (h + 1) + T(" miles per hour", " millas por hora"), T("1/" + r + " hour per mile", "1/" + r + " hora por milla"), r * h + T(" miles", " millas")]}; },
+    function(){ var p = elige([14, 15, 16, 17, 18]), h = elige([20, 30, 40]); return {en: T("Pay against hours worked is a straight line: 0 hours pays $0 and " + h + " hours pay $" + p * h + ". What does the slope mean?", "El salario en función de las horas trabajadas es una recta: 0 horas pagan $0 y " + h + " horas pagan $" + p * h + ". ¿Qué significa la pendiente?"),
+      ok: T("$" + p + " for each hour worked", "$" + p + " por cada hora trabajada"), mal: [T("$" + p * h + " for each hour worked", "$" + p * h + " por cada hora trabajada"), T(h + " hours per dollar", h + " horas por dólar"), T("The pay for the whole week", "El salario de toda la semana")]}; },
+    function(){ var g = elige([8, 10, 12, 15]), t0 = elige([120, 150, 180]); return {en: T("A tank has " + t0 + " gallons and drains at a steady rate. After 4 minutes it has " + (t0 - 4 * g) + " gallons. What is the rate of change?", "Un tanque tiene " + t0 + " galones y se vacía a ritmo constante. A los 4 minutos tiene " + (t0 - 4 * g) + " galones. ¿Cuál es la tasa de cambio?"),
+      ok: T("−" + g + " gallons per minute (it loses " + g + " each minute)", "−" + g + " galones por minuto (pierde " + g + " cada minuto)"), mal: [T(g + " gallons per minute (it gains " + g + " each minute)", g + " galones por minuto (gana " + g + " cada minuto)"), T("−" + 4 * g + " gallons per minute", "−" + 4 * g + " galones por minuto"), T("−1/" + g + " minute per gallon", "−1/" + g + " minuto por galón")]}; },
+    function(){ var k = elige([0.12, 0.14, 0.15, 0.18]); return {en: T("The graph of an electric bill against kilowatt-hours used is a line with slope " + k + ". What does the slope mean?", "La gráfica de la factura de la luz en función de los kilovatios-hora consumidos es una recta de pendiente " + k + ". ¿Qué significa la pendiente?"),
+      ok: T("Each extra kWh costs $" + k.toFixed(2), "Cada kWh adicional cuesta $" + k.toFixed(2)), mal: [T("The fixed monthly charge", "El cargo fijo del mes"), T("The whole bill is $" + k.toFixed(2), "El total de la factura es $" + k.toFixed(2)), T("Each extra dollar buys " + k + " kWh", "Cada dólar adicional compra " + k + " kWh")]}; }])();
+  var ops = [{clave: "ok", html: c.ok}].concat(c.mal.map(function(m, i){ return {clave: "m" + i, html: m}; }));
+  return {enun: c.en, correcta: "ok", opciones: ops, pista: T("The slope is a rate: (change in y) ÷ (change in x), with units “y per x.” Check the sign too.", "La pendiente es una tasa: (cambio en y) ÷ (cambio en x), con unidades «y por x». Revise también el signo."), bien: c.ok + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

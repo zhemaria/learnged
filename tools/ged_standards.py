@@ -181,6 +181,14 @@ CCR = {
  "8.G.5": ("D", "Use informal arguments to establish facts about the angle sum and exterior angle of triangles, about the angles created when parallel lines are cut by a transversal, and the angle-angle criterion for similarity of triangles."),
  "8.G.6": ("D", "Explain a proof of the Pythagorean Theorem and its converse."),
  "8.G.7": ("D", "Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions."),
+ "6.NS.8": ("D", "Solve real-world and mathematical problems by graphing points in all four quadrants of the coordinate plane. Include use of coordinates and absolute value to find distances between points with the same first coordinate or the same second coordinate."),
+ "8.G.8": ("D", "Apply the Pythagorean Theorem to find the distance between two points in a coordinate system."),
+ "8.EE.5": ("D", "Graph proportional relationships, interpreting the unit rate as the slope of the graph. Compare two different proportional relationships represented in different ways."),
+ "8.EE.6": ("D", "Use similar triangles to explain why the slope m is the same between any two distinct points on a non-vertical line in the coordinate plane; derive the equation y = mx for a line through the origin and the equation y = mx + b for a line intercepting the vertical axis at b."),
+ "8.F.3": ("D", "Interpret the equation y = mx + b as defining a linear function, whose graph is a straight line; give examples of functions that are not linear."),
+ "8.F.4": ("D", "Construct a function to model a linear relationship between two quantities. Determine the rate of change and initial value of the function from a description of a relationship or from two (x, y) values, including reading these from a table or from a graph. Interpret the rate of change and initial value of a linear function in terms of the situation it models, and in terms of its graph or a table of values."),
+ "G-GPE.5": ("E", "Prove the slope criteria for parallel and perpendicular lines and use them to solve geometric problems (e.g., find the equation of a line parallel or perpendicular to a given line that passes through a given point)."),
+ "G-GPE.7": ("E", "Use coordinates to compute perimeters of polygons and areas of triangles and rectangles, e.g., using the distance formula."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
  "6.SP.4": ("D", "Display numerical data in plots on a number line, including dot plots, histograms, and box plots."),
@@ -385,6 +393,12 @@ LESSONS = [
   {"direct": ["Q.8.b"], "builds": ["Q.8.a"], "mp": ["MP.1.a", "MP.2.c", "MP.4.a"], "ccr": ["7.SP.5", "7.SP.7", "7.SP.8"]}),
  ("level-3/lesson-8-3.html", "8.3", "Final project and strategies for the GED math test",
   {"direct": ["Q.6.b", "Q.7.a", "Q.8.b"], "builds": [], "mp": ["MP.1.a", "MP.3.a", "MP.4.c"], "ccr": ["6.SP.2", "6.SP.4", "6.SP.5", "7.SP.8"]}),
+ ("level-4/lesson-1-1.html", "1.1", "The coordinate plane: ordered pairs, distance, and midpoint",
+  {"direct": ["A.5.a"], "builds": ["Q.4.e", "Q.4.c"], "mp": ["MP.1.b", "MP.2.b", "MP.4.a"], "ccr": ["6.NS.8", "8.G.8", "G-GPE.7"]}),
+ ("level-4/lesson-1-2.html", "1.2", "Slope: idea, formula, and meaning",
+  {"direct": ["A.5.b", "A.5.c"], "builds": ["A.6.a"], "mp": ["MP.2.c", "MP.3.a", "MP.4.c"], "ccr": ["8.EE.5", "8.EE.6", "8.F.4"]}),
+ ("level-4/lesson-1-3.html", "1.3", "Equations of a line: slope-intercept, point-slope, and standard form",
+  {"direct": ["A.6.a", "A.6.b", "A.6.c", "A.5.d"], "builds": [], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["8.EE.6", "8.F.3", "G-GPE.5"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

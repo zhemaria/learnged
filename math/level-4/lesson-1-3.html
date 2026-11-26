@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 1.3 · Math Level 4 (English) — built by tools/build_n4_lesson_1_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 1.3 · Equations of a line: slope-intercept, point-slope, and standard form · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 1 — Analytic geometry</p>
+<h1>Lesson 1.3 · Equations of a line: slope-intercept, point-slope, and standard form</h1>
+<p class="lema">Write the equation of a line in slope-intercept, point-slope, and standard form, change between them, and tell parallel and perpendicular lines by their slopes.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📐</span> Graph paper</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Write</strong> the equation of a line in slope-intercept form (y = mx + b) and read m and b.</li>
+<li><strong>Use</strong> the point-slope form to write the line through a point with a given slope, or through two points.</li>
+<li><strong>Change</strong> between slope-intercept, point-slope, and standard form (Ax + By = C).</li>
+<li><strong>Recognize</strong> parallel and perpendicular lines by their slopes.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.6.a</span> Write the equation of a line with a given slope through a given point.</li><li><span class="std-cod std-dir">A.6.b</span> Write the equation of a line passing through two given distinct points.</li><li><span class="std-cod std-dir">A.6.c</span> Use slope to identify parallel and perpendicular lines and to solve geometric problems.</li><li><span class="std-cod std-dir">A.5.d</span> Graph two-variable linear equations.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.b</span> Transform and solve algebraic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">8.EE.6</span> <span class="std-nivel">Level D</span> Use similar triangles to explain why the slope m is the same between any two distinct points on a non-vertical line in the coordinate plane; derive the equation y = mx for a line through the origin and the equation y = mx + b for a line intercepting the vertical axis at b.</li><li><span class="std-cod std-ccr">8.F.3</span> <span class="std-nivel">Level D</span> Interpret the equation y = mx + b as defining a linear function, whose graph is a straight line; give examples of functions that are not linear.</li><li><span class="std-cod std-ccr">G-GPE.5</span> <span class="std-nivel">Level E</span> Prove the slope criteria for parallel and perpendicular lines and use them to solve geometric problems (e.g., find the equation of a line parallel or perpendicular to a given line that passes through a given point).</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-slope-intercept">The slope-intercept form: y = mx + b</a></li>
+<li><a href="#s-point-slope">The point-slope form: y − y₁ = m(x − x₁)</a></li>
+<li><a href="#s-forms">The standard form and changing between forms</a></li>
+<li><a href="#s-parallel">Parallel and perpendicular lines</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-slope-intercept"><span aria-hidden="true" class="num-seccion">1</span>The slope-intercept form: y = mx + b</h2>
+<p><strong>A link with Lesson 1.2.</strong> In Lesson 1.2 you found the slope (m) of a line. A line, though, is fixed by two facts: how steep it is (the slope) and where it goes through (a point or the intercept). This lesson puts the two together to <strong>write the equation</strong> of any line and change it between three equivalent forms. It is the tool that lets you model real linear situations (fees, pay, usage) with one algebraic expression.</p>
+<p>The most direct way to write a line is the <strong>slope-intercept form</strong>:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">y = mx + b</p>
+<p>Here <strong>m</strong> is the slope (how much the line goes up or down for each unit to the right) and <strong>b</strong> is the <strong>y-intercept</strong>: the value of y where the line crosses the vertical axis, that is, the point (0, b).</p>
+<svg viewBox="0 0 348 384" role="img" aria-label="The line y = 2x + 1. It crosses the y-axis at (0, 1), so b = 1. For each unit it moves to the right it goes up 2, so m = 2." style="width:100%;max-width:320px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="66" y1="30" x2="66" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="102" y1="30" x2="102" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="138" y1="30" x2="138" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="174" y1="30" x2="174" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="210" y1="30" x2="210" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="246" y1="30" x2="246" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="282" y1="30" x2="282" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="318" y1="30" x2="318" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="354" x2="318" y2="354" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="318" x2="318" y2="318" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="282" x2="318" y2="282" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="246" x2="318" y2="246" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="210" x2="318" y2="210" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="174" x2="318" y2="174" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="138" x2="318" y2="138" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="102" x2="318" y2="102" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="66" x2="318" y2="66" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="318" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="246" x2="328" y2="246" stroke="#10174f" stroke-width="2"/><line x1="174" y1="362" x2="174" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="332,246 322,241 322,251" fill="#10174f"/><polygon points="174,16 169,26 179,26" fill="#10174f"/><text x="332" y="234" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="188" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="264" font-size="13" fill="#455a64" text-anchor="middle">−4</text><text x="66" y="264" font-size="13" fill="#455a64" text-anchor="middle">−3</text><text x="102" y="264" font-size="13" fill="#455a64" text-anchor="middle">−2</text><text x="138" y="264" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="210" y="264" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="246" y="264" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="282" y="264" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="168" y="358" font-size="13" fill="#455a64" text-anchor="end">−3</text><text x="168" y="322" font-size="13" fill="#455a64" text-anchor="end">−2</text><text x="168" y="286" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="168" y="214" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="168" y="178" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="168" y="142" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="168" y="106" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="168" y="70" font-size="13" fill="#455a64" text-anchor="end">5</text><line x1="102.0" y1="354.0" x2="264.0" y2="30.0" stroke="#0d47a1" stroke-width="3" stroke-linecap="round"/><line x1="210.0" y1="138.0" x2="246.0" y2="138.0" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="246.0" y1="138.0" x2="246.0" y2="66.0" stroke="#c62828" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><text x="228.0" y="154.0" font-size="14" font-weight="700" fill="#1565c0" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">1</text><text x="256.0" y="102.0" font-size="14" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">2</text><text x="275.6" y="94.8" font-size="15" font-weight="700" fill="#10174f" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">m = 2</text><circle cx="174.0" cy="210.0" r="6" fill="#b71c1c" stroke="#fff" stroke-width="2"/><text x="164.0" y="200.0" font-size="15" font-weight="700" fill="#b71c1c" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">b = 1</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: from the slope and the intercept. A line has slope 2 and crosses the y-axis at 3. What is its equation?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Name the facts.</strong> m = 2 and b = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute in y = mx + b.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>y = 2x + 3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: reading the slope and the intercept. For the line y = −3x + 5, find its slope and its intercept.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The number in front of x is the slope.</strong> m = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>The number by itself is the intercept.</strong> b = 5, so the line goes through (0, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>m = −3</strong> (the line goes down) and <strong>b = 5</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Why y = mx + b is so handy</span>
+<p>Just by looking at the equation you know what the line looks like: the sign of m tells you whether it goes up or down, and b tells you where it crosses the y-axis. That is why it is the favorite form for graphing. When m = 0, the line is horizontal and its equation is just y = b.</p>
+</div>
+<a class="enlace-interactivo" href="practice-1-3.html#slope-intercept" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the slope-intercept form (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the slope-intercept form</span><span class="ei-sub">Move the slope and the intercept and watch the line; read m and b from an equation or a graph.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-point-slope"><span aria-hidden="true" class="num-seccion">2</span>The point-slope form: y − y₁ = m(x − x₁)</h2>
+<p>When you know the slope and any point of the line (not necessarily the intercept), use the <strong>point-slope form</strong>:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">y − y₁ = m(x − x₁)</p>
+<p>Here (x₁, y₁) is the known point. From this form you can always solve for y to get to y = mx + b.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: a point and the slope. Write the equation of the line with slope 3 through the point (2, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Substitute in the point-slope form.</strong> y − 5 = 3(x − 2).</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Distribute.</strong> y − 5 = 3x − 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Solve for y.</strong> y = 3x − 6 + 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>y = 3x − 1</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: two points. Write the equation of the line through (1, 2) and (3, 8).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>First, the slope.</strong> m = (8 − 2) ÷ (3 − 1) = 6 ÷ 2 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Use one point, for example (1, 2).</strong> y − 2 = 3(x − 1).</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Distribute and solve for y.</strong> y − 2 = 3x − 3 → y = 3x − 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>y = 3x − 1</strong>. (You get the same line with the other point.)</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">With two points, the slope comes first</span>
+<p>The point-slope form needs a value of m. So when you are given only two points, the first step is always to find the slope with m = (y₂ − y₁) ÷ (x₂ − x₁). Watch the signs: with the point (−2, 4), the form is y − 4 = m(x + 2).</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — From m and b</h3></div>
+<p class="pregunta-int" id="t-p1">Slope 4 and y-intercept −2. The equation is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">y = −2x + 4</button>
+<button class="opcion" data-k="b" type="button">y = 4x + 2</button>
+<button class="opcion" data-k="c" type="button">y = 4x − 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Reading the slope</h3></div>
+<p class="pregunta-int" id="t-p2">What is the slope of y = −5x + 7?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">−5</button>
+<button class="opcion" data-k="c" type="button">5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — A point on the y-axis</h3></div>
+<p class="pregunta-int" id="t-p3">The line with slope 2 that goes through (0, 4) is…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">y = 2x + 4</button>
+<button class="opcion" data-k="b" type="button">y = 4x + 2</button>
+<button class="opcion" data-k="c" type="button">y = 2x − 4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-3.html#point-slope" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the point-slope form (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the point-slope form</span><span class="ei-sub">Cases step by step, with a point and the slope or with two points, and the line drawn at the end.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-forms"><span aria-hidden="true" class="num-seccion">3</span>The standard form and changing between forms</h2>
+<p>The <strong>standard form</strong> of the equation of a line is:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">Ax + By = C</p>
+<p>Here A, B, and C are whole numbers and, by custom, A is positive. The three forms describe the same line; you choose one or another depending on what you need.</p>
+<div aria-label="The three forms of the equation of a line (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The three forms of the equation of a line, with the general expression and when to use each</caption>
+<thead><tr><th scope="col">Form</th><th scope="col">Expression</th><th scope="col">When to use it</th></tr></thead>
+<tbody>
+<tr><td>Slope-intercept</td><td>y = mx + b</td><td>To graph, and to see m and b at once.</td></tr>
+<tr><td>Point-slope</td><td>y − y₁ = m(x − x₁)</td><td>To write the line from a point and the slope.</td></tr>
+<tr><td>Standard</td><td>Ax + By = C</td><td>A common format on the GED test; useful for systems of equations.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: from slope-intercept to standard. Change y = 2x + 3 to standard form.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Move the x-term to the left side.</strong> −2x + y = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Multiply by −1 so that A is positive.</strong> 2x − y = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>2x − y = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 6: from standard to slope-intercept. Change 2x + 3y = 12 to slope-intercept form.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Leave the y-term alone.</strong> 3y = −2x + 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Divide everything by 3.</strong> y = −(2/3)x + 4.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>y = −(2/3)x + 4</strong>, with slope −2/3 and intercept 4.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">A check that never fails</span>
+<p>Choose a value of x, for example x = 3, and evaluate both forms. If both give the same y, the conversion is right. In Example 6: 2(3) + 3y = 12 gives y = 2, and −(2/3)(3) + 4 = 2 too.</p>
+</div>
+<a class="enlace-interactivo" href="practice-1-3.html#forms" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: changing between the three forms (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: changing between the three forms</span><span class="ei-sub">Conversions step by step, including the ones that leave a fraction for the slope and the ones where you must clear a fraction first.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-parallel"><span aria-hidden="true" class="num-seccion">4</span>Parallel and perpendicular lines</h2>
+<p>The slopes show how two lines are related:</p>
+<ul><li><strong>Parallel</strong> lines have the <strong>same slope</strong> (m₁ = m₂). They never cross.</li>
+<li><strong>Perpendicular</strong> lines have <strong>negative reciprocal</strong> slopes; their product is −1 (m₁ × m₂ = −1). They cross at a right angle.</li></ul>
+<div class="ejemplo">
+<p class="titulo-ej">Example 7: classifying two lines. How are y = 2x + 1 and y = 2x − 4 related? And y = 2x + 1 and y = −(1/2)x + 3?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The first two have the same slope (2).</strong> They are <strong>parallel</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>For y = 2x + 1 and y = −(1/2)x + 3, multiply the slopes.</strong> 2 × (−1/2) = −1.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> y = 2x + 1 and y = −(1/2)x + 3 are <strong>perpendicular</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 8: writing a parallel line. Write the equation of the line parallel to y = 3x − 2 that goes through (0, 5).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Parallel means the same slope.</strong> m = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>It goes through (0, 5).</strong> b = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>y = 3x + 5</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The negative reciprocal: two moves, not one</span>
+<p>To find the slope perpendicular to a given one, flip the fraction <strong>and</strong> change the sign. The perpendicular to m = 3 (that is, 3/1) is −1/3; the perpendicular to m = −2/5 is 5/2. Stopping halfway (flipping without changing the sign) is the most common mistake.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — From standard form</h3></div>
+<p class="pregunta-int" id="t-p4">The slope-intercept form of 4x + 2y = 10 is…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">y = 4x + 5</button>
+<button class="opcion" data-k="b" type="button">y = −2x + 5</button>
+<button class="opcion" data-k="c" type="button">y = 2x − 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — A perpendicular slope</h3></div>
+<p class="pregunta-int" id="t-p5">The slope of a line perpendicular to y = 4x + 1 is…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">−1/4</button>
+<button class="opcion" data-k="b" type="button">4</button>
+<button class="opcion" data-k="c" type="button">1/4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — A parallel line</h3></div>
+<p class="pregunta-int" id="t-p6">Which line is parallel to y = −3x + 2?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">y = 3x + 2</button>
+<button class="opcion" data-k="b" type="button">y = (1/3)x − 1</button>
+<button class="opcion" data-k="c" type="button">y = −3x − 7</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-3.html#parallel" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: parallel and perpendicular lines (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: parallel and perpendicular lines</span><span class="ei-sub">Pairs of lines with their graph, and a negative-reciprocal calculator that shows the two moves.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-1-3.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with a notebook and graph paper: (1) Four lines in slope-intercept form: two from m and b, and two reading the slope and the intercept on a graph that you draw. (2) Four lines in point-slope form, two with a point and the slope and two with two points; then change each one to slope-intercept form. (3) Three equations changed between the three forms, one of them with a fraction for the slope. (4) Six pairs of lines sorted as parallel, perpendicular, or neither, with the slopes as your reason. (5) A real problem: a taxi charges $2.50 to start plus $1.80 per mile. Write the equation of the cost in the three forms and find how much a 12-mile ride costs. About 70 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Find a price with a fixed part and a part per unit: a cell phone plan, a gym membership with a sign-up fee, a delivery fee plus a price per pound. Write it as y = mx + b, say what m and b mean in that situation, and graph it for the first 10 units. Compare two plans: are their lines parallel? What would that mean?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">Slope 5 and y-intercept −1. The equation is…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 5x − 1</button><button class="opcion" data-k="b" type="button">y = −x + 5</button><button class="opcion" data-k="c" type="button">y = 5x + 1</button><button class="opcion" data-k="d" type="button">y = x − 5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">The line with slope −2 that goes through (0, 6) is…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 6x − 2</button><button class="opcion" data-k="b" type="button">y = 2x + 6</button><button class="opcion" data-k="c" type="button">y = −2x + 6</button><button class="opcion" data-k="d" type="button">y = −2x − 6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">The line with slope 4 that goes through (1, 3), in slope-intercept form, is…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 4x + 3</button><button class="opcion" data-k="b" type="button">y = 3x + 4</button><button class="opcion" data-k="c" type="button">y = 4x + 1</button><button class="opcion" data-k="d" type="button">y = 4x − 1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">The line through (0, −2) and (4, 6) is…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 2x + 2</button><button class="opcion" data-k="b" type="button">y = 2x − 2</button><button class="opcion" data-k="c" type="button">y = (1/2)x − 2</button><button class="opcion" data-k="d" type="button">y = −2x + 4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">The standard form of y = 3x + 5 (with A positive) is…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3x + y = 5</button><button class="opcion" data-k="b" type="button">−3x + y = 5</button><button class="opcion" data-k="c" type="button">y − 3x = 5</button><button class="opcion" data-k="d" type="button">3x − y = −5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">The slope-intercept form of 6x + 3y = 9 is…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">y = 6x + 3</button><button class="opcion" data-k="b" type="button">y = 2x − 3</button><button class="opcion" data-k="c" type="button">y = −2x − 3</button><button class="opcion" data-k="d" type="button">y = −2x + 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">The slope perpendicular to m = 2/3 is…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2/3</button><button class="opcion" data-k="b" type="button">3/2</button><button class="opcion" data-k="c" type="button">−3/2</button><button class="opcion" data-k="d" type="button">−2/3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">How are y = 4x + 1 and y = −(1/4)x + 9 related?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Parallel</button><button class="opcion" data-k="b" type="button">Perpendicular</button><button class="opcion" data-k="c" type="button">They are the same line</button><button class="opcion" data-k="d" type="button">Neither</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the equations of a line (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for writing and changing the equation of a line and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Slope-intercept form</th><td>I write and read y = mx + b with ease and match it to its graph.</td><td>I find m and b with occasional sign mistakes.</td><td>I mix up the slope and the intercept.</td></tr>
+<tr><th scope="row">Point-slope form</th><td>I use it with ease, even starting from two points.</td><td>I make mistakes when I distribute or solve for y.</td><td>I do not write the form, or I substitute in the wrong place.</td></tr>
+<tr><th scope="row">Changing between forms</th><td>I change between the three forms with no mistakes and choose the most useful one.</td><td>I change forms with algebra mistakes.</td><td>I cannot get from one form to another.</td></tr>
+<tr><th scope="row">Parallel and perpendicular</th><td>I decide with the slopes and write parallel and perpendicular lines with the right negative reciprocal.</td><td>I recognize parallel lines but mix up the condition for perpendicular.</td><td>I do not connect the slopes with how the lines sit.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson closes <strong>Topic 1</strong>. You learned to write the equation of a line in three forms, <strong>slope-intercept</strong> (y = mx + b), <strong>point-slope</strong>, and <strong>standard</strong> (Ax + By = C), to change between them, and to recognize <strong>parallel</strong> and <strong>perpendicular</strong> lines by their slopes. With Lessons 1.1 and 1.2 you now have the whole basic toolkit of analytic geometry.</p>
+<p>In <strong>Topic 2</strong> you will go back to geometry in three dimensions: <strong>Lesson 2.1 · Volume of spheres, cones, and pyramids</strong>.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 2.1 · Volume of spheres, cones, and pyramids</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>slope-intercept form</dt><dd>y = mx + b, where m is the slope and b the y-intercept.</dd>
+<dt>y-intercept</dt><dd>The point (0, b) where the line crosses the y-axis.</dd>
+<dt>point-slope form</dt><dd>y − y₁ = m(x − x₁)</dd>
+<dt>standard form</dt><dd>Ax + By = C, with whole numbers and A positive.</dd>
+<dt>negative reciprocal</dt><dd>The slope of a perpendicular line: flip the fraction and change the sign.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 1 · Lesson 1.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 2.1",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "You swapped m and b. The slope goes with x.",
+    "b": "The intercept is −2, so the constant is − 2."
+   },
+   "right": "m = 4, b = −2: y = 4x − 2.",
+   "solution": "y = 4x − 2."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "7 is the intercept b. The slope is the number with x.",
+    "c": "Keep the sign: the number with x is −5."
+   },
+   "right": "The number in front of x: m = −5.",
+   "solution": "m = −5."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "You swapped m and b.",
+    "c": "(0, 4) means b = +4."
+   },
+   "right": "(0, 4) is the intercept: b = 4.",
+   "solution": "y = 2x + 4."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "When 4x moves to the right side it becomes −4x, and then everything is divided by 2.",
+    "c": "Check the signs: 2y = −4x + 10, so y = −2x + 5."
+   },
+   "right": "2y = −4x + 10 → y = −2x + 5.",
+   "solution": "y = −2x + 5."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "4 is the parallel slope. Perpendicular: flip and change the sign.",
+    "c": "You flipped it, but you also need to change the sign."
+   },
+   "right": "Flip 4/1 to 1/4 and change the sign: −1/4.",
+   "solution": "−1/4."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Parallel needs the same slope, sign included: −3.",
+    "b": "(1/3) is not the same slope as −3."
+   },
+   "right": "Same slope, −3: parallel.",
+   "solution": "y = −3x − 7."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "a",
+   "hints": {
+    "b": "You swapped m and b.",
+    "c": "The intercept is −1, not +1.",
+    "d": "The slope is 5: it goes with x."
+   },
+   "solution": "y = 5x − 1."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "6 is the intercept, not the slope.",
+    "b": "The slope is −2, not 2.",
+    "d": "(0, 6) means b = +6."
+   },
+   "solution": "y = −2x + 6."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "3 is y₁, not b. Use y − 3 = 4(x − 1).",
+    "b": "You swapped the slope and the y-coordinate.",
+    "c": "Check the sign: y − 3 = 4x − 4, so y = 4x − 1."
+   },
+   "solution": "y − 3 = 4(x − 1) → y = 4x − 1."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "(0, −2) means b = −2.",
+    "c": "You divided the run by the rise: m = 8 ÷ 4 = 2.",
+    "d": "The line goes up from (0, −2) to (4, 6): the slope is positive."
+   },
+   "solution": "m = (6 − (−2)) ÷ 4 = 2, b = −2: y = 2x − 2."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "In standard form both variables are on the left and A is positive.",
+    "b": "A must be positive: multiply by −1.",
+    "c": "The x-term goes first and A must be positive."
+   },
+   "solution": "−3x + y = 5 → 3x − y = −5."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "You did not divide by 3.",
+    "b": "Check the signs: 3y = −6x + 9.",
+    "c": "9 ÷ 3 = +3."
+   },
+   "solution": "3y = −6x + 9 → y = −2x + 3."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "That is the same slope (parallel).",
+    "b": "You flipped it, but you also need to change the sign.",
+    "d": "You changed the sign, but you also need to flip it."
+   },
+   "solution": "Flip 2/3 → 3/2 and change the sign: −3/2."
+  },
+  "H": {
+   "ok": "b",
+   "hints": {
+    "a": "Parallel lines have the same slope. These are 4 and −1/4.",
+    "c": "The slopes are different, so they are not the same line.",
+    "d": "Multiply the slopes: 4 × (−1/4) = −1."
+   },
+   "solution": "4 × (−1/4) = −1: perpendicular."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

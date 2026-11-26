@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 4 · Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar — práctica (español) — construida con tools/build_n4_lesson_1_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-4/practice-1-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .eq{white-space:nowrap;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 4 · Tema 1 · Geometría analítica</div>
+    <h1>Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#pendiente-intercepto">La forma pendiente-intercepto: y = mx + b</a></li>
+      <li><a href="#punto-pendiente">La forma punto-pendiente</a></li>
+      <li><a href="#formas">Convertir entre las tres formas</a></li>
+      <li><a href="#paralelas">Rectas paralelas y perpendiculares</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="pendiente-intercepto" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>La forma pendiente-intercepto: y = mx + b</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>En y = mx + b los dos números dicen todo lo que hay que saber de la recta: m es la pendiente (cuánto sube o baja por cada unidad hacia la derecha) y b es el intercepto en y, el punto (0, b) por donde cruza el eje vertical. Mueva los dos y obsérvelo.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:220px;"><label for="si-m">Pendiente m = <span id="si-mv"></span></label><input type="range" id="si-m" min="0" max="12" step="1" value="11" aria-describedby="si-mlista"><span class="sr-only" id="si-mlista">Pendientes de −3 a 3: −3, −2, −3/2, −1, −2/3, −1/2, 0, 1/2, 2/3, 1, 3/2, 2, 3</span></div>
+        <div class="campo" style="flex:1;min-width:220px;"><label for="si-b">Intercepto b = <span id="si-bv"></span></label><input type="range" id="si-b" min="-6" max="6" step="1" value="1"></div></div></div>
+      <div id="si-svg"></div>
+      <div class="salida" aria-live="polite" id="si-eq"></div>
+      <h3>Practique: pendiente e intercepto</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="opciones" id="sq-opciones"></div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="sq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="punto-pendiente">
+    <summary><span class="num" aria-hidden="true">2</span><h2>La forma punto-pendiente</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando el punto conocido no es el intercepto, conviene empezar por la forma punto-pendiente, que admite cualquier punto de la recta:</p>
+      <div class="formula">y − y₁ = m(x − x₁)</div>
+      <h3>Paso a paso</h3>
+      <div class="panel"><p class="enun" id="ps-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ps-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="ps-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="ps-nuevo">Otro caso</button></div></div>
+      <div class="pasos" id="ps-pasos" aria-live="polite"></div>
+      <div id="ps-svg"></div>
+      <div class="caja-tip">Con dos puntos, primero la pendiente: la forma punto-pendiente necesita un valor de m, así que el paso cero siempre es (y₂ − y₁) ÷ (x₂ − x₁). Da igual cuál de los dos puntos se use después: la recta que sale es la misma.</div>
+      <h3>Practique: escriba la ecuación</h3>
+      <div class="practica" id="pq">
+        <div class="enun" id="pq-enun"></div>
+        <div class="opciones" id="pq-opciones"></div>
+        <div class="fb" id="pq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="pq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="pq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="formas">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Convertir entre las tres formas</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Las tres formas describen la misma recta; cambia solo el traje. Conviene saber pasar de una a otra, porque cada una sirve para algo distinto.</p>
+      <div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">Las tres formas y para qué sirve cada una</caption>
+        <thead><tr><th scope="col">Forma</th><th scope="col">Expresión</th><th scope="col">Cuándo conviene</th></tr></thead><tbody>
+        <tr><td>Pendiente-intercepto</td><td>y = mx + b</td><td>Para graficar: m y b se leen de un vistazo.</td></tr>
+        <tr><td>Punto-pendiente</td><td>y − y₁ = m(x − x₁)</td><td>Para escribir la recta desde un punto cualquiera.</td></tr>
+        <tr><td>Estándar</td><td>Ax + By = C</td><td>Formato habitual del GED y de los sistemas de ecuaciones.</td></tr></tbody></table></div>
+      <h3>Paso a paso</h3>
+      <div class="panel"><p class="enun" id="fc-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="fc-sig">Mostrar el siguiente paso</button><button type="button" class="btn-sec" id="fc-todo">Mostrar todos los pasos</button><button type="button" class="btn-sec" id="fc-nuevo">Otra conversión</button></div></div>
+      <div class="pasos" id="fc-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Comprobación que nunca falla: elija un valor de x, por ejemplo x = 2, y evalúe las dos formas. Si ambas dan la misma y, la conversión está bien hecha.</div>
+      <h3>Practique: convierta la ecuación</h3>
+      <div class="practica" id="fq">
+        <div class="enun" id="fq-enun"></div>
+        <div class="opciones" id="fq-opciones"></div>
+        <div class="fb" id="fq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="fq-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="fq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="paralelas">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Rectas paralelas y perpendiculares</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La relación entre dos rectas se decide mirando solo las pendientes: iguales quiere decir paralelas; recíprocas negativas (producto igual a −1) quiere decir perpendiculares.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="pa-par">Par de rectas</label><select id="pa-par"><option value="0">y = 2x + 1 · y = 2x − 4</option><option value="1">y = 2x + 1 · y = −(1/2)x + 3</option><option value="2">y = 3x − 2 · y = (1/3)x + 1</option><option value="3">y = −(2/5)x + 1 · y = (5/2)x − 3</option><option value="4">y = 4x · y = 4x + 5</option><option value="5">y = x + 2 · y = −x + 2</option></select></div></div></div>
+      <div id="pa-svg"></div>
+      <div class="salida" aria-live="polite" id="pa-res"></div>
+      <h3>Calculadora de la recíproca negativa</h3>
+      <p>Escriba una pendiente como fracción y obtenga la perpendicular. Para un número entero, deje el denominador en 1.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="rc-n">Numerador de m</label><input type="text" inputmode="numeric" class="corto" id="rc-n" value="2"></div><div class="campo"><label for="rc-d">Denominador de m</label><input type="text" inputmode="numeric" class="corto" id="rc-d" value="3"></div></div></div>
+      <div class="salida" aria-live="polite" id="rc-res"></div>
+      <div class="caja-atencion"><strong>Dos movimientos, no uno.</strong> La perpendicular se halla invirtiendo la fracción y cambiando el signo. Quedarse a medio camino (invertir sin cambiar el signo) es el error más frecuente de esta sección.</div>
+      <h3>Practique: paralelas y perpendiculares</h3>
+      <div class="practica" id="pa">
+        <div class="enun" id="pa-enun"></div>
+        <div class="opciones" id="pa-opciones"></div>
+        <div class="fb" id="pa-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="pa-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="pa-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 4 · Tema 1 · Geometría analítica · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script>
+function F(n, d){ return fr(n, d === undefined ? 1 : d); }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function pnF(f){ return f.n < 0 ? "(" + fTxt(f) + ")" : fTxt(f); }
+function opEq(txt, clave){ return {clave: clave || txt, html: eqHTML(txt)}; }
+var PEND = [F(-3), F(-2), F(-3, 2), F(-1), F(-2, 3), F(-1, 2), F(0), F(1, 2), F(2, 3), F(1), F(3, 2), F(2), F(3)];
+function grafRecta(lineas, ptos, voz, ancho){
+  var P = Plano({xmin: -8, xmax: 8, ymin: -8, ymax: 8, u: 26, paso: 2}), s = "";
+  lineas.forEach(function(l){ s += rectaPor(P, [0, fval(l.b)], [l.m.d, fval(l.b) + l.m.n], l.color || C4.azul, 3); });
+  (ptos || []).forEach(function(p){ s += P.punto(p.p, p.color || C4.rojo, p.nombre, p.lado); });
+  return P.svg(s, voz, ancho);
+}
+/* Step-by-step widget: gen() returns {enun, pasos: [html], fin()} */
+function pasoAPaso4(pre, gen){
+  var caso, k;
+  function nuevo(){ caso = gen(); k = 0; $(pre + "-enun").innerHTML = caso.enun; $(pre + "-pasos").innerHTML = ""; $(pre + "-sig").disabled = false; $(pre + "-todo").disabled = false; if (caso.inicio) caso.inicio(); }
+  function uno(){ if (k >= caso.pasos.length) return; var d = document.createElement("div"); d.className = "paso4"; d.innerHTML = '<span class="nn" aria-hidden="true">' + (k === caso.pasos.length - 1 ? "✓" : k + 1) + "</span> " + caso.pasos[k]; $(pre + "-pasos").appendChild(d); k++;
+    if (k >= caso.pasos.length){ $(pre + "-sig").disabled = true; $(pre + "-todo").disabled = true; if (caso.fin) caso.fin(); } }
+  $(pre + "-sig").addEventListener("click", uno);
+  $(pre + "-todo").addEventListener("click", function(){ while (k < caso.pasos.length) uno(); });
+  $(pre + "-nuevo").addEventListener("click", nuevo);
+  nuevo();
+}
+
+/* ===== MODULE 1 · y = mx + b ===== */
+function siPinta(){
+  var m = PEND[+$("si-m").value], b = +$("si-b").value;
+  $("si-mv").innerHTML = mHTML(m); $("si-bv").textContent = sg(b);
+  var P = Plano({xmin: -8, xmax: 8, ymin: -8, ymax: 8, u: 28, paso: 2}), s = rectaPor(P, [0, b], [m.d, b + m.n], C4.azul, 3.5);
+  if (m.n !== 0){ var a = [0, b], c = [m.d, b], e = [m.d, b + m.n]; if (e[1] <= 8 && e[1] >= -8) s += P.seg(a, c, "#1565c0", 3, "7 5") + P.seg(c, e, "#c62828", 3, "7 5") + P.texto([m.d / 2, b], String(m.d), "#1565c0", 13, "middle", 0, m.n > 0 ? 14 : -12) + P.texto([m.d, b + m.n / 2], sg(m.n), "#c62828", 13, "start", 8, 0); }
+  s += P.punto([0, b], C4.rojo, "(0, " + sg(b) + ")", "nw");
+  var eq = eqSI(m, F(b));
+  $("si-svg").innerHTML = P.svg(s, T("Graph of ", "Gráfica de ") + vozEq(eq) + T(". It crosses the y-axis at (0, ", ". Cruza el eje y en (0, ") + sg(b) + ").", 480);
+  $("si-eq").innerHTML = '<div class="linea veredicto" style="font-size:22px">' + eqHTML(eq) + "</div>" +
+    '<div class="linea">' + (m.n === 0 ? T("With m = 0 the line lies flat: it does not go up or down, and its equation is just y = b. Its slope is not missing: it is zero.", "Con m = 0 la recta se acuesta: no sube ni baja, y su ecuación queda y = b. No es una recta «sin pendiente»: su pendiente vale cero.") :
+      T("From (0, ", "Desde (0, ") + sg(b) + T("), each time you move ", "), cada vez que avanza ") + m.d + T(" to the right the line goes ", " a la derecha, la recta ") + (m.n > 0 ? T("up ", "sube ") : T("down ", "baja ")) + Math.abs(m.n) + ".") + "</div>";
+}
+$("si-m").addEventListener("input", siPinta); $("si-b").addEventListener("input", siPinta); siPinta();
+OMR("sq", function(){
+  var m = elige(PEND.filter(function(x){ return x.n !== 0; })), b = F(aleatorio(-6, 6)), r = Math.random(), eq = eqSI(m, b);
+  var malos = [eqSI(fneg(m), b), eqSI(m, fneg(b)), m.d === 1 && b.n !== 0 && b.d === 1 ? eqSI(b, m) : eqSI(fdiv(F(1), m), b), eqSI(fneg(m), fneg(b))];
+  if (r < 0.4){
+    return {enun: T("Which equation matches this line?", "¿Qué ecuación corresponde a esta recta?") + grafRecta([{m: m, b: b}], [{p: [0, fval(b)], nombre: "", color: C4.rojo}], T("A line on the coordinate plane that crosses the y-axis at ", "Una recta en el plano que cruza el eje y en ") + fTxt(b) + T(" and goes ", " y que ") + (m.n > 0 ? T("up ", "sube ") : T("down ", "baja ")) + Math.abs(m.n) + T(" for every ", " por cada ") + m.d + T(" to the right.", " a la derecha."), 300),
+      correcta: eq, opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+      pista: T("Find b where the line crosses the y-axis. Then count the rise and the run from that point: m = rise ÷ run.", "Busque b donde la recta corta el eje y. Después cuente la elevación y el avance desde ese punto: m = elevación ÷ avance."), bien: eqHTML(eq) + "."};
+  }
+  if (r < 0.7){
+    var ok = "m = " + fTxt(m) + ", b = " + fTxt(b);
+    return {enun: T("What are the slope and the y-intercept of ", "¿Cuáles son la pendiente y el intercepto de ") + eqHTML(eq) + "?", correcta: ok,
+      opciones: [ok, "m = " + fTxt(b) + ", b = " + fTxt(m), "m = " + fTxt(fneg(m)) + ", b = " + fTxt(b), "m = " + fTxt(m) + ", b = " + fTxt(fneg(b))].map(function(x){ return {clave: x, html: x}; }),
+      pista: T("m is the number with x (keep its sign); b is the number by itself.", "m es el número que acompaña a la x (con su signo); b es el número solo."), bien: ok + "."};
+  }
+  return {enun: T("A line has slope ", "Una recta tiene pendiente ") + fTxt(m) + T(" and crosses the y-axis at ", " y cruza el eje y en ") + fTxt(b) + T(". What is its equation?", ". ¿Cuál es su ecuación?"), correcta: eq,
+    opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })), pista: T("Put m with x and b by itself: y = mx + b.", "Ponga m con la x y b sola: y = mx + b."), bien: eqHTML(eq) + "."};
+});
+
+/* ===== MODULE 2 · Point-slope ===== */
+function casoPS(){
+  var dos = Math.random() < 0.5, m, x1, y1, x2, y2;
+  if (dos){ do { m = F(elige([-3, -2, -1, 1, 2, 3])); x1 = aleatorio(-4, 3); y1 = aleatorio(-5, 5); var d = elige([1, 2, 3]); x2 = x1 + d; y2 = y1 + m.n * d; } while (y2 > 8 || y2 < -8); }
+  else { m = elige([F(-3), F(-2), F(2), F(3), F(4), F(-1), F(1, 2), F(-1, 2)]); x1 = m.d === 2 ? elige([-4, -2, 2, 4]) : aleatorio(-4, 4); y1 = aleatorio(-5, 5); if (x1 === 0) x1 = 1; }
+  var b = fsum(F(y1), fmul(fneg(m), F(x1))), eq = eqSI(m, b), mx1 = fmul(m, F(x1)), pasos = [];
+  if (dos) pasos.push(T("First, the slope: ", "Primero la pendiente: ") + "m = (" + sg(y2) + " − " + pn(y1) + ") ÷ (" + sg(x2) + " − " + pn(x1) + ") = " + sg(y2 - y1) + " ÷ " + sg(x2 - x1) + " = <strong>" + fTxt(m) + "</strong>.");
+  pasos.push(T("Substitute m and the point (", "Se sustituyen m y el punto (") + sg(x1) + ", " + sg(y1) + T(") in y − y₁ = m(x − x₁): ", ") en y − y₁ = m(x − x₁): ") + eqHTML(eqPS(m, F(x1), F(y1))) + ".");
+  pasos.push(T("Distribute m: ", "Se distribuye m: ") + eqHTML(restaTxt("y", F(y1)) + " = " + coefX(m) + constTxt(fneg(mx1))) + ".");
+  pasos.push(T("Solve for y (", "Se despeja y (") + (y1 >= 0 ? T("add ", "se suma ") + y1 : T("subtract ", "se resta ") + Math.abs(y1)) + T(" on both sides): ", " a los dos lados): ") + eqHTML(eq) + ".");
+  return {m: m, x1: x1, y1: y1, x2: x2, y2: y2, b: b, eq: eq, dos: dos, pasos: pasos};
+}
+pasoAPaso4("ps", function(){
+  var c = casoPS();
+  return {enun: c.dos ? T("Write the equation of the line through ", "Escriba la ecuación de la recta que pasa por ") + parHTML(c.x1, c.y1) + T(" and ", " y ") + parHTML(c.x2, c.y2) + "." :
+      T("Write the equation of the line with slope ", "Escriba la ecuación de la recta de pendiente ") + fTxt(c.m) + T(" through ", " que pasa por ") + parHTML(c.x1, c.y1) + ".",
+    pasos: c.pasos, inicio: function(){ $("ps-svg").innerHTML = ""; },
+    fin: function(){ var pts = [{p: [c.x1, c.y1], nombre: par(c.x1, c.y1), color: C4.rojo}]; if (c.dos) pts.push({p: [c.x2, c.y2], nombre: par(c.x2, c.y2), color: C4.morado});
+      $("ps-svg").innerHTML = grafRecta([{m: c.m, b: c.b}], pts, T("The line ", "La recta ") + vozEq(c.eq) + T(" with the given points marked.", " con los puntos del enunciado marcados."), 420); }};
+});
+OMR("pq", function(){
+  var c = casoPS(), eq = c.eq;
+  var malos = [eqSI(c.m, F(c.y1)), eqSI(c.m, fsum(F(c.y1), fmul(c.m, F(c.x1)))), eqSI(c.m, fneg(c.b)), eqSI(fneg(c.m), c.b)];
+  return {enun: (c.dos ? T("Which is the line through ", "¿Cuál es la recta que pasa por ") + parHTML(c.x1, c.y1) + T(" and ", " y ") + parHTML(c.x2, c.y2) + "?" :
+      T("Which is the line with slope ", "¿Cuál es la recta de pendiente ") + fTxt(c.m) + T(" through ", " que pasa por ") + parHTML(c.x1, c.y1) + "?"),
+    correcta: eq, opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+    pista: (c.dos ? T("Find the slope first. ", "Calcule primero la pendiente. ") : "") + T("Then use y − y₁ = m(x − x₁), distribute, and solve for y. Check: the point must make the equation true.", "Después use y − y₁ = m(x − x₁), distribuya y despeje y. Compruebe: el punto debe cumplir la ecuación."),
+    bien: eqHTML(eq) + T(". Check: ", ". Comprobación: ") + fTxt(c.m) + " · " + pn(c.x1) + " " + (c.b.n < 0 ? "− " + fTxt(fneg(c.b)) : "+ " + fTxt(c.b)) + " = " + sg(c.y1) + "."};
+});
+
+/* ===== MODULE 3 · Converting ===== */
+function casoForma(tipo){
+  var m, b, e, pasos = [], enun, res;
+  if (tipo === "si-std"){
+    m = elige([F(2), F(-3), F(4), F(1, 2), F(-2, 3), F(3, 4), F(-1), F(5)]); b = F(aleatorio(-6, 6)); if (b.n === 0) b = F(3);
+    e = estandar(m, b);
+    enun = T("Change ", "Convierta ") + eqHTML(eqSI(m, b)) + T(" to standard form.", " a la forma estándar.");
+    pasos.push(T("Move the x-term to the left side: ", "Se pasa el término con x al lado izquierdo: ") + eqHTML(coefX(fneg(m)) + " + y = " + fTxt(b)) + ".");
+    var k = m.d;
+    if (k > 1) pasos.push(T("Multiply everything by ", "Se multiplica todo por ") + k + T(" to clear the fraction: ", " para quitar la fracción: ") + eqHTML(eqStd({A: -m.n, B: k, C: b.n * k})) + ".");
+    if (-m.n < 0) pasos.push(T("Multiply by −1 so that A is positive: ", "Se multiplica por −1 para que A sea positivo: ") + eqHTML(eqStd(e)) + ".");
+    pasos.push(T("Standard form: ", "Forma estándar: ") + "<strong>" + eqHTML(eqStd(e)) + "</strong>.");
+    res = eqStd(e);
+  } else if (tipo === "std-si"){
+    var A = elige([1, 2, 3, 4, 5, 6]), Bv = elige([1, 2, 3, -1, -2, -3]), C = elige([-12, -6, 4, 6, 8, 12, 9, 10]); e = {A: A, B: Bv, C: C};
+    m = F(-A, Bv); b = F(C, Bv);
+    enun = T("Change ", "Convierta ") + eqHTML(eqStd(e)) + T(" to slope-intercept form.", " a la forma pendiente-intercepto.");
+    pasos.push(T("Leave the y-term alone (move the x-term to the right): ", "Se deja solo el término con y (el término con x pasa a la derecha): ") + eqHTML((Bv === 1 ? "" : Bv === -1 ? "−" : sg(Bv)) + "y = " + coefX(F(-A)) + constTxt(F(C))) + ".");
+    if (Bv !== 1) pasos.push(T("Divide every term by ", "Se divide cada término entre ") + pn(Bv) + ": " + eqHTML(eqSI(m, b)) + ".");
+    pasos.push(T("Slope ", "Pendiente ") + fTxt(m) + T(", intercept ", ", intercepto ") + fTxt(b) + ": <strong>" + eqHTML(eqSI(m, b)) + "</strong>.");
+    res = eqSI(m, b);
+  } else {
+    m = elige([F(2), F(-3), F(4), F(-1), F(1, 2), F(-1, 2)]); var x1 = m.d === 2 ? elige([-4, -2, 2, 4]) : aleatorio(-4, 4), y1 = aleatorio(-5, 5); if (!x1) x1 = 2;
+    b = fsum(F(y1), fmul(fneg(m), F(x1)));
+    enun = T("Change ", "Convierta ") + eqHTML(eqPS(m, F(x1), F(y1))) + T(" to slope-intercept form.", " a la forma pendiente-intercepto.");
+    pasos.push(T("Distribute: ", "Se distribuye: ") + eqHTML(restaTxt("y", F(y1)) + " = " + coefX(m) + constTxt(fneg(fmul(m, F(x1))))) + ".");
+    pasos.push(T("Solve for y: ", "Se despeja y: ") + "<strong>" + eqHTML(eqSI(m, b)) + "</strong>.");
+    res = eqSI(m, b);
+  }
+  return {enun: enun, pasos: pasos, res: res, m: m, b: b, tipo: tipo};
+}
+pasoAPaso4("fc", function(){ var c = casoForma(elige(["si-std", "std-si", "ps-si"])); return {enun: c.enun, pasos: c.pasos}; });
+OMR("fq", function(){
+  var c = casoForma(elige(["si-std", "std-si", "std-si", "ps-si"])), malos;
+  if (c.tipo === "si-std"){ var e = estandar(c.m, c.b); malos = [eqStd({A: e.A, B: e.B, C: -e.C}), eqStd({A: e.A, B: -e.B, C: e.C}), eqStd({A: -e.A, B: e.B, C: e.C})]; }
+  else { malos = [eqSI(fneg(c.m), c.b), eqSI(c.m, fneg(c.b)), eqSI(fneg(c.m), fneg(c.b))]; }
+  return {enun: c.enun.replace(T("Change ", "Convierta "), T("Which is ", "¿Cuál es ")).replace(T(" to standard form.", " a la forma estándar."), T(" in standard form?", " en forma estándar?")).replace(T(" to slope-intercept form.", " a la forma pendiente-intercepto."), T(" in slope-intercept form?", " en forma pendiente-intercepto?")),
+    correcta: c.res, opciones: [opEq(c.res)].concat(malos.map(function(x){ return opEq(x); })),
+    pista: T("Do one step at a time and watch the signs when a term changes sides. Check with a value of x: both forms must give the same y.", "Haga un paso a la vez y cuide los signos cuando un término cambia de lado. Compruebe con un valor de x: las dos formas deben dar la misma y."),
+    bien: c.pasos.map(function(p){ return p.replace(/<strong>|<\/strong>/g, ""); }).join(" ")};
+});
+
+/* ===== MODULE 4 · Parallel and perpendicular ===== */
+var PARES = [[F(2), F(1), F(2), F(-4)], [F(2), F(1), F(-1, 2), F(3)], [F(3), F(-2), F(1, 3), F(1)], [F(-2, 5), F(1), F(5, 2), F(-3)], [F(4), F(0), F(4), F(5)], [F(1), F(2), F(-1), F(2)]];
+function relacion(m1, m2){ if (figual(m1, m2)) return "par"; if (figual(fmul(m1, m2), F(-1))) return "perp"; return "nin"; }
+var NOMREL = {par: T("parallel", "paralelas"), perp: T("perpendicular", "perpendiculares"), nin: T("neither parallel nor perpendicular", "ni paralelas ni perpendiculares")};
+function prPinta(){
+  var q = PARES[+$("pa-par").value], e1 = eqSI(q[0], q[1]), e2 = eqSI(q[2], q[3]), r = relacion(q[0], q[2]);
+  $("pa-svg").innerHTML = grafRecta([{m: q[0], b: q[1], color: C4.azul}, {m: q[2], b: q[3], color: "#e65100"}], [], T("The lines ", "Las rectas ") + vozEq(e1) + T(" (blue) and ", " (azul) y ") + vozEq(e2) + T(" (orange).", " (naranja)."), 420);
+  $("pa-res").innerHTML = '<div class="linea"><span style="color:' + C4.azul + ';font-weight:700">' + eqHTML(e1) + "</span> → m₁ = " + fTxt(q[0]) + "</div>" +
+    '<div class="linea"><span style="color:#e65100;font-weight:700">' + eqHTML(e2) + "</span> → m₂ = " + fTxt(q[2]) + "</div>" +
+    '<div class="linea veredicto">' + (r === "par" ? T("The slopes are equal: the lines are parallel.", "Las pendientes son iguales: las rectas son paralelas.") :
+      "m₁ × m₂ = " + fTxt(q[0]) + " × " + pnF(q[2]) + " = " + fTxt(fmul(q[0], q[2])) + (r === "perp" ? T(": the lines are perpendicular.", ": las rectas son perpendiculares.") : T(", not −1, and the slopes are different: neither parallel nor perpendicular.", ", no −1, y las pendientes son distintas: ni paralelas ni perpendiculares.") + (figual(q[2], fdiv(F(1), q[0])) ? " " + T("(The fraction was flipped, but the sign was not changed.)", "(Se invirtió la fracción, pero no se cambió el signo.)") : ""))) + "</div>";
+}
+$("pa-par").addEventListener("change", prPinta); prPinta();
+function rcCalcula(){
+  var n = leeEntero($("rc-n").value), d = leeEntero($("rc-d").value), o = $("rc-res");
+  if (n === null || d === null || d === 0){ o.innerHTML = '<div class="linea">' + T("Type a whole number in each box; the bottom cannot be 0.", "Escriba un número entero en cada casilla; el denominador no puede ser 0.") + "</div>"; return; }
+  var m = F(n, d);
+  if (m.n === 0){ o.innerHTML = '<div class="linea">' + T("m = 0 is a horizontal line. Its perpendicular is a vertical line, whose slope is undefined.", "m = 0 es una recta horizontal. Su perpendicular es una recta vertical, de pendiente indefinida.") + "</div>"; return; }
+  var inv = F(m.d, m.n), p = fneg(inv);
+  o.innerHTML = '<div class="linea">m = ' + fracHTML(m.n, m.d) + "</div>" +
+    '<div class="linea">1 · ' + T("Flip the fraction: ", "Se invierte la fracción: ") + fracHTML(inv.n, inv.d) + "</div>" +
+    '<div class="linea">2 · ' + T("Change the sign: ", "Se cambia el signo: ") + fracHTML(p.n, p.d) + "</div>" +
+    '<div class="linea veredicto">' + T("Perpendicular slope: ", "Pendiente perpendicular: ") + fracHTML(p.n, p.d) + T(". Check: ", ". Comprobación: ") + fTxt(m) + " × " + pnF(p) + " = −1.</div>";
+}
+["rc-n", "rc-d"].forEach(function(i){ $(i).addEventListener("input", rcCalcula); }); rcCalcula();
+OMR("pa", function(){
+  var r = Math.random(), m1 = elige(PEND.filter(function(x){ return x.n !== 0; })), recip = F(m1.d, m1.n), perp = fneg(recip);
+  if (r < 0.35){
+    var k = elige(["par", "perp", "nin", "nin2"]), m2 = k === "par" ? m1 : (k === "perp" ? perp : (k === "nin" ? recip : fneg(m1))), b1 = F(aleatorio(-5, 5)), b2 = F(aleatorio(-5, 5));
+    if (k === "par" && figual(b1, b2)) b2 = fsum(b2, F(2));
+    var rel = relacion(m1, m2);
+    return {enun: T("How are ", "¿Qué relación tienen ") + eqHTML(eqSI(m1, b1)) + T(" and ", " y ") + eqHTML(eqSI(m2, b2)) + T(" related?", "?"), correcta: rel, enOrden: true,
+      opciones: [{clave: "par", html: T("Parallel", "Paralelas")}, {clave: "perp", html: T("Perpendicular", "Perpendiculares")}, {clave: "nin", html: T("Neither", "Ninguna de las dos")}],
+      pista: T("Compare the slopes. Equal: parallel. Product −1: perpendicular.", "Compare las pendientes. Iguales: paralelas. Producto −1: perpendiculares."), bien: "m₁ = " + fTxt(m1) + ", m₂ = " + fTxt(m2) + ": " + NOMREL[rel] + "."};
+  }
+  if (r < 0.7){
+    var quiere = Math.random() < 0.5 ? "perp" : "par", ok = quiere === "perp" ? perp : m1;
+    var ops = [m1, perp, recip, fneg(m1)].filter(function(x, i, a){ return a.findIndex(function(y){ return figual(x, y); }) === i; });
+    return {enun: T("What is the slope of a line ", "¿Cuál es la pendiente de una recta ") + (quiere === "perp" ? T("perpendicular", "perpendicular") : T("parallel", "paralela")) + T(" to ", " a ") + eqHTML(eqSI(m1, F(aleatorio(-5, 5)))) + "?", correcta: fTxt(ok),
+      opciones: ops.map(function(x){ return {clave: fTxt(x), html: fracHTML(x.n, x.d)}; }),
+      porClave: (function(){ var o = {}; o[fTxt(recip)] = T("You flipped it, but you also need to change the sign.", "La invirtió, pero falta cambiar el signo."); o[fTxt(fneg(m1))] = T("You changed the sign, but you also need to flip it.", "Cambió el signo, pero falta invertirla."); return o; })(),
+      pista: quiere === "perp" ? T("Perpendicular: flip the fraction and change the sign.", "Perpendicular: se invierte la fracción y se cambia el signo.") : T("Parallel: the same slope, sign included.", "Paralela: la misma pendiente, con su signo."), bien: fTxt(ok) + "."};
+  }
+  var quiere2 = Math.random() < 0.5 ? "perp" : "par", mm = quiere2 === "perp" ? perp : m1, x1 = mm.d === 1 ? aleatorio(-3, 3) : mm.d * elige([-1, 1]), y1 = aleatorio(-4, 4), bb = fsum(F(y1), fmul(fneg(mm), F(x1))), eq = eqSI(mm, bb);
+  var malos = [eqSI(quiere2 === "perp" ? m1 : perp, bb), eqSI(mm, F(y1)), eqSI(quiere2 === "perp" ? recip : fneg(m1), bb)];
+  return {enun: T("Which line is ", "¿Qué recta es ") + (quiere2 === "perp" ? T("perpendicular", "perpendicular") : T("parallel", "paralela")) + T(" to ", " a ") + eqHTML(eqSI(m1, F(aleatorio(-5, 5)))) + T(" and goes through ", " y pasa por ") + parHTML(x1, y1) + "?", correcta: eq,
+    opciones: [opEq(eq)].concat(malos.map(function(x){ return opEq(x); })),
+    pista: T("First the slope (", "Primero la pendiente (") + (quiere2 === "perp" ? T("flip and change the sign", "se invierte y se cambia el signo") : T("the same one", "la misma")) + T("), then use the point in y − y₁ = m(x − x₁).", "), después use el punto en y − y₁ = m(x − x₁)."), bien: "m = " + fTxt(mm) + ": " + eqHTML(eq) + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

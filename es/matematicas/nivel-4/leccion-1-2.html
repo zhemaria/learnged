@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 1.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 1.2 · La pendiente: concepto, fórmula e interpretación · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-1-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 1 — Geometría analítica</p>
+<h1>Lección 1.2 · La pendiente: concepto, fórmula e interpretación</h1>
+<p class="lema">Calcule la pendiente de una recta desde su gráfica y desde dos puntos, distinga los cuatro tipos y lea la pendiente como una tasa de cambio.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Papel cuadriculado</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Calcular</strong> la pendiente de una recta desde su gráfica (elevación entre avance).</li>
+<li><strong>Calcular</strong> la pendiente a partir de dos puntos con la fórmula m = (y₂ − y₁) ÷ (x₂ − x₁).</li>
+<li><strong>Identificar</strong> pendientes positivas, negativas, cero e indefinidas.</li>
+<li><strong>Interpretar</strong> la pendiente como una tasa de cambio y comparar dos rectas por su inclinación.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.5.b</span> Hallar la pendiente de una recta a partir de una gráfica, una ecuación o una tabla.</li><li><span class="std-cod std-dir">A.5.c</span> Interpretar la tasa unitaria como la pendiente en una relación proporcional.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">A.6.a</span> Escribir la ecuación de una recta con una pendiente dada que pasa por un punto dado.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.2.c</span> Reconocer los datos importantes y destacados de un problema.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.EE.5</span> <span class="std-nivel">Nivel D</span> Graficar relaciones proporcionales e interpretar la tasa unitaria como la pendiente de la gráfica. Comparar dos relaciones proporcionales representadas de maneras distintas.</li><li><span class="std-cod std-ccr">8.EE.6</span> <span class="std-nivel">Nivel D</span> Usar triángulos semejantes para explicar por qué la pendiente m es la misma entre dos puntos cualesquiera de una recta no vertical del plano de coordenadas; deducir la ecuación y = mx de una recta que pasa por el origen y la ecuación y = mx + b de una recta que corta el eje vertical en b.</li><li><span class="std-cod std-ccr">8.F.4</span> <span class="std-nivel">Nivel D</span> Construir una función que modele una relación lineal entre dos cantidades. Hallar la tasa de cambio y el valor inicial de la función a partir de una descripción o de dos valores (x, y), incluso leyéndolos en una tabla o una gráfica. Interpretar la tasa de cambio y el valor inicial de una función lineal según la situación que modela y según su gráfica o su tabla de valores.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-pendiente">¿Qué es la pendiente?</a></li>
+<li><a href="#s-dos-puntos">La pendiente a partir de dos puntos</a></li>
+<li><a href="#s-tipos">Los cuatro tipos de pendiente</a></li>
+<li><a href="#s-tasa">La pendiente como tasa de cambio</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-pendiente"><span aria-hidden="true" class="num-seccion">1</span>¿Qué es la pendiente?</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 1.1 se calcularon el cambio horizontal (Δx) y el cambio vertical (Δy) entre dos puntos para hallar la distancia. Esta lección usa exactamente esos dos cambios, pero ahora en forma de <strong>cociente</strong>: la pendiente mide cuánto sube o baja una recta (Δy) por cada unidad que avanza hacia la derecha (Δx). Es el concepto que une la geometría del plano con el álgebra de la recta de la Lección 1.3.</p>
+<p>La <strong>pendiente</strong> de una recta, que se representa con la letra <strong>m</strong>, mide su inclinación. Es el cociente entre la <strong>elevación</strong> (cuánto sube o baja, el cambio vertical) y el <strong>avance</strong> (cuánto se desplaza a la derecha, el cambio horizontal):</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">m = elevación ÷ avance = Δy ÷ Δx</p>
+<svg viewBox="0 0 340 340" role="img" aria-label="Una recta que pasa por (1, 1) y (3, 4). Del primer punto al segundo la recta avanza 2 hacia la derecha (el avance) y sube 3 (la elevación), así que su pendiente es 3/2." style="width:100%;max-width:380px;height:auto;display:block;margin:12px auto;"><line x1="30" y1="30" x2="30" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="70" y1="30" x2="70" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="110" y1="30" x2="110" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="150" y1="30" x2="150" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="190" y1="30" x2="190" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="230" y1="30" x2="230" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="270" y1="30" x2="270" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="310" y1="30" x2="310" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="310" x2="310" y2="310" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="270" x2="310" y2="270" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="230" x2="310" y2="230" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="190" x2="310" y2="190" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="150" x2="310" y2="150" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="110" x2="310" y2="110" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="70" x2="310" y2="70" stroke="#cfd8dc" stroke-width="1"/><line x1="30" y1="30" x2="310" y2="30" stroke="#cfd8dc" stroke-width="1"/><line x1="22" y1="270" x2="320" y2="270" stroke="#10174f" stroke-width="2"/><line x1="70" y1="318" x2="70" y2="20" stroke="#10174f" stroke-width="2"/><polygon points="324,270 314,265 314,275" fill="#10174f"/><polygon points="70,16 65,26 75,26" fill="#10174f"/><text x="324" y="258" font-size="16" font-style="italic" font-weight="700" fill="#10174f" text-anchor="middle">x</text><text x="84" y="20" font-size="16" font-style="italic" font-weight="700" fill="#10174f">y</text><text x="30" y="288" font-size="13" fill="#455a64" text-anchor="middle">−1</text><text x="110" y="288" font-size="13" fill="#455a64" text-anchor="middle">1</text><text x="150" y="288" font-size="13" fill="#455a64" text-anchor="middle">2</text><text x="190" y="288" font-size="13" fill="#455a64" text-anchor="middle">3</text><text x="230" y="288" font-size="13" fill="#455a64" text-anchor="middle">4</text><text x="270" y="288" font-size="13" fill="#455a64" text-anchor="middle">5</text><text x="64" y="314" font-size="13" fill="#455a64" text-anchor="end">−1</text><text x="64" y="234" font-size="13" fill="#455a64" text-anchor="end">1</text><text x="64" y="194" font-size="13" fill="#455a64" text-anchor="end">2</text><text x="64" y="154" font-size="13" fill="#455a64" text-anchor="end">3</text><text x="64" y="114" font-size="13" fill="#455a64" text-anchor="end">4</text><text x="64" y="74" font-size="13" fill="#455a64" text-anchor="end">5</text><line x1="56.7" y1="310.0" x2="243.3" y2="30.0" stroke="#90a4ae" stroke-width="2.5" stroke-linecap="round"/><line x1="110.0" y1="230.0" x2="190.0" y2="230.0" stroke="#1565c0" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><line x1="190.0" y1="230.0" x2="190.0" y2="110.0" stroke="#c62828" stroke-width="3" stroke-dasharray="7 5" stroke-linecap="round"/><text x="150.0" y="246.0" font-size="14" font-weight="700" fill="#1565c0" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">avance = 2</text><text x="200.0" y="170.0" font-size="14" font-weight="700" fill="#c62828" text-anchor="start" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">elevación = 3</text><circle cx="110.0" cy="230.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="100.0" y="220.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">(1, 1)</text><circle cx="190.0" cy="110.0" r="6" fill="#0d47a1" stroke="#fff" stroke-width="2"/><text x="180.0" y="100.0" font-size="15" font-weight="700" fill="#0d47a1" text-anchor="end" paint-order="stroke" stroke="#fff" stroke-width="4">(3, 4)</text><text x="242.0" y="102.0" font-size="16" font-weight="700" fill="#10174f" text-anchor="middle" dominant-baseline="middle" paint-order="stroke" stroke="#fff" stroke-width="4">m = 3/2</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Una idea clave</span>
+<p>La pendiente es constante a lo largo de toda la recta. No importa qué par de puntos se elija sobre la misma recta: elevación entre avance siempre da el mismo número.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#pendiente" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la pendiente en movimiento (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la pendiente en movimiento</span><span class="ei-sub">Mueva dos puntos sobre una recta y observe cómo cambian la elevación, el avance y la pendiente.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-dos-puntos"><span aria-hidden="true" class="num-seccion">2</span>La pendiente a partir de dos puntos</h2>
+<p>Cuando se conocen dos puntos (x₁, y₁) y (x₂, y₂), la pendiente se calcula con la fórmula:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">m = (y₂ − y₁) ÷ (x₂ − x₁)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Pendiente positiva. Hallar la pendiente de la recta que pasa por (1, 2) y (4, 11).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Elevación (numerador).</strong> y₂ − y₁ = 11 − 2 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Avance (denominador).</strong> x₂ − x₁ = 4 − 1 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Cociente.</strong> m = 9 ÷ 3 = 3.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La pendiente es <strong>3</strong> (positiva: la recta sube).</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Pendiente negativa. Hallar la pendiente de la recta que pasa por (0, 0) y (5, −10).</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Elevación.</strong> −10 − 0 = −10.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Avance.</strong> 5 − 0 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Cociente.</strong> m = −10 ÷ 5 = −2.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La pendiente es <strong>−2</strong> (negativa: la recta baja).</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Mantenga el mismo orden</span>
+<p>El punto que se resta primero en el numerador debe ser el mismo que se resta primero en el denominador. Si se invierte solo uno de los dos, el signo de la pendiente sale mal. La elevación va arriba: Δx ÷ Δy es el error más común.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Por (1, 1) y (3, 7)</h3></div>
+<p class="pregunta-int" id="t-p1">¿Cuál es la pendiente de la recta que pasa por (1, 1) y (3, 7)?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">1/3</button>
+<button class="opcion" data-k="b" type="button">2</button>
+<button class="opcion" data-k="c" type="button">3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Por (0, 4) y (2, 0)</h3></div>
+<p class="pregunta-int" id="t-p2">¿Cuál es la pendiente de la recta que pasa por (0, 4) y (2, 0)?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">2</button>
+<button class="opcion" data-k="b" type="button">−2</button>
+<button class="opcion" data-k="c" type="button">−1/2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — Por (2, 3) y (6, 3)</h3></div>
+<p class="pregunta-int" id="t-p3">¿Cuál es la pendiente de la recta que pasa por (2, 3) y (6, 3)?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">0</button>
+<button class="opcion" data-k="b" type="button">indefinida</button>
+<button class="opcion" data-k="c" type="button">4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#dos-puntos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la pendiente con dos puntos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la pendiente con dos puntos</span><span class="ei-sub">Calcule la elevación, el avance y el cociente paso a paso, con puntos nuevos cada vez.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tipos"><span aria-hidden="true" class="num-seccion">3</span>Los cuatro tipos de pendiente</h2>
+<p>El signo y el valor de la pendiente describen la dirección de la recta. Las rectas se leen siempre de izquierda a derecha.</p>
+<svg viewBox="0 0 560 170" role="img" aria-label="Cuatro gráficas pequeñas: una recta que sube de izquierda a derecha (pendiente positiva), una que baja (pendiente negativa), una horizontal (pendiente cero) y una vertical (pendiente indefinida)." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><rect x="10" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="20" y1="72.5" x2="125" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="72.5" y1="20" x2="72.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="36.5" y1="108.5" x2="108.5" y2="36.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="72.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Positiva</text><rect x="145" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="155" y1="72.5" x2="260" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="207.5" y1="20" x2="207.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="171.5" y1="36.5" x2="243.5" y2="108.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="207.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Negativa</text><rect x="280" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="290" y1="72.5" x2="395" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="342.5" y1="20" x2="342.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="297.5" y1="54.5" x2="387.5" y2="54.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="342.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Cero</text><rect x="415" y="10" width="125" height="125" rx="10" fill="#fff" stroke="#cfd8dc"/><line x1="425" y1="72.5" x2="530" y2="72.5" stroke="#b0bec5" stroke-width="1.5"/><line x1="477.5" y1="20" x2="477.5" y2="125" stroke="#b0bec5" stroke-width="1.5"/><line x1="495.5" y1="117.5" x2="495.5" y2="27.5" stroke="#0d47a1" stroke-width="4" stroke-linecap="round"/><text x="477.5" y="158" font-size="15" font-weight="700" fill="#10174f" text-anchor="middle">Indefinida</text></svg>
+<div aria-label="Los cuatro tipos de pendiente (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Tipos de pendiente: cómo se ve la recta y el signo o valor de m</caption>
+<thead><tr><th scope="col">Tipo</th><th scope="col">¿Cómo se ve la recta?</th><th scope="col">Valor de m</th></tr></thead>
+<tbody>
+<tr><td>Positiva</td><td>Sube de izquierda a derecha.</td><td>m > 0</td></tr>
+<tr><td>Negativa</td><td>Baja de izquierda a derecha.</td><td>m < 0</td></tr>
+<tr><td>Cero</td><td>Horizontal (plana).</td><td>m = 0</td></tr>
+<tr><td>Indefinida</td><td>Vertical.</td><td>m no existe (avance = 0)</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">¿Por qué la vertical es indefinida?</span>
+<p>En una recta vertical todos los puntos tienen la misma x, así que el avance (x₂ − x₁) es 0. Como no se puede dividir entre 0, la pendiente no existe. En cambio, en la horizontal la elevación es 0, así que m = 0 ÷ avance = 0.</p>
+</div>
+<p>Para comparar dos rectas, la <strong>más empinada</strong> es la que tiene el mayor <strong>valor absoluto</strong> de la pendiente. Por ejemplo, una recta con m = −5 es más empinada que una con m = 3, aunque una baje y la otra suba.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Una recta que sube</h3></div>
+<p class="pregunta-int" id="t-p4">Una recta que sube de izquierda a derecha tiene pendiente…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">negativa</button>
+<button class="opcion" data-k="b" type="button">cero</button>
+<button class="opcion" data-k="c" type="button">positiva</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Una recta vertical</h3></div>
+<p class="pregunta-int" id="t-p5">Una recta vertical tiene pendiente…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">indefinida</button>
+<button class="opcion" data-k="b" type="button">cero</button>
+<button class="opcion" data-k="c" type="button">positiva</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — La más empinada</h3></div>
+<p class="pregunta-int" id="t-p6">¿Qué pendiente corresponde a la recta más empinada?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">m = 2/3</button>
+<button class="opcion" data-k="b" type="button">m = 4</button>
+<button class="opcion" data-k="c" type="button">m = 1</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#tipos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los cuatro tipos de pendiente (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los cuatro tipos de pendiente</span><span class="ei-sub">Positiva, negativa, cero o indefinida: reconózcala en la gráfica y en los puntos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tasa"><span aria-hidden="true" class="num-seccion">4</span>La pendiente como tasa de cambio</h2>
+<p>Fuera del plano, la pendiente cobra un significado muy útil: es una <strong>tasa de cambio</strong>, es decir, cuánto cambia una cantidad por cada unidad de la otra. Las unidades de la pendiente son siempre «unidades de y por cada unidad de x».</p>
+<div aria-label="La pendiente como tasa de cambio (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Ejemplos de la pendiente interpretada como tasa de cambio en distintas situaciones</caption>
+<thead><tr><th scope="col">Situación</th><th scope="col">La pendiente representa…</th></tr></thead>
+<tbody>
+<tr><td>Distancia recorrida vs. tiempo</td><td>la velocidad (millas por hora).</td></tr>
+<tr><td>Salario vs. horas trabajadas</td><td>la paga por hora (dólares por hora).</td></tr>
+<tr><td>Costo total vs. unidades compradas</td><td>el precio por unidad (dólares por unidad).</td></tr>
+<tr><td>Agua en un tanque vs. tiempo</td><td>qué tan rápido se llena o se vacía (galones por minuto).</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Interpretar la pendiente. La gráfica de la distancia que recorre un auto (en millas) en función del tiempo (en horas) es una recta de pendiente 60. ¿Qué significa esa pendiente?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Las unidades.</strong> Millas por hora.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>El significado.</strong> Una pendiente de 60 indica que, por cada hora que pasa, la distancia aumenta 60 millas.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El auto viaja a una velocidad constante de <strong>60 millas por hora</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">El signo también se interpreta</span>
+<p>Una tasa positiva indica que la cantidad aumenta; una negativa, que disminuye. Un tanque que se vacía a −10 galones por minuto pierde 10 galones cada minuto: conviene decirlo con palabras, no solo con el signo.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 7 — La factura de la luz</h3></div>
+<p class="pregunta-int" id="t-p7">La gráfica del costo total de la electricidad en función de los kilovatios-hora consumidos es una recta de pendiente 0.15 (dólares por kWh). ¿Qué representa la pendiente?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Cada kWh adicional cuesta $0.15</button>
+<button class="opcion" data-k="b" type="button">El cargo fijo del servicio</button>
+<button class="opcion" data-k="c" type="button">El total de la factura es $0.15</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#tasa" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la pendiente como tasa de cambio (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la pendiente como tasa de cambio</span><span class="ei-sub">Calcule la tasa con sus unidades a partir de tablas y gráficas, y diga qué significa.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-1-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno y papel cuadriculado: (1) Seis pendientes a partir de dos puntos, dos de ellas con coordenadas negativas. Escriba la elevación y el avance antes de dividir, y simplifique la fracción. (2) Cuatro rectas dibujadas, una de cada tipo (positiva, negativa, cero e indefinida). Explique en una oración por qué cada una tiene esa pendiente. (3) Tres rectas distintas con pendiente 3/5 que pasen por puntos diferentes. Escriba qué tienen en común y por qué. (4) Tres situaciones de su vida diaria (una tarifa, una velocidad, un ahorro) expresadas como tasa de cambio con sus unidades, y una oración que interprete cada una. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Mire una factura de la luz, del gas o del teléfono. Busque el precio por unidad (por kWh, por therm, por GB) y escríbalo como una pendiente: «dólares por ___». Si consumiera 100 unidades más, ¿cuánto más pagaría? Después busque una señal de carretera que avise de una pendiente pronunciada (por ejemplo, «7% grade»): ese porcentaje también es una pendiente, 7 pies de elevación por cada 100 pies de avance.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">En una gráfica, una recta sube 3 unidades por cada 2 que avanza a la derecha. ¿Cuál es su pendiente?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2/3</button><button class="opcion" data-k="b" type="button">5</button><button class="opcion" data-k="c" type="button">1</button><button class="opcion" data-k="d" type="button">3/2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">En una gráfica, una recta baja 4 unidades por cada 1 que avanza. ¿Cuál es su pendiente?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4</button><button class="opcion" data-k="b" type="button">−1/4</button><button class="opcion" data-k="c" type="button">−4</button><button class="opcion" data-k="d" type="button">1/4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">¿Cuál es la pendiente de una recta horizontal?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">0</button><button class="opcion" data-k="b" type="button">1</button><button class="opcion" data-k="c" type="button">indefinida</button><button class="opcion" data-k="d" type="button">negativa</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">¿Cuál es la pendiente de la recta que pasa por (1, 2) y (4, 11)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9</button><button class="opcion" data-k="b" type="button">3</button><button class="opcion" data-k="c" type="button">1/3</button><button class="opcion" data-k="d" type="button">13</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Cuál es la pendiente de la recta que pasa por (0, 0) y (5, −10)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">2</button><button class="opcion" data-k="b" type="button">−1/2</button><button class="opcion" data-k="c" type="button">−2</button><button class="opcion" data-k="d" type="button">−10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Cuál es la pendiente de la recta que pasa por (4, 1) y (4, 7)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">indefinida</button><button class="opcion" data-k="b" type="button">0</button><button class="opcion" data-k="c" type="button">6</button><button class="opcion" data-k="d" type="button">3/2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">¿Cuál de estas pendientes corresponde a la recta más empinada?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">m = 1/2</button><button class="opcion" data-k="b" type="button">m = 3</button><button class="opcion" data-k="c" type="button">m = 0</button><button class="opcion" data-k="d" type="button">m = −5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">La gráfica de distancia (millas) en función del tiempo (horas) es una recta de pendiente 60. ¿Qué significa?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Recorre 60 millas en total</button><button class="opcion" data-k="b" type="button">Tarda 60 horas</button><button class="opcion" data-k="c" type="button">Recorre 60 millas por cada hora</button><button class="opcion" data-k="d" type="button">Va a 60 pies por segundo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la pendiente (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas para calcular, clasificar e interpretar la pendiente y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcular la pendiente</th><td>Calculo la pendiente desde la gráfica o desde dos puntos sin errores (elevación entre avance).</td><td>Cometo errores ocasionales de signo.</td><td>Confundo la elevación con el avance o invierto el cociente.</td></tr>
+<tr><th scope="row">Identificar el tipo de pendiente</th><td>Distingo los cuatro tipos y comparo inclinaciones por el valor absoluto.</td><td>Reconozco algunos tipos, pero confundo cero con indefinida.</td><td>No distingo los cuatro tipos.</td></tr>
+<tr><th scope="row">Interpretar como tasa de cambio</th><td>Interpreto la pendiente como tasa con las unidades correctas y explico qué significa su signo.</td><td>Interpreto la pendiente, pero omito o confundo las unidades.</td><td>No relaciono la pendiente con un significado real.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se definió la <strong>pendiente</strong> como elevación entre avance (Δy ÷ Δx), se calculó desde una gráfica y desde dos puntos, se clasificaron los cuatro tipos (positiva, negativa, cero e indefinida) y se interpretó como una <strong>tasa de cambio</strong> con unidades.</p>
+<p>En la <strong>Lección 1.3 · Ecuaciones de la recta</strong> se unirán la pendiente y el intercepto para <strong>escribir la ecuación</strong> de una recta. Se usará la forma y = mx + b, se convertirá entre las tres formas de la ecuación y se reconocerán las rectas <strong>paralelas</strong> (misma pendiente) y <strong>perpendiculares</strong> (pendientes recíprocas negativas).</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 1.3 · Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>pendiente (m)</dt><dd>La inclinación de una recta: elevación ÷ avance, Δy ÷ Δx.</dd>
+<dt>elevación</dt><dd>El cambio vertical entre dos puntos, y₂ − y₁.</dd>
+<dt>avance</dt><dd>El cambio horizontal entre dos puntos, x₂ − x₁.</dd>
+<dt>pendiente indefinida</dt><dd>La pendiente de una recta vertical: el avance es 0.</dd>
+<dt>tasa de cambio</dt><dd>Cuánto cambia una cantidad por cada unidad de otra, como millas por hora.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 1 · Lección 1.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 1.3",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Dividió el avance entre la elevación. La elevación va arriba: 6 ÷ 2.",
+    "b": "Revise la elevación: 7 − 1 = 6, y el avance: 3 − 1 = 2."
+   },
+   "right": "(7 − 1) ÷ (3 − 1) = 6 ÷ 2 = 3.",
+   "solution": "m = 6 ÷ 2 = 3."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "La recta baja (la y pasa de 4 a 0), así que la pendiente es negativa.",
+    "c": "Dividió el avance entre la elevación. La elevación va arriba: −4 ÷ 2."
+   },
+   "right": "(0 − 4) ÷ (2 − 0) = −4 ÷ 2 = −2.",
+   "solution": "m = −4 ÷ 2 = −2."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "Indefinida es para una recta vertical (avance = 0). Aquí la elevación es 0.",
+    "c": "4 es el avance. La elevación es 3 − 3 = 0."
+   },
+   "right": "La elevación es 0, así que m = 0 ÷ 4 = 0: una recta horizontal.",
+   "solution": "m = 0 ÷ 4 = 0."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Una pendiente negativa baja de izquierda a derecha.",
+    "b": "Una pendiente cero es una recta plana, horizontal."
+   },
+   "right": "Sube: m > 0.",
+   "solution": "Positiva."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Cero es para una horizontal. En una vertical el avance es 0.",
+    "c": "Una vertical no sube ni baja de izquierda a derecha: el avance es 0."
+   },
+   "right": "El avance es 0 y no se puede dividir entre 0.",
+   "solution": "indefinida."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "2/3 es menor que 1: una recta suave.",
+    "c": "Compare los valores absolutos: 4 es mayor que 1."
+   },
+   "right": "4 tiene el mayor valor absoluto.",
+   "solution": "m = 4."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "El cargo fijo es donde empieza la recta (con 0 kWh), no la pendiente.",
+    "c": "La pendiente es una tasa: dólares por kWh, no un total."
+   },
+   "right": "Dólares por kWh: cada kWh más suma $0.15.",
+   "solution": "$0.15 por kWh."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "Dividió el avance entre la elevación.",
+    "b": "Los sumó. Divida la elevación entre el avance.",
+    "c": "Divida: 3 ÷ 2."
+   },
+   "solution": "m = 3 ÷ 2 = 3/2."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "Baja, así que la pendiente es negativa.",
+    "b": "Dividió el avance entre la elevación.",
+    "d": "Baja, y la elevación va arriba: −4 ÷ 1."
+   },
+   "solution": "m = −4 ÷ 1 = −4."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "Una pendiente de 1 sube una unidad por cada unidad de avance.",
+    "c": "Indefinida es para una vertical.",
+    "d": "Una horizontal no sube ni baja."
+   },
+   "solution": "La elevación es 0, así que m = 0."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "9 es la elevación. Divídala entre el avance, 3.",
+    "c": "Dividió el avance entre la elevación.",
+    "d": "Sumó. Divida la elevación entre el avance."
+   },
+   "solution": "(11 − 2) ÷ (4 − 1) = 9 ÷ 3 = 3."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "La recta baja (la y pasa de 0 a −10), así que la pendiente es negativa.",
+    "b": "Dividió el avance entre la elevación.",
+    "d": "−10 es la elevación. Divídala entre el avance, 5."
+   },
+   "solution": "−10 ÷ 5 = −2."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Cero es para una horizontal. Aquí la x se queda en 4: el avance es 0.",
+    "c": "6 es la elevación. El avance es 4 − 4 = 0.",
+    "d": "Calcule el avance: 4 − 4 = 0."
+   },
+   "solution": "El avance es 0: recta vertical, pendiente indefinida."
+  },
+  "G": {
+   "ok": "d",
+   "hints": {
+    "a": "|1/2| es pequeño: una recta suave.",
+    "b": "Compare valores absolutos: |−5| = 5 es más que 3.",
+    "c": "Una pendiente cero es plana."
+   },
+   "solution": "|−5| = 5 es el mayor valor absoluto."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "La pendiente es una tasa (por hora), no la distancia total.",
+    "b": "Las unidades son millas por hora, no horas.",
+    "d": "Las unidades son millas y horas."
+   },
+   "solution": "60 millas por cada hora."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
