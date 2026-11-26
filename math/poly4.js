@@ -118,3 +118,34 @@ function evaluaF(txt, ok, trampas){
   if (!fin) return {estado: "mal", msg: F.f.some(function(q){ return contenido(q) !== 1 || !q[0]; }) ? T("The product is right, but a factor still has a common factor inside. Take it out.", "El producto está bien, pero dentro de un factor todavía queda un factor común. Sáquelo.") : T("The product is right, but it can be factored further: look at what is left inside the parentheses.", "El producto está bien, pero todavía se puede factorizar más: mire lo que queda dentro del paréntesis.")};
   return {estado: "bien"};
 }
+
+/* ===== Quadratic equations (Topic 4) ===== */
+/* A fraction as text: frTxt(-3, 2) → "−3/2"; whole numbers without the bar. */
+function frTxt(n, d){ d = d || 1; if (d < 0){ n = -n; d = -d; } var g = mcd(Math.abs(n), d) || 1; n /= g; d /= g; return d === 1 ? sg(n) : (n < 0 ? "−" : "") + Math.abs(n) + "/" + d; }
+/* The root of a binomial factor q = [b, a] (ax + b = 0): text and value. */
+function raizTxt(q){ return frTxt(-q[0], q[1]); }
+function raizVal(q){ return -q[0] / q[1]; }
+/* An equation with a polynomial on each side. */
+function ecVis(L, R){ return pVis(L) + " = " + pVis(R); }
+function ecHTML(L, R){ return envuelve(ecVis(L, R), pVoz(L) + T(" equals ", " es igual a ") + pVoz(R)); }
+/* The solutions as text: x = −2 or x = 3 (one value: x = 4 only). */
+function solTxt(lista){ var u = []; lista.forEach(function(v){ if (u.indexOf(v) < 0) u.push(v); }); return u.map(function(v){ return "x = " + v; }).join(T(" or ", " o ")); }
+/* Reads typed solutions: "x = -2, x = 3", "-2 and 3", "1/2 y -3", "2.5". Returns a list of numbers (no repeats) or null. */
+function leeSol(txt){
+  var s = String(txt).replace(/[−–]/g, "-").replace(/x\s*[₁₂]|x\s*_?\s*[12]\s*(?==)/gi, "x").replace(/(\d),(\d{3})(?!\d)/g, "$1$2");
+  var m = s.match(/-?\s*\d+(?:\.\d+)?(?:\s*\/\s*\d+)?/g); if (!m) return null;
+  var r = [];
+  for (var i = 0; i < m.length; i++){ var t = m[i].replace(/\s+/g, ""), v; if (t.indexOf("/") >= 0){ var p = t.split("/"); if (+p[1] === 0) return null; v = +p[0] / +p[1]; } else v = +t; if (isNaN(v)) return null; if (!r.some(function(w){ return Math.abs(w - v) < 1e-9; })) r.push(v); }
+  return r;
+}
+/* Checks typed solutions against the list of true roots (numbers). tol: how close an approximate answer must be (default exact). */
+function evaluaSol(txt, raices, tol){
+  var v = leeSol(txt), cerca = function(a, b){ return Math.abs(a - b) < (tol || 1e-6); }, esta = function(l, x){ return l.some(function(y){ return cerca(x, y); }); };
+  if (!v || !v.length) return {estado: "invalido", msg: T("Type the solutions as numbers, for example: x = −2, x = 3. A fraction can be written as 1/2.", "Escriba las soluciones como números, por ejemplo: x = −2, x = 3. Una fracción se escribe como 1/2.")};
+  var u = []; raices.forEach(function(x){ if (!esta(u, x)) u.push(x); });
+  var bien = v.filter(function(x){ return esta(u, x); }), mal = v.filter(function(x){ return !esta(u, x); });
+  if (!mal.length && bien.length === u.length) return {estado: "bien"};
+  if (!mal.length) return {estado: "mal", msg: esta(u, 0) && !esta(v, 0) ? T("Your value is right, but one is missing: x = 0 is also a solution. Do not divide by x.", "Su valor es correcto, pero falta uno: x = 0 también es solución. No divida entre x.") : T("Your value is right, but there is another solution. Set each factor equal to zero.", "Su valor es correcto, pero hay otra solución. Iguale cada factor a cero.")};
+  if (v.length === u.length && v.every(function(x){ return esta(u, -x); })) return {estado: "mal", msg: T("Check the signs: x + 3 = 0 gives x = −3, not 3.", "Revise los signos: x + 3 = 0 da x = −3, no 3.")};
+  return {estado: "mal", msg: T("Substitute to check: ", "Sustituya para comprobar: ") + mal.map(function(x){ return "x = " + sg(Math.round(x * 1000) / 1000); }).join(", ") + T(" does not make the equation true.", " no hace cierta la ecuación.")};
+}

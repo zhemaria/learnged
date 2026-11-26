@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 4.2 · Math Level 4 (English) — built by tools/build_n4_lesson_4_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 4.2 · Completing the square · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 4 — Quadratic equations</p>
+<h1>Lesson 4.2 · Completing the square</h1>
+<p class="lema">Complete the square to solve any quadratic equation: add (b/2)², write a binomial squared, and take the square root with ±.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">✏️</span> No calculator</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Explain</strong> completing the square with the area model.</li>
+<li><strong>Solve</strong> quadratic equations by completing the square with five steps.</li>
+<li><strong>Divide</strong> by a first when the coefficient of x² is not 1, and find (b/2)², even as a fraction.</li>
+<li><strong>Follow</strong> how completing the square leads to the quadratic formula.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.4.a</span> Solve quadratic equations in one variable with rational coefficients and real solutions, using appropriate methods (e.g., quadratic formula, completing the square, factoring, inspection).</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.b</span> Transform and solve algebraic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">A-REI.4</span> <span class="std-nivel">Level E</span> Solve quadratic equations in one variable. Solve quadratic equations by inspection (e.g., for x² = 49), taking square roots, completing the square, the quadratic formula and factoring, as appropriate to the initial form of the equation. Recognize when the quadratic formula gives complex solutions and write them as a ± bi for real numbers a and b.</li><li><span class="std-cod std-ccr">A-SSE.3</span> <span class="std-nivel">Level E</span> Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression: factor a quadratic expression to reveal the zeros of the function it defines; complete the square in a quadratic expression to reveal the maximum or minimum value of the function it defines.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-visual">The visual idea: completing a square</a></li>
+<li><a href="#s-steps">The five steps (when a = 1)</a></li>
+<li><a href="#s-divide">When a ≠ 1: divide first</a></li>
+<li><a href="#s-add">How much do you add?</a></li>
+<li><a href="#s-origin">The origin of the quadratic formula</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-visual"><span aria-hidden="true" class="num-seccion">1</span>The visual idea: completing a square</h2>
+<p><strong>A link with Lesson 4.1.</strong> In Lesson 4.1 you solved quadratic equations by factoring. But some equations do not factor with whole numbers. <strong>Completing the square</strong> is a method that always works, whether the equation factors or not, and it is also where the quadratic formula comes from.</p>
+<p>The expression x² + 6x can be drawn as a square with side x plus a rectangle of area 6x. If you cut that rectangle in half and place one half on each side of the square, only a small corner is missing to make a big square. That corner is (6/2)² = 9.</p>
+<svg viewBox="0 0 420 330" role="img" aria-label="Area model: a square x by x, two rectangles 3 by x of area 3x each, and the missing corner 3 by 3 of area 9. Together they form a square with side x + 3." style="width:100%;max-width:380px;height:auto;display:block;margin:12px auto;"><rect x="60" y="30" width="170" height="170" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/><rect x="230" y="30" width="85" height="170" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/><rect x="60" y="200" width="170" height="85" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/><rect x="230" y="200" width="85" height="85" fill="#fff3e0" stroke="#e65100" stroke-width="2.5" stroke-dasharray="7 5"/><text x="145.0" y="124.0" font-size="26" font-weight="700" text-anchor="middle" fill="#0d47a1">x²</text><text x="272.5" y="123.0" font-size="22" font-weight="700" text-anchor="middle" fill="#1b5e20">3x</text><text x="145.0" y="250.5" font-size="22" font-weight="700" text-anchor="middle" fill="#1b5e20">3x</text><text x="272.5" y="250.5" font-size="24" font-weight="700" text-anchor="middle" fill="#e65100">9</text><text x="145.0" y="22" font-size="17" text-anchor="middle" fill="#37474f">x</text><text x="272.5" y="22" font-size="17" text-anchor="middle" fill="#37474f">3</text><text x="50" y="121.0" font-size="17" text-anchor="end" fill="#37474f">x</text><text x="50" y="248.5" font-size="17" text-anchor="end" fill="#37474f">3</text></svg>
+<p class="formula" style="text-align:center;font-size:1.25rem;font-weight:700;">x² + 6x + 9 = (x + 3)²</p>
+<p>Adding that missing term turns x² + 6x + 9 into the perfect square (x + 3)². That is the central idea: add just the right term to form a binomial squared.</p>
+<a class="enlace-interactivo" href="practice-4-2.html#visual" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the area model (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the area model</span><span class="ei-sub">Change b and complete the missing corner to see x² + bx become a binomial squared.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-steps"><span aria-hidden="true" class="num-seccion">2</span>The five steps (when a = 1)</h2>
+<div aria-label="The five steps (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The five steps to solve a quadratic equation by completing the square</caption>
+<thead><tr><th scope="col">Step</th><th scope="col">What to do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Leave the terms with x on one side: x² + bx = −c.</td></tr>
+<tr><td>2</td><td>Add (b/2)² to both sides.</td></tr>
+<tr><td>3</td><td>Write the left side as (x + b/2)².</td></tr>
+<tr><td>4</td><td>Take the square root of both sides, with ±.</td></tr>
+<tr><td>5</td><td>Solve for x.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: solve x² + 6x − 7 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x² + 6x = 7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>(6/2)² = 9. Add 9 to both sides:</strong> x² + 6x + 9 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(x + 3)² = 16.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x + 3 = ±4.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = −3 + 4 = 1 or x = −3 − 4 = −7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = 1 and x = −7</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: solve x² − 4x − 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x² − 4x = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>(−4/2)² = 4. Add 4:</strong> x² − 4x + 4 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(x − 2)² = 9.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x − 2 = ±3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = 5 or x = −1.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = 5 and x = −1</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Do not forget the ± sign</span>
+<p>When you take the square root of both sides, there are two results, the positive one and the negative one. Leaving out the ± loses one of the two solutions.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — x² + 4x − 5 = 0</h3></div>
+<p class="pregunta-int" id="t-p1">Choose the solutions.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 and x = 5</button>
+<button class="opcion" data-k="b" type="button">x = 1 and x = 5</button>
+<button class="opcion" data-k="c" type="button">x = 1 and x = −5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — x² − 2x − 8 = 0</h3></div>
+<p class="pregunta-int" id="t-p2">Choose the solutions.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x = 4 and x = −2</button>
+<button class="opcion" data-k="b" type="button">x = −4 and x = 2</button>
+<button class="opcion" data-k="c" type="button">x = 4 and x = 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — x² + 6x + 5 = 0</h3></div>
+<p class="pregunta-int" id="t-p3">Choose the solutions.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x = 1 and x = 5</button>
+<button class="opcion" data-k="b" type="button">x = −1 and x = −5</button>
+<button class="opcion" data-k="c" type="button">x = −1 and x = 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-2.html#steps" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the five steps (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the five steps</span><span class="ei-sub">Follow a case step by step, then solve on your own with two tries and the full solution.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-divide"><span aria-hidden="true" class="num-seccion">3</span>When a ≠ 1: divide first</h2>
+<p>The five steps assume the coefficient of x² is 1. If it is not, the first move is to divide the whole equation by a.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: solve 2x² + 8x − 10 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Divide everything by 2:</strong> x² + 4x − 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>x² + 4x = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(4/2)² = 4. Add 4:</strong> (x + 2)² = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x + 2 = ±3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = 1 or x = −5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = 1 and x = −5</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Divide the whole equation</span>
+<p>When you divide by a, divide every term, including the constant. Then the coefficient of x² is 1 and the five steps work just as before.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-2.html#divide" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: dividing by a first (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: dividing by a first</span><span class="ei-sub">Divide the equation by a before you complete the square, and check that all three terms are divided.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-add"><span aria-hidden="true" class="num-seccion">4</span>How much do you add?</h2>
+<p>The heart of the method is (b/2)²: half the coefficient of x, squared. It is worth practicing by itself:</p>
+<div aria-label="The term that completes the square (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Examples of the term that completes the square for each coefficient of x</caption>
+<thead><tr><th scope="col">Expression</th><th scope="col">b/2</th><th scope="col">Add (b/2)²</th></tr></thead>
+<tbody>
+<tr><td>x² + 8x</td><td>4</td><td>16</td></tr>
+<tr><td>x² − 10x</td><td>−5</td><td>25</td></tr>
+<tr><td>x² + 12x</td><td>6</td><td>36</td></tr>
+<tr><td>x² − 6x</td><td>−3</td><td>9</td></tr>
+<tr><td>x² + 5x</td><td>5/2</td><td>25/4</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Always positive</span>
+<p>Even when b is negative, (b/2)² is positive: (−5)² = 25. When b is odd, the result is a fraction: (5/2)² = 25/4.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — x² + 12x</h3></div>
+<p class="pregunta-int" id="t-p4">Which term completes the square?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">24</button>
+<button class="opcion" data-k="b" type="button">144</button>
+<button class="opcion" data-k="c" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — x² − 6x</h3></div>
+<p class="pregunta-int" id="t-p5">Which term completes the square?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — x² + 5x</h3></div>
+<p class="pregunta-int" id="t-p6">Which term completes the square?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">25/4</button>
+<button class="opcion" data-k="b" type="button">5/2</button>
+<button class="opcion" data-k="c" type="button">25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-2.html#add" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: how much to add (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: how much to add</span><span class="ei-sub">Find (b/2)² for any b, also when b is odd and the result is a fraction.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-origin"><span aria-hidden="true" class="num-seccion">5</span>The origin of the quadratic formula</h2>
+<p>If you complete the square in the general equation ax² + bx + c = 0 (no numbers, only letters), the result is exactly the quadratic formula:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">x = (−b ± √(b² − 4ac)) / 2a</p>
+<p>That is why this method matters so much: it is not an isolated trick, it is the proof of where the formula of Lesson 4.3 comes from.</p>
+<div class="ejemplo">
+<p class="titulo-ej">The derivation, step by step (the same steps as in section 3, with letters)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Divide everything by a:</strong> x² + (b/a)x + c/a = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Move the constant to the other side:</strong> x² + (b/a)x = −c/a.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Add half the coefficient of x, squared, to both sides: (b/2a)² = b²/4a².</strong> x² + (b/a)x + b²/4a² = b²/4a² − c/a.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>The left side is a perfect square; write the right side with a common denominator:</strong> (x + b/2a)² = (b² − 4ac)/4a².</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Take the square root, without forgetting ±:</strong> x + b/2a = ±√(b² − 4ac) / 2a.</p>
+<p class="paso"><span aria-hidden="true" class="n">6</span><strong>Subtract b/2a to get x alone:</strong> x = (−b ± √(b² − 4ac)) / 2a.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result:</strong> the quadratic formula, the same one on the GED formula sheet.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-2.html#origin" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the origin of the quadratic formula (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the origin of the quadratic formula</span><span class="ei-sub">Follow the derivation with letters and with numbers, and answer questions about each step.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-4-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook open: (1) From the picture to the method: solve x² + 6x = 7 and x² + 4x = 12 by drawing the area model. Then use the five steps on x² + 8x + 7 = 0, x² − 10x + 16 = 0, x² + 2x − 8 = 0, x² − 6x − 3 = 0, 2x² + 8x − 10 = 0, and 3x² − 12x + 6 = 0. In each one, write down the term (b/2)² that completes the square. (2) The derivation: after you study the six steps of section 5, close the lesson and complete the square yourself in ax² + bx + c = 0 until you reach the quadratic formula. Compare your result with the GED formula sheet. (3) I do not lose solutions: in each solution below, the ± was forgotten. Find the missing solution and write both: (x + 2)² = 9 → x = 1; (x − 4)² = 25 → x = 9; (x + 1)² = 7 → x = −1 + √7. Then do several exercises of each activity on the practice page, solving them in your notebook first, and write down the ones you miss to review them. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Cut a square of paper and two equal strips, as in the area model. Show someone at home how the missing corner “completes” the square, and ask them to find the corner for x² + 10x.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">What do you add to complete the square of x² + 8x?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8</button><button class="opcion" data-k="b" type="button">16</button><button class="opcion" data-k="c" type="button">64</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">What do you add to complete the square of x² − 10x?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">Solve x² + 6x − 7 = 0.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 1 and x = −7</button><button class="opcion" data-k="b" type="button">x = −1 and x = 7</button><button class="opcion" data-k="c" type="button">x = 1 and x = 7</button><button class="opcion" data-k="d" type="button">x = −1 and x = −7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">Solve x² − 4x − 5 = 0.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −5 and x = 1</button><button class="opcion" data-k="b" type="button">x = 5 and x = 1</button><button class="opcion" data-k="c" type="button">x = −5 and x = −1</button><button class="opcion" data-k="d" type="button">x = 5 and x = −1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Solve x² + 2x − 3 = 0.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 and x = 3</button><button class="opcion" data-k="b" type="button">x = 1 and x = 3</button><button class="opcion" data-k="c" type="button">x = 1 and x = −3</button><button class="opcion" data-k="d" type="button">x = −1 and x = −3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Solve x² − 8x + 12 = 0.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −6 and x = −2</button><button class="opcion" data-k="b" type="button">x = 6 and x = −2</button><button class="opcion" data-k="c" type="button">x = −6 and x = 2</button><button class="opcion" data-k="d" type="button">x = 6 and x = 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Solve 2x² + 8x − 10 = 0.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 and x = 5</button><button class="opcion" data-k="b" type="button">x = 1 and x = −5</button><button class="opcion" data-k="c" type="button">x = 2 and x = −10</button><button class="opcion" data-k="d" type="button">x = 1 and x = 5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">To solve 3x² + 12x − 15 = 0 by completing the square, what is the first step?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Divide everything by 3</button><button class="opcion" data-k="b" type="button">Add 12</button><button class="opcion" data-k="c" type="button">Subtract 15</button><button class="opcion" data-k="d" type="button">Multiply by 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for completing the square (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for completing the square and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Finding (b/2)²</th><td>I find (b/2)² easily, even with fractions.</td><td>I find b/2 but forget to square it.</td><td>I do not find the term that completes the square.</td></tr>
+<tr><th scope="row">Keeping the equation balanced</th><td>I add (b/2)² to both sides and write (x + b/2)² correctly.</td><td>I add to both sides, but make arithmetic mistakes.</td><td>I add the term to only one side.</td></tr>
+<tr><th scope="row">Square root with ±</th><td>I take the root with ± and get both solutions, also when a ≠ 1.</td><td>I take the root but lose a solution.</td><td>I do not take the root or I ignore the ±.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned to <strong>complete the square</strong>: a method that always works, adding (b/2)² to form a binomial squared and taking the root with ±. You also saw that this process, used on the general equation, produces the quadratic formula.</p>
+<p>In <strong>Lesson 4.3 · The quadratic formula, the discriminant, and applications</strong> you will use that formula to solve any quadratic equation directly, predict the number of solutions with the discriminant, and model real situations such as the path of a ball.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-3.html">Lesson 4.3 · The quadratic formula, the discriminant, and applications</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>completing the square</dt><dd>Adding (b/2)² to x² + bx to make a binomial squared.</dd>
+<dt>perfect square trinomial</dt><dd>x² + bx + (b/2)² = (x + b/2)²</dd>
+<dt>±</dt><dd>“Plus or minus”: a number and its opposite, the two square roots.</dd>
+<dt>quadratic formula</dt><dd>x = (−b ± √(b² − 4ac)) / 2a</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 4 · Lesson 4.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 4.3",
+ "review": "sections 2 and 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "(x + 2)² = 9 gives x + 2 = 3 or x + 2 = −3.",
+    "b": "Substitute x = 5: 25 + 20 − 5 is not 0."
+   },
+   "right": "(x + 2)² = 9, x + 2 = ±3.",
+   "solution": "x = 1 and x = −5."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "(x − 1)² = 9 gives x − 1 = ±3, so x = 1 ± 3.",
+    "c": "Substitute x = 2: 4 − 4 − 8 is not 0."
+   },
+   "right": "(x − 1)² = 9, x − 1 = ±3.",
+   "solution": "x = 4 and x = −2."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "(x + 3)² = 4 gives x = −3 ± 2.",
+    "c": "Substitute x = 5: 25 + 30 + 5 is not 0."
+   },
+   "right": "(x + 3)² = 4, x + 3 = ±2.",
+   "solution": "x = −1 and x = −5."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "24 is 2 · 12. Take half of 12, then square it.",
+    "b": "144 is 12². First take half of 12."
+   },
+   "right": "12 ÷ 2 = 6 and 6² = 36.",
+   "solution": "36."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "3 is half of 6. Now square it.",
+    "c": "36 is 6². First take half of 6."
+   },
+   "right": "−6 ÷ 2 = −3 and (−3)² = 9.",
+   "solution": "9."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "5/2 is half of 5. Now square it.",
+    "c": "25 is 5². First take half of 5."
+   },
+   "right": "(5/2)² = 25/4.",
+   "solution": "25/4."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "8 is b. Take half, then square.",
+    "c": "64 is 8². First take half of 8.",
+    "d": "4 is half of 8. Now square it."
+   },
+   "solution": "16."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "100 is 10². First take half of 10.",
+    "b": "10 is b. Take half, then square.",
+    "d": "5 is half of 10. Now square it."
+   },
+   "solution": "25."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "(x + 3)² = 16 gives x = −3 ± 4.",
+    "c": "Substitute x = 7: 49 + 42 − 7 is not 0.",
+    "d": "Substitute x = −1: 1 − 6 − 7 is not 0."
+   },
+   "solution": "x = 1 and x = −7."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "(x − 2)² = 9 gives x = 2 ± 3.",
+    "b": "Substitute x = 1: 1 − 4 − 5 is not 0.",
+    "c": "(x − 2)² = 9 gives x = 2 ± 3."
+   },
+   "solution": "x = 5 and x = −1."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "(x + 1)² = 4 gives x = −1 ± 2.",
+    "b": "Substitute x = 3: 9 + 6 − 3 is not 0.",
+    "d": "Substitute x = −1: 1 − 2 − 3 is not 0."
+   },
+   "solution": "x = 1 and x = −3."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "(x − 4)² = 4 gives x = 4 ± 2.",
+    "b": "(x − 4)² = 4 gives x = 4 ± 2.",
+    "c": "(x − 4)² = 4 gives x = 4 ± 2."
+   },
+   "solution": "x = 6 and x = 2."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "Divide by 2: x² + 4x − 5 = 0, then (x + 2)² = 9.",
+    "c": "Divide the whole equation by 2 first.",
+    "d": "Substitute x = 5: 50 + 40 − 10 is not 0."
+   },
+   "solution": "x = 1 and x = −5."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "The coefficient of x² must be 1 first.",
+    "c": "Moving 15 comes later; first make the coefficient of x² equal 1.",
+    "d": "Multiplying makes the coefficient of x² bigger, not 1."
+   },
+   "solution": "Divide everything by 3."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

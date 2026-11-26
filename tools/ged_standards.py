@@ -191,6 +191,9 @@ CCR = {
  "G-GPE.7": ("E", "Use coordinates to compute perimeters of polygons and areas of triangles and rectangles, e.g., using the distance formula."),
  "G-GMD.3": ("E", "Use volume formulas for cylinders, pyramids, cones, and spheres to solve problems."),
  "A-SSE.2": ("E", "Use the structure of an expression to identify ways to rewrite it. For example, see x⁴ − y⁴ as (x²)² − (y²)², thus recognizing it as a difference of squares that can be factored as (x² − y²)(x² + y²)."),
+ "A-REI.4": ("E", "Solve quadratic equations in one variable. Solve quadratic equations by inspection (e.g., for x² = 49), taking square roots, completing the square, the quadratic formula and factoring, as appropriate to the initial form of the equation. Recognize when the quadratic formula gives complex solutions and write them as a ± bi for real numbers a and b."),
+ "A-SSE.3": ("E", "Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression: factor a quadratic expression to reveal the zeros of the function it defines; complete the square in a quadratic expression to reveal the maximum or minimum value of the function it defines."),
+ "A-CED.1": ("E", "Create equations and inequalities in one variable and use them to solve problems. Include equations arising from linear and quadratic functions, and simple rational and exponential functions."),
  "A-APR.1": ("E", "Understand that polynomials form a system analogous to the integers, namely, they are closed under the operations of addition, subtraction, and multiplication; add, subtract, and multiply polynomials."),
  "8.G.9": ("D", "Know the formulas for the volumes of cones, cylinders, and spheres and use them to solve real-world and mathematical problems."),
  "6.SP.2": ("D", "Understand that a set of data collected to answer a statistical question has a distribution which can be described by its center, spread, and overall shape."),
@@ -414,6 +417,12 @@ LESSONS = [
   {"direct": ["A.1.f"], "builds": ["A.1.d"], "mp": ["MP.3.a", "MP.3.c", "MP.4.b"], "ccr": ["A-SSE.2", "A-APR.1"]}),
  ("level-4/lesson-3-3.html", "3.3", "Factoring trinomials (a = 1 and a ≠ 1)",
   {"direct": ["A.1.f"], "builds": ["A.1.d"], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["A-SSE.2", "A-APR.1"]}),
+ ("level-4/lesson-4-1.html", "4.1", "Solving quadratic equations by factoring",
+  {"direct": ["A.4.a", "A.4.b"], "builds": ["A.1.f"], "mp": ["MP.1.b", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.4", "A-SSE.3", "A-CED.1"]}),
+ ("level-4/lesson-4-2.html", "4.2", "Completing the square",
+  {"direct": ["A.4.a"], "builds": [], "mp": ["MP.1.b", "MP.3.a", "MP.4.b"], "ccr": ["A-REI.4", "A-SSE.3"]}),
+ ("level-4/lesson-4-3.html", "4.3", "The quadratic formula, the discriminant, and applications",
+  {"direct": ["A.4.a", "A.4.b"], "builds": [], "mp": ["MP.1.e", "MP.2.a", "MP.3.a"], "ccr": ["A-REI.4", "A-CED.1"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

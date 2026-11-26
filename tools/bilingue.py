@@ -70,7 +70,7 @@ def tabla(aria, caption, cabeza, filas, expr_cols=()):
     """Tabla desplazable. aria y caption en el idioma; el sufijo del aria va en inglés (lo traduce traduce.py)."""
     th = "".join(f'<th scope="col">{c}</th>' for c in cabeza)
     tr = "\n".join("<tr>" + "".join(f'<td class="expr">{c}</td>' if i in expr_cols else f"<td>{c}</td>" for i, c in enumerate(f)) + "</tr>" for f in filas)
-    return (f'<div aria-label="{aria} (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">{caption}</caption>\n'
+    return (f'<div aria-label="{aria} {t("(table you can scroll sideways)", "(tabla desplazable horizontalmente)")}" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">{caption}</caption>\n'
             f'<thead><tr>{th}</tr></thead>\n<tbody>\n{tr}\n</tbody>\n</table></div>\n'
             '<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>')
 

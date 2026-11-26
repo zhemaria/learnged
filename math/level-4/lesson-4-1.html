@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 4.1 · Math Level 4 (English) — built by tools/build_n4_lesson_4_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 4.1 · Solving quadratic equations by factoring · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 4 — Quadratic equations</p>
+<h1>Lesson 4.1 · Solving quadratic equations by factoring</h1>
+<p class="lema">Solve a quadratic equation by writing it equal to zero, factoring, and setting each factor equal to zero; then check and interpret the solutions.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">✏️</span> No calculator</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Understand and use</strong> the zero product property.</li>
+<li><strong>Solve</strong> quadratic equations by factoring with a five-step method.</li>
+<li><strong>Write</strong> an equation in standard form ax² + bx + c = 0 before factoring.</li>
+<li><strong>Solve</strong> word problems and check both solutions in the original equation.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.4.a</span> Solve quadratic equations in one variable with rational coefficients and real solutions, using appropriate methods (e.g., quadratic formula, completing the square, factoring, inspection).</li><li><span class="std-cod std-dir">A.4.b</span> Write one-variable quadratic equations to represent context.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">A.1.f</span> Factor polynomial expressions.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.a</span> Represent real world problems algebraically.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">A-REI.4</span> <span class="std-nivel">Level E</span> Solve quadratic equations in one variable. Solve quadratic equations by inspection (e.g., for x² = 49), taking square roots, completing the square, the quadratic formula and factoring, as appropriate to the initial form of the equation. Recognize when the quadratic formula gives complex solutions and write them as a ± bi for real numbers a and b.</li><li><span class="std-cod std-ccr">A-SSE.3</span> <span class="std-nivel">Level E</span> Choose and produce an equivalent form of an expression to reveal and explain properties of the quantity represented by the expression: factor a quadratic expression to reveal the zeros of the function it defines; complete the square in a quadratic expression to reveal the maximum or minimum value of the function it defines.</li><li><span class="std-cod std-ccr">A-CED.1</span> <span class="std-nivel">Level E</span> Create equations and inequalities in one variable and use them to solve problems. Include equations arising from linear and quadratic functions, and simple rational and exponential functions.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-zero">The zero product property</a></li>
+<li><a href="#s-steps">The five steps</a></li>
+<li><a href="#s-standard-form">Standard form first</a></li>
+<li><a href="#s-apply">Applications: area problems</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-zero"><span aria-hidden="true" class="num-seccion">1</span>The zero product property</h2>
+<p><strong>A link with Topic 3.</strong> In Topic 3 you learned to <strong>factor</strong> polynomials. Now that skill gets a powerful purpose: <strong>solving equations</strong>. A quadratic equation is an equation with an x² term; solving it means finding the values of x that make it true. Factoring, together with a very simple property of the number zero, opens the door to those solutions.</p>
+<p>Zero has a property in multiplication that no other number has:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">If A · B = 0, then A = 0 or B = 0.</p>
+<p>In words: if the product of two quantities is zero, at least one of them <strong>has to</strong> be zero. There is no other way for a product to be zero.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The idea with numbers</span>
+<p>If 7 · B = 0, what is B? It has to be 0, because 7 is not zero. The same happens with factors that contain x: if (x − 2)(x + 5) = 0, then x − 2 = 0 or x + 5 = 0, so x = 2 or x = −5.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The key is the zero</span>
+<p>This property only works when the product <strong>equals zero</strong>. If a product equals 12, the factors could be 3 and 4, 2 and 6, 24 and 0.5… That is why the equation must equal zero (standard form) before you use it.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-1.html#zero" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the zero product property (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the zero product property</span><span class="ei-sub">Decide whether you can already use the property, and go from the factors to the solutions.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-steps"><span aria-hidden="true" class="num-seccion">2</span>The five steps</h2>
+<p>To solve a quadratic equation by factoring, always follow these steps:</p>
+<div aria-label="The five steps (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The five steps to solve a quadratic equation by factoring</caption>
+<thead><tr><th scope="col">Step</th><th scope="col">What to do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Write the equation in standard form: ax² + bx + c = 0.</td></tr>
+<tr><td>2</td><td>Factor the left side.</td></tr>
+<tr><td>3</td><td>Set each factor equal to zero.</td></tr>
+<tr><td>4</td><td>Solve each linear equation.</td></tr>
+<tr><td>5</td><td>Check both solutions in the original equation.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: solve x² + 5x + 6 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>It is already in standard form.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Factor.</strong> (x + 2)(x + 3) = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Each factor equals zero.</strong> x + 2 = 0 or x + 3 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Solve.</strong> x = −2 or x = −3.</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Check.</strong> (−2)² + 5(−2) + 6 = 4 − 10 + 6 = 0. Right.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = −2 and x = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: with a difference of squares. Solve x² − 9 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>It is already in standard form.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Factor.</strong> (x + 3)(x − 3) = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Each factor equals zero.</strong> x + 3 = 0 or x − 3 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = −3 and x = 3</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — x² + 7x + 12 = 0</h3></div>
+<p class="pregunta-int" id="t-p1">Choose the solutions.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">x = 3 and x = 4</button>
+<button class="opcion" data-k="b" type="button">x = −3 and x = 4</button>
+<button class="opcion" data-k="c" type="button">x = −3 and x = −4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — x² − x − 6 = 0</h3></div>
+<p class="pregunta-int" id="t-p2">Choose the solutions.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x = 3 and x = −2</button>
+<button class="opcion" data-k="b" type="button">x = −3 and x = 2</button>
+<button class="opcion" data-k="c" type="button">x = 3 and x = 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — x² − 25 = 0</h3></div>
+<p class="pregunta-int" id="t-p3">Choose the solutions.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x = 5 only</button>
+<button class="opcion" data-k="b" type="button">x = 5 and x = −5</button>
+<button class="opcion" data-k="c" type="button">x = 25 and x = −25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-1.html#steps" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the five steps (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the five steps</span><span class="ei-sub">See the five steps one at a time, then solve on your own and type both solutions.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-standard-form"><span aria-hidden="true" class="num-seccion">3</span>Standard form first</h2>
+<p>Many equations do not come equal to zero. <strong>Step 1</strong> is always to rearrange them, moving every term to one side. When a term moves to the other side, its sign changes, because you do the same operation on both sides.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: solve x² = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Standard form.</strong> x² − 9 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Factor.</strong> (x + 3)(x − 3) = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = 3 and x = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: zero as a solution. Solve x² = 5x.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Standard form.</strong> x² − 5x = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Common factor.</strong> x(x − 5) = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Each factor equals zero.</strong> x = 0 or x − 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = 0 and x = 5</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Do not divide by x</span>
+<p>In x² = 5x, dividing both sides by x would lose the solution x = 0. Always move everything to one side and factor; that way you do not lose any solution.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — x² = 16</h3></div>
+<p class="pregunta-int" id="t-p4">Rearrange to standard form and solve.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x = 4 only</button>
+<button class="opcion" data-k="b" type="button">x = 16 and x = −16</button>
+<button class="opcion" data-k="c" type="button">x = 4 and x = −4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — x² = 3x</h3></div>
+<p class="pregunta-int" id="t-p5">Rearrange to standard form and solve.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = 3 only</button>
+<button class="opcion" data-k="b" type="button">x = 0 and x = 3</button>
+<button class="opcion" data-k="c" type="button">x = 3 and x = −3</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — x² + 2x = 8</h3></div>
+<p class="pregunta-int" id="t-p6">Rearrange to standard form and solve.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">x = −4 and x = 2</button>
+<button class="opcion" data-k="b" type="button">x = 4 and x = −2</button>
+<button class="opcion" data-k="c" type="button">x = −4 and x = −2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-1.html#standard-form" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: standard form first (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: standard form first</span><span class="ei-sub">Watch the typical mistake of factoring without the zero, move terms across, and solve.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-apply"><span aria-hidden="true" class="num-seccion">4</span>Applications: area problems</h2>
+<p>Quadratic equations model real situations, especially of area and motion. In these problems you must <strong>interpret</strong> the solutions: sometimes one of them makes no sense in the situation.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 5: the area of a rectangle is 54 square feet. The length is 3 feet more than the width. How long is each side?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Let x be the width. The length is x + 3.</strong> Area: x(x + 3) = 54.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Standard form.</strong> x² + 3x − 54 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Factor.</strong> (x + 9)(x − 6) = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Solve.</strong> x = −9 or x = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Interpret.</strong> A length cannot be negative, so x = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>The width is 6 feet and the length, 9 feet.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Interpret the situation</span>
+<p>In problems about lengths, times, or amounts, throw out negative solutions or solutions that make no physical sense. Always ask: is this solution possible in the real situation?</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-1.html#apply" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: word problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: word problems</span><span class="ei-sub">Write the equation, solve it by factoring, and decide which of the two solutions makes sense.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-4-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook open: (1) Solve eight equations by factoring, writing the five steps and how many different solutions you get in each: x² + 7x + 10 = 0, x² − 3x − 18 = 0, 2x² + 5x − 3 = 0, x² + 6x + 9 = 0, x² = 9, x² = 5x, x² − 8x = −15, and 3x² = 12x. The last four must first be written in standard form. (2) The rectangle: its length is 3 feet more than its width and its area is 54 square feet. Write the equation, solve it by factoring, and explain why one solution is thrown out. Then make up a similar problem and solve it. (3) I always check: substitute each solution in its equation and correct the ones that do not make it true, describing the mistake in one sentence. x² − 5x + 6 = 0 → x = 2 or x = 3; x² + x − 12 = 0 → x = −3 or x = 4; x² = 4x → x = 4. Then do a round of each activity on the practice page, solving each exercise on paper before you type the answer. About 60 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Think of a garden, a rug, or a window at home whose length is a few feet more than its width. Measure it, find its area, and write the equation that would let someone find the width from the area alone.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">Solve x² + 5x + 6 = 0.</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2 and x = 3</button><button class="opcion" data-k="b" type="button">x = −2 and x = −3</button><button class="opcion" data-k="c" type="button">x = −1 and x = −6</button><button class="opcion" data-k="d" type="button">x = 2 and x = −3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">Solve x² − 7x + 10 = 0.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 2 and x = 5</button><button class="opcion" data-k="b" type="button">x = −2 and x = −5</button><button class="opcion" data-k="c" type="button">x = 2 and x = −5</button><button class="opcion" data-k="d" type="button">x = 1 and x = 10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">Solve (x − 4)(x + 1) = 0.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −4 and x = 1</button><button class="opcion" data-k="b" type="button">x = 4 and x = 1</button><button class="opcion" data-k="c" type="button">x = 4 and x = −1</button><button class="opcion" data-k="d" type="button">x = −4 and x = −1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">Solve x² − 16 = 0.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 4 only</button><button class="opcion" data-k="b" type="button">x = 16 and x = −16</button><button class="opcion" data-k="c" type="button">x = 8 and x = −8</button><button class="opcion" data-k="d" type="button">x = 4 and x = −4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Solve x² = 7x.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 7 only</button><button class="opcion" data-k="b" type="button">x = 7 and x = −7</button><button class="opcion" data-k="c" type="button">x = 0 only</button><button class="opcion" data-k="d" type="button">x = 0 and x = 7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Solve x² + 4x = 0.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 0 and x = −4</button><button class="opcion" data-k="b" type="button">x = 0 and x = 4</button><button class="opcion" data-k="c" type="button">x = −4 only</button><button class="opcion" data-k="d" type="button">x = 4 only</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Solve x² + 3x = 10.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 5 and x = −2</button><button class="opcion" data-k="b" type="button">x = −5 and x = −2</button><button class="opcion" data-k="c" type="button">x = −5 and x = 2</button><button class="opcion" data-k="d" type="button">x = 10 and x = −1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">The area of a rectangle is 54 square feet. The length is 3 feet more than the width. How wide is it?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">6 feet</button><button class="opcion" data-k="b" type="button">9 feet</button><button class="opcion" data-k="c" type="button">54 feet</button><button class="opcion" data-k="d" type="button">27 feet</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for solving by factoring (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for solving quadratic equations by factoring and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Standard form</th><td>I write the equation as ax² + bx + c = 0, even with terms on both sides.</td><td>I try, but I make mistakes when I move terms.</td><td>I do not make the equation equal zero.</td></tr>
+<tr><th scope="row">Zero product property</th><td>I set each factor equal to zero and do not lose x = 0.</td><td>I set only one factor equal to zero, or I solve the linear equation wrong.</td><td>I do not set the factors equal to zero.</td></tr>
+<tr><th scope="row">Checking and interpreting</th><td>I check both solutions and throw out the one that makes no sense.</td><td>I check only one solution, or I do not throw out the impossible one.</td><td>I do not check or interpret the solutions.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you solved quadratic equations by <strong>factoring</strong>, using the <strong>zero product property</strong> with a five-step method, and you interpreted the solutions in area problems.</p>
+<p>But not every quadratic equation factors with whole numbers. In <strong>Lesson 4.2 · Completing the square</strong> you will learn a method that <strong>always</strong> works, whether the equation factors or not. Completing the square is also where the quadratic formula of Lesson 4.3 comes from.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-4-2.html">Lesson 4.2 · Completing the square</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>quadratic equation</dt><dd>An equation whose highest power of x is x².</dd>
+<dt>standard form</dt><dd>ax² + bx + c = 0</dd>
+<dt>zero product property</dt><dd>If A · B = 0, then A = 0 or B = 0.</dd>
+<dt>solution (root)</dt><dd>A value of x that makes the equation true.</dd>
+<dt>extraneous answer</dt><dd>A correct algebraic solution that makes no sense in the situation, such as a negative length.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 4 · Lesson 4.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 4.2",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Substitute x = 3: 9 + 21 + 12 is not 0.",
+    "b": "(x + 3)(x + 4) = 0: each factor gives a negative value."
+   },
+   "right": "(x + 3)(x + 4) = 0, so x = −3 or x = −4.",
+   "solution": "x = −3 and x = −4."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "(x − 3)(x + 2) = 0: x − 3 = 0 gives x = 3.",
+    "c": "Substitute x = 2: 4 − 2 − 6 = −4, not 0."
+   },
+   "right": "(x − 3)(x + 2) = 0, so x = 3 or x = −2.",
+   "solution": "x = 3 and x = −2."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "(−5)² is also 25.",
+    "c": "25² is 625, not 25."
+   },
+   "right": "(x + 5)(x − 5) = 0, so x = 5 or x = −5.",
+   "solution": "x = 5 and x = −5."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "(−4)² is also 16.",
+    "b": "16² is 256, not 16."
+   },
+   "right": "x² − 16 = 0, (x + 4)(x − 4) = 0.",
+   "solution": "x = 4 and x = −4."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "Do not divide by x: you lose x = 0.",
+    "c": "Substitute x = −3: 9 = −9 is false."
+   },
+   "right": "x² − 3x = 0, x(x − 3) = 0.",
+   "solution": "x = 0 and x = 3."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "(x + 4)(x − 2) = 0: x + 4 = 0 gives x = −4.",
+    "c": "Substitute x = −2: 4 − 4 = 0, not 8."
+   },
+   "right": "x² + 2x − 8 = 0, (x + 4)(x − 2) = 0.",
+   "solution": "x = −4 and x = 2."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "(x + 2)(x + 3) = 0: each factor gives a negative value.",
+    "c": "−1 · (−6) = 6, but −1 + (−6) = −7.",
+    "d": "Substitute x = 2: 4 + 10 + 6 is not 0."
+   },
+   "solution": "x = −2 and x = −3."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "(x − 2)(x − 5) = 0: x − 2 = 0 gives x = 2.",
+    "c": "Substitute x = −5: 25 + 35 + 10 is not 0.",
+    "d": "1 + 10 = 11, not 7."
+   },
+   "solution": "x = 2 and x = 5."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "x − 4 = 0 gives x = 4, not −4.",
+    "b": "x + 1 = 0 gives x = −1.",
+    "d": "x − 4 = 0 gives x = 4."
+   },
+   "solution": "x = 4 and x = −1."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "(−4)² is also 16.",
+    "b": "16² is 256.",
+    "c": "8² is 64."
+   },
+   "solution": "x = 4 and x = −4."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "Do not divide by x: you lose x = 0.",
+    "b": "Substitute x = −7: 49 = −49 is false.",
+    "c": "x = 7 also works: 49 = 49."
+   },
+   "solution": "x = 0 and x = 7."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "x + 4 = 0 gives x = −4.",
+    "c": "x = 0 is also a solution: x(x + 4) = 0.",
+    "d": "Factor: x(x + 4) = 0."
+   },
+   "solution": "x = 0 and x = −4."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "(x + 5)(x − 2) = 0: x + 5 = 0 gives x = −5.",
+    "b": "Substitute x = −2: 4 − 6 = −2, not 10.",
+    "d": "First make it equal zero: x² + 3x − 10 = 0."
+   },
+   "solution": "x = −5 and x = 2."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "9 feet is the length (x + 3), not the width.",
+    "c": "54 is the area, not a side.",
+    "d": "Solve x(x + 3) = 54."
+   },
+   "solution": "6 feet."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

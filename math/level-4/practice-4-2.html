@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 4.2 · practice (English) — built by tools/build_n4_lesson_4_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 4.2 · Completing the square · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 4 · Quadratic equations</div>
+    <h1>Lesson 4.2 · Completing the square</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#visual">The visual idea: completing a square</a></li>
+      <li><a href="#steps">The five steps (when a = 1)</a></li>
+      <li><a href="#divide">When a ≠ 1: divide first</a></li>
+      <li><a href="#add">How much do you add?</a></li>
+      <li><a href="#origin">The origin of the quadratic formula</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="visual" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The visual idea: completing a square</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>x² + bx is drawn as a square with side x plus a rectangle of area bx. Cut the rectangle in half and put one half on each side of the square: only one corner is missing to form a big square. That corner measures b/2 by b/2, so its area is (b/2)².</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="vi-b">Coefficient of x: b = <output id="vi-bv"></output></label><input type="range" id="vi-b" min="1" max="12" step="1" value="6"></div></div>
+        <div class="fila-btn"><button type="button" class="btn" id="vi-esq" aria-pressed="false">Complete the corner</button></div></div>
+      <div class="geo-svg" id="vi-svg"></div>
+      <div class="salida" aria-live="polite" id="vi-txt"></div>
+      <div class="caja-tip">If b is negative, the picture is the same with b/2 negative: x² − 6x + 9 = (x − 3)². The number you add, (b/2)², is always positive.</div>
+      <h3>Practice: which binomial squared is it?</h3>
+      <div class="practica" id="vq">
+        <div class="enun" id="vq-enun"></div>
+        <div class="opciones" id="vq-opciones"></div>
+        <div class="fb" id="vq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="vq-nuevo">New exercise</button></div>
+        <p class="marcador" id="vq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="steps">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The five steps (when a = 1)</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>1. Leave the x terms on one side. 2. Add (b/2)² to both sides. 3. Write the left side as (x + b/2)². 4. Take the square root with ±. 5. Solve for x.</p>
+      <div class="panel"><p class="enun" id="cs-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="cs-sig">Show the next step</button><button type="button" class="btn-sec" id="cs-todo">Show all the steps</button><button type="button" class="btn-sec" id="cs-nuevo">Another case</button></div></div>
+      <div class="pasos" id="cs-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>Do not forget the ±.</strong> The square root gives two results, the positive one and the negative one. Without the ± you lose a solution.</div>
+      <h3>Practice: solve by completing the square</h3>
+      <div class="practica" id="sq">
+        <div class="enun" id="sq-enun"></div>
+        <div class="campos"><div class="campo"><label for="sq-r">Solutions</label><input type="text" autocomplete="off" class="ancho" id="sq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="sq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="sq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="sq-fb" role="status"></div>
+        <p class="marcador" id="sq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="divide">
+    <summary><span class="num" aria-hidden="true">3</span><h2>When a ≠ 1: divide first</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The five steps work when the coefficient of x² is 1. If it is not, first divide the whole equation by a, including the constant.</p>
+      <div class="panel"><p class="enun" id="dv-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="dv-sig">Show the next step</button><button type="button" class="btn-sec" id="dv-todo">Show all the steps</button><button type="button" class="btn-sec" id="dv-nuevo">Another case</button></div></div>
+      <div class="pasos" id="dv-pasos" aria-live="polite"></div>
+      <h3>Practice: which equation do you get when you divide?</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">New exercise</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <h3>Practice: divide, complete the square, and solve</h3>
+      <div class="practica" id="dsq">
+        <div class="enun" id="dsq-enun"></div>
+        <div class="campos"><div class="campo"><label for="dsq-r">Solutions</label><input type="text" autocomplete="off" class="ancho" id="dsq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="dsq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="dsq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="dsq-fb" role="status"></div>
+        <p class="marcador" id="dsq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="add">
+    <summary><span class="num" aria-hidden="true">4</span><h2>How much do you add?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The heart of the method is (b/2)²: half the coefficient of x, squared. When b is odd, the result is a fraction.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="su-b">Type b</label><input type="text" autocomplete="off" id="su-b" value="5"></div></div></div>
+      <div class="salida" aria-live="polite" id="su-txt"></div>
+      <h3>Practice: the term that completes the square</h3>
+      <div class="practica" id="aq">
+        <div class="enun" id="aq-enun"></div>
+        <div class="campos"><div class="campo"><label for="aq-r">Term to add</label><input type="text" autocomplete="off" class="ancho" id="aq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="aq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="aq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="aq-fb" role="status"></div>
+        <p class="marcador" id="aq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="origin">
+    <summary><span class="num" aria-hidden="true">5</span><h2>The origin of the quadratic formula</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">x = (−b ± √(b² − 4ac)) / 2a</div>
+      <p>Completing the square in the general equation ax² + bx + c = 0, with letters, gives exactly the quadratic formula. It is not an isolated trick: it is the proof of where the formula of Lesson 4.3 comes from.</p>
+      <h3>Watch: the derivation, step by step</h3>
+      <div class="panel"><p class="enun" id="ol-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ol-sig">Show the next step</button><button type="button" class="btn-sec" id="ol-todo">Show all the steps</button><button type="button" class="btn-sec" id="ol-nuevo">Start again</button></div></div>
+      <div class="pasos" id="ol-pasos" aria-live="polite"></div>
+      <h3>Watch: the same steps with numbers</h3>
+      <div class="panel"><p class="enun" id="on-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="on-sig">Show the next step</button><button type="button" class="btn-sec" id="on-todo">Show all the steps</button><button type="button" class="btn-sec" id="on-nuevo">Another case</button></div></div>
+      <div class="pasos" id="on-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Look at step 4: the right side, (b² − 4ac)/4a², is exactly what goes inside the square root in the formula. And √(4a²) = 2a: that is where the denominator 2a comes from.</div>
+      <h3>Practice: follow the derivation</h3>
+      <div class="practica" id="oq">
+        <div class="enun" id="oq-enun"></div>
+        <div class="opciones" id="oq-opciones"></div>
+        <div class="fb" id="oq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="oq-nuevo">New exercise</button></div>
+        <p class="marcador" id="oq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 4 · Quadratic equations · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+var O = T(" or ", " o ");
+var SOL_AYUDA = T("Type both solutions separated by a comma, like: −2, 3.", "Escriba las dos soluciones separadas por una coma, como: −2, 3.");
+function xmas(h){ return "x" + (h < 0 ? " − " + Math.abs(h) : h > 0 ? " + " + h : ""); }
+function cuadTxt(h){ return "(" + xmas(h) + ")²"; }
+function eqV(p, d){ return pVis(p) + " = " + (d === undefined ? "0" : sg(d)); }
+function eqH(p, d){ return envuelve(eqV(p, d), pVoz(p) + T(" equals ", " es igual a ") + (d === undefined ? "0" : sg(d))); }
+
+/* ===== MODULE 1 · The area model ===== */
+function viDibuja(){
+  var b = +$("vi-b").value, h = b / 2, k = h * h, X = 150, u = 16, w = Math.abs(h) * u, x0 = 70, y0 = 40, lleno = $("vi-esq").getAttribute("aria-pressed") === "true";
+  $("vi-bv").textContent = sg(b);
+  var hv = frTxt(b, 2), kv = frTxt(b * b, 4), s = "";
+  s += '<rect x="' + x0 + '" y="' + y0 + '" width="' + X + '" height="' + X + '" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/>';
+  s += '<rect x="' + (x0 + X) + '" y="' + y0 + '" width="' + w + '" height="' + X + '" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/>';
+  s += '<rect x="' + x0 + '" y="' + (y0 + X) + '" width="' + X + '" height="' + w + '" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/>';
+  s += '<rect x="' + (x0 + X) + '" y="' + (y0 + X) + '" width="' + w + '" height="' + w + '" fill="' + (lleno ? "#ffcc80" : "#fff") + '" stroke="#e65100" stroke-width="2.5" stroke-dasharray="' + (lleno ? "none" : "6 4") + '"/>';
+  s += '<text x="' + (x0 + X / 2) + '" y="' + (y0 + X / 2 + 9) + '" font-size="26" font-weight="700" text-anchor="middle" fill="#0d47a1">x²</text>';
+  var et = (Math.abs(h) === 1 ? "" : String(Math.abs(h)).replace(".5", "½")) + "x";
+  if (w >= 34){ s += '<text x="' + (x0 + X + w / 2) + '" y="' + (y0 + X / 2 + 7) + '" font-size="18" font-weight="700" text-anchor="middle" fill="#1b5e20">' + et + '</text>'; }
+  s += '<text x="' + (x0 + X / 2) + '" y="' + (y0 + X + w / 2 + 7) + '" font-size="18" font-weight="700" text-anchor="middle" fill="#1b5e20">' + (w >= 22 ? et : "") + '</text>';
+  if (lleno && w >= 28) s += '<text x="' + (x0 + X + w / 2) + '" y="' + (y0 + X + w / 2 + 7) + '" font-size="17" font-weight="700" text-anchor="middle" fill="#bf360c">' + kv + '</text>';
+  s += '<text x="' + (x0 + X / 2) + '" y="' + (y0 - 10) + '" font-size="16" text-anchor="middle" fill="#37474f">x</text><text x="' + (x0 + X + w / 2) + '" y="' + (y0 - 10) + '" font-size="16" text-anchor="middle" fill="#37474f">' + frTxt(Math.abs(b), 2) + '</text>';
+  s += '<text x="' + (x0 - 10) + '" y="' + (y0 + X / 2 + 6) + '" font-size="16" text-anchor="end" fill="#37474f">x</text><text x="' + (x0 - 10) + '" y="' + (y0 + X + w / 2 + 6) + '" font-size="16" text-anchor="end" fill="#37474f">' + frTxt(Math.abs(b), 2) + '</text>';
+  var W = x0 + X + w + 30, H = y0 + X + w + 20;
+  $("vi-svg").innerHTML = '<svg style="display:block;margin:auto" viewBox="0 0 ' + W + " " + H + '" width="' + Math.min(420, W * 1.25) + '" role="img" aria-label="' + T("Area model of x² + ", "Modelo del área de x² + ") + Math.abs(b) + "x" + (lleno ? T(" with the corner of " + kv + " completed", " con la esquina de " + kv + " completada") : T(" with the corner still missing", " con la esquina todavía vacía")) + '">' + s + "</svg>";
+  var p = [0, b, 1];
+  $("vi-txt").innerHTML = '<div class="linea">' + T("Half of ", "La mitad de ") + sg(b) + " = " + hv + "; " + T("the corner is ", "la esquina es ") + "(" + hv + ")² = " + kv + ".</div>" +
+    (lleno ? '<div class="linea"><strong>' + pVis(p) + " + " + kv + " = (x " + (b < 0 ? "−" : "+") + " " + frTxt(Math.abs(b), 2) + ")²</strong>. " + T("The big square has side x + b/2.", "El cuadrado grande tiene lado x + b/2.") + "</div>" : '<div class="linea">' + T("Press “Complete the corner”.", "Pulse «Completar la esquina».") + "</div>");
+}
+$("vi-b").addEventListener("input", function(){ $("vi-esq").setAttribute("aria-pressed", "false"); viDibuja(); });
+$("vi-esq").addEventListener("click", function(){ $("vi-esq").setAttribute("aria-pressed", $("vi-esq").getAttribute("aria-pressed") === "true" ? "false" : "true"); viDibuja(); });
+viDibuja();
+OMR("vq", function(){
+  var h = nz(-9, 9), b = 2 * h, k = h * h;
+  var ops = [{clave: "ok", html: cuadTxt(h)}, {clave: "s", html: cuadTxt(-h)}, {clave: "b", html: cuadTxt(b)}, {clave: "k", html: "(x " + (h < 0 ? "− " : "+ ") + k + ")²"}];
+  var vistos = {}; ops = ops.filter(function(o){ if (vistos[o.html]) return false; vistos[o.html] = 1; return true; });
+  return {enun: T("Which binomial squared is ", "¿Qué binomio al cuadrado es ") + envuelve(pVis([k, b, 1]), pVoz([k, b, 1])) + "?", correcta: "ok", opciones: ops,
+    porClave: {s: T("Look at the sign of the middle term: it goes inside the parentheses.", "Mire el signo del término del medio: es el que va dentro del paréntesis."), b: T("Inside goes half of b, not b.", "Dentro va la mitad de b, no b."), k: T("Inside goes half of b, not the last term.", "Dentro va la mitad de b, no el último término.")},
+    pista: T("Half of the coefficient of x goes inside the parentheses.", "Dentro del paréntesis va la mitad del coeficiente de x."), bien: pVis([k, b, 1]) + " = " + cuadTxt(h) + T(", because half of ", ", porque la mitad de ") + sg(b) + T(" is ", " es ") + sg(h) + T(" and ", " y ") + pn(h) + "² = " + k + "."};
+});
+
+/* ===== MODULE 2 · The five steps ===== */
+function casoCC(a){
+  var r1, r2; do { r1 = nz(-9, 9); r2 = nz(-9, 9); } while ((r1 + r2) % 2 || r1 === r2 || r1 + r2 === 0);
+  var b = -(r1 + r2), c = r1 * r2, h = b / 2, D = h * h - c;
+  return {a: a || 1, r1: Math.max(r1, r2), r2: Math.min(r1, r2), b: b, c: c, h: h, k: h * h, D: D, d: Math.sqrt(D)};
+}
+function pasosCC(k){
+  return [T("Leave the x terms on one side: ", "Se dejan los términos con x a un lado: ") + pVis([0, k.b, 1]) + " = " + sg(-k.c) + ".",
+    T("Half of ", "La mitad de ") + sg(k.b) + T(" is ", " es ") + sg(k.h) + T("; squared, ", "; al cuadrado, ") + k.k + ". " + T("Add ", "Se suma ") + k.k + T(" to both sides: ", " a ambos lados: ") + pVis([0, k.b, 1]) + " + " + k.k + " = " + sg(-k.c) + " + " + k.k + " = " + sg(k.D) + ".",
+    T("The left side is a binomial squared: ", "El lado izquierdo es un binomio al cuadrado: ") + cuadTxt(k.h) + " = " + k.D + ".",
+    T("Square root with ±: ", "Raíz cuadrada con ±: ") + xmas(k.h) + " = ±" + k.d + ".",
+    T("Solve: ", "Se resuelve: ") + "x = " + sg(-k.h) + " + " + k.d + " = " + sg(k.r1) + O + "x = " + sg(-k.h) + " − " + k.d + " = " + sg(k.r2) + ".",
+    T("Solutions: ", "Soluciones: ") + "<strong>x = " + sg(k.r1) + O + "x = " + sg(k.r2) + "</strong>."];
+}
+pasoAPaso4("cs", function(){ var k = casoCC(); return {enun: T("Solve by completing the square: ", "Resuelva completando el cuadrado: ") + eqH([k.c, k.b, 1]) + ".", pasos: pasosCC(k)}; });
+creaPracticaLibre("sq", function(){ var k = casoCC();
+  return {enun: T("Solve by completing the square: ", "Resuelva completando el cuadrado: ") + eqH([k.c, k.b, 1]) + ". " + SOL_AYUDA,
+    evalua: function(txt){ var v = leeSol(txt); if (v && v.length === 2 && v.some(function(x){ return x === k.h + k.d || x === k.h - k.d; }) && !v.every(function(x){ return x === k.r1 || x === k.r2; })) return {estado: "mal", msg: T("After x + b/2 = ±d, subtract b/2: x = −b/2 ± d. Watch the sign.", "Después de x + b/2 = ±d, se resta b/2: x = −b/2 ± d. Cuide el signo.")}; return evaluaSol(txt, [k.r1, k.r2]); },
+    solucion: pasosCC(k).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 3 · Divide first ===== */
+function pasosDiv(k){
+  var A = k.a;
+  return [T("Divide every term by ", "Se divide cada término entre ") + A + ": " + eqV([k.c, k.b, 1]) + "."].concat(pasosCC(k));
+}
+pasoAPaso4("dv", function(){ var k = casoCC(elige([2, 3, 4, 5])); return {enun: T("Solve by completing the square: ", "Resuelva completando el cuadrado: ") + eqH([k.a * k.c, k.a * k.b, k.a]) + ".", pasos: pasosDiv(k)}; });
+OMR("dq", function(){ var k = casoCC(elige([2, 3, 4, 5])), A = k.a, P = [A * k.c, A * k.b, A];
+  var ops = [{clave: "ok", html: eqH([k.c, k.b, 1])}, {clave: "c", html: eqH([A * k.c, k.b, 1])}, {clave: "b", html: eqH([k.c, A * k.b, 1])}, {clave: "x", html: eqH([k.c, k.b, A])}];
+  return {enun: T("Divide ", "Divida ") + eqH(P) + T(" by ", " entre ") + A + T(". Which equation do you get?", ". ¿Qué ecuación queda?"), correcta: "ok", opciones: ops,
+    porClave: {c: T("The constant must be divided too.", "También hay que dividir el término independiente."), b: T("The x term must be divided too.", "También hay que dividir el término con x."), x: T("x² must be divided too: its coefficient becomes 1.", "También se divide x²: su coeficiente queda en 1.")},
+    pista: T("Divide all three terms.", "Divida los tres términos."), bien: T("All three terms are divided by ", "Se dividen los tres términos entre ") + A + ": " + eqV([k.c, k.b, 1]) + "."};
+});
+creaPracticaLibre("dsq", function(){ var k = casoCC(elige([2, 3])), P = [k.a * k.c, k.a * k.b, k.a];
+  return {enun: T("Solve by completing the square: ", "Resuelva completando el cuadrado: ") + eqH(P) + ". " + SOL_AYUDA, evalua: function(txt){ return evaluaSol(txt, [k.r1, k.r2]); }, solucion: pasosDiv(k).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 4 · How much to add ===== */
+function suDibuja(){
+  var r = leeSol($("su-b").value), out = $("su-txt");
+  if (!r || r.length !== 1 || r[0] !== Math.round(r[0])){ out.innerHTML = '<div class="linea">' + T("Type a whole number for b, like 8 or −7.", "Escriba un número entero para b, como 8 o −7.") + "</div>"; return; }
+  var b = r[0];
+  out.innerHTML = '<div class="linea">x² ' + (b < 0 ? "− " : "+ ") + (Math.abs(b) === 1 ? "" : Math.abs(b)) + "x: b/2 = " + frTxt(b, 2) + T("; you add ", "; se suma ") + "(b/2)² = (" + frTxt(b, 2) + ")² = <strong>" + frTxt(b * b, 4) + "</strong>.</div>" +
+    '<div class="linea">' + pVis([0, b, 1]) + " + " + frTxt(b * b, 4) + " = (x " + (b < 0 ? "−" : "+") + " " + frTxt(Math.abs(b), 2) + ")²" + (b % 2 ? T(". b is odd, so the result is a fraction.", ". b es impar, así que el resultado es una fracción.") : ".") + "</div>";
+}
+$("su-b").addEventListener("input", suDibuja); suDibuja();
+creaPracticaLibre("aq", function(){ var b = nz(-15, 15), k = b * b / 4;
+  return {enun: T("What do you add to complete the square of ", "¿Qué se suma para completar el cuadrado de ") + envuelve(pVis([0, b, 1]), pVoz([0, b, 1])) + T("? A fraction can be written as 25/4.", "? Una fracción se escribe como 25/4."),
+    evalua: function(txt){ var v = leeSol(txt); if (!v || v.length !== 1) return {estado: "invalido", msg: T("Type one number.", "Escriba un número.")}; var x = v[0];
+      if (Math.abs(x - k) < 1e-9) return {estado: "bien"};
+      if (Math.abs(x - b / 2) < 1e-9 || Math.abs(x + b / 2) < 1e-9) return {estado: "mal", msg: T("That is half of b. Now square it.", "Esa es la mitad de b. Ahora elévela al cuadrado.")};
+      if (Math.abs(x - b * b) < 1e-9) return {estado: "mal", msg: T("That is b². First take half of b, then square it.", "Eso es b². Primero saque la mitad de b y después elévela al cuadrado.")};
+      if (Math.abs(x + k) < 1e-9) return {estado: "mal", msg: T("A square is never negative.", "Un cuadrado nunca es negativo.")};
+      return {estado: "mal", msg: T("Take half of the coefficient of x and square it.", "Saque la mitad del coeficiente de x y elévela al cuadrado.")}; },
+    solucion: "b/2 = " + frTxt(b, 2) + "; (" + frTxt(b, 2) + ")² = " + frTxt(b * b, 4) + "."};
+});
+
+/* ===== MODULE 5 · The origin of the formula ===== */
+var OR_EXPR = ["ax² + bx + c = 0", "x² + (b/a)x + c/a = 0", "x² + (b/a)x = −c/a", "x² + (b/a)x + b²/4a² = b²/4a² − c/a", "(x + b/2a)² = (b² − 4ac)/4a²", "x + b/2a = ±√(b² − 4ac) / 2a", "x = (−b ± √(b² − 4ac)) / 2a"];
+var OR_ACC = ["", T("Divide everything by a", "Se divide todo entre a"), T("Move the constant to the other side", "Se pasa la constante al otro lado"), T("Add (b/2a)² = b²/4a² to both sides", "Se suma (b/2a)² = b²/4a² en ambos lados"), T("Factor the perfect square and use a common denominator", "Se factoriza el cuadrado perfecto y se usa denominador común"), T("Take the square root without forgetting the ±", "Se saca raíz cuadrada sin olvidar el ±"), T("Subtract b/2a to get x alone", "Se despeja x restando b/2a")];
+var OR_MAL = ["", T("Divide only the bx term by a", "Se divide entre a solo el término bx"), T("Move the (b/a)x term to the other side", "Se pasa el término (b/a)x al otro lado"), T("Add half, b/2a, to both sides", "Se suma la mitad, b/2a, en ambos lados"), T("Multiply everything by 4a² to clear denominators", "Se multiplica todo por 4a² para quitar denominadores"), T("Take the square root of the left side only", "Se saca raíz cuadrada solo del lado izquierdo"), T("Add b/2a to get x alone", "Se despeja x sumando b/2a")];
+var OR_EXPR_MAL = [[], ["x² + bx + c/a = 0", "x² + (b/a)x + c = 0", "x² + (a/b)x + c/a = 0"], ["x² + (b/a)x = c/a", "x² = −(b/a)x − c/a", "x² + (b/a)x = −c"], ["x² + (b/a)x + b/2a = b/2a − c/a", "x² + (b/a)x + b²/4a² = −c/a", "x² + (b/a)x + b²/4a² = b²/4a² + c/a"], ["(x + b/a)² = (b² − 4ac)/4a²", "(x + b/2a)² = (b² − 4c)/4a²", "(x + b/2a)² = (b² − 4ac)/2a"], ["x + b/2a = √(b² − 4ac) / 2a", "x + b/2a = ±√(b² − 4ac) / 4a²", "x + b/2a = ±(b² − 4ac) / 2a"], ["x = (b ± √(b² − 4ac)) / 2a", "x = −b/2a ± √(b² − 4ac)", "x = (−b ± √(b² + 4ac)) / 2a"]];
+var OR_EXPL = ["", T("So that the coefficient of x² is 1, all three terms are divided by a: bx ÷ a = (b/a)x and c ÷ a = c/a.", "Para que el coeficiente de x² sea 1, se dividen los tres términos entre a: bx ÷ a = (b/a)x y c ÷ a = c/a."), T("Subtract c/a on both sides, leaving only the x terms on the left: −c/a is on the right.", "Se resta c/a en ambos lados, para dejar a un lado solo los términos con x: queda −c/a a la derecha."), T("Half the coefficient of x is (b/a) ÷ 2 = b/2a; squared, b²/4a². It is added to both sides to keep the equation balanced.", "La mitad del coeficiente de x es (b/a) ÷ 2 = b/2a, y al cuadrado queda b²/4a². Se suma en ambos lados para mantener la igualdad."), T("On the left, x² + (b/a)x + b²/4a² = (x + b/2a)². On the right, with the common denominator 4a²: b²/4a² − 4ac/4a² = (b² − 4ac)/4a².", "A la izquierda, x² + (b/a)x + b²/4a² = (x + b/2a)². A la derecha, con denominador común 4a²: b²/4a² − 4ac/4a² = (b² − 4ac)/4a²."), T("The square root gives two signs (±). Also, √(4a²) = 2a, so the denominator is 2a.", "Al sacar la raíz aparecen dos signos (±). Además, √(4a²) = 2a, por eso el denominador queda 2a."), T("Subtract b/2a on both sides; both terms have denominator 2a, so they are written together.", "Se resta b/2a en ambos lados; como los dos términos tienen denominador 2a, se escriben juntos.")];
+pasoAPaso4("ol", function(){ var P = []; for (var i = 1; i <= 6; i++) P.push(OR_ACC[i] + ": <strong>" + OR_EXPR[i] + "</strong>. " + OR_EXPL[i]); P.push(T("Result: the quadratic formula, the same one on the GED formula sheet.", "Resultado: la fórmula cuadrática, la misma que aparece en la hoja de fórmulas del GED.")); return {enun: T("Complete the square in ", "Completar el cuadrado en ") + "<strong>ax² + bx + c = 0</strong>.", pasos: P}; });
+function casoNum(){ var a = aleatorio(2, 4), k = casoCC(a); k.B = a * k.b; k.C = a * k.c; k.delta = k.B * k.B - 4 * a * k.C; return k; }
+pasoAPaso4("on", function(){ var k = casoNum(), a = k.a, raiz = Math.sqrt(k.delta);
+  var P = [T("Divide everything by ", "Se divide todo entre ") + a + ": " + eqV([k.c, k.b, 1]) + ".", T("Move the constant: ", "Se pasa la constante: ") + pVis([0, k.b, 1]) + " = " + sg(-k.c) + ".",
+    T("Add (b/2a)² = (", "Se suma (b/2a)² = (") + sg(k.B) + "/" + 2 * a + ")² = " + k.k + ": " + cuadTxt(k.h) + " = " + k.D + ". " + T("With letters: (b² − 4ac)/4a² = ", "Con letras: (b² − 4ac)/4a² = ") + k.delta + "/" + 4 * a * a + " = " + k.D + ".",
+    T("Square root with ±: ", "Raíz cuadrada con ±: ") + xmas(k.h) + " = ±" + k.d + ".", T("x = ", "x = ") + sg(k.r1) + O + "x = " + sg(k.r2) + ".",
+    T("With the formula: x = (", "Con la fórmula: x = (") + sg(-k.B) + " ± √" + k.delta + ") / " + 2 * a + " = (" + sg(-k.B) + " ± " + raiz + ") / " + 2 * a + ": <strong>x = " + sg(k.r1) + O + "x = " + sg(k.r2) + "</strong>. " + T("Both methods give the same solutions.", "Los dos métodos dan las mismas soluciones.")];
+  return {enun: T("Solve ", "Resuelva ") + eqH([k.C, k.B, a]) + " (a = " + a + ", b = " + sg(k.B) + ", c = " + sg(k.C) + ").", pasos: P}; });
+var OR_ULT = -1;
+OMR("oq", function(){
+  var tipo; do { tipo = aleatorio(0, 3); } while (tipo === OR_ULT); OR_ULT = tipo;
+  if (tipo === 0){ var n = aleatorio(1, 6), otros = []; for (var i = 1; i <= 6; i++) if (i !== n && Math.abs(i - n) <= 2) otros.push(OR_ACC[i]); otros = baraja(otros);
+    return {enun: T("In the derivation, ", "En la derivación, ") + "«" + OR_EXPR[n - 1] + "» " + T("becomes", "se convierte en") + " «" + OR_EXPR[n] + "». " + T("What was done in this step?", "¿Qué se hizo en este paso?"), correcta: "ok", opciones: [{clave: "ok", html: OR_ACC[n]}, {clave: "m", html: OR_MAL[n]}, {clave: "o1", html: otros[0]}, {clave: "o2", html: otros[1]}], pista: OR_EXPL[n], bien: T("Step ", "Paso ") + n + ": " + OR_EXPL[n]}; }
+  if (tipo === 1){ var m = aleatorio(1, 6);
+    return {enun: T("You have ", "Se tiene ") + "«" + OR_EXPR[m - 1] + "». " + T("Next step: ", "Siguiente paso: ") + OR_ACC[m].charAt(0).toLowerCase() + OR_ACC[m].slice(1) + ". " + T("Which equation do you get?", "¿Qué ecuación queda?"), correcta: "ok", opciones: [{clave: "ok", html: OR_EXPR[m]}].concat(OR_EXPR_MAL[m].map(function(e, j){ return {clave: "m" + j, html: e}; })), pista: OR_EXPL[m], bien: T("Step ", "Paso ") + m + ": " + OR_EXPL[m]}; }
+  var k; do { k = casoNum(); } while (Math.abs(k.h) < 2);
+  if (tipo === 2){ var cand = [k.k, k.a * k.a * k.k, k.h, k.b * k.b, k.a * k.k, 2 * k.k], ops = [], vis = {};
+    cand.forEach(function(v, j){ if (!vis[v] && ops.length < 4){ vis[v] = 1; ops.push({clave: j ? "m" + j : "ok", html: sg(v)}); } });
+    return {enun: T("To solve ", "Para resolver ") + eqH([k.C, k.B, k.a]) + T(" by completing the square, first divide by ", " completando el cuadrado, primero se divide entre ") + k.a + T(" to get ", " y queda ") + eqH([k.c, k.b, 1]) + ". " + T("What number do you add to both sides?", "¿Qué número se suma en ambos lados?"), correcta: "ok", opciones: ops,
+      pista: T("Half the coefficient of x, squared.", "La mitad del coeficiente de x, al cuadrado."), bien: T("After dividing, the coefficient of x is ", "Después de dividir, el coeficiente de x es ") + sg(k.b) + T("; half is ", "; su mitad es ") + sg(k.h) + T(", and squared, ", " y al cuadrado, ") + k.k + "."}; }
+  var cand2 = [k.delta, k.B * k.B + 4 * k.a * k.C, k.B * k.B - 4 * k.C, k.D, k.B * k.B - 2 * k.a * k.C], ops2 = [], vis2 = {};
+  cand2.forEach(function(v, j){ if (!vis2[v] && ops2.length < 4){ vis2[v] = 1; ops2.push({clave: j ? "m" + j : "ok", html: sg(v)}); } });
+  return {enun: T("Completing the square in ", "Al completar el cuadrado en ") + eqH([k.C, k.B, k.a]) + T(" gives ", " se llega a ") + cuadTxt(k.h) + " = " + k.D + T(". That ", ". Ese ") + k.D + T(" is (b² − 4ac)/4a². What is b² − 4ac for this equation?", " es (b² − 4ac)/4a². ¿Cuánto vale b² − 4ac en esta ecuación?"), correcta: "ok", opciones: ops2,
+    pista: "a = " + k.a + ", b = " + sg(k.B) + ", c = " + sg(k.C) + ".", bien: "b² − 4ac = " + pn(k.B) + "² − 4(" + k.a + ")" + pn(k.C) + " = " + k.delta + ". " + k.delta + "/" + 4 * k.a * k.a + " = " + k.D + "."};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

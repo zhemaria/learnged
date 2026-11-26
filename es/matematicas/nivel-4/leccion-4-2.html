@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 4.2 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_4_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 4.2 · Completar el cuadrado · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-4-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 4 — Ecuaciones cuadráticas</p>
+<h1>Lección 4.2 · Completar el cuadrado</h1>
+<p class="lema">Complete el cuadrado para resolver cualquier ecuación cuadrática: sume (b/2)², escriba un binomio al cuadrado y saque la raíz con ±.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">✏️</span> Sin calculadora</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Explicar</strong> la idea de completar el cuadrado con el modelo del área.</li>
+<li><strong>Resolver</strong> ecuaciones cuadráticas completando el cuadrado con cinco pasos.</li>
+<li><strong>Dividir</strong> primero entre a cuando el coeficiente de x² no es 1, y calcular (b/2)², incluso como fracción.</li>
+<li><strong>Seguir</strong> cómo completar el cuadrado conduce a la fórmula cuadrática.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.4.a</span> Resolver ecuaciones cuadráticas de una variable con coeficientes racionales y soluciones reales, con el método adecuado (por ejemplo, la fórmula cuadrática, completar el cuadrado, la factorización o la inspección).</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.b</span> Transformar y resolver expresiones algebraicas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-REI.4</span> <span class="std-nivel">Nivel E</span> Resolver ecuaciones cuadráticas de una variable: por inspección (por ejemplo, x² = 49), sacando raíces cuadradas, completando el cuadrado, con la fórmula cuadrática y factorizando, según convenga a la forma inicial de la ecuación. Reconocer cuándo la fórmula cuadrática da soluciones complejas y escribirlas como a ± bi, con a y b números reales.</li><li><span class="std-cod std-ccr">A-SSE.3</span> <span class="std-nivel">Nivel E</span> Elegir y obtener una forma equivalente de una expresión para revelar y explicar propiedades de la cantidad que representa: factorizar una expresión cuadrática para revelar los ceros de la función que define; completar el cuadrado en una expresión cuadrática para revelar el valor máximo o mínimo de la función que define.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-visual">La idea visual: completar un cuadrado</a></li>
+<li><a href="#s-pasos">Los cinco pasos (cuando a = 1)</a></li>
+<li><a href="#s-dividir">Cuando a ≠ 1: dividir primero</a></li>
+<li><a href="#s-sumar">¿Cuánto hay que sumar?</a></li>
+<li><a href="#s-origen">El origen de la fórmula cuadrática</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-visual"><span aria-hidden="true" class="num-seccion">1</span>La idea visual: completar un cuadrado</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 4.1 se resolvieron ecuaciones cuadráticas por factorización. Pero hay ecuaciones que no se factorizan con números enteros. <strong>Completar el cuadrado</strong> es un método que funciona siempre, factorice o no la ecuación, y además es la base de la fórmula cuadrática.</p>
+<p>La expresión x² + 6x se puede representar como un cuadrado de lado x más un rectángulo de área 6x. Si ese rectángulo se parte por la mitad y se coloca una mitad a cada lado, falta un pedacito cuadrado para «completar» un cuadrado grande. Ese pedacito es (6/2)² = 9.</p>
+<svg viewBox="0 0 420 330" role="img" aria-label="Modelo del área: un cuadrado de x por x, dos rectángulos de 3 por x de área 3x cada uno y la esquina que falta, de 3 por 3 y área 9. Juntos forman un cuadrado de lado x + 3." style="width:100%;max-width:380px;height:auto;display:block;margin:12px auto;"><rect x="60" y="30" width="170" height="170" fill="#e3f2fd" stroke="#0d47a1" stroke-width="2.5"/><rect x="230" y="30" width="85" height="170" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/><rect x="60" y="200" width="170" height="85" fill="#e8f5e9" stroke="#1b5e20" stroke-width="2.5"/><rect x="230" y="200" width="85" height="85" fill="#fff3e0" stroke="#e65100" stroke-width="2.5" stroke-dasharray="7 5"/><text x="145.0" y="124.0" font-size="26" font-weight="700" text-anchor="middle" fill="#0d47a1">x²</text><text x="272.5" y="123.0" font-size="22" font-weight="700" text-anchor="middle" fill="#1b5e20">3x</text><text x="145.0" y="250.5" font-size="22" font-weight="700" text-anchor="middle" fill="#1b5e20">3x</text><text x="272.5" y="250.5" font-size="24" font-weight="700" text-anchor="middle" fill="#e65100">9</text><text x="145.0" y="22" font-size="17" text-anchor="middle" fill="#37474f">x</text><text x="272.5" y="22" font-size="17" text-anchor="middle" fill="#37474f">3</text><text x="50" y="121.0" font-size="17" text-anchor="end" fill="#37474f">x</text><text x="50" y="248.5" font-size="17" text-anchor="end" fill="#37474f">3</text></svg>
+<p class="formula" style="text-align:center;font-size:1.25rem;font-weight:700;">x² + 6x + 9 = (x + 3)²</p>
+<p>Al sumar ese término que falta, x² + 6x + 9 se convierte en el cuadrado perfecto (x + 3)². Esa es la idea central: agregar el término justo para formar un binomio al cuadrado.</p>
+<a class="enlace-interactivo" href="practica-4-2.html#visual" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el modelo del área (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el modelo del área</span><span class="ei-sub">Cambie el valor de b y complete la esquina que falta para ver cómo x² + bx se convierte en un binomio al cuadrado.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-pasos"><span aria-hidden="true" class="num-seccion">2</span>Los cinco pasos (cuando a = 1)</h2>
+<div aria-label="Los cinco pasos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Los cinco pasos para resolver una ecuación cuadrática completando el cuadrado</caption>
+<thead><tr><th scope="col">Paso</th><th scope="col">Acción</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Dejar los términos con x a un lado: x² + bx = −c.</td></tr>
+<tr><td>2</td><td>Sumar (b/2)² a ambos lados.</td></tr>
+<tr><td>3</td><td>Escribir el lado izquierdo como (x + b/2)².</td></tr>
+<tr><td>4</td><td>Sacar la raíz cuadrada de ambos lados, con ±.</td></tr>
+<tr><td>5</td><td>Resolver para x.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Resolver x² + 6x − 7 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x² + 6x = 7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>(6/2)² = 9. Se suma 9 a ambos lados:</strong> x² + 6x + 9 = 16.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(x + 3)² = 16.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x + 3 = ±4.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = −3 + 4 = 1 o x = −3 − 4 = −7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Soluciones.</strong> <strong>x = 1 y x = −7</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Resolver x² − 4x − 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>x² − 4x = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>(−4/2)² = 4. Se suma 4:</strong> x² − 4x + 4 = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(x − 2)² = 9.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x − 2 = ±3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = 5 o x = −1.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Soluciones.</strong> <strong>x = 5 y x = −1</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">No olvide el signo ±</span>
+<p>Al sacar la raíz cuadrada de ambos lados aparecen dos resultados, el positivo y el negativo. Omitir el signo ± hace perder una de las dos soluciones.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — x² + 4x − 5 = 0</h3></div>
+<p class="pregunta-int" id="t-p1">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 y x = 5</button>
+<button class="opcion" data-k="b" type="button">x = 1 y x = 5</button>
+<button class="opcion" data-k="c" type="button">x = 1 y x = −5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — x² − 2x − 8 = 0</h3></div>
+<p class="pregunta-int" id="t-p2">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">x = 4 y x = −2</button>
+<button class="opcion" data-k="b" type="button">x = −4 y x = 2</button>
+<button class="opcion" data-k="c" type="button">x = 4 y x = 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — x² + 6x + 5 = 0</h3></div>
+<p class="pregunta-int" id="t-p3">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">x = 1 y x = 5</button>
+<button class="opcion" data-k="b" type="button">x = −1 y x = −5</button>
+<button class="opcion" data-k="c" type="button">x = −1 y x = 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#pasos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: los cinco pasos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: los cinco pasos</span><span class="ei-sub">Siga un caso paso a paso y después resuelva por su cuenta, con dos intentos y la solución completa.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-dividir"><span aria-hidden="true" class="num-seccion">3</span>Cuando a ≠ 1: dividir primero</h2>
+<p>El método de los cinco pasos asume que el coeficiente de x² es 1. Si no lo es, el primer movimiento es dividir toda la ecuación entre a.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Resolver 2x² + 8x − 10 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se divide todo entre 2:</strong> x² + 4x − 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>x² + 4x = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>(4/2)² = 4. Se suma 4:</strong> (x + 2)² = 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x + 2 = ±3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>x = 1 o x = −5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Soluciones.</strong> <strong>x = 1 y x = −5</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Divida la ecuación completa</span>
+<p>Al dividir entre a, se dividen todos los términos, incluido el término independiente. Así el coeficiente de x² queda en 1 y los cinco pasos funcionan tal cual.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#dividir" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: dividir primero entre a (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: dividir primero entre a</span><span class="ei-sub">Divida la ecuación entre a antes de completar el cuadrado y compruebe que se dividen los tres términos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-sumar"><span aria-hidden="true" class="num-seccion">4</span>¿Cuánto hay que sumar?</h2>
+<p>El corazón del método es calcular (b/2)²: la mitad del coeficiente de x, elevada al cuadrado. Conviene practicarlo por separado:</p>
+<div aria-label="El término que completa el cuadrado (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Ejemplos del término que completa el cuadrado según el coeficiente de x</caption>
+<thead><tr><th scope="col">Expresión</th><th scope="col">b/2</th><th scope="col">Se suma (b/2)²</th></tr></thead>
+<tbody>
+<tr><td>x² + 8x</td><td>4</td><td>16</td></tr>
+<tr><td>x² − 10x</td><td>−5</td><td>25</td></tr>
+<tr><td>x² + 12x</td><td>6</td><td>36</td></tr>
+<tr><td>x² − 6x</td><td>−3</td><td>9</td></tr>
+<tr><td>x² + 5x</td><td>5/2</td><td>25/4</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Siempre positivo</span>
+<p>Aunque b sea negativo, (b/2)² es positivo: (−5)² = 25. Cuando b es impar, el resultado es una fracción: (5/2)² = 25/4.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — x² + 12x</h3></div>
+<p class="pregunta-int" id="t-p4">¿Qué término completa el cuadrado?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">24</button>
+<button class="opcion" data-k="b" type="button">144</button>
+<button class="opcion" data-k="c" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — x² − 6x</h3></div>
+<p class="pregunta-int" id="t-p5">¿Qué término completa el cuadrado?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — x² + 5x</h3></div>
+<p class="pregunta-int" id="t-p6">¿Qué término completa el cuadrado?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">25/4</button>
+<button class="opcion" data-k="b" type="button">5/2</button>
+<button class="opcion" data-k="c" type="button">25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#sumar" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cuánto hay que sumar (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cuánto hay que sumar</span><span class="ei-sub">Calcule (b/2)² para cualquier b, también cuando b es impar y el resultado es una fracción.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-origen"><span aria-hidden="true" class="num-seccion">5</span>El origen de la fórmula cuadrática</h2>
+<p>Si se completa el cuadrado en la ecuación general ax² + bx + c = 0 (sin números, solo letras), el resultado es exactamente la fórmula cuadrática:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">x = (−b ± √(b² − 4ac)) / 2a</p>
+<p>Por eso este método es tan importante: no es un truco aislado, sino la demostración de dónde proviene la fórmula que se usará en la Lección 4.3 para resolver cualquier ecuación cuadrática.</p>
+<div class="ejemplo">
+<p class="titulo-ej">La derivación, paso a paso (los mismos pasos de la sección 3, con letras)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se divide todo entre a:</strong> x² + (b/a)x + c/a = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se pasa la constante al otro lado:</strong> x² + (b/a)x = −c/a.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se suma la mitad del coeficiente de x, al cuadrado, en ambos lados: (b/2a)² = b²/4a².</strong> x² + (b/a)x + b²/4a² = b²/4a² − c/a.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>El lado izquierdo es un cuadrado perfecto, y el derecho se escribe con denominador común:</strong> (x + b/2a)² = (b² − 4ac)/4a².</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Se saca raíz cuadrada sin olvidar el ±:</strong> x + b/2a = ±√(b² − 4ac) / 2a.</p>
+<p class="paso"><span aria-hidden="true" class="n">6</span><strong>Se despeja x restando b/2a:</strong> x = (−b ± √(b² − 4ac)) / 2a.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Resultado:</strong> la fórmula cuadrática, la misma que aparece en la hoja de fórmulas del GED.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-2.html#origen" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el origen de la fórmula cuadrática (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el origen de la fórmula cuadrática</span><span class="ei-sub">Siga la derivación con letras y con números, y responda preguntas sobre cada paso.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-4-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno abierto: (1) De la figura al algoritmo: resuelva x² + 6x = 7 y x² + 4x = 12 dibujando el modelo del área. Luego aplique los cinco pasos a x² + 8x + 7 = 0, x² − 10x + 16 = 0, x² + 2x − 8 = 0, x² − 6x − 3 = 0, 2x² + 8x − 10 = 0 y 3x² − 12x + 6 = 0. En cada una, anote cuál es el término (b/2)² que completa el cuadrado. (2) La derivación: después de estudiar los seis pasos de la sección 5, cierre la lección y complete usted el cuadrado en ax² + bx + c = 0 hasta llegar a la fórmula cuadrática. Compare su resultado con la hoja de fórmulas del GED. (3) No pierdo soluciones: en cada resolución se olvidó el signo ±. Encuentre la solución que falta y escriba las dos: (x + 2)² = 9 → x = 1; (x − 4)² = 25 → x = 9; (x + 1)² = 7 → x = −1 + √7. Después haga varios ejercicios de cada actividad de la página de práctica, resolviéndolos primero en el cuaderno, y anote los que falle para repasarlos. Unos 60 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Recorte un cuadrado de papel y dos tiras iguales, como en el modelo del área. Muéstrele a alguien en casa cómo la esquina que falta «completa» el cuadrado y pídale que halle la esquina de x² + 10x.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿Qué se suma para completar el cuadrado de x² + 8x?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8</button><button class="opcion" data-k="b" type="button">16</button><button class="opcion" data-k="c" type="button">64</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">¿Qué se suma para completar el cuadrado de x² − 10x?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Resuelva x² + 6x − 7 = 0.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 1 y x = −7</button><button class="opcion" data-k="b" type="button">x = −1 y x = 7</button><button class="opcion" data-k="c" type="button">x = 1 y x = 7</button><button class="opcion" data-k="d" type="button">x = −1 y x = −7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Resuelva x² − 4x − 5 = 0.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −5 y x = 1</button><button class="opcion" data-k="b" type="button">x = 5 y x = 1</button><button class="opcion" data-k="c" type="button">x = −5 y x = −1</button><button class="opcion" data-k="d" type="button">x = 5 y x = −1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Resuelva x² + 2x − 3 = 0.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 y x = 3</button><button class="opcion" data-k="b" type="button">x = 1 y x = 3</button><button class="opcion" data-k="c" type="button">x = 1 y x = −3</button><button class="opcion" data-k="d" type="button">x = −1 y x = −3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Resuelva x² − 8x + 12 = 0.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −6 y x = −2</button><button class="opcion" data-k="b" type="button">x = 6 y x = −2</button><button class="opcion" data-k="c" type="button">x = −6 y x = 2</button><button class="opcion" data-k="d" type="button">x = 6 y x = 2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Resuelva 2x² + 8x − 10 = 0.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1 y x = 5</button><button class="opcion" data-k="b" type="button">x = 1 y x = −5</button><button class="opcion" data-k="c" type="button">x = 2 y x = −10</button><button class="opcion" data-k="d" type="button">x = 1 y x = 5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Para resolver 3x² + 12x − 15 = 0 completando el cuadrado, ¿cuál es el primer paso?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Dividir todo entre 3</button><button class="opcion" data-k="b" type="button">Sumar 12</button><button class="opcion" data-k="c" type="button">Restar 15</button><button class="opcion" data-k="d" type="button">Multiplicar por 3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de completar el cuadrado (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de completar el cuadrado y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcular (b/2)²</th><td>Calculo (b/2)² con fluidez, incluso con fracciones.</td><td>Calculo b/2, pero no lo elevo al cuadrado.</td><td>No calculo el término que completa el cuadrado.</td></tr>
+<tr><th scope="row">Mantener la igualdad</th><td>Sumo (b/2)² a ambos lados y escribo (x + b/2)² correctamente.</td><td>Sumo a ambos lados, pero con errores aritméticos.</td><td>Sumo el término a un solo lado.</td></tr>
+<tr><th scope="row">Raíz con ±</th><td>Saco la raíz con ± y obtengo ambas soluciones, también con a ≠ 1.</td><td>Saco la raíz, pero pierdo una solución.</td><td>No saco la raíz o ignoro el signo ±.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió a <strong>completar el cuadrado</strong>: un método que funciona siempre, sumando (b/2)² para formar un binomio al cuadrado y sacando la raíz con el signo ±. También se vio que este procedimiento, aplicado a la ecuación general, produce la fórmula cuadrática.</p>
+<p>En la <strong>Lección 4.3 · La fórmula cuadrática, el discriminante y aplicaciones</strong> se usará esa fórmula para resolver cualquier ecuación cuadrática de forma directa, se aprenderá a predecir el número de soluciones con el discriminante y se modelarán situaciones reales como la trayectoria de un proyectil.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-4-3.html">Lección 4.3 · La fórmula cuadrática, el discriminante y aplicaciones</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>completar el cuadrado</dt><dd>Sumar (b/2)² a x² + bx para formar un binomio al cuadrado.</dd>
+<dt>trinomio cuadrado perfecto</dt><dd>x² + bx + (b/2)² = (x + b/2)²</dd>
+<dt>±</dt><dd>«Más o menos»: un número y su opuesto, las dos raíces cuadradas.</dd>
+<dt>fórmula cuadrática</dt><dd>x = (−b ± √(b² − 4ac)) / 2a</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 4 · Lección 4.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 4.3",
+ "review": "las secciones 2 y 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "(x + 2)² = 9 da x + 2 = 3 o x + 2 = −3.",
+    "b": "Sustituya x = 5: 25 + 20 − 5 no es 0."
+   },
+   "right": "(x + 2)² = 9, x + 2 = ±3.",
+   "solution": "x = 1 y x = −5."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "(x − 1)² = 9 da x − 1 = ±3, así que x = 1 ± 3.",
+    "c": "Sustituya x = 2: 4 − 4 − 8 no es 0."
+   },
+   "right": "(x − 1)² = 9, x − 1 = ±3.",
+   "solution": "x = 4 y x = −2."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "(x + 3)² = 4 da x = −3 ± 2.",
+    "c": "Sustituya x = 5: 25 + 30 + 5 no es 0."
+   },
+   "right": "(x + 3)² = 4, x + 3 = ±2.",
+   "solution": "x = −1 y x = −5."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "24 es 2 · 12. Saque la mitad de 12 y elévela al cuadrado.",
+    "b": "144 es 12². Primero saque la mitad de 12."
+   },
+   "right": "12 ÷ 2 = 6 y 6² = 36.",
+   "solution": "36."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "3 es la mitad de 6. Ahora elévelo al cuadrado.",
+    "c": "36 es 6². Primero saque la mitad de 6."
+   },
+   "right": "−6 ÷ 2 = −3 y (−3)² = 9.",
+   "solution": "9."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "5/2 es la mitad de 5. Ahora elévelo al cuadrado.",
+    "c": "25 es 5². Primero saque la mitad de 5."
+   },
+   "right": "(5/2)² = 25/4.",
+   "solution": "25/4."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "8 es b. Saque la mitad y elévela al cuadrado.",
+    "c": "64 es 8². Primero saque la mitad de 8.",
+    "d": "4 es la mitad de 8. Ahora elévelo al cuadrado."
+   },
+   "solution": "16."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "100 es 10². Primero saque la mitad de 10.",
+    "b": "10 es b. Saque la mitad y elévela al cuadrado.",
+    "d": "5 es la mitad de 10. Ahora elévelo al cuadrado."
+   },
+   "solution": "25."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "(x + 3)² = 16 da x = −3 ± 4.",
+    "c": "Sustituya x = 7: 49 + 42 − 7 no es 0.",
+    "d": "Sustituya x = −1: 1 − 6 − 7 no es 0."
+   },
+   "solution": "x = 1 y x = −7."
+  },
+  "D": {
+   "ok": "d",
+   "hints": {
+    "a": "(x − 2)² = 9 da x = 2 ± 3.",
+    "b": "Sustituya x = 1: 1 − 4 − 5 no es 0.",
+    "c": "(x − 2)² = 9 da x = 2 ± 3."
+   },
+   "solution": "x = 5 y x = −1."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "(x + 1)² = 4 da x = −1 ± 2.",
+    "b": "Sustituya x = 3: 9 + 6 − 3 no es 0.",
+    "d": "Sustituya x = −1: 1 − 2 − 3 no es 0."
+   },
+   "solution": "x = 1 y x = −3."
+  },
+  "F": {
+   "ok": "d",
+   "hints": {
+    "a": "(x − 4)² = 4 da x = 4 ± 2.",
+    "b": "(x − 4)² = 4 da x = 4 ± 2.",
+    "c": "(x − 4)² = 4 da x = 4 ± 2."
+   },
+   "solution": "x = 6 y x = 2."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "Divida entre 2: x² + 4x − 5 = 0, y después (x + 2)² = 9.",
+    "c": "Primero divida toda la ecuación entre 2.",
+    "d": "Sustituya x = 5: 50 + 40 − 10 no es 0."
+   },
+   "solution": "x = 1 y x = −5."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Primero el coeficiente de x² tiene que ser 1.",
+    "c": "Pasar el 15 viene después; primero el coeficiente de x² debe ser 1.",
+    "d": "Multiplicar hace más grande el coeficiente de x², no 1."
+   },
+   "solution": "Dividir todo entre 3."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

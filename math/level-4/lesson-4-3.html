@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 4.3 · Math Level 4 (English) — built by tools/build_n4_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 4.3 · The quadratic formula, the discriminant, and applications · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 4 · Topic 4 — Quadratic equations</p>
+<h1>Lesson 4.3 · The quadratic formula, the discriminant, and applications</h1>
+<p class="lema">Solve any quadratic equation with the formula, predict the number of solutions with the discriminant, and model the path of a ball.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Calculator and formula sheet allowed</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Identify</strong> a, b, and c with their signs and use the quadratic formula.</li>
+<li><strong>Find</strong> the discriminant and use it to predict the number of real solutions.</li>
+<li><strong>Solve</strong> problems about the path of a ball and interpret the solutions.</li>
+<li><strong>Choose</strong> the best method: factoring, completing the square, or the formula.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">A.4.a</span> Solve quadratic equations in one variable with rational coefficients and real solutions, using appropriate methods (e.g., quadratic formula, completing the square, factoring, inspection).</li><li><span class="std-cod std-dir">A.4.b</span> Write one-variable quadratic equations to represent context.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Select the appropriate mathematical technique(s) to use in solving a problem or a line of reasoning.</li><li><span class="std-cod std-mp">MP.2.a</span> Represent real world problems algebraically.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">A-REI.4</span> <span class="std-nivel">Level E</span> Solve quadratic equations in one variable. Solve quadratic equations by inspection (e.g., for x² = 49), taking square roots, completing the square, the quadratic formula and factoring, as appropriate to the initial form of the equation. Recognize when the quadratic formula gives complex solutions and write them as a ± bi for real numbers a and b.</li><li><span class="std-cod std-ccr">A-CED.1</span> <span class="std-nivel">Level E</span> Create equations and inequalities in one variable and use them to solve problems. Include equations arising from linear and quadratic functions, and simple rational and exponential functions.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-formula">The quadratic formula</a></li>
+<li><a href="#s-discriminant">The discriminant: how many solutions?</a></li>
+<li><a href="#s-solve">Solving with the formula</a></li>
+<li><a href="#s-projectile">Application: the path of a ball</a></li>
+<li><a href="#s-methods">Three methods: which one is best?</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-formula"><span aria-hidden="true" class="num-seccion">1</span>The quadratic formula</h2>
+<p><strong>A link with Lesson 4.2.</strong> In Lesson 4.2 you saw that completing the square in the general equation produces the quadratic formula. Now you use the formula directly: it solves any quadratic equation, whether it factors or not. In this lesson you may use the calculator and the GED formula sheet.</p>
+<p>For any equation in standard form ax² + bx + c = 0, the solutions are:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">x = (−b ± √(b² − 4ac)) / 2a</p>
+<p>The first step is always to identify a, b, and c with their signs. For example, in 2x² − 4x − 3 = 0: a = 2, b = −4, c = −3.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Watch the signs of b and c</span>
+<p>The value of b includes its sign. In −b, a negative b becomes positive. Substituting with parentheses, for example (−4)², avoids the most common sign mistakes: (−4)² = 16, never −16.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-3.html#formula" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the quadratic formula step by step (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the quadratic formula step by step</span><span class="ei-sub">Type the coefficients you want and reveal one step at a time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-discriminant"><span aria-hidden="true" class="num-seccion">2</span>The discriminant: how many solutions?</h2>
+<p>The part of the formula inside the square root, b² − 4ac, is called the <strong>discriminant</strong>. Its sign tells you how many real solutions the equation has before you solve it:</p>
+<div aria-label="The discriminant and the number of solutions (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">How the sign of the discriminant tells the number of real solutions</caption>
+<thead><tr><th scope="col">Discriminant b² − 4ac</th><th scope="col">Real solutions</th><th scope="col">The parabola and the x-axis</th></tr></thead>
+<tbody>
+<tr><td>greater than 0</td><td>2 different solutions</td><td>crosses it at 2 points</td></tr>
+<tr><td>equal to 0</td><td>1 solution (a double one)</td><td>touches it at 1 point</td></tr>
+<tr><td>less than 0</td><td>no real solutions</td><td>does not touch it</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: how many solutions does x² + 3x + 5 = 0 have?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 1, b = 3, c = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminant:</strong> (3)² − 4(1)(5) = 9 − 20 = −11.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Since −11 < 0, there are no real solutions.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>No real solution.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Find the discriminant first</span>
+<p>Before you solve, ask: how many solutions do I expect? Then you will know whether the equation has two, one, or none, and you will catch a mistake if your result does not match.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — x² − 5x + 6 = 0</h3></div>
+<p class="pregunta-int" id="t-p1">Find b² − 4ac and the number of real solutions.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">1 → 2 solutions</button>
+<button class="opcion" data-k="b" type="button">0 → 1 solution</button>
+<button class="opcion" data-k="c" type="button">−1 → none</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — x² − 6x + 9 = 0</h3></div>
+<p class="pregunta-int" id="t-p2">Find b² − 4ac and the number of real solutions.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">36 → 2 solutions</button>
+<button class="opcion" data-k="b" type="button">−36 → none</button>
+<button class="opcion" data-k="c" type="button">0 → 1 solution</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — 2x² + x + 4 = 0</h3></div>
+<p class="pregunta-int" id="t-p3">Find b² − 4ac and the number of real solutions.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">33 → 2 solutions</button>
+<button class="opcion" data-k="b" type="button">−31 → none</button>
+<button class="opcion" data-k="c" type="button">0 → 1 solution</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-3.html#discriminant" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the discriminant (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the discriminant</span><span class="ei-sub">A calculator for b² − 4ac with the graph of the parabola, and exercises to predict how many real solutions there are.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-solve"><span aria-hidden="true" class="num-seccion">3</span>Solving with the formula</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: whole-number solutions. Solve x² + 5x + 6 = 0 with the formula.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 1, b = 5, c = 6.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminant:</strong> 5² − 4(1)(6) = 25 − 24 = 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>x = (−5 ± √1) / 2 = (−5 ± 1) / 2.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x = −2 or x = −3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions.</strong> <strong>x = −2 and x = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: with the calculator (the root is not exact). Solve 2x² − 4x − 3 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 2, b = −4, c = −3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminant:</strong> (−4)² − 4(2)(−3) = 16 + 24 = 40.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>x = (4 ± √40) / 4.</strong> With the calculator, √40 ≈ 6.32.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x ≈ (4 + 6.32) / 4 ≈ 2.58 or x ≈ (4 − 6.32) / 4 ≈ −0.58.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Solutions (rounded).</strong> <strong>x ≈ 2.58 and x ≈ −0.58</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — x² + 7x + 10 = 0</h3></div>
+<p class="pregunta-int" id="t-p4">Choose the solutions.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x = −2 and x = −5</button>
+<button class="opcion" data-k="b" type="button">x = 2 and x = 5</button>
+<button class="opcion" data-k="c" type="button">x = −2 and x = 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — x² − 3x − 10 = 0</h3></div>
+<p class="pregunta-int" id="t-p5">Choose the solutions.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = −5 and x = 2</button>
+<button class="opcion" data-k="b" type="button">x = 5 and x = −2</button>
+<button class="opcion" data-k="c" type="button">x = 5 and x = 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — x² − 2x − 1 = 0 (use the calculator)</h3></div>
+<p class="pregunta-int" id="t-p6">Choose the solutions.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">x ≈ 1.41 and x ≈ −1.41</button>
+<button class="opcion" data-k="b" type="button">x = 1 only</button>
+<button class="opcion" data-k="c" type="button">x ≈ 2.41 and x ≈ −0.41</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-4-3.html#formula" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: solving with the formula (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: solving with the formula</span><span class="ei-sub">Step by step with the coefficients you choose, and exercises to solve on your own.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-projectile"><span aria-hidden="true" class="num-seccion">4</span>Application: the path of a ball</h2>
+<p>Quadratic functions model the height of an object thrown into the air. If h(t) is the height (in feet) after t seconds, solving h(t) = 0 tells you when it hits the ground, and solving h(t) = a value tells you when it reaches that height.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">h(t) = −16t² + v₀t + h₀</p>
+<p>v₀ is the starting speed (in feet per second) and h₀ is the height it is thrown from (in feet). The −16 comes from gravity and is always the same when you measure in feet.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: a ball is thrown and its height is h(t) = −16t² + 96t + 5. When does it hit the ground? (use the calculator)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Hitting the ground means h(t) = 0:</strong> −16t² + 96t + 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>a = −16, b = 96, c = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Discriminant:</strong> 96² − 4(−16)(5) = 9,216 + 320 = 9,536. √9,536 ≈ 97.65.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>t = (−96 ± 97.65) / (−32).</strong> t ≈ −0.05 or t ≈ 6.05.</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Throw out the negative root; t ≈ 6.05 is left.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>The ball hits the ground after about 6.05 seconds.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Interpret the situation</span>
+<p>In problems about time and height, negative solutions make no sense (time is not negative). The valid solution is the one that fits the real situation.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-3.html#projectile" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the path of a ball (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the path of a ball</span><span class="ei-sub">A launch simulator: change the speed and the starting height, watch the curve, and answer questions about the situation.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-methods"><span aria-hidden="true" class="num-seccion">5</span>Three methods: which one is best?</h2>
+<p>You now know three ways to solve a quadratic equation. Knowing which to choose saves time:</p>
+<div aria-label="The three methods (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The three methods to solve quadratic equations and when each one is best</caption>
+<thead><tr><th scope="col">Method</th><th scope="col">When is it best?</th></tr></thead>
+<tbody>
+<tr><td>Factoring</td><td>When the trinomial factors easily with whole numbers.</td></tr>
+<tr><td>Completing the square</td><td>When a = 1 and b is even; useful to understand the structure.</td></tr>
+<tr><td>Quadratic formula</td><td>Always works; best when it does not factor or the roots are not whole numbers.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Three questions, in order</span>
+<p>Does the trinomial factor easily with whole numbers? Then factor. If not, is a = 1 and b even? Then complete the square. In any other case, use the quadratic formula, which always works.</p>
+</div>
+<a class="enlace-interactivo" href="practice-4-3.html#methods" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: choosing the method (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: choosing the method</span><span class="ei-sub">Decide when it is best to factor, complete the square, or use the formula, and compare the three roads on the same equation.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-4-3.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> For your own work, with your notebook, the calculator, and the GED formula sheet: (1) The ball: the height of a ball is h(t) = −16t² + 96t + 5 (in feet, with t in seconds). Find when it hits the ground and at what moments it is at 120 feet. Explain what each solution means and which one you throw out. (2) How many solutions do I expect? Before solving, find the discriminant of each equation and predict whether it has two, one, or no real solutions. Then check with the formula the ones that have solutions: x² − 6x + 9 = 0, x² + 2x + 5 = 0, 2x² − 3x − 2 = 0, x² − 4x + 1 = 0, 4x² + 4x + 1 = 0, and 3x² + x + 2 = 0. (3) The best method: decide and explain whether it is best to factor, take a square root, or use the formula, and solve with the method you chose: x² − 7x + 12 = 0, x² + 3x − 1 = 0, x² = 49, 2x² − 5x − 3 = 0, x² + 6x − 2 = 0, and 5x² = 20x. Then do several exercises of each activity on the practice page, solving them in your notebook first, and write down the ones you miss to review them. About 70 minutes; check your work with the checklist of this lesson.</li>
+<li><strong>In your daily life.</strong> Toss a ball straight up outside and count the seconds until it lands. Use h(t) = −16t² + v₀t + 4 (your hand is about 4 feet high) and try values of v₀ until the landing time matches what you counted. What starting speed did you throw it with?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">In 3x² − 2x + 1 = 0, what are a, b, and c?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a = 3, b = 2, c = 1</button><button class="opcion" data-k="b" type="button">a = 3, b = −2, c = 1</button><button class="opcion" data-k="c" type="button">a = 3, b = −2, c = −1</button><button class="opcion" data-k="d" type="button">a = −3, b = 2, c = 1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">The discriminant of x² − 5x + 6 = 0 and the number of solutions.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1 → 2 solutions</button><button class="opcion" data-k="b" type="button">0 → 1 solution</button><button class="opcion" data-k="c" type="button">−1 → none</button><button class="opcion" data-k="d" type="button">49 → 2 solutions</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">The discriminant of x² + 4x + 4 = 0 and the number of solutions.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">16 → 2 solutions</button><button class="opcion" data-k="b" type="button">−16 → none</button><button class="opcion" data-k="c" type="button">8 → 2 solutions</button><button class="opcion" data-k="d" type="button">0 → 1 solution</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">The discriminant of x² + x + 3 = 0 and the number of solutions.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">13 → 2 solutions</button><button class="opcion" data-k="b" type="button">0 → 1 solution</button><button class="opcion" data-k="c" type="button">−11 → none</button><button class="opcion" data-k="d" type="button">11 → 2 solutions</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Solve x² − 6x + 9 = 0.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 3 (a double solution)</button><button class="opcion" data-k="b" type="button">x = 3 and x = −3</button><button class="opcion" data-k="c" type="button">x = 9 and x = 1</button><button class="opcion" data-k="d" type="button">no solution</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Solve 2x² + 5x − 3 = 0.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1/2 and x = 3</button><button class="opcion" data-k="b" type="button">x = 1/2 and x = −3</button><button class="opcion" data-k="c" type="button">x = 1/2 and x = 3</button><button class="opcion" data-k="d" type="button">x = −1/2 and x = −3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A ball has height h(t) = −16t² + 32t. When does it hit the ground (h = 0)?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">after 16 seconds</button><button class="opcion" data-k="b" type="button">after 32 seconds</button><button class="opcion" data-k="c" type="button">after 2 seconds</button><button class="opcion" data-k="d" type="button">after 1 second</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">Which method is the safest when an equation does not factor with whole numbers?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The quadratic formula</button><button class="opcion" data-k="b" type="button">Guessing</button><button class="opcion" data-k="c" type="button">Common factor</button><button class="opcion" data-k="d" type="button">Dividing by x</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the quadratic formula (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the quadratic formula and the discriminant and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identifying a, b, c</th><td>I identify the coefficients with their signs in any form of the equation.</td><td>I identify them but make a sign mistake.</td><td>I mix up the coefficients or their signs.</td></tr>
+<tr><th scope="row">The discriminant</th><td>I find b² − 4ac and use it to predict and check the result.</td><td>I find it, but I read the number of solutions wrong.</td><td>I do not find the discriminant.</td></tr>
+<tr><th scope="row">Using the formula and interpreting</th><td>I solve without substitution mistakes, even with inexact roots, and throw out impossible answers.</td><td>I use the formula with sign or calculation mistakes.</td><td>My substitution has mistakes that ruin the result.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson closes Topic 4 · Quadratic equations. You mastered the three methods of solving (factoring, completing the square, and the quadratic formula), the discriminant to predict the number of solutions, and modeling real situations such as the path of a ball.</p>
+<p>Topic 5 · Rational expressions begins with <strong>Lesson 5.1 · Simplifying rational expressions: factor and cancel</strong>. All the factoring of Topic 3 will be center stage again: now it will help you simplify fractions made of polynomials and find the values excluded from the domain.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 5.1 · Simplifying rational expressions: factor and cancel</p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>quadratic formula</dt><dd>x = (−b ± √(b² − 4ac)) / 2a</dd>
+<dt>discriminant</dt><dd>b² − 4ac: positive, two solutions; zero, one; negative, none that are real.</dd>
+<dt>double solution</dt><dd>When the discriminant is 0, the two solutions are the same number.</dd>
+<dt>parabola</dt><dd>The U-shaped graph of a quadratic function. Its x-intercepts are the real solutions.</dd>
+<dt>vertex</dt><dd>The highest (or lowest) point of a parabola; for a ball, its maximum height.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 4 · Topic 4 · Lesson 4.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 5.1",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "(−5)² − 4(1)(6) = 25 − 24.",
+    "c": "(−5)² is +25, not −25."
+   },
+   "right": "25 − 24 = 1 > 0: two solutions (x = 2 and x = 3).",
+   "solution": "1 → 2 solutions."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "Do not forget to subtract 4ac = 36.",
+    "b": "(−6)² is +36."
+   },
+   "right": "36 − 36 = 0: one double solution, x = 3.",
+   "solution": "0 → 1 solution."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "4ac = 4(2)(4) = 32 is subtracted, not added.",
+    "c": "1² − 4(2)(4) = 1 − 32."
+   },
+   "right": "1 − 32 = −31 < 0: no real solutions.",
+   "solution": "−31 → none."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "x = (−7 ± 3)/2: both are negative.",
+    "c": "Substitute x = 5: 25 + 35 + 10 is not 0."
+   },
+   "right": "D = 49 − 40 = 9, x = (−7 ± 3)/2.",
+   "solution": "x = −2 and x = −5."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "−b = −(−3) = +3: x = (3 ± 7)/2.",
+    "c": "Substitute x = 2: 4 − 6 − 10 is not 0."
+   },
+   "right": "D = 9 + 40 = 49, x = (3 ± 7)/2.",
+   "solution": "x = 5 and x = −2."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "x = (2 ± √8)/2 = 1 ± 1.41: do not forget the 1.",
+    "b": "D = 4 + 4 = 8 > 0: there are two solutions."
+   },
+   "right": "D = 8, x = (2 ± 2.83)/2.",
+   "solution": "x ≈ 2.41 and x ≈ −0.41."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "b includes its sign: b = −2.",
+    "c": "c = +1.",
+    "d": "a = 3, positive."
+   },
+   "solution": "a = 3, b = −2, c = 1."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "25 − 24 is not 0.",
+    "c": "(−5)² = +25.",
+    "d": "Subtract 4ac: 25 − 24."
+   },
+   "solution": "1 → 2 solutions."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Subtract 4ac = 16.",
+    "b": "4² = 16 and 4ac = 16: 16 − 16.",
+    "c": "b² − 4ac = 16 − 16."
+   },
+   "solution": "0 → 1 solution."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "4ac = 12 is subtracted.",
+    "b": "1 − 12 is not 0.",
+    "d": "1 − 12 = −11, negative."
+   },
+   "solution": "−11 → none."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Substitute x = −3: 9 − 18 + 9 = 0. And x = 3?",
+    "c": "D = 36 − 36 = 0: only one solution.",
+    "d": "D = 0, not negative."
+   },
+   "solution": "x = 3 (a double solution)."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "x = (−5 ± 7)/4: (−5 + 7)/4 = 1/2.",
+    "c": "Substitute x = 3: 18 + 15 − 3 is not 0.",
+    "d": "(−5 + 7)/4 is positive."
+   },
+   "solution": "x = 1/2 and x = −3."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "−16t² + 32t = −16t(t − 2) = 0.",
+    "b": "−16t(t − 2) = 0.",
+    "d": "At t = 1 the ball is at its highest point."
+   },
+   "solution": "After 2 seconds."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Guessing does not always work.",
+    "c": "A common factor is not always there.",
+    "d": "Dividing by x loses solutions."
+   },
+   "solution": "The quadratic formula."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 4 · Lesson 4.3 · practice (English) — built by tools/build_n4_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 4.3 · The quadratic formula, the discriminant, and applications · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+
+  [hidden]{display:none !important;}
+  .geo-svg{display:block;width:100%;height:auto;margin:12px auto;background:#fff;border:1px solid #cfd8dc;border-radius:10px;}
+  .plano-svg:focus{outline:3px solid #6a1b9a;outline-offset:3px;}
+  .par-campos{display:flex;align-items:flex-end;gap:6px;flex-wrap:wrap;font-size:22px;font-weight:700;color:var(--tema-d);}
+  .par-campos .campo{margin:0;}
+  .par-campos input{width:88px;font-size:18px;text-align:center;}
+  .par-campos .pa{padding-bottom:6px;}
+  .modos{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .modos button[aria-pressed="true"]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:14px;font-size:14px;color:var(--gris);margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .lectura-plano{min-height:1.4em;}
+  .tabla-lados{border-collapse:collapse;margin:10px 0;font-size:16px;}
+  .tabla-lados th,.tabla-lados td{border:1px solid #c8c8c8;padding:6px 12px;text-align:left;}
+  .tabla-lados th{background:var(--tema-bg);color:var(--tema-d);}
+  .tabla-lados tr.incl td{background:#fff8e1;}
+  .salida:empty{display:none;}
+  .paso4{background:#fff;border-left:4px solid var(--tema);padding:8px 12px;margin:8px 0;border-radius:6px;}
+  .paso4 .nn{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--tema);color:#fff;align-items:center;justify-content:center;font-weight:700;margin-right:6px;}
+  .tarjetas{display:flex;flex-wrap:wrap;gap:12px;margin:10px 0;}
+  .tarjeta{flex:1;min-width:180px;background:#fff;border:2px solid var(--tema-bg2);border-radius:10px;padding:10px 14px;}
+  .tarjeta strong{display:block;color:var(--tema-d);}
+  .tarjeta .grande{font-size:22px;font-weight:700;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 4 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 4 · Topic 4 · Quadratic equations</div>
+    <h1>Lesson 4.3 · The quadratic formula, the discriminant, and applications</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try. You may use the calculator.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#discriminant">The discriminant: how many solutions?</a></li>
+      <li><a href="#formula">Solving with the quadratic formula</a></li>
+      <li><a href="#projectile">The path of a ball</a></li>
+      <li><a href="#methods">Three methods: which one is best?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="discriminant" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The discriminant: how many solutions?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The discriminant is the part inside the square root of the quadratic formula: b² − 4ac. Its sign tells how many real solutions the equation has before you solve it.</p>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">How the sign of the discriminant tells the number of real solutions</caption><thead><tr><th scope="col">Discriminant b² − 4ac</th><th scope="col">Real solutions</th><th scope="col">The parabola and the x-axis</th></tr></thead><tbody><tr><td>Greater than 0</td><td>2 different solutions</td><td>Crosses it at 2 points</td></tr><tr><td>Equal to 0</td><td>1 solution (a double one)</td><td>Touches it at 1 point</td></tr><tr><td>Less than 0</td><td>No real solution</td><td>Does not touch it</td></tr></tbody></table></div>
+      <p class="nota">What does “no real solution” mean? No real number solves the equation, so the parabola never crosses the x-axis. The answer lives in a larger set of numbers (the complex numbers) studied in later courses; it is not part of this level or of the GED test.</p>
+      <div class="panel"><p><strong>Discriminant calculator.</strong> Type the coefficients of ax² + bx + c = 0.</p><div class="campos"><div class="campo"><label for="di-a">a (cannot be 0)</label><input type="text" inputmode="numeric" autocomplete="off" id="di-a" value="1" style="width:6em"></div><div class="campo"><label for="di-b">b </label><input type="text" inputmode="numeric" autocomplete="off" id="di-b" value="-2" style="width:6em"></div><div class="campo"><label for="di-c">c </label><input type="text" inputmode="numeric" autocomplete="off" id="di-c" value="-3" style="width:6em"></div></div></div>
+      <div class="salida" aria-live="polite" id="di-txt"></div>
+      <div class="geo-svg" id="di-svg"></div>
+      <div class="caja-tip">Before solving, ask: how many solutions do I expect? If you get a different number at the end, there is a sign mistake somewhere.</div>
+      <h3>Practice: how many real solutions?</h3>
+      <div class="practica" id="dq">
+        <div class="enun" id="dq-enun"></div>
+        <div class="opciones" id="dq-opciones"></div>
+        <div class="fb" id="dq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="dq-nuevo">New exercise</button></div>
+        <p class="marcador" id="dq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="formula">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Solving with the quadratic formula</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">x = (−b ± √(b² − 4ac)) / 2a</div>
+      <p>Type the coefficients and reveal one step at a time. Try to predict each step before you show it.</p>
+      <div class="panel"><div class="campos"><div class="campo"><label for="fm-a">a (cannot be 0)</label><input type="text" inputmode="numeric" autocomplete="off" id="fm-a" value="2" style="width:6em"></div><div class="campo"><label for="fm-b">b </label><input type="text" inputmode="numeric" autocomplete="off" id="fm-b" value="-4" style="width:6em"></div><div class="campo"><label for="fm-c">c </label><input type="text" inputmode="numeric" autocomplete="off" id="fm-c" value="-3" style="width:6em"></div></div></div>
+      <div class="panel"><p class="enun" id="fm-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="fm-sig">Show the next step</button><button type="button" class="btn-sec" id="fm-todo">Show all the steps</button><button type="button" class="btn-sec" id="fm-nuevo">Start with these coefficients</button></div></div>
+      <div class="pasos" id="fm-pasos" aria-live="polite"></div>
+      <div class="caja-atencion"><strong>The most common mistake:</strong> forgetting that −b changes the sign of b. If b = −4, then −b = +4, and b² = (−4)² = 16, never −16.</div>
+      <h3>Practice: solve the equation</h3>
+      <div class="practica" id="fq">
+        <div class="enun" id="fq-enun"></div>
+        <div class="campos"><div class="campo"><label for="fq-r">Solutions</label><input type="text" autocomplete="off" class="ancho" id="fq-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="fq-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="fq-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="fq-fb" role="status"></div>
+        <p class="marcador" id="fq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="projectile">
+    <summary><span class="num" aria-hidden="true">3</span><h2>The path of a ball</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="formula">h(t) = −16t² + v₀t + h₀</div>
+      <p>v₀ is the starting speed (feet per second) and h₀ is the height it is thrown from (feet). The −16 comes from gravity and is always the same in feet.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="pr-v">Starting speed v₀: <output id="pr-vv"></output> ft/s</label><input type="range" id="pr-v" min="16" max="96" step="16" value="64"></div>
+        <div class="campo"><label for="pr-h">Starting height h₀: <output id="pr-hv"></output> ft</label><input type="range" id="pr-h" min="0" max="160" step="16" value="80"></div>
+        <div class="campo"><label for="pr-t">Look at t = <output id="pr-tv"></output> s</label><input type="range" id="pr-t" min="0" max="6" step="0.5" value="2"></div></div></div>
+      <div class="geo-svg" id="pr-svg"></div>
+      <div class="salida" aria-live="polite" id="pr-txt"></div>
+      <div class="caja-atencion"><strong>Interpret the situation.</strong> Solving h(t) = 0 gives two solutions, but time cannot be negative. The valid answer is the positive one.</div>
+      <h3>Practice: read the launch</h3>
+      <div class="practica" id="pq">
+        <div class="enun" id="pq-enun"></div>
+        <div class="opciones" id="pq-opciones"></div>
+        <div class="fb" id="pq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="pq-nuevo">New exercise</button></div>
+        <p class="marcador" id="pq-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="methods">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Three methods: which one is best?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Factoring, completing the square, and the formula reach the same solutions, but they do not take the same work.</p>
+<div class="tabla-scroll"><table class="tabla-lados"><caption class="sr-only">The three methods and when each one is best</caption><thead><tr><th scope="col">Method</th><th scope="col">When is it best?</th></tr></thead><tbody><tr><td>Factoring</td><td>When the trinomial factors easily with whole numbers.</td></tr><tr><td>Completing the square</td><td>When a = 1 and b is even.</td></tr><tr><td>Quadratic formula</td><td>Always works; best when it does not factor or the roots are not whole numbers.</td></tr></tbody></table></div>
+      <div class="caja-tip">Ask three questions, in this order. Does the trinomial factor easily with whole numbers? Then factor. If not, is a = 1 and b even? Then complete the square. In any other case, use the formula, which always works.</div>
+      <div class="panel"><p class="enun" id="me-enun"></p>
+      <div class="salida" aria-live="polite" id="me-rec"></div>
+        <p><strong>See the solution by each method:</strong></p>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="me-f">By factoring</button><button type="button" class="btn-sec" id="me-c">By completing the square</button><button type="button" class="btn-sec" id="me-q">With the formula</button></div>
+        <div class="salida" id="me-via" aria-live="polite"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="me-otro">Another equation</button></div></div>
+      <h3>Practice: which method is best?</h3>
+      <div class="practica" id="mq">
+        <div class="enun" id="mq-enun"></div>
+        <div class="opciones" id="mq-opciones"></div>
+        <div class="fb" id="mq-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="mq-nuevo">New exercise</button></div>
+        <p class="marcador" id="mq-marcador"></p>
+      </div>
+      <h3>Practice: choose the method and solve</h3>
+      <div class="practica" id="mr">
+        <div class="enun" id="mr-enun"></div>
+        <div class="campos"><div class="campo"><label for="mr-r">Solutions</label><input type="text" autocomplete="off" class="ancho" id="mr-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="mr-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="mr-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="mr-fb" role="status"></div>
+        <p class="marcador" id="mr-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 4 · Topic 4 · Quadratic equations · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/coord4.js"></script>
+<script src="/math/poly4.js"></script>
+<script>
+function nz(a, b){ var v; do { v = aleatorio(a, b); } while (!v); return v; }
+function pn(v){ return v < 0 ? "(" + sg(v) + ")" : sg(v); }
+function r2(x){ return Math.round(x * 100) / 100; }
+function nd2(x){ return sg(r2(x)).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"); }
+function mil(n){ return sg(n).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,"); }
+var O = T(" or ", " o ");
+function disc(a, b, c){ return b * b - 4 * a * c; }
+function cuantasTxt(n){ return n === 2 ? T("2 different real solutions", "2 soluciones reales distintas") : n === 1 ? T("1 real solution (a double one)", "1 solución real (doble)") : T("No real solution", "Ninguna solución real"); }
+function cuantas(D){ return D > 0 ? 2 : D === 0 ? 1 : 0; }
+function raicesQ(a, b, c){ var D = disc(a, b, c); if (D < 0) return []; var s = Math.sqrt(D); return D === 0 ? [-b / (2 * a)] : [(-b + s) / (2 * a), (-b - s) / (2 * a)]; }
+function exacta(D){ return D >= 0 && esCuadrado(D); }
+function eqH(a, b, c){ var p = pDe({2: a, 1: b, 0: c}); return envuelve(pVis(p) + " = 0", pVoz(p) + T(" equals 0", " es igual a 0")); }
+function eqV(a, b, c){ return pVis(pDe({2: a, 1: b, 0: c})) + " = 0"; }
+function discTxt(a, b, c){ var D = disc(a, b, c), q = 4 * a * c; return "(" + sg(b) + ")² − 4(" + sg(a) + ")(" + sg(c) + ") = " + mil(b * b) + (q < 0 ? " + " + mil(-q) : " − " + mil(q)) + " = " + mil(D); }
+function solsTxt(a, b, c){ var D = disc(a, b, c); if (D < 0) return T("no real solution", "ninguna solución real");
+  if (exacta(D)){ var s = Math.round(Math.sqrt(D)), l = ["x = " + frTxt(-b + s, 2 * a)]; if (s) l.push("x = " + frTxt(-b - s, 2 * a)); return l.join(O); }
+  return raicesQ(a, b, c).map(function(v){ return "x ≈ " + nd2(v); }).join(O); }
+function pasosFormula(a, b, c, v){
+  v = v || "x"; var D = disc(a, b, c), P = [];
+  P.push("a = " + sg(a) + ", b = " + sg(b) + ", c = " + sg(c) + ".");
+  P.push(T("Discriminant: ", "Discriminante: ") + "b² − 4ac = " + discTxt(a, b, c) + ".");
+  P.push(D > 0 ? T("It is positive: there are 2 different real solutions.", "Es positivo: hay 2 soluciones reales distintas.") : D === 0 ? T("It is zero: there is 1 real solution (a double one).", "Es cero: hay 1 solución real (doble).") : T("It is negative: there is no real solution. The parabola does not touch the x-axis.", "Es negativo: no hay ninguna solución real. La parábola no toca el eje x."));
+  if (D < 0) return P;
+  var s = Math.sqrt(D), den = 2 * a, menos = sg(-b);
+  P.push(v + " = (−b ± √(b² − 4ac)) / 2a = (" + menos + " ± √" + mil(D) + ") / " + pn(den) + (exacta(D) ? " = (" + menos + " ± " + Math.round(s) + ") / " + pn(den) : T(". With the calculator, √", ". Con calculadora, √") + mil(D) + " ≈ " + nd2(s)) + ".");
+  if (exacta(D)){ var k = Math.round(s); P.push(D === 0 ? v + " = " + menos + " / " + pn(den) + " = " + frTxt(-b, den) + "." : v + " = (" + menos + " + " + k + ") / " + pn(den) + " = " + frTxt(-b + k, den) + O + v + " = (" + menos + " − " + k + ") / " + pn(den) + " = " + frTxt(-b - k, den) + "."); }
+  else P.push(v + " ≈ (" + menos + " + " + nd2(s) + ") / " + pn(den) + " ≈ " + nd2((-b + s) / den) + O + v + " ≈ (" + menos + " − " + nd2(s) + ") / " + pn(den) + " ≈ " + nd2((-b - s) / den) + ".");
+  P.push(T("Solutions: ", "Soluciones: ") + "<strong>" + solsTxt(a, b, c).replace(/x/g, v) + "</strong>.");
+  return P;
+}
+/* The parabola y = ax² + bx + c, with its x-intercepts marked */
+function parabolaSVG(a, b, c, voz){
+  var xv = -b / (2 * a), rs = raicesQ(a, b, c), w = 5; rs.forEach(function(r){ w = Math.max(w, Math.abs(r - xv) + 2); }); w = Math.min(w, 14);
+  var x0 = xv - w, x1 = xv + w, f = function(x){ return a * x * x + b * x + c; }, ys = [], i, N = 80;
+  for (i = 0; i <= N; i++) ys.push(f(x0 + (x1 - x0) * i / N));
+  var yv = f(xv), y0 = Math.min(0, yv), y1 = Math.max(0, yv), alto = Math.max(Math.abs(yv), 6) * 1.6;
+  if (a > 0){ y0 = Math.min(0, yv) - alto * .15; y1 = Math.max(0, yv) + alto; } else { y1 = Math.max(0, yv) + alto * .15; y0 = Math.min(0, yv) - alto; }
+  var W = 440, H = 300, m = 34, X = function(x){ return m + (x - x0) / (x1 - x0) * (W - 2 * m); }, Y = function(y){ return H - m - (y - y0) / (y1 - y0) * (H - 2 * m); };
+  var s = '<rect x="' + m + '" y="' + m + '" width="' + (W - 2 * m) + '" height="' + (H - 2 * m) + '" fill="#fafafa" stroke="#eceff1"/>';
+  var paso = w > 8 ? 2 : 1;
+  var marcas = "";
+  for (i = Math.ceil(x0); i <= Math.floor(x1); i++) if (i % paso === 0){ s += '<line x1="' + X(i).toFixed(1) + '" y1="' + Y(0).toFixed(1) + '" x2="' + X(i).toFixed(1) + '" y2="' + (Y(0) + 5).toFixed(1) + '" stroke="#455a64"/>'; if (i) marcas += '<text x="' + X(i).toFixed(1) + '" y="' + (Y(0) + 21).toFixed(1) + '" font-size="11" text-anchor="middle" fill="#455a64" paint-order="stroke" stroke="#fff" stroke-width="3">' + sg(i) + "</text>"; }
+  s += '<line x1="' + m + '" y1="' + Y(0).toFixed(1) + '" x2="' + (W - m) + '" y2="' + Y(0).toFixed(1) + '" stroke="#263238" stroke-width="2"/><text x="' + (W - m + 6) + '" y="' + (Y(0) + 5).toFixed(1) + '" font-size="15" font-style="italic" font-weight="700" fill="#263238">x</text>';
+  if (x0 < 0 && x1 > 0) s += '<line x1="' + X(0).toFixed(1) + '" y1="' + m + '" x2="' + X(0).toFixed(1) + '" y2="' + (H - m) + '" stroke="#263238" stroke-width="2"/><text x="' + (X(0) + 6).toFixed(1) + '" y="' + (m + 12) + '" font-size="15" font-style="italic" font-weight="700" fill="#263238">y</text>';
+  var d = ""; for (i = 0; i <= N; i++){ var x = x0 + (x1 - x0) * i / N, y = Math.max(y0 - 1e6, Math.min(y1 + 1e6, ys[i])); d += (i ? " L" : "M") + X(x).toFixed(1) + " " + Math.max(-50, Math.min(H + 50, Y(y))).toFixed(1); }
+  s += '<clipPath id="cp-par"><rect x="' + m + '" y="' + m + '" width="' + (W - 2 * m) + '" height="' + (H - 2 * m) + '"/></clipPath><path d="' + d + '" fill="none" stroke="#1565c0" stroke-width="3" clip-path="url(#cp-par)"/>';
+  rs.forEach(function(r){ s += '<circle cx="' + X(r).toFixed(1) + '" cy="' + Y(0).toFixed(1) + '" r="6" fill="#c62828" stroke="#fff" stroke-width="2"/>'; });
+  s += marcas;
+  return '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + voz + '" style="display:block;margin:auto;max-width:' + W + 'px;width:100%">' + s + "</svg>";
+}
+
+/* ===== MODULE 1 · The discriminant ===== */
+function leeCoef(id){ var v = leeSol($(id).value); return v && v.length === 1 && v[0] === Math.round(v[0]) && Math.abs(v[0]) <= 50 ? v[0] : null; }
+function diDibuja(){
+  var a = leeCoef("di-a"), b = leeCoef("di-b"), c = leeCoef("di-c");
+  if (a === null || b === null || c === null || !a){ $("di-txt").innerHTML = '<div class="linea">' + T("Type whole numbers from −50 to 50; a cannot be 0.", "Escriba números enteros de −50 a 50; a no puede ser 0.") + "</div>"; $("di-svg").innerHTML = ""; return; }
+  var D = disc(a, b, c), n = cuantas(D);
+  $("di-txt").innerHTML = '<div class="linea">' + eqV(a, b, c) + "</div>" + '<div class="linea">b² − 4ac = ' + discTxt(a, b, c) + "</div>" + '<div class="linea"><strong>' + cuantasTxt(n) + "</strong>" + (n ? ": " + solsTxt(a, b, c) : "") + ". " + (n === 2 ? T("The parabola crosses the x-axis at 2 points.", "La parábola corta el eje x en 2 puntos.") : n === 1 ? T("The parabola touches the x-axis at 1 point.", "La parábola toca el eje x en 1 punto.") : T("The parabola does not touch the x-axis.", "La parábola no toca el eje x.")) + "</div>";
+  $("di-svg").innerHTML = parabolaSVG(a, b, c, T("Graph of y = ", "Gráfica de y = ") + pVoz(pDe({2: a, 1: b, 0: c})) + ". " + cuantasTxt(n) + ".");
+}
+["di-a", "di-b", "di-c"].forEach(function(id){ $(id).addEventListener("input", diDibuja); }); diDibuja();
+function casoDisc(n){
+  var a, b, c, D, k = 0;
+  do { a = elige([1, 1, 1, 2, 3, -1]); b = aleatorio(-10, 10);
+    if (n === 1){ var r = nz(-6, 6), p = elige([1, 1, 2, 3]); a = p * p * (a < 0 ? -1 : 1); b = -2 * a * r / p; c = a * r * r / (p * p); }
+    else c = aleatorio(-12, 12);
+    D = disc(a, b, c); k++; } while ((cuantas(D) !== n || b !== Math.round(b) || c !== Math.round(c) || !c) && k < 500);
+  return {a: a, b: b, c: c, D: D};
+}
+OMR("dq", function(){ var n = elige([0, 1, 2]), k = casoDisc(n);
+  return {enun: T("How many real solutions does ", "¿Cuántas soluciones reales tiene ") + eqH(k.a, k.b, k.c) + T(" have?", "?"), correcta: String(n), opciones: [2, 1, 0].map(function(x){ return {clave: String(x), html: cuantasTxt(x)}; }),
+    pista: T("Find b² − 4ac first, with parentheses: (b)² − 4(a)(c).", "Calcule primero b² − 4ac, con paréntesis: (b)² − 4(a)(c)."), bien: "b² − 4ac = " + discTxt(k.a, k.b, k.c) + ". " + cuantasTxt(n) + "."};
+});
+
+/* ===== MODULE 2 · The formula ===== */
+pasoAPaso4("fm", function(){
+  var a = leeCoef("fm-a"), b = leeCoef("fm-b"), c = leeCoef("fm-c");
+  if (a === null || b === null || c === null || !a) return {enun: T("Type whole numbers from −50 to 50 in a, b, and c (a cannot be 0), then press “Start with these coefficients”.", "Escriba números enteros de −50 a 50 en a, b y c (a no puede ser 0) y pulse «Empezar con estos coeficientes»."), pasos: [T("Check the coefficients.", "Revise los coeficientes.")]};
+  return {enun: T("Solve ", "Resuelva ") + eqH(a, b, c) + T(" with the quadratic formula.", " con la fórmula cuadrática."), pasos: pasosFormula(a, b, c)};
+});
+["fm-a", "fm-b", "fm-c"].forEach(function(id){ $(id).addEventListener("change", function(){ $("fm-nuevo").click(); }); });
+function casoFormula(){
+  var tipo = elige(["ent", "ent", "frac", "aprox", "aprox"]), a, b, c;
+  if (tipo === "ent"){ var r1 = nz(-9, 9), r2 = nz(-9, 9); a = 1; b = -(r1 + r2); c = r1 * r2; }
+  else if (tipo === "frac"){ var p = elige([2, 3]), q, r = nz(-6, 6); do { q = nz(-7, 7); } while (mcd(p, Math.abs(q)) !== 1); a = p; b = -(q + p * r); c = q * r; }
+  else { do { a = elige([1, 1, 2, 3]); b = aleatorio(-9, 9); c = nz(-9, 9); } while (disc(a, b, c) <= 0 || exacta(disc(a, b, c))); }
+  return {a: a, b: b, c: c, tipo: tipo};
+}
+creaPracticaLibre("fq", function(){ var k = casoFormula(), rs = raicesQ(k.a, k.b, k.c);
+  return {enun: T("Solve with the quadratic formula: ", "Resuelva con la fórmula cuadrática: ") + eqH(k.a, k.b, k.c) + ". " + (k.tipo === "aprox" ? T("The root is not exact: round each solution to the hundredths, like 2.58, −0.58.", "La raíz no es exacta: redondee cada solución a las centésimas, como 2.58, −0.58.") : T("Type both solutions separated by a comma; a fraction can be written as 1/2.", "Escriba las dos soluciones separadas por una coma; una fracción se escribe como 1/2.")),
+    evalua: function(txt){ return evaluaSol(txt, rs, .006); }, solucion: pasosFormula(k.a, k.b, k.c).join(" ").replace(/<\/?strong>/g, "")};
+});
+
+/* ===== MODULE 3 · The path of a ball ===== */
+function prDibuja(){
+  var v0 = +$("pr-v").value, h0 = +$("pr-h").value, tq = +$("pr-t").value;
+  $("pr-vv").textContent = v0; $("pr-hv").textContent = h0;
+  var tv = v0 / 32, hm = h0 + v0 * v0 / 64, D = v0 * v0 + 64 * h0, ts = (-v0 - Math.sqrt(D)) / -32, h = function(t){ return -16 * t * t + v0 * t + h0; };
+  if (tq > ts) tq = ts; $("pr-tv").textContent = tq.toFixed(1);
+  $("pr-t").max = Math.ceil(ts * 2) / 2;
+  var W = 460, H = 290, m = 44, tmax = Math.max(ts, 1), hmaxEje = Math.max(hm, 40) * 1.12, X = function(t){ return m + t / tmax * (W - m - 20); }, Y = function(y){ return H - m + 6 - y / hmaxEje * (H - m - 20); };
+  var s = '<line x1="' + m + '" y1="' + Y(0) + '" x2="' + (W - 12) + '" y2="' + Y(0) + '" stroke="#263238" stroke-width="2"/><line x1="' + m + '" y1="' + Y(0) + '" x2="' + m + '" y2="14" stroke="#263238" stroke-width="2"/>';
+  var pt = tmax > 6 ? 2 : 1, i;
+  for (i = 0; i <= tmax + 1e-9; i += pt) s += '<text x="' + X(i).toFixed(1) + '" y="' + (Y(0) + 17) + '" font-size="11" text-anchor="middle" fill="#455a64">' + i + "</text>";
+  var ph = hmaxEje > 300 ? 100 : hmaxEje > 120 ? 50 : 20;
+  for (i = ph; i < hmaxEje; i += ph) s += '<line x1="' + m + '" y1="' + Y(i).toFixed(1) + '" x2="' + (W - 12) + '" y2="' + Y(i).toFixed(1) + '" stroke="#eceff1"/><text x="' + (m - 6) + '" y="' + (Y(i) + 4).toFixed(1) + '" font-size="11" text-anchor="end" fill="#455a64">' + i + "</text>";
+  s += '<text x="' + (W - 12) + '" y="' + (Y(0) + 32) + '" font-size="12" text-anchor="end" fill="#263238">' + T("t (seconds)", "t (segundos)") + '</text><text x="' + (m + 6) + '" y="12" font-size="12" fill="#263238">' + T("height (feet)", "altura (pies)") + "</text>";
+  var d = ""; for (i = 0; i <= 60; i++){ var t = ts * i / 60; d += (i ? " L" : "M") + X(t).toFixed(1) + " " + Y(Math.max(0, h(t))).toFixed(1); }
+  s += '<path d="' + d + '" fill="none" stroke="#1565c0" stroke-width="3"/>';
+  s += '<line x1="' + X(tv).toFixed(1) + '" y1="' + Y(0) + '" x2="' + X(tv).toFixed(1) + '" y2="' + Y(hm).toFixed(1) + '" stroke="#ef6c00" stroke-width="1.5" stroke-dasharray="5 4"/><circle cx="' + X(tv).toFixed(1) + '" cy="' + Y(hm).toFixed(1) + '" r="5" fill="#ef6c00"/>';
+  s += '<circle cx="' + X(tq).toFixed(1) + '" cy="' + Y(h(tq)).toFixed(1) + '" r="7" fill="#2e7d32" stroke="#fff" stroke-width="2"/><circle cx="' + X(ts).toFixed(1) + '" cy="' + Y(0) + '" r="5" fill="#c62828"/>';
+  $("pr-svg").innerHTML = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + T("The height of the ball over time: it starts at " + h0 + " feet, rises to " + nd2(hm) + " feet at " + nd2(tv) + " seconds, and lands at " + nd2(ts) + " seconds.", "La altura de la pelota con el tiempo: sale de " + h0 + " pies, sube hasta " + nd2(hm) + " pies a los " + nd2(tv) + " segundos y cae a los " + nd2(ts) + " segundos.") + '" style="display:block;margin:auto;max-width:' + W + 'px;width:100%">' + s + "</svg>";
+  $("pr-txt").innerHTML = '<div class="linea"><strong>h(t) = −16t² + ' + v0 + "t" + (h0 ? " + " + h0 : "") + "</strong></div>" +
+    '<div class="linea">' + T("Highest point (vertex): t = −b/2a = ", "Punto más alto (vértice): t = −b/2a = ") + v0 + " / 32 = " + nd2(tv) + T(" s, height ", " s, altura ") + nd2(hm) + T(" ft.", " pies.") + "</div>" +
+    '<div class="linea">' + T("It hits the ground (h = 0) at t ", "Toca el suelo (h = 0) a los t ") + (Math.abs(ts - Math.round(ts)) < 1e-9 ? "= " : "≈ ") + nd2(ts) + T(" s (the other solution, ", " s (la otra solución, ") + nd2((-v0 + Math.sqrt(D)) / -32) + T(", is thrown out).", ", se descarta).") + "</div>" +
+    '<div class="linea">' + T("At t = ", "En t = ") + tq.toFixed(1) + " s: h = " + nd2(h(tq)) + T(" ft.", " pies.") + "</div>";
+}
+["pr-v", "pr-h", "pr-t"].forEach(function(id){ $(id).addEventListener("input", prDibuja); }); prDibuja();
+var PR_ULT = -1;
+OMR("pq", function(){
+  var T0 = aleatorio(2, 6), v0 = 16 * aleatorio(1, T0), h0 = 16 * T0 * T0 - v0 * T0, tv = v0 / 32, hm = h0 + v0 * v0 / 64, otra = -h0 / (16 * T0), q, k = aleatorio(1, T0 - 1);
+  do { q = aleatorio(0, 4); } while (q === PR_ULT); PR_ULT = q;
+  var hf = function(t){ return -16 * t * t + v0 * t + h0; }, mod = "h(t) = −16t² + " + v0 + "t" + (h0 ? " + " + h0 : ""), enun = T("A ball is thrown and its height in feet is ", "Se lanza una pelota y su altura en pies es ") + "<strong>" + mod + "</strong>. ", ops, ok, bien;
+  var u = function(x, uni){ return nd2(x) + " " + uni; }, ft = T("feet", "pies"), sec = T("seconds", "segundos");
+  if (q === 0){ enun += T("From what height was it thrown?", "¿Desde qué altura se lanzó?"); ok = u(h0, ft); ops = [ok, u(v0, ft), u(hm, ft)]; bien = T("The starting height is h(0) = ", "La altura inicial es h(0) = ") + h0 + T(" feet: the constant term.", " pies: el término independiente."); }
+  else if (q === 1){ enun += T("After how many seconds does it reach its highest point?", "¿A los cuántos segundos alcanza su altura máxima?"); ok = u(tv, sec); ops = [ok, u(v0 / 16, sec), u(T0, sec)]; bien = T("The vertex is at t = −b/2a = −", "El vértice está en t = −b/2a = −") + v0 + " / (2 · (−16)) = " + nd2(tv) + T(" seconds.", " segundos."); }
+  else if (q === 2){ enun += T("What is its greatest height?", "¿Cuál es su altura máxima?"); ok = u(hm, ft); ops = [ok, u(hm + 16, ft), u(h0 + v0, ft)]; bien = "h(" + nd2(tv) + ") = −16" + pn(r2(tv * tv)) + " + " + v0 + "(" + nd2(tv) + ")" + (h0 ? " + " + h0 : "") + " = " + nd2(hm) + T(" feet.", " pies."); }
+  else if (q === 3){ enun += T("After how many seconds does it hit the ground?", "¿A los cuántos segundos toca el suelo?"); ok = u(T0, sec); ops = [ok, u(tv, sec), u(T0 + 1, sec)]; bien = T("Solving h(t) = 0 gives t = ", "Al resolver h(t) = 0 se obtiene t = ") + T0 + (h0 ? O + "t = " + nd2(otra) + T("; the negative one is thrown out, because time cannot be negative.", "; se descarta la negativa, porque el tiempo no puede serlo.") : O + T("t = 0 (the moment it is thrown).", "t = 0 (el momento del lanzamiento).")); }
+  else { enun += T("How high is it after " + k + " seconds?", "¿A qué altura está a los " + k + " segundos?"); ok = u(hf(k), ft); ops = [ok, u(16 * k * k + v0 * k + h0, ft), u(-16 * k + v0 * k + h0, ft)]; bien = "h(" + k + ") = −16(" + k * k + ") + " + v0 + "(" + k + ")" + (h0 ? " + " + h0 : "") + " = " + nd2(hf(k)) + T(" feet.", " pies."); }
+  var vis = {}, opciones = []; ops.forEach(function(x, j){ if (!vis[x]){ vis[x] = 1; opciones.push({clave: j ? "m" + j : "ok", html: x}); } });
+  while (opciones.length < 3){ var extra = q === 1 || q === 3 ? u(T0 + opciones.length + 1, sec) : u(hm + 32 * opciones.length, ft); if (!vis[extra]){ vis[extra] = 1; opciones.push({clave: "e" + opciones.length, html: extra}); } }
+  return {enun: enun, correcta: "ok", opciones: opciones, pista: q === 1 ? T("The highest point is at t = −b/2a.", "El punto más alto está en t = −b/2a.") : q === 3 ? T("Solve h(t) = 0 and keep the positive time.", "Resuelva h(t) = 0 y quédese con el tiempo positivo.") : q === 0 ? T("At the start, t = 0.", "Al principio, t = 0.") : T("Substitute the time in h(t), with parentheses.", "Sustituya el tiempo en h(t), con paréntesis."), bien: bien};
+});
+
+/* ===== MODULE 4 · Choosing the method ===== */
+var MET = {fact: T("Factoring", "Factorización"), cs: T("Completing the square", "Completar el cuadrado"), formula: T("Quadratic formula", "Fórmula cuadrática")};
+function casoMet(tipo){
+  tipo = tipo || elige(["fact", "cs", "formula"]); var a, b, c, FF = null;
+  if (tipo === "fact"){ var r1 = nz(-9, 9), r2 = nz(-9, 9); if (Math.random() < .25){ var p = 2, q; do { q = nz(-7, 7); } while (q % 2 === 0); a = 2; b = -(q + 2 * r1); c = q * r1; FF = {k: 1, m: 0, f: [[-q, 2], [-r1, 1]]}; } else { a = 1; b = -(r1 + r2); c = r1 * r2; FF = {k: 1, m: 0, f: [[-r1, 1], [-r2, 1]]}; } }
+  else if (tipo === "cs"){ var h, m; do { h = nz(-6, 6); m = aleatorio(2, 30); } while (esCuadrado(m)); a = 1; b = 2 * h; c = h * h - m; }
+  else { do { a = elige([1, 2, 3, 5]); b = aleatorio(-9, 9); c = nz(-9, 9); } while (disc(a, b, c) <= 0 || exacta(disc(a, b, c)) || (a === 1 && b % 2 === 0)); }
+  return {tipo: tipo, a: a, b: b, c: c, FF: FF};
+}
+function porque(k){ var D = disc(k.a, k.b, k.c);
+  if (k.tipo === "fact") return T("b² − 4ac = " + mil(D) + " is a perfect square, so the trinomial factors with whole numbers: factoring is the shortest road.", "b² − 4ac = " + mil(D) + " es un cuadrado perfecto, así que el trinomio se factoriza con enteros: factorizar es el camino más corto.");
+  if (k.tipo === "cs") return T("It does not factor with whole numbers (b² − 4ac = " + mil(D) + " is not a perfect square), but a = 1 and b is even, so (b/2)² is a whole number: complete the square.", "No se factoriza con enteros (b² − 4ac = " + mil(D) + " no es un cuadrado perfecto), pero a = 1 y b es par, así que (b/2)² es un entero: conviene completar el cuadrado.");
+  return T("It does not factor with whole numbers (b² − 4ac = " + mil(D) + " is not a perfect square), and " + (k.a !== 1 ? "a is not 1" : "b is odd") + ", so completing the square brings fractions: use the formula.", "No se factoriza con enteros (b² − 4ac = " + mil(D) + " no es un cuadrado perfecto), y " + (k.a !== 1 ? "a no es 1" : "b es impar") + ", así que completar el cuadrado trae fracciones: conviene la fórmula."); }
+function viaFact(k){ return k.FF ? [T("Factor: ", "Se factoriza: ") + fVis(k.FF) + " = 0.", T("Each factor equals zero: ", "Cada factor igual a cero: ") + solsTxt(k.a, k.b, k.c) + "."] : [T("It does not factor with whole numbers: b² − 4ac = " + mil(disc(k.a, k.b, k.c)) + " is not a perfect square. This road gets stuck.", "No se factoriza con enteros: b² − 4ac = " + mil(disc(k.a, k.b, k.c)) + " no es un cuadrado perfecto. Este camino se atasca.")]; }
+function viaCS(k){ var a = k.a, b = k.b, c = k.c, h = frTxt(b, 2 * a), D = disc(a, b, c), P = [];
+  if (a !== 1) P.push(T("Divide by ", "Se divide entre ") + a + T(" (fractions appear): ", " (aparecen fracciones): ") + "x² " + (b < 0 ? "− " : "+ ") + frTxt(Math.abs(b), a) + "x " + (c < 0 ? "− " : "+ ") + frTxt(Math.abs(c), a) + " = 0.");
+  P.push(T("Add (b/2)² = (", "Se suma (b/2)² = (") + h + ")² = " + frTxt(b * b, 4 * a * a) + T(" to both sides: ", " a ambos lados: ") + "(x " + (b < 0 ? "− " : "+ ") + frTxt(Math.abs(b), 2 * a) + ")² = " + frTxt(D, 4 * a * a) + ".");
+  P.push(T("Square root with ±: ", "Raíz con ±: ") + solsTxt(a, b, c) + "."); return P; }
+function meNuevo(){ var k = casoMet(); MEK = k; $("me-enun").innerHTML = T("Equation: ", "Ecuación: ") + eqH(k.a, k.b, k.c); $("me-rec").innerHTML = '<div class="linea"><strong>' + T("Recommended: ", "Conviene: ") + MET[k.tipo] + ".</strong> " + porque(k) + "</div>"; $("me-via").innerHTML = ""; }
+var MEK = null;
+$("me-otro").addEventListener("click", meNuevo);
+$("me-f").addEventListener("click", function(){ $("me-via").innerHTML = viaFact(MEK).map(function(x){ return '<div class="linea">' + x + "</div>"; }).join(""); });
+$("me-c").addEventListener("click", function(){ $("me-via").innerHTML = viaCS(MEK).map(function(x){ return '<div class="linea">' + x + "</div>"; }).join(""); });
+$("me-q").addEventListener("click", function(){ $("me-via").innerHTML = pasosFormula(MEK.a, MEK.b, MEK.c).map(function(x){ return '<div class="linea">' + x + "</div>"; }).join(""); });
+meNuevo();
+OMR("mq", function(){ var k = casoMet();
+  return {enun: T("Which method is best for ", "¿Qué método conviene más para ") + eqH(k.a, k.b, k.c) + "?", correcta: k.tipo, opciones: ["fact", "cs", "formula"].map(function(x){ return {clave: x, html: MET[x]}; }),
+    porClave: {fact: T("Does it factor with whole numbers? Look for two numbers, or check whether b² − 4ac is a perfect square.", "¿Se factoriza con enteros? Busque los dos números o compruebe si b² − 4ac es un cuadrado perfecto."), cs: T("Completing the square is easy only when a = 1 and b is even.", "Completar el cuadrado es cómodo solo cuando a = 1 y b es par."), formula: T("The formula works, but there is a shorter road here.", "La fórmula funciona, pero aquí hay un camino más corto.")},
+    bien: porque(k)};
+});
+creaPracticaLibre("mr", function(){ var k = casoMet(), rs = raicesQ(k.a, k.b, k.c), exa = exacta(disc(k.a, k.b, k.c));
+  return {enun: T("Solve with the method you think is best: ", "Resuelva con el método que más convenga: ") + eqH(k.a, k.b, k.c) + ". " + (exa ? T("Type both solutions separated by a comma.", "Escriba las dos soluciones separadas por una coma.") : T("The root is not exact: round to the hundredths.", "La raíz no es exacta: redondee a las centésimas.")),
+    evalua: function(txt){ return evaluaSol(txt, rs, .006); }, solucion: MET[k.tipo] + ". " + (k.tipo === "fact" ? viaFact(k) : k.tipo === "cs" ? viaCS(k) : pasosFormula(k.a, k.b, k.c)).join(" ").replace(/<\/?strong>/g, "")};
+});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

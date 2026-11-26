@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 4.3 · Matemáticas Nivel 4 (español) — construida con tools/build_n4_lesson_4_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 4.3 · La fórmula cuadrática, el discriminante y aplicaciones · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-4/lesson-4-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 4</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 4 · Tema 4 — Ecuaciones cuadráticas</p>
+<h1>Lección 4.3 · La fórmula cuadrática, el discriminante y aplicaciones</h1>
+<p class="lema">Resuelva cualquier ecuación cuadrática con la fórmula, prediga el número de soluciones con el discriminante y modele la trayectoria de un proyectil.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Se permiten calculadora y hoja de fórmulas</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> a, b y c con sus signos y aplicar la fórmula cuadrática.</li>
+<li><strong>Calcular</strong> el discriminante y usarlo para predecir el número de soluciones reales.</li>
+<li><strong>Resolver</strong> problemas de la trayectoria de un proyectil e interpretar las soluciones.</li>
+<li><strong>Elegir</strong> el método más conveniente: factorización, completar el cuadrado o la fórmula.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">A.4.a</span> Resolver ecuaciones cuadráticas de una variable con coeficientes racionales y soluciones reales, con el método adecuado (por ejemplo, la fórmula cuadrática, completar el cuadrado, la factorización o la inspección).</li><li><span class="std-cod std-dir">A.4.b</span> Escribir ecuaciones cuadráticas de una variable que representen una situación.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.e</span> Elegir la técnica o técnicas matemáticas adecuadas para resolver un problema o seguir una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.2.a</span> Representar algebraicamente problemas de la vida real.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">A-REI.4</span> <span class="std-nivel">Nivel E</span> Resolver ecuaciones cuadráticas de una variable: por inspección (por ejemplo, x² = 49), sacando raíces cuadradas, completando el cuadrado, con la fórmula cuadrática y factorizando, según convenga a la forma inicial de la ecuación. Reconocer cuándo la fórmula cuadrática da soluciones complejas y escribirlas como a ± bi, con a y b números reales.</li><li><span class="std-cod std-ccr">A-CED.1</span> <span class="std-nivel">Nivel E</span> Crear ecuaciones y desigualdades de una variable y usarlas para resolver problemas, incluidas ecuaciones que surgen de funciones lineales y cuadráticas y de funciones racionales y exponenciales sencillas.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-formula">La fórmula cuadrática</a></li>
+<li><a href="#s-discriminante">El discriminante: ¿cuántas soluciones?</a></li>
+<li><a href="#s-resolver">Resolver con la fórmula</a></li>
+<li><a href="#s-proyectil">Aplicación: la trayectoria de un proyectil</a></li>
+<li><a href="#s-metodos">Tres métodos: ¿cuál conviene?</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-formula"><span aria-hidden="true" class="num-seccion">1</span>La fórmula cuadrática</h2>
+<p><strong>Conexión con la lección anterior.</strong> En la Lección 4.2 se vio que completar el cuadrado en la ecuación general produce la fórmula cuadrática. Ahora se usará esa fórmula directamente: con ella se resuelve cualquier ecuación cuadrática, se factorice o no. En esta lección se permite el uso de la calculadora y de la hoja de fórmulas del GED.</p>
+<p>Para cualquier ecuación en forma estándar ax² + bx + c = 0, las soluciones son:</p>
+<p class="formula" style="text-align:center;font-size:1.3rem;font-weight:700;">x = (−b ± √(b² − 4ac)) / 2a</p>
+<p>El primer paso siempre es identificar a, b y c con sus signos. Por ejemplo, en 2x² − 4x − 3 = 0: a = 2, b = −4, c = −3.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Cuide los signos de b y c</span>
+<p>El valor de b incluye su signo. En −b, un b negativo se vuelve positivo. Sustituir con paréntesis, por ejemplo (−4)², evita los errores de signo más frecuentes: (−4)² = 16, nunca −16.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#formula" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la fórmula cuadrática paso a paso (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la fórmula cuadrática paso a paso</span><span class="ei-sub">Escriba los coeficientes que quiera y vaya revelando un paso a la vez.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-discriminante"><span aria-hidden="true" class="num-seccion">2</span>El discriminante: ¿cuántas soluciones?</h2>
+<p>La parte de la fórmula que está dentro de la raíz, b² − 4ac, se llama <strong>discriminante</strong>. Su signo revela cuántas soluciones reales tiene la ecuación antes de resolverla:</p>
+<div aria-label="El discriminante y el número de soluciones (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Relación entre el signo del discriminante y el número de soluciones reales</caption>
+<thead><tr><th scope="col">Discriminante b² − 4ac</th><th scope="col">Soluciones reales</th><th scope="col">La parábola y el eje x</th></tr></thead>
+<tbody>
+<tr><td>mayor que 0</td><td>2 soluciones distintas</td><td>lo corta en 2 puntos</td></tr>
+<tr><td>igual a 0</td><td>1 solución (doble)</td><td>lo toca en 1 punto</td></tr>
+<tr><td>menor que 0</td><td>ninguna solución real</td><td>no lo toca</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · ¿Cuántas soluciones tiene x² + 3x + 5 = 0?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 1, b = 3, c = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminante:</strong> (3)² − 4(1)(5) = 9 − 20 = −11.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Como −11 < 0, no hay soluciones reales.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>Ninguna solución real.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Calcule primero el discriminante</span>
+<p>Antes de resolver, pregúntese: «¿cuántas soluciones espero?». Así sabrá si la ecuación tiene dos, una o ninguna, y detectará errores si su resultado no coincide con esa predicción.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — x² − 5x + 6 = 0</h3></div>
+<p class="pregunta-int" id="t-p1">Calcule b² − 4ac e indique el número de soluciones reales.</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">1 → 2 soluciones</button>
+<button class="opcion" data-k="b" type="button">0 → 1 solución</button>
+<button class="opcion" data-k="c" type="button">−1 → ninguna</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — x² − 6x + 9 = 0</h3></div>
+<p class="pregunta-int" id="t-p2">Calcule b² − 4ac e indique el número de soluciones reales.</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">36 → 2 soluciones</button>
+<button class="opcion" data-k="b" type="button">−36 → ninguna</button>
+<button class="opcion" data-k="c" type="button">0 → 1 solución</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — 2x² + x + 4 = 0</h3></div>
+<p class="pregunta-int" id="t-p3">Calcule b² − 4ac e indique el número de soluciones reales.</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">33 → 2 soluciones</button>
+<button class="opcion" data-k="b" type="button">−31 → ninguna</button>
+<button class="opcion" data-k="c" type="button">0 → 1 solución</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#discriminante" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el discriminante (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el discriminante</span><span class="ei-sub">Calculadora de b² − 4ac con la gráfica de la parábola y ejercicios para predecir cuántas soluciones reales hay.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-resolver"><span aria-hidden="true" class="num-seccion">3</span>Resolver con la fórmula</h2>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Soluciones enteras. Resolver x² + 5x + 6 = 0 con la fórmula.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 1, b = 5, c = 6.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminante:</strong> 5² − 4(1)(6) = 25 − 24 = 1.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>x = (−5 ± √1) / 2 = (−5 ± 1) / 2.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x = −2 o x = −3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Soluciones.</strong> <strong>x = −2 y x = −3</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Con calculadora (raíz no exacta). Resolver 2x² − 4x − 3 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>a = 2, b = −4, c = −3.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Discriminante:</strong> (−4)² − 4(2)(−3) = 16 + 24 = 40.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>x = (4 ± √40) / 4.</strong> Con calculadora, √40 ≈ 6.32.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>x ≈ (4 + 6.32) / 4 ≈ 2.58 o x ≈ (4 − 6.32) / 4 ≈ −0.58.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Soluciones (aproximadas).</strong> <strong>x ≈ 2.58 y x ≈ −0.58</strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — x² + 7x + 10 = 0</h3></div>
+<p class="pregunta-int" id="t-p4">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x = −2 y x = −5</button>
+<button class="opcion" data-k="b" type="button">x = 2 y x = 5</button>
+<button class="opcion" data-k="c" type="button">x = −2 y x = 5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — x² − 3x − 10 = 0</h3></div>
+<p class="pregunta-int" id="t-p5">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = −5 y x = 2</button>
+<button class="opcion" data-k="b" type="button">x = 5 y x = −2</button>
+<button class="opcion" data-k="c" type="button">x = 5 y x = 2</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — x² − 2x − 1 = 0 (use la calculadora)</h3></div>
+<p class="pregunta-int" id="t-p6">Seleccione las soluciones.</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">x ≈ 1.41 y x ≈ −1.41</button>
+<button class="opcion" data-k="b" type="button">x = 1 solamente</button>
+<button class="opcion" data-k="c" type="button">x ≈ 2.41 y x ≈ −0.41</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#formula" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: resolver con la fórmula (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: resolver con la fórmula</span><span class="ei-sub">Resolución paso a paso con los coeficientes que elija, más ejercicios para resolver por su cuenta.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-proyectil"><span aria-hidden="true" class="num-seccion">4</span>Aplicación: la trayectoria de un proyectil</h2>
+<p>Las funciones cuadráticas modelan la altura de un objeto lanzado al aire. Si h(t) es la altura (en pies) a los t segundos, resolver h(t) = 0 indica cuándo toca el suelo, y resolver h(t) = un valor indica cuándo alcanza esa altura.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">h(t) = −16t² + v₀t + h₀</p>
+<p>v₀ es la velocidad inicial (en pies por segundo) y h₀ es la altura desde la que se lanza (en pies). El −16 viene de la gravedad y siempre es el mismo cuando se mide en pies.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Una pelota se lanza y su altura es h(t) = −16t² + 96t + 5. ¿Cuándo toca el suelo? (usar calculadora)</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Tocar el suelo significa h(t) = 0:</strong> −16t² + 96t + 5 = 0.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>a = −16, b = 96, c = 5.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Discriminante:</strong> 96² − 4(−16)(5) = 9,216 + 320 = 9,536. √9,536 ≈ 97.65.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>t = (−96 ± 97.65) / (−32).</strong> t ≈ −0.05 o t ≈ 6.05.</p>
+<p class="paso"><span aria-hidden="true" class="n">5</span><strong>Se descarta la raíz negativa; queda t ≈ 6.05.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>La pelota toca el suelo a los 6.05 segundos, aproximadamente.</strong></p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Interprete el contexto</span>
+<p>En problemas de tiempo y altura, las soluciones negativas no tienen sentido (el tiempo no es negativo). La solución válida es la que corresponde a la situación real descrita.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#proyectil" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: la trayectoria de un proyectil (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: la trayectoria de un proyectil</span><span class="ei-sub">Simulador de lanzamiento: cambie la velocidad y la altura inicial, observe la curva y responda preguntas de contexto.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-metodos"><span aria-hidden="true" class="num-seccion">5</span>Tres métodos: ¿cuál conviene?</h2>
+<p>Ya se conocen tres formas de resolver una ecuación cuadrática. Saber elegir ahorra tiempo:</p>
+<div aria-label="Los tres métodos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Comparación de los tres métodos para resolver ecuaciones cuadráticas y cuándo conviene cada uno</caption>
+<thead><tr><th scope="col">Método</th><th scope="col">¿Cuándo conviene?</th></tr></thead>
+<tbody>
+<tr><td>Factorización</td><td>Cuando el trinomio se factoriza fácilmente con enteros.</td></tr>
+<tr><td>Completar el cuadrado</td><td>Cuando a = 1 y b es par; útil para entender la estructura.</td></tr>
+<tr><td>Fórmula cuadrática</td><td>Siempre funciona; ideal cuando no se factoriza o las raíces no son enteras.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Tres preguntas, en orden</span>
+<p>¿El trinomio se factoriza fácilmente con enteros? Entonces factorice. Si no, ¿a = 1 y b es par? Entonces complete el cuadrado. En cualquier otro caso, use la fórmula cuadrática, que siempre funciona.</p>
+</div>
+<a class="enlace-interactivo" href="practica-4-3.html#metodos" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cómo elegir el método (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cómo elegir el método</span><span class="ei-sub">Decida cuándo conviene factorizar, completar el cuadrado o usar la fórmula, y compare los tres caminos en una misma ecuación.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-4-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Para hacer por su cuenta, con el cuaderno, la calculadora y la hoja de fórmulas del GED: (1) El proyectil: la altura de una pelota es h(t) = −16t² + 96t + 5 (en pies, con t en segundos). Calcule cuándo toca el suelo y en qué momentos está a 120 pies. Explique qué significa cada solución y cuál descarta. (2) ¿Cuántas soluciones espero? Antes de resolver, calcule el discriminante de cada ecuación y prediga si tiene dos, una o ninguna solución real. Después compruebe con la fórmula las que tengan solución: x² − 6x + 9 = 0, x² + 2x + 5 = 0, 2x² − 3x − 2 = 0, x² − 4x + 1 = 0, 4x² + 4x + 1 = 0 y 3x² + x + 2 = 0. (3) El método más eficiente: decida y justifique si conviene factorizar, sacar raíz cuadrada o usar la fórmula, y resuelva por el método elegido: x² − 7x + 12 = 0, x² + 3x − 1 = 0, x² = 49, 2x² − 5x − 3 = 0, x² + 6x − 2 = 0 y 5x² = 20x. Después haga varios ejercicios de cada actividad de la página de práctica, resolviéndolos primero en el cuaderno, y anote los que falle para repasarlos. Unos 70 minutos; revise su trabajo con la lista de autoevaluación de esta lección.</li>
+<li><strong>En su vida diaria.</strong> Lance una pelota hacia arriba al aire libre y cuente los segundos hasta que cae. Use h(t) = −16t² + v₀t + 4 (su mano está a unos 4 pies de altura) y pruebe valores de v₀ hasta que el tiempo de caída coincida con lo que contó. ¿Con qué velocidad inicial la lanzó?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">En 3x² − 2x + 1 = 0, ¿cuánto valen a, b y c?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a = 3, b = 2, c = 1</button><button class="opcion" data-k="b" type="button">a = 3, b = −2, c = 1</button><button class="opcion" data-k="c" type="button">a = 3, b = −2, c = −1</button><button class="opcion" data-k="d" type="button">a = −3, b = 2, c = 1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Discriminante de x² − 5x + 6 = 0 y número de soluciones.</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1 → 2 soluciones</button><button class="opcion" data-k="b" type="button">0 → 1 solución</button><button class="opcion" data-k="c" type="button">−1 → ninguna</button><button class="opcion" data-k="d" type="button">49 → 2 soluciones</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Discriminante de x² + 4x + 4 = 0 y número de soluciones.</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">16 → 2 soluciones</button><button class="opcion" data-k="b" type="button">−16 → ninguna</button><button class="opcion" data-k="c" type="button">8 → 2 soluciones</button><button class="opcion" data-k="d" type="button">0 → 1 solución</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Discriminante de x² + x + 3 = 0 y número de soluciones.</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">13 → 2 soluciones</button><button class="opcion" data-k="b" type="button">0 → 1 solución</button><button class="opcion" data-k="c" type="button">−11 → ninguna</button><button class="opcion" data-k="d" type="button">11 → 2 soluciones</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">Resuelva x² − 6x + 9 = 0.</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 3 (solución doble)</button><button class="opcion" data-k="b" type="button">x = 3 y x = −3</button><button class="opcion" data-k="c" type="button">x = 9 y x = 1</button><button class="opcion" data-k="d" type="button">ninguna solución</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Resuelva 2x² + 5x − 3 = 0.</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = −1/2 y x = 3</button><button class="opcion" data-k="b" type="button">x = 1/2 y x = −3</button><button class="opcion" data-k="c" type="button">x = 1/2 y x = 3</button><button class="opcion" data-k="d" type="button">x = −1/2 y x = −3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Una pelota tiene altura h(t) = −16t² + 32t. ¿Cuándo toca el suelo (h = 0)?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a los 16 segundos</button><button class="opcion" data-k="b" type="button">a los 32 segundos</button><button class="opcion" data-k="c" type="button">a los 2 segundos</button><button class="opcion" data-k="d" type="button">a 1 segundo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">¿Qué método es el más seguro cuando una ecuación no se factoriza con enteros?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La fórmula cuadrática</button><button class="opcion" data-k="b" type="button">Adivinar</button><button class="opcion" data-k="c" type="button">Factor común</button><button class="opcion" data-k="d" type="button">Dividir entre x</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación de la fórmula cuadrática (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas de la fórmula cuadrática y el discriminante y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identificar a, b, c</th><td>Identifico los coeficientes con sus signos en cualquier forma de la ecuación.</td><td>Los identifico, pero con un error de signo.</td><td>Confundo los coeficientes o sus signos.</td></tr>
+<tr><th scope="row">El discriminante</th><td>Calculo b² − 4ac y lo uso para anticipar y verificar el resultado.</td><td>Lo calculo, pero interpreto mal el número de soluciones.</td><td>No calculo el discriminante.</td></tr>
+<tr><th scope="row">Aplicar la fórmula e interpretar</th><td>Resuelvo sin errores de sustitución, incluso con raíces no exactas, y descarto lo imposible.</td><td>Aplico la fórmula con errores de signo o de cálculo.</td><td>Sustituyo con errores que invalidan el resultado.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Tema 4 · Ecuaciones cuadráticas. Se dominaron los tres métodos de resolución (factorización, completar el cuadrado y la fórmula cuadrática), el uso del discriminante para predecir el número de soluciones y el modelado de situaciones reales como la trayectoria de un proyectil.</p>
+<p>El Tema 5 · Expresiones racionales comienza con la <strong>Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar</strong>. Toda la destreza de factorización del Tema 3 volverá a ser protagonista: ahora servirá para simplificar fracciones con polinomios e identificar los valores excluidos del dominio.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 5.1 · Simplificar expresiones racionales: factorizar y cancelar</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>fórmula cuadrática</dt><dd>x = (−b ± √(b² − 4ac)) / 2a</dd>
+<dt>discriminante</dt><dd>b² − 4ac: positivo, dos soluciones; cero, una; negativo, ninguna real.</dd>
+<dt>solución doble</dt><dd>Cuando el discriminante es 0, las dos soluciones son el mismo número.</dd>
+<dt>parábola</dt><dd>La gráfica en forma de U de una función cuadrática. Sus cortes con el eje x son las soluciones reales.</dd>
+<dt>vértice</dt><dd>El punto más alto (o más bajo) de una parábola; en un lanzamiento, la altura máxima.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 4 · Tema 4 · Lección 4.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 5.1",
+ "review": "las secciones 2 y 3",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "(−5)² − 4(1)(6) = 25 − 24.",
+    "c": "(−5)² es +25, no −25."
+   },
+   "right": "25 − 24 = 1 > 0: dos soluciones (x = 2 y x = 3).",
+   "solution": "1 → 2 soluciones."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "No olvide restar 4ac = 36.",
+    "b": "(−6)² es +36."
+   },
+   "right": "36 − 36 = 0: una solución doble, x = 3.",
+   "solution": "0 → 1 solución."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "4ac = 4(2)(4) = 32 se resta, no se suma.",
+    "c": "1² − 4(2)(4) = 1 − 32."
+   },
+   "right": "1 − 32 = −31 < 0: ninguna solución real.",
+   "solution": "−31 → ninguna."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "x = (−7 ± 3)/2: las dos son negativas.",
+    "c": "Sustituya x = 5: 25 + 35 + 10 no es 0."
+   },
+   "right": "D = 49 − 40 = 9, x = (−7 ± 3)/2.",
+   "solution": "x = −2 y x = −5."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "−b = −(−3) = +3: x = (3 ± 7)/2.",
+    "c": "Sustituya x = 2: 4 − 6 − 10 no es 0."
+   },
+   "right": "D = 9 + 40 = 49, x = (3 ± 7)/2.",
+   "solution": "x = 5 y x = −2."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "x = (2 ± √8)/2 = 1 ± 1.41: no olvide el 1.",
+    "b": "D = 4 + 4 = 8 > 0: hay dos soluciones."
+   },
+   "right": "D = 8, x = (2 ± 2.83)/2.",
+   "solution": "x ≈ 2.41 y x ≈ −0.41."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "b incluye su signo: b = −2.",
+    "c": "c = +1.",
+    "d": "a = 3, positivo."
+   },
+   "solution": "a = 3, b = −2, c = 1."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "25 − 24 no es 0.",
+    "c": "(−5)² = +25.",
+    "d": "Reste 4ac: 25 − 24."
+   },
+   "solution": "1 → 2 soluciones."
+  },
+  "C": {
+   "ok": "d",
+   "hints": {
+    "a": "Reste 4ac = 16.",
+    "b": "4² = 16 y 4ac = 16: 16 − 16.",
+    "c": "b² − 4ac = 16 − 16."
+   },
+   "solution": "0 → 1 solución."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "4ac = 12 se resta.",
+    "b": "1 − 12 no es 0.",
+    "d": "1 − 12 = −11, negativo."
+   },
+   "solution": "−11 → ninguna."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Sustituya x = −3: 9 − 18 + 9 = 0. ¿Y x = 3?",
+    "c": "D = 36 − 36 = 0: una sola solución.",
+    "d": "D = 0, no negativo."
+   },
+   "solution": "x = 3 (solución doble)."
+  },
+  "F": {
+   "ok": "b",
+   "hints": {
+    "a": "x = (−5 ± 7)/4: (−5 + 7)/4 = 1/2.",
+    "c": "Sustituya x = 3: 18 + 15 − 3 no es 0.",
+    "d": "(−5 + 7)/4 es positivo."
+   },
+   "solution": "x = 1/2 y x = −3."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "−16t² + 32t = −16t(t − 2) = 0.",
+    "b": "−16t(t − 2) = 0.",
+    "d": "En t = 1 la pelota está en su punto más alto."
+   },
+   "solution": "A los 2 segundos."
+  },
+  "H": {
+   "ok": "a",
+   "hints": {
+    "b": "Adivinar no siempre funciona.",
+    "c": "No siempre hay factor común.",
+    "d": "Dividir entre x hace perder soluciones."
+   },
+   "solution": "La fórmula cuadrática."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
