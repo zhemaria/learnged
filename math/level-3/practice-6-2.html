@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 6.2 · practice (English) — built by tools/build_n3_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 6.2 · The Pythagorean theorem: proof, applications, and converse · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity</div>
+    <h1>Lesson 6.2 · The Pythagorean theorem: proof, applications, and converse</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#theorem">The right triangle and the theorem</a></li>
+      <li><a href="#hypotenuse">Finding the hypotenuse</a></li>
+      <li><a href="#leg">Finding a leg</a></li>
+      <li><a href="#triples">Pythagorean triples</a></li>
+      <li><a href="#converse">The converse of the theorem</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="theorem" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The right triangle and the theorem</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>In a right triangle, the two sides that form the 90° angle are the <strong>legs</strong> (a and b). The side across from the right angle, the longest one, is the <strong>hypotenuse</strong> (c).</p>
+      <div class="formula">a² + b² = c²</div>
+      <h3>The proof with squares</h3>
+      <p>Draw a square on each side. The theorem says that the areas of the two small squares together are exactly the area of the big square. Change the legs and check it.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:200px;"><label for="pc-a">Leg a: <span id="pc-av"></span></label><input type="range" id="pc-a" min="1" max="12" step="1" value="3"></div>
+        <div class="campo" style="flex:1;min-width:200px;"><label for="pc-b">Leg b: <span id="pc-bv"></span></label><input type="range" id="pc-b" min="1" max="12" step="1" value="4"></div></div></div>
+      <div id="pc-svg"></div>
+      <div class="salida" aria-live="polite" id="pc-salida"></div>
+      <div class="caja-tip">The hypotenuse is always c: it is the longest side, and it is across from the right angle. Finding it is the first step, because in the formula it always takes the place that is alone.</div>
+      <h3>Practice: which side is the hypotenuse?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="hypotenuse">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Finding the hypotenuse</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>With the two legs, substitute into the formula, add the squares, and take the square root.</p>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <p class="enun" id="hp-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="hp-sig"></button><button type="button" class="btn-sec" id="hp-todo">Show all the steps</button><button type="button" class="btn-sec" id="hp-nuevo">Another example</button></div>
+      </div>
+      <div class="pasos" id="hp-pasos" aria-live="polite"></div>
+      <h3>Practice: find the hypotenuse</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Hypotenuse</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">If the result is not exact, round to the nearest tenth (for example, 7.8).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="leg">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Finding a leg</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>If you know the hypotenuse and one leg, solve for the other: subtract the square of the known leg from the square of the hypotenuse, and take the square root.</p>
+      <div class="formula">b² = c² − a²</div>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <p class="enun" id="ct-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="ct-sig"></button><button type="button" class="btn-sec" id="ct-todo">Show all the steps</button><button type="button" class="btn-sec" id="ct-nuevo">Another example</button></div>
+      </div>
+      <div class="pasos" id="ct-pasos" aria-live="polite"></div>
+      <div class="caja-tip">For a leg, subtract: the most common mistake is to add the two squares. If your answer is longer than the hypotenuse, something is wrong: no leg can be longer than the hypotenuse.</div>
+      <h3>Practice: find the missing leg</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Leg</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">If the result is not exact, round to the nearest tenth (for example, 7.8).</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <div class="caja-tip">Word problems with ladders, ramps, roofs, and screens: <a href="explore-pythagoras.html">Explore: the Pythagorean theorem in real life</a>.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="triples">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Pythagorean triples</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Some right triangles have three whole-number sides. Recognizing them saves calculations on the test, and their multiples work too: if 3-4-5 is a triple, so are 6-8-10 and 9-12-15.</p>
+      <h3>Triple maker</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="tp-base">Basic triple</label><select id="tp-base"><option value="3,4,5">3-4-5</option><option value="5,12,13">5-12-13</option><option value="8,15,17">8-15-17</option><option value="7,24,25">7-24-25</option></select></div>
+        <div class="campo" style="flex:1;min-width:200px;"><label for="tp-k">Multiply by: <span id="tp-kv"></span></label><input type="range" id="tp-k" min="1" max="10" step="1" value="1"></div></div></div>
+      <div class="salida" aria-live="polite" id="tp-salida"></div>
+      <h3>Practice: recognize the triple</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">New exercise</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="converse">
+    <summary><span class="num" aria-hidden="true">5</span><h2>The converse of the theorem</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The converse goes the other way: if the three sides make a² + b² = c² true, the triangle is a right triangle. It is a way to check whether a corner is a right angle. The longest side always plays the part of c, even if it is not listed last.</p>
+      <h3>Practice: is it a right triangle?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <div class="caja-tip">On the job: carpenters mark 3 feet on one wall and 4 on the other. If the diagonal measures 5, the corner is square. That is the converse of the theorem.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script>
+/* MODULE 1 · Squares on the sides */
+function pintaCuadrados(){
+  var a = +$("pc-a").value, b = +$("pc-b").value, c2 = a * a + b * b;
+  $("pc-av").textContent = a; $("pc-bv").textContent = b;
+  var minX = -a, maxX = b + a, minY = -b, maxY = a + b, esc = Math.min(560 / (maxX - minX), 440 / (maxY - minY)), ox = 320 - (minX + maxX) / 2 * esc, oy = 20 + maxY * esc;
+  function V(p){ return [ox + p[0] * esc, oy - p[1] * esc]; }
+  function poli(l, fill, st){ return '<polygon points="' + l.map(function(p){ var q = V(p); return f1(q[0]) + "," + f1(q[1]); }).join(" ") + '" fill="' + fill + '" stroke="' + st + '" stroke-width="2"/>'; }
+  var s = '<svg class="geo-svg" viewBox="0 0 640 ' + f1(oy + b * esc + 20) + '" role="img" aria-label="' + T("Right triangle with legs " + a + " and " + b + " and a square on each side. Areas: " + (a * a) + ", " + (b * b) + ", and " + c2 + ".", "Triángulo rectángulo de catetos " + a + " y " + b + " con un cuadrado sobre cada lado. Áreas: " + (a * a) + ", " + (b * b) + " y " + c2 + ".") + '">';
+  s += poli([[0, 0], [0, a], [-a, a], [-a, 0]], "#e3f2fd", "#0d47a1") + poli([[0, 0], [b, 0], [b, -b], [0, -b]], "#e8f5e9", "#1b5e20") + poli([[b, 0], [0, a], [a, a + b], [b + a, b]], "#fff8e1", "#5c3900");
+  var i;
+  for (i = 1; i < a; i++) s += lineaG(V([-a, i]), V([0, i]), "#90caf9", 1) + lineaG(V([-i, 0]), V([-i, a]), "#90caf9", 1);
+  for (i = 1; i < b; i++) s += lineaG(V([i, 0]), V([i, -b]), "#a5d6a7", 1) + lineaG(V([0, -i]), V([b, -i]), "#a5d6a7", 1);
+  s += poli([[0, 0], [b, 0], [0, a]], "#efebe9", "#4e342e") + marcaRecta(V([0, 0]), 0, 12, "#4e342e");
+  s += texto(V([-a / 2, a / 2]), a > 1 ? "a² = " + (a * a) : "1", a > 2 ? 18 : 14, "#0d47a1") + texto(V([b / 2, -b / 2]), b > 1 ? "b² = " + (b * b) : "1", b > 2 ? 18 : 14, "#1b5e20");
+  s += texto(V([(b + a) / 2, (a + b) / 2]), "c² = " + c2, 20, "#5c3900");
+  $("pc-svg").innerHTML = s + "</svg>";
+  $("pc-salida").innerHTML = '<div class="linea">' + (a * a) + " + " + (b * b) + " = <strong>" + c2 + "</strong>" + T(": the area of the square on the hypotenuse.", ": el área del cuadrado de la hipotenusa.") + "</div>" +
+    '<div class="linea veredicto">' + T("The hypotenuse measures c = ", "La hipotenusa mide c = ") + "√" + c2 + (esCuadrado(c2) ? " = " + Math.sqrt(c2) + T(". It is a Pythagorean triple!", ". ¡Es un triple pitagórico!") : " ≈ " + aprox(Math.sqrt(c2), 2) + ".") + "</div>";
+}
+function genHipotenusa(){
+  var tr = elige([[3, 4, 5], [5, 12, 13], [8, 15, 17], [6, 8, 10]]), rot = aleatorio(0, 359), letras = baraja(["p", "q", "r"]);
+  var sc = 230 / tr[2], c = Math.cos(rad(rot)), sn = Math.sin(rad(rot));
+  function G(p){ var x = p[0] * sc, y = p[1] * sc; return [x * c - y * sn, -(x * sn + y * c)]; }
+  var pa = G([0, 0]), pb = G([tr[1], 0]), pc = G([0, tr[0]]), cx = (pa[0] + pb[0] + pc[0]) / 3, cy = (pa[1] + pb[1] + pc[1]) / 3;
+  pa = [pa[0] - cx + 320, pa[1] - cy + 160]; pb = [pb[0] - cx + 320, pb[1] - cy + 160]; pc = [pc[0] - cx + 320, pc[1] - cy + 160];
+  function medio(p, q){ var m = [(p[0] + q[0]) / 2, (p[1] + q[1]) / 2], v = [m[0] - 320, m[1] - 160], nn = Math.hypot(v[0], v[1]) || 1; return [m[0] + v[0] / nn * 22, m[1] + v[1] / nn * 22]; }
+  var s = '<svg class="geo-svg" viewBox="0 0 640 320" role="img" aria-label="' + T("A turned right triangle with sides ", "Triángulo rectángulo girado con lados ") + letras.join(", ") + T(". The right angle is marked with a small square between sides " + letras[0] + " and " + letras[1] + ".", ". El ángulo recto está marcado con un cuadradito entre los lados " + letras[0] + " y " + letras[1] + ".") + '">';
+  s += '<polygon points="' + [pa, pb, pc].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="#efebe9" stroke="#4e342e" stroke-width="3"/>';
+  var gAB = Math.atan2(-(pb[1] - pa[1]), pb[0] - pa[0]) * 180 / Math.PI, gAC = Math.atan2(-(pc[1] - pa[1]), pc[0] - pa[0]) * 180 / Math.PI;
+  s += marcaRecta(pa, ((gAC - gAB + 360) % 360) < 180 ? gAB : gAC, 14, "#4e342e");
+  s += texto(medio(pa, pc), letras[0], 22, "#0d47a1") + texto(medio(pa, pb), letras[1], 22, "#0d47a1") + texto(medio(pb, pc), letras[2], 22, "#0d47a1") + "</svg>";
+  var pc2 = {}; pc2[letras[0]] = pc2[letras[1]] = T("That side touches the right angle: it is a leg.", "Ese lado toca el ángulo recto: es un cateto."); pc2.x = T("Only one side is the hypotenuse.", "Solo un lado es la hipotenusa.");
+  return {enun: T("In this right triangle, which side is the hypotenuse?", "En este triángulo rectángulo, ¿cuál lado es la hipotenusa?") + s,
+    opciones: letras.map(function(l){ return {html: T("Side ", "El lado ") + l, clave: l}; }).concat([{html: T("Any of the three", "Cualquiera de los tres"), clave: "x"}]), correcta: letras[2], porClave: pc2,
+    pista: T("Find the small square: it marks the right angle.", "Busque el cuadradito: marca el ángulo recto."), bien: T("The hypotenuse is the side across from the right angle (the small square).", "La hipotenusa es el lado de enfrente del ángulo recto (el cuadradito)."), mal: T("The hypotenuse is " + letras[2] + ": the side that does not touch the right angle.", "La hipotenusa es " + letras[2] + ": el lado que no toca el ángulo recto.")};
+}
+
+/* MODULES 2 and 3 · Hypotenuse and leg, step by step */
+function pasosHip(a, b){
+  var c2 = a * a + b * b;
+  return [T("Substitute the legs: ", "Se sustituyen los catetos: ") + auto(a + "<sup>2</sup> + " + b + "<sup>2</sup> = c<sup>2</sup>") + ".",
+    T("Square and add: ", "Se calculan y se suman los cuadrados: ") + (a * a) + " + " + (b * b) + " = " + c2 + T(", so c² = ", ", así que c² = ") + c2 + ".",
+    T("Take the square root: c = ", "Se saca la raíz cuadrada: c = ") + raizTxt(c2) + ".",
+    '<span class="veredicto">' + T("The hypotenuse measures ", "La hipotenusa mide ") + (esCuadrado(c2) ? Math.sqrt(c2) : "≈ " + aprox(Math.sqrt(c2), 1)) + ".</span>"];
+}
+function pasosCat(c, a){
+  var b2 = c * c - a * a;
+  return [T("Write it with the hypotenuse alone: ", "Se plantea con la hipotenusa sola: ") + auto(a + "<sup>2</sup> + b<sup>2</sup> = " + c + "<sup>2</sup>") + T(", that is, ", ", es decir ") + (a * a) + " + b² = " + (c * c) + ".",
+    T("Solve by subtracting: b² = ", "Se despeja restando: b² = ") + (c * c) + " − " + (a * a) + " = " + b2 + ".",
+    T("Take the square root: b = ", "Se saca la raíz cuadrada: b = ") + raizTxt(b2) + ".",
+    '<span class="veredicto">' + T("The other leg measures ", "El otro cateto mide ") + (esCuadrado(b2) ? Math.sqrt(b2) : "≈ " + aprox(Math.sqrt(b2), 1)) + T(". It is shorter than the hypotenuse, as it should be.", ". Es menor que la hipotenusa, como debe ser.") + "</span>"];
+}
+var HP_COLA = [[3, 4], [6, 8], [5, 7]], CT_COLA = [[13, 5], [10, 6], [9, 4]];
+function nuevoHP(){
+  var e = HP_COLA.length ? HP_COLA.shift() : (Math.random() < 0.7 ? tripleAzar(40).slice(0, 2) : [aleatorio(2, 9), aleatorio(2, 9)]);
+  $("hp-enun").innerHTML = T("The legs measure " + e[0] + " and " + e[1] + ". What is the length of the hypotenuse?", "Los catetos miden " + e[0] + " y " + e[1] + ". ¿Cuánto mide la hipotenusa?"); HPS.carga(pasosHip(e[0], e[1]));
+}
+function nuevoCT(){
+  var e; if (CT_COLA.length) e = CT_COLA.shift(); else if (Math.random() < 0.7){ var tr = tripleAzar(40); e = [tr[2], tr[aleatorio(0, 1)]]; } else { var c = aleatorio(6, 15); e = [c, aleatorio(2, c - 1)]; }
+  $("ct-enun").innerHTML = T("The hypotenuse measures " + e[0] + " and one leg measures " + e[1] + ". What is the length of the other leg?", "La hipotenusa mide " + e[0] + " y un cateto mide " + e[1] + ". ¿Cuánto mide el otro cateto?"); CTS.carga(pasosCat(e[0], e[1]));
+}
+function genPracHip(){
+  var e = Math.random() < 0.7 ? tripleAzar(50).slice(0, 2) : [aleatorio(2, 12), aleatorio(2, 12)], a = e[0], b = e[1], c2 = a * a + b * b;
+  return {enun: T("The legs of a right triangle measure " + a + " and " + b + ". What is the length of the hypotenuse?", "Los catetos de un triángulo rectángulo miden " + a + " y " + b + ". ¿Cuánto mide la hipotenusa?"),
+    solucion: a + "² + " + b + "² = " + (a * a) + " + " + (b * b) + " = " + c2 + T(", and c = ", ", y c = ") + raizTxt(c2) + ".",
+    evalua: function(v){ return evaluaRaiz(v, c2, [{v: a + b, msg: T("You do not add the sides themselves: add their squares, then take the square root.", "Los lados no se suman directamente: se suman sus cuadrados y después se saca la raíz.")}, {v: c2, msg: T("That is c². You still need to take the square root.", "Ese es c². Falta sacar la raíz cuadrada.")}]); }};
+}
+function genPracCat(){
+  var c, a; if (Math.random() < 0.7){ var tr = tripleAzar(50); c = tr[2]; a = tr[aleatorio(0, 1)]; } else { c = aleatorio(6, 16); a = aleatorio(2, c - 1); }
+  var b2 = c * c - a * a;
+  return {enun: T("The hypotenuse of a right triangle measures " + c + " and one leg measures " + a + ". What is the length of the other leg?", "La hipotenusa de un triángulo rectángulo mide " + c + " y un cateto mide " + a + ". ¿Cuánto mide el otro cateto?"),
+    solucion: c + "² − " + a + "² = " + (c * c) + " − " + (a * a) + " = " + b2 + T(", and b = ", ", y b = ") + raizTxt(b2) + ".",
+    evalua: function(v){ return evaluaRaiz(v, b2, [{v: Math.sqrt(c * c + a * a), msg: T("You added the squares. For a leg, subtract the square of the known leg from the square of the hypotenuse.", "Se sumaron los cuadrados. Para un cateto, al cuadrado de la hipotenusa se le resta el del cateto conocido.")},
+      {v: c - a, msg: T("You do not subtract the sides themselves: subtract their squares, then take the square root.", "Los lados no se restan directamente: se restan sus cuadrados y después se saca la raíz.")}, {v: b2, msg: T("That is b². You still need to take the square root.", "Ese es b². Falta sacar la raíz cuadrada.")}]); }};
+}
+
+/* MODULE 4 · Triples */
+function pintaTP(){
+  var tr = $("tp-base").value.split(",").map(Number), k = +$("tp-k").value, a = tr[0] * k, b = tr[1] * k, c = tr[2] * k;
+  $("tp-kv").textContent = k;
+  $("tp-salida").innerHTML = '<div class="linea grande">' + a + " – " + b + " – " + c + "</div>" +
+    '<div class="linea">' + T("Check: ", "Comprobación: ") + a + "² + " + b + "² = " + com(a * a) + " + " + com(b * b) + " = " + com(a * a + b * b) + T(", and ", ", y ") + c + "² = " + com(c * c) + ". ✓</div>" +
+    (k > 1 ? '<div class="linea">' + T("It is the triple " + tr.join("-") + " multiplied by " + k + ": each side times " + k + ".", "Es el triple " + tr.join("-") + " multiplicado por " + k + ": cada lado por " + k + ".") + "</div>" : "");
+}
+function genTriple(){
+  if (Math.random() < 0.55){
+    var tr = tripleAzar(60), falta = aleatorio(0, 2), vis = tr.map(function(x, i){ return i === falta ? "?" : x; }).join(", ");
+    var ok = tr[falta], o = [{html: String(ok), clave: "n" + ok}], pc = {};
+    var otros = tr.filter(function(x, i){ return i !== falta; });
+    var suma = falta === 2 ? otros[0] + otros[1] : otros[1] - otros[0]; o.push({html: String(suma), clave: "n" + suma}); pc["n" + suma] = T("You do not add or subtract the sides themselves: work with their squares.", "Los lados no se suman ni se restan directamente: se trabaja con los cuadrados.");
+    [ok + 1, ok - 1, ok + 2].forEach(function(v){ o.push({html: String(v), clave: "n" + v}); });
+    return {enun: T("Complete the Pythagorean triple: " + vis + " (the last number is the hypotenuse).", "Complete el triple pitagórico: " + vis + " (el último número es la hipotenusa)."), opciones: [o[0]].concat(baraja(o.slice(1)).slice(0, 3)), correcta: o[0].clave, porClave: pc,
+      pista: T("Is it a multiple of 3-4-5, 5-12-13, 8-15-17, or 7-24-25?", "¿Es un múltiplo de 3-4-5, 5-12-13, 8-15-17 o 7-24-25?"),
+      bien: tr.join("-") + T(" makes ", " cumple ") + tr[0] + "² + " + tr[1] + "² = " + tr[2] + T("² true.", "²."), mal: T("It is ", "Es ") + tr.join("-") + ": " + com(tr[0] * tr[0]) + " + " + com(tr[1] * tr[1]) + " = " + com(tr[2] * tr[2]) + "."};
+  }
+  var b = tripleAzar(60), malos = [];
+  while (malos.length < 3){ var m = tripleAzar(60).slice(); m[2] += elige([1, -1, 2]); if (m[0] * m[0] + m[1] * m[1] !== m[2] * m[2] && malos.indexOf(m.join("-")) < 0 && m.join("-") !== b.join("-")) malos.push(m.join("-")); }
+  var o2 = [{html: b.join(" – "), clave: "b"}].concat(malos.map(function(m, i){ return {html: m.split("-").join(" – "), clave: "m" + i}; }));
+  return {enun: T("Which of these is a Pythagorean triple?", "¿Cuál de estos es un triple pitagórico?"), opciones: o2, correcta: "b", porClave: {},
+    pista: T("Check a² + b² = c² for each one, or look for a multiple of a known triple.", "Compruebe a² + b² = c² en cada uno, o busque un múltiplo de un triple conocido."),
+    bien: b[0] + "² + " + b[1] + "² = " + com(b[0] * b[0] + b[1] * b[1]) + " = " + b[2] + "².", mal: T("Only " + b.join("-") + " makes a² + b² = c² true: ", "Solo " + b.join("-") + " cumple a² + b² = c²: ") + com(b[0] * b[0]) + " + " + com(b[1] * b[1]) + " = " + com(b[2] * b[2]) + "."};
+}
+
+/* MODULE 5 · Converse */
+function genConverso(){
+  var lados, si = Math.random() < 0.5;
+  if (si) lados = tripleAzar(60);
+  else { lados = tripleAzar(60).slice(); lados[aleatorio(0, 2)] += elige([1, -1, 2]); if (lados[0] * lados[0] + lados[1] * lados[1] === lados[2] * lados[2]) lados[2]++; }
+  var ord = lados.slice().sort(function(x, y){ return x - y; }), a = ord[0], b = ord[1], c = ord[2], s = a * a + b * b;
+  var ok = s === c * c, vis = baraja(lados).join(", ");
+  var exp = T("The longest side is " + c + ". ", "El lado más largo es " + c + ". ") + a + "² + " + b + "² = " + com(a * a) + " + " + com(b * b) + " = " + com(s) + T(" and ", " y ") + c + "² = " + com(c * c) + ": " + (ok ? T("they match, so it is a right triangle.", "coinciden, así que es rectángulo.") : T("they do not match, so it is not a right triangle.", "no coinciden, así que no es rectángulo."));
+  return {enun: T("Is a triangle with sides " + vis + " a right triangle?", "¿Es rectángulo un triángulo cuyos lados miden " + vis + "?"),
+    opciones: [{html: T("Yes, it is a right triangle", "Sí, es rectángulo"), clave: "si"}, {html: T("No, it is not a right triangle", "No, no es rectángulo"), clave: "no"}, {html: T("There is no way to know without measuring the angles", "No se puede saber sin medir los ángulos"), clave: "x"}],
+    correcta: ok ? "si" : "no", porClave: {x: T("Yes, you can: the converse of the theorem lets you decide with the sides alone.", "Sí se puede: el converso del teorema permite decidirlo solo con los lados.")},
+    pista: T("Use the longest side as c, and check whether a² + b² = c².", "Tome el lado más largo como c y compruebe si a² + b² = c²."), bien: exp, mal: exp};
+}
+
+/* Start */
+["pc-a", "pc-b"].forEach(function(id){ $(id).addEventListener("input", pintaCuadrados); });
+pintaCuadrados();
+OMR("p1", genHipotenusa);
+var HPS = pasoAPaso("hp", []), CTS = pasoAPaso("ct", []);
+$("hp-nuevo").addEventListener("click", nuevoHP); nuevoHP();
+creaPracticaLibre("p2", genPracHip);
+$("ct-nuevo").addEventListener("click", nuevoCT); nuevoCT();
+creaPracticaLibre("p3", genPracCat);
+$("tp-base").addEventListener("change", pintaTP); $("tp-k").addEventListener("input", pintaTP); pintaTP();
+OMR("p4", genTriple);
+OMR("p5", genConverso);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

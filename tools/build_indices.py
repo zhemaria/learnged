@@ -225,15 +225,21 @@ TEMAS3 = {
   ("3", "Radicales y números reales", [("3-1", "Simplificar radicales: factorización en cuadrados perfectos"), ("3-2", "Operaciones con radicales: suma, resta y multiplicación"), ("3-3", "El sistema de números reales: racionales, irracionales y la recta numérica completa")]),
   ("4", "Álgebra lineal", [("4-1", "Variables, expresiones algebraicas y traducción"), ("4-2", "Resolver ecuaciones lineales: propiedades de igualdad y variables en ambos lados"), ("4-3", "Ecuaciones con coeficientes fraccionarios, decimales y casos especiales")]),
   ("5", "Inecuaciones y fórmulas", [("5-1", "Resolver inecuaciones lineales y graficar en la recta numérica"), ("5-2", "Inecuaciones que requieren simplificación y problemas verbales"), ("5-3", "Despeje de fórmulas literales y estrategia general de resolución")]),
-  ("6", "Geometría avanzada", [("6-1", "Ángulos: relaciones y líneas paralelas cortadas por una transversal"), ("6-2", "Teorema de Pitágoras: demostración, aplicaciones y converso"), ("6-3", "Semejanza de figuras y dibujos a escala (Teorema de Thales)")]),
+  ("6", "Geometría avanzada", [("6-1", "Ángulos: relaciones y líneas paralelas cortadas por una transversal"), ("6-2", "Teorema de Pitágoras: demostración, aplicaciones y converso"), ("6-3", "Semejanza de figuras y dibujos a escala (teorema de Tales)")]),
   ("7", "Volumen y análisis de datos", [("7-1", "Volumen de prismas y cilindros"), ("7-2", "Diagramas de caja y bigotes"), ("7-3", "Histogramas: construir, interpretar y comparar distribuciones")]),
   ("8", "Combinatoria y probabilidad", [("8-1", "Principio fundamental del conteo, permutaciones y combinaciones"), ("8-2", "Probabilidad compuesta: con y sin reemplazo"), ("8-3", "Proyecto final integrador y estrategias para el GED Mathematical Reasoning")])]}
 
 EXTRAS3 = {
  "en": {"1-3": ("check", "topic-1-check.html", None, "Topic 1 check: the five rules of exponents"),
-        "3-3": ("speed", "speed-irrationals.html", None, "Speed practice: irrational numbers against the clock")},
+        "3-3": ("speed", "speed-irrationals.html", None, "Speed practice: irrational numbers against the clock"),
+        "6-1": ("explore", "explore-angles.html", None, "Explore: angles, parallel lines, and a transversal"),
+        "6-2": ("explore", "explore-pythagoras.html", None, "Explore: the Pythagorean theorem in real life"),
+        "6-3": ("explore", "explore-similar.html", None, "Explore: congruent and similar triangles")},
  "es": {"1-3": ("check", "comprobacion-tema-1.html", None, "Comprobación del Tema 1: las cinco reglas de los exponentes"),
-        "3-3": ("speed", "rapidez-irracionales.html", None, "Ejercicios de rapidez: números irracionales contra reloj")}}
+        "3-3": ("speed", "rapidez-irracionales.html", None, "Ejercicios de rapidez: números irracionales contra reloj"),
+        "6-1": ("explore", "explorar-angulos.html", None, "Explorar: ángulos, paralelas y una transversal"),
+        "6-2": ("explore", "explorar-pitagoras.html", None, "Explorar: el teorema de Pitágoras en la vida real"),
+        "6-3": ("explore", "explorar-semejanza.html", None, "Explorar: triángulos congruentes y semejantes")}}
 
 def _tx3():
     import copy

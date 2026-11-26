@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 6.2 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 6.2 · Teorema de Pitágoras: demostración, aplicaciones y converso · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-6-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 6 — Geometría: ángulos, teorema de Pitágoras y semejanza</p>
+<h1>Lección 6.2 · Teorema de Pitágoras: demostración, aplicaciones y converso</h1>
+<p class="lema">Use a² + b² = c² para hallar el lado que falta de un triángulo rectángulo, reconozca los triples pitagóricos y use el converso para comprobar un ángulo recto.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">📐</span> Calculadora para las raíces</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> la hipotenusa y los catetos de un triángulo rectángulo.</li>
+<li><strong>Aplicar</strong> a² + b² = c² para hallar la hipotenusa.</li>
+<li><strong>Despejar</strong> un cateto conociendo la hipotenusa y el otro cateto.</li>
+<li><strong>Reconocer</strong> los triples pitagóricos comunes y sus múltiplos.</li>
+<li><strong>Usar</strong> el converso para decidir si un triángulo es rectángulo, y resolver problemas reales de construcción y distancia.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.4.e</span> Usar el teorema de Pitágoras para hallar la medida de un lado desconocido de un triángulo rectángulo.</li></ul>
+<p class="std-tit">Esta lección prepara la base para estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-base">Q.2.b</span> Hacer cálculos y escribir expresiones numéricas con cuadrados y raíces cuadradas de números racionales positivos.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Planear un camino de solución o esbozar una línea de razonamiento.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.a</span> Manejar y resolver expresiones aritméticas.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">8.G.6</span> <span class="std-nivel">Nivel D</span> Explicar una demostración del teorema de Pitágoras y de su converso.</li><li><span class="std-cod std-ccr">8.G.7</span> <span class="std-nivel">Nivel D</span> Aplicar el teorema de Pitágoras para hallar lados desconocidos de triángulos rectángulos en problemas de la vida real y de matemáticas, en dos y tres dimensiones.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-teorema">El triángulo rectángulo y el teorema</a></li>
+<li><a href="#s-hipotenusa">Calcular la hipotenusa</a></li>
+<li><a href="#s-cateto">Calcular un cateto</a></li>
+<li><a href="#s-triples">Triples pitagóricos</a></li>
+<li><a href="#s-converso">El converso del teorema</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-teorema"><span aria-hidden="true" class="num-seccion">1</span>El triángulo rectángulo y el teorema</h2>
+<p>En la Lección 6.1 se trabajó con los ángulos de los triángulos, incluyendo el triángulo rectángulo (el que tiene un ángulo de 90°). Esta lección estudia la relación entre sus lados: el teorema de Pitágoras. Para despejar el lado desconocido se usará exactamente lo aprendido en el álgebra de los Temas 4 y 5, y se sacará la raíz cuadrada como en el Tema 3.</p>
+<p>En un triángulo rectángulo, los dos lados que forman el ángulo de 90° se llaman <strong>catetos</strong> (a y b). El lado opuesto al ángulo recto, que es el más largo, se llama <strong>hipotenusa</strong> (c). El teorema de Pitágoras relaciona los tres:</p>
+<p class="formula" style="text-align:center;font-size:1.4rem;font-weight:700;">a² + b² = c²</p>
+<svg viewBox="0 0 540 300" role="img" aria-label="Un triángulo rectángulo. Los catetos a y b forman el ángulo recto, marcado con un cuadradito. La hipotenusa c está enfrente del ángulo recto." style="width:100%;max-width:460px;height:auto;display:block;margin:12px auto;"><polygon points="120,250 420,250 120,60" fill="#efebe9" stroke="#4e342e" stroke-width="3"/><path d="M120 232 H138 V250" fill="none" stroke="#4e342e" stroke-width="2"/><text x="100" y="160" font-size="24" font-weight="700" fill="#0d47a1" text-anchor="middle">a</text><text x="270" y="282" font-size="24" font-weight="700" fill="#1b5e20" text-anchor="middle">b</text><text x="290" y="140" font-size="24" font-weight="700" fill="#b71c1c" text-anchor="middle">c</text><text x="300" y="166" font-size="15" fill="#b71c1c" text-anchor="middle">hipotenusa</text></svg>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">La hipotenusa siempre es c</span>
+<p>Es el lado más largo y está enfrente del ángulo recto. Identificarla bien es el primer paso, porque en la fórmula a² + b² = c², la c siempre ocupa el lugar de la hipotenusa.</p>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#teorema" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el triángulo rectángulo y el teorema (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el triángulo rectángulo y el teorema</span><span class="ei-sub">Vea la demostración con cuadrados e identifique la hipotenusa y los catetos antes de plantear a² + b² = c².</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-hipotenusa"><span aria-hidden="true" class="num-seccion">2</span>Calcular la hipotenusa</h2>
+<p>Cuando se conocen los dos catetos, se sustituyen en la fórmula y se saca la raíz cuadrada para hallar la hipotenusa.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · El triángulo 3-4-5. Los catetos miden 3 y 4. ¿Cuánto mide la hipotenusa?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye.</strong> 3² + 4² = c², es decir 9 + 16 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se suma.</strong> 25 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se saca la raíz.</strong> c = √25 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La hipotenusa mide <strong>5</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2: los catetos miden 6 y 8. ¿Cuánto mide la hipotenusa?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se sustituye.</strong> 6² + 8² = 36 + 64 = 100 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se saca la raíz.</strong> c = √100 = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> La hipotenusa mide <strong>10</strong>.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Con la calculadora</span>
+<p>Cuando la suma de los cuadrados no es un cuadrado perfecto, use la calculadora: con catetos 5 y 7, c² = 25 + 49 = 74, y √74 ≈ 8.6. Redondee a la décima, salvo que el problema diga otra cosa.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — Catetos 8 y 15</h3></div>
+<p class="pregunta-int" id="t-p1">Los catetos miden 8 y 15. La hipotenusa mide…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">17</button>
+<button class="opcion" data-k="b" type="button">23</button>
+<button class="opcion" data-k="c" type="button">64</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — Catetos 9 y 12</h3></div>
+<p class="pregunta-int" id="t-p2">Los catetos miden 9 y 12. La hipotenusa mide…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">21</button>
+<button class="opcion" data-k="b" type="button">15</button>
+<button class="opcion" data-k="c" type="button">225</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#hipotenusa" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: calcular la hipotenusa (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: calcular la hipotenusa</span><span class="ei-sub">Sume los cuadrados de los catetos y saque la raíz.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-cateto"><span aria-hidden="true" class="num-seccion">3</span>Calcular un cateto</h2>
+<p>Si se conocen la hipotenusa y un cateto, se despeja el otro cateto: se resta el cuadrado del cateto conocido y se saca la raíz.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3: la hipotenusa mide 13 y un cateto mide 5. ¿Cuánto mide el otro cateto?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Se plantea.</strong> 5² + b² = 13², es decir 25 + b² = 169.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se despeja.</strong> b² = 169 − 25 = 144.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Se saca la raíz.</strong> b = √144 = 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> El otro cateto mide <strong>12</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Para un cateto, se resta</span>
+<p>Al buscar un cateto, el cuadrado de la hipotenusa va solo de un lado y se le resta el cuadrado del cateto conocido. Un error común es sumar en lugar de restar. Compruebe su respuesta: un cateto siempre es más corto que la hipotenusa.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — El cateto que falta</h3></div>
+<p class="pregunta-int" id="t-p3">La hipotenusa mide 13 y un cateto mide 12. El otro cateto mide…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Problemas de la vida real</span>
+<p>Escaleras, rampas, techos, cables tensores y pantallas de televisor esconden un triángulo rectángulo. Practique con ellos en <a href="explorar-pitagoras.html">Explorar: el teorema de Pitágoras en la vida real</a>, donde puede ver el triángulo sobre el dibujo y la solución paso a paso.</p>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#cateto" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: calcular un cateto (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: calcular un cateto</span><span class="ei-sub">Reste los cuadrados y saque la raíz para hallar el cateto que falta.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-triples"><span aria-hidden="true" class="num-seccion">4</span>Triples pitagóricos</h2>
+<p>Algunos triángulos rectángulos tienen lados que son números enteros. Reconocerlos ahorra cálculos en el examen.</p>
+<div aria-label="Triples pitagóricos comunes (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Triples pitagóricos comunes (catetos e hipotenusa enteros)</caption>
+<thead><tr><th scope="col">Cateto a</th><th scope="col">Cateto b</th><th scope="col">Hipotenusa c</th></tr></thead>
+<tbody>
+<tr><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>5</td><td>12</td><td>13</td></tr>
+<tr><td>8</td><td>15</td><td>17</td></tr>
+<tr><td>7</td><td>24</td><td>25</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Los múltiplos también funcionan</span>
+<p>Si 3-4-5 es un triple, también lo son 6-8-10 (todo por 2) o 9-12-15 (todo por 3). Reconocer un múltiplo del 3-4-5 permite hallar la respuesta casi de inmediato.</p>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#triples" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: triples pitagóricos (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: triples pitagóricos</span><span class="ei-sub">Reconozca los triples más comunes y sus múltiplos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-converso"><span aria-hidden="true" class="num-seccion">5</span>El converso del teorema</h2>
+<p>El <strong>converso</strong> permite ir en sentido contrario: si los tres lados de un triángulo cumplen a² + b² = c², entonces el triángulo es rectángulo. Sirve para verificar si una esquina forma un ángulo recto.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Verificar con el converso. ¿Es rectángulo un triángulo con lados 30, 40 y 50?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>El lado más largo (50) sería la hipotenusa.</strong> Se comprueba: 30² + 40² = 900 + 1,600 = 2,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Se compara.</strong> Y 50² = 2,500. Como coinciden, se cumple a² + b² = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Respuesta.</strong> <strong>Sí</strong>, el triángulo es rectángulo.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">En la obra</span>
+<p>Los carpinteros marcan 3 pies en una pared y 4 en la otra. Si la diagonal entre las marcas mide 5 pies, la esquina está a escuadra. Es el converso del teorema.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — 5, 12 y 13</h3></div>
+<p class="pregunta-int" id="t-p4">¿Es rectángulo un triángulo de lados 5, 12 y 13?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Sí, porque 25 + 144 = 169</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">Solo si es isósceles</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — 4, 5 y 6</h3></div>
+<p class="pregunta-int" id="t-p5">¿Es rectángulo un triángulo de lados 4, 5 y 6?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Sí</button>
+<button class="opcion" data-k="b" type="button">Siempre lo es</button>
+<button class="opcion" data-k="c" type="button">No, porque 16 + 25 ≠ 36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#converso" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: el converso del teorema (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: el converso del teorema</span><span class="ei-sub">Decida si un triángulo es rectángulo a partir de sus lados.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-6-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Resuelva cuatro ejercicios de calcular la hipotenusa o un cateto, cuatro problemas aplicados de construcción o distancia y dos ejercicios de verificar, con el converso, si un triángulo es rectángulo. Después practique en <a href="explorar-pitagoras.html">Explorar: el teorema de Pitágoras en la vida real</a>: cuando la raíz le salga sola, solo queda identificar cuál de los tres lados falta.</li>
+<li><strong>En su vida diaria.</strong> Compruebe una esquina de su casa con la regla 3-4-5: mida 3 pies a lo largo de una pared y 4 pies a lo largo de la otra desde la esquina, y marque los dos puntos. Mida la distancia entre las marcas. Si es de 5 pies, la esquina está a escuadra. Después mida el ancho y el alto de la pantalla de un televisor o computadora y use el teorema para hallar su diagonal; compárela con la medida de la caja.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">Catetos 6 y 8. La hipotenusa mide…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">14</button><button class="opcion" data-k="b" type="button">100</button><button class="opcion" data-k="c" type="button">48</button><button class="opcion" data-k="d" type="button">10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Catetos 5 y 12. La hipotenusa mide…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17</button><button class="opcion" data-k="b" type="button">169</button><button class="opcion" data-k="c" type="button">13</button><button class="opcion" data-k="d" type="button">60</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">Hipotenusa 13, un cateto 5. El otro cateto mide…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">8</button><button class="opcion" data-k="c" type="button">18</button><button class="opcion" data-k="d" type="button">144</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Hipotenusa 25, un cateto 7. El otro cateto mide…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">18</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">32</button><button class="opcion" data-k="d" type="button">625</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Es rectángulo un triángulo de lados 3, 4 y 5?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sí, porque 9 + 16 = 25</button><button class="opcion" data-k="b" type="button">No</button><button class="opcion" data-k="c" type="button">Solo si es isósceles</button><button class="opcion" data-k="d" type="button">Falta información</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">¿Es rectángulo un triángulo de lados 6, 8 y 11?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">No, porque 36 + 64 ≠ 121</button><button class="opcion" data-k="b" type="button">Sí</button><button class="opcion" data-k="c" type="button">Sí, siempre</button><button class="opcion" data-k="d" type="button">No se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Una rampa cubre una distancia horizontal de 12 pies y sube 5 pies. ¿Cuánto mide la rampa (la hipotenusa)?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17 pies</button><button class="opcion" data-k="b" type="button">7 pies</button><button class="opcion" data-k="c" type="button">13 pies</button><button class="opcion" data-k="d" type="button">60 pies</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Una escalera de 10 pies se apoya en una pared, con el pie a 6 pies de la pared. ¿A qué altura llega?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4 pies</button><button class="opcion" data-k="b" type="button">16 pies</button><button class="opcion" data-k="c" type="button">60 pies</button><button class="opcion" data-k="d" type="button">8 pies</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación del teorema de Pitágoras (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Lista de autoevaluación: destrezas del teorema de Pitágoras y su converso y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identificar hipotenusa y catetos</th><td>Identifico correctamente la hipotenusa y los catetos, incluso en triángulos en distintas posiciones.</td><td>Identifico los lados con errores ocasionales.</td><td>Confundo la hipotenusa con un cateto.</td></tr>
+<tr><th scope="row">Plantear a² + b² = c²</th><td>Planteo a² + b² = c² correctamente y reconozco los triples pitagóricos.</td><td>Planteo la ecuación con los lados mal ubicados.</td><td>No planteo la ecuación correctamente.</td></tr>
+<tr><th scope="row">Calcular el lado</th><td>Calculo correctamente la hipotenusa y los catetos.</td><td>Calculo con errores al despejar o al sacar la raíz.</td><td>No despejo ni saco la raíz.</td></tr>
+<tr><th scope="row">Aplicar el converso</th><td>Uso el converso para decidir si el triángulo es rectángulo, tomando el lado más largo como c.</td><td>Aplico el converso con errores.</td><td>No uso el converso para clasificar.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>En esta lección se aprendió el teorema de Pitágoras (a² + b² = c²) para calcular la hipotenusa y los catetos de un triángulo rectángulo, se reconocieron los triples pitagóricos y se usó el converso para verificar si un triángulo es rectángulo, resolviendo problemas reales de construcción y distancia.</p>
+<p>En la <strong>Lección 6.3 · Semejanza de figuras y dibujos a escala (teorema de Tales)</strong> se estudiarán las figuras que tienen la misma forma pero distinto tamaño. Se resolverán proporciones para hallar lados desconocidos, se interpretarán escalas de mapas y planos, y se medirán alturas inaccesibles con el teorema de Tales.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-6-3.html">Lección 6.3 · Semejanza de figuras y dibujos a escala (teorema de Tales)</a></p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>triángulo rectángulo</dt><dd>Un triángulo con un ángulo de 90°.</dd>
+<dt>catetos</dt><dd>Los dos lados que forman el ángulo recto.</dd>
+<dt>hipotenusa</dt><dd>El lado opuesto al ángulo recto. Siempre es el lado más largo.</dd>
+<dt>triple pitagórico</dt><dd>Tres números enteros que cumplen a² + b² = c², como 3, 4, 5.</dd>
+<dt>converso</dt><dd>El teorema al revés: si se cumple a² + b² = c², el triángulo es rectángulo.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 6 · Lección 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lección 6.3",
+ "review": "las secciones 2, 3 y 5",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "Sumó los catetos. Hay que sumar sus cuadrados: 64 + 225.",
+    "c": "64 es 8². Sume 8² + 15² y saque la raíz."
+   },
+   "right": "8² + 15² = 64 + 225 = 289, √289 = 17.",
+   "solution": "8² + 15² = 289, c = √289 = 17."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados: 81 + 144.",
+    "c": "225 es c². Falta sacar la raíz."
+   },
+   "right": "9² + 12² = 81 + 144 = 225, √225 = 15.",
+   "solution": "9² + 12² = 225, c = √225 = 15."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "No se restan los lados; se restan sus cuadrados: 169 − 144.",
+    "c": "25 es b². Falta sacar la raíz."
+   },
+   "right": "13² − 12² = 169 − 144 = 25, √25 = 5.",
+   "solution": "b² = 169 − 144 = 25, b = 5."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Compruebe: 5² + 12² = 25 + 144 = 169, y 13² = 169.",
+    "c": "El converso solo pide que se cumpla a² + b² = c². Compruébelo."
+   },
+   "right": "25 + 144 = 169 = 13², así que es rectángulo.",
+   "solution": "Sí: 25 + 144 = 169."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Compruebe: 4² + 5² = 16 + 25 = 41, y 6² = 36.",
+    "b": "No todo triángulo es rectángulo. Compruebe a² + b² = c²."
+   },
+   "right": "16 + 25 = 41, que no es 36, así que no es rectángulo.",
+   "solution": "No: 16 + 25 = 41 ≠ 36."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados.",
+    "b": "100 es c². Saque la raíz.",
+    "c": "Multiplicó los catetos. Hay que sumar sus cuadrados."
+   },
+   "solution": "36 + 64 = 100, c = 10."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados.",
+    "b": "169 es c². Saque la raíz.",
+    "d": "Multiplicó los catetos. Hay que sumar sus cuadrados."
+   },
+   "solution": "25 + 144 = 169, c = 13."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "No se restan los lados; se restan sus cuadrados.",
+    "c": "Sumó los lados. Para un cateto se restan los cuadrados.",
+    "d": "144 es b². Saque la raíz."
+   },
+   "solution": "169 − 25 = 144, b = 12."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Reste los cuadrados: 625 − 49.",
+    "c": "Sumó los lados. Para un cateto se restan los cuadrados.",
+    "d": "625 es 25². Reste 7² y saque la raíz."
+   },
+   "solution": "625 − 49 = 576, b = 24."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Compruebe: 9 + 16 = 25 = 5².",
+    "c": "El converso solo pide que se cumpla a² + b² = c².",
+    "d": "Con los tres lados basta para decidir."
+   },
+   "solution": "Sí: 9 + 16 = 25."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Compruebe: 36 + 64 = 100, y 11² = 121.",
+    "c": "No todo triángulo es rectángulo.",
+    "d": "Con los tres lados basta para decidir."
+   },
+   "solution": "No: 100 ≠ 121."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados: 144 + 25.",
+    "b": "Restó los catetos. La rampa es la hipotenusa: se suman los cuadrados.",
+    "d": "Multiplicó. Sume los cuadrados y saque la raíz."
+   },
+   "solution": "144 + 25 = 169, √169 = 13 pies."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Restó los lados. Hay que restar sus cuadrados: 100 − 36.",
+    "b": "La escalera es la hipotenusa, así que la altura es un cateto: se resta.",
+    "c": "Multiplicó. Reste los cuadrados y saque la raíz."
+   },
+   "solution": "100 − 36 = 64, √64 = 8 pies."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal — práctica (español) — construida con tools/build_n3_lesson_6_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-6-1.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza</div>
+    <h1>Lección 6.1 · Ángulos: relaciones y líneas paralelas cortadas por una transversal</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#basicos">Relaciones básicas entre ángulos</a></li>
+      <li><a href="#transversal">Paralelas cortadas por una transversal</a></li>
+      <li><a href="#calcular">Calcular ángulos desconocidos</a></li>
+      <li><a href="#triangulo">La suma de los ángulos de un triángulo</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="basicos" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Relaciones básicas entre ángulos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <table class="reglas"><caption>Relaciones básicas entre ángulos</caption>
+        <thead><tr><th scope="col">Relación</th><th scope="col">Propiedad</th><th scope="col">Ejemplo</th></tr></thead>
+        <tbody><tr><td>Complementarios</td><td>suman 90°</td><td>30° y 60°</td></tr>
+        <tr><td>Suplementarios</td><td>suman 180°</td><td>110° y 70°</td></tr>
+        <tr><td>Opuestos por el vértice</td><td>son iguales</td><td>50° y 50°</td></tr></tbody></table>
+      <h3>Dos rectas que se cortan</h3>
+      <p>Mueva el deslizador. Los ángulos opuestos por el vértice son siempre iguales, y dos ángulos vecinos siempre suman 180°.</p>
+      <div class="panel"><div class="campo"><label for="bs-a">Ángulo marcado: <span id="bs-val"></span></label><input type="range" id="bs-a" min="10" max="170" step="5" value="50"></div></div>
+      <div id="bs-svg"></div>
+      <div class="salida" aria-live="polite" id="bs-salida"></div>
+      <div class="caja-tip">Para recordar cuál es cuál: «complementarios» y «esquina» (90°) van juntos; «suplementarios» y «recta» (180°) también. Un ángulo de 90° o más no tiene complemento.</div>
+      <h3>Practique: complemento, suplemento y opuesto por el vértice</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="transversal">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Paralelas cortadas por una transversal</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuando una recta transversal corta dos paralelas se forman ocho ángulos. Solo hay dos medidas: los ángulos agudos son todos iguales entre sí, los obtusos también, y un agudo más un obtuso suman 180°.</p>
+      <table class="reglas"><caption>Parejas de ángulos entre paralelas</caption>
+        <thead><tr><th scope="col">Pareja</th><th scope="col">Ejemplo en el diagrama</th><th scope="col">Propiedad</th></tr></thead>
+        <tbody><tr><td>Correspondientes</td><td>1 y 5</td><td>son iguales</td></tr>
+        <tr><td>Alternos internos</td><td>4 y 5</td><td>son iguales</td></tr>
+        <tr><td>Alternos externos</td><td>1 y 8</td><td>son iguales</td></tr>
+        <tr><td>Internos del mismo lado</td><td>3 y 5</td><td>suman 180°</td></tr>
+        <tr><td>Opuestos por el vértice</td><td>1 y 4</td><td>son iguales</td></tr></tbody></table>
+      <h3>Explore los ocho ángulos</h3>
+      <p>Incline la transversal y elija un ángulo: se marcan en verde los que miden lo mismo y en rojo los que lo completan hasta 180°.</p>
+      <div class="panel"><div class="campo"><label for="tv-a">Inclinación de la transversal: <span id="tv-val"></span></label><input type="range" id="tv-a" min="35" max="145" step="5" value="60"></div>
+        <div class="elecciones" id="tv-botones" role="group" aria-label="Elija un ángulo"></div></div>
+      <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#0d47a1"></i>elegido</span><span><i style="background:#1b5e20"></i>mide lo mismo</span><span><i style="background:#b71c1c"></i>suman 180°</span></div>
+      <div id="tv-svg"></div>
+      <div class="salida" aria-live="polite" id="tv-salida"></div>
+      <div class="caja-tip">Más en <a href="explorar-angulos.html">Explorar: ángulos, paralelas y una transversal</a>: ángulos que se eligen sobre el mismo dibujo y un cuestionario con pistas.</div>
+      <h3>Practique: ¿qué relación tienen?</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="opciones" id="p2-opciones"></div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="calcular">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Calcular ángulos desconocidos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Conociendo una relación, se calcula cualquier ángulo. Si los ángulos vienen con expresiones como 2x o 3x + 10, se plantea una ecuación como las del Tema 4: «son iguales» da una ecuación con =, y «suman 180°» o «suman 90°» da una suma.</p>
+      <h3>Practique: con el diagrama</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Medida en grados</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba solo el número, sin el símbolo °.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <h3>Practique: con una ecuación</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Valor de x</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Escriba solo el número.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="triangulo">
+    <summary><span class="num" aria-hidden="true">4</span><h2>La suma de los ángulos de un triángulo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los tres ángulos interiores de cualquier triángulo suman 180°. Además, un ángulo exterior es igual a la suma de los dos interiores que no están junto a él.</p>
+      <div class="formula">A + B + C = 180°</div>
+      <h3>Deforme el triángulo</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:220px;"><label for="tr-a">Ángulo A: <span id="tr-av"></span></label><input type="range" id="tr-a" min="15" max="120" step="5" value="60"></div>
+        <div class="campo" style="flex:1;min-width:220px;"><label for="tr-b">Ángulo B: <span id="tr-bv"></span></label><input type="range" id="tr-b" min="15" max="120" step="5" value="50"></div></div></div>
+      <div id="tr-svg"></div>
+      <div class="salida" aria-live="polite" id="tr-salida"></div>
+      <div class="caja-tip">El triángulo rectángulo: si un ángulo mide 90°, los otros dos suman 90°: son complementarios.</div>
+      <h3>Practique: halle el ángulo que falta</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="campos"><div class="campo"><label for="p5-r">Medida en grados</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p5-r"></div></div>
+        <p class="nota">Escriba solo el número, sin el símbolo °.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script>
+/* MODULE 1 · Two lines that cross */
+function pintaBasicos(){
+  var a = +$("bs-a").value, c = [320, 150], s = "";
+  $("bs-val").textContent = a + "°"; $("bs-a").setAttribute("aria-valuetext", a + T(" degrees", " grados"));
+  s += '<svg class="geo-svg" viewBox="0 0 640 300" role="img" aria-label="' + T("Two lines that cross. Angles: ", "Dos rectas que se cortan. Ángulos: ") + a + "°, " + (180 - a) + "°, " + a + "° " + T("and", "y") + " " + (180 - a) + '°.">';
+  s += arco(c[0], c[1], 46, 0, a, COL_SEL, "#e3f2fd") + arco(c[0], c[1], 46, 180, 180 + a, COL_IG, "#e8f5e9") + arco(c[0], c[1], 38, a, 180, COL_SUP, "#ffebee");
+  s += lineaG(punto(c[0], c[1], 280, 180), punto(c[0], c[1], 280, 0), "#424242", 3) + lineaG(punto(c[0], c[1], 150, a + 180), punto(c[0], c[1], 150, a), "#424242", 3);
+  s += texto(punto(c[0], c[1], 80, a / 2), a + "°", 18, COL_SEL) + texto(punto(c[0], c[1], 80, 180 + a / 2), a + "°", 18, COL_IG) +
+       texto(punto(c[0], c[1], 74, (a + 180) / 2), (180 - a) + "°", 18, COL_SUP) + texto(punto(c[0], c[1], 74, (a + 540) / 2), (180 - a) + "°", 18, "#424242");
+  $("bs-svg").innerHTML = s + "</svg>";
+  $("bs-salida").innerHTML = '<div class="linea">' + T("The vertical angle (across from it) also measures ", "El ángulo opuesto por el vértice también mide ") + "<strong>" + a + "°</strong>.</div>" +
+    '<div class="linea">' + T("Its neighbor measures ", "Su vecino mide ") + "180° − " + a + "° = <strong>" + (180 - a) + "°</strong>" + T(": they are supplementary, because together they make a straight line.", ": son suplementarios, porque juntos forman una recta.") + "</div>" +
+    '<div class="linea">' + (a < 90 ? T("Its complement would be ", "Su complemento sería ") + "90° − " + a + "° = <strong>" + (90 - a) + "°</strong>." : T("Since it measures " + a + "°, it has no complement: it already reaches or passes 90°.", "Como mide " + a + "°, no tiene complemento: ya llega o pasa de 90°.")) + "</div>";
+}
+function genBasicos(){
+  var tp = aleatorio(1, 4), a, pc = {};
+  if (tp === 1){ a = aleatorio(5, 85); pc["g" + (180 - a)] = T("That is the supplement (they add up to 180°). The complement completes 90°.", "Ese es el suplemento (suman 180°). El complemento completa 90°."); pc["g" + a] = T("That is the same angle. The complement completes 90°.", "Es el mismo ángulo. El complemento completa 90°.");
+    return {enun: T("What is the measure of the complement of a " + a + "° angle?", "¿Cuánto mide el complemento de un ángulo de " + a + "°?"), opciones: [opG(90 - a), opG(180 - a), opG(a), opG(360 - a)], correcta: "g" + (90 - a), porClave: pc,
+      pista: T("Complementary angles add up to 90°.", "Los complementarios suman 90°."), bien: "90° − " + a + "° = " + (90 - a) + "°.", mal: T("Complementary angles add up to 90°: ", "Los complementarios suman 90°: ") + "90° − " + a + "° = " + (90 - a) + "°."}; }
+  if (tp === 2){ a = aleatorio(5, 175); if (a === 90) a = 91; pc["g" + Math.abs(90 - a)] = T("Supplementary angles add up to 180°, not 90°.", "Los suplementarios suman 180°, no 90°."); pc["g" + a] = T("That is the same angle. The supplement completes 180°.", "Es el mismo ángulo. El suplemento completa 180°.");
+    return {enun: T("What is the measure of the supplement of a " + a + "° angle?", "¿Cuánto mide el suplemento de un ángulo de " + a + "°?"), opciones: [opG(180 - a), opG(Math.abs(90 - a)), opG(360 - a), opG(a)], correcta: "g" + (180 - a), porClave: pc,
+      pista: T("Supplementary angles add up to 180°.", "Los suplementarios suman 180°."), bien: "180° − " + a + "° = " + (180 - a) + "°.", mal: T("Supplementary angles add up to 180°: ", "Los suplementarios suman 180°: ") + "180° − " + a + "° = " + (180 - a) + "°."}; }
+  if (tp === 3){ a = aleatorio(20, 160); if (a === 90) a = 70; pc["g" + (180 - a)] = T("That is its neighbor, which forms a straight line with it. The vertical angle is across from it.", "Ese es su vecino, que forma una recta con él. El opuesto por el vértice está enfrentado.");
+    return {enun: T("Two lines cross, and one of the angles measures " + a + "°. What is the measure of its vertical angle (the one across from it)?", "Dos rectas se cortan y uno de los ángulos mide " + a + "°. ¿Cuánto mide el ángulo opuesto por el vértice?"), opciones: [opG(a), opG(180 - a), opG(Math.abs(90 - a) || 45), opG(2 * a)], correcta: "g" + a, porClave: pc,
+      pista: T("Vertical angles are across from each other.", "Los opuestos por el vértice están enfrentados."), bien: T("Vertical angles are equal.", "Los opuestos por el vértice son iguales."), mal: T("Vertical angles are equal: it measures " + a + "°. Its neighbor, on the other hand, measures " + (180 - a) + "°.", "Los opuestos por el vértice son iguales: mide " + a + "°. Su vecino, en cambio, mide " + (180 - a) + "°.")}; }
+  a = aleatorio(95, 170); pc["g" + (a - 90)] = T("A complement must be positive, and 90° − " + a + "° is negative.", "Un complemento tiene que ser positivo, y 90° − " + a + "° es negativo."); pc["g" + (180 - a)] = T("That is the supplement. Can anything complete " + a + "° up to 90°?", "Ese es el suplemento. ¿Algo puede completar " + a + "° hasta 90°?");
+  return {enun: T("What is the measure of the complement of a " + a + "° angle?", "¿Cuánto mide el complemento de un ángulo de " + a + "°?"), opciones: [{html: T("It has no complement", "No tiene complemento"), clave: "no"}, opG(180 - a), opG(a - 90), opG(360 - a)], correcta: "no", porClave: pc,
+    pista: T("Complementary angles add up to 90°. Is " + a + "° less than 90°?", "Los complementarios suman 90°. ¿" + a + "° es menor que 90°?"), bien: T("Complementary angles add up to 90°, and " + a + "° is already more than 90°.", "Dos ángulos complementarios suman 90°, y " + a + "° ya pasa de 90°."), mal: T("It has none: " + a + "° is already more than 90°, so no positive angle completes it to 90°.", "No tiene: " + a + "° ya es mayor que 90°, así que ningún ángulo positivo lo completa hasta 90°.")};
+}
+
+/* MODULE 2 · Transversal */
+var TV = {sel: 1};
+function pintaTV(){
+  var alfa = +$("tv-a").value, colores = {}, igual = [], sup = [], i;
+  $("tv-val").textContent = alfa + "°"; $("tv-a").setAttribute("aria-valuetext", alfa + T(" degrees", " grados"));
+  for (i = 1; i <= 8; i++){
+    if (i === TV.sel) colores[i] = COL_SEL;
+    else if (medida(i, alfa) === medida(TV.sel, alfa)){ colores[i] = COL_IG; igual.push(i); }
+    else { colores[i] = COL_SUP; sup.push(i); }
+  }
+  if (alfa === 90){ igual = igual.concat(sup); sup = []; for (i = 1; i <= 8; i++) if (i !== TV.sel) colores[i] = COL_IG; }
+  $("tv-svg").innerHTML = dibujaTransversal(alfa, {colores: colores, voz: T("Transversal tilted " + alfa + " degrees. Chosen angle: " + TV.sel + ".", "Transversal inclinada " + alfa + " grados. Ángulo elegido: " + TV.sel + ".")});
+  Array.prototype.forEach.call($("tv-botones").children, function(b){ b.setAttribute("aria-pressed", +b.getAttribute("data-i") === TV.sel ? "true" : "false"); });
+  var m = medida(TV.sel, alfa), nombre = function(j){ var r = relacion(TV.sel, j); return j + (r ? " (" + REL[r] + ")" : ""); };
+  var h = '<div class="linea">' + T("Angle " + TV.sel + " measures ", "El ángulo " + TV.sel + " mide ") + "<strong>" + m + "°</strong>.</div>";
+  h += '<div class="linea">' + T("Same measure (" + m + "°): ", "Miden lo mismo (" + m + "°): ") + igual.map(nombre).join(", ") + ".</div>";
+  if (sup.length) h += '<div class="linea">' + T("They measure " + (180 - m) + "° and add up to 180° with it: ", "Miden " + (180 - m) + "° y suman 180° con él: ") + sup.map(nombre).join(", ") + ".</div>";
+  $("tv-salida").innerHTML = h;
+}
+var PAREJAS = [[1, 5], [2, 6], [3, 7], [4, 8], [4, 5], [3, 6], [1, 8], [2, 7], [3, 5], [4, 6], [1, 4], [2, 3], [5, 8], [6, 7], [1, 7], [2, 8]];
+var CLAVES = ["corr", "aint", "aext", "sint", "vert", "sext"];
+function pistaRel(i, j){
+  if (interDe(i) === interDe(j)) return T("Both angles are at the same intersection. Are they across from each other?", "Los dos ángulos están en la misma intersección. ¿Están enfrentados?");
+  if (posDe(i) === posDe(j)) return T("Look at where each angle sits at its own intersection.", "Mire dónde está cada ángulo en su propia intersección.");
+  return T("Are both angles between the parallel lines (interior) or outside them (exterior)? Are they on the same side of the transversal?", "¿Los dos ángulos están entre las paralelas (internos) o fuera de ellas (externos)? ¿Están del mismo lado de la transversal?");
+}
+function genRelacion(){
+  var par = baraja(elige(PAREJAS)), r = relacion(par[0], par[1]), alfa = elige([50, 55, 60, 65, 70, 115, 120, 125]), col = {};
+  col[par[0]] = COL_SEL; col[par[1]] = COL_SEL;
+  var otros = baraja(CLAVES.filter(function(k){ return k !== r; })).slice(0, 3);
+  var o = [{html: REL_OP[r], clave: r}].concat(otros.map(function(k){ return {html: REL_OP[k], clave: k}; }));
+  var igual = medida(par[0], alfa) === medida(par[1], alfa), exp = T("They are " + REL[r] + ": ", "Son " + REL[r] + ": ") + (igual ? T("they have the same measure.", "miden lo mismo.") : T("they add up to 180°.", "suman 180°."));
+  return {enun: T("What is the relationship between angles " + par[0] + " and " + par[1] + "?", "¿Qué relación tienen los ángulos " + par[0] + " y " + par[1] + "?") + dibujaTransversal(alfa, {colores: col, voz: T("Transversal with angles " + par[0] + " and " + par[1] + " highlighted.", "Transversal con los ángulos " + par[0] + " y " + par[1] + " resaltados.")}),
+    opciones: o, correcta: r, porClave: {}, pista: pistaRel(par[0], par[1]), bien: exp, mal: exp};
+}
+
+/* MODULE 3 · Finding angles */
+function genDiagrama(){
+  var alfa = aleatorio(35, 145); if (alfa === 90) alfa = 72;
+  var i = aleatorio(1, 8), j; do { j = aleatorio(1, 8); } while (j === i);
+  var mi = medida(i, alfa), mj = medida(j, alfa), r = relacion(i, j), et = {}, col = {};
+  et[i] = mi + "°"; et[j] = "?"; col[i] = COL_SEL; col[j] = COL_SUP;
+  var porque = mi === mj ? (r ? T("They are " + REL[r] + ", so they have the same measure", "Son " + REL[r] + ", así que miden lo mismo") : T("Both are the same kind (both acute or both obtuse), so they have the same measure", "Los dos son del mismo tipo (agudos u obtusos), así que miden lo mismo"))
+                         : (r ? T("They are " + REL[r] + ": they add up to 180°", "Son " + REL[r] + ": suman 180°") : T("One is acute and the other is obtuse: they add up to 180°", "Uno es agudo y el otro obtuso: suman 180°"));
+  return {enun: T("Angle " + i + " measures " + mi + "°. What is the measure of angle " + j + "?", "El ángulo " + i + " mide " + mi + "°. ¿Cuánto mide el ángulo " + j + "?") +
+      dibujaTransversal(alfa, {colores: col, etiquetas: et, voz: T("Transversal. Angle " + i + " measures " + mi + " degrees; the question asks about angle " + j + ".", "Transversal. El ángulo " + i + " mide " + mi + " grados; se pregunta por el ángulo " + j + ".")}),
+    solucion: porque + (mi === mj ? "." : ": 180° − " + mi + "° = " + mj + "°."),
+    evalua: function(v){ return evaluaGrados(v, mj, [{v: 180 - mj, msg: mi === mj ? T("Those two angles have the same measure; you do not subtract from 180°.", "Esos dos ángulos miden lo mismo; no hay que restar de 180°.") : T("Those two angles do not have the same measure: they add up to 180°.", "Esos dos ángulos no miden lo mismo: suman 180°.")}]); }};
+}
+function ex(a, b){ return auto(b ? P(tm(a, "x"), tm(b)) : P(tm(a, "x"))); }
+function genEcuacion(){
+  var tp = aleatorio(1, 5), x, a, b, c, d, enun, ec, pistas = [];
+  if (tp === 1){ do { a = aleatorio(1, 3); c = aleatorio(2, 5); } while (180 % (a + c) || a === c); x = 180 / (a + c);
+    enun = T("Two supplementary angles measure ", "Dos ángulos suplementarios miden ") + ex(a, 0) + T(" and ", " y ") + ex(c, 0) + T(". What is the value of x?", ". ¿Cuánto vale x?"); ec = ex(a, 0) + " + " + ex(c, 0) + " = 180"; pistas = [{v: fr(90, a + c), msg: T("Supplementary angles add up to 180°, not 90°.", "Los suplementarios suman 180°, no 90°.")}]; }
+  else if (tp === 2){ x = aleatorio(10, 25); a = 1; c = 2; b = aleatorio(1, 10); d = 90 - (a * x + b) - c * x;
+    enun = T("Two complementary angles measure ", "Dos ángulos complementarios miden ") + ex(a, b) + T(" and ", " y ") + ex(c, d) + T(". What is the value of x?", ". ¿Cuánto vale x?"); ec = "(" + ex(a, b) + ") + (" + ex(c, d) + ") = 90"; }
+  else if (tp === 3){ x = aleatorio(10, 40); a = aleatorio(2, 4); c = a + aleatorio(1, 3); b = aleatorio(5, 30); d = a * x + b - c * x;
+    enun = T("Two vertical angles measure ", "Dos ángulos opuestos por el vértice miden ") + ex(a, b) + T(" and ", " y ") + ex(c, d) + T(". What is the value of x?", ". ¿Cuánto vale x?"); ec = ex(a, b) + " = " + ex(c, d); }
+  else if (tp === 4){ x = aleatorio(15, 35); a = aleatorio(3, 5); c = aleatorio(1, 2); b = -aleatorio(5, 20); d = a * x + b - c * x;
+    enun = T("Between two parallel lines, two corresponding angles measure ", "Entre dos paralelas, dos ángulos correspondientes miden ") + ex(a, b) + T(" and ", " y ") + ex(c, d) + T(". What is the value of x?", ". ¿Cuánto vale x?"); ec = ex(a, b) + " = " + ex(c, d); }
+  else { x = aleatorio(20, 45); a = 1; c = 2; b = aleatorio(5, 20); d = 180 - (x + b) - 2 * x;
+    enun = T("Between two parallel lines, two same-side interior angles measure ", "Entre dos paralelas, dos ángulos internos del mismo lado miden ") + ex(a, b) + T(" and ", " y ") + ex(c, d) + T(". What is the value of x?", ". ¿Cuánto vale x?"); ec = "(" + ex(a, b) + ") + (" + ex(c, d) + ") = 180"; }
+  var regla = tp === 3 || tp === 4 ? T("The angles are equal, so set the two expressions equal.", "Los ángulos son iguales, así que se igualan las dos expresiones.") : T("The angles add up to " + (tp === 2 ? 90 : 180) + "°, so add the two expressions.", "Los ángulos suman " + (tp === 2 ? 90 : 180) + "°, así que se suman las dos expresiones.");
+  return {enun: enun, solucion: regla + " " + ec + ", x = " + x + ".",
+    evalua: function(v){ var r = evaluaNumero(v, fr(x), pistas); if (r.estado === "mal" && !pistas.some(function(p){ return r.msg === p.msg; })) r.msg = regla; return r; }};
+}
+
+/* MODULE 4 · Triangle */
+function pintaTR(){
+  var A = +$("tr-a").value, B = +$("tr-b").value;
+  if (A + B > 165){ B = 165 - A; $("tr-b").value = B; }
+  var C = 180 - A - B, lenAC = Math.sin(rad(B)) / Math.sin(rad(C)), Cp = [lenAC * Math.cos(rad(A)), lenAC * Math.sin(rad(A))];
+  var xs = [0, 1, Cp[0], 1.35], minX = Math.min.apply(null, xs), maxX = Math.max.apply(null, xs), maxY = Math.max(Cp[1], 0.01);
+  var esc = Math.min(520 / (maxX - minX), 230 / maxY), ox = 60 - minX * esc, oy = 285;
+  function V(p){ return [ox + p[0] * esc, oy - p[1] * esc]; }
+  var pa = V([0, 0]), pb = V([1, 0]), pc = V(Cp), pe = V([1.35, 0]);
+  $("tr-av").textContent = A + "°"; $("tr-bv").textContent = B + "°";
+  $("tr-a").setAttribute("aria-valuetext", A + T(" degrees", " grados")); $("tr-b").setAttribute("aria-valuetext", B + T(" degrees", " grados"));
+  var s = '<svg class="geo-svg" viewBox="0 0 640 320" role="img" aria-label="' + T("Triangle with angle A of " + A + ", B of " + B + ", and C of " + C + " degrees. Exterior angle at B: " + (A + C) + " degrees.", "Triángulo con ángulos A de " + A + ", B de " + B + " y C de " + C + " grados. Ángulo exterior en B: " + (A + C) + " grados.") + '">';
+  s += '<polygon points="' + [pa, pb, pc].map(function(p){ return f1(p[0]) + "," + f1(p[1]); }).join(" ") + '" fill="#efebe9" stroke="#4e342e" stroke-width="3"/>';
+  s += lineaG(pb, pe, "#9e9e9e", 2, ' stroke-dasharray="6 5"');
+  var gBC = 180 - B, gCA = 180 + A, gCB = 360 - B;
+  s += arco(pa[0], pa[1], 34, 0, A, COL_SEL, "#e3f2fd") + arco(pb[0], pb[1], 34, gBC, 180, COL_IG, "#e8f5e9") + arco(pc[0], pc[1], 30, gCA, gCB, COL_SUP, "#ffebee") + arco(pb[0], pb[1], 26, 0, gBC, "#6a1b9a", "#f3e5f5");
+  s += texto(punto(pa[0], pa[1], 62, A / 2), A + "°", 20, COL_SEL) + texto(punto(pb[0], pb[1], 62, (gBC + 180) / 2), B + "°", 20, COL_IG);
+  s += texto(punto(pc[0], pc[1], 56, (gCB + gCA) / 2), C + "°", 20, COL_SUP) + texto(punto(pb[0], pb[1], 66, gBC / 2), (A + C) + "°", 20, "#6a1b9a");
+  s += texto([pa[0] - 16, pa[1] + 4], "A", 20, "#3e2723") + texto([pb[0] + 2, pb[1] + 22], "B", 20, "#3e2723") + texto([pc[0], pc[1] - 18], "C", 20, "#3e2723");
+  $("tr-svg").innerHTML = s + "</svg>";
+  $("tr-salida").innerHTML = '<div class="linea">' + A + "° + " + B + "° + " + C + "° = <strong>180°</strong>" + T(", whatever the shape.", ", sea cual sea la forma.") + "</div>" +
+    '<div class="linea">' + T("The exterior angle at B (in purple) measures ", "El ángulo exterior en B (en morado) mide ") + "180° − " + B + "° = " + (A + C) + "°" + T(", which is exactly A + C = ", ", que es justo A + C = ") + A + "° + " + C + "°.</div>" +
+    (A === 90 || B === 90 || C === 90 ? '<div class="linea">' + T("It is a right triangle: the other two angles add up to 90°.", "Es un triángulo rectángulo: los otros dos ángulos suman 90°.") + "</div>" : "");
+}
+function genTriangulo(){
+  var tp = aleatorio(1, 4), A, B, C, enun, sol, res, pistas = [];
+  if (tp === 1){ A = aleatorio(20, 100); B = aleatorio(20, 160 - A); res = 180 - A - B; enun = T("A triangle has angles of " + A + "° and " + B + "°. What is the measure of the third angle?", "Un triángulo tiene ángulos de " + A + "° y " + B + "°. ¿Cuánto mide el tercero?"); sol = "180° − " + A + "° − " + B + "° = " + res + "°.";
+    pistas = [{v: A + B, msg: T("That is the sum of the two angles. Subtract it from 180°.", "Esa es la suma de los dos ángulos. Réstela de 180°.")}]; }
+  else if (tp === 2){ A = aleatorio(15, 75); res = 90 - A; enun = T("In a right triangle, one of the acute angles measures " + A + "°. What is the measure of the other acute angle?", "En un triángulo rectángulo, uno de los ángulos agudos mide " + A + "°. ¿Cuánto mide el otro ángulo agudo?"); sol = T("The two acute angles add up to 90°: ", "Los dos agudos suman 90°: ") + "90° − " + A + "° = " + res + "°.";
+    pistas = [{v: 180 - A, msg: T("Remember the right angle: 180° − 90° − " + A + "°.", "No olvide el ángulo recto: 180° − 90° − " + A + "°.")}]; }
+  else if (tp === 3){ B = aleatorio(20, 80); res = 180 - 2 * B; enun = T("An isosceles triangle has two equal angles of " + B + "° each. What is the measure of the third angle?", "Un triángulo isósceles tiene dos ángulos iguales de " + B + "° cada uno. ¿Cuánto mide el tercer ángulo?"); sol = "180° − 2 · " + B + "° = " + res + "°.";
+    pistas = [{v: 180 - B, msg: T("There are two angles of " + B + "°: subtract both.", "Hay dos ángulos de " + B + "°: reste los dos.")}]; }
+  else { A = aleatorio(20, 80); C = aleatorio(20, 80); res = A + C; enun = T("Two interior angles of a triangle measure " + A + "° and " + C + "°. What is the measure of the exterior angle at the third vertex?", "Dos ángulos interiores de un triángulo miden " + A + "° y " + C + "°. ¿Cuánto mide el ángulo exterior que está junto al tercer vértice?"); sol = T("The exterior angle is the sum of the two interior angles that are not next to it: ", "El exterior es la suma de los dos interiores lejanos: ") + A + "° + " + C + "° = " + res + "°.";
+    pistas = [{v: 180 - A - C, msg: T("That is the interior angle at the third vertex. The exterior angle forms a straight line with it.", "Ese es el ángulo interior del tercer vértice. El exterior forma una recta con él.")}]; }
+  return {enun: enun, solucion: sol, evalua: function(v){ var r = evaluaGrados(v, res, pistas); if (r.estado === "mal" && !pistas.some(function(p){ return r.msg === p.msg; })) r.msg = T("The three angles of a triangle add up to 180°.", "Los tres ángulos de un triángulo suman 180°."); return r; }};
+}
+
+/* Start */
+$("bs-a").addEventListener("input", pintaBasicos); pintaBasicos();
+OMR("p1", genBasicos);
+for (var ib = 1; ib <= 8; ib++){ (function(i){
+  var b = document.createElement("button"); b.type = "button"; b.className = "eleccion"; b.textContent = T("Angle ", "Ángulo ") + i; b.setAttribute("data-i", i);
+  b.addEventListener("click", function(){ TV.sel = i; pintaTV(); }); $("tv-botones").appendChild(b);
+})(ib); }
+$("tv-a").addEventListener("input", pintaTV); pintaTV();
+OMR("p2", genRelacion);
+creaPracticaLibre("p3", genDiagrama);
+creaPracticaLibre("p4", genEcuacion);
+$("tr-a").addEventListener("input", pintaTR); $("tr-b").addEventListener("input", pintaTR); pintaTR();
+creaPracticaLibre("p5", genTriangulo);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 6.2 · El teorema de Pitágoras en la vida real — página para explorar (español) — construida con tools/build_n3_explora_6.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorar · Lección 6.2 · El teorema de Pitágoras en la vida real · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/explore-pythagoras.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="leccion-6-2.html">← Volver a la Lección 6.2</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza</div>
+    <h1>Explorar: el teorema de Pitágoras en la vida real</h1>
+    <div class="meta">Una actividad interactiva para explorar lo aprendido en la Lección 6.2. Acompaña a la lección y a su página de práctica.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#problemas">Problemas de Pitágoras de la vida diaria</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="problemas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Problemas de Pitágoras de la vida diaria</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Escaleras, rampas, techos, cables, ríos y pantallas de televisor esconden un triángulo rectángulo. En cada problema, encuentre el triángulo, decida si busca la hipotenusa o un cateto y use a² + b² = c².</p>
+      <div class="formula">a² + b² = c²</div>
+      <div class="practica" id="pt">
+        <div class="enun" id="pt-enun"></div>
+        <div id="pt-svg"></div>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn-sec" id="pt-tri" aria-pressed="false">Mostrar el triángulo</button></div>
+        <div class="datos-geo" id="pt-datos"></div>
+        <div class="campos"><div class="campo"><label for="pt-r" id="pt-rlab"></label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="pt-r"></div></div>
+        <p class="nota">Use la calculadora y redondee a la décima.</p>
+        <div class="fila-btn"><button type="button" class="btn" id="pt-comprobar">Comprobar</button><button type="button" class="btn-sec" id="pt-ver">Ver la solución</button><button type="button" class="btn-sec" id="pt-nuevo">Otro ejercicio</button></div>
+        <div class="fb" id="pt-fb" role="status"></div>
+        <div class="datos-geo" id="pt-sol" aria-live="polite" style="display:none"></div>
+        <p class="marcador" id="pt-marcador"></p>
+      </div>
+      <div class="caja-tip"><strong>¿Hipotenusa o cateto?</strong> Si busca el lado más largo (opuesto al ángulo recto), se suman los cuadrados. Si busca uno de los lados cortos, se restan los cuadrados. En los dos casos, al final se saca la raíz cuadrada.</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+/* Each scenario names its two legs and the hypotenuse; drawn as an SVG with the right triangle in color. US units. */
+var ESC = [
+  {id: "escalera", nombre: T("Ladder against a wall", "Escalera apoyada en una pared"), u: T("feet", "pies"),
+   lados: [T("height on the wall", "altura en la pared"), T("distance from the wall to the foot of the ladder", "distancia de la pared al pie de la escalera"), T("length of the ladder", "largo de la escalera")],
+   txt: T("A ladder leans against a wall.", "Una escalera está apoyada contra una pared."), rango: [[8, 24], [3, 9]]},
+  {id: "rampa", nombre: T("Wheelchair ramp", "Rampa de acceso"), u: T("feet", "pies"),
+   lados: [T("height of the ramp", "altura de la rampa"), T("horizontal distance the ramp covers", "distancia horizontal que cubre la rampa"), T("length of the ramp", "largo de la rampa")],
+   txt: T("A ramp is built so a wheelchair can reach a door.", "Se construye una rampa para que una silla de ruedas llegue a una puerta."), rango: [[1, 4], [12, 40]]},
+  {id: "torre", nombre: T("Tower with a guy wire", "Torre con cable tensor"), u: T("feet", "pies"),
+   lados: [T("height where the wire is tied to the tower", "altura donde el cable se sujeta a la torre"), T("distance from the base of the tower to the stake", "distancia de la base de la torre a la estaca"), T("length of the wire", "largo del cable")],
+   txt: T("A wire runs from a point on a radio tower to a stake in the ground.", "Un cable va de un punto de una torre de radio a una estaca en el suelo."), rango: [[30, 90], [15, 50]]},
+  {id: "techo", nombre: T("Roof of a house", "Techo de una casa"), u: T("feet", "pies"),
+   lados: [T("rise of the roof (height of the peak)", "altura del techo (de la base a la cumbrera)"), T("half the width of the house", "mitad del ancho de la casa"), T("length of the rafter (from the edge to the peak)", "largo de la viga (del borde a la cumbrera)")],
+   txt: T("A house has a roof with two equal sides.", "Una casa tiene un techo de dos aguas iguales."), rango: [[4, 12], [10, 20]]},
+  {id: "rio", nombre: T("Boat crossing a river", "Barco que cruza un río"), u: T("yards", "yardas"),
+   lados: [T("width of the river", "ancho del río"), T("distance the current carries the boat downstream", "distancia que la corriente arrastra el barco río abajo"), T("distance the boat actually travels", "distancia que el barco recorre en realidad")],
+   txt: T("A boat heads straight across a river, but the current carries it downstream.", "Un barco cruza un río en línea recta, pero la corriente lo arrastra río abajo."), rango: [[40, 120], [15, 60]]},
+  {id: "tv", nombre: T("TV screen", "Pantalla de televisor"), u: T("inches", "pulgadas"),
+   lados: [T("height of the screen", "alto de la pantalla"), T("width of the screen", "ancho de la pantalla"), T("diagonal of the screen (the size on the box)", "diagonal de la pantalla (la medida de la caja)")],
+   txt: T("TV sizes are measured along the diagonal of the screen.", "El tamaño de un televisor se mide por la diagonal de la pantalla."), rango: [[18, 36], [32, 64]]}
+];
+var TRIPLES = [[3, 4, 5], [5, 12, 13], [8, 15, 17], [7, 24, 25], [6, 8, 10], [9, 12, 15], [12, 16, 20], [20, 21, 29]];
+var PT = {e: null, a: 0, b: 0, c: 0, falta: 2, verTri: false, intentos: 0, resuelto: false, primero: 0, pista: 0, total: 0, d: [0, 0, 0]};
+function r1(x){ return Math.round(x * 10) / 10; }
+function f1(x){ return (Math.round(x * 10) / 10).toString(); }
+function nuevoPT(){
+  var e = PT.e = elige(ESC), a, b;
+  if (Math.random() < 0.45){
+    var tr, k = 0, n = 0;
+    while (!k && n++ < 40){ tr = baraja(elige(TRIPLES).slice(0, 2)); for (var i = 1; i <= 12; i++){ var aa = tr[0] * i, bb = tr[1] * i;
+      if (aa >= e.rango[0][0] && aa <= e.rango[0][1] && bb >= e.rango[1][0] && bb <= e.rango[1][1]){ k = i; break; } } }
+    if (k){ a = tr[0] * k; b = tr[1] * k; } else { a = aleatorio(e.rango[0][0], e.rango[0][1]); b = aleatorio(e.rango[1][0], e.rango[1][1]); }
+  } else { a = aleatorio(e.rango[0][0], e.rango[0][1]); b = aleatorio(e.rango[1][0], e.rango[1][1]); }
+  PT.a = a; PT.b = b; PT.c = Math.sqrt(a * a + b * b);
+  PT.falta = elige([0, 1, 2, 2]);
+  /* the numbers the student sees: the hypotenuse is rounded to a tenth when it is given */
+  PT.d = [a, b, r1(PT.c)];
+  var d = PT.d;
+  PT.resp = PT.falta === 2 ? r1(Math.sqrt(d[0] * d[0] + d[1] * d[1])) : r1(Math.sqrt(d[2] * d[2] - d[1 - PT.falta] * d[1 - PT.falta]));
+  PT.intentos = 0; PT.resuelto = false;
+  pintaPT();
+  $("pt-r").value = ""; $("pt-r").disabled = false; $("pt-comprobar").disabled = false;
+  $("pt-fb").className = "fb"; $("pt-fb").innerHTML = ""; $("pt-sol").innerHTML = ""; $("pt-sol").style.display = "none";
+}
+function etiqueta(i){ return PT.falta === i ? "?" : f1(PT.d[i]); }
+function dibujoPT(){
+  var e = PT.e, s = "", col = PT.verTri ? ["#c62828", "#1565c0", "#2e7d32"] : ["#37474f", "#37474f", "#37474f"], w = PT.verTri ? 6 : 3;
+  function seg(x1, y1, x2, y2, i){ return '<line x1="' + x1 + '" y1="' + y1 + '" x2="' + x2 + '" y2="' + y2 + '" stroke="' + col[i] + '" stroke-width="' + w + '" stroke-linecap="round"/>'; }
+  function lab(x, y, i, ancla){ return '<text x="' + x + '" y="' + y + '" text-anchor="' + (ancla || "middle") + '" font-size="18" font-weight="700" fill="' + col[i] + '">' + etiqueta(i) + " " + (PT.falta === i ? "" : e.u.split(" ")[0]) + "</text>"; }
+  function recto(x, y, dx, dy){ return '<path d="M' + (x + dx) + " " + y + " V" + (y + dy) + " H" + x + '" fill="none" stroke="#37474f" stroke-width="2"/>'; }
+  if (e.id === "escalera"){
+    s += '<rect x="420" y="40" width="40" height="260" fill="#d7ccc8" stroke="#6d4c41"/><line x1="60" y1="300" x2="560" y2="300" stroke="#6d4c41" stroke-width="4"/>';
+    s += seg(420, 300, 420, 70, 0) + seg(250, 300, 420, 300, 1) + seg(250, 300, 420, 70, 2) + recto(420, 300, -16, -16);
+    for (var k = 1; k < 8; k++){ var tt = k / 8; s += '<line x1="' + (250 + 170 * tt - 6) + '" y1="' + (300 - 230 * tt) + '" x2="' + (250 + 170 * tt + 6) + '" y2="' + (300 - 230 * tt + 5) + '" stroke="#8d6e63" stroke-width="3"/>'; }
+    s += lab(480, 190, 0, "start") + lab(335, 330, 1) + lab(300, 170, 2, "end");
+  } else if (e.id === "rampa"){
+    s += '<rect x="440" y="150" width="140" height="150" fill="#e0e0e0" stroke="#757575"/><rect x="500" y="80" width="40" height="70" fill="#a1887f"/><line x1="40" y1="300" x2="600" y2="300" stroke="#6d4c41" stroke-width="4"/>';
+    s += seg(440, 300, 440, 150, 0) + seg(80, 300, 440, 300, 1) + seg(80, 300, 440, 150, 2) + recto(440, 300, -16, -16);
+    s += lab(430, 230, 0, "end") + lab(260, 330, 1) + lab(240, 205, 2, "end");
+  } else if (e.id === "torre"){
+    s += '<rect x="290" y="30" width="20" height="270" fill="#b0bec5" stroke="#546e7a"/><line x1="40" y1="300" x2="600" y2="300" stroke="#6d4c41" stroke-width="4"/>';
+    s += seg(300, 300, 300, 60, 0) + seg(300, 300, 520, 300, 1) + seg(300, 60, 520, 300, 2) + recto(300, 300, 16, -16) + '<circle cx="520" cy="300" r="7" fill="#5d4037"/>';
+    s += lab(280, 190, 0, "end") + lab(410, 330, 1) + lab(430, 160, 2, "start");
+  } else if (e.id === "techo"){
+    s += '<rect x="120" y="190" width="400" height="120" fill="#ffe0b2" stroke="#8d6e63"/><polygon points="120,190 320,70 520,190" fill="#bcaaa4" stroke="#6d4c41"/>';
+    s += seg(320, 190, 320, 70, 0) + seg(320, 190, 520, 190, 1) + seg(320, 70, 520, 190, 2) + recto(320, 190, 16, -16);
+    s += lab(310, 140, 0, "end") + lab(420, 220, 1) + lab(440, 115, 2, "start");
+  } else if (e.id === "rio"){
+    s += '<rect x="40" y="70" width="560" height="200" fill="#bbdefb"/><rect x="40" y="40" width="560" height="30" fill="#a5d6a7"/><rect x="40" y="270" width="560" height="30" fill="#a5d6a7"/>';
+    s += '<path d="M480 170 l40 0 m-12 -8 l12 8 l-12 8" stroke="#1565c0" stroke-width="3" fill="none"/>';
+    s += seg(180, 270, 180, 70, 0) + seg(180, 70, 420, 70, 1) + seg(180, 270, 420, 70, 2) + recto(180, 70, 16, 16);
+    s += '<path d="M168 282 h24 l-12 -18 z" fill="#5d4037"/>' + lab(170, 175, 0, "end") + lab(300, 60, 1) + lab(320, 200, 2, "start");
+  } else {
+    s += '<rect x="150" y="50" width="340" height="210" rx="8" fill="#263238"/><rect x="165" y="64" width="310" height="182" fill="#455a64"/><rect x="295" y="260" width="50" height="30" fill="#37474f"/>';
+    s += seg(165, 246, 165, 64, 0) + seg(165, 246, 475, 246, 1) + seg(165, 246, 475, 64, 2) + recto(165, 246, 16, -16);
+    s += lab(150, 160, 0, "end") + lab(320, 312, 1) + '<text x="330" y="140" text-anchor="middle" font-size="18" font-weight="700" fill="' + (PT.verTri ? col[2] : "#fff") + '">' + etiqueta(2) + " " + (PT.falta === 2 ? "" : e.u) + "</text>";
+  }
+  var voz = e.nombre + ". " + e.lados.map(function(l, i){ return l + ": " + (PT.falta === i ? T("unknown", "desconocido") : f1(PT.d[i]) + " " + e.u); }).join("; ") + ".";
+  return '<svg class="geo-svg" viewBox="0 0 640 340" role="img" aria-label="' + voz + '">' + s + "</svg>";
+}
+function pintaPT(){
+  var e = PT.e;
+  $("pt-svg").innerHTML = dibujoPT();
+  $("pt-enun").innerHTML = "<strong>" + e.nombre + ".</strong> " + e.txt + " " + T("Find the ", "Halle la medida: ") + "<strong>" + e.lados[PT.falta] + "</strong>" + T(", to the nearest tenth.", ", a la décima más cercana.");
+  $("pt-datos").innerHTML = e.lados.map(function(l, i){ return "<p>" + l.charAt(0).toUpperCase() + l.slice(1) + ": " + (PT.falta === i ? "<strong>?</strong>" : f1(PT.d[i]) + " " + e.u) + (PT.verTri ? ' <span class="nota">(' + (i === 2 ? T("hypotenuse", "hipotenusa") : T("leg", "cateto")) + ")</span>" : "") + "</p>"; }).join("");
+  $("pt-rlab").textContent = e.lados[PT.falta].charAt(0).toUpperCase() + e.lados[PT.falta].slice(1) + " (" + e.u + ")";
+}
+function pasosPT(){
+  var d = PT.d, e = PT.e, h = [];
+  h.push(T("Step 1. The right angle is where the two legs meet. The hypotenuse is the side across from it: the ", "Paso 1. El ángulo recto está donde se unen los dos catetos. La hipotenusa es el lado opuesto a él: la ") + e.lados[2] + ".");
+  if (PT.falta === 2){
+    var s2 = d[0] * d[0] + d[1] * d[1];
+    h.push(T("Step 2. You want the hypotenuse, so add the squares of the legs: ", "Paso 2. Se busca la hipotenusa, así que se suman los cuadrados de los catetos: ") + "c² = " + f1(d[0]) + "² + " + f1(d[1]) + "² = " + f1(d[0] * d[0]) + " + " + f1(d[1] * d[1]) + " = " + f1(s2) + ".");
+    h.push(T("Step 3. Take the square root: ", "Paso 3. Se saca la raíz cuadrada: ") + "c = √" + f1(s2) + " ≈ " + f1(PT.resp) + " " + e.u + ".");
+  } else {
+    var o = d[1 - PT.falta], dif = d[2] * d[2] - o * o;
+    h.push(T("Step 2. You want a leg, so subtract: hypotenuse squared minus the other leg squared: ", "Paso 2. Se busca un cateto, así que se resta: la hipotenusa al cuadrado menos el otro cateto al cuadrado: ") + f1(d[2]) + "² − " + f1(o) + "² = " + f1(d[2] * d[2]) + " − " + f1(o * o) + " = " + f1(dif) + ".");
+    h.push(T("Step 3. Take the square root: ", "Paso 3. Se saca la raíz cuadrada: ") + "√" + f1(dif) + " ≈ " + f1(PT.resp) + " " + e.u + ".");
+  }
+  return h.map(function(p){ return "<p>" + p + "</p>"; }).join("");
+}
+function compruebaPT(){
+  if (PT.resuelto) return;
+  var v = leeDecimal($("pt-r").value), fb = $("pt-fb"), d = PT.d;
+  if (v === null){ fb.className = "fb pista"; fb.innerHTML = T("Type a number, for example 12.5.", "Escriba un número, por ejemplo 12.5."); return; }
+  PT.intentos++;
+  var ok = Math.abs(v - PT.resp) <= 0.051;
+  if (ok){ PT.resuelto = true; PT.total++; if (PT.intentos === 1) PT.primero++; else PT.pista++; fb.className = "fb bien"; fb.innerHTML = TX.bien + f1(PT.resp) + " " + PT.e.u + "."; }
+  else if (PT.intentos >= 2){ PT.resuelto = true; PT.total++; fb.className = "fb mal"; fb.innerHTML = TX.asi + T("The answer is ", "La respuesta es ") + f1(PT.resp) + " " + PT.e.u + "." + TX.nuevo; }
+  else {
+    var msg = T("Check which side is the hypotenuse: it is always the longest side, across from the right angle.", "Revise cuál es la hipotenusa: siempre es el lado más largo, opuesto al ángulo recto.");
+    var o = PT.falta === 2 ? null : d[1 - PT.falta];
+    if (PT.falta === 2 && Math.abs(v - (d[0] + d[1])) < 0.06) msg = T("You added the legs. Add their squares, then take the square root.", "Sumó los catetos. Hay que sumar sus cuadrados y después sacar la raíz.");
+    else if (PT.falta === 2 && Math.abs(v - (d[0] * d[0] + d[1] * d[1])) < 0.06) msg = T("You still need to take the square root.", "Falta sacar la raíz cuadrada.");
+    else if (o !== null && Math.abs(v - r1(Math.sqrt(d[2] * d[2] + o * o))) < 0.06) msg = T("To find a leg, subtract the squares; do not add them.", "Para hallar un cateto se restan los cuadrados; no se suman.");
+    else if (o !== null && Math.abs(v - (d[2] * d[2] - o * o)) < 0.06) msg = T("You still need to take the square root.", "Falta sacar la raíz cuadrada.");
+    else if (o !== null && Math.abs(v - (d[2] - o)) < 0.06) msg = T("You subtracted the sides. Subtract their squares, then take the square root.", "Restó los lados. Hay que restar sus cuadrados y después sacar la raíz.");
+    fb.className = "fb pista"; fb.innerHTML = TX.todavia + msg + TX.unoMas;
+  }
+  if (PT.resuelto){ $("pt-r").disabled = true; $("pt-comprobar").disabled = true; $("pt-sol").innerHTML = pasosPT(); $("pt-sol").style.display = "block"; }
+  $("pt-marcador").textContent = PT.total ? TX.resueltos(PT.primero + PT.pista, PT.primero, PT.total) : "";
+}
+$("pt-tri").addEventListener("click", function(){ PT.verTri = !PT.verTri; this.setAttribute("aria-pressed", PT.verTri ? "true" : "false"); this.textContent = PT.verTri ? T("Hide the triangle", "Ocultar el triángulo") : T("Show the triangle", "Mostrar el triángulo"); pintaPT(); });
+$("pt-ver").addEventListener("click", function(){ $("pt-sol").innerHTML = pasosPT(); $("pt-sol").style.display = "block"; });
+$("pt-comprobar").addEventListener("click", compruebaPT);
+$("pt-r").addEventListener("keydown", function(ev){ if (ev.key === "Enter") compruebaPT(); });
+$("pt-nuevo").addEventListener("click", nuevoPT);
+nuevoPT();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

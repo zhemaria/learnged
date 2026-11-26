@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 6.3 · explore page (English) — built by tools/build_n3_lesson_6_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore · Lesson 6.3 · Congruent and similar triangles · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="lesson-6-3.html">← Back to Lesson 6.3</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity</div>
+    <h1>Explore: congruent and similar triangles</h1>
+    <div class="meta">An interactive activity to explore what you learned in Lesson 6.3. It goes with the lesson and its practice page.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#explore">Congruent and similar triangles</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="explore" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Congruent and similar triangles</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Two triangles are <strong>congruent</strong> when they have the same shape and the same size: equal sides and equal angles. They are <strong>similar</strong> when they have the same shape but maybe a different size: equal angles and proportional sides.</p>
+      <p>Drag the white points of the blue triangle (or focus them and use the arrow keys). The red triangle follows. Switch between the two modes and, in similar mode, change the scale factor.</p>
+      <div class="panel">
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn-sec" id="se-igual" aria-pressed="true">Congruent</button><button type="button" class="btn-sec" id="se-sem" aria-pressed="false">Similar</button></div>
+        <div class="campo" id="se-escala" style="display:none"><label for="se-k">Scale factor: <span id="se-kval">1.5</span></label><input type="range" id="se-k" min="0.5" max="2" step="0.1" value="1.5"></div>
+        <div id="se-svg"></div>
+        <div class="datos-geo" id="se-res" aria-live="polite"></div>
+        <div class="tabla-scroll" id="se-tabla"></div>
+      </div>
+      <h3>Practice: congruent, similar, or neither?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+var SE = {modo: "igual", k: 1.5, P: [{x: 70, y: 260}, {x: 150, y: 90}, {x: 250, y: 260}], arrastra: -1, sel: 0};
+var ESCALA = 20; /* 20 px = 1 unit */
+function dist(p, q){ return Math.sqrt((p.x - q.x) * (p.x - q.x) + (p.y - q.y) * (p.y - q.y)); }
+function lados(P){ return [dist(P[1], P[2]), dist(P[0], P[2]), dist(P[0], P[1])]; } /* side across from A, B, C */
+function angulos(P){ var l = lados(P); return [0, 1, 2].map(function(i){ var a = l[i], b = l[(i + 1) % 3], c = l[(i + 2) % 3]; return Math.acos(Math.max(-1, Math.min(1, (b * b + c * c - a * a) / (2 * b * c)))) * 180 / Math.PI; }); }
+function copia(){
+  var k = SE.modo === "igual" ? 1 : SE.k, ox = 330, minx = Math.min.apply(null, SE.P.map(function(p){ return p.x; })), maxy = Math.max.apply(null, SE.P.map(function(p){ return p.y; }));
+  return SE.P.map(function(p){ return {x: ox + (p.x - minx) * k, y: 300 - (maxy - p.y) * k}; });
+}
+function tri(P, col, nombres){ var s = '<polygon points="' + P.map(function(p){ return p.x + "," + p.y; }).join(" ") + '" fill="' + col + '" fill-opacity="0.25" stroke="' + col + '" stroke-width="3"/>';
+  var c = {x: (P[0].x + P[1].x + P[2].x) / 3, y: (P[0].y + P[1].y + P[2].y) / 3};
+  P.forEach(function(p, i){ var dx = p.x - c.x, dy = p.y - c.y, m = Math.sqrt(dx * dx + dy * dy) || 1; s += '<text x="' + (p.x + dx / m * 20) + '" y="' + (p.y + dy / m * 20 + 6) + '" text-anchor="middle" font-size="18" font-weight="700" fill="' + col + '">' + nombres[i] + "</text>"; });
+  return s; }
+function pintaSE(){
+  var Q = copia(), lb = lados(SE.P), lr = lados(Q), ab = angulos(SE.P), ar = angulos(Q), s = "";
+  s += tri(SE.P, "#1565c0", ["A", "B", "C"]) + tri(Q, "#c62828", ["A′", "B′", "C′"]);
+  SE.P.forEach(function(p, i){ s += '<circle class="vertice" data-i="' + i + '" tabindex="0" role="slider" aria-label="' + T("Vertex ", "Vértice ") + "ABC".charAt(i) + T(" of the blue triangle. Use the arrow keys to move it.", " del triángulo azul. Use las flechas para moverlo.") + '" aria-valuetext="x ' + Math.round(p.x / ESCALA) + ", y " + Math.round((320 - p.y) / ESCALA) + '" cx="' + p.x + '" cy="' + p.y + '" r="11" fill="#fff" stroke="#1565c0" stroke-width="3"/>'; });
+  var voz = T("Blue triangle ABC and red triangle A′B′C′. ", "Triángulo azul ABC y triángulo rojo A′B′C′. ") + (SE.modo === "igual" ? T("The red one is an exact copy.", "El rojo es una copia exacta.") : T("The red one is the blue one scaled by " + SE.k + ".", "El rojo es el azul a escala " + SE.k + "."));
+  $("se-svg").innerHTML = '<svg class="geo-svg" id="se-lienzo" viewBox="0 0 640 330" role="group" aria-label="' + voz + '">' + s + "</svg>";
+  var n = ["BC", "AC", "AB"], np = ["B′C′", "A′C′", "A′B′"], f = function(x){ return (Math.round(x / ESCALA * 10) / 10).toFixed(1); };
+  var h = '<table class="comparar"><caption>' + T("Sides and angles of the two triangles (1 unit = 1 square of the grid)", "Lados y ángulos de los dos triángulos (1 unidad = 1 cuadro)") + '</caption><thead><tr><th scope="col">' + T("Blue", "Azul") + '</th><th scope="col">' + T("Red", "Rojo") + '</th><th scope="col">' + T("Red ÷ blue", "Rojo ÷ azul") + "</th></tr></thead><tbody>";
+  for (var i = 0; i < 3; i++) h += "<tr><td>" + n[i] + " = " + f(lb[i]) + "</td><td>" + np[i] + " = " + f(lr[i]) + "</td><td>" + (Math.round(lr[i] / lb[i] * 100) / 100).toFixed(2) + "</td></tr>";
+  for (i = 0; i < 3; i++) h += "<tr><td>∠" + "ABC".charAt(i) + " = " + Math.round(ab[i]) + "°</td><td>∠" + "ABC".charAt(i) + "′ = " + Math.round(ar[i]) + "°</td><td>" + (Math.round(ab[i]) === Math.round(ar[i]) ? T("equal", "iguales") : "—") + "</td></tr>";
+  $("se-tabla").innerHTML = h + "</tbody></table>";
+  $("se-res").innerHTML = SE.modo === "igual" ? T("<strong>The triangles are congruent:</strong> same shape and same size. Every side ratio is 1 and the angles are equal.", "<strong>Los triángulos son congruentes (iguales):</strong> misma forma y mismo tamaño. Cada razón entre lados es 1 y los ángulos son iguales.")
+    : T("<strong>The triangles are similar:</strong> same shape, different size. The angles are equal and every side of the red one is " + SE.k + " times the matching blue side: the scale factor is " + SE.k + ".", "<strong>Los triángulos son semejantes:</strong> misma forma, distinto tamaño. Los ángulos son iguales y cada lado del rojo mide " + SE.k + " veces el lado azul que le corresponde: el factor de escala es " + SE.k + ".");
+  enganchaSE();
+}
+function aSVG(ev){ var svg = $("se-lienzo"), r = svg.getBoundingClientRect(); return {x: (ev.clientX - r.left) * 640 / r.width, y: (ev.clientY - r.top) * 330 / r.height}; }
+function limita(p){ return {x: Math.max(20, Math.min(300, p.x)), y: Math.max(20, Math.min(310, p.y))}; }
+function enganchaSE(){
+  Array.prototype.forEach.call(document.querySelectorAll("#se-svg .vertice"), function(c){
+    var i = +c.getAttribute("data-i");
+    c.addEventListener("pointerdown", function(ev){ ev.preventDefault(); SE.arrastra = i; });
+    c.addEventListener("keydown", function(ev){
+      var d = {ArrowLeft: [-10, 0], ArrowRight: [10, 0], ArrowUp: [0, -10], ArrowDown: [0, 10]}[ev.key];
+      if (!d) return; ev.preventDefault();
+      SE.P[i] = limita({x: SE.P[i].x + d[0], y: SE.P[i].y + d[1]}); pintaSE();
+      var f = document.querySelector('#se-svg .vertice[data-i="' + i + '"]'); if (f) f.focus();
+    });
+  });
+}
+document.addEventListener("pointermove", function(ev){ if (SE.arrastra < 0) return; SE.P[SE.arrastra] = limita(aSVG(ev)); pintaSE(); });
+document.addEventListener("pointerup", function(){ SE.arrastra = -1; });
+function modoSE(m){
+  SE.modo = m;
+  $("se-igual").setAttribute("aria-pressed", m === "igual" ? "true" : "false"); $("se-sem").setAttribute("aria-pressed", m === "sem" ? "true" : "false");
+  $("se-escala").style.display = m === "sem" ? "block" : "none";
+  pintaSE();
+}
+$("se-igual").addEventListener("click", function(){ modoSE("igual"); });
+$("se-sem").addEventListener("click", function(){ modoSE("sem"); });
+$("se-k").addEventListener("input", function(){ SE.k = +this.value; $("se-kval").textContent = SE.k; pintaSE(); });
+modoSE("igual");
+
+/* Practice: congruent, similar, or neither? */
+function genCSN(){
+  var base = elige([[3, 4, 5], [5, 5, 8], [4, 6, 7], [6, 8, 10], [5, 7, 9], [2, 3, 4]]), tp = aleatorio(1, 3), otro, k = elige([2, 3, 1.5, 0.5]);
+  if (tp === 1) otro = baraja(base.slice());
+  else if (tp === 2) otro = baraja(base.map(function(x){ return x * k; }));
+  else { do { otro = base.map(function(x){ return x * k; }); var j = aleatorio(0, 2); otro[j] = otro[j] + elige([1, 2, -1]); otro.sort(function(p, q){ return p - q; }); } while (otro[0] <= 0 || otro[0] + otro[1] <= otro[2]); otro = baraja(otro); }
+  var fmt = function(l){ return l.map(function(x){ return String(x); }).join(", "); };
+  var exp = tp === 1 ? T("The sides are the same numbers, only in a different order: the triangles are congruent.", "Los lados son los mismos números, solo en otro orden: los triángulos son congruentes.")
+          : (tp === 2 ? T("Order both lists from smallest to largest: every side of the second is " + k + " times the first. Similar, with scale factor " + k + ".", "Ordene las dos listas de menor a mayor: cada lado del segundo es " + k + " veces el del primero. Semejantes, con factor de escala " + k + ".")
+                      : T("Order both lists from smallest to largest and divide: the ratios are not all the same, so the triangles are neither congruent nor similar.", "Ordene las dos listas de menor a mayor y divida: las razones no son todas iguales, así que los triángulos no son ni congruentes ni semejantes."));
+  return {enun: T("Triangle 1 has sides " + fmt(base) + ". Triangle 2 has sides " + fmt(otro) + ". How are they related?", "El triángulo 1 tiene lados " + fmt(base) + ". El triángulo 2 tiene lados " + fmt(otro) + ". ¿Qué relación tienen?"), enOrden: true,
+    opciones: [{html: T("Congruent", "Congruentes"), clave: "c"}, {html: T("Similar, but not congruent", "Semejantes, pero no congruentes"), clave: "s"}, {html: T("Neither", "Ninguna de las dos"), clave: "n"}],
+    correcta: ["c", "s", "n"][tp - 1], porClave: {}, pista: T("Order the sides of each triangle from smallest to largest and divide matching sides.", "Ordene los lados de cada triángulo de menor a mayor y divida los lados que se corresponden."), bien: exp, mal: exp};
+}
+OMR("p1", genCSN);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

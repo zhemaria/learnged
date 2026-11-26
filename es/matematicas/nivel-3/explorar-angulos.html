@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 6.1 · Ángulos entre paralelas y una transversal — página para explorar (español) — construida con tools/build_n3_explora_6.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explorar · Lección 6.1 · Ángulos entre paralelas y una transversal · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/explore-angles.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="leccion-6-1.html">← Volver a la Lección 6.1</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza</div>
+    <h1>Explorar: ángulos, paralelas y una transversal</h1>
+    <div class="meta">Una actividad interactiva para explorar lo aprendido en la Lección 6.1. Acompaña a la lección y a su página de práctica.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#explorar">Explore los ocho ángulos</a></li>
+      <li><a href="#comprension">Compruebe su comprensión</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="explorar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Explore los ocho ángulos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Dos rectas paralelas, r y s, están cortadas por una transversal t. Se forman ocho ángulos: cuatro en cada intersección. Elija un ángulo para ver cuáles son iguales a él y cuáles suman 180° con él. Mueva el deslizador para inclinar la transversal: las relaciones no cambian.</p>
+      <div class="panel">
+        <div class="campo"><label for="an-phi">Medida del ángulo 1: <span id="an-phi-val">120°</span></label><input type="range" id="an-phi" min="35" max="145" step="5" value="60"></div>
+        <label class="casilla" style="margin-top:8px;"><input type="checkbox" id="an-medidas"> Mostrar la medida de cada ángulo</label>
+        <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#0d47a1"></i>ángulo elegido</span><span><i style="background:#c8e6c9"></i>congruente</span><span><i style="background:#ffe0b2"></i>suplementario</span></div>
+        <div id="an-svg"></div>
+        <div class="datos-geo" id="an-info" aria-live="polite"></div>
+      </div>
+      <table class="reglas"><caption>Las relaciones entre los ángulos</caption><thead><tr><th scope="col">Nombre</th><th scope="col">Dónde están</th><th scope="col">Medidas</th></tr></thead><tbody><tr><td>Correspondientes</td><td>Misma posición en cada intersección (1 y 5)</td><td>Congruentes</td></tr><tr><td>Alternos internos</td><td>Entre las paralelas, a lados opuestos de t (3 y 6)</td><td>Congruentes</td></tr><tr><td>Alternos externos</td><td>Fuera de las paralelas, a lados opuestos de t (1 y 8)</td><td>Congruentes</td></tr><tr><td>Opuestos por el vértice</td><td>Enfrentados en la misma intersección (1 y 4)</td><td>Congruentes</td></tr><tr><td>Adyacentes (par lineal)</td><td>Uno al lado del otro sobre una recta (1 y 2)</td><td>Suplementarios (180°)</td></tr><tr><td>Internos del mismo lado</td><td>Entre las paralelas, del mismo lado de t (3 y 5)</td><td>Suplementarios (180°)</td></tr></tbody></table>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="comprension">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Compruebe su comprensión</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Hay dos ángulos resaltados. Elija su relación. Si se equivoca, recibe una pista y otra oportunidad.</p>
+      <div class="practica" id="qz">
+        <div id="qz-svg"></div>
+        <div class="enun" id="qz-enun"></div>
+        <div class="opciones" id="qz-opciones"></div>
+        <div class="fb" id="qz-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn" id="qz-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="qz-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 6 · Geometría: ángulos, teorema de Pitágoras y semejanza · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script>
+/* Positions: 1 top-left, 2 top-right, 3 bottom-left, 4 bottom-right at line r; 5–8 the same at line s.
+   phi is the angle of the transversal (measure of angle 2). */
+var AN = {phi: 60, sel: null};
+var POS = {1: ["r", "TL"], 2: ["r", "TR"], 3: ["r", "BL"], 4: ["r", "BR"], 5: ["s", "TL"], 6: ["s", "TR"], 7: ["s", "BL"], 8: ["s", "BR"]};
+var NOMBRE = {
+  corr: T("corresponding", "correspondientes"), vert: T("vertical", "opuestos por el vértice"), lin: T("a linear pair", "adyacentes (par lineal)"),
+  aint: T("alternate interior", "alternos internos"), aext: T("alternate exterior", "alternos externos"),
+  sint: T("same-side interior", "internos del mismo lado"), sext: T("same-side exterior", "externos del mismo lado")};
+var CONGRUENTE = {corr: true, vert: true, aint: true, aext: true, lin: false, sint: false, sext: false};
+function medida(a){ var p = POS[a][1]; return (p === "TR" || p === "BL") ? AN.phi : 180 - AN.phi; }
+function interior(a){ var l = POS[a][0], p = POS[a][1]; return (l === "r" && p.charAt(0) === "B") || (l === "s" && p.charAt(0) === "T"); }
+function lado(a){ return POS[a][1].charAt(1); }
+function relacion(a, b){
+  var A = POS[a], Bp = POS[b];
+  if (A[0] === Bp[0]) return (A[1].charAt(0) !== Bp[1].charAt(0) && A[1].charAt(1) !== Bp[1].charAt(1)) ? "vert" : "lin";
+  if (A[1] === Bp[1]) return "corr";
+  if (interior(a) && interior(b)) return lado(a) !== lado(b) ? "aint" : "sint";
+  if (!interior(a) && !interior(b)) return lado(a) !== lado(b) ? "aext" : "sext";
+  return null;
+}
+function frase(k){ return NOMBRE[k] + (CONGRUENTE[k] ? T(" (congruent: equal measures)", " (congruentes: miden lo mismo)") : T(" (supplementary: they add up to 180°)", " (suplementarios: suman 180°)")); }
+var COLOR = {sel: "#0d47a1", igual: "#c8e6c9", supl: "#ffe0b2"};
+function geom(){
+  var phi = AN.phi * Math.PI / 180, yr = 110, ys = 250, cx = 320, dx = (ys - yr) / Math.tan(phi);
+  return {phi: phi, yr: yr, ys: ys, xr: cx + dx / 2, xs: cx - dx / 2};
+}
+function punto(x, y, ang, r){ return [x + r * Math.cos(ang), y - r * Math.sin(ang)]; }
+function sector(x, y, a1, a2, r){ var p = punto(x, y, a1, r), q = punto(x, y, a2, r); return "M" + x + " " + y + " L" + p[0] + " " + p[1] + " A" + r + " " + r + " 0 0 0 " + q[0] + " " + q[1] + " Z"; }
+function rango(a){ var g = geom(), f = g.phi, P = POS[a][1]; return P === "TR" ? [0, f] : (P === "TL" ? [f, Math.PI] : (P === "BL" ? [Math.PI, Math.PI + f] : [Math.PI + f, 2 * Math.PI])); }
+function dibujaAngulos(resalta){
+  var g = geom(), s = "", ext = 300;
+  var tA = punto(g.xr, g.yr, g.phi, 110), tB = punto(g.xs, g.ys, g.phi + Math.PI, 110);
+  s += '<line x1="30" y1="' + g.yr + '" x2="610" y2="' + g.yr + '" stroke="#37474f" stroke-width="3"/><line x1="30" y1="' + g.ys + '" x2="610" y2="' + g.ys + '" stroke="#37474f" stroke-width="3"/>';
+  s += '<line x1="' + tA[0] + '" y1="' + tA[1] + '" x2="' + tB[0] + '" y2="' + tB[1] + '" stroke="#6a1b9a" stroke-width="3"/>';
+  s += '<text x="616" y="' + (g.yr + 6) + '" font-size="20" font-style="italic">r</text><text x="616" y="' + (g.ys + 6) + '" font-size="20" font-style="italic">s</text><text x="' + (tA[0] + 8) + '" y="' + (tA[1] + 4) + '" font-size="20" font-style="italic" fill="#6a1b9a">t</text>';
+  for (var a = 1; a <= 8; a++){
+    var x = POS[a][0] === "r" ? g.xr : g.xs, y = POS[a][0] === "r" ? g.yr : g.ys, R = rango(a), bis = (R[0] + R[1]) / 2, L = punto(x, y, bis, 50);
+    var fill = "#ffffff", borde = "#90a4ae";
+    if (resalta && resalta[a]){ fill = resalta[a]; borde = "#37474f"; }
+    var voz = T("Angle " + a, "Ángulo " + a) + (AN.verMedidas ? ", " + medida(a) + "°" : "");
+    s += '<g class="ang-btn" tabindex="0" role="button" data-a="' + a + '" aria-label="' + voz + '"><path d="' + sector(x, y, R[0], R[1], 30) + '" fill="' + fill + '" stroke="' + borde + '" stroke-width="1.5"/>' +
+         '<circle class="ang-num" cx="' + L[0] + '" cy="' + L[1] + '" r="16" fill="' + (resalta && resalta[a] === COLOR.sel ? COLOR.sel : "#fff") + '" stroke="#37474f" stroke-width="2"/>' +
+         '<text x="' + L[0] + '" y="' + (L[1] + 6) + '" text-anchor="middle" font-size="17" font-weight="700" fill="' + (resalta && resalta[a] === COLOR.sel ? "#fff" : "#222") + '">' + a + "</text>";
+    if (AN.verMedidas){ var M = punto(x, y, bis, 82); s += '<text x="' + M[0] + '" y="' + (M[1] + 5) + '" text-anchor="middle" font-size="14" fill="#37474f">' + medida(a) + "°</text>"; }
+    s += "</g>";
+  }
+  return '<svg class="geo-svg" viewBox="0 0 640 360" role="group" aria-label="' + T("Two parallel lines r and s cut by a transversal t, forming angles 1 to 8. Choose an angle.", "Dos rectas paralelas r y s cortadas por una transversal t, que forman los ángulos 1 a 8. Elija un ángulo.") + '">' + s + "</svg>";
+}
+function pintaExplora(){
+  var res = {}, txt;
+  if (AN.sel){
+    var a = AN.sel; res[a] = COLOR.sel;
+    var grupos = {};
+    for (var b = 1; b <= 8; b++) if (b !== a){ var k = relacion(a, b); if (k){ (grupos[k] = grupos[k] || []).push(b); res[b] = CONGRUENTE[k] ? COLOR.igual : COLOR.supl; } }
+    txt = "<p><strong>" + T("Angle " + a, "Ángulo " + a) + " = " + medida(a) + "°.</strong></p><ul>";
+    ["corr", "aint", "aext", "vert", "lin", "sint", "sext"].forEach(function(k){ if (grupos[k]) txt += "<li>" + T("Angle", "Ángulo") + (grupos[k].length > 1 ? "s " : " ") + grupos[k].join(T(" and ", " y ")) + ": " + frase(k) + "</li>"; });
+    txt += "</ul><p>" + T("Green angles measure " + medida(a) + "°; orange angles measure " + (180 - medida(a)) + "°.", "Los ángulos verdes miden " + medida(a) + "°; los anaranjados miden " + (180 - medida(a)) + "°.") + "</p>";
+  } else txt = "<p>" + T("Choose any numbered angle to see how it is related to the others.", "Elija cualquier ángulo numerado para ver su relación con los demás.") + "</p>";
+  $("an-svg").innerHTML = dibujaAngulos(res);
+  $("an-info").innerHTML = txt;
+  Array.prototype.forEach.call($("an-svg").querySelectorAll(".ang-btn"), function(gr){
+    function elegir(){ AN.sel = +gr.getAttribute("data-a"); pintaExplora(); var f = $("an-svg").querySelector('[data-a="' + AN.sel + '"]'); if (f) f.focus(); }
+    gr.addEventListener("click", elegir);
+    gr.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); elegir(); } });
+  });
+}
+/* Quiz: two tries */
+var QZ = {a: 0, b: 0, k: "", intentos: 0, resuelto: false, primero: 0, pista: 0, total: 0};
+function nuevoQZ(){
+  var a, b, k;
+  do { a = aleatorio(1, 8); b = aleatorio(1, 8); k = a !== b ? relacion(a, b) : null; } while (!k);
+  QZ.a = a; QZ.b = b; QZ.k = k; QZ.intentos = 0; QZ.resuelto = false;
+  var res = {}; res[a] = "#d1c4e9"; res[b] = "#d1c4e9";
+  $("qz-svg").innerHTML = dibujaAngulos(res).replace('role="group"', 'role="img"');
+  $("qz-enun").innerHTML = T("What is the relationship between angle " + a + " and angle " + b + "?", "¿Qué relación hay entre el ángulo " + a + " y el ángulo " + b + "?");
+  var otros = baraja(Object.keys(NOMBRE).filter(function(x){ return x !== k; })).slice(0, 3), ops = baraja([k].concat(otros)), cont = $("qz-opciones");
+  cont.innerHTML = "";
+  ops.forEach(function(x){
+    var bt = document.createElement("button"); bt.type = "button"; bt.className = "opcion"; bt.textContent = NOMBRE[x].charAt(0).toUpperCase() + NOMBRE[x].slice(1);
+    bt.addEventListener("click", function(){ respondeQZ(x, bt); }); cont.appendChild(bt);
+  });
+  $("qz-fb").className = "fb"; $("qz-fb").innerHTML = "";
+}
+function pistaQZ(){
+  var mismo = POS[QZ.a][0] === POS[QZ.b][0];
+  if (mismo) return T("Both angles are at the same intersection: are they across from each other, or side by side?", "Los dos ángulos están en la misma intersección: ¿están enfrentados o uno al lado del otro?");
+  if (POS[QZ.a][1] === POS[QZ.b][1]) return T("They are at different intersections, in the same position.", "Están en intersecciones distintas, en la misma posición.");
+  return T("Are the angles between the parallel lines (interior) or outside them (exterior)? Are they on the same side of the transversal?", "¿Los ángulos están entre las paralelas (internos) o fuera de ellas (externos)? ¿Están del mismo lado de la transversal?");
+}
+function respondeQZ(x, bt){
+  if (QZ.resuelto) return;
+  var fb = $("qz-fb"); QZ.intentos++;
+  var exp = T("Angles " + QZ.a + " and " + QZ.b + " are ", "Los ángulos " + QZ.a + " y " + QZ.b + " son ") + frase(QZ.k) + ".";
+  if (x === QZ.k){ QZ.resuelto = true; QZ.total++; if (QZ.intentos === 1) QZ.primero++; else QZ.pista++; bt.classList.add("correcta"); fb.className = "fb bien"; fb.innerHTML = TX.bien + exp; }
+  else if (QZ.intentos >= 2){ QZ.resuelto = true; QZ.total++; bt.classList.add("incorrecta"); fb.className = "fb mal"; fb.innerHTML = TX.asi + exp + TX.nuevo;
+    Array.prototype.forEach.call($("qz-opciones").children, function(o){ if (o.textContent.toLowerCase() === NOMBRE[QZ.k].toLowerCase()) o.classList.add("correcta"); }); }
+  else { bt.classList.add("incorrecta"); bt.disabled = true; fb.className = "fb pista"; fb.innerHTML = TX.todavia + pistaQZ() + TX.unoMas; }
+  if (QZ.resuelto) Array.prototype.forEach.call($("qz-opciones").children, function(o){ o.disabled = true; });
+  $("qz-marcador").textContent = QZ.total ? TX.resueltos(QZ.primero + QZ.pista, QZ.primero, QZ.total) : "";
+}
+$("an-phi").addEventListener("input", function(){ AN.phi = +this.value; $("an-phi-val").textContent = (180 - AN.phi) + "°"; pintaExplora(); });
+$("an-medidas").addEventListener("change", function(){ AN.verMedidas = this.checked; pintaExplora(); });
+pintaExplora();
+$("qz-nuevo").addEventListener("click", nuevoQZ);
+nuevoQZ();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

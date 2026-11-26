@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 6.3 · practice (English) — built by tools/build_n3_lesson_6_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 6.3 · Similar figures and scale drawings (Thales' theorem) · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity</div>
+    <h1>Lesson 6.3 · Similar figures and scale drawings (Thales' theorem)</h1>
+    <div class="meta">Four practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#similar">Similar figures</a></li>
+      <li><a href="#proportion">Finding a side with a proportion</a></li>
+      <li><a href="#scale">Scale drawings</a></li>
+      <li><a href="#thales">Thales' theorem: indirect measurement</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="similar" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Similar figures</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Two figures are similar when they have the same shape: their corresponding angles are equal and their corresponding sides are proportional. The number that relates them is the <strong>scale factor</strong>: divide a side of the new figure by the matching side of the original.</p>
+      <h3>Make it bigger or smaller</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="sj-t">Original triangle</label><select id="sj-t"><option value="3,4,5">sides 3, 4, and 5</option><option value="4,5,6">sides 4, 5, and 6</option><option value="3,5,7">sides 3, 5, and 7</option><option value="5,5,6">sides 5, 5, and 6</option></select></div>
+        <div class="campo" style="flex:1;min-width:200px;"><label for="sj-k">Scale factor: <span id="sj-kv"></span></label><input type="range" id="sj-k" min="0.5" max="3" step="0.5" value="2"></div></div></div>
+      <div id="sj-svg"></div>
+      <div class="tabla-scroll" id="sj-tabla"></div>
+      <div class="caja-tip">If the factor is greater than 1, the figure grows; if it is between 0 and 1, it shrinks. The angles never change: that is why the shape stays the same.</div>
+      <div class="caja-tip">Congruent or similar? Drag the corners of a triangle in <a href="explore-similar.html">Explore: congruent and similar triangles</a>.</div>
+      <h3>Practice: scale factor and corresponding sides</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">New exercise</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="proportion">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Finding a side with a proportion</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The corresponding sides of two similar figures form a proportion. To find an unknown side, write the proportion and solve it with cross multiplication.</p>
+      <h3>Step by step</h3>
+      <div class="panel">
+        <p class="enun" id="pp-enun"></p>
+        <div class="fila-btn"><button type="button" class="btn" id="pp-sig"></button><button type="button" class="btn-sec" id="pp-todo">Show all the steps</button><button type="button" class="btn-sec" id="pp-nuevo">Another example</button></div>
+      </div>
+      <div class="pasos" id="pp-pasos" aria-live="polite"></div>
+      <div class="caja-tip">Match the sides correctly: in the proportion, each side of one figure goes with its matching side of the other, always in the same order (small over large in both fractions, or large over small in both).</div>
+      <h3>Practice: find the unknown side</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Length of the side</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type the number; it can be a decimal, like 7.5.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="scale">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Scale drawings</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A map or a floor plan is a drawing similar to the real thing, but smaller. The scale tells how much of the real thing each unit of the drawing is worth. It is written in two ways:</p>
+      <table class="reglas"><caption>The two ways to write a scale</caption>
+        <thead><tr><th scope="col">Scale</th><th scope="col">Meaning</th><th scope="col">Drawing to real</th><th scope="col">Real to drawing</th></tr></thead>
+        <tbody><tr><td>1 inch = 5 miles</td><td>each inch on the map is 5 miles</td><td>multiply by 5</td><td>divide by 5</td></tr>
+        <tr><td>1:100</td><td>the real thing is 100 times bigger, in the same unit</td><td>multiply by 100</td><td>divide by 100</td></tr></tbody></table>
+      <h3>Scale converter</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="es-tipo">Kind of scale</label><select id="es-tipo"><option value="mapa">Map: 1 inch = k miles</option><option value="plano">Plan: 1 : n</option></select></div>
+        <div class="campo"><label for="es-k" id="es-klab"></label><input type="text" inputmode="decimal" class="corto" id="es-k" value="5"></div>
+        <div class="campo"><label for="es-dir">Direction</label><select id="es-dir"><option value="real">From the drawing to real life</option><option value="dib">From real life to the drawing</option></select></div>
+        <div class="campo"><label for="es-m" id="es-mlab"></label><input type="text" inputmode="decimal" class="corto" id="es-m" value="4"></div></div>
+        <p class="caja-aviso" id="es-aviso" role="alert"></p></div>
+      <div class="salida" aria-live="polite" id="es-salida"></div>
+      <h3>Practice: maps and plans</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Result</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type only the number, in the unit the question asks for.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="thales">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Thales' theorem: indirect measurement</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>At the same time of day, the sun's rays reach every object at the same angle. So an object and its shadow form a triangle similar to the one formed by another object and its shadow. With a known reference (a post, a person), you can find the height of something you cannot measure directly.</p>
+      <div class="formula"><span class="fracc"><span class="fa">height of the post</span><span class="fb2">shadow of the post</span></span> = <span class="fracc"><span class="fa">height of the tree</span><span class="fb2">shadow of the tree</span></span></div>
+      <h3>The tree's shadow</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:180px;"><label for="th-h">Height of the post (ft): <span id="th-hv"></span></label><input type="range" id="th-h" min="2" max="8" step="1" value="4"></div>
+        <div class="campo" style="flex:1;min-width:180px;"><label for="th-s">Shadow of the post (ft): <span id="th-sv"></span></label><input type="range" id="th-s" min="2" max="10" step="1" value="6"></div>
+        <div class="campo" style="flex:1;min-width:180px;"><label for="th-S">Shadow of the tree (ft): <span id="th-Sv"></span></label><input type="range" id="th-S" min="10" max="40" step="2" value="24"></div></div></div>
+      <div id="th-svg"></div>
+      <div class="salida" aria-live="polite" id="th-salida"></div>
+      <div class="caja-tip">Same time, same proportion: if the shadows were measured at different times, the angle of the sun would change and the triangles would no longer be similar.</div>
+      <h3>Practice: indirect measurement</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Result</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type the number; it can be a decimal.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 6 · Geometry: angles, the Pythagorean theorem, and similarity · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script>
+var U = {in: T("inches", "pulgadas"), ft: T("feet", "pies"), mi: T("miles", "millas")};
+/* MODULE 1 · Similar triangles */
+function pintaSJ(){
+  var l = $("sj-t").value.split(",").map(Number), k = +$("sj-k").value, a = l[0], b = l[1], c = l[2];
+  $("sj-kv").textContent = "×" + nm(k); $("sj-k").setAttribute("aria-valuetext", T("times ", "por ") + nm(k));
+  var v1 = verticesDe(a, b, c), v2 = verticesDe(a * k, b * k, c * k), esc = 500 / (c * (1 + k) * 1.1);
+  var x0 = 40, y0 = 250, x1 = x0 + c * esc + 40;
+  function V(v, ox){ return [ox + v[0] * esc, y0 - v[1] * esc]; }
+  function tri(v, ox, fill, st){ return '<polygon points="' + v.map(function(p){ var q = V(p, ox); return f1(q[0]) + "," + f1(q[1]); }).join(" ") + '" fill="' + fill + '" stroke="' + st + '" stroke-width="3"/>'; }
+  function rotulos(v, ox, lados, col){
+    var s = "", pares = [[1, 2, 0], [2, 0, 1], [0, 1, 2]], cc = V([(v[0][0] + v[1][0] + v[2][0]) / 3, (v[0][1] + v[1][1] + v[2][1]) / 3], ox);
+    pares.forEach(function(p){ var m = V([(v[p[0]][0] + v[p[1]][0]) / 2, (v[p[0]][1] + v[p[1]][1]) / 2], ox), d = [m[0] - cc[0], m[1] - cc[1]], n = Math.hypot(d[0], d[1]) || 1;
+      s += texto([m[0] + d[0] / n * 16, m[1] + d[1] / n * 16], nm(lados[p[2]]), 16, col); });
+    return s;
+  }
+  var top = y0 - Math.max(v1[2][1] * esc, v2[2][1] * esc) - 30, H = y0 + 26 - top;
+  var s = '<svg class="geo-svg" viewBox="0 ' + f1(top) + " 640 " + f1(H) + '" role="img" aria-label="' + T("Original triangle with sides " + a + ", " + b + ", and " + c + ", and a similar triangle with sides " + nm(a * k) + ", " + nm(b * k) + ", and " + nm(c * k) + ".", "Triángulo original de lados " + a + ", " + b + " y " + c + ", y triángulo semejante de lados " + nm(a * k) + ", " + nm(b * k) + " y " + nm(c * k) + ".") + '">';
+  s += tri(v1, x0, "#e3f2fd", "#0d47a1") + rotulos(v1, x0, [a, b, c], "#0d47a1");
+  s += tri(v2, x1, "#efebe9", "#4e342e") + rotulos(v2, x1, [a * k, b * k, c * k], "#3e2723");
+  $("sj-svg").innerHTML = s + "</svg>";
+  var ang = angulosDe(a, b, c).map(function(g){ return aprox(g, 1) + "°"; });
+  $("sj-tabla").innerHTML = '<table class="comparar"><caption>' + T("Corresponding sides and angles", "Lados y ángulos correspondientes") + '</caption><thead><tr><th scope="col">' + T("Original side", "Lado original") + '</th><th scope="col">' + T("New side", "Lado nuevo") + '</th><th scope="col">' + T("New ÷ original", "Nuevo ÷ original") + "</th></tr></thead><tbody>" +
+    [a, b, c].map(function(x){ return "<tr><td>" + x + "</td><td>" + nm(x * k) + "</td><td>" + nm(k) + "</td></tr>"; }).join("") + "</tbody></table>" +
+    '<p class="nota">' + T("The angles measure " + ang.join(", ") + " in both triangles: the scale factor does not change them.", "Los ángulos miden " + ang.join(", ") + " en los dos triángulos: no cambian con el factor de escala.") + "</p>";
+}
+function genFactor(){
+  var tp = aleatorio(1, 3), a = aleatorio(2, 9), k = elige([2, 3, 4, 5, 0.5]), o, pc = {};
+  if (tp === 1){ var b = a * k;
+    o = [{html: "×" + nm(k), clave: "k" + k}, {html: "×" + nm(b - a), clave: "k" + (b - a)}, {html: "×" + nm(a / b), clave: "k" + (a / b)}, {html: "×" + nm(a * b), clave: "k" + (a * b)}];
+    pc["k" + (b - a)] = T("You get the scale factor by dividing, not by subtracting.", "El factor de escala se obtiene dividiendo, no restando."); pc["k" + (a / b)] = T("Divide the new side by the original, not the other way around.", "Se divide el lado nuevo entre el original, no al revés."); pc["k" + (a * b)] = T("Divide the sides; do not multiply them.", "Los lados se dividen, no se multiplican.");
+    return {enun: T("A side of " + a + " inches matches a side of " + nm(b) + " inches in a similar figure. What is the scale factor?", "Un lado de " + a + " pulgadas corresponde, en una figura semejante, a un lado de " + nm(b) + " pulgadas. ¿Cuál es el factor de escala?"), opciones: o, correcta: "k" + k, porClave: pc,
+      pista: T("Divide the new side by the original side.", "Divida el lado nuevo entre el original."), bien: nm(b) + " ÷ " + a + " = " + nm(k) + ".", mal: T("Divide the new side by the original: ", "Se divide el lado nuevo entre el original: ") + nm(b) + " ÷ " + a + " = " + nm(k) + "."}; }
+  if (tp === 2){ var r = a * k;
+    o = [{html: nm(r), clave: "n" + r}, {html: nm(a + k), clave: "n" + (a + k)}, {html: nm(a / k), clave: "n" + (a / k)}, {html: nm(r + 1), clave: "n" + (r + 1)}];
+    pc["n" + (a + k)] = T("The factor multiplies; you do not add it.", "El factor multiplica; no se suma."); pc["n" + (a / k)] = T("Multiply by the factor; do not divide.", "Se multiplica por el factor; no se divide.");
+    return {enun: T("With a scale factor of ×" + nm(k) + ", how long is the side that matches a side of " + a + " inches?", "Con un factor de escala ×" + nm(k) + ", ¿cuánto mide el lado correspondiente a uno de " + a + " pulgadas?"), opciones: o, correcta: "n" + r, porClave: pc,
+      pista: T("The scale factor is the number you multiply by.", "El factor de escala es el número por el que se multiplica."), bien: a + " × " + nm(k) + " = " + nm(r) + ".", mal: T("Multiply by the factor: ", "Se multiplica por el factor: ") + a + " × " + nm(k) + " = " + nm(r) + "."}; }
+  var tr = elige([[3, 4, 5], [4, 5, 6], [5, 12, 13], [6, 8, 9]]), kk = elige([2, 3]), falt = tr[2] * kk, sumado = tr[2] + tr[0] * kk - tr[0];
+  o = [{html: String(falt), clave: "n" + falt}, {html: String(sumado), clave: "n" + sumado}, {html: String(falt + 1), clave: "n" + (falt + 1)}, {html: String(tr[2] * kk * kk), clave: "n" + tr[2] * kk * kk}];
+  pc["n" + sumado] = T("Sides of similar figures do not grow by adding the same amount: they are multiplied by the same factor.", "Entre figuras semejantes los lados no aumentan sumando la misma cantidad: se multiplican por el mismo factor.");
+  return {enun: T("Two similar triangles have sides " + tr.join(", ") + " and " + (tr[0] * kk) + ", " + (tr[1] * kk) + ", x. What is the value of x?", "Dos triángulos semejantes tienen lados " + tr.join(", ") + " y " + (tr[0] * kk) + ", " + (tr[1] * kk) + ", x. ¿Cuánto vale x?"), opciones: o, correcta: "n" + falt, porClave: pc,
+    pista: T("Find the scale factor first: " + (tr[0] * kk) + " ÷ " + tr[0] + ".", "Halle primero el factor de escala: " + (tr[0] * kk) + " ÷ " + tr[0] + "."),
+    bien: T("The factor is ", "El factor es ") + (tr[0] * kk) + " ÷ " + tr[0] + " = " + kk + T(", so x = ", ", así que x = ") + tr[2] + " × " + kk + " = " + falt + ".", mal: T("The factor is " + kk + ": x = ", "El factor es " + kk + ": x = ") + tr[2] + " × " + kk + " = " + falt + "."};
+}
+
+/* MODULE 2 · Proportion */
+function problemaProp(){
+  var tr = elige([[3, 4, 5], [4, 6, 8], [5, 7, 9], [2, 5, 6], [6, 8, 10]]), k = elige([2, 3, 1.5, 2.5, 4]), i = aleatorio(0, 2), j; do { j = aleatorio(0, 2); } while (j === i);
+  var gra = tr.map(function(x){ return x * k; }), deGrande = Math.random() < 0.5;
+  return {peq: tr, gra: gra, i: i, j: j, deGrande: deGrande, x: deGrande ? gra[j] : tr[j]};
+}
+function textoProp(q){
+  var nom = [T("first", "primer"), T("second", "segundo"), T("third", "tercer")];
+  return T("Two triangles are similar. In the small one, the " + nom[q.i] + " side measures " + nm(q.peq[q.i]) + " and the " + nom[q.j] + " measures " + (q.deGrande ? nm(q.peq[q.j]) : "x") + ". In the large one, the corresponding sides measure " + nm(q.gra[q.i]) + " and " + (q.deGrande ? "x" : nm(q.gra[q.j])) + ". What is the value of x?",
+           "Dos triángulos son semejantes. En el pequeño, el " + nom[q.i] + " lado mide " + nm(q.peq[q.i]) + " y el " + nom[q.j] + " mide " + (q.deGrande ? nm(q.peq[q.j]) : "x") + ". En el grande, los lados correspondientes miden " + nm(q.gra[q.i]) + " y " + (q.deGrande ? "x" : nm(q.gra[q.j])) + ". ¿Cuánto vale x?");
+}
+function pasosProp(q){
+  var a = nm(q.peq[q.i]), A = nm(q.gra[q.i]), b = q.deGrande ? nm(q.peq[q.j]) : "x", B = q.deGrande ? "x" : nm(q.gra[q.j]);
+  var cruz = q.deGrande ? a + " · x = " + A + " · " + b : A + " · x = " + a + " · " + B;
+  var prod = q.deGrande ? q.gra[q.i] * q.peq[q.j] : q.peq[q.i] * q.gra[q.j], coef = q.deGrande ? q.peq[q.i] : q.gra[q.i];
+  return [T("Write the proportion, small over large in both fractions: ", "Se plantea la proporción, pequeño sobre grande en las dos fracciones: ") + auto(Qf(a, A) + " = " + Qf(b, B)) + ".",
+    T("Cross multiply: ", "Multiplicación cruzada: ") + auto(cruz) + T(", that is, ", ", es decir ") + auto(nm(coef) + "x = " + nm(prod)) + ".",
+    T("Solve: x = ", "Se despeja: x = ") + nm(prod) + " ÷ " + nm(coef) + " = " + nm(q.x) + ".",
+    '<span class="veredicto">x = ' + nm(q.x) + T(". Check: the scale factor is ", ". Comprobación: el factor de escala es ") + nm(q.gra[q.i] / q.peq[q.i]) + T(" in both pairs of sides.", " en los dos pares de lados.") + "</span>"];
+}
+var PP_COLA = [{peq: [3, 4, 5], gra: [6, 8, 10], i: 0, j: 2, deGrande: true, x: 10}];
+function nuevoPP(){ var q = PP_COLA.length ? PP_COLA.shift() : problemaProp(); $("pp-enun").textContent = textoProp(q); PPS.carga(pasosProp(q)); }
+function genProp(){
+  var q = problemaProp(), malo = q.deGrande ? q.peq[q.j] * q.peq[q.i] / q.gra[q.i] : q.gra[q.j] * q.gra[q.i] / q.peq[q.i];
+  return {enun: textoProp(q), solucion: pasosProp(q).slice(0, 3).join(" "),
+    evalua: function(v){ return evaluaDec(v, q.x, [{v: malo, msg: T("It looks like the order in the proportion got mixed up: put small over large in both fractions.", "Parece que se mezcló el orden en la proporción: ponga pequeño sobre grande en las dos fracciones.")}]); }};
+}
+
+/* MODULE 3 · Scales */
+function pintaES(){
+  var tipo = $("es-tipo").value, dir = $("es-dir").value, k = leeDecimal($("es-k").value), m = leeDecimal($("es-m").value), av = $("es-aviso");
+  $("es-klab").textContent = tipo === "mapa" ? T("Value of k (miles for each inch)", "Valor de k (millas por cada pulgada)") : T("Value of n", "Valor de n");
+  $("es-mlab").textContent = dir === "real" ? (tipo === "mapa" ? T("Measure on the map (inches)", "Medida en el mapa (pulgadas)") : T("Measure on the plan (inches)", "Medida en el plano (pulgadas)")) : (tipo === "mapa" ? T("Real distance (miles)", "Distancia real (millas)") : T("Real measure (inches)", "Medida real (pulgadas)"));
+  if (k === null || m === null || k <= 0 || m < 0){ av.className = "caja-aviso visible"; av.textContent = T("Type positive numbers.", "Escriba números positivos."); $("es-salida").innerHTML = ""; return; }
+  av.className = "caja-aviso"; av.textContent = "";
+  var r, h, dib = tipo === "mapa" ? T("map", "mapa") : T("plan", "plano");
+  if (dir === "real"){ r = m * k; h = T("Each inch on the " + dib + " is worth " + nm(k) + (tipo === "mapa" ? " miles" : " real inches") + ": multiply. ", "Cada pulgada del " + dib + " vale " + nm(k) + (tipo === "mapa" ? " millas" : " pulgadas reales") + ": se multiplica. ") + nm(m) + " × " + nm(k) + " = <strong>" + nm(r) + " " + (tipo === "mapa" ? U.mi : U.in) + "</strong>" + T(" in real life.", " en la realidad."); }
+  else { r = m / k; h = T("The real thing is bigger than the drawing: divide by ", "La realidad es más grande que el dibujo: se divide entre ") + nm(k) + ". " + nm(m) + " ÷ " + nm(k) + " = <strong>" + nm(r) + " " + U.in + "</strong>" + T(" on the " + dib + ".", " en el " + dib + "."); }
+  if (tipo === "plano" && dir === "real" && r >= 24) h += T(" That is ", " Es decir, ") + nm(Math.round(r / 12 * 100) / 100) + " " + U.ft + ".";
+  $("es-salida").innerHTML = '<div class="linea">' + h + "</div>";
+}
+function genEscala(){
+  var tp = aleatorio(1, 4), k, m, r, enun, sol, pistas = [];
+  if (tp === 1){ k = elige([2, 3, 5, 10, 20, 25]); m = elige([2, 3, 4, 5, 6, 7.5, 8]); r = m * k; enun = T("On a map, 1 inch stands for " + k + " miles. Two towns are " + nm(m) + " inches apart on the map. How many miles apart are they in real life?", "En un mapa, 1 pulgada representa " + k + " millas. Dos pueblos están a " + nm(m) + " pulgadas en el mapa. ¿A cuántas millas están en la realidad?"); sol = nm(m) + " × " + k + " = " + nm(r) + " " + U.mi + "."; pistas.push({v: m / k, msg: T("From the map to real life the distance grows: multiply.", "Del mapa a la realidad la distancia crece: se multiplica.")}); }
+  else if (tp === 2){ k = elige([2, 4, 5, 10, 25]); r = elige([2, 3, 4, 6, 1.5, 2.5]); m = r * k; enun = T("On a map, 1 inch stands for " + k + " miles. Two cities are " + nm(m) + " miles apart in real life. How many inches apart are they on the map?", "En un mapa, 1 pulgada representa " + k + " millas. Dos ciudades están a " + nm(m) + " millas en la realidad. ¿A cuántas pulgadas están en el mapa?"); sol = nm(m) + " ÷ " + k + " = " + nm(r) + " " + U.in + "."; pistas.push({v: m * k, msg: T("From real life to the map the measure shrinks: divide.", "De la realidad al mapa la medida se achica: se divide.")}); }
+  else if (tp === 3){ k = elige([24, 48, 50, 100]); r = elige([2, 3, 4, 5, 6, 8]); m = r * k; enun = T("A floor plan is drawn at a scale of 1:" + k + ". A real wall measures " + nm(m) + " inches. How many inches long is it on the plan?", "Un plano está a escala 1:" + k + ". Una pared real mide " + nm(m) + " pulgadas. ¿Cuántas pulgadas mide en el plano?"); sol = nm(m) + " ÷ " + k + " = " + nm(r) + " " + U.in + "."; pistas.push({v: m * k, msg: T("From real life to the plan, divide.", "De la realidad al plano se divide.")}); }
+  else { k = elige([24, 48, 50, 100]); m = elige([1, 1.5, 2, 2.5, 3, 4]); r = m * k; enun = T("A floor plan is drawn at a scale of 1:" + k + ". A sofa measures " + nm(m) + " inches on the plan. How many inches long is it in real life?", "Un plano está a escala 1:" + k + ". Un sofá mide " + nm(m) + " pulgadas en el plano. ¿Cuántas pulgadas mide en la realidad?"); sol = nm(m) + " × " + k + " = " + nm(r) + " " + U.in + " (" + nm(Math.round(r / 12 * 100) / 100) + " " + U.ft + ")."; pistas.push({v: m / k, msg: T("From the plan to real life, multiply.", "Del plano a la realidad se multiplica.")}, {v: r / 12, msg: T("That is the answer in feet. The question asks for inches.", "Esa es la respuesta en pies. La pregunta pide pulgadas.")}); }
+  return {enun: enun, solucion: sol, evalua: function(v){ var res = evaluaDec(v, r, pistas); if (res.estado === "mal" && !pistas.some(function(p){ return p.msg === res.msg; })) res.msg = T("From the drawing to real life, multiply; from real life to the drawing, divide.", "Del dibujo a la realidad se multiplica; de la realidad al dibujo se divide."); return res; }};
+}
+
+/* MODULE 4 · Shadows */
+function pintaTH(){
+  var h = +$("th-h").value, s = +$("th-s").value, S = +$("th-S").value, H = h * S / s;
+  $("th-hv").textContent = nm(h); $("th-sv").textContent = nm(s); $("th-Sv").textContent = nm(S);
+  var esc = Math.min(560 / (s + S + 3), 210 / Math.max(H, h)), y0 = 250, xp = 30, xa = xp + (s + 2) * esc, u = T(" ft", " pies");
+  var svg = '<svg class="geo-svg" viewBox="0 0 640 290" role="img" aria-label="' + T("A " + nm(h) + "-foot post with a " + nm(s) + "-foot shadow; a tree with a " + nm(S) + "-foot shadow and a height of " + nm(H) + " feet.", "Poste de " + nm(h) + " pies con sombra de " + nm(s) + " pies; árbol con sombra de " + nm(S) + " pies y altura de " + nm(H) + " pies.") + '">';
+  svg += lineaG([20, y0], [620, y0], "#6d4c41", 3);
+  svg += lineaG([xp, y0], [xp, y0 - h * esc], "#424242", 6) + lineaG([xp + s * esc, y0], [xp, y0 - h * esc], "#f9a825", 2, ' stroke-dasharray="7 5"');
+  svg += lineaG([xp, y0 + 2], [xp + s * esc, y0 + 2], "#212121", 6);
+  svg += '<rect x="' + f1(xa - 6) + '" y="' + f1(y0 - H * esc * 0.45) + '" width="12" height="' + f1(H * esc * 0.45) + '" fill="#6d4c41"/>';
+  svg += '<ellipse cx="' + f1(xa) + '" cy="' + f1(y0 - H * esc * 0.7) + '" rx="' + f1(Math.max(H * esc * 0.22, 14)) + '" ry="' + f1(H * esc * 0.3) + '" fill="#2e7d32"/>';
+  svg += lineaG([xa + S * esc, y0], [xa, y0 - H * esc], "#f9a825", 2, ' stroke-dasharray="7 5"') + lineaG([xa, y0 + 2], [xa + S * esc, y0 + 2], "#212121", 6);
+  svg += '<text x="' + f1(xp + 12) + '" y="' + f1(y0 - h * esc / 2) + '" font-size="18" font-weight="700" fill="#222" dominant-baseline="middle">' + nm(h) + u + "</text>";
+  svg += texto([xp + s * esc / 2, y0 + 24], nm(s) + u, 18, "#222") + texto([xa + S * esc / 2, y0 + 24], nm(S) + u, 18, "#222");
+  svg += '<text x="' + f1(xa + 14) + '" y="' + f1(Math.max(y0 - H * esc - 12, 16)) + '" font-size="18" font-weight="700" fill="#1b5e20">' + T("height = ", "altura = ") + nm(H) + u + "</text>";
+  $("th-svg").innerHTML = svg + "</svg>";
+  $("th-salida").innerHTML = '<div class="linea">' + T("Proportion: ", "Proporción: ") + auto(Qf(nm(h), nm(s)) + " = " + Qf("x", nm(S))) + T(". Cross multiply: ", ". Multiplicación cruzada: ") + auto(nm(s) + " · x = " + nm(h) + " · " + nm(S)) + ".</div>" +
+    '<div class="linea veredicto">x = ' + nm(h * S) + " ÷ " + nm(s) + " = " + nm(H) + T(" feet tall.", " pies de altura.") + "</div>";
+}
+function genThales(){
+  var tp = aleatorio(1, 3), h, s, S, H, enun, r, pistas = [], orden = T("Check the order: height over shadow in both fractions.", "Revise el orden: altura sobre sombra en las dos fracciones.");
+  if (tp === 1){ h = elige([3, 4, 5, 6]); s = elige([2, 3, 4, 5, 6]); S = s * elige([2, 3, 4, 5, 6]); H = h * S / s; r = H;
+    enun = T("A " + h + "-foot post casts a " + s + "-foot shadow. At the same time, a tree casts a " + S + "-foot shadow. How tall is the tree, in feet?", "Un poste de " + h + " pies proyecta una sombra de " + s + " pies. A la misma hora, un árbol proyecta una sombra de " + S + " pies. ¿Qué altura tiene el árbol, en pies?"); pistas.push({v: s * S / h, msg: orden}); }
+  else if (tp === 2){ h = elige([5, 5.5, 6]); s = elige([2, 3, 4]); var k = elige([5, 6, 8, 10, 12]); H = h * k; S = s * k; r = S;
+    enun = T("A " + nm(h) + "-foot person casts a " + s + "-foot shadow. At the same time, what shadow does a " + nm(H) + "-foot building cast, in feet?", "Una persona de " + nm(h) + " pies proyecta una sombra de " + s + " pies. A la misma hora, ¿qué sombra proyecta un edificio de " + nm(H) + " pies, en pies?"); pistas.push({v: H * h / s, msg: orden}); }
+  else { h = elige([3, 4, 6]); s = elige([4, 5, 8, 9]); var k2 = elige([3, 4, 5, 6]); H = h * k2; S = s * k2; r = H;
+    enun = T("A " + h + "-foot stick casts a " + s + "-foot shadow. The shadow of a tower measures " + S + " feet. How tall is the tower, in feet?", "Una vara de " + h + " pies da una sombra de " + s + " pies. La sombra de una torre mide " + S + " pies. ¿Cuánto mide la torre, en pies?"); pistas.push({v: s * S / h, msg: orden}); }
+  return {enun: enun, solucion: T("Height-to-shadow proportion: ", "Proporción altura/sombra: ") + auto(Qf(nm(h), nm(s)) + " = " + Qf(nm(H), nm(S))) + T(". The answer is " + nm(r) + " feet.", ". El resultado es " + nm(r) + " pies."),
+    evalua: function(v){ var res = evaluaDec(v, r, pistas); if (res.estado === "mal" && res.msg !== orden) res.msg = T("Write height over shadow for both objects, then cross multiply.", "Escriba altura sobre sombra para los dos objetos y multiplique en cruz."); return res; }};
+}
+
+/* Start */
+$("sj-t").addEventListener("change", pintaSJ); $("sj-k").addEventListener("input", pintaSJ); pintaSJ();
+OMR("p1", genFactor);
+var PPS = pasoAPaso("pp", []);
+$("pp-nuevo").addEventListener("click", nuevoPP); nuevoPP();
+creaPracticaLibre("p2", genProp);
+["es-tipo", "es-dir"].forEach(function(id){ $(id).addEventListener("change", pintaES); });
+["es-k", "es-m"].forEach(function(id){ $(id).addEventListener("input", pintaES); });
+pintaES();
+creaPracticaLibre("p3", genEscala);
+["th-h", "th-s", "th-S"].forEach(function(id){ $(id).addEventListener("input", pintaTH); }); pintaTH();
+creaPracticaLibre("p4", genThales);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

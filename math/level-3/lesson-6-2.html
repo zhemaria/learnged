@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 6.2 · Math Level 3 (English) — built by tools/build_n3_lesson_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 6.2 · The Pythagorean theorem: proof, applications, and converse · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 6 — Geometry: angles, the Pythagorean theorem, and similarity</p>
+<h1>Lesson 6.2 · The Pythagorean theorem: proof, applications, and converse</h1>
+<p class="lema">Use a² + b² = c² to find a missing side of a right triangle, recognize Pythagorean triples, and use the converse to check for a right angle.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">📐</span> Calculator for square roots</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Identify</strong> the hypotenuse and the legs of a right triangle.</li>
+<li><strong>Use</strong> a² + b² = c² to find the hypotenuse.</li>
+<li><strong>Solve</strong> for a leg when you know the hypotenuse and the other leg.</li>
+<li><strong>Recognize</strong> common Pythagorean triples and their multiples.</li>
+<li><strong>Use</strong> the converse to decide whether a triangle is a right triangle, and solve real problems about building and distance.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.4.e</span> Use the Pythagorean theorem to determine unknown side lengths in a right triangle.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.2.b</span> Perform computations and write numerical expressions with squares and square roots of positive, rational numbers.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.b</span> Plan a solution pathway or outline a line of reasoning.</li><li><span class="std-cod std-mp">MP.3.a</span> Build steps of a line of reasoning or solution pathway, based on previous step or givens.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">8.G.6</span> <span class="std-nivel">Level D</span> Explain a proof of the Pythagorean Theorem and its converse.</li><li><span class="std-cod std-ccr">8.G.7</span> <span class="std-nivel">Level D</span> Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-theorem">The right triangle and the theorem</a></li>
+<li><a href="#s-hypotenuse">Finding the hypotenuse</a></li>
+<li><a href="#s-leg">Finding a leg</a></li>
+<li><a href="#s-triples">Pythagorean triples</a></li>
+<li><a href="#s-converse">The converse of the theorem</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-theorem"><span aria-hidden="true" class="num-seccion">1</span>The right triangle and the theorem</h2>
+<p>In Lesson 6.1 you worked with the angles of triangles, including the right triangle (the one with a 90° angle). This lesson studies the relationship between its sides: the Pythagorean theorem. To solve for the unknown side you will use exactly the algebra of Topics 4 and 5, and you will take a square root as in Topic 3.</p>
+<p>In a right triangle, the two sides that form the 90° angle are called the <strong>legs</strong> (a and b). The side across from the right angle, which is the longest one, is called the <strong>hypotenuse</strong> (c). The Pythagorean theorem relates the three:</p>
+<p class="formula" style="text-align:center;font-size:1.4rem;font-weight:700;">a² + b² = c²</p>
+<svg viewBox="0 0 540 300" role="img" aria-label="A right triangle. The legs a and b form the right angle, marked with a small square. The hypotenuse c is across from the right angle." style="width:100%;max-width:460px;height:auto;display:block;margin:12px auto;"><polygon points="120,250 420,250 120,60" fill="#efebe9" stroke="#4e342e" stroke-width="3"/><path d="M120 232 H138 V250" fill="none" stroke="#4e342e" stroke-width="2"/><text x="100" y="160" font-size="24" font-weight="700" fill="#0d47a1" text-anchor="middle">a</text><text x="270" y="282" font-size="24" font-weight="700" fill="#1b5e20" text-anchor="middle">b</text><text x="290" y="140" font-size="24" font-weight="700" fill="#b71c1c" text-anchor="middle">c</text><text x="300" y="166" font-size="15" fill="#b71c1c" text-anchor="middle">hypotenuse</text></svg>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The hypotenuse is always c</span>
+<p>It is the longest side, and it is across from the right angle. Finding it correctly is the first step, because in the formula a² + b² = c², c always takes the place of the hypotenuse.</p>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#theorem" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the right triangle and the theorem (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the right triangle and the theorem</span><span class="ei-sub">See the proof with squares, and find the hypotenuse and the legs before you write a² + b² = c².</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-hypotenuse"><span aria-hidden="true" class="num-seccion">2</span>Finding the hypotenuse</h2>
+<p>When you know the two legs, substitute them into the formula and take the square root to find the hypotenuse.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: the 3-4-5 triangle. The legs measure 3 and 4. What is the length of the hypotenuse?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Substitute.</strong> 3² + 4² = c², that is, 9 + 16 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Add.</strong> 25 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Take the square root.</strong> c = √25 = 5.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The hypotenuse measures <strong>5</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: the legs measure 6 and 8. What is the length of the hypotenuse?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Substitute.</strong> 6² + 8² = 36 + 64 = 100 = c².</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Take the square root.</strong> c = √100 = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The hypotenuse measures <strong>10</strong>.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> With the calculator</span>
+<p>When the sum of the squares is not a perfect square, use the calculator: for legs 5 and 7, c² = 25 + 49 = 74, and √74 ≈ 8.6. Round to the tenth unless the problem says otherwise.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Legs 8 and 15</h3></div>
+<p class="pregunta-int" id="t-p1">The legs measure 8 and 15. The hypotenuse measures…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">17</button>
+<button class="opcion" data-k="b" type="button">23</button>
+<button class="opcion" data-k="c" type="button">64</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Legs 9 and 12</h3></div>
+<p class="pregunta-int" id="t-p2">The legs measure 9 and 12. The hypotenuse measures…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">21</button>
+<button class="opcion" data-k="b" type="button">15</button>
+<button class="opcion" data-k="c" type="button">225</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#hypotenuse" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: finding the hypotenuse (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: finding the hypotenuse</span><span class="ei-sub">Add the squares of the legs and take the square root.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-leg"><span aria-hidden="true" class="num-seccion">3</span>Finding a leg</h2>
+<p>If you know the hypotenuse and one leg, solve for the other leg: subtract the square of the known leg and take the square root.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: the hypotenuse measures 13 and one leg measures 5. What is the length of the other leg?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Write the equation.</strong> 5² + b² = 13², that is, 25 + b² = 169.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Solve for b².</strong> b² = 169 − 25 = 144.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Take the square root.</strong> b = √144 = 12.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> The other leg measures <strong>12</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">For a leg, subtract</span>
+<p>When you look for a leg, the square of the hypotenuse is alone on one side, and you subtract the square of the known leg from it. A common mistake is to add instead of subtract. Check your answer: a leg is always shorter than the hypotenuse.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — The missing leg</h3></div>
+<p class="pregunta-int" id="t-p3">The hypotenuse measures 13 and one leg measures 12. The other leg measures…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">25</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Real-life problems</span>
+<p>Ladders, ramps, roofs, guy wires, and TV screens all hide a right triangle. Practice with them in <a href="explore-pythagoras.html">Explore: the Pythagorean theorem in real life</a>, where you can show the triangle on the drawing and see the solution step by step.</p>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#leg" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: finding a leg (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: finding a leg</span><span class="ei-sub">Subtract the squares and take the square root to find the missing leg.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-triples"><span aria-hidden="true" class="num-seccion">4</span>Pythagorean triples</h2>
+<p>Some right triangles have sides that are whole numbers. Recognizing them saves calculations on the test.</p>
+<div aria-label="Common Pythagorean triples (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Common Pythagorean triples (whole legs and hypotenuse)</caption>
+<thead><tr><th scope="col">Leg a</th><th scope="col">Leg b</th><th scope="col">Hypotenuse c</th></tr></thead>
+<tbody>
+<tr><td>3</td><td>4</td><td>5</td></tr>
+<tr><td>5</td><td>12</td><td>13</td></tr>
+<tr><td>8</td><td>15</td><td>17</td></tr>
+<tr><td>7</td><td>24</td><td>25</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Multiples work too</span>
+<p>If 3-4-5 is a triple, so are 6-8-10 (everything times 2) and 9-12-15 (everything times 3). Recognizing a multiple of 3-4-5 lets you find the answer almost right away.</p>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#triples" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: Pythagorean triples (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: Pythagorean triples</span><span class="ei-sub">Recognize the most common triples and their multiples.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-converse"><span aria-hidden="true" class="num-seccion">5</span>The converse of the theorem</h2>
+<p>The <strong>converse</strong> goes the other way: if the three sides of a triangle make a² + b² = c² true, then the triangle is a right triangle. It is a way to check whether a corner is a right angle.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: checking with the converse. Is a triangle with sides 30, 40, and 50 a right triangle?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>The longest side (50) would be the hypotenuse.</strong> Check: 30² + 40² = 900 + 1,600 = 2,500.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Compare.</strong> 50² = 2,500. They match, so a² + b² = c² is true.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>Yes</strong>, the triangle is a right triangle.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">On the job</span>
+<p>Carpenters mark 3 feet on one wall and 4 feet on the other. If the diagonal between the marks measures 5 feet, the corner is square. That is the converse of the theorem.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — 5, 12, and 13</h3></div>
+<p class="pregunta-int" id="t-p4">Is a triangle with sides 5, 12, and 13 a right triangle?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Yes, because 25 + 144 = 169</button>
+<button class="opcion" data-k="b" type="button">No</button>
+<button class="opcion" data-k="c" type="button">Only if it is isosceles</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — 4, 5, and 6</h3></div>
+<p class="pregunta-int" id="t-p5">Is a triangle with sides 4, 5, and 6 a right triangle?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Yes</button>
+<button class="opcion" data-k="b" type="button">Always</button>
+<button class="opcion" data-k="c" type="button">No, because 16 + 25 ≠ 36</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#converse" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the converse of the theorem (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the converse of the theorem</span><span class="ei-sub">Decide whether a triangle is a right triangle from its sides.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-6-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve four exercises that find the hypotenuse or a leg, four word problems about building or distance, and two exercises that use the converse to check whether a triangle is a right triangle. Then practice in <a href="explore-pythagoras.html">Explore: the Pythagorean theorem in real life</a>: once the square root comes easily, all that is left is to decide which side is missing.</li>
+<li><strong>In your daily life.</strong> Check a corner at home with the 3-4-5 rule: measure 3 feet along one wall and 4 feet along the other from the corner, and mark both points. Measure the distance between the marks. If it is 5 feet, the corner is square. Then measure the width and height of a TV or computer screen and use the theorem to find its diagonal; compare it with the size on the box.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">The legs measure 6 and 8. The hypotenuse measures…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">14</button><button class="opcion" data-k="b" type="button">100</button><button class="opcion" data-k="c" type="button">48</button><button class="opcion" data-k="d" type="button">10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">The legs measure 5 and 12. The hypotenuse measures…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17</button><button class="opcion" data-k="b" type="button">169</button><button class="opcion" data-k="c" type="button">13</button><button class="opcion" data-k="d" type="button">60</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">The hypotenuse measures 13 and one leg measures 5. The other leg measures…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">8</button><button class="opcion" data-k="c" type="button">18</button><button class="opcion" data-k="d" type="button">144</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">The hypotenuse measures 25 and one leg measures 7. The other leg measures…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">18</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">32</button><button class="opcion" data-k="d" type="button">625</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">Is a triangle with sides 3, 4, and 5 a right triangle?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Yes, because 9 + 16 = 25</button><button class="opcion" data-k="b" type="button">No</button><button class="opcion" data-k="c" type="button">Only if it is isosceles</button><button class="opcion" data-k="d" type="button">There is not enough information</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">Is a triangle with sides 6, 8, and 11 a right triangle?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">No, because 36 + 64 ≠ 121</button><button class="opcion" data-k="b" type="button">Yes</button><button class="opcion" data-k="c" type="button">Yes, always</button><button class="opcion" data-k="d" type="button">There is no way to know</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">A ramp covers a horizontal distance of 12 feet and rises 5 feet. How long is the ramp (the hypotenuse)?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">17 feet</button><button class="opcion" data-k="b" type="button">7 feet</button><button class="opcion" data-k="c" type="button">13 feet</button><button class="opcion" data-k="d" type="button">60 feet</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A 10-foot ladder leans against a wall with its foot 6 feet from the wall. How high up the wall does it reach?</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4 feet</button><button class="opcion" data-k="b" type="button">16 feet</button><button class="opcion" data-k="c" type="button">60 feet</button><button class="opcion" data-k="d" type="button">8 feet</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for the Pythagorean theorem (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the Pythagorean theorem and its converse and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identifying the hypotenuse and legs</th><td>I identify the hypotenuse and the legs correctly, even in triangles in different positions.</td><td>I identify the sides with occasional mistakes.</td><td>I confuse the hypotenuse with a leg.</td></tr>
+<tr><th scope="row">Writing a² + b² = c²</th><td>I write a² + b² = c² correctly and recognize Pythagorean triples.</td><td>I write the equation with the sides in the wrong places.</td><td>I do not write the equation correctly.</td></tr>
+<tr><th scope="row">Finding the side</th><td>I find the hypotenuse and the legs correctly.</td><td>I make mistakes solving or taking the square root.</td><td>I do not solve or take the square root.</td></tr>
+<tr><th scope="row">Using the converse</th><td>I use the converse to decide whether the triangle is a right triangle, choosing the longest side as c.</td><td>I use the converse with mistakes.</td><td>I do not use the converse to classify.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned the Pythagorean theorem (a² + b² = c²) to find the hypotenuse and the legs of a right triangle, recognized Pythagorean triples, and used the converse to check whether a triangle is a right triangle, solving real problems about building and distance.</p>
+<p>In <strong>Lesson 6.3 · Similar figures and scale drawings (Thales' theorem)</strong> you will study figures that have the same shape but a different size. You will solve proportions to find unknown sides, read the scales of maps and plans, and measure heights you cannot reach with Thales' theorem.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-6-3.html">Lesson 6.3 · Similar figures and scale drawings (Thales' theorem)</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>right triangle</dt><dd>A triangle with a 90° angle.</dd>
+<dt>legs</dt><dd>The two sides that form the right angle.</dd>
+<dt>hypotenuse</dt><dd>The side across from the right angle. It is always the longest side.</dd>
+<dt>Pythagorean triple</dt><dd>Three whole numbers that make a² + b² = c² true, like 3, 4, 5.</dd>
+<dt>converse</dt><dd>The theorem turned around: if a² + b² = c², the triangle is a right triangle.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 6 · Lesson 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 6.3",
+ "review": "sections 2, 3, and 5",
+ "practice": {
+  "p1": {
+   "ok": "a",
+   "hints": {
+    "b": "You added the legs. Add their squares: 64 + 225.",
+    "c": "64 is 8². Add 8² + 15² and take the square root."
+   },
+   "right": "8² + 15² = 64 + 225 = 289, √289 = 17.",
+   "solution": "8² + 15² = 289, c = √289 = 17."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "You added the legs. Add their squares: 81 + 144.",
+    "c": "225 is c². You still need the square root."
+   },
+   "right": "9² + 12² = 81 + 144 = 225, √225 = 15.",
+   "solution": "9² + 12² = 225, c = √225 = 15."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Do not subtract the sides; subtract their squares: 169 − 144.",
+    "c": "25 is b². You still need the square root."
+   },
+   "right": "13² − 12² = 169 − 144 = 25, √25 = 5.",
+   "solution": "b² = 169 − 144 = 25, b = 5."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Check: 5² + 12² = 25 + 144 = 169, and 13² = 169.",
+    "c": "The converse only needs a² + b² = c². Check it."
+   },
+   "right": "25 + 144 = 169 = 13², so it is a right triangle.",
+   "solution": "Yes: 25 + 144 = 169."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Check: 4² + 5² = 16 + 25 = 41, and 6² = 36.",
+    "b": "Not every triangle is a right triangle. Check a² + b² = c²."
+   },
+   "right": "16 + 25 = 41, which is not 36, so it is not a right triangle.",
+   "solution": "No: 16 + 25 = 41 ≠ 36."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "d",
+   "hints": {
+    "a": "You added the legs. Add their squares.",
+    "b": "100 is c². Take the square root.",
+    "c": "You multiplied the legs. Add their squares."
+   },
+   "solution": "36 + 64 = 100, c = 10."
+  },
+  "B": {
+   "ok": "c",
+   "hints": {
+    "a": "You added the legs. Add their squares.",
+    "b": "169 is c². Take the square root.",
+    "d": "You multiplied the legs. Add their squares."
+   },
+   "solution": "25 + 144 = 169, c = 13."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "Do not subtract the sides; subtract their squares.",
+    "c": "You added the sides. For a leg, subtract the squares.",
+    "d": "144 is b². Take the square root."
+   },
+   "solution": "169 − 25 = 144, b = 12."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "Subtract the squares: 625 − 49.",
+    "c": "You added the sides. For a leg, subtract the squares.",
+    "d": "625 is 25². Subtract 7² and take the square root."
+   },
+   "solution": "625 − 49 = 576, b = 24."
+  },
+  "E": {
+   "ok": "a",
+   "hints": {
+    "b": "Check: 9 + 16 = 25 = 5².",
+    "c": "The converse only needs a² + b² = c².",
+    "d": "The three sides are enough to decide."
+   },
+   "solution": "Yes: 9 + 16 = 25."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Check: 36 + 64 = 100, and 11² = 121.",
+    "c": "Not every triangle is a right triangle.",
+    "d": "The three sides are enough to decide."
+   },
+   "solution": "No: 100 ≠ 121."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "You added the legs. Add their squares: 144 + 25.",
+    "b": "You subtracted the legs. The ramp is the hypotenuse: add the squares.",
+    "d": "You multiplied. Add the squares and take the square root."
+   },
+   "solution": "144 + 25 = 169, √169 = 13 feet."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "You subtracted the sides. Subtract their squares: 100 − 36.",
+    "b": "The ladder is the hypotenuse, so the height is a leg: subtract.",
+    "c": "You multiplied. Subtract the squares and take the square root."
+   },
+   "solution": "100 − 36 = 64, √64 = 8 feet."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

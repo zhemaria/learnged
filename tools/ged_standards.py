@@ -175,6 +175,12 @@ CCR = {
  "4.MD.3": ("C", "Apply the area and perimeter formulas for rectangles in real world and mathematical problems."),
  "3.MD.7": ("B", "Relate area to the operations of multiplication and addition."),
  "7.G.4": ("D", "Know the formulas for the area and circumference of a circle and use them to solve problems; give an informal derivation of the relationship between the circumference and area of a circle."),
+ "7.G.1": ("D", "Solve problems involving scale drawings of geometric figures, including computing actual lengths and areas from a scale drawing and reproducing a scale drawing at a different scale."),
+ "7.G.5": ("D", "Use facts about supplementary, complementary, vertical, and adjacent angles in a multi-step problem to write and solve simple equations for an unknown angle in a figure."),
+ "8.G.4": ("D", "Understand that a two-dimensional figure is similar to another if the second can be obtained from the first by a sequence of rotations, reflections, translations, and dilations; given two similar two-dimensional figures, describe a sequence that exhibits the similarity between them."),
+ "8.G.5": ("D", "Use informal arguments to establish facts about the angle sum and exterior angle of triangles, about the angles created when parallel lines are cut by a transversal, and the angle-angle criterion for similarity of triangles."),
+ "8.G.6": ("D", "Explain a proof of the Pythagorean Theorem and its converse."),
+ "8.G.7": ("D", "Apply the Pythagorean Theorem to determine unknown side lengths in right triangles in real-world and mathematical problems in two and three dimensions."),
  "7.G.6": ("D", "Solve real-world and mathematical problems involving area, volume and surface area of two- and three-dimensional objects composed of triangles, quadrilaterals, polygons, cubes, and right prisms."),
  "6.G.1": ("D", "Find the area of right triangles, other triangles, special quadrilaterals, and polygons by composing into rectangles or decomposing into triangles and other shapes; apply these techniques in the context of solving real-world and mathematical problems."),
  "3.MD.3": ("B", "Draw a scaled picture graph and a scaled bar graph to represent a data set with several categories. Solve one- and two-step \"how many more\" and \"how many less\" problems using information presented in scaled bar graphs."),
@@ -357,6 +363,12 @@ LESSONS = [
   {"direct": ["A.3.a", "A.3.c", "A.3.d"], "builds": ["A.3.b"], "mp": ["MP.2.a", "MP.4.b", "MP.2.c"], "ccr": ["7.EE.4"]}),
  ("level-3/lesson-5-3.html", "5.3", "Solving literal formulas, and a general strategy",
   {"direct": ["A.2.a"], "builds": ["Q.4.a", "Q.5.a", "A.2.b"], "mp": ["MP.2.a", "MP.4.b", "MP.3.a"], "ccr": ["A-CED.4"]}),
+ ("level-3/lesson-6-1.html", "6.1", "Angles: relationships and parallel lines cut by a transversal",
+  {"direct": [], "builds": ["A.2.a"], "mp": ["MP.2.a", "MP.3.a", "MP.4.a"], "ccr": ["7.G.5", "8.G.5"]}),
+ ("level-3/lesson-6-2.html", "6.2", "The Pythagorean theorem: proof, applications, and converse",
+  {"direct": ["Q.4.e"], "builds": ["Q.2.b"], "mp": ["MP.1.b", "MP.3.a", "MP.4.a"], "ccr": ["8.G.6", "8.G.7"]}),
+ ("level-3/lesson-6-3.html", "6.3", "Similar figures and scale drawings (Thales' theorem)",
+  {"direct": ["Q.3.b", "Q.3.c"], "builds": ["A.2.a"], "mp": ["MP.1.b", "MP.2.a", "MP.4.a"], "ccr": ["7.G.1", "8.G.4", "8.G.5"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"
