@@ -28,8 +28,8 @@
   <div class="wrap">
     <a class="logo" href="./"><img src="img/learnged-logo-horizontal.svg" alt="LearnGED home"></a>
     <div class="tools">
-      <button type="button" id="b-big" aria-pressed="false">A+ Larger text</button>
-      <button type="button" id="b-hc" aria-pressed="false">High contrast</button>
+      <button type="button" id="b-big" data-off="A+ Larger text" data-on="A− Smaller text">A+ Larger text</button>
+      <button type="button" id="b-hc" data-off="High contrast" data-on="Less contrast">High contrast</button>
       <nav class="lang" aria-label="Language / Idioma">
         <a href="./" lang="en" data-lang="en" aria-current="true">EN</a>
         <a href="es/" lang="es" data-lang="es" >ES</a>
@@ -42,7 +42,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="badge">New: Math · Levels 1 and 2</span>
+        <span class="badge">New: Math · Levels 1 to 4</span>
         <h1>Free GED<sup>®</sup> prep, in English and Spanish, at your own pace.</h1>
         <p class="lead">Build your foundation, study the four GED subjects, and practice with explanations that help you move forward.</p>
         <p><a class="btn" href="#routes">Get started <span aria-hidden="true">↓</span></a></p>
@@ -55,7 +55,7 @@
     <div class="routes" id="routes">
       <article class="route"><h2>Build your foundation</h2><p>Reading, writing and math, step by step, starting from what you already know.</p>
         <h3>Math</h3>
-        <div class="niveles"><a class="btn" href="math/level-1/" aria-label="Math, level 1">Level 1</a><a class="btn" href="math/level-2/" aria-label="Math, level 2">Level 2</a></div>
+        <div class="niveles"><a class="btn" href="math/level-1/" aria-label="Math, level 1">Level 1</a><a class="btn" href="math/level-2/" aria-label="Math, level 2">Level 2</a><a class="btn" href="math/level-3/" aria-label="Math, level 3">Level 3</a><a class="btn" href="math/level-4/" aria-label="Math, level 4">Level 4</a></div>
         <h3>Reading and writing</h3>
         <span class="soon">Coming soon</span></article>
       <article class="route"><h2>Prepare for the GED</h2><p>The four subjects of the test: math, reasoning through language arts, science and social studies.</p><span class="soon">Coming soon</span></article>
@@ -84,9 +84,10 @@
   var b=document.body;
   [['b-big','big'],['b-hc','hc']].forEach(function(x){
     var btn=document.getElementById(x[0]);
-    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}
+    function pon(on){btn.textContent=on?btn.getAttribute('data-on'):btn.getAttribute('data-off');}
+    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);pon(true);}
     btn.addEventListener('click',function(){
-      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+      var on=b.classList.toggle(x[1]); pon(on); set('learnged-'+x[1],on?'1':'0');
     });
   });
   document.querySelectorAll('.lang a').forEach(function(a){

@@ -46,8 +46,8 @@
   <div class="wrap">
     <a class="logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED"></a>
     <div class="tools">
-      <button type="button" id="b-big" aria-pressed="false">A+ Texto más grande</button>
-      <button type="button" id="b-hc" aria-pressed="false">Alto contraste</button>
+      <button type="button" id="b-big" data-off="A+ Texto más grande" data-on="A− Texto más pequeño">A+ Texto más grande</button>
+      <button type="button" id="b-hc" data-off="Alto contraste" data-on="Menor contraste">Alto contraste</button>
       <nav class="lang" aria-label="Language / Idioma">
         <a href="/math/level-2/" lang="en" hreflang="en" data-lang="en">EN</a>
         <a href="/es/matematicas/nivel-2/" lang="es" hreflang="es" data-lang="es" aria-current="true">ES</a>
@@ -133,9 +133,10 @@
   var b=document.body;
   [['b-big','big'],['b-hc','hc']].forEach(function(x){
     var btn=document.getElementById(x[0]);
-    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}
+    function pon(on){btn.textContent=on?btn.getAttribute('data-on'):btn.getAttribute('data-off');}
+    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);pon(true);}
     btn.addEventListener('click',function(){
-      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+      var on=b.classList.toggle(x[1]); pon(on); set('learnged-'+x[1],on?'1':'0');
     });
   });
   document.querySelectorAll('.lang a').forEach(function(a){

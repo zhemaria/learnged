@@ -38,7 +38,7 @@ TX = {
         "intro": "Eight topics, from whole numbers to tables and graphs. Each lesson has a practice page that makes new exercises every time.",
         "otro": '<span lang="es">Versión en español: <a href="/es/matematicas/nivel-1/" hreflang="es">Matemáticas · Nivel 1</a></span>',
         "maestros": 'For teachers: <a href="../ged-standards.html">standards map</a>',
-        "navlabel": "Topics", "big": "A+ Larger text", "hc": "High contrast", "tema": "Topic", "leccion": "Lesson", "practica": "practice", "ariaPrac": "Practice for lesson {}", "pronto": "coming soon",
+        "navlabel": "Topics", "big": "A+ Larger text", "small": "A− Smaller text", "hc": "High contrast", "lc": "Less contrast", "tema": "Topic", "leccion": "Lesson", "practica": "practice", "ariaPrac": "Practice for lesson {}", "pronto": "coming soon",
         "alt": '<link rel="alternate" hreflang="es" href="/es/matematicas/nivel-1/">',
         "pie": '<p class="tm">© 2026. <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a>. GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p>'},
  "es": {"dir": "es/matematicas/nivel-1", "lec": "leccion-{}.html", "prac": "practica-{}.html", "lang": "es", "title": "Matemáticas · Nivel 1 · LearnGED",
@@ -46,7 +46,7 @@ TX = {
         "intro": "Ocho temas, de los números enteros a las tablas y gráficas. Cada lección tiene una página de práctica que genera ejercicios nuevos cada vez.",
         "otro": '<span lang="en">English version: <a href="/math/level-1/" hreflang="en">Math · Level 1</a></span>',
         "maestros": 'Para maestros: <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>',
-        "navlabel": "Temas", "big": "A+ Texto más grande", "hc": "Alto contraste", "tema": "Tema", "leccion": "Lección", "practica": "práctica", "ariaPrac": "Práctica de la lección {}", "pronto": "próximamente",
+        "navlabel": "Temas", "big": "A+ Texto más grande", "small": "A− Texto más pequeño", "hc": "Alto contraste", "lc": "Menor contraste", "tema": "Tema", "leccion": "Lección", "practica": "práctica", "ariaPrac": "Práctica de la lección {}", "pronto": "próximamente",
         "alt": '<link rel="alternate" hreflang="en" href="/math/level-1/">',
         "pie": '<p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p>\n<p class="tm">© 2026. Licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license">CC BY-NC-SA 4.0</a>. GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>'}}
 
@@ -121,8 +121,8 @@ def construye(L, temas=None, extras=None, tx=None):
   <div class="wrap">
     <a class="logo" href="{X["home"]}"><img src="/img/learnged-logo-horizontal.svg" alt="{X["logoalt"]}"></a>
     <div class="tools">
-      <button type="button" id="b-big" aria-pressed="false">{X["big"]}</button>
-      <button type="button" id="b-hc" aria-pressed="false">{X["hc"]}</button>
+      <button type="button" id="b-big" data-off="{X["big"]}" data-on="{X["small"]}">{X["big"]}</button>
+      <button type="button" id="b-hc" data-off="{X["hc"]}" data-on="{X["lc"]}">{X["hc"]}</button>
       <nav class="lang" aria-label="Language / Idioma">
         <a href="/{tx["en"]["dir"]}/" lang="en" hreflang="en" data-lang="en"{' aria-current="true"' if L == "en" else ""}>EN</a>
         <a href="/{tx["es"]["dir"]}/" lang="es" hreflang="es" data-lang="es"{' aria-current="true"' if L == "es" else ""}>ES</a>
@@ -151,9 +151,10 @@ def construye(L, temas=None, extras=None, tx=None):
   var b=document.body;
   [['b-big','big'],['b-hc','hc']].forEach(function(x){{
     var btn=document.getElementById(x[0]);
-    if(get('learnged-'+x[1])==='1'){{b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}}
+    function pon(on){{btn.textContent=on?btn.getAttribute('data-on'):btn.getAttribute('data-off');}}
+    if(get('learnged-'+x[1])==='1'){{b.classList.add(x[1]);pon(true);}}
     btn.addEventListener('click',function(){{
-      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+      var on=b.classList.toggle(x[1]); pon(on); set('learnged-'+x[1],on?'1':'0');
     }});
   }});
   document.querySelectorAll('.lang a').forEach(function(a){{
@@ -245,7 +246,42 @@ def _tx3():
     return X
 TX3 = _tx3()
 
+# ---------------- Level 4 · Mastering the GED and problem solving ----------------
+TEMAS4 = {
+ "en": [
+  ("1", "Analytic geometry", [("1-1", "The coordinate plane: ordered pairs, distance, and midpoint"), ("1-2", "Slope: idea, formula, and meaning"), ("1-3", "Equations of a line: slope-intercept, point-slope, and standard form")]),
+  ("2", "3D volume and polynomials", [("2-1", "Volume of spheres, cones, and pyramids"), ("2-2", "Composite 3D figures and surface area"), ("2-3", "Polynomials: types, adding, subtracting, and multiplying")]),
+  ("3", "Multiplying and factoring", [("3-1", "Multiplying binomials: FOIL and special products"), ("3-2", "Factoring: common factor and difference of squares"), ("3-3", "Factoring trinomials (a = 1 and a ≠ 1)")]),
+  ("4", "Quadratic equations", [("4-1", "Solving quadratic equations by factoring"), ("4-2", "Completing the square"), ("4-3", "The quadratic formula, the discriminant, and applications")]),
+  ("5", "Rational expressions", [("5-1", "Simplifying rational expressions: factor and cancel"), ("5-2", "Adding, subtracting, multiplying, and dividing rational expressions"), ("5-3", "Solving rational equations and modeling")]),
+  ("6", "Systems of linear equations", [("6-1", "Solving systems by substitution"), ("6-2", "Solving systems by elimination, and types of systems"), ("6-3", "The graphing method, applications, and modeling with systems")]),
+  ("7", "Systems of inequalities and functions", [("7-1", "Systems of linear inequalities: graphing the solution region"), ("7-2", "Relations and functions, f(x) notation, domain and range"), ("7-3", "Average rate of change and types of functions")]),
+  ("8", "Modeling with functions and a practice GED test", [("8-1", "Quadratic functions: the parabola, the vertex, and the intercepts"), ("8-2", "Exponential functions, growth and decay, and a first look at logarithms"), ("8-3", "Final project and practice GED math test")])],
+ "es": [
+  ("1", "Geometría analítica", [("1-1", "El plano cartesiano: pares ordenados, distancia y punto medio"), ("1-2", "La pendiente: concepto, fórmula e interpretación"), ("1-3", "Ecuaciones de la recta: pendiente-intercepto, punto-pendiente y forma estándar")]),
+  ("2", "Volumen 3D y polinomios", [("2-1", "Volumen de esferas, conos y pirámides"), ("2-2", "Figuras 3D compuestas y área de superficie"), ("2-3", "Polinomios: clasificación, suma, resta y multiplicación básica")]),
+  ("3", "Multiplicación y factorización", [("3-1", "Multiplicación de binomios: FOIL e identidades notables"), ("3-2", "Factorización: factor común y diferencia de cuadrados"), ("3-3", "Factorización de trinomios (a = 1 y a ≠ 1)")]),
+  ("4", "Ecuaciones cuadráticas", [("4-1", "Resolver ecuaciones cuadráticas por factorización"), ("4-2", "Completar el cuadrado"), ("4-3", "La fórmula cuadrática, el discriminante y aplicaciones")]),
+  ("5", "Expresiones racionales complejas", [("5-1", "Simplificar expresiones racionales: factorizar y cancelar"), ("5-2", "Sumar, restar, multiplicar y dividir expresiones racionales"), ("5-3", "Resolver ecuaciones con expresiones racionales y modelado")]),
+  ("6", "Sistemas de ecuaciones lineales", [("6-1", "Resolver sistemas de ecuaciones por sustitución"), ("6-2", "Resolver sistemas por eliminación y clasificar sistemas"), ("6-3", "Método gráfico, aplicaciones y modelado con sistemas")]),
+  ("7", "Sistemas de desigualdades y funciones", [("7-1", "Sistemas de desigualdades lineales: graficar la región solución"), ("7-2", "Relaciones vs. funciones, notación f(x) y dominio/rango"), ("7-3", "Tasa de cambio promedio e identificar tipos de funciones")]),
+  ("8", "Modelado de funciones y simulacro GED", [("8-1", "Funciones cuadráticas: la parábola, el vértice y los interceptos"), ("8-2", "Funciones exponenciales, crecimiento/decaimiento e introducción a logaritmos"), ("8-3", "Proyecto final integrador y simulacro GED Mathematical Reasoning")])]}
+
+def _tx4():
+    import copy
+    X = copy.deepcopy(TX)
+    for L in X:
+        for k, v in X[L].items():
+            X[L][k] = v.replace("level-1", "level-4").replace("nivel-1", "nivel-4").replace("Level 1", "Level 4").replace("Nivel 1", "Nivel 4")
+    X["en"]["h1"] = "Math · Level 4 · Mastering the GED and problem solving"
+    X["es"]["h1"] = "Matemáticas · Nivel 4 · Dominio del GED y resolución de problemas"
+    X["en"]["intro"] = "Eight topics, from the coordinate plane to functions and a practice GED test. Each lesson will have a practice page that makes new exercises every time."
+    X["es"]["intro"] = "Ocho temas, del plano cartesiano a las funciones y un simulacro del GED. Cada lección tendrá una página de práctica que genera ejercicios nuevos cada vez."
+    return X
+TX4 = _tx4()
+
 if __name__ == "__main__":
     print("Level 1 ok:", construye("en"), "English lessons ·", construye("es"), "lecciones en español")
     print("Level 2 ok:", construye("en", TEMAS2, EXTRAS2, TX2), "English lessons ·", construye("es", TEMAS2, EXTRAS2, TX2), "lecciones en español")
     print("Level 3 ok:", construye("en", TEMAS3, EXTRAS3, TX3), "English lessons ·", construye("es", TEMAS3, EXTRAS3, TX3), "lecciones en español")
+    print("Level 4 ok:", construye("en", TEMAS4, {"en": {}, "es": {}}, TX4), "English lessons ·", construye("es", TEMAS4, {"en": {}, "es": {}}, TX4), "lecciones en español")

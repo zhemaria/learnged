@@ -21,8 +21,8 @@
   <div class="wrap">
     <a class="logo" href="./"><img src="../img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED"></a>
     <div class="tools">
-      <button type="button" id="b-big" aria-pressed="false">A+ Texto más grande</button>
-      <button type="button" id="b-hc" aria-pressed="false">Alto contraste</button>
+      <button type="button" id="b-big" data-off="A+ Texto más grande" data-on="A− Texto más pequeño">A+ Texto más grande</button>
+      <button type="button" id="b-hc" data-off="Alto contraste" data-on="Menor contraste">Alto contraste</button>
       <nav class="lang" aria-label="Language / Idioma">
         <a href="../" lang="en" data-lang="en" >EN</a>
         <a href="./" lang="es" data-lang="es" aria-current="true">ES</a>
@@ -35,7 +35,7 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="badge">Nuevo: Matemáticas · Niveles 1 y 2</span>
+        <span class="badge">Nuevo: Matemáticas · Niveles 1 al 4</span>
         <h1>Preparación gratuita para el GED<sup>®</sup>, en español e inglés y a su propio ritmo.</h1>
         <p class="lead">Fortalezca sus bases, estudie las cuatro materias del examen y practique con explicaciones que le ayuden a avanzar.</p>
         <p><a class="btn" href="#rutas">Comenzar <span aria-hidden="true">↓</span></a></p>
@@ -48,7 +48,7 @@
     <div class="routes" id="rutas">
       <article class="route"><h2>Construya sus bases</h2><p>Lectura, escritura y matemáticas, paso a paso, a partir de lo que ya sabe.</p>
         <h3>Matemáticas</h3>
-        <div class="niveles"><a class="btn" href="matematicas/nivel-1/" aria-label="Matemáticas, nivel 1">Nivel 1</a><a class="btn" href="matematicas/nivel-2/" aria-label="Matemáticas, nivel 2">Nivel 2</a></div>
+        <div class="niveles"><a class="btn" href="matematicas/nivel-1/" aria-label="Matemáticas, nivel 1">Nivel 1</a><a class="btn" href="matematicas/nivel-2/" aria-label="Matemáticas, nivel 2">Nivel 2</a><a class="btn" href="matematicas/nivel-3/" aria-label="Matemáticas, nivel 3">Nivel 3</a><a class="btn" href="matematicas/nivel-4/" aria-label="Matemáticas, nivel 4">Nivel 4</a></div>
         <h3>Lectura y escritura</h3>
         <span class="soon">Próximamente</span></article>
       <article class="route"><h2>Prepárese para el GED</h2><p>Las cuatro materias del examen: matemáticas, razonamiento a través de las artes del lenguaje, ciencias y estudios sociales.</p><span class="soon">Próximamente</span></article>
@@ -77,9 +77,10 @@
   var b=document.body;
   [['b-big','big'],['b-hc','hc']].forEach(function(x){
     var btn=document.getElementById(x[0]);
-    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);btn.setAttribute('aria-pressed','true');}
+    function pon(on){btn.textContent=on?btn.getAttribute('data-on'):btn.getAttribute('data-off');}
+    if(get('learnged-'+x[1])==='1'){b.classList.add(x[1]);pon(true);}
     btn.addEventListener('click',function(){
-      var on=b.classList.toggle(x[1]); btn.setAttribute('aria-pressed',on?'true':'false'); set('learnged-'+x[1],on?'1':'0');
+      var on=b.classList.toggle(x[1]); pon(on); set('learnged-'+x[1],on?'1':'0');
     });
   });
   document.querySelectorAll('.lang a').forEach(function(a){
