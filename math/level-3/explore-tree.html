@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 8.2 · explore page (English) — built by tools/build_n3_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore · Lesson 8.2 · From the tree to the table · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+  .sim-res{font-size:1.25rem;font-weight:700;text-align:center;min-height:1.6em;margin:8px 0;color:var(--tema-d);}
+  .dados{display:flex;gap:18px;justify-content:center;margin:8px 0;}
+  .tabla-sim{border-collapse:collapse;margin:10px auto;font-size:16px;}
+  .tabla-sim caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-sim th,.tabla-sim td{border:1px solid #c8c8c8;padding:5px 12px;text-align:center;}
+  .tabla-sim th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla{border-collapse:collapse;margin:10px auto;font-size:17px;}
+  .arbol-tabla th,.arbol-tabla td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;}
+  .arbol-tabla th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla td.marca{background:#fff8e1;outline:3px solid #f9a825;}
+  .arbol-tabla td[tabindex]{cursor:pointer;}
+  .pasos-arbol{font-weight:700;color:var(--tema-d);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="lesson-8-2.html">← Back to Lesson 8.2</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 8 · Counting and probability</div>
+    <h1>Explore: from the tree to the table</h1>
+    <div class="meta">An interactive activity to explore what you learned in Lesson 8.2. It goes with the lesson and its practice page.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#tree">From the tree to the table</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="tree" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>From the tree to the table</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Two balls are taken out of a jar, one after the other. Build the tree diagram step by step and see how each path becomes a cell of the two-way table. Choose a cell of the table to highlight its path on the tree.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo"><label for="ar-r">Red balls</label><input type="number" id="ar-r" min="1" max="10" value="4"></div>
+        <div class="campo"><label for="ar-a">Blue balls</label><input type="number" id="ar-a" min="1" max="10" value="3"></div>
+        <label class="casilla" style="align-self:flex-end;"><input type="checkbox" id="ar-con"> With replacement</label></div>
+        <p class="nota" id="ar-modo"></p>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="ar-ant">◀ Back</button><button type="button" class="btn" id="ar-sig">Next step ▶</button><button type="button" class="btn-sec" id="ar-todo">Show all</button><button type="button" class="btn-sec" id="ar-cero">↺ Start over</button></div>
+        <p class="pasos-arbol" id="ar-paso"></p>
+        <p id="ar-narr" aria-live="polite"></p></div>
+      <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#c62828"></i>R = red ball</span><span><i style="background:#1565c0"></i>B = blue ball</span></div>
+      <div class="tabla-scroll" id="ar-svg"></div>
+      <h3>Two-way table</h3>
+      <div class="tabla-scroll" id="ar-tabla"></div>
+      <h3>Results and check</h3>
+      <div class="salida" id="ar-deriv" aria-live="polite"></div>
+      <div class="caja-tip"><strong>To check a tree:</strong> add the probabilities of all the paths. If they do not add up to 1, a branch is wrong.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 8 · Counting and probability · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script src="/math/prob3.js"></script>
+<script>
+var AR = {paso: 4};
+var NOMBRE_C = {R: T("red", "roja"), A: T("blue", "azul")};
+function fq(n, d){ var r = reduce(n, d); return r.q === 1 ? String(r.p) : r.p + "/" + r.q; }
+function fqH(n, d){ var r = reduce(n, d); return fracHTML(r.p, r.q); }
+function modelo(){
+  var r = Math.max(1, Math.min(10, +$("ar-r").value || 1)), a = Math.max(1, Math.min(10, +$("ar-a").value || 1)), con = $("ar-con").checked, T0 = r + a, T2 = con ? T0 : T0 - 1;
+  var c = {RR: [con ? r : r - 1, T2], RA: [a, T2], AR: [r, T2], AA: [con ? a : a - 1, T2]};
+  var D = T0 * T2, num = {RR: r * c.RR[0], RA: r * a, AR: a * r, AA: a * c.AA[0]};
+  return {r: r, a: a, con: con, T0: T0, T2: T2, c: c, D: D, num: num};
+}
+function svgFr(x, y, n, d, col){ return '<text x="' + x + '" y="' + (y - 3) + '" text-anchor="middle" font-size="15" font-weight="700" fill="' + col + '">' + n + '</text><line x1="' + (x - 14) + '" y1="' + y + '" x2="' + (x + 14) + '" y2="' + y + '" stroke="' + col + '" stroke-width="1.5"/><text x="' + x + '" y="' + (y + 15) + '" text-anchor="middle" font-size="15" font-weight="700" fill="' + col + '">' + d + "</text>"; }
+function pintaAR(marca){
+  var M = modelo(), p = AR.paso, CR = "#c62828", CA = "#1565c0", s = "";
+  $("ar-modo").textContent = M.con ? T("With replacement: the ball goes back.", "Con reemplazo: la bola se devuelve.") : T("Without replacement: the ball stays out.", "Sin reemplazo: la bola no se devuelve.");
+  var narr = [T("The jar has " + M.r + " red and " + M.a + " blue balls (" + M.T0 + " in all). We take out two, one after the other, and write down the colors.", "La urna tiene " + M.r + " bolas rojas y " + M.a + " azules (" + M.T0 + " en total). Se sacan dos, una tras otra, y se anotan los colores."),
+    T("First draw. Each branch shows its probability: the balls of that color out of the total.", "Primera extracción. Cada rama muestra su probabilidad: las bolas de ese color entre el total."),
+    M.con ? T("Second draw, with replacement: the ball goes back, the total stays " + M.T0 + ", and the draws are independent.", "Segunda extracción, con reemplazo: la bola se devuelve, el total sigue en " + M.T0 + " y las extracciones son independientes.") : T("Second draw, without replacement: the ball stays out, so the total drops to " + M.T2 + ", and the second draw depends on the first (dependent events).", "Segunda extracción, sin reemplazo: la bola no se devuelve, el total baja a " + M.T2 + " y la segunda depende de la primera (eventos dependientes)."),
+    T("Multiplication rule: the probability of each path is the product of its two branches.", "Regla del producto: la probabilidad de cada camino es el producto de sus dos ramas."),
+    T("Two-way table: the four results organized; together they add up to 1.", "Tabla de doble entrada: los cuatro resultados organizados; juntos suman 1.")];
+  $("ar-paso").textContent = T("Step ", "Paso ") + (p + 1) + T(" of 5", " de 5");
+  $("ar-narr").textContent = narr[p];
+  /* jar */
+  s += '<path d="M30 160 L110 160 L104 270 Q70 284 36 270 Z" fill="#fff8e1" stroke="#8d6e63" stroke-width="3"/>';
+  for (var i = 0; i < M.T0; i++) s += '<circle cx="' + (46 + (i % 4) * 16) + '" cy="' + (180 + Math.floor(i / 4) * 17) + '" r="7" fill="' + (i < M.r ? CR : CA) + '"/>';
+  var lados = {RR: [80, "R", "R"], RA: [175, "R", "A"], AR: [300, "A", "R"], AA: [395, "A", "A"]}, marcado = function(k){ return marca === k ? 6 : 3; };
+  if (p >= 1){
+    s += lineaG([130, 230], [300, 128], CR, marca && marca[0] === "R" ? 6 : 3) + lineaG([130, 230], [300, 348], CA, marca && marca[0] === "A" ? 6 : 3);
+    s += svgFr(200, 160, M.r, M.T0, CR) + svgFr(200, 318, M.a, M.T0, CA);
+    s += '<circle cx="315" cy="128" r="16" fill="' + CR + '"/><text x="315" y="134" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">R</text><circle cx="315" cy="348" r="16" fill="' + CA + '"/><text x="315" y="354" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">' + T("B", "A") + "</text>";
+  }
+  if (p >= 2){
+    ["RR", "RA", "AR", "AA"].forEach(function(k){
+      var y0 = k[0] === "R" ? 128 : 348, y = lados[k][0], col = k[1] === "R" ? CR : CA, mid = [(331 + 530) / 2, (y0 + y) / 2];
+      s += lineaG([331, y0], [530, y], col, marcado(k)) + svgFr(mid[0], mid[1] + (y < y0 ? -22 : 30), M.c[k][0], M.c[k][1], col);
+      s += '<circle cx="545" cy="' + y + '" r="15" fill="' + col + '"/><text x="545" y="' + (y + 6) + '" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">' + (k[1] === "R" ? "R" : T("B", "A")) + "</text>";
+    });
+  }
+  if (p >= 3){
+    ["RR", "RA", "AR", "AA"].forEach(function(k){ var y = lados[k][0], r = reduce(M.num[k], M.D);
+      s += textoA([640, y - 18], (k[0] === "R" ? "R" : T("B", "A")) + (k[1] === "R" ? "R" : T("B", "A")), 13, "#424242", 700) + svgFr(640, y + 2, r.p, r.q, "#1b5e20") + textoA([640, y + 30], "≈ " + (M.num[k] / M.D).toFixed(3), 12, "#424242", 400); });
+  }
+  var voz = T("Tree diagram. Jar with " + M.r + " red and " + M.a + " blue balls. ", "Diagrama de árbol. Urna con " + M.r + " rojas y " + M.a + " azules. ") + (p >= 1 ? T("First draw: red " + M.r + "/" + M.T0 + ", blue " + M.a + "/" + M.T0 + ". ", "Primera: roja " + M.r + "/" + M.T0 + ", azul " + M.a + "/" + M.T0 + ". ") : "") +
+    (p >= 2 ? T("Second draw after red: red " + M.c.RR[0] + "/" + M.T2 + ", blue " + M.c.RA[0] + "/" + M.T2 + "; after blue: red " + M.c.AR[0] + "/" + M.T2 + ", blue " + M.c.AA[0] + "/" + M.T2 + ". ", "Segunda después de roja: roja " + M.c.RR[0] + "/" + M.T2 + ", azul " + M.c.RA[0] + "/" + M.T2 + "; después de azul: roja " + M.c.AR[0] + "/" + M.T2 + ", azul " + M.c.AA[0] + "/" + M.T2 + ". ") : "");
+  $("ar-svg").innerHTML = '<svg class="geo-svg" viewBox="0 0 700 440" role="img" aria-label="' + voz + '">' + s + "</svg>";
+  /* table */
+  if (p >= 4){
+    var celda = function(k){ return '<td tabindex="0" role="button" data-k="' + k + '"' + (marca === k ? ' class="marca"' : "") + ' aria-label="' + T("First " + NOMBRE_C[k[0]] + ", second " + NOMBRE_C[k[1]] + ": ", "Primera " + NOMBRE_C[k[0]] + ", segunda " + NOMBRE_C[k[1]] + ": ") + fq(M.num[k], M.D) + '">' + fqH(M.num[k], M.D) + "</td>"; };
+    $("ar-tabla").innerHTML = '<table class="arbol-tabla"><caption class="sr-only">' + T("Two-way table of the two draws", "Tabla de doble entrada de las dos extracciones") + '</caption><thead><tr><th scope="col"></th><th scope="col">' + T("2nd red", "2.ª roja") + '</th><th scope="col">' + T("2nd blue", "2.ª azul") + '</th><th scope="col">Total</th></tr></thead><tbody>' +
+      '<tr><th scope="row">' + T("1st red", "1.ª roja") + "</th>" + celda("RR") + celda("RA") + "<td>" + fqH(M.r, M.T0) + "</td></tr>" +
+      '<tr><th scope="row">' + T("1st blue", "1.ª azul") + "</th>" + celda("AR") + celda("AA") + "<td>" + fqH(M.a, M.T0) + "</td></tr>" +
+      '<tr><th scope="row">Total</th><td>' + fqH(M.num.RR + M.num.AR, M.D) + "</td><td>" + fqH(M.num.RA + M.num.AA, M.D) + "</td><td>1</td></tr></tbody></table>";
+    Array.prototype.forEach.call($("ar-tabla").querySelectorAll("td[data-k]"), function(td){
+      function elige_(){ pintaAR(td.getAttribute("data-k")); var f = $("ar-tabla").querySelector('td[data-k="' + td.getAttribute("data-k") + '"]'); if (f) f.focus(); }
+      td.addEventListener("click", elige_); td.addEventListener("keydown", function(ev){ if (ev.key === "Enter" || ev.key === " "){ ev.preventDefault(); elige_(); } });
+    });
+    var mismo = M.num.RR + M.num.AA, dist = M.num.RA + M.num.AR, alMenos = M.D - M.num.AA;
+    $("ar-deriv").innerHTML = '<div class="linea">' + T("Same color (RR or BB): ", "Mismo color (RR o AA): ") + fqH(mismo, M.D) + " ≈ " + (mismo / M.D).toFixed(3) + "</div>" +
+      '<div class="linea">' + T("Different colors (RB or BR): ", "Colores distintos (RA o AR): ") + fqH(dist, M.D) + " ≈ " + (dist / M.D).toFixed(3) + "</div>" +
+      '<div class="linea">' + T("At least one red (1 − P(BB)): ", "Al menos una roja (1 − P(AA)): ") + fqH(alMenos, M.D) + " ≈ " + (alMenos / M.D).toFixed(3) + "</div>" +
+      '<div class="linea veredicto">' + T("Check: the four paths add up to ", "Comprobación: los cuatro caminos suman ") + M.num.RR + " + " + M.num.RA + " + " + M.num.AR + " + " + M.num.AA + " = " + M.D + "/" + M.D + " = 1 ✓</div>" +
+      (marca ? '<div class="linea">' + T("Path ", "Camino ") + NOMBRE_C[marca[0]] + " → " + NOMBRE_C[marca[1]] + ": " + fqH(marca[0] === "R" ? M.r : M.a, M.T0) + " × " + fqH(M.c[marca][0], M.c[marca][1]) + " = " + fqH(M.num[marca], M.D) + "</div>" : "");
+  } else { $("ar-tabla").innerHTML = '<p class="nota">' + T("The table fills in at step 5. Go through the steps or press “Show all”.", "La tabla se completa en el paso 5. Avance los pasos o pulse «Ver todo».") + "</p>"; $("ar-deriv").innerHTML = ""; }
+  $("ar-ant").disabled = p === 0; $("ar-sig").disabled = p === 4;
+}
+$("ar-ant").addEventListener("click", function(){ if (AR.paso > 0){ AR.paso--; pintaAR(); } });
+$("ar-sig").addEventListener("click", function(){ if (AR.paso < 4){ AR.paso++; pintaAR(); } });
+$("ar-todo").addEventListener("click", function(){ AR.paso = 4; pintaAR(); });
+$("ar-cero").addEventListener("click", function(){ AR.paso = 0; pintaAR(); });
+["ar-r", "ar-a"].forEach(function(id){ $(id).addEventListener("input", function(){ pintaAR(); }); });
+$("ar-con").addEventListener("change", function(){ pintaAR(); });
+pintaAR();
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -93,8 +93,9 @@ def construye(L, temas=None, extras=None, tx=None):
             if existe(X["lec"].format(k)):
                 p = f' <a class="prac" href="{X["prac"].format(k)}" aria-label="{X["ariaPrac"].format(num)}">{X["practica"]}</a>' if existe(X["prac"].format(k)) else ""
                 items.append(f'<li><span class="num" aria-hidden="true">{num}</span><a class="lec" href="{X["lec"].format(k)}"><span class="sr">{X["leccion"]} {num}: </span>{titulo}</a>{p}</li>')
-                x = extras[L].get(k)
-                if x and existe(x[1]):
+                xs = extras[L].get(k)
+                for x in (xs if isinstance(xs, list) else [xs] if xs else []):  # one extra, or a list of them
+                    if not existe(x[1]): continue
                     pe = f' <a class="prac" href="{x[2]}" aria-label="{X["practica"]}: {x[3]}">{X["practica"]}</a>' if x[2] and existe(x[2]) else ""
                     items.append(f'<li class="extra"><span class="num" aria-hidden="true"></span><a class="lec" href="{x[1]}">{x[3]}</a>{pe}</li>')
             else:
@@ -237,12 +238,20 @@ EXTRAS3 = {
         "3-3": ("speed", "speed-irrationals.html", None, "Speed practice: irrational numbers against the clock"),
         "6-1": ("explore", "explore-angles.html", None, "Explore: angles, parallel lines, and a transversal"),
         "6-2": ("explore", "explore-pythagoras.html", None, "Explore: the Pythagorean theorem in real life"),
-        "6-3": ("explore", "explore-similar.html", None, "Explore: congruent and similar triangles")},
+        "6-3": ("explore", "explore-similar.html", None, "Explore: congruent and similar triangles"),
+        "8-2": [("explore", "explore-chance.html", None, "Explore: dice, cards, and spinners (simulations)"),
+                ("explore", "explore-tree.html", None, "Explore: tree diagrams and two-way tables")],
+        "8-3": [("project", "project-level-3.html", None, "Final project: My data analysis (template)"),
+                ("check", "final-check-level-3.html", None, "Level 3 final check: 25 questions")]},
  "es": {"1-3": ("check", "comprobacion-tema-1.html", None, "Comprobación del Tema 1: las cinco reglas de los exponentes"),
         "3-3": ("speed", "rapidez-irracionales.html", None, "Ejercicios de rapidez: números irracionales contra reloj"),
         "6-1": ("explore", "explorar-angulos.html", None, "Explorar: ángulos, paralelas y una transversal"),
         "6-2": ("explore", "explorar-pitagoras.html", None, "Explorar: el teorema de Pitágoras en la vida real"),
-        "6-3": ("explore", "explorar-semejanza.html", None, "Explorar: triángulos congruentes y semejantes")}}
+        "6-3": ("explore", "explorar-semejanza.html", None, "Explorar: triángulos congruentes y semejantes"),
+        "8-2": [("explore", "explorar-azar.html", None, "Explorar: dados, cartas y ruletas (simulaciones)"),
+                ("explore", "explorar-arbol.html", None, "Explorar: diagramas de árbol y tablas de doble entrada")],
+        "8-3": [("project", "proyecto-nivel-3.html", None, "Proyecto final: Mi análisis de datos (plantilla)"),
+                ("check", "evaluacion-final-nivel-3.html", None, "Evaluación final del Nivel 3: 25 preguntas")]}}
 
 def _tx3():
     import copy

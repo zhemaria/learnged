@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 8.3 · Proyecto final «Mi análisis de datos» — plantilla (español) — construida con tools/build_n3_proyecto.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proyecto final · Lección 8.3 · Proyecto final: Mi análisis de datos · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/project-level-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+  .sim-res{font-size:1.25rem;font-weight:700;text-align:center;min-height:1.6em;margin:8px 0;color:var(--tema-d);}
+  .dados{display:flex;gap:18px;justify-content:center;margin:8px 0;}
+  .tabla-sim{border-collapse:collapse;margin:10px auto;font-size:16px;}
+  .tabla-sim caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-sim th,.tabla-sim td{border:1px solid #c8c8c8;padding:5px 12px;text-align:center;}
+  .tabla-sim th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla{border-collapse:collapse;margin:10px auto;font-size:17px;}
+  .arbol-tabla th,.arbol-tabla td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;}
+  .arbol-tabla th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla td.marca{background:#fff8e1;outline:3px solid #f9a825;}
+  .arbol-tabla td[tabindex]{cursor:pointer;}
+  .pasos-arbol{font-weight:700;color:var(--tema-d);}
+  [hidden]{display:none !important;}
+  .rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin:10px 0;}
+  .rejilla label{font-size:13px;color:var(--gris);display:block;}
+  .rejilla input{width:100%;font-size:17px;padding:6px 8px;}
+  textarea.trabajo{width:100%;min-height:150px;font:inherit;font-size:17px;padding:10px;border:2px solid #b0bec5;border-radius:8px;}
+  .tabla-est{border-collapse:collapse;margin:10px 0;font-size:16px;width:100%;}
+  .tabla-est th,.tabla-est td{border:1px solid #c8c8c8;padding:6px 10px;text-align:left;}
+  .tabla-est th{background:var(--tema-bg);color:var(--tema-d);}
+  .guardado{font-size:14px;color:var(--gris);}
+  .lista-cierre label{display:flex;gap:10px;align-items:flex-start;margin:8px 0;}
+  .lista-cierre input{margin-top:5px;width:20px;height:20px;}
+  @media print{
+    .lg-bar,.saltar,.fila-btn,.no-imp,#gph-calc-btn,.gph-calc,[data-gph-calculadora],.indice,.volver{display:none !important;}
+    details.modulo{break-inside:auto;} textarea.trabajo{border:1px solid #000;min-height:0;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="leccion-8-3.html">← Volver a la Lección 8.3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 8 · Combinatoria y probabilidad</div>
+    <h1>Proyecto final · Mi análisis de datos</h1>
+    <div class="meta">Su plantilla de trabajo para el proyecto final del Nivel 3. Complétela, compruebe su trabajo y guárdela en PDF.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#instrucciones">Instrucciones del proyecto</a></li>
+      <li><a href="#estudiante">0 · Datos del estudiante y del conjunto</a></li>
+      <li><a href="#datos">1 · Conjunto de datos</a></li>
+      <li><a href="#estadisticos">2 · Cálculo de estadísticos</a></li>
+      <li><a href="#grafica">3 · Representación gráfica</a></li>
+      <li><a href="#interpretacion">4 · Interpretación escrita</a></li>
+      <li><a href="#probabilidad">5 · Cálculo de probabilidad</a></li>
+      <li><a href="#cierre">✓ Cómo cerrar el proyecto</a></li>
+      <li><a href="#rubrica">Rúbrica del proyecto</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="instrucciones" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Instrucciones del proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Este proyecto reúne lo aprendido en los ocho temas del Nivel 3 y es la última pieza del nivel. Aquí las destrezas sueltas se usan todas sobre unos mismos datos: los suyos. Tómeselo con calma; no es un ejercicio más, es la prueba de que el nivel quedó aprendido.</p>
+      <p>Elija un conjunto de datos real de su propio entorno (los gastos de un mes, las edades de su familia, las temperaturas de la semana, las calificaciones del semestre) y analícelo por completo. El proyecto debe incluir cinco componentes:</p>
+      <ol><li><strong>Conjunto de datos:</strong> entre 10 y 20 valores reales, con su fuente y su contexto descritos.</li>
+      <li><strong>Gráfica:</strong> un diagrama de caja y bigotes o un histograma, con todas sus etiquetas.</li>
+      <li><strong>Estadísticos:</strong> al menos tres cálculos (media, mediana, IQR u otro).</li>
+      <li><strong>Interpretación escrita:</strong> qué dicen los datos sobre su centro, su dispersión y su forma.</li>
+      <li><strong>Probabilidad:</strong> al menos un cálculo de probabilidad vinculado al contexto de los datos.</li></ol>
+      <div class="caja-tip">La plantilla calcula los estadísticos, construye la gráfica y ofrece comprobaciones, pero <strong>usted debe mostrar su procedimiento por escrito</strong>: el cálculo automático solo sirve para verificar el suyo.</div>
+      <div class="fila-btn no-imp"><button type="button" class="btn" id="b-pdf">Exportar como PDF</button><button type="button" class="btn-sec" id="b-borrar">Borrar todo</button><button type="button" class="btn" id="b-borrar-si" hidden>Sí, borrar</button><button type="button" class="btn-sec" id="b-borrar-no" hidden>No, conservar</button></div>
+      <p class="nota" id="borrar-msg" role="status"></p>
+      <p class="guardado" id="guardado" aria-live="polite">Su trabajo se guarda solo en este navegador. Para conservarlo, pulse «Exportar como PDF» y elija «Guardar como PDF» como destino.</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="estudiante">
+    <summary><span class="num" aria-hidden="true">2</span><h2>0 · Datos del estudiante y del conjunto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="p-nombre">Nombre del estudiante</label><input type="text" id="p-nombre" autocomplete="off" ></div><div class="campo" style="flex:1;min-width:220px;"><label for="p-fecha">Fecha de entrega</label><input type="date" id="p-fecha" autocomplete="off" ></div></div>
+      <div class="campos"><div class="campo" style="flex:1;min-width:220px;"><label for="p-titulo">Título del conjunto de datos</label><input type="text" id="p-titulo" autocomplete="off" ></div><div class="campo" style="flex:1;min-width:220px;"><label for="p-unidad">Unidad de medida (por ejemplo, dólares, °F, minutos)</label><input type="text" id="p-unidad" autocomplete="off" ></div></div>
+      <div class="campo"><label for="p-fuente">Fuente y contexto de los datos</label><textarea class="trabajo" id="p-fuente" style="min-height:90px"></textarea></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="datos">
+    <summary><span class="num" aria-hidden="true">3</span><h2>1 · Conjunto de datos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Escriba entre 10 y 20 valores numéricos reales. La plantilla los ordena de menor a mayor y calcula todo lo demás a partir de ellos.</p>
+      <div class="rejilla" id="rejilla"></div>
+      <div class="fila-btn no-imp"><button type="button" class="btn-sec" id="dt-mas">＋ Agregar dato</button><button type="button" class="btn-sec" id="dt-menos">− Quitar el último</button></div>
+      <div class="no-imp"><div class="campo"><label for="dt-pegar">Atajo opcional: pegue aquí sus datos separados por comas o espacios</label><textarea class="trabajo" id="dt-pegar" style="min-height:60px"></textarea></div>
+      <div class="fila-btn"><button type="button" class="btn-sec" id="dt-cargar">Cargar los datos pegados</button></div></div>
+      <p class="caja-aviso" id="dt-aviso" role="alert"></p>
+      <p><strong id="dt-cuenta"></strong></p>
+      <p>Datos ordenados de menor a mayor:</p><div id="dt-orden">—</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="estadisticos">
+    <summary><span class="num" aria-hidden="true">4</span><h2>2 · Cálculo de estadísticos</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Calcule al menos tres estadísticos a mano y muestre el procedimiento completo, no solo el resultado. El panel de comprobación sirve únicamente para verificar su trabajo.</p>
+      <div class="campo"><label for="est-trabajo">Procedimiento y resultados (escriba aquí)</label><textarea class="trabajo" id="est-trabajo"></textarea></div>
+      <h3>Comprobación automática (a partir de los datos de la sección 1)</h3>
+      <div class="tabla-scroll"><table class="tabla-est" id="est-tabla"></table></div>
+      <p class="nota">Los cuartiles se calculan con el método del curso: se ordena el conjunto, la mediana lo divide en dos mitades y Q1 y Q3 son las medianas de la mitad inferior y de la superior (si n es impar, la mediana no se incluye en ninguna mitad).</p>
+      <p id="est-lim"></p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="grafica">
+    <summary><span class="num" aria-hidden="true">5</span><h2>3 · Representación gráfica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija un diagrama de caja y bigotes o un histograma. La gráfica se construye con los datos de la sección 1 e incluye todas sus etiquetas.</p>
+      <div class="campos"><div class="campo"><label for="gr-tipo">Tipo de gráfica</label><select id="gr-tipo"><option value="caja">Diagrama de caja y bigotes</option><option value="hist">Histograma</option></select></div></div>
+      <div id="gr-hist" hidden><div class="campos"><div class="campo"><label for="gr-inicio">Inicio del primer intervalo</label><input type="text" inputmode="decimal" class="corto" id="gr-inicio" value="0"></div>
+        <div class="campo"><label for="gr-ancho">Ancho del intervalo</label><input type="text" inputmode="decimal" class="corto" id="gr-ancho" value="10"></div>
+        <div class="fila-btn no-imp" style="align-self:flex-end;"><button type="button" class="btn-sec" id="gr-sugerir">Sugerir intervalos</button></div></div></div>
+      <div id="gr-svg"></div>
+      <div class="campo"><label for="gr-texto">Título de la gráfica y explicación de su elección</label><textarea class="trabajo" id="gr-texto" style="min-height:90px"></textarea></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="interpretacion">
+    <summary><span class="num" aria-hidden="true">6</span><h2>4 · Interpretación escrita</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Redacte al menos cinco oraciones completas. Una gráfica sin interpretación queda incompleta: explique qué dicen sus datos.</p>
+      <div class="caja-tip"><strong>Guía de redacción: los tres aspectos que debe cubrir</strong><ul>
+        <li><strong>Centro:</strong> ¿alrededor de qué valor se agrupan los datos? (media, mediana)</li>
+        <li><strong>Dispersión:</strong> ¿qué tan separados están? (rango, IQR, longitud de los bigotes)</li>
+        <li><strong>Forma:</strong> ¿se reparten de manera simétrica, se cargan hacia un lado, hay valores llamativamente altos o bajos?</li>
+        <li>Cierre con una conclusión propia: ¿qué aprendió sobre la situación que midió?</li></ul></div>
+      <div class="campo"><label for="in-texto">Su interpretación</label><textarea class="trabajo" id="in-texto" style="min-height:200px"></textarea></div>
+      <p class="nota" id="in-cuenta" aria-live="polite"></p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="probabilidad">
+    <summary><span class="num" aria-hidden="true">7</span><h2>5 · Cálculo de probabilidad</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Plantee al menos una pregunta de probabilidad sobre su propio conjunto de datos y resuélvala. Exprese el resultado en fracción, decimal y porcentaje.</p>
+      <div class="campo"><label for="pr-pregunta">Pregunta de probabilidad que va a resolver</label><textarea class="trabajo" id="pr-pregunta" style="min-height:70px"></textarea></div>
+      <h3>Comprobación automática de la probabilidad</h3>
+      <div class="campos"><div class="campo"><label for="pr-cond">Condición del evento favorable</label><select id="pr-cond"><option value="mayor">Mayor que (>)</option><option value="mayorIg">Mayor o igual que (≥)</option><option value="menor">Menor que (<)</option><option value="menorIg">Menor o igual que (≤)</option><option value="igual">Igual a (=)</option><option value="entre">Entre dos valores (inclusive)</option></select></div>
+        <div class="campo"><label for="pr-v1">Valor de referencia</label><input type="text" inputmode="decimal" class="corto" id="pr-v1"></div>
+        <div class="campo" id="pr-v2c" hidden><label for="pr-v2">Segundo valor</label><input type="text" inputmode="decimal" class="corto" id="pr-v2"></div></div>
+      <div class="salida" id="pr-res" aria-live="polite"></div>
+      <div class="campo"><label for="pr-trabajo">Planteamiento y resolución (escriba aquí)</label><textarea class="trabajo" id="pr-trabajo"></textarea></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cierre">
+    <summary><span class="num" aria-hidden="true">8</span><h2>✓ Cómo cerrar el proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Marque lo que vaya completando. Los cuatro pasos importan; el segundo es el que de verdad revela si entendió.</p>
+      <div class="lista-cierre"><label><input type="checkbox"><span><strong>Proyecto completo y guardado en PDF</strong>, con los cinco componentes: datos, gráfica, estadísticos, interpretación y probabilidad. Es su constancia de haber terminado el Nivel 3.</span></label><label><input type="checkbox"><span><strong>Explicado en voz alta</strong>, de tres a cuatro minutos, a un familiar o grabándose con el teléfono. Diga de dónde salieron los datos, qué muestra la gráfica y qué concluye. Lo que no logre explicar en voz alta todavía no lo entendió del todo.</span></label><label><input type="checkbox"><span><strong>Revisado al día siguiente</strong> con la rúbrica de abajo en la mano, criterio por criterio, como si el trabajo fuera de otra persona.</span></label><label><input type="checkbox"><span><strong>Hoja de fórmulas del GED repasada</strong> antes de la evaluación final del nivel. En el examen la tendrá disponible, pero buscar una fórmula cuesta tiempo: conviene saber dónde está cada una.</span></label></div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="rubrica">
+    <summary><span class="num" aria-hidden="true">9</span><h2>Rúbrica del proyecto</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cinco criterios en cuatro niveles de desempeño (20 puntos en total). Léalos antes de empezar y vuelva a ellos al terminar, para evaluar su propio trabajo con honestidad.</p>
+      <div class="tabla-scroll"><table class="tabla-est"><caption class="sr-only">Rúbrica del proyecto final, con cinco criterios y cuatro niveles</caption>
+        <thead><tr><th scope="col">Criterio</th><th scope="col">Inicial (1)</th><th scope="col">En desarrollo (2)</th><th scope="col">Competente (3)</th><th scope="col">Destacado (4)</th></tr></thead>
+        <tbody><tr><th scope="row">1. Conjunto de datos</th><td>Datos inventados o sin describir.</td><td>Datos reales, pero sin fuente clara.</td><td>Conjunto de datos real y bien descrito.</td><td>Datos reales, relevantes y con su fuente y contexto explicados.</td></tr><tr><th scope="row">2. Representación gráfica</th><td>No incluye una gráfica válida.</td><td>Gráfica con errores o sin etiquetas.</td><td>Caja o histograma correcto con todas las etiquetas.</td><td>Gráfica clara, correcta y bien rotulada, adecuada a los datos.</td></tr><tr><th scope="row">3. Cálculo de estadísticos</th><td>No calcula estadísticos.</td><td>Calcula menos de tres o con errores.</td><td>Calcula correctamente al menos tres estadísticos.</td><td>Calcula varios estadísticos sin errores y los relaciona entre sí.</td></tr><tr><th scope="row">4. Interpretación escrita</th><td>No interpreta los datos.</td><td>Interpretación vaga o incoherente con los datos.</td><td>Interpretación escrita coherente con los datos.</td><td>Interpretación clara y profunda (centro, dispersión y forma).</td></tr><tr><th scope="row">5. Cálculo de probabilidad</th><td>No incluye probabilidad.</td><td>Cálculo de probabilidad con errores.</td><td>Cálculo de probabilidad correcto vinculado al contexto.</td><td>Probabilidad correcta, bien explicada y ligada al análisis.</td></tr></tbody></table></div>
+      <p class="nota">La nota del proyecto se combina con la de la evaluación final del Nivel 3 (25 preguntas).</p>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 8 · Combinatoria y probabilidad · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script src="/math/prob3.js"></script>
+<script>
+var CLAVE = "learnged-n3-proyecto-" + (ES ? "es" : "en"), MIN = 10, MAX = 20;
+/* (A) Data grid */
+function celda(i, v){
+  var d = document.createElement("div");
+  d.innerHTML = '<label for="dt-' + i + '">' + T("Value ", "Dato ") + (i + 1) + '</label><input type="text" inputmode="decimal" id="dt-' + i + '" autocomplete="off" value="' + (v === undefined || v === null ? "" : String(v).replace(/"/g, "")) + '">';
+  d.querySelector("input").addEventListener("input", todo);
+  return d;
+}
+function pintaRejilla(vals){ var r = $("rejilla"); r.innerHTML = ""; vals.forEach(function(v, i){ r.appendChild(celda(i, v)); }); }
+function valoresCrudos(){ return [].map.call(document.querySelectorAll("#rejilla input"), function(x){ return x.value; }); }
+function valores(){ return valoresCrudos().map(function(x){ return leeDecimal(String(x).replace(/,/g, "")); }).filter(function(v){ return v !== null; }); }
+function aviso(msg){ $("dt-aviso").className = msg ? "caja-aviso visible" : "caja-aviso"; $("dt-aviso").textContent = msg || ""; }
+$("dt-mas").addEventListener("click", function(){ var v = valoresCrudos(); if (v.length >= MAX){ aviso(T("The project takes at most " + MAX + " values.", "El proyecto admite un máximo de " + MAX + " datos.")); return; } v.push(""); pintaRejilla(v); aviso(""); todo(); $("dt-" + (v.length - 1)).focus(); });
+$("dt-menos").addEventListener("click", function(){ var v = valoresCrudos(); if (v.length <= 1) return; v.pop(); pintaRejilla(v); aviso(""); todo(); });
+$("dt-cargar").addEventListener("click", function(){
+  var partes = $("dt-pegar").value.split(/[\s;,]+/).map(function(x){ return x.trim(); }).filter(Boolean);
+  var nums = partes.map(function(x){ return leeDecimal(x); }).filter(function(v){ return v !== null; });
+  if (!nums.length){ aviso(T("No numbers were found in what you pasted.", "No se encontraron números en lo que pegó.")); return; }
+  if (nums.length > MAX){ nums = nums.slice(0, MAX); aviso(T("Only the first " + MAX + " values were loaded.", "Solo se cargaron los primeros " + MAX + " datos.")); } else aviso("");
+  pintaRejilla(nums); todo();
+});
+/* (B) Statistics */
+function moda(o){ var c = {}, mx = 0; o.forEach(function(v){ c[v] = (c[v] || 0) + 1; mx = Math.max(mx, c[v]); }); if (mx < 2) return T("none (no value repeats)", "no hay (ningún dato se repite)"); return Object.keys(c).filter(function(k){ return c[k] === mx; }).map(function(k){ return nm(+k); }).join(", "); }
+function r2_(x){ return nm(Math.round(x * 100) / 100); }
+function estadisticos(d){
+  if (d.length < 2) return null;
+  var c = cinco(d), media = d.reduce(function(s, x){ return s + x; }, 0) / d.length, L = limites(c);
+  return {n: d.length, media: media, c: c, iqr: c.q3 - c.q1, rango: c.max - c.min, moda: moda(c.o), L: L};
+}
+function pintaEst(E, d){
+  $("dt-cuenta").textContent = T("Valid values: ", "Datos válidos: ") + d.length + (d.length < MIN ? T(" (the project needs at least " + MIN + ")", " (el proyecto necesita al menos " + MIN + ")") : "");
+  $("dt-orden").innerHTML = d.length ? chips(ordena(d)) : "—";
+  var u = esc($("p-unidad").value.trim()), un = u ? " " + u : "";
+  var f = function(k, v){ return "<td>" + (E ? v : "—") + "</td>"; };
+  $("est-tabla").innerHTML = '<caption class="sr-only">' + T("Statistics calculated from your data", "Estadísticos calculados a partir de sus datos") + "</caption><tbody>" +
+    "<tr><th scope=\"row\">" + T("Number of values (n)", "Cantidad de datos (n)") + "</th>" + f(0, E && E.n) + "<th scope=\"row\">" + T("Mean", "Media") + "</th>" + f(0, E && r2_(E.media) + un) + "</tr>" +
+    "<tr><th scope=\"row\">" + T("Minimum", "Mínimo") + "</th>" + f(0, E && nm(E.c.min) + un) + "<th scope=\"row\">" + T("Maximum", "Máximo") + "</th>" + f(0, E && nm(E.c.max) + un) + "</tr>" +
+    "<tr><th scope=\"row\">" + T("First quartile (Q1)", "Primer cuartil (Q1)") + "</th>" + f(0, E && nm(E.c.q1) + un) + "<th scope=\"row\">" + T("Third quartile (Q3)", "Tercer cuartil (Q3)") + "</th>" + f(0, E && nm(E.c.q3) + un) + "</tr>" +
+    "<tr><th scope=\"row\">" + T("Median (Q2)", "Mediana (Q2)") + "</th>" + f(0, E && nm(E.c.med) + un) + "<th scope=\"row\">IQR</th>" + f(0, E && nm(E.iqr) + un) + "</tr>" +
+    "<tr><th scope=\"row\">" + T("Range (max − min)", "Rango (máx − mín)") + "</th>" + f(0, E && nm(E.rango) + un) + "<th scope=\"row\">" + T("Mode", "Moda") + "</th>" + f(0, E && E.moda) + "</tr></tbody>";
+  $("est-lim").innerHTML = E ? T("Outlier limits: Q1 − 1.5 × IQR = ", "Límites para valores atípicos: Q1 − 1.5 × IQR = ") + r2_(E.L.inf) + " · Q3 + 1.5 × IQR = " + r2_(E.L.sup) + ". " +
+    (function(){ var at = E.c.o.filter(function(v){ return v < E.L.inf || v > E.L.sup; }); return at.length ? T("Outliers: ", "Valores atípicos: ") + listaN(at) + "." : T("No value is an outlier.", "Ningún dato es atípico."); })() : "";
+}
+/* (C) Graph */
+function esc(x){ return String(x).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function sugerir(d){ if (d.length < 2) return; var o = ordena(d), r = o[o.length - 1] - o[0] || 1, w = Math.max(1, Math.ceil(r / 5)); var cand = [1, 2, 5, 10, 20, 25, 50, 100, 200, 500, 1000]; for (var i = 0; i < cand.length; i++) if (cand[i] >= w){ w = cand[i]; break; } $("gr-ancho").value = w; $("gr-inicio").value = Math.floor(o[0] / w) * w; }
+function pintaGraf(E, d){
+  var tipo = $("gr-tipo").value, tit = esc($("p-titulo").value.trim() || T("My data", "Mis datos")), u = esc($("p-unidad").value.trim());
+  $("gr-hist").hidden = tipo !== "hist";
+  if (!E || d.length < 2){ $("gr-svg").innerHTML = '<p class="nota">' + T("Type at least 2 values to see the graph.", "Escriba al menos 2 datos para ver la gráfica.") + "</p>"; return; }
+  if (E.c.min === E.c.max){ $("gr-svg").innerHTML = '<p class="nota">' + T("All the values are equal, so there is no spread to draw.", "Todos los datos son iguales: no hay dispersión que dibujar.") + "</p>"; return; }
+  var cab = '<p style="text-align:center;font-weight:700;margin:6px 0;">' + tit + (u ? " (" + u + ")" : "") + "</p>";
+  if (tipo === "caja"){
+    var at = E.c.o.filter(function(v){ return v < E.L.inf || v > E.L.sup; }), ok = E.c.o.filter(function(v){ return v >= E.L.inf && v <= E.L.sup; });
+    $("gr-svg").innerHTML = cab + cajaSVG([{c: E.c, atip: at, bigMin: ok[0], bigMax: ok[ok.length - 1]}], T("Box plot of " + tit + ": minimum ", "Diagrama de caja de " + tit + ": mínimo ") + nm(E.c.min) + ", Q1 " + nm(E.c.q1) + T(", median ", ", mediana ") + nm(E.c.med) + ", Q3 " + nm(E.c.q3) + T(", maximum ", ", máximo ") + nm(E.c.max) + ".", {rotulos: true});
+  } else {
+    var a0 = leeDecimal($("gr-inicio").value), w = leeDecimal($("gr-ancho").value);
+    if (a0 === null || w === null || w <= 0){ $("gr-svg").innerHTML = '<p class="nota">' + T("Type the start of the first interval and a width greater than 0.", "Escriba el inicio del primer intervalo y un ancho mayor que 0.") + "</p>"; return; }
+    var cl = [], mx = E.c.max; if (a0 > E.c.min) a0 = Math.floor(E.c.min / w) * w;
+    for (var a = a0; a <= mx && cl.length < 30; a += w) cl.push({a: a, b: a + w, f: d.filter(function(v){ return v >= a && v < a + w; }).length});
+    $("gr-svg").innerHTML = cab + histSVG(cl, T("Histogram of " + tit + ". ", "Histograma de " + tit + ". ") + cl.map(function(c){ return nm(c.a) + "–" + nm(c.b) + ": " + c.f; }).join("; "), {eje: u || T("Values", "Valores")}) +
+      '<p class="nota">' + T("Each interval includes its left end but not its right end.", "Cada intervalo incluye su extremo izquierdo, pero no el derecho.") + "</p>";
+  }
+}
+/* (D) Interpretation */
+function oraciones(s){ return (String(s).match(/[^.!?¡¿]*[a-záéíóúñü0-9][^.!?]*[.!?]/gi) || []).filter(function(x){ return x.trim().split(/\s+/).length >= 3; }).length; }
+/* (E) Probability */
+function pintaProb(d){
+  var cond = $("pr-cond").value, v1 = leeDecimal($("pr-v1").value), v2 = leeDecimal($("pr-v2").value), n = d.length;
+  $("pr-v2c").hidden = cond !== "entre";
+  if (!n || v1 === null || (cond === "entre" && v2 === null)){ $("pr-res").innerHTML = '<div class="linea">' + T("Choose a condition and type the reference value.", "Elija una condición y escriba el valor de referencia.") + "</div>"; return; }
+  var f = d.filter(function(x){ return cond === "mayor" ? x > v1 : cond === "mayorIg" ? x >= v1 : cond === "menor" ? x < v1 : cond === "menorIg" ? x <= v1 : cond === "igual" ? x === v1 : (x >= Math.min(v1, v2) && x <= Math.max(v1, v2)); }).length;
+  var h = '<div class="linea">' + T("Favorable cases: ", "Casos favorables: ") + f + T(" of ", " de ") + n + " → P = " + (f === 0 ? "0" : f === n ? "1" : tresFormas(f, n)) + "</div>";
+  if (n >= 2) h += '<div class="linea">' + T("Choosing two values at random, both favorable: with replacement ", "Al elegir dos datos al azar, los dos favorables: con reemplazo ") + (f ? tresFormas(f * f, n * n) : "0") + T("; without replacement ", "; sin reemplazo ") + (f >= 2 ? tresFormas(f * (f - 1), n * (n - 1)) : "0") + ".</div>";
+  $("pr-res").innerHTML = h;
+}
+/* (F) Saving */
+var CAMPOS = ["p-nombre", "p-fecha", "p-titulo", "p-unidad", "p-fuente", "est-trabajo", "gr-tipo", "gr-inicio", "gr-ancho", "gr-texto", "in-texto", "pr-pregunta", "pr-cond", "pr-v1", "pr-v2", "pr-trabajo"];
+function guarda(){
+  var e = {datos: valoresCrudos(), cierre: [].map.call(document.querySelectorAll(".lista-cierre input"), function(c){ return c.checked; })};
+  CAMPOS.forEach(function(id){ e[id] = $(id).value; });
+  try { localStorage.setItem(CLAVE, JSON.stringify(e)); $("guardado").textContent = T("Saved in this browser at ", "Guardado en este navegador a las ") + new Date().toLocaleTimeString(ES ? "es" : "en-US", {hour: "2-digit", minute: "2-digit"}) + "."; }
+  catch (err){ $("guardado").textContent = T("This browser cannot save. Export to PDF to keep your work.", "Este navegador no puede guardar. Exporte a PDF para conservar su trabajo."); }
+}
+function restaura(){
+  var e = null; try { e = JSON.parse(localStorage.getItem(CLAVE) || "null"); } catch (err){}
+  if (!e){ pintaRejilla(new Array(12).fill("")); return; }
+  CAMPOS.forEach(function(id){ if (e[id] !== undefined) $(id).value = e[id]; });
+  pintaRejilla(e.datos && e.datos.length ? e.datos : new Array(12).fill(""));
+  [].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c, i){ c.checked = !!(e.cierre && e.cierre[i]); });
+}
+var temporizador = null;
+function todo(){
+  var d = valores(), E = estadisticos(d);
+  pintaEst(E, d); pintaGraf(E, d); pintaProb(d);
+  var k = oraciones($("in-texto").value); $("in-cuenta").textContent = T("Sentences found: ", "Oraciones detectadas: ") + k + (k < 5 ? T(" (write at least 5)", " (escriba al menos 5)") : " ✓");
+  clearTimeout(temporizador); temporizador = setTimeout(guarda, 500);
+}
+CAMPOS.forEach(function(id){ $(id).addEventListener("input", todo); $(id).addEventListener("change", todo); });
+[].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c){ c.addEventListener("change", guarda); });
+$("gr-sugerir").addEventListener("click", function(){ sugerir(valores()); todo(); });
+$("b-pdf").addEventListener("click", function(){ document.querySelectorAll("details.modulo").forEach(function(x){ x.open = true; }); window.print(); });
+window.addEventListener("beforeprint", function(){ document.querySelectorAll("details.modulo").forEach(function(x){ x.open = true; }); });
+$("b-borrar").addEventListener("click", function(){ $("b-borrar").hidden = true; $("b-borrar-si").hidden = false; $("b-borrar-no").hidden = false; $("borrar-msg").textContent = T("Erase all your work? This cannot be undone.", "¿Borrar todo su trabajo? No se puede deshacer."); });
+$("b-borrar-no").addEventListener("click", function(){ $("b-borrar").hidden = false; $("b-borrar-si").hidden = true; $("b-borrar-no").hidden = true; $("borrar-msg").textContent = ""; });
+$("b-borrar-si").addEventListener("click", function(){ try { localStorage.removeItem(CLAVE); } catch (err){} CAMPOS.forEach(function(id){ var x = $(id); if (x.tagName === "SELECT") x.selectedIndex = 0; else x.value = ""; }); [].forEach.call(document.querySelectorAll(".lista-cierre input"), function(c){ c.checked = false; }); pintaRejilla(new Array(12).fill("")); $("b-borrar-no").click(); todo(); });
+restaura(); todo();
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

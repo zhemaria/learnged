@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 8.2 · Math Level 3 (English) — built by tools/build_n3_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 8.2 · Compound probability: with and without replacement · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 8 — Counting and probability</p>
+<h1>Lesson 8.2 · Compound probability: with and without replacement</h1>
+<p class="lema">Find the probability of two events in a row, with and without replacement, and write it as a fraction, a decimal, and a percent.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🎲</span> Chance and the tree diagram</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Find</strong> the probability of a simple event as favorable cases over possible cases.</li>
+<li><strong>Find</strong> the probability of two events with replacement (independent): P(A and B) = P(A) × P(B).</li>
+<li><strong>Find</strong> the probability without replacement (dependent): P(A and B) = P(A) × P(B after A).</li>
+<li><strong>Tell</strong> how replacement changes the probabilities.</li>
+<li><strong>Write</strong> the answer as a fraction, a decimal, and a percent.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.8.b</span> Determine the probability of simple and compound events.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.8.a</span> Use counting techniques to solve problems and determine combinations and permutations.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.a</span> Search for and recognize entry points for solving a problem.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.SP.5</span> <span class="std-nivel">Level D</span> Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood.</li><li><span class="std-cod std-ccr">7.SP.7</span> <span class="std-nivel">Level D</span> Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy.</li><li><span class="std-cod std-ccr">7.SP.8</span> <span class="std-nivel">Level D</span> Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-one-event">Review: the probability of one event</a></li>
+<li><a href="#s-with">Two events with replacement</a></li>
+<li><a href="#s-without">Two events without replacement</a></li>
+<li><a href="#s-three-forms">Three ways to write the answer</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-one-event"><span aria-hidden="true" class="num-seccion">1</span>Review: the probability of one event</h2>
+<p>In Lesson 8.1 you learned to count the possible outcomes. Probability uses that counting: it compares the favorable cases with the possible cases. This lesson studies the probability of two or more events together, and the key difference between doing it with replacement and without replacement.</p>
+<p>The probability of an event measures how likely it is to happen. It is the ratio of the favorable cases to the possible cases.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">P(event) = <span class="fracc"><span class="fa">favorable cases</span><span class="fb2">possible cases</span></span></p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: a bag has 4 red candies, 3 blue, and 2 green (9 in all). What is the probability of drawing a red one?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Count.</strong> Favorable cases (red): 4. Possible cases (total): 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> P(red) = <strong>4/9</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Theoretical and experimental</span>
+<p>In <a href="explore-chance.html">Explore: chance experiments</a> you can roll dice, draw cards, and spin a spinner hundreds of times, and watch the experimental probability get close to the theoretical one.</p>
+</div>
+<a class="enlace-interactivo" href="practice-8-2.html#one-event" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the probability of one event (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the probability of one event</span><span class="ei-sub">Review probability as favorable cases out of possible cases.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-with"><span aria-hidden="true" class="num-seccion">2</span>Two events with replacement</h2>
+<p>When the object is put back after the first event (<strong>with replacement</strong>), the second event is not affected: the events are <strong>independent</strong>. The probability that both happen is the product of their probabilities.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">P(A and B) = P(A) × P(B)</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: with replacement. From the bag (4 red, 3 blue, 2 green; 9 in all), you draw a candy, put it back, and draw another. What is the probability of red and then blue?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>P(red) = 4/9.</strong> Since it goes back, the total is still 9.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>P(blue) = 3/9.</strong> Multiply: <span class="fracc"><span class="fa">4</span><span class="fb2">9</span></span> × <span class="fracc"><span class="fa">3</span><span class="fb2">9</span></span> = <span class="fracc"><span class="fa">12</span><span class="fb2">81</span></span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> P(red and then blue) = <span class="fracc"><span class="fa">12</span><span class="fb2">81</span></span>, which simplifies to <strong><span class="fracc"><span class="fa">4</span><span class="fb2">27</span></span></strong>.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — One green</h3></div>
+<p class="pregunta-int" id="t-p1">Same bag (4 red, 3 blue, 2 green; 9 in all). P(green) in one draw is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">2/7</button>
+<button class="opcion" data-k="b" type="button">9/2</button>
+<button class="opcion" data-k="c" type="button">2/9</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — Red twice, with replacement</h3></div>
+<p class="pregunta-int" id="t-p2">With replacement, P(red and then red) is…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">4/9 × 3/8</button>
+<button class="opcion" data-k="b" type="button">4/9 × 4/9 = 16/81</button>
+<button class="opcion" data-k="c" type="button">8/9</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — The total</h3></div>
+<p class="pregunta-int" id="t-p3">With replacement, does the total number of candies change between the first and the second draw?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">No, it is still 9</button>
+<button class="opcion" data-k="b" type="button">Yes, it drops to 8</button>
+<button class="opcion" data-k="c" type="button">Yes, it goes up to 10</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-2.html#with" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: two events with replacement (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: two events with replacement</span><span class="ei-sub">Multiply probabilities when the denominator does not change.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-without"><span aria-hidden="true" class="num-seccion">3</span>Two events without replacement</h2>
+<p>When the object is not put back, the second event does change: there is one object fewer in all (and one fewer of the kind that came out). The events are <strong>dependent</strong>.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">P(A and B) = P(A) × P(B after A)</p>
+<svg viewBox="0 0 560 260" role="img" aria-label="A tree diagram for a bag with 4 red and 3 blue candies, without replacement. First draw: red 4/7, blue 3/7. After a red one: red 3/6, blue 3/6. The path red then blue is 4/7 × 3/6." style="width:100%;max-width:540px;height:auto;display:block;margin:12px auto;"><text x="40" y="155" font-size="15" font-weight="700" text-anchor="middle" fill="#5d4037">Bag</text><line x1="65" y1="150" x2="215" y2="70" stroke="#c62828" stroke-width="3"/><line x1="65" y1="150" x2="215" y2="230" stroke="#1565c0" stroke-width="3"/><text x="130" y="89" font-size="15" font-weight="700" text-anchor="middle" fill="#c62828">4</text><line x1="118" y1="92" x2="142" y2="92" stroke="#c62828"/><text x="130" y="107" font-size="15" font-weight="700" text-anchor="middle" fill="#c62828">7</text><text x="130" y="209" font-size="15" font-weight="700" text-anchor="middle" fill="#1565c0">3</text><line x1="118" y1="212" x2="142" y2="212" stroke="#1565c0"/><text x="130" y="227" font-size="15" font-weight="700" text-anchor="middle" fill="#1565c0">7</text><circle cx="230" cy="70" r="15" fill="#c62828"/><text x="230" y="76" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">R</text><circle cx="230" cy="230" r="15" fill="#1565c0"/><text x="230" y="236" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">B</text><line x1="245" y1="70" x2="395" y2="30" stroke="#c62828" stroke-width="3"/><line x1="245" y1="70" x2="395" y2="110" stroke="#1565c0" stroke-width="3"/><text x="318" y="29" font-size="15" font-weight="700" text-anchor="middle" fill="#c62828">3</text><line x1="306" y1="32" x2="330" y2="32" stroke="#c62828"/><text x="318" y="47" font-size="15" font-weight="700" text-anchor="middle" fill="#c62828">6</text><text x="318" y="115" font-size="15" font-weight="700" text-anchor="middle" fill="#1565c0">3</text><line x1="306" y1="118" x2="330" y2="118" stroke="#1565c0"/><text x="318" y="133" font-size="15" font-weight="700" text-anchor="middle" fill="#1565c0">6</text><circle cx="410" cy="30" r="15" fill="#c62828"/><text x="410" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">R</text><circle cx="410" cy="110" r="15" fill="#1565c0"/><text x="410" y="116" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">B</text><text x="440" y="116" font-size="16" font-weight="700" fill="#1b5e20">4/7 × 3/6</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: without replacement. From a bag with 4 red and 3 blue candies (7 in all), you draw one and do not put it back; then you draw another. What is the probability of red and then blue?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>P(red) = 4/7.</strong> </p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Without replacement, 6 candies are left, 3 of them blue.</strong> P(blue after) = 3/6.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Multiply.</strong> <span class="fracc"><span class="fa">4</span><span class="fb2">7</span></span> × <span class="fracc"><span class="fa">3</span><span class="fb2">6</span></span> = <span class="fracc"><span class="fa">12</span><span class="fb2">42</span></span> = <span class="fracc"><span class="fa">2</span><span class="fb2">7</span></span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> P(red and then blue) = <strong><span class="fracc"><span class="fa">2</span><span class="fb2">7</span></span></strong>.</p>
+</div>
+<div aria-label="With and without replacement (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The difference between probability with and without replacement</caption>
+<thead><tr><th scope="col">Situation</th><th scope="col">Kind of events</th><th scope="col">The denominator…</th></tr></thead>
+<tbody>
+<tr><td>With replacement (it goes back)</td><td>Independent</td><td>Does not change</td></tr>
+<tr><td>Without replacement (it stays out)</td><td>Dependent</td><td>Goes down by 1</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Adjust both numbers</span>
+<p>Without replacement, on the second draw both the numerator (if an object of that kind came out) and the denominator (always down by 1) change. Forgetting to adjust the denominator is the most common mistake.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — What is left</h3></div>
+<p class="pregunta-int" id="t-p4">A bag has 5 chips; one is taken out and not put back. How many are left for the second draw?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">4</button>
+<button class="opcion" data-k="b" type="button">5</button>
+<button class="opcion" data-k="c" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — Red twice, without replacement</h3></div>
+<p class="pregunta-int" id="t-p5">A bag has 4 red and 2 blue (6 in all). Without replacement, P(red and then red) is…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">4/6 × 4/6</button>
+<button class="opcion" data-k="b" type="button">4/6 × 3/5</button>
+<button class="opcion" data-k="c" type="button">4/6 + 3/5</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 6 — Independent events</h3></div>
+<p class="pregunta-int" id="t-p6">Which events are independent?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">The draws without replacement</button>
+<button class="opcion" data-k="b" type="button">There are never independent events</button>
+<button class="opcion" data-k="c" type="button">The draws with replacement</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">From the tree to the table</span>
+<p>In <a href="explore-tree.html">Explore: from the tree to the table</a> you can build a tree diagram step by step, with or without replacement, and see how each path becomes a cell of a two-way table.</p>
+</div>
+<a class="enlace-interactivo" href="practice-8-2.html#without" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: two events without replacement (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: two events without replacement</span><span class="ei-sub">Adjust the numerator and the denominator after the first draw.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-three-forms"><span aria-hidden="true" class="num-seccion">4</span>Three ways to write the answer</h2>
+<p>A probability can be written as a fraction, a decimal, or a percent. The GED test often asks for one of the three, so it helps to know how to convert between them.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: write the probability 1/4 in the three forms.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>As a fraction.</strong> 1/4.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>As a decimal.</strong> 1 ÷ 4 = 0.25.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>As a percent.</strong> 0.25 × 100 = 25%.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> <strong>1/4 = 0.25 = 25%</strong>.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Every probability is between 0 and 1</span>
+<p>A value of 0 means impossible, and 1 (or 100%) means certain. If a calculation gives a probability greater than 1, there is a mistake: you probably added when you needed to multiply.</p>
+</div>
+<a class="enlace-interactivo" href="practice-8-2.html#three-forms" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: fraction, decimal, and percent (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: fraction, decimal, and percent</span><span class="ei-sub">Write the answer in the three forms.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-8-2.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve three probability problems with replacement and three without replacement, drawing the tree diagram for each one. Write every answer as a fraction, a decimal, and a percent. Then check two of them in <a href="explore-tree.html">Explore: from the tree to the table</a>.</li>
+<li><strong>In your daily life.</strong> Put 5 coins of two kinds in a cup (for example, 3 pennies and 2 nickels). Draw two without looking, without putting the first back, and write down the result. Repeat 20 times. Compare how often you got two pennies with the probability 3/5 × 2/4.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">A bag has 3 red and 5 blue (8 in all). P(red) is…</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3/5</button><button class="opcion" data-k="b" type="button">5/8</button><button class="opcion" data-k="c" type="button">3/8</button><button class="opcion" data-k="d" type="button">8/3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">With replacement, the two events are…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">dependent</button><button class="opcion" data-k="b" type="button">impossible</button><button class="opcion" data-k="c" type="button">always equal</button><button class="opcion" data-k="d" type="button">independent</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">With replacement, P(A and B) is found with…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">P(A) + P(B)</button><button class="opcion" data-k="b" type="button">P(A) × P(B)</button><button class="opcion" data-k="c" type="button">P(A) − P(B)</button><button class="opcion" data-k="d" type="button">P(A) / P(B)</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">A coin is tossed twice. P(heads and then heads) is…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">1/2 × 1/2 = 1/4</button><button class="opcion" data-k="b" type="button">1/2 + 1/2 = 1</button><button class="opcion" data-k="c" type="button">1/2</button><button class="opcion" data-k="d" type="button">2</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">A bag has 5 chips; one is taken out without replacement. For the second draw there are…</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">5</button><button class="opcion" data-k="b" type="button">6</button><button class="opcion" data-k="c" type="button">4</button><button class="opcion" data-k="d" type="button">3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">A bag has 4 red and 3 blue (7). Without replacement, P(red and then blue) is…</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">4/7 × 3/6</button><button class="opcion" data-k="b" type="button">4/7 × 3/7</button><button class="opcion" data-k="c" type="button">4/7 + 3/6</button><button class="opcion" data-k="d" type="button">4/7 × 4/6</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Which probability is equal to 1/4?</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">0.40 = 40%</button><button class="opcion" data-k="b" type="button">0.25 = 25%</button><button class="opcion" data-k="c" type="button">0.14 = 14%</button><button class="opcion" data-k="d" type="button">4.0 = 400%</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">A valid probability can never be…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">equal to 0</button><button class="opcion" data-k="b" type="button">equal to 1</button><button class="opcion" data-k="c" type="button">greater than 1</button><button class="opcion" data-k="d" type="button">a fraction</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for compound probability (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for compound probability with and without replacement and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Classifying the events</th><td>I tell independent from dependent events and explain the effect of replacement.</td><td>I classify with occasional mistakes.</td><td>I cannot tell independent from dependent.</td></tr>
+<tr><th scope="row">Using the right formula</th><td>I use the right formula and adjust the numerator and denominator without replacement.</td><td>I multiply, but I do not adjust without replacement.</td><td>I do not multiply the probabilities.</td></tr>
+<tr><th scope="row">Finding and writing the answer</th><td>I calculate without mistakes, simplify, and write the answer as a fraction, a decimal, and a percent.</td><td>I make a mistake or do not simplify.</td><td>I make fraction mistakes.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you found the compound probability of two events: with replacement (independent, the denominator does not change) and without replacement (dependent, the denominator goes down by 1), using the tree diagram and writing the answer as a fraction, a decimal, and a percent.</p>
+<p><strong>Lesson 8.3 · Final project and strategies for the GED math test</strong> closes Level 3. You will bring together everything you learned in a data project and practice strategies for the GED test, including a final review of the eight topics.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-8-3.html">Lesson 8.3 · Final project and strategies for the GED math test</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>probability</dt><dd>Favorable cases ÷ possible cases. It is always between 0 and 1.</dd>
+<dt>with replacement</dt><dd>The object goes back before the next draw; the events are independent.</dd>
+<dt>without replacement</dt><dd>The object stays out; the events are dependent.</dd>
+<dt>independent events</dt><dd>Events in which one does not change the probability of the other.</dd>
+<dt>tree diagram</dt><dd>A drawing with one branch for each outcome; multiply along a path.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 8 · Lesson 8.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.3",
+ "review": "sections 2 and 3",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "The denominator is the total of all the candies, not only the ones that are not green.",
+    "b": "The fraction is upside down, and a probability is never more than 1."
+   },
+   "right": "2 green out of 9 in all: 2/9.",
+   "solution": "2/9."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "That would be without replacement. Here the candy goes back.",
+    "c": "You added. For both events, multiply."
+   },
+   "right": "With replacement the bag does not change: 4/9 × 4/9 = 16/81.",
+   "solution": "4/9 × 4/9 = 16/81."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "The candy goes back into the bag.",
+    "c": "No new candies are added."
+   },
+   "right": "The candy goes back, so the total is still 9.",
+   "solution": "No, it is still 9."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "The chip is not put back.",
+    "c": "A chip was taken out, not added."
+   },
+   "right": "5 − 1 = 4.",
+   "solution": "4 chips."
+  },
+  "p5": {
+   "ok": "b",
+   "hints": {
+    "a": "That would be with replacement. Without it, adjust the second fraction.",
+    "c": "For both events, multiply; do not add."
+   },
+   "right": "After a red one, 3 red are left out of 5: 4/6 × 3/5.",
+   "solution": "4/6 × 3/5 = 12/30 = 2/5."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Without replacement, the second draw depends on the first.",
+    "b": "With replacement, the bag is the same for the second draw."
+   },
+   "right": "With replacement, the first draw does not affect the second.",
+   "solution": "With replacement."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "The denominator is the total, 8, not the blue ones.",
+    "b": "5/8 is the probability of blue.",
+    "d": "The fraction is upside down."
+   },
+   "solution": "3/8."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "Dependent is without replacement.",
+    "b": "They can happen.",
+    "c": "They do not have to be equal."
+   },
+   "solution": "Independent."
+  },
+  "C": {
+   "ok": "b",
+   "hints": {
+    "a": "For “A and B”, multiply.",
+    "c": "For “A and B”, multiply.",
+    "d": "For “A and B”, multiply."
+   },
+   "solution": "P(A) × P(B)."
+  },
+  "D": {
+   "ok": "a",
+   "hints": {
+    "b": "You added. A probability is never more than 1.",
+    "c": "That is one toss. There are two.",
+    "d": "A probability is never more than 1."
+   },
+   "solution": "1/2 × 1/2 = 1/4."
+  },
+  "E": {
+   "ok": "c",
+   "hints": {
+    "a": "The chip is not put back.",
+    "b": "A chip was taken out, not added.",
+    "d": "Only one chip was taken out."
+   },
+   "solution": "5 − 1 = 4."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "Without replacement, the second total is 6, not 7.",
+    "c": "For both events, multiply.",
+    "d": "The second draw is blue: 3 blue are left."
+   },
+   "solution": "4/7 × 3/6 = 2/7."
+  },
+  "G": {
+   "ok": "b",
+   "hints": {
+    "a": "1 ÷ 4 = 0.25.",
+    "c": "1 ÷ 4 = 0.25, not 0.14.",
+    "d": "You divided the other way around."
+   },
+   "solution": "1/4 = 0.25 = 25%."
+  },
+  "H": {
+   "ok": "c",
+   "hints": {
+    "a": "0 means impossible: that is allowed.",
+    "b": "1 means certain: that is allowed.",
+    "d": "Probabilities are often fractions."
+   },
+   "solution": "Greater than 1."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!-- LearnGED · Nivel 3 · Lección 8.2 · Probabilidad compuesta: con y sin reemplazo — práctica (español) — construida con tools/build_n3_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 8.2 · Probabilidad compuesta: con y sin reemplazo · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="alternate" hreflang="en" href="/math/level-3/practice-8-2.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+  .sim-res{font-size:1.25rem;font-weight:700;text-align:center;min-height:1.6em;margin:8px 0;color:var(--tema-d);}
+  .dados{display:flex;gap:18px;justify-content:center;margin:8px 0;}
+  .tabla-sim{border-collapse:collapse;margin:10px auto;font-size:16px;}
+  .tabla-sim caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-sim th,.tabla-sim td{border:1px solid #c8c8c8;padding:5px 12px;text-align:center;}
+  .tabla-sim th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla{border-collapse:collapse;margin:10px auto;font-size:17px;}
+  .arbol-tabla th,.arbol-tabla td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;}
+  .arbol-tabla th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla td.marca{background:#fff8e1;outline:3px solid #f9a825;}
+  .arbol-tabla td[tabindex]{cursor:pointer;}
+  .pasos-arbol{font-weight:700;color:var(--tema-d);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al contenido</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Nivel 3 · Tema 8 · Combinatoria y probabilidad</div>
+    <h1>Lección 8.2 · Probabilidad compuesta: con y sin reemplazo</h1>
+    <div class="meta">Cuatro actividades de práctica en una sola página. Los ejercicios cambian cada vez. Si se equivoca, recibe una pista y otra oportunidad.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#un-evento">Probabilidad de un evento</a></li>
+      <li><a href="#con">Dos eventos con reemplazo</a></li>
+      <li><a href="#sin">Dos eventos sin reemplazo</a></li>
+      <li><a href="#arbol">Del árbol a la tabla</a></li>
+      <li><a href="#tres-formas">Fracción, decimal y porcentaje</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="un-evento" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Probabilidad de un evento</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La probabilidad de un evento es la razón entre los casos favorables y los casos posibles. Siempre está entre 0 (imposible) y 1 (seguro).</p>
+      <div class="formula">P(evento) = <span class="fracc"><span class="fa">casos favorables</span><span class="fb2">casos posibles</span></span></div>
+      <div class="caja-tip"><strong>Experimentos de azar:</strong> en <a href="explorar-azar.html">Explorar: experimentos de azar</a> puede lanzar dos dados, sacar cartas y girar una ruleta 1, 10 o 100 veces, y comparar la probabilidad teórica (la de la fórmula) con la experimental (la que sale al repetir).</div>
+      <h3>Practique: probabilidad de un evento</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="opciones" id="p1-opciones"></div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p1-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="con">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Dos eventos con reemplazo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si después de la primera extracción el objeto se devuelve, la bolsa queda igual para la segunda: los eventos son <strong>independientes</strong>. La probabilidad de los dos es el producto.</p>
+      <div class="formula">P(A y B) = P(A) × P(B)</div>
+      <h3>La bolsa que no cambia</h3>
+      <div class="panel" id="bc-panel"></div>
+      <h3>Practique: con reemplazo</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Probabilidad</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Escriba una fracción (como 4/27), un decimal o un porcentaje. No hace falta simplificar.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="sin">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Dos eventos sin reemplazo</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si el objeto no se devuelve, la bolsa cambia: queda uno menos en total, y uno menos del tipo que salió. Los eventos son <strong>dependientes</strong>.</p>
+      <div class="formula">P(A y B) = P(A) × P(B después de A)</div>
+      <h3>La bolsa que pierde un elemento</h3>
+      <div class="panel" id="bs-panel"></div>
+      <div class="caja-tip"><strong>Ajuste los dos números:</strong> en la segunda extracción el denominador siempre baja en 1, y el numerador baja en 1 solo si se busca el mismo color que ya salió.</div>
+      <h3>Practique: sin reemplazo</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Probabilidad</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Escriba una fracción (como 2/7), un decimal o un porcentaje. No hace falta simplificar.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="arbol">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Del árbol a la tabla</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un diagrama de árbol muestra todas las posibilidades de dos extracciones: en cada rama se escribe su probabilidad, y la probabilidad de un camino completo es el producto de sus ramas. Las probabilidades de todos los caminos suman 1. Una tabla de doble entrada organiza los mismos resultados.</p>
+      <div class="caja-tip">Construya un árbol paso a paso, con o sin reemplazo, y véalo convertirse en tabla en <a href="explorar-arbol.html">Explorar: del árbol a la tabla</a>.</div>
+      <div class="caja-tip"><strong>Para comprobar un árbol:</strong> sume las probabilidades de todos los caminos. Si no da 1, hay una rama mal calculada.</div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="tres-formas">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Fracción, decimal y porcentaje</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Una probabilidad se puede escribir de tres formas. El examen suele pedir una en particular.</p>
+      <table class="reglas"><caption>Cómo pasar de una forma a otra</caption>
+        <thead><tr><th scope="col">De</th><th scope="col">A</th><th scope="col">Se hace</th></tr></thead>
+        <tbody><tr><td>Fracción</td><td>Decimal</td><td>se divide el numerador entre el denominador</td></tr>
+        <tr><td>Decimal</td><td>Porcentaje</td><td>se multiplica por 100</td></tr>
+        <tr><td>Porcentaje</td><td>Fracción</td><td>se escribe sobre 100 y se simplifica</td></tr></tbody></table>
+      <h3>Conversor</h3>
+      <div class="panel"><div class="campo"><label for="tf-v">Probabilidad (fracción, decimal o porcentaje)</label><input type="text" id="tf-v" class="ancho" value="3/8" autocomplete="off"></div></div>
+      <div class="salida" aria-live="polite" id="tf-salida"></div>
+      <div class="caja-tip"><strong>Toda probabilidad está entre 0 y 1:</strong> si un cálculo da más de 1 (o más de 100%), hay un error; probablemente se sumó cuando había que multiplicar.</div>
+      <h3>Practique: las tres formas</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="opciones" id="p4-opciones"></div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p4-nuevo">Otro ejercicio</button></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al contenido</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Nivel 3 · Tema 8 · Combinatoria y probabilidad · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script src="/math/prob3.js"></script>
+<script>
+var COLORES = [{n: T("red", "rojo"), pl: T("red", "rojos"), l: "R", c: "#c62828"}, {n: T("blue", "azul"), pl: T("blue", "azules"), l: T("B", "A"), c: "#1565c0"}, {n: T("green", "verde"), pl: T("green", "verdes"), l: T("G", "V"), c: "#2e7d32"}];
+function cuenta(k, i){ return k + " " + (k === 1 ? COLORES[i].n : COLORES[i].pl); }
+function textoBolsa(n){ var T0 = n[0] + n[1] + n[2]; return T("A bag has " + n[0] + " red, " + n[1] + " blue, and " + n[2] + " green candies (" + T0 + " in all).", "Una bolsa tiene " + cuenta(n[0], 0) + ", " + cuenta(n[1], 1) + " y " + cuenta(n[2], 2) + " (" + T0 + " caramelos en total)."); }
+function bolsaAzar(){ var n; do { n = [aleatorio(1, 6), aleatorio(1, 6), aleatorio(0, 4)]; } while (n[0] + n[1] + n[2] < 5); return n; }
+function coloresConHay(n){ return [0, 1, 2].filter(function(i){ return n[i] > 0; }); }
+
+/* MODULE 1 · One event */
+function opF(p, q){ var r = reduce(p, q); return {html: fracHTML(p, q), clave: "f" + r.p + "/" + r.q}; }
+function genSimple(){
+  var tp = aleatorio(1, 3), f, T0, enun, o, pc = {}, pista;
+  if (tp === 1){ var n = bolsaAzar(); T0 = n[0] + n[1] + n[2]; var c = elige(coloresConHay(n)); f = n[c];
+    enun = textoBolsa(n) + T(" What is the probability of drawing a " + COLORES[c].n + " one?", " ¿Cuál es la probabilidad de sacar uno " + COLORES[c].n + "?");
+    o = [opF(f, T0), opF(f, T0 - f), opF(T0, f), opF(f, T0 + 1)]; var r1_ = reduce(f, T0 - f); pc["f" + r1_.p + "/" + r1_.q] = T("The denominator is the total number of possible cases, not the ones that are not " + COLORES[c].n + ".", "El denominador es el total de casos posibles, no los que no son " + COLORES[c].pl + "."); pista = T("Favorable: the " + COLORES[c].n + " candies. Possible: all of them.", "Favorables: los caramelos " + COLORES[c].pl + ". Posibles: todos."); }
+  else if (tp === 2){ var ev = elige([[T("an even number", "un número par"), 3], [T("a number greater than 4", "un número mayor que 4"), 2], [T("a 6", "un 6"), 1], [T("a number less than 3", "un número menor que 3"), 2], [T("a multiple of 3", "un múltiplo de 3"), 2]]); T0 = 6; f = ev[1];
+    enun = T("A six-sided die is rolled. What is the probability of getting " + ev[0] + "?", "Se lanza un dado de seis caras. ¿Cuál es la probabilidad de obtener " + ev[0] + "?"); o = [opF(f, 6), opF(6 - f, 6), opF(f, 5), opF(1, f + 1 === 6 ? 7 : f + 1)]; pista = T("A die has 6 possible results. How many of them are favorable?", "Un dado tiene 6 resultados posibles. ¿Cuántos son favorables?"); }
+  else { var ev2 = elige([[T("a heart", "un corazón"), 13], [T("an ace", "un as"), 4], [T("a face card (J, Q, or K)", "una figura (J, Q o K)"), 12], [T("a red card", "una carta roja"), 26], [T("the ace of spades", "el as de picas"), 1]]); T0 = 52; f = ev2[1];
+    enun = T("A card is drawn from a deck of 52. What is the probability of drawing " + ev2[0] + "?", "Se saca una carta de una baraja de 52. ¿Cuál es la probabilidad de sacar " + ev2[0] + "?"); o = [opF(f, 52), opF(52 - f, 52), opF(f, 13), opF(1, f)]; pista = T("A deck has 52 cards: 4 suits of 13, and each suit has 1 ace and 3 face cards.", "Una baraja tiene 52 cartas: 4 palos de 13, y cada palo tiene 1 as y 3 figuras."); }
+  return {enun: enun, opciones: o, correcta: o[0].clave, porClave: pc, pista: pista, bien: T("Favorable cases: " + f + "; possible cases: " + T0 + ".", "Casos favorables: " + f + "; casos posibles: " + T0 + "."), mal: T("P = favorable cases ÷ possible cases = " + f + "/" + T0 + ".", "P = casos favorables ÷ casos posibles = " + f + "/" + T0 + ".")};
+}
+
+/* MODULES 2 and 3 · The bag of candies */
+function bolsaSVG(cuentas, quitado, titulo){
+  var items = []; cuentas.forEach(function(k, i){ for (var j = 0; j < k; j++) items.push(i); });
+  var porFila = 9, filas = Math.ceil(items.length / porFila) || 1, W = 300, H = 76 + filas * 32, s = '<svg class="geo-svg" style="max-width:300px" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + titulo + '">';
+  s += '<path d="M20 20 Q20 ' + (H - 6) + " 150 " + (H - 6) + " Q280 " + (H - 6) + ' 280 20 Z" fill="#fff8e1" stroke="#8d6e63" stroke-width="3"/>';
+  var marcado = false;
+  items.forEach(function(ci, j){
+    var x = 44 + (j % porFila) * 27, y = 52 + Math.floor(j / porFila) * 32, col = COLORES[ci], fuera = quitado !== null && quitado !== undefined && ci === quitado && !marcado; if (fuera) marcado = true;
+    s += '<circle cx="' + x + '" cy="' + y + '" r="12" fill="' + (fuera ? "#fff" : col.c) + '" stroke="' + col.c + '" stroke-width="2"' + (fuera ? ' stroke-dasharray="3 3"' : "") + "/>" + texto([x, y + 1], col.l, 12, fuera ? col.c : "#fff");
+  });
+  return s + "</svg>";
+}
+function creaBolsa(pre, reemplazo){
+  var panel = $(pre + "-panel");
+  var sel = function(id, def){ return '<select id="' + pre + "-" + id + '">' + COLORES.map(function(c, i){ return '<option value="' + i + '"' + (i === def ? " selected" : "") + ">" + c.n + "</option>"; }).join("") + "</select>"; };
+  panel.innerHTML = '<div class="campos">' + COLORES.map(function(c, i){ return '<div class="campo"><label for="' + pre + "-n" + i + '">' + T(c.n.charAt(0).toUpperCase() + c.n.slice(1) + " candies", "Caramelos " + c.pl) + '</label><input type="text" inputmode="numeric" class="corto" id="' + pre + "-n" + i + '" value="' + [4, 3, 2][i] + '"></div>'; }).join("") + "</div>" +
+    '<div class="campos" style="margin-top:8px;"><div class="campo"><label for="' + pre + '-c1">' + T("First comes out", "Primero sale") + "</label>" + sel("c1", 0) + '</div><div class="campo"><label for="' + pre + '-c2">' + T("Then comes out", "Después sale") + "</label>" + sel("c2", reemplazo ? 1 : 0) + "</div></div>" +
+    '<p class="caja-aviso" id="' + pre + '-aviso" role="alert"></p>' +
+    '<div class="lado-a-lado"><div><p><strong>' + T("1st draw", "1.ª extracción") + '</strong></p><div id="' + pre + '-b1"></div></div><div><p><strong>' + T("2nd draw", "2.ª extracción") + '</strong></p><div id="' + pre + '-b2"></div></div></div>' +
+    '<div class="salida" id="' + pre + '-salida" aria-live="polite"></div>';
+  function pinta(){
+    var n = [0, 1, 2].map(function(i){ return leeEntero($(pre + "-n" + i).value); }), av = $(pre + "-aviso");
+    if (n.some(function(x){ return x === null || x < 0 || x > 9; })){ av.className = "caja-aviso visible"; av.textContent = T("Type whole numbers from 0 to 9.", "Escriba cantidades enteras de 0 a 9."); return; }
+    var c1 = +$(pre + "-c1").value, c2 = +$(pre + "-c2").value, T0 = n[0] + n[1] + n[2];
+    if (T0 < 2 || n[c1] === 0){ av.className = "caja-aviso visible"; av.textContent = T("The bag needs at least 2 candies and at least one of the first color you chose.", "La bolsa necesita al menos 2 caramelos y alguno del primer color elegido."); return; }
+    av.className = "caja-aviso"; av.textContent = "";
+    var n2 = n.slice(); if (!reemplazo) n2[c1]--;
+    var T2 = reemplazo ? T0 : T0 - 1, f2 = n2[c2];
+    $(pre + "-b1").innerHTML = bolsaSVG(n, null, T("Bag with " + n[0] + " red, " + n[1] + " blue, and " + n[2] + " green.", "Bolsa con " + n[0] + " rojos, " + n[1] + " azules y " + n[2] + " verdes."));
+    $(pre + "-b2").innerHTML = bolsaSVG(n, reemplazo ? null : c1, reemplazo ? T("The same bag: the candy went back.", "La misma bolsa: el caramelo se devolvió.") : T("The bag without the " + COLORES[c1].n + " candy that came out: " + T2 + " are left.", "Bolsa sin el caramelo " + COLORES[c1].n + " que salió: quedan " + T2 + "."));
+    var h = '<div class="linea">P(' + COLORES[c1].n + T(" first) = ", " primero) = ") + fracHTML(n[c1], T0) + ".</div>";
+    h += '<div class="linea">' + (reemplazo ? T("It goes back: the bag still has " + T0 + " candies, " + n[c2] + " " + COLORES[c2].n + ".", "Se devuelve: la bolsa sigue con " + T0 + " caramelos, " + cuenta(n[c2], c2) + ".") :
+          T("It does not go back: " + T2 + " candies are left, " + f2 + " " + COLORES[c2].n + (c1 === c2 ? " (one fewer, because one of that color already came out)." : "."), "No se devuelve: quedan " + T2 + " caramelos, " + cuenta(f2, c2) + (c1 === c2 ? " (uno menos, porque ya salió uno de ese color)." : "."))) +
+          " P(" + COLORES[c2].n + T(" next) = ", " después) = ") + fracHTML(f2, T2) + ".</div>";
+    var num = n[c1] * f2, den = T0 * T2;
+    h += '<div class="linea veredicto">P(' + COLORES[c1].n + T(" and then ", " y luego ") + COLORES[c2].n + ") = " + fracHTML(n[c1], T0) + " × " + fracHTML(f2, T2) + " = " + (num === 0 ? "0" : tresFormas(num, den)) + "</div>";
+    var otra = reemplazo ? n[c1] * (n[c2] - (c1 === c2 ? 1 : 0)) : n[c1] * n[c2], otroDen = reemplazo ? T0 * (T0 - 1) : T0 * T0;
+    h += '<div class="linea nota">' + (reemplazo ? T("Without replacement", "Sin reemplazo") : T("With replacement", "Con reemplazo")) + T(" it would be ", " daría ") + fracHTML(Math.max(otra, 0), otroDen) + " ≈ " + nm(Math.round(Math.max(otra, 0) / otroDen * 10000) / 10000) + ".</div>";
+    $(pre + "-salida").innerHTML = h;
+  }
+  panel.querySelectorAll("input").forEach(function(x){ x.addEventListener("input", pinta); });
+  panel.querySelectorAll("select").forEach(function(x){ x.addEventListener("change", pinta); });
+  pinta();
+}
+function genCon(){
+  var n = bolsaAzar(), T0 = n[0] + n[1] + n[2], c = coloresConHay(n), a = elige(c), b = elige(c), p = fr(n[a] * n[b], T0 * T0);
+  return {enun: textoBolsa(n) + T(" You draw a candy, <strong>put it back</strong>, and draw another. What is the probability of " + COLORES[a].n + " and then " + COLORES[b].n + "?", " Se saca un caramelo, <strong>se devuelve</strong> y se saca otro. ¿Cuál es la probabilidad de sacar " + COLORES[a].n + " y luego " + COLORES[b].n + "?"),
+    solucion: T("With replacement the total is still " + T0 + ": ", "Con reemplazo el total sigue siendo " + T0 + ": ") + fracHTML(n[a], T0) + " × " + fracHTML(n[b], T0) + " = " + fracHTML(n[a] * n[b], T0 * T0) + (mcd(n[a] * n[b], T0 * T0) > 1 ? " = " + fracHTML(p.n, p.d) : "") + ".",
+    evalua: function(v){ return evaluaProb(v, p, [{v: fr(n[a] * (n[b] - (a === b ? 1 : 0)), T0 * (T0 - 1)), msg: T("That would be without replacement. Here the candy goes back: the bag does not change.", "Así sería sin reemplazo. Aquí el caramelo se devuelve: la bolsa no cambia.")}, {v: fr(n[a] + n[b], T0), msg: T("For both events to happen, multiply the probabilities; do not add them.", "Para que ocurran los dos eventos se multiplican las probabilidades, no se suman.")}]); }};
+}
+function genSin(){
+  var n = bolsaAzar(), T0 = n[0] + n[1] + n[2], c = coloresConHay(n), a = elige(c), b = elige(c);
+  if (a === b && n[a] < 2) b = elige(c.filter(function(x){ return x !== a; }).concat([a]));
+  var f2 = n[b] - (a === b ? 1 : 0), p = fr(n[a] * f2, T0 * (T0 - 1));
+  var pistas = [{v: fr(n[a] * n[b], T0 * T0), msg: T("That would be with replacement. Without replacement, there is one candy fewer for the second draw.", "Así sería con reemplazo. Sin reemplazo, en la segunda extracción queda un caramelo menos.")}];
+  if (a === b) pistas.push({v: fr(n[a] * n[b], T0 * (T0 - 1)), msg: T("The denominator is right, but the numerator goes down too: a " + COLORES[a].n + " candy already came out.", "El denominador está bien, pero también baja el numerador: ya salió un caramelo " + COLORES[a].n + ".")});
+  return {enun: textoBolsa(n) + T(" You draw a candy, <strong>do not put it back</strong>, and draw another. What is the probability of " + COLORES[a].n + " and then " + COLORES[b].n + "?", " Se saca un caramelo, <strong>no se devuelve</strong>, y se saca otro. ¿Cuál es la probabilidad de sacar " + COLORES[a].n + " y luego " + COLORES[b].n + "?"),
+    solucion: T("First ", "Primero ") + fracHTML(n[a], T0) + T("; then " + (T0 - 1) + " candies are left and " + f2 + " are " + COLORES[b].n + ": ", "; después quedan " + (T0 - 1) + " caramelos y " + cuenta(f2, b) + ": ") + fracHTML(f2, T0 - 1) + T(". Product: ", ". Producto: ") + fracHTML(n[a] * f2, T0 * (T0 - 1)) + (p.n !== 0 && mcd(n[a] * f2, T0 * (T0 - 1)) > 1 ? " = " + fracHTML(p.n, p.d) : "") + ".",
+    evalua: function(v){ return evaluaProb(v, p, pistas, T("After the first draw, take 1 away from the total (and from the color that came out, if it is the same).", "Después de la primera extracción, reste 1 al total (y al color que salió, si es el mismo).")); }};
+}
+
+/* MODULE 4 · Three forms */
+function aFraccionDec(v){ for (var k = 0; k <= 6; k++){ var d = Math.pow(10, k); if (Math.abs(Math.round(v * d) - v * d) < 1e-9) return reduce(Math.round(v * d), d); } return null; }
+function pintaTF(){
+  var s = $("tf-v").value, v = leeProb(s), sal = $("tf-salida");
+  if (v === null){ sal.innerHTML = '<div class="linea">' + T("Type a fraction (3/8), a decimal (0.375), or a percent (37.5%).", "Escriba una fracción (3/8), un decimal (0.375) o un porcentaje (37.5%).") + "</div>"; return; }
+  var f = leeFraccion(String(s).trim().replace(/\s+/g, "")), fr_ = f && f.q !== 1 ? reduce(f.p, f.q) : aFraccionDec(v);
+  var h = '<div class="linea">' + T("Fraction: ", "Fracción: ") + (fr_ ? fracHTML(fr_.p, fr_.q) : "—") + '</div><div class="linea">' + T("Decimal: ", "Decimal: ") + nm(Math.round(v * 10000) / 10000) + '</div><div class="linea">' + T("Percent: ", "Porcentaje: ") + nm(Math.round(v * 100000) / 1000) + "%</div>";
+  if (v < 0 || v > 1) h += '<div class="linea veredicto">' + T("That value cannot be a probability: every probability is between 0 and 1 (between 0% and 100%).", "Ese valor no puede ser una probabilidad: toda probabilidad está entre 0 y 1 (entre 0% y 100%).") + "</div>";
+  else h += '<div class="linea veredicto">' + (v === 0 ? T("Probability 0: the event is impossible.", "Probabilidad 0: el evento es imposible.") : (v === 1 ? T("Probability 1: the event is certain.", "Probabilidad 1: el evento es seguro.") : T("It is a valid probability: it is between 0 and 1.", "Es una probabilidad válida: está entre 0 y 1."))) + "</div>";
+  sal.innerHTML = h;
+}
+function genTres(){
+  var tp = aleatorio(1, 4), par = elige([[1, 4], [3, 4], [1, 2], [1, 5], [2, 5], [3, 8], [1, 8], [7, 10], [3, 20], [9, 25]]), v = par[0] / par[1], o, pc = {};
+  if (tp === 1){ var d = nm(v); o = [{html: d, clave: "a"}, {html: nm(v + 0.1), clave: "b"}, {html: nm(par[1] / par[0]), clave: "c"}, {html: (par[0] + "." + par[1] === nm(par[1] / par[0]) ? nm(v * 10) : par[0] + "." + par[1]), clave: "d"}];
+    pc.c = T("Divide the numerator by the denominator, not the other way around.", "Se divide el numerador entre el denominador, no al revés."); if (par[0] + "." + par[1] !== nm(par[1] / par[0])) pc.d = T("You cannot convert a fraction by joining its numbers with a point.", "Una fracción no se convierte juntando sus números con un punto.");
+    return {enun: T("Write ", "Escriba ") + fracHTML(par[0], par[1]) + T(" as a decimal.", " como decimal."), opciones: o, correcta: "a", porClave: pc, pista: T("Divide the numerator by the denominator.", "Divida el numerador entre el denominador."), bien: par[0] + " ÷ " + par[1] + " = " + d + ".", mal: par[0] + " ÷ " + par[1] + " = " + d + "."}; }
+  if (tp === 2){ var pp = nm(v * 100); o = [{html: pp + "%", clave: "a"}, {html: nm(v) + "%", clave: "b"}, {html: nm(v * 1000) + "%", clave: "c"}, {html: par[0] + "%", clave: "d"}];
+    pc.b = T("You still need to multiply the decimal by 100.", "Falta multiplicar el decimal por 100."); pc.c = T("Multiply by 100, not by 1,000.", "Se multiplica por 100, no por 1,000.");
+    return {enun: T("Write ", "Escriba ") + fracHTML(par[0], par[1]) + T(" as a percent.", " como porcentaje."), opciones: o, correcta: "a", porClave: pc, pista: T("First divide to get the decimal, then multiply by 100.", "Primero divida para obtener el decimal y después multiplique por 100."), bien: par[0] + " ÷ " + par[1] + " = " + nm(v) + T(", and × 100 = ", ", y × 100 = ") + pp + "%.", mal: par[0] + " ÷ " + par[1] + " = " + nm(v) + T(", and × 100 = ", ", y × 100 = ") + pp + "%."}; }
+  if (tp === 3){ var pc100 = Math.round(v * 100); if (Math.abs(pc100 - v * 100) > 1e-9) return genTres(); var r = reduce(pc100, 100);
+    o = [opF(r.p, r.q), opF(pc100, 10), {html: fracHTML(1, pc100), clave: "inv"}, opF(pc100 + 5, 100)];
+    return {enun: T("Write " + pc100 + "% as a simplified fraction.", "Escriba " + pc100 + "% como fracción simplificada."), opciones: o, correcta: o[0].clave, porClave: {}, pista: T("Write it over 100 and simplify.", "Escríbalo sobre 100 y simplifique."), bien: pc100 + "% = " + fracHTML(pc100, 100) + " = " + fracHTML(r.p, r.q) + ".", mal: pc100 + "% = " + fracHTML(pc100, 100) + " = " + fracHTML(r.p, r.q) + "."}; }
+  var malo = elige([["1.2", T("is greater than 1", "es mayor que 1")], ["120%", T("is more than 100%", "pasa del 100%")], ["−0.3", T("is negative", "es negativo")], [fracHTML(5, 4), T("is greater than 1", "es mayor que 1")]]);
+  var buenos = baraja(["0.95", "3%", fracHTML(7, 8), "0", "100%", "0.5"]).slice(0, 3);
+  o = [{html: malo[0], clave: "m"}].concat(buenos.map(function(b, i){ return {html: b, clave: "b" + i}; }));
+  return {enun: T("Which of these values <strong>cannot</strong> be a probability?", "¿Cuál de estos valores <strong>no</strong> puede ser una probabilidad?"), opciones: o, correcta: "m", porClave: {}, pista: T("A probability is between 0 and 1, that is, between 0% and 100%.", "Una probabilidad está entre 0 y 1, es decir, entre 0% y 100%."),
+    bien: T("It " + malo[1] + ": a probability is always between 0 and 1.", "Ese valor " + malo[1] + ": una probabilidad está siempre entre 0 y 1."), mal: T("The one that cannot be is ", "El que no puede ser es ") + malo[0] + T(", because it " + malo[1] + ".", ", porque " + malo[1] + ".")};
+}
+
+/* Start */
+OMR("p1", genSimple);
+creaBolsa("bc", true);
+creaPracticaLibre("p2", genCon);
+creaBolsa("bs", false);
+creaPracticaLibre("p3", genSin);
+$("tf-v").addEventListener("input", pintaTF); pintaTF();
+OMR("p4", genTres);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

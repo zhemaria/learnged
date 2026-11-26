@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 8.1 · practice (English) — built by tools/build_n3_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Practice · Lesson 8.1 · The counting principle, permutations, and combinations · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 8 · Counting and probability</div>
+    <h1>Lesson 8.1 · The counting principle, permutations, and combinations</h1>
+    <div class="meta">Five practice activities on one page. The exercises change every time. If you make a mistake, you get a hint and another try.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#counting">The counting principle</a></li>
+      <li><a href="#factorial">The factorial</a></li>
+      <li><a href="#permutations">Permutations: order matters</a></li>
+      <li><a href="#combinations">Combinations: order does not matter</a></li>
+      <li><a href="#decide">Does order matter?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="counting" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>The counting principle</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>If one decision can be made in m ways and another in n ways, the two together can be made in m × n ways. With more decisions, keep multiplying the choices for each one.</p>
+      <h3>The growing tree</h3>
+      <p>Put together a menu. Each branch of the tree is a choice; the leaves at the end are all the possible meals.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:170px;"><label for="ar-a">Main dishes: <span id="ar-av"></span></label><input type="range" id="ar-a" min="1" max="4" value="2"></div>
+        <div class="campo" style="flex:1;min-width:170px;"><label for="ar-b">Drinks: <span id="ar-bv"></span></label><input type="range" id="ar-b" min="1" max="4" value="3"></div>
+        <div class="campo" style="flex:1;min-width:170px;"><label for="ar-c">Desserts: <span id="ar-cv"></span></label><input type="range" id="ar-c" min="0" max="3" value="0"></div></div></div>
+      <div id="ar-svg"></div>
+      <div class="salida" aria-live="polite" id="ar-salida"></div>
+      <h3>Practice: how many possibilities are there?</h3>
+      <div class="practica" id="p1">
+        <div class="enun" id="p1-enun"></div>
+        <div class="campos"><div class="campo"><label for="p1-r">Total</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p1-r"></div></div>
+        <p class="nota">Type a whole number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p1-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p1-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p1-fb" role="status"></div>
+        <p class="marcador" id="p1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="factorial">
+    <summary><span class="num" aria-hidden="true">2</span><h2>The factorial</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The factorial of a number, n!, is the product of all the whole numbers from n down to 1. By agreement, 0! = 1. It grows very fast, so simplify quotients before you multiply.</p>
+      <div class="formula">n! = n × (n − 1) × … × 2 × 1</div>
+      <h3>Factorial explorer</h3>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:170px;"><label for="fc-n">n: <span id="fc-nv"></span></label><input type="range" id="fc-n" min="0" max="10" value="5"></div>
+        <div class="campo" style="flex:1;min-width:170px;"><label for="fc-k">Divide by k! with k = <span id="fc-kv"></span></label><input type="range" id="fc-k" min="0" max="10" value="3"></div></div></div>
+      <div class="salida" aria-live="polite" id="fc-salida"></div>
+      <h3>Practice: calculate</h3>
+      <div class="practica" id="p2">
+        <div class="enun" id="p2-enun"></div>
+        <div class="campos"><div class="campo"><label for="p2-r">Result</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p2-r"></div></div>
+        <p class="nota">Type a whole number. Simplify before you multiply.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p2-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p2-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p2-fb" role="status"></div>
+        <p class="marcador" id="p2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="permutations">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Permutations: order matters</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A <strong>permutation</strong> counts how many ways you can put in order r items chosen from n. Use it when the order changes the result: a podium, a code, an order of arrival.</p>
+      <div class="formula">P(n, r) = <span class="fracc"><span class="fa">n!</span><span class="fb2">(n − r)!</span></span> = n × (n − 1) × … (r factors)</div>
+      <h3>Filling the places</h3>
+      <p>There are n people and r places. Anyone can go in the first place; in the second, one person fewer; and so on.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:170px;"><label for="pm-n">People (n): <span id="pm-nv"></span></label><input type="range" id="pm-n" min="2" max="8" value="5"></div>
+        <div class="campo" style="flex:1;min-width:170px;"><label for="pm-r">Places (r): <span id="pm-rv"></span></label><input type="range" id="pm-r" min="1" max="8" value="3"></div></div>
+        <div class="slots" id="pm-slots" aria-hidden="true"></div></div>
+      <div class="salida" aria-live="polite" id="pm-salida"></div>
+      <h3>Practice: permutations</h3>
+      <div class="practica" id="p3">
+        <div class="enun" id="p3-enun"></div>
+        <div class="campos"><div class="campo"><label for="p3-r">Total</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p3-r"></div></div>
+        <p class="nota">Type a whole number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p3-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p3-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p3-fb" role="status"></div>
+        <p class="marcador" id="p3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="combinations">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Combinations: order does not matter</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>A <strong>combination</strong> counts how many ways you can choose a group when order does not matter: a committee, a team, a hand of cards. It is the permutation divided by r!, because each group shows up r! times among the permutations, once for each order.</p>
+      <div class="formula">C(n, r) = <span class="fracc"><span class="fa">n!</span><span class="fb2">r! (n − r)!</span></span> = <span class="fracc"><span class="fa">P(n, r)</span><span class="fb2">r!</span></span></div>
+      <h3>From order to group</h3>
+      <p>With small numbers you can see them all: each row is the different orders of one group.</p>
+      <div class="panel"><div class="campos">
+        <div class="campo" style="flex:1;min-width:170px;"><label for="cb-n">Items (n): <span id="cb-nv"></span></label><input type="range" id="cb-n" min="2" max="6" value="4"></div>
+        <div class="campo" style="flex:1;min-width:170px;"><label for="cb-r">Chosen (r): <span id="cb-rv"></span></label><input type="range" id="cb-r" min="1" max="4" value="2"></div></div></div>
+      <div class="salida" aria-live="polite" id="cb-salida"></div>
+      <div id="cb-lista"></div>
+      <h3>Practice: combinations</h3>
+      <div class="practica" id="p4">
+        <div class="enun" id="p4-enun"></div>
+        <div class="campos"><div class="campo"><label for="p4-r">Total</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="p4-r"></div></div>
+        <p class="nota">Type a whole number.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="p4-comprobar">Check</button>
+          <button type="button" class="btn-sec" id="p4-nuevo">New exercise</button>
+        </div>
+        <div class="fb" id="p4-fb" role="status"></div>
+        <p class="marcador" id="p4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="decide">
+    <summary><span class="num" aria-hidden="true">5</span><h2>Does order matter?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Before you calculate, ask yourself: “If I change the order, does the result change?”</p>
+      <table class="reglas"><caption>How to decide which tool to use</caption>
+        <thead><tr><th scope="col">Situation</th><th scope="col">Tool</th><th scope="col">Example</th></tr></thead>
+        <tbody><tr><td>Decisions of different kinds</td><td>Counting principle</td><td>dish, drink, and dessert</td></tr>
+        <tr><td>From the same group, and order matters</td><td>Permutation</td><td>president, secretary, and treasurer</td></tr>
+        <tr><td>From the same group, and order does not matter</td><td>Combination</td><td>a committee of 3</td></tr></tbody></table>
+      <h3>Practice: which tool would you use?</h3>
+      <div class="practica" id="p5">
+        <div class="enun" id="p5-enun"></div>
+        <div class="opciones" id="p5-opciones"></div>
+        <div class="fb" id="p5-fb" role="status"></div>
+        <div class="fila-btn"><button type="button" class="btn-sec" id="p5-nuevo">New exercise</button></div>
+        <p class="marcador" id="p5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 8 · Counting and probability · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script src="/math/prob3.js"></script>
+<script>
+/* MODULE 1 · The tree */
+var OPCIONES = [[T("chicken", "pollo"), T("pasta", "pasta"), T("fish", "pescado"), T("rice", "arroz")], [T("water", "agua"), T("juice", "jugo"), T("coffee", "café"), T("tea", "té")], [T("flan", "flan"), T("fruit", "fruta"), T("ice cream", "helado")]];
+var COL_AR = ["#b71c1c", "#0d47a1", "#1b5e20"];
+function pintaArbol(){
+  var ns = [+$("ar-a").value, +$("ar-b").value, +$("ar-c").value].filter(function(x, i){ return i < 2 || x > 0; });
+  $("ar-av").textContent = $("ar-a").value; $("ar-bv").textContent = $("ar-b").value; $("ar-cv").textContent = $("ar-c").value === "0" ? T("none", "ninguno") : $("ar-c").value;
+  var total = ns.reduce(function(a, b){ return a * b; }, 1), paso = total > 24 ? 12 : 22, H = Math.max(total * paso + 30, 160), niveles = ns.length;
+  var xs = [30].concat(ns.map(function(x, i){ return 30 + (i + 1) * (niveles === 3 ? 170 : 230); }));
+  var s = '<svg class="geo-svg" viewBox="0 0 640 ' + H + '" role="img" aria-label="' + T("Tree with " + total + " outcomes: " + ns.join(" times ") + ".", "Árbol de " + total + " combinaciones: " + ns.join(" por ") + ".") + '">';
+  function nodo(nivel, y0, y1, ruta){
+    var y = (y0 + y1) / 2;
+    if (nivel === niveles){ if (total <= 24) s += textoA([xs[nivel] + 10, y], ruta.join(" · "), 13, "#424242", 400, "start"); return; }
+    var n = ns[nivel], h = (y1 - y0) / n;
+    for (var i = 0; i < n; i++){
+      var yc = y0 + h * i + h / 2, nombre = OPCIONES[nivel][i];
+      s += lineaG([xs[nivel], y], [xs[nivel + 1], yc], COL_AR[nivel], 2) + '<circle cx="' + xs[nivel + 1] + '" cy="' + f1(yc) + '" r="4" fill="#424242"/>';
+      if (nivel < niveles - 1 || total <= 12) s += textoA([xs[nivel + 1] - 6, yc - 9], nombre, 13, COL_AR[nivel], 700, "end");
+      nodo(nivel + 1, y0 + h * i, y0 + h * (i + 1), ruta.concat([nombre]));
+    }
+  }
+  s += '<circle cx="30" cy="' + f1(H / 2) + '" r="6" fill="#424242"/>';
+  nodo(0, 10, H - 10, []);
+  $("ar-svg").innerHTML = s + "</svg>";
+  $("ar-salida").innerHTML = '<div class="linea">' + T("Each dish opens into " + ns[1] + " drinks" + (niveles === 3 ? ", and each drink into " + ns[2] + " desserts" : "") + ".", "Cada plato se abre en " + ns[1] + " bebidas" + (niveles === 3 ? ", y cada bebida en " + ns[2] + " postres" : "") + ".") + "</div>" +
+    '<div class="linea veredicto">' + T("Total: ", "Total: ") + ns.join(" × ") + " = " + total + T(" different meals.", " combinaciones distintas.") + "</div>";
+}
+function genConteo(){
+  var tp = aleatorio(1, 5), enun, res, sol, pistas = [];
+  if (tp === 1){ var a = aleatorio(3, 8), b = aleatorio(2, 6), c = aleatorio(2, 4); res = a * b * c; enun = T("You have " + a + " shirts, " + b + " pairs of pants, and " + c + " pairs of shoes. How many different outfits can you make?", "Usted tiene " + a + " camisas, " + b + " pantalones y " + c + " pares de zapatos. ¿Cuántos conjuntos distintos puede formar?"); sol = a + " × " + b + " × " + c + " = " + res + "."; pistas.push({v: a + b + c, msg: T("Multiply the choices for each decision; do not add them.", "Las opciones de cada decisión se multiplican, no se suman.")}); }
+  else if (tp === 2){ var n = aleatorio(4, 10); res = Math.pow(2, n); enun = T("A test has " + n + " true-or-false questions. In how many different ways can it be answered?", "Un examen tiene " + n + " preguntas de verdadero o falso. ¿De cuántas formas distintas se puede contestar?"); sol = T("Each question has 2 choices: 2 multiplied " + n + " times = 2<sup>" + n + "</sup> = " + com(res) + ".", "Cada pregunta tiene 2 opciones: 2 multiplicado " + n + " veces = 2<sup>" + n + "</sup> = " + com(res) + "."); pistas.push({v: 2 * n, msg: T("There are " + n + " decisions with 2 choices each: multiply 2 × 2 × … (" + n + " times), not 2 × " + n + ".", "Son " + n + " decisiones de 2 opciones cada una: se multiplica 2 × 2 × … (" + n + " veces), no 2 × " + n + ".")}); }
+  else if (tp === 3){ var d = aleatorio(3, 5); res = Math.pow(10, d); enun = T("A code has " + d + " digits, and digits can repeat. How many different codes are there?", "Una clave tiene " + d + " dígitos y se pueden repetir. ¿Cuántas claves distintas hay?"); sol = T("10 choices for each digit: 10<sup>" + d + "</sup> = " + com(res) + ".", "10 opciones para cada dígito: 10<sup>" + d + "</sup> = " + com(res) + "."); pistas.push({v: 10 * d, msg: T("There are " + d + " decisions with 10 choices each: multiply 10 × 10 × …", "Son " + d + " decisiones de 10 opciones: se multiplica 10 × 10 × …")}, {v: perm(10, d), msg: T("That would be the answer if digits could not repeat. Here they can: 10 choices each time.", "Así sería si los dígitos no se pudieran repetir. Aquí sí se repiten: 10 opciones cada vez.")}); }
+  else if (tp === 4){ res = 26 * 26 * 10 * 10; enun = T("A license plate has 2 letters (out of 26) followed by 2 digits (0 to 9), and they can repeat. How many different plates are there?", "Una placa tiene 2 letras (de 26) seguidas de 2 dígitos (de 0 a 9), y se pueden repetir. ¿Cuántas placas distintas hay?"); sol = "26 × 26 × 10 × 10 = " + com(res) + "."; pistas.push({v: 26 + 26 + 10 + 10, msg: T("Multiply the choices; do not add them.", "Las opciones se multiplican, no se suman.")}); }
+  else { var p = aleatorio(2, 5), q = aleatorio(2, 5), r = aleatorio(2, 4); res = p * q * r; enun = T("A restaurant has " + p + " appetizers, " + q + " main dishes, and " + r + " desserts. How many different three-course meals can you order?", "Un restaurante ofrece " + p + " entradas, " + q + " platos fuertes y " + r + " postres. ¿Cuántas comidas distintas de tres tiempos se pueden pedir?"); sol = p + " × " + q + " × " + r + " = " + res + "."; pistas.push({v: p + q + r, msg: T("Multiply the choices for each course.", "Las opciones de cada tiempo se multiplican.")}); }
+  return {enun: enun, solucion: sol, evalua: function(v){ return evaluaEntero(v, res, pistas, T("Multiply the number of choices for each decision.", "Multiplique el número de opciones de cada decisión.")); }};
+}
+
+/* MODULE 2 · Factorial */
+function pintaFC(){
+  var n = +$("fc-n").value, k = +$("fc-k").value;
+  if (k > n){ k = n; $("fc-k").value = n; }
+  $("fc-nv").textContent = n; $("fc-kv").textContent = k;
+  var exp = n === 0 ? T("1 (by agreement)", "1 (por convención)") : factores(n, n);
+  var h = '<div class="linea grande">' + n + "! = " + exp + " = " + com(fact(n)) + "</div>";
+  var arriba = n === 0 ? "1" : Array.from({length: n}, function(_, i){ var v = n - i; return v <= k ? '<span class="tok cancelado">' + v + "</span>" : v; }).join(" × ");
+  var abajo = k === 0 ? "1" : Array.from({length: k}, function(_, i){ return '<span class="tok cancelado">' + (k - i) + "</span>"; }).join(" × ");
+  var res = fact(n) / fact(k);
+  h += '<div class="linea">' + T("To find " + n + "! ÷ " + k + "!, cross out the common factors:", "Para calcular " + n + "! ÷ " + k + "! se tachan los factores comunes:") + "</div>";
+  h += '<div class="fraccion-grande" aria-hidden="true"><span class="frac"><span class="arriba">' + arriba + '</span><span class="abajo">' + abajo + "</span></span> = " + (n > k ? factores(n, n - k) + " = " : "") + com(res) + "</div>";
+  h += '<p class="sr-only">' + T(n + " factorial divided by " + k + " factorial equals " + res + ".", n + " factorial entre " + k + " factorial es igual a " + res + ".") + "</p>";
+  $("fc-salida").innerHTML = h;
+}
+function genFactorial(){
+  var tp = aleatorio(1, 4), enun, res, sol, pistas = [];
+  if (tp === 1){ var n = aleatorio(3, 7); res = fact(n); enun = T("What is " + n + "!?", "¿Cuánto es " + n + "!?"); sol = factores(n, n) + " = " + com(res) + "."; pistas.push({v: n * (n - 1), msg: T("The factorial multiplies all the whole numbers from " + n + " down to 1.", "El factorial multiplica todos los enteros desde " + n + " hasta 1.")}, {v: n * (n + 1) / 2, msg: T("You added. The factorial multiplies.", "Sumó. El factorial multiplica.")}); }
+  else if (tp === 2){ var m = aleatorio(6, 12), k = m - aleatorio(2, 3); res = fact(m) / fact(k); enun = T("What is " + m + "! ÷ " + k + "!?", "¿Cuánto es " + m + "! ÷ " + k + "!?"); sol = T("The factors of " + k + "! cancel, and " + factores(m, m - k) + " = " + com(res) + " is left.", "Se cancelan los factores de " + k + "! y quedan " + factores(m, m - k) + " = " + com(res) + "."); pistas.push({v: fact(m - k), msg: T("Do not subtract inside the factorial: " + m + "! ÷ " + k + "! is not (" + m + " − " + k + ")!.", "No se restan los números dentro del factorial: " + m + "! ÷ " + k + "! no es (" + m + " − " + k + ")!.")}); }
+  else if (tp === 3){ res = 1; enun = T("What is 0!?", "¿Cuánto es 0!?"); sol = T("By agreement, 0! = 1.", "Por convención, 0! = 1."); pistas.push({v: 0, msg: T("By agreement, 0! is 1, not 0.", "Por convención, 0! vale 1, no 0.")}); }
+  else { var a = aleatorio(4, 7), b = aleatorio(1, a - 1); res = fact(a) / (fact(b) * fact(a - b)); enun = T("What is " + a + "! ÷ (" + b + "! × " + (a - b) + "!)?", "¿Cuánto es " + a + "! ÷ (" + b + "! × " + (a - b) + "!)?"); sol = com(fact(a)) + " ÷ (" + fact(b) + " × " + fact(a - b) + ") = " + com(res) + "."; pistas.push({v: fact(a) / fact(b), msg: T("Divide by both factorials in the parentheses.", "Hay que dividir entre los dos factoriales del paréntesis.")}); }
+  return {enun: enun, solucion: sol, evalua: function(v){ return evaluaEntero(v, res, pistas, T("Write out the factors and cancel the common ones before multiplying.", "Escriba los factores y cancele los comunes antes de multiplicar.")); }};
+}
+
+/* MODULE 3 · Permutations */
+function pintaPM(){
+  var n = +$("pm-n").value, r = +$("pm-r").value; if (r > n){ r = n; $("pm-r").value = n; }
+  $("pm-nv").textContent = n; $("pm-rv").textContent = r;
+  var h = "";
+  for (var i = 0; i < r; i++) h += '<div class="slot"><strong>' + (n - i) + "</strong><span>" + T(["1st", "2nd", "3rd"][i] || (i + 1) + "th", (i + 1) + ".º") + T(" place", " lugar") + "</span></div>";
+  $("pm-slots").innerHTML = h;
+  var P = perm(n, r), f = factores(n, r);
+  var s = '<div class="linea">' + T("Choices for each place: ", "Opciones por lugar: ") + f + '.</div><div class="linea veredicto">P(' + n + ", " + r + ") = " + f + " = " + com(P) + T(" arrangements", " ordenamientos") + "</div>";
+  s += '<div class="linea">' + T("With the formula: ", "Con la fórmula: ") + n + "! ÷ (" + n + " − " + r + ")! = " + com(fact(n)) + " ÷ " + com(fact(n - r)) + " = " + com(P) + ".</div>";
+  if (P <= 60) s += '<p class="nota">' + T("All the arrangements with the people ", "Todos los ordenamientos con las personas ") + LETRAS.slice(0, n).join(", ") + ':</p><div class="arreglos">' + permutaciones(LETRAS.slice(0, n), r).map(function(p){ return "<span>" + p.join("") + "</span>"; }).join("") + "</div>";
+  $("pm-salida").innerHTML = s;
+}
+function genPermutacion(){
+  var tp = aleatorio(1, 4), n, r, enun;
+  if (tp === 1){ n = aleatorio(5, 10); r = 3; enun = T("There are " + n + " runners in a race. In how many ways can 1st, 2nd, and 3rd place be given out?", "En una carrera hay " + n + " corredores. ¿De cuántas formas se pueden repartir el 1.º, 2.º y 3.º lugar?"); }
+  else if (tp === 2){ n = aleatorio(6, 12); r = 3; enun = T("A club of " + n + " people chooses a president, a secretary, and a treasurer (different jobs). In how many ways can it do this?", "Un club de " + n + " personas elige presidente, secretario y tesorero (cargos distintos). ¿De cuántas formas puede hacerlo?"); }
+  else if (tp === 3){ n = aleatorio(4, 7); r = n; enun = T("In how many ways can " + n + " different books be arranged on a shelf?", "¿De cuántas formas se pueden ordenar " + n + " libros distintos en un estante?"); }
+  else { n = 10; r = aleatorio(3, 4); enun = T("A " + r + "-digit code cannot repeat any digit. How many different codes are there?", "Una clave de " + r + " dígitos no puede repetir ningún dígito. ¿Cuántas claves distintas hay?"); }
+  var res = perm(n, r), pistas = [{v: comb(n, r), msg: T("That would be the combination. Here order matters: each different order counts.", "Esa sería la combinación. Aquí el orden importa: cada orden distinto cuenta.")}, {v: Math.pow(n, r), msg: T("That would be the answer with repeats. Without repeats, each place has one choice fewer than the one before.", "Así sería si se pudiera repetir. Sin repetir, cada lugar tiene una opción menos que el anterior.")}, {v: n * r, msg: T("Do not multiply n by r: multiply the choices for each place, which go down by one each time.", "No se multiplica n por r: se multiplican las opciones de cada lugar, que van bajando de uno en uno.")}];
+  return {enun: enun, solucion: T("Order matters: P(", "El orden importa: P(") + n + ", " + r + ") = " + factores(n, r) + " = " + com(res) + ".",
+    evalua: function(v){ return evaluaEntero(v, res, pistas, T("Count the choices for each place: " + n + ", then " + (n - 1) + ", and so on.", "Cuente las opciones de cada lugar: " + n + ", después " + (n - 1) + ", y así.")); }};
+}
+
+/* MODULE 4 · Combinations */
+function pintaCB(){
+  var n = +$("cb-n").value, r = +$("cb-r").value; if (r > n){ r = n; $("cb-r").value = n; }
+  $("cb-nv").textContent = n; $("cb-rv").textContent = r;
+  var P = perm(n, r), C = comb(n, r);
+  $("cb-salida").innerHTML = '<div class="linea">' + T("If order mattered, there would be P(" + n + ", " + r + ") = " + com(P) + " arrangements.", "Si importara el orden habría P(" + n + ", " + r + ") = " + com(P) + " ordenamientos.") + "</div>" +
+    '<div class="linea">' + T("But each group of " + r + " shows up " + r + "! = " + fact(r) + (fact(r) === 1 ? " time" : " times") + " (once for each order).", "Pero cada grupo de " + r + " aparece " + r + "! = " + fact(r) + (fact(r) === 1 ? " vez" : " veces") + " (una por cada orden).") + "</div>" +
+    '<div class="linea veredicto">C(' + n + ", " + r + ") = " + com(P) + " ÷ " + fact(r) + " = " + com(C) + T(" groups", " grupos") + "</div>";
+  var lista = combinaciones(LETRAS.slice(0, n), r);
+  $("cb-lista").innerHTML = P <= 120 ? '<p class="nota">' + T("Each row is one group with all its orders:", "Cada fila es un grupo con todos sus órdenes:") + "</p>" + lista.map(function(g){ return '<div class="arreglos"><span class="grupo">{' + g.join(", ") + "}</span>" + permutaciones(g, r).map(function(p){ return "<span>" + p.join("") + "</span>"; }).join("") + "</div>"; }).join("") : '<p class="nota">' + T("There are too many to show them all.", "Son demasiados para mostrarlos todos.") + "</p>";
+}
+function genCombinacion(){
+  var tp = aleatorio(1, 4), n, r, enun;
+  if (tp === 1){ n = aleatorio(6, 12); r = 3; enun = T("From a group of " + n + " people, a committee of 3 is chosen (no titles). How many different committees can be formed?", "De un grupo de " + n + " personas se elige un comité de 3 (sin cargos). ¿Cuántos comités distintos se pueden formar?"); }
+  else if (tp === 2){ n = aleatorio(6, 10); r = 2; enun = T("A pizza place offers " + n + " toppings, and you choose 2. How many different two-topping pizzas are there?", "Una pizzería ofrece " + n + " ingredientes y se eligen 2. ¿Cuántas pizzas distintas de dos ingredientes hay?"); }
+  else if (tp === 3){ n = aleatorio(8, 12); r = elige([4, 5]); enun = T("A coach chooses " + r + " players out of " + n + " for a team. How many different teams can the coach make?", "Un entrenador elige " + r + " jugadores de " + n + " para un equipo. ¿Cuántos equipos distintos puede formar?"); }
+  else { n = aleatorio(5, 8); r = 2; enun = T("At a meeting there are " + n + " people, and each one shakes hands with every other person once. How many handshakes are there?", "En una reunión hay " + n + " personas y cada una saluda a todas las demás una vez con un apretón de manos. ¿Cuántos apretones hay?"); }
+  var res = comb(n, r), pistas = [{v: perm(n, r), msg: T("That is the permutation. In a group, order does not matter: divide by " + r + "! = " + fact(r) + ".", "Esa es la permutación. En un grupo el orden no importa: hay que dividir entre " + r + "! = " + fact(r) + ".")}];
+  return {enun: enun, solucion: T("Order does not matter: C(", "El orden no importa: C(") + n + ", " + r + ") = P(" + n + ", " + r + ") ÷ " + r + "! = " + com(perm(n, r)) + " ÷ " + fact(r) + " = " + com(res) + ".",
+    evalua: function(v){ return evaluaEntero(v, res, pistas, T("Find P(" + n + ", " + r + ") and divide by " + r + "!.", "Calcule P(" + n + ", " + r + ") y divida entre " + r + "!.")); }};
+}
+
+/* MODULE 5 · Deciding */
+var SITUACIONES = [
+  [T("Choosing a committee of 3 people from a group of 10.", "Elegir un comité de 3 personas de un grupo de 10."), "c", T("In a committee everyone has the same role: order does not matter.", "En un comité todos tienen el mismo papel: el orden no importa.")],
+  [T("Giving 1st, 2nd, and 3rd place to 3 of 8 runners.", "Repartir 1.º, 2.º y 3.º lugar entre 8 corredores."), "p", T("Finishing first is not the same as finishing third: order matters.", "No es lo mismo llegar primero que tercero: el orden importa.")],
+  [T("Putting together an outfit with a shirt, a pair of pants, and a pair of shoes.", "Formar un conjunto con una camisa, un pantalón y unos zapatos."), "f", T("These are decisions of different kinds: multiply the choices for each one.", "Son decisiones de tipos distintos: se multiplican las opciones de cada una.")],
+  [T("Choosing a president and a vice president of a club of 15 people.", "Elegir presidente y vicepresidente de un club de 15 personas."), "p", T("The jobs are different: order matters.", "Los cargos son distintos: el orden importa.")],
+  [T("Picking 2 ice cream flavors out of 12 for a cup.", "Escoger 2 sabores de helado de 12 para una copa."), "c", T("Chocolate and vanilla is the same cup as vanilla and chocolate.", "Chocolate y vainilla es la misma copa que vainilla y chocolate.")],
+  [T("Making a 4-digit code whose digits can repeat.", "Crear una clave de 4 dígitos que se pueden repetir."), "f", T("Each digit is a decision with 10 choices, and they can repeat: the counting principle.", "Cada dígito es una decisión con 10 opciones, y se pueden repetir: principio del conteo.")],
+  [T("Arranging 5 photos in a row on the wall.", "Ordenar 5 fotos en una fila en la pared."), "p", T("Changing the order of the photos gives a different row.", "Cambiar el orden de las fotos da otra fila distinta.")],
+  [T("Choosing 5 cards from a deck to make a hand.", "Elegir 5 cartas de una baraja para formar una mano."), "c", T("A hand is the same no matter the order in which the cards came.", "Una mano es la misma sin importar el orden en que llegaron las cartas.")],
+  [T("Ordering an appetizer, a main dish, and a dessert from a menu.", "Pedir una entrada, un plato fuerte y un postre de un menú."), "f", T("Three decisions of different kinds: multiply.", "Tres decisiones de tipos distintos: se multiplican.")],
+  [T("Choosing 4 books out of 9 to take on a trip.", "Elegir 4 libros de 9 para llevar de viaje."), "c", T("You take the same books no matter the order in which you pick them.", "Se llevan los mismos libros sin importar el orden en que se escojan.")],
+  [T("Giving 3 different shifts (morning, afternoon, and night) to 3 of 7 workers.", "Asignar 3 turnos distintos (mañana, tarde y noche) a 3 de 7 empleados."), "p", T("Each shift is different: order matters.", "Cada turno es distinto: el orden importa.")]];
+function genDecidir(){
+  var s = elige(SITUACIONES);
+  return {enun: s[0] + T(" Which tool do you use?", " ¿Qué herramienta se usa?"), opciones: [{html: T("Permutation (order matters)", "Permutación (el orden importa)"), clave: "p"}, {html: T("Combination (order does not matter)", "Combinación (el orden no importa)"), clave: "c"}, {html: T("Counting principle (different decisions)", "Principio del conteo (decisiones distintas)"), clave: "f"}],
+    correcta: s[1], porClave: {}, pista: T("Are the choices from the same group? If so, does the result change if you change the order?", "¿Las elecciones salen del mismo grupo? Si es así, ¿cambia el resultado si se cambia el orden?"), bien: s[2], mal: s[2]};
+}
+
+/* Start */
+["ar-a", "ar-b", "ar-c"].forEach(function(id){ $(id).addEventListener("input", pintaArbol); }); pintaArbol();
+creaPracticaLibre("p1", genConteo);
+["fc-n", "fc-k"].forEach(function(id){ $(id).addEventListener("input", pintaFC); }); pintaFC();
+creaPracticaLibre("p2", genFactorial);
+["pm-n", "pm-r"].forEach(function(id){ $(id).addEventListener("input", pintaPM); }); pintaPM();
+creaPracticaLibre("p3", genPermutacion);
+["cb-n", "cb-r"].forEach(function(id){ $(id).addEventListener("input", pintaCB); }); pintaCB();
+creaPracticaLibre("p4", genCombinacion);
+OMR("p5", genDecidir);
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

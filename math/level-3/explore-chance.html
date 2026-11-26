@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- LearnGED · Level 3 · Lesson 8.2 · explore page (English) — built by tools/build_n3_lesson_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explore · Lesson 8.2 · Chance experiments: dice, cards, and a spinner · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../practice.css">
+<style>
+  .linea.grande{font-size:1.35rem;font-weight:700;color:var(--acento);}
+  .linea.veredicto,.veredicto{font-weight:700;color:var(--ok);}
+  .fraccion-grande .grande{font-size:2rem;font-weight:700;}
+  .elecciones{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+  .salida:empty{display:none;}
+  .estado{text-align:center;font-size:18px;margin:6px 0 10px;}
+  .estado .grande{font-size:1.6rem;font-weight:700;color:var(--acento);}
+  input[type=range]{width:100%;accent-color:var(--tema);}
+  .geo-svg{width:100%;max-width:640px;height:auto;display:block;margin:8px auto;touch-action:none;}
+  .ang-btn{cursor:pointer;}
+  .ang-btn:focus{outline:none;}
+  .ang-btn:focus-visible .ang-num{stroke:#0d47a1;stroke-width:4;}
+  .leyenda-geo{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;font-size:15px;margin:4px 0 10px;}
+  .leyenda-geo span{display:inline-flex;align-items:center;gap:6px;}
+  .leyenda-geo i{display:inline-block;width:16px;height:16px;border-radius:4px;border:1px solid #555;}
+  .datos-geo{background:#f7f9fc;border:1px solid #d7dee8;border-radius:10px;padding:10px 14px;margin:10px 0;}
+  .datos-geo p{margin:4px 0;}
+  .btn-sec[aria-pressed=true]{background:var(--tema);color:#fff;border-color:var(--tema);}
+  .vertice{cursor:grab;}
+  .vertice:focus{outline:none;}
+  .vertice:focus-visible{stroke:#0d47a1;stroke-width:5;}
+
+  .datos{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0;}
+  .dato{min-width:40px;text-align:center;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;font-weight:700;font-size:17px;}
+  .dato.med{background:var(--tema);border-color:var(--tema-d);color:#fff;}
+  .dato.baja{border-color:#1565c0;} .dato.alta{border-color:#2e7d32;}
+  .dato.atip{background:#ffebee;border-color:#b71c1c;color:#b71c1c;}
+  .sim-res{font-size:1.25rem;font-weight:700;text-align:center;min-height:1.6em;margin:8px 0;color:var(--tema-d);}
+  .dados{display:flex;gap:18px;justify-content:center;margin:8px 0;}
+  .tabla-sim{border-collapse:collapse;margin:10px auto;font-size:16px;}
+  .tabla-sim caption{font-size:14px;color:var(--gris);padding-bottom:6px;}
+  .tabla-sim th,.tabla-sim td{border:1px solid #c8c8c8;padding:5px 12px;text-align:center;}
+  .tabla-sim th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla{border-collapse:collapse;margin:10px auto;font-size:17px;}
+  .arbol-tabla th,.arbol-tabla td{border:1px solid #c8c8c8;padding:8px 14px;text-align:center;}
+  .arbol-tabla th{background:var(--tema-bg);color:var(--tema-d);}
+  .arbol-tabla td.marca{background:#fff8e1;outline:3px solid #f9a825;}
+  .arbol-tabla td[tabindex]{cursor:pointer;}
+  .pasos-arbol{font-weight:700;color:var(--tema-d);}
+</style>
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="lesson-8-2.html">← Back to Lesson 8.2</a></nav>
+<a class="saltar" href="#titulo-indice">Skip to contents</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Level 3 · Topic 8 · Counting and probability</div>
+    <h1>Explore: chance experiments</h1>
+    <div class="meta">An interactive activity to explore what you learned in Lesson 8.2. It goes with the lesson and its practice page.</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">On this page</h2>
+    <ol>
+      <li><a href="#dice">Two dice</a></li>
+      <li><a href="#cards">A deck of cards</a></li>
+      <li><a href="#spinner">A spinner</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Open all</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Close all</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="dice" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Two dice</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Roll two dice and add them. There are 6 × 6 = 36 equally likely results, but the sums are not equally likely: 7 can happen in 6 ways (1 + 6, 2 + 5, …), while 2 can only happen as 1 + 1. Roll many times and watch the yellow bars get close to the gray ones.</p>
+      <div class="panel">
+        <div id="dd-dibujo"></div>
+        <p class="sim-res" id="dd-res" role="status" aria-live="polite"></p>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn" id="dd-x1">1 time</button><button type="button" class="btn-sec" id="dd-x10">10 times</button><button type="button" class="btn-sec" id="dd-x100">100 times</button><button type="button" class="btn-sec" id="dd-borrar">Start over</button></div>
+        <p class="nota" id="dd-total" style="text-align:center;"></p>
+      </div>
+      <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#90a4ae"></i>theoretical</span><span><i style="background:#f9a825"></i>experimental</span></div>
+      <div id="dd-graf"></div>
+      <div class="tabla-scroll"><table class="tabla-sim" id="dd-tabla"></table></div>
+      <div class="caja-tip"><strong>Theoretical probability</strong> comes from the formula: favorable cases ÷ possible cases, such as P(7) = 6/36. <strong>Experimental probability</strong> comes from repeating the experiment: times it happened ÷ total trials. With more trials, the two get closer.</div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cards">
+    <summary><span class="num" aria-hidden="true">2</span><h2>A deck of cards</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Draw a card from a full deck of 52, look at it, and put it back. Each suit has 13 cards, so each one has a probability of 13/52 = 1/4. Half the cards (hearts and diamonds) are red.</p>
+      <div class="panel">
+        <div id="cb-dibujo"></div>
+        <p class="sim-res" id="cb-res" role="status" aria-live="polite"></p>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn" id="cb-x1">1 time</button><button type="button" class="btn-sec" id="cb-x10">10 times</button><button type="button" class="btn-sec" id="cb-x100">100 times</button><button type="button" class="btn-sec" id="cb-borrar">Start over</button></div>
+        <p class="nota" id="cb-total" style="text-align:center;"></p>
+      </div>
+      <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#90a4ae"></i>theoretical</span><span><i style="background:#f9a825"></i>experimental</span></div>
+      <div id="cb-graf"></div>
+      <div class="tabla-scroll"><table class="tabla-sim" id="cb-tabla"></table></div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="spinner">
+    <summary><span class="num" aria-hidden="true">3</span><h2>A spinner</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>The spinner has 6 equal parts, so each color has a probability of 1/6. With only a few spins the results can look very uneven; with hundreds, they even out.</p>
+      <div class="panel">
+        <div id="rl-dibujo"></div>
+        <p class="sim-res" id="rl-res" role="status" aria-live="polite"></p>
+        <div class="fila-btn" style="justify-content:center;"><button type="button" class="btn" id="rl-x1">1 time</button><button type="button" class="btn-sec" id="rl-x10">10 times</button><button type="button" class="btn-sec" id="rl-x100">100 times</button><button type="button" class="btn-sec" id="rl-borrar">Start over</button></div>
+        <p class="nota" id="rl-total" style="text-align:center;"></p>
+      </div>
+      <div class="leyenda-geo" aria-hidden="true"><span><i style="background:#90a4ae"></i>theoretical</span><span><i style="background:#f9a825"></i>experimental</span></div>
+      <div id="rl-graf"></div>
+      <div class="tabla-scroll"><table class="tabla-sim" id="rl-tabla"></table></div>
+      <a class="volver" href="#titulo-indice">↑ Back to contents</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Level 3 · Topic 8 · Counting and probability · LearnGED</strong><br>
+    José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago.</p>
+    <p>This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p>
+    <p class="tm">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p>
+  </footer>
+</div>
+<script src="../practice.js"></script>
+<script src="/math/radicals.js"></script>
+<script src="/math/linear.js"></script>
+<script src="/math/inequalities.js"></script>
+<script src="/math/geometry3.js"></script>
+<script src="/math/data3.js"></script>
+<script src="/math/prob3.js"></script>
+<script>
+/* Each experiment: outcome names, theoretical probabilities, a draw function, and a picture */
+function barras(nombres, teo, exp, voz){
+  var W = 640, H = 230, x0 = 46, x1 = 620, yb = 190, n = nombres.length, w = (x1 - x0) / n, mx = Math.max.apply(null, teo.concat(exp).concat([0.05])), tope = Math.ceil(mx * 20) / 20;
+  function Y(p){ return yb - p * (yb - 16) / tope; }
+  var s = '<svg class="geo-svg" viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + voz + '">';
+  for (var k = 0; k <= tope + 1e-9; k += 0.05) s += lineaG([x0, Y(k)], [x1, Y(k)], "#e0e0e0", 1) + textoA([x0 - 6, Y(k)], Math.round(k * 100) + "%", 12, "#424242", 400, "end");
+  nombres.forEach(function(nm_, i){
+    var x = x0 + i * w;
+    s += '<rect x="' + f1(x + w * 0.12) + '" y="' + f1(Y(teo[i])) + '" width="' + f1(w * 0.36) + '" height="' + f1(yb - Y(teo[i])) + '" fill="#90a4ae"/>';
+    s += '<rect x="' + f1(x + w * 0.5) + '" y="' + f1(Y(exp[i])) + '" width="' + f1(w * 0.36) + '" height="' + f1(yb - Y(exp[i])) + '" fill="#f9a825"/>';
+    s += textoA([x + w / 2, yb + 16], nm_, 13, "#222", 700);
+  });
+  return s + lineaG([x0, yb], [x1, yb], "#424242", 2) + "</svg>";
+}
+function creaSim(pre, cfg){
+  var E = {f: cfg.nombres.map(function(){ return 0; }), n: 0};
+  function pinta(ultimo){
+    var h = "<caption>" + T("Theoretical and experimental probability", "Probabilidad teórica y experimental") + '</caption><thead><tr><th scope="col">' + cfg.col + '</th><th scope="col">' + T("Times", "Veces") + '</th><th scope="col">' + T("Theoretical", "Teórica") + '</th><th scope="col">' + T("Experimental", "Experimental") + "</th></tr></thead><tbody>";
+    var exp = E.f.map(function(x){ return E.n ? x / E.n : 0; });
+    cfg.nombres.forEach(function(nm_, i){ h += "<tr><td>" + nm_ + "</td><td>" + E.f[i] + "</td><td>" + cfg.teoTxt[i] + " ≈ " + (cfg.teo[i] * 100).toFixed(1) + "%</td><td>" + (exp[i] * 100).toFixed(1) + "%</td></tr>"; });
+    $(pre + "-tabla").innerHTML = h + "</tbody>";
+    $(pre + "-graf").innerHTML = barras(cfg.corto || cfg.nombres, cfg.teo, exp, T("Bar graph: gray bars are the theoretical probabilities and yellow bars the experimental ones after " + E.n + " trials.", "Gráfica de barras: las grises son las probabilidades teóricas y las amarillas las experimentales después de " + E.n + " intentos."));
+    $(pre + "-total").textContent = T("Total trials: ", "Total de intentos: ") + E.n;
+    if (ultimo) $(pre + "-dibujo").innerHTML = cfg.dibujo(ultimo);
+  }
+  function corre(veces){
+    var ult = null;
+    for (var i = 0; i < veces; i++){ ult = cfg.saca(); E.f[ult.i]++; E.n++; }
+    pinta(ult);
+    $(pre + "-res").textContent = veces === 1 ? cfg.texto(ult) : T(veces + " more trials. The last one: ", veces + " intentos más. El último: ") + cfg.texto(ult);
+  }
+  [1, 10, 100].forEach(function(v){ $(pre + "-x" + v).addEventListener("click", function(){ corre(v); }); });
+  $(pre + "-borrar").addEventListener("click", function(){ E.f = E.f.map(function(){ return 0; }); E.n = 0; $(pre + "-res").textContent = ""; pinta(null); });
+  $(pre + "-dibujo").innerHTML = cfg.dibujo(null);
+  pinta(null);
+}
+/* Two dice */
+var PUNTOS = {1: [[0, 0]], 2: [[-1, -1], [1, 1]], 3: [[-1, -1], [0, 0], [1, 1]], 4: [[-1, -1], [1, -1], [-1, 1], [1, 1]], 5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]], 6: [[-1, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [1, 1]]};
+function dado(v){ var s = '<svg width="90" height="90" viewBox="0 0 90 90" aria-hidden="true"><rect x="4" y="4" width="82" height="82" rx="14" fill="#fff" stroke="#37474f" stroke-width="3"/>'; (PUNTOS[v] || []).forEach(function(p){ s += '<circle cx="' + (45 + p[0] * 22) + '" cy="' + (45 + p[1] * 22) + '" r="7.5" fill="#263238"/>'; }); return s + "</svg>"; }
+var SUMAS = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], FORMAS = [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1];
+creaSim("dd", {col: T("Sum", "Suma"), nombres: SUMAS.map(String), teo: FORMAS.map(function(k){ return k / 36; }), teoTxt: FORMAS.map(function(k){ return k + "/36"; }),
+  saca: function(){ var a = aleatorio(1, 6), b = aleatorio(1, 6); return {i: a + b - 2, a: a, b: b}; },
+  texto: function(u){ return u.a + " + " + u.b + " = " + (u.a + u.b) + "."; },
+  dibujo: function(u){ return '<div class="dados">' + dado(u ? u.a : 1) + dado(u ? u.b : 1) + "</div>"; }});
+/* A deck of cards */
+var PALOS = [{s: "♥", n: T("hearts", "corazones"), r: true}, {s: "♦", n: T("diamonds", "diamantes"), r: true}, {s: "♣", n: T("clubs", "tréboles"), r: false}, {s: "♠", n: T("spades", "picas"), r: false}];
+var VALORES = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+function carta(u){
+  if (!u) return '<svg width="110" height="150" viewBox="0 0 110 150" aria-hidden="true"><rect x="4" y="4" width="102" height="142" rx="10" fill="#1565c0" stroke="#0d47a1" stroke-width="3"/><rect x="16" y="16" width="78" height="118" rx="6" fill="none" stroke="#bbdefb" stroke-width="2"/></svg>';
+  var p = PALOS[u.i], col = p.r ? "#c62828" : "#212121";
+  return '<svg width="110" height="150" viewBox="0 0 110 150" aria-hidden="true"><rect x="4" y="4" width="102" height="142" rx="10" fill="#fff" stroke="#37474f" stroke-width="3"/><text x="16" y="30" font-size="20" font-weight="700" fill="' + col + '">' + u.v + '</text><text x="16" y="50" font-size="18" fill="' + col + '">' + p.s + '</text><text x="55" y="95" font-size="48" text-anchor="middle" fill="' + col + '">' + p.s + "</text></svg>";
+}
+creaSim("cb", {col: T("Suit", "Palo"), nombres: PALOS.map(function(p){ return p.s + " " + p.n; }), corto: PALOS.map(function(p){ return p.s; }), teo: [0.25, 0.25, 0.25, 0.25], teoTxt: ["13/52", "13/52", "13/52", "13/52"],
+  saca: function(){ return {i: aleatorio(0, 3), v: elige(VALORES)}; },
+  texto: function(u){ return T(u.v + " of " + PALOS[u.i].n + " (a " + (PALOS[u.i].r ? "red" : "black") + " card).", u.v + " de " + PALOS[u.i].n + " (carta " + (PALOS[u.i].r ? "roja" : "negra") + ")."); },
+  dibujo: function(u){ return '<div class="dados">' + carta(u) + "</div>"; }});
+/* A spinner with 6 equal parts */
+var SECTORES = [{n: T("Red", "Rojo"), c: "#e53935"}, {n: T("Yellow", "Amarillo"), c: "#fdd835"}, {n: T("Green", "Verde"), c: "#43a047"}, {n: T("Teal", "Turquesa"), c: "#00acc1"}, {n: T("Blue", "Azul"), c: "#1e88e5"}, {n: T("Purple", "Morado"), c: "#8e24aa"}];
+function ruleta(u){
+  var s = '<svg width="200" height="200" viewBox="-100 -100 200 200" aria-hidden="true">', giro = u ? u.i * 60 + 30 : 30;
+  SECTORES.forEach(function(sc, i){ var a1 = rad(90 - i * 60 + giro), a0 = a1 - rad(60); var p = [Math.cos(a1) * 88, -Math.sin(a1) * 88], q = [Math.cos(a0) * 88, -Math.sin(a0) * 88];
+    s += '<path d="M0 0 L' + f1(p[0]) + " " + f1(p[1]) + " A88 88 0 0 1 " + f1(q[0]) + " " + f1(q[1]) + ' Z" fill="' + sc.c + '" stroke="#fff" stroke-width="2"/>'; });
+  return s + '<circle r="8" fill="#263238"/><path d="M0 -98 L-10 -76 L10 -76 Z" fill="#263238"/></svg>';
+}
+creaSim("rl", {col: T("Color", "Color"), nombres: SECTORES.map(function(sc){ return sc.n; }), teo: [1, 1, 1, 1, 1, 1].map(function(){ return 1 / 6; }), teoTxt: ["1/6", "1/6", "1/6", "1/6", "1/6", "1/6"],
+  saca: function(){ return {i: aleatorio(0, 5)}; },
+  texto: function(u){ return T("The arrow landed on ", "La flecha cayó en ") + SECTORES[u.i].n.toLowerCase() + ".";},
+  dibujo: function(u){ return '<div class="dados">' + ruleta(u) + "</div>"; }});
+iniciaNavegacion();
+</script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

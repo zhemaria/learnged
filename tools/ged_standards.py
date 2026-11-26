@@ -191,6 +191,7 @@ CCR = {
  "6.SP.3": ("D", "Recognize that a measure of center for a numerical data set summarizes all of its values with a single number, while a measure of variation describes how its values vary with a single number."),
  "7.SP.5": ("D", "Understand that the probability of a chance event is a number between 0 and 1 that expresses the likelihood of the event occurring. Larger numbers indicate greater likelihood."),
  "7.SP.6": ("D", "Approximate the probability of a chance event by collecting data on the chance process that produces it and observing its long-run relative frequency, and predict the approximate relative frequency given the probability."),
+ "7.SP.8": ("D", "Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation."),
  "7.SP.7": ("D", "Develop a probability model and use it to find probabilities of events. Compare probabilities from a model to observed frequencies; if the agreement is not good, explain possible sources of the discrepancy."),
  "6.SP.5": ("D", "Summarize numerical data sets in relation to their context, such as by reporting the number of observations, describing the attribute under investigation and its units of measurement, and giving quantitative measures of center (median and/or mean) and variability."),
  "5.G.2": ("C", "Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation."),
@@ -378,7 +379,12 @@ LESSONS = [
  ("level-3/lesson-7-2.html", "7.2", "Box plots",
   {"direct": ["Q.6.b"], "builds": ["Q.7.a"], "mp": ["MP.2.b", "MP.4.c", "MP.3.a"], "ccr": ["6.SP.4", "6.SP.5", "7.SP.4"]}),
  ("level-3/lesson-7-3.html", "7.3", "Histograms: make, read, and compare",
-  {"direct": ["Q.6.b"], "builds": ["Q.6.a", "Q.7.a"], "mp": ["MP.2.b", "MP.4.c", "MP.3.a"], "ccr": ["6.SP.2", "6.SP.4", "6.SP.5"]}),
+  {"direct": ["Q.6.b"], "builds": ["Q.6.a", "Q.7.a"], "mp": ["MP.2.b", "MP.4.c", "MP.3.a"], "ccr": ["6.SP.2", "6.SP.4", "6.SP.5"]}), ("level-3/lesson-8-1.html", "8.1", "The counting principle, permutations, and combinations",
+  {"direct": ["Q.8.a"], "builds": ["Q.8.b"], "mp": ["MP.1.a", "MP.2.c", "MP.4.a"], "ccr": ["7.SP.8"]}),
+ ("level-3/lesson-8-2.html", "8.2", "Compound probability: with and without replacement",
+  {"direct": ["Q.8.b"], "builds": ["Q.8.a"], "mp": ["MP.1.a", "MP.2.c", "MP.4.a"], "ccr": ["7.SP.5", "7.SP.7", "7.SP.8"]}),
+ ("level-3/lesson-8-3.html", "8.3", "Final project and strategies for the GED math test",
+  {"direct": ["Q.6.b", "Q.7.a", "Q.8.b"], "builds": [], "mp": ["MP.1.a", "MP.3.a", "MP.4.c"], "ccr": ["6.SP.2", "6.SP.4", "6.SP.5", "7.SP.8"]}),
 ]
 
 SOURCE = "GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016)"

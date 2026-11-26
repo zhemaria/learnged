@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lección 8.3 · Matemáticas Nivel 3 (español) — construida con tools/build_n3_lesson_8_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.3 · Proyecto final integrador y estrategias para el GED · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license"/>
+<link rel="alternate" hreflang="en" href="/math/level-3/lesson-8-3.html">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="/math/lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Matemáticas · Lecciones del Nivel 3</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Matemáticas · Nivel 3 · Tema 8 — Combinatoria y probabilidad</p>
+<h1>Lección 8.3 · Proyecto final integrador y estrategias para el GED</h1>
+<p class="lema">Reúna el Nivel 3 en un proyecto con sus propios datos, aprenda estrategias para el examen GED y repase los ocho temas.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip"><span aria-hidden="true">🎓</span> El cierre del Nivel 3</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Presentar</strong> el proyecto integrador «Mi análisis de datos» con todos sus componentes.</li>
+<li><strong>Reunir</strong> en un solo trabajo lo aprendido en estadística, probabilidad y cálculo.</li>
+<li><strong>Aplicar</strong> estrategias de examen para el GED de Razonamiento Matemático.</li>
+<li><strong>Usar</strong> la hoja de fórmulas oficial del GED y manejar el tiempo de la prueba.</li>
+<li><strong>Responder</strong> preguntas tipo GED que integran los ocho temas del nivel.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Esta lección trabaja estos objetivos de evaluación del GED®:</p><ul><li><span class="std-cod std-dir">Q.6.b</span> Representar, mostrar e interpretar datos de una variable en gráficas sobre la recta numérica, incluidos los diagramas de puntos, los histogramas y los diagramas de caja.</li><li><span class="std-cod std-dir">Q.7.a</span> Calcular la media, la mediana, la moda y el rango. Calcular un dato que falta, dada la media y todos los demás datos, y también la media ponderada.</li><li><span class="std-cod std-dir">Q.8.b</span> Hallar la probabilidad de eventos simples y compuestos.</li></ul>
+<p class="std-tit">Prácticas matemáticas que usa:</p><ul><li><span class="std-cod std-mp">MP.1.a</span> Buscar y reconocer por dónde empezar a resolver un problema.</li><li><span class="std-cod std-mp">MP.3.a</span> Construir los pasos de una línea de razonamiento o de un camino de solución a partir del paso anterior o de los datos.</li><li><span class="std-cod std-mp">MP.4.c</span> Mostrar datos o expresiones algebraicas en forma gráfica.</li></ul>
+<p class="std-tit">Estándares CCR para la educación de adultos (College and Career Readiness):</p><ul><li><span class="std-cod std-ccr">6.SP.2</span> <span class="std-nivel">Nivel D</span> Entender que un conjunto de datos reunido para responder una pregunta estadística tiene una distribución que se describe por su centro, su dispersión y su forma general.</li><li><span class="std-cod std-ccr">6.SP.4</span> <span class="std-nivel">Nivel D</span> Representar datos numéricos en gráficas sobre la recta numérica, como diagramas de puntos, histogramas y diagramas de caja.</li><li><span class="std-cod std-ccr">6.SP.5</span> <span class="std-nivel">Nivel D</span> Resumir grupos de datos numéricos según su contexto: decir cuántas observaciones hay, describir lo que se estudia y sus unidades de medida, y dar medidas del centro (mediana o media) y de la variación.</li><li><span class="std-cod std-ccr">7.SP.8</span> <span class="std-nivel">Nivel D</span> Hallar la probabilidad de eventos compuestos con listas organizadas, tablas, diagramas de árbol y simulaciones.</li></ul>
+<p class="std-fuente">Fuentes: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. Los textos de los estándares son traducciones de LearnGED; los oficiales están en inglés en el <a href="/math/ged-standards.html" hreflang="en">mapa de estándares (en inglés)</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s-proyecto">El proyecto «Mi análisis de datos»</a></li>
+<li><a href="#s-construir">Cómo construir el proyecto</a></li>
+<li><a href="#s-estrategias">Estrategias para el examen GED</a></li>
+<li><a href="#s-repaso">Repaso integrador de los ocho temas</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-autoevaluacion">Lista de autoevaluación</a></li>
+<li><a href="#s-siguiente">Lo que viene</a></li>
+<li><a href="#s-terminos">Términos clave</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-proyecto"><span aria-hidden="true" class="num-seccion">1</span>El proyecto «Mi análisis de datos»</h2>
+<p>Esta lección cierra el Nivel 3. Reúne el sentido numérico de los Temas 1 al 3 (exponentes, notación científica, números reales), el álgebra de los Temas 4 y 5 (ecuaciones, inecuaciones, fórmulas), la geometría de los Temas 6 y 7 (Pitágoras, semejanza, volumen) y la estadística y probabilidad de los Temas 7 y 8. El proyecto integrador y la preparación para el examen GED ponen todo en práctica a la vez.</p>
+<p>El proyecto final, <strong>«Mi análisis de datos»</strong>, consiste en analizar un conjunto de datos real y presentarlo de forma completa. Debe incluir cinco componentes:</p>
+<div aria-label="Componentes del proyecto (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Componentes del proyecto integrador «Mi análisis de datos»</caption>
+<thead><tr><th scope="col">Componente</th><th scope="col">Qué se espera</th></tr></thead>
+<tbody>
+<tr><td>Conjunto de datos</td><td>Datos reales (edades, gastos, temperaturas…) descritos con su fuente.</td></tr>
+<tr><td>Gráfica</td><td>Un diagrama de caja o un histograma, con todas sus etiquetas.</td></tr>
+<tr><td>Estadísticos</td><td>Al menos tres cálculos: media, mediana, IQR u otro.</td></tr>
+<tr><td>Interpretación</td><td>Un texto que explique qué dicen los datos.</td></tr>
+<tr><td>Probabilidad</td><td>Al menos un cálculo de probabilidad vinculado al contexto.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Datos cercanos motivan más</span>
+<p>Conviene elegir un conjunto de datos del propio entorno: los gastos del mes, las edades de la familia, las temperaturas de la semana. Analizar algo propio hace el proyecto más significativo y fácil de interpretar.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-construir"><span aria-hidden="true" class="num-seccion">2</span>Cómo construir el proyecto</h2>
+<p>El proyecto se arma siguiendo un orden claro, usando las herramientas de los Temas 7 y 8.</p>
+<ol><li>Reunir entre 10 y 20 datos reales y ordenarlos.</li><li>Calcular los estadísticos (media, mediana, Q1, Q3, IQR).</li><li>Construir la gráfica elegida (diagrama de caja o histograma) con sus etiquetas.</li><li>Escribir la interpretación: forma, centro y dispersión de los datos.</li><li>Plantear y calcular una probabilidad ligada al contexto.</li></ol>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">La interpretación es clave</span>
+<p>El proyecto no termina con la gráfica. Lo más valioso es el texto que explica qué significan los datos: dónde se concentran, qué tan dispersos están y qué se puede concluir. Una gráfica sin interpretación queda incompleta.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La plantilla del proyecto</span>
+<p>Use la <a href="proyecto-nivel-3.html">Plantilla del proyecto final: Mi análisis de datos</a>. Usted escribe sus datos y su trabajo, y la plantilla comprueba sus estadísticos, dibuja la gráfica, verifica su probabilidad y guarda su trabajo en este navegador. Al terminar, guárdelo como PDF.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 — El conjunto de datos</h3></div>
+<p class="pregunta-int" id="t-p1">El conjunto de datos del proyecto debe ser…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">inventado al azar</button>
+<button class="opcion" data-k="b" type="button">de solo dos números</button>
+<button class="opcion" data-k="c" type="button">real, con su fuente descrita</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 — La gráfica</h3></div>
+<p class="pregunta-int" id="t-p2">La gráfica del proyecto puede ser…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">solo una gráfica circular</button>
+<button class="opcion" data-k="b" type="button">un diagrama de caja o un histograma</button>
+<button class="opcion" data-k="c" type="button">solo una tabla sin gráfica</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 — ¿Qué más?</h3></div>
+<p class="pregunta-int" id="t-p3">Además de la gráfica y los estadísticos, el proyecto pide…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">al menos un cálculo de probabilidad</button>
+<button class="opcion" data-k="b" type="button">solo el título</button>
+<button class="opcion" data-k="c" type="button">una fotografía decorativa</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-estrategias"><span aria-hidden="true" class="num-seccion">3</span>Estrategias para el examen GED</h2>
+<p>El examen GED de Razonamiento Matemático evalúa el razonamiento, no solo el cálculo. Estas estrategias ayudan a rendir mejor:</p>
+<div aria-label="Estrategias para el examen GED (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Estrategias para el examen GED de Razonamiento Matemático</caption>
+<thead><tr><th scope="col">Estrategia</th><th scope="col">Cómo aplicarla</th></tr></thead>
+<tbody>
+<tr><td>Usar la hoja de fórmulas</td><td>El examen provee fórmulas de área, volumen y otras: no hay que memorizarlas, sino saber localizarlas y usarlas.</td></tr>
+<tr><td>Manejar el tiempo</td><td>No detenerse demasiado en una pregunta; marcarla y volver al final.</td></tr>
+<tr><td>Usar la calculadora TI-30XS</td><td>Aprovecharla para raíces, potencias, π, nPr y nCr; limpiarla antes de cada cálculo.</td></tr>
+<tr><td>Estimar primero</td><td>Una estimación rápida ayuda a descartar opciones absurdas en las preguntas de opción múltiple.</td></tr>
+<tr><td>Leer lo que se pregunta</td><td>Subraye la pregunta y las unidades. Muchas respuestas incorrectas son respuestas correctas a otra pregunta.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> Sobre la calculadora</span>
+<p>En el examen GED se usa la calculadora TI-30XS MultiView. La calculadora de esta página hace las mismas operaciones, aunque algunas teclas tienen otro nombre o están en otro lugar. Si tiene una TI-30XS, practique también con ella para conocer la ubicación de sus teclas.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La hoja de fórmulas es una aliada</span>
+<p>Como el examen la provee, conviene practicar con ella desde ahora, para llegar al día de la prueba sabiendo exactamente dónde está cada fórmula. Ábrala con el botón Hoja de referencia de esta página. El Nivel 4 reforzará esta preparación.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-repaso"><span aria-hidden="true" class="num-seccion">4</span>Repaso integrador de los ocho temas</h2>
+<p>El Nivel 3 recorrió ocho temas. Este es el mapa completo de lo aprendido, que la evaluación final pondrá a prueba.</p>
+<div aria-label="Los ocho temas del Nivel 3 (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Mapa de los ocho temas del Nivel 3</caption>
+<thead><tr><th scope="col">Tema</th><th scope="col">Contenido principal</th></tr></thead>
+<tbody>
+<tr><td>1. Exponentes</td><td>Reglas del producto, cociente, potencias y exponentes negativos.</td></tr>
+<tr><td>2. Notación científica</td><td>Conversión y operaciones con potencias de 10.</td></tr>
+<tr><td>3. Números reales</td><td>Radicales, racionales e irracionales, recta numérica.</td></tr>
+<tr><td>4. Álgebra lineal</td><td>Variables, expresiones y ecuaciones en una variable.</td></tr>
+<tr><td>5. Inecuaciones y fórmulas</td><td>Inecuaciones, problemas verbales y despeje de fórmulas.</td></tr>
+<tr><td>6. Geometría</td><td>Ángulos, Pitágoras, semejanza y escala.</td></tr>
+<tr><td>7. Volumen y datos</td><td>Volumen de sólidos, caja y bigotes, histogramas.</td></tr>
+<tr><td>8. Probabilidad</td><td>Conteo, permutaciones, combinaciones y probabilidad compuesta.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 — Exponentes</h3></div>
+<p class="pregunta-int" id="t-p4">Simplifique: x⁵ · x³.</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">x⁸</button>
+<button class="opcion" data-k="b" type="button">x¹⁵</button>
+<button class="opcion" data-k="c" type="button">x²</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 5 — Una ecuación</h3></div>
+<p class="pregunta-int" id="t-p5">Resuelva: 2x + 3 = 11.</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">x = 7</button>
+<button class="opcion" data-k="b" type="button">x = 5</button>
+<button class="opcion" data-k="c" type="button">x = 4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 6 — Pitágoras</h3></div>
+<p class="pregunta-int" id="t-p6">Catetos 6 y 8: la hipotenusa mide…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">14</button>
+<button class="opcion" data-k="b" type="button">10</button>
+<button class="opcion" data-k="c" type="button">48</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-8-3.html#mezcla" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: repaso mezclado de los ocho temas (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: repaso mezclado de los ocho temas</span><span class="ei-sub">Una pregunta a la vez de cualquier tema, con pista y segunda oportunidad.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-8-3.html#indice" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: todas las prácticas del Nivel 3 (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: todas las prácticas del Nivel 3</span><span class="ei-sub">Busque por palabra y vaya directo a la práctica que necesita.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La evaluación final</span>
+<p>Cuando esté listo, haga la <a href="evaluacion-final-nivel-3.html">Evaluación final del Nivel 3</a>: 25 preguntas de los ocho temas, respondidas de una sola vez, con un informe por tema que le dice qué repasar. Se aprueba con 18 aciertos (70%).</p>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">5</span>Tarea</h2>
+<p>Esta es práctica independiente. Calcule alrededor de una hora, con su cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-8-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios cambian cada vez. Haga por lo menos 10 en cada actividad y siga hasta acertar 8 de 10 al primer intento. El marcador de cada actividad lleva la cuenta por usted.</li>
+<li><strong>Papel y lápiz.</strong> Esta es la última tarea del Nivel 3 y la más larga: dese dos o tres sesiones tranquilas. (1) Complete «Mi análisis de datos» en la <a href="proyecto-nivel-3.html">Plantilla del proyecto final: Mi análisis de datos</a>, con sus cinco componentes, y guárdelo en PDF. (2) Déjelo reposar un día; después léalo como si fuera de otra persona, con la rúbrica en la mano, y explíquelo en voz alta durante tres o cuatro minutos: lo que no logre explicar todavía no lo entendió. (3) Repase entera la hoja de fórmulas del GED y marque las fórmulas que usó en este nivel. (4) Haga la <a href="evaluacion-final-nivel-3.html">Evaluación final del Nivel 3</a> de una sentada, sin interrupciones y sin consultar las lecciones.</li>
+<li><strong>En su vida diaria.</strong> Elija los datos de su proyecto de su propia vida: lo que gasta cada día durante dos semanas, los minutos que duerme cada noche, los precios de un producto en varias tiendas o las temperaturas del mes en su ciudad.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Quiz de práctica</h2>
+<p>Responda las <strong>8 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento, verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Pregunta A</p>
+<p class="pregunta" id="t-qA">¿Cuántos componentes debe tener el proyecto final?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3</button><button class="opcion" data-k="b" type="button">5</button><button class="opcion" data-k="c" type="button">4</button><button class="opcion" data-k="d" type="button">1</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Pregunta B</p>
+<p class="pregunta" id="t-qB">Lo más valioso del proyecto es…</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la gráfica</button><button class="opcion" data-k="b" type="button">el título</button><button class="opcion" data-k="c" type="button">los cálculos</button><button class="opcion" data-k="d" type="button">la interpretación escrita</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Pregunta C</p>
+<p class="pregunta" id="t-qC">En el examen GED, lo mejor con la hoja de fórmulas es…</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">saber dónde está cada fórmula y cómo usarla</button><button class="opcion" data-k="b" type="button">memorizarla, porque no se entrega</button><button class="opcion" data-k="c" type="button">ignorarla</button><button class="opcion" data-k="d" type="button">usarla solo en la primera pregunta</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Pregunta D</p>
+<p class="pregunta" id="t-qD">Una pregunta le está tomando demasiado tiempo. Lo mejor es…</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">quedarse en ella hasta terminar</button><button class="opcion" data-k="b" type="button">dejarla en blanco y olvidarla</button><button class="opcion" data-k="c" type="button">marcarla y volver al final</button><button class="opcion" data-k="d" type="button">adivinar enseguida y no volver</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Pregunta E</p>
+<p class="pregunta" id="t-qE">¿Para qué sirve estimar antes de calcular?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Para no calcular</button><button class="opcion" data-k="b" type="button">Para descartar opciones absurdas</button><button class="opcion" data-k="c" type="button">Para gastar más tiempo</button><button class="opcion" data-k="d" type="button">Para reemplazar la respuesta</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Pregunta F</p>
+<p class="pregunta" id="t-qF">Simplifique: x⁴ · x².</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x⁸</button><button class="opcion" data-k="b" type="button">x²</button><button class="opcion" data-k="c" type="button">x⁶</button><button class="opcion" data-k="d" type="button">x¹⁶</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Pregunta G</p>
+<p class="pregunta" id="t-qG">Resuelva: 3x = 21.</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">x = 7</button><button class="opcion" data-k="b" type="button">x = 18</button><button class="opcion" data-k="c" type="button">x = 24</button><button class="opcion" data-k="d" type="button">x = 63</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Pregunta H</p>
+<p class="pregunta" id="t-qH">Bolsa con 3 rojas y 2 azules (5). P(roja en una extracción) es…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3/2</button><button class="opcion" data-k="b" type="button">5/3</button><button class="opcion" data-k="c" type="button">2/3</button><button class="opcion" data-k="d" type="button">3/5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz de nuevo</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-autoevaluacion"><span aria-hidden="true" class="num-seccion">7</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea. Úsela <strong>después</strong> para revisar su propio trabajo con honestidad.</p>
+<div aria-label="Rúbrica del proyecto final (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Rúbrica del proyecto final «Mi análisis de datos» y cómo se ve cada nivel: Lo domino, Voy avanzando y Necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Conjunto de datos</th><td>Datos reales, relevantes y con su fuente y contexto explicados.</td><td>Datos reales, pero sin fuente clara.</td><td>Datos inventados o sin describir.</td></tr>
+<tr><th scope="row">Representación gráfica</th><td>Caja o histograma correcto, con todas sus etiquetas y adecuado a los datos.</td><td>Gráfica con errores o sin etiquetas.</td><td>No incluye una gráfica válida.</td></tr>
+<tr><th scope="row">Cálculo de estadísticos</th><td>Al menos tres estadísticos sin errores, relacionados entre sí.</td><td>Menos de tres o con errores.</td><td>No calcula estadísticos.</td></tr>
+<tr><th scope="row">Interpretación escrita</th><td>Interpretación clara y coherente con los datos (centro, dispersión y forma).</td><td>Interpretación vaga o incoherente con los datos.</td><td>No interpreta los datos.</td></tr>
+<tr><th scope="row">Cálculo de probabilidad</th><td>Probabilidad correcta, bien explicada y ligada al análisis.</td><td>Cálculo de probabilidad con errores.</td><td>No incluye probabilidad.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-siguiente"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Nivel 3 completo. A lo largo de ocho temas se construyó un recorrido sólido: del sentido numérico (exponentes, notación científica y números reales) al álgebra (ecuaciones, inecuaciones y fórmulas), de la geometría (Pitágoras, semejanza y volumen) a la estadística y la probabilidad (caja, histograma, conteo y probabilidad compuesta). El proyecto integrador reunió todo en un análisis propio.</p>
+<p>El siguiente paso es el <strong>Nivel 4</strong>, donde el álgebra se profundiza con polinomios, factorización, ecuaciones cuadráticas, sistemas de ecuaciones y funciones, completando la preparación para el examen GED de Razonamiento Matemático. ¡Enhorabuena por llegar al final del Nivel 3!</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Nivel 4</p>
+</section>
+
+<section>
+<h2 id="s-terminos"><span aria-hidden="true" class="num-seccion">📘</span>Términos clave</h2>
+<dl class="glosario">
+<dt>conjunto de datos</dt><dd>El grupo de valores que se reúnen y se analizan.</dd>
+<dt>interpretación</dt><dd>Una explicación escrita de lo que dicen los datos: centro, dispersión y forma.</dd>
+<dt>hoja de fórmulas</dt><dd>La página de fórmulas que el examen GED entrega durante la prueba de matemáticas.</dd>
+<dt>estimar</dt><dd>Hallar rápidamente una respuesta aproximada, para comprobar la exacta.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Matemáticas · Nivel 3 · Tema 8 · Lección 8.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está licenciada bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación. TI-30XS MultiView es una marca de Texas Instruments; la calculadora de esta página es un simulador independiente para aprender.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Nivel 4",
+ "review": "las secciones 3 y 4",
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Los datos inventados no dicen nada del mundo real.",
+    "b": "Dos números no alcanzan para hallar cuartiles ni dibujar una gráfica."
+   },
+   "right": "Datos reales, de 10 a 20 valores, con su fuente descrita.",
+   "solution": "Real, con su fuente descrita."
+  },
+  "p2": {
+   "ok": "b",
+   "hints": {
+    "a": "La gráfica circular es para categorías; el proyecto analiza datos numéricos.",
+    "c": "El proyecto pide una gráfica."
+   },
+   "right": "Un diagrama de caja o un histograma, con todas sus etiquetas.",
+   "solution": "Un diagrama de caja o un histograma."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "El título solo no es uno de los cinco componentes.",
+    "c": "Una fotografía no analiza nada."
+   },
+   "right": "El quinto componente es un cálculo de probabilidad ligado a los datos.",
+   "solution": "Al menos un cálculo de probabilidad."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Los exponentes se suman, no se multiplican.",
+    "c": "Los exponentes se suman, no se restan."
+   },
+   "right": "5 + 3 = 8.",
+   "solution": "x⁸."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Primero reste 3: 2x = 8.",
+    "b": "Compruebe: 2 · 5 + 3 = 13, no 11."
+   },
+   "right": "2x = 8, x = 4.",
+   "solution": "x = 4."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Sumó los catetos. Hay que sumar sus cuadrados y sacar la raíz.",
+    "c": "Multiplicó los catetos."
+   },
+   "right": "36 + 64 = 100, √100 = 10.",
+   "solution": "10."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "b",
+   "hints": {
+    "a": "El proyecto usa datos reales, no inventados.",
+    "c": "Cuéntelos: datos, gráfica, estadísticos, interpretación, probabilidad.",
+    "d": "Un solo estadístico no basta."
+   },
+   "solution": "Cinco componentes."
+  },
+  "B": {
+   "ok": "d",
+   "hints": {
+    "a": "La gráfica muestra los datos, pero no los explica.",
+    "b": "El título solo no dice nada de los datos.",
+    "c": "Los cálculos son necesarios, pero no son lo más valioso."
+   },
+   "solution": "La interpretación escrita."
+  },
+  "C": {
+   "ok": "a",
+   "hints": {
+    "b": "El examen GED provee una hoja de fórmulas.",
+    "c": "Las fórmulas se dan: hay que saber dónde están.",
+    "d": "Se puede usar en todo el examen de matemáticas."
+   },
+   "solution": "Saber dónde está cada fórmula y cómo usarla."
+  },
+  "D": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso puede agotar el tiempo de las demás preguntas.",
+    "b": "Una respuesta en blanco siempre es incorrecta; márquela y vuelva.",
+    "d": "Adivinar primero desperdicia la oportunidad de volver con más tiempo."
+   },
+   "solution": "Marcarla y volver al final."
+  },
+  "E": {
+   "ok": "b",
+   "hints": {
+    "a": "Estimar no reemplaza el cálculo; ayuda a comprobar.",
+    "c": "Una estimación rápida toma segundos.",
+    "d": "La estimación es una comprobación, no la respuesta final."
+   },
+   "solution": "Para descartar opciones absurdas."
+  },
+  "F": {
+   "ok": "c",
+   "hints": {
+    "a": "Los exponentes se suman, no se multiplican.",
+    "b": "Los exponentes se suman, no se restan.",
+    "d": "Eso es 4 × 4. Sume los exponentes: 4 + 2."
+   },
+   "solution": "x⁶."
+  },
+  "G": {
+   "ok": "a",
+   "hints": {
+    "b": "Restó 3. Hay que dividir entre 3.",
+    "c": "Sumó 3. Hay que dividir entre 3.",
+    "d": "Multiplicó. Hay que dividir entre 3."
+   },
+   "solution": "x = 7."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "3/2 compara rojas con azules, no con el total.",
+    "b": "La fracción está al revés.",
+    "c": "La fracción está al revés."
+   },
+   "solution": "3/5."
+  }
+ }
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#0d47a1" defer></script>
+</body>
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!-- LearnGED · Lesson 8.1 · Math Level 3 (English) — built by tools/build_n3_lesson_8_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 8.1 · The counting principle, permutations, and combinations · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../lesson.css">
+</head>
+<body>
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link lg-inicio" href="/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Home</a><a class="lg-link" href="./">Math · Level 3 lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Math · Level 3 · Topic 8 — Counting and probability</p>
+<h1>Lesson 8.1 · The counting principle, permutations, and combinations</h1>
+<p class="lema">Count outcomes by multiplying, use the factorial, and tell when order matters (permutation) and when it does not (combination).</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip"><span aria-hidden="true">🧮</span> Keys n!, nPr, and nCr</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Use</strong> the counting principle to find the total outcomes of events in a row.</li>
+<li><strong>Understand</strong> the factorial (n!) as the product of the whole numbers from 1 to n.</li>
+<li><strong>Find</strong> permutations, where order matters: P(n, r) = n! / (n − r)!.</li>
+<li><strong>Find</strong> combinations, where order does not matter: C(n, r) = n! / [r!(n − r)!].</li>
+<li><strong>Tell</strong> when a problem asks for a permutation and when it asks for a combination.</li>
+</ul>
+</div>
+<!-- GED-STANDARDS -->
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">This lesson works on these GED® Assessment Targets:</p><ul><li><span class="std-cod std-dir">Q.8.a</span> Use counting techniques to solve problems and determine combinations and permutations.</li></ul>
+<p class="std-tit">This lesson builds the foundation for these GED® Assessment Targets:</p><ul><li><span class="std-cod std-base">Q.8.b</span> Determine the probability of simple and compound events.</li></ul>
+<p class="std-tit">Mathematical Practices you use:</p><ul><li><span class="std-cod std-mp">MP.1.a</span> Search for and recognize entry points for solving a problem.</li><li><span class="std-cod std-mp">MP.2.c</span> Recognize the important and salient attributes of a problem.</li><li><span class="std-cod std-mp">MP.4.a</span> Manipulate and solve arithmetic expressions.</li></ul>
+<p class="std-tit">College and Career Readiness (CCR) Standards for Adult Education:</p><ul><li><span class="std-cod std-ccr">7.SP.8</span> <span class="std-nivel">Level D</span> Find probabilities of compound events using organized lists, tables, tree diagrams, and simulation.</li></ul>
+<p class="std-fuente">Sources: GED Testing Service, <cite>Assessment Guide for Educators: Mathematical Reasoning</cite> (2016); Pimentel, S. (2013). <cite>College and Career Readiness Standards for Adult Education</cite>. U.S. Department of Education, Office of Vocational and Adult Education. See the <a href="../ged-standards.html">standards map for all the lessons</a>.</p>
+</div>
+</details>
+<!-- /GED-STANDARDS -->
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s-counting">The counting principle</a></li>
+<li><a href="#s-factorial">The factorial</a></li>
+<li><a href="#s-permutations">Permutations: order matters</a></li>
+<li><a href="#s-combinations">Combinations: order does not matter</a></li>
+<li><a href="#s-homework">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-checklist">Self-check checklist</a></li>
+<li><a href="#s-next">Coming next</a></li>
+<li><a href="#s-words">Key words</a></li>
+</ol></nav>
+
+<section>
+<h2 id="s-counting"><span aria-hidden="true" class="num-seccion">1</span>The counting principle</h2>
+<p>Topic 7 summarized and interpreted data. Topic 8 opens <strong>combinatorics</strong>: the art of counting how many ways things can happen. Counting the possible outcomes is the direct basis of probability, which you will study in the next lesson. It is also the first step in closing Level 3.</p>
+<p>If one event can happen in m ways and another in n ways, then the two together can happen in m × n ways. The idea extends to more events: multiply the choices for each one.</p>
+<p class="formula" style="text-align:center;font-weight:700;">Total outcomes = (choices for the 1st) × (choices for the 2nd) × …</p>
+<svg viewBox="0 0 600 300" role="img" aria-label="A tree diagram. From the start, two branches: chicken and fish. Each one opens into three branches: water, juice, and coffee. In all there are 2 × 3 = 6 meals." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><circle cx="40" cy="150" r="6" fill="#424242"/><text x="40" y="132" font-size="14" text-anchor="middle" fill="#424242">Start</text><line x1="40" y1="150" x2="190" y2="75" stroke="#b71c1c" stroke-width="2.5"/><circle cx="190" cy="75" r="5" fill="#424242"/><text x="190" y="63" font-size="15" font-weight="700" text-anchor="middle" fill="#b71c1c">Chicken</text><line x1="190" y1="75" x2="340" y2="30" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="30" r="4" fill="#424242"/><text x="350" y="35" font-size="14" fill="#0d47a1">Water</text><line x1="190" y1="75" x2="340" y2="75" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="75" r="4" fill="#424242"/><text x="350" y="80" font-size="14" fill="#0d47a1">Juice</text><line x1="190" y1="75" x2="340" y2="120" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="120" r="4" fill="#424242"/><text x="350" y="125" font-size="14" fill="#0d47a1">Coffee</text><line x1="40" y1="150" x2="190" y2="225" stroke="#b71c1c" stroke-width="2.5"/><circle cx="190" cy="225" r="5" fill="#424242"/><text x="190" y="213" font-size="15" font-weight="700" text-anchor="middle" fill="#b71c1c">Fish</text><line x1="190" y1="225" x2="340" y2="180" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="180" r="4" fill="#424242"/><text x="350" y="185" font-size="14" fill="#0d47a1">Water</text><line x1="190" y1="225" x2="340" y2="225" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="225" r="4" fill="#424242"/><text x="350" y="230" font-size="14" fill="#0d47a1">Juice</text><line x1="190" y1="225" x2="340" y2="270" stroke="#0d47a1" stroke-width="2"/><circle cx="340" cy="270" r="4" fill="#424242"/><text x="350" y="275" font-size="14" fill="#0d47a1">Coffee</text><text x="470" y="155" font-size="22" font-weight="700" fill="#1b5e20">2 × 3 = 6</text></svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1: a menu has 2 main dishes and 3 drinks. How many dish-and-drink pairs are there?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Multiply the choices.</strong> 2 × 3 = 6.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> There are <strong>6</strong> possible pairs.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 — Outfits</h3></div>
+<p class="pregunta-int" id="t-p1">There are 4 shirts and 3 pairs of pants. How many different outfits can you make?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">7</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">43</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#counting" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the counting principle (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the counting principle</span><span class="ei-sub">Count possibilities with a tree diagram and by multiplying.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-factorial"><span aria-hidden="true" class="num-seccion">2</span>The factorial</h2>
+<p>The <strong>factorial</strong> of a number, written n!, is the product of all the whole numbers from 1 to n. It appears in the formulas for permutations and combinations.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">n! = n × (n − 1) × … × 2 × 1</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2: find 5!.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Multiply the whole numbers from 5 down to 1.</strong> 5 × 4 × 3 × 2 × 1 = 120.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> 5! = <strong>120</strong>.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The special case 0!</span>
+<p>By agreement, 0! = 1. That makes the formulas work correctly.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> About the calculator</span>
+<p>The GED test uses the TI-30XS MultiView calculator. It has keys for the factorial and for permutations and combinations: <strong>n!</strong>, <strong>nPr</strong>, and <strong>nCr</strong> (on the TI-30XS they are in the PRB menu). The calculator on this page has them too, although they may have other names or be in other places.</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Open the calculator</button>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 — A factorial</h3></div>
+<p class="pregunta-int" id="t-p2">What is 4!?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">24</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#factorial" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: the factorial (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: the factorial</span><span class="ei-sub">Find factorials and simplify quotients of factorials.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-permutations"><span aria-hidden="true" class="num-seccion">3</span>Permutations: order matters</h2>
+<p>A <strong>permutation</strong> counts how many ways items can be put in order. Use it when the order matters (a podium, a code, the order of arrival).</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">P(n, r) = <span class="fracc"><span class="fa">n!</span><span class="fb2">(n − r)!</span></span></p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3: in how many ways can you arrange 3 books out of 5 on a shelf?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Here n = 5 and r = 3, and the order matters.</strong> P(5, 3) = <span class="fracc"><span class="fa">5!</span><span class="fb2">(5 − 3)!</span></span> = <span class="fracc"><span class="fa">5!</span><span class="fb2">2!</span></span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Calculate.</strong> 120 ÷ 2 = 60. (Or count the places: 5 × 4 × 3 = 60.)</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> There are <strong>60</strong> ways to arrange them.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 — In a line</h3></div>
+<p class="pregunta-int" id="t-p3">In how many ways can 3 people stand in a line?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">3</button>
+<button class="opcion" data-k="b" type="button">9</button>
+<button class="opcion" data-k="c" type="button">6</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#permutations" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: permutations: order matters (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: permutations: order matters</span><span class="ei-sub">Count arrangements with P(n, r).</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-combinations"><span aria-hidden="true" class="num-seccion">4</span>Combinations: order does not matter</h2>
+<p>A <strong>combination</strong> counts how many ways you can choose a group, when the order does not matter (a committee, a hand of cards, a group of friends). That is why its formula also divides by r!, which removes the repeated orders.</p>
+<p class="formula" style="text-align:center;font-size:1.2rem;font-weight:700;">C(n, r) = <span class="fracc"><span class="fa">n!</span><span class="fb2">r! (n − r)!</span></span></p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4: in how many ways can you choose 3 books out of 5 to take on a trip (order does not matter)?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>n = 5, r = 3.</strong> C(5, 3) = <span class="fracc"><span class="fa">5!</span><span class="fb2">3! (5 − 3)!</span></span> = <span class="fracc"><span class="fa">120</span><span class="fb2">6 × 2</span></span>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Calculate.</strong> 120 ÷ 12 = 10.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Answer.</strong> There are <strong>10</strong> ways to choose them.</p>
+</div>
+<div aria-label="Permutation or combination? (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">How to tell a permutation from a combination</caption>
+<thead><tr><th scope="col">Does order matter?</th><th scope="col">Type</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td>Yes</td><td>Permutation</td><td>A podium (1st, 2nd, 3rd), a code</td></tr>
+<tr><td>No</td><td>Combination</td><td>A committee, a group of friends</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The key question</span>
+<p>Before you calculate, ask yourself: “Does the result change if I change the order?” If yes → permutation. If no → combination. Mixing them up is the most common mistake in this topic.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 — A committee</h3></div>
+<p class="pregunta-int" id="t-p4">Choosing a committee of 3 people from a group of 10 is a problem of…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">combination (order does not matter)</button>
+<button class="opcion" data-k="b" type="button">permutation (order matters)</button>
+<button class="opcion" data-k="c" type="button">the counting principle only</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 5 — A race</h3></div>
+<p class="pregunta-int" id="t-p5">Giving 1st, 2nd, and 3rd place to 5 runners is a problem of…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">combination (order does not matter)</button>
+<button class="opcion" data-k="b" type="button">the factorial of 3</button>
+<button class="opcion" data-k="c" type="button">permutation (order matters)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>C(4, 2)</h3></div>
+<p class="pregunta-int" id="t-p6">What is C(4, 2)?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">12</button>
+<button class="opcion" data-k="b" type="button">6</button>
+<button class="opcion" data-k="c" type="button">8</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-8-1.html#combinations" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: combinations: order does not matter (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: combinations: order does not matter</span><span class="ei-sub">Count groups with C(n, r).</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practice-8-1.html#decide" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: does order matter? (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔗</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: does order matter?</span><span class="ei-sub">Decide whether each situation is a permutation, a combination, or the counting principle.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s-homework"><span aria-hidden="true" class="num-seccion">5</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-8-1.html">practice page for this lesson</a> and do each activity. The exercises change every time. Do at least 10 in each activity, and keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Paper and pencil.</strong> Solve three counting-principle problems (menus, outfits, codes), three permutations, and three combinations. For each one, write first whether order matters, then calculate by hand and check with the calculator's nPr and nCr keys.</li>
+<li><strong>In your daily life.</strong> Count the outfits you could make with the shirts, pants, and shoes in your closet. Then think of a lock or a phone PIN: how many 4-digit codes are possible if digits can repeat? And if they cannot?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">6</span>Practice quiz</h2>
+<p>Answer the <strong>8 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="A"><p class="qnum">Question A</p>
+<p class="pregunta" id="t-qA">There are 3 appetizers and 4 main dishes. How many different meals (one of each) can you make?</p>
+<div aria-labelledby="t-qA" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">7</button><button class="opcion" data-k="b" type="button">34</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">3</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="B"><p class="qnum">Question B</p>
+<p class="pregunta" id="t-qB">What is 5!?</p>
+<div aria-labelledby="t-qB" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">120</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">15</button><button class="opcion" data-k="d" type="button">20</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="C"><p class="qnum">Question C</p>
+<p class="pregunta" id="t-qC">In how many ways can 4 people stand in a line?</p>
+<div aria-labelledby="t-qC" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">12</button><button class="opcion" data-k="b" type="button">16</button><button class="opcion" data-k="c" type="button">24</button><button class="opcion" data-k="d" type="button">4</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="D"><p class="qnum">Question D</p>
+<p class="pregunta" id="t-qD">What is P(5, 2)?</p>
+<div aria-labelledby="t-qD" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">10</button><button class="opcion" data-k="b" type="button">20</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="E"><p class="qnum">Question E</p>
+<p class="pregunta" id="t-qE">What is C(5, 2)?</p>
+<div aria-labelledby="t-qE" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">20</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">7</button><button class="opcion" data-k="d" type="button">10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="F"><p class="qnum">Question F</p>
+<p class="pregunta" id="t-qF">What is C(6, 2)?</p>
+<div aria-labelledby="t-qF" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">15</button><button class="opcion" data-k="b" type="button">30</button><button class="opcion" data-k="c" type="button">12</button><button class="opcion" data-k="d" type="button">36</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="G"><p class="qnum">Question G</p>
+<p class="pregunta" id="t-qG">Choosing 3 fruits out of 7 for a salad (order does not matter) is…</p>
+<div aria-labelledby="t-qG" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a permutation</button><button class="opcion" data-k="b" type="button">a factorial only</button><button class="opcion" data-k="c" type="button">a combination</button><button class="opcion" data-k="d" type="button">the counting principle</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="H"><p class="qnum">Question H</p>
+<p class="pregunta" id="t-qH">Giving gold, silver, and bronze to 3 of 8 athletes is…</p>
+<div aria-labelledby="t-qH" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a combination</button><button class="opcion" data-k="b" type="button">the factorial of 8</button><button class="opcion" data-k="c" type="button">the counting principle only</button><button class="opcion" data-k="d" type="button">a permutation</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-checklist"><span aria-hidden="true" class="num-seccion">7</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist for counting (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Self-check checklist: skills for the counting principle, permutations, and combinations and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">The counting principle</th><td>I multiply the choices for each event and can check with a tree diagram.</td><td>I multiply with occasional mistakes.</td><td>I do not multiply the choices for each event.</td></tr>
+<tr><th scope="row">Permutation or combination</th><td>I decide whether the problem asks for a permutation or a combination, and explain why.</td><td>I tell them apart with some mistakes.</td><td>I cannot tell whether order matters.</td></tr>
+<tr><th scope="row">Using the formula</th><td>I use the right formula without factorial mistakes and check with the calculator.</td><td>I use the formula with factorial mistakes.</td><td>I do not use the factorial correctly.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-next"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>In this lesson you learned to count possible outcomes: the counting principle (multiply the choices), the factorial, permutations (when order matters), and combinations (when it does not), and when to use each one.</p>
+<p>In <strong>Lesson 8.2 · Compound probability: with and without replacement</strong> you will use this counting to find the probability of two or more events: the probability that A happens and then B, and how the answer changes with or without replacement.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-8-2.html">Lesson 8.2 · Compound probability: with and without replacement</a></p>
+</section>
+
+<section>
+<h2 id="s-words"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>counting principle</dt><dd>If one event can happen in m ways and another in n ways, together they can happen in m × n ways.</dd>
+<dt>factorial</dt><dd>n! = n × (n − 1) × … × 1. By agreement, 0! = 1.</dd>
+<dt>permutation</dt><dd>An arrangement in which order matters: P(n, r).</dd>
+<dt>combination</dt><dd>A choice of a group in which order does not matter: C(n, r).</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Math · Level 3 · Topic 8 · Lesson 8.1</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service. TI-30XS MultiView is a trademark of Texas Instruments; the calculator on this page is an independent learning simulator.</p></footer>
+<script>
+window.LESSON = {
+ "next": "Lesson 8.2",
+ "review": "sections 3 and 4",
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "You added. Each shirt goes with each pair of pants: multiply.",
+    "c": "You wrote the numbers side by side. Multiply them."
+   },
+   "right": "4 × 3 = 12.",
+   "solution": "4 × 3 = 12."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "12 is 4 × 3. Keep going: × 2 × 1.",
+    "c": "4! is not 4: multiply 4 × 3 × 2 × 1."
+   },
+   "right": "4 × 3 × 2 × 1 = 24.",
+   "solution": "4! = 24."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "The first place has 3 choices, the second 2, and the third 1.",
+    "b": "That is 3 × 3. Each person can only be in one place: 3 × 2 × 1."
+   },
+   "right": "3! = 3 × 2 × 1 = 6.",
+   "solution": "3! = 6."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "In a committee everyone has the same role. Does the order change the committee?",
+    "c": "All the members come from the same group, and order does not matter."
+   },
+   "right": "Ana, Luis, and Rosa form the same committee in any order: combination.",
+   "solution": "Combination."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Is finishing first the same as finishing third?",
+    "b": "There are 5 runners, not 3: P(5, 3) = 5 × 4 × 3."
+   },
+   "right": "The places are different, so order matters: permutation.",
+   "solution": "Permutation."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "12 is P(4, 2), where order matters. Divide by 2! = 2.",
+    "c": "That is 4 × 2. Use C(4, 2) = (4 × 3) ÷ (2 × 1)."
+   },
+   "right": "(4 × 3) ÷ (2 × 1) = 6.",
+   "solution": "C(4, 2) = 6."
+  }
+ },
+ "quiz": {
+  "A": {
+   "ok": "c",
+   "hints": {
+    "a": "You added. Multiply the choices.",
+    "b": "You wrote the numbers side by side. Multiply them.",
+    "d": "3 is only the number of appetizers."
+   },
+   "solution": "3 × 4 = 12."
+  },
+  "B": {
+   "ok": "a",
+   "hints": {
+    "b": "25 is 5 × 5. Multiply 5 × 4 × 3 × 2 × 1.",
+    "c": "You added 5 + 4 + 3 + 2 + 1. Multiply.",
+    "d": "20 is 5 × 4. Keep going: × 3 × 2 × 1."
+   },
+   "solution": "5! = 120."
+  },
+  "C": {
+   "ok": "c",
+   "hints": {
+    "a": "12 is 4 × 3. Keep going: × 2 × 1.",
+    "b": "16 is 4 × 4. Each person can only take one place.",
+    "d": "4 is the number of people. The places: 4 × 3 × 2 × 1."
+   },
+   "solution": "4! = 24."
+  },
+  "D": {
+   "ok": "b",
+   "hints": {
+    "a": "10 is C(5, 2), where order does not matter.",
+    "c": "25 is 5 × 5. Without repeating: 5 × 4.",
+    "d": "You added. Multiply 5 × 4."
+   },
+   "solution": "P(5, 2) = 5 × 4 = 20."
+  },
+  "E": {
+   "ok": "d",
+   "hints": {
+    "a": "20 is P(5, 2). Divide by 2! = 2.",
+    "b": "25 is 5 × 5. Use (5 × 4) ÷ (2 × 1).",
+    "c": "You added. Use (5 × 4) ÷ (2 × 1)."
+   },
+   "solution": "C(5, 2) = 20 ÷ 2 = 10."
+  },
+  "F": {
+   "ok": "a",
+   "hints": {
+    "b": "30 is P(6, 2). Divide by 2! = 2.",
+    "c": "12 is 6 × 2. Use (6 × 5) ÷ (2 × 1).",
+    "d": "36 is 6 × 6. Use (6 × 5) ÷ (2 × 1)."
+   },
+   "solution": "C(6, 2) = 30 ÷ 2 = 15."
+  },
+  "G": {
+   "ok": "c",
+   "hints": {
+    "a": "Does a salad change if you pick the fruits in another order?",
+    "b": "Only 3 of the 7 fruits are chosen.",
+    "d": "All the fruits come from the same group, and order does not matter."
+   },
+   "solution": "Combination."
+  },
+  "H": {
+   "ok": "d",
+   "hints": {
+    "a": "Are gold and bronze the same prize?",
+    "b": "Only 3 of the 8 athletes get a medal.",
+    "c": "The medals go to people from the same group, and order matters."
+   },
+   "solution": "Permutation: P(8, 3)."
+  }
+ }
+};
+</script>
+<script src="../lesson.js"></script>
+<script src="/js/calculator.js" data-color="#0d47a1" defer></script>
+</body>
+</html>
