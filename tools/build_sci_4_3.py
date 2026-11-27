@@ -311,7 +311,7 @@ def leccion():
          t("<strong>Interpret</strong> a growth curve with a carrying capacity.", "<strong>Interpretar</strong> una curva de crecimiento con capacidad de carga."),
          t("<strong>Tell apart</strong> the four kinds of relationship between species by who benefits and who is harmed.", "<strong>Distinguir</strong> los cuatro tipos de relación entre especies según a quién beneficia y a quién perjudica.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 5 · Physical science I: matter, atoms, and chemical reactions (being written).", "Siguiente: Tema 5 · Ciencias físicas I: materia, átomo y reacciones químicas (en preparación).")), glosario, P, calculadora=True)
+        ("5-1", t("The atom, the periodic table, and chemical bonds", "El átomo, la tabla periódica y los enlaces químicos")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- práctica
