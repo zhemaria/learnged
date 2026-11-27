@@ -75,3 +75,31 @@ body.hc .route,body.hc .note{border-color:#000}
   .routes{grid-template-columns:1fr}
 }
 @media print{.tools,.skip{display:none} footer{background:#fff;color:#000} footer a{color:#000}}
+
+/* Portada · acordeones (tools/build_portada.py) */
+.ac-intro{font-size:1.5rem;color:var(--navy);margin:8px 0 4px}
+.ac-ayuda{margin:0 0 14px;color:var(--muted)}
+.acordeones{display:flex;flex-direction:column;gap:14px;margin:0 0 28px}
+.acordeon{background:#fff;border:1px solid var(--line);border-left:8px solid var(--c,var(--teal));border-radius:14px;overflow:hidden}
+.acordeon>summary{list-style:none;cursor:pointer;padding:18px 56px 18px 22px;position:relative;display:flex;flex-direction:column;gap:2px}
+.acordeon>summary::-webkit-details-marker{display:none}
+.acordeon>summary::after{content:"";position:absolute;right:22px;top:50%;width:12px;height:12px;border-right:3px solid var(--navy);border-bottom:3px solid var(--navy);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.acordeon[open]>summary::after{transform:translateY(-30%) rotate(-135deg)}
+.acordeon>summary:hover{background:#f7f9fb}
+.acordeon>summary:focus-visible{outline:3px solid var(--mustard);outline-offset:-3px}
+.ac-tit{font-size:1.35rem;font-weight:700;color:var(--navy)}
+.ac-desc{color:var(--muted)}
+.ac-cuerpo{padding:4px 22px 20px;border-top:1px solid var(--line)}
+.fila{padding:14px 0;border-bottom:1px dashed var(--line)}
+.fila:last-child{border-bottom:0}
+.fila h3{margin:0 0 6px;padding-left:10px;border-left:5px solid var(--c,var(--teal));font-size:1.15rem;color:var(--teal-d)}
+.fila-nota{margin:0 0 10px;font-size:.95rem;color:var(--muted)}
+.fila .niveles{gap:8px}
+.fila .btn{padding:8px 14px;font-size:.98rem}
+.btn.btn-sec{background:#fff;color:var(--navy);border:2px solid var(--navy);padding:6px 12px}
+.btn.btn-sec:hover{background:var(--navy);color:#fff}
+.btn .tn{display:inline-flex;align-items:center;justify-content:center;min-width:1.5em;height:1.5em;margin-right:4px;border-radius:50%;background:#fff;color:var(--navy);font-size:.85em}
+body.hc .acordeon{border-color:#000;border-left-color:#000}
+body.hc .fila h3{color:#000;border-left-color:#000}
+body.hc .ac-desc,body.hc .fila-nota{color:#000}
+@media print{.acordeon:not([open]) .ac-cuerpo{display:block}}
