@@ -16,6 +16,14 @@ CIEN = [("The scientific method", "El método científico", "The scientific meth
         ("Force and energy", "Fuerza y energía", "Physical science II: force, motion, energy, and waves", "Ciencias físicas II: fuerza, movimiento, energía y ondas"),
         ("Earth and space", "La Tierra y el espacio", "Earth and space science", "Ciencias de la Tierra y el espacio"),
         ("Test preparation", "Preparación del examen", "Putting it together: evaluating conclusions and GED preparation", "Integración, evaluación de conclusiones y preparación para el GED")]
+SOC = [("Inquiry and sources", "Indagación y fuentes", "Inquiry, sources, and analytical literacy", "Indagación, fuentes y alfabetización analítica"),
+       ("Data and numbers", "Datos y números", "Quantitative reasoning in social studies", "Razonamiento cuantitativo en estudios sociales"),
+       ("Founding documents", "Documentos fundacionales", "Civics I: founding documents and constitutional principles", "Cívica I: documentos fundacionales y principios constitucionales"),
+       ("The three branches", "Las tres ramas", "Civics II: the three branches and policymaking", "Cívica II: las tres ramas y la formación de políticas"),
+       ("Rights and elections", "Derechos y elecciones", "Citizenship in action: rights, elections, and public finance", "Ciudadanía en acción: derechos, elecciones y finanzas públicas"),
+       ("U.S. history", "Historia de EE. UU.", "U.S. history: cause and change", "Historia de los Estados Unidos: causalidad y cambio"),
+       ("Economics and geography", "Economía y geografía", "Economics and geography of a connected world", "Economía y geografía del mundo conectado"),
+       ("Test preparation", "Preparación del examen", "Putting it together: multiple-source scenarios and GED preparation", "Integración, escenarios de varias fuentes y preparación para el GED")]
 
 
 def existe(ruta):
@@ -63,12 +71,17 @@ def pagina(lang):
         f = T(f"lesson-{k}-1.html", f"leccion-{k}-1.html")
         ciencias.append(boton(sci + f, f'<span class="tn">{k}</span> {T(cen, ces)}', T(f"Science, topic {k}: {len_}", f"Ciencias, tema {k}: {les}"), rel_root=scir + f))
     ciencias.append(boton(T("science/practice-test.html", "ciencias/simulacro.html"), T("Timed practice test", "Simulacro cronometrado"), T("Science, timed practice test of 40 questions", "Ciencias, simulacro cronometrado de 40 preguntas"), sec=True, rel_root=T("science/practice-test.html", "es/ciencias/simulacro.html")))
+    soc, socr = T("social-studies/", "estudios-sociales/"), T("social-studies/", "es/estudios-sociales/")
+    sociales = [boton(soc, T("Course plan", "Plan del curso"), T("Social studies, plan of the course", "Estudios sociales, plan del curso"), sec=True, rel_root=socr)]
+    for k, (cen, ces, len_, les) in enumerate(SOC, 1):
+        f = T(f"lesson-{k}-1.html", f"leccion-{k}-1.html")
+        sociales.append(boton(soc + f, f'<span class="tn">{k}</span> {T(cen, ces)}', T(f"Social studies, topic {k}: {len_}", f"Estudios sociales, tema {k}: {les}"), rel_root=socr + f))
     ged = [
         fila(T("Math", "Matemáticas"), [boton(m + niv(k), T(f"Level {k}", f"Nivel {k}"), T(f"Math, level {k}", f"Matemáticas, nivel {k}"), rel_root=mr(k)) for k in (3, 4)],
              T("Algebra, geometry, functions, data, and probability, as on the GED Mathematical Reasoning test.", "Álgebra, geometría, funciones, datos y probabilidad, como en el examen de Razonamiento Matemático del GED.")),
         fila(T("Reasoning through language arts", "Razonamiento a través de las artes del lenguaje"), [], pronto=T("rla/#levels-3-4", "artes-del-lenguaje/#levels-3-4")),
         fila(T("Science", "Ciencias"), ciencias, T("Eight topics, from the scientific method to test preparation. Each button opens the first lesson of the topic.", "Ocho temas, del método científico a la preparación del examen. Cada botón abre la primera lección del tema.")),
-        fila(T("Social studies", "Estudios sociales"), [], pronto=T("social-studies/", "estudios-sociales/")),
+        fila(T("Social studies", "Estudios sociales"), sociales, T("Eight topics, from reading sources to test preparation. Each button opens the first lesson of the topic; the others are on their way.", "Ocho temas, de la lectura de fuentes a la preparación del examen. Cada botón abre la primera lección del tema; los demás están en camino.")),
     ]
     # ---------- Practique
     pruebas = [boton(T("science/practice-test.html", "ciencias/simulacro.html"), T("Science · timed practice test", "Ciencias · simulacro cronometrado"), rel_root=T("science/practice-test.html", "es/ciencias/simulacro.html")),

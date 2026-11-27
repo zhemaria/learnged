@@ -25,6 +25,15 @@ def t(en, es):
     return en if L == "en" else es
 
 
+# ---------------------------------------------------------------- la materia (Ciencias; tools/sociales.py la cambia)
+MAT = {"nombre": ("Science", "Ciencias"), "carpeta": ("science", "es/ciencias"), "builder": "build_sci_",
+       "css": ["/science/science.css"], "icono": "🔬"}
+
+
+def materia():
+    return t(*MAT["nombre"])
+
+
 # ---------------------------------------------------------------- temas y áreas
 TEMAS = {
     1: (("The scientific method and research design", "El método científico y el diseño de investigación"), "skills"),
@@ -213,7 +222,7 @@ def prac(n, lang=None):
 
 
 def carpeta(lang=None):
-    return "science" if (lang or L) == "en" else "es/ciencias"
+    return MAT["carpeta"][0] if (lang or L) == "en" else MAT["carpeta"][1]
 
 
 def existe(n):
@@ -290,7 +299,7 @@ def lectura(titulo, parrafos, nota=None):
 
 def enlace(n, ancla, titulo, sub):
     return f'''<a class="enlace-interactivo" href="{prac(n)}#{ancla}" target="_blank" rel="noopener noreferrer" aria-label="{t("Open the practice activity", "Abrir la actividad de práctica")}: {H.escape(re.sub("<[^>]+>", "", titulo))} {t("(opens in a new tab)", "(se abre en una pestaña nueva)")}">
-<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-icono" aria-hidden="true">{MAT["icono"]}</span>
 <span class="ei-cuerpo"><span class="ei-titulo">{t("Practice more", "Practique más")}: {titulo}</span><span class="ei-sub">{sub}</span><span class="ei-cta">{t("Open the activity", "Abrir la actividad")} <span aria-hidden="true">›</span></span></span>
 </a>'''
 
@@ -336,7 +345,7 @@ PIE = {
 
 def barra():
     return (f'<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="{t("/", "/es/")}"><img src="/img/learnged-logo-horizontal.svg" alt="{t("LearnGED home", "Inicio de LearnGED")}" height="34"></a>'
-            f'<a class="lg-link" href="./">{t("Science · all lessons", "Ciencias · todas las lecciones")}</a></nav>')
+            f'<a class="lg-link" href="./">{materia()} · {t("all lessons", "todas las lecciones")}</a></nav>')
 
 
 # ---------------------------------------------------------------- la página de la lección
@@ -366,7 +375,7 @@ def pagina_leccion(n, titulo, lema, sp_chips, objetivos, estd, conexion, seccion
               "review": t("the lesson", "la lección")}
     calc = '\n<script src="%s" data-color="%s" defer></script>' % (t("/js/calculator.js", "/js/calculadora.js"), COLOR[area]) if calculadora else ""
     return f'''<!DOCTYPE html>
-<!-- LearnGED · {t("Science · Lesson", "Ciencias · Lección")} {num} ({t("English", "español")}) — {t("built by", "construida con")} tools/build_sci_{n.replace("-", "_")}.py
+<!-- LearnGED · {materia()} · {t("Lesson", "Lección")} {num} ({t("English", "español")}) — {t("built by", "construida con")} tools/{MAT["builder"]}{n.replace("-", "_")}.py
      José M. Fernández · CC BY-NC-SA 4.0 -->
 <html lang="{L}">
 <head>
@@ -377,14 +386,14 @@ def pagina_leccion(n, titulo, lema, sp_chips, objetivos, estd, conexion, seccion
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="alternate" hreflang="{t("es", "en")}" href="/{carpeta("es" if L == "en" else "en")}/{lec(n, "es" if L == "en" else "en")}"/>
 <link rel="stylesheet" href="/math/lesson.css">
-<link rel="stylesheet" href="/science/science.css">
+{"".join('<link rel="stylesheet" href="' + x + '">' for x in MAT["css"])}
 </head>
 <body data-area="{area}">
 {barra()}
 <a class="saltar" href="#indice">{t("Skip to the lesson contents", "Saltar al contenido de la lección")}</a>
 <header class="principal">
 <div class="envoltura-header">
-<p class="ruta">{t("Science · Topic", "Ciencias · Tema")} {tn} — {tema(tn)}</p>
+<p class="ruta">{materia()} · {t("Topic", "Tema")} {tn} — {tema(tn)}</p>
 <h1>{t("Lesson", "Lección")} {num} · {titulo}</h1>
 <p class="lema">{lema}</p>
 <div class="chips">
@@ -473,7 +482,7 @@ def pagina_leccion(n, titulo, lema, sp_chips, objetivos, estd, conexion, seccion
 </dl>
 </section>
 </div>
-<footer><p>LearnGED · {t("Science · Topic", "Ciencias · Tema")} {tn} · {t("Lesson", "Lección")} {num}</p>{PIE[L]}</footer>
+<footer><p>LearnGED · {materia()} · {t("Topic", "Tema")} {tn} · {t("Lesson", "Lección")} {num}</p>{PIE[L]}</footer>
 <script>
 window.LESSON = {json.dumps(lesson, ensure_ascii=False, indent=1)};
 </script>
@@ -547,11 +556,11 @@ def pagina_practica(n, titulo, meta, modulos, js, scripts=(), calculadora=False)
     num = n.replace("-", ".")
     idx = "\n".join(f'      <li><a href="#{mid}">{tt}</a></li>' for mid, tt, _ in modulos)
     mods = "\n\n".join(modulo(mid, i + 1, tt, h, i == 0) for i, (mid, tt, h) in enumerate(modulos))
-    ruta = f'{t("Science · Topic", "Ciencias · Tema")} {tn} · {tema(tn)}'
+    ruta = f'{materia()} · {t("Topic", "Tema")} {tn} · {tema(tn)}'
     otra = "es" if L == "en" else "en"
     calc = '\n<script src="%s" data-color="%s" defer></script>' % (t("/js/calculator.js", "/js/calculadora.js"), COLOR[area]) if calculadora else ""
     return f'''<!DOCTYPE html>
-<!-- LearnGED · {t("Science · Lesson", "Ciencias · Lección")} {num} · {t("practice", "práctica")} ({t("English", "español")}) — {t("built by", "construida con")} tools/build_sci_{n.replace("-", "_")}.py
+<!-- LearnGED · {materia()} · {t("Lesson", "Lección")} {num} · {t("practice", "práctica")} ({t("English", "español")}) — {t("built by", "construida con")} tools/{MAT["builder"]}{n.replace("-", "_")}.py
      José M. Fernández · CC BY-NC-SA 4.0 -->
 <html lang="{L}">
 <head>
@@ -562,7 +571,7 @@ def pagina_practica(n, titulo, meta, modulos, js, scripts=(), calculadora=False)
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="{otra}" href="/{carpeta(otra)}/{prac(n, otra)}">
 <link rel="stylesheet" href="/math/practice.css">
-<link rel="stylesheet" href="/science/science.css">
+{"".join('<link rel="stylesheet" href="' + x + '">' for x in MAT["css"])}
 </head>
 <body data-area="{area}">
 {barra()}

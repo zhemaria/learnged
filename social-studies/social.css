@@ -1,0 +1,32 @@
+/* LearnGED · Social studies: color of each area and the pieces of the subject (documents, quotes).
+   Loaded after /math/lesson.css (or practice.css) and /science/science.css. */
+body[data-area="tools"]{--c1:#7a4a2e;--c2:#965c3a;--c3:#f6ede6;}
+body[data-area="civics"]{--c1:#283593;--c2:#3949ab;--c3:#e8eaf6;}
+body[data-area="history"]{--c1:#9c3d1c;--c2:#b8532c;--c3:#fbece5;}
+body[data-area="economics"]{--c1:#2e6b30;--c2:#3b843d;--c3:#e9f4e9;}
+body[data-area="ged"]{--c1:#5e3591;--c2:#7646ad;--c3:#f1eafa;}
+
+/* A real document with its card */
+.documento{background:#fffdf7;border:1px solid #e4dcc4;border-left:6px solid var(--c2);border-radius:12px;padding:16px 20px;margin:18px 0;}
+.documento .doc-tit{margin:0 0 8px;font-weight:700;font-size:19px;color:var(--c1);}
+.documento .ficha{display:grid;grid-template-columns:max-content 1fr;gap:4px 14px;margin:0 0 12px;padding:10px 14px;background:#fff;border:1px solid #eadfca;border-radius:8px;font-size:15px;}
+.documento .ficha dt{font-weight:700;color:var(--c1);}
+.documento .ficha dd{margin:0;}
+.documento .doc-nota{font-size:15px;background:#fff6e0;border-radius:8px;padding:8px 12px;}
+.documento .doc-parte{border-top:1px dashed #e0d5bd;padding-top:10px;margin-top:10px;}
+.documento .doc-parte:first-child{border-top:0;margin-top:0;}
+.documento h4{margin:0 0 6px;font-size:17px;color:#3e2a25;}
+.documento .doc-texto p{font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.6;}
+.documento details.original{margin:6px 0 4px;}
+.documento details.original summary{cursor:pointer;font-weight:700;color:var(--c1);font-size:15px;}
+.documento details.original div{background:#f7f3ea;border-radius:8px;padding:6px 12px;margin-top:6px;}
+@media (max-width:560px){ .documento .ficha{grid-template-columns:1fr;} .documento .ficha dd{margin-bottom:6px;} }
+
+/* A short quotation used as the stimulus of a question */
+.cita-doc{margin:10px 0 12px;padding:10px 16px;background:#fffdf7;border-left:5px solid var(--c2);border-radius:8px;}
+.cita-doc p{margin:0 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55;}
+.cita-doc footer{font-size:15px;color:#5b6675;}
+
+/* Diagrams drawn for this course */
+.diagrama{width:100%;height:auto;display:block;margin:14px auto;}
+body.hc .documento,body.hc .cita-doc{background:#fff;border-color:#000;}

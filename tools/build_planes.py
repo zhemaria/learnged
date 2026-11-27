@@ -226,12 +226,12 @@ CIEN_AREAS = [
 ]
 
 
-def lecciones_hechas(lang, tema):
-    """Lecciones de Ciencias ya publicadas en el tema: {número de lección: enlace}."""
+def lecciones_hechas(lang, tema, carpetas=("science", "es/ciencias")):
+    """Lecciones ya publicadas en el tema: {número de lección: enlace}."""
     out = {}
     for i in (1, 2, 3):
         f = ("lesson-%d-%d.html" if lang == "en" else "leccion-%d-%d.html") % (tema, i)
-        if os.path.exists(os.path.join(RAIZ, "science" if lang == "en" else "es/ciencias", f)):
+        if os.path.exists(os.path.join(RAIZ, carpetas[0] if lang == "en" else carpetas[1], f)):
             out[i] = f
     return out
 
@@ -286,24 +286,24 @@ def ciencias(lang):
 # ---------------------------------------------------------------- SOCIAL STUDIES
 SOC_TEMAS = {
     "en": [
-        ("Inquiry, sources, and analytical literacy", "SSP.1 · SSP.2 · SSP.6 · SSP.7", ["Compelling and supporting questions: the inquiry arc", "Primary and secondary sources: origin, purpose, and context", "Bias, point of view, and persuasive language"]),
-        ("Quantitative reasoning in social studies", "SSP.10 · SSP.11", ["Graphs, tables, and the TI-30XS calculator", "Measures of center in population and economic data", "Percents, rates, map scales, and population density"]),
-        ("Civics I: founding documents and constitutional principles", "SSP.1 · SSP.6", ["From the social contract to the Declaration of Independence", "The Constitution: structure and principles", "Federalism in practice"]),
-        ("Civics II: the three branches and policymaking", "SSP.1 · SSP.3", ["The legislative branch: how a bill becomes a law", "The executive branch: the presidency, the cabinet, and the bureaucracy", "The judicial branch: judicial review and precedent"]),
-        ("Citizenship in action: rights, elections, and public finance", "SSP.2 · SSP.11", ["The Bill of Rights and the expansion of citizenship", "The election process: parties, campaigns, and the Electoral College", "Taxes, the budget, and fiscal policy"]),
-        ("U.S. history: cause and change", "SSP.3 · SSP.5", ["Colonies, the Revolution, and building a nation", "Expansion, slavery, the Civil War, and Reconstruction", "From the 20th century to today: industrialization, wars, and civil rights"]),
-        ("Economics and geography of a connected world", "SSP.9 · SSP.10", ["Supply, demand, markets, and the consumer", "Population, migration, and human geography", "Resources, the environment, and sustainability"]),
-        ("Putting it together: multiple-source scenarios and GED preparation", "SSP.4 · SSP.7 · SSP.10", ["Multiple-source scenarios: text, graph, and map", "Final project: civic inquiry and informed action", "Timed practice test, item types, and the Illinois Constitution"]),
+        ("Inquiry, sources, and analytical literacy", "SSP.1 · SSP.2 · SSP.5 · SSP.7 · SSP.8", ["Compelling and supporting questions: the inquiry arc", "Primary and secondary sources: origin, purpose, and context", "Bias, point of view, and persuasive language"]),
+        ("Quantitative reasoning in social studies", "SSP.6 · SSP.10 · SSP.11", ["Graphs, tables, and the TI-30XS calculator", "Measures of center in population and economic data", "Percents, rates, map scales, and population density"]),
+        ("Civics I: founding documents and constitutional principles", "SSP.1 · SSP.4 · SSP.5", ["From the social contract to the Declaration of Independence", "The Constitution: structure and principles", "Federalism in practice"]),
+        ("Civics II: the three branches and policymaking", "SSP.2 · SSP.3 · SSP.4", ["The legislative branch: how a bill becomes a law", "The executive branch: the presidency, the cabinet, and the bureaucracy", "The judicial branch: judicial review and precedent"]),
+        ("Citizenship in action: rights, elections, and public finance", "SSP.3 · SSP.6 · SSP.10", ["The Bill of Rights and the expansion of citizenship", "The election process: parties, campaigns, and the Electoral College", "Taxes, the budget, and fiscal policy"]),
+        ("U.S. history: cause and change", "SSP.3 · SSP.5 · SSP.8", ["Colonies, the Revolution, and building a nation", "Expansion, slavery, the Civil War, and Reconstruction", "From the 20th century to today: industrialization, wars, and civil rights"]),
+        ("Economics and geography of a connected world", "SSP.3 · SSP.6 · SSP.10", ["Supply, demand, markets, and the consumer", "Population, migration, and human geography", "Resources, the environment, and sustainability"]),
+        ("Putting it together: multiple-source scenarios and GED preparation", "SSP.6 · SSP.7 · SSP.8", ["Multiple-source scenarios: text, graph, and map", "Final project: civic inquiry and informed action", "Timed practice test, item types, and the Illinois Constitution"]),
     ],
     "es": [
-        ("Indagación, fuentes y alfabetización analítica", "SSP.1 · SSP.2 · SSP.6 · SSP.7", ["Preguntas convincentes y de apoyo: el arco de indagación", "Fuentes primarias y secundarias: origen, propósito y contexto", "Sesgo, punto de vista y lenguaje persuasivo"]),
-        ("Razonamiento cuantitativo en estudios sociales", "SSP.10 · SSP.11", ["Gráficas, tablas y la calculadora TI-30XS", "Medidas de tendencia central en datos demográficos y económicos", "Porcentajes, tasas, escalas de mapas y densidad de población"]),
-        ("Cívica I: documentos fundacionales y principios constitucionales", "SSP.1 · SSP.6", ["Del contrato social a la Declaración de Independencia", "La Constitución: estructura y principios", "El federalismo en la práctica"]),
-        ("Cívica II: las tres ramas y la formación de políticas", "SSP.1 · SSP.3", ["El poder legislativo: del proyecto a la ley", "El poder ejecutivo: presidencia, gabinete y burocracia", "El poder judicial: revisión judicial y precedente"]),
-        ("Ciudadanía en acción: derechos, elecciones y finanzas públicas", "SSP.2 · SSP.11", ["La Carta de Derechos y la expansión de la ciudadanía", "El proceso electoral: partidos, campañas y colegio electoral", "Impuestos, presupuesto y política fiscal"]),
-        ("Historia de los Estados Unidos: causalidad y cambio", "SSP.3 · SSP.5", ["Colonia, Revolución y la construcción de la nación", "Expansión, esclavitud, Guerra Civil y Reconstrucción", "Del siglo XX a hoy: industrialización, guerras y derechos civiles"]),
-        ("Economía y geografía del mundo conectado", "SSP.9 · SSP.10", ["Oferta, demanda, mercados y el consumidor", "Población, migración y geografía humana", "Recursos, medio ambiente y sostenibilidad"]),
-        ("Integración, escenarios de varias fuentes y preparación para el GED", "SSP.4 · SSP.7 · SSP.10", ["Escenarios de varias fuentes: texto, gráfica y mapa", "Proyecto final: indagación cívica y acción informada", "Simulacro cronometrado, tipos de pregunta y Constitución de Illinois"]),
+        ("Indagación, fuentes y alfabetización analítica", "SSP.1 · SSP.2 · SSP.5 · SSP.7 · SSP.8", ["Preguntas convincentes y de apoyo: el arco de indagación", "Fuentes primarias y secundarias: origen, propósito y contexto", "Sesgo, punto de vista y lenguaje persuasivo"]),
+        ("Razonamiento cuantitativo en estudios sociales", "SSP.6 · SSP.10 · SSP.11", ["Gráficas, tablas y la calculadora TI-30XS", "Medidas de tendencia central en datos demográficos y económicos", "Porcentajes, tasas, escalas de mapas y densidad de población"]),
+        ("Cívica I: documentos fundacionales y principios constitucionales", "SSP.1 · SSP.4 · SSP.5", ["Del contrato social a la Declaración de Independencia", "La Constitución: estructura y principios", "El federalismo en la práctica"]),
+        ("Cívica II: las tres ramas y la formación de políticas", "SSP.2 · SSP.3 · SSP.4", ["El poder legislativo: del proyecto a la ley", "El poder ejecutivo: presidencia, gabinete y burocracia", "El poder judicial: revisión judicial y precedente"]),
+        ("Ciudadanía en acción: derechos, elecciones y finanzas públicas", "SSP.3 · SSP.6 · SSP.10", ["La Carta de Derechos y la expansión de la ciudadanía", "El proceso electoral: partidos, campañas y colegio electoral", "Impuestos, presupuesto y política fiscal"]),
+        ("Historia de los Estados Unidos: causalidad y cambio", "SSP.3 · SSP.5 · SSP.8", ["Colonia, Revolución y la construcción de la nación", "Expansión, esclavitud, Guerra Civil y Reconstrucción", "Del siglo XX a hoy: industrialización, guerras y derechos civiles"]),
+        ("Economía y geografía del mundo conectado", "SSP.3 · SSP.6 · SSP.10", ["Oferta, demanda, mercados y el consumidor", "Población, migración y geografía humana", "Recursos, medio ambiente y sostenibilidad"]),
+        ("Integración, escenarios de varias fuentes y preparación para el GED", "SSP.6 · SSP.7 · SSP.8", ["Escenarios de varias fuentes: texto, gráfica y mapa", "Proyecto final: indagación cívica y acción informada", "Simulacro cronometrado, tipos de pregunta y Constitución de Illinois"]),
     ],
 }
 SOC_COLORES = ["#8d5a3b", "#2a7f86", "#1e3a5f", "#3949ab", "#00838f", "#b0532c", "#2e7d32", "#6a3fa0"]
@@ -326,9 +326,9 @@ def sociales(lang):
         if en else
         "El examen de Estudios Sociales del GED casi nunca pregunta una fecha. Presenta un documento (un fragmento de la Constitución, un mapa, una gráfica, un discurso, una caricatura política) y pregunta qué se puede sostener con él y qué no. Este curso enseña exactamente eso, con documentos reales."))
     c.append(estado(lang,
-        "<strong>Coming soon.</strong> We are writing this course now, in English and in Spanish. This page shows what it will cover, so you (and the teachers who review LearnGED) can see the plan."
+        "<strong>Topic 1 is ready:</strong> its three lessons are linked below, each with a practice page. The other topics are being written now, in English and in Spanish; this page shows the whole plan."
         if en else
-        "<strong>Próximamente.</strong> Estamos preparando este curso, en español y en inglés. Esta página muestra lo que va a abarcar, para que usted (y los profesores que revisan LearnGED) pueda ver el plan."))
+        "<strong>El Tema 1 ya está listo:</strong> sus tres lecciones están enlazadas abajo, cada una con su página de práctica. Los demás temas se están escribiendo ahora, en español y en inglés; esta página muestra el plan completo."))
     c.append(indice(lang, [("organization", "How it is organized" if en else "Cómo se organiza")] +
                     [(g[0], g[1] if en else g[2]) for g in SOC_GRUPOS] +
                     [("sources", "Source archive and extras" if en else "Archivo de fuentes y complementos"), ("how", "How each lesson works" if en else "Cómo es cada lección")]))
@@ -337,15 +337,18 @@ def sociales(lang):
         "<strong>Un solo curso de 24 lecciones en 8 temas</strong>, de unas 4 horas de estudio cada una (unas 96 horas en total). No se divide en niveles.",
         "<strong>Topics 1 and 2 build the tools</strong> (questioning sources and reading data); <strong>Topics 3 to 7</strong> cover civics, history, economics, and geography in about the same proportion as the test, where civics and government weigh the most; <strong>Topic 8</strong> puts everything together and prepares for test day." if en else
         "<strong>Los Temas 1 y 2 construyen las herramientas</strong> (interrogar fuentes y leer datos); <strong>los Temas 3 a 7</strong> recorren cívica, historia, economía y geografía en una proporción parecida a la del examen, donde la cívica y el gobierno pesan más; <strong>el Tema 8</strong> lo integra todo y prepara el día de la prueba.",
-        "<strong>The social studies practices of the GED</strong> (SSP) appear in every topic; each topic lists the ones it works on." if en else
-        "<strong>Las prácticas de estudios sociales del GED</strong> (SSP) aparecen en todos los temas; cada tema indica las que trabaja.",
+        "<strong>The social studies practices of the GED</strong> (SSP.1 to SSP.11: drawing conclusions, central ideas, cause and effect, words in context, point of view, maps and graphs, fact and opinion, comparing sources, and data) appear in every topic. Each lesson shows the ones it works on, with their depth of knowledge (DOK) and the aligned CCR standards, and ends with GED-style questions." if en else
+        "<strong>Las prácticas de estudios sociales del GED</strong> (de SSP.1 a SSP.11: sacar conclusiones, ideas centrales, causa y efecto, palabras en contexto, punto de vista, mapas y gráficas, hecho y opinión, comparar fuentes y datos) aparecen en todos los temas. Cada lección indica las que trabaja, con su profundidad de conocimiento (DOK) y los estándares CCR alineados, y termina con preguntas tipo GED.",
+        "<strong>Every question on the test joins one practice with one content topic:</strong> civics and government (about 50% of the test), U.S. history (20%), economics (15%), and geography and the world (15%)." if en else
+        "<strong>Cada pregunta del examen une una práctica con un tema de contenido:</strong> educación cívica y gobierno (cerca del 50 % del examen), historia de los Estados Unidos (20 %), economía (15 %) y geografía y el mundo (15 %).",
         "<strong>When to take it:</strong> it leans on reading and argument more than on math. It works best after Reasoning through language arts Level 3 and Math Level 3, and it can go along with Language arts Level 4. Always start with Lesson 1.1." if en else
         "<strong>Cuándo tomarlo:</strong> se apoya más en la lectura y la argumentación que en las matemáticas. Funciona mejor después del Nivel 3 de Artes del Lenguaje y del Nivel 3 de Matemáticas, y puede cursarse junto con el Nivel 4 de Artes del Lenguaje. Siempre conviene empezar por la Lección 1.1.",
     ])
     c.append(bloque("organization", "How it is organized" if en else "Cómo se organiza", org, lang))
     for g in SOC_GRUPOS:
         tarj = "".join(tarjeta(lang, t, T[t - 1][0], T[t - 1][2], color=SOC_COLORES[t - 1],
-                               nota=("Practices: " if en else "Prácticas: ") + T[t - 1][1]) for t in g[3])
+                               nota=("Practices: " if en else "Prácticas: ") + T[t - 1][1],
+                               enlaces=lecciones_hechas(lang, t, ("social-studies", "es/estudios-sociales"))) for t in g[3])
         c.append(bloque(g[0], g[1] if en else g[2], '<div class="grid">%s</div>' % tarj, lang))
     extras = lista([
         "<strong>Source archive.</strong> The real public-domain documents the lessons use (the Declaration of Independence, the Constitution, speeches, court decisions, and more). The English version links to each original as its official repository keeps it; the Spanish version adds a translation." if en else
