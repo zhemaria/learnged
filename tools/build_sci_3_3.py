@@ -261,7 +261,7 @@ def leccion():
          t("<strong>Tell apart</strong> negative feedback, which steadies, from positive feedback, which amplifies.", "<strong>Distinguir</strong> la retroalimentación negativa, que estabiliza, de la positiva, que amplifica el cambio."),
          t("<strong>Read</strong> public health data in tables and graphs, telling what the data support from what they do not.", "<strong>Interpretar</strong> datos de salud pública en tablas y gráficas, distinguiendo lo que los datos sostienen de lo que no permiten concluir.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 4 · Life science II: heredity, evolution, and ecosystems (being written).", "Siguiente: Tema 4 · Ciencias de la vida II: herencia, evolución y ecosistemas (en preparación).")), glosario, P)
+        ("4-1", t("DNA, RNA, and gene expression", "ADN, ARN y expresión genética")), glosario, P)
 
 
 # ---------------------------------------------------------------- práctica
