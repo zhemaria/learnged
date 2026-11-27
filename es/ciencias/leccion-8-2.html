@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 8.2 · Cuaderno del proyecto final — construida con tools/build_sci_8_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 8.2 · Proyecto final: mi propia investigación · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="en" href="/science/lesson-8-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+<style>
+  [hidden]{display:none !important;}
+  .campo{margin:14px 0;}
+  .campo label{display:block;font-weight:700;color:var(--azul-osc,#14265e);margin-bottom:4px;font-size:17px;}
+  .campo .ayuda{margin:0 0 6px;font-size:15px;color:#4a5568;}
+  textarea.trabajo,input.corto{width:100%;font:inherit;font-size:17px;padding:10px;border:2px solid #b0bec5;border-radius:8px;background:#fff;box-sizing:border-box;}
+  input.corto{max-width:520px;}
+  textarea.trabajo:focus,input.corto:focus,.tabla-datos input:focus{outline:3px solid #1e3a8a;outline-offset:1px;border-color:#1e3a8a;}
+  .tabla-datos input{width:100%;min-width:110px;font:inherit;font-size:16px;padding:6px 8px;border:1px solid #b0bec5;border-radius:6px;box-sizing:border-box;}
+  .tabla-datos td{padding:6px !important;}
+  .fila-botones{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0;}
+  #estado{font-weight:600;color:#14265e;min-height:1.4em;}
+  #informe-txt{width:100%;min-height:320px;font-family:Consolas,'Courier New',monospace;font-size:14px;padding:10px;border:2px solid #b0bec5;border-radius:8px;box-sizing:border-box;}
+  .aviso-corto{background:#fdf3df;border-left:4px solid #5C3900;padding:8px 12px;border-radius:5px;color:#5C3900;font-weight:600;}
+  section.etapa{border-top:3px solid #e6e9f2;padding-top:6px;}
+  @media print{
+    .lg-bar,.saltar,.fila-botones,#informe-caja,.indice,.aviso-desliza,#estado{display:none !important;}
+    textarea.trabajo{border:1px solid #000;min-height:0;height:auto;}
+    section.etapa{break-inside:auto;}
+    body{background:#fff;}
+  }
+</style>
+</head>
+<body data-area="ged">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido del cuaderno</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Ciencias · Tema 8 — Integración, evaluación de conclusiones y preparación para el GED</p>
+<h1>Lección 8.2 · Proyecto final: mi propia investigación</h1>
+<p class="lema">Diseñe una investigación sencilla sobre algo de su entorno, recoja sus propios datos y defienda una conclusión que se ajuste a ellos.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas, repartidas en dos o tres semanas</span>
+<span class="chip chip-sp">SP.1 – SP.8 · Todas las prácticas del curso</span>
+<span class="chip chip-sp">Sin quiz · el proyecto sustituye la evaluación</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a hacer</h2>
+<ul>
+<li><strong>Diseñar</strong> una investigación sencilla sobre un fenómeno del propio entorno.</li>
+<li><strong>Formular</strong> una pregunta investigable y una hipótesis comprobable.</li>
+<li><strong>Identificar</strong> las variables y establecer un control adecuado.</li>
+<li><strong>Recoger</strong> datos propios, organizarlos en una tabla y representarlos en la gráfica apropiada.</li>
+<li><strong>Formular</strong> una conclusión proporcionada a los datos, reconociendo al menos una limitación.</li>
+<li><strong>Presentar</strong> oralmente la investigación con lenguaje científico correcto.</li>
+</ul>
+</div>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido del cuaderno</h2><ol><li><a href="#s-plantilla">Cómo trabajar con esta plantilla</a></li><li><a href="#s-rubrica">La rúbrica, desde el primer día</a></li><li><a href="#s-elegir">Elegir la pregunta</a></li><li><a href="#e1">Etapa 1 · La pregunta</a></li><li><a href="#e2">Etapa 2 · La hipótesis</a></li><li><a href="#e3">Etapa 3 · El diseño</a></li><li><a href="#e4">Etapa 4 · Los datos</a></li><li><a href="#e5">Etapa 5 · La conclusión</a></li><li><a href="#e6">Etapa 6 · La presentación</a></li><li><a href="#s-vocab">Vocabulario del proyecto</a></li><li><a href="#s-evaluar">Cómo evaluarlo</a></li><li><a href="#s-sigue">Lo que viene</a></li></ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Antes de empezar</span>
+<p><strong>Esta página es su cuaderno de trabajo.</strong> No es una lección para leer: es una plantilla que se va completando a lo largo de unas tres semanas. Cada etapa tiene sus campos, y al final todo queda reunido en un solo informe.</p>
+<p><strong>El calendario.</strong> Conviene empezar pronto, porque varias investigaciones necesitan días de observación. Un buen ritmo es dedicar la primera semana a las etapas 1 a 3, la segunda a recoger los datos y la tercera a la conclusión y a preparar la presentación.</p>
+<p><strong>El círculo se cierra.</strong> El Tema 1 enseñó a formular una hipótesis comprobable y a aislar una variable. Todo lo que sigue es hacerlo de verdad, con un fenómeno propio y datos propios.</p>
+</div>
+
+<section>
+<h2 id="s-plantilla"><span aria-hidden="true" class="num-seccion">💾</span>Cómo trabajar con esta plantilla</h2>
+<p>Escriba directamente en los campos. La página guarda sola un borrador en este navegador cada pocos segundos, y también puede pulsar <strong>Guardar borrador</strong>. Al volver a esta página en el mismo equipo, encontrará su trabajo donde lo dejó.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El borrador guardado no es una copia de seguridad</span>
+<p>Solo está en este equipo y se pierde si se borran los datos del navegador o si se usa otro dispositivo. Para conservar su trabajo, pulse <strong>Generar informe</strong> y copie el texto, o use <strong>Imprimir o guardar en PDF</strong>.</p>
+</div>
+<div class="fila-botones">
+<button class="btn" type="button" id="b-guardar">Guardar borrador</button>
+<button class="btn" type="button" id="b-informe">Generar informe</button>
+<button class="btn btn-sec" type="button" id="b-imprimir">Imprimir o guardar en PDF</button>
+<button class="btn btn-sec" type="button" id="b-borrar">Borrar todo y empezar de nuevo</button>
+</div>
+<p id="estado" role="status" aria-live="polite"></p>
+<div id="informe-caja" hidden>
+<label for="informe-txt"><strong>Informe completo, listo para copiar</strong></label>
+<textarea id="informe-txt" readonly></textarea>
+<p><button class="btn btn-sec" type="button" id="b-copiar">Copiar el informe</button></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-rubrica"><span aria-hidden="true" class="num-seccion">📊</span>La rúbrica, desde el primer día</h2>
+<p>Esta rúbrica no aparece al final para calificar: se entrega ahora, al empezar, porque <strong>es la guía del trabajo</strong>. Cada criterio indica qué debe contener el proyecto, y la columna «Destacado» describe adónde conviene apuntar. Cinco criterios con cuatro niveles: hasta 20 puntos.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Fíjese en el criterio 4</span>
+<p><strong>Reconocer una limitación suma puntos, no los resta.</strong> Un proyecto que admite lo que sus datos no permiten afirmar está mejor hecho, no peor.</p>
+</div>
+<div aria-label="Rúbrica analítica del proyecto final con cinco criterios y cuatro niveles de desempeño, hasta un máximo de veinte puntos (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Rúbrica analítica del proyecto final con cinco criterios y cuatro niveles de desempeño, hasta un máximo de veinte puntos</caption>
+<thead><tr><th scope="col">Criterio</th><th scope="col">Inicial (1)</th><th scope="col">En desarrollo (2)</th><th scope="col">Competente (3)</th><th scope="col">Destacado (4)</th></tr></thead>
+<tbody>
+<tr><th scope="row">1 · Pregunta investigable e hipótesis comprobable</th><td>La pregunta no puede responderse con una medición.</td><td>La pregunta es investigable, pero la hipótesis no anticipa un resultado concreto.</td><td>La pregunta se responde midiendo y la hipótesis anticipa un resultado comprobable.</td><td>La hipótesis nombra además la variable que se cambia y la que se mide, y explica en qué se basa.</td></tr>
+<tr><th scope="row">2 · Diseño con variables identificadas y control adecuado</th><td>No distingue qué cambia y qué se mide.</td><td>Identifica las variables, pero no mantiene constantes las demás condiciones.</td><td>Aísla la variable independiente y mantiene constantes las demás.</td><td>Incorpora además un grupo de control o repeticiones, y justifica su necesidad.</td></tr>
+<tr><th scope="row">3 · Datos organizados en tabla y gráfica apropiada</th><td>Los datos aparecen sueltos, sin organizar.</td><td>Hay tabla, pero la gráfica no corresponde al tipo de datos o carece de rótulos.</td><td>Tabla completa y gráfica del tipo adecuado, con ejes rotulados y unidades.</td><td>La gráfica se lee sin explicación adicional y el tipo elegido se justifica.</td></tr>
+<tr><th scope="row">4 · Conclusión proporcionada, con una limitación reconocida</th><td>La conclusión afirma mucho más de lo que los datos muestran.</td><td>La conclusión se ajusta a los datos, pero no reconoce ninguna limitación.</td><td>La conclusión responde a la pregunta inicial y reconoce al menos una limitación.</td><td>Señala además qué dato adicional o qué mejora del diseño resolvería esa limitación.</td></tr>
+<tr><th scope="row">5 · Presentación oral clara, con lenguaje científico correcto</th><td>No se distinguen las partes de la investigación al exponer.</td><td>Expone las partes, pero confunde términos científicos básicos.</td><td>Presenta las seis etapas con claridad y emplea el vocabulario correcto.</td><td>Responde además las preguntas de quien lo escucha, apoyándose en sus propios datos.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section>
+<h2 id="s-elegir"><span aria-hidden="true" class="num-seccion">❓</span>Elegir la pregunta</h2>
+<p>Una <strong>pregunta investigable</strong> es la que puede responderse <strong>midiendo algo</strong>. No lo son las que piden una opinión («¿es mejor el café que el té?») ni las que se contestan buscando el dato en un libro («¿a qué temperatura hierve el agua?»). La prueba es sencilla: si para responderla hay que <strong>hacer algo y anotar números</strong>, es investigable.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Empiece por lo pequeño</span>
+<p>Un buen proyecto de este curso se hace en casa, con lo que hay en casa, y cambia una sola cosa. Los proyectos que fracasan casi nunca fracasan por falta de ambición: fracasan por intentar medir demasiadas cosas a la vez.</p>
+</div>
+<div aria-label="Banco de veinte preguntas investigables factibles en casa, agrupadas por ámbito (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Banco de veinte preguntas investigables factibles en casa, agrupadas por ámbito</caption>
+<thead><tr><th scope="col">Ámbito</th><th scope="col">Preguntas posibles</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calor y temperatura</th><td>¿Se enfría el café más rápido en taza de cerámica o de metal? · ¿Influye la tapa en la velocidad de enfriamiento? · ¿Cuánto tarda en derretirse un cubito según el líquido en que se sumerja? · ¿Se calienta más una superficie oscura o una clara al sol?</td></tr>
+<tr><th scope="row">Plantas y germinación</th><td>¿Germinan las semillas más rápido con luz o sin ella? · ¿Influye la cantidad de agua en la altura de la planta? · ¿Crece igual una planta regada con agua del grifo que con agua hervida y enfriada? · ¿Afecta la profundidad a la que se siembra la semilla?</td></tr>
+<tr><th scope="row">Disoluciones y materiales</th><td>¿Se disuelve el azúcar más rápido en agua fría o caliente? · ¿Influye remover en el tiempo de disolución? · ¿Qué material absorbe más agua en un minuto? · ¿Cuántas gotas de agua caben sobre una moneda según su tamaño?</td></tr>
+<tr><th scope="row">Movimiento y fuerza</th><td>¿Llega más lejos una pelota lanzada desde una rampa más alta? · ¿Influye la superficie en la distancia que recorre un objeto al deslizarse? · ¿Cambia el tiempo de caída según la forma del papel? · ¿Cuánto tarda un péndulo en detenerse según su longitud?</td></tr>
+<tr><th scope="row">Vida cotidiana y entorno</th><td>¿Qué aparato de la casa consume más electricidad en una hora? · ¿Varía la temperatura entre habitaciones a lo largo del día? · ¿Cuánta agua se gasta al lavarse los dientes con el grifo abierto frente a cerrado? · ¿Cambia el nivel de ruido de la calle según la hora?</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p><strong>Se admite cualquier otra pregunta</strong>, siempre que cumpla tres condiciones: que se responda midiendo, que solo cambie una cosa cada vez y que pueda hacerse con seguridad y con lo que se tenga a mano. Si se le ocurre una propia, compruebe con su profesor o profesora que cumple las tres condiciones antes de empezar a recoger datos.</p>
+<p>Complete cada etapa en su momento. No conviene adelantar la conclusión antes de tener los datos, ni empezar a medir sin haber decidido qué se mantiene constante.</p>
+</section>
+
+<section class="etapa"><h2 id="e1"><span aria-hidden="true" class="num-seccion">1</span>Etapa 1 · La pregunta</h2>
+<p>Escriba la pregunta que va a investigar. Debe poder responderse midiendo algo.</p><div class="campo"><label for="nombre">Nombre y fecha de inicio</label><input type="text" id="nombre" data-campo="nombre" class="corto"></div><div class="campo"><label for="pregunta">Mi pregunta investigable</label><p class="ayuda" id="pregunta-ayuda">Formúlela como pregunta completa. Ejemplo: «¿Se enfría el café más rápido en una taza de cerámica que en una de metal?»</p><textarea id="pregunta" class="trabajo" rows="2" data-campo="pregunta" aria-describedby="pregunta-ayuda"></textarea></div><div class="campo"><label for="interes">Por qué me interesa y qué sé ya sobre el tema</label><p class="ayuda" id="interes-ayuda">Dos o tres líneas. Si algo de lo estudiado en el curso se relaciona con su pregunta, menciónelo.</p><textarea id="interes" class="trabajo" rows="3" data-campo="interes" aria-describedby="interes-ayuda"></textarea></div>
+</section>
+<section class="etapa"><h2 id="e2"><span aria-hidden="true" class="num-seccion">2</span>Etapa 2 · La hipótesis</h2>
+<p>Una hipótesis <strong>anticipa un resultado concreto</strong> y puede resultar falsa. «Veré qué pasa» no es una hipótesis; «el café se enfriará más rápido en la taza de metal» sí lo es.</p><div class="caja caja-tip">
+<span class="etiqueta et-verde">La fórmula que ayuda</span>
+<p>«<strong>Si</strong> [cambio esto], <strong>entonces</strong> [ocurrirá esto otro], <strong>porque</strong> [razón]». La parte del «porque» es la que distingue una hipótesis de una simple predicción.</p>
+</div><div class="campo"><label for="hipotesis">Mi hipótesis</label><textarea id="hipotesis" class="trabajo" rows="3" data-campo="hipotesis"></textarea></div><div class="campo"><label for="base">En qué me baso para pensarlo</label><textarea id="base" class="trabajo" rows="3" data-campo="base"></textarea></div>
+</section>
+<section class="etapa"><h2 id="e3"><span aria-hidden="true" class="num-seccion">3</span>Etapa 3 · El diseño</h2>
+<p>Aquí se decide qué se cambia, qué se mide y qué se mantiene igual. Es la parte que más se juega en la rúbrica y la que más proyectos arruina cuando se hace deprisa.</p><div class="campo"><label for="vi">Variable independiente · lo que yo cambio</label><p class="ayuda" id="vi-ayuda">Solo una. Ejemplo: el material de la taza.</p><textarea id="vi" class="trabajo" rows="2" data-campo="vi" aria-describedby="vi-ayuda"></textarea></div><div class="campo"><label for="vd">Variable dependiente · lo que yo mido</label><p class="ayuda" id="vd-ayuda">Indique también con qué instrumento y en qué unidad. Ejemplo: la temperatura, con termómetro, en grados Celsius.</p><textarea id="vd" class="trabajo" rows="2" data-campo="vd" aria-describedby="vd-ayuda"></textarea></div><div class="campo"><label for="constantes">Lo que mantengo constante</label><p class="ayuda" id="constantes-ayuda">Todo lo demás. Ejemplo: la misma cantidad de líquido, la misma temperatura inicial, el mismo lugar, la misma hora.</p><textarea id="constantes" class="trabajo" rows="3" data-campo="constantes" aria-describedby="constantes-ayuda"></textarea></div><div class="campo"><label for="control">Mi grupo de control o mis repeticiones</label><p class="ayuda" id="control-ayuda">¿Con qué compara? ¿Cuántas veces repite cada medición? Repetir al menos tres veces reduce el efecto de un error puntual.</p><textarea id="control" class="trabajo" rows="3" data-campo="control" aria-describedby="control-ayuda"></textarea></div><div class="campo"><label for="procedimiento">Procedimiento paso a paso</label><p class="ayuda" id="procedimiento-ayuda">Escríbalo de manera que otra persona pueda repetirlo exactamente igual sin preguntarle nada.</p><textarea id="procedimiento" class="trabajo" rows="6" data-campo="procedimiento" aria-describedby="procedimiento-ayuda"></textarea></div><div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Seguridad primero</span>
+<p>Ningún proyecto de este curso requiere sustancias peligrosas, fuego sin supervisión, electricidad de la red ni animales. Si su diseño parece necesitar algo de eso, cámbielo antes de continuar.</p>
+</div>
+</section>
+<section class="etapa"><h2 id="e4"><span aria-hidden="true" class="num-seccion">4</span>Etapa 4 · Los datos</h2>
+<p>Anote las mediciones <strong>según las obtiene</strong>, no de memoria al final. Si un dato sale raro, no lo borre: anótelo y coméntelo después. Escriba la condición siempre igual (por ejemplo, siempre «metal» y «cerámica»), para que la página pueda agrupar sus mediciones.</p><div aria-label="Tabla de datos (desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad tabla-datos"><caption class="cap-oculto">Tabla para registrar hasta doce mediciones: número, condición ensayada, valor medido, unidad y observaciones</caption><thead><tr><th scope="col">N.º</th><th scope="col">Condición ensayada</th><th scope="col">Valor medido</th><th scope="col">Unidad</th><th scope="col">Observaciones</th></tr></thead><tbody><tr><th scope="row">1</th><td><input type="text" id="d1-c" data-campo="d1-c" aria-label="Medición 1: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d1-v" data-campo="d1-v" aria-label="Medición 1: valor medido"></td><td><input type="text" id="d1-u" data-campo="d1-u" aria-label="Medición 1: unidad"></td><td><input type="text" id="d1-o" data-campo="d1-o" aria-label="Medición 1: observaciones"></td></tr>
+<tr><th scope="row">2</th><td><input type="text" id="d2-c" data-campo="d2-c" aria-label="Medición 2: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d2-v" data-campo="d2-v" aria-label="Medición 2: valor medido"></td><td><input type="text" id="d2-u" data-campo="d2-u" aria-label="Medición 2: unidad"></td><td><input type="text" id="d2-o" data-campo="d2-o" aria-label="Medición 2: observaciones"></td></tr>
+<tr><th scope="row">3</th><td><input type="text" id="d3-c" data-campo="d3-c" aria-label="Medición 3: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d3-v" data-campo="d3-v" aria-label="Medición 3: valor medido"></td><td><input type="text" id="d3-u" data-campo="d3-u" aria-label="Medición 3: unidad"></td><td><input type="text" id="d3-o" data-campo="d3-o" aria-label="Medición 3: observaciones"></td></tr>
+<tr><th scope="row">4</th><td><input type="text" id="d4-c" data-campo="d4-c" aria-label="Medición 4: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d4-v" data-campo="d4-v" aria-label="Medición 4: valor medido"></td><td><input type="text" id="d4-u" data-campo="d4-u" aria-label="Medición 4: unidad"></td><td><input type="text" id="d4-o" data-campo="d4-o" aria-label="Medición 4: observaciones"></td></tr>
+<tr><th scope="row">5</th><td><input type="text" id="d5-c" data-campo="d5-c" aria-label="Medición 5: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d5-v" data-campo="d5-v" aria-label="Medición 5: valor medido"></td><td><input type="text" id="d5-u" data-campo="d5-u" aria-label="Medición 5: unidad"></td><td><input type="text" id="d5-o" data-campo="d5-o" aria-label="Medición 5: observaciones"></td></tr>
+<tr><th scope="row">6</th><td><input type="text" id="d6-c" data-campo="d6-c" aria-label="Medición 6: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d6-v" data-campo="d6-v" aria-label="Medición 6: valor medido"></td><td><input type="text" id="d6-u" data-campo="d6-u" aria-label="Medición 6: unidad"></td><td><input type="text" id="d6-o" data-campo="d6-o" aria-label="Medición 6: observaciones"></td></tr>
+<tr><th scope="row">7</th><td><input type="text" id="d7-c" data-campo="d7-c" aria-label="Medición 7: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d7-v" data-campo="d7-v" aria-label="Medición 7: valor medido"></td><td><input type="text" id="d7-u" data-campo="d7-u" aria-label="Medición 7: unidad"></td><td><input type="text" id="d7-o" data-campo="d7-o" aria-label="Medición 7: observaciones"></td></tr>
+<tr><th scope="row">8</th><td><input type="text" id="d8-c" data-campo="d8-c" aria-label="Medición 8: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d8-v" data-campo="d8-v" aria-label="Medición 8: valor medido"></td><td><input type="text" id="d8-u" data-campo="d8-u" aria-label="Medición 8: unidad"></td><td><input type="text" id="d8-o" data-campo="d8-o" aria-label="Medición 8: observaciones"></td></tr>
+<tr><th scope="row">9</th><td><input type="text" id="d9-c" data-campo="d9-c" aria-label="Medición 9: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d9-v" data-campo="d9-v" aria-label="Medición 9: valor medido"></td><td><input type="text" id="d9-u" data-campo="d9-u" aria-label="Medición 9: unidad"></td><td><input type="text" id="d9-o" data-campo="d9-o" aria-label="Medición 9: observaciones"></td></tr>
+<tr><th scope="row">10</th><td><input type="text" id="d10-c" data-campo="d10-c" aria-label="Medición 10: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d10-v" data-campo="d10-v" aria-label="Medición 10: valor medido"></td><td><input type="text" id="d10-u" data-campo="d10-u" aria-label="Medición 10: unidad"></td><td><input type="text" id="d10-o" data-campo="d10-o" aria-label="Medición 10: observaciones"></td></tr>
+<tr><th scope="row">11</th><td><input type="text" id="d11-c" data-campo="d11-c" aria-label="Medición 11: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d11-v" data-campo="d11-v" aria-label="Medición 11: valor medido"></td><td><input type="text" id="d11-u" data-campo="d11-u" aria-label="Medición 11: unidad"></td><td><input type="text" id="d11-o" data-campo="d11-o" aria-label="Medición 11: observaciones"></td></tr>
+<tr><th scope="row">12</th><td><input type="text" id="d12-c" data-campo="d12-c" aria-label="Medición 12: condición ensayada"></td><td><input type="text" inputmode="decimal" id="d12-v" data-campo="d12-v" aria-label="Medición 12: valor medido"></td><td><input type="text" id="d12-u" data-campo="d12-u" aria-label="Medición 12: unidad"></td><td><input type="text" id="d12-o" data-campo="d12-o" aria-label="Medición 12: observaciones"></td></tr></tbody></table></div><p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p><p><button class="btn btn-sec" type="button" id="b-resumen">Resumir mis datos</button></p><div id="resumen" aria-live="polite"></div><div class="caja caja-tip">
+<span class="etiqueta et-verde">¿Qué gráfica?</span>
+<p>Elija según sus datos: <strong>barras</strong> para comparar categorías distintas (taza de metal frente a cerámica); <strong>líneas</strong> para seguir un cambio a lo largo del tiempo; <strong>circular</strong> solo para partes de un total. El resumen de arriba dibuja una gráfica de barras de las medias para ayudarle a revisar; su propia gráfica, hecha a mano o con hoja de cálculo, debe llevar los ejes rotulados y las unidades.</p>
+</div><div class="campo"><label for="grafica">Qué gráfica voy a hacer y por qué</label><textarea id="grafica" class="trabajo" rows="3" data-campo="grafica"></textarea></div>
+</section>
+<section class="etapa"><h2 id="e5"><span aria-hidden="true" class="num-seccion">5</span>Etapa 5 · La conclusión</h2>
+<p>Responda a su pregunta inicial <strong>con lo que sus datos muestran</strong>, ni más ni menos. Es exactamente el criterio de la Lección 8.1 aplicado a su propio trabajo.</p><div class="campo"><label for="conclusion">Mi conclusión</label><p class="ayuda" id="conclusion-ayuda">Empiece respondiendo a la pregunta y cite enseguida el dato que lo sostiene. Ejemplo: «El café se enfrió más rápido en metal: bajó 18 °C frente a 11 °C en el mismo tiempo».</p><textarea id="conclusion" class="trabajo" rows="4" data-campo="conclusion" aria-describedby="conclusion-ayuda"></textarea></div><div class="campo"><label for="confirmada">¿Se confirmó mi hipótesis?</label><p class="ayuda" id="confirmada-ayuda">Si no se confirmó, dígalo con claridad. Una hipótesis refutada con datos honestos vale igual que una confirmada; lo que la rúbrica penaliza es forzar los datos para que encajen.</p><textarea id="confirmada" class="trabajo" rows="3" data-campo="confirmada" aria-describedby="confirmada-ayuda"></textarea></div><div class="campo"><label for="limitacion">Una limitación de mi investigación</label><p class="ayuda" id="limitacion-ayuda">Obligatorio, y suma puntos. Ejemplo: solo medí un día, o usé un solo termómetro sin comprobar su precisión, o hice tres repeticiones y quizá hagan falta más.</p><textarea id="limitacion" class="trabajo" rows="3" data-campo="limitacion" aria-describedby="limitacion-ayuda"></textarea></div><div class="campo"><label for="despues">Qué haría distinto o qué mediría después</label><textarea id="despues" class="trabajo" rows="3" data-campo="despues"></textarea></div>
+</section>
+<section class="etapa"><h2 id="e6"><span aria-hidden="true" class="num-seccion">6</span>Etapa 6 · La presentación</h2>
+<p>Cinco minutos, siguiendo el orden de las etapas, ante un familiar, una amistad o la cámara de su teléfono. Después pida a quien lo escuche que le haga dos preguntas. Prepare aquí el guion.</p><div class="campo"><label for="guion">Guion de mi presentación</label><p class="ayuda" id="guion-ayuda">Una o dos frases por etapa: pregunta, hipótesis, diseño, datos, gráfica, conclusión. No lea el informe entero: cuente lo esencial.</p><textarea id="guion" class="trabajo" rows="6" data-campo="guion" aria-describedby="guion-ayuda"></textarea></div><div class="campo"><label for="preguntas">Dos preguntas que creo que me harán, y mis respuestas</label><p class="ayuda" id="preguntas-ayuda">Anticiparlas es la mejor preparación. La respuesta debe apoyarse en sus datos.</p><textarea id="preguntas" class="trabajo" rows="5" data-campo="preguntas" aria-describedby="preguntas-ayuda"></textarea></div>
+</section>
+
+<section>
+<h2 id="s-vocab"><span aria-hidden="true" class="num-seccion">🔤</span>Vocabulario del proyecto</h2>
+<p><strong>Hipótesis</strong> procede del griego <span class="raiz">hypó-</span>, debajo, y <em>thesis</em>, colocación: lo que se pone debajo como base provisional, a la espera de comprobarlo. <strong>Variable</strong> viene del latín <em>variare</em>, cambiar; la <strong>independiente</strong> cambia porque el investigador lo decide, y la <strong>dependiente</strong> cambia en respuesta. <strong>Control</strong>, del francés antiguo <em>contre-rôle</em>, el registro duplicado que servía para verificar el original: el grupo de control es justamente esa segunda copia con la que se compara. <strong>Dato</strong> procede de <span class="raiz">datum</span>, lo dado, y esa es su naturaleza: se recoge, no se decide. <strong>Conclusión</strong>, de <em>cum</em> y <em>claudere</em>, cerrar juntamente: lo que cierra el razonamiento. <strong>Limitación</strong>, de <span class="raiz">limes</span>, frontera: señalar hasta dónde llega lo que se puede afirmar.</p>
+</section>
+
+<section>
+<h2 id="s-evaluar"><span aria-hidden="true" class="num-seccion">✅</span>Cómo evaluarlo</h2>
+<p>Pulse <strong>Generar informe</strong>, copie el texto y entrégueselo a su profesor o profesora para que lo evalúe con la rúbrica de este proyecto, criterio por criterio. Antes de entregarlo, califíquelo usted con la misma rúbrica y aplíquele el criterio de la Lección 8.1: ¿cada afirmación de su conclusión se apoya en una cifra de su tabla? Después revise su presentación con el criterio 5.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con el proyecto se cierra el recorrido que empezó en el Tema 1. Aquel tema enseñó a formular una hipótesis comprobable y a aislar una variable sobre investigaciones ajenas; este proyecto ha exigido hacerlo con un fenómeno propio, datos propios y una conclusión que había que defender con esos datos.</p>
+<p>Queda una sola lección. La 8.3 no enseña ciencia: enseña <strong>a rendir el examen</strong>. Los tipos de pregunta que aparecen en la pantalla (arrastrar y soltar, menús desplegables, completar espacios, punto en una imagen), la administración del tiempo y un simulacro cronometrado completo. Conviene llegar con el proyecto ya terminado.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-8-3.html">Lección 8.3 · Simulacro cronometrado y tipos de pregunta</a></p>
+</section>
+</div>
+<footer><p>LearnGED · Ciencias · Tema 8 · Lección 8.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p></footer>
+<script>
+window.INFO = {"clave": "learnged-ciencias-proyecto-es", "orden": [["Etapa 1 · La pregunta", [["nombre", "Nombre y fecha de inicio"], ["pregunta", "Mi pregunta investigable"], ["interes", "Por qué me interesa y qué sé ya sobre el tema"]]], ["Etapa 2 · La hipótesis", [["hipotesis", "Mi hipótesis"], ["base", "En qué me baso para pensarlo"]]], ["Etapa 3 · El diseño", [["vi", "Variable independiente · lo que yo cambio"], ["vd", "Variable dependiente · lo que yo mido"], ["constantes", "Lo que mantengo constante"], ["control", "Mi grupo de control o mis repeticiones"], ["procedimiento", "Procedimiento paso a paso"]]], ["Etapa 4 · Los datos", [["DATOS", ""], ["grafica", "Qué gráfica voy a hacer y por qué"]]], ["Etapa 5 · La conclusión", [["conclusion", "Mi conclusión"], ["confirmada", "¿Se confirmó mi hipótesis?"], ["limitacion", "Una limitación de mi investigación"], ["despues", "Qué haría distinto o qué mediría después"]]], ["Etapa 6 · La presentación", [["guion", "Guion de mi presentación"], ["preguntas", "Dos preguntas que creo que me harán, y mis respuestas"]]]], "txt": {"guardado": "Borrador guardado en este navegador a las ", "cargado": "Se cargó su borrador guardado.", "borrar": "Pulse otra vez en menos de 5 segundos para borrar todo. No se puede deshacer.", "borrado": "Se borró todo.", "sin": "(sin completar)", "datos": "Datos", "media": "media", "n": "mediciones", "cond": "Condición", "ncab": "Mediciones", "mcab": "Media", "nodatos": "Escriba al menos una condición con un valor numérico para ver el resumen.", "resumen": "Resumen de sus datos: media de cada condición.", "aviso1": "Solo una medición en: ", "aviso2": ". Repita al menos tres veces.", "graf": "Gráfica de barras de la media de cada condición", "titulo": "PROYECTO FINAL · MI PROPIA INVESTIGACIÓN", "copiado": "Informe copiado. Puede pegarlo en un correo o en un documento.", "nocopia": "Seleccione el texto y cópielo con Ctrl+C (Cmd+C en Mac)."}};
+
+var INFO = window.INFO, X = INFO.txt;
+function $(id){ return document.getElementById(id); }
+function campos(){ return [].slice.call(document.querySelectorAll("[data-campo]")); }
+function lee(){ var o = {}; campos().forEach(function(c){ o[c.dataset.campo] = c.value; }); return o; }
+function escribe(o){ campos().forEach(function(c){ if (o[c.dataset.campo] != null) c.value = o[c.dataset.campo]; }); }
+function aviso(m){ $("estado").textContent = m; }
+function guarda(silencio){ try { localStorage.setItem(INFO.clave, JSON.stringify(lee())); if (!silencio){ var d = new Date(); aviso(X.guardado + d.toLocaleTimeString()); } } catch(e){} }
+function num(s){ s = String(s || "").trim().replace(/\s/g, ""); if (!s) return null; if (/^-?\d{1,3}(,\d{3})+(\.\d+)?$/.test(s)) s = s.replace(/,/g, ""); else s = s.replace(",", "."); var v = Number(s); return isFinite(v) ? v : null; }
+function filas(){ var out = []; for (var i = 1; i <= 12; i++){ var c = $("d" + i + "-c").value.trim(), v = $("d" + i + "-v").value.trim(), u = $("d" + i + "-u").value.trim(), o = $("d" + i + "-o").value.trim(); if (c || v || u || o) out.push({i: i, c: c, v: v, u: u, o: o}); } return out; }
+function grupos(){ var g = {}, ord = []; filas().forEach(function(f){ var v = num(f.v); if (!f.c || v === null) return; var k = f.c.toLowerCase(); if (!g[k]){ g[k] = {nom: f.c, vals: [], u: f.u}; ord.push(k); } g[k].vals.push(v); if (!g[k].u && f.u) g[k].u = f.u; }); return ord.map(function(k){ var x = g[k]; x.media = x.vals.reduce(function(a, b){ return a + b; }, 0) / x.vals.length; return x; }); }
+function fmt(v){ return (Math.round(v * 100) / 100).toLocaleString("en-US"); }
+function esc(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+function resumen(){
+  var gs = grupos(), r = $("resumen");
+  if (!gs.length){ r.innerHTML = "<p>" + X.nodatos + "</p>"; return; }
+  var una = gs.filter(function(g){ return g.vals.length < 2; }).map(function(g){ return esc(g.nom); });
+  var h = "<p><strong>" + X.resumen + "</strong></p><table class=\"tabla-trad\"><caption class=\"cap-oculto\">" + X.resumen + "</caption><thead><tr><th scope=\"col\">" + X.cond + "</th><th scope=\"col\">" + X.ncab + "</th><th scope=\"col\">" + X.mcab + "</th></tr></thead><tbody>" +
+    gs.map(function(g){ return "<tr><th scope=\"row\">" + esc(g.nom) + "</th><td>" + g.vals.length + "</td><td>" + fmt(g.media) + (g.u ? " " + esc(g.u) : "") + "</td></tr>"; }).join("") + "</tbody></table>";
+  var mx = Math.max.apply(null, gs.map(function(g){ return g.media; })), mn = Math.min(0, Math.min.apply(null, gs.map(function(g){ return g.media; })));
+  var W = 520, H = 260, x0 = 60, y0 = 20, ah = 180, bw = Math.min(90, (W - x0 - 20) / gs.length - 20), rango = (mx - mn) || 1;
+  var y = function(v){ return y0 + ah - (v - mn) / rango * ah; };
+  var s = "<svg viewBox=\"0 0 " + W + " " + H + "\" style=\"width:100%;max-width:" + W + "px;height:auto\" role=\"img\" aria-label=\"" + X.graf + ": " + gs.map(function(g){ return esc(g.nom) + " " + fmt(g.media); }).join(", ") + "\">";
+  s += "<line x1=\"" + x0 + "\" y1=\"" + y(mn) + "\" x2=\"" + (W - 10) + "\" y2=\"" + y(mn) + "\" stroke=\"#222\" stroke-width=\"2\"/><line x1=\"" + x0 + "\" y1=\"" + y0 + "\" x2=\"" + x0 + "\" y2=\"" + (y0 + ah) + "\" stroke=\"#222\" stroke-width=\"2\"/>";
+  gs.forEach(function(g, k){ var bx = x0 + 20 + k * (bw + 20), top = y(Math.max(g.media, 0)), bot = y(Math.min(g.media, 0));
+    s += "<rect x=\"" + bx + "\" y=\"" + top + "\" width=\"" + bw + "\" height=\"" + Math.max(bot - top, 1) + "\" fill=\"#5b8def\" stroke=\"#1e3a8a\"/>";
+    s += "<text x=\"" + (bx + bw / 2) + "\" y=\"" + (top - 6) + "\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\" fill=\"#1e3a8a\">" + fmt(g.media) + "</text>";
+    s += "<text x=\"" + (bx + bw / 2) + "\" y=\"" + (y0 + ah + 20) + "\" font-size=\"13\" text-anchor=\"middle\" fill=\"#222\">" + esc(g.nom.length > 14 ? g.nom.slice(0, 13) + "…" : g.nom) + "</text>"; });
+  s += "<text x=\"16\" y=\"" + (y0 + ah / 2) + "\" font-size=\"12\" text-anchor=\"middle\" fill=\"#222\" transform=\"rotate(-90 16 " + (y0 + ah / 2) + ")\">" + X.mcab + (gs[0].u ? " (" + esc(gs[0].u) + ")" : "") + "</text></svg>";
+  h += s;
+  if (una.length) h += "<p class=\"aviso-corto\">" + X.aviso1 + una.join(", ") + X.aviso2 + "</p>";
+  r.innerHTML = h;
+}
+function informe(){
+  var o = lee(), L = [X.titulo, ""];
+  INFO.orden.forEach(function(e){
+    L.push("== " + e[0].toUpperCase() + " ==");
+    e[1].forEach(function(p){
+      if (p[0] === "DATOS"){ L.push(X.datos + ":"); var fs = filas(); if (!fs.length) L.push("  " + X.sin); fs.forEach(function(f){ L.push("  " + f.i + ". " + [f.c, f.v + (f.u ? " " + f.u : ""), f.o].filter(Boolean).join(" · ")); });
+        var gs = grupos(); if (gs.length){ L.push("  " + X.resumen); gs.forEach(function(g){ L.push("  - " + g.nom + ": " + X.media + " " + fmt(g.media) + (g.u ? " " + g.u : "") + " (" + g.vals.length + " " + X.n + ")"); }); }
+        return; }
+      L.push(p[1] + ":"); L.push((o[p[0]] || "").trim() || X.sin); L.push("");
+    });
+    L.push("");
+  });
+  $("informe-txt").value = L.join("\n"); $("informe-caja").hidden = false; $("informe-txt").focus();
+}
+$("b-guardar").addEventListener("click", function(){ guarda(false); });
+$("b-informe").addEventListener("click", function(){ guarda(true); informe(); });
+$("b-copiar").addEventListener("click", function(){ var tx = $("informe-txt"); tx.select(); var ok = false; try { ok = document.execCommand("copy"); } catch(e){} if (navigator.clipboard){ navigator.clipboard.writeText(tx.value).then(function(){ aviso(X.copiado); }, function(){ aviso(X.nocopia); }); } else aviso(ok ? X.copiado : X.nocopia); });
+$("b-imprimir").addEventListener("click", function(){ guarda(true); resumen(); window.print(); });
+$("b-resumen").addEventListener("click", resumen);
+var armado = 0;
+$("b-borrar").addEventListener("click", function(){ var ahora = Date.now(); if (ahora - armado > 5000){ armado = ahora; aviso(X.borrar); return; } armado = 0; try { localStorage.removeItem(INFO.clave); } catch(e){} campos().forEach(function(c){ c.value = ""; }); $("resumen").innerHTML = ""; $("informe-caja").hidden = true; aviso(X.borrado); });
+var t0; document.addEventListener("input", function(){ clearTimeout(t0); t0 = setTimeout(function(){ guarda(true); }, 1500); });
+try { var g = localStorage.getItem(INFO.clave); if (g){ escribe(JSON.parse(g)); aviso(X.cargado); if (grupos().length) resumen(); } } catch(e){}
+
+</script>
+</body>
+</html>

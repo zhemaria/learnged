@@ -222,7 +222,7 @@ def leccion():
          t("<strong>Compare</strong> renewable and nonrenewable energy sources with clear criteria of efficiency, cost, and impact.", "<strong>Comparar</strong> fuentes de energía renovables y no renovables con criterios explícitos de rendimiento, coste e impacto."),
          t("<strong>Back</strong> a position with cited data and admit its limitations.", "<strong>Sostener</strong> una posición con datos citados y reconocer sus limitaciones.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 8 · Putting it all together and getting ready for the test (being written).", "Siguiente: Tema 8 · Integrar y preparar el examen (en preparación).")), glosario, P, calculadora=True)
+        ("8-1", t("Multiple findings: judging conclusions with evidence", "Hallazgos múltiples: evaluar conclusiones con evidencia")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- práctica
