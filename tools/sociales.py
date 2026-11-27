@@ -218,3 +218,15 @@ def documento(titulo, ficha, partes, nota=None):
 def cita(texto, autor):
     """Un fragmento breve de una fuente (estímulo de una pregunta tipo GED)."""
     return f'<blockquote class="cita-doc"><p>{texto}</p><footer>— {autor}</footer></blockquote>'
+
+
+# ---------------------------------------------------------------- el escenario de varias fuentes
+def fuente(etiqueta, cuerpo):
+    """Una fuente dentro de un escenario: etiqueta («Source 1 · Text») y su contenido en HTML."""
+    return f'<div class="fuente"><p class="f-tit">{etiqueta}</p>{cuerpo}</div>'
+
+
+def escenario(titulo, fuentes, nota=None):
+    """Un escenario del examen: varias fuentes sobre un mismo asunto, en una caja."""
+    n = f'<p class="esc-nota">{nota}</p>' if nota else ""
+    return f'<div class="escenario" role="group" aria-label="{titulo}"><p class="esc-tit"><span aria-hidden="true">🧩</span> {titulo}</p>{"".join(fuentes)}{n}</div>'

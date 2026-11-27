@@ -76,15 +76,17 @@ def pagina(lang):
     for k, (cen, ces, len_, les) in enumerate(SOC, 1):
         f = T(f"lesson-{k}-1.html", f"leccion-{k}-1.html")
         sociales.append(boton(soc + f, f'<span class="tn">{k}</span> {T(cen, ces)}', T(f"Social studies, topic {k}: {len_}", f"Estudios sociales, tema {k}: {les}"), rel_root=socr + f))
+    sociales.append(boton(T("social-studies/practice-test.html", "estudios-sociales/simulacro.html"), T("Timed practice test", "Simulacro cronometrado"), T("Social studies, timed practice test of 35 questions", "Estudios sociales, simulacro cronometrado de 35 preguntas"), sec=True, rel_root=T("social-studies/practice-test.html", "es/estudios-sociales/simulacro.html")))
     ged = [
         fila(T("Math", "Matemáticas"), [boton(m + niv(k), T(f"Level {k}", f"Nivel {k}"), T(f"Math, level {k}", f"Matemáticas, nivel {k}"), rel_root=mr(k)) for k in (3, 4)],
              T("Algebra, geometry, functions, data, and probability, as on the GED Mathematical Reasoning test.", "Álgebra, geometría, funciones, datos y probabilidad, como en el examen de Razonamiento Matemático del GED.")),
         fila(T("Reasoning through language arts", "Razonamiento a través de las artes del lenguaje"), [], pronto=T("rla/#levels-3-4", "artes-del-lenguaje/#levels-3-4")),
         fila(T("Science", "Ciencias"), ciencias, T("Eight topics, from the scientific method to test preparation. Each button opens the first lesson of the topic.", "Ocho temas, del método científico a la preparación del examen. Cada botón abre la primera lección del tema.")),
-        fila(T("Social studies", "Estudios sociales"), sociales, T("Eight topics, from reading sources to test preparation. Each button opens the first lesson of the topic; the others are on their way.", "Ocho temas, de la lectura de fuentes a la preparación del examen. Cada botón abre la primera lección del tema; los demás están en camino.")),
+        fila(T("Social studies", "Estudios sociales"), sociales, T("Eight topics, from reading sources to test preparation. Each button opens the first lesson of the topic.", "Ocho temas, de la lectura de fuentes a la preparación del examen. Cada botón abre la primera lección del tema.")),
     ]
     # ---------- Practique
     pruebas = [boton(T("science/practice-test.html", "ciencias/simulacro.html"), T("Science · timed practice test", "Ciencias · simulacro cronometrado"), rel_root=T("science/practice-test.html", "es/ciencias/simulacro.html")),
+               boton(T("social-studies/practice-test.html", "estudios-sociales/simulacro.html"), T("Social studies · timed practice test", "Estudios sociales · simulacro cronometrado"), rel_root=T("social-studies/practice-test.html", "es/estudios-sociales/simulacro.html")),
                boton(m + niv(3) + T("final-check-level-3.html", "evaluacion-final-nivel-3.html"), T("Math · Level 3 final check", "Matemáticas · evaluación final del Nivel 3"), rel_root=mr(3) + T("final-check-level-3.html", "evaluacion-final-nivel-3.html")),
                boton(m + niv(4) + T("final-check-level-4.html", "evaluacion-final-nivel-4.html"), T("Math · Level 4 final check", "Matemáticas · evaluación final del Nivel 4"), rel_root=mr(4) + T("final-check-level-4.html", "evaluacion-final-nivel-4.html"))]
     juegos = [boton(f"{pre}math/level-2/fracciomania.html?lang={lang}", T("Fracciomanía · fractions", "Fracciomanía · fracciones"), rel_root="math/level-2/fracciomania.html"),

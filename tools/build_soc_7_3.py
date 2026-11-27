@@ -202,7 +202,7 @@ def leccion():
          t("<strong>Evaluate</strong> two opposed positions on an environmental policy by identifying each one’s evidence.", "<strong>Evaluar</strong> dos posiciones enfrentadas sobre una política ambiental identificando la evidencia de cada una."),
          t("<strong>Defend</strong> a position you disagree with, and recognize a strong point of the other side.", "<strong>Defender</strong> una posición con la que no se está de acuerdo, y reconocer un punto fuerte de la contraria.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 8 · Putting it together: multiple-source scenarios and GED preparation.", "Siguiente: Tema 8 · Integración, escenarios de varias fuentes y preparación para el GED.")), glosario, P, calculadora=True)
+        ("8-1", t("Multiple-source scenarios: text, graph, and map", "Escenarios de varias fuentes: texto, gráfica y mapa")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- la práctica
