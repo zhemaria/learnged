@@ -722,7 +722,7 @@ def grafica(spec, aria, ancho=560, alto=320, y0=None, y1=None):
         for i, b in enumerate(spec["barras"]):
             x = ml + i * bw + bw * 0.18
             g.append(f'<rect x="{x:.1f}" y="{Y(b["valor"]):.1f}" width="{bw * 0.64:.1f}" height="{Y(ymin) - Y(b["valor"]):.1f}" fill="{PALETA[0]}"/>'
-                     f'<text x="{x + bw * 0.32:.1f}" y="{Y(b["valor"]) - 6:.1f}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">{_fmt(b["valor"])}</text>'
+                     f'<text x="{x + bw * 0.32:.1f}" y="{Y(b["valor"]) - 6:.1f}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">{b.get("txt", _fmt(b["valor"]))}</text>'
                      f'<text x="{x + bw * 0.32:.1f}" y="{mt + Hh + 18}" text-anchor="middle" font-size="{12 if n > 6 else 13}" fill="#3d4753">{b["etq"]}</text>')
     g.append(f'<text x="{ml + W / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">{spec["xEtq"]}</text>'
              f'<text x="16" y="{mt + Hh / 2:.1f}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 {mt + Hh / 2:.1f})">{spec["yEtq"]}</text>')

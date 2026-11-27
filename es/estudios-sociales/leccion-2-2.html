@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- LearnGED · Estudios sociales · Lección 2.2 (español) — construida con tools/build_soc_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 2.2 · Medidas de tendencia central en datos demográficos y económicos · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="en" href="/social-studies/lesson-2-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css"><link rel="stylesheet" href="/social-studies/social.css">
+</head>
+<body data-area="tools">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Estudios sociales · todas las lecciones</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Estudios sociales · Tema 2 — Razonamiento cuantitativo en estudios sociales</p>
+<h1>Lección 2.2 · Medidas de tendencia central en datos demográficos y económicos</h1>
+<p class="lema">La media, la mediana y la moda pueden contar tres historias distintas de los mismos datos. Saber cuál encaja es la destreza.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip chip-sp">SSP.11 · Media, mediana, moda, rango</span><span class="chip chip-sp">SSP.6 · Cajas e histogramas</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Calcular</strong> la media, la mediana, la moda y el rango de un conjunto de datos sociales.</li>
+<li><strong>Decidir</strong> cuál medida describe mejor un conjunto, según su forma.</li>
+<li><strong>Construir</strong> el resumen de cinco números y leer un diagrama de caja.</li>
+<li><strong>Comparar</strong> dos grupos y explicar qué significa que una caja sea más ancha que otra.</li>
+</ul>
+</div>
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Prácticas de estudios sociales del examen GED® que trabaja esta lección:</p><ul><li><span class="std-cod std-dir">SSP.11.a</span> <strong>Medir el centro de un conjunto de datos.</strong> Usar la media, la mediana, la moda y el rango para describir un conjunto de datos.<br><span class="std-meta">DOK 1 · Alineado con 6.SP, S-ID</span></li><li><span class="std-cod std-dir">SSP.6.b</span> <strong>Integrar contenido presentado de distintas formas.</strong> Analizar la información de mapas, organizadores gráficos, tablas y gráficas, y de fuentes visuales como objetos, fotografías y caricaturas políticas.<br><span class="std-meta">DOK 2–3 · Alineado con R7, R9</span></li><li><span class="std-cod std-dir">SSP.7.b</span> <strong>Evaluar el razonamiento y la evidencia.</strong> Distinguir entre las afirmaciones sin respaldo y las hipótesis informadas que se apoyan en evidencia de los estudios sociales.<br><span class="std-meta">DOK 2–3 · Alineado con R8, NSH</span></li></ul>
+<p class="std-tit">También prepara la base para:</p><ul><li><span class="std-cod std-base">SSP.10.a</span> <strong>Leer e interpretar gráficas y tablas.</strong> Interpretar, usar y elaborar gráficas (de dispersión, de líneas, de barras, circulares), incluida la predicción de tendencias dentro de límites razonables.<br><span class="std-meta">DOK 2–3 · Alineado con 7.RP, 3.MD, 8.SP, S-ID</span></li></ul>
+<p class="std-tit">Temas de contenido de Estudios Sociales del GED®:</p>
+<ul><li><span class="std-cod std-mp">E.c</span> Conceptos económicos fundamentales <span class="std-meta">(Economía · cerca del 15 %)</span></li><li><span class="std-cod std-mp">E.f</span> Economía del consumidor <span class="std-meta">(Economía · cerca del 15 %)</span></li></ul>
+<p class="std-tit">Qué significan los códigos alineados:</p><ul class="std-clave"><li><span class="std-cod std-ccr">6.SP</span> Matemáticas, estadística (6.º grado): centro y dispersión de un conjunto de datos.</li><li><span class="std-cod std-ccr">S-ID</span> Estadística: interpretar datos categóricos y cuantitativos.</li><li><span class="std-cod std-ccr">R7</span> Lectura CCR 7: integrar información de textos, imágenes y números.</li><li><span class="std-cod std-ccr">R9</span> Lectura CCR 9: comparar cómo tratan dos textos el mismo tema.</li><li><span class="std-cod std-ccr">R8</span> Lectura CCR 8: evaluar las afirmaciones de un texto y la evidencia que las sostiene.</li><li><span class="std-cod std-ccr">NSH</span> Estándares Nacionales de Historia: análisis e interpretación histórica (contexto, credibilidad, evidencia).</li><li><span class="std-cod std-ccr">7.RP</span> Matemáticas, razones y proporciones (7.º grado): tasas, porcentajes y relaciones proporcionales.</li><li><span class="std-cod std-ccr">3.MD</span> Matemáticas, medición y datos (3.er grado): pictogramas y gráficas de barras.</li><li><span class="std-cod std-ccr">8.SP</span> Matemáticas, estadística (8.º grado): patrones en datos de dos variables.</li></ul>
+<p class="std-fuente">DOK (profundidad de conocimiento): 1 = recordar, 2 = aplicar una destreza o un concepto, 3 = razonar con evidencia. Fuente de las prácticas, los temas de contenido, los rangos de DOK y la alineación: GED Testing Service, <cite>Assessment Guide for Educators: Social Studies</cite>. Los estándares ancla CCR están en Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>.</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s1">Las cuatro medidas</a></li>
+<li><a href="#s2">Cuando la media engaña</a></li>
+<li><a href="#s3">La forma decide la medida</a></li>
+<li><a href="#s4">El resumen de cinco números y el diagrama de caja</a></li>
+<li><a href="#s5">Media o mediana: la elección interesada</a></li>
+<li><a href="#s6">Preguntas tipo GED</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-lista">Lista de autoevaluación</a></li>
+<li><a href="#s-sigue">Lo que viene</a></li>
+<li><a href="#s-palabras">Palabras clave</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Antes de empezar</span>
+<p>La Lección 2.1 enseñó a leer una gráfica antes de creerla, y terminó con una idea incómoda: una correlación admite cuatro explicaciones y el dibujo no permite elegir. Aquí se baja un nivel más. Antes que la gráfica está el número que la resume, y esos números también se eligen. Cuando alguien dice «el ingreso típico del barrio es de noventa mil dólares», tomó una decisión antes de hablar: decidió qué significa <em>típico</em>.</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>Las cuatro medidas</h2>
+<p>Tres medidas describen el <strong>centro</strong> de un conjunto de datos. La cuarta describe cuánto se <strong>separan</strong>.</p>
+<div aria-label="Las cuatro medidas y cómo se obtienen (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las cuatro medidas y cómo se obtienen</caption>
+<thead><tr><th scope="col">Medida</th><th scope="col">Qué es</th><th scope="col">Cómo se obtiene</th></tr></thead>
+<tbody>
+<tr><th scope="row">Media (promedio)</th><td>El reparto por igual</td><td>Se suman todos los valores y se divide entre cuántos son.</td></tr>
+<tr><th scope="row">Mediana</th><td>El valor de en medio</td><td>Se ordenan de menor a mayor y se toma el del centro. Si son pares, la media de los dos centrales.</td></tr>
+<tr><th scope="row">Moda</th><td>El valor que más se repite</td><td>Se cuenta cuál aparece más veces. Puede no haber ninguna, o haber varias.</td></tr>
+<tr><th scope="row">Rango</th><td>Cuánto se separan</td><td>El valor mayor menos el menor.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Ordenar primero, siempre</span>
+<p>La mediana no existe hasta que los datos están ordenados. Es el error más común y el más fácil de evitar: si no ordenó, el número del centro no es la mediana.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo · Los diez valores 12, 15, 15, 18, 22, 25, 25, 25, 31, 40</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Media:</strong> la suma es 228, y 228 ÷ 10 = 22.8.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Mediana:</strong> diez valores, así que se toman el 5.º y el 6.º: 22 y 25. (22 + 25) ÷ 2 = 23.5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Moda:</strong> 25 aparece tres veces.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Rango:</strong> 40 − 12 = 28.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span>Tres «centros» distintos para los mismos datos: 22.8, 23.5 y 25. Ninguno está mal.</p>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#calcular" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: Calcule las cuatro medidas (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: Calcule las cuatro medidas</span><span class="ei-sub">Un conjunto nuevo cada vez, con una pista si confunde las medidas.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>Cuando la media engaña</h2>
+<p>Estos son los ingresos anuales de once hogares de cada uno de dos barrios, en miles de dólares, ya ordenados. Datos ilustrativos.</p>
+<p><strong>Barrio A</strong></p><p class="datos-lista">28 · 31 · 33 · 35 · 38 · 40 · 40 · 45 · 48 · 52 · 600</p>
+<p><strong>Barrio B</strong></p><p class="datos-lista">34 · 36 · 38 · 39 · 40 · 41 · 42 · 43 · 44 · 46 · 48</p>
+<div aria-label="Las cuatro medidas en los dos barrios, en miles de dólares (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las cuatro medidas en los dos barrios, en miles de dólares</caption>
+<thead><tr><th scope="col">Medida</th><th scope="col">Barrio A</th><th scope="col">Barrio B</th></tr></thead>
+<tbody>
+<tr><th scope="row">Media</th><td>90</td><td>41</td></tr>
+<tr><th scope="row">Mediana</th><td>40</td><td>41</td></tr>
+<tr><th scope="row">Moda</th><td>40</td><td>no hay</td></tr>
+<tr><th scope="row">Rango</th><td>572</td><td>14</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>Mire la fila de la media. El Barrio A sale con noventa mil y el B con cuarenta y uno: parece que en el A se gana más del doble. Ahora mire la mediana: cuarenta y cuarenta y uno. Casi idénticas.</p>
+<p>Las dos filas son correctas. La diferencia la produce un solo hogar, el de seiscientos mil, que arrastra la media y no mueve la mediana. Diez de los once hogares del Barrio A ganan cincuenta y dos mil o menos. <strong>Ninguno gana noventa.</strong></p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Por qué ocurre</span>
+<p>La media reparte por igual: si sumásemos todo el dinero del barrio y lo dividiésemos entre los once hogares, tocarían noventa mil. Pero nadie reparte nada. La mediana solo cuenta posiciones, así que un valor enorme ocupa una posición, no más. <strong>Un valor atípico mueve la media y deja quieta la mediana.</strong> Y el rango es el aviso: un rango de 572 frente a uno de 14 significa que en el A hay algo muy separado del resto.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 1 · El valor atípico</h3></div>
+<p class="pregunta-int" id="t-p1">Si el hogar de 600 pasara a ganar 6,000, ¿qué le ocurriría a la mediana del Barrio A?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">Subiría mucho</button>
+<button class="opcion" data-k="b" type="button">Subiría un poco</button>
+<button class="opcion" data-k="c" type="button">No cambiaría: seguiría siendo 40</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 2 · La señal de aviso</h3></div>
+<p class="pregunta-int" id="t-p2">¿Qué medida avisa de que puede haber un valor atípico?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">El rango, cuando es enorme comparado con los valores del centro</button>
+<button class="opcion" data-k="b" type="button">La moda</button>
+<button class="opcion" data-k="c" type="button">Ninguna: hay que mirar los datos uno a uno</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>La forma decide la medida</h2>
+<p>No hay una medida mejor que otra. Hay una que encaja con la <strong>forma</strong> de los datos, y para verla se dibuja un <strong>histograma</strong>: se reparten los valores en tramos y se cuenta cuántos caen en cada uno.</p>
+<h3>Simétrica</h3><svg viewBox="0 0 560 300" role="img" aria-label="Histograma de forma simétrica: 2, 5, 9, 5 y 2 hogares en los tramos de ingreso de 20–29, 30–39, 40–49, 50–59 y 60–69 mil dólares." style="width:100%;max-width:560px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#e1e6ea"/><text x="58" y="247.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="196.8" x2="542" y2="196.8" stroke="#e1e6ea"/><text x="58" y="201.8" text-anchor="end" font-size="13" fill="#3d4753">2</text><line x1="66" y1="151.6" x2="542" y2="151.6" stroke="#e1e6ea"/><text x="58" y="156.6" text-anchor="end" font-size="13" fill="#3d4753">4</text><line x1="66" y1="106.4" x2="542" y2="106.4" stroke="#e1e6ea"/><text x="58" y="111.4" text-anchor="end" font-size="13" fill="#3d4753">6</text><line x1="66" y1="61.2" x2="542" y2="61.2" stroke="#e1e6ea"/><text x="58" y="66.2" text-anchor="end" font-size="13" fill="#3d4753">8</text><line x1="66" y1="16.0" x2="542" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="16" x2="66" y2="242" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#1a2330" stroke-width="1.5"/><rect x="83.1" y="196.8" width="60.9" height="45.2" fill="#1f6066"/><text x="113.6" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="113.6" y="260" text-anchor="middle" font-size="13" fill="#3d4753">20–29</text><rect x="178.3" y="129.0" width="60.9" height="113.0" fill="#1f6066"/><text x="208.8" y="123.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">5</text><text x="208.8" y="260" text-anchor="middle" font-size="13" fill="#3d4753">30–39</text><rect x="273.5" y="38.6" width="60.9" height="203.4" fill="#1f6066"/><text x="304.0" y="32.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="304.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">40–49</text><rect x="368.7" y="129.0" width="60.9" height="113.0" fill="#1f6066"/><text x="399.2" y="123.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">5</text><text x="399.2" y="260" text-anchor="middle" font-size="13" fill="#3d4753">50–59</text><rect x="463.9" y="196.8" width="60.9" height="45.2" fill="#1f6066"/><text x="494.4" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="494.4" y="260" text-anchor="middle" font-size="13" fill="#3d4753">60–69</text><text x="304.0" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Ingreso anual por hogar (miles de $)</text><text x="16" y="129.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 129.0)">Número de hogares</text></svg><p>La mayoría se agrupa en el centro y baja de forma pareja a los dos lados. La media y la mediana casi coinciden. Datos ilustrativos.</p>
+<h3>Sesgada a la derecha</h3><svg viewBox="0 0 560 300" role="img" aria-label="Histograma sesgado a la derecha: 9, 7, 4, 2, 1 y 1 hogares en los tramos de ingreso de 20–39, 40–59, 60–79, 80–99, 100–119 y 120 mil dólares o más." style="width:100%;max-width:560px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#e1e6ea"/><text x="58" y="247.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="196.8" x2="542" y2="196.8" stroke="#e1e6ea"/><text x="58" y="201.8" text-anchor="end" font-size="13" fill="#3d4753">2</text><line x1="66" y1="151.6" x2="542" y2="151.6" stroke="#e1e6ea"/><text x="58" y="156.6" text-anchor="end" font-size="13" fill="#3d4753">4</text><line x1="66" y1="106.4" x2="542" y2="106.4" stroke="#e1e6ea"/><text x="58" y="111.4" text-anchor="end" font-size="13" fill="#3d4753">6</text><line x1="66" y1="61.2" x2="542" y2="61.2" stroke="#e1e6ea"/><text x="58" y="66.2" text-anchor="end" font-size="13" fill="#3d4753">8</text><line x1="66" y1="16.0" x2="542" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="16" x2="66" y2="242" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#1a2330" stroke-width="1.5"/><rect x="80.3" y="38.6" width="50.8" height="203.4" fill="#1f6066"/><text x="105.7" y="32.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="105.7" y="260" text-anchor="middle" font-size="13" fill="#3d4753">20–39</text><rect x="159.6" y="83.8" width="50.8" height="158.2" fill="#1f6066"/><text x="185.0" y="77.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">7</text><text x="185.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">40–59</text><rect x="238.9" y="151.6" width="50.8" height="90.4" fill="#1f6066"/><text x="264.3" y="145.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">4</text><text x="264.3" y="260" text-anchor="middle" font-size="13" fill="#3d4753">60–79</text><rect x="318.3" y="196.8" width="50.8" height="45.2" fill="#1f6066"/><text x="343.7" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="343.7" y="260" text-anchor="middle" font-size="13" fill="#3d4753">80–99</text><rect x="397.6" y="219.4" width="50.8" height="22.6" fill="#1f6066"/><text x="423.0" y="213.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">1</text><text x="423.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">100–119</text><rect x="476.9" y="219.4" width="50.8" height="22.6" fill="#1f6066"/><text x="502.3" y="213.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">1</text><text x="502.3" y="260" text-anchor="middle" font-size="13" fill="#3d4753">120+</text><text x="304.0" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Ingreso anual por hogar (miles de $)</text><text x="16" y="129.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 129.0)">Número de hogares</text></svg><p>La mayoría se agrupa a la izquierda y una cola larga se estira hacia los valores altos. Esa cola arrastra la media por encima de la mediana. Datos ilustrativos.</p>
+<p>Los ingresos, en casi cualquier lugar del mundo, tienen la segunda forma. Por eso la Oficina del Censo de los Estados Unidos y otros organismos suelen publicar el <strong>ingreso mediano por hogar</strong>, y no la media: describe mejor a la familia corriente.</p>
+<div aria-label="Qué medida usar (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Qué medida usar</caption>
+<thead><tr><th scope="col">Si los datos…</th><th scope="col">Use</th><th scope="col">Porque</th></tr></thead>
+<tbody>
+<tr><th scope="row">son simétricos, sin valores extremos</th><td>la media</td><td>usa toda la información y coincide con la mediana</td></tr>
+<tr><th scope="row">tienen valores atípicos o una cola larga</th><td>la mediana</td><td>unos pocos valores extremos no la arrastran</td></tr>
+<tr><th scope="row">son categorías, no números</th><td>la moda</td><td>es la única que funciona: no se puede promediar un color ni un idioma</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 3 · Elija la medida</h3></div>
+<p class="pregunta-int" id="t-p3">Preguntó a doscientas personas cuál es su idioma materno. ¿Qué medida de centro tiene sentido?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">La media</button>
+<button class="opcion" data-k="b" type="button">La mediana</button>
+<button class="opcion" data-k="c" type="button">La moda</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#elegir" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: ¿Qué medida? (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: ¿Qué medida?</span><span class="ei-sub">Situaciones para decidir entre media, mediana y moda, y preguntas sobre valores atípicos.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>El resumen de cinco números y el diagrama de caja</h2>
+<p>Un solo número nunca describe un conjunto. Cinco, casi siempre.</p>
+<div aria-label="El resumen de cinco números (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">El resumen de cinco números</caption>
+<thead><tr><th scope="col">Número</th><th scope="col">Qué es</th></tr></thead>
+<tbody>
+<tr><th scope="row">Mínimo</th><td>El valor más bajo.</td></tr>
+<tr><th scope="row">Primer cuartil (Q1)</th><td>La mediana de la mitad de abajo. Por debajo queda la cuarta parte de los datos.</td></tr>
+<tr><th scope="row">Mediana</th><td>El centro.</td></tr>
+<tr><th scope="row">Tercer cuartil (Q3)</th><td>La mediana de la mitad de arriba. Por debajo quedan tres cuartas partes de los datos.</td></tr>
+<tr><th scope="row">Máximo</th><td>El valor más alto.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>El <strong>diagrama de caja</strong> dibuja esos cinco números. La caja va de Q1 a Q3 y contiene la mitad central de los datos; la raya de dentro es la mediana; los bigotes llegan al mínimo y al máximo. Abajo: salarios anuales de once trabajadores de cada uno de dos sectores, en miles de dólares. Datos ilustrativos.</p>
+<svg class="diagrama" style="max-width:720px" viewBox="0 0 720 250" role="img" aria-label="Dos diagramas de caja de salarios anuales en miles de dólares, en la misma escala de 20 a 90. Comercio minorista: mínimo 22, primer cuartil 26, mediana 30, tercer cuartil 35, máximo 37; una caja corta y estrecha. Tecnología: mínimo 38, primer cuartil 45, mediana 55, tercer cuartil 70, máximo 88; una caja mucho más ancha." xmlns="http://www.w3.org/2000/svg"><line x1="150.0" y1="20" x2="150.0" y2="190" stroke="#eef0f2"/><text x="150.0" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">20</text><line x1="224.3" y1="20" x2="224.3" y2="190" stroke="#eef0f2"/><text x="224.3" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">30</text><line x1="298.6" y1="20" x2="298.6" y2="190" stroke="#eef0f2"/><text x="298.6" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">40</text><line x1="372.9" y1="20" x2="372.9" y2="190" stroke="#eef0f2"/><text x="372.9" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">50</text><line x1="447.1" y1="20" x2="447.1" y2="190" stroke="#eef0f2"/><text x="447.1" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">60</text><line x1="521.4" y1="20" x2="521.4" y2="190" stroke="#eef0f2"/><text x="521.4" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">70</text><line x1="595.7" y1="20" x2="595.7" y2="190" stroke="#eef0f2"/><text x="595.7" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">80</text><line x1="670.0" y1="20" x2="670.0" y2="190" stroke="#eef0f2"/><text x="670.0" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">90</text><line x1="150" y1="192" x2="670" y2="192" stroke="#1a2330" stroke-width="1.5"/><text x="410.0" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Salario anual (miles de $)</text><text x="138" y="75" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Comercio minorista</text><line x1="164.9" y1="70" x2="194.6" y2="70" stroke="#7a4a2e" stroke-width="2.5"/><line x1="261.4" y1="70" x2="276.3" y2="70" stroke="#7a4a2e" stroke-width="2.5"/><line x1="164.9" y1="58" x2="164.9" y2="82" stroke="#7a4a2e" stroke-width="2.5"/><line x1="276.3" y1="58" x2="276.3" y2="82" stroke="#7a4a2e" stroke-width="2.5"/><rect x="194.6" y="50" width="66.9" height="40" fill="#7a4a2e" fill-opacity=".18" stroke="#7a4a2e" stroke-width="2.5"/><line x1="224.3" y1="50" x2="224.3" y2="90" stroke="#7a4a2e" stroke-width="4"/><text x="138" y="150" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Tecnología</text><line x1="283.7" y1="145" x2="335.7" y2="145" stroke="#2a7f86" stroke-width="2.5"/><line x1="521.4" y1="145" x2="655.1" y2="145" stroke="#2a7f86" stroke-width="2.5"/><line x1="283.7" y1="133" x2="283.7" y2="157" stroke="#2a7f86" stroke-width="2.5"/><line x1="655.1" y1="133" x2="655.1" y2="157" stroke="#2a7f86" stroke-width="2.5"/><rect x="335.7" y="125" width="185.7" height="40" fill="#2a7f86" fill-opacity=".18" stroke="#2a7f86" stroke-width="2.5"/><line x1="410.0" y1="125" x2="410.0" y2="165" stroke="#2a7f86" stroke-width="4"/></svg>
+<div aria-label="Resumen de cinco números de los dos sectores, en miles de dólares (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Resumen de cinco números de los dos sectores, en miles de dólares</caption>
+<thead><tr><th scope="col">Sector</th><th scope="col">Mínimo</th><th scope="col">Q1</th><th scope="col">Mediana</th><th scope="col">Q3</th><th scope="col">Máximo</th></tr></thead>
+<tbody>
+<tr><th scope="row">Comercio minorista</th><td>22</td><td>26</td><td>30</td><td>35</td><td>37</td></tr>
+<tr><th scope="row">Tecnología</th><td>38</td><td>45</td><td>55</td><td>70</td><td>88</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Lo que enseña una caja ancha</span>
+<p>Lo que hay que ver no es solo que tecnología pague más. Su caja es mucho más ancha: dentro del mismo sector, los salarios son muy desiguales. En el comercio minorista casi todos cobran parecido. La anchura de la caja (Q3 − Q1) es donde vive la mitad central de la gente. <strong>Dos grupos pueden tener la misma mediana y vidas muy distintas.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Con once valores</span>
+<p>Con los once valores ordenados, la mediana es el 6.º, Q1 es el 3.º y Q3 es el 9.º.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Práctica 4 · Lea las cajas</h3></div>
+<p class="pregunta-int" id="t-p4">El trabajador mejor pagado del comercio minorista, ¿gana más o menos que el peor pagado de tecnología?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Menos: 37 frente a 38; los dos rangos no se solapan</button>
+<button class="opcion" data-k="b" type="button">Más</button>
+<button class="opcion" data-k="c" type="button">Lo mismo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-2.html#cuartiles" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: Resumen de cinco números (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: Resumen de cinco números</span><span class="ei-sub">Encuentre la mediana, Q1 o Q3 de una lista nueva de once valores cada vez.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Media o mediana: la elección interesada</h2>
+<p>Vuelva al Barrio A. Media noventa, mediana cuarenta. Las dos cifras son correctas y las dos describen el mismo barrio. Ahora imagine dos personas que tienen que hablar de ese barrio en público.</p>
+<div aria-label="Dos afirmaciones verdaderas sobre el mismo barrio (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Dos afirmaciones verdaderas sobre el mismo barrio</caption>
+<thead><tr><th scope="col">Quién habla</th><th scope="col">Qué dice</th><th scope="col">Por qué</th></tr></thead>
+<tbody>
+<tr><th scope="row">Un funcionario que quiere atraer inversión</th><td>«El ingreso medio de los hogares aquí es de noventa mil dólares».</td><td>La media hace que el barrio parezca próspero.</td></tr>
+<tr><th scope="row">Un grupo que pide ayuda pública</th><td>«El ingreso mediano de los hogares aquí es de cuarenta mil dólares».</td><td>La mediana hace visible la necesidad.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Esto es la Lección 1.3 otra vez</span>
+<p>Ninguno miente y ninguno se equivocó en una cuenta. Uno eligió la media y el otro la mediana, igual que los dos semanarios de 1905 eligieron qué hechos contar. El sesgo no necesita mentiras: le basta con elegir. La defensa es siempre la misma pregunta: <strong>¿por qué esta medida y no la otra?</strong> Cuando alguien publica una media sin la mediana, o al revés, pregúntese qué se ve mejor con la que eligió, y qué queda tapado.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s6"><span aria-hidden="true" class="num-seccion">6</span>Preguntas tipo GED</h2>
+<p>Estas preguntas funcionan como las del examen de Estudios Sociales del GED®. Cada una indica la práctica de estudios sociales que evalúa y su profundidad de conocimiento (DOK). Puede usar la calculadora.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 1 · SSP.11.a · DOK 1</h3></div>
+<p class="pregunta-int" id="t-p5"><div aria-label="Salarios anuales de 7 trabajadores de una empresa pequeña, en miles de dólares (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Salarios anuales de 7 trabajadores de una empresa pequeña, en miles de dólares</caption>
+<thead><tr><th scope="col">Trabajador</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th><th scope="col">F</th><th scope="col">Dueña</th></tr></thead>
+<tbody>
+<tr><th scope="row">Salario</th><td>31</td><td>33</td><td>33</td><td>35</td><td>38</td><td>40</td><td>250</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>¿Cuál es el salario <strong>mediano</strong> de esta empresa?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">35 mil dólares</button>
+<button class="opcion" data-k="b" type="button">65.7 mil dólares</button>
+<button class="opcion" data-k="c" type="button">33 mil dólares</button>
+<button class="opcion" data-k="d" type="button">219 mil dólares</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 2 · SSP.11.a · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p6"><div aria-label="Salarios anuales de 7 trabajadores de una empresa pequeña, en miles de dólares (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Salarios anuales de 7 trabajadores de una empresa pequeña, en miles de dólares</caption>
+<thead><tr><th scope="col">Trabajador</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th><th scope="col">F</th><th scope="col">Dueña</th></tr></thead>
+<tbody>
+<tr><th scope="row">Salario</th><td>31</td><td>33</td><td>33</td><td>35</td><td>38</td><td>40</td><td>250</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>La dueña dice: «El salario medio aquí es de unos 66 mil dólares». ¿Por qué es engañosa esta afirmación?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Su propio salario sube la media; seis de las siete personas ganan 40 mil dólares o menos.</button>
+<button class="opcion" data-k="b" type="button">La media está mal calculada.</button>
+<button class="opcion" data-k="c" type="button">La moda es mayor que la media.</button>
+<button class="opcion" data-k="d" type="button">Los salarios no se pueden promediar.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 3 · SSP.6.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p7"><em>Observe los diagramas de caja de la sección 4.</em><br>¿Qué afirmación está sostenida?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Los salarios varían mucho más dentro de tecnología que dentro del comercio minorista.</button>
+<button class="opcion" data-k="b" type="button">Todos los trabajadores de tecnología ganan más de 55 mil dólares.</button>
+<button class="opcion" data-k="c" type="button">Los trabajadores del comercio están menos capacitados.</button>
+<button class="opcion" data-k="d" type="button">Los dos sectores tienen la misma mediana.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 4 · SSP.11.a · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p8"><em>Una encuesta preguntó a 50 trabajadores cómo van al trabajo: auto, autobús, tren, bicicleta o a pie.</em><br>¿Qué medida describe mejor la respuesta típica?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">La moda</button>
+<button class="opcion" data-k="b" type="button">La media</button>
+<button class="opcion" data-k="c" type="button">La mediana</button>
+<button class="opcion" data-k="d" type="button">El rango</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Tarea</h2>
+<p>Es práctica independiente. Calcule una hora, con el cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-2-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios salen en un orden distinto cada vez. Siga hasta acertar 8 de cada 10 al primer intento. El marcador de cada actividad lleva la cuenta.</li>
+<li><strong>A mano y con la calculadora (20 minutos).</strong> Calcule a mano las cuatro medidas del Barrio B y después compruébelas con la calculadora. <em>Compruebe:</em> media 41, mediana 41, sin moda, rango 14.</li>
+<li><strong>Media o mediana (25 minutos).</strong> Con los datos del Barrio A, escriba dos párrafos cortos sobre el mismo barrio: uno para atraer inversión y otro para pedir una ayuda pública. No puede inventar ni cambiar ningún dato; solo puede elegir qué medida usa y qué cifras menciona. <em>Compruebe:</em> si tuvo que inventar un dato, vuelva atrás.</li>
+<li><strong>Su propio resumen de cinco números (30 minutos).</strong> Reúna once datos reales: el precio de once artículos del supermercado, las edades de once personas conocidas o los minutos que tardó en llegar al trabajo once días. Ordénelos, saque el resumen de cinco números y dibuje la caja a mano en papel cuadriculado. <em>Compruebe:</em> Q1 es el 3.º valor y Q3 el 9.º.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Quiz de práctica</h2>
+<p>Responda las <strong>12 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Pregunta 1</p>
+<p class="pregunta" id="t-q1">Para hallar la mediana, lo primero es…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">sumar todos los valores</button><button class="opcion" data-k="b" type="button">ordenar los datos</button><button class="opcion" data-k="c" type="button">buscar el que más se repite</button><button class="opcion" data-k="d" type="button">restar el menor del mayor</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Pregunta 2</p>
+<p class="pregunta" id="t-q2">El conjunto 12, 15, 15, 18, 22, 25, 25, 25, 31, 40 suma 228. Su media es…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">23.5</button><button class="opcion" data-k="b" type="button">22.8</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">28</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Pregunta 3</p>
+<p class="pregunta" id="t-q3">En ese mismo conjunto de diez valores, la mediana es…</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">22</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">23.5</button><button class="opcion" data-k="d" type="button">22.8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Pregunta 4</p>
+<p class="pregunta" id="t-q4">El rango de un conjunto se obtiene…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">sumando el mayor y el menor</button><button class="opcion" data-k="b" type="button">restando el menor del mayor</button><button class="opcion" data-k="c" type="button">dividiendo el mayor entre el menor</button><button class="opcion" data-k="d" type="button">contando los valores</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Pregunta 5</p>
+<p class="pregunta" id="t-q5">En el Barrio A la media es 90 y la mediana 40. La diferencia se debe a…</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">un error de cálculo</button><button class="opcion" data-k="b" type="button">un hogar con un ingreso muy alto que arrastra la media</button><button class="opcion" data-k="c" type="button">que hay pocos hogares</button><button class="opcion" data-k="d" type="button">una lista mal ordenada</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Pregunta 6</p>
+<p class="pregunta" id="t-q6">Un valor atípico muy alto afecta…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a la media, no a la mediana</button><button class="opcion" data-k="b" type="button">a la mediana, no a la media</button><button class="opcion" data-k="c" type="button">a las dos por igual</button><button class="opcion" data-k="d" type="button">a ninguna</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Pregunta 7</p>
+<p class="pregunta" id="t-q7">Para describir el ingreso de una familia corriente de un barrio, se publica…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la media</button><button class="opcion" data-k="b" type="button">la mediana</button><button class="opcion" data-k="c" type="button">el rango</button><button class="opcion" data-k="d" type="button">el máximo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Pregunta 8</p>
+<p class="pregunta" id="t-q8">En una distribución sesgada a la derecha…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la media es mayor que la mediana</button><button class="opcion" data-k="b" type="button">la media es menor que la mediana</button><button class="opcion" data-k="c" type="button">son iguales</button><button class="opcion" data-k="d" type="button">no hay mediana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Pregunta 9</p>
+<p class="pregunta" id="t-q9">¿Qué parte de los datos hay dentro de la caja?</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Todos</button><button class="opcion" data-k="b" type="button">La mitad central</button><button class="opcion" data-k="c" type="button">La cuarta parte</button><button class="opcion" data-k="d" type="button">Solo la mediana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Pregunta 10</p>
+<p class="pregunta" id="t-q10">¿En qué sector hay más desigualdad interna de salarios?</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Comercio, porque paga menos</button><button class="opcion" data-k="b" type="button">Los dos igual</button><button class="opcion" data-k="c" type="button">Tecnología, porque su caja es mucho más ancha</button><button class="opcion" data-k="d" type="button">No se puede saber</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Pregunta 11</p>
+<p class="pregunta" id="t-q11">Con once valores ordenados, Q3 es el…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3.er valor</button><button class="opcion" data-k="b" type="button">6.º valor</button><button class="opcion" data-k="c" type="button">9.º valor</button><button class="opcion" data-k="d" type="button">11.º valor</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Pregunta 12</p>
+<p class="pregunta" id="t-q12">Un funcionario dice la media; un grupo vecinal, la mediana. Las dos son correctas. La mejor pregunta es…</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">¿Quién calculó mal?</button><button class="opcion" data-k="b" type="button">¿Por qué eligió cada uno esa medida y qué tapa?</button><button class="opcion" data-k="c" type="button">¿Cuál miente?</button><button class="opcion" data-k="d" type="button">¿Qué cifra es mayor?</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz otra vez</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">9</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea y úsela <strong>después</strong> para revisar su trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Destrezas de la lección y cómo se ve cada nivel: lo domino, voy avanzando y necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcula las cuatro medidas</th><td>Obtengo las cuatro sin errores, a mano y con la calculadora, y estimo antes.</td><td>La media me sale, pero fallo la mediana de conjuntos pares o el rango.</td><td>Confundo media y mediana, o busco la mediana sin ordenar (<a href="#s1">repase la sección 1</a>).</td></tr>
+<tr><th scope="row">Reconoce el efecto de un valor atípico</th><td>Explico que mueve la media y no la mediana, y uso el rango como aviso.</td><td>Sé que los atípicos afectan, pero no a cuál medida.</td><td>Tomo siempre la media como valor típico (<a href="#s2">repase la sección 2</a>).</td></tr>
+<tr><th scope="row">Elige la medida según la forma</th><td>Justifico mi elección con la forma y digo qué taparía la otra medida.</td><td>Elijo entre media y mediana, pero olvido la moda con categorías.</td><td>Uso siempre la media (<a href="#s3">repase la sección 3</a>).</td></tr>
+<tr><th scope="row">Interpreta un diagrama de caja</th><td>Comparo dos cajas y explico qué significa que una sea más ancha.</td><td>Leo los cinco números, pero no la anchura de la caja.</td><td>Solo miro la mediana (<a href="#s4">repase la sección 4</a>).</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Esta lección deja instalada la herramienta: <strong>un solo número nunca describe un conjunto</strong>. Media, mediana, moda y rango dicen cosas distintas de los mismos datos, y el resumen de cinco números dice más que los cuatro juntos. Y deja instalada la sospecha, la misma del Tema 1 con otro disfraz: cuando alguien publica una media sin la mediana, la pregunta no es si calculó bien, sino por qué eligió esa.</p><p>La Lección 2.3 cierra el tema con los porcentajes, las tasas, las escalas de mapa y la densidad de población. Y vuelve el censo de Agnes Holbrook de 1895 de la Lección 1.2: un mapa que parece medir densidad, de una autora que advirtió por escrito que sus datos no sostienen afirmaciones sobre densidad.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-2-3.html">Lección 2.3 · Porcentajes, tasas, escalas de mapas y densidad de población</a></p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Palabras clave</h2>
+<dl class="glosario">
+<dt>Media</dt><dd>La suma de los valores dividida entre cuántos son; el promedio.</dd>
+<dt>Mediana</dt><dd>El valor central de los datos ordenados.</dd>
+<dt>Moda</dt><dd>El valor más frecuente; la única medida de centro para categorías.</dd>
+<dt>Rango</dt><dd>El valor mayor menos el menor.</dd>
+<dt>Valor atípico</dt><dd>Un valor muy separado del resto.</dd>
+<dt>Distribución sesgada</dt><dd>Datos con una cola larga hacia un lado; los ingresos están sesgados a la derecha.</dd>
+<dt>Cuartiles y diagrama de caja</dt><dd>Q1 y Q3 dividen los datos en cuartos; el diagrama de caja dibuja mínimo, Q1, mediana, Q3 y máximo.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Estudios sociales · Tema 2 · Lección 2.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "La mediana cuenta posiciones, no cantidades.",
+    "b": "¿Sigue estando 6,000 en la última posición?"
+   },
+   "right": "El 6.º valor sigue siendo 40. La media, en cambio, saltaría a unos 489.",
+   "solution": "El 6.º valor sigue siendo 40. La media, en cambio, saltaría a unos 489."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "La moda solo dice el valor más frecuente.",
+    "c": "Una de las cuatro medidas sí avisa."
+   },
+   "right": "Un rango de 572 cuando los valores centrales rondan 40 es una señal de alarma.",
+   "solution": "Un rango de 572 cuando los valores centrales rondan 40 es una señal de alarma."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "¿Se pueden sumar idiomas?",
+    "b": "¿Se pueden ordenar idiomas de menor a mayor?"
+   },
+   "right": "Con categorías solo funciona la moda: el idioma más frecuente.",
+   "solution": "Con categorías solo funciona la moda: el idioma más frecuente."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Compare el máximo del comercio con el mínimo de tecnología.",
+    "c": "Mire las cifras exactas."
+   },
+   "right": "Máximo del comercio, 37; mínimo de tecnología, 38.",
+   "solution": "Máximo del comercio, 37; mínimo de tecnología, 38."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Esa es la media.",
+    "c": "Esa es la moda.",
+    "d": "Ese es el rango."
+   },
+   "right": "Siete valores ordenados; el 4.º es 35.",
+   "solution": "Siete valores ordenados; el 4.º es 35."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "460 ÷ 7 ≈ 65.7: la cuenta está bien.",
+    "c": "La moda es 33, mucho más baja.",
+    "d": "Se puede; la cuestión es si la media es típica."
+   },
+   "right": "Un valor atípico (250 mil) mueve la media; la mediana (35 mil) describe mejor al trabajador típico.",
+   "solution": "Un valor atípico (250 mil) mueve la media; la mediana (35 mil) describe mejor al trabajador típico."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "55 es la mediana: la mitad gana menos.",
+    "c": "La gráfica muestra salarios, no capacitación.",
+    "d": "30 y 55 no son iguales."
+   },
+   "right": "La caja de tecnología (45 a 70) es mucho más ancha que la del comercio (26 a 35).",
+   "solution": "La caja de tecnología (45 a 70) es mucho más ancha que la del comercio (26 a 35)."
+  },
+  "p8": {
+   "ok": "a",
+   "hints": {
+    "b": "No se puede sumar «autobús» y «tren».",
+    "c": "Estas respuestas no tienen un orden de menor a mayor.",
+    "d": "El rango necesita números."
+   },
+   "right": "Con categorías solo funciona la moda: la forma más común de ir al trabajo.",
+   "solution": "Con categorías solo funciona la moda: la forma más común de ir al trabajo."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "b",
+   "hints": {
+    "a": "Eso es para la media.",
+    "c": "Eso es la moda.",
+    "d": "Eso es el rango."
+   },
+   "solution": "Sin orden no hay mediana."
+  },
+  "2": {
+   "ok": "b",
+   "hints": {
+    "a": "Esa es la mediana.",
+    "c": "Esa es la moda.",
+    "d": "Ese es el rango."
+   },
+   "solution": "228 ÷ 10 = 22.8."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "Con una cantidad par, se promedian los dos centrales.",
+    "b": "25 es la moda.",
+    "d": "Esa es la media."
+   },
+   "solution": "(22 + 25) ÷ 2 = 23.5."
+  },
+  "4": {
+   "ok": "b",
+   "hints": {
+    "a": "Mide distancia, no un total.",
+    "c": "Es una diferencia.",
+    "d": "Eso es cuántos, no cuánto se separan."
+   },
+   "solution": "Mayor − menor."
+  },
+  "5": {
+   "ok": "b",
+   "hints": {
+    "a": "Las dos son correctas.",
+    "c": "Los mismos once hogares dan una mediana de 40.",
+    "d": "La lista está ordenada."
+   },
+   "solution": "El hogar de 600 mil."
+  },
+  "6": {
+   "ok": "a",
+   "hints": {
+    "b": "La mediana cuenta posiciones.",
+    "c": "Una se mueve mucho y la otra casi nada.",
+    "d": "La media se mueve."
+   },
+   "solution": "La media reparte cantidades; la mediana cuenta posiciones."
+  },
+  "7": {
+   "ok": "b",
+   "hints": {
+    "a": "Los ingresos tienen una cola larga que arrastra la media.",
+    "c": "El rango es dispersión, no centro.",
+    "d": "El máximo es un solo hogar."
+   },
+   "solution": "Los ingresos están sesgados a la derecha."
+  },
+  "8": {
+   "ok": "a",
+   "hints": {
+    "b": "La cola está del lado alto.",
+    "c": "Eso es una forma simétrica.",
+    "d": "Siempre hay mediana."
+   },
+   "solution": "La cola arrastra la media hacia arriba."
+  },
+  "9": {
+   "ok": "b",
+   "hints": {
+    "a": "Los bigotes llegan al resto.",
+    "c": "De Q1 a Q3 son dos cuartos.",
+    "d": "La mediana es la raya de dentro."
+   },
+   "solution": "De Q1 a Q3: el 50 % de los datos."
+  },
+  "10": {
+   "ok": "c",
+   "hints": {
+    "a": "Pagar menos no es lo mismo que ser desigual.",
+    "b": "Compare las anchuras.",
+    "d": "La caja lo muestra."
+   },
+   "solution": "70 − 45 = 25 frente a 35 − 26 = 9."
+  },
+  "11": {
+   "ok": "c",
+   "hints": {
+    "a": "Ese es Q1.",
+    "b": "Esa es la mediana.",
+    "d": "Ese es el máximo."
+   },
+   "solution": "La mediana de los cinco de arriba (7.º a 11.º) es el 9.º."
+  },
+  "12": {
+   "ok": "b",
+   "hints": {
+    "a": "Nadie.",
+    "c": "Nadie miente.",
+    "d": "El tamaño no es la cuestión."
+   },
+   "solution": "Elegir es el sesgo; preguntar por qué es la defensa."
+  }
+ },
+ "next": "Lección 2.3",
+ "review": "la lección"
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#7a4a2e" defer></script>
+</body>
+</html>

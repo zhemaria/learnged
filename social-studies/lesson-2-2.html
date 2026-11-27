@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- LearnGED · Social studies · Lesson 2.2 (English) — built by tools/build_soc_2_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 2.2 · Measures of center in population and economic data · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="es" href="/es/estudios-sociales/leccion-2-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css"><link rel="stylesheet" href="/social-studies/social.css">
+</head>
+<body data-area="tools">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Social studies · all lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Social studies · Topic 2 — Quantitative reasoning in social studies</p>
+<h1>Lesson 2.2 · Measures of center in population and economic data</h1>
+<p class="lema">Mean, median, and mode can tell three different stories about the same data. Knowing which one fits is the skill.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip chip-sp">SSP.11 · Mean, median, mode, range</span><span class="chip chip-sp">SSP.6 · Box plots and histograms</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Calculate</strong> the mean, median, mode, and range of a set of social data.</li>
+<li><strong>Decide</strong> which measure best describes a set, according to its shape.</li>
+<li><strong>Build</strong> the five-number summary and read a box plot.</li>
+<li><strong>Compare</strong> two groups and explain what it means that one box is wider than the other.</li>
+</ul>
+</div>
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Social Studies Practices of the GED® test that this lesson works on:</p><ul><li><span class="std-cod std-dir">SSP.11.a</span> <strong>Measuring the center of a statistical data set.</strong> Use mean, median, mode, and range to describe a set of data.<br><span class="std-meta">DOK 1 · Aligned with 6.SP, S-ID</span></li><li><span class="std-cod std-dir">SSP.6.b</span> <strong>Integrating content presented in different ways.</strong> Analyze information presented in a variety of maps, graphic organizers, tables, and charts, and in a variety of visual sources such as artifacts, photographs, and political cartoons.<br><span class="std-meta">DOK 2–3 · Aligned with R7, R9</span></li><li><span class="std-cod std-dir">SSP.7.b</span> <strong>Evaluating reasoning and evidence.</strong> Distinguish between unsupported claims and informed hypotheses grounded in social studies evidence.<br><span class="std-meta">DOK 2–3 · Aligned with R8, NSH</span></li></ul>
+<p class="std-tit">It also builds the base for:</p><ul><li><span class="std-cod std-base">SSP.10.a</span> <strong>Reading and interpreting graphs and charts.</strong> Interpret, use, and create graphs (e.g., scatterplot, line, bar, circle), including predicting trends within reasonable limits.<br><span class="std-meta">DOK 2–3 · Aligned with 7.RP, 3.MD, 8.SP, S-ID</span></li></ul>
+<p class="std-tit">GED® Social Studies content topics:</p>
+<ul><li><span class="std-cod std-mp">E.c</span> Fundamental economic concepts <span class="std-meta">(Economics · about 15%)</span></li><li><span class="std-cod std-mp">E.f</span> Consumer economics <span class="std-meta">(Economics · about 15%)</span></li></ul>
+<p class="std-tit">What the aligned codes mean:</p><ul class="std-clave"><li><span class="std-cod std-ccr">6.SP</span> Math, statistics (grade 6): center and spread of a data set.</li><li><span class="std-cod std-ccr">S-ID</span> Statistics: interpret categorical and quantitative data.</li><li><span class="std-cod std-ccr">R7</span> CCR Reading 7: combine information from text, visuals, and numbers.</li><li><span class="std-cod std-ccr">R9</span> CCR Reading 9: compare how two texts treat the same topic.</li><li><span class="std-cod std-ccr">R8</span> CCR Reading 8: evaluate the claims in a text and the evidence behind them.</li><li><span class="std-cod std-ccr">NSH</span> National Standards for History: historical analysis and interpretation (context, credibility, evidence).</li><li><span class="std-cod std-ccr">7.RP</span> Math, ratios and proportions (grade 7): rates, percents, and proportional relationships.</li><li><span class="std-cod std-ccr">3.MD</span> Math, measurement and data (grade 3): picture and bar graphs.</li><li><span class="std-cod std-ccr">8.SP</span> Math, statistics (grade 8): patterns in two-variable data.</li></ul>
+<p class="std-fuente">DOK (depth of knowledge): 1 = recall, 2 = use a skill or concept, 3 = reason with evidence. Source of the practices, the content topics, the DOK ranges, and the alignment: GED Testing Service, <cite>Assessment Guide for Educators: Social Studies</cite>. The CCR anchor standards are in Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>.</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s1">The four measures</a></li>
+<li><a href="#s2">When the mean misleads</a></li>
+<li><a href="#s3">The shape decides the measure</a></li>
+<li><a href="#s4">The five-number summary and the box plot</a></li>
+<li><a href="#s5">Mean or median: a one-sided choice</a></li>
+<li><a href="#s6">GED-style questions</a></li>
+<li><a href="#s-tarea">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-lista">Self-check checklist</a></li>
+<li><a href="#s-sigue">Coming next</a></li>
+<li><a href="#s-palabras">Key words</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Before you start</span>
+<p>Lesson 2.1 taught you to read a graph before believing it, and it ended with an uncomfortable idea: a correlation allows four explanations, and the drawing cannot choose. Here we go one level deeper. Before the graph comes the number that sums it up, and those numbers are chosen too. When someone says “the typical income in the neighborhood is ninety thousand dollars,” they made a decision before speaking: they decided what <em>typical</em> means.</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>The four measures</h2>
+<p>Three measures describe the <strong>center</strong> of a set of data. The fourth describes how <strong>spread out</strong> it is.</p>
+<div aria-label="The four measures and how to find them (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The four measures and how to find them</caption>
+<thead><tr><th scope="col">Measure</th><th scope="col">What it is</th><th scope="col">How to find it</th></tr></thead>
+<tbody>
+<tr><th scope="row">Mean (average)</th><td>An equal share</td><td>Add all the values and divide by how many there are.</td></tr>
+<tr><th scope="row">Median</th><td>The middle value</td><td>Put the values in order and take the one in the middle. If there is an even number of values, take the mean of the two middle ones.</td></tr>
+<tr><th scope="row">Mode</th><td>The most frequent value</td><td>Count which value appears most. There may be none, or more than one.</td></tr>
+<tr><th scope="row">Range</th><td>How far apart the values are</td><td>Largest value minus smallest value.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Always put the data in order first</span>
+<p>The median does not exist until the data are in order. It is the most common mistake and the easiest to avoid: if you did not order the list, the number in the middle is not the median.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example · The ten values 12, 15, 15, 18, 22, 25, 25, 25, 31, 40</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Mean:</strong> the sum is 228, and 228 ÷ 10 = 22.8.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Median:</strong> ten values, so take the 5th and 6th: 22 and 25. (22 + 25) ÷ 2 = 23.5.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Mode:</strong> 25 appears three times.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Range:</strong> 40 − 12 = 28.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span>Three different “centers” for the same data: 22.8, 23.5, and 25. None of them is wrong.</p>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#calculate" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: Calculate the four measures (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: Calculate the four measures</span><span class="ei-sub">A new data set every time, with a hint if you mix up the measures.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>When the mean misleads</h2>
+<p>Here are the yearly incomes of eleven households in each of two neighborhoods, in thousands of dollars, already in order. Illustrative data.</p>
+<p><strong>Neighborhood A</strong></p><p class="datos-lista">28 · 31 · 33 · 35 · 38 · 40 · 40 · 45 · 48 · 52 · 600</p>
+<p><strong>Neighborhood B</strong></p><p class="datos-lista">34 · 36 · 38 · 39 · 40 · 41 · 42 · 43 · 44 · 46 · 48</p>
+<div aria-label="The four measures in the two neighborhoods, in thousands of dollars (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The four measures in the two neighborhoods, in thousands of dollars</caption>
+<thead><tr><th scope="col">Measure</th><th scope="col">Neighborhood A</th><th scope="col">Neighborhood B</th></tr></thead>
+<tbody>
+<tr><th scope="row">Mean</th><td>90</td><td>41</td></tr>
+<tr><th scope="row">Median</th><td>40</td><td>41</td></tr>
+<tr><th scope="row">Mode</th><td>40</td><td>none</td></tr>
+<tr><th scope="row">Range</th><td>572</td><td>14</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<p>Look at the mean row. Neighborhood A comes out at 90 thousand and B at 41: it looks as if people in A earn more than twice as much. Now look at the median: 40 and 41. Almost the same.</p>
+<p>Both rows are correct. The difference comes from a single household, the one with 600 thousand, which pulls the mean up and does not move the median. Ten of the eleven households in A earn 52 thousand or less. <strong>None earns 90.</strong></p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Why it happens</span>
+<p>The mean shares equally: if we added up all the money in the neighborhood and split it among the eleven households, each would get 90 thousand. But nobody shares anything. The median only counts positions, so a huge value takes up one position, no more. <strong>An outlier moves the mean and leaves the median alone.</strong> And the range is the warning: a range of 572 against one of 14 means something in A is very far from the rest.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 1 · The outlier</h3></div>
+<p class="pregunta-int" id="t-p1">If the household with 600 earned 6,000 instead, what would happen to the median of Neighborhood A?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">It would rise a lot</button>
+<button class="opcion" data-k="b" type="button">It would rise a little</button>
+<button class="opcion" data-k="c" type="button">It would not change: it would still be 40</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 2 · The warning sign</h3></div>
+<p class="pregunta-int" id="t-p2">Which measure warns you that there may be an outlier?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">The range, when it is huge compared with the values in the middle</button>
+<button class="opcion" data-k="b" type="button">The mode</button>
+<button class="opcion" data-k="c" type="button">None: you must check the values one by one</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>The shape decides the measure</h2>
+<p>No measure is better than the others. One fits the <strong>shape</strong> of the data, and to see the shape you draw a <strong>histogram</strong>: the values are split into ranges, and you count how many fall in each one.</p>
+<h3>Symmetric</h3><svg viewBox="0 0 560 300" role="img" aria-label="Histogram with a symmetric shape: 2, 5, 9, 5, and 2 households in the income ranges 20–29, 30–39, 40–49, 50–59, and 60–69 thousand dollars." style="width:100%;max-width:560px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#e1e6ea"/><text x="58" y="247.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="196.8" x2="542" y2="196.8" stroke="#e1e6ea"/><text x="58" y="201.8" text-anchor="end" font-size="13" fill="#3d4753">2</text><line x1="66" y1="151.6" x2="542" y2="151.6" stroke="#e1e6ea"/><text x="58" y="156.6" text-anchor="end" font-size="13" fill="#3d4753">4</text><line x1="66" y1="106.4" x2="542" y2="106.4" stroke="#e1e6ea"/><text x="58" y="111.4" text-anchor="end" font-size="13" fill="#3d4753">6</text><line x1="66" y1="61.2" x2="542" y2="61.2" stroke="#e1e6ea"/><text x="58" y="66.2" text-anchor="end" font-size="13" fill="#3d4753">8</text><line x1="66" y1="16.0" x2="542" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="16" x2="66" y2="242" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#1a2330" stroke-width="1.5"/><rect x="83.1" y="196.8" width="60.9" height="45.2" fill="#1f6066"/><text x="113.6" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="113.6" y="260" text-anchor="middle" font-size="13" fill="#3d4753">20–29</text><rect x="178.3" y="129.0" width="60.9" height="113.0" fill="#1f6066"/><text x="208.8" y="123.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">5</text><text x="208.8" y="260" text-anchor="middle" font-size="13" fill="#3d4753">30–39</text><rect x="273.5" y="38.6" width="60.9" height="203.4" fill="#1f6066"/><text x="304.0" y="32.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="304.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">40–49</text><rect x="368.7" y="129.0" width="60.9" height="113.0" fill="#1f6066"/><text x="399.2" y="123.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">5</text><text x="399.2" y="260" text-anchor="middle" font-size="13" fill="#3d4753">50–59</text><rect x="463.9" y="196.8" width="60.9" height="45.2" fill="#1f6066"/><text x="494.4" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="494.4" y="260" text-anchor="middle" font-size="13" fill="#3d4753">60–69</text><text x="304.0" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Yearly household income (thousands of $)</text><text x="16" y="129.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 129.0)">Number of households</text></svg><p>Most values gather in the middle and drop off evenly on both sides. The mean and the median almost match. Illustrative data.</p>
+<h3>Skewed to the right</h3><svg viewBox="0 0 560 300" role="img" aria-label="Histogram skewed to the right: 9, 7, 4, 2, 1, and 1 households in the income ranges 20–39, 40–59, 60–79, 80–99, 100–119, and 120 thousand dollars or more." style="width:100%;max-width:560px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#e1e6ea"/><text x="58" y="247.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="196.8" x2="542" y2="196.8" stroke="#e1e6ea"/><text x="58" y="201.8" text-anchor="end" font-size="13" fill="#3d4753">2</text><line x1="66" y1="151.6" x2="542" y2="151.6" stroke="#e1e6ea"/><text x="58" y="156.6" text-anchor="end" font-size="13" fill="#3d4753">4</text><line x1="66" y1="106.4" x2="542" y2="106.4" stroke="#e1e6ea"/><text x="58" y="111.4" text-anchor="end" font-size="13" fill="#3d4753">6</text><line x1="66" y1="61.2" x2="542" y2="61.2" stroke="#e1e6ea"/><text x="58" y="66.2" text-anchor="end" font-size="13" fill="#3d4753">8</text><line x1="66" y1="16.0" x2="542" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="16" x2="66" y2="242" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="242.0" x2="542" y2="242.0" stroke="#1a2330" stroke-width="1.5"/><rect x="80.3" y="38.6" width="50.8" height="203.4" fill="#1f6066"/><text x="105.7" y="32.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="105.7" y="260" text-anchor="middle" font-size="13" fill="#3d4753">20–39</text><rect x="159.6" y="83.8" width="50.8" height="158.2" fill="#1f6066"/><text x="185.0" y="77.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">7</text><text x="185.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">40–59</text><rect x="238.9" y="151.6" width="50.8" height="90.4" fill="#1f6066"/><text x="264.3" y="145.6" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">4</text><text x="264.3" y="260" text-anchor="middle" font-size="13" fill="#3d4753">60–79</text><rect x="318.3" y="196.8" width="50.8" height="45.2" fill="#1f6066"/><text x="343.7" y="190.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="343.7" y="260" text-anchor="middle" font-size="13" fill="#3d4753">80–99</text><rect x="397.6" y="219.4" width="50.8" height="22.6" fill="#1f6066"/><text x="423.0" y="213.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">1</text><text x="423.0" y="260" text-anchor="middle" font-size="13" fill="#3d4753">100–119</text><rect x="476.9" y="219.4" width="50.8" height="22.6" fill="#1f6066"/><text x="502.3" y="213.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">1</text><text x="502.3" y="260" text-anchor="middle" font-size="13" fill="#3d4753">120+</text><text x="304.0" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Yearly household income (thousands of $)</text><text x="16" y="129.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 129.0)">Number of households</text></svg><p>Most values gather on the left, and a long tail stretches toward high values. The tail pulls the mean above the median. Illustrative data.</p>
+<p>Incomes, almost everywhere in the world, have the second shape. That is why the U.S. Census Bureau and other agencies usually publish the <strong>median household income</strong>, not the mean: it describes the ordinary family better.</p>
+<div aria-label="Which measure to use (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Which measure to use</caption>
+<thead><tr><th scope="col">If the data…</th><th scope="col">Use</th><th scope="col">Because</th></tr></thead>
+<tbody>
+<tr><th scope="row">are symmetric, with no extreme values</th><td>the mean</td><td>it uses all the information and matches the median</td></tr>
+<tr><th scope="row">have outliers or a long tail</th><td>the median</td><td>a few extreme values cannot pull it</td></tr>
+<tr><th scope="row">are categories, not numbers</th><td>the mode</td><td>it is the only one that works: you cannot average a color or a language</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 3 · Choose the measure</h3></div>
+<p class="pregunta-int" id="t-p3">You asked 200 people what their first language is. Which measure of center makes sense?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">The mean</button>
+<button class="opcion" data-k="b" type="button">The median</button>
+<button class="opcion" data-k="c" type="button">The mode</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#choose" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: Which measure? (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: Which measure?</span><span class="ei-sub">Situations to decide among mean, median, and mode, and questions about outliers.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>The five-number summary and the box plot</h2>
+<p>A single number never describes a set of data. Five numbers almost always do.</p>
+<div aria-label="The five-number summary (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The five-number summary</caption>
+<thead><tr><th scope="col">Number</th><th scope="col">What it is</th></tr></thead>
+<tbody>
+<tr><th scope="row">Minimum</th><td>The lowest value.</td></tr>
+<tr><th scope="row">First quartile (Q1)</th><td>The median of the lower half. One quarter of the data are below it.</td></tr>
+<tr><th scope="row">Median</th><td>The middle.</td></tr>
+<tr><th scope="row">Third quartile (Q3)</th><td>The median of the upper half. Three quarters of the data are below it.</td></tr>
+<tr><th scope="row">Maximum</th><td>The highest value.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<p>A <strong>box plot</strong> draws those five numbers. The box goes from Q1 to Q3 and holds the middle half of the data; the line inside is the median; the whiskers reach the minimum and the maximum. Below: yearly salaries of eleven workers in each of two sectors, in thousands of dollars. Illustrative data.</p>
+<svg class="diagrama" style="max-width:720px" viewBox="0 0 720 250" role="img" aria-label="Two box plots of yearly salaries in thousands of dollars, on the same scale from 20 to 90. Retail: minimum 22, first quartile 26, median 30, third quartile 35, maximum 37; a short, narrow box. Technology: minimum 38, first quartile 45, median 55, third quartile 70, maximum 88; a much wider box." xmlns="http://www.w3.org/2000/svg"><line x1="150.0" y1="20" x2="150.0" y2="190" stroke="#eef0f2"/><text x="150.0" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">20</text><line x1="224.3" y1="20" x2="224.3" y2="190" stroke="#eef0f2"/><text x="224.3" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">30</text><line x1="298.6" y1="20" x2="298.6" y2="190" stroke="#eef0f2"/><text x="298.6" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">40</text><line x1="372.9" y1="20" x2="372.9" y2="190" stroke="#eef0f2"/><text x="372.9" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">50</text><line x1="447.1" y1="20" x2="447.1" y2="190" stroke="#eef0f2"/><text x="447.1" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">60</text><line x1="521.4" y1="20" x2="521.4" y2="190" stroke="#eef0f2"/><text x="521.4" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">70</text><line x1="595.7" y1="20" x2="595.7" y2="190" stroke="#eef0f2"/><text x="595.7" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">80</text><line x1="670.0" y1="20" x2="670.0" y2="190" stroke="#eef0f2"/><text x="670.0" y="212" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#3d4753">90</text><line x1="150" y1="192" x2="670" y2="192" stroke="#1a2330" stroke-width="1.5"/><text x="410.0" y="240" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Yearly salary (thousands of $)</text><text x="138" y="75" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Retail</text><line x1="164.9" y1="70" x2="194.6" y2="70" stroke="#7a4a2e" stroke-width="2.5"/><line x1="261.4" y1="70" x2="276.3" y2="70" stroke="#7a4a2e" stroke-width="2.5"/><line x1="164.9" y1="58" x2="164.9" y2="82" stroke="#7a4a2e" stroke-width="2.5"/><line x1="276.3" y1="58" x2="276.3" y2="82" stroke="#7a4a2e" stroke-width="2.5"/><rect x="194.6" y="50" width="66.9" height="40" fill="#7a4a2e" fill-opacity=".18" stroke="#7a4a2e" stroke-width="2.5"/><line x1="224.3" y1="50" x2="224.3" y2="90" stroke="#7a4a2e" stroke-width="4"/><text x="138" y="150" text-anchor="end" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#1a2330">Technology</text><line x1="283.7" y1="145" x2="335.7" y2="145" stroke="#2a7f86" stroke-width="2.5"/><line x1="521.4" y1="145" x2="655.1" y2="145" stroke="#2a7f86" stroke-width="2.5"/><line x1="283.7" y1="133" x2="283.7" y2="157" stroke="#2a7f86" stroke-width="2.5"/><line x1="655.1" y1="133" x2="655.1" y2="157" stroke="#2a7f86" stroke-width="2.5"/><rect x="335.7" y="125" width="185.7" height="40" fill="#2a7f86" fill-opacity=".18" stroke="#2a7f86" stroke-width="2.5"/><line x1="410.0" y1="125" x2="410.0" y2="165" stroke="#2a7f86" stroke-width="4"/></svg>
+<div aria-label="Five-number summary of the two sectors, in thousands of dollars (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Five-number summary of the two sectors, in thousands of dollars</caption>
+<thead><tr><th scope="col">Sector</th><th scope="col">Minimum</th><th scope="col">Q1</th><th scope="col">Median</th><th scope="col">Q3</th><th scope="col">Maximum</th></tr></thead>
+<tbody>
+<tr><th scope="row">Retail</th><td>22</td><td>26</td><td>30</td><td>35</td><td>37</td></tr>
+<tr><th scope="row">Technology</th><td>38</td><td>45</td><td>55</td><td>70</td><td>88</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">What a wide box tells you</span>
+<p>It is not only that technology pays more. Its box is much wider: inside the same sector, salaries are very unequal. In retail almost everyone earns about the same. The width of the box (Q3 − Q1) is where the middle half of the people are. <strong>Two groups can have the same median and very different lives.</strong></p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">With eleven values</span>
+<p>Once the eleven values are in order, the median is the 6th, Q1 is the 3rd, and Q3 is the 9th.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Practice 4 · Read the boxes</h3></div>
+<p class="pregunta-int" id="t-p4">Does the best-paid retail worker earn more or less than the lowest-paid technology worker?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Less: 37 against 38; the two ranges do not overlap</button>
+<button class="opcion" data-k="b" type="button">More</button>
+<button class="opcion" data-k="c" type="button">The same</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-2-2.html#quartiles" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: Five-number summary (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🗂️</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: Five-number summary</span><span class="ei-sub">Find the median, Q1, or Q3 of a new list of eleven values each time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Mean or median: a one-sided choice</h2>
+<p>Go back to Neighborhood A. Mean 90, median 40. Both numbers are correct, and both describe the same neighborhood. Now picture two people who must speak about that neighborhood in public.</p>
+<div aria-label="Two true statements about the same neighborhood (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Two true statements about the same neighborhood</caption>
+<thead><tr><th scope="col">Who speaks</th><th scope="col">What they say</th><th scope="col">Why</th></tr></thead>
+<tbody>
+<tr><th scope="row">An official who wants to attract investment</th><td>“The average household income here is 90 thousand dollars.”</td><td>The mean makes the neighborhood look prosperous.</td></tr>
+<tr><th scope="row">A group asking for public aid</th><td>“The median household income here is 40 thousand dollars.”</td><td>The median makes the need visible.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">This is Lesson 1.3 again</span>
+<p>Neither one lies, and neither one made a mistake in the arithmetic. One chose the mean and the other the median, just as the two weeklies of 1905 chose which facts to tell. Bias does not need lies: choosing is enough. The defense is always the same question: <strong>why this measure and not the other?</strong> When someone publishes a mean without the median, or the other way around, ask what looks better with the one they chose, and what stays hidden.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s6"><span aria-hidden="true" class="num-seccion">6</span>GED-style questions</h2>
+<p>These questions work like the ones on the GED® Social Studies test. Each one shows the social studies practice it checks and its depth of knowledge (DOK). You may use the calculator.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 1 · SSP.11.a · DOK 1</h3></div>
+<p class="pregunta-int" id="t-p5"><div aria-label="Yearly salaries of 7 workers at a small company, in thousands of dollars (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Yearly salaries of 7 workers at a small company, in thousands of dollars</caption>
+<thead><tr><th scope="col">Worker</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th><th scope="col">F</th><th scope="col">Owner</th></tr></thead>
+<tbody>
+<tr><th scope="row">Salary</th><td>31</td><td>33</td><td>33</td><td>35</td><td>38</td><td>40</td><td>250</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>What is the <strong>median</strong> salary at this company?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">$35 thousand</button>
+<button class="opcion" data-k="b" type="button">$65.7 thousand</button>
+<button class="opcion" data-k="c" type="button">$33 thousand</button>
+<button class="opcion" data-k="d" type="button">$219 thousand</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 2 · SSP.11.a · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p6"><div aria-label="Yearly salaries of 7 workers at a small company, in thousands of dollars (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Yearly salaries of 7 workers at a small company, in thousands of dollars</caption>
+<thead><tr><th scope="col">Worker</th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th><th scope="col">F</th><th scope="col">Owner</th></tr></thead>
+<tbody>
+<tr><th scope="row">Salary</th><td>31</td><td>33</td><td>33</td><td>35</td><td>38</td><td>40</td><td>250</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>The owner says: “The average salary here is about $66 thousand.” Why is this statement misleading?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Her own salary pulls the mean up; six of the seven people earn $40 thousand or less.</button>
+<button class="opcion" data-k="b" type="button">The mean was calculated wrong.</button>
+<button class="opcion" data-k="c" type="button">The mode is higher than the mean.</button>
+<button class="opcion" data-k="d" type="button">Salaries cannot be averaged.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 3 · SSP.6.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p7"><em>Look at the box plots in section 4.</em><br>Which statement is supported?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Salaries vary much more within technology than within retail.</button>
+<button class="opcion" data-k="b" type="button">Every technology worker earns more than $55 thousand.</button>
+<button class="opcion" data-k="c" type="button">Retail workers are less skilled.</button>
+<button class="opcion" data-k="d" type="button">The two sectors have the same median.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 4 · SSP.11.a · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p8"><em>A survey asked 50 workers how they get to work: car, bus, train, bicycle, or walking.</em><br>Which measure best describes the typical answer?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">The mode</button>
+<button class="opcion" data-k="b" type="button">The mean</button>
+<button class="opcion" data-k="c" type="button">The median</button>
+<button class="opcion" data-k="d" type="button">The range</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-2-2.html">practice page for this lesson</a> and do each activity. The exercises come in a new order every time. Keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>By hand and with the calculator (20 minutes).</strong> Calculate the four measures of Neighborhood B by hand, then check them with the calculator. <em>Check:</em> mean 41, median 41, no mode, range 14.</li>
+<li><strong>Mean or median (25 minutes).</strong> With the data of Neighborhood A, write two short paragraphs about the same neighborhood: one to attract investment and one to ask for public aid. You cannot invent or change any data; you can only choose which measure to use and which numbers to mention. <em>Check:</em> if you had to invent a fact, go back.</li>
+<li><strong>Your own five-number summary (30 minutes).</strong> Collect eleven real values: the prices of eleven grocery items, the ages of eleven people you know, or your travel time to work on eleven days. Put them in order, find the five-number summary, and draw the box by hand on graph paper. <em>Check:</em> Q1 is the 3rd value and Q3 the 9th.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Practice quiz</h2>
+<p>Answer the <strong>12 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Question 1</p>
+<p class="pregunta" id="t-q1">To find the median, the first thing to do is…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">add all the values</button><button class="opcion" data-k="b" type="button">put the data in order</button><button class="opcion" data-k="c" type="button">find the most frequent value</button><button class="opcion" data-k="d" type="button">subtract the smallest from the largest</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Question 2</p>
+<p class="pregunta" id="t-q2">The set 12, 15, 15, 18, 22, 25, 25, 25, 31, 40 adds up to 228. Its mean is…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">23.5</button><button class="opcion" data-k="b" type="button">22.8</button><button class="opcion" data-k="c" type="button">25</button><button class="opcion" data-k="d" type="button">28</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Question 3</p>
+<p class="pregunta" id="t-q3">In that same set of ten values, the median is…</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">22</button><button class="opcion" data-k="b" type="button">25</button><button class="opcion" data-k="c" type="button">23.5</button><button class="opcion" data-k="d" type="button">22.8</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Question 4</p>
+<p class="pregunta" id="t-q4">The range of a set is found by…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">adding the largest and smallest</button><button class="opcion" data-k="b" type="button">subtracting the smallest from the largest</button><button class="opcion" data-k="c" type="button">dividing the largest by the smallest</button><button class="opcion" data-k="d" type="button">counting the values</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Question 5</p>
+<p class="pregunta" id="t-q5">In Neighborhood A the mean is 90 and the median 40. The difference comes from…</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">a calculation mistake</button><button class="opcion" data-k="b" type="button">one household with a very high income that pulls the mean</button><button class="opcion" data-k="c" type="button">too few households</button><button class="opcion" data-k="d" type="button">a badly ordered list</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Question 6</p>
+<p class="pregunta" id="t-q6">A very high outlier affects…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">the mean, not the median</button><button class="opcion" data-k="b" type="button">the median, not the mean</button><button class="opcion" data-k="c" type="button">both equally</button><button class="opcion" data-k="d" type="button">neither</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Question 7</p>
+<p class="pregunta" id="t-q7">To describe the income of an ordinary family in a neighborhood, publish…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">the mean</button><button class="opcion" data-k="b" type="button">the median</button><button class="opcion" data-k="c" type="button">the range</button><button class="opcion" data-k="d" type="button">the maximum</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Question 8</p>
+<p class="pregunta" id="t-q8">In a distribution skewed to the right…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">the mean is greater than the median</button><button class="opcion" data-k="b" type="button">the mean is less than the median</button><button class="opcion" data-k="c" type="button">they are equal</button><button class="opcion" data-k="d" type="button">there is no median</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Question 9</p>
+<p class="pregunta" id="t-q9">What part of the data is inside the box of a box plot?</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">All of it</button><button class="opcion" data-k="b" type="button">The middle half</button><button class="opcion" data-k="c" type="button">One quarter</button><button class="opcion" data-k="d" type="button">Only the median</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Question 10</p>
+<p class="pregunta" id="t-q10">In which sector is there more inequality of salaries inside the sector?</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Retail, because it pays less</button><button class="opcion" data-k="b" type="button">Both the same</button><button class="opcion" data-k="c" type="button">Technology, because its box is much wider</button><button class="opcion" data-k="d" type="button">It cannot be known</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Question 11</p>
+<p class="pregunta" id="t-q11">With eleven values in order, Q3 is the…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">3rd value</button><button class="opcion" data-k="b" type="button">6th value</button><button class="opcion" data-k="c" type="button">9th value</button><button class="opcion" data-k="d" type="button">11th value</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Question 12</p>
+<p class="pregunta" id="t-q12">An official says the mean income; a community group says the median. Both are correct. The best question to ask is…</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Who calculated wrong?</button><button class="opcion" data-k="b" type="button">Why did each one choose that measure, and what does it hide?</button><button class="opcion" data-k="c" type="button">Which one is lying?</button><button class="opcion" data-k="d" type="button">Which number is bigger?</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">9</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Skills of this lesson and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calculate the four measures</th><td>I get all four right, by hand and with the calculator, and I estimate first.</td><td>The mean is fine, but I miss the median of an even set or the range.</td><td>I mix up mean and median, or find the median without ordering (<a href="#s1">review section 1</a>).</td></tr>
+<tr><th scope="row">See the effect of an outlier</th><td>I explain that it moves the mean and not the median, and I use the range as a warning.</td><td>I know outliers matter but not which measure they move.</td><td>I always take the mean as the typical value (<a href="#s2">review section 2</a>).</td></tr>
+<tr><th scope="row">Choose the measure by the shape</th><td>I justify my choice with the shape and say what the other measure would hide.</td><td>I choose between mean and median, but forget the mode for categories.</td><td>I always use the mean (<a href="#s3">review section 3</a>).</td></tr>
+<tr><th scope="row">Read a box plot</th><td>I compare two boxes and explain what a wider box means.</td><td>I read the five numbers but not the width of the box.</td><td>I only look at the median (<a href="#s4">review section 4</a>).</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson set up the tool: <strong>a single number never describes a set of data</strong>. Mean, median, mode, and range say different things about the same data, and the five-number summary says more than all four together. And it set up the suspicion, the same one as in Topic 1 in a new disguise: when someone publishes a mean without the median, the question is not whether they calculated right, but why they chose it.</p><p>Lesson 2.3 closes the topic with percents, rates, map scales, and population density. And Agnes Holbrook’s 1895 survey from Lesson 1.2 comes back: a map that seems to measure density, by an author who warned in writing that her data do not support claims about density.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-2-3.html">Lesson 2.3 · Percents, rates, map scales, and population density</a></p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>Mean</dt><dd>The sum of the values divided by how many there are; the average.</dd>
+<dt>Median</dt><dd>The middle value of the ordered data.</dd>
+<dt>Mode</dt><dd>The most frequent value; the only measure of center for categories.</dd>
+<dt>Range</dt><dd>Largest value minus smallest value.</dd>
+<dt>Outlier</dt><dd>A value far away from the rest.</dd>
+<dt>Skewed distribution</dt><dd>Data with a long tail on one side; incomes are skewed to the right.</dd>
+<dt>Quartiles and box plot</dt><dd>Q1 and Q3 split the data into quarters; the box plot draws the minimum, Q1, median, Q3, and maximum.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Social studies · Topic 2 · Lesson 2.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "The median counts positions, not amounts.",
+    "b": "Is 6,000 still in the last position?"
+   },
+   "right": "The 6th value is still 40. The mean, however, would jump to about 489.",
+   "solution": "The 6th value is still 40. The mean, however, would jump to about 489."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "The mode only tells the most frequent value.",
+    "c": "One of the four measures does warn you."
+   },
+   "right": "A range of 572 when the middle values are near 40 is a red flag.",
+   "solution": "A range of 572 when the middle values are near 40 is a red flag."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "Can you add up languages?",
+    "b": "Can you put languages in order from smallest to largest?"
+   },
+   "right": "Only the mode works with categories: the most common language.",
+   "solution": "Only the mode works with categories: the most common language."
+  },
+  "p4": {
+   "ok": "a",
+   "hints": {
+    "b": "Compare the maximum of retail with the minimum of technology.",
+    "c": "Look at the exact numbers."
+   },
+   "right": "Retail maximum 37; technology minimum 38.",
+   "solution": "Retail maximum 37; technology minimum 38."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "That is the mean.",
+    "c": "That is the mode.",
+    "d": "That is the range."
+   },
+   "right": "Seven values in order; the 4th is 35.",
+   "solution": "Seven values in order; the 4th is 35."
+  },
+  "p6": {
+   "ok": "a",
+   "hints": {
+    "b": "460 ÷ 7 ≈ 65.7: the arithmetic is right.",
+    "c": "The mode is 33, much lower.",
+    "d": "They can; the question is whether the mean is typical."
+   },
+   "right": "One outlier ($250 thousand) moves the mean; the median ($35 thousand) describes the typical worker better.",
+   "solution": "One outlier ($250 thousand) moves the mean; the median ($35 thousand) describes the typical worker better."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "55 is the median: half earn less.",
+    "c": "The graph shows salaries, not skills.",
+    "d": "30 and 55 are not the same."
+   },
+   "right": "The technology box (45 to 70) is much wider than the retail box (26 to 35).",
+   "solution": "The technology box (45 to 70) is much wider than the retail box (26 to 35)."
+  },
+  "p8": {
+   "ok": "a",
+   "hints": {
+    "b": "You cannot add “bus” and “train.”",
+    "c": "These answers have no order from smallest to largest.",
+    "d": "The range needs numbers."
+   },
+   "right": "With categories, only the mode works: the most common way to get to work.",
+   "solution": "With categories, only the mode works: the most common way to get to work."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "b",
+   "hints": {
+    "a": "That is for the mean.",
+    "c": "That is the mode.",
+    "d": "That is the range."
+   },
+   "solution": "No order, no median."
+  },
+  "2": {
+   "ok": "b",
+   "hints": {
+    "a": "That is the median.",
+    "c": "That is the mode.",
+    "d": "That is the range."
+   },
+   "solution": "228 ÷ 10 = 22.8."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "With an even count, average the two middle values.",
+    "b": "25 is the mode.",
+    "d": "That is the mean."
+   },
+   "solution": "(22 + 25) ÷ 2 = 23.5."
+  },
+  "4": {
+   "ok": "b",
+   "hints": {
+    "a": "It measures distance, not a total.",
+    "c": "It is a difference.",
+    "d": "That is how many, not how spread out."
+   },
+   "solution": "Largest − smallest."
+  },
+  "5": {
+   "ok": "b",
+   "hints": {
+    "a": "Both are correct.",
+    "c": "The same eleven households give a median of 40.",
+    "d": "The list is in order."
+   },
+   "solution": "The 600 thousand household."
+  },
+  "6": {
+   "ok": "a",
+   "hints": {
+    "b": "The median counts positions.",
+    "c": "One moves a lot, the other hardly at all.",
+    "d": "The mean moves."
+   },
+   "solution": "The mean shares amounts; the median counts positions."
+  },
+  "7": {
+   "ok": "b",
+   "hints": {
+    "a": "Incomes have a long tail that pulls the mean.",
+    "c": "The range is spread, not center.",
+    "d": "The maximum is one household."
+   },
+   "solution": "Incomes are skewed to the right."
+  },
+  "8": {
+   "ok": "a",
+   "hints": {
+    "b": "The tail is on the high side.",
+    "c": "That is a symmetric shape.",
+    "d": "There is always a median."
+   },
+   "solution": "The tail pulls the mean up."
+  },
+  "9": {
+   "ok": "b",
+   "hints": {
+    "a": "The whiskers reach the rest.",
+    "c": "From Q1 to Q3 is two quarters.",
+    "d": "The median is the line inside."
+   },
+   "solution": "From Q1 to Q3: 50% of the data."
+  },
+  "10": {
+   "ok": "c",
+   "hints": {
+    "a": "Paying less is not the same as being unequal.",
+    "b": "Compare the widths.",
+    "d": "The box shows it."
+   },
+   "solution": "70 − 45 = 25 against 35 − 26 = 9."
+  },
+  "11": {
+   "ok": "c",
+   "hints": {
+    "a": "That is Q1.",
+    "b": "That is the median.",
+    "d": "That is the maximum."
+   },
+   "solution": "The median of the top five values (7th to 11th) is the 9th."
+  },
+  "12": {
+   "ok": "b",
+   "hints": {
+    "a": "Nobody did.",
+    "c": "Nobody is lying.",
+    "d": "Size is not the point."
+   },
+   "solution": "Choosing is the bias; asking why is the defense."
+  }
+ },
+ "next": "Lesson 2.3",
+ "review": "the lesson"
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculator.js" data-color="#7a4a2e" defer></script>
+</body>
+</html>
