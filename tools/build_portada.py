@@ -90,7 +90,7 @@ def pagina(lang):
     ]
 
     def acordeon(aid, alias, titulo, desc, filas, color):
-        return (f'<details class="acordeon" id="{aid}" data-alias="{alias}" style="--c:var({color})">'
+        return (f'<details class="acordeon ac-{color[2:]}" id="{aid}" data-alias="{alias}">'
                 f'<summary><span class="ac-tit">{titulo}</span><span class="ac-desc">{desc}</span></summary>'
                 f'<div class="ac-cuerpo">{"".join(filas)}</div></details>')
 
@@ -124,7 +124,7 @@ def pagina(lang):
 <link rel="alternate" hreflang="en" href="https://www.learnged.com/">
 <link rel="alternate" hreflang="es" href="https://www.learnged.com/es/">
 <link href="/fonts/fonts.css" rel="stylesheet">
-<link rel="stylesheet" href="{pre}learnged.css">
+<link rel="stylesheet" href="{pre}learnged.css?v=2">
 </head>
 <body>
 <a class="skip" href="#main">{T("Skip to content", "Saltar al contenido")}</a>
