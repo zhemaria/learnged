@@ -663,6 +663,8 @@ def grafica(spec, aria, ancho=560, alto=320, y0=None, y1=None):
         tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in f) + "</tr>" for f in spec["filas"])
         return f'<table class="cuaderno"><caption class="cap-oculto">{aria}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
     ml, mr, mt, mb = 66, 18, 16, 58
+    if spec["tipo"] == "barras" and any("\n" in b["etq"] for b in spec["barras"]):
+        mb = 72
     W, Hh = ancho - ml - mr, alto - mt - mb
     if spec["tipo"] in ("linea", "puntos"):
         xs = [p[0] for s in spec["series"] for p in s["puntos"]]
@@ -723,10 +725,18 @@ def grafica(spec, aria, ancho=560, alto=320, y0=None, y1=None):
             x = ml + i * bw + bw * 0.18
             g.append(f'<rect x="{x:.1f}" y="{Y(b["valor"]):.1f}" width="{bw * 0.64:.1f}" height="{Y(ymin) - Y(b["valor"]):.1f}" fill="{PALETA[0]}"/>'
                      f'<text x="{x + bw * 0.32:.1f}" y="{Y(b["valor"]) - 6:.1f}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">{b.get("txt", _fmt(b["valor"]))}</text>'
-                     f'<text x="{x + bw * 0.32:.1f}" y="{mt + Hh + 18}" text-anchor="middle" font-size="{12 if n > 6 else 13}" fill="#3d4753">{b["etq"]}</text>')
+                     f'<text x="{x + bw * 0.32:.1f}" y="{mt + Hh + 18}" text-anchor="middle" font-size="{12 if n > 6 else 13}" fill="#3d4753">{_lineas(b["etq"], x + bw * 0.32)}</text>')
     g.append(f'<text x="{ml + W / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">{spec["xEtq"]}</text>'
              f'<text x="16" y="{mt + Hh / 2:.1f}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 {mt + Hh / 2:.1f})">{spec["yEtq"]}</text>')
     return f'<svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="{H.escape(aria)}" style="width:100%;max-width:{ancho}px;height:auto;display:block;margin:10px auto;">{"".join(g)}</svg>'
+
+
+def _lineas(etq, x):
+    """Rótulo de barra en una o varias líneas (separadas por \n)."""
+    partes = etq.split("\n")
+    if len(partes) == 1:
+        return etq
+    return "".join(f'<tspan x="{x:.1f}" dy="{0 if i == 0 else 15}">{p}</tspan>' for i, p in enumerate(partes))
 
 
 def describe(spec):
@@ -739,7 +749,7 @@ def describe(spec):
             partes.append(f'{s["nombre"]}: ' + "; ".join(f"{_fmt(x)}, {_fmt(y)}" for x, y in s["puntos"]))
         return t(f'Line graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Data points (x, y): ', f'Gráfica de líneas. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Puntos (x, y): ') + ". ".join(partes) + "."
     if spec["tipo"] == "barras":
-        return t(f'Bar graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Values: ', f'Gráfica de barras. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Valores: ') + "; ".join(f'{b["etq"]}, {_fmt(b["valor"])}' for b in spec["barras"]) + "."
+        return t(f'Bar graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Values: ', f'Gráfica de barras. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Valores: ') + "; ".join(f'{b["etq"].replace(chr(10), " ")}, {_fmt(b["valor"])}' for b in spec["barras"]) + "."
     return t("Data table.", "Tabla de datos.")
 
 

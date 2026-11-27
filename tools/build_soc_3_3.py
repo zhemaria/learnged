@@ -170,7 +170,7 @@ def leccion():
          t("<strong>Place</strong> the levels of government where you live and say which are in the Constitution.", "<strong>Situar</strong> los niveles de gobierno del lugar donde vive y decir cuáles están en la Constitución."),
          t("<strong>Analyze</strong> a conflict between the Union and a state by its shape: a floor, money with conditions, or a head-on clash.", "<strong>Analizar</strong> un conflicto entre la Unión y un estado por su forma: un suelo, fondos con condiciones o un choque frontal.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 4 · Civics II: the three branches and policymaking.", "Siguiente: Tema 4 · Cívica II: las tres ramas y la formación de políticas.")), glosario, P)
+        ("4-1", t("The legislative branch: how a bill becomes a law", "El poder legislativo: del proyecto a la ley")), glosario, P)
 
 
 # ---------------------------------------------------------------- la práctica

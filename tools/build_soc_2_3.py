@@ -195,7 +195,7 @@ def leccion():
          t("<strong>Use</strong> a map scale to find real distances without unit mistakes.", "<strong>Aplicar</strong> la escala de un mapa para hallar distancias reales sin errores de unidad."),
          t("<strong>Calculate</strong> population density and compare areas, knowing what that number says and what it does not.", "<strong>Calcular</strong> la densidad de población y comparar territorios, sabiendo qué afirma esa cifra y qué no.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 3 · Civics I: founding documents and constitutional principles.", "Siguiente: Tema 3 · Cívica I: documentos fundacionales y principios constitucionales.")), glosario, P, calculadora=True)
+        ("3-1", t("From the social contract to the Declaration of Independence", "Del contrato social a la Declaración de Independencia")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- la práctica

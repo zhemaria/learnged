@@ -218,7 +218,7 @@ def leccion():
          t("<strong>Identify</strong> the central reasoning of a decision, separate from its result.", "<strong>Identificar</strong> el razonamiento central de una sentencia, separado de su resultado."),
          t("<strong>Explain</strong> what has to change for a precedent to be overturned, and what does not.", "<strong>Explicar</strong> qué tiene que cambiar para que se revoque un precedente, y qué no cambia.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 5 · Civics III: rights, elections, and public finance.", "Siguiente: Tema 5 · Cívica III: derechos, elecciones y finanzas públicas.")), glosario, P)
+        ("5-1", t("The Bill of Rights and the expansion of citizenship", "La Carta de Derechos y la expansión de la ciudadanía")), glosario, P)
 
 
 # ---------------------------------------------------------------- la práctica
