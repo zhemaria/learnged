@@ -142,7 +142,7 @@ def indice(lang, items):
         T["contenido"], "".join('<li><a href="#%s">%s</a></li>' % (a, e(t)) for a, t in items))
 
 
-def tarjeta(lang, num, nombre, lecciones, color=None, nota=None, sin_num=False):
+def tarjeta(lang, num, nombre, lecciones, color=None, nota=None, sin_num=False, enlaces=None):
     T = TXT[lang]
     st = ' style="--c:%s"' % color if color else ""
     s = ['<div class="tema"%s>' % st]
@@ -154,7 +154,8 @@ def tarjeta(lang, num, nombre, lecciones, color=None, nota=None, sin_num=False):
         s.append('<ol>')
         for i, l in enumerate(lecciones, 1):
             pref = "" if sin_num else "<b>%s.%d</b>" % (num, i)
-            s.append('<li>%s%s</li>' % (pref, e(l)))
+            href = (enlaces or {}).get(i)
+            s.append('<li>%s%s</li>' % (pref, '<a href="%s">%s</a>' % (href, e(l)) if href else e(l)))
         s.append('</ol>')
     if nota:
         s.append('<p class="nota">%s</p>' % nota)
@@ -225,6 +226,16 @@ CIEN_AREAS = [
 ]
 
 
+def lecciones_hechas(lang, tema):
+    """Lecciones de Ciencias ya publicadas en el tema: {número de lección: enlace}."""
+    out = {}
+    for i in (1, 2, 3):
+        f = ("lesson-%d-%d.html" if lang == "en" else "leccion-%d-%d.html") % (tema, i)
+        if os.path.exists(os.path.join(RAIZ, "science" if lang == "en" else "es/ciencias", f)):
+            out[i] = f
+    return out
+
+
 def ciencias(lang):
     en = lang == "en"
     T = CIEN_TEMAS[lang]
@@ -235,9 +246,9 @@ def ciencias(lang):
         if en else
         "El examen de Ciencias del GED le presenta un texto, una tabla, una gráfica o un experimento, y le pregunta qué se puede concluir. Este curso le enseña la ciencia que necesita y, sobre todo, a leer y razonar con información científica."))
     c.append(estado(lang,
-        "<strong>Coming soon.</strong> We are writing this course now, in English and in Spanish. This page shows what it will cover, so you (and the teachers who review LearnGED) can see the plan."
+        "<strong>Topic 1 is ready.</strong> Its three lessons, each with a practice page, are linked below. We are writing the other topics now, in English and in Spanish; this page shows the whole plan."
         if en else
-        "<strong>Próximamente.</strong> Estamos preparando este curso, en español y en inglés. Esta página muestra lo que va a abarcar, para que usted (y los profesores que revisan LearnGED) pueda ver el plan."))
+        "<strong>El Tema 1 ya está listo.</strong> Sus tres lecciones, cada una con su página de práctica, están enlazadas abajo. Estamos preparando los demás temas, en español y en inglés; esta página muestra el plan completo."))
     c.append(indice(lang, [("organization", "How it is organized" if en else "Cómo se organiza")] +
                     [(a[0], a[1] if en else a[2]) for a in CIEN_AREAS] +
                     [("extras", "Labs and simulations" if en else "Laboratorios y simulaciones"), ("how", "How each lesson works" if en else "Cómo es cada lección")]))
@@ -249,12 +260,14 @@ def ciencias(lang):
         "<strong>No va por niveles, sino por áreas.</strong> Ciencias se organiza según las tres áreas de contenido del examen del GED: ciencias de la vida, ciencias físicas y ciencias de la Tierra y el espacio. Los temas de destrezas (1, 2 y 8) van antes y después.",
         "<strong>The eight science practices of the GED</strong> (SP.1 to SP.8: reading science, designing investigations, reasoning from data, evaluating conclusions, and more) run through the whole course. Each lesson says which ones it works on." if en else
         "<strong>Las ocho prácticas científicas del GED</strong> (de SP.1 a SP.8: leer ciencia, diseñar investigaciones, razonar con datos, evaluar conclusiones y otras) recorren todo el curso. Cada lección indica cuáles trabaja.",
+        "<strong>Three reporting categories.</strong> The test reports your score in three parts: analyzing arguments, evidence, and texts (30%); applying scientific processes (40%); and reasoning with numbers and data (30%). Each lesson shows the category, the depth of knowledge (DOK), and the standards aligned with each practice, and ends with GED-style questions." if en else
+        "<strong>Tres categorías de informe.</strong> El examen informa la puntuación en tres partes: analizar argumentos, evidencia y textos (30 %); aplicar procesos científicos (40 %); y razonar con números y datos (30 %). Cada lección indica la categoría, la profundidad de conocimiento (DOK) y los estándares alineados con cada práctica, y termina con preguntas tipo GED.",
         "<strong>Where to start:</strong> Topics 1 and 2 first, because they teach the skills the other topics use. After that, the areas can be studied in any order. Math Level 2 (graphs, percents, mean and median) is a good base." if en else
         "<strong>Por dónde empezar:</strong> primero los Temas 1 y 2, porque enseñan las destrezas que usan los demás. Después, las áreas se pueden estudiar en cualquier orden. El Nivel 2 de Matemáticas (gráficas, porcentajes, media y mediana) es una buena base.",
     ])
     c.append(bloque("organization", "How it is organized" if en else "Cómo se organiza", org, lang))
     for a in CIEN_AREAS:
-        tarjetas = "".join(tarjeta(lang, t, T[t - 1][0], T[t - 1][1], color=a[6]) for t in a[5])
+        tarjetas = "".join(tarjeta(lang, t, T[t - 1][0], T[t - 1][1], color=a[6], enlaces=lecciones_hechas(lang, t)) for t in a[5])
         c.append(bloque(a[0], a[1] if en else a[2], '<div class="grid">%s</div>' % tarjetas, lang,
                         sub=(a[3] if en else a[4]).capitalize()))
     extras = lista([

@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 1.2 · práctica (español) — construida con tools/build_sci_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 1.2 · Variables, grupos de control y fuentes de error · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="/science/practice-1-2.html">
+<link rel="stylesheet" href="/math/practice.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al índice</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Ciencias · Tema 1 · El método científico y el diseño de investigación</div>
+    <h1>Práctica · Lección 1.2 · Variables, grupos de control y fuentes de error</h1>
+    <div class="meta">Cuatro actividades · el orden de los ejercicios cambia cada vez · dos intentos en cada uno</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#invernadero">El invernadero: aísle la variable</a></li>
+      <li><a href="#variables">Identifique las variables</a></li>
+      <li><a href="#auditor">El auditor del experimento</a></li>
+      <li><a href="#cientilab">CientíLab: diseño experimental</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="invernadero" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>El invernadero: aísle la variable</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Los grupos A y B empiezan iguales: luz, riego, temperatura y suelo habituales. Cambie los factores de cualquiera de los dos grupos y pulse <strong>Hacer el ensayo</strong>. A las seis semanas verá la altura media de cada grupo y si el resultado permite concluir algo. El modelo da siempre el mismo resultado para el mismo montaje, como debe ser en un buen experimento.</p>
+      <div class="practica" id="m1">
+        <div class="mesa-inv" id="m1-mesa"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m1-ensayar">Hacer el ensayo</button>
+          <button type="button" class="btn-sec" id="m1-reinicia">Volver a igualar los grupos</button>
+        </div>
+        <div class="fb" id="m1-fb" role="status" aria-live="polite"></div>
+        <div class="tabla-scroll" role="region" tabindex="0" aria-label="Cuaderno de laboratorio (tabla desplazable horizontalmente)">
+        <table class="cuaderno"><caption class="cap-oculto">Cuaderno de laboratorio: cada ensayo, qué cambió entre A y B, la altura media de cada grupo y si se puede concluir algo</caption>
+        <thead><tr><th scope="col">Ensayo</th><th scope="col">Qué cambió entre A y B</th><th scope="col">Altura A (cm)</th><th scope="col">Altura B (cm)</th><th scope="col">¿Se puede concluir?</th></tr></thead>
+        <tbody id="m1-cuaderno"><tr><td colspan="5">Todavía no ha hecho ningún ensayo.</td></tr></tbody></table></div>
+        <p class="nota">Reto: encuentre la mejor luz para las plantas. Después, el mejor suelo. ¿Cuántos ensayos necesitó? ¿Cambió alguna vez dos cosas a la vez?</p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="variables">
+    <summary><span class="num" aria-hidden="true">2</span><h2>Identifique las variables</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cuatro experimentos reales, tres preguntas cada uno. Lea el experimento y responda. Las preguntas salen en un orden distinto cada vez.</p>
+      <div class="practica" id="m2">
+        <div class="enun" id="m2-enun"></div>
+        <div class="opciones" id="m2-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m2-fb" role="status"></div>
+        <p class="marcador" id="m2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="auditor">
+    <summary><span class="num" aria-hidden="true">3</span><h2>El auditor del experimento</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Cada estudio tiene un fallo. Elija el más grave. Al responder verá cómo se podría corregir.</p>
+      <div class="practica" id="m3">
+        <div class="enun" id="m3-enun"></div>
+        <div class="opciones" id="m3-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m3-fb" role="status"></div>
+        <p class="marcador" id="m3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cientilab">
+    <summary><span class="num" aria-hidden="true">4</span><h2>CientíLab: diseño experimental</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Veinticuatro experimentos de biología, química, física y ciencias de la Tierra, como en el examen GED®: variables, grupos de control, variables confusoras, muestras y replicación.</p>
+      <div class="practica" id="m4">
+        <div class="enun" id="m4-enun"></div>
+        <div class="opciones" id="m4-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m4-fb" role="status"></div>
+        <p class="marcador" id="m4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Ciencias · Tema 1 · El método científico y el diseño de investigación · LearnGED</strong><br>
+    <a href="leccion-1-2.html">Volver a la lección 1.2</a></p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/science/sci.js"></script>
+<script>
+var FACT = [
+ {
+  "id": "luz",
+  "t": "Luz",
+  "base": "1000",
+  "ops": [
+   [
+    "0",
+    "Oscuridad total"
+   ],
+   [
+    "500",
+    "500 lux, luz escasa"
+   ],
+   [
+    "1000",
+    "1000 lux, luz habitual"
+   ],
+   [
+    "2000",
+    "2000 lux, luz abundante"
+   ],
+   [
+    "4000",
+    "4000 lux, luz muy intensa"
+   ]
+  ],
+  "f": {
+   "0": 0.1,
+   "500": 0.7,
+   "1000": 1.0,
+   "2000": 1.1,
+   "4000": 1.12
+  }
+ },
+ {
+  "id": "agua",
+  "t": "Riego",
+  "base": "100",
+  "ops": [
+   [
+    "0",
+    "Sin riego"
+   ],
+   [
+    "50",
+    "50 mL al día"
+   ],
+   [
+    "100",
+    "100 mL al día, riego habitual"
+   ],
+   [
+    "200",
+    "200 mL al día"
+   ],
+   [
+    "400",
+    "400 mL al día, encharcamiento"
+   ]
+  ],
+  "f": {
+   "0": 0.05,
+   "50": 0.65,
+   "100": 1.0,
+   "200": 0.9,
+   "400": 0.35
+  }
+ },
+ {
+  "id": "temp",
+  "t": "Temperatura",
+  "base": "25",
+  "ops": [
+   [
+    "5",
+    "5 °C"
+   ],
+   [
+    "15",
+    "15 °C"
+   ],
+   [
+    "25",
+    "25 °C, temperatura habitual"
+   ],
+   [
+    "35",
+    "35 °C"
+   ]
+  ],
+  "f": {
+   "5": 0.2,
+   "15": 0.75,
+   "25": 1.0,
+   "35": 0.55
+  }
+ },
+ {
+  "id": "suelo",
+  "t": "Tipo de suelo",
+  "base": "jardin",
+  "ops": [
+   [
+    "arena",
+    "Arena"
+   ],
+   [
+    "jardin",
+    "Tierra de jardín, suelo habitual"
+   ],
+   [
+    "arcilla",
+    "Arcilla pesada"
+   ],
+   [
+    "compost",
+    "Tierra con compost"
+   ]
+  ],
+  "f": {
+   "arena": 0.55,
+   "jardin": 1.0,
+   "arcilla": 0.72,
+   "compost": 1.15
+  }
+ }
+];
+var TXI = {
+  grupo: "Grupo",
+  igual: function (h) { return "<strong>Los dos grupos son iguales,</strong> así que ambos llegan a " + h.toFixed(1) + " cm a las seis semanas. Ese es su punto de partida. Ahora cambie <strong>un</strong> factor en el grupo B y repita el ensayo."; },
+  uno: function (f, a, b, d) { return "<strong>Solo cambió: " + f + ".</strong> Grupo A: " + a.toFixed(1) + " cm. Grupo B: " + b.toFixed(1) + " cm. Todo lo demás fue igual, así que la diferencia de " + d.toFixed(1) + " cm solo puede deberse a ese factor. <strong>De este ensayo se puede sacar una conclusión.</strong> El grupo A es su grupo de control."; },
+  varios: function (fs, a, b) { return "<strong>Cambió " + fs.length + " factores a la vez (" + fs.join(", ") + ").</strong> Grupo A: " + a.toFixed(1) + " cm. Grupo B: " + b.toFixed(1) + " cm. ¿Cuál causó la diferencia? Pudo ser uno, el otro, todos juntos, o que uno empujara en un sentido y otro en el contrario. <strong>No se puede concluir nada.</strong> Vuelva atrás y cambie un solo factor."; }
+};
+var VARS = [
+ {
+  "enun": "<p>Para saber si un fertilizante nuevo aumenta la cosecha, un agricultor lo aplica a treinta plantas de tomate y no se lo aplica a otras treinta. Las sesenta plantas están en el mismo terreno, reciben el mismo riego y se plantaron el mismo día. A los tres meses pesa los tomates recogidos en cada grupo.</p><p><strong>¿Cuál es la variable independiente?</strong></p>",
+  "ops": [
+   "La aplicación del fertilizante",
+   "El peso de los tomates recogidos",
+   "La cantidad de riego",
+   "El número de plantas de cada grupo"
+  ],
+  "ok": 0,
+  "pista": "La variable independiente es la que el investigador cambia a propósito, antes de medir nada.",
+  "exp": "El agricultor decide quién recibe fertilizante: esa es la variable independiente. El peso de la cosecha es la dependiente. Las treinta plantas sin fertilizante son el grupo de control: muestran cuánto habría producido el cultivo sin el tratamiento. El riego, el terreno y la fecha son constantes, y por eso el experimento se sostiene."
+ },
+ {
+  "enun": "<p>Para saber si un fertilizante nuevo aumenta la cosecha, un agricultor lo aplica a treinta plantas de tomate y no se lo aplica a otras treinta. Las sesenta plantas están en el mismo terreno, reciben el mismo riego y se plantaron el mismo día. A los tres meses pesa los tomates recogidos en cada grupo.</p><p><strong>¿Cuál es la variable dependiente?</strong></p>",
+  "ops": [
+   "El tipo de terreno",
+   "El peso de los tomates recogidos",
+   "La aplicación del fertilizante",
+   "La fecha de plantación"
+  ],
+  "ok": 1,
+  "pista": "La variable dependiente se mide al final, para ver si respondió.",
+  "exp": "El agricultor decide quién recibe fertilizante: esa es la variable independiente. El peso de la cosecha es la dependiente. Las treinta plantas sin fertilizante son el grupo de control: muestran cuánto habría producido el cultivo sin el tratamiento. El riego, el terreno y la fecha son constantes, y por eso el experimento se sostiene."
+ },
+ {
+  "enun": "<p>Para saber si un fertilizante nuevo aumenta la cosecha, un agricultor lo aplica a treinta plantas de tomate y no se lo aplica a otras treinta. Las sesenta plantas están en el mismo terreno, reciben el mismo riego y se plantaron el mismo día. A los tres meses pesa los tomates recogidos en cada grupo.</p><p><strong>¿Cuál es el grupo de control?</strong></p>",
+  "ops": [
+   "Las treinta plantas que reciben fertilizante",
+   "Las treinta plantas que no reciben fertilizante",
+   "El terreno donde están todas",
+   "No hay grupo de control"
+  ],
+  "ok": 1,
+  "pista": "El grupo de control es el que no recibe el tratamiento que se prueba.",
+  "exp": "El agricultor decide quién recibe fertilizante: esa es la variable independiente. El peso de la cosecha es la dependiente. Las treinta plantas sin fertilizante son el grupo de control: muestran cuánto habría producido el cultivo sin el tratamiento. El riego, el terreno y la fecha son constantes, y por eso el experimento se sostiene."
+ },
+ {
+  "enun": "<p>Un estudiante quiere saber si la temperatura del agua afecta al tiempo que tarda en disolverse una pastilla efervescente. Usa siempre la misma marca de pastilla y la misma cantidad de agua, y hace pruebas a 10 °C, 25 °C, 40 °C y 60 °C. Repite cada temperatura tres veces y calcula el promedio.</p><p><strong>¿Cuál es la variable independiente?</strong></p>",
+  "ops": [
+   "El tiempo que tarda en disolverse",
+   "La temperatura del agua",
+   "La marca de la pastilla",
+   "La cantidad de agua"
+  ],
+  "ok": 1,
+  "pista": "La variable independiente es la que el investigador cambia a propósito, antes de medir nada.",
+  "exp": "Aquí la variable independiente toma cuatro valores en lugar de dos, y está bien: un experimento no necesita tener solo dos grupos. Las tres repeticiones de cada temperatura protegen el resultado del azar: si una prueba sale rara, el promedio de tres lo amortigua."
+ },
+ {
+  "enun": "<p>Un estudiante quiere saber si la temperatura del agua afecta al tiempo que tarda en disolverse una pastilla efervescente. Usa siempre la misma marca de pastilla y la misma cantidad de agua, y hace pruebas a 10 °C, 25 °C, 40 °C y 60 °C. Repite cada temperatura tres veces y calcula el promedio.</p><p><strong>¿Cuál es la variable dependiente?</strong></p>",
+  "ops": [
+   "La temperatura del agua",
+   "El número de repeticiones",
+   "El tiempo que tarda en disolverse",
+   "El tamaño del vaso"
+  ],
+  "ok": 2,
+  "pista": "La variable dependiente se mide al final, para ver si respondió.",
+  "exp": "Aquí la variable independiente toma cuatro valores en lugar de dos, y está bien: un experimento no necesita tener solo dos grupos. Las tres repeticiones de cada temperatura protegen el resultado del azar: si una prueba sale rara, el promedio de tres lo amortigua."
+ },
+ {
+  "enun": "<p>Un estudiante quiere saber si la temperatura del agua afecta al tiempo que tarda en disolverse una pastilla efervescente. Usa siempre la misma marca de pastilla y la misma cantidad de agua, y hace pruebas a 10 °C, 25 °C, 40 °C y 60 °C. Repite cada temperatura tres veces y calcula el promedio.</p><p><strong>¿Qué se mantuvo constante?</strong></p>",
+  "ops": [
+   "La marca de la pastilla y la cantidad de agua",
+   "La temperatura del agua",
+   "El tiempo de disolución",
+   "Nada, todo cambió en cada prueba"
+  ],
+  "ok": 0,
+  "pista": "Las constantes se mantienen iguales a propósito para que no puedan explicar el resultado.",
+  "exp": "Aquí la variable independiente toma cuatro valores en lugar de dos, y está bien: un experimento no necesita tener solo dos grupos. Las tres repeticiones de cada temperatura protegen el resultado del azar: si una prueba sale rara, el promedio de tres lo amortigua."
+ },
+ {
+  "enun": "<p>Un laboratorio prueba si un jarabe reduce la duración de la tos. A cien pacientes se les da el jarabe con principio activo y a otros cien, un frasco de aspecto y sabor idénticos pero sin principio activo. Ni los pacientes ni el personal saben quién recibió cada frasco. Se anota cuántos días tose cada paciente.</p><p><strong>¿Cuál es la variable independiente?</strong></p>",
+  "ops": [
+   "El número de días con tos",
+   "Recibir o no el principio activo",
+   "El sabor del jarabe",
+   "El número de pacientes"
+  ],
+  "ok": 1,
+  "pista": "La variable independiente es la que el investigador cambia a propósito, antes de medir nada.",
+  "exp": "El grupo de control recibe algo, no nada: un frasco idéntico sin principio activo (un placebo). Así la única diferencia entre los grupos es el principio activo. Que tampoco lo sepa el personal añade otra protección: quien cree saber quién recibió el tratamiento tiende, sin querer, a observar de manera distinta a unos y a otros."
+ },
+ {
+  "enun": "<p>Un laboratorio prueba si un jarabe reduce la duración de la tos. A cien pacientes se les da el jarabe con principio activo y a otros cien, un frasco de aspecto y sabor idénticos pero sin principio activo. Ni los pacientes ni el personal saben quién recibió cada frasco. Se anota cuántos días tose cada paciente.</p><p><strong>¿Cuál es la variable dependiente?</strong></p>",
+  "ops": [
+   "El número de días con tos",
+   "El aspecto del frasco",
+   "La edad de los pacientes",
+   "Recibir o no el principio activo"
+  ],
+  "ok": 0,
+  "pista": "La variable dependiente se mide al final, para ver si respondió.",
+  "exp": "El grupo de control recibe algo, no nada: un frasco idéntico sin principio activo (un placebo). Así la única diferencia entre los grupos es el principio activo. Que tampoco lo sepa el personal añade otra protección: quien cree saber quién recibió el tratamiento tiende, sin querer, a observar de manera distinta a unos y a otros."
+ },
+ {
+  "enun": "<p>Un laboratorio prueba si un jarabe reduce la duración de la tos. A cien pacientes se les da el jarabe con principio activo y a otros cien, un frasco de aspecto y sabor idénticos pero sin principio activo. Ni los pacientes ni el personal saben quién recibió cada frasco. Se anota cuántos días tose cada paciente.</p><p><strong>¿Cuál es el grupo de control?</strong></p>",
+  "ops": [
+   "Los cien pacientes que reciben el principio activo",
+   "El personal que atiende a los pacientes",
+   "Los cien pacientes que reciben el frasco sin principio activo",
+   "No hay grupo de control"
+  ],
+  "ok": 2,
+  "pista": "El grupo de control es el que no recibe el tratamiento que se prueba.",
+  "exp": "El grupo de control recibe algo, no nada: un frasco idéntico sin principio activo (un placebo). Así la única diferencia entre los grupos es el principio activo. Que tampoco lo sepa el personal añade otra protección: quien cree saber quién recibió el tratamiento tiende, sin querer, a observar de manera distinta a unos y a otros."
+ },
+ {
+  "enun": "<p>Una técnica compara dos marcas de pila. Conecta cada pila a una linterna del mismo modelo, deja todas las linternas encendidas en la misma habitación y mide cuántas horas alumbra cada una hasta apagarse. Prueba cinco pilas de cada marca.</p><p><strong>¿Cuál es la variable independiente?</strong></p>",
+  "ops": [
+   "El modelo de linterna",
+   "La marca de la pila",
+   "Las horas que alumbra la linterna",
+   "La temperatura de la habitación"
+  ],
+  "ok": 1,
+  "pista": "La variable independiente es la que el investigador cambia a propósito, antes de medir nada.",
+  "exp": "Este diseño está bien resuelto: cambia solo la marca y todo lo demás se mantiene igual, incluida la habitación, que importa más de lo que parece porque el frío reduce la duración de una pila. Las cinco pilas de cada marca cumplen la misma función que las repeticiones del caso de la pastilla: una pila defectuosa no arruina la comparación."
+ },
+ {
+  "enun": "<p>Una técnica compara dos marcas de pila. Conecta cada pila a una linterna del mismo modelo, deja todas las linternas encendidas en la misma habitación y mide cuántas horas alumbra cada una hasta apagarse. Prueba cinco pilas de cada marca.</p><p><strong>¿Cuál es la variable dependiente?</strong></p>",
+  "ops": [
+   "Las horas que alumbra la linterna",
+   "La marca de la pila",
+   "El número de pilas probadas",
+   "El precio de la pila"
+  ],
+  "ok": 0,
+  "pista": "La variable dependiente se mide al final, para ver si respondió.",
+  "exp": "Este diseño está bien resuelto: cambia solo la marca y todo lo demás se mantiene igual, incluida la habitación, que importa más de lo que parece porque el frío reduce la duración de una pila. Las cinco pilas de cada marca cumplen la misma función que las repeticiones del caso de la pastilla: una pila defectuosa no arruina la comparación."
+ },
+ {
+  "enun": "<p>Una técnica compara dos marcas de pila. Conecta cada pila a una linterna del mismo modelo, deja todas las linternas encendidas en la misma habitación y mide cuántas horas alumbra cada una hasta apagarse. Prueba cinco pilas de cada marca.</p><p><strong>¿Qué se mantuvo constante?</strong></p>",
+  "ops": [
+   "La marca de la pila",
+   "El modelo de linterna y las condiciones de la habitación",
+   "La duración de la pila",
+   "El número de marcas comparadas"
+  ],
+  "ok": 1,
+  "pista": "Las constantes se mantienen iguales a propósito para que no puedan explicar el resultado.",
+  "exp": "Este diseño está bien resuelto: cambia solo la marca y todo lo demás se mantiene igual, incluida la habitación, que importa más de lo que parece porque el frío reduce la duración de una pila. Las cinco pilas de cada marca cumplen la misma función que las repeticiones del caso de la pastilla: una pila defectuosa no arruina la comparación."
+ }
+];
+var AUD = [
+ {
+  "enun": "<p>Un fabricante anuncia que su crema alivia el dolor de rodilla. Como prueba, explica que se la aplicó a tres personas con molestias y que las tres dijeron sentirse mejor a la semana.</p><p><strong>¿Cuál es el fallo más grave?</strong></p>",
+  "ops": [
+   "Tamaño de muestra insuficiente",
+   "Sesgo de selección",
+   "Ausencia de grupo de control",
+   "Variable no controlada"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pistas": {
+   "1": "¿Quiénes son los participantes? ¿Representan a todos aquellos de quienes habla la conclusión?",
+   "2": "¿Hay un grupo sin tratamiento con el cual comparar?",
+   "3": "Además del tratamiento, ¿cambia algo más entre los grupos?"
+  },
+  "exp": "<strong>Tamaño de muestra insuficiente.</strong> Con tres casos, la casualidad basta para producir cualquier resultado: muchas molestias de rodilla mejoran solas en una semana. Además faltaría un grupo de control, pero el fallo que salta primero es el tamaño de la muestra: ni con control tres personas dirían gran cosa.<br><em>Corrección viable: repetir el ensayo con varios cientos de personas, la mitad con la crema y la mitad con una crema idéntica sin principio activo, y medir el dolor con una escala fija antes y después.</em>"
+ },
+ {
+  "enun": "<p>Una escuela quiere saber si desayunar mejora las notas. Compara el promedio de los estudiantes que desayunan con el de los que no. Al revisar los datos se descubre que los que desayunan son, además, los que llegan temprano y los que duermen más horas.</p><p><strong>¿Cuál es el fallo más grave?</strong></p>",
+  "ops": [
+   "Tamaño de muestra insuficiente",
+   "Sesgo de selección",
+   "Ausencia de grupo de control",
+   "Variable no controlada"
+  ],
+  "ok": 3,
+  "enOrden": true,
+  "pistas": {
+   "0": "Cuente los casos. ¿Hay suficientes para que el azar no explique el resultado?",
+   "1": "¿Quiénes son los participantes? ¿Representan a todos aquellos de quienes habla la conclusión?",
+   "2": "¿Hay un grupo sin tratamiento con el cual comparar?"
+  },
+  "exp": "<strong>Variable no controlada.</strong> Hay dos grupos y hay comparación, pero entre ellos cambia mucho más que el desayuno: también el sueño y la puntualidad. Si las notas difieren, no hay manera de atribuir la diferencia al desayuno. Es el mismo fallo que se provoca en el invernadero al mover dos factores a la vez.<br><em>Corrección viable: comparar estudiantes que duerman lo mismo y lleguen a la misma hora, y que se diferencien solo en el desayuno; o asignar el desayuno al azar durante unas semanas dentro de un mismo grupo.</em>"
+ },
+ {
+  "enun": "<p>Una empresa pregunta a los visitantes de su propia página web si considera su producto el mejor del mercado. El 92 % responde que sí, y la empresa publica el dato como prueba de la calidad del producto.</p><p><strong>¿Cuál es el fallo más grave?</strong></p>",
+  "ops": [
+   "Tamaño de muestra insuficiente",
+   "Sesgo de selección",
+   "Ausencia de grupo de control",
+   "Variable no controlada"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pistas": {
+   "0": "Cuente los casos. ¿Hay suficientes para que el azar no explique el resultado?",
+   "2": "¿Hay un grupo sin tratamiento con el cual comparar?",
+   "3": "Además del tratamiento, ¿cambia algo más entre los grupos?"
+  },
+  "exp": "<strong>Sesgo de selección.</strong> Quien entra en la página de una marca ya es, en general, cliente o simpatizante. La muestra no representa a los consumidores en general, sino a los que ya estaban convencidos. El 92 % es real y perfectamente inútil para la conclusión que se pretende.<br><em>Corrección viable: encuestar a una muestra tomada al azar de los consumidores, sin que sepan qué empresa encarga el estudio, y preguntar por todas las marcas por igual.</em>"
+ },
+ {
+  "enun": "<p>Un estudiante riega sus plantas con agua azucarada durante un mes. Al final del mes las plantas han crecido 12 cm y concluye que el azúcar favorece el crecimiento de las plantas.</p><p><strong>¿Cuál es el fallo más grave?</strong></p>",
+  "ops": [
+   "Tamaño de muestra insuficiente",
+   "Sesgo de selección",
+   "Ausencia de grupo de control",
+   "Variable no controlada"
+  ],
+  "ok": 2,
+  "enOrden": true,
+  "pistas": {
+   "0": "Cuente los casos. ¿Hay suficientes para que el azar no explique el resultado?",
+   "1": "¿Quiénes son los participantes? ¿Representan a todos aquellos de quienes habla la conclusión?",
+   "3": "Además del tratamiento, ¿cambia algo más entre los grupos?"
+  },
+  "exp": "<strong>Ausencia de grupo de control.</strong> Falta la pregunta más importante: ¿cuánto habrían crecido con agua normal? Sin un grupo de comparación, los 12 cm no significan nada; quizá con agua sola habrían crecido 15 cm. Un solo grupo nunca puede sostener una conclusión sobre causas.<br><em>Corrección viable: cultivar dos grupos iguales de plantas en las mismas condiciones y regar uno con agua azucarada y el otro con agua sola.</em>"
+ },
+ {
+  "enun": "<p>Un jardinero quiere comprobar si un abono acelera el crecimiento. Coloca las plantas abonadas dentro del invernadero, que está templado y bien iluminado, y las plantas sin abono en el patio, a la intemperie. A las seis semanas, las abonadas son más altas.</p><p><strong>¿Cuál es el fallo más grave?</strong></p>",
+  "ops": [
+   "Tamaño de muestra insuficiente",
+   "Sesgo de selección",
+   "Ausencia de grupo de control",
+   "Variable no controlada"
+  ],
+  "ok": 3,
+  "enOrden": true,
+  "pistas": {
+   "0": "Cuente los casos. ¿Hay suficientes para que el azar no explique el resultado?",
+   "1": "¿Quiénes son los participantes? ¿Representan a todos aquellos de quienes habla la conclusión?",
+   "2": "¿Hay un grupo sin tratamiento con el cual comparar?"
+  },
+  "exp": "<strong>Variable no controlada.</strong> Aquí <em>sí</em> hay grupo de control, y esa es la trampa. El problema es que los dos grupos no se diferencian solo en el abono: también en la temperatura y la luz. La diferencia podría deberse por completo al invernadero. Tener un grupo de control no basta: tiene que ser comparable en todo lo demás.<br><em>Corrección viable: poner los dos grupos dentro del invernadero, uno al lado del otro, y que la única diferencia sea el abono.</em>"
+ }
+];
+var LAB = [
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>María quiere probar si un fertilizante nuevo acelera el crecimiento de plantas de tomate. Siembra 10 plantas en macetas iguales con la misma tierra: 5 plantas reciben agua con fertilizante y las coloca cerca de la ventana; las otras 5 reciben solo agua y las coloca en el otro extremo de la sala, lejos de la ventana. Después de 4 semanas, mide la altura de cada planta.</p><p><strong>¿Cuál es el problema más serio del diseño experimental de María?</strong></p>",
+  "ops": [
+   "La muestra de 10 plantas es demasiado pequeña para sacar conclusiones.",
+   "No identificó correctamente la variable independiente.",
+   "Las plantas con fertilizante reciben más luz solar, lo que introduce una variable confusora.",
+   "Debió usar plantas de distintas especies para que la conclusión sea generalizable."
+  ],
+  "ok": 2,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Si las plantas con fertilizante crecen más, no se podrá saber si fue por el fertilizante o por la luz extra junto a la ventana. Cuando dos factores varían a la vez, el efecto no se puede atribuir a uno solo. Un buen diseño mantiene todas las condiciones iguales salvo la que se investiga."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un estudiante investiga si la cafeína aumenta el pulso. Pide a 20 voluntarios adultos sanos que se sienten tranquilos durante 10 minutos, les mide el pulso (medición basal), les da una taza de café con 100 mg de cafeína, espera 30 minutos y vuelve a medir el pulso.</p><p><strong>¿Cuál es la variable independiente en este experimento?</strong></p>",
+  "ops": [
+   "El pulso medido en los voluntarios.",
+   "La administración de cafeína (con o sin cafeína).",
+   "El tiempo de espera de 30 minutos.",
+   "La edad de los voluntarios."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La variable independiente es la que el experimentador manipula a propósito: aquí, la administración de cafeína. El pulso es la variable dependiente (la respuesta). El tiempo de espera es una condición controlada."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un microbiólogo prueba un nuevo antibiótico sobre cultivos de <em>E. coli</em>. Prepara 4 placas de Petri con el mismo medio de cultivo e inocula en cada una la misma cantidad de bacterias. Incuba todas a 37 °C durante 24 horas y luego cuenta las colonias.</p><table class=\"cuaderno\"><caption>Distribución de placas</caption><thead><tr><th scope=\"col\">Placa</th><th scope=\"col\">Tratamiento</th></tr></thead><tbody><tr><td>1</td><td>Sin antibiótico</td></tr><tr><td>2</td><td>5 mg de antibiótico</td></tr><tr><td>3</td><td>10 mg de antibiótico</td></tr><tr><td>4</td><td>20 mg de antibiótico</td></tr></tbody></table><p><strong>¿Cuál es el grupo de control en este experimento?</strong></p>",
+  "ops": [
+   "La Placa 1 (sin antibiótico).",
+   "La Placa 2 (5 mg, dosis más baja).",
+   "La Placa 4 (20 mg, dosis más alta).",
+   "No hay un grupo de control claramente definido."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "El grupo de control es el que no recibe el tratamiento que se evalúa. La Placa 1, sin antibiótico, muestra cómo crecen las bacterias sin el tratamiento y permite saber si el antibiótico realmente inhibe el crecimiento."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un investigador quiere saber si 30 minutos de caminata diaria reducen la presión arterial en adultos. Recluta a 8 hombres de entre 25 y 30 años, les mide la presión arterial basal, les pide caminar 30 minutos diarios durante un mes y vuelve a medir. La presión promedio bajó 5 mmHg. Concluye: «Caminar 30 minutos al día reduce la presión arterial en los adultos».</p><p><strong>¿Cuál es la limitación más importante de esa conclusión?</strong></p>",
+  "ops": [
+   "La reducción de 5 mmHg es demasiado grande para ser creíble.",
+   "La muestra es pequeña (n = 8) y solo incluye hombres jóvenes; no se puede extrapolar «a los adultos» en general.",
+   "La caminata debió durar al menos tres meses.",
+   "Debió medir también la frecuencia cardíaca como variable dependiente."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Generalizar de 8 hombres jóvenes a «los adultos» extiende la conclusión a mujeres, adultos mayores, personas con otras condiciones de salud, etc. Una conclusión honesta se limita a la población estudiada, o requiere una muestra más grande y diversa antes de generalizar."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Luis quiere probar si las semillas de frijol germinan mejor en oscuridad. Coloca 10 semillas en una caja completamente cerrada (sin luz) y las riega a diario. Una semana después, observa que 9 de las 10 han germinado. Concluye: «La oscuridad favorece la germinación del frijol».</p><p><strong>¿Cuál es el problema más grave con el experimento de Luis?</strong></p>",
+  "ops": [
+   "No midió la temperatura dentro de la caja.",
+   "Faltó un grupo de control con semillas expuestas a la luz para poder comparar.",
+   "No usó suficientes semillas.",
+   "No debió cerrar la caja por completo."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Sin un grupo comparativo con semillas en la luz, Luis no puede saber si la oscuridad ayudó, estorbó o fue indiferente. Quizá 9 de 10 también habrían germinado a la luz. Sin control no hay comparación; sin comparación, no hay conclusión válida."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un laboratorio publica que una nueva enzima descompone plásticos 200 veces más rápido que cualquier otra conocida. El equipo realizó el experimento una sola vez, con una sola muestra de plástico, y publicó los resultados inmediatamente.</p><p><strong>¿Por qué la comunidad científica pedirá más evidencia antes de aceptar este resultado?</strong></p>",
+  "ops": [
+   "Un solo experimento con una sola muestra no permite descartar errores, contaminación o casualidad; la replicación es necesaria.",
+   "Una mejora de 200 veces es imposible por principios de la química.",
+   "El experimento debió publicarse en inglés para ser aceptado.",
+   "Las enzimas no son capaces de descomponer plásticos bajo ninguna circunstancia."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La replicabilidad es un pilar del método científico. Un resultado único puede deberse a contaminación, error de medición, defecto de la muestra o simple casualidad. Solo cuando se reproduce en laboratorios independientes, con muestras distintas, se acepta como fiable."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un químico estudia cómo la temperatura afecta la velocidad de una reacción química. Prepara 5 matraces idénticos con la misma cantidad del mismo reactivo. Calienta cada matraz a una temperatura distinta y mide cuánto tiempo tarda la reacción en completarse.</p><table class=\"cuaderno\"><caption>Matraces preparados</caption><thead><tr><th scope=\"col\">Matraz</th><th scope=\"col\">Temperatura</th></tr></thead><tbody><tr><td>1</td><td>20 °C</td></tr><tr><td>2</td><td>30 °C</td></tr><tr><td>3</td><td>40 °C</td></tr><tr><td>4</td><td>50 °C</td></tr><tr><td>5</td><td>60 °C</td></tr></tbody></table><p><strong>¿Cuál es la variable dependiente en este experimento?</strong></p>",
+  "ops": [
+   "La temperatura de cada matraz.",
+   "La cantidad de reactivo en cada matraz.",
+   "El tiempo que tarda la reacción en completarse.",
+   "El número de matraces utilizados."
+  ],
+  "ok": 2,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La variable dependiente es la que se mide como respuesta. El químico manipula la temperatura (independiente) y mide cómo responde el tiempo de reacción (dependiente). La cantidad de reactivo se mantiene constante a propósito: es una condición controlada."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Una estudiante quiere medir cómo cambia la solubilidad del azúcar en agua al aumentar la temperatura. Prepara 4 vasos de precipitados con agua a 20, 40, 60 y 80 °C, y añade cucharadas de azúcar a cada uno hasta que ya no se disuelva más, contando cuántas cucharadas entraron.</p><p><strong>Para que los resultados sean comparables entre los cuatro vasos, ¿qué variable DEBE mantenerse constante?</strong></p>",
+  "ops": [
+   "La temperatura del agua en cada vaso.",
+   "La cantidad inicial de agua en cada vaso.",
+   "El color o material de los vasos de precipitados.",
+   "El sabor del azúcar utilizado."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Para comparar la solubilidad hay que usar el mismo volumen de agua. Si un vaso tiene más agua, aceptará más azúcar sin que la solubilidad sea mayor. La temperatura es la variable independiente (debe variar). El color y el material del vaso son irrelevantes."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un químico compara la velocidad de una misma reacción en dos condiciones. En la reacción A usa agua destilada; en la reacción B usa agua de la llave. La reacción B ocurre el doble de rápido y concluye: «El agua de la llave acelera la reacción en comparación con el agua destilada».</p><p><strong>Un revisor señala que la conclusión es prematura. ¿Por qué?</strong></p>",
+  "ops": [
+   "El agua no influye en las reacciones químicas, así que la observación debe ser un error.",
+   "El agua de la llave contiene sales y minerales disueltos (calcio, magnesio, cloruros…), por lo que no se puede saber si aceleró la reacción el «agua de la llave», un ion específico o una combinación.",
+   "Debió usar al menos cinco tipos distintos de agua para obtener un resultado válido.",
+   "El experimento tiene muy pocos ensayos por cada condición."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Al comparar agua destilada con agua de la llave se cambian varias cosas a la vez: calcio, magnesio, cloro, bicarbonatos, incluso el pH. Cualquiera de ellos, solo o combinado, podría ser la causa real. Para aislarla habría que probar soluciones que difieran en un solo ion a la vez."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Una investigadora estudia si el platino actúa como catalizador acelerando la descomposición del peróxido de hidrógeno (H₂O₂). Prepara tres tubos idénticos, cada uno con 10 mL de H₂O₂ al 3 % a la misma temperatura. Durante 5 minutos mide el volumen de oxígeno liberado por cada tubo.</p><table class=\"cuaderno\"><caption>Condiciones de los tubos</caption><thead><tr><th scope=\"col\">Tubo</th><th scope=\"col\">Contenido adicional</th></tr></thead><tbody><tr><td>1</td><td>Nada (solo H₂O₂)</td></tr><tr><td>2</td><td>Laminilla de platino</td></tr><tr><td>3</td><td>Laminilla de platino + agitación</td></tr></tbody></table><p><strong>¿Cuál es el grupo de control en este experimento?</strong></p>",
+  "ops": [
+   "El Tubo 1 (sin platino).",
+   "El Tubo 2 (con platino sin agitar).",
+   "El Tubo 3 (con platino y agitación).",
+   "No hay grupo de control en este experimento."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "El grupo de control no recibe el tratamiento que se evalúa. Aquí el tratamiento es añadir platino, así que el Tubo 1 (sin platino) es la línea base: muestra cuánto oxígeno libera el H₂O₂ por sí solo, para comparar con los tubos con catalizador."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un alumno mide el pH de tres soluciones de ácido acético de distinta concentración: 0.1 M, 0.5 M y 1.0 M. Obtiene pH de 2.9, 2.4 y 2.2 respectivamente. Concluye: «Cualquier ácido se comporta como ácido más fuerte a mayor concentración».</p><p><strong>¿Cuál es el problema más importante con esa conclusión?</strong></p>",
+  "ops": [
+   "Los datos no muestran ninguna tendencia clara.",
+   "Está generalizando a «cualquier ácido» a partir de un solo ácido (el acético); tendría que haber probado también con HCl, H₂SO₄, HNO₃ y otros.",
+   "Las concentraciones utilizadas son demasiado altas para medir el pH correctamente.",
+   "El pH no está relacionado con la fuerza ni con la concentración del ácido."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Los datos sí muestran que al aumentar la concentración del ácido acético baja el pH, y eso es válido para ese ácido. Pero extenderlo a «cualquier ácido» requiere probar ácidos de distinta naturaleza: los fuertes (HCl, H₂SO₄) y los débiles (acético) responden de forma muy distinta a los cambios de concentración."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Una estudiante disuelve 10 g de sal en 100 mL de agua caliente. Reparte la solución en dos recipientes idénticos: uno lo deja sobre la mesa del laboratorio y otro lo pone en la ventana al sol. Tres días después observa que el recipiente de la ventana tiene cristales más grandes. Concluye: «La luz solar favorece la formación de cristales grandes».</p><p><strong>¿Qué cambio haría el experimento más confiable para probar esa conclusión?</strong></p>",
+  "ops": [
+   "Repetir el experimento varias veces controlando por separado la temperatura, la luz y la velocidad de evaporación.",
+   "Usar solo la mitad de sal, para que los cristales sean más pequeños.",
+   "Sustituir la sal por azúcar, que produce cristales más claros.",
+   "Medir únicamente el recipiente de la ventana y no el de la mesa."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La ventana al sol es también más caliente y provoca evaporación más rápida; la luz es solo una de tres variables que cambian a la vez. Sin separarlas, no se puede atribuir el tamaño de los cristales a la luz sola. Un buen diseño varía un factor por vez y replica la medición para reducir el azar."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un alumno investiga qué factores afectan el período de un péndulo simple. Lo hace oscilar variando la longitud de la cuerda (20, 40, 60 y 80 cm), manteniendo la misma masa colgante y soltando siempre desde el mismo ángulo inicial. Para cada longitud mide el tiempo de 10 oscilaciones y calcula el período.</p><p><strong>¿Cuál es la variable independiente en este experimento?</strong></p>",
+  "ops": [
+   "La masa colgante del péndulo.",
+   "La longitud de la cuerda.",
+   "El período de oscilación.",
+   "El ángulo inicial de liberación."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La variable independiente se manipula a propósito: aquí, la longitud de la cuerda (cuatro valores). La masa y el ángulo se mantienen constantes. El período es la variable dependiente (la respuesta)."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un grupo de estudiantes quiere comparar la fricción que ejercen distintos materiales sobre un bloque que desliza por una rampa. Hacen deslizar el mismo bloque sobre tres superficies distintas: madera, cartón y metal. Cronometran cuánto tarda el bloque en recorrer la rampa en cada superficie.</p><p><strong>¿Qué variables deben mantenerse constantes para que el experimento sea válido?</strong></p>",
+  "ops": [
+   "El material de la superficie, la masa del bloque y la altura de partida.",
+   "La masa del bloque, el ángulo de la rampa y la altura desde la que se suelta el bloque.",
+   "Solo el ángulo de la rampa.",
+   "Solo la masa del bloque."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Para atribuir las diferencias de tiempo al material (la variable independiente), todo lo demás que afecte al movimiento debe mantenerse: masa del bloque, ángulo de la rampa y altura de partida. El material es lo único que debe cambiar."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Una estudiante investiga cómo la temperatura afecta la resistencia eléctrica de un cable de cobre. Toma el mismo cable y le mide la resistencia con un multímetro en tres condiciones distintas.</p><table class=\"cuaderno\"><caption>Condiciones de medición</caption><thead><tr><th scope=\"col\">Medición</th><th scope=\"col\">Condición</th></tr></thead><tbody><tr><td>1</td><td>Temperatura ambiente (≈ 22 °C)</td></tr><tr><td>2</td><td>Sumergido en hielo con sal (≈ −5 °C)</td></tr><tr><td>3</td><td>Sumergido en nitrógeno líquido (≈ −196 °C)</td></tr></tbody></table><p><strong>¿Cuál medición funciona como grupo de control?</strong></p>",
+  "ops": [
+   "La medición 1, a temperatura ambiente: sirve como referencia base para comparar las condiciones frías.",
+   "La medición 2, en hielo con sal.",
+   "La medición 3, en nitrógeno líquido.",
+   "No hay grupo de control en experimentos de este tipo."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "El control es la condición sin el tratamiento especial, la línea base. Aquí el tratamiento es enfriar el cable, así que la medición a temperatura ambiente es la referencia natural para las mediciones en frío."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un estudiante quiere comprobar si los objetos más pesados caen más rápido que los livianos. Deja caer desde 2 metros de altura una bola de hierro de 1 kg y una pluma. La bola tarda 0.8 s en llegar al suelo; la pluma, 5.2 s. Concluye: «Los objetos más pesados caen más rápido, contradiciendo a Galileo».</p><p><strong>¿Cuál es el error principal del experimento?</strong></p>",
+  "ops": [
+   "No dejó caer los objetos exactamente desde la misma altura.",
+   "No controló la resistencia del aire, que frena muchísimo a la pluma pero casi no afecta a la bola de hierro; en vacío ambos caerían igual.",
+   "Usó un cronómetro poco preciso para estas mediciones.",
+   "La conclusión es correcta; Galileo estaba equivocado."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La predicción de Galileo se cumple sin aire. La pluma cae lento no por ser liviana sino porque el aire la frena muchísimo. Un experimento válido dejaría caer los objetos en vacío, o compararía dos objetos de masa distinta con resistencia al aire parecida."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un técnico mide la longitud de una barra metálica con un calibrador de acero a 20 °C. Luego calienta la barra a 100 °C con un soplete y la mide inmediatamente con el mismo calibrador, sin dejar que se enfríe. Anota que la barra se alargó 0.2 mm y utiliza ese dato para calcular el coeficiente de dilatación del metal.</p><p><strong>¿Cuál es un problema no controlado en esta medición?</strong></p>",
+  "ops": [
+   "El calibrador también se calienta por contacto con la barra caliente, así que también se dilata y altera la medición.",
+   "El soplete no calienta de forma completamente uniforme, pero eso no afecta al resultado.",
+   "La barra debería enfriarse antes de medirla, aunque eso no afecta al resultado.",
+   "Las barras metálicas no se dilatan con el calor."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Al tocar una barra a 100 °C, el calibrador de acero también se calienta y cambia ligeramente de tamaño, introduciendo error en la lectura. Un diseño mejor usa un método que el calor no afecte: láser, cámara a distancia o calibrador aislado."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un físico quiere medir la velocidad del sonido en distintos gases. Hace sonar un diapasón en un extremo de un tubo lleno de helio y mide con un cronómetro cuánto tarda en escuchar el eco desde el otro extremo. Hace una sola medición. Luego repite una sola vez con CO₂. Los resultados son muy distintos y concluye que la velocidad del sonido depende del gas.</p><p><strong>¿Qué haría el experimento más fiable?</strong></p>",
+  "ops": [
+   "Repetir cada medición varias veces para calcular un promedio y estimar la incertidumbre; así se distingue una diferencia real de una debida al azar o al tiempo de reacción.",
+   "Usar el mismo gas en ambos tubos para que las condiciones sean idénticas.",
+   "Dejar de medir con eco y usar otro método, aunque se midiera solo una vez.",
+   "Cambiar de diapasón entre una medición y otra."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Una sola medición por gas contiene ruido: el tiempo de reacción humano con el cronómetro, la detección imprecisa del eco, etc. Repetir y promediar reduce el error aleatorio y muestra la incertidumbre, para saber si la diferencia es real."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Un grupo de estudiantes construye un modelo de ladera inclinada y simula la lluvia con una regadera para estudiar la erosión. Prueban tres tipos de cubierta de suelo en la misma ladera, vertiendo siempre 1 litro de agua desde la misma altura, y miden cuántos gramos de material se desprenden en cada caso.</p><table class=\"cuaderno\"><caption>Tipos de cubierta probados</caption><thead><tr><th scope=\"col\">Ensayo</th><th scope=\"col\">Cubierta del suelo</th></tr></thead><tbody><tr><td>A</td><td>Arcilla compactada</td></tr><tr><td>B</td><td>Arena suelta</td></tr><tr><td>C</td><td>Tierra con hierba</td></tr></tbody></table><p><strong>¿Cuál es la variable independiente?</strong></p>",
+  "ops": [
+   "La cantidad de agua utilizada.",
+   "El tipo de cubierta del suelo.",
+   "La cantidad de material desprendido.",
+   "El tamaño del modelo de ladera."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "La variable independiente es el factor que se cambia deliberadamente: aquí, el tipo de cubierta. El agua y la ladera se mantienen (condiciones controladas), y el material desprendido es la variable dependiente."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Un biólogo estudia si la contaminación del aire afecta la diversidad de líquenes que crecen sobre los árboles. Visita tres lugares y, en cada uno, cuenta las especies de líquenes en 50 árboles: el centro de una gran ciudad (muy contaminado), un parque suburbano (contaminación moderada) y un bosque rural alejado (contaminación mínima). Encuentra muchas más especies en el bosque rural.</p><p><strong>En este estudio observacional, ¿qué lugar funciona como referencia para evaluar el efecto de la contaminación urbana?</strong></p>",
+  "ops": [
+   "El centro urbano, porque allí la contaminación es máxima.",
+   "El parque suburbano, porque tiene contaminación intermedia.",
+   "El bosque rural, porque con contaminación mínima funciona como línea base o control natural con el cual comparar los demás.",
+   "Ningún lugar puede servir de control en estudios de campo."
+  ],
+  "ok": 2,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "En los estudios observacionales, el «control» es la condición sin el factor que se investiga. El bosque rural, con contaminación mínima, muestra los líquenes sin el factor y es la referencia natural para los demás lugares."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Un estudiante diseña un modelo para ilustrar el efecto invernadero. Coloca dos botellas de plástico cerradas bajo una lámpara: una con aire y otra con CO₂ puro. Mide la temperatura dentro de cada botella cada 2 minutos durante 20 minutos. Tras este único experimento, concluye: «El CO₂ es la causa principal del calentamiento global actual».</p><p><strong>¿Por qué esta conclusión es demasiado amplia?</strong></p>",
+  "ops": [
+   "Un modelo en botellas es una analogía muy simplificada del clima global, y además una sola corrida no permite descartar fluctuaciones aleatorias.",
+   "El CO₂ en realidad no tiene ningún efecto sobre la temperatura del aire.",
+   "La lámpara no emite exactamente el mismo espectro que el Sol.",
+   "Las botellas deberían haber sido de vidrio en lugar de plástico."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "El experimento ilustra que el CO₂ atrapa calor, pero el clima real implica océanos, corrientes, nubes, hielo, vegetación, aerosoles y mucho más. Además, una sola corrida sin repeticiones no distingue una diferencia real de una aleatoria. Una conclusión honesta: «Coherente con que el CO₂ atrapa más calor en este modelo»."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Un oceanógrafo observa que en una zona costera tranquila los sedimentos en suspensión tardan 3 días en asentarse, mientras que en otra zona con fuerte oleaje tardan 10 días. Concluye: «Las corrientes marinas lentas aceleran la sedimentación, mientras que las fuertes la retrasan».</p><p><strong>Un crítico señala que la conclusión es frágil. ¿Cuál es la razón principal?</strong></p>",
+  "ops": [
+   "Las corrientes marinas no están relacionadas con la sedimentación.",
+   "Las dos zonas probablemente también difieren en profundidad, salinidad, tipo de sedimento y aportes de ríos cercanos, y esas variables confusoras no se controlaron.",
+   "Tres días es demasiado poco tiempo para hacer una medición válida.",
+   "El estudio solo usó dos zonas, cuando debería haber usado exactamente cuatro."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "En los estudios de campo, dos zonas costeras difieren en muchos factores a la vez. Una podría ser más profunda, más salada o recibir agua de un río cercano, y cualquiera de ellos afecta la sedimentación. Para aislar la corriente habría que comparar zonas casi idénticas salvo en la corriente, o hacer el experimento en un laboratorio controlado."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Un agricultor quiere saber si el suelo de su finca (de 20 hectáreas) es adecuado para cultivar arándanos, que necesitan un pH ácido entre 4 y 5. Toma una sola muestra de suelo cerca de la casa, la lleva al laboratorio y el análisis da pH 6.5. Concluye: «Mi finca completa no sirve para arándanos».</p><p><strong>¿Cuál es el problema con esa conclusión?</strong></p>",
+  "ops": [
+   "El pH del suelo no influye en el cultivo de arándanos.",
+   "Una sola muestra no representa la variabilidad de una finca tan grande; debería tomar varias muestras en distintos puntos.",
+   "El agricultor debió medir humedad y temperatura además del pH.",
+   "Los arándanos crecen igualmente bien en cualquier tipo de suelo."
+  ],
+  "ok": 1,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "El pH del suelo varía dentro de una misma finca por drenaje, sombra, uso previo, cercanía a árboles o construcciones. Una muestra única puede no ser representativa. Un buen diseño toma muchas muestras en distintos puntos, en cuadrícula o al azar, y las promedia o mapea."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Una estudiante de geología estudia cómo la temperatura del agua afecta el tamaño de los cristales de sulfato de cobre. Prepara una solución saturada a 80 °C en un recipiente y otra a 40 °C en otro recipiente distinto. Deja que ambas se enfríen lentamente durante tres días y luego mide el cristal más grande de cada recipiente.</p><p><strong>¿Qué cambio mejoraría el diseño para atribuir con más confianza las diferencias a la temperatura inicial?</strong></p>",
+  "ops": [
+   "Preparar varios recipientes por cada temperatura inicial y promediar los tamaños; además, controlar la iluminación, el tipo de recipiente y la pureza del agua.",
+   "Usar temperaturas mucho más altas, como 200 °C, para que los cristales sean más grandes.",
+   "Sustituir el sulfato de cobre por sal común para simplificar el experimento.",
+   "Dejar las soluciones solo un día en lugar de tres."
+  ],
+  "ok": 0,
+  "pista": "Antes de elegir, llene mentalmente las tres columnas: qué se cambia, qué se mide, qué se mantiene igual. Después pregúntese: ¿hay una comparación justa?, ¿la muestra es suficiente?, ¿se repitió?",
+  "exp": "Un solo recipiente por temperatura deja el resultado a merced del azar (impurezas, evaporación, vibraciones, iluminación). Varias réplicas permiten promediar y ver la variación de cada condición. Además hay que controlar las otras variables (iluminación, recipiente, pureza del agua) para no introducir confusores."
+ }
+];
+creaInvernadero("m1", FACT, 32, TXI);
+creaBanco("m2", VARS);
+creaBanco("m3", AUD);
+creaBanco("m4", LAB);
+iniciaNavegacion();
+</script>
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 1.2 (español) — construida con tools/build_sci_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 1.2 · Variables, grupos de control y fuentes de error · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="en" href="/science/lesson-1-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Ciencias · Tema 1 — El método científico y el diseño de investigación</p>
+<h1>Lección 1.2 · Variables, grupos de control y fuentes de error</h1>
+<p class="lema">Un buen experimento cambia una cosa, mide una cosa y compara.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip chip-sp">SP.2 · Diseño de investigaciones</span><span class="chip chip-sp">SP.4 · Evaluar conclusiones</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Identificar</strong> la variable independiente, la dependiente y las constantes en un diseño experimental.</li>
+<li><strong>Explicar</strong> la función del grupo de control y reconocerlo dentro de un experimento descrito.</li>
+<li><strong>Señalar</strong> al menos dos fuentes de error en un diseño defectuoso: tamaño de muestra, sesgo de selección, ausencia de control o variable no controlada.</li>
+<li><strong>Justificar</strong> por qué una conclusión no se sostiene con el diseño que la produjo.</li>
+<li><strong>Proponer</strong> una corrección viable a un experimento mal diseñado.</li>
+</ul>
+</div>
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Prácticas científicas del examen GED® que trabaja esta lección:</p><ul><li><span class="std-cod std-dir">SP.2.a</span> Identificar posibles fuentes de error y modificar el diseño de una investigación para corregirlas.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8 · NRC P3, P4 · Mat. M4</span></li><li><span class="std-cod std-dir">SP.2.c</span> Identificar los puntos fuertes y débiles de uno o más diseños de investigación científica (experimentales o de observación).<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8, R9 · NRC P2, P5 · Mat. M3, M4</span></li><li><span class="std-cod std-dir">SP.2.e</span> Identificar e interpretar las variables independiente y dependiente en las investigaciones científicas.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R5 · NRC P2, P4 · Mat. M4</span></li><li><span class="std-cod std-dir">SP.3.b</span> Razonar a partir de datos o evidencia hasta llegar a una conclusión.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R1, R2, R3 · NRC P1, P6, P7 · Mat. M3, M4, M7, M8</span></li><li><span class="std-cod std-dir">SP.3.d</span> Usar técnicas de muestreo para responder preguntas científicas.<br><span class="std-meta">Categoría 3 · DOK 2–3 · NRC P4, P5 · Mat. S-CP, 7.SP, M4, M7, M8</span></li><li><span class="std-cod std-dir">SP.4.a</span> Evaluar si unos datos o una evidencia concretos apoyan o contradicen una conclusión o teoría.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8 · NRC P4, P6 · Mat. M3, M7, M8</span></li></ul>
+<p class="std-tit">También prepara la base para:</p><ul><li><span class="std-cod std-base">SP.2.d</span> Diseñar una investigación científica.<br><span class="std-meta">Categoría 2 · DOK 1–3 · CCR W7 · NRC P3, P5 · Mat. 3.MD, M4, M8</span></li></ul>
+<p class="std-tit">Categorías de informe del examen de Ciencias del GED®:</p><ul><li>Categoría 2 · Aplicar procesos científicos y conceptos de procedimiento (40 % del examen)</li><li>Categoría 3 · Razonar con cantidades e interpretar datos en contextos científicos (30 % del examen)</li></ul>
+<p class="std-tit">Temas de contenido de Ciencias del GED®:</p>
+<p>Las destrezas de esta lección se aplican a todos los temas de contenido del examen: ciencias de la vida, ciencias físicas y ciencias de la Tierra y el espacio.</p>
+<p class="std-tit">Qué significan los códigos alineados (CCR, NRC y matemáticas):</p><ul class="std-clave"><li><span class="std-cod std-ccr">R8</span> Lectura CCR 8: evaluar las afirmaciones de un texto y la evidencia que las sostiene.</li><li><span class="std-cod std-ccr">P3</span> Práctica NRC 3: planificar y llevar a cabo investigaciones.</li><li><span class="std-cod std-ccr">P4</span> Práctica NRC 4: analizar e interpretar datos.</li><li><span class="std-cod std-ccr">M4</span> Práctica matemática 4: modelar con matemáticas.</li><li><span class="std-cod std-ccr">R9</span> Lectura CCR 9: comparar cómo tratan dos textos el mismo tema.</li><li><span class="std-cod std-ccr">P2</span> Práctica NRC 2: desarrollar y usar modelos.</li><li><span class="std-cod std-ccr">P5</span> Práctica NRC 5: usar las matemáticas y el pensamiento computacional.</li><li><span class="std-cod std-ccr">M3</span> Práctica matemática 3: construir argumentos y criticar el razonamiento ajeno.</li><li><span class="std-cod std-ccr">R5</span> Lectura CCR 5: analizar la estructura de un texto.</li><li><span class="std-cod std-ccr">R1</span> Lectura CCR 1: leer con atención y citar evidencia concreta del texto.</li><li><span class="std-cod std-ccr">R2</span> Lectura CCR 2: determinar las ideas centrales y resumirlas.</li><li><span class="std-cod std-ccr">R3</span> Lectura CCR 3: analizar cómo se desarrollan y relacionan las ideas, los hechos o los pasos.</li><li><span class="std-cod std-ccr">P1</span> Práctica NRC 1: hacer preguntas.</li><li><span class="std-cod std-ccr">P6</span> Práctica NRC 6: construir explicaciones.</li><li><span class="std-cod std-ccr">P7</span> Práctica NRC 7: argumentar con evidencia.</li><li><span class="std-cod std-ccr">M7</span> Práctica matemática 7: buscar y usar la estructura.</li><li><span class="std-cod std-ccr">M8</span> Práctica matemática 8: buscar regularidades en el razonamiento repetido.</li><li><span class="std-cod std-ccr">S-CP</span> Estadística: probabilidad condicional y sucesos compuestos.</li><li><span class="std-cod std-ccr">7.SP</span> Matemáticas, estadística y probabilidad (7.º grado): muestras y probabilidad.</li><li><span class="std-cod std-ccr">W7</span> Escritura CCR 7: hacer proyectos breves de investigación.</li><li><span class="std-cod std-ccr">3.MD</span> Matemáticas, medición y datos (3.er grado): medir y elegir unidades.</li></ul>
+<p class="std-fuente">DOK (profundidad de conocimiento): 1 = recordar, 2 = aplicar una destreza o un concepto, 3 = razonar con evidencia. Fuente de las prácticas, las categorías, los rangos de DOK y la alineación: GED Testing Service, <cite>Assessment Guide for Educators: Science</cite> (2016; prácticas científicas actualizadas en 2020). Los estándares ancla CCR están en Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>; las prácticas NRC, en <cite>A Framework for K-12 Science Education</cite> (National Research Council, 2012).</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s1">Las tres clases de variables</a></li>
+<li><a href="#s2">El grupo de control: la vara de medir</a></li>
+<li><a href="#s3">Cuatro fuentes de error que hay que saber detectar</a></li>
+<li><a href="#s4">Lectura científica</a></li>
+<li><a href="#s5">Preguntas tipo GED</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-lista">Lista de autoevaluación</a></li>
+<li><a href="#s-sigue">Lo que viene</a></li>
+<li><a href="#s-palabras">Palabras clave</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Antes de empezar</span>
+<p>La Lección 1.1 recorrió las seis etapas de una investigación y se detuvo en la hipótesis. Esta lección entra en la etapa cuatro: el <strong>diseño</strong>. Una hipótesis bien redactada no sirve de nada si el experimento que la pone a prueba no permite distinguir qué causó qué. Aquí se estudia cómo se construye un diseño que sí lo permita, y cómo se detecta uno que no.</p><p><strong>Cómo estudiar esta lección:</strong> dibuje en una hoja tres columnas: <em>qué se cambia</em>, <em>qué se mide</em>, <em>qué se mantiene igual</em>. Ante cada experimento, llene las tres columnas antes de responder: si una columna queda vacía o dudosa, allí suele estar el fallo del diseño.</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>Las tres clases de variables</h2>
+<p>Todo experimento se organiza alrededor de tres preguntas: qué se cambia, qué se mide y qué se mantiene igual. Cada una corresponde a una clase de variable, y confundirlas es lo que arruina un diseño.</p>
+<div aria-label="Las tres clases de variables y la pregunta que identifica cada una (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las tres clases de variables y la pregunta que identifica cada una</caption>
+<thead><tr><th scope="col">Clase de variable</th><th scope="col">Pregunta que la identifica</th><th scope="col">También llamada</th></tr></thead>
+<tbody>
+<tr><th scope="row">Variable independiente</th><td>¿Qué cambia el investigador a propósito?</td><td>el tratamiento, el factor que se prueba</td></tr>
+<tr><th scope="row">Variable dependiente</th><td>¿Qué se mide al final, para ver si respondió?</td><td>el resultado, la respuesta</td></tr>
+<tr><th scope="row">Constantes (variables controladas)</th><td>¿Qué se mantiene igual a propósito?</td><td>condiciones controladas</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Fertilizante y altura del tallo</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Un investigador riega un grupo de plantas con 10 mL de fertilizante y otro grupo sin fertilizante. A los veinte días mide la altura de todas.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span>Lo que cambia a propósito: la cantidad de fertilizante. Es la <strong>variable independiente</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span>Lo que se mide al final: la altura del tallo. Es la <strong>variable dependiente</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span>Lo que debe permanecer igual: la especie de planta, el tipo de tierra, la cantidad de agua, la luz, la temperatura y el tiempo. Son las <strong>constantes</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Regla de lectura:</strong> la variable dependiente <em>depende</em> de la independiente. Si se puede decir «la altura depende del fertilizante» y no al revés, la clasificación es correcta.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Una sola a la vez</span>
+<p>Un experimento bien diseñado cambia <strong>una</strong> variable independiente por vez. Si se cambian dos, y el resultado varía, no hay manera de saber cuál de las dos lo provocó. El experimento produce datos, pero no produce conocimiento.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#invernadero" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: aísle la variable en el invernadero (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: aísle la variable en el invernadero</span><span class="ei-sub">Dos grupos de plantas y cuatro controles: luz, agua, temperatura y suelo. Cambie uno y vea el resultado; cambie dos y vea por qué no se puede concluir nada.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 1 · La variable independiente</h3></div>
+<p class="pregunta-int" id="t-p1">Se estudia si el tiempo de estudio influye en la calificación de una prueba. ¿Cuál es la variable independiente?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">La calificación obtenida</button>
+<button class="opcion" data-k="b" type="button">El tiempo de estudio</button>
+<button class="opcion" data-k="c" type="button">La dificultad de la prueba</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 2 · La variable dependiente</h3></div>
+<p class="pregunta-int" id="t-p2">En ese mismo estudio, ¿cuál es la variable dependiente?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">El número de estudiantes</button>
+<button class="opcion" data-k="b" type="button">El tiempo de estudio</button>
+<button class="opcion" data-k="c" type="button">La calificación obtenida</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 3 · Las constantes</h3></div>
+<p class="pregunta-int" id="t-p3">Se mide cuánta azúcar se disuelve en agua a distintas temperaturas. ¿Qué debe mantenerse constante?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">El volumen de agua y el tipo de azúcar</button>
+<button class="opcion" data-k="b" type="button">La temperatura del agua</button>
+<button class="opcion" data-k="c" type="button">La cantidad de azúcar disuelta</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 4 · Dos cambios a la vez</h3></div>
+<p class="pregunta-int" id="t-p4">Un experimento cambia al mismo tiempo la cantidad de luz y la cantidad de agua. ¿Cuál es el problema?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Ninguno: así se ahorra tiempo</button>
+<button class="opcion" data-k="b" type="button">Que la variable dependiente desaparece</button>
+<button class="opcion" data-k="c" type="button">Que no se podrá saber cuál de las dos causó el resultado</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>El grupo de control: la vara de medir</h2>
+<p>El <strong>grupo de control</strong> es el grupo que no recibe el tratamiento que se está probando. Todo lo demás se mantiene idéntico al grupo experimental. Su función no es decorativa: sin él no existe punto de comparación, y sin comparación no se puede atribuir el resultado al tratamiento.</p>
+<svg viewBox="0 0 560 290" role="img" aria-label="Gráfica de barras. Grupo de control, sin fertilizante: 11 cm. Grupo experimental, con fertilizante: 18 cm. La diferencia es de 7 cm." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><line x1="70" y1="230" x2="490" y2="230" stroke="#5b6675" stroke-width="2"/><rect x="120" y="120" width="110" height="110" fill="#90a4ae"/><rect x="320" y="50" width="110" height="180" fill="#2a7f86"/><text x="175" y="110" text-anchor="middle" font-size="18" font-weight="700" fill="#1a2330">11 cm</text><text x="375" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="#1a2330">18 cm</text><text x="175" y="254" text-anchor="middle" font-size="16" fill="#1a2330">Grupo de control</text><text x="175" y="274" text-anchor="middle" font-size="14" fill="#5b6675">sin fertilizante</text><text x="375" y="254" text-anchor="middle" font-size="16" fill="#1a2330">Grupo experimental</text><text x="375" y="274" text-anchor="middle" font-size="14" fill="#5b6675">con fertilizante</text><line x1="250" y1="50" x2="250" y2="120" stroke="#b5342a" stroke-width="2"/><text x="258" y="90" font-size="15" font-weight="700" fill="#b5342a">7 cm</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Por qué funciona la comparación</span>
+<p>Si absolutamente todo es igual en los dos grupos <strong>salvo</strong> el fertilizante, entonces la diferencia de 7 cm solo puede atribuirse al fertilizante. Esa es toda la lógica del experimento controlado.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Sin control no hay conclusión</span>
+<p>Si el investigador solo hubiera cultivado el grupo con fertilizante y las plantas hubieran alcanzado 18 cm, no sabría nada. ¿Es mucho? ¿Es poco? ¿Habrían llegado igual sin fertilizante? Un solo grupo produce un número, no una respuesta.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Atención al placebo</span>
+<p>En los estudios con personas, el grupo de control no se queda sin nada: recibe un tratamiento idéntico en apariencia pero sin principio activo (un <strong>placebo</strong>). Así, la única diferencia entre los dos grupos es el principio activo, y no el hecho de estar recibiendo algo y sentirse atendido.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>Cuatro fuentes de error que hay que saber detectar</h2>
+<p>El examen presenta con frecuencia un diseño defectuoso y pide señalar por qué su conclusión no se sostiene. Casi siempre el fallo pertenece a una de estas cuatro familias.</p>
+<div aria-label="Cuatro fuentes de error en el diseño experimental, con su descripción, una señal de alerta y la corrección (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Cuatro fuentes de error en el diseño experimental, con su descripción, una señal de alerta y la corrección</caption>
+<thead><tr><th scope="col">Fuente de error</th><th scope="col">En qué consiste</th><th scope="col">Señal de alerta en el texto</th><th scope="col">Corrección</th></tr></thead>
+<tbody>
+<tr><th scope="row">Muestra demasiado pequeña</th><td>Se estudian tan pocos casos que el resultado puede deberse al azar.</td><td>«Se probó con 4 personas», «se usaron 3 plantas».</td><td>Aumentar el número de participantes o de réplicas.</td></tr>
+<tr><th scope="row">Sesgo de selección</th><td>Los participantes no se asignaron al azar, de modo que los grupos ya diferían antes de empezar.</td><td>«Los voluntarios eligieron su grupo», «se seleccionó a los más motivados».</td><td>Asignar los participantes a los grupos de forma aleatoria.</td></tr>
+<tr><th scope="row">Ausencia de grupo de control</th><td>No hay un grupo sin tratamiento con el cual comparar.</td><td>«Todos recibieron el suplemento», «se midió antes y después, sin más».</td><td>Añadir un grupo que no reciba el tratamiento.</td></tr>
+<tr><th scope="row">Variable no controlada</th><td>Algo distinto del tratamiento cambió también entre los grupos y pudo causar el resultado.</td><td>«Además cambiaron su dieta», «un grupo estuvo junto a la ventana».</td><td>Igualar esa condición en ambos grupos o medirla y tenerla en cuenta.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Auditar un diseño</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>«Seis voluntarios de un gimnasio tomaron un suplemento durante un mes y todos aumentaron su fuerza. El suplemento aumenta la fuerza muscular».</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span>Seis participantes es una <strong>muestra demasiado pequeña</strong> para generalizar.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span>Eran voluntarios de un gimnasio: hay <strong>sesgo de selección</strong>, porque ya entrenaban.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span>Nadie dejó de tomar el suplemento: falta el <strong>grupo de control</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span>Siguieron entrenando durante el mes: el entrenamiento es una <strong>variable no controlada</strong> que explica igual de bien el resultado.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Conclusión de la auditoría:</strong> el estudio muestra que seis personas que entrenan aumentan su fuerza. No permite atribuir ese aumento al suplemento.</p>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#auditor" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: audite el diseño (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: audite el diseño</span><span class="ei-sub">Cinco estudios con un fallo. Encuentre el más grave y vea cómo se corregiría.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<h3><span aria-hidden="true">🔤</span> Vocabulario técnico: las raíces revelan el significado</h3>
+<div aria-label="Raíces y afijos de la lección, su significado y el término de diseño experimental que forman (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Raíces y afijos de la lección, su significado y el término de diseño experimental que forman</caption>
+<thead><tr><th scope="col">Raíz o afijo</th><th scope="col">Significado</th><th scope="col">Término que forma</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="raiz">vari-</span></th><td>que cambia, diverso</td><td><strong>Vari</strong>able: aquello que puede tomar valores distintos.</td></tr>
+<tr><th scope="row"><span class="raiz">pend-</span></th><td>colgar de, estar sujeto a</td><td>De<strong>pend</strong>iente: lo que queda colgando del valor de otra cosa.</td></tr>
+<tr><th scope="row"><span class="raiz">in-</span></th><td>no, sin</td><td><strong>In</strong>dependiente: lo que no está sujeto a otra variable del experimento.</td></tr>
+<tr><th scope="row"><span class="raiz">re-</span></th><td>de nuevo, otra vez</td><td><strong>Ré</strong>plica: repetición del experimento para comprobar el resultado.</td></tr>
+<tr><th scope="row"><span class="raiz">con-</span></th><td>junto con</td><td>Variable <strong>con</strong>fusora: la que se mezcla con el tratamiento y confunde la conclusión.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>Lectura científica</h2>
+<p>Resumen de investigación adaptado al nivel. Léalo con ojo de auditor y responda las preguntas.</p>
+<div class="lectura"><h3><span aria-hidden="true">📖</span> Una infusión para dormir mejor</h3><div class="texto">
+<p>Una empresa afirma que su infusión de hierbas mejora el sueño. Para comprobarlo, publicó un anuncio en una revista de salud invitando a participar a quienes tuvieran dificultades para dormir. Se inscribieron 12 personas.</p>
+<p>Durante dos semanas, las 12 tomaron una taza de la infusión antes de acostarse. Cada mañana anotaban en un formulario cuántas horas <em>creían</em> haber dormido. Al inicio, el promedio declarado fue de 5.4 horas; al final, de 6.8 horas.</p>
+<p>El folleto de la empresa concluye: «Nuestra infusión aumenta el sueño en 1.4 horas por noche».</p>
+<p>El estudio no menciona que, durante esas dos semanas, los participantes recibieron también un folleto con recomendaciones de higiene del sueño: acostarse a la misma hora, apagar pantallas y evitar la cafeína por la tarde.</p>
+</div></div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 1</h3></div>
+<p class="pregunta-int" id="t-p5">¿Cuál es la variable independiente que la empresa pretende estudiar?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">El consumo de la infusión antes de acostarse</button>
+<button class="opcion" data-k="b" type="button">Las horas de sueño declaradas</button>
+<button class="opcion" data-k="c" type="button">El número de participantes</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 2</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuál es el fallo <strong>más grave</strong> del diseño?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Que el estudio duró solo dos semanas</button>
+<button class="opcion" data-k="b" type="button">Que se anotaban las horas por la mañana</button>
+<button class="opcion" data-k="c" type="button">Que no hubo grupo de control: nadie dejó de tomar la infusión</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 3</h3></div>
+<p class="pregunta-int" id="t-p7">El folleto de higiene del sueño constituye…</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Una constante del experimento</button>
+<button class="opcion" data-k="b" type="button">Una variable no controlada que explica igual de bien el resultado</button>
+<button class="opcion" data-k="c" type="button">Una réplica del estudio</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Y hay más</span>
+<p>Los participantes se inscribieron por su cuenta tras leer un anuncio, lo que introduce <strong>sesgo de selección</strong>, y doce personas son una <strong>muestra pequeña</strong>. Las horas de sueño, además, fueron <em>declaradas</em>, no medidas. Un mismo estudio puede acumular varias fuentes de error a la vez.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 5 · El grupo de control</h3></div>
+<p class="pregunta-int" id="t-p8">La función del grupo de control es…</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">Aumentar el número total de participantes</button>
+<button class="opcion" data-k="b" type="button">Ofrecer un punto de comparación sin el tratamiento</button>
+<button class="opcion" data-k="c" type="button">Comprobar que el instrumento de medición funciona</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 6 · ¿Quién eligió el grupo?</h3></div>
+<p class="pregunta-int" id="t-p9">«Los estudiantes escogieron si entraban en el grupo con tutoría o en el grupo sin ella». Esto es…</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">Un diseño correcto y respetuoso</button>
+<button class="opcion" data-k="b" type="button">Una variable dependiente mal definida</button>
+<button class="opcion" data-k="c" type="button">Sesgo de selección</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 7 · Tres pacientes</h3></div>
+<p class="pregunta-int" id="t-p10">«Se probó el medicamento en tres pacientes y funcionó en los tres». El problema principal es…</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">La muestra es demasiado pequeña para generalizar</button>
+<button class="opcion" data-k="b" type="button">Falta la variable independiente</button>
+<button class="opcion" data-k="c" type="button">No se puede medir la mejoría de un paciente</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 8 · Junto a la ventana</h3></div>
+<p class="pregunta-int" id="t-p11">Un grupo de plantas se colocó junto a la ventana y el otro al fondo del salón. La luz es…</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">La variable dependiente</button>
+<button class="opcion" data-k="b" type="button">Una variable no controlada que puede causar la diferencia</button>
+<button class="opcion" data-k="c" type="button">Una constante del experimento</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-1-2.html#cientilab" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: CientíLab, diseño experimental (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: CientíLab, diseño experimental</span><span class="ei-sub">Veinticuatro experimentos de biología, química, física y ciencias de la Tierra: variables, grupos de control, variables confusoras y muestras.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Preguntas tipo GED</h2>
+<p>Estas preguntas funcionan como las del examen de Ciencias del GED®: primero un texto breve o una tabla, y después una pregunta con cuatro opciones. Cada una indica la práctica científica que evalúa y su profundidad de conocimiento (DOK). Antes de responder, llene las tres columnas: qué se cambia, qué se mide y qué se mantiene igual.</p>
+<p><em>Unos estudiantes investigan cómo influye la cantidad de luz en la fotosíntesis de una planta acuática, la Elodea. Colocan cuatro ramas idénticas en tubos de ensayo con la misma cantidad de agua rica en dióxido de carbono, todos a 22 °C. Cada tubo se sitúa a una distancia distinta de una lámpara: 10, 20, 30 y 40 cm. Durante 5 minutos cuentan las burbujas de oxígeno que libera cada rama por minuto, como indicador de la velocidad de la fotosíntesis.</em></p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 1 · SP.2.e · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p12">¿Cuál es la <strong>variable independiente</strong> de este diseño?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">La cantidad de burbujas de oxígeno por minuto</button>
+<button class="opcion" data-k="b" type="button">La temperatura del agua</button>
+<button class="opcion" data-k="c" type="button">La distancia entre la lámpara y la planta</button>
+<button class="opcion" data-k="d" type="button">El tipo de planta utilizada</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<div aria-label="Burbujas de oxígeno por minuto según la distancia a la lámpara (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Burbujas de oxígeno por minuto según la distancia a la lámpara</caption>
+<thead><tr><th scope="col">Distancia a la lámpara (cm)</th><th scope="col">Burbujas por minuto (media)</th></tr></thead>
+<tbody>
+<tr><th scope="row">10</th><td>30</td></tr>
+<tr><th scope="row">20</th><td>18</td></tr>
+<tr><th scope="row">30</th><td>9</td></tr>
+<tr><th scope="row">40</th><td>4</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 2 · SP.3.b · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p13">¿Qué conclusión apoyan estos resultados?</p>
+<div aria-labelledby="t-p13" class="opciones" data-practica="p13" role="group">
+<button class="opcion" data-k="a" type="button">Cuanto más cerca está la lámpara, más burbujas: dentro de este rango, más luz acelera la fotosíntesis.</button>
+<button class="opcion" data-k="b" type="button">La luz es el único factor que afecta la fotosíntesis.</button>
+<button class="opcion" data-k="c" type="button">A 50 cm la planta dejará de producir oxígeno por completo.</button>
+<button class="opcion" data-k="d" type="button">El agua se calentó cerca de la lámpara, y eso produjo las burbujas.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p13" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 3 · SP.2.c · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p14"><em>Dos estudiantes quieren saber si una bebida deportiva ayuda a correr más rápido 100 metros.<br><strong>Diseño A:</strong> 10 voluntarios del equipo de atletismo toman la bebida y corren; sus tiempos se comparan con los suyos del mes pasado.<br><strong>Diseño B:</strong> 40 estudiantes se reparten al azar. La mitad toma la bebida y la otra mitad, agua con sabor de aspecto y gusto idénticos. Todos corren el mismo día, en la misma pista.</em><br>¿Qué afirmación compara correctamente los diseños?</p>
+<div aria-labelledby="t-p14" class="opciones" data-practica="p14" role="group">
+<button class="opcion" data-k="a" type="button">El diseño A es mejor, porque los corredores tienen experiencia.</button>
+<button class="opcion" data-k="b" type="button">El diseño B es mejor: tiene grupo de control con placebo, una muestra mayor, grupos al azar y las mismas condiciones para todos.</button>
+<button class="opcion" data-k="c" type="button">Los dos son igual de buenos, porque ambos miden el tiempo de carrera.</button>
+<button class="opcion" data-k="d" type="button">El diseño B es peor, porque algunos estudiantes no reciben la bebida.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p14" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 4 · SP.2.a · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p15"><em>Un estudiante cronometra 10 oscilaciones del mismo péndulo cuatro veces, sin cambiar nada: 14.1 s, 14.2 s, 18.8 s y 14.0 s.</em><br>¿Qué es lo mejor que puede hacer a continuación?</p>
+<div aria-labelledby="t-p15" class="opciones" data-practica="p15" role="group">
+<button class="opcion" data-k="a" type="button">Promediar los cuatro tiempos, porque todas las mediciones valen lo mismo.</button>
+<button class="opcion" data-k="b" type="button">Concluir que el péndulo se volvió más lento en el tercer ensayo.</button>
+<button class="opcion" data-k="c" type="button">Buscar un error de medición en el tercer ensayo (por ejemplo, contar oscilaciones de más) y repetirlo antes de usar los datos.</button>
+<button class="opcion" data-k="d" type="button">Usar una cuerda más larga para que los tiempos se parezcan más.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p15" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 5 · SP.3.d · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p16"><em>Una ciudad quiere estimar qué porcentaje de sus 80,000 viviendas todavía tiene tuberías de plomo. Solo puede revisar 400 viviendas.</em><br>¿Qué muestra daría la estimación más confiable?</p>
+<div aria-labelledby="t-p16" class="opciones" data-practica="p16" role="group">
+<button class="opcion" data-k="a" type="button">Las 400 viviendas más nuevas de la ciudad</button>
+<button class="opcion" data-k="b" type="button">Las 400 primeras personas que llamen a una línea telefónica para pedir la prueba</button>
+<button class="opcion" data-k="c" type="button">400 viviendas del barrio más antiguo</button>
+<button class="opcion" data-k="d" type="button">400 direcciones elegidas al azar en todos los barrios</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p16" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Tarea</h2>
+<p>Es práctica independiente. Calcule una hora, con el cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-1-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios salen en un orden distinto cada vez. Siga hasta acertar 8 de cada 10 al primer intento. El marcador de cada actividad lleva la cuenta.</li>
+<li><strong>La plantilla de tres columnas.</strong> Dibuje en una hoja tres columnas: qué se cambia, qué se mide y qué se mantiene igual. Llénelas con dos experimentos de esta lección y con el invernadero. En cada caso, compruebe que la variable dependiente realmente depende de la independiente.</li>
+<li><strong>El informe del auditor.</strong> Tome el estudio de la infusión y escriba un informe breve con tres puntos: qué variable no se controló, qué le falta al grupo de control y qué cambiaría usted.</li>
+<li><strong>Rediseñe el experimento.</strong> Proponga una versión corregida: cuántos participantes, cómo se asignarían a los grupos, qué recibiría el grupo de control y qué condiciones se igualarían. Después compruebe que su corrección elimina de verdad cada fuente de error que señaló.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Quiz de práctica</h2>
+<p>Responda las <strong>12 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Pregunta 1</p>
+<p class="pregunta" id="t-q1">Se estudia si la cantidad de fertilizante afecta la altura de las plantas. La variable independiente es…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La altura del tallo</button><button class="opcion" data-k="b" type="button">La cantidad de fertilizante</button><button class="opcion" data-k="c" type="button">El tipo de tierra</button><button class="opcion" data-k="d" type="button">El número de plantas</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Pregunta 2</p>
+<p class="pregunta" id="t-q2">En ese mismo estudio, la variable dependiente es…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La altura del tallo</button><button class="opcion" data-k="b" type="button">La cantidad de fertilizante</button><button class="opcion" data-k="c" type="button">La cantidad de luz</button><button class="opcion" data-k="d" type="button">La especie de planta</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Pregunta 3</p>
+<p class="pregunta" id="t-q3">Se mide cuánta sal se disuelve en agua a distintas temperaturas. ¿Qué debe permanecer constante?</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La temperatura del agua</button><button class="opcion" data-k="b" type="button">La cantidad de sal disuelta</button><button class="opcion" data-k="c" type="button">El volumen de agua de cada muestra</button><button class="opcion" data-k="d" type="button">El resultado del experimento</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Pregunta 4</p>
+<p class="pregunta" id="t-q4">Un investigador cambia a la vez el tipo de suelo y la cantidad de agua. La consecuencia es que…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">El experimento será más completo</button><button class="opcion" data-k="b" type="button">No podrá saber cuál de los dos factores causó el resultado</button><button class="opcion" data-k="c" type="button">La variable dependiente desaparece</button><button class="opcion" data-k="d" type="button">Necesitará menos participantes</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Pregunta 5</p>
+<p class="pregunta" id="t-q5">¿Cuál es la función del grupo de control?</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Duplicar la cantidad de datos recogidos</button><button class="opcion" data-k="b" type="button">Verificar que los instrumentos midan bien</button><button class="opcion" data-k="c" type="button">Servir de punto de comparación sin recibir el tratamiento</button><button class="opcion" data-k="d" type="button">Sustituir a los participantes que abandonan</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Pregunta 6</p>
+<p class="pregunta" id="t-q6">En un estudio sobre una vacuna, el grupo de control es el que…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Recibe una sustancia sin efecto en lugar de la vacuna</button><button class="opcion" data-k="b" type="button">Recibe una dosis doble de la vacuna</button><button class="opcion" data-k="c" type="button">Se encarga de anotar los resultados</button><button class="opcion" data-k="d" type="button">Presenta más síntomas al inicio</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Pregunta 7</p>
+<p class="pregunta" id="t-q7">Si un experimento carece de grupo de control, ocurre que…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Los datos recogidos son falsos</button><button class="opcion" data-k="b" type="button">No se puede atribuir el resultado al tratamiento</button><button class="opcion" data-k="c" type="button">La variable independiente cambia sola</button><button class="opcion" data-k="d" type="button">El estudio dura más tiempo del previsto</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Pregunta 8</p>
+<p class="pregunta" id="t-q8">«Se probó el método con cuatro estudiantes y los cuatro mejoraron». El fallo principal es…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La variable dependiente está mal definida</button><button class="opcion" data-k="b" type="button">Falta una hipótesis en forma condicional</button><button class="opcion" data-k="c" type="button">La muestra es demasiado pequeña para generalizar</button><button class="opcion" data-k="d" type="button">El estudio no midió el tiempo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Pregunta 9</p>
+<p class="pregunta" id="t-q9">«Los participantes decidieron por sí mismos en qué grupo entrar». Esto introduce…</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Sesgo de selección</button><button class="opcion" data-k="b" type="button">Una constante adicional</button><button class="opcion" data-k="c" type="button">Una réplica del experimento</button><button class="opcion" data-k="d" type="button">Una variable dependiente doble</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Pregunta 10</p>
+<p class="pregunta" id="t-q10">Un grupo de plantas se regó con agua de la llave y el otro con agua destilada, pero además el primero estuvo junto a una ventana. El origen del agua…</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Es la única explicación posible del resultado</button><button class="opcion" data-k="b" type="button">Es una constante del diseño</button><button class="opcion" data-k="c" type="button">Convierte el estudio en una réplica</button><button class="opcion" data-k="d" type="button">Se confunde con la luz, que no fue controlada</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Pregunta 11</p>
+<p class="pregunta" id="t-q11">Un estudio afirma que un suplemento aumenta la fuerza, pero todos los participantes entrenaron durante el mes. El entrenamiento es…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La variable dependiente</button><button class="opcion" data-k="b" type="button">Una variable no controlada que explica igual de bien el resultado</button><button class="opcion" data-k="c" type="button">El grupo de control del estudio</button><button class="opcion" data-k="d" type="button">Una constante correctamente fijada</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Pregunta 12</p>
+<p class="pregunta" id="t-q12">¿Cuál de estas correcciones resuelve la ausencia de grupo de control?</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Aumentar la duración del estudio a seis meses</button><button class="opcion" data-k="b" type="button">Medir la variable dependiente con un instrumento más preciso</button><button class="opcion" data-k="c" type="button">Añadir un grupo equivalente que no reciba el tratamiento</button><button class="opcion" data-k="d" type="button">Repetir el mismo experimento con los mismos participantes</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz otra vez</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">8</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea y úsela <strong>después</strong> para revisar su trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Destrezas de la lección y cómo se ve cada nivel: lo domino, voy avanzando y necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Clasifica las variables</th><td>Nombro la independiente, la dependiente y las constantes, y explico cuál depende de cuál.</td><td>Identifico una de las dos, pero no distingo las constantes.</td><td>Confundo la independiente con la dependiente.</td></tr>
+<tr><th scope="row">Explica la función del grupo de control</th><td>Lo identifico, explico que es la comparación y digo qué no se podría concluir sin él.</td><td>Lo identifico, pero lo explico de forma imprecisa.</td><td>No reconozco el grupo de control.</td></tr>
+<tr><th scope="row">Detecta una fuente de error y la justifica</th><td>Encuentro varias y digo cuál es la más grave.</td><td>Señalo una, pero no explico por qué daña la conclusión.</td><td>No veo fallos en un diseño que los tiene.</td></tr>
+<tr><th scope="row">Propone una corrección</th><td>Mi corrección es concreta, elimina el error y no crea uno nuevo.</td><td>Mi corrección es general («hacerlo mejor») y no dice cómo.</td><td>No propongo corrección, o no resuelve el problema.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección queda instalado el <strong>diseño experimental</strong>: las tres clases de variables, la función del <strong>grupo de control</strong> y las cuatro <strong>fuentes de error</strong> que el examen presenta una y otra vez. A partir de aquí, ningún texto científico debería leerse sin preguntar qué se cambió, qué se midió y con qué se comparó.</p><p>La Lección 1.3 cierra el Tema 1 y pasa del diseño a la lectura: cómo deducir el significado de un término desconocido por sus raíces, cómo seguir un protocolo de ocho pasos sin invertir ni omitir ninguno y cómo reconocer la estructura con que un autor organizó su texto.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: <a href="leccion-1-3.html">Lección 1.3 · Leer ciencia: vocabulario técnico y procedimientos de pasos múltiples</a></p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Palabras clave</h2>
+<dl class="glosario">
+<dt>Variable independiente</dt><dd>Lo que el investigador cambia a propósito.</dd>
+<dt>Variable dependiente</dt><dd>Lo que se mide para ver si responde al cambio.</dd>
+<dt>Constantes</dt><dd>Todo lo que se mantiene igual a propósito.</dd>
+<dt>Grupo de control</dt><dd>El grupo que no recibe el tratamiento; es el punto de comparación.</dd>
+<dt>Placebo</dt><dd>Tratamiento de apariencia idéntica pero sin principio activo.</dd>
+<dt>Muestra</dt><dd>El conjunto de casos o personas que se estudia.</dd>
+<dt>Sesgo de selección</dt><dd>Grupos que ya diferían antes del estudio porque no se formaron al azar.</dd>
+<dt>Variable confusora</dt><dd>Factor que cambia junto con el tratamiento y confunde la conclusión.</dd>
+<dt>Réplica</dt><dd>Repetición de un experimento para comprobar su resultado.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Ciencias · Tema 1 · Lección 1.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "La calificación se mide al final: ¿depende de otra cosa?",
+    "c": "La dificultad debe ser igual para todos. ¿Qué cambia el estudio a propósito?"
+   },
+   "right": "El <strong>tiempo de estudio</strong> es lo que se cambia a propósito; la calificación depende de él.",
+   "solution": "El <strong>tiempo de estudio</strong> es lo que se cambia a propósito; la calificación depende de él."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "El número de estudiantes es parte del diseño, no el resultado.",
+    "b": "Esa es la que se cambia. ¿Cuál se mide al final?"
+   },
+   "right": "La <strong>calificación</strong> se mide al final y depende del tiempo de estudio.",
+   "solution": "La <strong>calificación</strong> se mide al final y depende del tiempo de estudio."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "La temperatura es lo que el estudio cambia a propósito.",
+    "c": "Ese es el resultado que se mide; no se puede mantener igual."
+   },
+   "right": "El <strong>volumen de agua y el tipo de azúcar</strong> deben ser iguales en todos los vasos, para que la única diferencia sea la temperatura.",
+   "solution": "El <strong>volumen de agua y el tipo de azúcar</strong> deben ser iguales en todos los vasos, para que la única diferencia sea la temperatura."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Ahorrar tiempo no sirve si el resultado no se puede explicar. Piense en la regla «una sola a la vez».",
+    "b": "Las plantas se pueden seguir midiendo. El problema es explicar el resultado."
+   },
+   "right": "Si cambian la luz y el agua, el resultado podría venir de una, de la otra o de las dos. No hay manera de saberlo.",
+   "solution": "Si cambian la luz y el agua, el resultado podría venir de una, de la otra o de las dos. No hay manera de saberlo."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "Las horas de sueño son el resultado: son la variable dependiente.",
+    "c": "El número de personas es parte del diseño, no lo que se prueba."
+   },
+   "right": "La empresa quiere saber el efecto del <strong>consumo de la infusión</strong>: eso es lo que cambia a propósito.",
+   "solution": "La empresa quiere saber el efecto del <strong>consumo de la infusión</strong>: eso es lo que cambia a propósito."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Dos semanas podrían bastar para ver un efecto. Pregúntese: ¿con qué se comparan las 6.8 horas?",
+    "b": "Anotarlo por la mañana es razonable. Busque lo que falta en el diseño."
+   },
+   "right": "Sin un grupo que no tomara la infusión no hay con qué comparar. El sueño podría haber mejorado de todos modos.",
+   "solution": "Sin un grupo que no tomara la infusión no hay con qué comparar. El sueño podría haber mejorado de todos modos."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "Una constante es igual para todos los grupos. Aquí hay un solo grupo, y los consejos por sí solos podrían cambiar el sueño.",
+    "c": "Una réplica repite el experimento entero. El folleto es algo adicional que ocurrió al mismo tiempo."
+   },
+   "right": "Los consejos (misma hora, sin pantallas, sin cafeína) podrían explicar por sí solos la mejoría. Es una <strong>variable no controlada</strong>.",
+   "solution": "Los consejos (misma hora, sin pantallas, sin cafeína) podrían explicar por sí solos la mejoría. Es una <strong>variable no controlada</strong>."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "Más participantes ayudan al tamaño de la muestra, pero eso no es lo que hace que un grupo sea de control.",
+    "c": "Comprobar instrumentos es calibrarlos, no el grupo de control."
+   },
+   "right": "El grupo de control muestra lo que ocurre <strong>sin</strong> el tratamiento, para poder comparar.",
+   "solution": "El grupo de control muestra lo que ocurre <strong>sin</strong> el tratamiento, para poder comparar."
+  },
+  "p9": {
+   "ok": "c",
+   "hints": {
+    "a": "Respetuoso sí, pero quienes eligen la tutoría quizá ya estaban más motivados.",
+    "b": "Aquí no se describe la variable dependiente. Fíjese en cómo se formaron los grupos."
+   },
+   "right": "Cuando cada quien elige su grupo, los grupos difieren desde el principio. Es <strong>sesgo de selección</strong>; se corrige asignando al azar.",
+   "solution": "Cuando cada quien elige su grupo, los grupos difieren desde el principio. Es <strong>sesgo de selección</strong>; se corrige asignando al azar."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "La variable independiente está: tomar el medicamento. Cuente los pacientes.",
+    "c": "La mejoría se puede medir (temperatura, escala de dolor, análisis). Fíjese en el número de casos."
+   },
+   "right": "Con tres casos, el azar basta para producir cualquier resultado. Hace falta una muestra mayor (y un grupo de control).",
+   "solution": "Con tres casos, el azar basta para producir cualquier resultado. Hace falta una muestra mayor (y un grupo de control)."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "La variable dependiente es lo que se mide al final, como la altura de las plantas.",
+    "c": "Una constante es igual en los dos grupos. ¿La luz es la misma junto a la ventana y al fondo?"
+   },
+   "right": "La luz es distinta en los dos grupos, así que podría explicar cualquier diferencia. Es una <strong>variable no controlada</strong>.",
+   "solution": "La luz es distinta en los dos grupos, así que podría explicar cualquier diferencia. Es una <strong>variable no controlada</strong>."
+  },
+  "p12": {
+   "ok": "c",
+   "hints": {
+    "a": "Las burbujas se cuentan al final: son la variable dependiente.",
+    "b": "El agua está a 22 °C en todos los tubos: es una constante.",
+    "d": "Las cuatro ramas son de <em>Elodea</em>: es una constante."
+   },
+   "right": "Los estudiantes cambian a propósito la distancia (y con ella, la cantidad de luz). Las burbujas son la variable dependiente; la temperatura y la especie son constantes.",
+   "solution": "Los estudiantes cambian a propósito la distancia (y con ella, la cantidad de luz). Las burbujas son la variable dependiente; la temperatura y la especie son constantes."
+  },
+  "p13": {
+   "ok": "a",
+   "hints": {
+    "b": "El estudio solo cambió la luz. No puede descartar otros factores.",
+    "c": "La tendencia baja, pero nada en los datos dice que llegue exactamente a cero a 50 cm.",
+    "d": "El texto dice que todos los tubos se mantuvieron a 22 °C."
+   },
+   "right": "Los datos muestran un patrón claro (30, 18, 9 y 4 burbujas) a medida que la lámpara se aleja. Una buena conclusión se queda dentro del rango que se probó.",
+   "solution": "Los datos muestran un patrón claro (30, 18, 9 y 4 burbujas) a medida que la lámpara se aleja. Una buena conclusión se queda dentro del rango que se probó."
+  },
+  "p14": {
+   "ok": "b",
+   "hints": {
+    "a": "La experiencia no arregla los problemas: un mes de entrenamiento, el clima o la pista podrían explicar un tiempo mejor.",
+    "c": "Medir lo mismo no basta. Compare quién está en cada grupo y con qué se compara.",
+    "d": "Los estudiantes sin la bebida son el grupo de control: hacen posible la comparación."
+   },
+   "right": "El diseño A tiene una muestra pequeña y seleccionada, y compara con otro día (el entrenamiento y el clima podrían explicar el cambio). El diseño B corrige los cuatro problemas.",
+   "solution": "El diseño A tiene una muestra pequeña y seleccionada, y compara con otro día (el entrenamiento y el clima podrían explicar el cambio). El diseño B corrige los cuatro problemas."
+  },
+  "p15": {
+   "ok": "c",
+   "hints": {
+    "a": "Un valor muy distinto subiría el promedio y escondería el período real.",
+    "b": "Nada cambió en el montaje. Un cambio repentino sin causa apunta a la medición, no al péndulo.",
+    "d": "Cambiar la cuerda cambia el experimento. El problema es una lectura extraña."
+   },
+   "right": "Tres valores son casi iguales (unos 14.1 s) y uno está muy lejos. Eso apunta a un error en ese ensayo, como contar 13 oscilaciones en lugar de 10. Hay que revisarlo y repetir el ensayo.",
+   "solution": "Tres valores son casi iguales (unos 14.1 s) y uno está muy lejos. Eso apunta a un error en ese ensayo, como contar 13 oscilaciones en lugar de 10. Hay que revisarlo y repetir el ensayo."
+  },
+  "p16": {
+   "ok": "d",
+   "hints": {
+    "a": "Las viviendas nuevas se construyeron cuando ya no se usaba plomo. La estimación saldría demasiado baja.",
+    "b": "Quien llama suele estar ya preocupado por su agua. Es sesgo de selección.",
+    "c": "Un solo barrio no representa a toda la ciudad. La estimación saldría demasiado alta."
+   },
+   "right": "Una muestra al azar de todos los barrios da a cada vivienda la misma probabilidad de ser elegida, así que la muestra se parece a toda la ciudad.",
+   "solution": "Una muestra al azar de todos los barrios da a cada vivienda la misma probabilidad de ser elegida, así que la muestra se parece a toda la ciudad."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "b",
+   "hints": {
+    "a": "La altura se mide al final: es el resultado.",
+    "c": "La tierra debe mantenerse igual.",
+    "d": "El número de plantas es parte del diseño, no lo que se prueba."
+   },
+   "solution": "El fertilizante es lo que el estudio cambia a propósito."
+  },
+  "2": {
+   "ok": "a",
+   "hints": {
+    "b": "Esa se cambia a propósito. ¿Cuál se mide?",
+    "c": "La luz debe ser una constante.",
+    "d": "La especie debe ser la misma en los dos grupos."
+   },
+   "solution": "La altura «depende» del fertilizante: es la variable dependiente."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "La temperatura es lo que se cambia a propósito.",
+    "b": "Eso es el resultado que se mide.",
+    "d": "El resultado no se puede fijar de antemano."
+   },
+   "solution": "Si un vaso tuviera más agua, disolvería más sal aun a la misma temperatura. El volumen de agua debe ser igual."
+  },
+  "4": {
+   "ok": "b",
+   "hints": {
+    "a": "Más cambios no lo hacen más completo: lo hacen imposible de explicar.",
+    "c": "Todavía puede medir las plantas.",
+    "d": "El número de participantes no es el problema aquí."
+   },
+   "solution": "Dos cambios a la vez: el resultado podría venir de cualquiera de los dos."
+  },
+  "5": {
+   "ok": "c",
+   "hints": {
+    "a": "Más datos no es la razón de su existencia.",
+    "b": "Eso es calibrar, no el grupo de control.",
+    "d": "El grupo de control no es un equipo de reserva."
+   },
+   "solution": "Muestra lo que ocurre sin el tratamiento, para que se vea la diferencia."
+  },
+  "6": {
+   "ok": "a",
+   "hints": {
+    "b": "Una dosis doble sigue siendo tratamiento.",
+    "c": "Quienes anotan son investigadores, no un grupo del estudio.",
+    "d": "Los grupos deben ser parecidos al inicio."
+   },
+   "solution": "Recibe un placebo, para que la única diferencia sea la vacuna misma."
+  },
+  "7": {
+   "ok": "b",
+   "hints": {
+    "a": "Los datos pueden ser correctos: el problema es qué significan.",
+    "c": "El investigador sigue controlando la variable independiente.",
+    "d": "El tiempo no tiene que ver."
+   },
+   "solution": "Sin comparación, el cambio podría haber ocurrido de todos modos."
+  },
+  "8": {
+   "ok": "c",
+   "hints": {
+    "a": "«Mejoraron» se puede medir con una prueba. Cuente los estudiantes.",
+    "b": "La hipótesis no es el problema principal. ¿Cuántos estudiantes hubo?",
+    "d": "El tiempo no es el problema."
+   },
+   "solution": "Cuatro casos son muy pocos: el azar podría explicarlo."
+  },
+  "9": {
+   "ok": "a",
+   "hints": {
+    "b": "Elegir el grupo no mantiene nada igual: hace que los grupos difieran.",
+    "c": "Una réplica repite el estudio entero.",
+    "d": "Aquí no se mide nada dos veces."
+   },
+   "solution": "Los grupos formados por elección difieren desde el inicio: es sesgo de selección."
+  },
+  "10": {
+   "ok": "d",
+   "hints": {
+    "a": "Algo más cambió entre los grupos. ¿Qué?",
+    "b": "El origen del agua es lo que se prueba, no una constante.",
+    "c": "Una réplica repite el estudio igual."
+   },
+   "solution": "Cambiaron el agua y la luz: el efecto del agua no se puede separar del de la luz."
+  },
+  "11": {
+   "ok": "b",
+   "hints": {
+    "a": "La variable dependiente es la fuerza que se mide.",
+    "c": "Un grupo de control es un grupo de personas, no una actividad.",
+    "d": "No hay un grupo sin entrenamiento con el que comparar: el entrenamiento no se controló."
+   },
+   "solution": "El entrenamiento por sí solo aumenta la fuerza: podría explicar todo el resultado."
+  },
+  "12": {
+   "ok": "c",
+   "hints": {
+    "a": "Un estudio más largo sigue sin tener con qué comparar.",
+    "b": "Medir mejor no crea una comparación.",
+    "d": "Repetirlo igual repite el mismo fallo."
+   },
+   "solution": "Solo un grupo sin tratamiento da algo con qué comparar."
+  }
+ },
+ "next": "Lección 1.3",
+ "review": "la lección"
+};
+</script>
+<script src="/math/lesson.js"></script>
+</body>
+</html>

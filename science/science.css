@@ -1,0 +1,76 @@
+/* LearnGED · Science: color of each area and the science activities.
+   Loaded after /math/lesson.css or /math/practice.css. The color comes from <body data-area>. */
+body[data-area="skills"]{--c1:#1f6066;--c2:#2a7f86;--c3:#e3f3f4;}
+body[data-area="life"]{--c1:#1b5e20;--c2:#2e7d32;--c3:#e8f5e9;}
+body[data-area="physical"]{--c1:#1e3a8a;--c2:#2948a8;--c3:#e6ebf8;}
+body[data-area="earth"]{--c1:#5b21b6;--c2:#7c3aed;--c3:#f1eafd;}
+body[data-area="ged"]{--c1:#8f3f1f;--c2:#c0582f;--c3:#fbece5;}
+body[data-area]{--azul:var(--c2);--azul-osc:var(--c1);--azul-cl:var(--c3);--tema:var(--c2);--tema-d:var(--c1);--tema-bg:var(--c3);--tema-bg2:var(--c3);--acento:var(--c1);}
+body[data-area] header.principal{background:linear-gradient(135deg,var(--c1) 0%,var(--c2) 100%);box-shadow:0 6px 22px rgba(0,0,0,.18);}
+body[data-area] .lg-bar{border-bottom-color:var(--c2);}
+
+/* chips with the science practices */
+.chip-sp{font-weight:700;}
+
+/* Scientific reading box */
+.lectura{background:#fffdf7;border:1px solid #e4dcc4;border-left:6px solid var(--c2,#2a7f86);border-radius:12px;padding:18px 22px;margin:18px 0;}
+.lectura h3{margin:0 0 8px;color:var(--c1,#1f6066);font-size:19px;}
+.lectura .texto p{margin:0 0 10px;}
+.lectura .fuente{font-size:14px;color:#5b6675;margin-top:6px;}
+
+/* Word roots */
+.raiz{font-weight:700;color:var(--c1,#1f6066);background:var(--c3,#e3f3f4);border-radius:4px;padding:0 3px;}
+
+/* Six stages cycle */
+.ciclo{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:16px 0;counter-reset:e;list-style:none;padding:0;}
+.ciclo li{background:#fff;border:2px solid var(--c2,#2a7f86);border-radius:12px;padding:10px 6px;text-align:center;font-weight:700;font-size:15px;line-height:1.3;position:relative;}
+.ciclo li .n{display:block;width:30px;height:30px;line-height:30px;margin:0 auto 6px;border-radius:50%;background:var(--c2,#2a7f86);color:#fff;}
+.ciclo li:not(:last-child)::after{content:"›";position:absolute;right:-9px;top:38%;color:var(--c1,#1f6066);font-size:20px;}
+.ciclo-vuelta{text-align:center;font-size:14px;color:#5b6675;margin-top:-6px;}
+@media (max-width:640px){ .ciclo{grid-template-columns:repeat(3,1fr);} .ciclo li:nth-child(3)::after{content:"";} }
+
+/* Ordering activity */
+.practica ol.lista-orden,ol.lista-orden{list-style:none !important;padding:0 !important;margin:12px 0;}
+.lista-orden li::marker{content:"";}
+.paso-orden{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #cfd8dc;border-radius:10px;padding:8px 10px;margin:6px 0;}
+.paso-orden .po-num{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tema,#2a7f86);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.paso-orden .po-txt{flex:1;}
+.paso-orden .po-btn{flex:none;display:flex;gap:4px;}
+.paso-orden .po-btn button{min-width:44px;min-height:40px;padding:4px 8px;}
+.paso-orden.ok{border-color:#2e7d32;background:#e8f5e9;}
+.paso-orden.revisar{border-color:#b26a00;background:#fff8e1;}
+
+/* Sorting activity */
+.pieza{background:#fff;border:1px solid #cfd8dc;border-radius:10px;padding:10px 12px;margin:8px 0;}
+.pieza .pz-txt{margin:0 0 6px;}
+.pieza .pz-lab{font-size:14px;color:#5b6675;}
+.pieza select,.frase-huecos select,.grupo-inv select{font:inherit;font-size:16px;padding:6px 8px;border:2px solid #90a4ae;border-radius:8px;background:#fff;max-width:100%;}
+.pieza .pz-fb{margin:6px 0 0;font-size:15px;}
+.pieza .pz-fb:empty{display:none;}
+.pieza.ok{border-color:#2e7d32;background:#e8f5e9;}
+.pieza.revisar{border-color:#b26a00;background:#fff8e1;}
+.pieza.corregida{border-color:#1565c0;background:#e3f2fd;}
+.frase-huecos{font-size:18px;line-height:2.2;}
+.frase-huecos select.revisar{border-color:#b26a00;background:#fff8e1;}
+
+/* Greenhouse */
+.mesa-inv{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.grupo-inv{border:2px solid var(--tema,#2a7f86);border-radius:12px;padding:10px 14px;background:#fff;}
+.grupo-inv legend{font-weight:700;padding:0 6px;color:var(--tema-d,#1f6066);}
+.campo-inv{margin:8px 0;}
+.campo-inv label{display:block;font-weight:600;font-size:15px;margin-bottom:2px;}
+.campo-inv select{width:100%;}
+@media (max-width:640px){ .mesa-inv{grid-template-columns:1fr;} }
+.cuaderno{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px;}
+.cuaderno th,.cuaderno td{border:1px solid #cfd8dc;padding:6px 8px;text-align:left;}
+.cuaderno thead th{background:var(--tema-bg,#e3f3f4);}
+.cap-oculto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+.chip-area{display:inline-block;font-size:13px;font-weight:700;border-radius:999px;padding:1px 10px;background:var(--tema-bg,#e3f3f4);color:var(--tema-d,#1f6066);}
+.enun .cuaderno{font-weight:400;margin:8px 0;}
+.enun .cuaderno caption{text-align:left;font-weight:700;font-size:14px;padding-bottom:4px;}
+body[data-area] .practica .enun{font-weight:400;}
+body[data-area] .practica .enun strong{font-weight:700;}
+.std-meta{display:inline-block;margin-top:2px;font-size:13.5px;color:#5b6675;}
+.std-clave li{font-size:14.5px;}
+.tipo-ged{border:2px solid var(--c2,#2a7f86);border-radius:14px;padding:4px 16px 10px;margin:18px 0;background:#fff;}
+.tipo-ged > p.nota-ged{font-size:15px;color:#5b6675;}

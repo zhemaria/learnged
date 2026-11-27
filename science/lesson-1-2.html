@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<!-- LearnGED · Science · Lesson 1.2 (English) — built by tools/build_sci_1_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 1.2 · Variables, control groups, and sources of error · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="es" href="/es/ciencias/leccion-1-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Science · all lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Science · Topic 1 — The scientific method and research design</p>
+<h1>Lesson 1.2 · Variables, control groups, and sources of error</h1>
+<p class="lema">A good experiment changes one thing, measures one thing, and compares.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip chip-sp">SP.2 · Investigation design</span><span class="chip chip-sp">SP.4 · Evaluating conclusions</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Identify</strong> the independent variable, the dependent variable, and the constants in an experiment.</li>
+<li><strong>Explain</strong> the job of the control group and find it in a described experiment.</li>
+<li><strong>Point out</strong> at least two sources of error in a flawed design: sample size, selection bias, no control group, or an uncontrolled variable.</li>
+<li><strong>Explain</strong> why a conclusion does not hold up with the design that produced it.</li>
+<li><strong>Propose</strong> a workable fix for a badly designed experiment.</li>
+</ul>
+</div>
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Science Practices of the GED® test that this lesson works on:</p><ul><li><span class="std-cod std-dir">SP.2.a</span> Identify possible sources of error and alter the design of an investigation to ameliorate that error.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R8 · NRC P3, P4 · Math M4</span></li><li><span class="std-cod std-dir">SP.2.c</span> Identify the strengths and weaknesses of one or more scientific investigation (i.e., experimental or observational) designs.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R8, R9 · NRC P2, P5 · Math M3, M4</span></li><li><span class="std-cod std-dir">SP.2.e</span> Identify and interpret independent and dependent variables in scientific investigations.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R5 · NRC P2, P4 · Math M4</span></li><li><span class="std-cod std-dir">SP.3.b</span> Reason from data or evidence to a conclusion.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R1, R2, R3 · NRC P1, P6, P7 · Math M3, M4, M7, M8</span></li><li><span class="std-cod std-dir">SP.3.d</span> Use sampling techniques to answer scientific questions.<br><span class="std-meta">Category 3 · DOK 2–3 · NRC P4, P5 · Math S-CP, 7.SP, M4, M7, M8</span></li><li><span class="std-cod std-dir">SP.4.a</span> Evaluate whether a conclusion or theory is supported or challenged by particular data or evidence.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R8 · NRC P4, P6 · Math M3, M7, M8</span></li></ul>
+<p class="std-tit">It also builds the base for:</p><ul><li><span class="std-cod std-base">SP.2.d</span> Design a scientific investigation.<br><span class="std-meta">Category 2 · DOK 1–3 · CCR W7 · NRC P3, P5 · Math 3.MD, M4, M8</span></li></ul>
+<p class="std-tit">Reporting categories of the GED® Science test:</p><ul><li>Category 2 · Applying scientific processes and procedural concepts (40% of the test)</li><li>Category 3 · Reasoning quantitatively and interpreting data in scientific contexts (30% of the test)</li></ul>
+<p class="std-tit">GED® Science content topics:</p>
+<p>The skills in this lesson are used with every content topic of the test: life science, physical science, and Earth and space science.</p>
+<p class="std-tit">What the aligned codes mean (CCR, NRC, and math):</p><ul class="std-clave"><li><span class="std-cod std-ccr">R8</span> CCR Reading 8: evaluate the claims in a text and the evidence behind them.</li><li><span class="std-cod std-ccr">P3</span> NRC practice 3: plan and carry out investigations.</li><li><span class="std-cod std-ccr">P4</span> NRC practice 4: analyze and interpret data.</li><li><span class="std-cod std-ccr">M4</span> Math practice 4: model with mathematics.</li><li><span class="std-cod std-ccr">R9</span> CCR Reading 9: compare how two texts treat the same topic.</li><li><span class="std-cod std-ccr">P2</span> NRC practice 2: develop and use models.</li><li><span class="std-cod std-ccr">P5</span> NRC practice 5: use mathematics and computational thinking.</li><li><span class="std-cod std-ccr">M3</span> Math practice 3: build arguments and critique the reasoning of others.</li><li><span class="std-cod std-ccr">R5</span> CCR Reading 5: analyze how a text is structured.</li><li><span class="std-cod std-ccr">R1</span> CCR Reading 1: read closely and cite specific evidence from the text.</li><li><span class="std-cod std-ccr">R2</span> CCR Reading 2: find the central ideas and summarize them.</li><li><span class="std-cod std-ccr">R3</span> CCR Reading 3: analyze how ideas, events, or steps develop and interact.</li><li><span class="std-cod std-ccr">P1</span> NRC practice 1: ask questions.</li><li><span class="std-cod std-ccr">P6</span> NRC practice 6: construct explanations.</li><li><span class="std-cod std-ccr">P7</span> NRC practice 7: argue from evidence.</li><li><span class="std-cod std-ccr">M7</span> Math practice 7: look for and use structure.</li><li><span class="std-cod std-ccr">M8</span> Math practice 8: look for patterns in repeated reasoning.</li><li><span class="std-cod std-ccr">S-CP</span> Statistics: conditional probability and compound events.</li><li><span class="std-cod std-ccr">7.SP</span> Math, statistics and probability (grade 7): samples and probability.</li><li><span class="std-cod std-ccr">W7</span> CCR Writing 7: carry out short research projects.</li><li><span class="std-cod std-ccr">3.MD</span> Math, measurement and data (grade 3): measure and choose units.</li></ul>
+<p class="std-fuente">DOK (depth of knowledge): 1 = recall, 2 = use a skill or concept, 3 = reason with evidence. Source of the practices, categories, DOK ranges, and alignment: GED Testing Service, <cite>Assessment Guide for Educators: Science</cite> (2016; Science Practices updated in 2020). The CCR anchor standards are in Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>; the NRC practices are in <cite>A Framework for K-12 Science Education</cite> (National Research Council, 2012).</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s1">The three kinds of variables</a></li>
+<li><a href="#s2">The control group: the measuring stick</a></li>
+<li><a href="#s3">Four sources of error you must be able to find</a></li>
+<li><a href="#s4">Science reading</a></li>
+<li><a href="#s5">GED-style questions</a></li>
+<li><a href="#s-tarea">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-lista">Self-check checklist</a></li>
+<li><a href="#s-sigue">Coming next</a></li>
+<li><a href="#s-palabras">Key words</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Before you start</span>
+<p>Lesson 1.1 went through the six stages of an investigation and stopped at the hypothesis. This lesson goes into stage four: the <strong>design</strong>. A well-written hypothesis is useless if the experiment that tests it cannot tell what caused what. Here you will learn how to build a design that can, and how to spot one that cannot.</p><p><strong>How to study this lesson:</strong> draw three columns on a sheet: <em>what is changed</em>, <em>what is measured</em>, <em>what stays the same</em>. For every experiment, fill in the three columns before you answer any question. If a column is empty or unclear, that is usually where the flaw is.</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>The three kinds of variables</h2>
+<p>Every experiment is built around three questions: what is changed, what is measured, and what stays the same. Each one is a kind of variable. Mixing them up ruins a design.</p>
+<div aria-label="The three kinds of variables and the question that identifies each one (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The three kinds of variables and the question that identifies each one</caption>
+<thead><tr><th scope="col">Kind of variable</th><th scope="col">Question that identifies it</th><th scope="col">Also called</th></tr></thead>
+<tbody>
+<tr><th scope="row">Independent variable</th><td>What does the researcher change on purpose?</td><td>the treatment, the factor tested</td></tr>
+<tr><th scope="row">Dependent variable</th><td>What is measured at the end, to see if it responded?</td><td>the result, the response</td></tr>
+<tr><th scope="row">Constants (controlled variables)</th><td>What is kept the same on purpose?</td><td>controlled conditions</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1 · Fertilizer and stem height</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>A researcher waters one group of plants with 10 mL of fertilizer and another group with no fertilizer. After twenty days, she measures the height of every plant.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span>What changes on purpose: the amount of fertilizer. It is the <strong>independent variable</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span>What is measured at the end: the height of the stem. It is the <strong>dependent variable</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span>What must stay the same: the kind of plant, the soil, the amount of water, the light, the temperature, and the time. They are the <strong>constants</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Reading rule:</strong> the dependent variable <em>depends</em> on the independent one. If you can say “the height depends on the fertilizer” and not the other way around, you sorted them correctly.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Only one at a time</span>
+<p>A well-designed experiment changes <strong>one</strong> independent variable at a time. If two things change and the result changes, there is no way to know which one caused it. The experiment produces numbers, but not knowledge.</p>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#greenhouse" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: isolate the variable in the greenhouse (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: isolate the variable in the greenhouse</span><span class="ei-sub">Two groups of plants and four controls: light, water, temperature, and soil. Change one and see the result; change two and see why nothing can be concluded.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 1 · The independent variable</h3></div>
+<p class="pregunta-int" id="t-p1">A study asks whether study time changes the score on a test. What is the independent variable?</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">The score on the test</button>
+<button class="opcion" data-k="b" type="button">The study time</button>
+<button class="opcion" data-k="c" type="button">How hard the test is</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 2 · The dependent variable</h3></div>
+<p class="pregunta-int" id="t-p2">In the same study, what is the dependent variable?</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">The number of students</button>
+<button class="opcion" data-k="b" type="button">The study time</button>
+<button class="opcion" data-k="c" type="button">The score on the test</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 3 · Constants</h3></div>
+<p class="pregunta-int" id="t-p3">A student measures how much sugar dissolves in water at different temperatures. What must stay the same?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">The amount of water and the kind of sugar</button>
+<button class="opcion" data-k="b" type="button">The temperature of the water</button>
+<button class="opcion" data-k="c" type="button">The amount of sugar that dissolves</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 4 · Two changes at once</h3></div>
+<p class="pregunta-int" id="t-p4">An experiment changes the amount of light and the amount of water at the same time. What is the problem?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">None: it saves time</button>
+<button class="opcion" data-k="b" type="button">The dependent variable disappears</button>
+<button class="opcion" data-k="c" type="button">Nobody can know which of the two caused the result</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>The control group: the measuring stick</h2>
+<p>The <strong>control group</strong> is the group that does not get the treatment being tested. Everything else is exactly the same as in the experimental group. It is not there for decoration: without it there is nothing to compare, and without a comparison you cannot say that the treatment caused the result.</p>
+<svg viewBox="0 0 560 290" role="img" aria-label="Bar graph. Control group, without fertilizer: 11 cm. Experimental group, with fertilizer: 18 cm. The difference is 7 cm." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><line x1="70" y1="230" x2="490" y2="230" stroke="#5b6675" stroke-width="2"/><rect x="120" y="120" width="110" height="110" fill="#90a4ae"/><rect x="320" y="50" width="110" height="180" fill="#2a7f86"/><text x="175" y="110" text-anchor="middle" font-size="18" font-weight="700" fill="#1a2330">11 cm</text><text x="375" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="#1a2330">18 cm</text><text x="175" y="254" text-anchor="middle" font-size="16" fill="#1a2330">Control group</text><text x="175" y="274" text-anchor="middle" font-size="14" fill="#5b6675">no fertilizer</text><text x="375" y="254" text-anchor="middle" font-size="16" fill="#1a2330">Experimental group</text><text x="375" y="274" text-anchor="middle" font-size="14" fill="#5b6675">with fertilizer</text><line x1="250" y1="50" x2="250" y2="120" stroke="#b5342a" stroke-width="2"/><text x="258" y="90" font-size="15" font-weight="700" fill="#b5342a">7 cm</text></svg>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Why the comparison works</span>
+<p>If absolutely everything is the same in the two groups <strong>except</strong> the fertilizer, then the 7 cm difference can only come from the fertilizer. That is all the logic of a controlled experiment. (7 cm is a little less than 3 inches.)</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">No control, no conclusion</span>
+<p>If the researcher had grown only the group with fertilizer and the plants reached 18 cm, she would know nothing. Is that a lot? A little? Would they have grown just as tall without fertilizer? One group gives a number, not an answer.</p>
+</div>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Watch for the placebo</span>
+<p>In studies with people, the control group does not get “nothing”: it gets a treatment that looks the same but has no active ingredient (a <strong>placebo</strong>). That way the only difference between the groups is the active ingredient, and not the fact of being treated and feeling cared for.</p>
+</div>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>Four sources of error you must be able to find</h2>
+<p>The test often shows a design with a flaw and asks why its conclusion does not hold up. The flaw almost always belongs to one of these four families.</p>
+<div aria-label="Four sources of error in an experimental design, with what they are, a warning sign in the text, and how to fix them (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Four sources of error in an experimental design, with what they are, a warning sign in the text, and how to fix them</caption>
+<thead><tr><th scope="col">Source of error</th><th scope="col">What it is</th><th scope="col">Warning sign in the text</th><th scope="col">How to fix it</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sample too small</th><td>So few cases are studied that the result could be due to chance.</td><td>“It was tried on 4 people,” “3 plants were used.”</td><td>Use more participants or more repeated trials.</td></tr>
+<tr><th scope="row">Selection bias</th><td>Participants were not assigned at random, so the groups were already different before the study began.</td><td>“The volunteers chose their group,” “the most motivated were chosen.”</td><td>Assign participants to the groups at random.</td></tr>
+<tr><th scope="row">No control group</th><td>There is no group without the treatment to compare with.</td><td>“Everyone took the supplement,” “it was measured before and after, and that’s all.”</td><td>Add a group that does not get the treatment.</td></tr>
+<tr><th scope="row">Uncontrolled variable</th><td>Something besides the treatment also changed between the groups and could have caused the result.</td><td>“They also changed their diet,” “one group was by the window.”</td><td>Make that condition the same in both groups, or measure it and take it into account.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2 · Audit a design</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>“Six volunteers from a gym took a supplement for one month, and all of them got stronger. The supplement increases muscle strength.”</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span>Six participants is a <strong>sample too small</strong> to draw a general conclusion.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span>They were gym volunteers: there is <strong>selection bias</strong>, because they were already training.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span>Nobody went without the supplement: there is <strong>no control group</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span>They kept training during the month: training is an <strong>uncontrolled variable</strong> that explains the result just as well.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Result of the audit:</strong> the study shows that six people who train got stronger. It does not show that the supplement caused it.</p>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#audit" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: audit the design (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: audit the design</span><span class="ei-sub">Five studies with a flaw. Find the most serious one and see how it could be fixed.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<h3><span aria-hidden="true">🔤</span> Science vocabulary: roots tell you the meaning</h3>
+<div aria-label="Roots and prefixes of this lesson, what they mean, and the experiment words they make (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Roots and prefixes of this lesson, what they mean, and the experiment words they make</caption>
+<thead><tr><th scope="col">Root or prefix</th><th scope="col">Meaning</th><th scope="col">Word it makes</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="raiz">vari-</span></th><td>that changes, different</td><td><strong>Vari</strong>able: something that can take different values.</td></tr>
+<tr><th scope="row"><span class="raiz">pend-</span></th><td>to hang from</td><td>De<strong>pend</strong>ent: what “hangs” on the value of something else.</td></tr>
+<tr><th scope="row"><span class="raiz">in-</span></th><td>not, without</td><td><strong>In</strong>dependent: what does not hang on another variable of the experiment.</td></tr>
+<tr><th scope="row"><span class="raiz">re-</span></th><td>again</td><td><strong>Re</strong>plicate: to repeat the experiment to check the result.</td></tr>
+<tr><th scope="row"><span class="raiz">con-</span></th><td>together with</td><td><strong>Con</strong>founding variable: one that gets mixed together with the treatment and confuses the conclusion.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>Science reading</h2>
+<p>A research summary written for this level. Read it like an auditor, then answer the questions.</p>
+<div class="lectura"><h3><span aria-hidden="true">📖</span> A tea to sleep better</h3><div class="texto">
+<p>A company says its herbal tea helps people sleep better. To prove it, the company put an ad in a health magazine, inviting people who had trouble sleeping to take part. Twelve people signed up.</p>
+<p>For two weeks, all 12 drank a cup of the tea before going to bed. Every morning they wrote down on a form how many hours they <em>thought</em> they had slept. At the start, the average they reported was 5.4 hours; at the end, 6.8 hours.</p>
+<p>The company’s brochure concludes: “Our tea increases sleep by 1.4 hours a night.”</p>
+<p>The study does not mention that, during those two weeks, the participants also received a brochure with sleep tips: go to bed at the same time, turn off screens, and avoid caffeine in the afternoon.</p>
+</div></div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 1</h3></div>
+<p class="pregunta-int" id="t-p5">What is the independent variable the company wants to study?</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">Drinking the tea before bed</button>
+<button class="opcion" data-k="b" type="button">The hours of sleep reported</button>
+<button class="opcion" data-k="c" type="button">The number of participants</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 2</h3></div>
+<p class="pregunta-int" id="t-p6">What is the <strong>most serious</strong> flaw in the design?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">The study lasted only two weeks</button>
+<button class="opcion" data-k="b" type="button">The hours were written down in the morning</button>
+<button class="opcion" data-k="c" type="button">There was no control group: nobody went without the tea</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 3</h3></div>
+<p class="pregunta-int" id="t-p7">The brochure with sleep tips is…</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">A constant of the experiment</button>
+<button class="opcion" data-k="b" type="button">An uncontrolled variable that explains the result just as well</button>
+<button class="opcion" data-k="c" type="button">A replication of the study</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">And there is more</span>
+<p>The participants signed up after reading an ad, which brings in <strong>selection bias</strong>, and twelve people is a <strong>small sample</strong>. Also, the hours of sleep were <em>reported</em>, not measured. One study can have several sources of error at once.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 5 · The control group</h3></div>
+<p class="pregunta-int" id="t-p8">The job of the control group is to…</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">Increase the total number of participants</button>
+<button class="opcion" data-k="b" type="button">Give a point of comparison without the treatment</button>
+<button class="opcion" data-k="c" type="button">Check that the measuring instrument works</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 6 · Who chose the group?</h3></div>
+<p class="pregunta-int" id="t-p9">“The students chose whether to join the group with tutoring or the group without it.” This is…</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">A correct and respectful design</button>
+<button class="opcion" data-k="b" type="button">A badly defined dependent variable</button>
+<button class="opcion" data-k="c" type="button">Selection bias</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 7 · Three patients</h3></div>
+<p class="pregunta-int" id="t-p10">“The medicine was tried on three patients and it worked for all three.” The main problem is…</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">The sample is too small to draw a general conclusion</button>
+<button class="opcion" data-k="b" type="button">The independent variable is missing</button>
+<button class="opcion" data-k="c" type="button">You cannot measure whether a patient gets better</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 8 · By the window</h3></div>
+<p class="pregunta-int" id="t-p11">One group of plants was placed by the window and the other at the back of the room. Light is…</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">The dependent variable</button>
+<button class="opcion" data-k="b" type="button">An uncontrolled variable that could cause the difference</button>
+<button class="opcion" data-k="c" type="button">A constant of the experiment</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-1-2.html#cientilab" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: CientíLab, experimental design (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: CientíLab, experimental design</span><span class="ei-sub">Twenty-four experiments from biology, chemistry, physics, and Earth science: variables, control groups, confounding variables, and samples.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>GED-style questions</h2>
+<p>These questions work like the ones on the GED® Science test: first a short text or a table, then a question with four options. Each one shows the science practice it checks and its depth of knowledge (DOK). Before you answer, fill in the three columns: what is changed, what is measured, and what stays the same.</p>
+<p><em>Students study how the amount of light affects photosynthesis in a water plant, Elodea. They put four identical sprigs in test tubes with the same amount of water rich in carbon dioxide, all at 22 °C. Each tube is placed at a different distance from a lamp: 10, 20, 30, and 40 cm. For 5 minutes they count the oxygen bubbles each sprig gives off per minute, as a sign of how fast photosynthesis is going.</em></p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 1 · SP.2.e · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p12">What is the <strong>independent variable</strong> in this design?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">The number of oxygen bubbles per minute</button>
+<button class="opcion" data-k="b" type="button">The temperature of the water</button>
+<button class="opcion" data-k="c" type="button">The distance between the lamp and the plant</button>
+<button class="opcion" data-k="d" type="button">The kind of plant used</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<div aria-label="Oxygen bubbles per minute by distance from the lamp (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Oxygen bubbles per minute by distance from the lamp</caption>
+<thead><tr><th scope="col">Distance from the lamp (cm)</th><th scope="col">Bubbles per minute (mean)</th></tr></thead>
+<tbody>
+<tr><th scope="row">10</th><td>30</td></tr>
+<tr><th scope="row">20</th><td>18</td></tr>
+<tr><th scope="row">30</th><td>9</td></tr>
+<tr><th scope="row">40</th><td>4</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 2 · SP.3.b · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p13">Which conclusion do these results support?</p>
+<div aria-labelledby="t-p13" class="opciones" data-practica="p13" role="group">
+<button class="opcion" data-k="a" type="button">The closer the lamp, the more bubbles: within this range, more light speeds up photosynthesis.</button>
+<button class="opcion" data-k="b" type="button">Light is the only factor that affects photosynthesis.</button>
+<button class="opcion" data-k="c" type="button">At 50 cm the plant will stop making oxygen completely.</button>
+<button class="opcion" data-k="d" type="button">The water got warmer near the lamp, and that made the bubbles.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p13" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 3 · SP.2.c · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p14"><em>Two students want to know whether a sports drink helps people run a 100-meter sprint faster.<br><strong>Design A:</strong> 10 volunteers from the track team drink the sports drink and run; their times are compared with their own times from last month.<br><strong>Design B:</strong> 40 students are split at random. Half drink the sports drink and half drink flavored water that looks and tastes the same. Everyone runs on the same day, on the same track.</em><br>Which statement compares the designs correctly?</p>
+<div aria-labelledby="t-p14" class="opciones" data-practica="p14" role="group">
+<button class="opcion" data-k="a" type="button">Design A is stronger, because the runners are experienced.</button>
+<button class="opcion" data-k="b" type="button">Design B is stronger: it has a control group with a placebo, a larger sample, random groups, and the same conditions for everyone.</button>
+<button class="opcion" data-k="c" type="button">Both are equally good, because both measure sprint time.</button>
+<button class="opcion" data-k="d" type="button">Design B is weaker, because some students do not get the drink.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p14" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 4 · SP.2.a · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p15"><em>A student times 10 swings of the same pendulum four times, without changing anything: 14.1 s, 14.2 s, 18.8 s, and 14.0 s.</em><br>What is the best thing to do next?</p>
+<div aria-labelledby="t-p15" class="opciones" data-practica="p15" role="group">
+<button class="opcion" data-k="a" type="button">Average all four times, because every measurement counts the same.</button>
+<button class="opcion" data-k="b" type="button">Conclude that the pendulum slowed down during the third trial.</button>
+<button class="opcion" data-k="c" type="button">Look for a measuring error in the third trial (for example, counting extra swings) and repeat it before using the data.</button>
+<button class="opcion" data-k="d" type="button">Use a longer string so the times are more alike.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p15" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 5 · SP.3.d · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p16"><em>A city wants to estimate what percent of its 80,000 homes still have lead water pipes. It can test only 400 homes.</em><br>Which sample would give the most trustworthy estimate?</p>
+<div aria-labelledby="t-p16" class="opciones" data-practica="p16" role="group">
+<button class="opcion" data-k="a" type="button">The 400 newest homes in the city</button>
+<button class="opcion" data-k="b" type="button">The first 400 people who call a hotline to ask for a test</button>
+<button class="opcion" data-k="c" type="button">400 homes in the oldest neighborhood</button>
+<button class="opcion" data-k="d" type="button">400 addresses chosen at random from every neighborhood</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p16" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">6</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-1-2.html">practice page for this lesson</a> and do each activity. The exercises come in a new order every time. Keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>The three-column chart.</strong> Draw three columns on a sheet: what is changed, what is measured, and what stays the same. Fill it in for two experiments of this lesson and for the greenhouse. In each one, check that the dependent variable really depends on the independent one.</li>
+<li><strong>The auditor’s report.</strong> Take the herbal tea study and write a short report with three points: which variable was not controlled, what is missing for a control group, and what you would change.</li>
+<li><strong>Redesign the experiment.</strong> Propose a corrected version: how many participants, how they would be put in groups, what the control group would get, and which conditions would be the same. Then check that your fix really removes each source of error you found.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">7</span>Practice quiz</h2>
+<p>Answer the <strong>12 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Question 1</p>
+<p class="pregunta" id="t-q1">A study asks whether the amount of fertilizer changes plant height. The independent variable is…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The height of the stem</button><button class="opcion" data-k="b" type="button">The amount of fertilizer</button><button class="opcion" data-k="c" type="button">The type of soil</button><button class="opcion" data-k="d" type="button">The number of plants</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Question 2</p>
+<p class="pregunta" id="t-q2">In the same study, the dependent variable is…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The height of the stem</button><button class="opcion" data-k="b" type="button">The amount of fertilizer</button><button class="opcion" data-k="c" type="button">The amount of light</button><button class="opcion" data-k="d" type="button">The kind of plant</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Question 3</p>
+<p class="pregunta" id="t-q3">A student measures how much salt dissolves in water at different temperatures. What must stay the same?</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The temperature of the water</button><button class="opcion" data-k="b" type="button">The amount of salt that dissolves</button><button class="opcion" data-k="c" type="button">The amount of water in each sample</button><button class="opcion" data-k="d" type="button">The result of the experiment</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Question 4</p>
+<p class="pregunta" id="t-q4">A researcher changes the type of soil and the amount of water at the same time. The result is that…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The experiment will be more complete</button><button class="opcion" data-k="b" type="button">He cannot know which of the two caused the result</button><button class="opcion" data-k="c" type="button">The dependent variable disappears</button><button class="opcion" data-k="d" type="button">He will need fewer participants</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Question 5</p>
+<p class="pregunta" id="t-q5">What is the job of the control group?</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">To double the amount of data collected</button><button class="opcion" data-k="b" type="button">To check that the instruments measure well</button><button class="opcion" data-k="c" type="button">To be a point of comparison without the treatment</button><button class="opcion" data-k="d" type="button">To replace participants who drop out</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Question 6</p>
+<p class="pregunta" id="t-q6">In a study of a vaccine, the control group is the one that…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Gets a substance with no effect instead of the vaccine</button><button class="opcion" data-k="b" type="button">Gets a double dose of the vaccine</button><button class="opcion" data-k="c" type="button">Writes down the results</button><button class="opcion" data-k="d" type="button">Has more symptoms at the start</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Question 7</p>
+<p class="pregunta" id="t-q7">If an experiment has no control group…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The data collected are false</button><button class="opcion" data-k="b" type="button">You cannot say that the treatment caused the result</button><button class="opcion" data-k="c" type="button">The independent variable changes by itself</button><button class="opcion" data-k="d" type="button">The study takes longer than planned</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Question 8</p>
+<p class="pregunta" id="t-q8">“The method was tried with four students, and all four improved.” The main flaw is…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The dependent variable is badly defined</button><button class="opcion" data-k="b" type="button">There is no “if… then…” hypothesis</button><button class="opcion" data-k="c" type="button">The sample is too small to draw a general conclusion</button><button class="opcion" data-k="d" type="button">The study did not measure time</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Question 9</p>
+<p class="pregunta" id="t-q9">“The participants decided for themselves which group to join.” This brings in…</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Selection bias</button><button class="opcion" data-k="b" type="button">One more constant</button><button class="opcion" data-k="c" type="button">A replication of the experiment</button><button class="opcion" data-k="d" type="button">A double dependent variable</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Question 10</p>
+<p class="pregunta" id="t-q10">One group of plants got tap water and the other got distilled water, but the first group was also by a window. The kind of water…</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Is the only possible explanation of the result</button><button class="opcion" data-k="b" type="button">Is a constant of the design</button><button class="opcion" data-k="c" type="button">Turns the study into a replication</button><button class="opcion" data-k="d" type="button">Is mixed up with the light, which was not controlled</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Question 11</p>
+<p class="pregunta" id="t-q11">A study says a supplement increases strength, but all the participants trained during the month. Training is…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">The dependent variable</button><button class="opcion" data-k="b" type="button">An uncontrolled variable that explains the result just as well</button><button class="opcion" data-k="c" type="button">The control group of the study</button><button class="opcion" data-k="d" type="button">A constant that was correctly set</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Question 12</p>
+<p class="pregunta" id="t-q12">Which change fixes the lack of a control group?</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Make the study last six months</button><button class="opcion" data-k="b" type="button">Measure the dependent variable with a more precise instrument</button><button class="opcion" data-k="c" type="button">Add a similar group that does not get the treatment</button><button class="opcion" data-k="d" type="button">Repeat the same experiment with the same participants</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">8</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Skills of this lesson and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sort the variables</th><td>I name the independent, the dependent, and the constants, and I can explain which depends on which.</td><td>I find one of the two, but I mix up the constants.</td><td>I mix up the independent and the dependent.</td></tr>
+<tr><th scope="row">Explain the control group</th><td>I find it, explain that it is the comparison, and say what could not be concluded without it.</td><td>I find it, but my explanation is not precise.</td><td>I do not recognize the control group.</td></tr>
+<tr><th scope="row">Find a source of error and explain it</th><td>I find several and can say which is the most serious.</td><td>I find one, but I cannot explain why it hurts the conclusion.</td><td>I do not see flaws in a design that has them.</td></tr>
+<tr><th scope="row">Propose a fix</th><td>My fix is specific, removes the error, and does not create a new one.</td><td>My fix is general (“do it better”) and does not say how.</td><td>I do not propose a fix, or it does not solve the problem.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>You now have <strong>experimental design</strong>: the three kinds of variables, the job of the <strong>control group</strong>, and the four <strong>sources of error</strong> that the test shows again and again. From now on, read every science text asking: what was changed, what was measured, and what was it compared with?</p><p>Lesson 1.3 closes Topic 1 and moves from design to reading: how to work out a word you do not know from its roots, how to follow an eight-step procedure without skipping or switching steps, and how to recognize the way an author organized a text.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: <a href="lesson-1-3.html">Lesson 1.3 · Reading science: technical vocabulary and multistep procedures</a></p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>Independent variable</dt><dd>What the researcher changes on purpose.</dd>
+<dt>Dependent variable</dt><dd>What is measured to see if it responds to the change.</dd>
+<dt>Constants</dt><dd>Everything that is kept the same on purpose.</dd>
+<dt>Control group</dt><dd>The group that does not get the treatment; it is the point of comparison.</dd>
+<dt>Placebo</dt><dd>A treatment that looks real but has no active ingredient.</dd>
+<dt>Sample</dt><dd>The group of cases or people that is studied.</dd>
+<dt>Selection bias</dt><dd>Groups that were already different before the study because they were not formed at random.</dd>
+<dt>Confounding variable</dt><dd>A factor that changes along with the treatment and confuses the conclusion.</dd>
+<dt>Replication</dt><dd>Repeating an experiment to check its result.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Science · Topic 1 · Lesson 1.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "The score is measured at the end: does it depend on something else?",
+    "c": "The difficulty should be the same for everyone. What is the study changing on purpose?"
+   },
+   "right": "The <strong>study time</strong> is what the study changes on purpose; the score depends on it.",
+   "solution": "The <strong>study time</strong> is what the study changes on purpose; the score depends on it."
+  },
+  "p2": {
+   "ok": "c",
+   "hints": {
+    "a": "The number of students is part of the design, not the result.",
+    "b": "That is the one that is changed. Which one is measured at the end?"
+   },
+   "right": "The <strong>score</strong> is measured at the end and depends on the study time.",
+   "solution": "The <strong>score</strong> is measured at the end and depends on the study time."
+  },
+  "p3": {
+   "ok": "a",
+   "hints": {
+    "b": "The temperature is what the study changes on purpose.",
+    "c": "That is the result being measured, so it cannot be kept the same."
+   },
+   "right": "The <strong>amount of water and the kind of sugar</strong> must be the same in every glass, so the only difference is the temperature.",
+   "solution": "The <strong>amount of water and the kind of sugar</strong> must be the same in every glass, so the only difference is the temperature."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Saving time does not help if the result cannot be explained. Think about the rule “only one at a time.”",
+    "b": "The plants can still be measured. The problem is explaining the result."
+   },
+   "right": "If light and water both change, the result could come from either one, or from both. Nobody can know which.",
+   "solution": "If light and water both change, the result could come from either one, or from both. Nobody can know which."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "The hours of sleep are the result: they are the dependent variable.",
+    "c": "The number of people is part of the design, not what is being tested."
+   },
+   "right": "The company wants to know the effect of <strong>drinking the tea</strong>: that is what it changes on purpose.",
+   "solution": "The company wants to know the effect of <strong>drinking the tea</strong>: that is what it changes on purpose."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "Two weeks could be enough to see an effect. Ask yourself: what are the 6.8 hours compared with?",
+    "b": "Writing it down in the morning is reasonable. Look for what is missing in the design."
+   },
+   "right": "Without a group that did not drink the tea, there is nothing to compare with. The sleep could have improved anyway.",
+   "solution": "Without a group that did not drink the tea, there is nothing to compare with. The sleep could have improved anyway."
+  },
+  "p7": {
+   "ok": "b",
+   "hints": {
+    "a": "A constant is the same for every group. Here there is only one group, and the tips could change sleep by themselves.",
+    "c": "A replication repeats the whole experiment. The brochure is something extra that happened at the same time."
+   },
+   "right": "The tips (same bedtime, no screens, no caffeine) could explain the better sleep by themselves. It is an <strong>uncontrolled variable</strong>.",
+   "solution": "The tips (same bedtime, no screens, no caffeine) could explain the better sleep by themselves. It is an <strong>uncontrolled variable</strong>."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "More participants helps the sample size, but that is not what makes a group a control group.",
+    "c": "Checking instruments is calibration, not the control group."
+   },
+   "right": "The control group shows what happens <strong>without</strong> the treatment, so the result can be compared.",
+   "solution": "The control group shows what happens <strong>without</strong> the treatment, so the result can be compared."
+  },
+  "p9": {
+   "ok": "c",
+   "hints": {
+    "a": "Respectful, yes, but the students who choose tutoring may already be more motivated.",
+    "b": "The dependent variable is not described here. Look at how the groups were formed."
+   },
+   "right": "When people choose their own group, the groups are different from the start. That is <strong>selection bias</strong>; the fix is to assign them at random.",
+   "solution": "When people choose their own group, the groups are different from the start. That is <strong>selection bias</strong>; the fix is to assign them at random."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "The independent variable is there: taking the medicine. Count the patients.",
+    "c": "Improvement can be measured (temperature, pain scale, tests). Look at the number of cases."
+   },
+   "right": "With three cases, chance alone can produce any result. A larger sample (and a control group) are needed.",
+   "solution": "With three cases, chance alone can produce any result. A larger sample (and a control group) are needed."
+  },
+  "p11": {
+   "ok": "b",
+   "hints": {
+    "a": "The dependent variable is what is measured at the end, like plant height.",
+    "c": "A constant is the same for both groups. Is the light the same by the window and at the back?"
+   },
+   "right": "The light is different for the two groups, so it could explain any difference. It is an <strong>uncontrolled variable</strong>.",
+   "solution": "The light is different for the two groups, so it could explain any difference. It is an <strong>uncontrolled variable</strong>."
+  },
+  "p12": {
+   "ok": "c",
+   "hints": {
+    "a": "The bubbles are counted at the end: that is the dependent variable.",
+    "b": "The water is at 22 °C in every tube: it is a constant.",
+    "d": "All four sprigs are <em>Elodea</em>: it is a constant."
+   },
+   "right": "The students change the distance on purpose (and with it, the amount of light). The bubbles are the dependent variable; the temperature and the kind of plant are constants.",
+   "solution": "The students change the distance on purpose (and with it, the amount of light). The bubbles are the dependent variable; the temperature and the kind of plant are constants."
+  },
+  "p13": {
+   "ok": "a",
+   "hints": {
+    "b": "The study changed only light. It cannot rule out other factors.",
+    "c": "The trend goes down, but nothing in the data says it reaches exactly zero at 50 cm.",
+    "d": "The text says all the tubes were kept at 22 °C."
+   },
+   "right": "The data show a clear pattern (30, 18, 9, 4 bubbles) as the lamp moves away. A good conclusion stays within the range that was tested.",
+   "solution": "The data show a clear pattern (30, 18, 9, 4 bubbles) as the lamp moves away. A good conclusion stays within the range that was tested."
+  },
+  "p14": {
+   "ok": "b",
+   "hints": {
+    "a": "Experience does not fix the problems: a month of training, the weather, or the track could explain a better time.",
+    "c": "Measuring the same thing is not enough. Compare who is in each group and what they are compared with.",
+    "d": "The students without the drink are the control group: they make the comparison possible."
+   },
+   "right": "Design A has a small, selected sample and compares with another day (training and weather could explain the change). Design B fixes all four problems.",
+   "solution": "Design A has a small, selected sample and compares with another day (training and weather could explain the change). Design B fixes all four problems."
+  },
+  "p15": {
+   "ok": "c",
+   "hints": {
+    "a": "One very different value would pull the average up and hide the real period.",
+    "b": "Nothing changed in the setup. A sudden change with no cause points to the measurement, not the pendulum.",
+    "d": "Changing the string changes the experiment. The problem is one strange reading."
+   },
+   "right": "Three values are almost the same (about 14.1 s) and one is far away. That points to an error in that trial, like counting 13 swings instead of 10. Check it and repeat the trial.",
+   "solution": "Three values are almost the same (about 14.1 s) and one is far away. That points to an error in that trial, like counting 13 swings instead of 10. Check it and repeat the trial."
+  },
+  "p16": {
+   "ok": "d",
+   "hints": {
+    "a": "New homes were built after lead pipes stopped being used. The estimate would come out too low.",
+    "b": "People who call are often worried about their water already. That is selection bias.",
+    "c": "One neighborhood does not represent the whole city. The estimate would come out too high."
+   },
+   "right": "A random sample from every neighborhood gives each home the same chance of being chosen, so the sample looks like the whole city.",
+   "solution": "A random sample from every neighborhood gives each home the same chance of being chosen, so the sample looks like the whole city."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "b",
+   "hints": {
+    "a": "Height is measured at the end: it is the result.",
+    "c": "The soil should stay the same.",
+    "d": "The number of plants is part of the design, not what is tested."
+   },
+   "solution": "The fertilizer is what the study changes on purpose."
+  },
+  "2": {
+   "ok": "a",
+   "hints": {
+    "b": "That one is changed on purpose. Which one is measured?",
+    "c": "Light should be a constant.",
+    "d": "The kind of plant should be the same in both groups."
+   },
+   "solution": "The height “depends on” the fertilizer: it is the dependent variable."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "The temperature is what is changed on purpose.",
+    "b": "That is the result being measured.",
+    "d": "The result cannot be decided beforehand."
+   },
+   "solution": "If one glass had more water, it would dissolve more salt even at the same temperature. The amount of water must be the same."
+  },
+  "4": {
+   "ok": "b",
+   "hints": {
+    "a": "More changes do not make it more complete; they make it impossible to explain.",
+    "c": "He can still measure the plants.",
+    "d": "The number of participants is not the issue here."
+   },
+   "solution": "Two changes at once: the result could come from either one."
+  },
+  "5": {
+   "ok": "c",
+   "hints": {
+    "a": "More data is not the reason it exists.",
+    "b": "That is calibration, not the control group.",
+    "d": "The control group is not a backup team."
+   },
+   "solution": "It shows what happens without the treatment, so the difference can be seen."
+  },
+  "6": {
+   "ok": "a",
+   "hints": {
+    "b": "A double dose is still a treatment.",
+    "c": "The people who write results are researchers, not a group of the study.",
+    "d": "Groups should be alike at the start."
+   },
+   "solution": "It gets a placebo, so the only difference is the vaccine itself."
+  },
+  "7": {
+   "ok": "b",
+   "hints": {
+    "a": "The data can be correct; the problem is what they mean.",
+    "c": "The researcher still controls the independent variable.",
+    "d": "Time has nothing to do with it."
+   },
+   "solution": "Without comparison, the change could have happened anyway."
+  },
+  "8": {
+   "ok": "c",
+   "hints": {
+    "a": "“Improved” could be measured with a test. Count the students.",
+    "b": "The hypothesis is not the main problem. How many students were there?",
+    "d": "Time is not the issue."
+   },
+   "solution": "Four cases are too few: chance alone could explain it."
+  },
+  "9": {
+   "ok": "a",
+   "hints": {
+    "b": "Choosing a group does not keep anything the same; it makes the groups different.",
+    "c": "A replication repeats the whole study.",
+    "d": "Nothing here is measured twice."
+   },
+   "solution": "Groups formed by choice differ from the start: that is selection bias."
+  },
+  "10": {
+   "ok": "d",
+   "hints": {
+    "a": "Something else also changed between the groups. What?",
+    "b": "The kind of water is what is being tested, so it is not a constant.",
+    "c": "A replication repeats the study the same way."
+   },
+   "solution": "Water and light both changed, so the effect of the water cannot be separated from the effect of the light."
+  },
+  "11": {
+   "ok": "b",
+   "hints": {
+    "a": "The dependent variable is the strength that is measured.",
+    "c": "A control group is a group of people, not an activity.",
+    "d": "There is no group without training to compare with, so training was not controlled."
+   },
+   "solution": "Training by itself increases strength, so it could explain the whole result."
+  },
+  "12": {
+   "ok": "c",
+   "hints": {
+    "a": "A longer study still has nothing to compare with.",
+    "b": "Better measurements do not create a comparison.",
+    "d": "Repeating it the same way repeats the same flaw."
+   },
+   "solution": "Only a group without the treatment gives something to compare with."
+  }
+ },
+ "next": "Lesson 1.3",
+ "review": "the lesson"
+};
+</script>
+<script src="/math/lesson.js"></script>
+</body>
+</html>
