@@ -732,3 +732,21 @@ def describe(spec):
     if spec["tipo"] == "barras":
         return t(f'Bar graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Values: ', f'Gráfica de barras. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Valores: ') + "; ".join(f'{b["etq"]}, {_fmt(b["valor"])}' for b in spec["barras"]) + "."
     return t("Data table.", "Tabla de datos.")
+
+
+def svg_orig(nombre, trad, aria_en, ancho=700):
+    """Diagrama SVG tomado de clases_ciencias (copiado en tools/svg). En inglés se traducen los rótulos
+    (trad: {"texto en español": "English text"}) y la descripción para lectores de pantalla."""
+    import re as _re
+    s = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "svg", nombre + ".svg"), encoding="utf-8").read()
+    s = _re.sub(r'<svg([^>]*?) width="\d+" height="\d+"', r'<svg\1', s, count=1)
+    s = s.replace("<svg", f'<svg style="width:100%;max-width:{ancho}px;height:auto;display:block;margin:12px auto;"', 1)
+    if L == "en":
+        s = _re.sub(r'aria-label="[^"]*"', 'aria-label="' + aria_en.replace('"', "&quot;") + '"', s, count=1)
+        def rep(m):
+            txt = m.group(2)
+            if txt.strip() not in trad:
+                raise KeyError("svg " + nombre + ": falta traducir «" + txt.strip() + "»")
+            return m.group(1) + txt.replace(txt.strip(), trad[txt.strip()]) + m.group(3)
+        s = _re.sub(r'(<(?:text|tspan)[^>]*>)([^<]*[^\s<0-9][^<]*)(</(?:text|tspan)>)', rep, s)
+    return s

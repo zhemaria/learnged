@@ -278,7 +278,7 @@ def leccion():
          t("<strong>Connect</strong> the spread of the data with experimental error (precision and accuracy).", "<strong>Relacionar</strong> la dispersión de los datos con el error experimental (precisión y exactitud)."),
          t("<strong>Use</strong> the counting principle, permutations, and combinations in biology and genetics.", "<strong>Aplicar</strong> el principio del conteo, las permutaciones y las combinaciones a escenarios biológicos y genéticos.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 3 · Life science I (being written).", "Siguiente: Tema 3 · Ciencias de la vida I (en preparación).")), glosario, P, calculadora=True)
+        ("3-1", t("Cell theory, organelles, and the cell membrane", "Teoría celular, organelos y membrana plasmática")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- práctica
