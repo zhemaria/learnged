@@ -28,7 +28,7 @@ LET = {k: k for k in "ATCGU"}
 def svg_helice():
     tr = dict(LET)
     tr.update({"Hebra 1": "Strand 1", "Hebra 2": "Strand 2", "A con T · C con G · siempre": "A with T · C with G · always"})
-    return C.svg_orig("4-1_0", tr, "Diagram of the two strands of DNA paired up. Strand one has the sequence adenine, thymine, cytosine, guanine, adenine, thymine. Strand two has the matching sequence: thymine, adenine, guanine, cytosine, thymine, adenine. Each adenine always pairs with a thymine, and each cytosine with a guanine.")
+    return C.svg_orig("4-1_0", tr, "Diagram of the two strands of DNA paired up. Strand one has the sequence adenine, thymine, cytosine, guanine, adenine, thymine. Strand two has the matching sequence: thymine, adenine, guanine, cytosine, thymine, adenine. Each base has its own color: adenine in red, thymine in yellow, cytosine in blue, and guanine in purple. Each adenine always pairs with a thymine, and each cytosine with a guanine.")
 
 
 def svg_expresion():

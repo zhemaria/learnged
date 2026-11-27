@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!-- LearnGED · Science · Lesson 6.2 (English) — built by tools/build_sci_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 6.2 · Work, energy, and conservation · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="es" href="/es/ciencias/leccion-6-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="physical">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/"><img src="/img/learnged-logo-horizontal.svg" alt="LearnGED home" height="34"></a><a class="lg-link" href="./">Science · all lessons</a></nav>
+<a class="saltar" href="#indice">Skip to the lesson contents</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Science · Topic 6 — Physical science II: force, motion, energy, and waves</p>
+<h1>Lesson 6.2 · Work, energy, and conservation</h1>
+<p class="lema">What it costs to move something and where that energy goes: work, power, kinetic and potential energy, and the principle that energy only changes form.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> About 4 hours with practice and homework · take breaks</span>
+<span class="chip chip-sp">SP.7 · Using formulas</span><span class="chip chip-sp">SP.6 · Reading graphs and giving results</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>What you will learn</h2>
+<p>When you finish this lesson, you will be able to:</p>
+<ul>
+<li><strong>Calculate</strong> mechanical work and recognize when a force does no work.</li>
+<li><strong>Calculate</strong> power and tell it apart from work.</li>
+<li><strong>Tell apart</strong> kinetic, potential, and mechanical energy in a system.</li>
+<li><strong>Use</strong> conservation of energy to predict speed or height at a point, before calculating.</li>
+<li><strong>Explain</strong> a numerical result in its physical context, including energy turned into heat by friction.</li>
+</ul>
+</div>
+<details class="estandares" id="ged-standards">
+<summary><span aria-hidden="true">🎓</span> Standards for this lesson (GED® and CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Science Practices of the GED® test that this lesson works on:</p><ul><li><span class="std-cod std-dir">SP.7.b</span> Apply formulas from scientific theories.<br><span class="std-meta">Category 3 · DOK 2 · NRC P2, P5 · Math M2, M4, M8</span></li><li><span class="std-cod std-dir">SP.6.c</span> Express scientific information or findings verbally.<br><span class="std-meta">Category 1 · DOK 2–3 · CCR R7, W2 · NRC P8 · Math M2, M6</span></li><li><span class="std-cod std-dir">SP.1.c</span> Understand and explain a non-textual scientific presentation.<br><span class="std-meta">Category 3 · DOK 2 · NRC P8 · Math S-ID, 8.SP, M2, M4, M6</span></li><li><span class="std-cod std-dir">SP.3.b</span> Reason from data or evidence to a conclusion.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R1, R2, R3 · NRC P1, P6, P7 · Math M3, M4, M7, M8</span></li></ul>
+<p class="std-tit">It also builds the base for:</p><ul><li><span class="std-cod std-base">SP.4.a</span> Evaluate whether a conclusion or theory is supported or challenged by particular data or evidence.<br><span class="std-meta">Category 2 · DOK 2–3 · CCR R8 · NRC P4, P6 · Math M3, M7, M8</span></li></ul>
+<p class="std-tit">Reporting categories of the GED® Science test:</p><ul><li>Category 1 · Analyzing scientific and technical arguments, evidence, and text-based information (30% of the test)</li><li>Category 2 · Applying scientific processes and procedural concepts (40% of the test)</li><li>Category 3 · Reasoning quantitatively and interpreting data in scientific contexts (30% of the test)</li></ul>
+<p class="std-tit">GED® Science content topics:</p>
+<ul><li><span class="std-cod std-mp">P.c</span> Chemical properties and reactions related to living systems</li></ul>
+<p class="std-tit">What the aligned codes mean (CCR, NRC, and math):</p><ul class="std-clave"><li><span class="std-cod std-ccr">P2</span> NRC practice 2: develop and use models.</li><li><span class="std-cod std-ccr">P5</span> NRC practice 5: use mathematics and computational thinking.</li><li><span class="std-cod std-ccr">M2</span> Math practice 2: reason abstractly and quantitatively.</li><li><span class="std-cod std-ccr">M4</span> Math practice 4: model with mathematics.</li><li><span class="std-cod std-ccr">M8</span> Math practice 8: look for patterns in repeated reasoning.</li><li><span class="std-cod std-ccr">R7</span> CCR Reading 7: combine information from text, visuals, and numbers.</li><li><span class="std-cod std-ccr">W2</span> CCR Writing 2: write to inform and explain.</li><li><span class="std-cod std-ccr">P8</span> NRC practice 8: obtain, evaluate, and communicate information.</li><li><span class="std-cod std-ccr">M6</span> Math practice 6: attend to precision.</li><li><span class="std-cod std-ccr">S-ID</span> Statistics: interpret categorical and quantitative data.</li><li><span class="std-cod std-ccr">8.SP</span> Math, statistics and probability (grade 8): patterns in two-variable data.</li><li><span class="std-cod std-ccr">R1</span> CCR Reading 1: read closely and cite specific evidence from the text.</li><li><span class="std-cod std-ccr">R2</span> CCR Reading 2: find the central ideas and summarize them.</li><li><span class="std-cod std-ccr">R3</span> CCR Reading 3: analyze how ideas, events, or steps develop and interact.</li><li><span class="std-cod std-ccr">P1</span> NRC practice 1: ask questions.</li><li><span class="std-cod std-ccr">P6</span> NRC practice 6: construct explanations.</li><li><span class="std-cod std-ccr">P7</span> NRC practice 7: argue from evidence.</li><li><span class="std-cod std-ccr">M3</span> Math practice 3: build arguments and critique the reasoning of others.</li><li><span class="std-cod std-ccr">M7</span> Math practice 7: look for and use structure.</li><li><span class="std-cod std-ccr">R8</span> CCR Reading 8: evaluate the claims in a text and the evidence behind them.</li><li><span class="std-cod std-ccr">P4</span> NRC practice 4: analyze and interpret data.</li></ul>
+<p class="std-fuente">DOK (depth of knowledge): 1 = recall, 2 = use a skill or concept, 3 = reason with evidence. Source of the practices, categories, DOK ranges, and alignment: GED Testing Service, <cite>Assessment Guide for Educators: Science</cite> (2016; Science Practices updated in 2020). The CCR anchor standards are in Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>; the NRC practices are in <cite>A Framework for K-12 Science Education</cite> (National Research Council, 2012).</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Lesson contents</h2><ol>
+<li><a href="#s1">Mechanical work</a></li>
+<li><a href="#s2">Power: work and time</a></li>
+<li><a href="#s3">The forms of mechanical energy</a></li>
+<li><a href="#s4">Conservation of energy</a></li>
+<li><a href="#s5">Science reading</a></li>
+<li><a href="#s6">GED-style questions</a></li>
+<li><a href="#s-tarea">Homework</a></li>
+<li><a href="#s-quiz">Practice quiz</a></li>
+<li><a href="#s-lista">Self-check checklist</a></li>
+<li><a href="#s-sigue">Coming next</a></li>
+<li><a href="#s-palabras">Key words</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Before you start</span>
+<p>A change of question. Lesson 6.1 asked what makes motion change, and the answer was the net force. This lesson asks something else: what it costs to move something and what happens to that cost afterward. The answer is <strong>energy</strong>, and its most useful property is that it is not lost: it changes form.</p><p>Rearranging formulas is already familiar from 5.2 and 6.1, so the work here is choosing the right formula and giving the result in the right unit. This lesson brings two new units, the joule and the watt, and both are easy to mix up. All the formulas (W = F · d, KE = ½ m v², PE = m · g · h) are on the GED formula sheet.</p><p><strong>How to study this lesson:</strong> predict before you calculate, then compare your prediction with the number. Whoever reasons with conservation of energy first solves many test items without any math, because the test often asks “where is it greatest” and not “how much is it.”</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>Mechanical work</h2>
+<p>In physics, <strong>work</strong> does not mean effort. It means something very specific: a force that manages to <strong>move</strong> an object in the direction of that force. If nothing moves, no work is done, no matter how much you sweat.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The formula</span>
+<p><strong>W = F × d</strong>, where F is the force in newtons and d the distance moved in meters. The result is in <strong>joules (J)</strong>. One joule is the work of a one-newton force over one meter: <strong>1 J = 1 N · m</strong>.</p>
+</div>
+<svg style="width:100%;max-width:700px;height:auto;display:block;margin:12px auto;" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two situations compared to decide whether mechanical work is done. In the first, a person pushes a box with a force of fifty newtons and the box moves three meters in the direction of the force: work is done, and it equals one hundred fifty joules. In the second, a person holds a heavy suitcase without moving: there is an upward force, but no movement, so the mechanical work is zero, even though the person gets tired.">
+        <rect x="14" y="16" width="336" height="218" rx="10" fill="#eef2fc" stroke="#14265e" stroke-width="2"/>
+        <text x="182" y="44" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#14265e" text-anchor="middle">Work is done</text>
+        <rect x="70" y="96" width="62" height="48" rx="6" fill="#dbe2f7" stroke="#14265e" stroke-width="3"/>
+        <line x1="140" y1="120" x2="240" y2="120" stroke="#1e3a8a" stroke-width="5"/><polygon points="240,112 258,120 240,128" fill="#1e3a8a"/>
+        <text x="196" y="106" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#14265e" text-anchor="middle">F = 50 N</text>
+        <line x1="70" y1="166" x2="286" y2="166" stroke="#14265e" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="178" y="186" font-family="Segoe UI, sans-serif" font-size="12" fill="#222" text-anchor="middle">d = 3 m</text>
+        <text x="182" y="216" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#14265e" text-anchor="middle">W = 50 × 3 = 150 J</text>
+
+        <rect x="364" y="16" width="322" height="218" rx="10" fill="#eef2fc" stroke="#14265e" stroke-width="2"/>
+        <text x="525" y="44" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#14265e" text-anchor="middle">No work is done</text>
+        <rect x="494" y="112" width="62" height="48" rx="6" fill="#dbe2f7" stroke="#14265e" stroke-width="3"/>
+        <line x1="525" y1="106" x2="525" y2="72" stroke="#1e3a8a" stroke-width="5"/><polygon points="517,72 525,56 533,72" fill="#1e3a8a"/>
+        <text x="600" y="86" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#14265e" text-anchor="middle">F upward</text>
+        <text x="525" y="186" font-family="Segoe UI, sans-serif" font-size="12" fill="#222" text-anchor="middle">d = 0 · the suitcase does not move</text>
+        <text x="525" y="216" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#14265e" text-anchor="middle">W = 50 × 0 = 0 J</text>
+      </svg>
+<div class="ejemplo">
+<p class="titulo-ej">Example 1 · Work</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>A person pushes a cart with a force of 25 N for 4 meters. How much work is done?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>What is missing.</strong> Force and distance are given; work is asked: W = F × d.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute and calculate.</strong> W = 25 N × 4 m = <strong>100 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Unit.</strong> Newtons times meters are joules, by definition. An answer in newtons or in meters would be wrong.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Zero work does not mean zero effort</span>
+<p>Holding a heavy suitcase for ten minutes without moving is very tiring, and yet the mechanical work is zero, because the distance moved in the direction of the force is zero. The same happens when you push a wall that does not budge. The test asks about this often, and the right answer usually seems to go against common sense.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 1 · Holding a box</h3></div>
+<p class="pregunta-int" id="t-p1">A person holds a heavy box without moving for two minutes. The mechanical work done is…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">very large, because the box is heavy</button>
+<button class="opcion" data-k="b" type="button">equal to the weight of the box</button>
+<button class="opcion" data-k="c" type="button">zero, because nothing moves</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#work" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: work problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: work problems</span><span class="ei-sub">New problems every time, some with zero work.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>Power: work and time</h2>
+<p>Two people lift the same box to the same height, one in five seconds and the other in twenty. They did the same work, because force and distance are the same. What sets them apart is how fast they did it, and that is <strong>power</strong>.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">The formula</span>
+<p><strong>P = W ÷ t</strong>, where W is the work in joules and t the time in seconds. The result is in <strong>watts (W)</strong>: one watt is one joule per second.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Two meanings of W</span>
+<p>The letter W is used for two different things: as a quantity it means <strong>work</strong>, and as a unit it means <strong>watt</strong>. Tell them apart by where they are: before the equals sign or inside a formula, it is work; next to a number as the unit of the result, it is watts. A 12 W light bulb uses twelve joules every second.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 2 · Power</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>A motor does 600 J of work in 30 seconds. What is its power?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>What is missing.</strong> Work and time are given; power is asked: P = W ÷ t.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute and calculate.</strong> P = 600 J ÷ 30 s = <strong>20 W</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Meaning.</strong> The motor delivers twenty joules every second. If it did the same work in half the time, its power would double, even though the work would not change.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 2 · Two workers</h3></div>
+<p class="pregunta-int" id="t-p2">Two workers lift identical loads to the same height, one in 10 s and the other in 40 s. You can say that…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">they did the same work, but the first one had more power</button>
+<button class="opcion" data-k="b" type="button">the first one did more work</button>
+<button class="opcion" data-k="c" type="button">the second one had more power</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#power" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: power problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: power problems</span><span class="ei-sub">Find the power, the work, or the time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>The forms of mechanical energy</h2>
+<p><strong>Energy</strong> is the ability to do work, and it is measured in the same unit: joules. This lesson focuses on two forms and their sum.</p>
+<div aria-label="The three energy quantities in this lesson, with their formula, what each depends on, and an example (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">The three energy quantities in this lesson, with their formula, what each depends on, and an example</caption>
+<thead><tr><th scope="col">Type</th><th scope="col">Formula</th><th scope="col">Depends on</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><th scope="row">Kinetic energy (KE)</th><td>KE = ½ · m · v²</td><td>Mass and, above all, speed, which is squared</td><td>A moving car</td></tr>
+<tr><th scope="row">Gravitational potential energy (PE)</th><td>PE = m · g · h</td><td>Mass and height above a reference level</td><td>A car stopped at the top of a roller coaster</td></tr>
+<tr><th scope="row">Mechanical energy</th><td>ME = KE + PE</td><td>The sum of the two above</td><td>The system’s total at any point of the ride</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<p>In the potential energy formula, <strong>g</strong> is the acceleration due to gravity, which on Earth is <strong>9.8 m/s²</strong>. It is on the GED formula sheet, so you do not have to memorize it; some problems round it to 10 to keep things simple, and when they do, the question says so.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Example 3 · Potential energy</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>A 50 kg car sits at the top of a slope, 10 meters high (about 33 feet). What is its potential energy?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Formula.</strong> PE = m · g · h.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Substitute.</strong> PE = 50 kg × 9.8 m/s² × 10 m.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Calculate.</strong> PE = <strong>4,900 J</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Example 4 · Kinetic energy and the effect of the square</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>A 2 kg object moves at 6 m/s. Find its kinetic energy. Then do it again for 12 m/s.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>First case.</strong> KE = ½ × 2 kg × (6 m/s)² = ½ × 2 × 36 = <strong>36 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Second case.</strong> KE = ½ × 2 kg × (12 m/s)² = ½ × 2 × 144 = <strong>144 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>What to notice.</strong> The speed doubled, but the energy was multiplied by four. That comes straight from the speed being squared.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">That four explains the reading in Lesson 6.1</span>
+<p>Braking distance does not grow in step with speed, but much faster: a car going twice as fast carries four times as much kinetic energy, and the friction of the brakes has to take all of it away. That is why road safety campaigns focus on speed and not only on reaction time. It is also the most common gut mistake with this formula on the test: thinking that doubling the speed doubles the energy.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 3 · Double the speed</h3></div>
+<p class="pregunta-int" id="t-p3">If an object’s speed doubles, its kinetic energy…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">doubles</button>
+<button class="opcion" data-k="b" type="button">is multiplied by four</button>
+<button class="opcion" data-k="c" type="button">does not change</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#energy" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: kinetic and potential energy problems (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: kinetic and potential energy problems</span><span class="ei-sub">Use KE = ½ m v² and PE = m g h with new numbers every time.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>Conservation of energy</h2>
+<p>The principle is short and very powerful: <strong>energy is neither created nor destroyed; it only changes from one form to another</strong>. It is the same idea that ran Topic 5 with matter, now applied to energy.</p>
+<p>On a ride like a roller coaster, that means the potential energy the car had at the top does not vanish on the way down: it becomes kinetic energy. And on the way up again, the kinetic energy turns back into potential energy. The sum of both, the mechanical energy, stays the same if nothing is lost.</p>
+<svg style="width:100%;max-width:700px;height:auto;display:block;margin:12px auto;" viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile of a roller coaster with five labeled points. Point A is at the very top, where the car is almost stopped: potential energy is highest and kinetic energy almost zero. Point B is halfway down: potential energy has gone down and kinetic energy has gone up. Point C is at the bottom, the lowest point: potential energy is lowest, kinetic energy is highest, and the speed is the greatest of the whole ride. Point D is on the next climb, halfway up: kinetic energy turns back into potential energy. Point E is the top of the second hill, lower than the first, because friction has turned part of the mechanical energy into heat. The sum of kinetic and potential energy stays the same if nothing is lost to friction.">
+        <line x1="30" y1="290" x2="670" y2="290" stroke="#222" stroke-width="2"/>
+        <path d="M 60 70 Q 130 74 175 170 Q 215 254 265 262 Q 330 270 385 176 Q 425 112 470 122 Q 520 132 560 210 Q 590 264 640 268" fill="none" stroke="#1e3a8a" stroke-width="5"/>
+
+        <circle cx="62" cy="70" r="9" fill="#14265e"/>
+        <text x="62" y="52" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">A</text>
+        <circle cx="192" cy="204" r="9" fill="#14265e"/>
+        <text x="192" y="192" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">B</text>
+        <circle cx="272" cy="263" r="9" fill="#14265e"/>
+        <text x="272" y="252" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">C</text>
+        <circle cx="404" cy="152" r="9" fill="#14265e"/>
+        <text x="404" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">D</text>
+        <circle cx="470" cy="122" r="9" fill="#14265e"/>
+        <text x="470" y="106" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">E</text>
+
+        <line x1="30" y1="70" x2="56" y2="70" stroke="#c3cdf0" stroke-width="2" stroke-dasharray="5 4"/>
+        <line x1="30" y1="122" x2="464" y2="122" stroke="#c3cdf0" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="285" y="92" font-family="Segoe UI, sans-serif" font-size="11" fill="#222" text-anchor="middle">E is lower than A:</text>
+        <text x="285" y="108" font-family="Segoe UI, sans-serif" font-size="11" fill="#222" text-anchor="middle">friction turned that energy into heat</text>
+
+        <text x="30" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">A: PE highest, KE almost zero</text>
+        <text x="250" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">C: KE highest, PE lowest, top speed</text>
+        <text x="520" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">E: PE high again</text>
+      </svg>
+<div aria-label="Potential energy, kinetic energy, and speed at each of the five points of the roller coaster (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Potential energy, kinetic energy, and speed at each of the five points of the roller coaster</caption>
+<thead><tr><th scope="col">Point</th><th scope="col">Potential energy</th><th scope="col">Kinetic energy</th><th scope="col">Speed</th></tr></thead>
+<tbody>
+<tr><th scope="row">A · first top</th><td>Highest</td><td>Almost zero</td><td>Almost zero</td></tr>
+<tr><th scope="row">B · halfway down</th><td>Has gone down</td><td>Has gone up</td><td>Medium</td></tr>
+<tr><th scope="row">C · lowest point</th><td>Lowest</td><td>Highest</td><td>The greatest of the ride</td></tr>
+<tr><th scope="row">D · halfway up</th><td>Goes up again</td><td>Goes down again</td><td>Medium</td></tr>
+<tr><th scope="row">E · second top</th><td>High, but less than at A</td><td>Low</td><td>Low</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<p>You can fill in that table without a single calculation, and that is the skill the test rewards. One reading rule is enough: <strong>where the track is higher, potential energy is greater; where it is lower, kinetic energy and speed are greater</strong>.</p>
+<h3>Why the second hill is always lower</h3>
+<p>If energy is conserved, you might expect the car to climb back to exactly its starting height. It never does, and the reason ties straight back to the last lesson: friction with the rails and the air turns part of the mechanical energy into heat. That energy has not disappeared (the conservation principle still holds), but it is no longer available to move the car.</p>
+<p>That is why no roller coaster has a second top as high as the first, and why a pendulum left alone swings less and less until it stops. In both cases the energy still exists: it is spread out as heat in the air, the rails, and the object itself.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">The exact wording matters on the test</span>
+<p>Saying that “energy is lost” is imprecise and is usually the wrong option. What happens is that energy <strong>turns into heat</strong> and can no longer be used for motion. The right answer almost always mentions the change of form, not disappearance.</p>
+</div>
+<h3>Energy changes in everyday devices</h3>
+<div aria-label="Everyday devices with the energy that goes in, the useful energy that comes out, and the energy that turns into heat (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Everyday devices with the energy that goes in, the useful energy that comes out, and the energy that turns into heat</caption>
+<thead><tr><th scope="col">Device</th><th scope="col">Energy in</th><th scope="col">Useful energy out</th><th scope="col">Also produces</th></tr></thead>
+<tbody>
+<tr><th scope="row">Light bulb</th><td>Electrical</td><td>Light</td><td>Heat (a lot in incandescent bulbs, little in LEDs)</td></tr>
+<tr><th scope="row">Electric fan</th><td>Electrical</td><td>Kinetic (moving blades)</td><td>Heat and sound</td></tr>
+<tr><th scope="row">Car engine</th><td>Chemical (fuel)</td><td>Kinetic</td><td>A lot of heat</td></tr>
+<tr><th scope="row">Battery-powered flashlight</th><td>Chemical (battery)</td><td>Light</td><td>Heat</td></tr>
+<tr><th scope="row">Solar panel</th><td>Light</td><td>Electrical</td><td>Heat</td></tr>
+<tr><th scope="row">Hydroelectric dam</th><td>Potential (water held high)</td><td>Electrical</td><td>Heat and sound</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 4 · Fastest point</h3></div>
+<p class="pregunta-int" id="t-p4">On the roller coaster, the car is fastest at…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">point A, the first top</button>
+<button class="opcion" data-k="b" type="button">point C, the lowest point</button>
+<button class="opcion" data-k="c" type="button">point E, the second top</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Try it 5 · The second top</h3></div>
+<p class="pregunta-int" id="t-p5">The second top never reaches the height of the first because…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">gravity gets weaker during the ride</button>
+<button class="opcion" data-k="b" type="button">part of the energy is destroyed</button>
+<button class="opcion" data-k="c" type="button">friction turns part of the mechanical energy into heat</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practice-6-2.html#roller-coaster" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: predict on the roller coaster (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: predict on the roller coaster</span><span class="ei-sub">Where is each energy highest? Answer without calculating.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practice-6-2.html#changes" target="_blank" rel="noopener noreferrer" aria-label="Open the practice activity: energy changes (opens in a new tab)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practice more: energy changes</span><span class="ei-sub">What goes in, what comes out, and where the heat comes from.</span><span class="ei-cta">Open the activity <span aria-hidden="true">›</span></span></span>
+</a>
+<h3><span aria-hidden="true">🔤</span> Science vocabulary: roots</h3>
+<p><strong>Energy</strong> comes from the Greek <em>enérgeia</em>, made of <span class="raiz">en-</span>, in, and <span class="raiz">ergon</span>, work: literally, the ability to do work that is inside. The same root <span class="raiz">erg</span> is in <em>ergonomics</em>. <strong>Kinetic</strong> comes from <span class="raiz">kinesis</span>, motion, the root of <em>cinema</em>, which first meant moving pictures. <strong>Potential</strong> comes from the Latin <em>potentia</em>, power or ability: it is the energy that is not acting yet but could, because of where the object is. <strong>Power</strong>, on the other hand, measures speed of work, not ability, so do not mix them up despite how alike they sound. <strong>Joule</strong> and <strong>watt</strong> are named after James Joule and James Watt: the unit name is written in lowercase and its symbol in uppercase, J and W, just like the newton in Lesson 6.1.</p>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Science reading</h2>
+<p>A short science text written for this level. Notice how much of the energy reaches its goal and what happens to the rest.</p>
+<div class="lectura"><h3><span aria-hidden="true">📖</span> Where a car’s energy goes</h3><div class="texto">
+<p>When fuel burns in a car’s engine, it releases a certain amount of energy. Only part of it ends up moving the car; the rest turns into other forms that do not help it move.</p>
+<p>Several efficiency studies agree that, in a regular gasoline engine, about three quarters of the energy released is given off as heat, through the exhaust, the cooling system, and the rubbing of moving parts. Another share goes to running the car’s own accessories.</p>
+<p>Of the energy that does reach the wheels, part is used up pushing through the air, which gets much harder as speed goes up, and part in the rolling resistance of the tires. When braking, the kinetic energy the car has built up turns almost completely into heat in the brakes and goes off into the air.</p>
+<p>Some vehicles have regenerative braking, which recovers part of that energy and stores it in a battery instead of giving it off as heat. The studies reviewed point out that the savings depend a lot on the kind of trip, and that they are much larger on trips with frequent braking than on the open highway.</p>
+</div></div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 1</h3></div>
+<p class="pregunta-int" id="t-p6">What is the main idea of the text?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Cars do not need energy to move.</button>
+<button class="opcion" data-k="b" type="button">The fuel’s energy is destroyed during the trip.</button>
+<button class="opcion" data-k="c" type="button">Only part of the fuel’s energy moves the car; the rest turns mostly into heat.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 2</h3></div>
+<p class="pregunta-int" id="t-p7">When braking, the car’s kinetic energy…</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">turns almost completely into heat in the brakes</button>
+<button class="opcion" data-k="b" type="button">disappears without a trace</button>
+<button class="opcion" data-k="c" type="button">becomes extra mass</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 3</h3></div>
+<p class="pregunta-int" id="t-p8">According to the text, regenerative braking pays off most…</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">on the open highway at steady speed</button>
+<button class="opcion" data-k="b" type="button">on trips with frequent braking</button>
+<button class="opcion" data-k="c" type="button">only in gasoline cars</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Reading · Question 4</h3></div>
+<p class="pregunta-int" id="t-p9">Does this text contradict the conservation of energy?</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">Yes, because it describes energy being lost</button>
+<button class="opcion" data-k="b" type="button">Yes, because the engine creates new energy</button>
+<button class="opcion" data-k="c" type="button">No: the energy does not disappear; it turns into heat and can no longer be used for motion</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s6"><span aria-hidden="true" class="num-seccion">6</span>GED-style questions</h2>
+<p>These questions work like the ones on the GED® Science test: a short text, a table, or a graph, then a question with four options. Each one shows the science practice it checks and its depth of knowledge (DOK). You may use the calculator and the formula sheet.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 1 · SP.7.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p10"><em>A mover pushes a 40 kg dresser across the floor with a force of 120 N for 5 meters, then holds it still for 30 seconds.</em><br>How much work does the mover do in total?</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">600 J</button>
+<button class="opcion" data-k="b" type="button">3,600 J</button>
+<button class="opcion" data-k="c" type="button">200 J</button>
+<button class="opcion" data-k="d" type="button">24 J</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 2 · SP.7.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p11"><em>Motor X lifts a load using 1,800 J in 60 s. Motor Y does the same job in 20 s.</em><br>Which statement is correct?</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">Motor Y has a power of 90 W, three times that of motor X.</button>
+<button class="opcion" data-k="b" type="button">Both motors have the same power because the work is the same.</button>
+<button class="opcion" data-k="c" type="button">Motor X has more power because it works longer.</button>
+<button class="opcion" data-k="d" type="button">Motor Y does three times as much work.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 3 · SP.6.c · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p12"><em>A car’s speed goes from 15 m/s to 30 m/s.</em><br>How does its kinetic energy change?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">It becomes four times as large.</button>
+<button class="opcion" data-k="b" type="button">It becomes twice as large.</button>
+<button class="opcion" data-k="c" type="button">It stays the same.</button>
+<button class="opcion" data-k="d" type="button">It increases by 15 J.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 4 · SP.1.c · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p13"><em>Kinetic energy of a roller-coaster car at five points of a ride, with no friction:</em><svg viewBox="0 0 520 290" role="img" aria-label="Bar graph. Horizontal axis: Point on the ride. Vertical axis: Kinetic energy (kJ). Values: P, 2; Q, 14; R, 25; S, 9; T, 4." style="width:100%;max-width:520px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="232.0" x2="502" y2="232.0" stroke="#e1e6ea"/><text x="58" y="237.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="188.8" x2="502" y2="188.8" stroke="#e1e6ea"/><text x="58" y="193.8" text-anchor="end" font-size="13" fill="#3d4753">5</text><line x1="66" y1="145.6" x2="502" y2="145.6" stroke="#e1e6ea"/><text x="58" y="150.6" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="102.4" x2="502" y2="102.4" stroke="#e1e6ea"/><text x="58" y="107.4" text-anchor="end" font-size="13" fill="#3d4753">15</text><line x1="66" y1="59.2" x2="502" y2="59.2" stroke="#e1e6ea"/><text x="58" y="64.2" text-anchor="end" font-size="13" fill="#3d4753">20</text><line x1="66" y1="16.0" x2="502" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">25</text><line x1="66" y1="16" x2="66" y2="232" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="232.0" x2="502" y2="232.0" stroke="#1a2330" stroke-width="1.5"/><rect x="81.7" y="214.7" width="55.8" height="17.3" fill="#1f6066"/><text x="109.6" y="208.7" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="109.6" y="250" text-anchor="middle" font-size="13" fill="#3d4753">P</text><rect x="168.9" y="111.0" width="55.8" height="121.0" fill="#1f6066"/><text x="196.8" y="105.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">14</text><text x="196.8" y="250" text-anchor="middle" font-size="13" fill="#3d4753">Q</text><rect x="256.1" y="16.0" width="55.8" height="216.0" fill="#1f6066"/><text x="284.0" y="10.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">25</text><text x="284.0" y="250" text-anchor="middle" font-size="13" fill="#3d4753">R</text><rect x="343.3" y="154.2" width="55.8" height="77.8" fill="#1f6066"/><text x="371.2" y="148.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="371.2" y="250" text-anchor="middle" font-size="13" fill="#3d4753">S</text><rect x="430.5" y="197.4" width="55.8" height="34.6" fill="#1f6066"/><text x="458.4" y="191.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">4</text><text x="458.4" y="250" text-anchor="middle" font-size="13" fill="#3d4753">T</text><text x="284.0" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Point on the ride</text><text x="16" y="124.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 124.0)">Kinetic energy (kJ)</text></svg>At which point is the car <strong>highest</strong> above the ground?</p>
+<div aria-labelledby="t-p13" class="opciones" data-practica="p13" role="group">
+<button class="opcion" data-k="a" type="button">P</button>
+<button class="opcion" data-k="b" type="button">R</button>
+<button class="opcion" data-k="c" type="button">Q</button>
+<button class="opcion" data-k="d" type="button">S</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p13" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>GED-style question 5 · SP.3.b · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p14"><em>Read “Where a car’s energy goes” in section 5. A student writes: “Most of a gasoline car’s fuel energy is wasted, so the car breaks the law of conservation of energy.”</em><br>What is wrong with the student’s reasoning?</p>
+<div aria-labelledby="t-p14" class="opciones" data-practica="p14" role="group">
+<button class="opcion" data-k="a" type="button">The “wasted” energy is not destroyed: it turns into heat, so the total is still conserved.</button>
+<button class="opcion" data-k="b" type="button">Nothing: the text shows energy disappearing.</button>
+<button class="opcion" data-k="c" type="button">Gasoline cars do not lose any energy to heat.</button>
+<button class="opcion" data-k="d" type="button">Conservation only applies to roller coasters.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p14" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Homework</h2>
+<p>This is independent practice. Plan for about one hour, with your notebook open.</p>
+<ul class="lista-tarea">
+<li><strong>The practice page.</strong> Open the <a href="practice-6-2.html">practice page for this lesson</a> and do each activity. The exercises come in a new order every time. Keep going until you get 8 out of 10 right on the first try. The score under each activity keeps count for you.</li>
+<li><strong>Ten problems.</strong> Do ten work, power, and energy problems, with the right unit in each answer.</li>
+<li><strong>Four predictions.</strong> Draw a ride with ups and downs, label four points, and say without calculating where speed and each energy are highest.</li>
+<li><strong>In your own words.</strong> Write a short paragraph explaining why doubling a car’s speed multiplies its kinetic energy by four, and what that means when braking.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Practice quiz</h2>
+<p>Answer the <strong>12 questions</strong> and press <strong>Check my answers</strong>. If an answer is not right, you will get a hint and a second try. After the second try, you will see the solution. You can take the quiz as many times as you want.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Question 1</p>
+<p class="pregunta" id="t-q1">The energy an object has because it is moving is called…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">kinetic energy</button><button class="opcion" data-k="b" type="button">potential energy</button><button class="opcion" data-k="c" type="button">power</button><button class="opcion" data-k="d" type="button">work</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Question 2</p>
+<p class="pregunta" id="t-q2">A car stopped at the top of a slope has mostly…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">kinetic energy</button><button class="opcion" data-k="b" type="button">gravitational potential energy</button><button class="opcion" data-k="c" type="button">power</button><button class="opcion" data-k="d" type="button">no energy</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Question 3</p>
+<p class="pregunta" id="t-q3">The mechanical energy of a system is…</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">only the kinetic energy</button><button class="opcion" data-k="b" type="button">only the potential energy</button><button class="opcion" data-k="c" type="button">the sum of kinetic and potential energy</button><button class="opcion" data-k="d" type="button">energy divided by time</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Question 4</p>
+<p class="pregunta" id="t-q4">The quantity that measures how fast work is done is…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">force</button><button class="opcion" data-k="b" type="button">kinetic energy</button><button class="opcion" data-k="c" type="button">potential energy</button><button class="opcion" data-k="d" type="button">power</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Question 5</p>
+<p class="pregunta" id="t-q5">At the lowest point of a roller coaster, the car has…</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">highest kinetic and lowest potential energy</button><button class="opcion" data-k="b" type="button">highest potential and lowest kinetic energy</button><button class="opcion" data-k="c" type="button">both energies at their highest</button><button class="opcion" data-k="d" type="button">no energy at all</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Question 6</p>
+<p class="pregunta" id="t-q6">A pendulum left alone swings less and less because…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">gravity gets weaker</button><button class="opcion" data-k="b" type="button">friction turns part of the mechanical energy into heat</button><button class="opcion" data-k="c" type="button">energy is destroyed</button><button class="opcion" data-k="d" type="button">its mass goes down</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Question 7</p>
+<p class="pregunta" id="t-q7">If an object’s speed doubles, its kinetic energy…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">does not change</button><button class="opcion" data-k="b" type="button">doubles</button><button class="opcion" data-k="c" type="button">is multiplied by four</button><button class="opcion" data-k="d" type="button">is cut in half</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Question 8</p>
+<p class="pregunta" id="t-q8">A car climbs the second hill and does not reach the height of the first. This means that…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">conservation of energy does not hold</button><button class="opcion" data-k="b" type="button">potential energy turned into mass</button><button class="opcion" data-k="c" type="button">the car lost weight on the ride</button><button class="opcion" data-k="d" type="button">friction turned part of the mechanical energy into heat</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Question 9</p>
+<p class="pregunta" id="t-q9">A 20 N force moves an object 5 meters in the same direction. The work done is…</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 J</button><button class="opcion" data-k="b" type="button">25 J</button><button class="opcion" data-k="c" type="button">4 J</button><button class="opcion" data-k="d" type="button">100 W</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Question 10</p>
+<p class="pregunta" id="t-q10">A person holds a box still for one minute. The mechanical work done is…</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 J</button><button class="opcion" data-k="b" type="button">0 J, because nothing moves</button><button class="opcion" data-k="c" type="button">equal to the weight of the box</button><button class="opcion" data-k="d" type="button">impossible to know</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Question 11</p>
+<p class="pregunta" id="t-q11">A motor does 900 J of work in 45 seconds. Its power is…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">40,500 W</button><button class="opcion" data-k="b" type="button">945 W</button><button class="opcion" data-k="c" type="button">20 W</button><button class="opcion" data-k="d" type="button">0.05 W</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Question 12</p>
+<p class="pregunta" id="t-q12">A 4 kg object moves at 5 m/s. Its kinetic energy is…</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">20 J</button><button class="opcion" data-k="b" type="button">100 J</button><button class="opcion" data-k="c" type="button">10 J</button><button class="opcion" data-k="d" type="button">50 J</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Check my answers</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Start the quiz again</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">9</span>Self-check checklist</h2>
+<p>Use this checklist to see how you are doing. For each skill, choose <strong>Got it</strong>, <strong>Getting there</strong>, or <strong>Needs more practice</strong>. Read it <strong>before</strong> you start the homework. Use it <strong>after</strong> to check your own work honestly.</p>
+<div aria-label="Self-check checklist (table you can scroll sideways)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Skills of this lesson and what Got it, Getting there, and Needs more practice look like</caption>
+<thead><tr><th scope="col">Skill</th><th class="nivel-cab" scope="col">Got it</th><th class="nivel-cab" scope="col">Getting there</th><th class="nivel-cab" scope="col">Needs more practice</th></tr></thead>
+<tbody>
+<tr><th scope="row">Tell the energy types apart in a system</th><td>I identify kinetic, potential, and mechanical energy at each point and explain that mechanical energy is their sum.</td><td>I name kinetic and potential energy but place them wrong on the ride.</td><td>I use “energy” as one single word.</td></tr>
+<tr><th scope="row">Use conservation to predict without calculating</th><td>I predict where speed and each energy are highest, reasoning with height.</td><td>I predict some cases but do not use conservation to explain.</td><td>I need to calculate to answer anything.</td></tr>
+<tr><th scope="row">Calculate with the right formula</th><td>I use W = F · d, P = W ÷ t, KE = ½ m v², and PE = m g h with joules and watts.</td><td>I choose the formula well but forget to square the speed.</td><td>I pick formulas at random.</td></tr>
+<tr><th scope="row">Explain the result in context</th><td>I explain the result as energy changing form, with friction turning it into heat.</td><td>I explain it but say the energy is lost.</td><td>I give the number with no meaning.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Slide the table sideways to see all the columns.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Coming next</h2>
+<p>This lesson ended with heat: that is where the energy friction takes from motion ends up, on the roller coaster, in the pendulum, and in a car’s brakes. Lesson 6.3 picks up that thread and studies heat in its own right: what sets it apart from temperature and how it travels.</p><p>The second half of that lesson opens something new, waves, with their properties and the electromagnetic spectrum. Scientific notation from Lesson 2.1 comes back there, because wavelengths are handled in powers of ten.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Next: Lesson 6.3 · Heat and waves</p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Key words</h2>
+<dl class="glosario">
+<dt>Work (W)</dt><dd>Force times the distance moved in the direction of the force: W = F × d, in joules.</dd>
+<dt>Joule (J)</dt><dd>The unit of work and energy: 1 J = 1 N · m.</dd>
+<dt>Power (P)</dt><dd>How fast work is done: P = W ÷ t, in watts.</dd>
+<dt>Watt (W)</dt><dd>The unit of power: one joule per second.</dd>
+<dt>Kinetic energy</dt><dd>Energy of motion: KE = ½ m v².</dd>
+<dt>Potential energy</dt><dd>Energy of position (height): PE = m g h, with g = 9.8 m/s².</dd>
+<dt>Conservation of energy</dt><dd>Energy is neither created nor destroyed; it only changes form.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Science · Topic 6 · Lesson 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® is a registered trademark of the American Council on Education (ACE) and administered exclusively by GED Testing Service LLC under license. LearnGED is not affiliated with, endorsed by, or approved by ACE or GED Testing Service.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Heavy is not the same as work.",
+    "b": "Weight is a force, not work."
+   },
+   "right": "d = 0, so W = F × 0 = 0 J.",
+   "solution": "d = 0, so W = F × 0 = 0 J."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "Same force, same height: same work.",
+    "c": "Taking longer means less power."
+   },
+   "right": "Same work, less time → more power.",
+   "solution": "Same work, less time → more power."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "Speed is squared.",
+    "c": "KE depends on speed."
+   },
+   "right": "2² = 4.",
+   "solution": "2² = 4."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "At the top the car is almost stopped.",
+    "c": "E is high: little kinetic energy."
+   },
+   "right": "Lowest point → most kinetic energy → most speed.",
+   "solution": "Lowest point → most kinetic energy → most speed."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "Gravity does not change.",
+    "b": "Energy is never destroyed."
+   },
+   "right": "Transformation, not disappearance.",
+   "solution": "Transformation, not disappearance."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "The text says the opposite.",
+    "b": "Energy is not destroyed; it changes form."
+   },
+   "right": "Part moves the car; most becomes heat.",
+   "solution": "Part moves the car; most becomes heat."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "Energy does not disappear.",
+    "c": "Not in everyday physics."
+   },
+   "right": "Friction in the brakes → heat.",
+   "solution": "Friction in the brakes → heat."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "Little braking, little to recover.",
+    "c": "The text does not say that."
+   },
+   "right": "More braking, more energy to recover.",
+   "solution": "More braking, more energy to recover."
+  },
+  "p9": {
+   "ok": "c",
+   "hints": {
+    "a": "It changes form, it is not lost.",
+    "b": "The engine changes chemical energy; it does not create it."
+   },
+   "right": "Conservation holds.",
+   "solution": "Conservation holds."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "Holding still adds no work: there is no distance.",
+    "c": "The mass is not part of W = F × d here.",
+    "d": "That divides instead of multiplying."
+   },
+   "right": "W = 120 × 5 = 600 J; holding still adds 0 J.",
+   "solution": "W = 120 × 5 = 600 J; holding still adds 0 J."
+  },
+  "p11": {
+   "ok": "a",
+   "hints": {
+    "b": "Power also depends on time.",
+    "c": "Longer time means less power.",
+    "d": "Same job, same work."
+   },
+   "right": "X: 1,800 ÷ 60 = 30 W. Y: 1,800 ÷ 20 = 90 W.",
+   "solution": "X: 1,800 ÷ 60 = 30 W. Y: 1,800 ÷ 20 = 90 W."
+  },
+  "p12": {
+   "ok": "a",
+   "hints": {
+    "b": "Speed is squared in KE = ½ m v².",
+    "c": "KE depends on speed.",
+    "d": "Speed and energy have different units."
+   },
+   "right": "Double the speed → 2² = 4 times the energy.",
+   "solution": "Double the speed → 2² = 4 times the energy."
+  },
+  "p13": {
+   "ok": "a",
+   "hints": {
+    "b": "R has the most kinetic energy: it is the lowest point.",
+    "c": "Q has a lot of kinetic energy.",
+    "d": "S has more kinetic energy than P."
+   },
+   "right": "Least kinetic energy → most potential energy → highest point.",
+   "solution": "Least kinetic energy → most potential energy → highest point."
+  },
+  "p14": {
+   "ok": "a",
+   "hints": {
+    "b": "The text describes transformation, not disappearance.",
+    "c": "The text says about three quarters become heat.",
+    "d": "It applies everywhere."
+   },
+   "right": "Useful energy is lost to heat, but total energy is conserved.",
+   "solution": "Useful energy is lost to heat, but total energy is conserved."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "a",
+   "hints": {
+    "b": "That depends on height.",
+    "c": "Power is a rate.",
+    "d": "Work is force times distance."
+   },
+   "solution": "Kinesis = motion."
+  },
+  "2": {
+   "ok": "b",
+   "hints": {
+    "a": "It is stopped.",
+    "c": "Power is not stored.",
+    "d": "Height gives it energy."
+   },
+   "solution": "Height → potential energy."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "Half of it.",
+    "b": "Half of it.",
+    "d": "That is power."
+   },
+   "solution": "ME = KE + PE."
+  },
+  "4": {
+   "ok": "d",
+   "hints": {
+    "a": "Force is a push.",
+    "b": "That is energy of motion.",
+    "c": "That is energy of position."
+   },
+   "solution": "P = W ÷ t."
+  },
+  "5": {
+   "ok": "a",
+   "hints": {
+    "b": "That is the top.",
+    "c": "One goes up as the other goes down.",
+    "d": "It is moving fast."
+   },
+   "solution": "Low → fast."
+  },
+  "6": {
+   "ok": "b",
+   "hints": {
+    "a": "Gravity does not change.",
+    "c": "Energy is never destroyed.",
+    "d": "Its mass stays the same."
+   },
+   "solution": "Friction → heat."
+  },
+  "7": {
+   "ok": "c",
+   "hints": {
+    "a": "It depends on speed.",
+    "b": "Speed is squared.",
+    "d": "More speed, more energy."
+   },
+   "solution": "2² = 4."
+  },
+  "8": {
+   "ok": "d",
+   "hints": {
+    "a": "It always holds.",
+    "b": "Not in everyday physics.",
+    "c": "Its weight is the same."
+   },
+   "solution": "Transformation into heat."
+  },
+  "9": {
+   "ok": "a",
+   "hints": {
+    "b": "That is adding.",
+    "c": "That is dividing.",
+    "d": "Watts are for power."
+   },
+   "solution": "20 × 5 = 100 J."
+  },
+  "10": {
+   "ok": "b",
+   "hints": {
+    "a": "Time is not distance.",
+    "c": "Weight is a force.",
+    "d": "d = 0 tells you."
+   },
+   "solution": "d = 0 → W = 0."
+  },
+  "11": {
+   "ok": "c",
+   "hints": {
+    "a": "That is multiplying.",
+    "b": "That is adding.",
+    "d": "Upside down."
+   },
+   "solution": "900 ÷ 45 = 20 W."
+  },
+  "12": {
+   "ok": "d",
+   "hints": {
+    "a": "Square the speed first.",
+    "b": "Do not forget the ½.",
+    "c": "Square the speed, not the mass."
+   },
+   "solution": "½ × 4 × 25 = 50 J."
+  }
+ },
+ "next": "Lesson 6.3",
+ "review": "the lesson"
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculator.js" data-color="#1e3a8a" defer></script>
+</body>
+</html>

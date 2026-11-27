@@ -263,7 +263,7 @@ def leccion():
          t("<strong>Classify</strong> reactions as synthesis, decomposition, replacement, or combustion.", "<strong>Clasificar</strong> reacciones en síntesis, descomposición, sustitución o combustión."),
          t("<strong>Tell</strong> exothermic from endothermic reactions using an energy diagram.", "<strong>Distinguir</strong> reacciones exotérmicas de endotérmicas con un diagrama de energía.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 6 · Physical science II: force, motion, energy, and waves (being written).", "Siguiente: Tema 6 · Ciencias físicas II: fuerza, movimiento, energía y ondas (en preparación).")), glosario, P)
+        ("6-1", t("Newton’s laws, force, and friction", "Las leyes de Newton, la fuerza y la fricción")), glosario, P)
 
 
 # ---------------------------------------------------------------- práctica

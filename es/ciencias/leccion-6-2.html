@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 6.2 (español) — construida con tools/build_sci_6_2.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 6.2 · Trabajo, energía y conservación · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="en" href="/science/lesson-6-2.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="physical">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Ciencias · Tema 6 — Ciencias físicas II: fuerza, movimiento, energía y ondas</p>
+<h1>Lección 6.2 · Trabajo, energía y conservación</h1>
+<p class="lema">Cuánto cuesta mover algo y adónde va esa energía: trabajo, potencia, energía cinética y potencial, y el principio de que la energía solo cambia de forma.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip chip-sp">SP.7 · Aplicar fórmulas</span><span class="chip chip-sp">SP.6 · Leer gráficas y expresar resultados</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Calcular</strong> el trabajo mecánico y reconocer los casos en que una fuerza no realiza trabajo.</li>
+<li><strong>Calcular</strong> la potencia y distinguirla del trabajo.</li>
+<li><strong>Distinguir</strong> energía cinética, potencial y mecánica en un sistema.</li>
+<li><strong>Aplicar</strong> la conservación de la energía para predecir la velocidad o la altura en un punto, antes de calcular.</li>
+<li><strong>Interpretar</strong> el resultado numérico en su contexto físico, incluida la energía que la fricción transforma en calor.</li>
+</ul>
+</div>
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Prácticas científicas del examen GED® que trabaja esta lección:</p><ul><li><span class="std-cod std-dir">SP.7.b</span> Aplicar fórmulas de las teorías científicas.<br><span class="std-meta">Categoría 3 · DOK 2 · NRC P2, P5 · Mat. M2, M4, M8</span></li><li><span class="std-cod std-dir">SP.6.c</span> Expresar información o hallazgos científicos con palabras.<br><span class="std-meta">Categoría 1 · DOK 2–3 · CCR R7, W2 · NRC P8 · Mat. M2, M6</span></li><li><span class="std-cod std-dir">SP.1.c</span> Comprender y explicar una presentación científica no textual (tablas, gráficas, diagramas).<br><span class="std-meta">Categoría 3 · DOK 2 · NRC P8 · Mat. S-ID, 8.SP, M2, M4, M6</span></li><li><span class="std-cod std-dir">SP.3.b</span> Razonar a partir de datos o evidencia hasta llegar a una conclusión.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R1, R2, R3 · NRC P1, P6, P7 · Mat. M3, M4, M7, M8</span></li></ul>
+<p class="std-tit">También prepara la base para:</p><ul><li><span class="std-cod std-base">SP.4.a</span> Evaluar si unos datos o una evidencia concretos apoyan o contradicen una conclusión o teoría.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8 · NRC P4, P6 · Mat. M3, M7, M8</span></li></ul>
+<p class="std-tit">Categorías de informe del examen de Ciencias del GED®:</p><ul><li>Categoría 1 · Analizar argumentos científicos y técnicos, evidencia e información de textos (30 % del examen)</li><li>Categoría 2 · Aplicar procesos científicos y conceptos de procedimiento (40 % del examen)</li><li>Categoría 3 · Razonar con cantidades e interpretar datos en contextos científicos (30 % del examen)</li></ul>
+<p class="std-tit">Temas de contenido de Ciencias del GED®:</p>
+<ul><li><span class="std-cod std-mp">P.c</span> Propiedades químicas y reacciones relacionadas con los seres vivos</li></ul>
+<p class="std-tit">Qué significan los códigos alineados (CCR, NRC y matemáticas):</p><ul class="std-clave"><li><span class="std-cod std-ccr">P2</span> Práctica NRC 2: desarrollar y usar modelos.</li><li><span class="std-cod std-ccr">P5</span> Práctica NRC 5: usar las matemáticas y el pensamiento computacional.</li><li><span class="std-cod std-ccr">M2</span> Práctica matemática 2: razonar de forma abstracta y cuantitativa.</li><li><span class="std-cod std-ccr">M4</span> Práctica matemática 4: modelar con matemáticas.</li><li><span class="std-cod std-ccr">M8</span> Práctica matemática 8: buscar regularidades en el razonamiento repetido.</li><li><span class="std-cod std-ccr">R7</span> Lectura CCR 7: integrar información de textos, imágenes y números.</li><li><span class="std-cod std-ccr">W2</span> Escritura CCR 2: escribir para informar y explicar.</li><li><span class="std-cod std-ccr">P8</span> Práctica NRC 8: obtener, evaluar y comunicar información.</li><li><span class="std-cod std-ccr">M6</span> Práctica matemática 6: atender a la precisión.</li><li><span class="std-cod std-ccr">S-ID</span> Estadística: interpretar datos categóricos y cuantitativos.</li><li><span class="std-cod std-ccr">8.SP</span> Matemáticas, estadística y probabilidad (8.º grado): patrones en datos de dos variables.</li><li><span class="std-cod std-ccr">R1</span> Lectura CCR 1: leer con atención y citar evidencia concreta del texto.</li><li><span class="std-cod std-ccr">R2</span> Lectura CCR 2: determinar las ideas centrales y resumirlas.</li><li><span class="std-cod std-ccr">R3</span> Lectura CCR 3: analizar cómo se desarrollan y relacionan las ideas, los hechos o los pasos.</li><li><span class="std-cod std-ccr">P1</span> Práctica NRC 1: hacer preguntas.</li><li><span class="std-cod std-ccr">P6</span> Práctica NRC 6: construir explicaciones.</li><li><span class="std-cod std-ccr">P7</span> Práctica NRC 7: argumentar con evidencia.</li><li><span class="std-cod std-ccr">M3</span> Práctica matemática 3: construir argumentos y criticar el razonamiento ajeno.</li><li><span class="std-cod std-ccr">M7</span> Práctica matemática 7: buscar y usar la estructura.</li><li><span class="std-cod std-ccr">R8</span> Lectura CCR 8: evaluar las afirmaciones de un texto y la evidencia que las sostiene.</li><li><span class="std-cod std-ccr">P4</span> Práctica NRC 4: analizar e interpretar datos.</li></ul>
+<p class="std-fuente">DOK (profundidad de conocimiento): 1 = recordar, 2 = aplicar una destreza o un concepto, 3 = razonar con evidencia. Fuente de las prácticas, las categorías, los rangos de DOK y la alineación: GED Testing Service, <cite>Assessment Guide for Educators: Science</cite> (2016; prácticas científicas actualizadas en 2020). Los estándares ancla CCR están en Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>; las prácticas NRC, en <cite>A Framework for K-12 Science Education</cite> (National Research Council, 2012).</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s1">El trabajo mecánico</a></li>
+<li><a href="#s2">La potencia: el trabajo y el tiempo</a></li>
+<li><a href="#s3">Las formas de la energía mecánica</a></li>
+<li><a href="#s4">La conservación de la energía</a></li>
+<li><a href="#s5">Lectura científica</a></li>
+<li><a href="#s6">Preguntas tipo GED</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-lista">Lista de autoevaluación</a></li>
+<li><a href="#s-sigue">Lo que viene</a></li>
+<li><a href="#s-palabras">Palabras clave</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Antes de empezar</span>
+<p>Cambio de pregunta. La 6.1 preguntaba qué hace que el movimiento cambie, y la respuesta era la fuerza neta. Esta lección pregunta otra cosa: cuánto cuesta mover algo y qué ocurre con ese coste después. La respuesta es la <strong>energía</strong>, y su propiedad más útil es que no se pierde: cambia de forma.</p><p>El despeje ya se domina desde la 5.2 y la 6.1, de modo que lo que se trabaja aquí es elegir la fórmula correcta y expresar el resultado en la unidad correcta. Esta lección introduce dos unidades nuevas, el julio y el vatio, y ambas se confunden con facilidad. Todas las fórmulas (W = F · d, Ec = ½ m v², Ep = m · g · h) están en la hoja de fórmulas del GED.</p><p><strong>Cómo estudiar esta lección:</strong> prediga antes de calcular y después contraste la predicción con el resultado numérico. Quien razona primero con la conservación de la energía resuelve muchos ítems del examen sin operar, porque el examen pregunta con frecuencia «dónde es mayor» y no «cuánto vale».</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>El trabajo mecánico</h2>
+<p>En física, <strong>trabajo</strong> no significa esfuerzo. Significa algo muy concreto: una fuerza que consigue <strong>desplazar</strong> un objeto en la dirección de esa fuerza. Si no hay desplazamiento, no hay trabajo, por mucho que se sude.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La fórmula</span>
+<p><strong>W = F × d</strong>, donde F es la fuerza en newtons y d la distancia recorrida en metros. El resultado se expresa en <strong>julios (J)</strong>. Un julio es el trabajo de una fuerza de un newton a lo largo de un metro: <strong>1 J = 1 N · m</strong>.</p>
+</div>
+<svg style="width:100%;max-width:700px;height:auto;display:block;margin:12px auto;" viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dos situaciones comparadas para decidir si hay trabajo mecánico. En la primera, una persona empuja una caja con una fuerza de cincuenta newtons y la caja se desplaza tres metros en la dirección de la fuerza: sí hay trabajo, y su valor es de ciento cincuenta julios. En la segunda, una persona sostiene una maleta pesada sin moverse del sitio: aplica fuerza hacia arriba, pero no hay desplazamiento, de modo que el trabajo mecánico es cero, aunque la persona se canse.">
+        <rect x="14" y="16" width="336" height="218" rx="10" fill="#eef2fc" stroke="#14265e" stroke-width="2"/>
+        <text x="182" y="44" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#14265e" text-anchor="middle">Sí hay trabajo</text>
+        <rect x="70" y="96" width="62" height="48" rx="6" fill="#dbe2f7" stroke="#14265e" stroke-width="3"/>
+        <line x1="140" y1="120" x2="240" y2="120" stroke="#1e3a8a" stroke-width="5"/><polygon points="240,112 258,120 240,128" fill="#1e3a8a"/>
+        <text x="196" y="106" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#14265e" text-anchor="middle">F = 50 N</text>
+        <line x1="70" y1="166" x2="286" y2="166" stroke="#14265e" stroke-width="2" stroke-dasharray="6 4"/>
+        <text x="178" y="186" font-family="Segoe UI, sans-serif" font-size="12" fill="#222" text-anchor="middle">d = 3 m</text>
+        <text x="182" y="216" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#14265e" text-anchor="middle">W = 50 × 3 = 150 J</text>
+
+        <rect x="364" y="16" width="322" height="218" rx="10" fill="#eef2fc" stroke="#14265e" stroke-width="2"/>
+        <text x="525" y="44" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#14265e" text-anchor="middle">No hay trabajo</text>
+        <rect x="494" y="112" width="62" height="48" rx="6" fill="#dbe2f7" stroke="#14265e" stroke-width="3"/>
+        <line x1="525" y1="106" x2="525" y2="72" stroke="#1e3a8a" stroke-width="5"/><polygon points="517,72 525,56 533,72" fill="#1e3a8a"/>
+        <text x="600" y="86" font-family="Segoe UI, sans-serif" font-size="12" font-weight="700" fill="#14265e" text-anchor="middle">F hacia arriba</text>
+        <text x="525" y="186" font-family="Segoe UI, sans-serif" font-size="12" fill="#222" text-anchor="middle">d = 0 · la maleta no se mueve</text>
+        <text x="525" y="216" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#14265e" text-anchor="middle">W = 50 × 0 = 0 J</text>
+      </svg>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Trabajo</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Una persona empuja un carrito con una fuerza de 25 N a lo largo de 4 metros. ¿Qué trabajo realiza?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Qué falta.</strong> Se dan fuerza y distancia y se pide trabajo: W = F × d.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustitución y cálculo.</strong> W = 25 N × 4 m = <strong>100 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Unidad.</strong> Newtons por metros son julios, por definición. Un resultado en newtons o en metros sería incorrecto.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Trabajo cero no significa esfuerzo cero</span>
+<p>Sostener una maleta pesada durante diez minutos sin moverse cansa muchísimo y, sin embargo, el trabajo mecánico es cero, porque la distancia recorrida en la dirección de la fuerza es cero. Lo mismo ocurre al empujar una pared que no cede. El examen plantea esta situación con frecuencia, y la respuesta correcta suele parecer contraria al sentido común.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 1 · Sostener una caja</h3></div>
+<p class="pregunta-int" id="t-p1">Una persona sostiene una caja pesada sin moverse durante dos minutos. El trabajo mecánico que realiza es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">muy grande, porque la caja pesa mucho</button>
+<button class="opcion" data-k="b" type="button">igual al peso de la caja</button>
+<button class="opcion" data-k="c" type="button">cero, porque no hay desplazamiento</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#trabajo" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: problemas de trabajo (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: problemas de trabajo</span><span class="ei-sub">Problemas nuevos cada vez, algunos con trabajo cero.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>La potencia: el trabajo y el tiempo</h2>
+<p>Dos personas suben la misma caja a la misma altura, una en cinco segundos y la otra en veinte. Han realizado el mismo trabajo, porque la fuerza y la distancia son idénticas. Lo que las distingue es la rapidez con que lo hicieron, y eso es la <strong>potencia</strong>.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">La fórmula</span>
+<p><strong>P = W ÷ t</strong>, donde W es el trabajo en julios y t el tiempo en segundos. El resultado se expresa en <strong>vatios (W)</strong>: un vatio es un julio por segundo.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Una colisión de símbolos que conviene tener clara</span>
+<p>La letra W se usa para dos cosas distintas: como magnitud significa <strong>trabajo</strong> (del inglés <em>work</em>) y como unidad significa <strong>vatio</strong>. Se distinguen por el sitio: si aparece antes del signo igual o dentro de una fórmula, es trabajo; si acompaña a un número como unidad del resultado, es vatio. Una bombilla de 12 W consume doce julios cada segundo.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Potencia</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Un motor realiza un trabajo de 600 J en 30 segundos. ¿Cuál es su potencia?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Qué falta.</strong> Se dan trabajo y tiempo y se pide potencia: P = W ÷ t.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustitución y cálculo.</strong> P = 600 J ÷ 30 s = <strong>20 W</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Interpretación.</strong> El motor entrega veinte julios cada segundo. Si hiciera el mismo trabajo en la mitad de tiempo, su potencia sería el doble, aunque el trabajo no habría cambiado.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 2 · Dos obreros</h3></div>
+<p class="pregunta-int" id="t-p2">Dos obreros suben cargas idénticas a la misma altura, uno en 10 s y otro en 40 s. Se puede afirmar que…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">realizaron el mismo trabajo, pero el primero desarrolló más potencia</button>
+<button class="opcion" data-k="b" type="button">el primero realizó más trabajo</button>
+<button class="opcion" data-k="c" type="button">el segundo desarrolló más potencia</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#potencia" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: problemas de potencia (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: problemas de potencia</span><span class="ei-sub">Halle la potencia, el trabajo o el tiempo.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>Las formas de la energía mecánica</h2>
+<p>La <strong>energía</strong> es la capacidad de realizar trabajo, y se mide en las mismas unidades: julios. En esta lección interesan dos formas y su suma.</p>
+<div aria-label="Las tres magnitudes energéticas de la lección con su fórmula, de qué depende cada una y un ejemplo (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las tres magnitudes energéticas de la lección con su fórmula, de qué depende cada una y un ejemplo</caption>
+<thead><tr><th scope="col">Tipo</th><th scope="col">Fórmula</th><th scope="col">De qué depende</th><th scope="col">Ejemplo</th></tr></thead>
+<tbody>
+<tr><th scope="row">Energía cinética (Ec)</th><td>Ec = ½ · m · v²</td><td>La masa y, sobre todo, la velocidad, que va elevada al cuadrado</td><td>Un automóvil en marcha</td></tr>
+<tr><th scope="row">Energía potencial gravitatoria (Ep)</th><td>Ep = m · g · h</td><td>La masa y la altura respecto a un nivel de referencia</td><td>Un vagón detenido en lo alto de una montaña rusa</td></tr>
+<tr><th scope="row">Energía mecánica</th><td>Em = Ec + Ep</td><td>La suma de las dos anteriores</td><td>El total del sistema en cualquier punto del recorrido</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>En la fórmula de la energía potencial, <strong>g</strong> es la aceleración de la gravedad, cuyo valor en la Tierra es de <strong>9.8 m/s²</strong>. Aparece en la hoja de fórmulas del GED, de modo que no hay que recordarlo; algunos problemas lo redondean a 10 para simplificar, y en ese caso el enunciado lo indica.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 3 · Energía potencial</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Un vagón de 50 kg se encuentra en lo alto de una pendiente, a 10 metros de altura. ¿Cuál es su energía potencial?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Fórmula.</strong> Ep = m · g · h.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Sustitución.</strong> Ep = 50 kg × 9.8 m/s² × 10 m.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Cálculo.</strong> Ep = <strong>4,900 J</strong>.</p>
+</div>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 4 · Energía cinética y el efecto del cuadrado</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Un cuerpo de 2 kg se mueve a 6 m/s. Calcule su energía cinética. Después repita el cálculo para 12 m/s.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Primer caso.</strong> Ec = ½ × 2 kg × (6 m/s)² = ½ × 2 × 36 = <strong>36 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Segundo caso.</strong> Ec = ½ × 2 kg × (12 m/s)² = ½ × 2 × 144 = <strong>144 J</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Lo que hay que observar.</strong> La velocidad se ha duplicado, pero la energía se ha multiplicado por cuatro. Es la consecuencia directa de que la velocidad vaya elevada al cuadrado.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Ese cuatro explica la lectura de la Lección 6.1</span>
+<p>La distancia de frenado no crece en proporción a la velocidad, sino mucho más deprisa: un automóvil que circula al doble de velocidad lleva cuatro veces más energía cinética, y toda esa energía tiene que ser retirada por la fricción de los frenos. Por eso las campañas de seguridad vial insisten en la velocidad y no solo en el tiempo de reacción. Es también el error de intuición más frecuente del examen en esta fórmula: suponer que al doblar la velocidad se dobla la energía.</p>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 3 · Doble velocidad</h3></div>
+<p class="pregunta-int" id="t-p3">Si la velocidad de un cuerpo se duplica, su energía cinética…</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">se duplica</button>
+<button class="opcion" data-k="b" type="button">se multiplica por cuatro</button>
+<button class="opcion" data-k="c" type="button">no cambia</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#energia" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: problemas de energía cinética y potencial (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: problemas de energía cinética y potencial</span><span class="ei-sub">Use Ec = ½ m v² y Ep = m g h con números nuevos cada vez.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>La conservación de la energía</h2>
+<p>El principio es breve y muy poderoso: <strong>la energía no se crea ni se destruye, solo se transforma de una forma en otra</strong>. Es la misma idea que gobernaba el Tema 5 con la materia, aplicada ahora a la energía.</p>
+<p>En un recorrido como el de una montaña rusa, eso significa que la energía potencial que el vagón tenía arriba no desaparece al bajar: se convierte en energía cinética. Y al subir de nuevo, la cinética vuelve a convertirse en potencial. La suma de ambas, la energía mecánica, se mantiene constante si no hay pérdidas.</p>
+<svg style="width:100%;max-width:700px;height:auto;display:block;margin:12px auto;" viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Perfil de una montaña rusa con cinco puntos rotulados. El punto A está en lo más alto del recorrido, donde el vagón está casi detenido: allí la energía potencial es máxima y la cinética casi nula. El punto B está a media bajada: la energía potencial ha disminuido y la cinética ha aumentado. El punto C está en el fondo del recorrido, el punto más bajo: allí la energía potencial es mínima, la cinética es máxima y la velocidad es la mayor de todo el trayecto. El punto D está en la subida siguiente, a media altura: la cinética vuelve a convertirse en potencial. El punto E es la cima de la segunda colina, más baja que la primera, porque la fricción ha transformado parte de la energía mecánica en calor. La suma de energía cinética y potencial se mantiene constante si no hay pérdidas.">
+        <line x1="30" y1="290" x2="670" y2="290" stroke="#222" stroke-width="2"/>
+        <path d="M 60 70 Q 130 74 175 170 Q 215 254 265 262 Q 330 270 385 176 Q 425 112 470 122 Q 520 132 560 210 Q 590 264 640 268" fill="none" stroke="#1e3a8a" stroke-width="5"/>
+
+        <circle cx="62" cy="70" r="9" fill="#14265e"/>
+        <text x="62" y="52" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">A</text>
+        <circle cx="192" cy="204" r="9" fill="#14265e"/>
+        <text x="192" y="192" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">B</text>
+        <circle cx="272" cy="263" r="9" fill="#14265e"/>
+        <text x="272" y="252" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">C</text>
+        <circle cx="404" cy="152" r="9" fill="#14265e"/>
+        <text x="404" y="140" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">D</text>
+        <circle cx="470" cy="122" r="9" fill="#14265e"/>
+        <text x="470" y="106" font-family="Segoe UI, sans-serif" font-size="14" font-weight="700" fill="#14265e" text-anchor="middle">E</text>
+
+        <line x1="30" y1="70" x2="56" y2="70" stroke="#c3cdf0" stroke-width="2" stroke-dasharray="5 4"/>
+        <line x1="30" y1="122" x2="464" y2="122" stroke="#c3cdf0" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="285" y="92" font-family="Segoe UI, sans-serif" font-size="11" fill="#222" text-anchor="middle">E queda por debajo de A:</text>
+        <text x="285" y="108" font-family="Segoe UI, sans-serif" font-size="11" fill="#222" text-anchor="middle">la fricción transformó esa energía en calor</text>
+
+        <text x="30" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">A: Ep máxima, Ec casi nula</text>
+        <text x="250" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">C: Ec máxima, Ep mínima, mayor velocidad</text>
+        <text x="520" y="312" font-family="Segoe UI, sans-serif" font-size="12" fill="#222">E: Ep alta otra vez</text>
+      </svg>
+<div aria-label="Energía potencial, energía cinética y velocidad en cada uno de los cinco puntos del recorrido de la montaña rusa (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Energía potencial, energía cinética y velocidad en cada uno de los cinco puntos del recorrido de la montaña rusa</caption>
+<thead><tr><th scope="col">Punto</th><th scope="col">Energía potencial</th><th scope="col">Energía cinética</th><th scope="col">Velocidad</th></tr></thead>
+<tbody>
+<tr><th scope="row">A · cima inicial</th><td>Máxima</td><td>Casi nula</td><td>Casi nula</td></tr>
+<tr><th scope="row">B · media bajada</th><td>Ha disminuido</td><td>Ha aumentado</td><td>Media</td></tr>
+<tr><th scope="row">C · punto más bajo</th><td>Mínima</td><td>Máxima</td><td>La mayor del recorrido</td></tr>
+<tr><th scope="row">D · media subida</th><td>Vuelve a aumentar</td><td>Vuelve a disminuir</td><td>Media</td></tr>
+<tr><th scope="row">E · segunda cima</th><td>Alta, pero menor que en A</td><td>Baja</td><td>Baja</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<p>Esa tabla se puede completar sin hacer un solo cálculo, y ahí está la destreza que el examen premia. Basta con una regla de lectura: <strong>donde el recorrido está más alto, la potencial es mayor; donde está más bajo, la cinética y la velocidad son mayores</strong>.</p>
+<h3>Por qué la segunda colina siempre es más baja</h3>
+<p>Si la energía se conserva, cabría esperar que el vagón volviera a subir exactamente a la altura de partida. No lo hace nunca, y el motivo enlaza directamente con la lección anterior: la fricción con los raíles y con el aire transforma parte de la energía mecánica en calor. Esa energía no ha desaparecido (el principio de conservación sigue cumpliéndose), pero ya no está disponible para mover el vagón.</p>
+<p>Por eso ninguna montaña rusa tiene una segunda cima tan alta como la primera, y por eso un péndulo abandonado a su suerte va reduciendo su oscilación hasta detenerse. En ambos casos la energía sigue existiendo: está repartida como calor entre el aire, los raíles y el propio cuerpo.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">La formulación exacta importa en el examen</span>
+<p>Decir que «se pierde energía» es impreciso y suele ser la opción incorrecta del ítem. Lo que ocurre es que la energía <strong>se transforma en calor</strong> y deja de ser aprovechable para el movimiento. La respuesta correcta casi siempre menciona la transformación, no la desaparición.</p>
+</div>
+<h3>Transformaciones de energía en aparatos cotidianos</h3>
+<div aria-label="Aparatos cotidianos con la energía que entra, la energía útil que sale y la que se transforma en calor (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Aparatos cotidianos con la energía que entra, la energía útil que sale y la que se transforma en calor</caption>
+<thead><tr><th scope="col">Aparato</th><th scope="col">Energía que entra</th><th scope="col">Energía útil que sale</th><th scope="col">También produce</th></tr></thead>
+<tbody>
+<tr><th scope="row">Bombilla</th><td>Eléctrica</td><td>Luminosa</td><td>Calor (mucho en las incandescentes, poco en las LED)</td></tr>
+<tr><th scope="row">Ventilador</th><td>Eléctrica</td><td>Cinética (aspas en movimiento)</td><td>Calor y sonido</td></tr>
+<tr><th scope="row">Motor de automóvil</th><td>Química (combustible)</td><td>Cinética</td><td>Mucho calor</td></tr>
+<tr><th scope="row">Linterna de pilas</th><td>Química (pila)</td><td>Luminosa</td><td>Calor</td></tr>
+<tr><th scope="row">Panel solar</th><td>Luminosa</td><td>Eléctrica</td><td>Calor</td></tr>
+<tr><th scope="row">Presa hidroeléctrica</th><td>Potencial (agua en altura)</td><td>Eléctrica</td><td>Calor y sonido</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 4 · El punto más rápido</h3></div>
+<p class="pregunta-int" id="t-p4">En el recorrido de la montaña rusa, la velocidad del vagón es mayor en…</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">el punto A, la cima inicial</button>
+<button class="opcion" data-k="b" type="button">el punto C, el más bajo del recorrido</button>
+<button class="opcion" data-k="c" type="button">el punto E, la segunda cima</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 5 · La segunda cima</h3></div>
+<p class="pregunta-int" id="t-p5">La segunda cima nunca alcanza la altura de la primera porque…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">la gravedad disminuye durante el recorrido</button>
+<button class="opcion" data-k="b" type="button">parte de la energía se destruye</button>
+<button class="opcion" data-k="c" type="button">la fricción transforma parte de la energía mecánica en calor</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-6-2.html#montana-rusa" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: prediga en la montaña rusa (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: prediga en la montaña rusa</span><span class="ei-sub">¿Dónde es máxima cada energía? Responda sin calcular.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-6-2.html#transformaciones" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: transformaciones de energía (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: transformaciones de energía</span><span class="ei-sub">Qué entra, qué sale y de dónde sale el calor.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<h3><span aria-hidden="true">🔤</span> Vocabulario técnico: raíces</h3>
+<p><strong>Energía</strong> procede del griego <em>enérgeia</em>, formada por <span class="raiz">en-</span>, dentro, y <span class="raiz">érgon</span>, obra o trabajo: literalmente, la capacidad de obrar que está dentro. La misma raíz <span class="raiz">érgon</span> aparece en <em>ergonomía</em>. <strong>Cinética</strong> viene de <span class="raiz">kínesis</span>, movimiento, la raíz de <em>cine</em>, que en su origen designaba imágenes en movimiento. <strong>Potencial</strong> procede del latín <em>potentia</em>, poder o capacidad: es la energía que todavía no actúa pero puede hacerlo, por la posición que ocupa el cuerpo. <strong>Potencia</strong>, en cambio, mide rapidez, no capacidad, y conviene no confundirlas pese al parecido. <strong>Julio</strong> y <strong>vatio</strong> son epónimos, de James Joule y James Watt: el nombre de la unidad se escribe en minúscula y su símbolo en mayúscula, J y W, igual que ocurría con el newton en la Lección 6.1.</p>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Lectura científica</h2>
+<p>Texto científico breve adaptado al nivel. Observe qué proporción de la energía llega a su destino y qué ocurre con el resto.</p>
+<div class="lectura"><h3><span aria-hidden="true">📖</span> Adónde va la energía de un automóvil</h3><div class="texto">
+<p>Cuando se quema combustible en el motor de un automóvil, se libera una cantidad determinada de energía. Solo una parte de ella acaba moviendo el vehículo; el resto se transforma en otras formas que no contribuyen al desplazamiento.</p>
+<p>Diversos análisis de eficiencia coinciden en que, en un motor de gasolina convencional, alrededor de las tres cuartas partes de la energía liberada se disipa en forma de calor, tanto por los gases de escape como por el sistema de refrigeración y por el rozamiento entre las piezas móviles. Una fracción adicional se emplea en mover los accesorios del propio vehículo.</p>
+<p>De la energía que sí llega a las ruedas, una parte se consume en vencer la resistencia del aire, que aumenta rápidamente con la velocidad, y otra en la resistencia de rodadura de los neumáticos. Al frenar, la energía cinética acumulada se transforma casi por completo en calor en los frenos y se disipa en el aire.</p>
+<p>Algunos vehículos incorporan sistemas de frenado regenerativo, que recuperan una fracción de esa energía y la almacenan en una batería en lugar de disiparla. Los estudios consultados señalan que el ahorro obtenido depende mucho del tipo de recorrido, y que en trayectos con frenadas frecuentes resulta considerablemente mayor que en carretera abierta.</p>
+</div></div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 1</h3></div>
+<p class="pregunta-int" id="t-p6">¿Cuál es la idea central del texto?</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">Los automóviles no necesitan energía para moverse.</button>
+<button class="opcion" data-k="b" type="button">La energía del combustible se destruye durante el trayecto.</button>
+<button class="opcion" data-k="c" type="button">Solo una parte de la energía del combustible mueve el vehículo; el resto se transforma sobre todo en calor.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 2</h3></div>
+<p class="pregunta-int" id="t-p7">Al frenar, la energía cinética del vehículo…</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">se transforma casi por completo en calor en los frenos</button>
+<button class="opcion" data-k="b" type="button">desaparece sin dejar rastro</button>
+<button class="opcion" data-k="c" type="button">se convierte en masa adicional</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 3</h3></div>
+<p class="pregunta-int" id="t-p8">Según el texto, el frenado regenerativo resulta más provechoso…</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">en carretera abierta y a velocidad constante</button>
+<button class="opcion" data-k="b" type="button">en recorridos con frenadas frecuentes</button>
+<button class="opcion" data-k="c" type="button">solo en vehículos de gasolina</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 4</h3></div>
+<p class="pregunta-int" id="t-p9">¿Contradice este texto el principio de conservación de la energía?</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">Sí, porque describe energía que se pierde</button>
+<button class="opcion" data-k="b" type="button">Sí, porque el motor crea energía nueva</button>
+<button class="opcion" data-k="c" type="button">No: la energía no desaparece, se transforma en calor y deja de ser aprovechable para el movimiento</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s6"><span aria-hidden="true" class="num-seccion">6</span>Preguntas tipo GED</h2>
+<p>Estas preguntas funcionan como las del examen de Ciencias del GED®: un texto breve, una tabla o una gráfica, y después una pregunta con cuatro opciones. Cada una indica la práctica científica que evalúa y su profundidad de conocimiento (DOK). Puede usar la calculadora y la hoja de fórmulas.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 1 · SP.7.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p10"><em>Un empleado de mudanzas empuja una cómoda de 40 kg por el suelo con una fuerza de 120 N a lo largo de 5 metros y después la sostiene quieta durante 30 segundos.</em><br>¿Cuánto trabajo realiza en total?</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">600 J</button>
+<button class="opcion" data-k="b" type="button">3,600 J</button>
+<button class="opcion" data-k="c" type="button">200 J</button>
+<button class="opcion" data-k="d" type="button">24 J</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 2 · SP.7.b · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p11"><em>El motor X sube una carga empleando 1,800 J en 60 s. El motor Y hace el mismo trabajo en 20 s.</em><br>¿Qué afirmación es correcta?</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">El motor Y tiene una potencia de 90 W, el triple que el motor X.</button>
+<button class="opcion" data-k="b" type="button">Los dos motores tienen la misma potencia porque el trabajo es el mismo.</button>
+<button class="opcion" data-k="c" type="button">El motor X tiene más potencia porque trabaja más tiempo.</button>
+<button class="opcion" data-k="d" type="button">El motor Y realiza el triple de trabajo.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 3 · SP.6.c · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p12"><em>La velocidad de un automóvil pasa de 15 m/s a 30 m/s.</em><br>¿Cómo cambia su energía cinética?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">Se hace cuatro veces mayor.</button>
+<button class="opcion" data-k="b" type="button">Se hace el doble.</button>
+<button class="opcion" data-k="c" type="button">No cambia.</button>
+<button class="opcion" data-k="d" type="button">Aumenta 15 J.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 4 · SP.1.c · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p13"><em>Energía cinética de un vagón de montaña rusa en cinco puntos de un recorrido, sin fricción:</em><svg viewBox="0 0 520 290" role="img" aria-label="Gráfica de barras. Eje horizontal: Punto del recorrido. Eje vertical: Energía cinética (kJ). Valores: P, 2; Q, 14; R, 25; S, 9; T, 4." style="width:100%;max-width:520px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="232.0" x2="502" y2="232.0" stroke="#e1e6ea"/><text x="58" y="237.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="188.8" x2="502" y2="188.8" stroke="#e1e6ea"/><text x="58" y="193.8" text-anchor="end" font-size="13" fill="#3d4753">5</text><line x1="66" y1="145.6" x2="502" y2="145.6" stroke="#e1e6ea"/><text x="58" y="150.6" text-anchor="end" font-size="13" fill="#3d4753">10</text><line x1="66" y1="102.4" x2="502" y2="102.4" stroke="#e1e6ea"/><text x="58" y="107.4" text-anchor="end" font-size="13" fill="#3d4753">15</text><line x1="66" y1="59.2" x2="502" y2="59.2" stroke="#e1e6ea"/><text x="58" y="64.2" text-anchor="end" font-size="13" fill="#3d4753">20</text><line x1="66" y1="16.0" x2="502" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">25</text><line x1="66" y1="16" x2="66" y2="232" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="232.0" x2="502" y2="232.0" stroke="#1a2330" stroke-width="1.5"/><rect x="81.7" y="214.7" width="55.8" height="17.3" fill="#1f6066"/><text x="109.6" y="208.7" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">2</text><text x="109.6" y="250" text-anchor="middle" font-size="13" fill="#3d4753">P</text><rect x="168.9" y="111.0" width="55.8" height="121.0" fill="#1f6066"/><text x="196.8" y="105.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">14</text><text x="196.8" y="250" text-anchor="middle" font-size="13" fill="#3d4753">Q</text><rect x="256.1" y="16.0" width="55.8" height="216.0" fill="#1f6066"/><text x="284.0" y="10.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">25</text><text x="284.0" y="250" text-anchor="middle" font-size="13" fill="#3d4753">R</text><rect x="343.3" y="154.2" width="55.8" height="77.8" fill="#1f6066"/><text x="371.2" y="148.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">9</text><text x="371.2" y="250" text-anchor="middle" font-size="13" fill="#3d4753">S</text><rect x="430.5" y="197.4" width="55.8" height="34.6" fill="#1f6066"/><text x="458.4" y="191.4" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">4</text><text x="458.4" y="250" text-anchor="middle" font-size="13" fill="#3d4753">T</text><text x="284.0" y="282" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Punto del recorrido</text><text x="16" y="124.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 124.0)">Energía cinética (kJ)</text></svg>¿En qué punto está el vagón <strong>más alto</strong> sobre el suelo?</p>
+<div aria-labelledby="t-p13" class="opciones" data-practica="p13" role="group">
+<button class="opcion" data-k="a" type="button">P</button>
+<button class="opcion" data-k="b" type="button">R</button>
+<button class="opcion" data-k="c" type="button">Q</button>
+<button class="opcion" data-k="d" type="button">S</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p13" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 5 · SP.3.b · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p14"><em>Lea «Adónde va la energía de un automóvil» de la sección 5. Un estudiante escribe: «La mayor parte de la energía del combustible se desperdicia, así que el automóvil no cumple la ley de conservación de la energía».</em><br>¿Qué falla en su razonamiento?</p>
+<div aria-labelledby="t-p14" class="opciones" data-practica="p14" role="group">
+<button class="opcion" data-k="a" type="button">La energía «desperdiciada» no se destruye: se transforma en calor, así que el total se conserva.</button>
+<button class="opcion" data-k="b" type="button">Nada: el texto muestra que la energía desaparece.</button>
+<button class="opcion" data-k="c" type="button">Los autos de gasolina no transforman energía en calor.</button>
+<button class="opcion" data-k="d" type="button">La conservación solo se aplica a las montañas rusas.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p14" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">7</span>Tarea</h2>
+<p>Es práctica independiente. Calcule una hora, con el cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-6-2.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios salen en un orden distinto cada vez. Siga hasta acertar 8 de cada 10 al primer intento. El marcador de cada actividad lleva la cuenta.</li>
+<li><strong>Diez problemas.</strong> Resuelva diez problemas de trabajo, potencia y transformación de energía, con la unidad exigida en cada respuesta.</li>
+<li><strong>Cuatro predicciones.</strong> Dibuje un recorrido con desniveles, rotule cuatro puntos y diga, sin calcular, dónde son mayores la velocidad y cada energía.</li>
+<li><strong>Con sus palabras.</strong> Escriba un párrafo breve que explique por qué duplicar la velocidad de un vehículo multiplica por cuatro su energía cinética, y qué consecuencia tiene eso al frenar.</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">8</span>Quiz de práctica</h2>
+<p>Responda las <strong>12 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Pregunta 1</p>
+<p class="pregunta" id="t-q1">La energía que posee un cuerpo por el hecho de estar en movimiento se denomina…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">energía cinética</button><button class="opcion" data-k="b" type="button">energía potencial</button><button class="opcion" data-k="c" type="button">potencia</button><button class="opcion" data-k="d" type="button">trabajo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Pregunta 2</p>
+<p class="pregunta" id="t-q2">Un vagón detenido en lo alto de una pendiente posee sobre todo…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">energía cinética</button><button class="opcion" data-k="b" type="button">energía potencial gravitatoria</button><button class="opcion" data-k="c" type="button">potencia</button><button class="opcion" data-k="d" type="button">ninguna energía</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Pregunta 3</p>
+<p class="pregunta" id="t-q3">La energía mecánica de un sistema es…</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">solo la energía cinética</button><button class="opcion" data-k="b" type="button">solo la energía potencial</button><button class="opcion" data-k="c" type="button">la suma de la cinética y la potencial</button><button class="opcion" data-k="d" type="button">la energía dividida entre el tiempo</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Pregunta 4</p>
+<p class="pregunta" id="t-q4">La magnitud que mide la rapidez con que se realiza un trabajo es…</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la fuerza</button><button class="opcion" data-k="b" type="button">la energía cinética</button><button class="opcion" data-k="c" type="button">la energía potencial</button><button class="opcion" data-k="d" type="button">la potencia</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Pregunta 5</p>
+<p class="pregunta" id="t-q5">En el punto más bajo de una montaña rusa, el vagón tiene…</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">energía cinética máxima y potencial mínima</button><button class="opcion" data-k="b" type="button">energía potencial máxima y cinética mínima</button><button class="opcion" data-k="c" type="button">ambas energías máximas</button><button class="opcion" data-k="d" type="button">ambas energías nulas</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Pregunta 6</p>
+<p class="pregunta" id="t-q6">Un péndulo abandonado a su suerte reduce poco a poco su oscilación porque…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la gravedad disminuye</button><button class="opcion" data-k="b" type="button">la fricción transforma parte de la energía mecánica en calor</button><button class="opcion" data-k="c" type="button">la energía se destruye</button><button class="opcion" data-k="d" type="button">su masa disminuye</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Pregunta 7</p>
+<p class="pregunta" id="t-q7">Si la velocidad de un cuerpo se duplica, su energía cinética…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">no cambia</button><button class="opcion" data-k="b" type="button">se duplica</button><button class="opcion" data-k="c" type="button">se multiplica por cuatro</button><button class="opcion" data-k="d" type="button">se reduce a la mitad</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Pregunta 8</p>
+<p class="pregunta" id="t-q8">Un vagón sube por la segunda colina y no alcanza la altura de la primera. Eso significa que…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">el principio de conservación de la energía no se cumple</button><button class="opcion" data-k="b" type="button">la energía potencial se convirtió en masa</button><button class="opcion" data-k="c" type="button">el vagón perdió peso durante el recorrido</button><button class="opcion" data-k="d" type="button">parte de la energía mecánica se transformó en calor por la fricción</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Pregunta 9</p>
+<p class="pregunta" id="t-q9">Una fuerza de 20 N desplaza un objeto 5 metros en su misma dirección. El trabajo realizado es…</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">100 J</button><button class="opcion" data-k="b" type="button">25 J</button><button class="opcion" data-k="c" type="button">4 J</button><button class="opcion" data-k="d" type="button">100 W</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Pregunta 10</p>
+<p class="pregunta" id="t-q10">Una persona sostiene una caja inmóvil durante un minuto. El trabajo mecánico realizado es…</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">60 J</button><button class="opcion" data-k="b" type="button">0 J, porque no hay desplazamiento</button><button class="opcion" data-k="c" type="button">igual al peso de la caja</button><button class="opcion" data-k="d" type="button">imposible de determinar</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Pregunta 11</p>
+<p class="pregunta" id="t-q11">Un motor realiza 900 J de trabajo en 45 segundos. Su potencia es…</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">40,500 W</button><button class="opcion" data-k="b" type="button">945 W</button><button class="opcion" data-k="c" type="button">20 W</button><button class="opcion" data-k="d" type="button">0.05 W</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Pregunta 12</p>
+<p class="pregunta" id="t-q12">Un cuerpo de 4 kg se mueve a 5 m/s. Su energía cinética es…</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">20 J</button><button class="opcion" data-k="b" type="button">100 J</button><button class="opcion" data-k="c" type="button">10 J</button><button class="opcion" data-k="d" type="button">50 J</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz otra vez</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">9</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea y úsela <strong>después</strong> para revisar su trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Destrezas de la lección y cómo se ve cada nivel: lo domino, voy avanzando y necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Distingue los tipos de energía en un sistema</th><td>Identifico cinética, potencial y mecánica en cada punto y explico que la mecánica es la suma.</td><td>Nombro la cinética y la potencial, pero las asigno mal en el recorrido.</td><td>Empleo «energía» como término único.</td></tr>
+<tr><th scope="row">Aplica la conservación para predecir sin calcular</th><td>Predigo dónde son máximas la velocidad y cada energía, razonando con la altura.</td><td>Predigo algún caso, pero no justifico con la conservación.</td><td>Necesito calcular para responder cualquier pregunta.</td></tr>
+<tr><th scope="row">Calcula con la fórmula adecuada</th><td>Aplico W = F · d, P = W ÷ t, Ec = ½ m v² y Ep = m g h con julios y vatios.</td><td>Elijo bien la fórmula, pero olvido elevar la velocidad al cuadrado.</td><td>Elijo la fórmula al azar.</td></tr>
+<tr><th scope="row">Interpreta el resultado en su contexto</th><td>Explico el resultado como transformación de energía, con la fricción convirtiéndola en calor.</td><td>Lo interpreto, pero afirmo que la energía se pierde.</td><td>Entrego el número sin relacionarlo con la situación.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Esta lección ha terminado en el calor: es ahí donde va a parar la energía que la fricción retira del movimiento, tanto en la montaña rusa como en el péndulo y en los frenos de un automóvil. La Lección 6.3 recoge ese hilo y estudia el calor por derecho propio: qué lo distingue de la temperatura y por qué caminos se transmite.</p><p>La segunda mitad de esa lección abre un asunto nuevo, las ondas, con sus propiedades y el espectro electromagnético. Allí volverá la notación científica de la Lección 2.1, porque las longitudes de onda se manejan en potencias de diez.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Lección 6.3 · El calor y las ondas</p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Palabras clave</h2>
+<dl class="glosario">
+<dt>Trabajo (W)</dt><dd>Fuerza por la distancia recorrida en su dirección: W = F × d, en julios.</dd>
+<dt>Julio (J)</dt><dd>Unidad de trabajo y de energía: 1 J = 1 N · m.</dd>
+<dt>Potencia (P)</dt><dd>Rapidez con que se realiza un trabajo: P = W ÷ t, en vatios.</dd>
+<dt>Vatio (W)</dt><dd>Unidad de potencia: un julio por segundo.</dd>
+<dt>Energía cinética</dt><dd>Energía del movimiento: Ec = ½ m v².</dd>
+<dt>Energía potencial</dt><dd>Energía de posición (altura): Ep = m g h, con g = 9.8 m/s².</dd>
+<dt>Conservación de la energía</dt><dd>La energía no se crea ni se destruye; solo cambia de forma.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Ciencias · Tema 6 · Lección 6.2</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "c",
+   "hints": {
+    "a": "Pesado no es lo mismo que trabajo.",
+    "b": "El peso es una fuerza, no un trabajo."
+   },
+   "right": "d = 0, así que W = F × 0 = 0 J.",
+   "solution": "d = 0, así que W = F × 0 = 0 J."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "Misma fuerza, misma altura: mismo trabajo.",
+    "c": "Tardar más significa menos potencia."
+   },
+   "right": "Mismo trabajo, menos tiempo → más potencia.",
+   "solution": "Mismo trabajo, menos tiempo → más potencia."
+  },
+  "p3": {
+   "ok": "b",
+   "hints": {
+    "a": "La velocidad va al cuadrado.",
+    "c": "La Ec depende de la velocidad."
+   },
+   "right": "2² = 4.",
+   "solution": "2² = 4."
+  },
+  "p4": {
+   "ok": "b",
+   "hints": {
+    "a": "Arriba el vagón casi está detenido.",
+    "c": "E está alto: poca energía cinética."
+   },
+   "right": "Punto más bajo → más energía cinética → más velocidad.",
+   "solution": "Punto más bajo → más energía cinética → más velocidad."
+  },
+  "p5": {
+   "ok": "c",
+   "hints": {
+    "a": "La gravedad no cambia.",
+    "b": "La energía nunca se destruye."
+   },
+   "right": "Transformación, no desaparición.",
+   "solution": "Transformación, no desaparición."
+  },
+  "p6": {
+   "ok": "c",
+   "hints": {
+    "a": "El texto dice lo contrario.",
+    "b": "La energía no se destruye; cambia de forma."
+   },
+   "right": "Una parte mueve el auto; la mayoría se vuelve calor.",
+   "solution": "Una parte mueve el auto; la mayoría se vuelve calor."
+  },
+  "p7": {
+   "ok": "a",
+   "hints": {
+    "b": "La energía no desaparece.",
+    "c": "No en la física cotidiana."
+   },
+   "right": "Fricción en los frenos → calor.",
+   "solution": "Fricción en los frenos → calor."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "Poco frenado, poco que recuperar.",
+    "c": "El texto no dice eso."
+   },
+   "right": "Más frenadas, más energía que recuperar.",
+   "solution": "Más frenadas, más energía que recuperar."
+  },
+  "p9": {
+   "ok": "c",
+   "hints": {
+    "a": "Cambia de forma, no se pierde.",
+    "b": "El motor transforma energía química; no la crea."
+   },
+   "right": "La conservación se cumple.",
+   "solution": "La conservación se cumple."
+  },
+  "p10": {
+   "ok": "a",
+   "hints": {
+    "b": "Sostenerla quieta no suma trabajo: no hay distancia.",
+    "c": "La masa no entra en W = F × d aquí.",
+    "d": "Eso divide en lugar de multiplicar."
+   },
+   "right": "W = 120 × 5 = 600 J; sostenerla quieta suma 0 J.",
+   "solution": "W = 120 × 5 = 600 J; sostenerla quieta suma 0 J."
+  },
+  "p11": {
+   "ok": "a",
+   "hints": {
+    "b": "La potencia también depende del tiempo.",
+    "c": "Más tiempo significa menos potencia.",
+    "d": "Mismo trabajo, mismos julios."
+   },
+   "right": "X: 1,800 ÷ 60 = 30 W. Y: 1,800 ÷ 20 = 90 W.",
+   "solution": "X: 1,800 ÷ 60 = 30 W. Y: 1,800 ÷ 20 = 90 W."
+  },
+  "p12": {
+   "ok": "a",
+   "hints": {
+    "b": "La velocidad va al cuadrado en Ec = ½ m v².",
+    "c": "La Ec depende de la velocidad.",
+    "d": "Velocidad y energía tienen unidades distintas."
+   },
+   "right": "Doble velocidad → 2² = 4 veces la energía.",
+   "solution": "Doble velocidad → 2² = 4 veces la energía."
+  },
+  "p13": {
+   "ok": "a",
+   "hints": {
+    "b": "R tiene la mayor energía cinética: es el punto más bajo.",
+    "c": "Q tiene mucha energía cinética.",
+    "d": "S tiene más energía cinética que P."
+   },
+   "right": "Menor energía cinética → mayor energía potencial → punto más alto.",
+   "solution": "Menor energía cinética → mayor energía potencial → punto más alto."
+  },
+  "p14": {
+   "ok": "a",
+   "hints": {
+    "b": "El texto describe transformación, no desaparición.",
+    "c": "El texto dice que unas tres cuartas partes se vuelven calor.",
+    "d": "Se aplica en todas partes."
+   },
+   "right": "La energía útil se va en calor, pero la energía total se conserva.",
+   "solution": "La energía útil se va en calor, pero la energía total se conserva."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "a",
+   "hints": {
+    "b": "Esa depende de la altura.",
+    "c": "La potencia es una rapidez.",
+    "d": "El trabajo es fuerza por distancia."
+   },
+   "solution": "Kínesis = movimiento."
+  },
+  "2": {
+   "ok": "b",
+   "hints": {
+    "a": "Está detenido.",
+    "c": "La potencia no se almacena.",
+    "d": "La altura le da energía."
+   },
+   "solution": "Altura → energía potencial."
+  },
+  "3": {
+   "ok": "c",
+   "hints": {
+    "a": "Es solo una parte.",
+    "b": "Es solo una parte.",
+    "d": "Eso es potencia."
+   },
+   "solution": "Em = Ec + Ep."
+  },
+  "4": {
+   "ok": "d",
+   "hints": {
+    "a": "La fuerza es un empuje.",
+    "b": "Es energía del movimiento.",
+    "c": "Es energía de posición."
+   },
+   "solution": "P = W ÷ t."
+  },
+  "5": {
+   "ok": "a",
+   "hints": {
+    "b": "Eso es la cima.",
+    "c": "Una sube cuando la otra baja.",
+    "d": "Se mueve rápido."
+   },
+   "solution": "Abajo → rápido."
+  },
+  "6": {
+   "ok": "b",
+   "hints": {
+    "a": "La gravedad no cambia.",
+    "c": "La energía nunca se destruye.",
+    "d": "Su masa no cambia."
+   },
+   "solution": "Fricción → calor."
+  },
+  "7": {
+   "ok": "c",
+   "hints": {
+    "a": "Depende de la velocidad.",
+    "b": "La velocidad va al cuadrado.",
+    "d": "Más velocidad, más energía."
+   },
+   "solution": "2² = 4."
+  },
+  "8": {
+   "ok": "d",
+   "hints": {
+    "a": "Siempre se cumple.",
+    "b": "No en la física cotidiana.",
+    "c": "Su peso es el mismo."
+   },
+   "solution": "Transformación en calor."
+  },
+  "9": {
+   "ok": "a",
+   "hints": {
+    "b": "Eso es sumar.",
+    "c": "Eso es dividir.",
+    "d": "Los vatios son de potencia."
+   },
+   "solution": "20 × 5 = 100 J."
+  },
+  "10": {
+   "ok": "b",
+   "hints": {
+    "a": "El tiempo no es distancia.",
+    "c": "El peso es una fuerza.",
+    "d": "d = 0 lo dice."
+   },
+   "solution": "d = 0 → W = 0."
+  },
+  "11": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es multiplicar.",
+    "b": "Eso es sumar.",
+    "d": "Al revés."
+   },
+   "solution": "900 ÷ 45 = 20 W."
+  },
+  "12": {
+   "ok": "d",
+   "hints": {
+    "a": "Eleve primero la velocidad al cuadrado.",
+    "b": "No olvide el ½.",
+    "c": "Eleve al cuadrado la velocidad."
+   },
+   "solution": "½ × 4 × 25 = 50 J."
+  }
+ },
+ "next": "Lección 6.3",
+ "review": "la lección"
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#1e3a8a" defer></script>
+</body>
+</html>
