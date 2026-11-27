@@ -206,7 +206,7 @@ def leccion():
          t("<strong>Compare</strong> four strategies of the civil rights movement and say what each achieved and what it did not.", "<strong>Comparar</strong> cuatro estrategias del movimiento por los derechos civiles y decir qué logró y qué no logró cada una."),
          t("<strong>Read</strong> a series of data by decade and propose more than one cause for the same change.", "<strong>Leer</strong> una serie de datos por décadas y proponer más de una causa para un mismo cambio.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 7 · Economics and geography of a connected world.", "Siguiente: Tema 7 · Economía y geografía del mundo conectado.")), glosario, P, calculadora=True)
+        ("7-1", t("Supply, demand, markets, and the consumer", "Oferta, demanda, mercados y el consumidor")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- la práctica
