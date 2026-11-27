@@ -215,8 +215,8 @@ def leccion():
     ]
     cierre = ("<p>" + t("This lesson followed the money: from a paycheck to the federal budget, through the three shapes a tax can take, to the difference between a year’s deficit and the accumulated debt, and finally to the two directions of fiscal policy. The main habit it asks for is the same as in Topic 2: always ask what a number is being divided by. A tax rate against the purchase and against income are two different stories.",
                      "Esta lección siguió al dinero: de una nómina al presupuesto federal, por las tres formas que puede tener un impuesto, hasta la diferencia entre el déficit de un año y la deuda acumulada, y por último a las dos direcciones de la política fiscal. El hábito principal que pide es el mismo del Tema 2: preguntarse siempre entre qué se está dividiendo. Una tasa contra la compra y contra el ingreso cuentan dos historias distintas.") + "</p><p>" +
-              t("This ends Topic 5 and the civics block. Topic 6 opens economics proper: markets, supply and demand, and the Federal Reserve, the other actor that can speed up or slow down the economy.",
-                "Con esto termina el Tema 5 y el bloque de cívica. El Tema 6 abre la economía propiamente dicha: los mercados, la oferta y la demanda, y la Reserva Federal, el otro actor que puede acelerar o frenar la economía.") + "</p>")
+              t("This ends Topic 5 and the civics block. Topic 6 changes the question: no longer how government works, but why it came to be this way. That is U.S. history, read as cause and change.",
+                "Con esto termina el Tema 5 y el bloque de cívica. El Tema 6 cambia de pregunta: ya no cómo funciona el gobierno, sino por qué llegó a ser así. Es la historia de los Estados Unidos, leída como causalidad y cambio.") + "</p>")
     glosario = [
         (t("Progressive tax", "Impuesto progresivo"), t("A tax that takes a higher percent of income as income rises.", "Impuesto que se lleva un porcentaje mayor del ingreso a medida que este sube.")),
         (t("Proportional (flat) tax", "Impuesto proporcional"), t("A tax that takes the same percent of every income.", "Impuesto que se lleva el mismo porcentaje de cualquier ingreso.")),
@@ -238,7 +238,7 @@ def leccion():
          t("<strong>Explain</strong> the difference between deficit and debt.", "<strong>Explicar</strong> la diferencia entre déficit y deuda."),
          t("<strong>Tell apart</strong> expansionary and contractionary fiscal policy.", "<strong>Distinguir</strong> una política fiscal expansiva de una restrictiva.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 6 · Economics: markets, money, and the Federal Reserve.", "Siguiente: Tema 6 · Economía: mercados, dinero y Reserva Federal.")), glosario, P, calculadora=True)
+        ("6-1", t("Colonies, the Revolution, and building a nation", "Colonias, Revolución y construcción de la nación")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- la práctica

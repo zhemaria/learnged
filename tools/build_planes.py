@@ -326,9 +326,9 @@ def sociales(lang):
         if en else
         "El examen de Estudios Sociales del GED casi nunca pregunta una fecha. Presenta un documento (un fragmento de la Constitución, un mapa, una gráfica, un discurso, una caricatura política) y pregunta qué se puede sostener con él y qué no. Este curso enseña exactamente eso, con documentos reales."))
     c.append(estado(lang,
-        "<strong>Topics 1 to 5 are ready:</strong> their fifteen lessons are linked below, each with a practice page. The other topics are being written now, in English and in Spanish; this page shows the whole plan."
+        "<strong>Topics 1 to 6 are ready:</strong> their eighteen lessons are linked below, each with a practice page. The other topics are being written now, in English and in Spanish; this page shows the whole plan."
         if en else
-        "<strong>Los Temas 1 a 5 ya están listos:</strong> sus quince lecciones están enlazadas abajo, cada una con su página de práctica. Los demás temas se están escribiendo ahora, en español y en inglés; esta página muestra el plan completo."))
+        "<strong>Los Temas 1 a 6 ya están listos:</strong> sus dieciocho lecciones están enlazadas abajo, cada una con su página de práctica. Los demás temas se están escribiendo ahora, en español y en inglés; esta página muestra el plan completo."))
     c.append(indice(lang, [("organization", "How it is organized" if en else "Cómo se organiza")] +
                     [(g[0], g[1] if en else g[2]) for g in SOC_GRUPOS] +
                     [("sources", "Source archive and extras" if en else "Archivo de fuentes y complementos"), ("how", "How each lesson works" if en else "Cómo es cada lección")]))
