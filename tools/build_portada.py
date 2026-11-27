@@ -109,7 +109,7 @@ def pagina(lang):
 
     acs = "\n".join([
         acordeon(T("foundation", "bases"), T("bases", "foundation"), T("Build your foundation", "Construya sus bases"), T("Reading, writing, and math, step by step, starting from what you already know.", "Lectura, escritura y matemáticas, paso a paso, a partir de lo que ya sabe."), bases, "--teal"),
-        acordeon("ged", "ged", T("Prepare for the GED", "Prepárese para el GED"), T("The four subjects of the test: math, reasoning through language arts, science, and social studies.", "Las cuatro materias del examen: matemáticas, razonamiento a través de las artes del lenguaje, ciencias y estudios sociales."), ged, "--rust"),
+        acordeon("ged", "ged", T("Prepare for the GED", "Prepárese para el GED"), T("The four subjects of the test: math, reasoning through language arts, science, and social studies.", "Las cuatro materias: matemáticas, razonamiento a través de las artes del lenguaje, ciencias y estudios sociales."), ged, "--rust"),
         acordeon(T("practice", "practica"), T("practica", "practice"), T("Practice", "Practique"), T("Practice tests, games, and interactive models, with explanations for every answer.", "Simulacros, juegos y modelos interactivos, con explicaciones de cada respuesta."), practica, "--mustard"),
     ])
 
@@ -137,7 +137,7 @@ def pagina(lang):
 <link rel="alternate" hreflang="en" href="https://www.learnged.com/">
 <link rel="alternate" hreflang="es" href="https://www.learnged.com/es/">
 <link href="/fonts/fonts.css" rel="stylesheet">
-<link rel="stylesheet" href="{pre}learnged.css?v=2">
+<link rel="stylesheet" href="{pre}learnged.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">{T("Skip to content", "Saltar al contenido")}</a>
