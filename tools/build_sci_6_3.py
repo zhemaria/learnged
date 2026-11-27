@@ -209,7 +209,7 @@ def leccion():
         (t("Frequency (f)", "Frecuencia (f)"), t("Complete waves per second, in hertz (Hz).", "Ondas completas por segundo, en hercios (Hz).")),
         (t("Electromagnetic spectrum", "Espectro electromagnético"), t("The family of waves from radio to gamma rays; shorter waves carry more energy.", "Familia de ondas desde la radio hasta los rayos gamma; las más cortas llevan más energía.")),
     ]
-    estd = C.estandares(["SP.1.b", "SP.7.b", "SP.3.c", "SP.6.c"], ["P.c"], base=["SP.4.a"])
+    estd = C.estandares(["SP.1.b", "SP.7.b", "SP.3.c", "SP.6.c"], ["P.a"], base=["SP.4.a"])
     conexion = "<p>" + t("Where this lesson comes from. Lesson 6.2 ended with heat: that is where the energy friction takes from motion ends up. This lesson studies heat in its own right, then adds something new, <strong>waves</strong>, which are the other way energy travels from one place to another.", "De dónde viene esta lección. La 6.2 terminó en el calor: allí va a parar la energía que la fricción retira del movimiento. Esta lección lo estudia por derecho propio y añade después un asunto nuevo, las <strong>ondas</strong>, que son la otra manera que tiene la energía de trasladarse de un sitio a otro.") + "</p><p>" + \
                t("A tool from Topic 2 also comes back. Wavelengths in the electromagnetic spectrum range from kilometers to ten-billionths of a meter, and numbers like those can only be handled with scientific notation. It is the same skill as in Lesson 2.1, now used on new content.", "Vuelve además una herramienta del Tema 2. Las longitudes de onda del espectro electromagnético van de kilómetros a diezmilmillonésimas de metro, y esas magnitudes solo se manejan con notación científica. Es la misma destreza de la Lección 2.1, ahora aplicada a un contenido nuevo.") + "</p><p>" + \
                t("<strong>How to study this lesson:</strong> the spectrum is always written in scientific notation. Review Lesson 2.1 first, especially how to compare two numbers written in powers of ten: reading the spectrum depends entirely on it.", "<strong>Cómo estudiar esta lección:</strong> las magnitudes del espectro se expresan siempre en notación científica. Conviene repasar antes la Lección 2.1, en especial cómo se comparan dos números escritos en potencias de diez: de eso depende toda la lectura del espectro.") + "</p>"
@@ -222,7 +222,7 @@ def leccion():
          t("<strong>Explain</strong> the inverse relationship between wavelength and frequency when speed stays the same.", "<strong>Explicar</strong> la relación inversa entre longitud de onda y frecuencia cuando la velocidad es constante."),
          t("<strong>Place</strong> the regions of the electromagnetic spectrum by wavelength and energy.", "<strong>Situar</strong> las regiones del espectro electromagnético según su longitud de onda y su energía.")],
         estd, conexion, secciones, tarea, quiz, filas, cierre,
-        (None, t("Next: Topic 7 · Earth and space science (being written).", "Siguiente: Tema 7 · Ciencias de la Tierra y el espacio (en preparación).")), glosario, P, calculadora=True)
+        ("7-1", t("The dynamic Earth: plates, rocks, and geologic time", "La Tierra dinámica: tectónica, rocas y tiempo geológico")), glosario, P, calculadora=True)
 
 
 # ---------------------------------------------------------------- práctica
