@@ -246,9 +246,9 @@ def ciencias(lang):
         if en else
         "El examen de Ciencias del GED le presenta un texto, una tabla, una gráfica o un experimento, y le pregunta qué se puede concluir. Este curso le enseña la ciencia que necesita y, sobre todo, a leer y razonar con información científica."))
     c.append(estado(lang,
-        "<strong>Topic 1 is ready.</strong> Its three lessons, each with a practice page, are linked below. We are writing the other topics now, in English and in Spanish; this page shows the whole plan."
+        "<strong>Topics 1 and 2 are ready.</strong> Their six lessons, each with a practice page, are linked below. We are writing the other topics now, in English and in Spanish; this page shows the whole plan."
         if en else
-        "<strong>El Tema 1 ya está listo.</strong> Sus tres lecciones, cada una con su página de práctica, están enlazadas abajo. Estamos preparando los demás temas, en español y en inglés; esta página muestra el plan completo."))
+        "<strong>Los Temas 1 y 2 ya están listos.</strong> Sus seis lecciones, cada una con su página de práctica, están enlazadas abajo. Estamos preparando los demás temas, en español y en inglés; esta página muestra el plan completo."))
     c.append(indice(lang, [("organization", "How it is organized" if en else "Cómo se organiza")] +
                     [(a[0], a[1] if en else a[2]) for a in CIEN_AREAS] +
                     [("extras", "Labs and simulations" if en else "Laboratorios y simulaciones"), ("how", "How each lesson works" if en else "Cómo es cada lección")]))

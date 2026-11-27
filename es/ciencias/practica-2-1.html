@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 2.1 · práctica (español) — construida con tools/build_sci_2_1.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.1 · Notación científica, unidades y la calculadora TI-30XS · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="/science/practice-2-1.html">
+<link rel="stylesheet" href="/math/practice.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al índice</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Ciencias · Tema 2 · Razonamiento cuantitativo en ciencias</div>
+    <h1>Práctica · Lección 2.1 · Notación científica, unidades y la calculadora TI-30XS</h1>
+    <div class="meta">Seis actividades · ejercicios nuevos cada vez · dos intentos en cada uno · con calculadora</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#escribir">Escriba tamaños reales en notación científica</a></li>
+      <li><a href="#a-decimal">De notación científica a decimal</a></li>
+      <li><a href="#operar">Multiplique y divida</a></li>
+      <li><a href="#unidades">Elija la unidad</a></li>
+      <li><a href="#clinica">La clínica de la TI-30XS: estime y compruebe</a></li>
+      <li><a href="#averias">Averías: ¿qué salió mal?</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="escribir" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Escriba tamaños reales en notación científica</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Del protón a la Vía Láctea. Antes de escribir, decida: ¿el número es menor que 1 (exponente negativo) o mayor que 10 (exponente positivo)?</p>
+      <div class="practica" id="m1">
+        <div class="enun" id="m1-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="m1-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="m1-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="m1-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="m1-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5). Para un exponente negativo, escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m1-fb" role="status"></div>
+        <p class="marcador" id="m1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="a-decimal">
+    <summary><span class="num" aria-hidden="true">2</span><h2>De notación científica a decimal</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Mueva el punto tantos lugares como indique el exponente. Puede separar los miles con comas: 1,270,000.</p>
+      <div class="practica" id="m2">
+        <div class="enun" id="m2-enun"></div>
+        <div class="campos"><div class="campo"><label for="m2-r">Número en notación decimal</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="m2-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m2-fb" role="status"></div>
+        <p class="marcador" id="m2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="operar">
+    <summary><span class="num" aria-hidden="true">3</span><h2>Multiplique y divida</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Coeficientes: se multiplican o se dividen. Exponentes: se suman o se restan. Después compruebe la regla del coeficiente (1 ≤ a &lt; 10) y ajuste si hace falta.</p>
+      <div class="practica" id="m3">
+        <div class="enun" id="m3-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="m3-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="m3-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="m3-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="m3-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5). Para un exponente negativo, escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m3-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m3-fb" role="status"></div>
+        <p class="marcador" id="m3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="unidades">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Elija la unidad</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija el prefijo que deja un número cómodo de leer.</p>
+      <div class="practica" id="m4">
+        <div class="enun" id="m4-enun"></div>
+        <div class="opciones" id="m4-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m4-fb" role="status"></div>
+        <p class="marcador" id="m4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="clinica">
+    <summary><span class="num" aria-hidden="true">5</span><h2>La clínica de la TI-30XS: estime y compruebe</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Resuélvalo primero a mano. Después abra la calculadora, tecléelo y compare. Escriba el resultado en notación científica.</p>
+      <p><button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button></p>
+      <div class="practica" id="m5">
+        <div class="enun" id="m5-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="m5-c">Coeficiente</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="m5-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="m5-e">Exponente</label><input type="text" autocomplete="off" class="corto" id="m5-e"></div>
+        </div>
+        <p class="nota">Use punto decimal (4.5). Para un exponente negativo, escriba el signo menos: −3 o -3.</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m5-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m5-fb" role="status"></div>
+        <p class="marcador" id="m5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="averias">
+    <summary><span class="num" aria-hidden="true">6</span><h2>Averías: ¿qué salió mal?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>La calculadora nunca se equivoca en aritmética, pero calcula exactamente lo que se tecleó.</p>
+      <div class="practica" id="m6">
+        <div class="enun" id="m6-enun"></div>
+        <div class="opciones" id="m6-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m6-fb" role="status"></div>
+        <p class="marcador" id="m6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Ciencias · Tema 2 · Razonamiento cuantitativo en ciencias · LearnGED</strong><br>
+    <a href="leccion-2-1.html">Volver a la lección 2.1</a></p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/science/sci.js"></script>
+<script src="/math/scinot.js"></script>
+<script>
+var OBJ = [
+ [
+  "1.7",
+  -15,
+  "El diámetro de un protón"
+ ],
+ [
+  "1.0",
+  -10,
+  "El diámetro de un átomo de hidrógeno"
+ ],
+ [
+  "2.8",
+  -10,
+  "El tamaño de una molécula de agua"
+ ],
+ [
+  "2.0",
+  -9,
+  "El ancho de la doble hélice del ADN"
+ ],
+ [
+  "1.0",
+  -7,
+  "El diámetro de un virus de la gripe"
+ ],
+ [
+  "5.5",
+  -7,
+  "La longitud de onda de la luz verde"
+ ],
+ [
+  "2.0",
+  -6,
+  "La longitud de una bacteria <em>E. coli</em>"
+ ],
+ [
+  "8.0",
+  -6,
+  "El diámetro de un glóbulo rojo"
+ ],
+ [
+  "7.0",
+  -5,
+  "El grosor de un cabello humano"
+ ],
+ [
+  "5.0",
+  -4,
+  "El tamaño de un grano de sal"
+ ],
+ [
+  "4.42",
+  2,
+  "La altura de la Torre Willis, en Chicago"
+ ],
+ [
+  "4.9",
+  5,
+  "La longitud del lago Míchigan"
+ ],
+ [
+  "1.27",
+  7,
+  "El diámetro de la Tierra"
+ ],
+ [
+  "1.39",
+  9,
+  "El diámetro del Sol"
+ ],
+ [
+  "1.5",
+  11,
+  "La distancia de la Tierra al Sol"
+ ],
+ [
+  "9.0",
+  12,
+  "El diámetro de la órbita de Neptuno"
+ ],
+ [
+  "4.0",
+  16,
+  "La distancia a Próxima Centauri, la estrella más cercana"
+ ],
+ [
+  "9.5",
+  20,
+  "El diámetro de la Vía Láctea"
+ ]
+];
+var UNI = [
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>El ancho de una célula: 0.00002 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.00002 m = 20 × 10⁻⁶ m = 20 µm."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>La longitud de onda de la luz roja: 0.0000007 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pistas": {
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.0000007 m = 700 × 10⁻⁹ m = 700 nm."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>La distancia de Chicago a Nueva York: 1,150,000 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 3,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas."
+  },
+  "exp": "1,150,000 m = 1,150 × 10³ m = 1,150 km."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>El grosor de una moneda: 0.0018 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 2,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.0018 m = 1.8 × 10⁻³ m = 1.8 mm."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>El diámetro de un virus de la gripe: 0.0000001 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pistas": {
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.0000001 m = 100 × 10⁻⁹ m = 100 nm."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>Una dosis de medicamento: 0.0005 g</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 2,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.0005 g = 0.5 × 10⁻³ g = 0.5 mg (o 500 µg)."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>El grosor de un cabello: 0.00007 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas.",
+   "3": "kilo- es 10³: para distancias de un mapa."
+  },
+  "exp": "0.00007 m = 70 × 10⁻⁶ m = 70 µm."
+ },
+ {
+  "enun": "¿Qué prefijo hace más cómodo este número?<br><strong>La longitud del río Misisipi: 3,730,000 m</strong>",
+  "ops": [
+   "nanómetros (nm)",
+   "micrómetros (µm)",
+   "milímetros o miligramos (mm, mg)",
+   "kilómetros (km)"
+  ],
+  "ok": 3,
+  "enOrden": true,
+  "pistas": {
+   "0": "nano- es 10⁻⁹: para cosas más pequeñas que una célula, como las ondas de luz y los virus.",
+   "1": "micro- es 10⁻⁶: para células y cabellos.",
+   "2": "mili- es 10⁻³: para monedas, gotas y dosis pequeñas."
+  },
+  "exp": "3,730,000 m = 3,730 km."
+ }
+];
+var CLI = [
+ {
+  "t": "¿Cuántos átomos de hidrógeno, de 1 × 10⁻¹⁰ m de diámetro, caben alineados en 1 mm (1 × 10⁻³ m)?",
+  "c": "1",
+  "e": 7,
+  "mano": "Coeficientes: 1 ÷ 1 = 1. Exponentes: −3 − (−10) = 7. Restar un exponente negativo lo suma.",
+  "teclas": "Teclas: 1, ×10ⁿ, (−), 3, ÷, 1, ×10ⁿ, (−), 10, enter."
+ },
+ {
+  "t": "La luz recorre 3 × 10⁸ m cada segundo. ¿Qué distancia recorre en un minuto (60 s)?",
+  "c": "1.8",
+  "e": 10,
+  "mano": "60 es 6 × 10¹. Coeficientes: 3 × 6 = 18. Exponentes: 8 + 1 = 9. 18 × 10⁹ se ajusta a 1.8 × 10¹⁰.",
+  "teclas": "Teclas: 3, ×10ⁿ, 8, ×, 60, enter. La pantalla puede mostrar 1.8E10 o 18000000000: es el mismo número."
+ },
+ {
+  "t": "Próxima Centauri está a 3.9 × 10¹⁶ m. Si la luz recorre 3 × 10⁸ m cada segundo, ¿cuántos segundos tarda su luz en llegar?",
+  "c": "1.3",
+  "e": 8,
+  "mano": "Coeficientes: 3.9 ÷ 3 = 1.3. Exponentes: 16 − 8 = 8. Unos 130 millones de segundos: algo más de cuatro años.",
+  "teclas": "Teclas: 3.9, ×10ⁿ, 16, ÷, 3, ×10ⁿ, 8, enter. Si sale algo cerca de 10⁻⁸, dividió al revés."
+ },
+ {
+  "t": "Un glóbulo rojo mide 8 × 10⁻⁶ m. ¿Cuántos harían falta, alineados, para cubrir 1 cm (1 × 10⁻² m)?",
+  "c": "1.25",
+  "e": 3,
+  "mano": "Coeficientes: 1 ÷ 8 = 0.125. Exponentes: −2 − (−6) = 4. 0.125 × 10⁴ queda por debajo de 1: se ajusta a 1.25 × 10³.",
+  "teclas": "Teclas: 1, ×10ⁿ, (−), 2, ÷, 8, ×10ⁿ, (−), 6, enter. La pantalla muestra 1250."
+ },
+ {
+  "t": "Una célula cúbica tiene 2 × 10⁻⁵ m de arista. ¿Cuál es su volumen (arista³)?",
+  "c": "8",
+  "e": -15,
+  "mano": "El coeficiente se eleva al cubo: 2³ = 8. El exponente se multiplica por 3: −5 × 3 = −15. El resultado va en metros cúbicos.",
+  "teclas": "Teclas: 2, ×10ⁿ, (−), 5, ^, 3, enter."
+ }
+];
+var AVE = [
+ {
+  "enun": "Para calcular (5 × 10⁻⁴) × 2, un estudiante teclea 5, la tecla de <strong>restar</strong>, 4, por 2. ¿Qué muestra la pantalla y por qué está mal?",
+  "ops": [
+   "−3, porque leyó «5 menos 4 por 2» y respetó la jerarquía de operaciones",
+   "1 × 10⁻³, el resultado correcto",
+   "Un mensaje de error de sintaxis",
+   "0.001, porque corrige el error automáticamente"
+  ],
+  "ok": 0,
+  "pista": "Piense en qué recibió realmente la calculadora con esas teclas.",
+  "exp": "La tecla de restar y la de signo son distintas. La calculadora leyó «5 − 4 × 2», resolvió primero la multiplicación y devolvió −3: impecable y sin relación con el problema. No aparece ningún error, y esa es la trampa. Quien estimó antes unos 10⁻³ ve enseguida que un resultado negativo delata un error de tecleo."
+ },
+ {
+  "enun": "La pantalla muestra 6.02E23. El examen pide escribir la respuesta. ¿Qué se escribe?",
+  "ops": [
+   "6.02E23",
+   "6.02 × 10²³",
+   "602 × 10²¹",
+   "6.02 elevado a 23"
+  ],
+  "ok": 1,
+  "pista": "Piense en qué recibió realmente la calculadora con esas teclas.",
+  "exp": "La E es la abreviatura de la máquina para «por diez elevado a». Es notación de pantalla, no notación científica escrita. 602 × 10²¹ vale lo mismo, pero su coeficiente no está entre 1 y 10."
+ },
+ {
+  "enun": "Un estudiante dejó la calculadora en modo SCI. En la lección siguiente, 10 ÷ 4 da 2.5E0 en lugar de 2.5. ¿Qué ocurrió?",
+  "ops": [
+   "La calculadora se estropeó",
+   "El resultado es incorrecto y hay que repetirlo",
+   "Es el mismo número: el modo SCI lo muestra todo en notación científica, y 2.5E0 es 2.5 × 10⁰",
+   "Falta pulsar enter otra vez"
+  ],
+  "ok": 2,
+  "pista": "Piense en qué recibió realmente la calculadora con esas teclas.",
+  "exp": "10⁰ = 1, así que 2.5 × 10⁰ es exactamente 2.5. El resultado era correcto; lo que confunde es el formato. Por eso conviene volver a NORM al terminar."
+ },
+ {
+  "enun": "Al calcular (4 × 10⁶) ÷ (2 × 10²), la pantalla de una estudiante muestra 2E8. Ella había estimado 2 × 10⁴. ¿Qué conviene hacer?",
+  "ops": [
+   "Aceptar la pantalla: la calculadora no se equivoca",
+   "Aceptar la estimación: 6 − 2 = 4, así que probablemente tecleó × en lugar de ÷",
+   "Repetir la estimación, porque seguro que está mal",
+   "Cambiar a modo ENG e intentarlo de nuevo"
+  ],
+  "ok": 1,
+  "pista": "Piense en qué recibió realmente la calculadora con esas teclas.",
+  "exp": "La máquina solo responde a lo que se tecleó. Un exponente 8 en vez de 4 es la firma de una suma de exponentes, es decir, de una multiplicación. La estimación detectó el error: para eso sirve."
+ },
+ {
+  "enun": "¿Qué afirmación sobre la calculadora en el examen de Ciencias del GED® es correcta?",
+  "ops": [
+   "Conviene teclearlo todo, porque la máquina no se equivoca",
+   "La calculadora avisa cuando el planteamiento es incorrecto",
+   "La calculadora verifica un razonamiento ya hecho, pero no lo sustituye ni detecta errores de planteamiento",
+   "En el examen de Ciencias no se permite calculadora"
+  ],
+  "ok": 2,
+  "pista": "Piense en qué recibió realmente la calculadora con esas teclas.",
+  "exp": "La TI-30XS está permitida y calcula sin error. Lo que no puede es decidir la operación ni avisar de un signo mal puesto. Siempre se estima primero y se comprueba después."
+ }
+];
+var sacaA = mazo(OBJ), sacaB = mazo(OBJ), sacaE = mazo(CLI);
+
+function gA(){ var o = sacaA(), n = sci(o[0], o[1]), k = o[1];
+  return {enun: "<p>" + o[2] + ": <strong>" + conComas(n) + " m</strong>.</p><p>Escriba esta longitud en notación científica.</p>", resp: n,
+    explica: k > 0 ? "Número grande: el punto se mueve " + k + " lugares a la izquierda, así que el exponente es positivo." : "Número pequeño: el punto se mueve " + (-k) + " lugares a la derecha, así que el exponente es negativo.",
+    diagnostico: function(v, cc, kk){ return (igual(cc, leeNumero(aSci(n).c)) && kk === -k) ? "El coeficiente está bien, pero el signo del exponente está al revés." : null; }}; }
+function gB(){ var o = sacaB(), n = sci(o[0], o[1]);
+  return {enun: "<p>" + o[2] + ": <strong>" + sciHTML(o[0], o[1]) + " m</strong>.</p><p>Escriba esta longitud como número decimal.</p>", resp: n,
+    explica: "La respuesta es " + conComas(n) + " m. " + (o[1] > 0 ? "Exponente positivo: el punto se mueve " + o[1] + " lugares a la derecha." : "Exponente negativo: el punto se mueve " + (-o[1]) + " lugares a la izquierda.")}; }
+var PARES = [[8,2],[9,3],[6,2],[6,3],[8,4],[2,8],[3,6],[4,8],[3,4],[1.5,3],[7,2],[9,4.5]];
+function gC(){
+  var mulOp = Math.random() < 0.5, a, b, m = aleatorio(-9, 9), k = aleatorio(-9, 9);
+  if (mulOp){ a = String(aleatorio(2, 9)); b = String(elige(["2", "3", "4", "5", "1.5", "2.5"])); }
+  else { var p = elige(PARES); a = String(p[0]); b = String(p[1]); }
+  var A = sci(a, m), B = sci(b, k), r = mulOp ? mul(A, B) : divide(A, B).n, s = aSci(r);
+  var c0 = mulOp ? mul(leeNumero(a), leeNumero(b)) : divide(leeNumero(a), leeNumero(b)).n, e0 = mulOp ? m + k : m - k, aj = !esValida(plano(c0));
+  return {enun: "<p>Calcule (" + sciHTML(a, m) + ") " + (mulOp ? "×" : "÷") + " (" + sciHTML(b, k) + "). Escriba el resultado en notación científica.</p>", resp: r,
+    explica: (mulOp ? "Se multiplican los coeficientes (" + a + " × " + b + " = " + plano(c0) + ") y se suman los exponentes (" + expTexto(m) + " + " + par(k) + " = " + expTexto(e0) + ")." : "Se dividen los coeficientes (" + a + " ÷ " + b + " = " + plano(c0) + ") y se restan los exponentes (" + expTexto(m) + " − " + par(k) + " = " + expTexto(e0) + ").") + (aj ? " Después se ajusta: " + plano(c0) + " no está entre 1 y 10, así que el resultado es " + sciTexto(s.c, s.e) + "." : "")}; }
+function gE(){ var o = sacaE(); return {enun: "<p>" + o.t + "</p><p><strong>Estime primero a mano.</strong> Después compruebe con la calculadora y escriba el resultado en notación científica.</p>", resp: sci(o.c, o.e), explica: o.mano + " " + o.teclas}; }
+creaPracticaSci("m1", gA);
+creaPracticaDec("m2", gB);
+creaPracticaSci("m3", gC);
+creaBanco("m4", UNI);
+creaPracticaSci("m5", gE);
+creaBanco("m6", AVE);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#1f6066" defer></script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 2.3 · práctica (español) — construida con tools/build_sci_2_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 2.3 · Estadística y probabilidad de datos experimentales · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="en" href="/science/practice-2-3.html">
+<link rel="stylesheet" href="/math/practice.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al índice</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Ciencias · Tema 2 · Razonamiento cuantitativo en ciencias</div>
+    <h1>Práctica · Lección 2.3 · Estadística y probabilidad de datos experimentales</h1>
+    <div class="meta">Seis actividades · ejercicios nuevos cada vez · dos intentos en cada uno · con calculadora</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#medidas">Media, mediana, moda, rango y cuartiles</a></li>
+      <li><a href="#mejor-medida">¿Qué medida conviene?</a></li>
+      <li><a href="#precision">¿Preciso o exacto?</a></li>
+      <li><a href="#conteo">Cuente las posibilidades</a></li>
+      <li><a href="#orden">¿Importa el orden?</a></li>
+      <li><a href="#cientiestad">CientíEstad: estadística en ciencia</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="medidas" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>Media, mediana, moda, rango y cuartiles</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Un conjunto nuevo cada vez. Ordene primero los datos. Para los cuartiles, use la mediana de cada mitad (si la cantidad es impar, deje fuera el valor central).</p>
+      <div class="practica" id="m1">
+        <div class="enun" id="m1-enun"></div>
+        <div class="campos"><div class="campo"><label for="m1-r">Respuesta</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="m1-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m1-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m1-fb" role="status"></div>
+        <p class="marcador" id="m1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="mejor-medida">
+    <summary><span class="num" aria-hidden="true">2</span><h2>¿Qué medida conviene?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Busque valores atípicos y pregúntese si los datos son números.</p>
+      <div class="practica" id="m2">
+        <div class="enun" id="m2-enun"></div>
+        <div class="opciones" id="m2-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m2-fb" role="status"></div>
+        <p class="marcador" id="m2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="precision">
+    <summary><span class="num" aria-hidden="true">3</span><h2>¿Preciso o exacto?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Preciso = cerca entre sí. Exacto = cerca del valor verdadero.</p>
+      <div class="practica" id="m3">
+        <div class="enun" id="m3-enun"></div>
+        <div class="opciones" id="m3-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m3-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m3-fb" role="status"></div>
+        <p class="marcador" id="m3-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="conteo">
+    <summary><span class="num" aria-hidden="true">4</span><h2>Cuente las posibilidades</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Multiplique las posibilidades de cada etapa. Si no importa el orden, divida entre las maneras de ordenar lo elegido.</p>
+      <div class="practica" id="m4">
+        <div class="enun" id="m4-enun"></div>
+        <div class="campos"><div class="campo"><label for="m4-r">Respuesta</label><input type="text" inputmode="numeric" autocomplete="off" class="ancho" id="m4-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m4-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m4-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m4-fb" role="status"></div>
+        <p class="marcador" id="m4-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="orden">
+    <summary><span class="num" aria-hidden="true">5</span><h2>¿Importa el orden?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Si otro orden da otro resultado, es una permutación.</p>
+      <div class="practica" id="m5">
+        <div class="enun" id="m5-enun"></div>
+        <div class="opciones" id="m5-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m5-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m5-fb" role="status"></div>
+        <p class="marcador" id="m5-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="cientiestad">
+    <summary><span class="num" aria-hidden="true">6</span><h2>CientíEstad: estadística en ciencia</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Veinticuatro preguntas de biología, química, física y ciencias de la Tierra, como en el examen GED®.</p>
+      <div class="practica" id="m6">
+        <div class="enun" id="m6-enun"></div>
+        <div class="opciones" id="m6-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m6-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m6-fb" role="status"></div>
+        <p class="marcador" id="m6-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Ciencias · Tema 2 · Razonamiento cuantitativo en ciencias · LearnGED</strong><br>
+    <a href="leccion-2-3.html">Volver a la lección 2.3</a></p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/science/sci.js"></script>
+<script src="/math/scinot.js"></script>
+<script>
+var MED = [
+ {
+  "enun": "Temperaturas máximas de una semana (°C): 28, 32, 30, 45, 31, 29, 33. El día de 45 °C fue una ola de calor anómala. ¿Qué medida representa mejor un día típico?",
+  "ops": [
+   "La media (32.6 °C), porque usa todos los datos",
+   "La mediana (31 °C), porque el valor extremo no la afecta",
+   "La moda, porque es la más fácil",
+   "El rango, porque muestra la variación"
+  ],
+  "ok": 1,
+  "pista": "Busque un valor atípico y pregúntese si los datos son números.",
+  "exp": "La mediana (31 °C) resiste el atípico de 45 °C; la media sube arrastrada."
+ },
+ {
+  "enun": "pH en siete puntos de un río contaminado, ordenados: 5.8, 6.1, 6.3, 6.5, 6.8, 7.1, 8.2. ¿Cuál es la mediana y por qué conviene aquí?",
+  "ops": [
+   "6.5; porque 8.2 es extremo y arrastraría la media",
+   "6.7; siempre es mejor que la media",
+   "6.8; porque es el valor más común",
+   "7.0; no hay diferencia con la media"
+  ],
+  "ok": 0,
+  "pista": "Busque un valor atípico y pregúntese si los datos son números.",
+  "exp": "Con 7 datos ordenados, la mediana es el 4.º: 6.5. La media (unos 6.69) sube por el 8.2."
+ },
+ {
+  "enun": "Colores de flores en un jardín: rojo, blanco, rojo, rosa, rojo, blanco. ¿Qué medida tiene sentido?",
+  "ops": [
+   "La media",
+   "La mediana",
+   "La moda",
+   "El rango"
+  ],
+  "ok": 2,
+  "pista": "Busque un valor atípico y pregúntese si los datos son números.",
+  "exp": "Los colores no son números: no se pueden sumar ni ordenar. La moda (rojo) sí funciona."
+ },
+ {
+  "enun": "Cinco tiempos de caída de una pelota: 1.02, 0.98, 1.05, 1.00, 0.99 s. ¿Cuál es la media, con dos decimales?",
+  "ops": [
+   "0.99 s",
+   "1.00 s",
+   "1.01 s",
+   "1.05 s"
+  ],
+  "ok": 2,
+  "pista": "Busque un valor atípico y pregúntese si los datos son números.",
+  "exp": "Suma = 5.04; 5.04 ÷ 5 = 1.008, que se redondea a 1.01 s."
+ }
+];
+var PRE = [
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>Masa verdadera: 50.0 g. Mediciones: 52.1, 52.0, 52.2, 52.1 g.</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pistas": {
+   "0": "Preciso y exacto: valores juntos y cerca del valor verdadero.",
+   "2": "Error aleatorio: valores muy separados entre sí."
+  },
+  "exp": "<strong>Preciso pero no exacto (error sistemático).</strong> Están a menos de 0.2 g entre sí, pero todas unos 2 g por encima: hay que calibrar la balanza."
+ },
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>Punto de ebullición verdadero: 100 °C. Lecturas: 99.9, 100.1, 100.0, 99.9 °C.</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pistas": {
+   "1": "Error sistemático: valores juntos pero todos desplazados igual.",
+   "2": "Error aleatorio: valores muy separados entre sí."
+  },
+  "exp": "<strong>Preciso y exacto.</strong> Juntas y cerca de 100 °C."
+ },
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>Longitud verdadera: 30.0 cm. Mediciones: 27.5, 32.8, 29.1, 31.9 cm.</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 2,
+  "enOrden": true,
+  "pistas": {
+   "0": "Preciso y exacto: valores juntos y cerca del valor verdadero.",
+   "1": "Error sistemático: valores juntos pero todos desplazados igual."
+  },
+  "exp": "<strong>Poco preciso (error aleatorio).</strong> Un rango de 5.3 cm: la técnica no está controlada. El promedio se acerca a 30, pero cada valor es poco fiable."
+ },
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>Tiempo verdadero: 1.00 s. Mediciones: 1.21, 1.19, 1.20, 1.22 s (el estudiante siempre pulsa el cronómetro tarde).</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pistas": {
+   "0": "Preciso y exacto: valores juntos y cerca del valor verdadero.",
+   "2": "Error aleatorio: valores muy separados entre sí."
+  },
+  "exp": "<strong>Preciso pero no exacto (error sistemático).</strong> Siempre unos 0.2 s de más: un error sistemático de la técnica."
+ },
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>pH verdadero: 7.0. Lecturas: 5.9, 7.8, 6.4, 8.1.</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 2,
+  "enOrden": true,
+  "pistas": {
+   "0": "Preciso y exacto: valores juntos y cerca del valor verdadero.",
+   "1": "Error sistemático: valores juntos pero todos desplazados igual."
+  },
+  "exp": "<strong>Poco preciso (error aleatorio).</strong> Las lecturas saltan mucho: error aleatorio."
+ },
+ {
+  "enun": "¿Qué tipo de datos son estos?<br><strong>Volumen verdadero: 25.0 mL. Lecturas: 25.1, 24.9, 25.0, 25.0 mL.</strong>",
+  "ops": [
+   "Preciso y exacto",
+   "Preciso pero no exacto (error sistemático)",
+   "Poco preciso (error aleatorio)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pistas": {
+   "1": "Error sistemático: valores juntos pero todos desplazados igual.",
+   "2": "Error aleatorio: valores muy separados entre sí."
+  },
+  "exp": "<strong>Preciso y exacto.</strong> Juntas y en el blanco."
+ }
+];
+var ORD = [
+ {
+  "enun": "Elegir tres muestras de un lote de diez para el mismo análisis.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "exp": "<strong>Combinación: el orden no importa.</strong> Da igual cuál se tome primero: el grupo de tres es el mismo."
+ },
+ {
+  "enun": "Ordenar los ocho pasos de una preparación de muestras.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "exp": "<strong>Permutación: el orden importa.</strong> Colorear y después cubrir no es lo mismo que cubrir y colorear (Lección 1.3)."
+ },
+ {
+  "enun": "Formar un equipo de cuatro estudiantes entre dieciocho, sin cargos.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "exp": "<strong>Combinación: el orden no importa.</strong> Sin cargos, el equipo es el mismo en cualquier orden. Con cargos (coordinador, secretario…) sería permutación."
+ },
+ {
+  "enun": "Registrar el primer, segundo y tercer corredor en llegar.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "exp": "<strong>Permutación: el orden importa.</strong> Primero, segundo y tercero son posiciones: importa el orden."
+ },
+ {
+  "enun": "Elegir dos reactivos de una estantería de seis para mezclarlos.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "exp": "<strong>Combinación: el orden no importa.</strong> Para contar las mezclas posibles, la pareja es la misma."
+ },
+ {
+  "enun": "Crear un código de 4 cifras para el congelador del laboratorio.",
+  "ops": [
+   "Permutación: el orden importa",
+   "Combinación: el orden no importa"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "exp": "<strong>Permutación: el orden importa.</strong> 1234 y 4321 son códigos distintos."
+ }
+];
+var EST = [
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Una bióloga mide la altura (cm) de seis plantas de tomate tras 30 días con un fertilizante nuevo: 18, 22, 19, 24, 20, 21.</p><p><strong>¿Cuál es la altura media, redondeada al centímetro?</strong></p>",
+  "ops": [
+   "19 cm",
+   "20.5 cm",
+   "21 cm",
+   "24 cm"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Media = (18 + 22 + 19 + 24 + 20 + 21) ÷ 6 = 124 ÷ 6 ≈ 20.67, que se redondea a 21 cm. 20.5 cm es la mediana, no la media."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>En un cruce Bb × Bb, B (semilla amarilla) es dominante sobre b (semilla verde). El cuadro de Punnett muestra lo esperado.</p><table class=\"cuaderno\" style=\"max-width:260px;margin:8px auto;text-align:center\"><caption>Cruce Bb × Bb</caption><thead><tr><th scope=\"col\"></th><th scope=\"col\">B</th><th scope=\"col\">b</th></tr></thead><tbody><tr><th scope=\"row\">B</th><td>BB</td><td>Bb</td></tr><tr><th scope=\"row\">b</th><td>Bb</td><td>bb</td></tr></tbody></table><p style=\"text-align:center\">3 amarillas : 1 verde</p><p><strong>De 200 semillas, ¿aproximadamente cuántas se espera que sean verdes (bb)?</strong></p>",
+  "ops": [
+   "25",
+   "50",
+   "100",
+   "150"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "bb es 1 de 4 casillas: 1/4 = 0.25. 200 × 0.25 = 50 semillas verdes."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un equipo midió la longitud del caparazón (cm) de 40 tortugas marinas y agrupó los datos en este histograma.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de barras. Eje horizontal: Longitud del caparazón (cm). Eje vertical: Número de tortugas. Valores: 80–90, 5; 90–100, 10; 100–110, 14; 110–120, 8; 120–130, 3.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"178.0\" x2=\"502\" y2=\"178.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"183.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">4</text><line x1=\"66\" y1=\"124.0\" x2=\"502\" y2=\"124.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"129.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">8</text><line x1=\"66\" y1=\"70.0\" x2=\"502\" y2=\"70.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"75.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">12</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">16</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><rect x=\"81.7\" y=\"164.5\" width=\"55.8\" height=\"67.5\" fill=\"#1f6066\"/><text x=\"109.6\" y=\"158.5\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">5</text><text x=\"109.6\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">80–90</text><rect x=\"168.9\" y=\"97.0\" width=\"55.8\" height=\"135.0\" fill=\"#1f6066\"/><text x=\"196.8\" y=\"91.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">10</text><text x=\"196.8\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">90–100</text><rect x=\"256.1\" y=\"43.0\" width=\"55.8\" height=\"189.0\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"37.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">14</text><text x=\"284.0\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">100–110</text><rect x=\"343.3\" y=\"124.0\" width=\"55.8\" height=\"108.0\" fill=\"#1f6066\"/><text x=\"371.2\" y=\"118.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">8</text><text x=\"371.2\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">110–120</text><rect x=\"430.5\" y=\"191.5\" width=\"55.8\" height=\"40.5\" fill=\"#1f6066\"/><text x=\"458.4\" y=\"185.5\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">3</text><text x=\"458.4\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">120–130</text><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Longitud del caparazón (cm)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Número de tortugas</text></svg><p><strong>¿En qué intervalo hay más tortugas?</strong></p>",
+  "ops": [
+   "80–90 cm",
+   "90–100 cm",
+   "100–110 cm",
+   "110–120 cm"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "La barra más alta es 100–110 cm, con 14 tortugas: es el intervalo modal."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un estudio observa que en los pueblos donde se come más helado también hay más quemaduras solares. La correlación es muy fuerte.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de dispersión. Eje horizontal: Venta de helado. Eje vertical: Quemaduras solares. Los puntos suben de izquierda a derecha en una franja estrecha: correlación positiva fuerte.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"178.0\" x2=\"502\" y2=\"178.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"183.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">20</text><line x1=\"66\" y1=\"124.0\" x2=\"502\" y2=\"124.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"129.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">40</text><line x1=\"66\" y1=\"70.0\" x2=\"502\" y2=\"70.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"75.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">60</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">80</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"175.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">20</text><line x1=\"175.0\" y1=\"232\" x2=\"175.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"284.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">40</text><line x1=\"284.0\" y1=\"232\" x2=\"284.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"393.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">60</text><line x1=\"393.0\" y1=\"232\" x2=\"393.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">80</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><circle cx=\"120.5\" cy=\"199.6\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"175.0\" cy=\"183.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"229.5\" cy=\"151.0\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"284.0\" cy=\"137.5\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"338.5\" cy=\"102.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"393.0\" cy=\"83.5\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"447.5\" cy=\"53.8\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"502.0\" cy=\"21.4\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Venta de helado</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Quemaduras solares</text></svg><p><strong>¿Cuál es la conclusión científicamente correcta?</strong></p>",
+  "ops": [
+   "Comer helado causa quemaduras solares.",
+   "Las quemaduras hacen que la gente compre helado.",
+   "Una tercera variable (el calor del verano) probablemente causa ambas.",
+   "No hay relación real; es coincidencia."
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Correlación no es causa: los días calurosos y soleados hacen comer más helado y quemarse más."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Una ecóloga quiere estimar el número medio de huevos por nido de un ave migratoria. Tiene cuatro opciones de muestra.</p><p><strong>¿Qué muestra daría la estimación más representativa?</strong></p>",
+  "ops": [
+   "10 nidos elegidos al azar en toda la zona",
+   "10 nidos del lugar más accesible",
+   "10 nidos ya estudiados en años anteriores",
+   "Solo nidos visibles desde el camino"
+  ],
+  "ok": 0,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Una muestra al azar reduce el sesgo de selección. Las otras tienen sesgo: el lugar fácil puede ser distinto, los nidos ya estudiados quizá no sean típicos y los escondidos quedan fuera."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Biología</span></p><p>Un cultivo de bacterias se duplica cada 30 minutos. A las 9:00 hay 1,000 bacterias.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de líneas. Eje horizontal: Minutos desde las 9:00. Eje vertical: Bacterias. Puntos (x, y): : 0, 1000; 30, 2000; 60, 4000; 90, 8000; 120, 16,000.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"178.0\" x2=\"502\" y2=\"178.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"183.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">5000</text><line x1=\"66\" y1=\"124.0\" x2=\"502\" y2=\"124.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"129.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">10,000</text><line x1=\"66\" y1=\"70.0\" x2=\"502\" y2=\"70.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"75.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">15,000</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">20,000</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"175.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">30</text><line x1=\"175.0\" y1=\"232\" x2=\"175.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"284.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">60</text><line x1=\"284.0\" y1=\"232\" x2=\"284.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"393.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">90</text><line x1=\"393.0\" y1=\"232\" x2=\"393.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">120</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><polyline points=\"66.0,221.2 175.0,210.4 284.0,188.8 393.0,145.6 502.0,59.2\" fill=\"none\" stroke=\"#1f6066\" stroke-width=\"3\"/><circle cx=\"66.0\" cy=\"221.2\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"175.0\" cy=\"210.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"284.0\" cy=\"188.8\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"393.0\" cy=\"145.6\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"502.0\" cy=\"59.2\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Minutos desde las 9:00</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Bacterias</text></svg><p><strong>Si la tendencia continúa, ¿cuántas bacterias habrá a las 11:00?</strong></p>",
+  "ops": [
+   "4,000",
+   "8,000",
+   "16,000",
+   "32,000"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Dos horas = cuatro periodos de 30 minutos: 1,000 → 2,000 → 4,000 → 8,000 → 16,000."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un químico mide el pH de un río contaminado en siete puntos. Ordenados: 5.8, 6.1, 6.3, 6.5, 6.8, 7.1, 8.2.</p><p><strong>¿Cuál es la mediana del pH y por qué es preferible a la media aquí?</strong></p>",
+  "ops": [
+   "6.5; hay un valor extremo (8.2) que distorsiona la media",
+   "6.7; siempre es preferible",
+   "6.8; es el valor más común",
+   "7.0; no hay diferencia"
+  ],
+  "ok": 0,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Con 7 datos ordenados, la mediana es el 4.º: 6.5. La media (unos 6.69) sube por el 8.2."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Para evaluar una balanza, un técnico pesa la misma muestra cinco veces: 12.45, 12.47, 12.46, 12.48, 12.44 g.</p><p><strong>¿Cuál es el rango de las mediciones?</strong></p>",
+  "ops": [
+   "0.02 g",
+   "0.04 g",
+   "0.46 g",
+   "12.46 g"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "12.48 − 12.44 = 0.04 g. Un rango pequeño indica buena precisión."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>En una mezcla de iones, el 40 % son Na⁺ y el 60 % son K⁺. Se extraen dos al azar, con reemplazo.</p><p><strong>¿Cuál es la probabilidad de extraer dos Na⁺ seguidos?</strong></p>",
+  "ops": [
+   "0.04 (4%)",
+   "0.16 (16%)",
+   "0.40 (40%)",
+   "0.80 (80%)"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Sucesos independientes: 0.40 × 0.40 = 0.16."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>En un experimento de cinética se midió el tiempo de reacción (s) en 20 ensayos de la misma reacción.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de barras. Eje horizontal: Tiempo de reacción (s). Eje vertical: Número de ensayos. Valores: 2–3, 2; 3–4, 4; 4–5, 7; 5–6, 5; 6–7, 2.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"178.0\" x2=\"502\" y2=\"178.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"183.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">2</text><line x1=\"66\" y1=\"124.0\" x2=\"502\" y2=\"124.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"129.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">4</text><line x1=\"66\" y1=\"70.0\" x2=\"502\" y2=\"70.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"75.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">6</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">8</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><rect x=\"81.7\" y=\"178.0\" width=\"55.8\" height=\"54.0\" fill=\"#1f6066\"/><text x=\"109.6\" y=\"172.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">2</text><text x=\"109.6\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">2–3</text><rect x=\"168.9\" y=\"124.0\" width=\"55.8\" height=\"108.0\" fill=\"#1f6066\"/><text x=\"196.8\" y=\"118.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">4</text><text x=\"196.8\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">3–4</text><rect x=\"256.1\" y=\"43.0\" width=\"55.8\" height=\"189.0\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"37.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">7</text><text x=\"284.0\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">4–5</text><rect x=\"343.3\" y=\"97.0\" width=\"55.8\" height=\"135.0\" fill=\"#1f6066\"/><text x=\"371.2\" y=\"91.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">5</text><text x=\"371.2\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">5–6</text><rect x=\"430.5\" y=\"178.0\" width=\"55.8\" height=\"54.0\" fill=\"#1f6066\"/><text x=\"458.4\" y=\"172.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">2</text><text x=\"458.4\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">6–7</text><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Tiempo de reacción (s)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Número de ensayos</text></svg><p><strong>¿Qué porcentaje de los ensayos tardó, aproximadamente, entre 4 y 6 segundos?</strong></p>",
+  "ops": [
+   "25%",
+   "40%",
+   "60%",
+   "75%"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "4–5 s (7) + 5–6 s (5) = 12 de 20 ensayos: 12 ÷ 20 = 60 %."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un químico grafica la velocidad de una reacción contra la temperatura, controlando todas las demás variables.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de dispersión. Eje horizontal: Temperatura (°C). Eje vertical: Velocidad (mol/s). Los puntos suben de izquierda a derecha en una franja estrecha: correlación positiva fuerte.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"160.0\" x2=\"502\" y2=\"160.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"165.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">2</text><line x1=\"66\" y1=\"88.0\" x2=\"502\" y2=\"88.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"93.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">4</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">6</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">10</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"153.2\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">20</text><line x1=\"153.2\" y1=\"232\" x2=\"153.2\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"240.4\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">30</text><line x1=\"240.4\" y1=\"232\" x2=\"240.4\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"327.6\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">40</text><line x1=\"327.6\" y1=\"232\" x2=\"327.6\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"414.8\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">50</text><line x1=\"414.8\" y1=\"232\" x2=\"414.8\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">60</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><circle cx=\"66.0\" cy=\"192.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"153.2\" cy=\"160.0\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"240.4\" cy=\"116.8\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"327.6\" cy=\"91.6\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"414.8\" cy=\"48.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"502.0\" cy=\"16.0\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Temperatura (°C)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Velocidad (mol/s)</text></svg><p><strong>A diferencia del ejemplo del helado, ¿por qué SÍ podemos inferir aquí que la temperatura causa el cambio de velocidad?</strong></p>",
+  "ops": [
+   "Porque la correlación es más fuerte.",
+   "Porque es un experimento controlado en el que solo cambió la temperatura.",
+   "Porque siempre están relacionadas.",
+   "Porque el químico es un experto."
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "La clave es el control: cuando se cambia una variable a propósito y se mantienen las demás, se puede inferir causa. Los estudios observacionales no."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Química</span></p><p>Un químico mide la concentración de un reactivo a distintos tiempos. Los datos siguen una clara tendencia lineal decreciente.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de líneas. Eje horizontal: Tiempo (s). Eje vertical: Concentración (M). Puntos (x, y): : 0, 1; 10, 0.84; 20, 0.68; 30, 0.52; 40, 0.36.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"188.8\" x2=\"502\" y2=\"188.8\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"193.8\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.2</text><line x1=\"66\" y1=\"145.6\" x2=\"502\" y2=\"145.6\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"150.6\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.4</text><line x1=\"66\" y1=\"102.4\" x2=\"502\" y2=\"102.4\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"107.4\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.6</text><line x1=\"66\" y1=\"59.2\" x2=\"502\" y2=\"59.2\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"64.2\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.8</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">1</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"175.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">10</text><line x1=\"175.0\" y1=\"232\" x2=\"175.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"284.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">20</text><line x1=\"284.0\" y1=\"232\" x2=\"284.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"393.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">30</text><line x1=\"393.0\" y1=\"232\" x2=\"393.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">40</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><polyline points=\"66.0,16.0 175.0,50.6 284.0,85.1 393.0,119.7 502.0,154.2\" fill=\"none\" stroke=\"#1f6066\" stroke-width=\"3\"/><circle cx=\"66.0\" cy=\"16.0\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"175.0\" cy=\"50.6\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"284.0\" cy=\"85.1\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"393.0\" cy=\"119.7\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"502.0\" cy=\"154.2\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Tiempo (s)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Concentración (M)</text></svg><p><strong>Si la tendencia continúa, ¿cuál será la concentración a los 50 segundos?</strong></p>",
+  "ops": [
+   "0.10 M",
+   "0.20 M",
+   "0.40 M",
+   "0.50 M"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Baja 0.16 M cada 10 s: 0.36 − 0.16 = 0.20 M (si la tendencia se mantiene)."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un estudiante cronometra cinco veces la caída de una pelota desde 4.9 m: 1.02, 0.98, 1.05, 1.00, 0.99 s.</p><p><strong>¿Cuál es el tiempo medio, redondeado a dos decimales?</strong></p>",
+  "ops": [
+   "0.99 s",
+   "1.00 s",
+   "1.01 s",
+   "1.05 s"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Suma = 5.04; 5.04 ÷ 5 = 1.008, que se redondea a 1.01 s. Promediar mediciones repetidas reduce el error aleatorio."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Dos estudiantes midieron la velocidad del sonido cinco veces cada uno (m/s).</p><table class=\"cuaderno\"><caption class=\"cap-oculto\">Tabla de datos</caption><thead><tr><th scope=\"col\">Medición</th><th scope=\"col\">1</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">4</th><th scope=\"col\">5</th><th scope=\"col\">Promedio</th></tr></thead><tbody><tr><td>Estudiante A</td><td>340</td><td>345</td><td>343</td><td>342</td><td>345</td><td>343</td></tr><tr><td>Estudiante B</td><td>310</td><td>375</td><td>340</td><td>360</td><td>320</td><td>341</td></tr></tbody></table><p><strong>¿Qué estudiante midió con más precisión, y por qué?</strong></p>",
+  "ops": [
+   "A, porque tiene mayor promedio",
+   "B, porque sus valores son más diversos",
+   "A, porque sus mediciones tienen menor rango",
+   "Ninguno; sus promedios son parecidos"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "La precisión es cuán agrupadas están las mediciones, no el promedio. Rango A = 5 m/s; rango B = 65 m/s."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un isótopo radiactivo tiene una vida media de 10 años: en cada periodo de 10 años, cada átomo tiene un 50 % de probabilidad de desintegrarse.</p><p><strong>Si se empieza con 800 átomos, ¿cuántos quedan después de 30 años?</strong></p>",
+  "ops": [
+   "50",
+   "100",
+   "200",
+   "400"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Tres vidas medias: 800 → 400 → 200 → 100."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Un físico cuenta las ondas detectadas por un sismógrafo en cada rango de frecuencia.</p><table class=\"cuaderno\"><caption class=\"cap-oculto\">Tabla de datos</caption><thead><tr><th scope=\"col\">Frecuencia (Hz)</th><th scope=\"col\">0–2</th><th scope=\"col\">2–4</th><th scope=\"col\">4–6</th><th scope=\"col\">6–8</th><th scope=\"col\">8–10</th></tr></thead><tbody><tr><td>Número de ondas</td><td>8</td><td>15</td><td>22</td><td>12</td><td>3</td></tr></tbody></table><p><strong>¿En qué rango se detectaron MÁS ondas, y qué porcentaje del total representan?</strong></p>",
+  "ops": [
+   "2–4 Hz, 25 %",
+   "4–6 Hz, 37 %",
+   "4–6 Hz, 22 %",
+   "6–8 Hz, 20 %"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "Total = 60. El mayor es 4–6 Hz con 22: 22 ÷ 60 ≈ 0.367 ≈ 37 %."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>En un experimento de péndulos se grafica el período (T) contra la longitud (L) de varios péndulos.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de dispersión. Eje horizontal: Longitud L (m). Eje vertical: Período T (s). Los puntos suben de izquierda a derecha en una franja estrecha: correlación positiva fuerte.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"188.8\" x2=\"502\" y2=\"188.8\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"193.8\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.5</text><line x1=\"66\" y1=\"145.6\" x2=\"502\" y2=\"145.6\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"150.6\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">1</text><line x1=\"66\" y1=\"102.4\" x2=\"502\" y2=\"102.4\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"107.4\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">1.5</text><line x1=\"66\" y1=\"59.2\" x2=\"502\" y2=\"59.2\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"64.2\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">2</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">2.5</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0.2</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"153.2\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0.4</text><line x1=\"153.2\" y1=\"232\" x2=\"153.2\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"240.4\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0.6</text><line x1=\"240.4\" y1=\"232\" x2=\"240.4\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"327.6\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">0.8</text><line x1=\"327.6\" y1=\"232\" x2=\"327.6\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"414.8\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">1</text><line x1=\"414.8\" y1=\"232\" x2=\"414.8\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">1.2</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><circle cx=\"66.0\" cy=\"154.2\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"153.2\" cy=\"122.3\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"240.4\" cy=\"98.1\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"327.6\" cy=\"77.3\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"414.8\" cy=\"59.2\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"502.0\" cy=\"41.9\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Longitud L (m)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Período T (s)</text></svg><p><strong>La correlación es fuerte y positiva. ¿Qué se puede concluir DIRECTAMENTE de los datos?</strong></p>",
+  "ops": [
+   "La longitud causa el período, sin más.",
+   "A mayor longitud, mayor período: una relación predecible.",
+   "No hay manera de saber si están relacionadas.",
+   "El período causa la longitud."
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "De una correlación se puede afirmar la relación predecible. (Aquí la teoría explica la causa, pero la pregunta pide lo que muestran los datos.)"
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Física</span></p><p>Se midió la distancia recorrida por un auto que acelera de forma constante.</p><table class=\"cuaderno\"><caption class=\"cap-oculto\">Tabla de datos</caption><thead><tr><th scope=\"col\">Tiempo (s)</th><th scope=\"col\">1</th><th scope=\"col\">2</th><th scope=\"col\">3</th><th scope=\"col\">4</th></tr></thead><tbody><tr><td>Distancia (m)</td><td>5</td><td>20</td><td>45</td><td>80</td></tr></tbody></table><p><strong>El patrón es d = 5t². ¿Qué distancia se predice a los 5 segundos?</strong></p>",
+  "ops": [
+   "100 m",
+   "115 m",
+   "125 m",
+   "160 m"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "d = 5 × 5² = 5 × 25 = 125 m. Las diferencias (15, 25, 35…) aumentan 10 cada vez."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Las temperaturas máximas (°C) de una ciudad durante una semana fueron 28, 32, 30, 45, 31, 29, 33. El día de 45 °C fue una ola de calor anómala.</p><p><strong>¿Qué medida de centro representa MEJOR un día típico?</strong></p>",
+  "ops": [
+   "La media (32.6 °C), porque usa todos los datos",
+   "La mediana (31 °C), porque el valor extremo no la afecta",
+   "La moda, porque es la más fácil",
+   "El rango, porque muestra la variación"
+  ],
+  "ok": 1,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "La mediana (31 °C) resiste los atípicos; la media sube por el día de 45 °C."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>El año pasado, los sismos detectados en una región fueron de magnitud 2.1 a 6.8.</p><p><strong>¿Cuál es el rango de magnitudes y qué indica?</strong></p>",
+  "ops": [
+   "4.7; mucha variación en la intensidad",
+   "8.9; poca variación",
+   "6.8; solo hubo un sismo grande",
+   "2.1; todos fueron pequeños"
+  ],
+  "ok": 0,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "6.8 − 2.1 = 4.7: la región tuvo tanto temblores leves como sismos fuertes."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>En los últimos 50 años, una región costera ha recibido 15 huracanes. Suponga que la frecuencia se mantiene.</p><p><strong>¿Cuál es la probabilidad estimada de que un huracán la impacte en un año cualquiera?</strong></p>",
+  "ops": [
+   "3%",
+   "15%",
+   "30%",
+   "50%"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "15 ÷ 50 = 0.30 = 30 %. Estimar probabilidades a partir de frecuencias históricas es habitual en climatología."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Este histograma muestra la precipitación anual (mm) de una estación meteorológica durante 25 años.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de barras. Eje horizontal: Precipitación (mm). Eje vertical: Número de años. Valores: 200–400, 2; 400–600, 6; 600–800, 8; 800–1000, 7; 1000–1200, 2.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"178.0\" x2=\"502\" y2=\"178.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"183.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">2</text><line x1=\"66\" y1=\"124.0\" x2=\"502\" y2=\"124.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"129.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">4</text><line x1=\"66\" y1=\"70.0\" x2=\"502\" y2=\"70.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"75.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">6</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">8</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><rect x=\"81.7\" y=\"178.0\" width=\"55.8\" height=\"54.0\" fill=\"#1f6066\"/><text x=\"109.6\" y=\"172.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">2</text><text x=\"109.6\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">200–400</text><rect x=\"168.9\" y=\"70.0\" width=\"55.8\" height=\"162.0\" fill=\"#1f6066\"/><text x=\"196.8\" y=\"64.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">6</text><text x=\"196.8\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">400–600</text><rect x=\"256.1\" y=\"16.0\" width=\"55.8\" height=\"216.0\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"10.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">8</text><text x=\"284.0\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">600–800</text><rect x=\"343.3\" y=\"43.0\" width=\"55.8\" height=\"189.0\" fill=\"#1f6066\"/><text x=\"371.2\" y=\"37.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">7</text><text x=\"371.2\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">800–1000</text><rect x=\"430.5\" y=\"178.0\" width=\"55.8\" height=\"54.0\" fill=\"#1f6066\"/><text x=\"458.4\" y=\"172.0\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#1a2330\">2</text><text x=\"458.4\" y=\"250\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">1000–1200</text><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">Precipitación (mm)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Número de años</text></svg><p><strong>¿Cuántos años tuvieron entre 600 y 1,000 mm de lluvia?</strong></p>",
+  "ops": [
+   "8",
+   "12",
+   "15",
+   "18"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "600–800 (8 años) + 800–1,000 (7 años) = 15 años."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>Los datos de los últimos 100 años muestran una correlación muy fuerte entre el CO₂ atmosférico y la temperatura global media.</p><svg viewBox=\"0 0 520 290\" role=\"img\" aria-label=\"Gráfica de dispersión. Eje horizontal: CO₂ atmosférico (ppm). Eje vertical: Anomalía de temperatura (°C). Los puntos suben de izquierda a derecha en una franja estrecha: correlación positiva fuerte.\" style=\"width:100%;max-width:520px;height:auto;display:block;margin:10px auto;\"><line x1=\"66\" y1=\"232.0\" x2=\"502\" y2=\"232.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"237.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">−0.25</text><line x1=\"66\" y1=\"188.8\" x2=\"502\" y2=\"188.8\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"193.8\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0</text><line x1=\"66\" y1=\"145.6\" x2=\"502\" y2=\"145.6\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"150.6\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.25</text><line x1=\"66\" y1=\"102.4\" x2=\"502\" y2=\"102.4\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"107.4\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.5</text><line x1=\"66\" y1=\"59.2\" x2=\"502\" y2=\"59.2\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"64.2\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">0.75</text><line x1=\"66\" y1=\"16.0\" x2=\"502\" y2=\"16.0\" stroke=\"#e1e6ea\"/><text x=\"58\" y=\"21.0\" text-anchor=\"end\" font-size=\"13\" fill=\"#3d4753\">1</text><line x1=\"66\" y1=\"16\" x2=\"66\" y2=\"232\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><line x1=\"66\" y1=\"188.8\" x2=\"502\" y2=\"188.8\" stroke=\"#1a2330\" stroke-width=\"1.5\"/><text x=\"66.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">300</text><line x1=\"66.0\" y1=\"232\" x2=\"66.0\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"153.2\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">325</text><line x1=\"153.2\" y1=\"232\" x2=\"153.2\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"240.4\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">350</text><line x1=\"240.4\" y1=\"232\" x2=\"240.4\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"327.6\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">375</text><line x1=\"327.6\" y1=\"232\" x2=\"327.6\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"414.8\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">400</text><line x1=\"414.8\" y1=\"232\" x2=\"414.8\" y2=\"237\" stroke=\"#1a2330\"/><text x=\"502.0\" y=\"252\" text-anchor=\"middle\" font-size=\"13\" fill=\"#3d4753\">425</text><line x1=\"502.0\" y1=\"232\" x2=\"502.0\" y2=\"237\" stroke=\"#1a2330\"/><circle cx=\"66.0\" cy=\"223.4\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"100.9\" cy=\"206.1\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"135.8\" cy=\"188.8\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"205.5\" cy=\"145.6\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"275.3\" cy=\"119.7\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"345.0\" cy=\"85.1\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"414.8\" cy=\"41.9\" r=\"4.5\" fill=\"#1f6066\"/><circle cx=\"467.1\" cy=\"16.0\" r=\"4.5\" fill=\"#1f6066\"/><text x=\"284.0\" y=\"282\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\">CO₂ atmosférico (ppm)</text><text x=\"16\" y=\"124.0\" text-anchor=\"middle\" font-size=\"14\" font-weight=\"700\" fill=\"#1a2330\" transform=\"rotate(-90 16 124.0)\">Anomalía de temperatura (°C)</text></svg><p><strong>¿Cuál es la conclusión más sólida que se puede sacar de estos datos por sí solos?</strong></p>",
+  "ops": [
+   "El CO₂ definitivamente causa el aumento de temperatura.",
+   "La temperatura causa el aumento de CO₂.",
+   "Hay una correlación fuerte; la causa debe establecerse con experimentos y modelos físicos.",
+   "No hay relación significativa."
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "La ciencia sí concluye que el CO₂ causa calentamiento, pero eso viene de la física del efecto invernadero, de modelos y de experimentos. ESTOS datos, por sí solos, solo muestran correlación."
+ },
+ {
+  "enun": "<p><span class=\"chip-area\">Ciencias de la Tierra</span></p><p>El nivel del mar en una estación ha subido una media de 3.2 mm por año en las dos últimas décadas.</p><p><strong>Si la tasa se mantiene, ¿cuánto subirá el mar en los próximos 25 años?</strong></p>",
+  "ops": [
+   "3.2 mm",
+   "32 mm",
+   "80 mm",
+   "320 mm"
+  ],
+  "ok": 2,
+  "pista": "Lea con cuidado qué pide la pregunta: qué medida, qué intervalo o qué clase de conclusión. Después compruébelo con los números.",
+  "exp": "3.2 mm/año × 25 años = 80 mm (8 cm). Es una proyección lineal simple; los modelos sugieren que la tasa podría acelerarse."
+ }
+];
+
+var M = {"media": "la media", "mediana": "la mediana", "moda": "la moda", "rango": "el rango", "q1": "el primer cuartil (Q1)", "q3": "el tercer cuartil (Q3)"}, CTX = [["Alturas de plantas (cm)", 15, 60], ["Tiempos de reacción (centésimas de segundo)", 20, 35], ["Pulsaciones (latidos por minuto)", 64, 88], ["Semillas germinadas en cada bandeja", 12, 30], ["Temperaturas máximas diarias (°C)", 14, 32], ["Masas de huevos (g)", 52, 64]], PI = {"media": "Sume todos los valores y divida entre la cantidad de datos.", "mediana": "Ordene primero los datos. Si la cantidad es par, promedie los dos centrales.", "moda": "¿Qué valor se repite más?", "rango": "Valor mayor menos valor menor.", "q1": "Ordene los datos, tome la mitad inferior y halle su mediana.", "q3": "Ordene los datos, tome la mitad superior y halle su mediana."}, OTRA = "Ese valor es {m}, no la medida que se pide. ";
+function med(a){ var n = a.length, m = Math.floor(n / 2); return n % 2 ? a[m] : (a[m - 1] + a[m]) / 2; }
+function fmt(x){ return String(Math.round(x * 1000) / 1000); }
+function gM(){
+  var n = elige([4, 5, 8, 10]), cx = elige(CTX), ctx = cx[0], base = aleatorio(cx[1], cx[2]), datos = [], i, que = elige(["media", "mediana", "moda", "rango", "q1", "q3"]);
+  for (i = 0; i < n; i++) datos.push(base + aleatorio(-6, 6));
+  if (que === "moda"){ var k = aleatorio(0, n - 3); datos[k + 1] = datos[k]; datos[k + 2] = datos[k]; }
+  var o = datos.slice().sort(function(a, b){ return a - b; }), r, exp, s = 0;
+  datos.forEach(function(v){ s += v; });
+  if (que === "moda"){ var c = {}, best = null; o.forEach(function(v){ c[v] = (c[v] || 0) + 1; if (best === null || c[v] > c[best]) best = v; }); var empate = Object.keys(c).filter(function(v){ return c[v] === c[best]; }).length > 1; if (empate) return gM(); }
+  if (que === "media"){ r = s / n; exp = "Suma = " + s + "; " + s + " ÷ " + n + " = " + fmt(r) + "."; }
+  else if (que === "mediana"){ r = med(o); exp = "Ordenados: " + o.join(", ") + ". " + (n % 2 ? "El valor central: " + fmt(r) + "." : "Los dos centrales son " + o[n/2 - 1] + " / " + o[n/2] + ", y su promedio es " + fmt(r) + "."); }
+  else if (que === "moda"){ r = best; exp = "Ordenados: " + o.join(", ") + ". " + best + " es el que más se repite."; }
+  else if (que === "rango"){ r = o[n - 1] - o[0]; exp = "Mayor − menor = " + o[n - 1] + " − " + o[0] + " = " + r + "."; }
+  else { var h = Math.floor(n / 2), lo = o.slice(0, h), hi = o.slice(n - h); r = que === "q1" ? med(lo) : med(hi); exp = "Ordenados: " + o.join(", ") + ". " + (que === "q1" ? "Q1 es la mediana de la mitad inferior: " + lo.join(", ") : "Q3 es la mediana de la mitad superior: " + hi.join(", ")) + " → " + fmt(r) + "."; }
+  var h2 = Math.floor(n / 2), otras = {media: s / n, mediana: med(o), rango: o[n - 1] - o[0], q1: med(o.slice(0, h2)), q3: med(o.slice(n - h2))};
+  return {enun: "<p>" + ctx + ": <strong>" + datos.join(", ") + "</strong>.</p><p>Halle <strong>" + M[que] + "</strong>.</p>", resp: leeNumero(fmt(r)), explica: exp, pista: function(v){
+    for (var k in otras) if (k !== que && otras[k] !== r && igual(v, leeNumero(fmt(otras[k])))) return OTRA.replace("{m}", M[k]) + PI[que];
+    return PI[que]; }};
+}
+
+function gK(){
+  var tipo = elige(["genes", "perm", "comb", "menu", "coin"]), r, enun, exp;
+  if (tipo === "genes"){ var n = aleatorio(2, 6); r = Math.pow(2, n); enun = "Un organismo tiene <strong>" + n + "</strong> genes con dos alelos cada uno. ¿Cuántos gametos distintos puede producir?"; exp = "Cada gen aporta 2 posibilidades: " + Array(n).fill("2").join(" × ") + " = " + r + "."; }
+  else if (tipo === "perm"){ var n = aleatorio(3, 6), f = 1, p = []; for (var i = n; i >= 1; i--){ f *= i; p.push(i); } r = f; enun = "Un protocolo tiene <strong>" + n + "</strong> pasos. ¿De cuántas maneras distintas podrían ordenarse?"; exp = "Importa el orden (permutación): " + p.join(" × ") + " = " + r + "."; }
+  else if (tipo === "comb"){ var n = aleatorio(5, 9), k = elige([2, 3]), num = 1, den = 1, a = [], b = []; for (var i = 0; i < k; i++){ num *= (n - i); a.push(n - i); den *= (i + 1); b.unshift(i + 1); } r = num / den; enun = "De <strong>" + n + "</strong> muestras se eligen <strong>" + k + "</strong> para el mismo análisis. No importa el orden. ¿Cuántas selecciones distintas son posibles?"; exp = "Combinación: (" + a.join(" × ") + ") ÷ (" + b.join(" × ") + ") = " + num + " ÷ " + den + " = " + r + ". (En la TI-30XS: " + n + ", prb, nCr, " + k + ".)"; }
+  else if (tipo === "menu"){ var x = aleatorio(2, 5), y = aleatorio(2, 5), z = aleatorio(2, 4); r = x * y * z; enun = "Un experimento puede usar <strong>" + x + "</strong> tipos de suelo, <strong>" + y + "</strong> cantidades de agua y <strong>" + z + "</strong> niveles de luz. ¿Cuántos montajes distintos son posibles?"; exp = "Principio del conteo: " + x + " × " + y + " × " + z + " = " + r + "."; }
+  else { var n = aleatorio(2, 6); r = Math.pow(2, n); enun = "Se lanza una moneda <strong>" + n + "</strong> veces. ¿Cuántas secuencias distintas de caras y cruces pueden salir?"; exp = "2 posibilidades cada vez: " + Array(n).fill("2").join(" × ") + " = " + r + "."; }
+  return {enun: "<p>" + enun + "</p>", solucion: exp, evalua: numN(r, [], "Multiplique las posibilidades de cada etapa (y divida si no importa el orden).")};
+}
+creaPracticaDec("m1", gM);
+creaBanco("m2", MED);
+creaBanco("m3", PRE);
+creaPracticaLibre("m4", gK);
+creaBanco("m5", ORD);
+creaBanco("m6", EST);
+iniciaNavegacion();
+</script>
+<script src="/js/calculadora.js" data-color="#1f6066" defer></script>
+</body>
+</html>

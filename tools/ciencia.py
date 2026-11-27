@@ -243,6 +243,45 @@ def tabla(caption, cabeza, filas, fila_th=True):
             f'<p class="aviso-desliza"><span aria-hidden="true">↔</span> {t("Slide the table sideways to see all the columns.", "Deslice la tabla horizontalmente para ver todas las columnas.")}</p>')
 
 
+def calc(titulo, cuerpo):
+    """Recuadro de la calculadora con el botón que la abre (js/calculator.js o js/calculadora.js)."""
+    return (f'<div class="caja-calc">\n<span class="et-calc"><span aria-hidden="true">🧮</span> {titulo}</span>\n{cuerpo}\n'
+            f'<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> {t("Open the calculator", "Abrir la calculadora")}</button>\n</div>')
+
+
+def sci_campos(pid):
+    """Respuesta escrita en notación científica (creaPracticaSci de /math/scinot.js)."""
+    return f'''      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>
+        <div class="campos campos-sci">
+          <div class="campo"><label for="{pid}-c">{t("Coefficient", "Coeficiente")}</label><input type="text" inputmode="decimal" autocomplete="off" class="corto" id="{pid}-c"></div>
+          <div class="campo" aria-hidden="true" style="font-size:20px;font-weight:700;padding-bottom:8px;white-space:nowrap;">× 10</div>
+          <div class="campo"><label for="{pid}-e">{t("Exponent", "Exponente")}</label><input type="text" autocomplete="off" class="corto" id="{pid}-e"></div>
+        </div>
+        <p class="nota">{t("Use a decimal point (4.5). For a negative exponent, type the minus sign: −3 or -3.", "Use punto decimal (4.5). Para un exponente negativo, escriba el signo menos: −3 o -3.")}</p>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">{t("Check", "Comprobar")}</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">{t("New exercise", "Otro ejercicio")}</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''
+
+
+def dec_campo(pid, etiqueta):
+    """Respuesta escrita con un número decimal (creaPracticaDec de /math/scinot.js)."""
+    return f'''      <div class="practica" id="{pid}">
+        <div class="enun" id="{pid}-enun"></div>
+        <div class="campos"><div class="campo"><label for="{pid}-r">{etiqueta}</label><input type="text" inputmode="decimal" autocomplete="off" class="ancho" id="{pid}-r"></div></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="{pid}-comprobar">{t("Check", "Comprobar")}</button>
+          <button type="button" class="btn-sec" id="{pid}-nuevo">{t("New exercise", "Otro ejercicio")}</button>
+        </div>
+        <div class="fb" id="{pid}-fb" role="status"></div>
+        <p class="marcador" id="{pid}-marcador"></p>
+      </div>'''
+
+
 def lectura(titulo, parrafos, nota=None):
     ps = "\n".join(f"<p>{p}</p>" for p in parrafos)
     n = f'<p class="fuente">{nota}</p>' if nota else ""
@@ -501,7 +540,7 @@ def huecos(pid, intro=""):
       </div>'''
 
 
-def pagina_practica(n, titulo, meta, modulos, js):
+def pagina_practica(n, titulo, meta, modulos, js, scripts=(), calculadora=False):
     """modulos: lista de (id, título, html). js: el código de la página (después de practice.js y sci.js)."""
     tn = int(n.split("-")[0])
     area = TEMAS[tn][1]
@@ -510,6 +549,7 @@ def pagina_practica(n, titulo, meta, modulos, js):
     mods = "\n\n".join(modulo(mid, i + 1, tt, h, i == 0) for i, (mid, tt, h) in enumerate(modulos))
     ruta = f'{t("Science · Topic", "Ciencias · Tema")} {tn} · {tema(tn)}'
     otra = "es" if L == "en" else "en"
+    calc = '\n<script src="%s" data-color="%s" defer></script>' % (t("/js/calculator.js", "/js/calculadora.js"), COLOR[area]) if calculadora else ""
     return f'''<!DOCTYPE html>
 <!-- LearnGED · {t("Science · Lesson", "Ciencias · Lección")} {num} · {t("practice", "práctica")} ({t("English", "español")}) — {t("built by", "construida con")} tools/build_sci_{n.replace("-", "_")}.py
      José M. Fernández · CC BY-NC-SA 4.0 -->
@@ -553,11 +593,11 @@ def pagina_practica(n, titulo, meta, modulos, js):
   </footer>
 </div>
 <script src="/math/practice.js"></script>
-<script src="/science/sci.js"></script>
+<script src="/science/sci.js"></script>{"".join(chr(10) + '<script src="' + x + '"></script>' for x in scripts)}
 <script>
 {js.strip()}
 iniciaNavegacion();
-</script>
+</script>{calc}
 </body>
 </html>
 '''
@@ -578,3 +618,117 @@ def construye(n, hacer_leccion, hacer_practica):
             open(ruta, "w", encoding="utf-8").write(f())
             print("ok", os.path.relpath(ruta, ROOT))
     L = "en"
+
+
+# ---------------------------------------------------------------- gráficas en SVG (líneas, barras, tablas)
+PALETA = ["#1f6066", "#c0582f", "#5b21b6", "#2e7d32"]
+
+
+def _paso(rango):
+    """Un paso «bonito» (1, 2, 2.5, 5 × 10^k) para unas 5 divisiones."""
+    import math
+    if rango <= 0:
+        return 1
+    bruto = rango / 5
+    k = 10 ** math.floor(math.log10(bruto))
+    for m in (1, 2, 2.5, 5, 10):
+        if bruto <= m * k:
+            return m * k
+    return 10 * k
+
+
+def _fmt(v):
+    v = round(v, 6)
+    s = (f"{v:,.6f}" if abs(v) >= 10000 else f"{v:.6f}").rstrip("0").rstrip(".")
+    return s.replace("-", "−")
+
+
+def grafica(spec, aria, ancho=560, alto=320, y0=None, y1=None):
+    """spec: {"tipo": "linea", "xEtq", "yEtq", "series": [{"nombre", "puntos": [[x, y], ...]}]}
+             {"tipo": "barras", "xEtq", "yEtq", "barras": [{"etq", "valor"}]}
+             {"tipo": "tabla", "encabezados": [...], "filas": [[...]]}
+    aria: descripción completa para lectores de pantalla (con los datos)."""
+    import math
+    if spec["tipo"] == "tabla":
+        th = "".join(f'<th scope="col">{c}</th>' for c in spec["encabezados"])
+        tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in f) + "</tr>" for f in spec["filas"])
+        return f'<table class="cuaderno"><caption class="cap-oculto">{aria}</caption><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table>'
+    ml, mr, mt, mb = 66, 18, 16, 58
+    W, Hh = ancho - ml - mr, alto - mt - mb
+    if spec["tipo"] in ("linea", "puntos"):
+        xs = [p[0] for s in spec["series"] for p in s["puntos"]]
+        ys = [p[1] for s in spec["series"] for p in s["puntos"]]
+        xmin, xmax = min(xs), max(xs)
+    else:
+        ys = [b["valor"] for b in spec["barras"]]
+    ymin = min(0, min(ys)) if y0 is None else y0
+    ymax = max(ys) if y1 is None else y1
+    py = spec.get("py") or _paso(ymax - ymin)
+    ymin = math.floor(ymin / py) * py
+    ymax = math.ceil(ymax / py) * py
+    if ymax == ymin:
+        ymax = ymin + py
+    Y = lambda v: mt + Hh - (v - ymin) / (ymax - ymin) * Hh
+    g = []
+    v = ymin
+    while v <= ymax + 1e-9:
+        g.append(f'<line x1="{ml}" y1="{Y(v):.1f}" x2="{ml + W}" y2="{Y(v):.1f}" stroke="#e1e6ea"/>'
+                 f'<text x="{ml - 8}" y="{Y(v) + 5:.1f}" text-anchor="end" font-size="13" fill="#3d4753">{_fmt(v)}</text>')
+        v += py
+    g.append(f'<line x1="{ml}" y1="{mt}" x2="{ml}" y2="{mt + Hh}" stroke="#1a2330" stroke-width="1.5"/>')
+    base = Y(max(ymin, min(0, ymax))) if ymin <= 0 <= ymax else mt + Hh
+    g.append(f'<line x1="{ml}" y1="{base:.1f}" x2="{ml + W}" y2="{base:.1f}" stroke="#1a2330" stroke-width="1.5"/>')
+    if spec["tipo"] in ("linea", "puntos"):
+        px = spec.get("px") or _paso(xmax - xmin)
+        xa, xb = math.floor(xmin / px) * px, math.ceil(xmax / px) * px
+        X = lambda v: ml + (v - xa) / (xb - xa) * W
+        v = xa
+        while v <= xb + 1e-9:
+            g.append(f'<text x="{X(v):.1f}" y="{mt + Hh + 20}" text-anchor="middle" font-size="13" fill="#3d4753">{_fmt(v)}</text>'
+                     f'<line x1="{X(v):.1f}" y1="{mt + Hh}" x2="{X(v):.1f}" y2="{mt + Hh + 5}" stroke="#1a2330"/>')
+            v += px
+        for i, s in enumerate(spec["series"]):
+            c = PALETA[i % len(PALETA)]
+            pts = " ".join(f"{X(x):.1f},{Y(y):.1f}" for x, y in s["puntos"])
+            dash = ' stroke-dasharray="7 4"' if i == 1 else (' stroke-dasharray="2 4"' if i == 2 else "")
+            if spec["tipo"] == "linea":
+                g.append(f'<polyline points="{pts}" fill="none" stroke="{c}" stroke-width="3"{dash}/>')
+            forma = ["circle", "rect", "diamond"][i % 3]
+            for x, y in s["puntos"]:
+                if forma == "circle":
+                    g.append(f'<circle cx="{X(x):.1f}" cy="{Y(y):.1f}" r="4.5" fill="{c}"/>')
+                elif forma == "rect":
+                    g.append(f'<rect x="{X(x) - 4.5:.1f}" y="{Y(y) - 4.5:.1f}" width="9" height="9" fill="{c}"/>')
+                else:
+                    g.append(f'<path d="M{X(x):.1f} {Y(y) - 6:.1f} l6 6 l-6 6 l-6 -6z" fill="{c}"/>')
+        if len(spec["series"]) > 1:
+            for i, s in enumerate(spec["series"]):
+                c = PALETA[i % len(PALETA)]
+                yy = mt + 8 + i * 20
+                g.append(f'<line x1="{ml + 14}" y1="{yy}" x2="{ml + 40}" y2="{yy}" stroke="{c}" stroke-width="3"{" stroke-dasharray=\"7 4\"" if i == 1 else (" stroke-dasharray=\"2 4\"" if i == 2 else "")}/>'
+                         f'<text x="{ml + 46}" y="{yy + 5}" font-size="13" font-weight="700" fill="{c}">{s["nombre"]}</text>')
+    else:
+        n = len(spec["barras"])
+        bw = W / n
+        for i, b in enumerate(spec["barras"]):
+            x = ml + i * bw + bw * 0.18
+            g.append(f'<rect x="{x:.1f}" y="{Y(b["valor"]):.1f}" width="{bw * 0.64:.1f}" height="{Y(ymin) - Y(b["valor"]):.1f}" fill="{PALETA[0]}"/>'
+                     f'<text x="{x + bw * 0.32:.1f}" y="{Y(b["valor"]) - 6:.1f}" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">{_fmt(b["valor"])}</text>'
+                     f'<text x="{x + bw * 0.32:.1f}" y="{mt + Hh + 18}" text-anchor="middle" font-size="{12 if n > 6 else 13}" fill="#3d4753">{b["etq"]}</text>')
+    g.append(f'<text x="{ml + W / 2:.1f}" y="{alto - 8}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">{spec["xEtq"]}</text>'
+             f'<text x="16" y="{mt + Hh / 2:.1f}" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 {mt + Hh / 2:.1f})">{spec["yEtq"]}</text>')
+    return f'<svg viewBox="0 0 {ancho} {alto}" role="img" aria-label="{H.escape(aria)}" style="width:100%;max-width:{ancho}px;height:auto;display:block;margin:10px auto;">{"".join(g)}</svg>'
+
+
+def describe(spec):
+    """Texto alternativo automático: tipo, ejes y todos los datos."""
+    if spec["tipo"] == "puntos":
+        return t(f'Scatter plot. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. ', f'Gráfica de dispersión. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. ') + spec.get("patron", "")
+    if spec["tipo"] == "linea":
+        partes = []
+        for s in spec["series"]:
+            partes.append(f'{s["nombre"]}: ' + "; ".join(f"{_fmt(x)}, {_fmt(y)}" for x, y in s["puntos"]))
+        return t(f'Line graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Data points (x, y): ', f'Gráfica de líneas. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Puntos (x, y): ') + ". ".join(partes) + "."
+    if spec["tipo"] == "barras":
+        return t(f'Bar graph. Horizontal axis: {spec["xEtq"]}. Vertical axis: {spec["yEtq"]}. Values: ', f'Gráfica de barras. Eje horizontal: {spec["xEtq"]}. Eje vertical: {spec["yEtq"]}. Valores: ') + "; ".join(f'{b["etq"]}, {_fmt(b["valor"])}' for b in spec["barras"]) + "."
+    return t("Data table.", "Tabla de datos.")

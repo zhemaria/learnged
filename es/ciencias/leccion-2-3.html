@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!-- LearnGED · Ciencias · Lección 2.3 (español) — construida con tools/build_sci_2_3.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lección 2.3 · Estadística y probabilidad de datos experimentales · LearnGED</title>
+<meta content="CC BY-NC-SA 4.0" name="license"/><link href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate" hreflang="en" href="/science/lesson-2-3.html"/>
+<link rel="stylesheet" href="/math/lesson.css">
+<link rel="stylesheet" href="/science/science.css">
+</head>
+<body data-area="skills">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link" href="./">Ciencias · todas las lecciones</a></nav>
+<a class="saltar" href="#indice">Saltar al contenido de la lección</a>
+<header class="principal">
+<div class="envoltura-header">
+<p class="ruta">Ciencias · Tema 2 — Razonamiento cuantitativo en ciencias</p>
+<h1>Lección 2.3 · Estadística y probabilidad de datos experimentales</h1>
+<p class="lema">Treinta mediciones, una cifra: resumir los datos, medir el error y contar las posibilidades.</p>
+<div class="chips">
+<span class="chip"><span aria-hidden="true">⏱️</span> Unas 4 horas con la práctica y la tarea · tome descansos</span>
+<span class="chip chip-sp">SP.8 · Estadística y probabilidad</span><span class="chip chip-sp">SP.3.d · Muestreo</span>
+</div>
+</div>
+</header>
+<div class="envoltura">
+<section>
+<div class="caja caja-objetivo">
+<h2><span aria-hidden="true" class="num-seccion">🎯</span>Lo que va a aprender</h2>
+<p>Al terminar esta lección, usted podrá:</p>
+<ul>
+<li><strong>Describir</strong> datos experimentales con la media, la mediana, la moda y el rango.</li>
+<li><strong>Decidir</strong> qué medida representa mejor un conjunto con un valor atípico.</li>
+<li><strong>Leer</strong> un histograma (forma, centro, dispersión) y un diagrama de caja (el resumen de cinco números).</li>
+<li><strong>Relacionar</strong> la dispersión de los datos con el error experimental (precisión y exactitud).</li>
+<li><strong>Aplicar</strong> el principio del conteo, las permutaciones y las combinaciones a escenarios biológicos y genéticos.</li>
+</ul>
+</div>
+<details class="estandares" id="estandares-ged">
+<summary><span aria-hidden="true">🎓</span> Estándares de esta lección (GED® y CCR)</summary>
+<div class="std-cuerpo">
+<p class="std-tit">Prácticas científicas del examen GED® que trabaja esta lección:</p><ul><li><span class="std-cod std-dir">SP.8.a</span> Describir un conjunto de datos con estadística.<br><span class="std-meta">Categoría 3 · DOK 1–2 · NRC P4, P5 · Mat. S-MD, S-ID, M4, M6</span></li><li><span class="std-cod std-dir">SP.8.b</span> Usar el conteo y las permutaciones para resolver problemas científicos.<br><span class="std-meta">Categoría 3 · DOK 1–2 · NRC P5 · Mat. 7.SP, M4, M6</span></li><li><span class="std-cod std-dir">SP.8.c</span> Determinar la probabilidad de un suceso.<br><span class="std-meta">Categoría 3 · DOK 2 · NRC P5 · Mat. 7.SP, S-CP, M4, M6</span></li><li><span class="std-cod std-dir">SP.3.d</span> Usar técnicas de muestreo para responder preguntas científicas.<br><span class="std-meta">Categoría 3 · DOK 2–3 · NRC P4, P5 · Mat. S-CP, 7.SP, M4, M7, M8</span></li><li><span class="std-cod std-dir">SP.4.a</span> Evaluar si unos datos o una evidencia concretos apoyan o contradicen una conclusión o teoría.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8 · NRC P4, P6 · Mat. M3, M7, M8</span></li></ul>
+<p class="std-tit">También prepara la base para:</p><ul><li><span class="std-cod std-base">SP.2.a</span> Identificar posibles fuentes de error y modificar el diseño de una investigación para corregirlas.<br><span class="std-meta">Categoría 2 · DOK 2–3 · CCR R8 · NRC P3, P4 · Mat. M4</span></li></ul>
+<p class="std-tit">Categorías de informe del examen de Ciencias del GED®:</p><ul><li>Categoría 2 · Aplicar procesos científicos y conceptos de procedimiento (40 % del examen)</li><li>Categoría 3 · Razonar con cantidades e interpretar datos en contextos científicos (30 % del examen)</li></ul>
+<p class="std-tit">Temas de contenido de Ciencias del GED®:</p>
+<p>Las destrezas de esta lección se aplican a todos los temas de contenido del examen: ciencias de la vida, ciencias físicas y ciencias de la Tierra y el espacio.</p>
+<p class="std-tit">Qué significan los códigos alineados (CCR, NRC y matemáticas):</p><ul class="std-clave"><li><span class="std-cod std-ccr">S-MD</span> Estadística: usar la probabilidad para tomar decisiones.</li><li><span class="std-cod std-ccr">S-ID</span> Estadística: interpretar datos categóricos y cuantitativos.</li><li><span class="std-cod std-ccr">P4</span> Práctica NRC 4: analizar e interpretar datos.</li><li><span class="std-cod std-ccr">P5</span> Práctica NRC 5: usar las matemáticas y el pensamiento computacional.</li><li><span class="std-cod std-ccr">M4</span> Práctica matemática 4: modelar con matemáticas.</li><li><span class="std-cod std-ccr">M6</span> Práctica matemática 6: atender a la precisión.</li><li><span class="std-cod std-ccr">7.SP</span> Matemáticas, estadística y probabilidad (7.º grado): muestras y probabilidad.</li><li><span class="std-cod std-ccr">S-CP</span> Estadística: probabilidad condicional y sucesos compuestos.</li><li><span class="std-cod std-ccr">M7</span> Práctica matemática 7: buscar y usar la estructura.</li><li><span class="std-cod std-ccr">M8</span> Práctica matemática 8: buscar regularidades en el razonamiento repetido.</li><li><span class="std-cod std-ccr">R8</span> Lectura CCR 8: evaluar las afirmaciones de un texto y la evidencia que las sostiene.</li><li><span class="std-cod std-ccr">P6</span> Práctica NRC 6: construir explicaciones.</li><li><span class="std-cod std-ccr">M3</span> Práctica matemática 3: construir argumentos y criticar el razonamiento ajeno.</li><li><span class="std-cod std-ccr">P3</span> Práctica NRC 3: planificar y llevar a cabo investigaciones.</li></ul>
+<p class="std-fuente">DOK (profundidad de conocimiento): 1 = recordar, 2 = aplicar una destreza o un concepto, 3 = razonar con evidencia. Fuente de las prácticas, las categorías, los rangos de DOK y la alineación: GED Testing Service, <cite>Assessment Guide for Educators: Science</cite> (2016; prácticas científicas actualizadas en 2020). Los estándares ancla CCR están en Pimentel, S. (2013), <cite>College and Career Readiness Standards for Adult Education</cite>; las prácticas NRC, en <cite>A Framework for K-12 Science Education</cite> (National Research Council, 2012).</p>
+</div>
+</details>
+</section>
+<nav aria-labelledby="indice-titulo" class="indice" id="indice"><h2 id="indice-titulo">Contenido de la lección</h2><ol>
+<li><a href="#s1">Cuatro maneras de resumir un conjunto de datos</a></li>
+<li><a href="#s2">Forma, centro y dispersión: el histograma</a></li>
+<li><a href="#s3">El resumen de cinco números y el diagrama de caja</a></li>
+<li><a href="#s4">La dispersión como medida del error experimental</a></li>
+<li><a href="#s5">Contar posibilidades</a></li>
+<li><a href="#s6">Lectura científica</a></li>
+<li><a href="#s7">Preguntas tipo GED</a></li>
+<li><a href="#s-tarea">Tarea</a></li>
+<li><a href="#s-quiz">Quiz de práctica</a></li>
+<li><a href="#s-lista">Lista de autoevaluación</a></li>
+<li><a href="#s-sigue">Lo que viene</a></li>
+<li><a href="#s-palabras">Palabras clave</a></li>
+</ol></nav>
+
+<div class="caja caja-tip"><span class="etiqueta et-verde">Antes de empezar</span>
+<p>La Lección 2.1 enseñó a escribir las magnitudes y la 2.2 a leerlas en un eje. Esta enseña a <strong>resumirlas</strong>: qué hacer cuando en lugar de un dato hay treinta y hace falta decir en una sola cifra cómo son.</p><p><strong>Cómo estudiar esta lección:</strong> calcule primero a mano con conjuntos pequeños (ocho o diez datos) y solo después use la calculadora con conjuntos mayores. El cálculo a mano fija el significado de cada medida; la calculadora solo ahorra tiempo. El Nivel 2 de Matemáticas (media, mediana, probabilidad) y el Tema 7 del Nivel 3 (cuartiles y diagramas de caja) son un buen puente.</p>
+</div>
+
+<section>
+<h2 id="s1"><span aria-hidden="true" class="num-seccion">1</span>Cuatro maneras de resumir un conjunto de datos</h2>
+<p>Las tres primeras medidas indican dónde está el <strong>centro</strong> de los datos; la cuarta, cuánto se <strong>dispersan</strong>. Ninguna sustituye a las demás, y el examen suele preguntar precisamente por la que menos se espera.</p>
+<div aria-label="Las cuatro medidas de resumen de un conjunto de datos, cómo se obtiene cada una y cuándo conviene (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Las cuatro medidas de resumen de un conjunto de datos, cómo se obtiene cada una y cuándo conviene</caption>
+<thead><tr><th scope="col">Medida</th><th scope="col">Cómo se obtiene</th><th scope="col">Cuándo conviene usarla</th></tr></thead>
+<tbody>
+<tr><th scope="row">Media (promedio)</th><td>Se suman todos los valores y se divide entre la cantidad de datos.</td><td>Cuando los datos son parejos y sin valores extremos. Es la más informativa, pero también la más frágil.</td></tr>
+<tr><th scope="row">Mediana</th><td>Se ordenan los datos y se toma el valor central. Con una cantidad par, el promedio de los dos centrales.</td><td>Cuando hay un valor atípico. La mediana no se deja arrastrar por él.</td></tr>
+<tr><th scope="row">Moda</th><td>El valor que más se repite. Puede haber más de una, o ninguna.</td><td>Con datos no numéricos —color de flor, tipo de sangre— y con mediciones muy repetidas.</td></tr>
+<tr><th scope="row">Rango</th><td>Se resta el valor menor del mayor.</td><td>Para expresar de un vistazo cuánta variabilidad hay. No dice nada sobre los datos intermedios.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 1 · Las cuatro medidas sobre un mismo conjunto</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>Un grupo midió diez veces la longitud de una misma hoja, en milímetros: 84, 86, 87, 87, 87, 89, 89, 90, 91 y 95.</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span><strong>Media:</strong> la suma es 885 y hay 10 datos, así que la media es <strong>88.5 mm</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span><strong>Mediana:</strong> con los datos ordenados, los dos centrales son 87 y 89; su promedio es <strong>88 mm</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span><strong>Moda:</strong> el 87 aparece tres veces, más que ningún otro: <strong>87 mm</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">4</span><strong>Rango:</strong> 95 − 84 = <strong>11 mm</strong>.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>Qué revela la comparación:</strong> la media es mayor que la mediana. No es casual: el 95, muy separado del resto, tira de la media hacia arriba sin afectar a la mediana. Si esa medición fue un descuido, la mediana representa mejor la hoja real.</p>
+</div>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">El valor atípico y la medida que se elige</span>
+<p>Ante un conjunto con un dato muy separado, la pregunta del examen suele ser qué medida «representa mejor» los datos. La respuesta es casi siempre la <strong>mediana</strong>, y hay que saber explicar por qué: la media incorpora el valor de cada dato, así que un solo número desmesurado la desplaza; la mediana solo atiende a la posición central, y por eso resiste.</p>
+</div>
+<p><strong>Use este conjunto para Pruebe 1 a 3:</strong> 12, 15, 15, 18 y 20.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 1 · La media</h3></div>
+<p class="pregunta-int" id="t-p1">La media del conjunto es…</p>
+<div aria-labelledby="t-p1" class="opciones" data-practica="p1" role="group">
+<button class="opcion" data-k="a" type="button">15</button>
+<button class="opcion" data-k="b" type="button">16</button>
+<button class="opcion" data-k="c" type="button">18</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p1" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 2 · Mediana y moda</h3></div>
+<p class="pregunta-int" id="t-p2">La mediana y la moda del conjunto son, respectivamente…</p>
+<div aria-labelledby="t-p2" class="opciones" data-practica="p2" role="group">
+<button class="opcion" data-k="a" type="button">15 y 15</button>
+<button class="opcion" data-k="b" type="button">16 y 15</button>
+<button class="opcion" data-k="c" type="button">15 y 20</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p2" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 3 · Un valor atípico</h3></div>
+<p class="pregunta-int" id="t-p3">Si se añadiera el valor 96 al conjunto, ¿qué medida cambiaría más?</p>
+<div aria-labelledby="t-p3" class="opciones" data-practica="p3" role="group">
+<button class="opcion" data-k="a" type="button">La moda</button>
+<button class="opcion" data-k="b" type="button">La mediana</button>
+<button class="opcion" data-k="c" type="button">La media</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p3" role="status"></div>
+</div>
+<a class="enlace-interactivo" href="practica-2-3.html#medidas" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: media, mediana, moda y rango (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: media, mediana, moda y rango</span><span class="ei-sub">Conjuntos nuevos cada vez: halle la medida que se pide.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s2"><span aria-hidden="true" class="num-seccion">2</span>Forma, centro y dispersión: el histograma</h2>
+<p>Un <strong>histograma</strong> agrupa los datos en intervalos y muestra cuántos caen en cada uno. La altura de una barra no es un valor, sino una <strong>frecuencia</strong> (cuántos). Lo que se lee en él es, sobre todo, la <strong>forma</strong> del conjunto.</p>
+<p><strong>Longitud del caparazón de 40 tortugas marinas en una playa de anidación</strong></p>
+<svg viewBox="0 0 560 320" role="img" aria-label="Gráfica de barras. Eje horizontal: Longitud del caparazón (cm). Eje vertical: Número de tortugas. Valores: 80–90, 5; 90–100, 10; 100–110, 14; 110–120, 8; 120–130, 3." style="width:100%;max-width:560px;height:auto;display:block;margin:10px auto;"><line x1="66" y1="262.0" x2="542" y2="262.0" stroke="#e1e6ea"/><text x="58" y="267.0" text-anchor="end" font-size="13" fill="#3d4753">0</text><line x1="66" y1="200.5" x2="542" y2="200.5" stroke="#e1e6ea"/><text x="58" y="205.5" text-anchor="end" font-size="13" fill="#3d4753">4</text><line x1="66" y1="139.0" x2="542" y2="139.0" stroke="#e1e6ea"/><text x="58" y="144.0" text-anchor="end" font-size="13" fill="#3d4753">8</text><line x1="66" y1="77.5" x2="542" y2="77.5" stroke="#e1e6ea"/><text x="58" y="82.5" text-anchor="end" font-size="13" fill="#3d4753">12</text><line x1="66" y1="16.0" x2="542" y2="16.0" stroke="#e1e6ea"/><text x="58" y="21.0" text-anchor="end" font-size="13" fill="#3d4753">16</text><line x1="66" y1="16" x2="66" y2="262" stroke="#1a2330" stroke-width="1.5"/><line x1="66" y1="262.0" x2="542" y2="262.0" stroke="#1a2330" stroke-width="1.5"/><rect x="83.1" y="185.1" width="60.9" height="76.9" fill="#1f6066"/><text x="113.6" y="179.1" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">5</text><text x="113.6" y="280" text-anchor="middle" font-size="13" fill="#3d4753">80–90</text><rect x="178.3" y="108.2" width="60.9" height="153.8" fill="#1f6066"/><text x="208.8" y="102.2" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">10</text><text x="208.8" y="280" text-anchor="middle" font-size="13" fill="#3d4753">90–100</text><rect x="273.5" y="46.8" width="60.9" height="215.2" fill="#1f6066"/><text x="304.0" y="40.8" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">14</text><text x="304.0" y="280" text-anchor="middle" font-size="13" fill="#3d4753">100–110</text><rect x="368.7" y="139.0" width="60.9" height="123.0" fill="#1f6066"/><text x="399.2" y="133.0" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">8</text><text x="399.2" y="280" text-anchor="middle" font-size="13" fill="#3d4753">110–120</text><rect x="463.9" y="215.9" width="60.9" height="46.1" fill="#1f6066"/><text x="494.4" y="209.9" text-anchor="middle" font-size="12" font-weight="700" fill="#1a2330">3</text><text x="494.4" y="280" text-anchor="middle" font-size="13" fill="#3d4753">120–130</text><text x="304.0" y="312" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Longitud del caparazón (cm)</text><text x="16" y="139.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330" transform="rotate(-90 16 139.0)">Número de tortugas</text></svg>
+<div aria-label="Los tres elementos que se leen en un histograma, qué se observa y qué significa en un experimento (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Los tres elementos que se leen en un histograma, qué se observa y qué significa en un experimento</caption>
+<thead><tr><th scope="col">Elemento</th><th scope="col">Qué se observa</th><th scope="col">Qué significa en un experimento</th></tr></thead>
+<tbody>
+<tr><th scope="row">Forma</th><td>Si es simétrico, si tiene una cola hacia un lado o si presenta dos picos.</td><td>Dos picos suelen indicar que se mezclaron dos grupos que convenía analizar por separado.</td></tr>
+<tr><th scope="row">Centro</th><td>Dónde se acumulan los datos, alrededor de qué valor.</td><td>El valor más probable de la magnitud medida.</td></tr>
+<tr><th scope="row">Dispersión</th><td>Si las barras se concentran en pocos intervalos o se extienden por muchos.</td><td>La precisión del procedimiento: cuanto más estrecha, más repetible la medición.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section>
+<h2 id="s3"><span aria-hidden="true" class="num-seccion">3</span>El resumen de cinco números y el diagrama de caja</h2>
+<p>El diagrama de caja condensa un conjunto entero en cinco valores: el <strong>mínimo</strong>, el <strong>primer cuartil</strong> (Q1), la <strong>mediana</strong>, el <strong>tercer cuartil</strong> (Q3) y el <strong>máximo</strong>. La caja contiene la mitad central de los datos; los bigotes, los extremos.</p>
+<h3><span aria-hidden="true">🔤</span> Vocabulario técnico: raíces</h3>
+<p><span class='raiz'>Cuart-</span>, como en <em>cuarto</em> y <em>cuarteto</em>, significa cuatro: los tres <strong>cuartiles</strong> dividen el conjunto ordenado en cuatro partes con la misma cantidad de datos. El segundo cuartil es la propia mediana. En la misma familia están <em>percentil</em> (cien partes) y <em>decil</em> (diez).</p>
+<svg viewBox="0 0 580 180" role="img" aria-label="Diagrama de caja de las diez mediciones de la hoja. Mínimo 84, primer cuartil 87, mediana 88, tercer cuartil 90, máximo 95 milímetros. La caja va de 87 a 90. El bigote izquierdo va de 84 a 87, y el derecho, mucho más largo, de 90 a 95." style="width:100%;max-width:580px;height:auto;display:block;margin:12px auto;"><line x1="60" y1="128" x2="60" y2="134" stroke="#1a2330"/><text x="60" y="150" text-anchor="middle" font-size="13" fill="#3d4753">82</text><line x1="121" y1="128" x2="121" y2="134" stroke="#1a2330"/><text x="121" y="150" text-anchor="middle" font-size="13" fill="#3d4753">84</text><line x1="183" y1="128" x2="183" y2="134" stroke="#1a2330"/><text x="183" y="150" text-anchor="middle" font-size="13" fill="#3d4753">86</text><line x1="244" y1="128" x2="244" y2="134" stroke="#1a2330"/><text x="244" y="150" text-anchor="middle" font-size="13" fill="#3d4753">88</text><line x1="305" y1="128" x2="305" y2="134" stroke="#1a2330"/><text x="305" y="150" text-anchor="middle" font-size="13" fill="#3d4753">90</text><line x1="367" y1="128" x2="367" y2="134" stroke="#1a2330"/><text x="367" y="150" text-anchor="middle" font-size="13" fill="#3d4753">92</text><line x1="428" y1="128" x2="428" y2="134" stroke="#1a2330"/><text x="428" y="150" text-anchor="middle" font-size="13" fill="#3d4753">94</text><line x1="489" y1="128" x2="489" y2="134" stroke="#1a2330"/><text x="489" y="150" text-anchor="middle" font-size="13" fill="#3d4753">96</text><line x1="60" y1="128" x2="520" y2="128" stroke="#1a2330"/><line x1="121" y1="70" x2="213" y2="70" stroke="#1a2330" stroke-width="2"/><line x1="305" y1="70" x2="459" y2="70" stroke="#1a2330" stroke-width="2"/><line x1="121" y1="56" x2="121" y2="84" stroke="#1a2330" stroke-width="2"/><line x1="459" y1="56" x2="459" y2="84" stroke="#1a2330" stroke-width="2"/><rect x="213" y="46" width="92" height="48" fill="#e3f3f4" stroke="#1f6066" stroke-width="2"/><line x1="244" y1="46" x2="244" y2="94" stroke="#b5342a" stroke-width="4"/><text x="121" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2330">mín.</text><text x="213" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2330">Q1</text><text x="244" y="24" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2330">mediana</text><text x="305" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2330">Q3</text><text x="459" y="36" text-anchor="middle" font-size="13" font-weight="700" fill="#1a2330">máx.</text><text x="290" y="172" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">Longitud de la hoja (mm)</text></svg>
+<div aria-label="Los cinco números del resumen aplicados a las diez mediciones de la hoja (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Los cinco números del resumen aplicados a las diez mediciones de la hoja</caption>
+<thead><tr><th scope="col">Número</th><th scope="col">Valor</th><th scope="col">Qué indica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Mínimo</th><td>84 mm</td><td>La medición más pequeña.</td></tr>
+<tr><th scope="row">Primer cuartil (Q1)</th><td>87 mm</td><td>Una cuarta parte de los datos queda por debajo. Es la mediana de la mitad inferior: 84, 86, 87, 87, 87.</td></tr>
+<tr><th scope="row">Mediana</th><td>88 mm</td><td>La mitad de los datos queda por debajo y la otra mitad por encima.</td></tr>
+<tr><th scope="row">Tercer cuartil (Q3)</th><td>90 mm</td><td>Tres cuartas partes quedan por debajo. Es la mediana de la mitad superior: 89, 89, 90, 91, 95.</td></tr>
+<tr><th scope="row">Máximo</th><td>95 mm</td><td>La medición más grande.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-tip">
+<span class="etiqueta et-verde">Lo que delata un bigote largo</span>
+<p>Aquí la caja mide solo 3 mm, mientras que el bigote derecho se extiende 5 mm. La mitad central de las mediciones fue muy consistente y un único dato se apartó. Un bigote mucho más largo que el otro es la señal visual de un valor atípico. La primera pregunta que debe hacerse un investigador: ¿es un fenómeno real o un error de medición?</p>
+</div>
+</section>
+
+<section>
+<h2 id="s4"><span aria-hidden="true" class="num-seccion">4</span>La dispersión como medida del error experimental</h2>
+<p>Aquí se cierra un círculo abierto en el Tema 1. Allí se estudiaron las <strong>fuentes de error</strong> de un diseño; ahora se tienen las herramientas para <strong>medirlas</strong>. La dispersión de mediciones repetidas no es un defecto del experimento: es su información sobre sí mismo.</p>
+<div aria-label="Precisión y exactitud en un conjunto de mediciones, y lo que revela cada situación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Precisión y exactitud en un conjunto de mediciones, y lo que revela cada situación</caption>
+<thead><tr><th scope="col">Situación</th><th scope="col">Qué se observa en los datos</th><th scope="col">Qué indica sobre el experimento</th></tr></thead>
+<tbody>
+<tr><th scope="row">Preciso y exacto</th><td>Rango pequeño y centro próximo al valor verdadero.</td><td>El procedimiento es repetible y el instrumento está bien calibrado.</td></tr>
+<tr><th scope="row">Preciso pero no exacto</th><td>Rango pequeño, pero el centro se aparta siempre del valor verdadero.</td><td>Un error sistemático: casi siempre un instrumento descalibrado que repite el mismo desvío.</td></tr>
+<tr><th scope="row">Poco preciso</th><td>Rango grande y datos muy dispersos.</td><td>Error aleatorio: la técnica no está controlada o el instrumento no tiene la sensibilidad necesaria.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="caja caja-ojo">
+<span class="etiqueta et-ambar">Repetir no corrige un error sistemático</span>
+<p>Aumentar el número de mediciones reduce el error aleatorio, porque los desvíos hacia arriba y hacia abajo se compensan. Pero si la balanza marca siempre dos gramos de más, mil mediciones darán una media igualmente desplazada. La repetición mejora la <strong>precisión</strong>, no la <strong>exactitud</strong>; esa la corrige la calibración.</p>
+</div>
+<a class="enlace-interactivo" href="practica-2-3.html#precision" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: ¿preciso o exacto? (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: ¿preciso o exacto?</span><span class="ei-sub">Seis conjuntos de mediciones: descubra el tipo de error y qué lo corregiría.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+<a class="enlace-interactivo" href="practica-2-3.html#cientiestad" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: CientíEstad, estadística en ciencia (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: CientíEstad, estadística en ciencia</span><span class="ei-sub">Veinticuatro preguntas de biología, química, física y ciencias de la Tierra: centro, dispersión, muestreo, correlación, probabilidad y predicción.</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s5"><span aria-hidden="true" class="num-seccion">5</span>Contar posibilidades</h2>
+<p>La última herramienta del tema responde a otra pregunta: no cómo son los datos, sino <strong>cuántos resultados distintos son posibles</strong>. En biología aparece constantemente, porque es la base del cálculo genético.</p>
+<h3>El principio fundamental del conteo</h3>
+<p>Si una elección puede hacerse de <em>m</em> maneras y otra independiente de <em>n</em> maneras, ambas juntas pueden hacerse de <strong><em>m</em> × <em>n</em></strong> maneras. El principio se extiende a cuantas etapas haga falta, multiplicándolas todas.</p>
+<svg viewBox="0 0 560 348" role="img" aria-label="Diagrama de árbol con tres genes de dos alelos. El gen 1 da A o a; cada rama se divide en B o b; y cada una de esas, en C o c. Al final hay 8 gametos: ABC, ABc, AbC, Abc, aBC, aBc, abC, abc." style="width:100%;max-width:560px;height:auto;display:block;margin:12px auto;"><line x1="20" y1="185" x2="45" y2="105" stroke="#90a4ae" stroke-width="2"/><line x1="75" y1="105" x2="185" y2="65" stroke="#90a4ae" stroke-width="2"/><line x1="215" y1="65" x2="325" y2="47" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="47" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="52" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">C</text><text x="480" y="52" font-size="15" font-weight="700" fill="#1f6066">ABC</text><line x1="215" y1="65" x2="325" y2="83" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="83" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="88" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">c</text><text x="480" y="88" font-size="15" font-weight="700" fill="#1f6066">ABc</text><circle cx="200" cy="65" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="200" y="70" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">B</text><line x1="75" y1="105" x2="185" y2="145" stroke="#90a4ae" stroke-width="2"/><line x1="215" y1="145" x2="325" y2="127" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="127" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="132" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">C</text><text x="480" y="132" font-size="15" font-weight="700" fill="#1f6066">AbC</text><line x1="215" y1="145" x2="325" y2="163" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="163" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="168" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">c</text><text x="480" y="168" font-size="15" font-weight="700" fill="#1f6066">Abc</text><circle cx="200" cy="145" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="200" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">b</text><circle cx="60" cy="105" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="60" y="110" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">A</text><line x1="20" y1="185" x2="45" y2="265" stroke="#90a4ae" stroke-width="2"/><line x1="75" y1="265" x2="185" y2="225" stroke="#90a4ae" stroke-width="2"/><line x1="215" y1="225" x2="325" y2="207" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="207" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="212" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">C</text><text x="480" y="212" font-size="15" font-weight="700" fill="#1f6066">aBC</text><line x1="215" y1="225" x2="325" y2="243" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="243" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="248" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">c</text><text x="480" y="248" font-size="15" font-weight="700" fill="#1f6066">aBc</text><circle cx="200" cy="225" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="200" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">B</text><line x1="75" y1="265" x2="185" y2="305" stroke="#90a4ae" stroke-width="2"/><line x1="215" y1="305" x2="325" y2="287" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="287" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">C</text><text x="480" y="292" font-size="15" font-weight="700" fill="#1f6066">abC</text><line x1="215" y1="305" x2="325" y2="323" stroke="#90a4ae" stroke-width="2"/><circle cx="340" cy="323" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="340" y="328" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">c</text><text x="480" y="328" font-size="15" font-weight="700" fill="#1f6066">abc</text><circle cx="200" cy="305" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="200" y="310" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">b</text><circle cx="60" cy="265" r="15" fill="#fff" stroke="#1f6066" stroke-width="2"/><text x="60" y="270" text-anchor="middle" font-size="14" font-weight="700" fill="#1a2330">a</text><text x="60" y="22" text-anchor="middle" font-size="13" fill="#5b6675">Gen 1</text><text x="200" y="22" text-anchor="middle" font-size="13" fill="#5b6675">Gen 2</text><text x="340" y="22" text-anchor="middle" font-size="13" fill="#5b6675">Gen 3</text><text x="498" y="22" text-anchor="middle" font-size="13" fill="#5b6675">Gameto</text></svg>
+<h3>Permutaciones y combinaciones</h3>
+<p>Cuando se eligen algunos elementos de un conjunto, todo depende de una sola pregunta: <strong>¿importa el orden?</strong></p>
+<div aria-label="Permutación y combinación: la pregunta que las distingue y un ejemplo científico de cada una (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0"><table class="tabla-trad"><caption class="cap-oculto">Permutación y combinación: la pregunta que las distingue y un ejemplo científico de cada una</caption>
+<thead><tr><th scope="col">Concepto</th><th scope="col">¿Importa el orden?</th><th scope="col">Ejemplo científico</th></tr></thead>
+<tbody>
+<tr><th scope="row">Permutación</th><td>Sí. Cambiar el orden produce un resultado distinto.</td><td>Los pasos de un protocolo: colorear y después cubrir no es lo mismo que cubrir y después colorear. Cinco pasos admiten 5 × 4 × 3 × 2 × 1 = 120 ordenaciones, y solo una es correcta.</td></tr>
+<tr><th scope="row">Combinación</th><td>No. Solo importa qué elementos se eligieron.</td><td>Elegir 3 muestras de un lote de 8 para analizarlas: da igual cuál se tome primero. Hay (8 × 7 × 6) ÷ (3 × 2 × 1) = 56 selecciones posibles.</td></tr>
+</tbody>
+</table></div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+<div class="ejemplo">
+<p class="titulo-ej">Ejemplo 2 · Conteo aplicado a la genética</p>
+<p class="paso"><span aria-hidden="true" class="n"></span>¿Cuántos gametos distintos puede producir un organismo con tres genes de dos alelos cada uno?</p>
+<p class="paso"><span aria-hidden="true" class="n">1</span>Cada gen aporta una elección con dos posibilidades: el alelo dominante o el recesivo.</p>
+<p class="paso"><span aria-hidden="true" class="n">2</span>Las tres elecciones son independientes, así que se aplica el principio del conteo.</p>
+<p class="paso"><span aria-hidden="true" class="n">3</span>2 × 2 × 2 = <strong>8 gametos distintos</strong>, los ocho del diagrama de árbol.</p>
+<p class="paso"><span aria-hidden="true" class="n">✓</span><strong>La regla general:</strong> con <em>n</em> genes de dos alelos, el número de gametos distintos es 2 elevado a <em>n</em>. Con cuatro genes, 16; con cinco, 32. Esta cuenta reaparecerá en el Tema 4 con los cruces genéticos y el cuadro de Punnett.</p>
+</div>
+<div class="caja-calc">
+<span class="et-calc"><span aria-hidden="true">🧮</span> nPr y nCr en la TI-30XS</span>
+<p>La calculadora cuenta con la tecla <strong>prb</strong>: elija <strong>nPr</strong> (importa el orden) o <strong>nCr</strong> (no importa). Para 3 muestras de 8: teclee 8, prb, elija nCr, 3, enter → 56. Muchos alumnos confunden la P con la C: P = permutación (importa el orden).</p>
+<button type="button" class="btn-calc" data-gph-calculadora><span aria-hidden="true">🧮</span> Abrir la calculadora</button>
+</div>
+<a class="enlace-interactivo" href="practica-2-3.html#conteo" target="_blank" rel="noopener noreferrer" aria-label="Abrir la actividad de práctica: cuente las posibilidades (se abre en una pestaña nueva)">
+<span class="ei-icono" aria-hidden="true">🔬</span>
+<span class="ei-cuerpo"><span class="ei-titulo">Practique más: cuente las posibilidades</span><span class="ei-sub">Gametos, protocolos, muestras y menús de laboratorio: números nuevos cada vez. Y además: ¿importa el orden?</span><span class="ei-cta">Abrir la actividad <span aria-hidden="true">›</span></span></span>
+</a>
+</section>
+
+<section>
+<h2 id="s6"><span aria-hidden="true" class="num-seccion">6</span>Lectura científica</h2>
+<p>Texto científico breve adaptado al nivel. Observe cómo deciden los autores qué medida informar.</p>
+<div class="lectura"><h3><span aria-hidden="true">📖</span> Diez mediciones de una misma pieza</h3><div class="texto">
+<p>Un equipo de estudiantes determinó la densidad de un bloque de aluminio repitiendo la medición diez veces con el mismo procedimiento. Los valores, en gramos por centímetro cúbico, fueron: 2.68, 2.71, 2.69, 2.70, 2.72, 2.70, 2.69, 2.71, 2.70 y 3.15.</p>
+<p>Nueve de las diez se agruparon estrechamente entre 2.68 y 2.72. La décima, 3.15, se apartó de forma llamativa. Al revisar el cuaderno, el equipo halló que esa vez el bloque no se había secado del todo tras sumergirlo, de modo que el agua adherida añadió masa sin añadir volumen.</p>
+<p>El equipo calculó las dos medidas de centro. La media de las diez fue 2.745 g/cm³; la mediana, 2.70 g/cm³. Al excluir la medición defectuosa y promediar las nueve restantes, se obtuvo exactamente 2.70 g/cm³.</p>
+<p>En el informe se consignó la mediana como resultado, con una nota que documentaba la medición descartada y el motivo. El equipo argumentó que eliminar un dato sin dejar constancia habría sido una manipulación, mientras que eliminarlo dejando constancia del motivo es parte del procedimiento científico.</p>
+</div></div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 1</h3></div>
+<p class="pregunta-int" id="t-p4">¿Por qué la mediana coincide con el valor obtenido al descartar la medición defectuosa?</p>
+<div aria-labelledby="t-p4" class="opciones" data-practica="p4" role="group">
+<button class="opcion" data-k="a" type="button">Porque la mediana siempre es igual a la media</button>
+<button class="opcion" data-k="b" type="button">Porque el valor 3.15 era en realidad correcto</button>
+<button class="opcion" data-k="c" type="button">Porque la mediana atiende a la posición central y no al valor de cada dato, de modo que el atípico no la desplaza</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p4" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 2</h3></div>
+<p class="pregunta-int" id="t-p5">El rango de las diez mediciones es de…</p>
+<div aria-labelledby="t-p5" class="opciones" data-practica="p5" role="group">
+<button class="opcion" data-k="a" type="button">0.47 g/cm³</button>
+<button class="opcion" data-k="b" type="button">0.04 g/cm³</button>
+<button class="opcion" data-k="c" type="button">2.745 g/cm³</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p5" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 3</h3></div>
+<p class="pregunta-int" id="t-p6">La medición de 3.15 corresponde a…</p>
+<div aria-labelledby="t-p6" class="opciones" data-practica="p6" role="group">
+<button class="opcion" data-k="a" type="button">un error sistemático, presente en todas las mediciones</button>
+<button class="opcion" data-k="b" type="button">un error puntual, cuya causa concreta se identificó</button>
+<button class="opcion" data-k="c" type="button">la variación natural esperable en toda medición</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p6" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Lectura · Pregunta 4</h3></div>
+<p class="pregunta-int" id="t-p7">Según el texto, ¿qué distingue un descarte legítimo de una manipulación?</p>
+<div aria-labelledby="t-p7" class="opciones" data-practica="p7" role="group">
+<button class="opcion" data-k="a" type="button">Que el dato descartado sea el mayor</button>
+<button class="opcion" data-k="b" type="button">Que se descarte más de un dato a la vez</button>
+<button class="opcion" data-k="c" type="button">Que quede documentado el descarte y su motivo</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p7" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 4 · La caja</h3></div>
+<p class="pregunta-int" id="t-p8">En el diagrama de caja de la hoja, ¿qué proporción de los datos queda dentro de la caja?</p>
+<div aria-labelledby="t-p8" class="opciones" data-practica="p8" role="group">
+<button class="opcion" data-k="a" type="button">La cuarta parte</button>
+<button class="opcion" data-k="b" type="button">La mitad central</button>
+<button class="opcion" data-k="c" type="button">La totalidad</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p8" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 5 · Un bigote largo</h3></div>
+<p class="pregunta-int" id="t-p9">Un bigote derecho mucho más largo que el izquierdo indica que…</p>
+<div aria-labelledby="t-p9" class="opciones" data-practica="p9" role="group">
+<button class="opcion" data-k="a" type="button">hay uno o varios valores altos apartados del conjunto</button>
+<button class="opcion" data-k="b" type="button">la mediana está mal calculada</button>
+<button class="opcion" data-k="c" type="button">los datos son perfectamente simétricos</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p9" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 6 · Cinco genes</h3></div>
+<p class="pregunta-int" id="t-p10">Un organismo con cinco genes de dos alelos puede producir…</p>
+<div aria-labelledby="t-p10" class="opciones" data-practica="p10" role="group">
+<button class="opcion" data-k="a" type="button">10 gametos distintos</button>
+<button class="opcion" data-k="b" type="button">25 gametos distintos</button>
+<button class="opcion" data-k="c" type="button">32 gametos distintos</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p10" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pruebe 7 · Dos picos</h3></div>
+<p class="pregunta-int" id="t-p11">Un histograma con dos picos separados sugiere sobre todo que…</p>
+<div aria-labelledby="t-p11" class="opciones" data-practica="p11" role="group">
+<button class="opcion" data-k="a" type="button">se mezclaron dos grupos que convenía analizar por separado</button>
+<button class="opcion" data-k="b" type="button">el instrumento estaba descalibrado</button>
+<button class="opcion" data-k="c" type="button">no hay dispersión en los datos</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p11" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s7"><span aria-hidden="true" class="num-seccion">7</span>Preguntas tipo GED</h2>
+<p>Estas preguntas funcionan como las del examen de Ciencias del GED®: un texto breve, una tabla o una gráfica, y después una pregunta con cuatro opciones. Cada una indica la práctica científica que evalúa y su profundidad de conocimiento (DOK). Puede usar la calculadora.</p>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 1 · SP.8.a · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p12"><em>Una enfermera midió el pulso en reposo de un paciente durante cinco días: 68, 72, 70, 71 y 69 latidos por minuto.</em><br>¿Cuáles son la media y el rango?</p>
+<div aria-labelledby="t-p12" class="opciones" data-practica="p12" role="group">
+<button class="opcion" data-k="a" type="button">Media 70, rango 4</button>
+<button class="opcion" data-k="b" type="button">Media 70, rango 72</button>
+<button class="opcion" data-k="c" type="button">Media 71, rango 4</button>
+<button class="opcion" data-k="d" type="button">Media 350, rango 4</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p12" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 2 · SP.8.c · DOK 2</h3></div>
+<p class="pregunta-int" id="t-p13"><em>En una mezcla de iones, el 40 % son Na⁺ y el 60 % son K⁺. Se extraen dos iones al azar, devolviendo cada uno antes de la siguiente extracción.</em><br>¿Cuál es la probabilidad de extraer dos iones Na⁺ seguidos?</p>
+<div aria-labelledby="t-p13" class="opciones" data-practica="p13" role="group">
+<button class="opcion" data-k="a" type="button">0.04 (4 %)</button>
+<button class="opcion" data-k="b" type="button">0.16 (16 %)</button>
+<button class="opcion" data-k="c" type="button">0.40 (40 %)</button>
+<button class="opcion" data-k="d" type="button">0.80 (80 %)</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p13" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 3 · SP.8.b · DOK 1–2</h3></div>
+<p class="pregunta-int" id="t-p14"><em>Un laboratorio puede elegir 3 medios de cultivo, 4 temperaturas y 2 tiempos de incubación.</em><br>¿Cuántos montajes distintos son posibles?</p>
+<div aria-labelledby="t-p14" class="opciones" data-practica="p14" role="group">
+<button class="opcion" data-k="a" type="button">9</button>
+<button class="opcion" data-k="b" type="button">12</button>
+<button class="opcion" data-k="c" type="button">24</button>
+<button class="opcion" data-k="d" type="button">48</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p14" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 4 · SP.3.d · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p15"><em>Una bióloga quiere estimar el número medio de huevos por nido de un ave en una gran zona de anidación. Solo puede revisar 10 nidos.</em><br>¿Qué muestra da la estimación más representativa?</p>
+<div aria-labelledby="t-p15" class="opciones" data-practica="p15" role="group">
+<button class="opcion" data-k="a" type="button">10 nidos elegidos al azar en toda la zona</button>
+<button class="opcion" data-k="b" type="button">Los 10 nidos más fáciles de alcanzar</button>
+<button class="opcion" data-k="c" type="button">10 nidos que ya estudió en años anteriores</button>
+<button class="opcion" data-k="d" type="button">Solo los nidos que se ven desde el camino</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p15" role="status"></div>
+</div>
+<div class="practica">
+<div class="cabe"><span aria-hidden="true" class="ico">✏️</span><h3>Pregunta tipo GED 5 · SP.4.a · DOK 2–3</h3></div>
+<p class="pregunta-int" id="t-p16"><em>Dos estudiantes midieron la velocidad del sonido cinco veces cada uno (m/s). Estudiante A: 340, 345, 343, 342, 345. Estudiante B: 310, 375, 340, 360, 320. Los dos promedios están cerca de 343 m/s, el valor aceptado.</em><br>¿Qué afirmación apoyan los datos?</p>
+<div aria-labelledby="t-p16" class="opciones" data-practica="p16" role="group">
+<button class="opcion" data-k="a" type="button">Los dos fueron igual de precisos, porque sus promedios se parecen.</button>
+<button class="opcion" data-k="b" type="button">El estudiante A fue más preciso: su rango es de 5 m/s, frente a 65 m/s del B.</button>
+<button class="opcion" data-k="c" type="button">El estudiante B fue más preciso, porque sus valores varían más.</button>
+<button class="opcion" data-k="d" type="button">Ninguno fue exacto.</button>
+</div>
+<div aria-live="polite" class="respuesta-int" id="r-p16" role="status"></div>
+</div>
+</section>
+
+<section>
+<h2 id="s-tarea"><span aria-hidden="true" class="num-seccion">8</span>Tarea</h2>
+<p>Es práctica independiente. Calcule una hora, con el cuaderno abierto.</p>
+<ul class="lista-tarea">
+<li><strong>La página de práctica.</strong> Abra la <a href="practica-2-3.html">página de práctica de esta lección</a> y haga cada actividad. Los ejercicios salen en un orden distinto cada vez. Siga hasta acertar 8 de cada 10 al primer intento. El marcador de cada actividad lleva la cuenta.</li>
+<li><strong>Mida diez veces.</strong> Con una regla o cinta, mida diez veces el mismo objeto de su casa (un libro, la mesa de la cocina). Halle la media, la mediana, la moda y el rango, y diga en una oración qué medida de centro lo representa mejor y por qué.</li>
+<li><strong>Dibuje la caja.</strong> Con sus diez mediciones, halle el resumen de cinco números y dibuje el diagrama de caja. ¿Un bigote es más largo que el otro? ¿Qué podría explicarlo?</li>
+<li><strong>Cuente.</strong> Dibuje un diagrama de árbol para tres lanzamientos de una moneda. ¿Cuántos resultados hay? ¿En cuántos salen exactamente dos caras?</li>
+</ul>
+</section>
+
+<section>
+<h2 id="s-quiz"><span aria-hidden="true" class="num-seccion">9</span>Quiz de práctica</h2>
+<p>Responda las <strong>12 preguntas</strong> y pulse <strong>Revisar mis respuestas</strong>. Si una respuesta no es correcta, recibirá una pista y un segundo intento. Después del segundo intento verá la solución. Puede hacer el quiz las veces que quiera.</p>
+<div id="quiz">
+<div class="quiz-bloque" data-q="1"><p class="qnum">Pregunta 1</p>
+<p class="pregunta" id="t-q1">Un conjunto de mediciones es 6, 8, 8, 10 y 13. La media es…</p>
+<div aria-labelledby="t-q1" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8</button><button class="opcion" data-k="b" type="button">9</button><button class="opcion" data-k="c" type="button">8.5</button><button class="opcion" data-k="d" type="button">10</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="2"><p class="qnum">Pregunta 2</p>
+<p class="pregunta" id="t-q2">En el mismo conjunto (6, 8, 8, 10, 13), la mediana y la moda son…</p>
+<div aria-labelledby="t-q2" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">9 y 8</button><button class="opcion" data-k="b" type="button">8 y 8</button><button class="opcion" data-k="c" type="button">8 y 13</button><button class="opcion" data-k="d" type="button">9 y 9</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="3"><p class="qnum">Pregunta 3</p>
+<p class="pregunta" id="t-q3">El rango del conjunto 6, 8, 8, 10 y 13 es…</p>
+<div aria-labelledby="t-q3" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">13</button><button class="opcion" data-k="b" type="button">8</button><button class="opcion" data-k="c" type="button">9</button><button class="opcion" data-k="d" type="button">7</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="4"><p class="qnum">Pregunta 4</p>
+<p class="pregunta" id="t-q4">Un conjunto de diez mediciones contiene un valor muy separado. ¿Qué medida lo representa mejor?</p>
+<div aria-labelledby="t-q4" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">La media, porque usa todos los datos</button><button class="opcion" data-k="b" type="button">El rango, porque mide la variación</button><button class="opcion" data-k="c" type="button">La mediana, porque el atípico no la desplaza</button><button class="opcion" data-k="d" type="button">La moda, porque es la más frecuente</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="5"><p class="qnum">Pregunta 5</p>
+<p class="pregunta" id="t-q5">En un diagrama de caja, la línea gruesa que atraviesa la caja representa…</p>
+<div aria-labelledby="t-q5" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la media</button><button class="opcion" data-k="b" type="button">el rango</button><button class="opcion" data-k="c" type="button">el valor máximo</button><button class="opcion" data-k="d" type="button">la mediana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="6"><p class="qnum">Pregunta 6</p>
+<p class="pregunta" id="t-q6">La caja de un diagrama de caja contiene…</p>
+<div aria-labelledby="t-q6" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">la mitad central de los datos</button><button class="opcion" data-k="b" type="button">todos los datos</button><button class="opcion" data-k="c" type="button">la cuarta parte de los datos</button><button class="opcion" data-k="d" type="button">solo los valores atípicos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="7"><p class="qnum">Pregunta 7</p>
+<p class="pregunta" id="t-q7">Un histograma presenta dos picos claramente separados. La interpretación más razonable es que…</p>
+<div aria-labelledby="t-q7" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">los datos son perfectamente simétricos</button><button class="opcion" data-k="b" type="button">se mezclaron dos grupos distintos</button><button class="opcion" data-k="c" type="button">no hay dispersión</button><button class="opcion" data-k="d" type="button">la media es igual a la mediana</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="8"><p class="qnum">Pregunta 8</p>
+<p class="pregunta" id="t-q8">Diez mediciones muy agrupadas, pero todas 2 gramos por encima del valor verdadero, indican…</p>
+<div aria-labelledby="t-q8" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">error aleatorio: hace falta repetir más</button><button class="opcion" data-k="b" type="button">datos precisos y exactos</button><button class="opcion" data-k="c" type="button">error sistemático: el instrumento está descalibrado</button><button class="opcion" data-k="d" type="button">un valor atípico que conviene descartar</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="9"><p class="qnum">Pregunta 9</p>
+<p class="pregunta" id="t-q9">Un organismo con cuatro genes de dos alelos cada uno puede producir…</p>
+<div aria-labelledby="t-q9" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">8 gametos distintos</button><button class="opcion" data-k="b" type="button">16 gametos distintos</button><button class="opcion" data-k="c" type="button">4 gametos distintos</button><button class="opcion" data-k="d" type="button">24 gametos distintos</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="10"><p class="qnum">Pregunta 10</p>
+<p class="pregunta" id="t-q10">¿De cuántas maneras distintas pueden ordenarse los cinco pasos de un protocolo?</p>
+<div aria-labelledby="t-q10" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">25</button><button class="opcion" data-k="b" type="button">10</button><button class="opcion" data-k="c" type="button">120</button><button class="opcion" data-k="d" type="button">5</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="11"><p class="qnum">Pregunta 11</p>
+<p class="pregunta" id="t-q11">De un lote de ocho muestras se eligen tres, sin que importe el orden. ¿Cuántas selecciones son posibles?</p>
+<div aria-labelledby="t-q11" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">56</button><button class="opcion" data-k="b" type="button">24</button><button class="opcion" data-k="c" type="button">336</button><button class="opcion" data-k="d" type="button">11</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+<div class="quiz-bloque" data-q="12"><p class="qnum">Pregunta 12</p>
+<p class="pregunta" id="t-q12">¿En cuál de estas situaciones IMPORTA el orden?</p>
+<div aria-labelledby="t-q12" class="opciones" role="group">
+<button class="opcion" data-k="a" type="button">Elegir tres muestras para analizarlas</button><button class="opcion" data-k="b" type="button">Escoger dos colores de flor para un cruce</button><button class="opcion" data-k="c" type="button">Seleccionar cuatro estudiantes para un equipo</button><button class="opcion" data-k="d" type="button">Establecer la secuencia de pasos de un procedimiento</button>
+</div><div aria-live="polite" class="respuesta-int" role="status"></div></div>
+</div>
+<p style="text-align:center;margin-top:18px;">
+<button class="btn" id="btn-calificar" type="button">Revisar mis respuestas</button>
+<button class="btn btn-sec" id="btn-reintentar" style="display:none;" type="button">Empezar el quiz otra vez</button>
+</p>
+<div aria-live="polite" class="marcador" id="marcador" role="status">
+<div aria-hidden="true" class="barra-prog"><span id="barra"></span></div>
+<p class="puntaje" id="puntaje"></p>
+<p class="mensaje" id="mensaje"></p>
+</div>
+</section>
+
+<section>
+<h2 id="s-lista"><span aria-hidden="true" class="num-seccion">10</span>Lista de autoevaluación</h2>
+<p>Use esta lista para ver cómo va. En cada destreza, elija <strong>Lo domino</strong>, <strong>Voy avanzando</strong> o <strong>Necesito más práctica</strong>. Léala <strong>antes</strong> de empezar la tarea y úsela <strong>después</strong> para revisar su trabajo con honestidad.</p>
+<div aria-label="Lista de autoevaluación (tabla desplazable horizontalmente)" class="tabla-scroll" role="region" tabindex="0">
+<table class="tabla-rubrica">
+<caption class="cap-oculto">Destrezas de la lección y cómo se ve cada nivel: lo domino, voy avanzando y necesito más práctica</caption>
+<thead><tr><th scope="col">Destreza</th><th class="nivel-cab" scope="col">Lo domino</th><th class="nivel-cab" scope="col">Voy avanzando</th><th class="nivel-cab" scope="col">Necesito más práctica</th></tr></thead>
+<tbody>
+<tr><th scope="row">Calcula las medidas de centro</th><td>Calculo media, mediana, moda y rango y digo cuál representa mejor los datos.</td><td>Calculo bien la media, pero me equivoco en la mediana o la moda.</td><td>Las confundo u olvido ordenar los datos para la mediana.</td></tr>
+<tr><th scope="row">Interpreta forma, centro y dispersión</th><td>Describo los tres y propongo una explicación (por ejemplo, dos grupos mezclados).</td><td>Identifico el centro, pero no la forma ni la dispersión.</td><td>Leo alturas de barras sin relacionarlas con la distribución.</td></tr>
+<tr><th scope="row">Aplica el principio del conteo</th><td>Distingo permutación de combinación y aplico la regla a cualquier número de etapas.</td><td>Multiplico, pero no distingo si el orden importa.</td><td>Sumo en lugar de multiplicar.</td></tr>
+<tr><th scope="row">Relaciona la dispersión con el error experimental</th><td>Distingo el error aleatorio del sistemático y explico por qué repetir no corrige el sistemático.</td><td>Reconozco la dispersión, pero no la interpreto.</td><td>Creo que toda variación es un fallo del estudiante.</td></tr>
+</tbody>
+</table>
+</div>
+<p class="aviso-desliza"><span aria-hidden="true">↔</span> Deslice la tabla horizontalmente para ver todas las columnas.</p>
+</section>
+
+<section class="cierre">
+<h2 id="s-sigue"><span aria-hidden="true" class="num-seccion">➡️</span>Lo que viene</h2>
+<p>Con esta lección se cierra el Tema 2 y queda completo el andamiaje numérico del curso: escribir cualquier magnitud en notación científica, leerla en una gráfica y resumirla con las medidas adecuadas. Junto con las tres herramientas del Tema 1, ya tiene todo lo que el examen exige <em>además</em> del contenido.</p><p>El Tema 3, Ciencias de la vida I, abre el primer dominio de contenido, el de mayor peso en el examen. Todo lo construido sigue en uso: las raíces de la Lección 1.3 servirán para desmontar palabras como <em>mitocondria</em> o <em>cloroplasto</em>, y el diagrama de árbol de esta lección volverá en el Tema 4 convertido en cruce genético.</p>
+<p class="flecha-sig"><span aria-hidden="true">➡️</span> Siguiente: Tema 3 · Ciencias de la vida I (en preparación).</p>
+</section>
+
+<section>
+<h2 id="s-palabras"><span aria-hidden="true" class="num-seccion">📘</span>Palabras clave</h2>
+<dl class="glosario">
+<dt>Media</dt><dd>La suma de los valores dividida entre la cantidad de datos.</dd>
+<dt>Mediana</dt><dd>El valor central de los datos ordenados.</dd>
+<dt>Moda</dt><dd>El valor que más se repite.</dd>
+<dt>Rango</dt><dd>El valor mayor menos el menor.</dd>
+<dt>Valor atípico</dt><dd>Un valor muy separado del resto de los datos.</dd>
+<dt>Cuartil</dt><dd>Cada uno de los tres valores que dividen los datos ordenados en cuatro partes iguales.</dd>
+<dt>Precisión</dt><dd>Cuán cerca están entre sí las mediciones repetidas.</dd>
+<dt>Exactitud</dt><dd>Cuán cerca está una medición del valor verdadero.</dd>
+<dt>Permutación / combinación</dt><dd>Una elección en la que importa el orden / en la que no importa.</dd>
+</dl>
+</section>
+</div>
+<footer><p>LearnGED · Ciencias · Tema 2 · Lección 2.3</p><p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p></footer>
+<script>
+window.LESSON = {
+ "practice": {
+  "p1": {
+   "ok": "b",
+   "hints": {
+    "a": "15 es la mediana y la moda. Sume los cinco valores y divida entre 5.",
+    "c": "18 es uno de los valores. Súmelos todos: 12 + 15 + 15 + 18 + 20."
+   },
+   "right": "12 + 15 + 15 + 18 + 20 = 80, y 80 ÷ 5 = 16.",
+   "solution": "12 + 15 + 15 + 18 + 20 = 80, y 80 ÷ 5 = 16."
+  },
+  "p2": {
+   "ok": "a",
+   "hints": {
+    "b": "16 es la media, no la mediana. ¿Qué valor está en el centro?",
+    "c": "20 aparece una sola vez. ¿Qué valor se repite?"
+   },
+   "right": "El valor central (el tercero) es 15, y 15 es el único que aparece dos veces.",
+   "solution": "El valor central (el tercero) es 15, y 15 es el único que aparece dos veces."
+  },
+  "p3": {
+   "ok": "c",
+   "hints": {
+    "a": "15 seguiría siendo el más repetido.",
+    "b": "La mediana solo pasaría de 15 a 16.5. ¿Qué medida usa el valor de cada número?"
+   },
+   "right": "La media pasaría de 16 a 176 ÷ 6 ≈ 29.3: un solo valor enorme la arrastra mucho.",
+   "solution": "La media pasaría de 16 a 176 ÷ 6 ≈ 29.3: un solo valor enorme la arrastra mucho."
+  },
+  "p4": {
+   "ok": "c",
+   "hints": {
+    "a": "Aquí la media (2.745) y la mediana (2.70) son distintas.",
+    "b": "El texto explica que 3.15 se debió al bloque mojado."
+   },
+   "right": "La mediana solo atiende a qué valor queda en el centro; 3.15 queda al final de la lista ordenada y no la mueve.",
+   "solution": "La mediana solo atiende a qué valor queda en el centro; 3.15 queda al final de la lista ordenada y no la mueve."
+  },
+  "p5": {
+   "ok": "a",
+   "hints": {
+    "b": "0.04 es el rango de las nueve buenas. Incluya 3.15.",
+    "c": "2.745 es la media, no el rango."
+   },
+   "right": "3.15 − 2.68 = 0.47 g/cm³.",
+   "solution": "3.15 − 2.68 = 0.47 g/cm³."
+  },
+  "p6": {
+   "ok": "b",
+   "hints": {
+    "a": "Un error sistemático desplazaría las diez. Aquí solo una se aparta.",
+    "c": "La variación natural es como de 2.68 a 2.72. 3.15 queda muy fuera."
+   },
+   "right": "Solo una medición se apartó, y el equipo encontró la causa (el bloque mojado).",
+   "solution": "Solo una medición se apartó, y el equipo encontró la causa (el bloque mojado)."
+  },
+  "p7": {
+   "ok": "c",
+   "hints": {
+    "a": "Ser el mayor no es motivo por sí solo.",
+    "b": "El número de datos descartados no es lo importante."
+   },
+   "right": "Último párrafo: eliminarlo dejando constancia del motivo es parte del procedimiento.",
+   "solution": "Último párrafo: eliminarlo dejando constancia del motivo es parte del procedimiento."
+  },
+  "p8": {
+   "ok": "b",
+   "hints": {
+    "a": "La caja va de Q1 a Q3. ¿Cuántos cuartos son?",
+    "c": "Los bigotes contienen el resto."
+   },
+   "right": "De Q1 a Q3 hay dos cuartos: la mitad central.",
+   "solution": "De Q1 a Q3 hay dos cuartos: la mitad central."
+  },
+  "p9": {
+   "ok": "a",
+   "hints": {
+    "b": "El bigote no depende de la mediana.",
+    "c": "Los datos simétricos tienen bigotes parecidos."
+   },
+   "right": "El bigote derecho llega al máximo: si es largo, hay valores altos lejos del resto.",
+   "solution": "El bigote derecho llega al máximo: si es largo, hay valores altos lejos del resto."
+  },
+  "p10": {
+   "ok": "c",
+   "hints": {
+    "a": "Eso es 2 + 2 + 2 + 2 + 2. El principio del conteo multiplica.",
+    "b": "Eso es 5 × 5. Cada gen da 2 opciones, cinco veces."
+   },
+   "right": "2 × 2 × 2 × 2 × 2 = 2⁵ = 32.",
+   "solution": "2 × 2 × 2 × 2 × 2 = 2⁵ = 32."
+  },
+  "p11": {
+   "ok": "a",
+   "hints": {
+    "b": "Un error de calibración desplaza todos los datos igual; no crea dos picos.",
+    "c": "Dos picos separados significan mucha dispersión."
+   },
+   "right": "Por ejemplo, mezclar estaturas de adultos y de niños da dos picos.",
+   "solution": "Por ejemplo, mezclar estaturas de adultos y de niños da dos picos."
+  },
+  "p12": {
+   "ok": "a",
+   "hints": {
+    "b": "El rango es el mayor menos el menor, no el mayor.",
+    "c": "Sume los cinco valores y divida entre 5.",
+    "d": "350 es la suma. Divídala entre 5."
+   },
+   "right": "Suma = 350, y 350 ÷ 5 = 70. Rango = 72 − 68 = 4.",
+   "solution": "Suma = 350, y 350 ÷ 5 = 70. Rango = 72 − 68 = 4."
+  },
+  "p13": {
+   "ok": "b",
+   "hints": {
+    "a": "0.4 × 0.4 no es 0.04. Multiplique con cuidado: 4 × 4 = 16, con dos decimales.",
+    "c": "Esa es la probabilidad de una extracción. Las dos tienen que ocurrir.",
+    "d": "Para «esto y después aquello», se multiplican las probabilidades; no se suman."
+   },
+   "right": "Sucesos independientes: 0.40 × 0.40 = 0.16, es decir, 16 %.",
+   "solution": "Sucesos independientes: 0.40 × 0.40 = 0.16, es decir, 16 %."
+  },
+  "p14": {
+   "ok": "c",
+   "hints": {
+    "a": "3 + 4 + 2 = 9 suma las opciones. El principio del conteo multiplica.",
+    "b": "3 × 4 = 12 olvida los 2 tiempos.",
+    "d": "Revise: 3 × 4 × 2."
+   },
+   "right": "3 × 4 × 2 = 24.",
+   "solution": "3 × 4 × 2 = 24."
+  },
+  "p15": {
+   "ok": "a",
+   "hints": {
+    "b": "Los lugares fáciles pueden tener condiciones distintas. Es sesgo de selección.",
+    "c": "Los nidos ya estudiados podrían no ser típicos.",
+    "d": "Los nidos escondidos quedarían fuera."
+   },
+   "right": "Una muestra al azar da a cada nido la misma probabilidad, así que la muestra se parece a toda la población.",
+   "solution": "Una muestra al azar da a cada nido la misma probabilidad, así que la muestra se parece a toda la población."
+  },
+  "p16": {
+   "ok": "b",
+   "hints": {
+    "a": "La precisión trata de cuán cerca están entre sí las mediciones, no del promedio.",
+    "c": "Más variación significa menos precisión.",
+    "d": "Los dos promedios están cerca de 343: en promedio, ambos son exactos."
+   },
+   "right": "Rango A = 345 − 340 = 5; rango B = 375 − 310 = 65. Los valores de A están agrupados: más preciso.",
+   "solution": "Rango A = 345 − 340 = 5; rango B = 375 − 310 = 65. Los valores de A están agrupados: más preciso."
+  }
+ },
+ "quiz": {
+  "1": {
+   "ok": "b",
+   "hints": {
+    "a": "8 es la mediana y la moda.",
+    "c": "Sume los cinco: 45. Divida entre 5.",
+    "d": "10 es uno de los valores."
+   },
+   "solution": "6 + 8 + 8 + 10 + 13 = 45; 45 ÷ 5 = 9."
+  },
+  "2": {
+   "ok": "b",
+   "hints": {
+    "a": "9 es la media. La mediana es el valor central.",
+    "c": "13 aparece una vez.",
+    "d": "9 no está en los datos."
+   },
+   "solution": "Valor central: 8. El más repetido: 8."
+  },
+  "3": {
+   "ok": "d",
+   "hints": {
+    "a": "13 es el valor mayor.",
+    "b": "8 es la mediana.",
+    "c": "9 es la media."
+   },
+   "solution": "13 − 6 = 7."
+  },
+  "4": {
+   "ok": "c",
+   "hints": {
+    "a": "Usar todos los datos es el problema: el atípico la arrastra.",
+    "b": "El rango no es una medida de centro.",
+    "d": "Puede no haber ningún valor repetido."
+   },
+   "solution": "La mediana resiste los valores atípicos."
+  },
+  "5": {
+   "ok": "d",
+   "hints": {
+    "a": "El diagrama de caja no muestra la media.",
+    "b": "El rango es todo el ancho, de bigote a bigote.",
+    "c": "El máximo es el extremo del bigote derecho."
+   },
+   "solution": "La línea dentro de la caja es la mediana (Q2)."
+  },
+  "6": {
+   "ok": "a",
+   "hints": {
+    "b": "Los bigotes contienen el resto.",
+    "c": "De Q1 a Q3 hay dos cuartos.",
+    "d": "Los atípicos están en los extremos."
+   },
+   "solution": "De Q1 a Q3: el 50 % central."
+  },
+  "7": {
+   "ok": "b",
+   "hints": {
+    "a": "Dos picos no equivale a simetría.",
+    "c": "Dos picos separados significan mucha dispersión.",
+    "d": "Eso no explica los dos picos."
+   },
+   "solution": "Dos picos suelen indicar dos grupos mezclados."
+  },
+  "8": {
+   "ok": "c",
+   "hints": {
+    "a": "Repetir no elimina un desvío que siempre es igual.",
+    "b": "Son precisos, pero no exactos.",
+    "d": "Las diez se apartan, no solo una."
+   },
+   "solution": "El mismo desvío cada vez: error sistemático, que se corrige calibrando."
+  },
+  "9": {
+   "ok": "b",
+   "hints": {
+    "a": "8 es para tres genes.",
+    "c": "Cada gen da 2 opciones; multiplique.",
+    "d": "24 = 4 × 3 × 2 × 1 es una permutación, no este conteo."
+   },
+   "solution": "2 × 2 × 2 × 2 = 16."
+  },
+  "10": {
+   "ok": "c",
+   "hints": {
+    "a": "5 × 5 permitiría usar un paso dos veces.",
+    "b": "10 es el número de pares, no de ordenaciones.",
+    "d": "5 es el número de pasos."
+   },
+   "solution": "5 × 4 × 3 × 2 × 1 = 120."
+  },
+  "11": {
+   "ok": "a",
+   "hints": {
+    "b": "24 = 4 × 3 × 2. Empiece por 8.",
+    "c": "336 = 8 × 7 × 6 cuenta cada grupo 6 veces. Divida entre 3 × 2 × 1.",
+    "d": "8 + 3 no es un conteo."
+   },
+   "solution": "(8 × 7 × 6) ÷ (3 × 2 × 1) = 336 ÷ 6 = 56."
+  },
+  "12": {
+   "ok": "d",
+   "hints": {
+    "a": "Las mismas tres muestras forman el mismo grupo en cualquier orden.",
+    "b": "La pareja es la misma.",
+    "c": "Sin cargos, el equipo es el mismo."
+   },
+   "solution": "Otro orden de pasos da otro resultado (a menudo arruinado)."
+  }
+ },
+ "next": "",
+ "review": "la lección"
+};
+</script>
+<script src="/math/lesson.js"></script>
+<script src="/js/calculadora.js" data-color="#1f6066" defer></script>
+</body>
+</html>
