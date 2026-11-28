@@ -1,0 +1,85 @@
+/* LearnGED · Artes del lenguaje: color de cada nivel y actividades de lectura.
+   Se carga después de /math/lesson.css o /math/practice.css y de /science/science.css.
+   El color sale de <body data-area="leng1"> … "leng4". Contraste del texto blanco sobre --c2 ≥ 4.5:1. */
+body[data-area="leng1"]{--c1:#004b75;--c2:#0b679c;--c3:#e3f0f8;}
+body[data-area="leng2"]{--c1:#004d44;--c2:#00695c;--c3:#e0f2f1;}
+body[data-area="leng3"]{--c1:#4a1d96;--c2:#6d28d9;--c3:#f1eafd;}
+body[data-area="leng4"]{--c1:#8b1a1a;--c2:#b42318;--c3:#fdecea;}
+
+/* Aviso cuando el navegador no tiene voz */
+.aviso-voz{background:#fff8e1;color:#5c3900;border-left:5px solid #f9a825;padding:8px 12px;border-radius:8px;margin:8px 0;}
+.btn-voz{display:inline-flex;align-items:center;gap:6px;border:2px solid var(--c2);background:#fff;color:var(--c1);border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;cursor:pointer;margin:4px 6px 4px 0;}
+.btn-voz:hover,.btn-voz:focus-visible{background:var(--c3);}
+.btn-voz.mini{padding:2px 9px;font-size:.9em;}
+.nota-audio{background:var(--c3);border-radius:8px;padding:8px 12px;}
+
+/* Abecedario */
+.abc{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;margin:12px 0;}
+.abc-letra{display:flex;flex-direction:column;align-items:center;gap:2px;background:#fff;border:2px solid #d5dde5;border-radius:12px;padding:8px 4px;cursor:pointer;font:inherit;color:#1b1f24;}
+.abc-letra:hover,.abc-letra:focus-visible{border-color:var(--c2);background:var(--c3);}
+.abc-letra.sonando{border-color:var(--c1);background:var(--c3);box-shadow:0 0 0 3px var(--c2);}
+.abc-par{font-size:1.9em;font-weight:700;line-height:1.1;}
+.abc-M{color:#0d47a1;margin-right:6px;}
+.abc-m{color:#a3154f;}
+.abc-e{font-size:1.4em;}
+.abc-p{font-weight:700;}
+.abc-n{font-size:.85em;color:#4a5560;}
+
+/* Emparejar */
+.emp-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:10px 0;}
+.emp-col{display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start;background:#fff;border:1px solid #d5dde5;border-radius:12px;padding:10px;}
+.emp-tit{width:100%;margin:0 0 4px;font-weight:700;color:var(--c1);}
+.emp-b{min-width:54px;min-height:54px;font:inherit;font-size:1.6em;font-weight:700;border:2px solid #b9c5d0;border-radius:10px;background:#fff;cursor:pointer;color:#1b1f24;}
+.emp-b.elegida{border-color:var(--c1);background:var(--c3);box-shadow:0 0 0 3px var(--c2);}
+.emp-b.correcta{border-color:#2e7d32;background:#e8f5e9;color:#1b5e20;cursor:default;}
+
+/* Sujeto y predicado: subrayado recto y ondulado (no depende solo del color) */
+.suj{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px;text-decoration-color:#0d47a1;}
+.pred{text-decoration:underline wavy;text-decoration-thickness:2px;text-underline-offset:6px;text-decoration-color:#a3154f;}
+.oracion-ej{font-size:1.2em;background:#fff;border:1px solid #d5dde5;border-radius:10px;padding:10px 16px;margin:8px 0;line-height:2;}
+.leyenda-sp{display:flex;flex-wrap:wrap;gap:18px;margin:8px 0;}
+.armar{background:#fff;border:1px solid #d5dde5;border-radius:12px;padding:14px 16px;margin:12px 0;}
+.armar-suj,.armar-pred{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 12px;}
+.armar-suj .opcion,.armar-pred .opcion{width:auto;}
+.armar-b.elegida{border-color:var(--c1);background:var(--c3);box-shadow:0 0 0 3px var(--c2);}
+.armar-frase{font-size:1.25em;min-height:2em;line-height:2;background:#fafbfc;border:2px dashed #b9c5d0;border-radius:10px;padding:6px 14px;}
+.armar-frase .hueco{color:#5b6675;font-style:italic;}
+.armar-lista li{margin:2px 0;}
+
+/* Guía de lectura */
+.guia-texto{font-size:1.3em;line-height:2.1;background:#fffdf7;border:1px solid #e4dcc4;border-radius:12px;padding:12px 18px;}
+.guia-linea{display:block;}
+.guia-p{border-radius:4px;padding:0 2px;transition:background .15s;}
+.guia-p.ahora{background:#ffe082;outline:2px solid #5c3900;}
+.recorrido{display:block;max-width:520px;margin:10px auto;}
+
+/* Cronómetro y teatro */
+.crono-reloj{font-size:2.2em;font-weight:700;font-variant-numeric:tabular-nums;color:var(--c1);margin:4px 0;}
+.texto-lectura{background:#fffdf7;border:1px solid #e4dcc4;border-left:6px solid var(--c2);border-radius:12px;padding:14px 20px;font-size:1.12em;line-height:1.9;}
+.texto-lectura p{margin:0 0 10px;}
+.teatro-lineas .linea{background:#fff;border:1px solid #d5dde5;border-radius:10px;padding:8px 14px;margin:6px 0;}
+.teatro-lineas .linea.tu{border-left:6px solid #e65100;}
+.teatro-lineas .linea.actual{background:#fff3e0;box-shadow:0 0 0 3px #e65100;}
+.teatro-lineas .quien{display:block;font-size:.85em;font-weight:700;color:#4a5560;}
+
+/* Dónde empieza cada oración */
+.lim-tit{font-weight:700;color:var(--c1);margin:0 0 6px;}
+.lim-texto{font-size:1.2em;line-height:2.3;}
+button.lim-p{font:inherit;border:1px solid #c9d2da;border-radius:6px;background:#fff;padding:0 5px;margin:0 1px;cursor:pointer;color:#1b1f24;}
+button.lim-p:hover,button.lim-p:focus-visible{border-color:var(--c2);}
+button.lim-p.marcada{background:#e8f5e9;border-color:#2e7d32;font-weight:700;}
+button.lim-p.marcada::before{content:". ";color:#1b5e20;font-weight:700;}
+button.lim-p.revisar{background:#fff8e1;border:2px solid #f9a825;}
+.lim-fija{font-weight:700;padding:0 5px;}
+
+/* Bienvenida: las cuatro materias */
+.materias{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:10px 0;}
+.materias div{background:#fff;border:1px solid #d5dde5;border-top:5px solid var(--c2,#0b679c);border-radius:10px;padding:10px 14px;}
+.materias .ico{font-size:1.6em;}
+.materias strong{display:block;color:var(--c1,#004b75);}
+.cita-gran{font-size:1.15em;font-weight:700;color:var(--c1,#004b75);border-left:6px solid var(--c2,#0b679c);padding:6px 14px;margin:12px 0;background:var(--c3,#e3f0f8);border-radius:0 10px 10px 0;}
+
+@media (max-width:640px){ .emp-cols{grid-template-columns:1fr;} .abc{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));} }
+@media print{ .abc-letra,.emp-b{break-inside:avoid;} }
+.grande{font-size:1.6em;font-weight:700;}
+.emoji-grande{font-size:2em;vertical-align:middle;margin-right:6px;}

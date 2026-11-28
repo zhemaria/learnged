@@ -63,7 +63,11 @@ def pagina(lang):
     bases = [
         fila(T("Math", "Matemáticas"), [boton(m + niv(k), T(f"Level {k}", f"Nivel {k}"), T(f"Math, level {k}", f"Matemáticas, nivel {k}"), rel_root=mr(k)) for k in (1, 2)],
              T("Whole numbers, fractions, decimals, and the first steps in algebra.", "Números enteros, fracciones, decimales y los primeros pasos del álgebra.")),
-        fila(T("Reading and writing", "Lectura y escritura"), [], pronto=T("rla/#levels-1-2", "artes-del-lenguaje/#levels-1-2")),
+        fila(T("Reading and writing", "Lectura y escritura"),
+             [boton(T(f"es/artes-del-lenguaje/nivel-{k}/", f"artes-del-lenguaje/nivel-{k}/"), T(f"Level {k} · in Spanish", f"Nivel {k} · en español"),
+                    T(f"Reading and writing in Spanish, level {k}", f"Lectura y escritura en español, nivel {k}"), rel_root=f"es/artes-del-lenguaje/nivel-{k}/") for k in (1, 2)],
+             T("Two paths: reading and writing in Spanish and in English. The Spanish path is being published topic by topic.", "Dos caminos: lectura y escritura en español y en inglés. El camino en español se está publicando tema por tema."),
+             pronto=T("rla/#levels-1-2", "artes-del-lenguaje/#levels-1-2")),
     ]
     # ---------- Prepárese para el GED
     ciencias = [boton(sci, T("Course plan", "Plan del curso"), T("Science, plan of the course", "Ciencias, plan del curso"), sec=True, rel_root=scir)]
