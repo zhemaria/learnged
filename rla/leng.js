@@ -651,7 +651,7 @@
       (t.getAttribute("data-guia") ? '<p class="tl-guia">' + esc(t.getAttribute("data-guia")) + '</p>' : '') +
       '<textarea id="' + id + '" class="tl-texto" rows="9" spellcheck="true" lang="es"></textarea>' +
       '<p class="tl-cuenta" aria-live="polite"></p><p class="tl-con"></p>' +
-      '<div class="fila-btn"><button type="button" class="btn-sec tl-oir">🔊 Escuchar mi texto</button><button type="button" class="btn-sec tl-copiar">📋 Copiar mi texto</button><button type="button" class="btn-sec tl-borrar">Borrar</button></div><p class="tl-aviso" aria-live="polite"></p>' +
+      '<div class="fila-btn"><button type="button" class="btn-sec tl-oir">🔊 Escuchar mi texto</button><button type="button" class="btn-sec tl-copiar">📋 Copiar mi texto</button><button type="button" class="btn-sec tl-borrar">Borrar</button></div><p class="tl-nota">👂 <strong>Escuche con atención:</strong> la voz lee su texto <strong>exactamente como está escrito</strong>, con sus errores. Si falta una tilde, la palabra suena distinta («papa» no es «papá»; «termino» no es «terminó»). Si falta un punto o una coma, la voz no hace la pausa. Cuando algo no suene como usted quería decirlo, revise esa palabra o esa oración.</p><p class="tl-aviso" aria-live="polite"></p>' +
       (lista.length ? '<fieldset class="tl-lista"><legend>Antes de entregar, revise:</legend>' + lista.map(function (x, i) { return '<label><input type="checkbox" data-i="' + i + '"> ' + esc(x) + '</label>'; }).join("") + '</fieldset>' : '');
     var area = t.querySelector("textarea"), cuenta = t.querySelector(".tl-cuenta"), cn = t.querySelector(".tl-con"), aviso = t.querySelector(".tl-aviso");
     function guarda() { try { localStorage.setItem(clave, JSON.stringify({ t: area.value, c: Array.prototype.map.call(t.querySelectorAll(".tl-lista input"), function (c) { return c.checked; }) })); } catch (e) {} }
@@ -665,7 +665,11 @@
     try { var g = JSON.parse(localStorage.getItem(clave) || "null"); if (g) { area.value = g.t || ""; (g.c || []).forEach(function (v, i) { var c = t.querySelector('.tl-lista input[data-i="' + i + '"]'); if (c) c.checked = v; }); } } catch (e) {}
     area.addEventListener("input", function () { actualiza(); guarda(); });
     t.addEventListener("change", function (ev) { if (ev.target.matches(".tl-lista input")) guarda(); });
-    t.querySelector(".tl-oir").addEventListener("click", function () { if (area.value.trim()) hablar(area.value, 0.9); });
+    t.querySelector(".tl-oir").addEventListener("click", function () {
+      if (!area.value.trim()) { aviso.textContent = "Primero escriba su texto."; return; }
+      aviso.textContent = "🔊 Escuche si cada palabra suena como usted quería: una tilde o un signo que falta cambian el sonido.";
+      hablar(area.value, 0.9);
+    });
     t.querySelector(".tl-copiar").addEventListener("click", function () {
       var v = area.value; if (!v.trim()) { aviso.textContent = "Primero escriba su texto."; return; }
       function ok() { aviso.textContent = "✓ Copiado. Péguelo donde le pida su maestro (por ejemplo, en el foro del curso)."; }
