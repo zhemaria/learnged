@@ -308,6 +308,64 @@
     nuevo(); marcador();
   };
 
+
+  /* ================= Constructor: tocar fichas en orden para formar una palabra o una frase =================
+     <div class="constructor" data-grupos='[["ca","sa",…]]' data-sep="" data-max="2" data-reales='["casa",…]' data-titulos='["Sílabas"]'>
+     sep "" → sílabas que forman una palabra; sep " " → palabras que forman una frase (mayúscula y punto). */
+  function constructor(caja) {
+    var G = JSON.parse(caja.getAttribute("data-grupos")), T = JSON.parse(caja.getAttribute("data-titulos") || "[]");
+    var sep = caja.getAttribute("data-sep") || "", max = +caja.getAttribute("data-max") || 99;
+    var reales = caja.getAttribute("data-reales") ? JSON.parse(caja.getAttribute("data-reales")) : null;
+    var elegidas = [], halladas = [];
+    var fichas = caja.querySelector(".cons-fichas"), out = caja.querySelector(".cons-frase"), fb = caja.querySelector(".fb"), lista = caja.querySelector(".cons-lista");
+    fichas.innerHTML = G.map(function (g, k) {
+      return (T[k] ? '<p class="cons-tit">' + T[k] + "</p>" : "") + '<div class="cons-grupo" role="group"' + (T[k] ? ' aria-label="' + esc(T[k]) + '"' : "") + ">" +
+        g.map(function (x) { return '<button type="button" class="opcion cons-b" data-f="' + esc(x) + '">' + x + "</button>"; }).join("") + "</div>";
+    }).join("");
+    function texto() {
+      var t = elegidas.join(sep);
+      if (sep === " " && t) { t = t.charAt(0).toUpperCase() + t.slice(1); if (!/[.!?]$/.test(t)) t += "."; }
+      return t;
+    }
+    function muestra() { out.textContent = elegidas.length ? texto() : (sep ? "Toque las palabras en orden." : "Toque dos sílabas en orden."); }
+    caja.addEventListener("click", function (ev) {
+      var b = ev.target.closest(".cons-b"); if (!b) return;
+      if (elegidas.length >= max) { fb.className = "fb pista"; fb.innerHTML = "Ya tiene " + max + (sep ? " palabras" : " sílabas") + ". Pulse «Leer» o «Limpiar»."; return; }
+      elegidas.push(b.getAttribute("data-f")); fb.className = "fb"; fb.innerHTML = ""; muestra();
+    });
+    caja.querySelector(".cons-leer").addEventListener("click", function () {
+      if (!elegidas.length) return;
+      var t = texto(); hablar(t, 0.8);
+      if (!reales) { fb.className = "fb bien"; fb.innerHTML = "Lea su frase en voz alta: <strong>" + esc(t) + "</strong>"; return; }
+      var w = t.toLowerCase(), k = reales.map(function (r) { return r.replace(/[áéíóú]/g, function (c) { return "aeiou"["áéíóú".indexOf(c)]; }); }).indexOf(w);
+      if (k >= 0) {
+        fb.className = "fb bien"; fb.innerHTML = "✓ <strong>" + reales[k] + "</strong> es una palabra de verdad. " + elogio();
+        if (halladas.indexOf(reales[k]) < 0) { halladas.push(reales[k]); lista.innerHTML = halladas.map(function (h) { return "<li>" + h + "</li>"; }).join(""); }
+      } else { fb.className = "fb pista"; fb.innerHTML = "«" + esc(t) + "» se puede leer, pero no es una palabra del español. Pruebe otra combinación."; }
+    });
+    caja.querySelector(".cons-limpiar").addEventListener("click", function () { elegidas = []; fb.className = "fb"; fb.innerHTML = ""; muestra(); });
+    muestra();
+  }
+
+  /* ================= Palabras al instante: una palabra cada pocos segundos =================
+     <div class="destello" id="d1" data-grupos='[{"n":"Grupo 1","p":["el","la",…]}]'> */
+  function destello(caja) {
+    var G = JSON.parse(caja.getAttribute("data-grupos")), id = caja.id, sel = $(id + "-grupo"), vel = $(id + "-vel"), tarj = $(id + "-palabra"), est = $(id + "-estado");
+    var bP = $(id + "-pasar"), bS = $(id + "-pausa"), lista = $(id + "-todas"), reloj = null, i = 0;
+    sel.innerHTML = G.map(function (g, k) { return '<option value="' + k + '">' + g.n + "</option>"; }).join("");
+    function grupo() { return G[+sel.value].p; }
+    function todas() { lista.innerHTML = grupo().map(function (w) { return '<button type="button" class="btn-voz mini" data-hablar="' + esc(w) + '">' + w + "</button>"; }).join(""); }
+    function pinta() { var g = grupo(); tarj.textContent = g[i]; est.textContent = "Palabra " + (i + 1) + " de " + g.length + ". Léala en voz alta."; }
+    function para() { clearInterval(reloj); reloj = null; bP.disabled = false; bS.disabled = true; }
+    bP.addEventListener("click", function () {
+      i = 0; pinta(); bP.disabled = true; bS.disabled = false;
+      reloj = setInterval(function () { i++; if (i >= grupo().length) { para(); i = 0; est.textContent = "Terminó el grupo. Repítalo hasta leer cada palabra sin dudar."; return; } pinta(); }, +vel.value);
+    });
+    bS.addEventListener("click", para);
+    sel.addEventListener("change", function () { para(); i = 0; tarj.textContent = grupo()[0]; est.textContent = ""; todas(); });
+    tarj.textContent = grupo()[0]; todas();
+  }
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();
@@ -317,6 +375,8 @@
     cada(".guia", guia);
     cada(".crono[data-texto]", crono);
     cada(".teatro[data-lineas]", teatro);
+    cada(".constructor[data-grupos]", constructor);
+    cada(".destello[data-grupos]", destello);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inicia); else inicia();
 })();
