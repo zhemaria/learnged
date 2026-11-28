@@ -675,6 +675,49 @@
     actualiza();
   }
 
+  /* Audio en dos pasadas: <div class="escucha" data-texto="…" data-titulo="…"></div> (voz del navegador; la transcripción va aparte). */
+  function escucha(e) {
+    var txt = e.getAttribute("data-texto"), vel = 0.85;
+    e.innerHTML = '<p class="es-vel" role="group" aria-label="Velocidad">Velocidad: <button type="button" class="btn-sec es-v" data-v="0.7" aria-pressed="false">🐢 Más lenta</button><button type="button" class="btn-sec es-v" data-v="0.85" aria-pressed="true">Normal</button></p>' +
+      '<p><button type="button" class="btn-sec es-p" data-p="1">▶️ Primera pasada: idea general</button><button type="button" class="btn-sec es-p" data-p="2">▶️ Segunda pasada: detalles</button><button type="button" class="btn-sec es-stop">⏹️ Parar</button></p>' +
+      '<p class="es-estado" aria-live="polite"></p>';
+    var est = e.querySelector(".es-estado");
+    e.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button"); if (!b) return;
+      if (b.classList.contains("es-v")) { vel = +b.getAttribute("data-v"); cada(".es-v", function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }, e); }
+      else if (b.classList.contains("es-p")) {
+        var p = b.getAttribute("data-p");
+        est.textContent = p === "1" ? "Primera pasada: escuche sin escribir. ¿De qué trata? ¿Quién habla?" : "Segunda pasada: anote números, nombres, fechas y palabras clave.";
+        hablar(txt, vel, function () { est.textContent = p === "1" ? "Terminó la primera pasada. Ahora escuche otra vez con papel y lápiz." : "Terminó la segunda pasada. Responda las preguntas y compruebe con la transcripción."; });
+      } else if (b.classList.contains("es-stop")) { callar(); est.textContent = "Audio detenido."; }
+    });
+  }
+
+  /* Grabadora: <div class="grabadora" data-nombre="mi-presentacion"></div>. La grabación queda en el equipo hasta que se descarga. */
+  function grabadora(g) {
+    var nombre = g.getAttribute("data-nombre") || "mi-grabacion";
+    g.innerHTML = '<p class="gr-reloj" aria-live="off">0:00</p><p class="gr-estado" aria-live="polite">Listo para grabar.</p>' +
+      '<p><button type="button" class="btn-sec gr-rec">🎙️ Grabar</button><button type="button" class="btn-sec gr-stop" disabled>⏹️ Detener</button></p>' +
+      '<audio class="gr-audio" controls hidden></audio><p><a class="gr-bajar btn-sec" hidden>⬇️ Descargar mi grabación</a></p>';
+    var rec, trozos = [], t0, int, reloj = g.querySelector(".gr-reloj"), est = g.querySelector(".gr-estado"), bR = g.querySelector(".gr-rec"), bS = g.querySelector(".gr-stop"), au = g.querySelector(".gr-audio"), dl = g.querySelector(".gr-bajar");
+    if (!navigator.mediaDevices || !window.MediaRecorder) { est.textContent = "Este navegador no permite grabar. Use la grabadora de voz de su celular."; bR.disabled = true; return; }
+    bR.addEventListener("click", function () {
+      navigator.mediaDevices.getUserMedia({ audio: true }).then(function (s) {
+        trozos = []; rec = new MediaRecorder(s);
+        rec.ondataavailable = function (ev) { if (ev.data.size) trozos.push(ev.data); };
+        rec.onstop = function () {
+          s.getTracks().forEach(function (x) { x.stop(); });
+          var tipo = rec.mimeType || "audio/webm", blob = new Blob(trozos, { type: tipo }), url = URL.createObjectURL(blob);
+          au.src = url; au.hidden = false; dl.href = url; dl.download = nombre + (tipo.indexOf("mp4") >= 0 ? ".m4a" : tipo.indexOf("ogg") >= 0 ? ".ogg" : ".webm"); dl.hidden = false;
+          est.textContent = "Grabación lista. Escúchela y, si le gusta, descárguela para entregarla.";
+        };
+        rec.start(); t0 = Date.now(); bR.disabled = true; bS.disabled = false; est.textContent = "Grabando… hable con calma.";
+        int = setInterval(function () { var s2 = Math.floor((Date.now() - t0) / 1000); reloj.textContent = Math.floor(s2 / 60) + ":" + ("0" + s2 % 60).slice(-2); }, 250);
+      }, function () { est.textContent = "No se pudo usar el micrófono. Revise el permiso del navegador o use la grabadora del celular."; });
+    });
+    bS.addEventListener("click", function () { if (rec && rec.state !== "inactive") rec.stop(); clearInterval(int); bR.disabled = false; bS.disabled = true; });
+  }
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();
@@ -687,6 +730,8 @@
     cada(".constructor[data-grupos]", constructor);
     cada(".destello[data-grupos]", destello);
     cada(".taller[data-clave]", taller);
+    cada(".escucha[data-texto]", escucha);
+    cada(".grabadora", grabadora);
     botonVozPagina();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inicia); else inicia();
