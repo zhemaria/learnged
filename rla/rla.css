@@ -352,3 +352,18 @@ ol.lt li:not(:last-child)::after{content:"→";position:absolute;right:-.75em;to
 .lectura-cl .rz-sep{display:none}
 .lectura-cl.ver-cl .rz-sep{display:inline;color:#6d28d9;font-weight:900}
 b.marca{color:#4c1d95;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+
+/* Cronómetro de lectura: controles antes del texto y barra fija mientras se lee */
+.crono-arriba{background:var(--c3,#e3f0f8);border-radius:10px;padding:.4em .9em;margin:.6em 0;display:flex;flex-wrap:wrap;align-items:center;gap:.2em 1em}
+.crono-arriba .crono-reloj{margin:0}
+.crono-arriba p{margin:.2em 0}
+.crono-arriba .fb{flex-basis:100%}
+.crono-barra{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:.8em;background:#fff;border:2px solid var(--c1,#004b75);border-radius:999px;padding:.35em .5em .35em 1.1em;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.crono-barra[hidden]{display:none}
+.crono-barra-t{font-size:1.4em;font-weight:800;font-variant-numeric:tabular-nums;color:var(--c1,#004b75)}
+.crono-barra .btn{font:inherit;font-weight:700;padding:.45em 1em;border-radius:999px;border:2px solid var(--c1,#004b75);background:var(--c1,#004b75);color:#fff;cursor:pointer}
+@media print{.crono-barra{display:none!important}}
+.crono-arriba .btn,.crono-arriba .btn-sec{font:inherit;font-size:1em;font-weight:700;padding:.5em 1.1em;border-radius:10px;border:2px solid var(--c1,#004b75);cursor:pointer}
+.crono-arriba .btn{background:var(--c1,#004b75);color:#fff}
+.crono-arriba .btn-sec{background:#fff;color:var(--c1,#004b75)}
+.crono-arriba button:disabled{opacity:.45;cursor:default}

@@ -209,17 +209,32 @@
 
   /* ================= Cronómetro de lectura (palabras por minuto) ================= */
   function crono(caja) {
-    var id = caja.id, texto = $(caja.getAttribute("data-texto")).textContent.replace(/\s+/g, " ").trim();
+    var id = caja.id, tx = $(caja.getAttribute("data-texto")), texto = tx.textContent.replace(/\s+/g, " ").trim();
     var palabras = texto.split(" ").filter(function (w) { return /[a-záéíóúñü0-9]/i.test(w); }).length;
     var inicio = 0, reloj = null, n = 0, el = $(id + "-tiempo"), res = $(id + "-res"), bE = $(id + "-empezar"), bT = $(id + "-terminar"), tb = caja.querySelector("tbody");
     function fmt(s) { return Math.floor(s / 60) + ":" + ("0" + Math.floor(s % 60)).slice(-2); }
+    /* El reloj y los botones van justo antes del texto: así «Empezar» queda junto a la primera línea.
+       Mientras corre el tiempo, una barra fija abajo muestra el reloj y «Terminar», para no tener que volver arriba. */
+    if (tx.compareDocumentPosition(caja) & Node.DOCUMENT_POSITION_FOLLOWING) {
+      var arriba = document.createElement("div"); arriba.className = "crono crono-arriba";
+      arriba.appendChild(el); arriba.appendChild(bE.parentNode); arriba.appendChild(res);
+      tx.parentNode.insertBefore(arriba, tx);
+    }
+    var barra = document.createElement("div"); barra.className = "crono-barra"; barra.hidden = true; barra.setAttribute("role", "region"); barra.setAttribute("aria-label", "Cronómetro de lectura");
+    barra.innerHTML = '<span class="crono-barra-t" aria-hidden="true">0:00</span> <button type="button" class="btn">⏹ Terminar</button>';
+    document.body.appendChild(barra);
+    var bt2 = barra.querySelector(".crono-barra-t");
     bE.addEventListener("click", function () {
-      callar(); inicio = Date.now(); el.textContent = "0:00"; res.textContent = "Lea en voz alta. Pulse «Terminar» al llegar al final.";
-      bE.disabled = true; bT.disabled = false; bT.focus();
-      reloj = setInterval(function () { el.textContent = fmt((Date.now() - inicio) / 1000); }, 250);
+      callar(); inicio = Date.now(); el.textContent = bt2.textContent = "0:00"; res.textContent = "Lea en voz alta. Pulse «Terminar» al llegar al final.";
+      bE.disabled = true; bT.disabled = false; barra.hidden = false;
+      var y = tx.getBoundingClientRect().top + window.scrollY - 90;
+      if (tx.getBoundingClientRect().top > 160) window.scrollTo({ top: y, behavior: "smooth" });
+      reloj = setInterval(function () { el.textContent = bt2.textContent = fmt((Date.now() - inicio) / 1000); }, 250);
     });
+    barra.querySelector("button").addEventListener("click", function () { bT.click(); });
     bT.addEventListener("click", function () {
-      clearInterval(reloj); var s = (Date.now() - inicio) / 1000; bE.disabled = false; bT.disabled = true;
+      clearInterval(reloj); barra.hidden = true; var s = (Date.now() - inicio) / 1000; bE.disabled = false; bT.disabled = true;
+      var r = el.getBoundingClientRect(); if (r.top < 70 || r.bottom > window.innerHeight) el.scrollIntoView({ behavior: "smooth", block: "center" });
       if (s < 15) { res.textContent = "Fueron solo " + Math.round(s) + " segundos: parece que no leyó el texto completo. Inténtelo otra vez."; return; }
       n++; var ppm = Math.round(palabras / s * 60);
       if (n === 1) tb.innerHTML = "";

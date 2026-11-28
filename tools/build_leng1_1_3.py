@@ -106,7 +106,7 @@ def leccion():
 <h3>La llamada</h3>
 {texto_lectura("llamada", LLAMADA)}
 {C.caja("tip", "La raya ( — )", "<p>En español, el diálogo se marca con raya. Cada raya al comienzo de una línea es una persona que habla; las rayas del medio encierran las palabras del narrador (<em>—preguntó una voz amable</em>). Al leer, cambie un poco la voz para cada personaje.</p>")}
-<h3>Mi lectura</h3>
+<h3>Mis pasadas</h3>
 {crono("c1", "llamada")}
 {C.caja("ojo", "¿Cuánto es bueno?", "<p>Lo más importante es <strong>mejorar de una pasada a la siguiente sin perder precisión</strong>. Como orientación, al empezar este nivel es normal leer un texto como este a unas 40 o 60 palabras por minuto; al terminar el nivel, un buen objetivo es pasar de 60 con muy pocos tropiezos. Si lee más rápido pero se salta palabras, baje la velocidad.</p>")}
 <h3>Evalúe su lectura</h3>
