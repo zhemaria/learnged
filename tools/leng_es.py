@@ -44,6 +44,15 @@ NIVELES = {
         6: "Leer con imágenes y en las materias",
         7: "Escribir con estructura",
         8: "Hablar, escuchar y proyecto final"}),
+    3: ("Exploración del análisis y la argumentación", {
+        1: "Gramática avanzada de la oración",
+        2: "Puntuación avanzada y vocabulario académico",
+        3: "Comprensión inferencial y evidencia textual",
+        4: "Estructura del texto y lenguaje literario",
+        5: "Evaluar argumentos e integrar fuentes",
+        6: "Leer en las materias: datos, procedimientos y multimedia",
+        7: "Escritura argumentada e informativa con análisis",
+        8: "Investigación, oralidad y proyecto final"}),
 }
 
 # Lecciones del Nivel 1 (las mismas de GEDparaHispanos; la 1.3 corresponde a la fluidez lectora)
@@ -117,6 +126,32 @@ LECCIONES = {
         "8-1": "Conversar con respeto: turnos, enlazar y aclarar",
         "8-2": "Comprensión auditiva y presentación oral con audio",
         "8-3": "Proyecto final y evaluación del nivel",
+    },
+    3: {
+        "1-1": "Pronombres relativos y conjunciones subordinantes",
+        "1-2": "Tiempos compuestos y la forma progresiva",
+        "1-3": "Corregir fragmentos y oraciones corridas",
+        "2-1": "Comillas, cursiva, dos puntos y punto y coma",
+        "2-2": "Raíces griegas y latinas; definir con sus palabras",
+        "2-3": "Vocabulario académico: sinónimos, antónimos y relaciones",
+        "3-1": "Tema central, ideas principales y resumen objetivo",
+        "3-2": "Citar detalles: lo explícito y lo inferido",
+        "3-3": "Hacer inferencias con evidencia del texto",
+        "4-1": "Estructuras del texto: cronología, comparación y causa-efecto",
+        "4-2": "Géneros literarios: poema, drama y prosa",
+        "4-3": "Lenguaje figurado: símiles, metáforas, modismos y refranes",
+        "5-1": "Razones y evidencias del autor",
+        "5-2": "Integrar información de dos textos",
+        "5-3": "Fuentes primarias y secundarias: citar y relacionar",
+        "6-1": "Gráficas complejas y tablas de varias columnas",
+        "6-2": "Texto con datos; hechos, juicios y especulaciones",
+        "6-3": "Seguir y analizar procedimientos científicos",
+        "7-1": "Texto argumentado: tesis, razones con hechos y transiciones",
+        "7-2": "Texto informativo con vocabulario de dominio y análisis",
+        "7-3": "Escribir en las materias: evidencia y tono objetivo",
+        "8-1": "Proyecto de investigación corto: fuentes, notas y paráfrasis",
+        "8-2": "Discusiones colegiadas y comprensión auditiva",
+        "8-3": "Presentación multimedia, proyecto final y evaluación del nivel",
     },
 }
 

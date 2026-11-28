@@ -149,7 +149,7 @@ def leccion():
         ("Estrategias", "Uso las cinco estrategias al responder.", "Uso algunas.", "No las recuerdo (<a href=\"#s3\">repase la sección 3</a>)."),
         ("Evaluación", "Llegué al 80 % o hice mi plan de repaso.", "Hice la evaluación, pero sin plan.", "No la he hecho (<a href=\"#s5\">vea la sección 5</a>)."),
     ]
-    cierre = "<p>¡Terminó el Nivel 2 de Artes del Lenguaje! En el Nivel 3 dará el salto a la lectura inferencial, al lenguaje figurado avanzado y a la escritura argumentada que pide el GED.</p>"
+    cierre = "<p>¡Terminó el Nivel 2 de Artes del Lenguaje! En el <a href=\"/es/artes-del-lenguaje/nivel-3/\">Nivel 3</a> dará el salto a la lectura inferencial, al lenguaje figurado avanzado y a la escritura argumentada que pide el GED.</p>"
     glosario = [("Proyecto", "Trabajo que reúne varias destrezas alrededor de un tema."), ("Estrategia de examen", "Una forma ordenada de responder mejor y más rápido."),
                 ("Autoevaluación", "Calificar el propio trabajo con criterios claros.")]
     conexion = ("<p>Este proyecto reúne todo el nivel: las fuentes de la Lección 6.2, las gráficas de la 6.1, la escritura del Tema 7 y la presentación de la 8.2.</p>"
@@ -158,7 +158,7 @@ def leccion():
     return C.pagina_leccion(N, LE.titulo(N), "Unir todo lo aprendido y medir el camino recorrido.", ["Proyecto final", "Evaluación del nivel"],
                             ["<strong>Investigar</strong> un tema con dos fuentes y escribir sobre él.", "<strong>Representar</strong> datos en una gráfica o tabla y presentarlos.",
                              "<strong>Aplicar</strong> cinco estrategias de examen.", "<strong>Medir</strong> lo aprendido en los ocho temas con la evaluación final."],
-                            estd, conexion, secciones, tarea, quiz, filas, cierre, (None, "Siguiente: Nivel 3 de Artes del Lenguaje (en preparación)."), glosario, P)
+                            estd, conexion, secciones, tarea, quiz, filas, cierre, (None, 'Siguiente: <a href="/es/artes-del-lenguaje/nivel-3/">Nivel 3 de Artes del lenguaje</a>.'), glosario, P)
 
 
 def banco():

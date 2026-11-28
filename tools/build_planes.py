@@ -10,7 +10,7 @@ Each page tells the student (and the reviewing teachers) what the course will co
 how it is organized, while its lessons are being written.
 Run:  python3 tools/build_planes.py
 """
-import os, html
+import os, glob, html
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 e = html.escape
@@ -432,7 +432,8 @@ def rla(lang):
             t_esp = ("Reading and writing in Spanish" if en else "Lectura y escritura en español") + ' <span class="ruta">%d %s</span>' % (nv["lec"], TXT[lang]["lecciones"])
             if os.path.exists(os.path.join(RAIZ, "es", "artes-del-lenguaje", "nivel-%d" % nv["n"], "index.html")):
                 t_esp = '<a href="/es/artes-del-lenguaje/nivel-%d/">%s</a>' % (nv["n"], t_esp.split(" <span")[0]) + " <span" + t_esp.split(" <span", 1)[1] + \
-                        ' <span class="ruta prep">%s</span>' % ("in progress · open" if en else "en curso · abrir")
+                        ' <span class="ruta prep">%s</span>' % (("complete · open" if en else "completo · abrir") if len(glob.glob(os.path.join(RAIZ, "es", "artes-del-lenguaje", "nivel-%d" % nv["n"], "leccion-*.html"))) >= nv["lec"]
+                                                                 else ("in progress · open" if en else "en curso · abrir"))
             col_ing = tarjeta(lang, None, t_ing, ["%d · %s" % (i, x) for i, x in enumerate(ing, 1)], color="#1e3a5f", sin_num=True)
             col_esp = tarjeta(lang, None, t_esp, ["%d · %s" % (i, x) for i, x in enumerate(sp, 1)], color="#2a7f86", sin_num=True)
             cuerpo.append('<div class="dos">%s</div>' % ((col_ing + col_esp) if en else (col_esp + col_ing)))
