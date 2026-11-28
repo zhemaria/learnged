@@ -524,6 +524,58 @@
     nuevo(); marcador();
   };
 
+
+  /* creaCortes(pre, banco): banco = [{pal: "ca-mión", exp}]. Se tocan los huecos entre letras para poner o quitar un corte.
+     Dos intentos: en el primero se marcan en naranja los cortes que faltan y en rosado los que sobran. */
+  window.creaCortes = function (pre, banco) {
+    var pila = [], est = { primero: 0, pista: 0, total: 0 }, it, intentos, cerrado, letras, ok;
+    var enun = $(pre + "-enun"), fb = $(pre + "-fb");
+    function saca() { if (!pila.length) pila = baraja(banco); return pila.pop(); }
+    function marcador() { $(pre + "-marcador").textContent = est.total ? "Resueltos: " + (est.primero + est.pista) + " de " + est.total + " (" + est.primero + " al primer intento)" : ""; }
+    function nuevo() {
+      it = saca(); intentos = 0; cerrado = false;
+      letras = it.pal.replace(/-/g, "").split(""); ok = []; var k = 0;
+      it.pal.split("").forEach(function (c) { if (c === "-") ok.push(k); else k++; });
+      var h = '<p class="lim-tit">Toque los espacios entre las letras para cortar <strong>' + esc(letras.join("")) + '</strong> en sílabas. <button type="button" class="leer-btn" data-hablar="' + esc(letras.join("")) + '" aria-label="Escuchar la palabra">🔊</button></p><p class="cortes" role="group" aria-label="Letras y espacios">';
+      letras.forEach(function (c, i) {
+        h += '<span class="ct-l">' + esc(c) + '</span>';
+        if (i < letras.length - 1) h += '<button type="button" class="ct-g" data-i="' + (i + 1) + '" aria-pressed="false" aria-label="Espacio entre ' + esc(c) + ' y ' + esc(letras[i + 1]) + '"></button>';
+      });
+      enun.innerHTML = h + "</p>"; fb.className = "fb"; fb.innerHTML = ""; $(pre + "-comprobar").disabled = false;
+    }
+    enun.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button.ct-g"); if (!b || cerrado) return;
+      var on = b.getAttribute("aria-pressed") !== "true"; b.setAttribute("aria-pressed", on ? "true" : "false"); b.classList.remove("ct-falta", "ct-sobra");
+    });
+    function comprueba() {
+      if (cerrado) return; intentos++;
+      var faltan = 0, sobran = 0;
+      cada("button.ct-g", function (b) {
+        var i = +b.getAttribute("data-i"), m = b.getAttribute("aria-pressed") === "true", d = ok.indexOf(i) >= 0;
+        b.classList.remove("ct-falta", "ct-sobra"); if (d && !m) faltan++; if (m && !d) sobran++;
+        if (intentos === 1) { if (m && !d) b.classList.add("ct-sobra"); }
+      }, enun);
+      var sol = it.pal;
+      if (!faltan && !sobran) {
+        cerrado = true; est.total++; if (intentos === 1) est.primero++; else est.pista++;
+        fb.className = "fb bien"; fb.innerHTML = "✓ Correcto: <strong>" + esc(sol) + "</strong>. " + (it.exp || "") + " " + elogio(); $(pre + "-comprobar").disabled = true;
+      } else if (intentos === 1) {
+        fb.className = "fb pista"; fb.innerHTML = "<strong>Todavía no.</strong> " + (faltan ? "Falta" + (faltan > 1 ? "n " + faltan + " cortes" : " un corte") + ". " : "") +
+          (sobran ? "Los cortes en rosado sobran. " : "") + "Recuerde: no se separan los grupos con l o r, ni ch, ll, rr; los diptongos van juntos. <strong>Inténtelo de nuevo.</strong>";
+      } else {
+        cerrado = true; est.total++;
+        cada("button.ct-g", function (b) { var i = +b.getAttribute("data-i"), m = b.getAttribute("aria-pressed") === "true", d = ok.indexOf(i) >= 0;
+          b.setAttribute("aria-pressed", d ? "true" : "false"); if (d && !m) b.classList.add("ct-falta"); }, enun);
+        fb.className = "fb mal"; fb.innerHTML = "<strong>Así se separa:</strong> " + esc(sol) + ". Las líneas naranjas son los cortes que faltaban. " + (it.exp || "") + " Pulse <em>Otro ejercicio</em> para intentar uno más.";
+        $(pre + "-comprobar").disabled = true;
+      }
+      marcador();
+    }
+    $(pre + "-comprobar").addEventListener("click", comprueba);
+    $(pre + "-nuevo").addEventListener("click", nuevo);
+    nuevo(); marcador();
+  };
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();

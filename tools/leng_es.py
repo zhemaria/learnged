@@ -35,6 +35,15 @@ NIVELES = {
         6: "Información visual: imágenes, mapas, tablas y gráficas",
         7: "El párrafo y los tipos de texto",
         8: "Comunicación, tecnología y proyecto final"}),
+    2: ("Conectando ideas y textos", {
+        1: "Fonética avanzada y fluidez lectora",
+        2: "Gramática de la oración",
+        3: "Puntuación, ortografía y registro",
+        4: "Idea principal y estructura del texto",
+        5: "Comparar textos, vocabulario y lenguaje figurado",
+        6: "Leer con imágenes y en las materias",
+        7: "Escribir con estructura",
+        8: "Hablar, escuchar y proyecto final"}),
 }
 
 # Lecciones del Nivel 1 (las mismas de GEDparaHispanos; la 1.3 corresponde a la fluidez lectora)
@@ -82,6 +91,32 @@ LECCIONES = {
         "8-4": "Presentación oral breve",
         "8-5": "Proyecto final: «Mi historia, mis metas»",
         "8-6": "Evaluación final y camino al GED",
+    },
+    2: {
+        "1-1": "Vocales, diptongos y sílabas complejas",
+        "1-2": "Prefijos y sufijos comunes para leer palabras nuevas",
+        "1-3": "Fluidez lectora: precisión, ritmo y expresión",
+        "2-1": "Sustantivos y adverbios",
+        "2-2": "Pronombres reflexivos y concordancia",
+        "2-3": "Oraciones simples, compuestas y complejas",
+        "3-1": "Mayúsculas, comas, dos puntos y raya",
+        "3-2": "La tilde y la ortografía convencional",
+        "3-3": "Registro formal e informal: habla frente a escritura",
+        "4-1": "Idea principal en varios párrafos y detalles de apoyo",
+        "4-2": "Estructura de la historia y propósito del autor",
+        "4-3": "Leer con ilustraciones y características del texto",
+        "5-1": "Comparar y contrastar dos textos",
+        "5-2": "Vocabulario por contexto: pistas, afijos y raíces",
+        "5-3": "Significado literal frente a figurado; modismos",
+        "6-1": "Gráficas de barras, líneas y circulares; tablas de datos",
+        "6-2": "Fuentes primarias y secundarias: introducción",
+        "6-3": "Vocabulario de dominio en ciencias e historia",
+        "7-1": "Texto de opinión: postura clara y razones con conectores",
+        "7-2": "Texto informativo: categorías, datos y conclusión",
+        "7-3": "Narración con escenario y diálogo; proceso de revisión",
+        "8-1": "Conversar con respeto: turnos, enlazar y aclarar",
+        "8-2": "Comprensión auditiva y presentación oral con audio",
+        "8-3": "Proyecto final y evaluación del nivel",
     },
 }
 
