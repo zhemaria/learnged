@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!-- LearnGED · Artes del lenguaje · Nivel 1 · Lección 5.6 · práctica (español) — construida con tools/build_leng1_5_6.py
+     José M. Fernández · CC BY-NC-SA 4.0 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica · Lección 5.6 · Comparar y contrastar información · LearnGED</title>
+<meta name="license" content="CC BY-NC-SA 4.0"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/math/practice.css">
+<link rel="stylesheet" href="/science/science.css"><link rel="stylesheet" href="/rla/rla.css">
+</head>
+<body data-area="leng1">
+<nav class="lg-bar" aria-label="LearnGED"><a class="lg-logo" href="/es/"><img src="/img/learnged-logo-horizontal.svg" alt="Inicio de LearnGED" height="34"></a><a class="lg-link lg-inicio" href="/es/" style="margin-left:auto;border:1.5px solid #1E3A5F;border-radius:999px;padding:3px 12px"><span aria-hidden="true">🏠 </span>Inicio</a><a class="lg-link" href="./">Artes del lenguaje · Nivel 1 · todas las lecciones</a></nav>
+<a class="saltar" href="#titulo-indice">Saltar al índice</a>
+<div class="contenedor">
+  <header class="principal">
+    <div class="ruta">Artes del lenguaje · Nivel 1 · Tema 5 · El texto narrativo y las relaciones entre ideas</div>
+    <h1>Práctica · Lección 5.6 · Comparar y contrastar información</h1>
+    <div class="meta">Dos actividades · los ejercicios cambian cada vez · dos intentos en cada uno</div>
+  </header>
+  <nav class="indice" aria-labelledby="titulo-indice">
+    <h2 id="titulo-indice">En esta página</h2>
+    <ol>
+      <li><a href="#conectores">¿Comparar o contrastar?</a></li>
+      <li><a href="#venn">El diagrama de Venn</a></li>
+    </ol>
+    <div class="controles-todo">
+      <button type="button" class="btn-sec" id="abrir-todo">Abrir todo</button>
+      <button type="button" class="btn-sec" id="cerrar-todo">Cerrar todo</button>
+    </div>
+  </nav>
+
+  <details class="modulo" id="conectores" open>
+    <summary><span class="num" aria-hidden="true">1</span><h2>¿Comparar o contrastar?</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Decida si el conector en cursiva señala un parecido o una diferencia.</p>
+      <div class="practica" id="m1">
+        <div class="enun" id="m1-enun"></div>
+        <div class="opciones" id="m1-opciones"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn-sec" id="m1-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m1-fb" role="status"></div>
+        <p class="marcador" id="m1-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <details class="modulo" id="venn">
+    <summary><span class="num" aria-hidden="true">2</span><h2>El diagrama de Venn</h2><span class="chev" aria-hidden="true">›</span></summary>
+    <div class="cuerpo">
+      <p>Elija para cada rasgo: solo el primero, los dos o solo el segundo. Después pulse <strong>Comprobar</strong>.</p>
+      <div class="practica" id="m2">
+        <div class="enun" id="m2-enun"></div>
+        <div id="m2-piezas"></div>
+        <div class="fila-btn">
+          <button type="button" class="btn" id="m2-comprobar">Comprobar</button>
+          <button type="button" class="btn-sec" id="m2-nuevo">Otro ejercicio</button>
+        </div>
+        <div class="fb" id="m2-fb" role="status"></div>
+        <p class="marcador" id="m2-marcador"></p>
+      </div>
+      <a class="volver" href="#titulo-indice">↑ Volver al índice</a>
+    </div>
+  </details>
+
+  <footer class="pie">
+    <p><strong>Artes del lenguaje · Nivel 1 · Tema 5 · El texto narrativo y las relaciones entre ideas · LearnGED</strong><br>
+    <a href="leccion-5-6.html">Volver a la lección 5.6</a></p>
+    <p>José M. Fernández, ABE/ASE Math Master Teacher, Harry S. Truman College — City Colleges of Chicago</p><p class="licencia">© 2026. Esta obra está bajo una licencia <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" rel="license" target="_blank">Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional (CC BY-NC-SA 4.0)</a>.</p><p class="licencia">GED® es una marca registrada del American Council on Education (ACE), administrada exclusivamente por GED Testing Service LLC bajo licencia. LearnGED no está afiliado a ACE ni a GED Testing Service, ni cuenta con su respaldo o aprobación.</p>
+  </footer>
+</div>
+<script src="/math/practice.js"></script>
+<script src="/science/sci.js"></script>
+<script src="/rla/leng.js"></script>
+<script>
+var CON = [
+ {
+  "enun": "<strong>Mi hermana es enfermera, <em>al igual que</em> mi madre.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>El invierno en Chicago es muy frío; <em>en cambio</em>, en Miami es templado.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>El perro es leal; <em>de la misma manera</em>, el gato puede ser muy fiel.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>Yo prefiero el café, <em>mientras que</em> mi esposo prefiere el té.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong><em>A diferencia de</em> su hermano, Luis es muy ordenado.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>El arroz tiene muchas calorías; <em>asimismo</em>, la pasta tiene bastantes.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>La bicicleta no contamina; <em>por el contrario</em>, el carro sí.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>El español viene del latín, <em>así como</em> el portugués.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>El examen de ciencias fue fácil; <em>sin embargo</em>, el de matemáticas fue difícil.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>Mi abuela cocinaba con leña, <em>como</em> la tuya.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>Ella habla rápido, <em>pero</em> su hermano habla muy despacio.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>Los girasoles necesitan mucho sol; <em>de manera similar</em>, los tomates también.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong><em>En contraste con</em> la ciudad, el pueblo es muy tranquilo.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>Juan trabaja los sábados; María <em>también</em>.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>La renta en el centro es cara; <em>en cambio</em>, en las afueras es más barata.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>El tigre es un felino, <em>al igual que</em> el león.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>El metro es rápido; <em>sin embargo</em>, el autobús llega a más lugares.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>Las naranjas tienen vitamina C, <em>así como</em> las fresas.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ },
+ {
+  "enun": "<strong>Mi primer trabajo era de día, <em>mientras que</em> el actual es de noche.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 1,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala una <strong>diferencia</strong>: es contraste."
+ },
+ {
+  "enun": "<strong>El mango es una fruta tropical, <em>como</em> la piña.</strong><br>¿El conector señala un parecido o una diferencia?",
+  "ops": [
+   "Comparar (parecido)",
+   "Contrastar (diferencia)"
+  ],
+  "ok": 0,
+  "enOrden": true,
+  "pista": "",
+  "exp": "Señala un <strong>parecido</strong>: es comparación."
+ }
+];
+var VEN = [
+ {
+  "titulo": "El perro y el gato",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo el perro",
+   "Los dos",
+   "Solo el gato"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Ladra",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Maúlla",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Es una mascota",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene cuatro patas",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Hay que sacarlo a pasear",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Usa una caja de arena",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "El celular y la computadora de mesa",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo el celular",
+   "Los dos",
+   "Solo la computadora de mesa"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Cabe en el bolsillo",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Necesita electricidad",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene una pantalla grande y un teclado aparte",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Sirve para enviar correos",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Funciona con batería",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "El sol y la luna",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo el sol",
+   "Los dos",
+   "Solo la luna"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Da luz propia",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Se ve en el cielo",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Refleja la luz del sol",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Es una estrella",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Parece cambiar de forma a lo largo del mes",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "La biblioteca y la librería",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo la biblioteca",
+   "Los dos",
+   "Solo la librería"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Presta los libros gratis",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene libros",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Vende los libros",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Hay que devolver los libros",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene estantes",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "El agua y el refresco",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo el agua",
+   "Los dos",
+   "Solo el refresco"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "No tiene azúcar ni calorías",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Es una bebida",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene burbujas y azúcar",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Se puede tomar fría",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "La carta en papel y el correo electrónico",
+  "intro": "Ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo la carta en papel",
+   "Los dos",
+   "Solo el correo electrónico"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Necesita sello y sobre",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Llega en segundos",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Sirve para comunicarse",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Lleva el nombre de quien la recibe",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Necesita internet",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ },
+ {
+  "titulo": "El metro y el autobús",
+  "intro": "Según los textos de la lección (sección 3), ponga cada rasgo en su zona del diagrama de Venn.",
+  "grupos": [
+   "Solo el metro",
+   "Los dos",
+   "Solo el autobús"
+  ],
+  "etiqueta": "¿Dónde va?",
+  "piezas": [
+   {
+    "t": "Circula por vías propias, bajo tierra o elevadas",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Circula por las calles",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Tiene horarios fijos",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "No lo afecta el tráfico",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Su velocidad depende del tráfico",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Es transporte público",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Funciona con electricidad",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "La mayoría funciona con diésel o gas",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "El boleto tiene un precio fijo",
+    "v": 1,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Infraestructura costosa",
+    "v": 0,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   },
+   {
+    "t": "Infraestructura sencilla y económica",
+    "v": 2,
+    "pista": "Pregúntese: ¿lo tiene el primero, el segundo o los dos?"
+   }
+  ],
+  "extra": ""
+ }
+];
+creaBanco("m1", CON);
+creaClasifica("m2", VEN);
+iniciaNavegacion();
+</script>
+</body>
+</html>
