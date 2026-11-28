@@ -71,6 +71,7 @@ def leccion():
     s3 = f"""<h3>Búsqueda del tesoro</h3>
 <p>Responda las preguntas leyendo <strong>solo</strong> el título, el subtítulo, los subtítulos de sección, los rótulos y los pies de foto.</p>
 {AGUA}
+<p class="nota-fina">Dato de la Figura 2: Agencia de Protección Ambiental de los EE. UU. (EPA), programa WaterSense. Consultado en noviembre de 2026.</p>
 {P("Pregunta 1", "¿Cuál es el tema general del artículo?", ["El agua potable de la ciudad", "Las tuberías rotas", "El lago Michigan"], 0, {1: "Solo es una parte.", 2: "Es de donde viene el agua, no el tema."}, "Lo dice el <strong>título</strong>.")}
 {P("Pregunta 2", "¿De dónde viene el agua de Chicago?", ["Del lago Michigan", "De un río", "De la lluvia"], 0, {1: "Mire los rótulos de la Figura 1.", 2: "Mire los rótulos de la Figura 1."}, "Del <strong>lago Michigan</strong>: lo dicen el rótulo y el pie de la Figura 1.")}
 {P("Pregunta 3", "¿Cuánta agua puede desperdiciar en un año una llave que gotea una vez por segundo?", ["Más de 3,000 galones", "Una gota", "Más de 300 galones"], 0, {1: "Eso es por segundo.", 2: "Lea el número del pie de la Figura 2 con cuidado."}, "<strong>Más de 3,000 galones</strong>: lo dice el pie de la Figura 2.")}

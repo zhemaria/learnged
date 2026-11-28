@@ -52,7 +52,8 @@ def leccion():
     s1 = f"""<p>En la vida diaria usamos palabras comunes: casa, calle, comida. Pero en un texto de ciencias o de historia aparecen otras: <em>población, latitud, ecosistema, soberanía</em>. Son el <strong>vocabulario de dominio</strong>: palabras propias de un campo de conocimiento.</p>
 {C.caja("tip", "Idea central", "<p>No tiene que aprender de memoria todas las palabras técnicas. Lo que necesita es una <strong>estrategia</strong> para reconocerlas y deducir su significado por el contexto.</p>")}
 <h3>Seis palabras esenciales</h3>
-{C.tabla("Seis palabras de Ciencias y Estudios Sociales", ["Palabra", "Materia", "Qué significa", "Ejemplo"], filas_p)}"""
+{C.tabla("Seis palabras de Ciencias y Estudios Sociales", ["Palabra", "Materia", "Qué significa", "Ejemplo"], filas_p)}
+<p class="nota-fina">Datos de los ejemplos: Oficina del Censo de los EE. UU., censo de 2020 (Chicago: 2,746,388 personas); NOAA, normales climáticas 1991–2020 (Miami, julio). Consultado en noviembre de 2026.</p>"""
 
     s2 = f"""<p>Cuando no tenga diccionario, el texto suele dar pistas: son las <strong>claves de contexto</strong> de la Lección 4.5, ahora con palabras de Ciencias y de Estudios Sociales.</p>
 {C.tabla("Tres claves de contexto", ["Clave", "Ejemplo", "Qué le dice"],
@@ -66,7 +67,7 @@ def leccion():
     graf = barras("Temperatura promedio en Chicago por estación", "Estación del año", "Temperatura (°F)", ESTACIONES, txt=lambda v: f"{v} °F", py=20)
     s3 = f"""<p>Ahora va a usar todo el tema: leer una gráfica y escribir un párrafo corto que la describa. Es una destreza para todo el GED, y también para el trabajo.</p>
 {graf}
-<p class="nota-fina">Fuente: NOAA, normales climáticas 1991–2020 (O'Hare, valores redondeados).</p>
+<p class="nota-fina">Fuente: NOAA, normales climáticas 1991–2020, estación del aeropuerto O'Hare. Valores redondeados. Consultado en noviembre de 2026.</p>
 <div class="caja caja-tip"><span class="etiqueta et-verde">Actividad · en su cuaderno</span>
 <p>Complete la plantilla con los datos de la gráfica:</p>
 <ol><li>«La gráfica muestra ____ en Chicago durante las cuatro estaciones del año.»</li><li>«La temperatura más alta es en ____, con ____ °F.»</li>
@@ -125,7 +126,7 @@ def practica():
                     "ok": 0, "pista": "La primera oración dice de qué trata la gráfica, como el título.", "exp": f"La primera oración presenta el tema, como el título: <strong>La gráfica muestra {que}.</strong>"})
     mods = [("vocabulario", "¿Qué palabra es?", C.om("m1", "Elija la palabra que corresponde a la definición.")),
             ("completar", "Complete la oración", C.om("m2", "Elija la palabra de dominio que completa la oración.")),
-            ("describir", "Describa la gráfica", C.om("m3", "Elija la oración que describe bien la gráfica."))]
+            ("describir", "Describa la gráfica", C.om("m3", "Elija la oración que describe bien la gráfica. Los datos son de ejemplo."))]
     js = C.js_datos("VOC", voc) + C.js_datos("COM", com) + C.js_datos("DES", des) + 'creaBanco("m1", VOC);\ncreaBanco("m2", COM);\ncreaBanco("m3", DES);\n'
     return C.pagina_practica(N, LE.titulo(N), "Tres actividades · los ejercicios cambian cada vez · dos intentos en cada uno", mods, js)
 

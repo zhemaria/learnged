@@ -67,7 +67,7 @@ def leccion():
     s3 = f"""<p>En Ciencias y en Estudios Sociales, a veces hay que juntar la información de una tabla con la de un mapa.</p>
 {MAPA_US}
 {temp}
-<p class="nota-fina">Tabla 1: Promedio de enero. Fuente: NOAA, normales climáticas 1991–2020 (valores redondeados).</p>
+<p class="nota-fina">Tabla 1: Promedio de enero. Fuente: NOAA (Administración Nacional Oceánica y Atmosférica de los EE. UU.), normales climáticas 1991–2020. Valores redondeados; el de Los Ángeles es aproximado. Consultado en noviembre de 2026.</p>
 {P("Pregunta 1", "¿Cuál es la temperatura promedio de Chicago en enero?", ["25 °F", "58 °F", "69 °F"], 0, {1: "Esa es la de Los Ángeles.", 2: "Esa es la de Miami."}, "Fila «Chicago», columna «Temperatura»: <strong>25 °F</strong>.")}
 {P("Pregunta 2", "¿Hacia dónde queda Miami con respecto a Chicago?", ["al sur", "al norte", "al oeste"], 0, {1: "Miami está abajo en el mapa.", 2: "Miami está abajo y un poco a la derecha."}, "<strong>Al sur</strong> (y un poco al este).")}
 {P("Pregunta 3", "Juntando el mapa y la tabla, ¿qué se observa?", ["En estos datos, las ciudades más al sur son más cálidas", "En estos datos, las ciudades más al norte son más cálidas", "No hay ninguna relación"], 0,
@@ -130,8 +130,8 @@ def practica():
                      "exp": f"<strong>{alto}</strong>: tiene el valor más alto de la columna."})
         comp.append({"enun": f"{t}Según la tabla, ¿qué {ef.lower()} {menos}?", "ops": [bajo, alto] + r.sample(medio, 1), "ok": 0, "pista": f"Compare todos los números de la columna «{ed}» y busque el más bajo.",
                      "exp": f"<strong>{bajo}</strong>: tiene el valor más bajo de la columna."})
-    mods = [("cruzar", "Cruce la fila y la columna", C.om("m1", "Busque el dato en el cruce.")),
-            ("comparar", "Compare los datos", C.om("m2", "Busque el valor más alto o el más bajo de la columna."))]
+    mods = [("cruzar", "Cruce la fila y la columna", C.om("m1", "Busque el dato en el cruce. Los datos son de ejemplo.")),
+            ("comparar", "Compare los datos", C.om("m2", "Busque el valor más alto o el más bajo de la columna. Los datos son de ejemplo."))]
     js = C.js_datos("CRU", cru) + C.js_datos("COMP", comp) + 'creaBanco("m1", CRU);\ncreaBanco("m2", COMP);\n'
     return C.pagina_practica(N, LE.titulo(N), "Dos actividades · los ejercicios cambian cada vez · dos intentos en cada uno", mods, js)
 

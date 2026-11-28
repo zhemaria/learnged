@@ -75,7 +75,7 @@ def leccion():
 {C.caja("ojo", "En el examen GED", "<p>Pueden aparecer los dos tipos y también otros, como las gráficas de líneas. Lo que aprende con las barras le sirve para leer las demás.</p>")}"""
 
     s3 = f"""{barras("Libros leídos en marzo", "Persona", "Número de libros", LIBROS, num=False, py=1)}
-<p class="nota-fina">Fuente: club de lectura del barrio.</p>
+<p class="nota-fina">Datos de ejemplo.</p>
 {P("Pregunta 1", "¿Quién leyó más libros?", ["Sofía", "María", "Diego"], 0, {1: "María leyó 8; hay una barra más alta.", 2: "Diego leyó 7; hay una barra más alta."}, "<strong>Sofía</strong>: su barra es la más alta (11).")}
 {P("Pregunta 2", "¿Quién leyó menos libros?", ["José", "Carlos", "Diego"], 0, {1: "Carlos leyó 5; hay una barra más baja.", 2: "Diego leyó 7."}, "<strong>José</strong>: su barra es la más baja (3).")}
 {P("Pregunta 3", "¿Cuántos libros leyó María?", ["8", "7", "11"], 0, {1: "Siga la punta de la barra de María hasta el eje Y.", 2: "Esa es la barra de Sofía."}, "<strong>8</strong>: la barra llega a la línea del 8.")}
@@ -140,7 +140,7 @@ def practica():
         lee.append({"enun": f"{g}¿Qué se mide en el eje Y (el vertical)?", "ops": [ye, xe], "ok": 0, "pista": "", "exp": f"El eje Y mide <strong>{ye.lower()}</strong>; en el eje X están las categorías ({xe.lower()})."})
     cual = [{"enun": f"<strong>{s}</strong><br>¿Qué gráfica conviene usar?", "ops": ["De barras", "De pastel"], "ok": k, "enOrden": True, "pista": "",
              "exp": ["<strong>De barras</strong>: se comparan cantidades entre categorías.", "<strong>De pastel</strong>: se muestran las partes de un todo."][k]} for s, k in CUAL]
-    mods = [("leer", "Lea la gráfica de barras", C.om("m1", "Lea el título, los ejes y compare las barras.")),
+    mods = [("leer", "Lea la gráfica de barras", C.om("m1", "Lea el título, los ejes y compare las barras. Los datos son de ejemplo.")),
             ("elegir", "¿Barras o pastel?", C.om("m2", "Decida qué gráfica conviene para cada situación."))]
     js = C.js_datos("LEE", lee) + C.js_datos("CUAL", cual) + 'creaBanco("m1", LEE);\ncreaBanco("m2", CUAL);\n'
     return C.pagina_practica(N, LE.titulo(N), "Dos actividades · los ejercicios cambian cada vez · dos intentos en cada uno", mods, js)

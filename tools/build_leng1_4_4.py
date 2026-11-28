@@ -38,7 +38,7 @@ def leccion():
     P = C.Practicas()
     s1 = f"""<p>La idea principal sola no basta: necesita <strong>detalles de apoyo</strong> que la expliquen y la hagan creíble. Los detalles funcionan como <strong>pruebas</strong>: razones, ejemplos o datos que muestran por qué la idea es verdad.</p>
 <div class="texto-lectura"><p><mark>El huracán Ike causó mucho daño en Cuba en 2008.</mark> Llegó a la provincia de Holguín con vientos de unas 130 millas por hora, y en todo el país más de 300,000 viviendas sufrieron daños. Las calles quedaron inundadas y muchas casas perdieron el techo. En Baracoa, por ejemplo, olas enormes pasaron por encima de las casas de la costa.</p>
-<p class="nota-fina">Datos: Centro Nacional de Huracanes de los Estados Unidos, informe sobre el huracán Ike (2008), y Cruz Roja Internacional.</p></div>
+<p class="nota-fina">Datos: Centro Nacional de Huracanes de los Estados Unidos, informe sobre el huracán Ike (2009, actualizado en 2014), y Federación Internacional de la Cruz Roja (2008). Consultado en noviembre de 2026.</p></div>
 <p>La idea principal (resaltada) dice <strong>qué pasó</strong>. Los detalles dicen <strong>cuánto, cómo y dónde</strong>. Sin ellos, la idea sería solo una afirmación sin pruebas.</p>
 <h3>Tres clases de detalles</h3>
 {C.tabla("Tres formas de apoyar una idea", ["Tipo", "Qué es", "Ejemplo del párrafo de Ike"],
