@@ -265,3 +265,43 @@ kbd{display:inline-block;padding:.05em .4em;border:1px solid #94a3b8;border-bott
 .tarjeta-mod summary{font-weight:700;cursor:pointer;color:#0b5d52}
 .tarjeta-mod p{margin:.35em 0}
 mark.mod{background:#fde68a;color:inherit;border-bottom:2px solid #b45309;padding:0 .1em;border-radius:3px}
+/* Taller de escritura */
+.taller{background:#fff;border:2px solid #0b5d52;border-radius:12px;padding:.8em 1em;margin:.8em 0}
+.tl-etq{display:block;font-weight:800;font-size:1.05em;margin-bottom:.2em}
+.tl-guia{color:#475569;font-style:italic;margin:.2em 0 .5em}
+.tl-texto{width:100%;box-sizing:border-box;font:inherit;font-size:1.05em;line-height:1.6;padding:.6em;border:1.5px solid #94a3b8;border-radius:8px;resize:vertical}
+.tl-texto:focus{outline:3px solid #f2b705;outline-offset:2px}
+.tl-cuenta,.tl-con{margin:.4em 0;font-size:.95em}
+.tl-ok{color:#166534;font-weight:700}
+.tl-chip{display:inline-block;background:#dff3e6;color:#0f5132;border-radius:999px;padding:.05em .6em;margin:.1em;font-size:.9em}
+.tl-lista{border:1px solid #cbd5e1;border-radius:8px;margin-top:.6em;padding:.5em .8em}
+.tl-lista legend{font-weight:700;padding:0 .3em}
+.tl-lista label{display:block;margin:.3em 0;cursor:pointer}
+.tl-aviso{color:#166534;font-weight:600;min-height:1.2em}
+/* Partes del texto de opinión (botón Mostrar las partes) */
+.partes-on .p-pos{background:#dbeafe;border-bottom:2px solid #1d4ed8}
+.partes-on .p-raz{background:#dcfce7;border-bottom:2px solid #15803d}
+.partes-on .p-con{background:#fef3c7;border-bottom:2px dashed #b45309;font-weight:700}
+.partes-on .p-fin{background:#fce7f3;border-bottom:2px solid #be185d}
+.leyenda-partes{display:none;gap:.4em;flex-wrap:wrap;margin:.4em 0}
+.partes-on + .leyenda-partes,.leyenda-partes.ver{display:flex}
+.leyenda-partes span{padding:.1em .6em;border-radius:6px;font-size:.9em}
+.partes-on .p-pos::before{content:"Postura ▸ ";font-size:.75em;font-weight:800;color:#1d4ed8}
+.partes-on .p-raz::before{content:"Razón ▸ ";font-size:.75em;font-weight:800;color:#15803d}
+.partes-on .p-fin::before{content:"Conclusión ▸ ";font-size:.75em;font-weight:800;color:#be185d}
+/* Botones secundarios también en las lecciones (lesson.css no los define) */
+.btn-sec{display:inline-block;background:#fff;color:var(--tema-d,#0b5d52);border:2px solid var(--tema,#0b5d52);border-radius:8px;padding:7px 16px;font:inherit;font-weight:700;cursor:pointer;margin:.15em .3em .15em 0}
+.btn-sec:hover{background:var(--tema-bg,#e3f1ee)}
+.btn-sec:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+/* Esquema del texto informativo */
+.esquema{border:2px solid #0b5d52;border-radius:12px;padding:.7em;margin:.8em 0;background:#f8fbfa}
+.esq-tema{text-align:center;font-weight:800;background:#0b5d52;color:#fff;border-radius:8px;padding:.4em;margin:0 0 .6em}
+.esq-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6em}
+.esq-cats>div{background:#fff;border:1.5px solid #94a3b8;border-radius:8px;padding:.4em .7em}
+.esq-cat{font-weight:800;color:#0b5d52;margin:.1em 0 .2em}
+.esq-cats ul{margin:0;padding-left:1.1em}
+/* Proceso de escritura en pasos */
+ol.proceso{display:flex;flex-wrap:wrap;gap:.4em;list-style:none;padding:0;counter-reset:pr}
+ol.proceso li{counter-increment:pr;background:#e3f1ee;border:1.5px solid #0b5d52;border-radius:999px;padding:.25em .8em;font-weight:700}
+ol.proceso li::before{content:counter(pr) " · "}
+ol.proceso li:not(:last-child)::after{content:" →";color:#0b5d52}

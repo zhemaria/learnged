@@ -641,6 +641,40 @@
     nuevo(); marcador();
   };
 
+  /* Taller de escritura: <div class="taller" data-clave data-etiqueta data-guia data-oraciones data-palabras data-conectores="a|b" data-lista="x|y">
+     Cuenta oraciones y palabras, muestra los conectores usados, lista de revisión, escuchar y copiar. Se guarda en el navegador. */
+  function taller(t) {
+    var clave = "learnged-taller-" + t.getAttribute("data-clave"), id = "tl-" + t.getAttribute("data-clave");
+    var con = (t.getAttribute("data-conectores") || "").split("|").filter(Boolean), lista = (t.getAttribute("data-lista") || "").split("|").filter(Boolean);
+    var mO = +t.getAttribute("data-oraciones") || 0, mP = +t.getAttribute("data-palabras") || 0;
+    t.innerHTML = '<label class="tl-etq" for="' + id + '">' + esc(t.getAttribute("data-etiqueta") || "Su texto") + '</label>' +
+      (t.getAttribute("data-guia") ? '<p class="tl-guia">' + esc(t.getAttribute("data-guia")) + '</p>' : '') +
+      '<textarea id="' + id + '" class="tl-texto" rows="9" spellcheck="true" lang="es"></textarea>' +
+      '<p class="tl-cuenta" aria-live="polite"></p><p class="tl-con"></p>' +
+      '<div class="fila-btn"><button type="button" class="btn-sec tl-oir">🔊 Escuchar mi texto</button><button type="button" class="btn-sec tl-copiar">📋 Copiar mi texto</button><button type="button" class="btn-sec tl-borrar">Borrar</button></div><p class="tl-aviso" aria-live="polite"></p>' +
+      (lista.length ? '<fieldset class="tl-lista"><legend>Antes de entregar, revise:</legend>' + lista.map(function (x, i) { return '<label><input type="checkbox" data-i="' + i + '"> ' + esc(x) + '</label>'; }).join("") + '</fieldset>' : '');
+    var area = t.querySelector("textarea"), cuenta = t.querySelector(".tl-cuenta"), cn = t.querySelector(".tl-con"), aviso = t.querySelector(".tl-aviso");
+    function guarda() { try { localStorage.setItem(clave, JSON.stringify({ t: area.value, c: Array.prototype.map.call(t.querySelectorAll(".tl-lista input"), function (c) { return c.checked; }) })); } catch (e) {} }
+    function actualiza() {
+      var x = area.value.trim(), pal = x ? x.split(/\s+/).length : 0, ora = (x.match(/[^.!?…]+[.!?…]+/g) || []).length;
+      cuenta.innerHTML = "Oraciones: <strong>" + ora + "</strong>" + (mO ? " de " + mO + " o más" : "") + " · Palabras: <strong>" + pal + "</strong>" + (mP ? " de " + mP + " o más" : "") +
+        ((mO && ora >= mO && (!mP || pal >= mP)) ? " · <span class=\"tl-ok\">✓ Ya tiene el largo pedido.</span>" : "");
+      var low = " " + x.toLowerCase().replace(/[.,;:¿?¡!«»"]/g, " ") + " ", usados = con.filter(function (c) { return low.indexOf(" " + c + " ") >= 0; });
+      cn.innerHTML = con.length ? (usados.length ? "Conectores que usó (" + usados.length + "): " + usados.map(function (c) { return '<span class="tl-chip">' + esc(c) + "</span>"; }).join(" ") : "Todavía no usa conectores de la lista.") : "";
+    }
+    try { var g = JSON.parse(localStorage.getItem(clave) || "null"); if (g) { area.value = g.t || ""; (g.c || []).forEach(function (v, i) { var c = t.querySelector('.tl-lista input[data-i="' + i + '"]'); if (c) c.checked = v; }); } } catch (e) {}
+    area.addEventListener("input", function () { actualiza(); guarda(); });
+    t.addEventListener("change", function (ev) { if (ev.target.matches(".tl-lista input")) guarda(); });
+    t.querySelector(".tl-oir").addEventListener("click", function () { if (area.value.trim()) hablar(area.value, 0.9); });
+    t.querySelector(".tl-copiar").addEventListener("click", function () {
+      var v = area.value; if (!v.trim()) { aviso.textContent = "Primero escriba su texto."; return; }
+      function ok() { aviso.textContent = "✓ Copiado. Péguelo donde le pida su maestro (por ejemplo, en el foro del curso)."; }
+      if (navigator.clipboard) navigator.clipboard.writeText(v).then(ok, function () { area.select(); document.execCommand("copy"); ok(); }); else { area.select(); document.execCommand("copy"); ok(); }
+    });
+    t.querySelector(".tl-borrar").addEventListener("click", function () { if (confirm("¿Borrar su texto? No se puede deshacer.")) { area.value = ""; actualiza(); guarda(); } });
+    actualiza();
+  }
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();
@@ -652,6 +686,7 @@
     cada(".teatro[data-lineas]", teatro);
     cada(".constructor[data-grupos]", constructor);
     cada(".destello[data-grupos]", destello);
+    cada(".taller[data-clave]", taller);
     botonVozPagina();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inicia); else inicia();
