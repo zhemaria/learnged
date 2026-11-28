@@ -237,7 +237,7 @@ kbd{display:inline-block;padding:.05em .4em;border:1px solid #94a3b8;border-bott
 .dictado-pal details summary{cursor:pointer}
 /* Fórmula o idea destacada, y número de párrafo */
 .formula{background:#eef6f4;border:1.5px dashed #0b5d52;border-radius:10px;padding:.5em .8em;text-align:center}
-.num-p{display:inline-flex;align-items:center;justify-content:center;min-width:1.6em;height:1.6em;border-radius:50%;background:#0b5d52;color:#fff;font-size:.8em;font-weight:700;margin-right:.3em;vertical-align:.1em}
+.num-p{display:inline-flex;align-items:center;justify-content:center;min-width:1.6em;height:1.6em;border-radius:50%;background:var(--c1,#0b5d52);color:#fff;font-size:.8em;font-weight:700;margin-right:.3em;vertical-align:.1em}
 /* Modo vistazo (Lección 2-4.3): las oraciones se ven borrosas; las ayudas y las negritas se leen */
 .vistazo .art-txt,.vistazo .art-txt li{color:transparent;text-shadow:0 0 7px rgba(30,41,59,.55);user-select:none}
 .vistazo .art-txt strong{color:#111827;text-shadow:none;background:#fef3c7;border-radius:4px;padding:0 .15em}
@@ -294,7 +294,7 @@ mark.mod{background:#fde68a;color:inherit;border-bottom:2px solid #b45309;paddin
 .btn-sec:hover{background:var(--tema-bg,#e3f1ee)}
 .btn-sec:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
 /* Esquema del texto informativo */
-.esquema{border:2px solid #0b5d52;border-radius:12px;padding:.7em;margin:.8em 0;background:#f8fbfa}
+.esquema{border:2px solid var(--c1,#0b5d52);border-radius:12px;padding:.7em;margin:.8em 0;background:#f8fbfa}
 .esq-tema{text-align:center;font-weight:800;background:#0b5d52;color:#fff;border-radius:8px;padding:.4em;margin:0 0 .6em}
 .esq-cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6em}
 .esq-cats>div{background:#fff;border:1.5px solid #94a3b8;border-radius:8px;padding:.4em .7em}
@@ -403,3 +403,12 @@ b.marca{color:#4c1d95;text-decoration:underline;text-decoration-thickness:2px;te
 .lectura-fg.ver-fg .fg-m{background:#ede9fe;color:#4c1d95}
 .lectura-fg.ver-fg .fg-d{background:#fef3c7;color:#78350f}
 .lectura-fg.ver-fg .fg-r{background:#dcfce7;color:#14532d}
+/* Partes de un argumento (Nivel 3 · 5.1) */
+.lectura-arg.arg-on .a-af{background:#dbeafe;box-shadow:inset 0 -2px #1d4ed8}
+.lectura-arg.arg-on .a-ra{background:#dcfce7;box-shadow:inset 0 -2px #15803d}
+.lectura-arg.arg-on .a-ev{background:#fef3c7;box-shadow:inset 0 -2px #b45309}
+.lectura-arg.arg-on .a-sa{background:#fee2e2;box-shadow:inset 0 -2px #b91c1c}
+.lectura-arg.arg-on .a-af::before{content:"Afirmación ▸ ";font-size:.72em;font-weight:800;color:#1d4ed8}
+.lectura-arg.arg-on .a-ra::before{content:"Razón ▸ ";font-size:.72em;font-weight:800;color:#15803d}
+.lectura-arg.arg-on .a-ev::before{content:"Evidencia ▸ ";font-size:.72em;font-weight:800;color:#b45309}
+.lectura-arg.arg-on .a-sa::before{content:"Sin apoyo ▸ ";font-size:.72em;font-weight:800;color:#b91c1c}
