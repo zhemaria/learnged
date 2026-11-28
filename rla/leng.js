@@ -576,6 +576,71 @@
     nuevo(); marcador();
   };
 
+  /* creaDictado(pre, frases): se escucha una oración, se escribe y se revisa palabra por palabra.
+     Verde: bien. Naranja: falta o sobra la tilde. Rosado: palabra distinta o de más. Dos intentos; después se muestra la oración. */
+  window.creaDictado = function (pre, frases) {
+    var pila = [], est = { primero: 0, pista: 0, total: 0 }, it, intentos, cerrado;
+    var enun = $(pre + "-enun"), fb = $(pre + "-fb");
+    function saca() { if (!pila.length) pila = baraja(frases); return pila.pop(); }
+    function sinTilde(s) { return s.normalize("NFD").replace(/[̀-ͯ]/g, "").normalize("NFC"); }
+    function pals(s) { return s.replace(/[¿?¡!.,;:«»"“”()—]/g, " ").split(/\s+/).filter(Boolean); }
+    function marcador() { $(pre + "-marcador").textContent = est.total ? "Oraciones resueltas: " + (est.primero + est.pista) + " de " + est.total + " (" + est.primero + " al primer intento)" : ""; }
+    function nuevo() {
+      it = saca(); intentos = 0; cerrado = false;
+      enun.innerHTML = '<p class="dc-botones"><button type="button" class="btn-sec dc-oir">🔊 Escuchar la oración</button> <button type="button" class="btn-sec dc-lento">🐢 Más despacio</button></p>' +
+        '<label class="dc-etq" for="' + pre + '-texto">Escriba la oración que oyó:</label><textarea id="' + pre + '-texto" class="dc-texto" rows="2" autocomplete="off" autocapitalize="sentences" spellcheck="false"></textarea>' +
+        '<div class="dc-rev" aria-live="polite"></div><p class="dc-sinvoz"><button type="button" class="enlace-btn dc-ver">¿No puede oír la voz? Pida a alguien que le dicte, o pulse aquí para ver la oración unos segundos.</button></p>';
+      fb.className = "fb"; fb.innerHTML = ""; $(pre + "-comprobar").disabled = false;
+      if (primeraVez) primeraVez = false; else setTimeout(function () { hablar(it, 0.8); }, 300);
+    }
+    var primeraVez = true;
+    enun.addEventListener("click", function (ev) {
+      if (ev.target.closest(".dc-oir")) hablar(it, 0.8);
+      else if (ev.target.closest(".dc-lento")) hablarPalabras(it);
+      else if (ev.target.closest(".dc-ver")) {
+        var r = enun.querySelector(".dc-rev"); r.innerHTML = '<p class="dc-flash">' + esc(it) + "</p>";
+        setTimeout(function () { if (!cerrado && r.querySelector(".dc-flash")) r.innerHTML = ""; }, 4000);
+      }
+    });
+    function comprueba() {
+      if (cerrado) return;
+      var area = $(pre + "-texto"), u = area.value.trim();
+      if (!u) { fb.className = "fb mal"; fb.textContent = "Primero escriba la oración que oyó."; return; }
+      intentos++;
+      var E = pals(it), U = pals(u), e = E.map(function (w) { return sinTilde(w.toLowerCase()); }), x = U.map(function (w) { return sinTilde(w.toLowerCase()); });
+      var n = e.length, m = x.length, L = [], i, j;
+      for (i = 0; i <= n; i++) L.push(new Array(m + 1).fill(0));
+      for (i = n - 1; i >= 0; i--) for (j = m - 1; j >= 0; j--) L[i][j] = e[i] === x[j] ? L[i + 1][j + 1] + 1 : Math.max(L[i + 1][j], L[i][j + 1]);
+      var marca = new Array(m).fill("w-mal"), usadas = 0, tildes = 0; i = 0; j = 0;
+      while (i < n && j < m) {
+        if (e[i] === x[j]) { var bien = E[i].toLowerCase() === U[j].toLowerCase(); marca[j] = bien ? "w-ok" : "w-tilde"; if (!bien) tildes++; usadas++; i++; j++; }
+        else if (L[i + 1][j] >= L[i][j + 1]) i++; else j++;
+      }
+      var malas = m - usadas, faltan = n - usadas, mayus = U.length && E.length && U[0].charAt(0) !== E[0].charAt(0) && U[0].charAt(0).toLowerCase() === E[0].charAt(0).toLowerCase();
+      enun.querySelector(".dc-rev").innerHTML = '<p class="dc-marcas">' + U.map(function (w, k) { return '<span class="' + marca[k] + '">' + esc(w) + "</span>"; }).join(" ") + "</p>";
+      if (!tildes && !malas && !faltan && !mayus) {
+        cerrado = true; est.total++; if (intentos === 1) est.primero++; else est.pista++;
+        fb.className = "fb bien"; fb.innerHTML = "✓ ¡Sin errores! <strong>" + esc(it) + "</strong> " + elogio(); $(pre + "-comprobar").disabled = true;
+      } else if (intentos === 1) {
+        var d = [];
+        if (tildes) d.push(tildes === 1 ? "una palabra tiene un problema de tilde (en naranja)" : tildes + " palabras tienen un problema de tilde (en naranja)");
+        if (malas) d.push(malas === 1 ? "una palabra está mal escrita o sobra (en rosado)" : malas + " palabras están mal escritas o sobran (en rosado)");
+        if (faltan > malas) d.push("falta" + (faltan - malas > 1 ? "n " + (faltan - malas) + " palabras" : " una palabra"));
+        if (mayus) d.push("la oración empieza con mayúscula");
+        var txt = d.join("; "); txt = txt.charAt(0).toUpperCase() + txt.slice(1);
+        fb.className = "fb pista"; fb.innerHTML = "<strong>Casi.</strong> " + txt + ". Escúchela otra vez, corrija y pulse <em>Comprobar</em>.";
+      } else {
+        cerrado = true; est.total++;
+        fb.className = "fb mal"; fb.innerHTML = "<strong>La oración es:</strong> " + esc(it) + " Compare con lo que escribió y anote en su cuaderno la regla de cada error. Pulse <em>Otro ejercicio</em> para seguir.";
+        $(pre + "-comprobar").disabled = true;
+      }
+      marcador();
+    }
+    $(pre + "-comprobar").addEventListener("click", comprueba);
+    $(pre + "-nuevo").addEventListener("click", nuevo);
+    nuevo(); marcador();
+  };
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();
