@@ -136,3 +136,13 @@ def construye(n, hacer_leccion, hacer_practica, horas="Unas 3 horas"):
         ruta = os.path.join(carpeta, nombre)
         open(ruta, "w", encoding="utf-8").write(_ajusta(f(), horas))
         print("ok", os.path.relpath(ruta, C.ROOT))
+
+
+def marcar(pid, intro):
+    """Módulo de práctica «toque las palabras» (creaMarcar de /rla/leng.js)."""
+    return f"      <p>{intro}</p>\n" + C.huecos(pid)
+
+
+def oracion(suj, pred, extra=""):
+    """Oración con el sujeto (subrayado recto) y el predicado (ondulado) marcados."""
+    return f'<p class="oracion-ej"><span class="suj">{suj}</span> <span class="pred">{pred}</span>{extra}</p>'

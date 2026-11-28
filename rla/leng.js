@@ -421,6 +421,26 @@
       });
       g.parentNode.insertBefore(b, g.nextSibling);
     }, raiz);
+    decoraMenus(raiz);
+  }
+  function decoraMenus(raiz) {
+    if (!vozOn) return;
+    cada(".frase-huecos", function (f) {
+      var sig = f.nextElementSibling;
+      if (sig && sig.classList.contains("leer-ops")) return;
+      var b = document.createElement("button"); b.type = "button"; b.className = "leer-ops";
+      b.innerHTML = '<span aria-hidden="true">🔊</span> Escuchar la oración y las opciones';
+      b.addEventListener("click", function () {
+        var c = f.cloneNode(true), ops = [];
+        Array.prototype.forEach.call(c.querySelectorAll("select"), function (sel, i) {
+          ops.push(Array.prototype.slice.call(sel.options, 1).map(function (o) { return o.textContent; }).join(", o "));
+          sel.replaceWith(document.createTextNode(" espacio en blanco "));
+        });
+        Array.prototype.forEach.call(c.querySelectorAll("label"), function (l) { l.remove(); });
+        hablar(c.textContent.replace(/\s+/g, " ").trim() + ". Opciones: " + ops.join(". En el siguiente espacio: ") + ".", 0.85);
+      });
+      f.parentNode.insertBefore(b, f.nextSibling);
+    }, raiz);
   }
   function quita() {
     cada(".leer-btn, .leer-ops", function (b) { b.remove(); });
@@ -434,7 +454,9 @@
     var b = document.createElement("button"); b.type = "button"; b.className = "voz-pagina";
     function pinta() { b.setAttribute("aria-pressed", vozOn ? "true" : "false"); b.innerHTML = '<span aria-hidden="true">🔊</span> Voz: ' + (vozOn ? "sí" : "no"); b.setAttribute("aria-label", vozOn ? "Lectura en voz alta activada. Pulse para desactivarla." : "Activar la lectura en voz alta de la página"); b.title = vozOn ? "Quitar los botones de lectura en voz alta" : "Poner un botón 🔊 junto a cada texto para oírlo"; }
     b.addEventListener("click", function () { vozOn = !vozOn; guardar(CLAVE_VOZ, vozOn ? "1" : "0"); pinta(); if (vozOn) decora(); else { quita(); callar(); } });
-    pinta(); document.body.appendChild(b);
+    pinta();
+    var barra = document.querySelector(".lg-bar") || document.querySelector("header.top .tools");
+    if (barra) { b.classList.add("en-barra"); barra.appendChild(b); } else document.body.appendChild(b);
     if (vozOn) decora();
     obs = new MutationObserver(function (m) {
       if (!vozOn) return;
@@ -442,6 +464,64 @@
     });
     obs.observe(document.body, { childList: true, subtree: true });
   }
+
+
+  /* ================= Tocar en un texto las palabras que se piden (dos intentos) =================
+     creaMarcar(pre, banco): banco = [{consigna, texto: "Mi *familia* es pequeña.", mayus: false, exp}]
+     Las palabras con * son las que hay que tocar. Con mayus: true el texto se muestra en minúsculas
+     y al tocar una palabra se le pone la mayúscula. */
+  window.creaMarcar = function (pre, banco) {
+    var pila = [], est = { primero: 0, pista: 0, total: 0 }, it, intentos, cerrado;
+    var enun = $(pre + "-enun"), fb = $(pre + "-fb");
+    function saca() { if (!pila.length) pila = baraja(banco); return pila.pop(); }
+    function marcador() { $(pre + "-marcador").textContent = est.total ? "Resueltos: " + (est.primero + est.pista) + " de " + est.total + " (" + est.primero + " al primer intento)" : ""; }
+    function partes(tok) { var m = tok.match(/^([«¿¡"(]*)(.*?)([.,;:!?»")]*)$/); return [m[1], m[2], m[3]]; }
+    function nuevo() {
+      it = saca(); intentos = 0; cerrado = false;
+      var html = it.texto.split(/\s+/).map(function (tok, i) {
+        var obj = tok.indexOf("*") >= 0; tok = tok.replace(/\*/g, "");
+        var p = partes(tok), w = p[1], vis = it.mayus ? w.toLowerCase() : w;
+        return p[0] + '<button type="button" class="lim-p" data-ok="' + (obj ? 1 : 0) + '" data-w="' + esc(w) + '" data-b="' + esc(vis) + '" aria-pressed="false">' + vis + "</button>" + p[2];
+      }).join(" ");
+      enun.innerHTML = '<p class="lim-tit">' + it.consigna + '</p><p class="lim-texto marcar" role="group">' + html + "</p>";
+      fb.className = "fb"; fb.innerHTML = ""; $(pre + "-comprobar").disabled = false;
+    }
+    enun.addEventListener("click", function (ev) {
+      var b = ev.target.closest("button.lim-p"); if (!b || cerrado) return;
+      var on = b.getAttribute("aria-pressed") !== "true";
+      b.setAttribute("aria-pressed", on ? "true" : "false"); b.classList.toggle("marcada", on); b.classList.remove("revisar");
+      if (it.mayus) { var w = b.getAttribute("data-b"); b.textContent = on ? w.charAt(0).toUpperCase() + w.slice(1) : w; }
+    });
+    function comprueba() {
+      if (cerrado) return;
+      var faltan = 0, sobran = 0, n = 0;
+      cada("button.lim-p", function (b) {
+        var m = b.getAttribute("aria-pressed") === "true", d = b.getAttribute("data-ok") === "1"; if (d) n++;
+        b.classList.toggle("revisar", m && !d); if (d && !m) faltan++; if (m && !d) sobran++;
+      }, enun);
+      intentos++;
+      if (!faltan && !sobran) {
+        cerrado = true; est.total++; if (intentos === 1) est.primero++; else est.pista++;
+        fb.className = "fb bien"; fb.innerHTML = "✓ Correcto. " + (it.exp || "") + " " + elogio(); $(pre + "-comprobar").disabled = true;
+      } else if (intentos === 1) {
+        fb.className = "fb pista";
+        fb.innerHTML = "<strong>Todavía no.</strong> Hay que marcar " + n + (n === 1 ? " palabra" : " palabras") + ". " + (faltan ? "Le " + (faltan === 1 ? "falta 1" : "faltan " + faltan) + ". " : "") +
+          (sobran ? "Las marcas en amarillo no van. " : "") + (it.pista || "") + " <strong>Inténtelo de nuevo.</strong>";
+      } else {
+        cerrado = true; est.total++;
+        cada("button.lim-p", function (b) {
+          var d = b.getAttribute("data-ok") === "1"; b.setAttribute("aria-pressed", d ? "true" : "false"); b.classList.toggle("marcada", d); b.classList.remove("revisar");
+          if (it.mayus) { var w = b.getAttribute("data-b"); b.textContent = d ? w.charAt(0).toUpperCase() + w.slice(1) : w; }
+        }, enun);
+        fb.className = "fb mal"; fb.innerHTML = "<strong>Así queda.</strong> " + (it.exp || "") + " Pulse <em>Otro ejercicio</em> para intentar uno más.";
+        $(pre + "-comprobar").disabled = true;
+      }
+      marcador();
+    }
+    $(pre + "-comprobar").addEventListener("click", comprueba);
+    $(pre + "-nuevo").addEventListener("click", nuevo);
+    nuevo(); marcador();
+  };
 
   /* ================= Arranque ================= */
   function inicia() {
