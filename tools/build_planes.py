@@ -416,6 +416,8 @@ def rla(lang):
         "<strong>Lectura y escritura en inglés</strong> es un curso nuevo, escrito desde el principio para el inglés, con textos de dominio público. Sus cuatro niveles siguen los estándares CCR para adultos (A–B, C, D y E) y combinan fonética, lectura, gramática para corregir textos y escritura. Los profesores de GED que enseñan en inglés lo revisarán antes de escribir las lecciones. Es para adultos que ya entienden el inglés hablado; si usted todavía está aprendiendo inglés, puede presentar el GED en español con el camino en español.",
         "<strong>Practice for the extended response</strong> will be connected to an essay checker in each language." if en else
         "<strong>La práctica de la respuesta extendida</strong> estará conectada con un evaluador de ensayos en cada idioma.",
+        '<strong>Standards.</strong> Every lesson shows the GED® indicators it works on, with their DOK and their CCR anchor standard. See <a href="/rla/ged-standards.html">all the RLA standards</a>: the test, the indicators, the three traits of the extended response, and the editing traps of each language.' if en else
+        '<strong>Estándares.</strong> Cada lección muestra los indicadores del GED® que trabaja, con su DOK y su estándar ancla CCR. Vea <a href="/es/artes-del-lenguaje/estandares-ged.html">todos los estándares de RLA</a>: el examen, los indicadores, los tres rasgos de la respuesta extendida y las trampas de corrección de cada idioma.',
     ])
     c.append(bloque("organization", "How it is organized" if en else "Cómo se organiza", org, lang))
     for id_, niveles, tit in (("levels-1-2", RLA_NIVELES[:2], ("Levels 1 and 2 · Build your foundation", "Niveles 1 y 2 · Construya sus bases")),
