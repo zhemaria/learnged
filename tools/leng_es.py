@@ -127,6 +127,44 @@ def _ajusta(html, horas):
     return html
 
 
+
+# ---------------------------------------------------------------- orden de las opciones
+# Las preguntas «Compruebe» y las del cuestionario se escriben a menudo con la respuesta correcta en primer lugar.
+# Para que la posición no la delate, cuando la correcta es la primera se barajan las opciones (siempre igual para
+# la misma pregunta, para que la página no cambie de una construcción a otra).
+import hashlib as _hl, random as _rnd
+
+
+def _mezcla(clave, ops, ok, pistas):
+    if ok != 0 or len(ops) < 2:
+        return ops, ok, pistas
+    r = _rnd.Random(int(_hl.md5(clave.encode("utf-8")).hexdigest()[:8], 16))
+    perm = list(range(len(ops)))
+    while perm[0] == 0:
+        r.shuffle(perm)
+    return [ops[i] for i in perm], perm.index(ok), {perm.index(i): h for i, h in pistas.items()}
+
+
+class _PracticasMezcla(C.Practicas):
+    def __call__(self, titulo, pregunta, ops, ok, pistas, solucion, right=None):
+        ops, ok, pistas = _mezcla(pregunta, list(ops), ok, dict(pistas))
+        return super().__call__(titulo, pregunta, ops, ok, pistas, solucion, right)
+
+
+_quiz_original = C.quiz_html
+
+
+def _quiz_mezcla(items):
+    nuevos = []
+    for preg, ops, ok, pistas, sol in items:
+        o, k, p = _mezcla(preg, list(ops), ok, dict(pistas))
+        nuevos.append((preg, o, k, p, sol))
+    return _quiz_original(nuevos)
+
+
+C.Practicas = _PracticasMezcla
+C.quiz_html = _quiz_mezcla
+
 def construye(n, hacer_leccion, hacer_practica, horas="Unas 3 horas"):
     C.L = "es"
     R.L = "es"
