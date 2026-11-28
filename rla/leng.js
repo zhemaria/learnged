@@ -374,7 +374,7 @@
   var CLAVE_VOZ = "learnged-voz-pagina", vozOn = false, obs = null;
   var SEL_TXT = ".envoltura h2, .envoltura h3, .envoltura p, .envoltura li, .envoltura dt, .envoltura dd," +
     " .contenedor h1, .contenedor h2, .contenedor h3, .contenedor p, .contenedor li, main h1, main h2, main h3, main p, main li, .enun, .pregunta, .pregunta-int, .etiqueta";
-  var EXCLUYE = "nav, footer, .indice, .opciones, button, .abc, .emparejar, .cons-fichas, .cons-frase, .armar-suj, .armar-pred, .armar-frase, .lim-texto, .guia, .texto-lectura, .destello, .crono, .teatro, .leer-ops, .fb, .marcador, .respuesta-int, .estandares, .chips, .migas, .aviso-voz, .nota-audio, .tabla-rubrica, label, select";
+  var EXCLUYE = "nav, footer, .indice, .opciones, button, .abc, .emparejar, .cons-fichas, .cons-frase, .armar-suj, .armar-pred, .armar-frase, .lim-texto, .guia, .destello, .crono, .teatro, .leer-ops, .fb, .marcador, .respuesta-int, .estandares, .chips, .migas, .aviso-voz, .nota-audio, .tabla-rubrica, label, select";
   function guardar(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
   function leer(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
   function limpio(el) {
