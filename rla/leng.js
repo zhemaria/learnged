@@ -371,7 +371,8 @@
      Un botón fijo («🔊 Leer en voz alta») pone un altavoz junto a cada párrafo, título, pregunta y
      lista, y un botón «Escuchar las opciones» debajo de cada grupo de opciones. Pensado para quien
      todavía no lee con soltura. Encendido de entrada en el Nivel 1; la elección se recuerda. */
-  var CLAVE_VOZ = "learnged-voz-pagina", vozOn = false, obs = null;
+  var L11 = /\/nivel-1\/(leccion|practica)-1-1\.html/.test(location.pathname);
+  var CLAVE_VOZ = L11 ? "learnged-voz-1-1" : "learnged-voz", vozOn = false, obs = null;
   var SEL_TXT = ".envoltura h2, .envoltura h3, .envoltura p, .envoltura li, .envoltura dt, .envoltura dd," +
     " .contenedor h1, .contenedor h2, .contenedor h3, .contenedor p, .contenedor li, main h1, main h2, main h3, main p, main li, .enun, .pregunta, .pregunta-int, .etiqueta";
   var EXCLUYE = "nav, footer, .indice, .opciones, button, .abc, .emparejar, .cons-fichas, .cons-frase, .armar-suj, .armar-pred, .armar-frase, .lim-texto, .guia, .destello, .crono, .teatro, .leer-ops, .fb, .marcador, .respuesta-int, .estandares, .chips, .migas, .aviso-voz, .nota-audio, .tabla-rubrica, label, select";
@@ -450,7 +451,7 @@
   function botonVozPagina() {
     if (!ES) return;
     var guardado = leer(CLAVE_VOZ);
-    vozOn = guardado === null ? /\/nivel-1\//.test(location.pathname) : guardado === "1";
+    vozOn = guardado === null ? L11 : guardado === "1";
     var b = document.createElement("button"); b.type = "button"; b.className = "voz-pagina";
     function pinta() { b.setAttribute("aria-pressed", vozOn ? "true" : "false"); b.innerHTML = '<span aria-hidden="true">🔊</span> Voz: ' + (vozOn ? "sí" : "no"); b.setAttribute("aria-label", vozOn ? "Lectura en voz alta activada. Pulse para desactivarla." : "Activar la lectura en voz alta de la página"); b.title = vozOn ? "Quitar los botones de lectura en voz alta" : "Poner un botón 🔊 junto a cada texto para oírlo"; }
     b.addEventListener("click", function () { vozOn = !vozOn; guardar(CLAVE_VOZ, vozOn ? "1" : "0"); pinta(); if (vozOn) decora(); else { quita(); callar(); } });

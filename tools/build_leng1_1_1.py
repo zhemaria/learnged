@@ -75,10 +75,10 @@ def leccion():
 
     s3 = f"""<p>Algunas letras se confunden porque se parecen mucho. Fíjese en hacia dónde mira la «barriga» de la letra y si el palito sube o baja:</p>
 {C.tabla("Letras que se confunden por su forma", ["Letras", "Cómo distinguirlas", "Ejemplos"],
-         [["b · d", "La <strong>b</strong> tiene el palito a la izquierda y la barriga a la derecha; la <strong>d</strong>, al revés.", "<em>boca · dedo</em>"],
-          ["p · q", "Las dos tienen el palito hacia abajo. La <strong>p</strong> lleva la barriga a la derecha; la <strong>q</strong>, a la izquierda, y siempre va con <em>u</em> (<em>que, qui</em>).", "<em>pan · queso</em>"],
-          ["n · ñ", "La <strong>ñ</strong> lleva una rayita ondulada encima (la tilde de la eñe).", "<em>pena · peña</em>"],
-          ["m · n", "La <strong>m</strong> tiene dos jorobas; la <strong>n</strong>, una.", "<em>mesa · nube</em>"]])}
+         [["<span class=\"junto\">b · d</span>", "La <strong>b</strong> tiene el palito a la izquierda y la barriga a la derecha; la <strong>d</strong>, al revés.", "<em class=\"junto\">boca · dedo</em>"],
+          ["<span class=\"junto\">p · q</span>", "Las dos tienen el palito hacia abajo. La <strong>p</strong> lleva la barriga a la derecha; la <strong>q</strong>, a la izquierda, y siempre va con <em>u</em> (<em>que, qui</em>).", "<em class=\"junto\">pan · queso</em>"],
+          ["<span class=\"junto\">n · ñ</span>", "La <strong>ñ</strong> lleva una rayita ondulada encima (la tilde de la eñe).", "<em class=\"junto\">pena · peña</em>"],
+          ["<span class=\"junto\">m · n</span>", "La <strong>m</strong> tiene dos jorobas; la <strong>n</strong>, una.", "<em class=\"junto\">mesa · nube</em>"]])}
 <p>Otras se confunden porque <strong>suenan igual</strong>, aunque se escriben distinto:</p>
 <ul>
 <li><strong>b</strong> y <strong>v</strong> suenan igual: <em>barco, vaca</em>.</li>
