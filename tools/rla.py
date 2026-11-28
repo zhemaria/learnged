@@ -132,6 +132,14 @@ CCR = {
     "RF.2": ("Phonological awareness: hear and work with spoken words, syllables, and sounds.", "Conciencia fonológica: oír y manejar las palabras, las sílabas y los sonidos de la lengua hablada."),
     "RF.3": ("Phonics and word recognition: use letter–sound knowledge to read words.", "Fonética y reconocimiento de palabras: usar la relación entre letras y sonidos para leer palabras."),
     "RF.4": ("Fluency: read with enough accuracy and fluency to understand.", "Fluidez: leer con la precisión y la soltura suficientes para comprender."),
+    "SL.1": ("Prepare for and participate effectively in a range of conversations and collaborations with diverse partners, building on others' ideas and expressing their own clearly and persuasively.",
+             "Prepararse para participar bien en conversaciones y trabajos en grupo con personas diversas: aprovechar las ideas de los demás y expresar las propias con claridad."),
+    "SL.2": ("Integrate and evaluate information presented in diverse media and formats, including visually, quantitatively, and orally.",
+             "Integrar y evaluar información presentada en distintos medios y formatos: visual, numérico y oral."),
+    "SL.4": ("Present information, findings, and supporting evidence such that listeners can follow the line of reasoning; the organization, development, and style are appropriate to task, purpose, and audience.",
+             "Presentar información y su evidencia de modo que quien escucha siga el razonamiento, con una organización y un estilo adecuados a la tarea, el propósito y el público."),
+    "SL.6": ("Adapt speech to a variety of contexts and communicative tasks, demonstrating command of formal English when indicated or appropriate.",
+             "Adaptar el habla a distintos contextos y situaciones, y usar el registro formal cuando corresponde."),
     "W.1": ("Write arguments to support claims, using valid reasoning and relevant, sufficient evidence.", "Escribir argumentos que sostengan una tesis con razonamiento válido y evidencia pertinente y suficiente."),
     "W.2": ("Write informative and explanatory texts that convey ideas clearly and accurately.", "Escribir textos informativos y explicativos que comuniquen ideas con claridad y precisión."),
     "W.4": ("Produce clear writing whose development, organization, and style fit the task, purpose, and audience.", "Producir una escritura clara cuyo desarrollo, organización y estilo se ajusten a la tarea, el propósito y el público."),
@@ -264,7 +272,10 @@ def estandares(cods, base=(), camino="en", fund=()):
          f'<summary><span aria-hidden="true">🎓</span> {t("Standards for this lesson (GED® and CCR)", "Estándares de esta lección (GED® y CCR)")}</summary>',
          '<div class="std-cuerpo">',
          ]
-    if fund:
+    if fund and all(k.startswith("SL") for k in fund):
+        s.append(f'<p class="std-tit">{t("CCR speaking and listening standards that this lesson works on (the GED® test does not assess them directly):", "Estándares CCR de comunicación oral que trabaja esta lección (el examen GED® no los evalúa directamente):")}</p><ul>' +
+                 "".join(f'<li><span class="std-cod std-dir">{k}</span> {t(*CCR[k])}</li>' for k in fund) + "</ul>")
+    elif fund:
         s.append(f'<p class="std-tit">{t("CCR reading foundations that this lesson works on (the GED® test takes them for granted):", "Fundamentos de lectura CCR que trabaja esta lección (el examen GED® los da por sabidos):")}</p><ul>' +
                  "".join(f'<li><span class="std-cod std-dir">{k}</span> {t(*CCR[k])}</li>' for k in fund) + "</ul>")
     if cods:
