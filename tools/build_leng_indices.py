@@ -151,7 +151,8 @@ def indice_nivel(n):
 
 def escribe(ruta, titulo, cuerpo, migas, js=""):
     s = P.pagina("es", titulo, "/rla/", "/" + os.path.dirname(ruta) + "/", cuerpo, migas[-1][1])
-    s = s.replace("</head>", CSS + "\n</head>", 1).replace("built by tools/build_planes.py", "built by tools/build_leng_indices.py")
+    s = s.replace("</head>", CSS + '\n<link rel="stylesheet" href="/rla/rla.css">\n</head>', 1).replace("built by tools/build_planes.py", "built by tools/build_leng_indices.py")
+    s = s.replace("</body>", '<script src="/rla/leng.js"></script>\n</body>', 1)
     pasos = "".join(f'<a href="{u}">{e(t)}</a> <span aria-hidden="true">›</span> ' for u, t in migas[:-1])
     s = s.replace('<span aria-hidden="true">›</span> <span aria-current="page">', f'<span aria-hidden="true">›</span> {pasos}<span aria-current="page">', 1)
     if js:

@@ -36,8 +36,8 @@ def leccion():
     P = C.Practicas()
     s1 = f"""<p>El alfabeto del español tiene <strong>27 letras</strong>. Cada letra tiene dos formas: la <strong>mayúscula</strong>, grande, y la <strong>minúscula</strong>, pequeña. Casi todo lo que usted lee está en minúsculas; las mayúsculas aparecen en lugares concretos, que verá en la sección 2.</p>
 {C.tabla("Las dos formas de las letras", ["Forma", "Cómo es", "Ejemplo"],
-         [["Mayúscula", "Grande. Todas las mayúsculas tienen la misma altura.", "M A R Í A"],
-          ["Minúscula", "Pequeña. Algunas suben (b, d, h, l…) y otras bajan (g, j, p, q, y).", "m a r í a"]])}
+         [["Mayúscula", "Grande. Todas las mayúsculas tienen la misma altura.", "<span class=\"letras-sep\">LENGUA</span>"],
+          ["Minúscula", "Pequeña. Algunas suben (b, d, h, l…) y otras bajan (g, j, p, q, y).", "<span class=\"letras-sep\">lengua</span><br><span class=\"nota-fina\">la <strong>l</strong> sube y la <strong>g</strong> baja</span>"]])}
 <h3>El abecedario ilustrado</h3>
 <p>Toque cualquier letra para oír su nombre y una palabra que empieza con ella. Haga tres pasadas:</p>
 <ol>
@@ -87,7 +87,7 @@ def leccion():
 <li>La <strong>h</strong> no suena: <em>hoja</em> se dice «oja».</li>
 </ul>
 <p>Por eso, para escribir bien no basta con oír la palabra: hay que recordar cómo se ve. Su diccionario personal (sección 4) le ayudará.</p>
-{P("Compruebe", "¿Con qué letra empieza <strong>vaca</strong>? <span aria-hidden=\"true\">🐄</span>", ["B", "V", "F"], 1,
+{P("Compruebe", "¿Con qué letra empieza <strong>vaca</strong>? <span class=\"emoji-grande\" aria-hidden=\"true\">🐄</span>", ["B", "V", "F"], 1,
    {0: "La b y la v suenan igual, pero esta palabra se escribe con la letra de la «ve corta».", 2: "La f suena distinto: se dice soplando entre los dientes y el labio."},
    "<em>Vaca</em> se escribe con <strong>V</strong>. Suena igual que la b: hay que recordar cómo se ve la palabra.")}"""
 
@@ -117,9 +117,9 @@ def leccion():
         ("¿Cuál es la minúscula de <strong>Ñ</strong>?", ["ñ", "n", "m"], 0, {1: "Le falta la rayita ondulada de encima.", 2: "La m tiene dos jorobas."}, "La minúscula de Ñ es <strong>ñ</strong>, con su tilde encima."),
         ("¿Cuál es la mayúscula de <strong>d</strong>?", ["B", "P", "D"], 2, {0: "La B es la mayúscula de b.", 1: "La P es la mayúscula de p."}, "La mayúscula de d es <strong>D</strong>."),
         ("¿Cuál es la mayúscula de <strong>h</strong>?", ["H", "N", "K"], 0, {1: "La N es la mayúscula de n.", 2: "La K es la mayúscula de k."}, "La mayúscula de h es <strong>H</strong>."),
-        ("¿Con qué letra empieza <strong>queso</strong>? <span aria-hidden=\"true\">🧀</span>", ["K", "Q", "C"], 1, {0: "Suena igual, pero queso no se escribe con k.", 2: "La c no puede ir delante de «ue» con ese sonido: se escribe qu."}, "<em>Queso</em> empieza con <strong>Q</strong> (que, qui)."),
-        ("¿Con qué letra empieza <strong>hoja</strong>? <span aria-hidden=\"true\">🍃</span>", ["O", "J", "H"], 2, {0: "Se oye «oja», pero hay una letra muda antes de la o.", 1: "La j está en medio de la palabra, no al principio."}, "<em>Hoja</em> empieza con <strong>H</strong>, que no suena."),
-        ("¿Con qué letra empieza <strong>zapato</strong>? <span aria-hidden=\"true\">👞</span>", ["Z", "S", "C"], 0, {1: "En América suenan igual, pero zapato no se escribe con s.", 2: "La c solo suena así delante de e o i."}, "<em>Zapato</em> empieza con <strong>Z</strong>."),
+        ("¿Con qué letra empieza <strong>queso</strong>? <span class=\"emoji-grande\" aria-hidden=\"true\">🧀</span>", ["K", "Q", "C"], 1, {0: "Suena igual, pero queso no se escribe con k.", 2: "La c no puede ir delante de «ue» con ese sonido: se escribe qu."}, "<em>Queso</em> empieza con <strong>Q</strong> (que, qui)."),
+        ("¿Con qué letra empieza <strong>hoja</strong>? <span class=\"emoji-grande\" aria-hidden=\"true\">🍃</span>", ["O", "J", "H"], 2, {0: "Se oye «oja», pero hay una letra muda antes de la o.", 1: "La j está en medio de la palabra, no al principio."}, "<em>Hoja</em> empieza con <strong>H</strong>, que no suena."),
+        ("¿Con qué letra empieza <strong>zapato</strong>? <span class=\"emoji-grande\" aria-hidden=\"true\">👞</span>", ["Z", "S", "C"], 0, {1: "En América suenan igual, pero zapato no se escribe con s.", 2: "La c solo suena así delante de e o i."}, "<em>Zapato</em> empieza con <strong>Z</strong>."),
         ("¿Cuántas letras tiene el alfabeto del español?", ["26", "27", "29"], 1, {0: "Esas son las del inglés. Falta una.", 2: "La ch y la ll ya no se cuentan como letras."}, "Son <strong>27</strong>."),
         ("¿Qué letra tiene el español que el inglés <strong>no</strong> tiene?", ["la W", "la K", "la Ñ"], 2, {0: "La w está en los dos alfabetos.", 1: "La k está en los dos alfabetos."}, "La <strong>Ñ</strong>."),
         ("¿Qué letra se escribe pero <strong>no suena</strong> en «hola»?", ["la O", "la L", "la H"], 2, {0: "La o sí suena.", 1: "La l sí suena."}, "La <strong>H</strong> es muda en español."),

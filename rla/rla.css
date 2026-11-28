@@ -21,7 +21,7 @@ body[data-area="leng4"]{--c1:#8b1a1a;--c2:#b42318;--c3:#fdecea;}
 .abc-par{font-size:1.9em;font-weight:700;line-height:1.1;}
 .abc-M{color:#0d47a1;margin-right:6px;}
 .abc-m{color:#a3154f;}
-.abc-e{font-size:1.4em;}
+.abc-e{font-size:2.3em;line-height:1.2;}
 .abc-p{font-weight:700;}
 .abc-n{font-size:.85em;color:#4a5560;}
 
@@ -82,7 +82,8 @@ button.lim-p.revisar{background:#fff8e1;border:2px solid #f9a825;}
 @media (max-width:640px){ .emp-cols{grid-template-columns:1fr;} .abc{grid-template-columns:repeat(auto-fill,minmax(92px,1fr));} }
 @media print{ .abc-letra,.emp-b{break-inside:avoid;} }
 .grande{font-size:1.6em;font-weight:700;}
-.emoji-grande{font-size:2em;vertical-align:middle;margin-right:6px;}
+.emoji-grande{display:block;font-size:3.4em;line-height:1.15;margin:4px 0 6px;}
+.opcion .emoji-grande{font-size:2.8em;margin:0;}
 
 /* Constructor de palabras y frases */
 .constructor{background:#fff;border:1px solid #d5dde5;border-radius:12px;padding:14px 16px;margin:12px 0;}
@@ -116,3 +117,15 @@ button.lim-p.revisar{background:#fff8e1;border:2px solid #f9a825;}
 .ficha{display:inline-block;min-width:2.2em;text-align:center;font-weight:700;border:2px solid;border-radius:8px;padding:4px 10px;}
 .ficha.sil{background:#e3f0f8;border-color:#0b679c;color:#004b75;}
 .ficha.sil2{background:#fce4ec;border-color:#a3154f;color:#7a0f3b;}
+
+.nota-fina{font-size:.85em;color:#4a5560;}
+/* Lectura en voz alta de la página (para quien todavía no lee con soltura) */
+.voz-pagina{position:fixed;left:10px;bottom:10px;font-size:.9em;z-index:50;display:flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--c2,#0b679c);color:var(--c1,#004b75);border-radius:999px;padding:7px 13px;font-family:inherit;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;}
+.voz-pagina[aria-pressed="true"]{background:var(--c2,#0b679c);color:#fff;}
+.leer-btn{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin:0 6px 0 0;padding:0;border:2px solid var(--c2,#0b679c);border-radius:50%;background:#fff;color:var(--c1,#004b75);font-size:.85em;cursor:pointer;vertical-align:middle;flex:none;}
+.leer-btn:hover,.leer-btn:focus-visible{background:var(--c3,#e3f0f8);}
+.leer-ops{display:inline-flex;align-items:center;gap:6px;margin:4px 0 8px;border:2px solid var(--c2,#0b679c);border-radius:999px;background:#fff;color:var(--c1,#004b75);padding:4px 12px;font:inherit;font-size:.92em;font-weight:700;cursor:pointer;}
+.leyendo{background:#fff3c4 !important;outline:2px solid #f5b301;border-radius:4px;}
+@media print{.voz-pagina,.leer-btn,.leer-ops{display:none !important;}}
+body:has(.voz-pagina){padding-bottom:64px;}
+.letras-sep{letter-spacing:.35em;white-space:nowrap;}

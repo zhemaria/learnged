@@ -366,6 +366,83 @@
     tarj.textContent = grupo()[0]; todas();
   }
 
+
+  /* ================= Lectura en voz alta de la página =================
+     Un botón fijo («🔊 Leer en voz alta») pone un altavoz junto a cada párrafo, título, pregunta y
+     lista, y un botón «Escuchar las opciones» debajo de cada grupo de opciones. Pensado para quien
+     todavía no lee con soltura. Encendido de entrada en el Nivel 1; la elección se recuerda. */
+  var CLAVE_VOZ = "learnged-voz-pagina", vozOn = false, obs = null;
+  var SEL_TXT = ".envoltura h2, .envoltura h3, .envoltura p, .envoltura li, .envoltura dt, .envoltura dd," +
+    " .contenedor h1, .contenedor h2, .contenedor h3, .contenedor p, .contenedor li, main h1, main h2, main h3, main p, main li, .enun, .pregunta, .pregunta-int, .etiqueta";
+  var EXCLUYE = "nav, footer, .indice, .opciones, button, .abc, .emparejar, .cons-fichas, .cons-frase, .armar-suj, .armar-pred, .armar-frase, .lim-texto, .guia, .texto-lectura, .destello, .crono, .teatro, .leer-ops, .fb, .marcador, .respuesta-int, .estandares, .chips, .migas, .aviso-voz, .nota-audio, .tabla-rubrica, label, select";
+  function guardar(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function leer(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function limpio(el) {
+    var c = el.cloneNode(true);
+    Array.prototype.forEach.call(c.querySelectorAll(".leer-btn, .leer-ops, button, .cap-oculto, [aria-hidden='true']"), function (x) { x.remove(); });
+    return c.textContent.replace(/[\u{1F300}-\u{1FAFF}☀-➿️]/gu, "").replace(/\s+/g, " ").trim();
+  }
+  function marcaLeyendo(el) {
+    cada(".leyendo", function (x) { x.classList.remove("leyendo"); });
+    el.classList.add("leyendo");
+    hablar(limpio(el), 0.85, function () { el.classList.remove("leyendo"); });
+  }
+  function decora(raiz) {
+    if (!vozOn) return;
+    cada(SEL_TXT, function (el) {
+      if (el.dataset.leer || el.closest(EXCLUYE) || el.querySelector("p, li, ul, ol, table, div") && !el.matches(".enun, .pregunta, .pregunta-int")) return;
+      if (el.matches("li") && el.querySelector(".leer-btn")) return;
+      if (el.parentElement && el.parentElement.closest("[data-leer]") && !el.matches(".pregunta, .pregunta-int")) return;
+      var txt = limpio(el); if (txt.length < 2) return;
+      el.dataset.leer = "1";
+      var b = document.createElement("button"); b.type = "button"; b.className = "leer-btn"; b.setAttribute("aria-label", "Leer en voz alta: " + txt.slice(0, 60));
+      b.innerHTML = '<span aria-hidden="true">🔊</span>';
+      b.addEventListener("click", function (ev) { ev.preventDefault(); ev.stopPropagation(); marcaLeyendo(el); });
+      el.insertBefore(b, el.firstChild);
+    }, raiz);
+    cada(".envoltura tbody tr, .contenedor tbody tr, main tbody tr", function (tr) {
+      if (tr.dataset.leer || tr.closest(EXCLUYE) || !tr.firstElementChild) return;
+      var txt = limpio(tr); if (txt.length < 2) return;
+      tr.dataset.leer = "1";
+      var b = document.createElement("button"); b.type = "button"; b.className = "leer-btn"; b.setAttribute("aria-label", "Leer la fila: " + txt.slice(0, 60));
+      b.innerHTML = '<span aria-hidden="true">🔊</span>';
+      b.addEventListener("click", function (ev) { ev.preventDefault(); ev.stopPropagation(); marcaLeyendo(tr); });
+      tr.firstElementChild.insertBefore(b, tr.firstElementChild.firstChild);
+    }, raiz);
+    cada(".opciones", function (g) {
+      var sig = g.nextElementSibling;
+      if (sig && sig.classList.contains("leer-ops")) return;
+      var b = document.createElement("button"); b.type = "button"; b.className = "leer-ops";
+      b.innerHTML = '<span aria-hidden="true">🔊</span> Escuchar las opciones';
+      b.addEventListener("click", function () {
+        var ops = Array.prototype.map.call(g.querySelectorAll(".opcion"), function (o) { return limpio(o) || (o.querySelector("[aria-label]") ? o.querySelector("[aria-label]").getAttribute("aria-label") : ""); });
+        var ord = ["Primera", "Segunda", "Tercera", "Cuarta", "Quinta"];
+        hablar(ops.map(function (t, i) { return (ord[i] || "Otra") + " opción: " + t + "."; }).join(" "), 0.85);
+      });
+      g.parentNode.insertBefore(b, g.nextSibling);
+    }, raiz);
+  }
+  function quita() {
+    cada(".leer-btn, .leer-ops", function (b) { b.remove(); });
+    cada("[data-leer]", function (el) { delete el.dataset.leer; });
+    cada(".leyendo", function (x) { x.classList.remove("leyendo"); });
+  }
+  function botonVozPagina() {
+    if (!ES) return;
+    var guardado = leer(CLAVE_VOZ);
+    vozOn = guardado === null ? /\/nivel-1\//.test(location.pathname) : guardado === "1";
+    var b = document.createElement("button"); b.type = "button"; b.className = "voz-pagina";
+    function pinta() { b.setAttribute("aria-pressed", vozOn ? "true" : "false"); b.innerHTML = '<span aria-hidden="true">🔊</span> Voz: ' + (vozOn ? "sí" : "no"); b.setAttribute("aria-label", vozOn ? "Lectura en voz alta activada. Pulse para desactivarla." : "Activar la lectura en voz alta de la página"); b.title = vozOn ? "Quitar los botones de lectura en voz alta" : "Poner un botón 🔊 junto a cada texto para oírlo"; }
+    b.addEventListener("click", function () { vozOn = !vozOn; guardar(CLAVE_VOZ, vozOn ? "1" : "0"); pinta(); if (vozOn) decora(); else { quita(); callar(); } });
+    pinta(); document.body.appendChild(b);
+    if (vozOn) decora();
+    obs = new MutationObserver(function (m) {
+      if (!vozOn) return;
+      obs.disconnect(); decora(); obs.observe(document.body, { childList: true, subtree: true });
+    });
+    obs.observe(document.body, { childList: true, subtree: true });
+  }
+
   /* ================= Arranque ================= */
   function inicia() {
     botonesVoz(); sonidos();
@@ -377,6 +454,7 @@
     cada(".teatro[data-lineas]", teatro);
     cada(".constructor[data-grupos]", constructor);
     cada(".destello[data-grupos]", destello);
+    botonVozPagina();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", inicia); else inicia();
 })();
